@@ -2,7 +2,7 @@
 
 ###Introduction
 
-XMERC is a Next Generation derivative of Merc 2.2.
+XMERC is a Next Generation MUD derivative of Merc 2.2.
 
 Merc Diku Mud is a Diku Mud with many enhancements and contributions. See our 'contrib.txt' and 'help merc' for acknowledgements.  Send us your contribution, and you'll be in there too!
 
