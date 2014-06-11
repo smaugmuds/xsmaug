@@ -11,7 +11,7 @@ Enjoy our mud.  May your visit here be ... Mercenary.
 
 ### XMERC Releases
 
- * **[XMERC Pre-Release v0.0.1] (https://github.com/smaugmuds/xmerc/releases/tag/2.4)**
+ * **[XMERC Release 2.4] (https://github.com/smaugmuds/xmerc/releases/tag/2.4)**
 
 #### Contents of the Release
 
