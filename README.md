@@ -36,11 +36,11 @@ Enjoy creating your next generation mud!
 
 #### Supported Operating Systems
 
-	- **Linux**
-	- **BSD**
-	- **Solaris**
-	- **Windows**
-	- **MAC**
+	- Linux
+	- BSD
+	- Solaris
+	- Windows
+	- MAC
 
  
 ### Authors and Contributors
