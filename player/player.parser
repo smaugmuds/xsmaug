@@ -1,0 +1,33 @@
+#!/bin/sh
+
+#
+# converts to a parsed system
+#
+mkdir a;mv A* a 
+mkdir b;mv B* b 
+mkdir c;mv C* c 
+mkdir d;mv D* d 
+mkdir e;mv E* e 
+mkdir f;mv F* f 
+mkdir g;mv G* g 
+mkdir h;mv H* h 
+mkdir i;mv I* i 
+mkdir j;mv J* j 
+mkdir k;mv K* k 
+mkdir l;mv L* l 
+mkdir m;mv M* m 
+mkdir n;mv N* n 
+mkdir o;mv O* o 
+mkdir p;mv P* p 
+mkdir q;mv Q* q 
+mkdir r;mv R* r 
+mkdir s;mv S* s 
+mkdir t;mv T* t 
+mkdir u;mv U* u 
+mkdir v;mv V* v 
+mkdir w;mv W* w 
+mkdir x;mv X* x 
+mkdir y;mv Y* y 
+mkdir z;mv Z* z 
+
+gzip -9 -r ../player
