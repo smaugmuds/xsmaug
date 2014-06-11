@@ -49,7 +49,7 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <arpa/telnet.h>
-#include "merc.h"
+#include "xmerc.h"
 
 const char echo_off_str[] = { IAC, WILL, TELOPT_ECHO, '\0' };
 const char echo_on_str[] = { IAC, WONT, TELOPT_ECHO, '\0' };

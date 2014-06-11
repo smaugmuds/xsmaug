@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "merc.h"
+#include "xmerc.h"
 
 #if !defined(macintosh)
 extern int _filbuf args( ( FILE * ) );

@@ -66,7 +66,7 @@
 #endif
 #endif
 #if defined(IMCROM) || defined(IMCMERC) || defined(IMCUENVY) || defined(IMC1STMUD)
-#include "merc.h"
+#include "xmerc.h"
 #if defined(IMCROM)
 #include "tables.h"
 #endif

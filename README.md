@@ -21,6 +21,16 @@ Enjoy our mud.  May your visit here be ... Mercenary.
 	- player: Player files (initially empty).
 	- imc:    IMC files.
 	- src:    Source files.
+	- conf:   XMERC Server Config File
+	- xmercd: XMERC Server Boot Script
+
+#### ChangeLog
+
+	* MERC 2.2 -> XMERC 2.4
+
+		- Added: xmerc.conf & xmercd
+		- Added: New Makefile
+		- Added: Name Change
 
 
 ###Supported Operating Systems

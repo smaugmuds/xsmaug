@@ -31,7 +31,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include "merc.h"
+#include "xmerc.h"
 
 /*
  * Local function prototypes

@@ -22,7 +22,7 @@
 #endif
 #include <stdio.h>
 #include <time.h>
-#include "merc.h"
+#include "xmerc.h"
 
 
 

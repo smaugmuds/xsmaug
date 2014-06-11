@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source xmerc.conf
+
+echo
+echo "          - (( $xmerc $version )) -" 
+echo 
+echo "                \"$realm\""
+echo
+
+sleep 2;
+
+cd $realm
+
+../$xmerc $port > $log
+

@@ -6,12 +6,12 @@
  # Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,          #
  # Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     #
  # ------------------------------------------------------------------------ #
- # MERC 2.4 (C) 2014 by Antonio Cao (BuRZuM-iSHi)                          #
+ # XMERC 2.4 (C) 2014 by Antonio Cao (BuRZuM-iSHi)                          #
  # ------------------------------------------------------------------------ #
- #                             MERC Makefile                               #
+ #                             XMERC Makefile                               #
  ############################################################################
 
-MERC = merc
+XMERC = xmerc
 VERSION = 2.4
 
 CC      = gcc
@@ -79,26 +79,26 @@ all:
 	@echo " # Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,          #"
 	@echo " # Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     #"
 	@echo " # ------------------------------------------------------------------------ #"
-	@echo " # MERC 2.4 (C) 2014 by Antonio Cao [BuRZuM-iSHi]                          #"
+	@echo " # XMERC 2.4 (C) 2014 by Antonio Cao [BuRZuM-iSHi]                          #"
 	@echo " # ------------------------------------------------------------------------ #"
-	@echo " #                             MERC Build                                  #"
+	@echo " #                             XMERC Build                                  #"
 	@echo " ############################################################################"
 	@echo ""
 	mkdir $(C_OBJ)
-	make $(MERC)
+	make $(XMERC)
 
 # pull in dependency info for *existing* .o files
 -include dependencies.d
 
-$(MERC): $(O_FILES)
-	rm -f $(MERC)
-	$(CC) -export-dynamic -o ../$(MERC) $(O_FILES) $(L_FLAGS)
+$(XMERC): $(O_FILES)
+	rm -f $(XMERC)
+	$(CC) -export-dynamic -o ../$(XMERC) $(O_FILES) $(L_FLAGS)
 	@echo "Generating dependency file ...";
 	@$(CC) -MM $(C_FLAGS) $(C_FILES) > dependencies.d
 	@perl -pi -e 's.^([a-z]).o/$$1.g' dependencies.d
-	@echo "Done building $(MERC).";
-	chmod g+w ../$(MERC)
-	chmod a+x ../$(MERC)
+	@echo "Done building $(XMERC).";
+	chmod g+w ../$(XMERC)
+	chmod a+x ../$(XMERC)
 	chmod g+w $(O_FILES)
 
 $(C_OBJ)/%.o: %.c
@@ -107,4 +107,4 @@ $(C_OBJ)/%.o: %.c
 	echo " done";
 
 clean:
-	rm -rf $(C_OBJ) ../$(MERC) *~ dependencies.d
+	rm -rf $(C_OBJ) ../$(XMERC) *~ dependencies.d

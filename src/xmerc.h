@@ -1529,11 +1529,11 @@ char *crypt args( ( const char *key, const char *salt ) );
 #define MOB_DIR         "MOBProgs/" /* MOBProg files                */
 #define AREA_LIST	"area.lst"  /* List of areas     */
 
-#define BUG_FILE	"bugs.txt"  /* For 'bug' and bug( )      */
-#define IDEA_FILE	"ideas.txt" /* For 'idea'        */
-#define TYPO_FILE	"typos.txt" /* For 'typo'       */
-#define NOTE_FILE	"notes.txt" /* For 'notes'       */
-#define SHUTDOWN_FILE	"shutdown.txt" /* For 'shutdown'    */
+#define BUG_FILE	"../log/bugs.log"  /* For 'bug' and bug( )      */
+#define IDEA_FILE	"../log/ideas.log" /* For 'idea'        */
+#define TYPO_FILE	"../log/typos.log" /* For 'typo'       */
+#define NOTE_FILE	"../log/notes.log" /* For 'notes'       */
+#define SHUTDOWN_FILE	"../log/shutdown.log" /* For 'shutdown'    */
 
 
 
