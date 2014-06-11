@@ -19,6 +19,7 @@ Enjoy our mud.  May your visit here be ... Mercenary.
 	- doc:    Documentation.
 	- log:    Log files    (initially empty).
 	- player: Player files (initially empty).
+	- imc:    IMC files.
 	- src:    Source files.
 
 
