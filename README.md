@@ -144,7 +144,9 @@ Feel free to contribute with **XSMAUG in GitHub**.
 
 Having trouble with **XSMAUG**?
 
-First, read the documentation in the **'doc'** directory.  We rewrote all of the documentation files from scratch for the **XSMAUG 2.0 Phoenix Release**, and have been keeping them up-to-date since.
+First, check out the documentation at **[XSMAUG Wiki] (https://github.com/smaugmuds/xmerc/wiki)** or send an Issue and we’ll help you sort it out.
+
+We rewrote all of the documentation files from scratch for the **XSMAUG 2.0 Phoenix Release**, and have been keeping them up-to-date since.
 
 Also check the **'wizhelp'** command and read the **'help'** descriptions for the individual immortal commands.
 
@@ -152,7 +154,8 @@ When you write us, we need to know what kind of machine you're running on.  If y
 
 Specific information means: an adb or gdb stack trace (if you're reporting a crash), or a syslog with the relevant commands logged.  The player files are ascii files -- dump them into your mail message too.
 
-Check out the documentation at **[XSMAUG Wiki] (https://github.com/smaugmuds/xmerc/wiki)** or send an Issue and we’ll help you sort it out.
+You can also read the OLD SMAUG Documentation in the **'doc'** directory.
+
 
 
 ### Copyright and License
