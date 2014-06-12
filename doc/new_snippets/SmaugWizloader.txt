@@ -1,0 +1,334 @@
+How to make SMAUG FUSS 1.6 read SmaugWiz zone files
+---------------------------------------------------
+
+Please note that this code requires that you are using the Smaug 1.6 FUSS
+package, or have applied the reset system fix to your Smaug 1.4a code.
+Attempting to perform this fix on any Smaug base that this has not been done
+to will not work and will not be supported if you break your code because of it.
+
+This code has been tested on the stock set of areas available with the SmaugWiz 2.02
+distribution. If your format deviates from the standard SmaugWiz zone, it probably won't work.
+
+This is not for the faint of heart. Back up your area files just in case.
+
+Instructions
+------------
+
+At the top of db.c, add:
+
+int get_langnum( char *flag );
+
+In load_area, locate:
+
+   area_version = 0;
+
+Change to:
+
+   if( area_version != 1000 )
+     area_version = 0;
+   LINK( pArea, first_area, last_area, next, prev );
+
+Yes, I know the above step looks stupid, just trust me here :)
+
+Find the load_version function and replace it with this:
+
+void load_version( AREA_DATA *tarea, FILE *fp )
+{
+   area_version = fread_number( fp );
+   return;
+}
+
+In load_mobiles, locate:
+
+      pMobIndex->gold = fread_number( fp );   
+      pMobIndex->exp = fread_number( fp );
+
+Change to:
+
+      ln = fread_line( fp );
+      x1 = x2 = 0;
+      sscanf( ln, "%d %d", &x1, &x2 );
+      pMobIndex->gold = x1;
+      pMobIndex->exp = x2;
+
+In load_mobiles, locate:
+
+         ln = fread_line( fp );
+         x1 = x2 = x3 = x4 = x5 = x6 = x7 = x8 = 0;
+         sscanf( ln, "%d %d %d %d %d %d %d", &x1, &x2, &x3, &x4, &x5, &x6, &x7 );
+         pMobIndex->race = x1;
+         pMobIndex->Class = x2;
+         pMobIndex->height = x3;
+         pMobIndex->weight = x4;
+         pMobIndex->speaks = x5;
+         pMobIndex->speaking = x6;
+         pMobIndex->numattacks = x7;
+         /*
+          * Thanks to Nick Gammon for noticing this.
+          * if ( !pMobIndex->speaks )
+          * pMobIndex->speaks = race_table[pMobIndex->race]->language | LANG_COMMON;
+          * if ( !pMobIndex->speaking )
+          * pMobIndex->speaking = race_table[pMobIndex->race]->language;
+          */
+         if( !pMobIndex->speaks )
+            pMobIndex->speaks = LANG_COMMON;
+         if( !pMobIndex->speaking )
+            pMobIndex->speaking = LANG_COMMON;
+
+Change that section to read:
+
+         if( area_version < 1000 ) /* Normal Smaug zones load here */
+         {
+            ln = fread_line( fp );
+            x1 = x2 = x3 = x4 = x5 = x6 = x7 = x8 = 0;
+            sscanf( ln, "%d %d %d %d %d %d %d", &x1, &x2, &x3, &x4, &x5, &x6, &x7 );
+            pMobIndex->race = x1;
+            pMobIndex->Class = x2;
+            pMobIndex->height = x3;
+            pMobIndex->weight = x4;
+            pMobIndex->speaks = x5;
+            pMobIndex->speaking = x6;
+            pMobIndex->numattacks = x7;
+         }
+         else /* SmaugWiz zone here */
+         {
+            char flag[MAX_INPUT_LENGTH];
+            int value;
+
+            ln = fread_line( fp );
+            x1 = x2 = x3 = x4 = x5 = 0;
+            sscanf( ln, "%d %d %d %d %d", &x1, &x2, &x3, &x4, &x5 );
+            pMobIndex->race = x1;
+            pMobIndex->Class = x2;
+            pMobIndex->height = x3;
+            pMobIndex->weight = x4;
+            pMobIndex->numattacks = x5;
+
+            ln = fread_line( fp );
+            ln[strlen( ln ) - 2] = '\0'; /* Get rid of the damn tilde */
+
+            if( !str_cmp( ln, "all" ) )
+               pMobIndex->speaks = ~LANG_CLAN;
+            else
+            {
+               while( ln[0] != '\0' )
+               {
+                  ln = one_argument( ln, flag );
+                  value = get_langnum( flag );
+                  if( value == -1 )
+                     bug( "Unknown speaks language: %s\n\r", flag );
+                  else
+                     TOGGLE_BIT( pMobIndex->speaks, 1 << value );
+               }
+            }
+
+            ln = fread_line( fp );
+            ln[strlen( ln ) - 2] = '\0'; /* Get rid of the damn tilde */
+
+            if( !str_cmp( ln, "all" ) )
+               pMobIndex->speaking = ~LANG_CLAN;
+            else
+            {
+               value = get_langnum( ln );
+               if( value == -1 )
+                  bug( "Unknown speaking language: %s\n\r", ln );
+               else
+                  TOGGLE_BIT( pMobIndex->speaking, 1 << value );
+            }
+         }
+         /*
+          * Thanks to Nick Gammon for noticing this.
+          * if ( !pMobIndex->speaks )
+          * pMobIndex->speaks = race_table[pMobIndex->race]->language | LANG_COMMON;
+          * if ( !pMobIndex->speaking )
+          * pMobIndex->speaking = race_table[pMobIndex->race]->language;
+          */
+         if( !pMobIndex->speaks )
+            pMobIndex->speaks = LANG_COMMON;
+         if( !pMobIndex->speaking )
+            pMobIndex->speaking = LANG_COMMON;
+
+In load_objects, locate:
+
+      pObjIndex->weight = fread_number( fp );
+      pObjIndex->weight = UMAX( 1, pObjIndex->weight );
+      pObjIndex->cost = fread_number( fp );
+      pObjIndex->rent = fread_number( fp );  /* unused */
+      if( area_version == 1 )
+      {
+         switch ( pObjIndex->item_type )
+         {
+            case ITEM_PILL:
+            case ITEM_POTION:
+            case ITEM_SCROLL:
+               pObjIndex->value[1] = skill_lookup( fread_word( fp ) );
+               pObjIndex->value[2] = skill_lookup( fread_word( fp ) );
+               pObjIndex->value[3] = skill_lookup( fread_word( fp ) );
+               break;
+            case ITEM_STAFF:
+            case ITEM_WAND:
+               pObjIndex->value[3] = skill_lookup( fread_word( fp ) );
+               break;
+            case ITEM_SALVE:
+               pObjIndex->value[4] = skill_lookup( fread_word( fp ) );
+               pObjIndex->value[5] = skill_lookup( fread_word( fp ) );
+               break;
+         }
+      }
+
+Change to:
+
+      if( area_version < 1000 )
+      {
+         pObjIndex->weight = fread_number( fp );
+         pObjIndex->weight = UMAX( 1, pObjIndex->weight );
+         pObjIndex->cost = fread_number( fp );
+         pObjIndex->rent = fread_number( fp );  /* unused */
+      }
+      if( area_version > 0 )
+      {
+         switch ( pObjIndex->item_type )
+         {
+            case ITEM_PILL:
+            case ITEM_POTION:
+            case ITEM_SCROLL:
+               pObjIndex->value[1] = skill_lookup( fread_word( fp ) );
+               pObjIndex->value[2] = skill_lookup( fread_word( fp ) );
+               pObjIndex->value[3] = skill_lookup( fread_word( fp ) );
+               break;
+            case ITEM_STAFF:
+            case ITEM_WAND:
+               pObjIndex->value[3] = skill_lookup( fread_word( fp ) );
+               break;
+            case ITEM_SALVE:
+               pObjIndex->value[4] = skill_lookup( fread_word( fp ) );
+               pObjIndex->value[5] = skill_lookup( fread_word( fp ) );
+               break;
+         }
+      }
+      if( area_version == 1000 )
+      {
+         while( !isdigit( letter = fread_letter( fp ) ) )
+            fread_to_eol( fp );
+         ungetc( letter, fp );
+
+         pObjIndex->weight = fread_number( fp );
+         pObjIndex->weight = UMAX( 1, pObjIndex->weight );
+         pObjIndex->cost = fread_number( fp );
+         pObjIndex->rent = fread_number( fp );  /* unused */
+      }
+
+
+Above the load_room_reset function, add the following new function:
+
+void load_smaugwiz_reset( ROOM_INDEX_DATA *room, FILE *fp )
+{
+   EXIT_DATA *pexit;
+   char letter2;
+   int extra, arg1, arg2, arg3, arg4;
+   int count = 0;
+
+   letter2 = fread_letter( fp );
+   extra = fread_number( fp );
+   arg1 = fread_number( fp );
+   arg2 = fread_number( fp );
+   arg3 = fread_number( fp );
+   arg4 = ( letter2 == 'G' || letter2 == 'R' ) ? 0 : fread_number( fp );
+   fread_to_eol( fp );
+
+   ++count;
+
+   /*
+    * Validate parameters.
+    * We're calling the index functions for the side effect.
+    */
+   switch( letter2 )
+   {
+      default:
+         bug( "%s: SmaugWiz - bad command '%c'.", __FUNCTION__, letter2 );
+         if( fBootDb )
+            boot_log( "%s: %s (%d) bad command '%c'.", __FUNCTION__, room->area->filename, count, letter2 );
+         return;
+
+      case 'M':
+          if( get_mob_index( arg2 ) == NULL && fBootDb )
+             boot_log( "%s: SmaugWiz - %s (%d) 'M': mobile %d doesn't exist.", __FUNCTION__, room->area->filename, count, arg2 );
+          break;
+
+      case 'O':
+          if( get_obj_index( arg2 ) == NULL && fBootDb )
+             boot_log( "%s: SmaugWiz - %s (%d) '%c': object %d doesn't exist.", __FUNCTION__, room->area->filename, count, letter2, arg2 );
+          break;
+
+      case 'P':
+          if( get_obj_index( arg2 ) == NULL && fBootDb )
+             boot_log( "%s: SmaugWiz - %s (%d) '%c': object %d doesn't exist.", __FUNCTION__, room->area->filename, count, letter2, arg2 );
+          if( arg4 > 0 )
+          {
+             if( get_obj_index( arg4 ) == NULL && fBootDb )
+                boot_log( "$s: SmaugWiz - %s (%d) 'P': destination object %d doesn't exist.", __FUNCTION__, room->area->filename, count, arg4 );
+          }
+          break;
+
+      case 'G':
+      case 'E':
+          if( get_obj_index( arg2 ) == NULL && fBootDb )
+             boot_log( "%s: SmaugWiz - %s (%d) '%c': object %d doesn't exist.", __FUNCTION__, room->area->filename, count, letter2, arg2 );
+          break;
+
+      case 'T':
+          break;
+
+      case 'H':
+         if( arg1 > 0 )
+            if( get_obj_index( arg2 ) == NULL && fBootDb )
+               boot_log( "%s: SmaugWiz - %s (%d) 'H': object %d doesn't exist.", __FUNCTION__, room->area->filename, count, arg2 );
+         break;
+
+      case 'D':
+         if( arg3 < 0 || arg3 > MAX_DIR + 1 || ( pexit = get_exit( room, arg3 ) ) == NULL
+          || !IS_SET( pexit->exit_info, EX_ISDOOR ) )
+         {
+            bug( "%s: SmaugWiz - 'D': exit %d not door.", __FUNCTION__, arg3 );
+            bug( "Reset: %c %d %d %d %d %d", letter2, extra, arg1, arg2, arg3, arg4 );
+            if( fBootDb )
+               boot_log( "%s: SmaugWiz - %s (%d) 'D': exit %d not door.", __FUNCTION__, room->area->filename, count, arg3 );
+         }
+         if( arg4 < 0 || arg4 > 2 )
+         {
+            bug( "%s: 'D': bad 'locks': %d.", __FUNCTION__, arg4 );
+            if( fBootDb )
+               boot_log( "%s: SmaugWiz - %s (%d) 'D': bad 'locks': %d.", __FUNCTION__, room->area->filename, count, arg4 );
+         }
+         break;
+
+      case 'R':
+         if( arg3 < 0 || arg3 > 10 )
+         {
+            bug( "%s: 'R': bad exit %d.", __FUNCTION__, arg3 );
+            if( fBootDb )
+               boot_log( "%s: SmaugWiz - %s (%d) 'R': bad exit %d.", __FUNCTION__, room->area->filename, count, arg3 );
+            break;
+         }
+         break;
+   }
+   /*
+    * Don't bother asking why arg1 isn't passed, SmaugWiz had some purpose for it, but it remains a mystery 
+    */
+   add_reset( room, letter2, extra, arg2, arg3, arg4 );
+}  /* End SmaugWiz resets */
+
+In load_rooms, locate:
+
+         else if( letter == 'R' )
+            load_room_reset( pRoomIndex, fp );
+
+Change to:
+
+         else if( letter == 'R' )
+         {
+            if( area_version < 1000 )
+               load_room_reset( pRoomIndex, fp );
+            else
+               load_smaugwiz_reset( pRoomIndex, fp );
+         }

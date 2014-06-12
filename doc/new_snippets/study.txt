@@ -1,0 +1,211 @@
+Study Skill
+-----------
+
+Original code by Absalom
+
+Ported to Smaug 1.4 by Samson
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This can be a somewhat powerful skill, as it allows anyone who can
+use the skill to learn spells from any staff, wand, or scroll possessing
+them. The newly learned spell will start off at 1%, and cannot be studied
+further. However, it is probably possible to practice the skill at
+a guildmaster once the player has it. It's not advised to give this 
+skill to a multiclass character if your mud supports multiclassing. 
+Recommended for higher level mages and clerics only.
+
+Note: This code has not been in use on Alsherok for some time and may
+conain bugs I am not aware of.
+
+Installation Instructions
+-------------------------
+
+1. In skills.c, add the following code:
+
+/* Allows PCs to learn spells embedded in object. Should prove interesting. - Samson 8-9-98 */
+void do_study( CHAR_DATA *ch, char *argument ) /* study by Absalom */
+{
+    char arg[MAX_INPUT_LENGTH];
+    OBJ_DATA *obj;
+    int sn = 0;
+
+    one_argument( argument, arg );
+
+    if ( arg[0] == '\0' )
+    {
+	send_to_char( "Study what?\r\n", ch );
+	return;
+    }
+
+    if ( ( obj = get_obj_carry( ch, arg ) ) == NULL )
+    {
+	send_to_char( "You do not have that item.\r\n", ch );
+	return;
+    }
+
+    if ( obj->item_type != ITEM_STAFF && obj->item_type != ITEM_WAND &&
+	obj->item_type != ITEM_SCROLL )
+    {
+	send_to_char( "You can only study scrolls, wands, and staves.\r\n", ch );
+	return;
+    }
+
+    act( AT_MAGIC, "$n studies $p.", ch, obj, NULL, TO_ROOM );
+    act( AT_MAGIC, "You study $p.", ch, obj, NULL, TO_CHAR );
+
+    if (obj->item_type == ITEM_STAFF || obj->item_type == ITEM_WAND )
+    {
+	sn = obj->value[3];
+	if ( sn < 0 || sn >= MAX_SKILL || skill_table[sn]->spell_fun == spell_null )
+	{
+	  bug( "Do_study: bad sn %d.", sn );
+	  return;
+	}
+	WAIT_STATE( ch, skill_table[gsn_study]->beats );
+	if ( number_percent() >= 55 + ch->pcdata->learned[gsn_study] * 4/5)
+	{
+	  send_to_char("You cannot glean any knowledge from it.\r\n",ch);
+	  learn_from_failure( ch, gsn_study );
+	  act( AT_FIRE, "$p burns brightly and is gone.", ch, obj, NULL, TO_CHAR );
+	  separate_obj( obj );
+	  extract_obj( obj );
+	  return;
+	}
+	if ( ch->pcdata->learned[sn])
+	{
+	  send_to_char("You already know that spell!\r\n",ch);
+	  return;
+	}
+	ch->pcdata->learned[sn] = 1;
+	act( AT_MAGIC, "You have learned the art of $t!", ch ,skill_table[sn]->name, NULL, TO_CHAR);
+	learn_from_success( ch, gsn_study );
+	act( AT_FIRE, "$p burns brightly and is gone.", ch, obj, NULL, TO_CHAR );
+      separate_obj( obj );
+	extract_obj( obj );
+	return;
+    }
+
+    if (obj->item_type == ITEM_SCROLL)
+    {
+	sn = obj->value[1];
+	if ( sn < 0 || sn >= MAX_SKILL || skill_table[sn]->spell_fun == spell_null )
+	{
+	  bug( "Do_study: bad sn %d.", sn );
+	  return;
+	}
+	if ( number_percent() >= 15 + ch->pcdata->learned[gsn_study] * 4/5)
+	{
+	  send_to_char("You cannot glean any knowledge from it.\r\n",ch);
+	  learn_from_failure( ch, gsn_study );
+	  act( AT_FIRE, "$p burns brightly and is gone.", ch, obj, NULL, TO_CHAR );
+	  separate_obj( obj );	
+	  extract_obj( obj );
+	  return;
+	}
+	if ( ch->pcdata->learned[sn])
+	{
+	  send_to_char("You already know that spell!\r\n",ch);
+	  return;
+	}
+	ch->pcdata->learned[sn] = 1;
+	act( AT_MAGIC, "You have learned the art of $t!", ch, skill_table[sn]->name, NULL, TO_CHAR);
+	learn_from_success( ch, gsn_study );
+	act( AT_FIRE, "$p burns brightly and is gone.", ch, obj, NULL, TO_CHAR );
+	separate_obj( obj );
+	extract_obj( obj );
+	return;
+    }
+
+}
+
+2. In db.c, below the following:
+
+      sh_int			gsn_slice;
+
+   add the following on the next line:
+
+short gsn_study;
+
+   Below the following:
+
+	ASSIGN_GSN( gsn_poison,		"poison" );
+
+   add the following on the next line:
+
+	ASSIGN_GSN( gsn_study,		"study" );
+
+4. In mud.h, above the following:
+
+extern	sh_int	gsn_dodge;
+
+   insert the following:
+
+extern short gsn_study; /* Samson */
+
+   And in the proper section, add: DECLARE_DO_FUN( do_study );
+
+5. In tables.c, add the appropriate entries for do_study.
+
+6. Make clean, then recompile.
+
+7. After the reboot, type: sset create skill study
+   then type: slookup study, and record the SN number it gives you.
+   Substitute that number for SN in the rest of this step.
+   then type: sset SN type skill
+   then type: sset SN guild -1
+   then type: sset SN code do_study
+   then type: sset save skill table
+
+8. Edit your class files accordingly depending on what classes you
+   want to have this new skill.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

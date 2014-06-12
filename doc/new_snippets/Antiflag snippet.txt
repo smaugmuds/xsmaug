@@ -1,0 +1,121 @@
+/**********************************************************************
+ * The purpose of this snippet is to add in antiflag functionality in *
+ * SmaugFUSS1.9.  This is set up for version 1.9, but shouldn't be    *
+ * difficult to retrofit to the earlier versions of the project.      *
+ *                                                                    *
+ * If you would like to contact me, feel free to do so via a PM on    *
+ * smaugmuds.org, my screen name is Aurin.                            *
+ *                                                                    *
+ * Cheers,                                                            *
+ * Aurin                                                              *
+ **********************************************************************/
+
+In act_obj.c:
+1. Find "Local Functions" at the top and add in at the bottom:
+bool anticheck          args((CHAR_DATA *ch, OBJ_DATA *obj));
+
+2. In function do_wear, find:
+   if( !str_cmp( arg1, "all" ) )
+   {
+      OBJ_DATA *obj_next;
+
+      for( obj = ch->first_carrying; obj; obj = obj_next )
+      {
+         obj_next = obj->next_content;
+         if( obj->wear_loc == WEAR_NONE && can_see_obj( ch, obj ) )
+         {
+            wear_obj( ch, obj, FALSE, -1 );
+            if( char_died( ch ) )
+               return;
+         }
+      }
+      return;
+   }
+   else
+   {
+      if( ( obj = get_obj_carry( ch, arg1 ) ) == NULL )
+      {
+         send_to_char( "You do not have that item.\r\n", ch );
+         return;
+      }
+      if( arg2[0] != '\0' )
+         wear_bit = get_wflag( arg2 );
+      else
+         wear_bit = -1;
+      wear_obj( ch, obj, TRUE, wear_bit );
+   }
+   
+change to:
+
+   // Updated to prevent the wearing of anti-flagged items. - Aurin
+   if( !str_cmp( arg1, "all" ) )
+   {
+      OBJ_DATA *obj_next;
+
+      for( obj = ch->first_carrying; obj; obj = obj_next )
+      {
+         obj_next = obj->next_content;
+         if( obj->wear_loc == WEAR_NONE && can_see_obj( ch, obj ) )
+         {
+		    if(anticheck(ch, obj))
+		       continue;
+            wear_obj( ch, obj, FALSE, -1 );
+            if( char_died( ch ) )
+               return;
+         }
+      }
+      return;
+   }
+   else
+   {
+      if( ( obj = get_obj_carry( ch, arg1 ) ) == NULL )
+      {
+         send_to_char( "You do not have that item.\r\n", ch );
+         return;
+      }
+	  if(anticheck(ch, obj))
+	     return;
+      if( arg2[0] != '\0' )
+         wear_bit = get_wflag( arg2 );
+      else
+         wear_bit = -1;
+      wear_obj( ch, obj, TRUE, wear_bit );
+   }
+	  
+3. Just above the do_remove function add:
+
+/* Wow...the anti-class flags were made, but never implemented.
+ * Time to implement them. - Aurin 11/1/2011
+ */
+bool anticheck(CHAR_DATA *ch, OBJ_DATA *obj)
+{
+    if((IS_OBJ_STAT(obj, ITEM_ANTI_WARRIOR) && ch->Class == 4)
+	   || (IS_OBJ_STAT(obj, ITEM_ANTI_MAGE) && ch->Class == 2)
+	   || (IS_OBJ_STAT(obj, ITEM_ANTI_THIEF) && ch->Class == 6)
+	   || (IS_OBJ_STAT(obj, ITEM_ANTI_CLERIC) && ch->Class == 0)
+	   || (IS_OBJ_STAT(obj, ITEM_ANTI_VAMPIRE) && ch->Class == 15)
+	   || (IS_OBJ_STAT(obj, ITEM_ANTI_DRUID) && ch->Class == 1))	   
+    {
+	   ch_printf(ch, "That item is Anti-%s, you cannot wear it.\r\n", class_table[ch->Class]->who_name);
+	   return TRUE;
+    }
+	if(IS_OBJ_STAT(obj, ITEM_ANTI_GOOD) && ch->alignment > 350)
+	{
+	   ch_printf(ch, "That item is Anti-Good, you cannot wear it.\r\n");
+	   return TRUE;
+	}
+	else if(IS_OBJ_STAT(obj, ITEM_ANTI_NEUTRAL) && ch->alignment >= -350 && ch->alignment <= 350)
+	{
+	   ch_printf(ch, "That item is Anti-Neutral, you cannot wear it.\r\n");
+	   return TRUE;
+	}
+	else if(IS_OBJ_STAT(obj, ITEM_ANTI_EVIL) && ch->alignment < -350)
+	{
+       ch_printf(ch, "That item is Anti-Evil, you cannot wear it.\r\n");
+	   return TRUE;
+	}
+	
+	// If we get here, there is no anti-flag as described above.
+	return FALSE;
+}
+

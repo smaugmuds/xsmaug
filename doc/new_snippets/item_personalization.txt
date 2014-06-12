@@ -1,0 +1,223 @@
+Personalized Objects
+-----------------------
+
+Original code from the Obscurities codebase.
+Modified for Smaug compatibility by Kayle of Malevolent Whispers.
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from me.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm not
+dealing with people who come crawling to whine and complain when they 
+haven't bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This code will allow for mobs/imms to personalize objects to only be worn by
+the objects owner. No one else can wear them. It can be used for any number of
+things, limiting the trading of hard pops or items that have to be made, or
+ensuring the safety of some gloried item. Could also be used as one more thing
+on the glory rates.
+
+Installation Instructions
+-------------------------
+
+1. In act_obj.c find the wear_obj fnuction and add somewhere near the top:
+
+  if( xIS_SET( obj->extra_flags, ITEM_PERSONAL ) && str_cmp( ch->name, obj->owner ) )
+   {
+      send_to_char( "That item is personalized and belongs to someone else.\n\r", ch );
+      return;
+   }
+
+2. In act_wiz.c, add this function in where ever you feel like:
+
+void do_personalize( CHAR_DATA * ch, char *argument )
+{
+  OBJ_DATA *obj;
+  CHAR_DATA *victim;
+  char arg[MAX_INPUT_LENGTH];
+  char arg1[MAX_INPUT_LENGTH];
+  
+  argument = one_argument( argument, arg );
+  argument = one_argument( argument, arg1 );
+
+  if( IS_NPC( ch ) )
+   {
+      send_to_char( "Huh?\r\n", ch );
+      return;
+   }
+   
+   if( !IS_IMMORTAL( ch ) )
+   {
+       send_to_char( "Huh?\r\n", ch );
+       return;
+   }
+   
+   if( !*arg )
+   {
+      send_to_char( "&YSyntax: &Wpersonalize <object> <player>&D\r\n", ch );
+      return;
+   }
+   
+   if( !*arg1 )
+   {
+      send_to_char( "&YSyntax: &Wpersonalize <object> <player>&D\r\n", ch );
+      return;
+   }
+
+   if( ( ( obj = get_obj_carry( ch, arg ) ) == NULL ) || !can_see_obj( ch, obj ) )
+   {
+      send_to_char( "You don't seem to be holding that object..\r\n", ch );
+      return;
+   } 
+
+   if( ( victim = get_char_world( ch, arg1 ) ) == NULL )
+   {
+       send_to_char( "They're not here.", ch );
+       return;
+   }
+   else if( ( victim = get_char_room( ch, arg1 ) ) == NULL )
+   {
+        send_to_char( "They're not in the room.", ch );
+        return;
+   }
+
+  send_to_char( "Object Owner set.\r\n", ch ); 
+  xTOGGLE_BIT( obj->extra_flags, ITEM_PERSONAL );
+  STRFREE( obj->owner );
+  obj->owner = STRALLOC( victim->name );
+  
+  return;
+    
+}
+
+3. In build.c,  "char const * o_flags = {" add at the end:
+	"personalized"
+
+4. In handler.c, extra_bit_name add:
+  if( xIS_SET( *extra_flags, ITEM_PERSONAL ) )
+      mudstrlcat( buf, " personalized", 512 );
+
+5. In mpxset.c, Add:
+
+void do_mppersonalize( CHAR_DATA * ch, char *argument )
+{
+  OBJ_DATA *obj;
+  CHAR_DATA *victim;
+  char arg[MAX_INPUT_LENGTH];
+  char arg1[MAX_INPUT_LENGTH];
+  
+  argument = one_argument( argument, arg );
+  argument = one_argument( argument, arg1 );
+
+  if( !IS_NPC( ch ) || IS_AFFECTED( ch, AFF_CHARM ) || ch->desc )
+   {
+      send_to_char( "Huh?\r\n", ch );
+      return;
+   }
+   
+   if( !*arg )
+   {
+      progbug( "MpPersonalize: no args", ch );
+      return;
+   }
+   
+   if( !*arg1 )
+   {
+      progbug( "MpPersonalize: missing arg", ch );
+      return;
+   }
+
+   if( ( obj = get_obj_carry( ch, arg ) ) == NULL )
+   {
+      progbug( "MpPersonalize: no object", ch );
+      return;
+   } 
+   if( ( victim = get_char_world( ch, arg1 ) ) == NULL )
+   {
+       progbug( "MpPersonalize: Target not in world", ch );
+       return;
+   }
+   else if( ( victim = get_char_room( ch, arg1 ) ) == NULL )
+   {
+        progbug( "MpPersonalize: Target not in the room", ch );
+        return;
+   }
+  
+  xTOGGLE_BIT( obj->extra_flags, ITEM_PERSONAL );
+  STRFREE( obj->owner );
+  obj->owner = STRALLOC( victim->name );
+  
+  return;
+    
+}
+
+6. In save.c, fwrite_obj, Add:
+
+    if( obj->owner != NULL )
+      fprintf( fp, "Owner	%s~\n", obj->owner );
+
+7. In save.c, fread_obj, Add the following at the appropriate place to correspond 
+   with the rest of the Cases:
+	case 'O':
+            if( !strcmp( word, "Owner" ) )
+            {
+                if( xIS_SET( obj->extra_flags, ITEM_PERSONAL ) && !obj->owner && ch )
+                  KEY( "Owner", obj->owner, fread_string( fp ) );
+            }
+
+8. In mud.h:
+	in the oBJ_DATA struct, Add: 
+		char  owner;
+ 	With the other declaraions, Add:
+		DECLARE_DO_FUN( do_personalize );
+		DECLARE_DO_FUN( do_mppersonalize );
+
+9. Add appropriate entries in tables.c (If Applicable, if using DLSYM skip this.)
+
+10. Make clean, recompile.
+
+11. use cedit to create entries for personalize and mppersonalize:
+	cedit personalize create do_personalize
+	cedit personalize level 51
+	cedit mppersonalize create do_mppersonalize
+	cedit mppersonalize level 0
+	cedit save cmdtable
+
+12. Utilize the commands.
+
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://www.smaugmuds.org.
+
+This code has been installed and tested on Smaug 1.7 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugmuds.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and I am not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Kayle
+Co-Owner/Coder
+Malevolent Whispers
+telnet://whispers.arthmoor.com:1070
+http://whispers.arthmoor.com
+
+IMC2 Contact: Kayle@MW
+OR          : Kayle@MWDev

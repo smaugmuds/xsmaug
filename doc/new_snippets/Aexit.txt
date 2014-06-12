@@ -1,0 +1,208 @@
+Area Exit Lister
+----------------
+
+Author: Shogar
+Improvements by Samson of Alsherok
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This is a really useful little utility for builders and other imms to check
+areas for all the standard entry and exit points it has, including teleport
+rooms. It will not count up exits by mudprograms though.
+
+Here's an example of its output:
+
+To: Overland  237X  161Y From:             deme.are Room  3700 (north)
+To: Overland  237X  169Y From:             deme.are Room  3701 (south)
+To: hdcaverns.are        Room: 29241 From: deme.are             Room  3703 (down)
+From: hdcaverns.are        Room: 29241 To: deme.are             Room  3703 (up)
+From: Overland  237X  162Y To: Room  3700
+From: Overland  237X  168Y To: Room  3701
+
+The program will default to the area you are standing in if you fail to
+specify an argument to it. Otherwise it accepts the filename for any
+area listed on the 'zones' command output.
+
+Installation Instructions
+-------------------------
+
+1. In build.c, or any other file you feel is appropriate, 
+   add the following code:
+
+/* Shogar's code to hunt for exits/entrances to/from a zone, very nice */
+/* Display improvements and overland support by Samson of Alsherok */
+void do_aexit( CHAR_DATA * ch, char *argument )
+{
+   ROOM_INDEX_DATA *room;
+   int i, vnum, lrange, trange;
+   AREA_DATA *tarea, *otherarea;
+   EXIT_DATA *pexit;
+   bool found = FALSE;
+#ifdef OVERLANDCODE
+   ENTRANCE_DATA *enter;
+#endif
+
+   if( argument[0] == '\0' )
+      tarea = ch->in_room->area;
+   else
+   {
+      for( tarea = first_area; tarea; tarea = tarea->next )
+         if( !str_cmp( tarea->filename, argument ) )
+         {
+            found = TRUE;
+            break;
+         }
+
+      if( !found )
+      {
+         for( tarea = first_build; tarea; tarea = tarea->next )
+            if( !str_cmp( tarea->filename, argument ) )
+            {
+               found = TRUE;
+               break;
+            }
+      }
+
+      if( !found )
+      {
+         send_to_char( "Area not found. Check 'zones' for the filename.\r\n", ch );
+         return;
+      }
+   }
+
+   trange = tarea->hi_r_vnum;
+   lrange = tarea->low_r_vnum;
+
+   for( vnum = lrange; vnum <= trange; vnum++ )
+   {
+      if( ( room = get_room_index( vnum ) ) == NULL )
+         continue;
+
+      if( IS_SET( room->room_flags, ROOM_TELEPORT ) && ( room->tele_vnum < lrange || room->tele_vnum > trange ) )
+      {
+         pager_printf( ch, "From: %-20.20s Room: %5d To: Room: %5d (Teleport)\r\n", tarea->filename, vnum, room->tele_vnum );
+      }
+
+      for( i = 0; i < MAX_DIR + 1; i++ )
+      {
+         if( ( pexit = get_exit( room, i ) ) == NULL )
+            continue;
+#ifdef OVERLANDCODE
+         if( IS_EXIT_FLAG( pexit, EX_OVERLAND ) )
+         {
+            pager_printf( ch, "To: Overland %4dX %4dY From: %20.20s Room: %5d (%s)\r\n",
+                          pexit->x, pexit->y, tarea->filename, vnum, dir_name[i] );
+            continue;
+         }
+#endif
+         if( pexit->to_room->area != tarea )
+         {
+            pager_printf( ch, "To: %-20.20s Room: %5d From: %-20.20s Room: %5d (%s)\r\n",
+                          pexit->to_room->area->filename, pexit->vnum, tarea->filename, vnum, dir_name[i] );
+         }
+      }
+   }
+
+   for( otherarea = first_area; otherarea; otherarea = otherarea->next )
+   {
+      if( tarea == otherarea )
+         continue;
+      trange = otherarea->hi_r_vnum;
+      lrange = otherarea->low_r_vnum;
+      for( vnum = lrange; vnum <= trange; vnum++ )
+      {
+         if( ( room = get_room_index( vnum ) ) == NULL )
+            continue;
+
+         if( IS_SET( room->room_flags, ROOM_TELEPORT ) )
+         {
+            if( room->tele_vnum >= tarea->low_r_vnum && room->tele_vnum <= tarea->hi_r_vnum )
+               pager_printf( ch, "From: %-20.20s Room: %5d To: %-20.20s Room: %5d (Teleport)\r\n",
+                             otherarea->filename, vnum, tarea->filename, room->tele_vnum );
+         }
+
+         for( i = 0; i < MAX_DIR + 1; i++ )
+         {
+            if( ( pexit = get_exit( room, i ) ) == NULL )
+               continue;
+
+#ifdef OVERLANDCODE
+            if( IS_EXIT_FLAG( pexit, EX_OVERLAND ) )
+               continue;
+#endif
+            if( pexit->to_room->area == tarea )
+            {
+               pager_printf( ch, "From: %-20.20s Room: %5d To: %-20.20s Room: %5d (%s)\r\n",
+                             otherarea->filename, vnum, pexit->to_room->area->filename, pexit->vnum, dir_name[i] );
+            }
+         }
+      }
+   }
+
+#ifdef OVERLANDCODE
+   for( enter = first_entrance; enter; enter = enter->next )
+   {
+      if( enter->vnum >= tarea->low_r_vnum && enter->vnum <= tarea->hi_r_vnum )
+      {
+         pager_printf( ch, "From: Overland %4dX %4dY To: Room: %5d\r\n", enter->herex, enter->herey, enter->vnum );
+      }
+   }
+#endif
+   return;
+}
+
+2. Add the appropriate declaration in mud.h for do_aexit
+
+3. Add the appropriate entries in tables.c for do_aexit
+
+4. Make clean, recompile
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

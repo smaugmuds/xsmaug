@@ -1,0 +1,85 @@
+
+
+  AUTHOR: Cronel (cronel_kal@hotmail.com)
+          of FrozenMUD (empire.digiunix.net 4000)
+
+
+  FILES
+	editor.c	The editor code
+	editor.patch	Patch for the rest of the code
+	editor.txt	This file
+	editor.help	Suggested help topic(s) for this code
+
+
+
+  LICENSE
+  Permission to use and distribute this code is granted provided
+  the header in the source file is retained and unaltered, and the 
+  distribution package contains all the original files unmodified.
+  If you modify this code and use/distribute modified versions
+  you must give credit to the original author(s).
+
+
+  DESCRIPTION
+
+  This code replaces the stock SMAUG editor by a new one that is less
+  restrictive and a bit more flexible. The main differences are:
+
+  a) The new editor does not have any hardcoded limitations for the buffers 
+     it can edit (either in the total number of lines or in the length of
+     each line). However, this limitation is imposed by the rest of the
+     code (no string can be larger than MAX_STRING_LENGTH). This is not
+     so bad, since you will hardly bump against that limit.
+  b) The editor is allways in insertion mode; you will no longer overwrite 
+     things. Typing something on an existing line will append to it, and 
+     after adding a line in the middle of other lines, a new empty line 
+     will be created for you to keep editing.
+  c) The insertion point is displayed as an asterisk ('*') when you do 
+     a list ('/l').
+  d) The list ('/l') command can now take a range of lines.
+  e) The replace command ('/r') is case sensitive now, meaning you can 
+     replace words with uppercase, and can also handle the replacing of
+     text with the single quote character in the middle of multi-word
+     replacements.
+  f) The help ('/?') command now can show information about each individual
+     editor command.
+  g) There's a new "print info" ('/p') command wich will show you some
+     information on the current editing session.
+
+
+  INSTALLATION INSTRUCTIONS 
+  
+  The easiest way is to apply the patch file "editor.patch" (doing something
+  like "patch <editor.patch" while in the src directory), and then include
+  the code in editor.c into the compilation, either by directly including
+  it in the Makefile or by pasting it into another .c file.
+
+  However if the patch doesn't work or you don't trust patches, here are
+  some manual installation instructions:
+
+  1) In build.c, comment out or delete the following functions:
+	start_editing
+	stop_editing
+	edit_buffer
+	copy_buffer
+  2) In mud.h, look for the declarations of those four functions. Delete
+     the one for "start_editing", and add these three lines there:
+	#define start_editing (ch, data ) \
+		start_editing_nolimit( ch, data, MAX_STRING_LENGTH )
+	void start_editing_nolimit( CHAR_DATA *ch, char *data, sh_int max_size );
+  3) Now grep for all calls to "start_editing" (with something like 
+     "grep start_editing *.c") and after each one, add a call to either
+     'set_editor_desc' or 'editor_desc_print'. This is simply to set the
+     description shown by the /p command so it's not really crucial.
+  4) Type 'make clean', then 'make'.
+
+  And you're done.
+
+
+  If you have any comments, or bug reports please feel free to mail the
+  author, or the mud administration of FrozenMUD at mudadmins@xnet.org.
+  Even dropping a "Good work guys!" line can go a long way in future 
+  releases.
+ 
+
+  --Cronel 17/12/98

@@ -671,7 +671,7 @@ extern int top_mob_index;
 extern int top_obj_index;
 extern short num_skills;
 extern int top_prog;
-#define codebase "SmaugFUSS 1.9"
+#define codebase "XSMAUG"
 
 short player_count( void )
 {

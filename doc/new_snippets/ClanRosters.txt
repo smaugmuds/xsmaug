@@ -1,0 +1,525 @@
+Clan and Guild Rosters
+----------------------
+
+Prerequisite Requirements
+-------------------------
+
+Cland and Guilds with members in them.
+Removal of Sadiq's clan roster code if you have it.
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This code provides you with a running roster of clan members on your game.
+It will list who they are, what their class is, how many kills and deaths they
+have, and when they joined. It updates itself whenever a member loads up.
+
+Installation Instructions
+-------------------------
+
+1. Open up clans.c, and place the following functions somewhere near the top:
+
+int get_npc_class( char *Class )
+{
+   int x;
+
+   for( x = 0; x < MAX_NPC_CLASS; x++ )
+      if( !str_cmp( Class, npc_class[x] ) )
+         return x;
+   return -1;
+}
+
+void add_roster( CLAN_DATA *clan, char *name, int Class, int level, int kills, int deaths )
+{
+   ROSTER_DATA *roster;
+
+   CREATE( roster, ROSTER_DATA, 1 );
+   roster->name = STRALLOC( name );
+   roster->Class = Class;
+   roster->level = level;
+   roster->kills = kills;
+   roster->deaths = deaths;
+   roster->joined = current_time;
+   LINK( roster, clan->first_member, clan->last_member, next, prev );
+   return;
+}
+
+void remove_roster( CLAN_DATA *clan, char *name )
+{
+   ROSTER_DATA *roster;
+
+   for( roster = clan->first_member; roster; roster = roster->next )
+   {
+      if( !str_cmp( name, roster->name ) )
+      {
+         STRFREE( roster->name );
+         UNLINK( roster, clan->first_member, clan->last_member, next, prev );
+         DISPOSE( roster );
+         return;
+      }
+   }
+}
+
+void update_roster( CHAR_DATA *ch )
+{
+   ROSTER_DATA *roster;
+
+   for( roster = ch->pcdata->clan->first_member; roster; roster = roster->next )
+   {
+      if( !str_cmp( ch->name, roster->name ) )
+      {
+         roster->level = ch->level;
+         roster->kills = ch->pcdata->mkills;
+         roster->deaths = ch->pcdata->mdeaths;
+         save_clan( ch->pcdata->clan );
+         return;
+      }
+   }
+   /* If we make it here, assume they haven't been added previously */
+   add_roster( ch->pcdata->clan, ch->name, ch->Class, ch->level, ch->pcdata->mkills, ch->pcdata->mdeaths );
+   save_clan( ch->pcdata->clan );
+   return;
+}
+
+/* For use during clan removal and memory cleanup */
+void remove_all_rosters( CLAN_DATA *clan )
+{
+   ROSTER_DATA *roster, *roster_next;
+
+   for( roster = clan->first_member; roster; roster = roster_next )
+   {
+      roster_next = roster->next;
+
+      STRFREE( roster->name );
+      UNLINK( roster, clan->first_member, clan->last_member, next, prev );
+      DISPOSE( roster );
+   }
+}
+
+void do_roster( CHAR_DATA *ch, char *argument )
+{
+   CLAN_DATA *clan;
+   ROSTER_DATA *roster;
+   char arg[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
+   int total = 0;
+
+   if( IS_NPC(ch) )
+   {
+      send_to_char( "NPCs can't use this command.\r\n", ch );
+      return;
+   }
+
+   if( !argument || argument[0] == '\0' )
+   {
+      send_to_char( "Usage: roster <clanname>\r\n", ch );
+      send_to_char( "Usage: roster <clanname> remove <name>\r\n", ch );
+      return;
+   }
+
+   argument = one_argument( argument, arg );
+   if( !( clan = get_clan( arg ) ) )
+   {
+      ch_printf( ch, "No such guild or clan known as %s\r\n", arg );
+      return;
+   }
+
+   if( !argument || argument[0] == '\0' )
+   {
+      ch_printf( ch, "Membership roster for the %s %s\r\n\r\n", clan->name,
+         clan->clan_type == CLAN_ORDER ? "Guild" : "Clan" );
+      ch_printf( ch, "%-15.15s  %-15.15s %-6.6s %-6.6s %-6.6s %s\r\n", "Name", "Class", "Level", "Kills", "Deaths", "Joined on" );
+      send_to_char( "-------------------------------------------------------------------------------------\r\n", ch );
+      for( roster = clan->first_member; roster; roster = roster->next )
+      {
+         ch_printf( ch, "%-15.15s  %-15.15s %-6d %-6d %-6d %s",
+            roster->name, capitalize( npc_class[roster->Class] ), roster->level, roster->kills, roster->deaths,
+            ctime( &roster->joined ) );
+         total++;
+      }
+      ch_printf( ch, "\r\nThere are %d member%s in %s\r\n", total, total == 1 ? "" : "s", clan->name );
+      return;
+   }
+
+   argument = one_argument( argument, arg2 );
+   if( !str_cmp( arg2, "remove" ) )
+   {
+      if( !argument || argument[0] == '\0' )
+      {
+         send_to_char( "Remove who from the roster?\r\n", ch );
+         return;
+      }
+      remove_roster( clan, argument );
+      save_clan( clan );
+      ch_printf( ch, "%s has been removed from the roster for %s\r\n", argument, clan->name );
+      return;
+   }
+   do_roster( ch, "" );
+   return;
+}
+
+void fwrite_memberlist( FILE *fp, CLAN_DATA *clan )
+{
+   ROSTER_DATA *roster;
+
+   for( roster = clan->first_member; roster; roster = roster->next )
+   {
+      fprintf( fp, "%s", "#ROSTER\n" );
+      fprintf( fp, "Name      %s~\n", roster->name );
+      fprintf( fp, "Joined    %ld\n", (time_t)roster->joined );
+      fprintf( fp, "Class     %s~\n", npc_class[roster->Class] );
+      fprintf( fp, "Level     %d\n", roster->level );
+      fprintf( fp, "Kills     %d\n", roster->kills );
+      fprintf( fp, "Deaths    %d\n", roster->deaths );
+      fprintf( fp, "%s", "End\n\n" );
+   }
+   return;
+}
+
+void fread_memberlist( CLAN_DATA *clan, FILE *fp )
+{
+   ROSTER_DATA *roster;
+   const char *word;
+   bool fMatch;
+
+   CREATE( roster, ROSTER_DATA, 1 );
+
+   for( ;; )
+   {
+      word = feof( fp ) ? "End" : fread_word( fp );
+      fMatch = FALSE;
+
+      switch ( UPPER( word[0] ) )
+      {
+         case '*':
+            fMatch = TRUE;
+            fread_to_eol( fp );
+            break;
+
+         case 'C':
+            if( !str_cmp( word, "Class" ) )
+            {
+               char *temp = fread_string( fp );
+               int Class = get_npc_class( temp );
+
+               if( Class < 0 || Class >= MAX_NPC_CLASS )
+               {
+                  bug( "%s: Invalid class in clan roster", __FUNCTION__ );
+                  Class = get_npc_class( "warrior" );
+               }
+               STRFREE( temp );
+               roster->Class = Class;
+               fMatch = TRUE;
+               break;
+            }
+            break;
+
+         case 'D':
+            KEY( "Deaths", roster->deaths, fread_number( fp ) );
+            break;
+
+         case 'E':
+            if( !str_cmp( word, "End" ) )
+            {
+               LINK( roster, clan->first_member, clan->last_member, next, prev );
+               return;
+            }
+            break;
+
+         case 'J':
+            KEY( "Joined", roster->joined, fread_number( fp ) );
+            break;
+
+         case 'K':
+            KEY( "Kills", roster->kills, fread_number( fp ) );
+            break;
+
+         case 'L':
+            KEY( "Level", roster->level, fread_number( fp ) );
+            break;
+
+         case 'N':
+            KEY( "Name", roster->name, fread_string( fp ) );
+            break;
+      }
+      if( !fMatch )
+         bug( "%s: no match: %s", __FUNCTION__, word );
+   }
+}
+
+   Then in do_induct, locate the following:
+
+   victim->pcdata->clan = clan;
+   STRFREE( victim->pcdata->clan_name );
+   victim->pcdata->clan_name = QUICKLINK( clan->name );
+   act( AT_MAGIC, "You induct $N into $t", ch, clan->name, victim, TO_CHAR );
+   act( AT_MAGIC, "$n inducts $N into $t", ch, clan->name, victim, TO_NOTVICT );
+   act( AT_MAGIC, "$n inducts you into $t", ch, clan->name, victim, TO_VICT );
+   save_char_obj( victim );
+   save_clan( clan );
+
+   Before the save_char_obj call, add the following:
+
+   add_roster( clan, victim->name, victim->Class, victim->level, victim->pcdata->mkills, victim->pcdata->mdeaths );
+
+   The in do_outcast, locate the following:
+
+   victim->pcdata->clan = NULL;
+   STRFREE( victim->pcdata->clan_name );
+   victim->pcdata->clan_name = STRALLOC( "" );
+   act( AT_MAGIC, "You outcast $N from $t", ch, clan->name, victim, TO_CHAR );
+   act( AT_MAGIC, "$n outcasts $N from $t", ch, clan->name, victim, TO_ROOM );
+   act( AT_MAGIC, "$n outcasts you from $t", ch, clan->name, victim, TO_VICT );
+   if( clan->clan_type != CLAN_GUILD && clan->clan_type != CLAN_ORDER )
+   {
+      sprintf( buf, "%s has been outcast from %s!", victim->name, clan->name );
+      echo_to_all( AT_MAGIC, buf, ECHOTAR_ALL );
+   }
+
+   Directly below that, add the following:
+
+   remove_roster( clan, victim->name );
+
+   Then in save_clan, locate the following:
+
+      fprintf( fp, "GuardOne     %d\n", clan->guard1 );
+      fprintf( fp, "GuardTwo     %d\n", clan->guard2 );
+      fprintf( fp, "%s", "End\n\n" );
+      fprintf( fp, "%s", "#END\n" );
+
+   Change that to:
+
+      fprintf( fp, "GuardOne     %d\n", clan->guard1 );
+      fprintf( fp, "GuardTwo     %d\n", clan->guard2 );
+      fprintf( fp, "%s", "End\n\n" );
+      fwrite_memberlist( fp, clan );
+      fprintf( fp, "%s", "#END\n" );
+
+   Then in load_clan_file, locate the following:
+
+         word = fread_word( fp );
+         if( !str_cmp( word, "CLAN" ) )
+         {
+            fread_clan( clan, fp );
+            break;
+         }
+         else if( !str_cmp( word, "END" ) )
+            break;
+         else
+         {
+            char buf[MAX_STRING_LENGTH];
+
+            sprintf( buf, "Load_clan_file: bad section: %s.", word );
+            bug( buf, 0 );
+            break;
+         }
+
+   Change that to read as follows:
+
+         word = fread_word( fp );
+         if( !str_cmp( word, "CLAN" ) )
+            fread_clan( clan, fp );
+         else if( !str_cmp( word, "ROSTER" ) )
+            fread_memberlist( clan, fp );
+         else if( !str_cmp( word, "END" ) )
+            break;
+         else
+         {
+            bug( "%s: bad section: %s.", __FUNCTION__, word );
+            break;
+         }
+
+2. Open up mud.h, and locate the clan_data structure.
+
+   Locate:
+      CLAN_DATA *prev;  /* previous clan in list      */
+
+   Directly below that, add:
+
+   ROSTER_DATA *first_member;
+   ROSTER_DATA *last_member;
+
+   Directly above the clan_data structure, add the following code:
+
+typedef struct roster_data ROSTER_DATA;
+void remove_roster( CLAN_DATA *clan, char *name );
+void add_roster( CLAN_DATA *clan, char *name, int Class, int level, int kills, int deaths );
+void update_roster( CHAR_DATA *ch );
+struct roster_data
+{
+   ROSTER_DATA *next;
+   ROSTER_DATA *prev;
+   char *name;
+   time_t joined;
+   int Class;
+   int level;
+   int kills;
+   int deaths;
+};
+
+   Then find the DECLARE_DO_FUN statements and add one for do_roster
+
+3. Open save.c.
+
+   Locate fread_char, and find the following:
+
+               /*
+                * this disallows chars from being 6', 180lbs, but easier than a flag 
+                */
+               if( ch->height == 72 )
+                  ch->height = number_range( (int)(race_table[ch->race]->height * .9), (int)(race_table[ch->race]->height * 1.1 ));
+               if( ch->weight == 180 )
+                  ch->weight = number_range( (int)(race_table[ch->race]->weight * .9), (int)(race_table[ch->race]->weight * 1.1 ));
+
+
+   Directly below that, add:
+
+               if( ch->pcdata->clan )
+                  update_roster( ch );
+
+4. Open build.c and find do_mset
+
+   Locate the following:
+
+      if( !arg3 || arg3[0] == '\0' )
+      {
+         /*
+          * Crash bug fix, oops guess I should have caught this one :)
+          * * But it was early in the morning :P --Shaddai 
+          */
+         if( victim->pcdata->clan == NULL )
+            return;
+         /*
+          * Added a check on immortals so immortals don't take up
+          * * any membership space. --Shaddai
+          */
+         if( !IS_IMMORTAL( victim ) )
+         {
+            --victim->pcdata->clan->members;
+            save_clan( victim->pcdata->clan );
+         }
+         STRFREE( victim->pcdata->clan_name );
+         victim->pcdata->clan_name = STRALLOC( "" );
+         victim->pcdata->clan = NULL;
+         return;
+      }
+      clan = get_clan( arg3 );
+      if( !clan )
+      {
+         send_to_char( "No such clan.\r\n", ch );
+         return;
+      }
+      if( victim->pcdata->clan != NULL && !IS_IMMORTAL( victim ) )
+      {
+         --victim->pcdata->clan->members;
+         save_clan( victim->pcdata->clan );
+      }
+      STRFREE( victim->pcdata->clan_name );
+      victim->pcdata->clan_name = QUICKLINK( clan->name );
+      victim->pcdata->clan = clan;
+      if( !IS_IMMORTAL( victim ) )
+      {
+         ++victim->pcdata->clan->members;
+         save_clan( victim->pcdata->clan );
+      }
+      return;
+
+   Change it as follows:
+
+      if( !arg3 || arg3[0] == '\0' )
+      {
+         /*
+          * Crash bug fix, oops guess I should have caught this one :)
+          * * But it was early in the morning :P --Shaddai 
+          */
+         if( victim->pcdata->clan == NULL )
+            return;
+         /*
+          * Added a check on immortals so immortals don't take up
+          * * any membership space. --Shaddai
+          */
+         if( !IS_IMMORTAL( victim ) )
+         {
+            remove_roster( victim->pcdata->clan, victim->name );
+            --victim->pcdata->clan->members;
+            save_clan( victim->pcdata->clan );
+         }
+         STRFREE( victim->pcdata->clan_name );
+         victim->pcdata->clan_name = STRALLOC( "" );
+         victim->pcdata->clan = NULL;
+         return;
+      }
+      clan = get_clan( arg3 );
+      if( !clan )
+      {
+         send_to_char( "No such clan.\r\n", ch );
+         return;
+      }
+      if( victim->pcdata->clan != NULL && !IS_IMMORTAL( victim ) )
+      {
+         remove_roster( victim->pcdata->clan, victim->name );
+         --victim->pcdata->clan->members;
+         save_clan( victim->pcdata->clan );
+      }
+      STRFREE( victim->pcdata->clan_name );
+      victim->pcdata->clan_name = QUICKLINK( clan->name );
+      victim->pcdata->clan = clan;
+      if( !IS_IMMORTAL( victim ) )
+      {
+         add_roster( victim->pcdata->clan, victim->name, victim->Class, victim->level, victim->pcdata->mkills, victim->pcdata->mdeaths );
+         ++victim->pcdata->clan->members;
+         save_clan( victim->pcdata->clan );
+      }
+      return;
+
+5. Add the appropriate entries in tables.c for do_roster.
+
+6. Make clean, recompile.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

@@ -292,8 +292,8 @@ extern bool DONT_UPPER;
 /*
  * SMAUG Version -- Scryn
  */
-#define SMAUG_VERSION_MAJOR "1"
-#define SMAUG_VERSION_MINOR "9 FUSS"
+#define SMAUG_VERSION_MAJOR "2"
+#define SMAUG_VERSION_MINOR "0"
 
 /* 
  * Stuff for area versions --Shaddai

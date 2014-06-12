@@ -1,0 +1,150 @@
+Beep Command
+------------
+
+Original author: Altrag <altrag@realms.game.org>
+
+Enhancements by Samson of Alsherok
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This gives you a simple command that will allow players to send a short
+sound tone to each other to get their attention. The ability to beep
+another person can be regulated via the use of PCFLAG_NOBEEP which is
+a toggle added to the do_config command.
+
+Installation Instructions
+-------------------------
+
+1. In act_comm.c, add the following code:
+
+/* Beep command courtesy of Altrag */
+/* Installed by Samson on unknown date, allows user to beep other users */
+void do_beep( CHAR_DATA *ch, char *argument )
+{
+   CHAR_DATA *victim;
+
+   if( ch->pcdata->release_date != 0 )
+   {
+      send_to_char( "Nope, no beeping from hell.\r\n", ch );
+      return;
+   }
+
+   if( !argument || !( victim = get_char_world( ch, argument ) ) )
+   {
+      send_to_char( "Beep who?\r\n", ch );
+      return;
+   }
+
+   /* NPC check added by Samson 2-15-98 */
+   if( IS_NPC( victim ) || is_ignoring( victim, ch ) )
+   {
+      send_to_char( "Beep who?\r\n", ch );
+      return;
+   }
+
+   /* PCFLAG_NOBEEP check added by Samson 2-15-98 */
+   if( IS_SET( victim->pcdata->flags, PCFLAG_NOBEEP ) )
+   {
+      ch_printf( ch, "%s is not accepting beeps at this time.\r\n", victim->name );
+      return;
+   }
+
+   ch_printf( victim, "%s is beeping you!\a\r\n", PERS( ch, victim, TRUE ) );
+   ch_printf( ch, "You beep %s.\r\n", PERS( victim, ch, TRUE ) );
+   return;
+}
+
+2. In mud.h, find the PCFLAGS section and add the following in an
+   empty bitvector slot, where xx is the next available number:
+
+   #define PCFLAG_NOBEEP		   BVxx   /* Added by Samson 2-15-98 */
+
+   Add the following in the appropriate section:
+
+   DECLARE_DO_FUN( do_beep );
+
+3. In act_info.c, find the following in do_config:
+
+   IS_SET( ch->pcdata->flags, PCFLAG_NOSUMMON ) 	? "[+] NOSUMMON"
+                                                     	: "[-] nosummon"
+
+   and below it add:
+
+   IS_SET( ch->pcdata->flags, PCFLAG_NOBEEP   )  	? "[+] NOBEEP"
+							: "[-] nobeep"
+
+4. Also in act_info.c, do_config, find the following:
+
+          else if ( !str_prefix( arg+1, "pager"    ) ) bit = PCFLAG_PAGERON;
+
+    and below it add:
+
+	    else if ( !str_prefix( arg+1, "nobeep" ) ) bit = PCFLAG_NOBEEP;
+
+5. Make the appropriate entries for do_beep in tables.c.
+
+6. Make clean, then recompile.
+
+7. Create a beep command, setting it to the desired level.
+
+8. Add the included help text to help.are (see below).
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok
+
+Suggested helpfile entry:
+
+2 BEEP~
+Syntax: beep <player>
+ 
+BEEP sends a short sound blip to the other user's terminal to get their
+attention. If someone doesn't respond right away, please don't keep
+spamming them with beeps. Try back again later, they may have gone afk.
+~

@@ -1,0 +1,239 @@
+Character stat reroller
+-----------------------
+
+Originally written by Unknown for ROM 2.4 muds
+Ported to Smaug by Samson of Alsherok
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+New characters will be able to reroll for their stats at creation.
+Note that in stock Smaug code, name_stamp_stats picks the player's
+stats based on their name. The reroll code will call to name_stamp
+weather it's altered or not, but with stock code, the roll won't
+change much if at all. A replacement for name_stamp_stats is included.
+
+Installation Instructions
+-------------------------
+
+1. In comm.c, add the following constate code to function nanny,
+   somewhere below an existing constate:
+
+    case CON_ROLL_STATS:
+      switch (argument[0] )
+      {
+         case 'y': case 'Y':
+	     write_to_buffer( d, "\r\nWould you like ANSI, or no graphic/color support, (A/N)? ", 0 );
+	     d->connected = CON_GET_WANT_RIPANSI;
+         break;
+
+         case 'n': case 'N':
+     
+	   name_stamp_stats(ch);
+
+         snprintf( buf, MAX_STRING_LENGTH, "\r\nStr: %d  Int: %d  Wis: %d  Dex: %d  Con: %d  Cha: %d  Lck: %d\r\nKeep? (Y/N)",
+         ch->perm_str, ch->perm_int, ch->perm_wis, ch->perm_dex, ch->perm_con, 
+	   ch->perm_cha, ch->perm_lck );
+	   write_to_buffer( d, buf, 0 );
+         return;
+         default: write_to_buffer( d, "Yes or No? ", 0 );
+         return;
+       }
+    break;
+
+2. Also in comm.c, after the following in CON_GET_NEW_RACE:
+    
+    if ( iRace == MAX_RACE
+    ||  !race_table[iRace].race_name || race_table[iRace].race_name[0] == '\0'
+    ||   IS_SET(race_table[iRace].class_restriction, 1 << ch->class) )
+	{
+	    write_to_buffer( d,
+		"That's not a race.\r\nWhat IS your race? ", 0 );
+	    return;
+	}
+
+Replace the remaining code from there to the break; with this:
+
+      /* Rerolling of stats added by Samson 2-8-98. Code courtesy of Kermit's Mud Page */
+
+        write_to_buffer( d, "You may now roll for your character's stats.\r\nYou may roll as often as you like.\r\n",0);
+        
+	  name_stamp_stats(ch);
+
+        snprintf( buf, MAX_STRING_LENGTH, "\r\nStr: %d  Int: %d  Wis: %d  Dex: %d  Con: %d  Cha: %d  Lck: %d\r\nKeep? (Y/N)",
+        ch->perm_str, ch->perm_int, ch->perm_wis, ch->perm_dex, ch->perm_con, 
+	  ch->perm_cha, ch->perm_lck );
+        write_to_buffer( d, buf, 0 );
+
+        d->connected = CON_ROLL_STATS;
+        break;
+
+     Find the following code segment:
+
+		/* ch->resist           += race_table[ch->race]->resist;    drats */
+            /* ch->susceptible     += race_table[ch->race]->suscept;    drats */
+
+	    name_stamp_stats( ch );
+
+     Comment out the call to name_stamp_stats here.
+
+   Find function close_socket and locate the following lines of code:
+
+	if ( dclose->connected == CON_PLAYING
+	||   dclose->connected == CON_EDITING )
+	{
+	    act( AT_ACTION, "$n has lost $s link.", ch, NULL, NULL, TO_CANSEE );
+	    ch->desc = NULL;
+	}
+
+   Change those lines to read:
+
+	if ( dclose->connected == CON_PLAYING
+	||   dclose->connected == CON_EDITING
+	||   dclose->connected == CON_ROLL_STATS )
+	{
+	    act( AT_ACTION, "$n has lost $s link.", ch, NULL, NULL, TO_CANSEE );
+	    ch->desc = NULL;
+	}
+
+   Find function check_playing, and locate the following lines of code:
+
+	    if ( !ch->name
+	    || ( cstate != CON_PLAYING && cstate != CON_EDITING ))
+	    {
+		write_to_buffer( d, "Already connected - try again.\r\n", 0 );
+		sprintf( log_buf, "%s already connected.", 
+				ch->pcdata->filename );
+		log_string_plus( log_buf, LOG_COMM, sysdata.log_level );
+		return BERR;
+	    }
+
+   Change those lines to read:
+
+	    if ( !ch->name
+	    || ( cstate != CON_PLAYING && cstate != CON_EDITING && cstate != CON_ROLL_STATS ))
+	    {
+                char lbuf[MAX_STRING_LENGTH];
+
+		write_to_buffer( d, "Already connected - try again.\r\n", 0 );
+		snprintf( lbuf, MAX_STRING_LENGTH, "%s already connected.", ch->pcdata->filename );
+		log_string_plus( lbuf, LOG_COMM, sysdata.log_level );
+		return BERR;
+	    }
+
+3. In handler.c, find name_stamp_stats. Comment it out, 
+    and replace it with the following:
+
+/*
+ * "Roll" players stats based on the character name		-Thoric
+ */
+/* Rewritten by Whir. Thanks to Vor/Casteele for help 2-1-98 */
+/* Racial bonus calculations moved to this function and removed
+   from comm.c - Samson 2-2-98 */
+/* Updated to AD&D standards by Samson 9-5-98 */
+/* Changed to use internal random number generator instead of
+   OS dependant random() function - Samson 9-5-98 */
+
+void name_stamp_stats( CHAR_DATA *ch )
+{
+     ch->perm_str = 6 + dice( 2,6 );
+     ch->perm_dex = 6 + dice( 2,6 );
+     ch->perm_wis = 6 + dice( 2,6 );
+     ch->perm_int = 6 + dice( 2,6 );
+     ch->perm_con = 6 + dice( 2,6 );
+     ch->perm_cha = 6 + dice( 2,6 );
+     ch->perm_lck = 6 + dice( 2,6 );
+     
+     ch->perm_str	+= race_table[ch->race]->str_plus;
+     ch->perm_int	+= race_table[ch->race]->int_plus;
+     ch->perm_wis	+= race_table[ch->race]->wis_plus;
+     ch->perm_dex	+= race_table[ch->race]->dex_plus;
+     ch->perm_con	+= race_table[ch->race]->con_plus;
+     ch->perm_cha	+= race_table[ch->race]->cha_plus; 
+     ch->perm_lck	+= race_table[ch->race]->lck_plus;
+}
+
+4. In mud_comm.c, function do_mpapplyb,
+   do yourself a favor and remove the following chunk of code:
+
+/* Stat stuff that follows from here to name_stamp is to keep stat-cheats
+   from abusing the auth system -- Blodkai */
+        victim->perm_str                = 13;
+        victim->perm_dex                = 13;
+        victim->perm_int                = 13;
+        victim->perm_wis                = 13;
+        victim->perm_cha                = 13;
+        victim->perm_con                = 13;
+        victim->perm_lck                = 13;
+        switch ( class_table[victim->class]->attr_prime )
+        {
+          case APPLY_STR: victim->perm_str = 16; break;
+          case APPLY_INT: victim->perm_int = 16; break;
+          case APPLY_WIS: victim->perm_wis = 16; break;
+          case APPLY_DEX: victim->perm_dex = 16; break;
+          case APPLY_CON: victim->perm_con = 16; break;
+          case APPLY_CHA: victim->perm_cha = 16; break;
+          case APPLY_LCK: victim->perm_lck = 16; break;
+        }
+        victim->perm_str         += race_table[victim->race]->str_plus;
+        victim->perm_int         += race_table[victim->race]->int_plus;
+        victim->perm_wis         += race_table[victim->race]->wis_plus;
+        victim->perm_dex         += race_table[victim->race]->dex_plus;
+        victim->perm_con         += race_table[victim->race]->con_plus;
+        victim->perm_cha         += race_table[victim->race]->cha_plus;
+        victim->perm_lck         += race_table[victim->race]->lck_plus;
+	name_stamp_stats( victim ); /* Take care of auth cons -- Blodkai */
+
+   
+5. In mud.h, add CON_ROLL_STATS to the list of connected states.
+
+6. Make clean, and recompile.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

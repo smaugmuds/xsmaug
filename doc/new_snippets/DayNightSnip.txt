@@ -1,0 +1,170 @@
+                     *Rythmic's Day\Night Mob Code*
+					   The Archway of Lost Souls
+                   Ver: 1.0 *Installation: For Smaug 1.4a*
+
+*******[ What does this snippet do? ]*****
+
+Creates two new mob flags DAY and NIGHT:
+
+A mob with a 'DAY' flag will only reset/pop during the day. While in the game
+during the night, the mob will be extracted with a room message.
+
+A mob with a 'NIGHT' flag will only reset/pop during the night. While in the game
+during the day, the mob will be extracted with a room message. 
+
+        **[ Building examples/ideas ]**
+
+Imagine a graveyard area, during the day fairly quiet and peaceful, except for a few
+rotting zombies shuffling about, rotting body parts falling off etc. Then as night
+approaches, scores of undead rise up from the grave, ghouls, wraiths, ghosts..
+well you get the picture.. Then as the day arrives, these nocturnal undead flee from
+the light of day, making the graveyard fairly safe once again......
+
+or
+
+The town of SomeName during the day the good folks travel about conducting business,
+children playing, shopkeeps sell wares etc.. Then as night approaches the town's folk
+head home for the night leaving the streets empty. Perhaps a few guards on fire watch
+complain about being on the night shift...
+
+Make quests more challenging trying to find a mob out only during a certain time...
+
+
+*********************[ Start ]*****************************
+
+First, and most important... BACK UP YOUR FILES FIRST....
+
+Next you'll need to have the following files handy from your src folder..
+             mud.h, build.c, reset.c, update.c 
+
+
+*********************[ mud.h ]*****************************
+
+** Find:
+
+/*
+ * ACT bits for mobs.
+ * Used in #MOBILES.
+ */
+#define ACT_IS_NPC		  0		/* Auto set for mobs*/
+#define ACT_SENTINEL		  1		/* Stays in one room	*/
+#define ACT_SCAVENGER		  2		/* Picks up objects	*/
+
+** Next define these new ACT_flags by adding them to the list
+in available slots, I used 3 and 4.
+
+#define ACT_DAY		      3	    /* Only out during the day */
+#define ACT_NIGHT	      4	    /* Only out during the night */
+
+**********************[ build.c ]***************************
+
+** Find:
+
+char *	const	act_flags [] =
+{
+"npc", "sentinel", "scavenger", "r1", "r2",
+
+** Next replace: "r1", "r2", with our 2 new flags "day", "night",
+   or replace the matching locations you added to mud.h
+
+**********************[ reset.c ]***************************
+** Find: void reset_area( AREA_DATA *pArea )
+
+     **Inside reset_area look for this piece of code**
+
+if ( pMobIndex->count >= pReset->arg2 )
+      {
+        mob = NULL;
+        break;
+      }
+
+     **Add this right after**
+
+/** Prevent Day and Night mob resets ** Rythmic */
+	  
+    if ( xIS_SET(pMobIndex->act, ACT_DAY ) && time_info.sunlight ==  SUN_DARK )
+     {
+        mob = NULL;
+        break;
+      }   
+
+         
+    if ( xIS_SET(pMobIndex->act, ACT_NIGHT ) && time_info.sunlight == SUN_LIGHT )
+       {
+        mob = NULL;
+        break;
+      } 
+
+****************************[ update.c ]**************************
+
+** Find:
+
+/*
+ * Mob autonomous action.
+ * This function takes 25% to 35% of ALL Mud cpu time.
+ */
+void mobile_update( void )
+
+** Next look for this bit of code inside mobile_update
+
+if ( !IS_NPC(ch) )
+	{
+	    drunk_randoms(ch);
+	    hallucinations(ch);
+	    continue;
+	}
+
+** Next add:
+
+/** Extract Day and Night mobs ** Rythmic **/
+
+    if ( xIS_SET(ch->act, ACT_DAY ) && time_info.sunlight ==  SUN_DARK )
+	{
+    act(AT_ACTION, "$n flees from the darkness.", ch, NULL, NULL, TO_ROOM);
+    extract_char(ch, TRUE);
+	continue;
+    }
+
+    if ( xIS_SET(ch->act, ACT_NIGHT ) && time_info.sunlight == SUN_LIGHT )
+    {
+    act(AT_ACTION, "$n flees from the light.", ch, NULL, NULL, TO_ROOM);
+    extract_char(ch, TRUE);
+	continue;
+    }
+
+****************************[ end ]**************************
+
+Okay save your changes and that's it for the code...
+
+Note you could also add/change checks for SUN_SET, SUN_RISE and add a couple more
+flags for more reset changes...
+
+Okay.. make clean ..(cross your fingers!) and compile...
+
+Now you can copyover/reboot your mud.. and add the new flags to your mobs....
+
+mset <mob's name> flags day
+mset <mob's name> flags night
+
+Wouldn't hurt to add your new flags to the help file when you get a chance.
+
+Special thanks to: Brynnah for her input, and Samson for hosting.
+
+**[ Finally] **My goal is simply to give this back to the community
+in gratitude to those folks that have given so much.. Thanks!
+
+Hopefully someone might find this of use..
+
+Your humble bard,
+Rythmic
+
+
+
+
+
+
+
+
+
+
+

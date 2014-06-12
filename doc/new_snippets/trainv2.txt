@@ -1,0 +1,421 @@
+/* Stat Training Code V2.0 for Smaug.
+Developed and maintained by Belgarath on Night of the Vampires 
+New Features are increased practice cost as well as support for secondary attributes.
+Also support may be added for multiple class types by contacting
+belgarath at notv@nightofthevampires.org.
+Future features will be support for deficient attributes.*/
+
+/*
+
+build.c, locate the following:
+
+char *	const	act_flags [] =
+{
+"npc", "sentinel", "scavenger", "r1", "r2", "aggressive", "stayarea",
+"wimpy", "pet", "train", "practice", "immortal", "deadly", "polyself",
+"meta_aggr", "guardian", "running", "nowander", "mountable", "mounted",
+"scholar", "secretive", "hardhat", "mobinvis", "noassist", "autonomous",
+"pacifist", "noattack", "annoying", "statshield", "prototype", "r14"
+};
+
+Add "train" to the list.
+
+in mud.h
+add the following line in the appropriate section
+
+DECLARE_DO_FUN( do_train        );
+
+also make sure you have #define ACT_TRAIN in the BV section for mob act_flags
+
+in struct char_data, find the line     sh_int              saving_spell_staff;
+
+add
+
+int                 hp_from_gain;         /*for stat training*/
+
+
+
+in tables.c
+
+in case 't' add
+        if ( !str_cmp( name, "do_train" ))              return do_train;
+
+also in tables.c after the line    
+
+if ( skill == do_traffic )          return "do_traffic";
+
+add
+    if ( skill == do_train )            return "do_train";
+
+*/
+
+#include <sys/types.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <time.h>
+#include "mud.h"
+
+void do_train( CHAR_DATA *ch, char *argument )
+{
+    char buf[MAX_STRING_LENGTH];
+    char buf2[20];
+    CHAR_DATA *mob;
+    int add_hp = 0;
+    int add_mana = 0;
+    short *AttrPerm;
+    char *pOutput;
+    int cost,cost1,cost2,cost3,cost4,cost5;  /* Urrgghh */
+    buf[0] = '\0';
+    buf2[0] = '\0';
+
+    if ( IS_NPC(ch) )
+    {
+        send_to_char( "Not for NPCs.  Sorry.\n\r", ch );
+        return;
+    }
+
+    /*
+     * Check for trainer.
+     */
+
+    for ( mob = ch->in_room->first_person; mob; mob = ch->next_in_room )
+      {
+        if ( IS_NPC(mob) && xIS_SET(mob->act, ACT_TRAIN) )
+              break;
+      }
+
+    if ( !mob  )
+      {
+        send_to_char( "You can't do that here.\n\r", ch );
+        return;
+      }
+
+    if ( argument[0] == '\0' )
+      {
+        sprintf( buf, "You have %d practice sessions.\n\r", ch->practice );
+        send_to_char( buf, ch );
+        argument = "foo";
+      }
+
+    cost = 8;
+
+    if ( !str_cmp( argument, "str" ) )
+      {
+       
+        if ( class_table[ch->class]->attr_second == APPLY_STR )
+              cost    = 7;
+        AttrPerm    = &ch->perm_str;
+        pOutput     = "strength";
+      }
+
+    else if ( !str_cmp( argument, "str" ) )
+      { 
+    
+        if ( class_table[ch->class]->attr_prime == APPLY_STR )
+              cost    = 6;
+        AttrPerm    = &ch->perm_str;
+        pOutput     = "strength";  
+      }
+
+    else if ( !str_cmp( argument, "int" ) )
+      {
+
+        if ( class_table[ch->class]->attr_second == APPLY_INT )
+              cost    = 6;
+        AttrPerm   = &ch->perm_int;
+        pOutput     = "intelligence";
+      }
+
+    else if ( !str_cmp( argument, "int" ) )
+      {
+        if ( class_table[ch->class]->attr_prime == APPLY_INT )
+              cost    = 6;
+        AttrPerm   = &ch->perm_int; 
+        pOutput     = "intelligence";
+      }
+
+    else if ( !str_cmp( argument, "wis" ) )
+      {
+        if ( class_table[ch->class]->attr_second == APPLY_WIS )
+              cost    = 7;
+        AttrPerm    = &ch->perm_wis;
+        pOutput     = "wisdom";
+      }
+
+    else if ( !str_cmp( argument, "wis" ) )
+      {
+        if ( class_table[ch->class]->attr_prime == APPLY_WIS ) 
+              cost    = 7;
+        AttrPerm    = &ch->perm_wis;
+        pOutput     = "wisdom";
+      }
+
+    else if ( !str_cmp( argument, "dex" ) )
+      {
+        if ( class_table[ch->class]->attr_second == APPLY_DEX )
+              cost    = 7;
+        AttrPerm   = &ch->perm_dex;
+        pOutput     = "dexterity"; 
+      }
+
+    else if ( !str_cmp( argument, "dex" ) )
+      {
+        if ( class_table[ch->class]->attr_prime == APPLY_DEX ) 
+              cost    = 6;
+        AttrPerm   = &ch->perm_dex; 
+        pOutput     = "dexterity";
+      }
+
+    else if ( !str_cmp( argument, "con" ) )
+      {
+        if ( class_table[ch->class]->attr_second == APPLY_CON )
+              cost    = 7;
+        AttrPerm    = &ch->perm_con; 
+        pOutput     = "constitution";
+      }
+
+    else if ( !str_cmp( argument, "con" ) )
+      {
+        if ( class_table[ch->class]->attr_prime == APPLY_CON )
+              cost    = 6;
+        AttrPerm    = &ch->perm_con;
+        pOutput     = "constitution";
+      }
+
+    else if ( !str_cmp( argument, "hp" ) )
+      {
+        AttrPerm = &ch->max_hit;
+        pOutput = "number of hit points";
+        cost = 4;    /* this is pracs per "train hp" */
+        add_hp = 1; /* this is hp gained per "train hp" */
+      }
+
+    else if ( !str_cmp( argument, "mana" ) )
+      {
+        AttrPerm = &ch->max_mana;
+        pOutput = "amount of mana";
+        cost = 5;
+        add_mana = 1;
+      }
+
+    else
+
+      {
+        /* Work out the costs... */
+        cost1=8 ;cost2=8 ;cost3=8 ;cost4=8 ;cost5=8;
+        if ( class_table[ch->class]->attr_prime == APPLY_STR )
+              cost1    = 6;
+        if ( class_table[ch->class]->attr_second == APPLY_STR )
+             cost1     = 7;       
+        if ( class_table[ch->class]->attr_prime == APPLY_INT )
+              cost2    = 6;
+        if ( class_table[ch->class]->attr_second == APPLY_INT )
+              cost2    = 7;
+        if ( class_table[ch->class]->attr_prime == APPLY_WIS )
+              cost3    = 6;
+        if ( class_table[ch->class]->attr_second == APPLY_WIS )
+              cost3    = 7;
+        if ( class_table[ch->class]->attr_prime == APPLY_DEX )
+              cost4    = 6;
+        if ( class_table[ch->class]->attr_second == APPLY_DEX )
+              cost4    = 7;
+        if ( class_table[ch->class]->attr_prime == APPLY_CON )
+              cost5    = 6;
+        if ( class_table[ch->class]->attr_second == APPLY_CON )
+              cost5    = 7;
+
+        strcpy( buf, "You can train: hp (4)  mana (5)" );
+
+        if ( ch->perm_str < 18 )
+        {
+            strcat( buf, "  str" );
+            sprintf( buf2, " (%d)", cost1 );
+            strcat( buf, buf2 );
+        }
+        if ( ch->perm_int < 18 )
+        {
+            strcat( buf, "  int" );
+            sprintf( buf2, " (%d)", cost2 );
+            strcat( buf, buf2 );
+        }
+        if ( ch->perm_wis < 18 )
+        {
+            strcat( buf, "  wis" );
+            sprintf( buf2, " (%d)", cost3 );
+            strcat( buf, buf2 );
+        }
+        if ( ch->perm_dex < 18 )
+        {
+            strcat( buf, "  dex" );
+            sprintf( buf2, " (%d)", cost4 );
+            strcat( buf, buf2 );
+        }
+        if ( ch->perm_con < 18 )
+        {
+            strcat( buf, "  con" );
+            sprintf( buf2, " (%d)", cost5 );
+            strcat( buf, buf2 );
+        }
+        if ( buf[strlen(buf)-1] != ':' )
+          {
+                strcat( buf, ".\n\r" );
+                    send_to_char( buf, ch );
+              }
+         return;
+      }
+
+
+
+    if ( !str_cmp( argument, "hp" ) )
+      {
+
+        if ( cost > ch->practice )
+          {
+            send_to_char( "You don't have enough practices.\n\r", ch );
+            return;
+          }
+
+             ch->practice        -= 4;
+/*             *AttrPerm           += add_hp;*/
+             ch->max_hit         += add_hp;
+             act( AT_ACTION, "Your $T increases!", ch, NULL, pOutput, TO_CHAR );
+             act( AT_ACTION, "$n's $T increases!", ch, NULL, pOutput, TO_ROOM );
+             return;
+      }
+
+      if ( !str_cmp( argument, "mana" ) )
+      {
+
+        if ( cost > ch->practice )
+          {
+            send_to_char( "You don't have enough practices.\n\r", ch );
+            return;
+          }
+
+             ch->practice        -= 5;
+/*             *AttrPerm           += add_mana;*/
+             ch->max_mana       += add_mana;
+
+             act( AT_ACTION, "Your $T increases!", ch, NULL,  pOutput, TO_CHAR );
+             act( AT_ACTION, "$n's $T increases!", ch, NULL,  pOutput, TO_ROOM );
+             return;
+      }
+    
+      if ( !str_cmp( argument, "str" ) )
+      {
+          if ( *AttrPerm >= 18 )
+           {
+            act( AT_ACTION, "Your $T is already at maximum.", ch,NULL, pOutput, TO_CHAR );
+	    return;
+            }
+
+        if ( cost > ch->practice )
+          {
+            send_to_char( "You don't have enough practices.\n\r", ch );
+            return;
+          }
+
+             ch->practice        -= cost;
+/*             *AttrPerm           += add_mana;*/
+             ch->perm_str       += 1;
+
+             act( AT_ACTION, "Your $T increases!", ch, NULL, pOutput, TO_CHAR );
+             act( AT_ACTION, "$n's $T increases!", ch, NULL, pOutput, TO_ROOM );
+             return;
+      }
+
+      if ( !str_cmp( argument, "int" ) )
+      {
+          if ( *AttrPerm >= 18 )
+           {
+            act( AT_ACTION, "Your $T is already at maximum.", ch, NULL, pOutput, TO_CHAR );
+            return;
+            }
+
+        if ( cost > ch->practice )
+          {
+            send_to_char( "You don't have enough practices.\n\r", ch );
+            return;
+          }
+
+             ch->practice        -= cost;
+/*             *AttrPerm           += add_mana;*/
+             ch->perm_int       += 1;
+
+             act( AT_ACTION, "Your $T increases!", ch, NULL, pOutput, TO_CHAR );
+             act( AT_ACTION, "$n's $T increases!", ch, NULL, pOutput, TO_ROOM );
+             return;
+      }
+
+      if ( !str_cmp( argument, "wis" ) )
+      {
+          if ( *AttrPerm >= 18 )
+           {
+            act( AT_ACTION, "Your $T is already at maximum.", ch, NULL, pOutput, TO_CHAR );
+            return;
+            }
+
+        if ( cost > ch->practice )
+          {
+            send_to_char( "You don't have enough practices.\n\r", ch );
+            return;
+          }
+
+             ch->practice        -= cost;
+/*             *AttrPerm           += add_mana;*/
+             ch->perm_wis       += 1;
+
+             act( AT_ACTION, "Your $T increases!", ch, NULL, pOutput, TO_CHAR );
+             act( AT_ACTION, "$n's $T increases!", ch, NULL, pOutput, TO_ROOM );
+             return;
+      }
+
+      if ( !str_cmp( argument, "dex" ) )
+      {
+          if ( *AttrPerm >= 18 )
+           {
+            act( AT_ACTION, "Your $T is already at maximum.", ch, NULL, pOutput, TO_CHAR );
+            return;
+            }
+
+        if ( cost > ch->practice )
+          {
+            send_to_char( "You don't have enough practices.\n\r", ch );
+            return;
+          }
+
+             ch->practice        -= cost;
+/*             *AttrPerm           += add_mana;*/
+             ch->perm_dex       += 1;
+
+             act( AT_ACTION, "Your $T increases!", ch, NULL, pOutput, TO_CHAR );
+             act( AT_ACTION, "$n's $T increases!", ch, NULL, pOutput, TO_ROOM );
+             return;
+      }
+
+      if ( !str_cmp( argument, "con" ) )
+      {
+          if ( *AttrPerm >= 18 )
+           {
+            act( AT_ACTION, "Your $T is already at maximum.", ch, NULL, pOutput, TO_CHAR );
+            return;
+            }
+
+        if ( cost > ch->practice )
+          {
+            send_to_char( "You don't have enough practices.\n\r", ch );
+            return;
+          }
+
+             ch->practice        -= cost;
+/*             *AttrPerm           += add_mana;*/
+             ch->perm_con       += 1;
+
+             act( AT_ACTION, "Your $T increases!", ch, NULL, pOutput, TO_CHAR );
+             act( AT_ACTION, "$n's $T increases!", ch, NULL, pOutput, TO_ROOM );
+             return;
+      }
+}
+

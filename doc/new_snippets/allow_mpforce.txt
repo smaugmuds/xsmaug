@@ -1,0 +1,104 @@
+SMAUG: "Toggable mpforces on Immortals" snippet by Zeno
+=======================================
+
+Description
+-----------
+This snippet is intended for SmaugFUSS, due to the fact that FUSS will
+not allow you to mpforce Immortals (for a good reason) and you will get
+a log message like this: 
+Mpforce - Attempting to force an immortal! Cheater detected!, Mob #1201.
+
+This snippet creates an Immortal-only config flag to allow being mpforced.
+Remember being able to be mpforced is a security risk, as lower Immortals
+can force a mob to mpforce you to use commands they do not have (such
+as destroy, advance, etc). This also changes the log message so it no
+longer logs but rather sends to the victim who was attempted to be
+mpforced (by what mob etc).
+
+Support
+-------
+All support for this snippet (and any of my snippets) must be posted on
+MudBytes (mudbytes.net) under the appropriate code. Find this snippet
+on MudBytes, post a new comment, and I will reply as soon as possible.
+
+Sharing
+-------
+All of my released code can be distributed anywhere as long as credit
+is given when due. Please do not claim my code as your own. If you
+do distribute my code to other places, I'd like it if you notify me.
+My email address is zeno-AT-biyg-DOT-org, but please do not
+use this for support.
+
+Background
+----------
+This code was originally released at MudBytes (mudbytes.net). Most
+(if not all) of my released code originated from the MUD I run
+(Bleached InuYasha Galaxy: biyg.org) which is a modified version of
+SmaugFUSS. Therefor all code I release has been tested and is currently
+running on a MUD open to the public. Everything should work as intended,
+but since I wrote most of this code years ago, improvements can probably
+be made to the code to make it more efficient. I'd appreciate it if you
+improve any of the code, that you would post the changes on MudBytes. You
+can find contact information and details about myself at the following URL:
+http://en.wikipedia.org/wiki/User:Zeno_McDohl
+
+Syntax
+------
+config +allowmpforce  - You can now be mpforced by mobs.
+config -allowmpforce  - You can no longer be mpforced by mobs.
+
+Installation
+------------
+1.) In mud.h where the other PLR_ flags are (such as PLR_AUTOGOLD), add a
+new flag called PLR_MPFORCE as the last (new) flag.
+
+2.) In act_info.c, find this line:
+        send_to_char( "\n\r\n\rImmortal toggles:  ", ch );
+On this line:
+				ch_printf( ch, "Roomvnum [%s]
+Add "AllowMpforce [%s]" to it. Now find the section below that has:
+			  xIS_SET(ch->act, PLR_ROOMVNUM )
+And add another block that looks like this:
+          xIS_SET(ch->act, PLR_MPFORCE )                ? "+"
+                                                        : "-"
+Further down in the file, find these lines:
+       else if ( IS_IMMORTAL( ch )
+             &&   !str_prefix( arg+1, "vnum"     ) ) bit = PLR_ROOMVNUM;
+And add these lines:
+        else if ( IS_IMMORTAL( ch )
+             &&   !str_prefix( arg+1, "allowmpforce" ) ) bit = PLR_MPFORCE;
+             
+3.) In build.c, find the plr_flags section where it contains the strings of
+the flag names (such as "wizinvis", "roomvnum","silence") and add another
+argument to that list ("mpforce").
+
+4.) In mud_comm.c, find this block of code:
+        if ( !IS_NPC( victim )
+        && ( !victim->desc )
+        && IS_IMMORTAL( victim ) )
+        {         
+            progbug( "Mpforce - Attempting to force link dead immortal", ch );
+            return;
+        }     
+Below it you should see the mpforce log message code. The entire block of code
+should be changed to look like this:
+      if ( get_trust ( victim ) <= LEVEL_AVATAR )    
+         interpret( victim, argument );
+      if ( get_trust ( victim ) >= LEVEL_AVATAR && xIS_SET(victim->act, PLR_MPFORCE) )
+         interpret( victim, argument );
+      else if ( get_trust ( victim ) >= LEVEL_AVATAR && !xIS_SET(victim->act, PLR_MPFORCE) )
+      {
+        if ( ch->pIndexData->vnum == 3 )
+        {
+                ch_printf( victim, "Failed attempt to mpforce you, %s.\n\r",
+                    ch->description == NULL ? "(unknown)" : ch->description );
+        }
+        else
+        {
+                ch_printf( victim, "Failed attempt to mpforce you, Mob #%d.\n\r",
+                    ch->pIndexData->vnum );
+        }
+      }
+
+
+5.) Make clean, make and hotboot/reboot the MUD.

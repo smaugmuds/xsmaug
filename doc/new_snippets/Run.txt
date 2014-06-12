@@ -1,0 +1,279 @@
+The Run Command
+---------------
+
+Code taken from DOTD codebase.
+Desolation of the Dragon MUD <dotd@dotd.com>
+Debugged and cleaned up to work in standard Smaug by Samson of Alsherok
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+Players will be able to type 'run <dir>' and start running in
+that direction. They'll stop when they can't get any further that way,
+or when they've moved the number of spaces they asked for. Output of
+all rooms and other text is supressed to protect against buffer
+overflows while moving.
+
+This code may not be appropriate for beginning coders based on the
+number of places that need to be changed to install it.
+You have been warned.
+
+Also, if your installing this after having installed the Overland
+code, pay attention to the places your changing and make sure you
+don't end up messing up the overland putting this in.
+
+Installation Instructions
+-------------------------
+
+1. In act_move.c, or whichever file works best for you, add the
+   following code:
+
+/* Run command taken from DOTD codebase - Samson 2-25-99 */
+/* Added argument to let players specify how far to run.
+ * Fixed an infinite loop bug where somehow a closed door would cause problems.
+ * Added Overland support to the command. Samson 4-4-01
+ */
+/* Supressed display of rooms/terrain until you stop to prevent buffer overflows - Samson 4-16-01 */
+void do_run( CHAR_DATA *ch, char *argument )
+{
+   char arg[MAX_INPUT_LENGTH];
+   ROOM_INDEX_DATA *from_room;
+   EXIT_DATA *pexit;
+   int amount = 0, x;
+#ifdef OVERLANDCODE
+   int fromx, fromy, frommap;
+#endif
+   bool limited = FALSE;
+
+   argument = one_argument( argument, arg );
+
+   if( arg[0] == '\0' )
+   {
+      send_to_char( "Run where?\r\n", ch );
+      return;
+   }
+
+   if( ch->position != POS_STANDING && ch->position != POS_MOUNTED )
+   {
+      send_to_char( "You are not in the correct position for that.\r\n", ch );
+      return;
+   }
+
+   if( argument )
+   {
+      if( is_number( argument ) )
+      {
+         limited = TRUE;
+         amount = atoi( argument );
+      }
+   }
+
+   from_room = ch->in_room;
+#ifdef OVERLANDCODE
+   frommap = ch->map;
+   fromx = ch->x;
+   fromy = ch->y;
+#endif
+
+   if( limited )
+   {
+      for( x = 1; x <= amount; x++ )
+      {
+         if( ( pexit = find_door( ch, arg, TRUE ) ) != NULL )
+         {
+            if ( ch->move < 1 )
+            {
+               send_to_char( "You are too exhausted to run anymore.\r\n", ch );
+               ch->move = 0;
+               break;
+            }
+#ifdef OVERLANDCODE
+            if( move_char( ch, pexit, 0, pexit->vdir, TRUE ) == rSTOP )
+#else
+            if( move_char( ch, pexit, 0, TRUE ) == rSTOP )
+#endif
+               break;
+
+            if( ch->position != POS_STANDING && ch->position != POS_MOUNTED )
+            {
+               send_to_char( "Your run has been interrupted!\r\n", ch );
+               break;
+            }
+         }
+      }
+   }
+   else
+   {
+      while( ( pexit = find_door( ch, arg, TRUE ) ) != NULL )
+      {
+         if ( ch->move < 1 )
+         {
+            send_to_char( "You are too exhausted to run anymore.\r\n", ch );
+            ch->move = 0;
+            break;
+         }
+#ifdef OVERLANDCODE
+         if( move_char( ch, pexit, 0, pexit->vdir, TRUE ) == rSTOP )
+#else
+         if( move_char( ch, pexit, 0, TRUE ) == rSTOP )
+#endif
+            break;
+
+         if( ch->position != POS_STANDING && ch->position != POS_MOUNTED )
+         {
+            send_to_char( "Your run has been interrupted!\r\n", ch );
+            break;
+         }
+      }
+   }
+
+#ifdef OVERLANDCODE
+   if( IS_PLR_FLAG( ch, PLR_ONMAP ) || IS_ACT_FLAG( ch, ACT_ONMAP ) )
+   {
+      if( ch->x == fromx && ch->y == fromy && ch->map == frommap )
+      {
+         send_to_char( "You try to run but don't get anywhere.\r\n", ch );
+         act( AT_ACTION, "$n tries to run but doesn't get anywhere.", ch, NULL, NULL, TO_ROOM );
+         return;
+      }
+   }
+   else
+#endif
+   {
+      if( ch->in_room == from_room )
+      {
+         send_to_char( "You try to run but don't get anywhere.\r\n", ch );
+         act( AT_ACTION, "$n tries to run but doesn't get anywhere.", ch, NULL, NULL, TO_ROOM );
+         return;
+      }
+   }
+
+   send_to_char( "You slow down after your run.\r\n", ch );
+   act( AT_ACTION, "$n slows down after $s run.", ch, NULL, NULL, TO_ROOM );
+
+   do_look( ch, "auto" );
+   return;
+}
+
+2. In mud.h, locate the following code:
+
+/*
+ * Return types for move_char, damage, greet_trigger, etc, etc
+ * Added by Thoric to get rid of bugs
+ */
+typedef enum
+{
+  rNONE, rCHAR_DIED, rVICT_DIED, rBOTH_DIED, rCHAR_QUIT, rVICT_QUIT,
+  rBOTH_QUIT, rSPELL_FAILED, rOBJ_SCRAPPED, rOBJ_EATEN, rOBJ_EXPIRED,
+  rOBJ_TIMER, rOBJ_SACCED, rOBJ_QUAFFED, rOBJ_USED, rOBJ_EXTRACTED,
+  rOBJ_DRUNK, rCHAR_IMMUNE, rVICT_IMMUNE, rCHAR_AND_OBJ_EXTRACTED = 128,
+  rERROR = 255
+} ret_types;
+
+   Add rSTOP to the list, after rERROR
+
+   Then locate the following line under the section for act_move.c:
+
+ch_ret	move_char	args( ( CHAR_DATA *ch, EXIT_DATA *pexit, int fall ) );
+
+Change it to read as follows:
+
+ch_ret	move_char	args( ( CHAR_DATA *ch, EXIT_DATA *pexit, int fall, bool running ) );
+
+3. In act_move.c, locate function move_char.
+
+   Locate this line:
+ch_ret move_char( CHAR_DATA *ch, EXIT_DATA *pexit, int fall )
+
+   Change it to this:
+
+ch_ret move_char( CHAR_DATA *ch, EXIT_DATA *pexit, int fall, bool running )
+
+   Replace every occurance of 	return rNONE; 
+   in this function *ONLY* with: return rSTOP;
+
+   Then locate all calls to move_char throughout your code and add a FALSE
+   argument to them. Example:
+
+    move_char( ch, get_exit(ch->in_room, DIR_NORTH), 0, FALSE );
+
+   Then locate all calls to move_char from WITHIN move_char itself and change
+   them to look like this:
+
+   move_char( ch, pexit, 0, running );
+
+   Be sure you preserve the actual variable used in each call and are ONLY adding
+   the argument for "running".
+
+   Then in move_char locate the following:
+
+    do_look( ch, "auto" );
+    if ( brief ) 
+ 	xSET_BIT(ch->act, PLR_BRIEF);
+
+   Change it to read as follows:
+
+    if( !running )
+       do_look( ch, "auto" );
+
+    if ( brief ) 
+ 	xSET_BIT( ch->act, PLR_BRIEF );
+
+3b. If you have Overland installed, you will need to open overland.c,
+   locate process_exit, and make changes to it that reflect the same
+   changes in move_char
+
+4. Make the appropriate entries in mud.h and tables.c for do_run
+
+5. Make clean, recompile.
+
+6. Add a run command to your commands.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.fussproject.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

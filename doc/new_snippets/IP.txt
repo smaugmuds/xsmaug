@@ -1,0 +1,26 @@
+Server IP Binding
+-----------------
+
+General tip - should be useable on nearly all merc derived codebases.
+
+Installation Instructions
+-------------------------
+
+1. In comm.c, function init_socket, locate the following code:
+
+    memset(&sa, '\0', sizeof(sa));
+    sa.sin_family   = AF_INET;
+    sa.sin_port	    = htons( port );
+
+    Add this line right below it:
+
+    /* sa.sin_addr.s_addr = inet_addr( "x.x.x.x" ); */
+
+2. Recompile, your done :)
+
+As stated, this additional line of code should work on nearly any
+MERC or ROM derived codebase. There should be no need to use it
+unless the server you happen to be on specifically requires you to
+bind your MUD to its own IP address, in which case they'll give you
+the proper number to substitute for x.x.x.x. Don't forget to uncomment
+the line if you need it :P

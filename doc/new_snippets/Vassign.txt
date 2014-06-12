@@ -1,0 +1,303 @@
+The Vassign command
+-------------------
+
+Written by Samson of Alsherok
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This code simply consolidates the function of the rassign, oassign, and
+massign commands. It then goes to the last specified vnum and initializes
+it with placeholder data. The zone and the player are then saved. For this
+reason, it is not a good idea to issue this command on someone who already
+has a zone being built. Safeguards are in place, but one never knows what
+could happen. If you're setup so that builders can only build rooms at first,
+you can still use this code. Just be sure your mob and object editing 
+commands are restricted above the level of your room editing commands, etc.
+
+Installation Instructions
+-------------------------
+
+1. In act_wiz.c, or whichever file works best for you, add the following
+   code:
+
+bool check_area_conflict( AREA_DATA *area, int low_range, int hi_range )
+{
+   if( low_range < area->low_r_vnum && area->low_r_vnum < hi_range )
+      return TRUE;
+   if( low_range < area->low_m_vnum && area->low_m_vnum < hi_range )
+      return TRUE;
+   if( low_range < area->low_o_vnum && area->low_o_vnum < hi_range )
+      return TRUE;
+
+   if( low_range < area->hi_r_vnum && area->hi_r_vnum < hi_range )
+      return TRUE;
+   if( low_range < area->hi_m_vnum && area->hi_m_vnum < hi_range )
+      return TRUE;
+   if( low_range < area->hi_o_vnum && area->hi_o_vnum < hi_range )
+      return TRUE;
+
+   if( ( low_range >= area->low_r_vnum ) && ( low_range <= area->hi_r_vnum ) )
+      return TRUE;
+   if( ( low_range >= area->low_m_vnum ) && ( low_range <= area->hi_m_vnum ) )
+      return TRUE;
+   if( ( low_range >= area->low_o_vnum ) && ( low_range <= area->hi_o_vnum ) )
+      return TRUE;
+
+   if( ( hi_range <= area->hi_r_vnum ) && ( hi_range >= area->low_r_vnum ) )
+      return TRUE;
+   if( ( hi_range <= area->hi_m_vnum ) && ( hi_range >= area->low_m_vnum ) )
+      return TRUE;
+   if( ( hi_range <= area->hi_o_vnum ) && ( hi_range >= area->low_o_vnum ) )
+      return TRUE;
+
+   return FALSE;
+}
+
+/* Runs the entire list, easier to call in places that have to check them all */
+bool check_area_conflicts( int lo, int hi )
+{
+   AREA_DATA *area;
+
+   for( area = first_area; area; area = area->next )
+      if( check_area_conflict( area, lo, hi ) )
+         return TRUE;
+
+   for( area = first_build; area; area = area->next )
+      if( check_area_conflict( area, lo, hi ) )
+         return TRUE;
+
+   return FALSE;
+}
+
+/* Consolidated *assign function. 
+ * Assigns room/obj/mob ranges and initializes new zone - Samson 2-12-99 
+ */
+/* Bugfix: Vnum range would not be saved properly without placeholders at both ends - Samson 1-6-00 */
+void do_vassign( CHAR_DATA * ch, char *argument )
+{
+   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH], arg3[MAX_INPUT_LENGTH];
+   int lo = -1, hi = -1;
+   CHAR_DATA *victim, *mob;
+   ROOM_INDEX_DATA *room;
+   MOB_INDEX_DATA *pMobIndex;
+   OBJ_INDEX_DATA *pObjIndex;
+   OBJ_DATA *obj;
+   AREA_DATA *tarea;
+   char filename[256];
+
+   set_char_color( AT_IMMORT, ch );
+
+   argument = one_argument( argument, arg1 );
+   argument = one_argument( argument, arg2 );
+   argument = one_argument( argument, arg3 );
+   lo = atoi( arg2 );
+   hi = atoi( arg3 );
+
+   if( arg1[0] == '\0' || lo < 0 || hi < 0 )
+   {
+      send_to_char( "Syntax: vassign <who> <low> <high>\r\n", ch );
+      return;
+   }
+
+   if( !( victim = get_char_world( ch, arg1 ) ) )
+   {
+      send_to_char( "They don't seem to be around.\r\n", ch );
+      return;
+   }
+
+   if( IS_NPC( victim ) || get_trust( victim ) < LEVEL_CREATOR )
+   {
+      send_to_char( "They wouldn't know what to do with a vnum range.\r\n", ch );
+      return;
+   }
+
+   if( lo == 0 && hi == 0 )
+   {
+      victim->pcdata->area = NULL;
+      victim->pcdata->r_range_lo = 0;
+      victim->pcdata->r_range_hi = 0;
+      victim->pcdata->o_range_lo = 0;
+      victim->pcdata->o_range_hi = 0;
+      victim->pcdata->m_range_lo = 0;
+      victim->pcdata->m_range_hi = 0;
+      ch_printf( victim, "%s has removed your vnum range.\r\n", ch->name );
+      save_char_obj( victim );
+      return;
+   }
+
+   if( victim->pcdata->area && lo != 0 )
+   {
+      send_to_char( "You cannot assign them a range, they already have one!\r\n", ch );
+      return;
+   }
+
+   if( lo == 0 && hi != 0 )
+   {
+      send_to_char( "Unacceptable vnum range, low vnum cannot be 0 when hi vnum is not.\r\n", ch );
+      return;
+   }
+
+   if( lo > hi )
+   {
+      send_to_char( "Unacceptable vnum range, low vnum must be smaller than high vnum.\r\n", ch );
+      return;
+   }
+
+   if( check_area_conflicts( lo, hi ) )
+   {
+      send_to_char( "That vnum range conflicts with another area. Check the zones or vnums command.\r\n", ch );
+      return;
+   }
+
+   victim->pcdata->r_range_lo = lo;
+   victim->pcdata->r_range_hi = hi;
+   victim->pcdata->o_range_lo = lo;
+   victim->pcdata->o_range_hi = hi;
+   victim->pcdata->m_range_lo = lo;
+   victim->pcdata->m_range_hi = hi;
+   assign_area( victim );
+   send_to_char( "Done.\r\n", ch );
+   ch_printf( victim, "%s has assigned you the vnum range %d - %d.\r\n", ch->name, lo, hi );
+   assign_area( victim );  /* Put back by Thoric on 02/07/96 */
+
+   if( !victim->pcdata->area )
+   {
+      bug( "%s: assign_area failed", __FUNCTION__ );
+      return;
+   }
+
+   tarea = victim->pcdata->area;
+
+   /*
+    * Initialize first and last rooms in range 
+    */
+   if( !( room = make_room( lo, tarea ) ) )
+   {
+      bug( "%s: make_room failed to initialize first room.", __FUNCTION__ );
+      return;
+   }
+
+   if( !( room = make_room( hi, tarea ) ) )
+   {
+      bug( "%s: make_room failed to initialize last room.", __FUNCTION__ );
+      return;
+   }
+
+   /*
+    * Initialize first mob in range 
+    */
+   if( !( pMobIndex = make_mobile( lo, 0, "first mob" ) ) )
+   {
+      bug( "%s: make_mobile failed to initialize first mob.", __FUNCTION__ );
+      return;
+   }
+   mob = create_mobile( pMobIndex );
+   char_to_room( mob, room );
+
+   /*
+    * Initialize last mob in range 
+    */
+   if( !( pMobIndex = make_mobile( hi, 0, "last mob" ) ) )
+   {
+      bug( "%s: make_mobile failed to initialize last mob.", __FUNCTION__ );
+      return;
+   }
+   mob = create_mobile( pMobIndex );
+   char_to_room( mob, room );
+
+   /*
+    * Initialize first obj in range 
+    */
+   if( !( pObjIndex = make_object( lo, 0, "first obj" ) ) )
+   {
+      bug( "%s: make_object failed to initialize first obj.", __FUNCTION__ );
+      return;
+   }
+   obj = create_object( pObjIndex, 0 );
+   obj_to_room( obj, room );
+
+   /*
+    * Initialize last obj in range 
+    */
+   if( !( pObjIndex = make_object( hi, 0, "last obj" ) ) )
+   {
+      bug( "%s: make_object failed to initialize last obj.", __FUNCTION__ );
+      return;
+   }
+   obj = create_object( pObjIndex, 0 );
+   obj_to_room( obj, room );
+
+   /*
+    * Save character and newly created zone 
+    */
+   save_char_obj( victim );
+
+   if( !IS_SET( tarea->status, AREA_DELETED ) )
+   {
+      snprintf( filename, 256, "%s%s", BUILD_DIR, tarea->filename );
+      fold_area( tarea, filename, FALSE );
+   }
+
+   set_char_color( AT_IMMORT, ch );
+   ch_printf( ch, "Vnum range set for %s and initialized.\r\n", victim->name );
+
+   return;
+}
+
+2. It is advisable, but not necessary, to remove the do_massign, do_oassign, and do_rassign functions.
+
+3. Add the appropriate entries in mud.h and tables.c for do_vassign.
+
+4. Make clean, recompile.
+
+5. Add the command for vassign.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

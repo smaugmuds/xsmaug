@@ -1,0 +1,23 @@
+
+1 EDITOR~
+The SMAUG Editor is used when you're writing mail, notes, your bio,
+description or other long bodies of text. The commands in the editor are
+(these commands are shown with a space between the / and the command letter. 
+Omit the space when using the commands in your notes):
+
+/? [command]     Displays editor help in general, or about a command.
+/l [line range]  Lists the current contents of the note.
+/c               Clears the current contents of the note.
+/d <line>        Delete line. 
+/g <line>        Goto line. This is useful for inserting lines,
+                 deleting and fixing lines, etc.
+/i <line>        Insert line. Inserts a new blank line where specified.
+/r <old> <new>   Global replace text. 
+/a               Abort editing. No changes you made are kept.
+/! <command>     Execute mud command. '/! smile' sends the smile
+                 command, without exiting the editor.
+/s               Save buffer, and exit the editor.
+/p               Print information about the current editing session.
+ 
+~
+

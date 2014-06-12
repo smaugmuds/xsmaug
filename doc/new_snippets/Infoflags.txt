@@ -1,0 +1,182 @@
+Immortal Area Info Flags
+------------------------
+
+Code written by Samson of Alsherok
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This is one of my early bits of code that I was going to release initally back in
+1997, but for whatever reason, I never got around to doing that. Basically all
+this does is display information about an area to an immortal in it. Useful
+when building to see what has been set on the room without having to keep
+checking rstat. Here's an example of the output:
+
+[Area Flags: noastral noportal norecall nosummon noscry noteleport]
+[Room Flags: indoors]
+[Sector Type: indoors]
+[Area name: Halls of the Gods]  [Area filename: gods.are]
+
+The exact output of the flags will vary depending on your mud, but you get the idea :)
+
+Installation Instructions
+-------------------------
+
+1. Open act_info.c, and locate the following code in do_look:
+
+	/* 'look' or 'look auto' */
+	set_char_color( AT_RMNAME, ch );
+	send_to_char( ch->in_room->name, ch );
+	send_to_char( "\r\n", ch );
+
+   Directly below that, add the following code:
+
+	/* Room flag display installed by Samson 12-10-97 */
+	if( !IS_NPC(ch) && IS_IMMORTAL(ch) && IS_SET( ch->pcdata->flags, PCFLAG_AUTOFLAGS ) )
+	{
+	   set_char_color( AT_IMMORTAL, ch );
+
+	   ch_printf( ch, "[Area Flags: %s]\r\n", flag_string( ch->in_room->area->flags, area_flags ) );
+
+	   set_char_color( AT_IMMORTAL, ch );
+	   ch_printf( ch, "[Room Flags: %s]\r\n", flag_string( ch->in_room->room_flags, r_flags ) );
+	}
+
+      /* Room Sector display written and installed by Samson 12-10-97 */
+      if( !IS_NPC(ch) && IS_IMMORTAL(ch) && IS_SET( ch->pcdata->flags, PCFLAG_SECTORD ) )
+	{
+	   set_char_color( AT_IMMORTAL, ch );
+	
+	   ch_printf( ch, "[Sector Type: %s]\r\n", sec_flags[ch->in_room->sector_type] );
+	}
+
+	/* Area name and filename display installed by Samson 12-13-97 */
+	if( !IS_NPC(ch) && IS_IMMORTAL(ch) && IS_SET( ch->pcdata->flags, PCFLAG_ANAME ) )
+	{
+	  set_char_color( AT_IMMORTAL, ch );
+	  ch_printf( ch, "[Area name: %s]  ", ch->in_room->area->name );
+        if ( ch->level >= LEVEL_CREATOR )
+          ch_printf( ch, "[Area filename: %s]\r\n", ch->in_room->area->filename );
+        else
+	    send_to_char( "\r\n", ch );
+      }	
+
+   Then locate function do_config and find the following code:
+
+      if ( IS_IMMORTAL( ch ) )
+      {
+	set_char_color( AT_DGREEN, ch );
+        send_to_char( "\r\n\r\nImmortal toggles:  ", ch );
+        set_char_color( AT_GREY, ch );
+        ch_printf( ch, "Roomvnum [%s]    Automap [%s]",
+	  xIS_SET(ch->act, PLR_ROOMVNUM ) 		? "+"
+							: " ",
+          xIS_SET(ch->act, PLR_AUTOMAP  ) 		? "+"
+							: " " );
+      }
+
+   Directly below that, add the following code:
+
+ 	/* Config option for Room Flag display added by Samson 12-10-97 */
+	/* Config option for Sector Type display added by Samson 12-10-97 */
+	/* Config option Area name and filename added by Samson 12-13-97 */
+      if( IS_IMMORTAL( ch ) )
+      {
+	  set_char_color( AT_DGREEN, ch );
+        send_to_char( "\r\nMore Immortal toggles:  ", ch );
+        set_char_color( AT_GREY, ch );
+        ch_printf( ch, "Roomflags [%s] Sectortypes [%s] Filename [%s]\r\n",
+        IS_SET(ch->pcdata->flags, PCFLAG_AUTOFLAGS) ? "+"
+							          : " ",
+	  IS_SET(ch->pcdata->flags, PCFLAG_SECTORD)   ? "+"
+							          : " ",
+	  IS_SET(ch->pcdata->flags, PCFLAG_ANAME)     ? "+"
+								    : " " );
+      }
+
+   Then a little further down, locate the following code:
+
+	  else if ( !str_prefix( arg+1, "nosummon" ) ) bit = PCFLAG_NOSUMMON;
+          else if ( !str_prefix( arg+1, "gag"      ) ) bit = PCFLAG_GAG; 
+          else if ( !str_prefix( arg+1, "pager"    ) ) bit = PCFLAG_PAGERON;
+
+   Directly below that, add the following code:
+
+	    else if ( IS_IMMORTAL ( ch )
+               && ( !str_prefix( arg+1, "roomflags" ) ) ) bit = PCFLAG_AUTOFLAGS;
+	    else if ( IS_IMMORTAL ( ch )
+		   && ( !str_prefix( arg+1, "sectortypes" ) ) ) bit = PCFLAG_SECTORD;
+	    else if ( IS_IMMORTAL ( ch )
+		   && ( !str_prefix( arg+1, "filename" ) ) ) bit = PCFLAG_ANAME;
+
+2. Open mud.h and locate the section called: /* Bits for pc_data->flags. */
+
+   Add PCFLAG_AUTOFLAGS, PCFLAG_SECTORD, and PCFLAG_ANAME in the next available BV slots.
+
+   Then locate the following code:
+
+extern	char *	const	r_flags		[];
+extern	char *	const	w_flags		[];
+
+   Directly below that, add the following code:
+
+extern	char *	const sec_flags		[];
+
+3. Open build.c, and locate the following:
+
+char *	const	pc_flags [] =
+{
+
+   Add "flags", "sector", and "aname" to the spots that match up with the BV slots
+   you used in mud.h
+
+4. Make clean, recompile.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

@@ -1,0 +1,161 @@
+Remcon's Suggested Helpfiles
+----------------------------
+
+Written by Remcon of Lands of Pabulum
+
+What this code does
+-------------------
+
+This is a general replacement for the stock help command.
+When a user types in a help for a topic which doesn't exist,
+the command will suggest other entries in the helpfiles which
+contain similar terms.
+
+Installation Instructions
+-------------------------
+/* This is so it will consider numbers valid keywords in helps */
+
+1. Open act_info.c, find get_help, and replace
+    if ( isdigit( argument[0] ) )
+with
+    if ( isdigit( argument[0] ) && !is_number( argument ) )
+
+
+2. Open act_info.c, find do_help, and replace it with the following:
+
+/*
+ * Now this is cleaner
+ */
+/* Updated do_help command provided by Remcon of The Lands of Pabulum 03/20/2004 */
+void do_help( CHAR_DATA * ch, char *argument )
+{
+   HELP_DATA *pHelp;
+   char *keyword;
+   char arg[MAX_INPUT_LENGTH];
+   char oneword[MAX_STRING_LENGTH], lastmatch[MAX_STRING_LENGTH];
+   short matched = 0, checked = 0, totalmatched = 0, found = 0;
+   bool uselevel = FALSE;
+   int value = 0;
+
+   set_pager_color( AT_NOTE, ch );
+
+   if( !argument || argument[0] == '\0' )
+      argument = "summary";
+   if( !( pHelp = get_help( ch, argument ) ) )
+   {
+      pager_printf( ch, "No help on \'%s\' found.\r\n", argument );
+      /* Get an arg incase they do a number seperate */
+      one_argument( argument, arg );
+      /* See if arg is a number if so update argument */
+      if( is_number( arg ) )
+      {
+        argument = one_argument( argument, arg );
+        if( argument && argument[0] != '\0' )
+        {
+            value = atoi( arg );
+            uselevel = TRUE;
+        }
+        else /* If no more argument put arg as argument */
+          argument = arg;
+      }
+      if( value > 0 )
+         pager_printf( ch, "Checking for suggested helps that are level %d.\r\n", value );
+      send_to_pager( "Suggested Help Files:\r\n", ch );
+      strncpy( lastmatch, " ", MAX_STRING_LENGTH );
+      for( pHelp = first_help; pHelp; pHelp = pHelp->next )
+      {
+         matched = 0;
+         if( !pHelp || !pHelp->keyword || pHelp->keyword[0] == '\0' || pHelp->level > get_trust( ch ) )
+            continue;
+         /* Check arg if its avaliable */
+         if( uselevel && pHelp->level != value )
+           continue;
+         keyword = pHelp->keyword;
+         while( keyword && keyword[0] != '\0' )
+         {
+            matched = 0;   /* Set to 0 for each time we check lol */
+            keyword = one_argument( keyword, oneword );
+            /*
+             * Lets check only up to 10 spots
+             */
+            for( checked = 0; checked <= 10; checked++ )
+            {
+               if( !oneword[checked] || !argument[checked] )
+                  break;
+               if( LOWER( oneword[checked] ) == LOWER( argument[checked] ) )
+                  matched++;
+            }
+            if( ( matched > 1 && matched > ( checked / 2 ) ) || ( matched > 0 && checked < 2 ) )
+            {
+               pager_printf( ch, " %-20s ", oneword );
+               if( ++found % 4 == 0 )
+               {
+                  found = 0;
+                  send_to_pager( "\r\n", ch );
+               }
+               strncpy( lastmatch, oneword, MAX_STRING_LENGTH );
+               totalmatched++;
+               break;
+            }
+         }
+      }
+      if( found != 0 )
+         send_to_pager( "\r\n", ch );
+      if( totalmatched == 0 )
+      {
+         send_to_pager( "No suggested help files.\r\n", ch );
+         return;
+      }
+      if( totalmatched == 1 && lastmatch != NULL && lastmatch && lastmatch[0] != '\0' && str_cmp(lastmatch, argument))
+      {
+         send_to_pager( "Opening only suggested helpfile.\r\n", ch );
+         do_help( ch, lastmatch );
+         return;
+      }
+      return;
+   }
+   /*
+    * Make newbies do a help start. --Shaddai
+    */
+   if( !IS_NPC( ch ) && !str_cmp( argument, "start" ) )
+      SET_BIT( ch->pcdata->flags, PCFLAG_HELPSTART );
+
+   if( IS_IMMORTAL( ch ) )
+      pager_printf( ch, "Help level: %d\r\n", pHelp->level );
+
+   set_pager_color( AT_NOTE, ch );
+
+   /*
+    * Strip leading '.' to allow initial blanks.
+    */
+   if( pHelp->text[0] == '.' )
+      send_to_pager( pHelp->text + 1, ch );
+   else
+      send_to_pager( pHelp->text, ch );
+   return;
+}
+
+3. Changes
+Fixed a crashing issue in the code.
+Changed AT_HELP to AT_NOTE (since stock smaug1.4a didnt understand color codes)
+Added in the fix to get_help incase you haven't added it.
+Added in so you can do like "help 53 wearlocs" and it will use 53 as the level
+of help files to check for wearlocs helpfile.
+
+4. Compile and reboot. That's it!
+
+Remcon can usually be reached via the muddomain.com site,
+or you can also contact him on the Mud Domain Intermud Communication Network.
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The SmaugFUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+SmaugFUSS Project does not have access to these development environments for testing.
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+

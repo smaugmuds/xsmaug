@@ -1,0 +1,171 @@
+Donate Command
+--------------
+
+Original author unknown
+
+Ported from ROM 2.4 by Samson
+Revised and debugged by Samson and Whir of Alsherok
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This command allows players to donate items from anywhere on the mud to
+one of the assigned donation rooms. It is not necessary to have the second
+donation room installed for this code to work, if you only want one
+room, comment out the random check, and the code for the second room.
+
+In the same manner, to add more donation rooms, simply follow the code
+as an example, and add the appropriate room vnum definition to mud.h.
+
+Be aware that if your running the DOTD codebase, this snippet will
+almost certainly require other modifications to get it working since
+DOTD handles donation in a completely different way.
+If your not feeling up to such a task, then you should probably stick
+with what they have already provided.
+
+Installation Instructions
+-------------------------
+
+1. Somewhere in act_obj.c add the following code:
+
+/* Donate command installed by Samson 2-6-98 
+   Coded by unknown author. Players can donate items for others to use. */
+/* Modified by Whir for multiple donation rooms - 3/25/98 */
+/* Slight bug corrected, objects weren't being seperated from each other - Whir 3-25-98 */
+/* Updated to use internal Smaug random number generator - Samson 9-11-98 */
+void do_donate( CHAR_DATA * ch, char *argument )
+{
+   OBJ_DATA *obj;
+   int room_chance;
+
+   if( !argument || argument[0] == '\0' )
+   {
+      send_to_char( "Donate what?\r\n", ch );
+      return;
+   }
+
+   if( ch->position == POS_FIGHTING )
+   {
+      send_to_char( "You cannot donate while fighting!\r\n", ch );
+      return;
+   }
+
+   if( !( obj = get_obj_carry( ch, argument ) ) )
+   {
+      send_to_char( "You do not have that!\r\n", ch );
+      return;
+   }
+   else
+   {
+      if( !can_drop_obj( ch, obj ) && ch->level < LEVEL_IMMORTAL )
+      {
+         send_to_char( "You cannot donate that, it's cursed!\r\n", ch );
+         return;
+      }
+
+      if( ( obj->item_type == ITEM_CORPSE_NPC ) || ( obj->item_type == ITEM_CORPSE_PC ) )
+      {
+         send_to_char( "You cannot donate corpses!\r\n", ch );
+         return;
+      }
+
+      if( obj->timer > 0 )
+      {
+         send_to_char( "You cannot donate that.\r\n", ch );
+         return;
+      }
+
+      room_chance = number_range( 1, 9 ); /* Smaug random number generator */
+
+      if( room_chance >= 5 )
+      {
+         act( AT_ACTION, "You donate $p, how generous of you!", ch, obj, NULL, TO_CHAR );
+         separate_obj( obj );
+         obj_from_char( obj );
+         obj_to_room( obj, get_room_index( ROOM_VNUM_DONATION ) );
+         /*
+          * Bleh. Forgot this to stop item duping. Samson 4-4-01 
+          */
+         save_char_obj( ch );
+         return;
+      }
+      else
+      {
+         act( AT_ACTION, "You donate $p, how generous of you!", ch, obj, NULL, TO_CHAR );
+         separate_obj( obj );
+         obj_from_char( obj );
+         obj_to_room( obj, get_room_index( ROOM_VNUM_DONATIONTWO ) );
+         /*
+          * Bleh. Forgot this to stop item duping. Samson 4-4-01 
+          */
+         save_char_obj( ch );
+         return;
+      }
+   }
+}
+
+2. In mud.h, under the section for well known room vnums, add:
+
+#define ROOM_VNUM_DONATION    xxxx
+#define ROOM_VNUM_DONATIONTWO xxxx
+
+   Where xxxx is the vnum of the room you wish to assign.
+
+   Add the following to the appropriate section:
+
+   DECLARE_DO_FUN( do_donate );
+
+3. Make the appropriate entried in tables.c for do_donate.
+
+4. Make clean, and recompile.
+
+5. Create a donate command, setting it to an appropriate level.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

@@ -1,0 +1,227 @@
+Cleararea Command
+-----------------
+
+Written by Samson of Alsherok
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This code takes an existing builder's area range and purges all the data in it.
+It then resets the area with their starting and ending vnums for rooms, mobs, and objects
+and then saves the purged area file back to disk. It is basically a modified Vassign that
+calls the close_area function in Smaug. Try not to use this accidently, the consequences
+could hurt.
+
+Installation Instructions
+-------------------------
+
+1. Open mud.h, and locate:
+
+DECLARE_DO_FUN(	do_claw		);
+
+   Directly below that, add:
+
+DECLARE_DO_FUN( do_cleararea );
+
+2. Open act_wiz.c, and place the following function at the bottom of the file:
+
+void do_cleararea( CHAR_DATA * ch, char *argument )
+{
+   CHAR_DATA *victim, *mob;
+   ROOM_INDEX_DATA *room;
+   MOB_INDEX_DATA *pMobIndex;
+   OBJ_INDEX_DATA *pObjIndex;
+   OBJ_DATA *obj;
+   AREA_DATA *tarea;
+   char filename[256];
+
+   set_char_color( AT_IMMORT, ch );
+
+   if( !argument || argument[0] == '\0' )
+   {
+      send_to_char( "Syntax: cleararea <who>\r\n", ch );
+      return;
+   }
+
+   if( ( victim = get_char_world( ch, argument ) ) == NULL )
+   {
+      send_to_char( "They don't seem to be around.\r\n", ch );
+      return;
+   }
+
+   if( IS_NPC( victim ) || get_trust( victim ) < LEVEL_CREATOR )
+   {
+      send_to_char( "They couldn't have an area assigned yet.\r\n", ch );
+      return;
+   }
+
+   if( !victim->pcdata->area )
+   {
+      send_to_char( "This person doesn't yet have vnums assigned.\r\n", ch );
+      return;
+   }
+
+   close_area( victim->pcdata->area );
+   victim->pcdata->area = NULL;
+
+   assign_area( victim );
+   assign_area( victim );
+
+   if( !victim->pcdata->area )
+   {
+      bug( "do_cleararea: assign_area failed", 0 );
+      return;
+   }
+
+   tarea = victim->pcdata->area;
+
+   /*
+    * Reinitialize first and last rooms in range 
+    */
+   room = make_room( victim->pcdata->r_range_lo );
+   if( !room )
+   {
+      bug( "do_cleararea: make_room failed to reinitialize first room.", 0 );
+      return;
+   }
+   room->area = tarea;
+
+   room = make_room( victim->pcdata->r_range_hi );
+   if( !room )
+   {
+      bug( "do_cleararea: make_room failed to reinitialize last room.", 0 );
+      return;
+   }
+   room->area = tarea;
+
+   /*
+    * Reinitialize first mob in range 
+    */
+   pMobIndex = make_mobile( victim->pcdata->m_range_lo, 0, "first mob" );
+   if( !pMobIndex )
+   {
+      log_string( "do_cleararea: make_mobile failed to reinitialize first mob." );
+      return;
+   }
+   mob = create_mobile( pMobIndex );
+   char_to_room( mob, room );
+
+   /*
+    * Reinitialize last mob in range 
+    */
+   pMobIndex = make_mobile( victim->pcdata->m_range_hi, 0, "last mob" );
+   if( !pMobIndex )
+   {
+      log_string( "do_cleararea: make_mobile failed to reinitialize last mob." );
+      return;
+   }
+   mob = create_mobile( pMobIndex );
+   char_to_room( mob, room );
+
+   /*
+    * Reinitialize first obj in range 
+    */
+   pObjIndex = make_object( victim->pcdata->o_range_lo, 0, "first obj" );
+   if( !pObjIndex )
+   {
+      log_string( "do_cleararea: make_object failed to reinitialize first obj." );
+      return;
+   }
+   obj = create_object( pObjIndex, 0 );
+   obj_to_room( obj, room );
+
+   /*
+    * Reinitialize last obj in range 
+    */
+   pObjIndex = make_object( victim->pcdata->o_range_hi, 0, "last obj" );
+   if( !pObjIndex )
+   {
+      log_string( "do_cleararea: make_object failed to reinitialize last obj." );
+      return;
+   }
+   obj = create_object( pObjIndex, 0 );
+   obj_to_room( obj, room );
+
+   /*
+    * Save character and newly created zone 
+    */
+   save_char_obj( victim );
+
+   snprintf( filename, 256, "%s%s", BUILD_DIR, tarea->filename );
+   fold_area( tarea, filename, FALSE );
+
+   SET_BIT( tarea->status, AREA_LOADED );
+   set_char_color( AT_IMMORT, ch );
+   ch_printf( ch, "Vnum range flushed and reinitialized for %s.\r\n", victim->name );
+   ch_printf( victim, "%s has flushed your area data and reset it.\r\n", ch->name );
+   return;
+}
+
+   While you're in the act_wiz.c file, locate function close_area, and find the following:
+
+  DISPOSE(pArea->name);
+  DISPOSE(pArea->filename);
+  STRFREE(pArea->author);
+  UNLINK( pArea, first_build, last_build, next, prev );
+  UNLINK( pArea, first_asort, last_asort, next_sort, prev_sort );
+  DISPOSE( pArea );
+
+   The second UNLINK call is bugged in stock code and needs to be corrected as shown:
+
+  UNLINK( pArea, first_bsort, last_bsort, next_sort, prev_sort );
+
+3. Add the appropriate entries in tables.c for do_cleararea
+
+4. Make clean, recompile.
+
+5. Create a cleararea command using cedit once the mud has rebooted. Be sure this is set to a
+   high level immortal so that accidental erasure of areas is reduced.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

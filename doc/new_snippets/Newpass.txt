@@ -1,0 +1,244 @@
+Immortal password reset command
+-------------------------------
+
+Written by John Strange of Triad Mud.
+
+Terms of Use
+------------
+
+This snippet may not be redistributed on any site without obtaining prior
+written consent from the author.
+
+What this code does
+-------------------
+
+This command allows immortals with sufficient access to change the
+passowrds of players without having to hassle with the formpass
+command. Can be used in conjunction with the loadup command to
+reset a password someone forgot, or to deliberately change the
+password of someone you intend to punish. Because this allows you
+to do so, it should only be granted to high level trusted admins.
+
+Installation Instructions
+-------------------------
+
+1. Copy the following code into act_wiz.c, or whichever file you prefer.
+
+If using standard Smaug, without the MD5 Password code:
+
+/* Password resetting command, added by Samson 2-11-98
+   Code courtesy of John Strange - Triad Mud */
+void do_newpassword( CHAR_DATA * ch, char *argument )
+{
+   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
+   CHAR_DATA *victim;
+   char *pwdnew, *p;
+
+   if( IS_NPC( ch ) )
+      return;
+
+   argument = one_argument( argument, arg1 );
+   argument = one_argument( argument, arg2 );
+
+   victim = get_char_world( ch, arg1 );
+
+   if( ( ch->pcdata->pwd != '\0' ) && ( arg1[0] == '\0' || arg2[0] == '\0' ) )
+   {
+      send_to_char( "Syntax: newpass <char> <newpassword>.\r\n", ch );
+      return;
+   }
+
+   if( victim == '\0' )
+   {
+      ch_printf( ch, "%s isn't here, they have to be here to reset passwords.\r\n", arg1 );
+      return;
+   }
+
+   if( IS_NPC( victim ) )
+   {
+      send_to_char( "You cannot change the password of NPCs!\r\n", ch );
+      return;
+   }
+
+   /*
+    * Immortal level check added to code by Samson 2-11-98 
+    */
+   if( ch->level < LEVEL_INFINITE )
+   {
+      if( ( victim->level >= LEVEL_IMMORTAL ) || ( get_trust( victim ) >= LEVEL_IMMORTAL ) )
+      {
+         send_to_char( "You can't change that person's password!\r\n", ch );
+         return;
+      }
+   }
+   else
+   {
+      if( victim->level >= ch->level )
+      {
+         ch_printf( ch, "%s would not appreciate that :P\r\n", victim->name );
+         return;
+      }
+   }
+
+   if( strlen( arg2 ) < 5 )
+   {
+      send_to_char( "New password must be at least five characters long.\r\n", ch );
+      return;
+   }
+
+   pwdnew = crypt( arg2, victim->name );
+
+   /*
+    * No tilde allowed because of player file format.
+    */
+
+   for( p = pwdnew; *p != '\0'; p++ )
+   {
+      if( *p == '~' )
+      {
+         send_to_char( "New password not acceptable, (can't use ~) try again.\r\n", ch );
+         return;
+      }
+   }
+
+   DISPOSE( victim->pcdata->pwd );
+   victim->pcdata->pwd = str_dup( pwdnew );
+   save_char_obj( victim );
+   ch_printf( ch, "&R%s's password has been changed to: %s\r\n&w", victim->name, arg2 );
+   ch_printf( victim, "&R%s has changed your password to: %s\r\n&w", ch->name, arg2 );
+   return;
+}
+
+If using Smaug WITH the MD5 Password code:
+
+/* Password resetting command, added by Samson 2-11-98
+   Code courtesy of John Strange - Triad Mud */
+void do_newpassword( CHAR_DATA * ch, char *argument )
+{
+   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
+   CHAR_DATA *victim;
+   char *pwdnew, *p;
+
+   if( IS_NPC( ch ) )
+      return;
+
+   argument = one_argument( argument, arg1 );
+   argument = one_argument( argument, arg2 );
+
+   victim = get_char_world( ch, arg1 );
+
+   if( ( ch->pcdata->pwd != '\0' ) && ( arg1[0] == '\0' || arg2[0] == '\0' ) )
+   {
+      send_to_char( "Syntax: newpass <char> <newpassword>.\r\n", ch );
+      return;
+   }
+
+   if( victim == '\0' )
+   {
+      ch_printf( ch, "%s isn't here, they have to be here to reset passwords.\r\n", arg1 );
+      return;
+   }
+
+   if( IS_NPC( victim ) )
+   {
+      send_to_char( "You cannot change the password of NPCs!\r\n", ch );
+      return;
+   }
+
+   /*
+    * Immortal level check added to code by Samson 2-11-98 
+    */
+   if( ch->level < LEVEL_INFINITE )
+   {
+      if( ( victim->level >= LEVEL_IMMORTAL ) || ( get_trust( victim ) >= LEVEL_IMMORTAL ) )
+      {
+         send_to_char( "You can't change that person's password!\r\n", ch );
+         return;
+      }
+   }
+   else
+   {
+      if( victim->level >= ch->level )
+      {
+         ch_printf( ch, "%s would not appreciate that :P\r\n", victim->name );
+         return;
+      }
+   }
+
+   if( strlen( arg2 ) < 5 )
+   {
+      send_to_char( "New password must be at least five characters long.\r\n", ch );
+      return;
+   }
+
+   pwdnew = smaug_crypt( arg2 );
+
+   /*
+    * No tilde allowed because of player file format.
+    */
+
+   for( p = pwdnew; *p != '\0'; p++ )
+   {
+      if( *p == '~' )
+      {
+         send_to_char( "New password not acceptable, (can't use ~) try again.\r\n", ch );
+         return;
+      }
+   }
+
+   DISPOSE( victim->pcdata->pwd );
+   victim->pcdata->pwd = str_dup( pwdnew );
+   save_char_obj( victim );
+   ch_printf( ch, "&R%s's password has been changed to: %s\r\n&w", victim->name, arg2 );
+   ch_printf( victim, "&R%s has changed your password to: %s\r\n&w", ch->name, arg2 );
+   return;
+}
+
+2. Add the appropriate entries in mud.h and tables.c for do_newpassword
+
+3. Make clean, and recompile.
+
+4. Add a 'newpassword' command.
+
+5. Add the included help text to your help.are file.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok
+
+Suggested helpfile entry:
+
+109 NEWPASS NEWPASSWORD~
+Syntax: newpass <player> <new password>
+
+This command allows you to change a user's password if necessary.
+It should ordinarily only be used if the player is requesting this
+help for some reason. Though it can also be used as a form of
+disciplinary action against particularly nasty players. The command
+informs the player of the password change if they are online at the
+time.
+
+If the target character is offline, then they will need to have
+their pfile loaded into the game using the 'loadup' command first.
+
+See also: LOADUP, PASSWORD
+~

@@ -1,0 +1,235 @@
+diff -U 2 ./stock/act_info.c ./act_info.c
+--- ./stock/act_info.c	Wed Jan  9 05:16:26 1980
++++ ./act_info.c	Tue Jan  8 19:19:41 1980
+@@ -1902,4 +1901,5 @@
+     ch->dest_buf = pHelp;
+     start_editing( ch, pHelp->text );
++    editor_desc_printf( ch, "Help topic, keyword '%s', level %d.", pHelp->keyword, pHelp->level );
+ }
+ 
+diff -U 2 ./stock/act_wiz.c ./act_wiz.c
+--- ./stock/act_wiz.c	Wed Jan  9 05:16:26 1980
++++ ./act_wiz.c	Wed Jan  9 06:41:06 1980
+@@ -8546,4 +8545,6 @@
+ 	pproject->description = STRALLOC("");
+       start_editing( ch, pproject->description );
++      editor_desc_printf( ch, "Project description for project '%s'.", 
++	pproject->name ? pproject->name : "(No name)" );
+       return;
+    }
+@@ -8670,4 +8671,7 @@
+ 	 ch->dest_buf = ch->pnote;
+ 	 start_editing( ch, ch->pnote->text);
++	 editor_desc_printf( ch, "A log note in project '%s', entitled '%s'.",
++		pproject->name ? pproject->name : "(No name)",
++		ch->pnote->subject ? ch->pnote->subject : "(No subject)" );
+ 	 return;
+       }
+diff -U 2 ./stock/ban.c ./ban.c
+--- ./stock/ban.c	Wed Jan  9 05:16:26 1980
++++ ./ban.c	Tue Jan  8 19:21:40 1980
+@@ -973,4 +972,5 @@
+ 	pban->note = STRALLOC ("");;
+    start_editing( ch, pban->note );
++   set_editor_desc( ch, "A ban description." );
+    return 1; 
+    }
+diff -U 2 ./stock/boards.c ./boards.c
+--- ./stock/boards.c	Wed Jan  9 05:16:26 1980
++++ ./boards.c	Tue Jan  8 19:48:21 1980
+@@ -846,4 +845,16 @@
+ 		--quill->value[0];
+ 	    start_editing( ch, ed->description );
++
++	    {
++		char *subject, *to_list;
++
++		if ( (subject = get_extra_descr( "_subject_", paper->first_extradesc )) == NULL )
++		  subject = "(no subject)";
++		if ( (to_list = get_extra_descr( "_to_", paper->first_extradesc )) == NULL )
++		  to_list = "(nobody)";
++
++		editor_desc_printf( ch, "Note entitled '%s', addressed to %s.",
++		   subject, to_list );
++	    }
+ 	    return;
+ 	}
+diff -U 2 ./stock/build.c ./build.c
+--- ./stock/build.c	Wed Jan  9 05:16:26 1980
++++ ./build.c	Tue Jan  8 22:43:16 1980
+@@ -715,4 +714,5 @@
+ }
+ 
++#ifdef 0
+ 
+ /*
+@@ -861,4 +860,5 @@
+     ch->desc->connected = CON_PLAYING;
+ }
++#endif
+ 
+ void do_goto( CHAR_DATA *ch, char *argument )
+@@ -2027,4 +2027,8 @@
+ 	ch->dest_buf = victim;
+ 	start_editing( ch, victim->description );
++	if( IS_NPC( victim) )
++		editor_desc_printf( ch, "Description of mob, vnum %ld (%s).", victim->pIndexData->vnum, victim->name );
++	else
++		editor_desc_printf( ch, "Description of player %s.", capitalize( victim->name ) );
+ 	return;
+     }
+@@ -3138,4 +3142,5 @@
+ 	ch->dest_buf = obj;
+ 	start_editing( ch, obj->description );
++	editor_desc_printf( ch, "Object long desc, vnum %ld (%s).", obj->pIndexData->vnum, obj->short_descr );
+ 	return;
+     }
+@@ -3529,4 +3534,6 @@
+ 	ch->dest_buf = ed;
+ 	start_editing( ch, ed->description );
++	editor_desc_printf( ch, "Extra description '%s' on object vnum %d (%s).",
++		arg3, obj->pIndexData->vnum, obj->short_descr );
+ 	return;
+     }
+@@ -4197,4 +4204,6 @@
+ 	ch->dest_buf = location;
+ 	start_editing( ch, location->description );
++	editor_desc_printf( ch, "Description of room vnum %d (%s).",
++		location->vnum, location->name );
+ 	return;
+     }
+@@ -4331,4 +4340,6 @@
+ 	ch->dest_buf = ed;
+ 	start_editing( ch, ed->description );
++	editor_desc_printf( ch, "Extra description '%s' on room %d (%s).",
++		argument, location->vnum, location->name );
+ 	return;
+     }
+@@ -5209,4 +5220,6 @@
+ }
+ 
++#ifdef 0
++
+ /*
+  * Simple but nice and handy line editor.			-Thoric
+@@ -5482,4 +5495,6 @@
+ }
+ 
++#endif
++
+ void free_reset( AREA_DATA *are, RESET_DATA *res )
+ {
+@@ -7302,4 +7317,7 @@
+ 	mprg->comlist = STRALLOC( "" );
+     start_editing( ch, mprg->comlist );
++    editor_desc_printf( ch, "Program '%s %s'.",
++	mprog_type_to_name( mprg->type ),
++	mprg->arglist );
+     return;
+ }
+@@ -7935,4 +7953,6 @@
+           mprg->comlist = STRALLOC("");
+ 	start_editing( ch, mprg->comlist );
++	/*shiver.. this function is actualy dead code.. */
++	/*set_editor_desc( ch, "A roomprog of some kind.." ); dead code*/
+ 	return;
+ }
+diff -U 2 ./stock/comments.c ./comments.c
+--- ./stock/comments.c	Wed Jan  9 05:16:26 1980
++++ ./comments.c	Tue Jan  8 22:52:40 1980
+@@ -286,4 +285,5 @@
+ 	ch->dest_buf = ch->pnote;
+ 	start_editing( ch, ch->pnote->text );
++	set_editor_desc( ch, "A player comment." );
+ 	return;
+     }
+diff -U 2 ./stock/deity.c ./deity.c
+--- ./stock/deity.c	Wed Jan  9 05:16:26 1980
++++ ./deity.c	Tue Jan  8 19:42:11 1980
+@@ -456,4 +455,6 @@
+         ch->dest_buf = deity;
+         start_editing( ch, deity->description );
++	editor_desc_printf( ch, "Deity description of deity '%s'.",
++		deity->name );
+         return;
+     }
+diff -U 2 ./stock/mapout.c ./mapout.c
+--- ./stock/mapout.c	Wed Jan  9 05:16:26 1980
++++ ./mapout.c	Wed Jan  9 06:42:55 1980
+@@ -861,4 +860,5 @@
+ 	ch -> dest_buf = ch -> pnote;
+ 	start_editing (ch, ch -> pnote -> text);
++	set_editor_desc( ch, "A map description" );
+ 	return;
+     }
+diff -U 2 ./stock/mud.h ./mud.h
+--- ./stock/mud.h	Wed Jan  9 05:16:26 1980
++++ ./mud.h	Tue Jan  8 19:13:40 1980
+@@ -2064,12 +2064,4 @@
+ };
+ 
+-struct	editor_data
+-{
+-    sh_int		numlines;
+-    sh_int		on_line;
+-    sh_int		size;
+-    char		line[49][81];
+-};
+-
+ struct	extracted_char_data
+ {
+@@ -4304,4 +4296,15 @@
+ #define SK	SKILLTYPE
+ 
++/* editor.c cronel new editor */
++#define start_editing( ch, data ) \
++	start_editing_nolimit( ch, data, MAX_STRING_LENGTH )
++void	start_editing_nolimit	args( ( CHAR_DATA *ch, char *data, sh_int max_size ) );
++void	stop_editing	args( ( CHAR_DATA *ch ) );
++void	edit_buffer	args( ( CHAR_DATA *ch, char *argument ) );
++char *	copy_buffer	args( ( CHAR_DATA *ch ) );
++void	set_editor_desc	args( ( CHAR_DATA *ch, char *desc ) );
++void	editor_desc_printf args( ( CHAR_DATA *ch, char *desc_fmt, ... ) );
++
++
+ /* act_comm.c */
+ bool	circle_follow	args( ( CHAR_DATA *ch, CHAR_DATA *victim ) );
+@@ -4489,8 +4492,4 @@
+ 
+ /* build.c */
+-void	start_editing	args( ( CHAR_DATA *ch, char *data ) );
+-void	stop_editing	args( ( CHAR_DATA *ch ) );
+-void	edit_buffer	args( ( CHAR_DATA *ch, char *argument ) );
+-char *	copy_buffer	args( ( CHAR_DATA *ch ) );
+ bool	can_rmodify	args( ( CHAR_DATA *ch, ROOM_INDEX_DATA *room ) );
+ bool	can_omodify	args( ( CHAR_DATA *ch, OBJ_DATA *obj  ) );
+diff -U 2 ./stock/player.c ./player.c
+--- ./stock/player.c	Wed Jan  9 05:16:26 1980
++++ ./player.c	Tue Jan  8 19:52:17 1980
+@@ -1574,4 +1573,5 @@
+ 	   ch->dest_buf = ch;
+ 	   start_editing( ch, ch->description );
++	   editor_desc_printf( ch, "Your description (%s)", ch->name );
+ 	   return;
+ 
+@@ -1618,4 +1618,5 @@
+ 	   ch->dest_buf = ch;
+ 	   start_editing( ch, ch->pcdata->bio );
++	   editor_desc_printf( ch, "Your bio (%s).", ch->name );
+ 	   return;
+ 
+diff -U 2 ./stock/polymorph.c ./polymorph.c
+--- ./stock/polymorph.c	Wed Jan  9 05:16:26 1980
++++ ./polymorph.c	Wed Jan  9 06:42:40 1980
+@@ -809,4 +808,5 @@
+         ch->dest_buf = morph;
+         start_editing( ch, morph->description );
++	set_editor_desc( ch, "A morph description." );
+         return;
+    }
+@@ -831,4 +831,5 @@
+         ch->dest_buf = morph;
+         start_editing( ch, morph->help );
++	set_editor_desc( ch, "A morph help file." );
+         return;
+    }

@@ -1,0 +1,319 @@
+                                          SESSION 11
+
+mob_index_data
+obj_index_data
+char_data
+pc_data
+obj_data
+room_index_data
+
+Ex: obj_data and obj_index_data
+
+in mud.h
+===========================================================================
+---------------------------------------------------------------------------
+Going to add an integer called newvalue to the OBJ_DATA and OBJ_INDEX_DATA
+structures.
+---------------------------------------------------------------------------
+Add this to obj_data
+   int newvalue;
+   
+Add this to obj_data_index
+   int newvalue;
+   
+Find this line
+
+   #define AREA_VERSION_WRITE 1
+   
+change it to
+
+   #define AREA_VERSION_WRITE 2
+---------------------------------------------------------------------------
+It is very important to change this with every version change, so your files
+will work with Smaug 1.4a files when you try to load them in.  These
+examples keep loading backwards compatiable, but not writing.
+---------------------------------------------------------------------------   
+===========================================================================
+   
+in build.c
+===========================================================================
+Add newvalue to do_oset.  Would look something like this...
+
+    if ( !str_cmp( arg2, "newvalue"))
+    {
+	if ( !can_omodify( ch, obj ) )
+	  return;
+	obj->newvalue = value;
+	if ( IS_OBJ_STAT(obj, ITEM_PROTOTYPE) )
+	  obj->pIndexData->newvalue = value;
+	return;
+    }
+
+---------------------------------------------------------------------------
+This is so you can set the new value in oset.  As you notice above, if the
+obj is flagged prototype, it will also set the index value.
+---------------------------------------------------------------------------
+
+Need to add the new value to fold_area
+
+Find the following in fold_area
+
+        fprintf( fpout, "%s~\n",	pObjIndex->description		);
+	fprintf( fpout, "%s~\n",	pObjIndex->action_desc		);
+	
+After it add this line
+
+        fprintf( fpout, "%d\n",         pObjIndex->newvalue);
+---------------------------------------------------------------------------
+With description, you notice it uses a string, strings need to end with a
+~ if they are being read.  Besides creating a new line for a value, you could
+perhaps add it to an already created fprintf line.  You would have to make
+more modifications later in the reading process in db.c       
+===========================================================================
+
+in db.c
+=========================================================================== 
+
+In load_objects, find the following
+
+        pObjIndex->description		= fread_string( fp );
+	pObjIndex->action_desc		= fread_string( fp );       
+
+Below it add the following
+
+        if (AREA_VERSION_WRITE >= 2)
+           pObjIndex->newvalue             = fread_number(fp);
+
+---------------------------------------------------------------------------
+It is important to put this in the sequence you put it in build.c in fold_area.
+If you do not, it will not load properly or at all.  If you add a new value to
+a group of values (like value[5]), you would do this
+
+        x1=x2=x3=x4=x5=x6=0;
+	sscanf( ln, "%d %d %d %d %d %d",
+		&x1, &x2, &x3, &x4, &x5, &x6 );     
+	
+To
+
+        x1=x2=x3=x4=x5=x6=x7=0;
+	sscanf( ln, "%d %d %d %d %d %d %d",
+		&x1, &x2, &x3, &x4, &x5, &x6, &x7 ); 
+		
+Then down below that find this
+
+        pObjIndex->value[5]		= x6;
+        
+Add below it
+
+        pObjIndex->value[6]		= x7;
+        
+Also, make sure to include the declaration for x7 in load_objects.
+---------------------------------------------------------------------------
+
+Find create_object (create_mobile if you are creating a mob)
+
+Find the following lines in create_object
+
+      obj->value[5]	= pObjIndex->value[5];
+      
+Below it add this
+
+      obj->newvalue     = pObjIndex->value;
+---------------------------------------------------------------------------
+This is when an object is loaded or "popped".  It copies the index values
+to the obj then does some other things with the values and flags.
+---------------------------------------------------------------------------
+
+Next find make_object (make_mobile if you are creating a mob)
+
+Find the following lines in create_object
+
+          pObjIndex->wear_flags		= 0;
+	  pObjIndex->value[0]		= 0;
+	  pObjIndex->value[1]		= 0;
+	  pObjIndex->value[2]		= 0;
+	  pObjIndex->value[3]		= 0;   
+	  
+Below those lines, add the following
+
+          pObjIndex->newvalue           = 0;
+          
+---------------------------------------------------------------------------
+This area is used for defaults loaded to an object when you type ocreate.
+If you want to say put a flag by default on all objects created, this is
+the place to do it.
+---------------------------------------------------------------------------
+
+In the same function, find the following lines
+
+          pObjIndex->wear_flags		= cObjIndex->wear_flags;
+	  pObjIndex->value[0]		= cObjIndex->value[0];
+	  pObjIndex->value[1]		= cObjIndex->value[1];
+	  pObjIndex->value[2]		= cObjIndex->value[2];
+	  pObjIndex->value[3]		= cObjIndex->value[3];
+	
+Below them add this
+
+          pObjIndex->newvalue           = cObjIndex->newvalue;
+    
+---------------------------------------------------------------------------
+This is the area where values are copied to an object when you copy an obj's
+stats during ocreate <vnum> <obj name>.  If you don't put the value in here,
+it won't be copied.
+---------------------------------------------------------------------------  
+=========================================================================== 
+
+Handler.c
+=========================================================================== 
+In clean_obj find the following
+ 
+        obj->cost		= 0;
+	obj->value[0]		= 0;
+	obj->value[1]		= 0;
+	obj->value[2]		= 0;
+	obj->value[3]		= 0;
+
+Below it, add the following
+
+        obj->newvalue           = 0;
+ 
+---------------------------------------------------------------------------  
+Used to clean an object out, not used a lot       
+---------------------------------------------------------------------------  
+=========================================================================== 
+
+save.c
+=========================================================================== 
+---------------------------------------------------------------------------  
+If you are adding a new value to a char_data that will be saved to a player
+too, this is how you do it.
+---------------------------------------------------------------------------  
+Find fwrite_char and the following lines
+
+    fprintf( fp, "Glory        %d\n",   ch->pcdata->quest_curr  );
+    fprintf( fp, "MGlory       %d\n",   ch->pcdata->quest_accum );
+    fprintf( fp, "Hitroll      %d\n",	ch->hitroll		);
+    fprintf( fp, "Damroll      %d\n",	ch->damroll		);
+    
+Below them add your new value (will be using the newvalue example)
+
+    fprintf( fp, "Newvalue     %d\n"    ch->newvalue            );
+   
+--------------------------------------------------------------------------- 
+This function writes the player files.  There is a value you can use like
+you do with areas to check a version, but I am not guessing you will be
+porting player files from another mud.... 
+--------------------------------------------------------------------------- 
+
+Find load_char_obj and the following lines
+
+    ch->perm_dex		= 13;
+    ch->perm_con		= 13;
+    ch->perm_cha		= 13;
+    ch->perm_lck		= 13;
+    ch->no_resistant 		= 0;
+    ch->no_susceptible 		= 0;
+    
+Now below it add
+
+    ch->newvalue                 = 0;
+ 
+--------------------------------------------------------------------------- 
+This is what the new player will start out with.  If you want the value to
+be a higher number (say you start out with 13 of a new stat) you want to set
+it here.   
+--------------------------------------------------------------------------- 
+
+Find fread_char and find the following
+
+        case 'N':
+	    KEY ("Name", ch->name, fread_string( fp ) );
+            KEY ("NoAffectedBy", ch->no_affected_by, fread_bitvector( fp ) );
+            KEY ("NoImmune", ch->no_immune, fread_number( fp ) );   
+       
+After that add this
+
+            KEY ("Newvalue", ch->newvalue, fread_number( fp ));
+            
+--------------------------------------------------------------------------- 
+This is where the value is loaded into the game.  If the value starts with N
+it has to be in the N case.  If B in the B case, etc
+--------------------------------------------------------------------------- 
+
+
+
+---------------------------------------------------------------------------  
+If you are adding a new value to an obj that a player can change or possibly
+change, you want to do this.
+---------------------------------------------------------------------------  
+
+Find the following function fwrite_obj and find the following
+
+    if ( obj->cost != obj->pIndexData->cost )
+      fprintf( fp, "Cost         %d\n",	obj->cost		     );
+    if ( obj->value[0] || obj->value[1] || obj->value[2]
+    ||   obj->value[3] || obj->value[4] || obj->value[5] )
+      fprintf( fp, "Values       %d %d %d %d %d %d\n",
+	obj->value[0], obj->value[1], obj->value[2],
+	obj->value[3], obj->value[4], obj->value[5]     );
+
+Below it add the following
+
+    if ( obj->newvalue != obj->pIndexData->newvalue )
+        fprintf(fp, "Newvalue     %d\n", obj->newvalue);
+---------------------------------------------------------------------------  
+This writes the changed value to the pfile (why the ifcheck is there)
+---------------------------------------------------------------------------  
+
+Find the following function fread_obj and find the following
+
+       case 'N':
+	    KEY( "Name",	obj->name,		fread_string( fp ) );
+
+	    if ( !strcmp( word, "Nest" ) )
+	    {
+		iNest = fread_number( fp );
+		if ( iNest < 0 || iNest >= MAX_NEST )
+		{
+		    bug( "Fread_obj: bad nest %d.", iNest );
+		    iNest = 0;
+		    fNest = FALSE;
+		}
+		fMatch = TRUE;
+	    }
+	  
+Below it add the following
+
+            KEY ("Newvalue", obj->newvalue, fread_number(fp));
+            
+--------------------------------------------------------------------------- 
+Reads the value from the pfile, make sure to put the KEY before the break
+otherwise it won't get read
+---------------------------------------------------------------------------             
+=========================================================================== 
+
+act_wiz.c
+=========================================================================== 
+Find the following in do_ostat
+
+    ch_printf_color( ch, "&cIn object: &w%s  ", obj->in_obj == NULL ? "(none)" : obj->in_obj->short_descr );
+    ch_printf_color( ch, "&cCarried by: &C%s\n\r", obj->carried_by == NULL ? "(none)" : obj->carried_by->name );
+    ch_printf_color( ch, "&cIndex Values : &w%d %d %d %d %d %d.\n\r",
+	obj->pIndexData->value[0], obj->pIndexData->value[1],
+        obj->pIndexData->value[2], obj->pIndexData->value[3],
+        obj->pIndexData->value[4], obj->pIndexData->value[5] );
+    ch_printf_color( ch, "&cObject Values: &w%d %d %d %d %d %d.\n\r",
+        obj->value[0], obj->value[1], obj->value[2], obj->value[3],
+	obj->value[4], obj->value[5] );
+	
+After it add the following
+
+    ch_printf_color(ch, "&cNewvalue: &w%.\n\r", obj->newvalue);
+---------------------------------------------------------------------------    
+Allows you to see the value in ostat
+---------------------------------------------------------------------------    
+=========================================================================== 
+
+Those are the steps to adding a new value to the OLC.
+
+Xerves, Owner/Operator of Rafermand (www.rafermand.net)

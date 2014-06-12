@@ -1,0 +1,254 @@
+Expanded MudProg Variable Functionality Snippet
+----------------------------------------------------
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from me.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. 
+
+
+What this code does
+-------------------
+
+This code will add support for expanding variables in progs to support things
+like $n.race or $n.class and will return the persons race or class. An example
+prog:
+
+>speech_prog test
+sayto $n Well, You're definitely a level $n.level, $n.race, $n.class.
+
+<985hp 450m 600mv>
+You say, 'test'
+Mistress Tsythia says to you, 'Well, You're definitely a level 65, Night Elf, bladesinger.'
+
+Additionally, it will also work on objects for displaying their level. Support has been
+included for allowing these to be interpreted in if checks, but it isn't required. Variables
+are easily expanded, and support is included for name, sex, race, class, and level for mobs/players,
+and level for items.
+
+
+Installation Instructions
+-------------------------
+
+1. The following files will be modified during the course of this installation:
+	db.c, mud_prog.c, mud.h.
+
+*****************
+* DB.C  	    *
+*****************
+
+2. Find: char *aoran( const char *str )
+   Below that function, add:
+
+// Simple function to add a single letter to the end of something.
+void add_letter( char *string, char letter )
+{
+  char buf[MAX_STRING_LENGTH];
+
+  sprintf( buf, "%c", letter );
+  mudstrlcat( string, buf, MAX_STRING_LENGTH );
+  return;
+}
+
+3. NOTE: Double check your code before adding this function right below the previous, 
+you might already have it. If you have it double check that yours is the same. :)
+Below the previous step, add:
+const char *format( const char *fmt, ... ) 
+ { 
+    static char newstring[MIL]; 
+    char buf[MSL * 2];        /* better safe than sorry */ 
+    va_list args; 
+  
+    newstring[0] = '\0'; 
+  
+    if( fmt[0] == '\0' ) 
+       return " "; 
+  
+    va_start( args, fmt );  
+    vsnprintf( buf, MSL * 2, fmt, args ); 
+    va_end( args ); 
+  
+    if( buf[0] == '\0' ) 
+       return " "; 
+    mudstrlcpy( newstring, buf, MIL ); 
+    return newstring; 
+ }
+
+*****************
+* MUD.H  	    *
+*****************
+
+4. **Note** If you skipped step 3 (because you already had it), 
+            only include the first prototype not the second.
+In the db.c prototype definitions add:
+
+void add_letter( char *string, char letter );
+const char *format( const char *fmt, ... ) __attribute__ ( ( format( printf, 1, 2 ) ) );
+
+
+*****************
+* MUD_PROG.C    *
+*****************
+
+5. Find: int mprog_do_ifcheck( char *ifcheck, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, void *vo, CHAR_DATA * rndm )
+
+Right above that function, (above the ginormous comment), add:
+char *parse_var( const char *cmnd, char_data *mob, char_data *actor, OBJ_DATA *obj, const void *vo, char_data *rndm )
+{
+  static char results[ MSL * 2 ];
+  int x;
+  char_data *chkchar = NULL;
+  OBJ_DATA *chkobj = NULL;
+  ROOM_INDEX_DATA *chkroom = NULL;
+
+  results[0] = '\0';
+  for( x = 0; cmnd[x] != '\0'; x++ )
+  {
+    chkchar = NULL;
+    chkobj = NULL;
+    if( cmnd[x] == '\0' )
+      return results;
+    if( cmnd[x] != '$' )
+      add_letter( results, cmnd[x] );
+    else
+    {
+       switch( cmnd[x + 1] )
+       {
+          default:
+           add_letter( results, cmnd[x] ); 
+           break;
+          case 'i':
+           chkchar = mob;
+           break;
+          case 'n':
+           chkchar = actor;
+           break;
+          case 't':
+           chkchar = ( char_data * )vo;
+           break;
+          case 'r':
+           chkchar = rndm;
+           break;
+          case 'o':
+           chkobj = obj;
+           break;
+          case 'p':
+           chkobj = ( OBJ_DATA * )vo;
+           break;
+       }
+    }
+    if( chkchar || chkobj || chkroom )
+    {
+      x += 2;
+      if( cmnd[x] != '.' || cmnd[x] == '\0' )
+      {
+         add_letter( results, cmnd[x-2]); 
+         add_letter( results, cmnd[x-1]); 
+         add_letter( results, cmnd[x]); 
+         if( cmnd[x] == '\0' )
+            return results;
+         continue;
+      }
+      else  
+      {
+         char word[MIL];;
+         word[0] = '\0';
+         x++;
+         while ( ( isalpha( cmnd[x] ) || isdigit( cmnd[x] ) ) && cmnd[x] != '\0' )  
+         {
+            add_letter( word, cmnd[x] );
+            x++;
+         }
+         if( chkchar != NULL )  
+         {
+             if( !str_cmp( word, "name" ) )
+             {
+                 if( IS_NPC( chkchar ) )
+                   mudstrlcat( results, format( "%s", chkchar->short_descr ), MSL );
+                 else
+                   mudstrlcat( results, format( "%s", chkchar->name ), MSL );
+             }
+             if( !str_cmp( word, "sex" ) )
+                 mudstrlcat( results, format( "%s", npc_sex[chkchar->sex] ), MSL );
+             if( !str_cmp( word, "class" ) )
+                 mudstrlcat( results, get_class( chkchar ), MSL );
+             if( !str_cmp( word, "race") )
+                  mudstrlcat( results, get_race( chkchar ), MSL );
+             if( !str_cmp( word, "level") )
+                 mudstrlcat( results, format( "%d", chkchar->level ), MSL );
+         }
+         if( chkobj != NULL )
+         {
+             if( !str_cmp( word, "level") )
+                 mudstrlcat( results, format( "%d", chkobj->level ), MSL );
+         }
+         if ( cmnd[x] == '\0')
+          return results;
+         else
+          add_letter( results, cmnd[x]);
+      }
+    }
+  }
+  return results;
+}
+
+6. **OPTIONAL** If you want to be able to use the expanded variables in if checks do the following:
+After:
+ doneargs:
+   q = p;
+   while( isoperator( *p ) )
+      ++p;
+   strncpy( opr, q, p - q );
+   opr[p - q] = '\0';
+   while( isspace( *p ) )
+      *p++ = '\0';
+Add:
+   rval = parse_var( p, mob, actor, obj, vo, rndm );
+
+7. In: int mprog_do_command( const char *cmnd, CharData * mob, CharData * actor,
+                      OBJ_DATA * obj, const void *vo, CharData * rndm, bool ignore, bool ignore_ors )
+
+Find:
+   /*
+    * If the command is 'break', that's all folks. 
+    */
+   if( !str_cmp( firstword, "break" ) )
+      return BERR;
+
+Below that, Add:
+   cmnd = parse_var( cmnd, mob, actor, obj, vo, rndm );
+
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://www.smaugmuds.org.
+
+This code has been installed and tested on Smaug 1.9 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugmuds.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and I am not responsible for any damages which may result
+from the application of this snippet to your codebase. I cannot guarantee compatibility
+any codebase outside of Smaug.
+
+Kayle
+Owner/Coder
+Malevolent Whispers
+telnet://whispers.arthmoor.com:1070
+http://whispers.arthmoor.com
+
+IMC2 Contact: Kayle@MW
+            : Kayle@MWDev

@@ -1,0 +1,131 @@
+/******************************************************************************
+ * Land Of Legends by Conner and Dragona -> telnet://tcdbbs.zapto.org:4000    *
+ * Web Page: http://tcdbbs.zapto.org/mud/  Email: csbsc@comcast.net           *
+ *       Forums: http://s11.invisionfree.com/Land_Of_Legends                  *
+ * Copyright (C) 1996 - 2005 Computerized Services By Sacks & Chung of        *
+ *           Glade Spring, Virginia - ALL RIGHTS RESERVED                     *
+ ******************************************************************************
+ * The text and pictures of this publication, or any part thereof, may not be *
+ * reproduced or transmitted in any form or by any means, electronic or       *
+ * mechanical, includes photocopying, recording, storage in a information     *
+ * retrieval system, or otherwise, without the prior written or e-mail        *
+ * consent from the publisher.                                                *
+ ******************************************************************************
+ * I only ask that my name be mentioned in your code somewhere, whether as    *
+ * Conner, Conner Destron, Conner and Dragona, or Land of Legends and that    *
+ * you drop me an email to let me know what mud this code is being used in    *
+ * should you decide that you want to use it, any other credit is welcome but *
+ * not required. However, all license requirements of the codebase that you   *
+ * are using are expected to be upheld as well.                               *
+ ******************************************************************************
+ * This code was written for my mud and has been snippitized with the         *
+ * intention of it being able to install and run cleanly and easily on any    *
+ * SmaugFUSS 1.6 mud, but has only been tested on my own mud which was        *
+ * started as SmaugFUSS 1.4 and has been hand modified to SmaugFUSS 1.6 with  *
+ * many modifications. I offer no guarantees that it will work for your mud   *
+ * and will accept no responsibility if it causes any damage to your mud.     *
+ *                     Use entirely at your own risk.                         *
+ ******************************************************************************
+ * Finally, please let me know if you have suggestions or comments about      *
+ * code that might improve upon it in some way, I will update it if I have    *
+ * time, I can figure out how, and the suggestion meets my approval.          *
+ ******************************************************************************/
+
+/* This snippet installs a new command called Petfind that lets mortals see   *
+ * where they left their pet(s) and lets immortals do the same but also for   *
+ * other people's pets too.                                                   */
+
+/* at the bottom of player.c, add the following function: */
+void do_petfind( CHAR_DATA * ch, char *argument )
+{
+   char arg[MAX_INPUT_LENGTH];
+   CHAR_DATA *victim, *mob;
+   bool found;
+
+   set_pager_color( AT_PLAIN, ch );
+
+   one_argument( argument, arg );
+   if( IS_NPC( ch ) )
+      return;
+   if( !IS_IMMORTAL( ch ) )
+      victim = ch;
+   else if( ( victim = get_char_world( ch, arg ) ) == NULL || !victim->pcdata || IS_NPC( victim ) )
+   {
+      send_to_char( "&CWho?&D\r\n", ch );
+      return;
+   }
+   if( !victim )
+      victim = ch;
+
+   found = FALSE;
+   for( mob = first_char; mob; mob = mob->next )
+   {
+      if( IS_NPC( mob ) && mob->in_room && victim == mob->master )
+      {
+         found = TRUE;
+         if( IS_IMMORTAL( ch ) )
+            pager_printf( ch, "[%5d] %-28s [%5d] %s\r\n", mob->pIndexData->vnum, mob->short_descr, mob->in_room->vnum, mob->in_room->name );
+         else
+            pager_printf( ch, "%-28s %s\r\n", mob->short_descr, mob->in_room->name );
+      }
+   }
+
+   if( !found && victim != ch )
+      send_to_char( "You didn't find any pets, are you sure they had one?", ch );
+   else if ( !found )
+      send_to_char( "You didn't find any pets, are you sure you had one?", ch );
+   return;
+}
+
+/* in mud.h, find: */
+DECLARE_DO_FUN( do_poison_weapon );
+
+// immediately after, add:
+DECLARE_DO_FUN( do_petfind );
+
+/* in tables.c, find: */
+         if( !str_cmp( name, "do_poison_weapon" ) )     return do_poison_weapon;
+
+// immediately after, add:
+         if( !str_cmp( name, "do_petfind" ) )		return do_petfind;
+
+//then find:
+   if( skill == do_poison_weapon )              return "do_poison_weapon";
+
+// immediately after, add:
+   if( skill == do_petfind )			return "do_petfind";
+
+/* in commands.dat, find: */
+#COMMAND
+Name        privacy~
+Code        do_privacy
+Position    100
+Level       2
+Log         0
+End
+// immediately after, add:
+
+#COMMAND
+Name        petfind~
+Code        do_petfind
+Position    100
+Level       2
+Log         0
+End
+
+/* in help.are, add (between the entries for help pets and help petsave: */
+1 PETFIND~
+&BSyntax: &Ypetfind&D
+
+This command will show you what room any pets you have are in.
+~
+
+51 PETFIND~
+&BSyntax: &Ypetfind <victim>&D
+
+This command will show you what room any pets you or your victim have are in.
+This will also show vnums to immortals for both the pet and the room, but the
+option of including a victim is only available to immortals.
+~
+
+/* make clean, hotboot, and your new command is done! */

@@ -1,0 +1,229 @@
+Character controlled delete command
+-----------------------------------
+
+Originally written by Waldemar Thiel (Swiv)
+Enhancements by Samson of Alsherok
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This code allows people to self delete, pure and simple. It will ask
+them for their password to confirm intent and to protect against being
+forced to delete. It also warns imms of the consequences of deleting.
+In order for this code to work properly, you need to have previously
+fixed the bug in Smaug 1.4a that misdefines the BACKUP_DIR value.
+
+Installation Instructions
+-------------------------
+
+1. In whichever file you feel appropriate (player.c works nicely),
+   add the following code:
+
+/* Alternate Self delete command provided by Waldemar Thiel (Swiv) */
+/* Allows characters to delete themselves - Installed 1-18-98 by Samson */
+
+void do_delet( CHAR_DATA *ch, char *argument )
+{
+   send_to_char( "If you want to DELETE, spell it out.\r\n", ch );
+   return;
+}
+
+void do_delete( CHAR_DATA *ch, char *argument )
+{
+   extern const char echo_off_str[];
+
+   if( IS_NPC(ch) )
+   {
+      send_to_char ( "Yeah, right. Mobs can't delete themselves.\r\n", ch );
+      return;
+   }
+
+   if( ch->fighting != NULL )
+   {
+      send_to_char( "Wait until the fight is over before deleting yourself.\r\n", ch );
+      return;
+   }
+
+   /* Reimbursement warning added to code by Samson 1-18-98 */
+   set_char_color( AT_YELLOW, ch );
+   send_to_char( "Remember, this decision is IRREVERSABLE. There are no reimbursements!\r\n", ch );
+
+   /* Immortals warning added to code by Samson 1-18-98 */
+   if( IS_IMMORTAL(ch) )
+   {
+      ch_printf( ch, "Consider this carefuly %s, if you delete, you will not\r\nbe reinstated as an immortal!\r\n", ch->name );
+      send_to_char( "Any area data you have will also be lost if you proceed.\r\n", ch );
+   }
+
+   set_char_color( AT_RED, ch );
+   send_to_char( "\r\nType your password if you wish to delete your character.\r\n", ch );
+   send_to_char( "[DELETE] Password: ", ch );
+   write_to_buffer( ch->desc, echo_off_str, 0 );
+   ch->desc->connected = CON_DELETE;
+   return;
+}
+
+2. In comm.c, function nanny - Find the sections dealing with constates
+   and place the following chunk of code between a set:
+
+    /* Con state for self delete code, installed by Samson 1-18-98
+       Code courtesy of Waldemar Thiel (Swiv) */
+
+    case CON_DELETE:
+    write_to_buffer( d, "\r\n", 2 );
+
+    if ( strcmp( crypt( argument, ch->pcdata->pwd ), ch->pcdata->pwd ) )
+    {
+        write_to_buffer( d, "Wrong password entered, deletion cancelled.\r\n", 0 );
+        write_to_buffer( d, echo_on_str, 0 );
+        d->connected = CON_PLAYING;
+        return;
+    }
+    else
+    {
+        char lbuf[MAX_STRING_LENGTH];
+
+        write_to_buffer( d, "\r\nYou've deleted your character!!!\r\n", 0 );
+        snprintf( lbuf, MAX_STRING_LENGTH, "Player: %s has deleted.", capitalize( ch->name ) );
+        log_string( lbuf );
+        do_destroy( ch, ch->name );
+        return;
+    }
+    break;
+
+   Find function close_socket, and locate the following lines of code:
+
+	if ( dclose->connected == CON_PLAYING
+	||   dclose->connected == CON_EDITING )
+	{
+	    act( AT_ACTION, "$n has lost $s link.", ch, NULL, NULL, TO_CANSEE );
+	    ch->desc = NULL;
+	}
+
+   Change those lines to read:
+
+	if ( dclose->connected == CON_PLAYING
+	||   dclose->connected == CON_EDITING
+	||   dclose->connected == CON_DELETE )
+	{
+	    act( AT_ACTION, "$n has lost $s link.", ch, NULL, NULL, TO_CANSEE );
+	    ch->desc = NULL;
+	}
+
+   Find function check_playing, and locate the following lines of code:
+
+	    if ( !ch->name
+	    || ( cstate != CON_PLAYING && cstate != CON_EDITING ))
+	    {
+		write_to_buffer( d, "Already connected - try again.\r\n", 0 );
+		snprintf( log_buf, MAX_STRING_LENGTH, "%s already connected.", 
+				ch->pcdata->filename );
+		log_string_plus( log_buf, LOG_COMM, sysdata.log_level );
+		return BERR;
+	    }
+
+   Change those lines to read:
+
+	    if ( !ch->name
+	    || ( cstate != CON_PLAYING && cstate != CON_EDITING && cstate != CON_DELETE ))
+	    {
+                char lbuf[MAX_STRING_LENGTH];
+
+		write_to_buffer( d, "Already connected - try again.\r\n", 0 );
+		snprintf( lbuf, MAX_STRING_LENGTH, "%s already connected.", ch->pcdata->filename );
+		log_string_plus( lbuf, LOG_COMM, sysdata.log_level );
+		return BERR;
+	    }
+
+3. In mud.h, add CON_DELETE to the list of connected states.
+
+   Add the following in the appropriate section:
+
+   DECLARE_DO_FUN( do_delet );
+   DECLARE_DO_FUN( do_delete );
+
+4. It is advised but not necessary to add protection against forcing
+   PCs to delete. I'll leave that as an option for the coder for now.
+
+5. Add the appropriate entries in tables.c for do_delet and do_delete.
+
+6. Make clean, and recompile.
+
+7. Add commands for delet and delete, setting them to whatever level
+   you wish people to be able to delete at.
+
+8. Add the included help text to help.are (see below).
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok
+
+Suggested helpfile entry:
+
+1 DELETE~
+&zSyntax: DELETE (followed by password entry)
+
+NOTE: &RTHIS COMMAND IS EXTREMELY DANGEROUS&z when using mud clients that have
+auto-login triggers, especially those used by Zmud. Be sure these triggers
+are OFF just in case you accidently type in DELETE (Newer versions of Zmud
+turn these off after the auto-login, but older ones don't). We have taken
+some steps to help prevent accidental deletion, but nothing is perfect.
+ 
+Allows you to delete your character should you decide you no longer wish
+to continue playing here. You will be prompted for your password to
+confirm your identity as well as your intentions. Immortals CANNOT force
+you to delete yourself.
+ 
+Consider this decision carefully, it is irreversable. Once deleted, you will
+have to log in a new character should you decide you wish to remain here.
+There will be no reimbursements for deleted characters.
+ 
+The same applies to immortal characters, if you delete, you will not be
+reinstated as an immortal if you return. Any and all area files in progress
+will also be lost.
+~
