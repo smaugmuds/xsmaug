@@ -1,100 +1,96 @@
 /*****************************************************
-**     _________       __			    **
+**     _________       __                           **
 **     \_   ___ \_____|__| _____  ________  ___     **
-**	/    \	\/_  __ \ |/	 \/  ___/_ \/	\   **
-**	\     \___|  | \/ |  | |  \___ \  / ) |  \  **
-**	 \______  /__| |__|__|_|  /____ \__/__|  /  **
-**	   ____\/____ _        \/ ___ \/      \/    **
-**	   \______   \ |_____  __| _/___	    **
-**	    |	 |  _/ |\__  \/ __ | __ \	    **
-**	    |	 |   \ |_/ __ \  / | ___/_	    **
-**	    |_____  /__/____  /_  /___	/	    **
-**		 \/Antipode\/  \/    \/ 	    **
+**      /    \  \/_  __ \ |/     \/  ___/_ \/   \   **
+**      \     \___|  | \/ |  | |  \___ \  / ) |  \  **
+**       \______  /__| |__|__|_|  /____ \__/__|  /  **
+**         ____\/____ _        \/ ___ \/      \/    **
+**         \______   \ |_____  __| _/___            **
+**          |    |  _/ |\__  \/ __ | __ \           **
+**          |    |   \ |_/ __ \  / | ___/_          **
+**          |_____  /__/____  /_  /___  /           **
+**               \/Antipode\/  \/    \/             **
 ******************************************************
-**	   Crimson Blade Codebase (CbC) 	    **
-**     (c) 2000-2002 John Bellone (Noplex)	    **
-**	     Coders: Noplex, Krowe		    **
-**	  http://www.crimsonblade.org		    **
 ******************************************************
-** Based on SMAUG 1.4a, by; Thoric, Altrag, Blodkai **
-**  Narn, Haus, Scryn, Rennard, Swordbearer, Gorog  **
-**    Grishnakh, Nivek, Tricops, and Fireblade	    **
+**       Copyright 2000-2003 Crimson Blade          **
 ******************************************************
-** Merc 2.1 by; Michael Chastain, Michael Quan, and **
-**		    Mitchell Tse		    **
-******************************************************
-**   DikuMUD by; Sebastian Hammer, Michael Seifert, **
-**     Hans Staerfeldt, Tom Madsen and Katja Nyobe  **
-*****************************************************/
+** Contributors: Noplex, Krowe, Emberlyna, Lanthos  **
+******************************************************/
 
 /*
- * Liquidtable Replacement Headerfile
- * by Noplex (noplex@crimsonblade.org)
+ * File: liquids.h
+ * Name: Liquidtable Module (3.0b)
+ * Author: John 'Noplex' Bellone (jbellone@comcast.net)
+ * Terms:
+ * If this file is to be re-disributed; you must send an email
+ * to the author. All headers above the #include calls must be
+ * kept intact. All license requirements must be met. License
+ * can be found in the included license.txt document or on the
+ * website.
+ * Description:
+ * This module is a rewrite of the original module which allowed for
+ * a SMAUG mud to have a fully online editable liquidtable; adding liquids;
+ * removing them; and editing them online. It allows an near-endless supply
+ * of liquids for builder's to work with.
+ * A second addition to this module allowed for builder's to create mixtures;
+ * when two liquids were mixed together they would produce a different liquid.
+ * Yet another adaptation to the above concept allowed for objects to be mixed
+ * with liquids to produce a liquid.
+ * This newest version offers a cleaner running code; smaller; and faster in
+ * all ways around. Hopefully it'll knock out the old one ten fold ;)
+ * Also in the upcoming 'testing' phase of this code; new additions will be added
+ * including a better alchemey system for creating poitions as immortals; and as
+ * mortals.
  */
 
-#define LIQUIDSYSTEM
+/* hard-coded max liquids */
+#define MAX_LIQUIDS 100
 
-#define TOP_MOD_NUM 4
-#define MAX_COND_VAL 100
+/* max condition value */
+#define MAX_COND_VALUE 100
+
+typedef struct liquid_table LIQ_TABLE;
+typedef struct mixture_list MIX_TABLE;
+
+/* globals */
+extern LIQ_TABLE *liquid_table[MAX_LIQUIDS];
+extern MIX_TABLE *first_mixture;
+extern MIX_TABLE *last_mixture;
+extern int top_liquid;
+
+/*
+ * Conditions.
+ */
+typedef enum
+{
+   COND_DRUNK, COND_FULL, COND_THIRST, COND_BLOODTHIRST, MAX_CONDS
+} conditions;
 
 typedef enum
 {
-   LIQ_NORMAL, LIQ_ALCOHOL, LIQ_POISON, LIQ_UNUSED, LIQ_TOP
-} liquids;
+   LIQTYPE_NORMAL, LIQTYPE_ALCOHOL, LIQTYPE_POISON, LIQTYPE_BLOOD, LIQTYPE_TOP
+} liquid_struct_types;
 
-extern char *const liquid_types[];
-
-typedef struct		liquid_data		LIQUID_DATA;
-typedef struct		liquid_mixture_list	LIQUID_MIXTURE_LIST;
-
-/*
- * Structures for liquids and mixtures
- */
-struct liquid_mixture_list
+struct liquid_table
 {
-	LIQUID_MIXTURE_LIST	*next;
-	LIQUID_MIXTURE_LIST	*prev;
-	char		*name;
-	int		with1; /* obj vnum if there is a obj, liq vnum if liquid */
-	int		with2;
-	int		into;
-	bool		object; /* false = no obj, true = obj */
+   const char *name;
+   const char *shortdesc;
+   const char *color;
+   int vnum;
+   int type;
+   int mod[MAX_CONDS];
 };
 
-struct liquid_data 
+struct mixture_list
 {
-	LIQUID_DATA	*next;
-	LIQUID_DATA	*prev;
-/*	EXT_BV		affected_by; */
-	char		*name;
-	char		*shortdesc;
-	char		*color;
-	int		vnum;
-	int		type;
-	sh_int		mod[4];
+   MIX_TABLE *next;
+   MIX_TABLE *prev;
+   const char *name;
+   int data[3];
+   bool object;
 };
 
-LIQUID_DATA *first_liquid;
-LIQUID_DATA *last_liquid;
-LIQUID_MIXTURE_LIST *first_mixture;
-LIQUID_MIXTURE_LIST *last_mixture;
-
-/* OLC */
-DECLARE_DO_FUN( do_setliquid );
-DECLARE_DO_FUN( do_setmixture );
-DECLARE_DO_FUN( do_liquids );
-
-/* funcs */
-DECLARE_DO_FUN( do_mix );
-
-/* saving/loading */
+LIQ_TABLE *get_liq_vnum( int vnum );
 void load_liquids( void );
-void save_liquids( void );
 void load_mixtures( void );
-void save_mixtures( void );
-
-/* lookup functions */
-LIQUID_DATA *get_liq_name( char *argument );
-LIQUID_DATA *check_liquid( char *argument );
-LIQUID_DATA *get_liq_index( int vnum );
-LIQUID_MIXTURE_LIST *get_mix_name( char *argument );
+void free_liquiddata( void );

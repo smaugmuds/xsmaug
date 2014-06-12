@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
  ############################################################################
- # [S]imulated [M]edieval [A]dventure multi[U]ser [G]ame      |   \\._.//   # 
+ # [S]imulated [M]edieval [A]dventure multi[U]ser [G]ame      |   \\._.//   #
  # -----------------------------------------------------------|   (0...0)   #
  # SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider      |    ).:.(    #
  # -----------------------------------------------------------|    {o o}    #
@@ -22,8 +22,9 @@
 XSMAUG = xsmaug
 VERSION = 2.0
 
-CC      = gcc
+CC      = g++
 #PROF    = -p
+
 NOCRYPT =
 
 C_OBJ = c.object
@@ -35,6 +36,9 @@ C_OBJ = c.object
 #Uncomment the line below if you are getting a line like:
 #interp.c:757: warning: int format, time_t arg (arg 7)
 #TIME = -DTIMEFORMAT
+
+#Uncomment to compile in Cygwin
+#CYGWIN = -DCYGWIN
 
 #Uncomment the line below if you are getting undefined references to dlsym, dlopen, and dlclose.
 #Comment it out if you get errors about ldl not being found.
@@ -54,39 +58,37 @@ NEED_CRYPT = -lcrypt
 
 #DBUGFLG = -DREQUESTS -Wall -Wuninitialized
 
-BLDFLG = -Wno-all -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast -Wno-overflow -Wno-pointer-arith -Wno-redundant-decls -Wno-cast-align -Wno-unused-result -Wno-format-security
-#W_FLAGS = -Wall -Werror -Wshadow -Wformat-security -Wpointer-arith -Wcast-align -Wredundant-decls
+# Uncomment the two lines below if compiling on a Solaris box
+#SOLARIS_FLAG = -Dsun -DSYSV
+#SOLARIS_LINK = -lnsl -lsocket
 
-#Uncomment the line below if you want a performance increase though beware
-#your core files may not be as much of a benefit if you do.
-OPT_FLAG = -finline-functions -funroll-loops -fdefer-pop -fstrength-reduce
+#IMC2 - Comment out to disable IMC2 support
+IMC = -DIMCSMAUG -DIMC
 
-C_FLAGS = $(OPT_FLAG) -O -g3 $(BLDFLG) $(PROF) $(NOCRYPT) $(DBUGFLG) -DSMAUG $(SOLARIS_FLAG) $(TIME) $(REG) $(EXPORT_SYMBOLS)
-L_FLAGS = $(OPT_FLAG) $(PROF) $(SOLARIS_LINK) $(NEED_CRYPT) $(NEED_DL)
+# W_FLAGS = -Wall -Werror -Wshadow -Wformat-security -Wpointer-arith -Wcast-align -Wredundant-decls
+B_FLAGS = -Wno-all -Wno-cast-align
 
-#Uncomment the next three comments below if you want to use IMC
-USE_IMC    = -DIMCSMAUG -DIMC
+C_FLAGS = -g2 $(B_FLAGS) $(W_FLAGS) $(SOLARIS_FLAG) $(PROF) $(EXPORT_SYMBOLS)
+L_FLAGS = $(PROF) $(SOLARIS_LINK) -lz $(NEED_DL)
+#D_FLAGS : For the DNS Slave process. No need in linking all the extra libs for this.
+D_FLAGS = -g2 -O $(PROF) $(SOLARIS_LINK)
 
-IMC_CFILES = imc.c imc-mail.c imc-interp.c imc-util.c imc-config.c \
-        imc-events.c imc-version.c imc-mercbase.c ice.c icec.c icec-mercbase.c
+C_FILES = act_comm.c act_info.c act_move.c act_obj.c act_wiz.c ban.c boards.c \
+          build.c calendar.c chess.c clans.c color.c comm.c comments.c const.c db.c deity.c \
+          dns.c fight.c handler.c hashstr.c hint.c hotboot.c imm_host.c interp.c \
+          liquids.c magic.c makeobjs.c mapout.c mapper.c mccp.c \
+          misc.c mpxset.c mssp.c mud_comm.c mud_prog.c news.c planes.c player.c polymorph.c \
+          renumber.c reset.c save.c services.c sha256.c shops.c skills.c special.c tables.c \
+          track.c update.c variables.c weather.c
 
-C_FILES = sha256.c act_comm.c act_info.c act_move.c act_obj.c act_wiz.c boards.c \
-          build.c clans.c comm.c comments.c const.c db.c deity.c fight.c \
-          handler.c hashstr.c ibuild.c ident.c interp.c magic.c makeobjs.c \
-          mapout.c misc.c mpxset.c mud_comm.c mud_prog.c player.c polymorph.c \
-          requests.c reset.c save.c shops.c skills.c special.c tables.c \
-          track.c update.c grub.c stat_obj.c ban.c services.c planes.c \
-          imm_host.c colorize.c stances.c adminlist.c \
-          hint.c starmap.c house.c variables.c news.c
-
-H_FILES = $(wildcard *.h)
-
-ifdef USE_IMC
-   C_FILES := $(IMC_CFILES) $(C_FILES)
-   C_FLAGS := $(C_FLAGS) $(USE_IMC)
+ifdef IMC
+   C_FILES := imc.c $(C_FILES)
+   C_FLAGS := $(C_FLAGS) $(IMC)
 endif
 
 O_FILES := $(patsubst %.c,$(C_OBJ)/%.o,$(C_FILES))
+
+H_FILES = $(wildcard *.h) 
 
 all:
 	@echo ""
@@ -109,27 +111,65 @@ all:
 	@echo " #                             XSMAUG Build                                 #"
 	@echo " ############################################################################"
 	@echo ""
-	mkdir $(C_OBJ)
-	make $(XSMAUG)
+	mkdir -p $(C_OBJ)
+	$(MAKE) -s $(XSMAUG)
+	$(MAKE) -s dns
 
 # pull in dependency info for *existing* .o files
 -include dependencies.d
 
+ifdef CYGWIN
 $(XSMAUG): $(O_FILES)
-	rm -f $(XSMAUG)
+	rm -f ../$(XSMAUG).exe
+	dlltool --export-all --output-def $(XSMAUG).def $(O_FILES)
+	dlltool --dllname ../$(XSMAUG).exe --output-exp $(XSMAUG).exp --def $(XSMAUG).def
+	$(CC) -o ../$(XSMAUG).exe $(O_FILES) $(XSMAUG).exp $(L_FLAGS)
+	@echo "Generating dependency file ...";
+	@$(CC) -MM $(C_FLAGS) $(C_FILES) > dependencies.d
+	@perl -pi -e 's.^([a-z]).o/$$1.g' dependencies.d
+	@echo "Done compiling $(XSMAUG).";
+	chmod g+w ../$(XSMAUG).exe
+	chmod a+x ../$(XSMAUG).exe
+	chmod g+w $(O_FILES)
+
+clean:
+	@rm -f $(C_OBJ)/*.o ../$(XSMAUG).exe dependencies.d dns_resolv.exe dns_resolv.o *~
+
+else
+$(XSMAUG): $(O_FILES)
+	rm -f ../$(XSMAUG)
 	$(CC) -export-dynamic -o ../$(XSMAUG) $(O_FILES) $(L_FLAGS)
 	@echo "Generating dependency file ...";
 	@$(CC) -MM $(C_FLAGS) $(C_FILES) > dependencies.d
 	@perl -pi -e 's.^([a-z]).o/$$1.g' dependencies.d
-	@echo "Done building $(XSMAUG).";
+	@echo "Done compiling $(XSMAUG).";
 	chmod g+w ../$(XSMAUG)
 	chmod a+x ../$(XSMAUG)
 	chmod g+w $(O_FILES)
+
+clean:
+	@rm -f $(C_OBJ)/*.o ../$(XSMAUG) dependencies.d dns_resolv dns_resolv.o *~
+endif
+
+dns: $(C_OBJ)/dns_resolv.o
+	rm -f ../dns_resolv
+	$(CC) $(D_FLAGS) -o ../dns_resolv $(C_OBJ)/dns_resolv.o
+	@echo "Done compiling DNS resolver.";
+	chmod g+w ../dns_resolv
+	chmod a+x ../dns_resolv
+	chmod g+w $(C_OBJ)/dns_resolv.o
+
+indent:
+	indent -ts3 -nut -nsaf -nsai -nsaw -npcs -npsl -ncs -nbc -bls -prs -bap -cbi0 -cli3 -bli0 -l125 -lp -i3 -cdb -c1 -cd1 -sc -pmt $(C_FILES)
+	indent -ts3 -nut -nsaf -nsai -nsaw -npcs -npsl -ncs -nbc -bls -prs -bap -cbi0 -cli3 -bli0 -l125 -lp -i3 -cdb -c1 -cd1 -sc -pmt $(H_FILES)
+
+indentclean:
+	rm *.c~ *.h~
 
 $(C_OBJ)/%.o: %.c
 	@echo -n "  $(CC) -> Building $@ ..."; \
 	$(CC) -c $(C_FLAGS) $< -o $@; \
 	echo " done";
 
-clean:
-	rm -rf $(C_OBJ) ../$(XSMAUG) ../log/* *~ dependencies.d
+.c.o: mud.h
+	$(CC) -c $(C_FLAGS) $<

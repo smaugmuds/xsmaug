@@ -50,14 +50,6 @@ Log         0
 End
 
 #COMMAND
-Name        <~
-Code        do_say_to
-Position    100
-Level       1
-Log         0
-End
-
-#COMMAND
 Name        authorize~
 Code        do_authorize
 Position    100
@@ -80,7 +72,6 @@ Code        do_at
 Position    100
 Level       52
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -185,9 +176,9 @@ End
 Name        avtalk~
 Code        do_avtalk
 Position    100
-Level       50
+Level       51
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
@@ -204,64 +195,13 @@ Code        do_atobj
 Position    100
 Level       52
 Log         0
-Flags       4
-End
-
-#COMMAND
-Name        adminlist~
-Code        do_adminlist
-Position    100
-Level       51
-Log         0
-End
-
-#COMMAND
-Name        appear~
-Code        do_appear
-Position    100
-Level       53
-Log         0
-End
-
-#COMMAND
-Name        assist~
-Code        do_assist
-Position    100
-Level       51
-Log         0
-End
-
-#COMMAND
-Name        addchange~
-Code        do_add_change
-Position    100
-Level       58
-Log         0
-End
-
-#COMMAND
-Name        accessories~
-Code        do_accessories
-Position    100
-Level       51
-Log         0
-Flags       4
 End
 
 #COMMAND
 Name        alinks~
 Code        do_alinks
 Position    100
-Level       59
-Log         0
-Flags       4
-End
-
-#COMMAND
-Name        aecho~
-Code        do_aecho
-Position    100
-Level       54
+Level       51
 Log         0
 End
 
@@ -271,7 +211,6 @@ Code        do_buy
 Position    106
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -327,7 +266,7 @@ End
 Name        bestow~
 Code        do_bestow
 Position    100
-Level       61
+Level       62
 Log         1
 End
 
@@ -345,7 +284,6 @@ Code        do_bodybag
 Position    100
 Level       51
 Log         1
-Flags       4
 End
 
 #COMMAND
@@ -362,7 +300,6 @@ Code        do_bset
 Position    100
 Level       61
 Log         1
-Flags       4
 End
 
 #COMMAND
@@ -401,17 +338,16 @@ End
 Name        bolt~
 Code        do_bolt
 Position    100
-Level       1
+Level       0
 Log         0
 End
 
 #COMMAND
-Name        beckon~
-Code        do_beckon
+Name        chess~
+Code        do_chess
 Position    100
-Level       2
+Level       10
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -420,7 +356,6 @@ Code        do_cast
 Position    104
 Level       0
 Log         0
-Flags       5
 End
 
 #COMMAND
@@ -462,7 +397,7 @@ Code        do_chat
 Position    103
 Level       2
 Log         0
-Flags       7
+Flags       3
 End
 
 #COMMAND
@@ -479,22 +414,6 @@ Code        do_clans
 Position    100
 Level       0
 Log         0
-End
-
-#COMMAND
-Name        clear~
-Code        do_clear
-Position    100
-Level       0
-Log         0
-End
-
-#COMMAND
-Name        cmenu~
-Code        do_cmenu
-Position    100
-Level       61
-Log         1
 End
 
 #COMMAND
@@ -535,7 +454,6 @@ Code        do_comment
 Position    106
 Level       51
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -560,7 +478,7 @@ Code        do_counciltalk
 Position    100
 Level       0
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
@@ -596,14 +514,6 @@ Log         0
 End
 
 #COMMAND
-Name        climate~
-Code        do_climate
-Position    100
-Level       61
-Log         0
-End
-
-#COMMAND
 Name        cook~
 Code        do_cook
 Position    100
@@ -612,74 +522,10 @@ Log         0
 End
 
 #COMMAND
-Name        colorize~
-Code        do_colorize
+Name        color~
+Code        do_color
 Position    100
-Level       51
-Log         1
-End
-
-#COMMAND
-Name        cwho~
-Code        do_cwho
-Position    100
-Level       51
-Log         0
-End
-
-#COMMAND
-Name        changes~
-Code        do_changes
-Position    100
-Level       1
-Log         0
-End
-
-#COMMAND
-Name        connect~
-Code        do_connect
-Position    100
-Level       2
-Log         1
-End
-
-#COMMAND
-Name        cscore~
-Code        do_cscore
-Position    100
-Level       51
-Log         0
-End
-
-#COMMAND
-Name        compass~
-Code        do_compass
-Position    100
-Level       1
-Log         0
-End
-
-#COMMAND
-Name        colorscheme~
-Code        do_colorscheme
-Position    100
-Level       1
-Log         0
-End
-
-#COMMAND
-Name        colorschemes~
-Code        do_colorscheme
-Position    100
-Level       1
-Log         0
-End
-
-#COMMAND
-Name        chardelete~
-Code        do_delete_char
-Position    100
-Level       2
+Level       0
 Log         0
 End
 
@@ -798,20 +644,11 @@ Log         0
 End
 
 #COMMAND
-Name        diagnose~
-Code        do_diagnose
-Position    100
-Level       62
-Log         0
-End
-
-#COMMAND
 Name        dismiss~
 Code        do_dismiss
 Position    100
 Level       2
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -819,8 +656,7 @@ Name        delay~
 Code        do_delay
 Position    100
 Level       58
-Log         1
-Flags       4
+Log         0
 End
 
 #COMMAND
@@ -832,42 +668,10 @@ Log         0
 End
 
 #COMMAND
-Name        dieroll~
-Code        do_rolldie
-Position    100
-Level       50
-Log         0
-End
-
-#COMMAND
 Name        dnd~
 Code        do_dnd
 Position    100
-Level       51
-Log         0
-End
-
-#COMMAND
-Name        destroyslay~
-Code        do_destroyslay
-Position    100
-Level       62
-Log         0
-End
-
-#COMMAND
-Name        disappear~
-Code        do_disappear
-Position    100
-Level       64
-Log         0
-End
-
-#COMMAND
-Name        defeats~
-Code        do_defeats
-Position    100
-Level       10
+Level       0
 Log         0
 End
 
@@ -893,7 +697,6 @@ Code        do_emote
 Position    106
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -921,20 +724,11 @@ Log         0
 End
 
 #COMMAND
-Name        ech~
-Code        do_ech
-Position    100
-Level       54
-Log         0
-End
-
-#COMMAND
 Name        echo~
 Code        do_echo
 Position    100
 Level       54
 Log         1
-Flags       4
 End
 
 #COMMAND
@@ -958,38 +752,6 @@ Name        elevate~
 Code        do_elevate
 Position    100
 Level       60
-Log         0
-End
-
-#COMMAND
-Name        email~
-Code        do_email
-Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        extinguish~
-Code        do_extinguish
-Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        experience~
-Code        do_level
-Position    100
-Level       0
-Log         0
-End
-
-#COMMAND
-Name        editnews~
-Code        do_editnews
-Position    100
-Level       59
 Log         0
 End
 
@@ -1045,7 +807,7 @@ End
 Name        force~
 Code        do_force
 Position    100
-Level       54
+Level       52
 Log         1
 End
 
@@ -1062,7 +824,7 @@ Name        formpass~
 Code        do_form_password
 Position    100
 Level       61
-Log         1
+Log         0
 End
 
 #COMMAND
@@ -1085,7 +847,7 @@ End
 Name        fixed~
 Code        do_fixed
 Position    100
-Level       58
+Level       51
 Log         0
 End
 
@@ -1122,18 +884,10 @@ Log         0
 End
 
 #COMMAND
-Name        findduped~
-Code        do_findduped
-Position    100
-Level       64
-Log         0
-End
-
-#COMMAND
 Name        findexit~
 Code        do_findexit
 Position    100
-Level       53
+Level       51
 Log         0
 End
 
@@ -1151,7 +905,6 @@ Code        do_give
 Position    106
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -1160,7 +913,6 @@ Code        do_gtell
 Position    100
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -1169,7 +921,6 @@ Code        do_group
 Position    104
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -1178,7 +929,6 @@ Code        do_guildtalk
 Position    100
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -1195,7 +945,6 @@ Code        do_goto
 Position    100
 Level       51
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -1204,15 +953,6 @@ Code        do_guilds
 Position    100
 Level       0
 Log         0
-End
-
-#COMMAND
-Name        grub~
-Code        do_grub
-Position    100
-Level       55
-Log         0
-Flags       4
 End
 
 #COMMAND
@@ -1240,22 +980,6 @@ Log         0
 End
 
 #COMMAND
-Name        gohome~
-Code        do_gohome
-Position    100
-Level       50
-Log         0
-End
-
-#COMMAND
-Name        garb~
-Code        do_equipment_full
-Position    100
-Level       0
-Log         0
-End
-
-#COMMAND
 Name        help~
 Code        do_help
 Position    100
@@ -1269,6 +993,14 @@ Code        do_wear
 Position    107
 Level       0
 Log         0
+End
+
+#COMMAND
+Name        hedit~
+Code        do_hedit
+Position    100
+Level       59
+Log         1
 End
 
 #COMMAND
@@ -1312,48 +1044,6 @@ Log         0
 End
 
 #COMMAND
-Name        hintedit~
-Code        do_hintedit
-Position    100
-Level       55
-Log         0
-End
-
-#COMMAND
-Name        hints~
-Code        do_hints
-Position    100
-Level       1
-Log         0
-End
-
-#COMMAND
-Name        hintsubmit~
-Code        do_hintsubmit
-Position    100
-Level       0
-Log         0
-End
-
-#COMMAND
-Name        house~
-Code        do_house
-Position    100
-Level       51
-Log         0
-Flags       4
-End
-
-#COMMAND
-Name        homebuy~
-Code        do_homebuy
-Position    100
-Level       51
-Log         0
-Flags       4
-End
-
-#COMMAND
 Name        hset~
 Code        do_hset
 Position    100
@@ -1362,10 +1052,18 @@ Log         1
 End
 
 #COMMAND
-Name        hedit~
-Code        do_hedit
+Name        holidays~
+Code        do_holidays
 Position    100
-Level       59
+Level       0
+Log         0
+End
+
+#COMMAND
+Name        hotboot~
+Code        do_hotboot
+Position    100
+Level       60
 Log         1
 End
 
@@ -1391,7 +1089,6 @@ Code        do_idea
 Position    100
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -1400,7 +1097,7 @@ Code        do_immtalk
 Position    100
 Level       51
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
@@ -1409,7 +1106,6 @@ Code        do_avtalk
 Position    100
 Level       50
 Log         0
-Flags       1
 End
 
 #COMMAND
@@ -1461,22 +1157,6 @@ Log         3
 End
 
 #COMMAND
-Name        imc~
-Code        do_imc
-Position    100
-Level       58
-Log         0
-End
-
-#COMMAND
-Name        imclist~
-Code        do_imclist
-Position    100
-Level       58
-Log         0
-End
-
-#COMMAND
 Name        ignore~
 Code        do_ignore
 Position    100
@@ -1496,63 +1176,7 @@ End
 Name        ipcompare~
 Code        do_ipcompare
 Position    100
-Level       51
-Log         0
-End
-
-#COMMAND
-Name        ichannels~
-Code        do_ichannels
-Position    100
-Level       60
-Log         0
-End
-
-#COMMAND
-Name        isetup~
-Code        do_isetup
-Position    100
-Level       60
-Log         0
-End
-
-#COMMAND
-Name        ilist~
-Code        do_ilist
-Position    100
-Level       60
-Log         0
-End
-
-#COMMAND
-Name        icommand~
-Code        (0x8130520)
-Position    100
-Level       63
-Log         0
-End
-
-#COMMAND
-Name        icq~
-Code        do_icq
-Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        istats~
-Code        do_istats
-Position    100
-Level       59
-Log         0
-End
-
-#COMMAND
-Name        journal~
-Code        do_journal
-Position    100
-Level       51
+Level       52
 Log         0
 End
 
@@ -1608,7 +1232,7 @@ End
 Name        languages~
 Code        do_languages
 Position    106
-Level       51
+Level       0
 Log         0
 End
 
@@ -1618,7 +1242,6 @@ Code        do_last
 Position    100
 Level       54
 Log         1
-Flags       4
 End
 
 #COMMAND
@@ -1635,7 +1258,6 @@ Code        do_light
 Position    108
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -1679,8 +1301,48 @@ Log         0
 End
 
 #COMMAND
-Name        lead~
-Code        do_lead
+Name        mpoowner~
+Code        do_mpoowner
+Position    100
+Level       0
+Log         0
+End
+
+#COMMAND
+Name        morph~
+Code        do_imm_morph
+Position    100
+Level       51
+Log         0
+End
+
+#COMMAND
+Name        morphstat~
+Code        do_morphstat
+Position    100
+Level       51
+Log         0
+End
+
+#COMMAND
+Name        morphcreate~
+Code        do_morphcreate
+Position    100
+Level       51
+Log         0
+End
+
+#COMMAND
+Name        morphset~
+Code        do_morphset
+Position    100
+Level       51
+Log         0
+End
+
+#COMMAND
+Name        morphdestroy~
+Code        do_morphdestroy
 Position    100
 Level       51
 Log         0
@@ -1701,7 +1363,6 @@ Code        do_mpechoat
 Position    100
 Level       0
 Log         0
-Flags       1
 End
 
 #COMMAND
@@ -1710,7 +1371,6 @@ Code        do_mpechoat
 Position    100
 Level       0
 Log         0
-Flags       5
 End
 
 #COMMAND
@@ -1737,7 +1397,6 @@ Code        do_mpechoaround
 Position    100
 Level       0
 Log         0
-Flags       1
 End
 
 #COMMAND
@@ -1746,7 +1405,6 @@ Code        do_mpechoaround
 Position    100
 Level       0
 Log         0
-Flags       1
 End
 
 #COMMAND
@@ -2031,27 +1689,11 @@ Log         1
 End
 
 #COMMAND
-Name        map~
-Code        do_lookmap
-Position    100
-Level       59
-Log         0
-End
-
-#COMMAND
 Name        mapout~
 Code        do_mapout
 Position    100
 Level       57
 Log         0
-End
-
-#COMMAND
-Name        massign~
-Code        do_massign
-Position    100
-Level       61
-Log         1
 End
 
 #COMMAND
@@ -2066,7 +1708,7 @@ End
 Name        mdelete~
 Code        do_mdelete
 Position    100
-Level       56
+Level       54
 Log         1
 End
 
@@ -2082,9 +1724,8 @@ End
 Name        mfind~
 Code        do_mfind
 Position    100
-Level       55
+Level       51
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -2104,14 +1745,6 @@ Log         0
 End
 
 #COMMAND
-Name        mmenu~
-Code        do_mmenu
-Position    100
-Level       60
-Log         0
-End
-
-#COMMAND
 Name        mpedit~
 Code        do_mpedit
 Position    100
@@ -2126,15 +1759,7 @@ Code        do_mpstat
 Position    100
 Level       54
 Log         0
-Flags       5
-End
-
-#COMMAND
-Name        mrange~
-Code        do_mrange
-Position    100
-Level       54
-Log         0
+Flags       1
 End
 
 #COMMAND
@@ -2151,7 +1776,6 @@ Code        do_mstat
 Position    100
 Level       53
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -2185,14 +1809,14 @@ Code        do_muse
 Position    100
 Level       55
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
 Name        mwhere~
 Code        do_mwhere
 Position    100
-Level       54
+Level       52
 Log         0
 End
 
@@ -2281,7 +1905,6 @@ Code        do_mpechozone
 Position    100
 Level       0
 Log         0
-Flags       1
 End
 
 #COMMAND
@@ -2335,7 +1958,6 @@ Code        do_nuisance
 Position    100
 Level       1
 Log         0
-Flags       1
 End
 
 #COMMAND
@@ -2348,57 +1970,16 @@ Flags       1
 End
 
 #COMMAND
-Name        mpfind~
-Code        do_mpfind
+Name        morphlist~
+Code        do_morphlist
 Position    100
-Level       55
-Log         0
-Flags       1
-End
-
-#COMMAND
-Name        makeadminlist~
-Code        do_makeadminlist
-Position    100
-Level       60
+Level       51
 Log         0
 End
 
 #COMMAND
-Name        makeretiredlist~
-Code        do_makeretiredlist
-Position    100
-Level       61
-Log         1
-End
-
-#COMMAND
-Name        mpcopy~
-Code        do_mpcopy
-Position    100
-Level       62
-Log         1
-End
-
-#COMMAND
-Name        memberlist~
-Code        do_memberlist
-Position    100
-Level       61
-Log         0
-End
-
-#COMMAND
-Name        makeslay~
-Code        do_makeslay
-Position    100
-Level       58
-Log         0
-End
-
-#COMMAND
-Name        mpplace~
-Code        do_mpplace
+Name        mphate~
+Code        do_mphate
 Position    100
 Level       0
 Log         0
@@ -2413,82 +1994,18 @@ Log         0
 End
 
 #COMMAND
-Name        mphate~
-Code        do_mphate
+Name        mpfear~
+Code        do_mpfear
 Position    100
 Level       0
 Log         0
 End
 
 #COMMAND
-Name        mpfillin~
-Code        do_mp_fill_in
+Name        mix~
+Code        do_mix
 Position    100
 Level       0
-Log         0
-End
-
-#COMMAND
-Name        mptag~
-Code        do_mptag
-Position    100
-Level       0
-Log         0
-End
-
-#COMMAND
-Name        mpflag~
-Code        do_mpflag
-Position    100
-Level       0
-Log         0
-End
-
-#COMMAND
-Name        mprmtag~
-Code        do_mprmtag
-Position    100
-Level       0
-Log         0
-End
-
-#COMMAND
-Name        mprmflag~
-Code        do_mprmflag
-Position    100
-Level       0
-Log         0
-End
-
-#COMMAND
-Name        mobinvade~
-Code        (0x8130520)
-Position    100
-Level       60
-Log         0
-End
-
-#COMMAND
-Name        mpowner~
-Code        (0x8130520)
-Position    100
-Level       64
-Log         0
-End
-
-#COMMAND
-Name        mpoowner~
-Code        do_mpoowner
-Position    100
-Level       0
-Log         0
-End
-
-#COMMAND
-Name        message~
-Code        do_message
-Position    100
-Level       53
 Log         0
 End
 
@@ -2538,7 +2055,7 @@ Code        do_newbiechat
 Position    100
 Level       0
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
@@ -2609,64 +2126,15 @@ End
 Name        nuisance~
 Code        do_nuisance
 Position    100
-Level       61
-Log         1
-Flags       4
-End
-
-#COMMAND
-Name        noauction~
-Code        do_noauction
-Position    100
-Level       62
-Log         0
-End
-
-#COMMAND
-Name        nslay~
-Code        do_nslay
-Position    100
-Level       58
+Level       54
 Log         1
 End
 
 #COMMAND
-Name        nobio~
-Code        do_nobio
+Name        oowner~
+Code        do_oowner
 Position    100
-Level       54
-Log         0
-End
-
-#COMMAND
-Name        nobeckon~
-Code        do_nobeckon
-Position    100
-Level       54
-Log         0
-End
-
-#COMMAND
-Name        no_desc~
-Code        do_nodesc
-Position    100
-Level       54
-Log         0
-End
-
-#COMMAND
-Name        ntoe~
-Code        do_noteroom
-Position    106
-Level       0
-Log         0
-End
-
-#COMMAND
-Name        nohomepage~
-Code        do_nohomepage
-Position    100
-Level       53
+Level       59
 Log         0
 End
 
@@ -2687,14 +2155,6 @@ Log         0
 End
 
 #COMMAND
-Name        oassign~
-Code        do_oassign
-Position    100
-Level       61
-Log         1
-End
-
-#COMMAND
 Name        ocreate~
 Code        do_ocreate
 Position    100
@@ -2706,7 +2166,7 @@ End
 Name        odelete~
 Code        do_odelete
 Position    100
-Level       59
+Level       54
 Log         1
 End
 
@@ -2716,7 +2176,6 @@ Code        do_ofind
 Position    100
 Level       54
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -2725,28 +2184,11 @@ Code        do_oinvoke
 Position    100
 Level       54
 Log         1
-Flags       4
-End
-
-#COMMAND
-Name        oldscore~
-Code        do_oldscore
-Position    100
-Level       2
-Log         0
 End
 
 #COMMAND
 Name        olist~
 Code        do_olist
-Position    100
-Level       54
-Log         0
-End
-
-#COMMAND
-Name        omenu~
-Code        do_omenu
 Position    100
 Level       54
 Log         0
@@ -2766,15 +2208,6 @@ Code        do_opstat
 Position    100
 Level       54
 Log         0
-Flags       4
-End
-
-#COMMAND
-Name        orange~
-Code        do_orange
-Position    100
-Level       54
-Log         0
 End
 
 #COMMAND
@@ -2791,7 +2224,6 @@ Code        do_ordertalk
 Position    100
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -2800,7 +2232,6 @@ Code        do_ostat
 Position    100
 Level       54
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -2820,70 +2251,11 @@ Log         1
 End
 
 #COMMAND
-Name        owhere~
-Code        do_owhere
-Position    100
-Level       53
-Log         0
-Flags       4
-End
-
-#COMMAND
-Name        opentourney~
-Code        (0x8130520)
-Position    100
-Level       65
-Log         1
-End
-
-#COMMAND
 Name        oset~
 Code        do_oset
 Position    100
 Level       54
 Log         3
-Flags       4
-End
-
-#COMMAND
-Name        ogrub~
-Code        do_ogrub
-Position    100
-Level       54
-Log         0
-Flags       4
-End
-
-#COMMAND
-Name        opfind~
-Code        do_opfind
-Position    100
-Level       55
-Log         0
-End
-
-#COMMAND
-Name        oclaim~
-Code        do_oclaim
-Position    100
-Level       60
-Log         0
-End
-
-#COMMAND
-Name        oowner~
-Code        do_oowner
-Position    100
-Level       59
-Log         0
-End
-
-#COMMAND
-Name        oscore~
-Code        do_score
-Position    100
-Level       2
-Log         0
 End
 
 #COMMAND
@@ -2907,14 +2279,6 @@ Name        practice~
 Code        do_practice
 Position    104
 Level       0
-Log         0
-End
-
-#COMMAND
-Name        pagelength~
-Code        do_pagelen
-Position    100
-Level       60
 Log         0
 End
 
@@ -2948,7 +2312,6 @@ Code        do_purge
 Position    100
 Level       57
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -3029,24 +2392,31 @@ Code        do_quest
 Position    104
 Level       0
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
 Name        qpset~
 Code        do_qpset
 Position    100
-Level       54
+Level       51
 Log         1
-Flags       4
 End
 
 #COMMAND
 Name        qpstat~
 Code        do_qpstat
 Position    100
-Level       54
+Level       51
 Log         0
+End
+
+#COMMAND
+Name        renumber~
+Code        do_renumber
+Position    100
+Level       55
+Log         1
 End
 
 #COMMAND
@@ -3079,7 +2449,6 @@ Code        do_reply
 Position    106
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -3096,15 +2465,6 @@ Code        do_rank
 Position    100
 Level       56
 Log         0
-Flags       8
-End
-
-#COMMAND
-Name        rassign~
-Code        do_rassign
-Position    100
-Level       61
-Log         1
 End
 
 #COMMAND
@@ -3119,7 +2479,7 @@ End
 Name        rdelete~
 Code        do_rdelete
 Position    100
-Level       59
+Level       53
 Log         1
 End
 
@@ -3161,22 +2521,6 @@ Code        do_redit
 Position    100
 Level       53
 Log         3
-End
-
-#COMMAND
-Name        redraw~
-Code        do_redraw_page
-Position    100
-Level       60
-Log         0
-End
-
-#COMMAND
-Name        refresh~
-Code        do_refresh_page
-Position    100
-Level       60
-Log         0
 End
 
 #COMMAND
@@ -3223,7 +2567,7 @@ End
 Name        reset~
 Code        do_reset
 Position    100
-Level       59
+Level       53
 Log         3
 End
 
@@ -3233,7 +2577,6 @@ Code        do_restore
 Position    100
 Level       54
 Log         1
-Flags       4
 End
 
 #COMMAND
@@ -3248,7 +2591,7 @@ End
 Name        restrict~
 Code        do_restrict
 Position    100
-Level       59
+Level       57
 Log         0
 End
 
@@ -3256,7 +2599,7 @@ End
 Name        return~
 Code        do_return
 Position    100
-Level       52
+Level       51
 Log         1
 End
 
@@ -3306,15 +2649,6 @@ Code        do_rpstat
 Position    100
 Level       54
 Log         0
-Flags       4
-End
-
-#COMMAND
-Name        rset~
-Code        do_rset
-Position    100
-Level       53
-Log         3
 End
 
 #COMMAND
@@ -3322,111 +2656,6 @@ Name        rstat~
 Code        do_rstat
 Position    100
 Level       53
-Log         0
-Flags       4
-End
-
-#COMMAND
-Name        rreset~
-Code        do_rreset
-Position    100
-Level       60
-Log         3
-End
-
-#COMMAND
-Name        rgrub~
-Code        do_rgrub
-Position    100
-Level       53
-Log         0
-End
-
-#COMMAND
-Name        rdisconnect~
-Code        (0x8130520)
-Position    100
-Level       58
-Log         0
-End
-
-#COMMAND
-Name        rconnect~
-Code        (0x8130520)
-Position    100
-Level       58
-Log         0
-End
-
-#COMMAND
-Name        rsockets~
-Code        (0x8130520)
-Position    100
-Level       56
-Log         0
-End
-
-#COMMAND
-Name        rignore~
-Code        (0x8130520)
-Position    100
-Level       61
-Log         0
-End
-
-#COMMAND
-Name        rchanset~
-Code        do_rchanset
-Position    100
-Level       61
-Log         0
-End
-
-#COMMAND
-Name        rtell~
-Code        do_rtell
-Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        rbeep~
-Code        do_rbeep
-Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        rreply~
-Code        do_rreply
-Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        rwho~
-Code        do_rwho
-Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        rquery~
-Code        (0x8130520)
-Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        rchannels~
-Code        do_rchannels
-Position    100
-Level       2
 Log         0
 End
 
@@ -3444,14 +2673,14 @@ Code        do_racetalk
 Position    100
 Level       2
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
 Name        rap~
 Code        do_rap
 Position    100
-Level       55
+Level       51
 Log         0
 End
 
@@ -3469,7 +2698,6 @@ Code        do_retell
 Position    100
 Level       1
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -3481,82 +2709,10 @@ Log         0
 End
 
 #COMMAND
-Name        rfinger~
-Code        (0x8130520)
+Name        revert~
+Code        do_revert
 Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        rwhois~
-Code        (0x8130520)
-Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        rpfind~
-Code        do_rpfind
-Position    100
-Level       55
-Log         0
-End
-
-#COMMAND
-Name        rinfo~
-Code        do_rinfo
-Position    100
-Level       64
-Log         0
-End
-
-#COMMAND
-Name        retiredtalk~
-Code        do_retiredtalk
-Position    100
-Level       50
-Log         0
-End
-
-#COMMAND
-Name        retiredlist~
-Code        do_retiredlist
-Position    104
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        rtalk~
-Code        do_retiredtalk
-Position    100
-Level       50
-Log         0
-End
-
-#COMMAND
-Name        rping~
-Code        (0x8130520)
-Position    100
-Level       59
-Log         0
-End
-
-#COMMAND
-Name        rdig~
-Code        do_rdig
-Position    100
-Level       62
-Log         0
-End
-
-#COMMAND
-Name        rgrid~
-Code        (0x8130520)
-Position    100
-Level       64
+Level       0
 Log         0
 End
 
@@ -3564,24 +2720,7 @@ End
 Name        roster~
 Code        do_roster
 Position    100
-Level       50
-Log         0
-Flags       4
-End
-
-#COMMAND
-Name        residence~
-Code        do_residence
-Position    100
-Level       55
-Log         0
-End
-
-#COMMAND
-Name        rloop~
-Code        do_rloop
-Position    100
-Level       54
+Level       0
 Log         0
 End
 
@@ -3590,6 +2729,14 @@ Name        south~
 Code        do_south
 Position    112
 Level       0
+Log         0
+End
+
+#COMMAND
+Name        skin~
+Code        do_skin
+Position    100
+Level       2
 Log         0
 End
 
@@ -3615,7 +2762,6 @@ Code        do_say
 Position    106
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -3624,7 +2770,6 @@ Code        do_save
 Position    100
 Level       0
 Log         0
-Flags       20
 End
 
 #COMMAND
@@ -3637,11 +2782,10 @@ End
 
 #COMMAND
 Name        score~
-Code        do_cscore
+Code        do_score
 Position    100
-Level       2
+Level       0
 Log         0
-Flags       16
 End
 
 #COMMAND
@@ -3657,6 +2801,22 @@ Name        stand~
 Code        do_stand
 Position    104
 Level       0
+Log         0
+End
+
+#COMMAND
+Name        stat~
+Code        do_stat
+Position    100
+Level       50
+Log         0
+End
+
+#COMMAND
+Name        statreport~
+Code        do_statreport
+Position    100
+Level       50
 Log         0
 End
 
@@ -3698,7 +2858,6 @@ Code        do_setclan
 Position    100
 Level       58
 Log         1
-Flags       4
 End
 
 #COMMAND
@@ -3710,12 +2869,20 @@ Log         1
 End
 
 #COMMAND
+Name        setmssp~
+Code        do_setmssp
+Position    100
+Level       61
+Log         1
+End
+
+#COMMAND
 Name        shout~
 Code        do_shout
 Position    106
-Level       51
+Level       3
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
@@ -3754,7 +2921,7 @@ End
 Name        showclan~
 Code        do_showclan
 Position    100
-Level       58
+Level       52
 Log         0
 End
 
@@ -3762,7 +2929,7 @@ End
 Name        showcouncil~
 Code        do_showcouncil
 Position    100
-Level       55
+Level       52
 Log         0
 End
 
@@ -3796,7 +2963,6 @@ Code        do_silence
 Position    100
 Level       51
 Log         1
-Flags       4
 End
 
 #COMMAND
@@ -3827,7 +2993,7 @@ End
 Name        slookup~
 Code        do_slookup
 Position    100
-Level       59
+Level       54
 Log         0
 End
 
@@ -3884,7 +3050,7 @@ End
 Name        speak~
 Code        do_speak
 Position    106
-Level       51
+Level       0
 Log         0
 End
 
@@ -3917,7 +3083,7 @@ End
 Name        setdeity~
 Code        do_setdeity
 Position    100
-Level       60
+Level       61
 Log         1
 End
 
@@ -3925,7 +3091,7 @@ End
 Name        showdeity~
 Code        do_showdeity
 Position    100
-Level       58
+Level       51
 Log         0
 End
 
@@ -3957,15 +3123,39 @@ End
 Name        scatter~
 Code        do_scatter
 Position    100
-Level       59
+Level       61
 Log         1
+End
+
+#COMMAND
+Name        style~
+Code        do_style
+Position    105
+Level       1
+Log         0
 End
 
 #COMMAND
 Name        showweather~
 Code        do_showweather
 Position    100
-Level       61
+Level       51
+Log         0
+End
+
+#COMMAND
+Name        setholiday~
+Code        do_setholiday
+Position    100
+Level       60
+Log         1
+End
+
+#COMMAND
+Name        saveholiday~
+Code        do_saveholiday
+Position    100
+Level       60
 Log         0
 End
 
@@ -3973,7 +3163,7 @@ End
 Name        setweather~
 Code        do_setweather
 Position    100
-Level       59
+Level       60
 Log         0
 End
 
@@ -3981,7 +3171,7 @@ End
 Name        strew~
 Code        do_strew
 Position    100
-Level       62
+Level       63
 Log         1
 End
 
@@ -3989,7 +3179,7 @@ End
 Name        showorder~
 Code        do_showclan
 Position    100
-Level       55
+Level       52
 Log         0
 End
 
@@ -3997,7 +3187,7 @@ End
 Name        showguild~
 Code        do_showclan
 Position    100
-Level       55
+Level       52
 Log         0
 End
 
@@ -4013,7 +3203,7 @@ End
 Name        showrace~
 Code        do_showrace
 Position    100
-Level       58
+Level       51
 Log         0
 End
 
@@ -4026,92 +3216,34 @@ Log         0
 End
 
 #COMMAND
-Name        showlayers~
-Code        do_showlayers
-Position    100
-Level       62
-Log         0
-End
-
-#COMMAND
-Name        stat~
-Code        do_stat
-Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        statreport~
-Code        do_statreport
-Position    100
-Level       2
-Log         0
-End
-
-#COMMAND
-Name        statshield~
-Code        do_statshield
-Position    100
-Level       64
-Log         0
-End
-
-#COMMAND
-Name        skin~
-Code        do_skin
-Position    100
-Level       50
-Log         0
-End
-
-#COMMAND
-Name        sayto~
-Code        do_say_to
-Position    106
-Level       1
-Log         0
-Flags       4
-End
-
-#COMMAND
-Name        setslay~
-Code        do_setslay
-Position    100
-Level       58
-Log         0
-End
-
-#COMMAND
-Name        showslay~
-Code        do_showslay
-Position    100
-Level       58
-Log         0
-End
-
-#COMMAND
-Name        setvault~
-Code        do_setvault
-Position    100
-Level       59
-Log         0
-End
-
-#COMMAND
-Name        sellhouse~
-Code        do_sellhouse
+Name        showliquid~
+Code        do_showliquid
 Position    100
 Level       51
 Log         0
-Flags       4
 End
 
 #COMMAND
-Name        style~
-Code        do_style
-Position    105
-Level       1
+Name        setliquid~
+Code        do_setliquid
+Position    100
+Level       56
+Log         0
+End
+
+#COMMAND
+Name        showmixture~
+Code        do_showmixture
+Position    100
+Level       51
+Log         0
+End
+
+#COMMAND
+Name        setmixture~
+Code        do_setmixture
+Position    100
+Level       56
 Log         0
 End
 
@@ -4119,9 +3251,9 @@ End
 Name        tell~
 Code        do_tell
 Position    106
-Level       2
+Level       0
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
@@ -4146,7 +3278,7 @@ Code        do_think
 Position    100
 Level       58
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
@@ -4158,10 +3290,18 @@ Log         0
 End
 
 #COMMAND
+Name        timezone~
+Code        do_timezone
+Position    100
+Level       0
+Log         0
+End
+
+#COMMAND
 Name        title~
 Code        do_title
 Position    100
-Level       5
+Level       0
 Log         0
 End
 
@@ -4171,6 +3311,14 @@ Code        do_transfer
 Position    100
 Level       52
 Log         1
+End
+
+#COMMAND
+Name        traffic~
+Code        do_traffic
+Position    100
+Level       0
+Log         0
 End
 
 #COMMAND
@@ -4185,9 +3333,8 @@ End
 Name        typo~
 Code        do_typo
 Position    100
-Level       1
+Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -4199,35 +3346,18 @@ Log         0
 End
 
 #COMMAND
-Name        traffic~
-Code        do_traffic
-Position    103
-Level       3
-Log         0
-Flags       3
-End
-
-#COMMAND
-Name        throw~
-Code        (0x8130520)
-Position    100
-Level       64
-Log         0
-End
-
-#COMMAND
-Name        typ~
-Code        (0x8130520)
-Position    100
-Level       64
-Log         0
-End
-
-#COMMAND
 Name        up~
 Code        do_up
 Position    112
 Level       0
+Log         0
+End
+
+#COMMAND
+Name        unmorph~
+Code        do_imm_unmorph
+Position    100
+Level       51
 Log         0
 End
 
@@ -4275,7 +3405,7 @@ End
 Name        unnuisance~
 Code        do_unnuisance
 Position    100
-Level       57
+Level       54
 Log         1
 End
 
@@ -4283,7 +3413,7 @@ End
 Name        unbolt~
 Code        do_unbolt
 Position    100
-Level       1
+Level       0
 Log         0
 End
 
@@ -4292,6 +3422,30 @@ Name        value~
 Code        do_value
 Position    106
 Level       0
+Log         0
+End
+
+#COMMAND
+Name        vassign~
+Code        do_vassign
+Position    100
+Level       61
+Log         1
+End
+
+#COMMAND
+Name        version~
+Code        do_version
+Position    100
+Level       0
+Log         0
+End
+
+#COMMAND
+Name        vstat~
+Code        do_vstat
+Position    100
+Level       54
 Log         0
 End
 
@@ -4317,7 +3471,6 @@ Code        do_vsearch
 Position    100
 Level       58
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -4325,22 +3478,6 @@ Name        victories~
 Code        do_victories
 Position    100
 Level       10
-Log         0
-End
-
-#COMMAND
-Name        version~
-Code        do_version
-Position    100
-Level       1
-Log         0
-End
-
-#COMMAND
-Name        vstat~
-Code        do_vstat
-Position    100
-Level       54
 Log         0
 End
 
@@ -4366,16 +3503,15 @@ Code        do_wartalk
 Position    104
 Level       2
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
 Name        who~
-Code        do_cwho
+Code        do_who
 Position    100
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -4392,7 +3528,6 @@ Code        do_whois
 Position    100
 Level       0
 Log         0
-Flags       4
 End
 
 #COMMAND
@@ -4473,7 +3608,6 @@ Code        do_worth
 Position    100
 Level       2
 Log         0
-Flags       16
 End
 
 #COMMAND
@@ -4482,16 +3616,16 @@ Code        do_whisper
 Position    100
 Level       1
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND
 Name        yell~
 Code        do_yell
 Position    106
-Level       3
+Level       0
 Log         0
-Flags       5
+Flags       1
 End
 
 #COMMAND

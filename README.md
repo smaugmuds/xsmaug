@@ -4,7 +4,7 @@
 
 **Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame**
 
-**XSMAUG** is an enhancenment of **SMAUG**.
+**XSMAUG** is an enhancenment of **SMAUGFuss**.
 
 **SMAUG** is the base code that runs the popular **Realms of Despair** MUD. Through the years it has been tweaked, modified, and enhanced to become one of the most feature packed branches of the MERC family of codebases.
 
@@ -39,6 +39,11 @@ Enjoy creating your own mud!
 	- corpses:       Death players corpses (initially empty).
 	- mudprogs:      MUD Program files.
 	- system:        MUD Game System files.
+	- building:      Building System files.
+	- classes:       Player Class files.
+	- color:	 MUD Color files.
+	- hotboot:       Fast boot config files.
+	- tools:         Developer tools.
 
 #### Features
 
@@ -85,17 +90,28 @@ Here are just some of the extra features XSMAUG has:
 	- Projectiles are fully supported
 	- Extended bit vectors for when 32 are just not enough
 	- SHA256 player passwords encryption
+	- MUD Mapper and Planes
+	- MCCP and MSSP
+	- New Weather System and Calendar
+	- HotBoot!
 	- Mounts and much much more
+
+Changes made to areas:
+
+	- Major changes to the reset system to fix the problems with the nested put resets.
+	- All of the stock areas in this package have been updated to support the new format.
+	- Will not be backward compatible with any Smaug mud that does not employ the reset fix.
+	- Areas written for Smaug 1.02a, 1.4, and 1.4a should load without a problem and remain compatible.
+
 
 #### ChangeLog
 
-	* SMAUG 1.8b -> XSMAUG 2.0
+	* SMAUGFuss 1.9  -> XSMAUG 2.0
 
 		- Added: xsmaug.conf & xsmaug-server
 		- Added: New Makefile
 		- Added: Name Change
-		- Moved: mud.h to xsmaug.h
-		- Added: SHA256 Encryption to Player passwords.
+
 
 #### Supported Operating Systems
 

@@ -16,17 +16,19 @@
  * Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     *
  ***************************************************************************/
 
-typedef struct	game_board_data	GAME_BOARD_DATA;
+#ifndef __CHESS_H__
+#define __CHESS_H__
 
-struct game_board_data {
-  int board[8][8];
-  int turn;
-  int type;
-  void *player1;
-  void *player2;
+struct game_board_data
+{
+   const char *player1;
+   const char *player2;
+   int board[8][8];
+   int turn;
+   int type;
 };
 
-void free_game( GAME_BOARD_DATA *board );
+void free_game( GAME_BOARD_DATA * board );
 
 #define NO_PIECE	0
 
@@ -46,8 +48,8 @@ void free_game( GAME_BOARD_DATA *board );
 
 #define MAX_PIECES	13
 
-#define IS_WHITE(x) ((x)>=WHITE_PAWN && (x)<=WHITE_KING)
-#define IS_BLACK(x) ((x)>=BLACK_PAWN && (x)<=BLACK_KING)
+#define IS_WHITE(x) ((x) >= WHITE_PAWN && (x) <= WHITE_KING)
+#define IS_BLACK(x) ((x) >= BLACK_PAWN && (x) <= BLACK_KING)
 
 #define MOVE_OK		0
 #define MOVE_INVALID	1
@@ -62,3 +64,4 @@ void free_game( GAME_BOARD_DATA *board );
 
 #define TYPE_LOCAL	1
 #define TYPE_IMC	2
+#endif
