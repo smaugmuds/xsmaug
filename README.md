@@ -4,13 +4,15 @@
 
 **Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame**
 
-**XSMAUG** is an enhancenment of **SMAUGFuss**.
+**XSMAUG** is an enhancenment of **SMAUGFuss 1.9**, an fixed **SMAUG 1.8b** which is a heavily modified derivative of the **Merc 2.1** distribution.
 
-**SMAUG** is the base code that runs the popular **Realms of Despair** MUD. Through the years it has been tweaked, modified, and enhanced to become one of the most feature packed branches of the MERC family of codebases.
+**SMAUG 1.4a** is close to six times the size of **Merc 2.1**, and has major changes to the inner workings of the code, hence making porting of code from other Diku-derivatives non-trivial to the non-coder.
 
-**SMAUG** is a derivative of **Merc Diku Mud** is a **Diku Mud** with many enhancements and contributions. See our **'contrib.txt'** and **'help merc'** for acknowledgements.  Send us your contribution, and you'll be in there too!
+Due to the ability to edit most everything online, you will most likely find the online help pages more informative.
 
-Enjoy creating your own mud!
+**SMAUG** is the base code that runs the popular **Realms of Despair** MUD. Through the years it has been tweaked, modified, and enhanced to become one of the most feature packed branches of the **MERC** family of codebases.
+
+**SMAUG** is a derivative of **Merc Diku Mud** is a **Diku Mud** with many enhancements and contributions.
 
 
 ### XSMAUG Releases
@@ -132,7 +134,7 @@ New Areas:
  
 ### Authors and Contributors
 
-**XSMAUG** Release by **Antonio Cao** ([@burzumishi] (https://github.com/burzumishi))
+**XSMAUG Phoenix Release** by **Antonio Cao** ([@burzumishi] (https://github.com/burzumishi))
 Wed Jun 11 14:49:27 CEST 2014
 
 Feel free to contribute with **XSMAUG in GitHub**.
