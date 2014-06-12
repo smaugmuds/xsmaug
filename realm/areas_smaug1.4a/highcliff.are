@@ -1,0 +1,4734 @@
+#AREA   Highcliff Ruins~
+
+#AUTHOR Cianhydle~
+
+#RANGES
+15 35 0 65
+$
+
+#RESETMSG A mournful wailing is heard in the distance...~
+
+#FLAGS
+0 15
+
+#ECONOMY 0 5213750
+
+#MOBILES
+#30000
+rotting corpse zombie~
+a zombie~
+A rotting corpse is collecting flies here.
+~
+The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+99 98816 -1000 C
+2 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+71 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 25~
+if ispc($n) 
+say Brains...
+endif 
+~
+> speech_prog brains~
+say Are you mocking me? Huh?
+mpechoat $n A zombie bitchslaps you!
+mpechoarround $n A zombie smacks $n.
+mpdamage $n ~
+|
+#30001
+walking corpse zombie~
+a zombie~
+A walking corpse is wanding about here.
+~
+The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+97 98816 -1000 C
+2 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+71 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 25~
+if ispc($n) 
+say More brains...
+endif 
+~
+> speech_prog brains~
+say Are you mocking me? Huh?
+mpechoat $n A zombie bitchslaps you!
+mpechoarround $n A zombie smacks $n.
+mpdamage $n ~
+|
+#30002
+headless corpse zombie~
+a headless zombie~
+A headless corpse is standing here.
+~
+This ghoul is missing its head, and is appears to be searching for
+its, or someone elses, head to wear.  Around its body the thing is
+wearing whatever tattered clothing it had on when it died.  A dark
+liquid substance is spurting up from the corpses neck as it moves.
+~
+99 98304 -1000 C
+3 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+71 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n) 
+mpechoat $n The headless corpse seems to want your head!!!
+endif 
+~
+|
+#30003
+floating head~
+a floating head~
+A decapitated head is floating about here.
+~
+The head is dripping a rather large ammount of blood on to the floor,
+and upon its face is an expression of pain.  The floating head moves
+about with great speed and agility, lashing out and biting.
+~
+99 98816 -1000 C
+3 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+84 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> all_greet_prog 15~
+if ispc($n) 
+say I'm gonna bite your nose off!!!
+mpecho The floating head starts to quickly dart around the room.
+endif 
+~
+|
+#30004
+corpse ghast~
+a ghast~
+A corpse is wearing a blood soaked apron here.
+~
+The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing an apron soaking in
+blood.  The ghasts face is twisted into a diabolic expression of joy.
+Perhaps this monster has something planned for you?
+~
+99 98848 -1000 C
+6 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+71 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 50~
+if ispc($n) 
+say Me cut you up! Me eat you!
+endif 
+~
+> fight_prog 5~
+cackle
+say Come on baby eat the rich...
+say Bite down of the son of a...
+mpechoar $n A ghast takes a swip at you.
+mpechoarround $n A ghast takes a swipe at $n.
+mpdamage $n ~
+|
+#30005
+translucent spirit appirition~
+an appirition~
+A translucent spirit floats off the ground here.
+~
+This spirit is of a translucent woman wearing a flowing white gown.
+She does not appear to be a malicious spirit.  Perhaps she can aid
+you on your travels?
+~
+67 5276200 1000 C
+65 0 0 0d0+0 0d0+0
+0 0
+8 8 2
+13 13 13 13 13 13 0
+0 0 0 0 0
+84 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n)
+tell $n Stand back! I mean you no harm! Beware!
+tell $n Turn back $n, this is no place for the living.
+tell $n Least you suffer a fate worse than mine...
+endif 
+~
+> greet_prog 100~
+tell $n Journey in the ruins and your death will be ~
+> rand_prog 1~
+say Journey in the ruins and your death will be ~
+> speech_prog ruins~
+nod
+tell $n The ruins are the lair of a master necromancer. She
+tell $n holds a powerful artifact, a circlet of pure darkness.
+tell $n From the keep she creates more undead by luring groups
+tell $n of adventurers to their death, or rather, undeath.
+~
+> speech_prog necromancer~
+nod
+tell $n Yes, she controls the ruins and has created all the undead.
+tell $n Her lair is deep within the catacombs, protect by all manner
+tell $n of ghouls and spirits. A magical mist hides her sanctuary
+tell $n from all but the most observant eyes. In addition she has
+tell $n recently began training would-be necromancer in her dark
+tell $n arts.
+sigh
+tell $n I emplore you to put an end to her evil!
+~
+> speech_prog undead~
+nod
+tell $n Yes, she controls them with a powerful circlet.
+sigh
+tell $n I knew many of them. We lived here in peace
+tell $n a century ago. Then came the necromancer.
+tell $n Most of the older ones are natives, while the
+tell $n ones with flesh are adventurers who came here
+tell $n looking for treasure.
+~
+> speech_prog circlet~
+tell $n I know little of it except it is her source of power.
+tell $n She first came to us over a century ago, so the
+tell $n circlet most likely gives extends her life. Unless
+tell $n she has transformed herself into an undead.
+sigh
+tell $n If there was only someone who could stop her.
+tell $n Then I could sleep once again.
+sigh
+tell $n We could all sleep again...
+~
+> speech_prog keep~
+tell $n Yes. Her lair is in the catacombs beneath the keep.
+tell $n Inside the keep you will encounter many kinds of un-
+tell $n dead whos willpower is not strong enough to resist,
+tell $n or were evil in life and willingly do her bidding.
+~
+> speech_prog catacombs~
+tell $n They are beneath the keep. I suspect you will need
+tell $n to fight many obstacles on your way there.
+sigh
+tell $n So many have died within searching for treasure or
+tell $n trying to put an end to her terror.
+~
+|
+#30006
+burnt corpse zombie~
+a zombie~
+A burnt corpse is siting on a couch here.
+~
+The is the corpse of a young child who was burnt in the building.  The
+poor thing is shrivelled up and burnt to a crisp.  You are not afraid
+of the thing, instead feeling a bit sorry for it.  Right now the thing
+does not appear to be aggressive.
+~
+67 98816 -1000 C
+4 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+71 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 50~
+if ispc($n) 
+say Fire! Fire! Fire!
+endif 
+~
+> speech_prog fuck~
+say Shut up ~
+> speech_prog beavis~
+say I am cornholio!
+say I have no ~
+> speech_prog assmunch~
+say Fire! Fire! ~
+> speech_prog fire~
+say Breaking the law! Breaking the ~
+> speech_prog law~
+say Yeah! Yeah! Yeah!
+say Breaking the ~
+> speech_prog butthead~
+say That asswipe is around here ~
+> speech_prog cornholio~
+say NO! I AM ~
+|
+#30007
+collapsing building~
+a collapsing building~
+A little girl is weeping in this building here.
+~
+The stones and timbers of this building seem to be alive and filled
+with hate.
+~
+99 4293160 -1000 C
+10 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+84 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> rand_prog 5~
+mpasound You can hear a child crying somewhere ~
+> greet_prog 100~
+if ispc($n) 
+mpechoat $n The girl disappears as the building collapses!
+mpechoat $n A falling timber strikes you over the head and you take damage.
+mpdamage $n 50
+endif 
+~
+> fight_prog 5~
+if ispc($n) 
+mpechoat $n A large stone strikes you in the chest and you take damage!
+mpdamage $n 50
+endif 
+~
+|
+#30008
+animated corpse gatekeeper~
+a gatekeeper~
+An animated corpse stands ready for battle here.
+~
+The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+67 33320 -1000 C
+10 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+36 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n) 
+tell $n None shall enter the keep... alive! Yet I am a
+tell $n reasonable man, well, I was a man. Answer my
+tell $n question, before it is asked, I shall grant to you
+tell $n access to the keep. Can you do it? Killing me
+tell $n shall get you nowhere, the key is hidden away
+tell $n where you shall never find it.
+snicker
+endif 
+~
+> rand_prog 1~
+say Answer my question and you shall pass.
+~
+> speech_prog question~
+tell $n First you must give me the answer.
+~
+> speech_prog answer~
+tell $n No, no, sorry, that is incorrect. You may try again.
+snicker
+tell $n But you're not even on the right track. Perhaps you
+tell $n should search for the answer. Perhaps you should
+tell $n go back somewhere and look into your soul for it?
+~
+> give_prog answer~
+tell $n Ah, well done. You shall be allowed to enter the keep.
+tell $n Take this key and be gone from my sight flesh-face,
+tell $n before I change my mind.
+mpoload 30013
+give key ~
+|
+#30009
+animated corpse skeleton~
+a skeleton~
+An animated corpse wanders up and down the path here.
+~
+The animated corpse is missing all of its skin.  Beneath the rags it
+was wearing when it died, bleached bones move about with an unsettling
+tell-tale rattle.  The empty eye sockets burn with a dim red light.
+~
+97 32768 -1000 C
+5 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+60 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 25~
+if ispc($n) 
+tell $n Pretty soft flesh...
+tell $n Now give it to me!!!
+endif 
+~
+|
+#30010
+rotting corpse ghoul~
+a ghoul~
+A rotting corpse is huddled up here.
+~
+The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  The ghouls teeth have elongated and become sharp, while
+its nails have extended and have become claw-like.
+~
+99 33280 -1000 C
+6 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+36 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#30011
+mound flesh abomination~
+an abomination~
+A mound of flesh is stuck to the wall here.
+~
+This abomination is a lump of writhing flesh that is clinging to the
+wall.  Sores continually ooze out a thick yellow mucus that is exuding
+a noxious odor.  The mass of skin is studded with twenty or more odd
+sized eyes.
+~
+99 98816 -1000 C
+8 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+52 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n) 
+mpechoat $n The mound of living flesh becomes aggitated...
+endif 
+~
+|
+#30012
+animated corpse zombie~
+a zombie~
+An animated corpse is defending the keep here.
+~
+The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+99 33280 -1000 C
+3 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+71 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#30013
+animated corpse zombie~
+a zombie~
+An animated corpse is defending the keep here.
+~
+The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+99 4227624 -1000 C
+4 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+71 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#30014
+animated corpse skeleton~
+a skeleton~
+An animated corpse is searching through the bookcase here.
+~
+The animated corpse is missing all of its skin.  Beneath the rags it
+was wearing when it died, bleached bones move about with an unsettling
+tell-tale rattle.  There is something very, very pathetic about this
+undead skeleton.  Most of its teeth are missing, and some of its bones
+are held together is glue or rope.  In addition, it only has about a
+third of its ribs, half its fingers, and most of a left leg.  In one
+of its hands it is grasping a key.
+~
+99 4227752 -1000 C
+3 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+60 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n) 
+tell $n I wish I still had my flesh...
+tell $n Let me borrow yours...
+endif 
+~
+|
+#30015
+dark shape wraith~
+a wraith~
+A dark shape drift about the chamber here.
+~
+The spectre is nothing more than a dark shadow with a vaguely human
+form.  It moves quickly and easily shifts in and out of the shadows
+here within the keep.  A pair of dull red points of light shine where
+eyes should be.
+~
+97 98856 -1000 C
+10 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+67 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 5~
+if ispc($n) 
+tell $n Diiieeee....
+endif 
+~
+|
+#30016
+decomposing cadaver wight~
+a wight~
+A decomposing cadaver is looking out the window here.
+~
+The animated corpse is missing several large patches of its skin.  The
+remaining skin is a black-gray flesh that is almost burnt.  Around its
+body the thing is wearing whatever tattered clothing it had on when it
+departed the realm of the living.
+~
+99 98856 -1000 C
+14 0 0 0d0+0 0d0+0
+100 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+68 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n) 
+tell $n Wrrrong place, wrrrong time.
+lick $n
+endif 
+~
+|
+#30017
+deformed statue gargoyle~
+a gargoyle~
+A deformed statue of a winged-dog stands motionless here.
+~
+This creature appears to be a statue, and nothing more, at first.  But
+once it has detected you it activates and immediately attacks.
+~
+67 33288 0 C
+14 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+34 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n) 
+mpecho The eyes of the statue begin to glow red...
+endif 
+~
+|
+#30018
+translucent spirit spectre~
+a spectre~
+A translucent spirit of a man is here.
+~
+The spectre is nothing more than a dark shadow with a vaguely human
+form.  It moves quickly and easily shifts in and out of the shadows
+here within the keep.  A pair of dull red points of light shine where
+eyes should be.
+~
+99 552 -1000 C
+16 0 0 0d0+0 0d0+0
+0 0
+8 8 1
+13 13 13 13 13 13 0
+0 0 0 0 0
+67 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#30019
+translucent spirit spectre~
+a spectre~
+A translucent spirit of a woman is here.
+~
+The spectre is nothing more than a dark shadow with a vaguely human
+form.  It moves quickly and easily shifts in and out of the shadows
+here within the keep.  A pair of dull red points of light shine where
+eyes should be.
+~
+99 552 -1000 C
+16 0 0 0d0+0 0d0+0
+0 0
+8 8 1
+13 13 13 13 13 13 0
+0 0 0 0 0
+67 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#30020
+horned statue gargoyle man~
+a gargoyle~
+A horned statue of a winged-man stands motionless here.
+~
+This creature appears to be a statue, and nothing more, at first.  But
+once it has detected you it activates and immediately attacks.
+~
+99 520 0 C
+14 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+34 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n) 
+mpecho The eyes of the statue begin to glow red...
+endif 
+~
+|
+#30021
+decomposing corpse horde maggots~
+a horde of maggots~
+A decomposing corpse is being eaten by maggots here.
+~
+There must be thousands of these disgusting little white maggots here
+crawling over this corpse.  The things do not appear to be sentient,
+but rather are driven by hunger.
+~
+99 512 -1000 C
+15 0 0 0d0+0 0d0+0
+50 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+70 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n) 
+mpecho The churning horde of maggots begins to move your way...
+endif 
+~
+|
+#30022
+malformed ghoul vampire~
+a vampire~
+A malformed ghoul is feasting on maggots here.
+~
+This undead fiend is deformed, having a twisted, evil look.  On its
+body it is wearing a dusty wardrobe that has been out of style for
+ages.  Its hair is matted, and its fingernails long and black.  From
+its grin mouth two elongated, pointed canine teeth are visible.
+~
+99 554 -1000 C
+20 0 0 0d0+0 0d0+0
+100 0
+8 8 1
+13 13 13 13 13 13 0
+0 0 0 0 0
+5 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 50~
+if ispc($n) 
+tell $n You killed Marco!!!
+endif 
+~
+|
+#30023
+twisted woman vampire~
+a vampire~
+A twisted woman is hanging from the ceiling here.
+~
+This undead fiend is deformed, having a twisted, evil look.  On its
+body it is wearing a dusty wardrobe that has been out of style for
+ages.  Its hair is matted, and its fingernails long and black.  From
+its grin mouth two elongated, pointed canine teeth are visible.
+~
+99 554 -1000 C
+22 0 0 0d0+0 0d0+0
+500 0
+8 8 2
+13 13 13 13 13 13 0
+0 0 0 0 0
+5 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 25~
+if ispc($n) 
+mpecho A ghoul drops from the ceiling...
+say Let's dance.
+smile
+endif 
+~
+|
+#30024
+bloated ghoul vampire~
+a vampire~
+A bloated ghoul is curled up in the corner here.
+~
+This undead fiend is deformed, having a twisted, evil look.  On its
+body it is wearing a dusty wardrobe that has been out of style for
+ages.  Its hair is matted, and its fingernails long and black.  From
+its grin mouth two elongated, pointed canine teeth are visible.
+~
+99 554 -1000 C
+21 0 0 0d0+0 0d0+0
+1000 0
+8 8 1
+13 13 13 13 13 13 0
+0 0 0 0 0
+5 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#30025
+pale man vampire~
+a vampire~
+A pale man is closing the lid to a coffin here.
+~
+This undead fiend is deformed, having a twisted, evil look.  On its
+body it is wearing a dusty wardrobe that has been out of style for
+ages.  Its hair is matted, and its fingernails long and black.  From
+its grin mouth two elongated, pointed canine teeth are visible.
+~
+99 554 -1000 C
+23 0 0 0d0+0 0d0+0
+0 0
+8 8 1
+13 13 13 13 13 13 0
+0 0 0 0 0
+5 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#30026
+deformed ghoul elder vampire~
+a vampire~
+A deformed ghoul has waken from his slumber here.
+~
+This mans have has been warped and twisted into a vertical oval.  His
+ears are somewhat pointed, and his hair is thin and sparce.  His teeth
+are more like fangs.  He is wearing a long, faded black trenchcoat and
+he smells very bad.  His hands are more like claws, and he stares back
+at you with large, bulbous eyes.
+~
+99 554 -1000 C
+22 0 0 0d0+0 0d0+0
+0 0
+8 8 1
+13 13 13 13 13 13 0
+0 0 0 0 0
+5 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#30027
+pale woman ancient vampire~
+an ancient vampire~
+A pale woman is closing the lid to her coffin here.
+~
+This woman has a very pale, unhealthy look to her skin.  Her nails and
+teeth are long, sharp, and stained with blood.  Her clothing has been
+out of style for a very long time.  Aside from these things, she has a
+very shapely figure and would be an excellent...
+~
+99 4194858 -1000 C
+25 0 0 0d0+0 0d0+0
+2000 0
+8 8 2
+13 13 13 13 13 13 0
+0 0 0 0 0
+5 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> death_prog 10~
+mpoload 30038
+drop bracer
+mpecho A single bracer falls from the fiends wrist!
+~
+|
+#30028
+shrouded woman banshee~
+a banshee~
+A shrouded woman is wailing for her sins here.
+~
+From behind this womans shround a mournful wailing echoes throughout
+the circular tower.  About her form she is wearing a soft, flowing
+white robe that covers most of her body.  It is only her exposed boney
+fingers, skeletal face, and wailing reveal her true, evil nature.
+~
+99 4194984 -1000 C
+25 0 0 0d0+0 0d0+0
+0 0
+8 8 2
+13 13 13 13 13 13 0
+0 0 0 0 0
+67 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> death_prog 10~
+mpoload 30039
+drop shroud
+mpecho The garmets of the banshee drift gently to the ground!
+~
+> rand_prog 1~
+mpasound From above the you hear a mournful ~
+|
+#30029
+animated corpse skeleton~
+a skeleton~
+An animated corpse is standing here.
+~
+The animated corpse is missing all of its skin.  Beneath the rags it
+was wearing when it died, bleached bones move about with an unsettling
+tell-tale rattle.  The empty eye sockets burn with a dim red light.
+~
+99 0 -1000 C
+3 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+60 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#30030
+dark shape wraith~
+a wraith~
+A dark shape drift about the chamber here.
+~
+The spectre is nothing more than a dark shadow with a vaguely human
+form.  It moves quickly and easily shifts in and out of the shadows
+here within the keep.  A pair of dull red points of light shine where
+eyes should be.
+~
+97 98856 -1000 C
+15 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+68 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> death_prog 25~
+mpoload 30038
+drop bracer
+mpecho A bracer slips from the spirit before it disappears!
+~
+> greet_prog 100~
+if ispc($n) 
+tell $n You will diess...
+cackle $n
+endif 
+~
+|
+#30031
+hideous corpse ghoul~
+a ghoul~
+A hideous corpse is gnawling on some bones here.
+~
+The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+99 33320 -1000 C
+5 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+36 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#30032
+skeletal abomination~
+an abomination~
+An abomination made of various human bones is lurking here.
+~
+This abomination is made of several bones place together in a miss-
+match fashion.  Each abonimation varies from the next one, some move
+about on four or six legs, while other have multiple skulls.  Like
+their normal skeleton counterparts, these abonimation move about with
+an ominous rattle.
+~
+97 33320 -1000 C
+15 0 0 0d0+0 0d0+0
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+60 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> death_prog 5~
+mpoload 30040
+drop flute
+mpecho The abomination shatters into hundreds of pieces!
+~
+|
+#30033
+giant corpse ghoul lord~
+a ghoul lord~
+A giant corpse is gnawling on some bones here.
+~
+The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  The ghouls teeth have elongated and become sharp, while
+its nails have extended and have become claw-like.  This thing might
+have been an ogre when it was still alive because it is about eight or
+so feet tall.
+~
+99 4227624 -1000 C
+20 0 0 0d0+0 0d0+0
+1000 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+36 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> death_prog 15~
+mpoload 30041
+drop claws
+mpecho The final blow rends the fiends claws from its body!
+~
+> greet_prog 50~
+if ispc($n) 
+tell $n My clawsss will sssink deep into your flesssh!
+endif 
+~
+|
+#30034
+black robed necromancer woman~
+a necromancer~
+A silent, black-robed woman is preparing a spell here.
+~
+This woman is shrouded in black robes.  From what little you can see
+of her she is thin, pale, and resembles, to a degree, the undead that
+you encountered in the upper parts of the ruins.
+~
+99 32808 -1000 C
+20 0 0 0d0+0 0d0+0
+500 0
+8 8 2
+13 13 13 13 13 13 0
+0 0 0 0 0
+0 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 80~
+if ispc($n)
+shake
+point $n
+endif 
+~
+|
+#30035
+black robed necromancer man~
+a necromancer~
+A large black-robed man is resting here.
+~
+This man is dressed in a black robe that hides almost all of his
+features except his hands and a bit of his face.  From what you can
+see of his face, he is pale and gaunt looking.  You can only image
+what the dark arts of necromancy have done to this fellow.
+~
+67 32808 250 C
+21 0 0 0d0+0 0d0+0
+500 0
+8 8 1
+13 13 13 13 13 13 0
+0 0 0 0 0
+0 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n)
+tell $n You should not have came here. We will have to
+tell $n kill you. You understand this, yes?
+tell $n I don't really enjoy this part of being a necromancer.
+endif 
+~
+> speech_prog necromancer~
+nod
+tell $n Yes. I practice the dark arts. I have been training
+tell $n for twelve years now and still have much to learn.
+tell $n Our master is very old and very powerful. Yet, she
+tell $n has been acting strange as of late. I think it she is
+tell $n being controlled by someone, or something, ~
+> rand_prog 1~
+yawn
+tell $n Hey, like why don't you go bother one of the
+tell $n other mobiles, I don't want to fight you. Ok?
+~
+|
+#30036
+black robed necromancer woman~
+a necromancer~
+A black-robed woman is guarding the door here.
+~
+This woman is shrouded in black robes.  From what little you can see
+of her she is thin, pale, and resembles, to a degree, the undead that
+you encountered in the upper parts of the ruins.  She is guarding the
+door here, allowing nobody through.
+~
+99 32808 -1000 C
+22 0 0 0d0+0 0d0+0
+500 0
+8 8 2
+13 13 13 13 13 13 0
+0 0 0 0 0
+0 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n)
+glare $n
+tell $n None shall pass!
+endif 
+~
+|
+#30037
+black robed necromancer man~
+a necromancer~
+A black-robed man is summoning the undead here.
+~
+This man is dressed in a black robe that hides almost all of his
+features except his hands and a bit of his face.  From what you can
+see of his face, he is pale and gaunt looking.  You can only image
+what the dark arts of necromancy have done to this fellow.
+~
+99 4227112 -1000 C
+23 0 0 0d0+0 0d0+0
+5000 0
+8 8 1
+13 13 13 13 13 13 0
+0 0 0 0 0
+0 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n)
+tell $n Fooolish moortal. Noow yoou die.
+endif 
+~
+> hitprcnt_prog 80~
+mpecho The necromancers eyes are glowing ~
+> hitprcnt_prog 60~
+mpecho Bat-like wings have started to grow from the necromancers ~
+> hitprcnt_prog 40~
+mpecho The necromancer hands have turned in sharp ~
+> hitprcnt_prog 20~
+mpecho Curved horns sprout from the necromancers ~
+> death_prog 100~
+mpecho From the corpse of the necromancer a strange dark shadow
+mpecho starts to flow out into the room. In the matter of seconds you
+mpecho are face to face with a demon!
+mpmload 30039~
+|
+#30038
+powerful necromancer woman~
+a necromancer~
+A powerful woman is here, wearing a circlet of gold.
+~
+This woman is shrouded in black robes.  From what little you can see
+of her she is thin, pale, and resembles, to a degree, the undead that
+you encountered in the upper parts of the ruins.  Upon her head she is
+wearing a circlet made of gold.
+~
+99 4235432 -1000 C
+35 0 0 0d0+0 0d0+0
+10000 0
+8 8 2
+13 13 13 13 13 13 0
+0 0 0 0 0
+0 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if ispc($n)
+smirk $n
+tell $n You have got to be kidding me! You made it all
+tell $n this way? You? Ha!
+chuckle $n
+tell $n You will be an excellent addition to my undead.
+tell $n Perhaps in twenty years I will transform you into
+tell $n a wraith? Hmm... I don't suppose you are just
+tell $n joing to give yourself up, are you?
+smile $n
+tell $n Shall we begin?
+c 'dispel magic' $n
+endif 
+~
+|
+#30039
+winged lesser demon~
+a lesser demon~
+A winged demon is laughing at you here.
+~
+This demon is slightly scratched, and looks really pissed off.  He has
+bat-like wings, sharp taloned fingers, and curved horns sticking out
+from his forehead.  He is stand about eight feet tall and is having to
+duck in order to keep his head from hitting the ceiling.
+~
+99 4194984 -1000 C
+30 0 0 0d0+0 0d0+0
+0 0
+8 8 1
+13 13 13 13 13 13 0
+0 0 0 0 0
+84 0 0 0 1 1 0
+0 0 1310782 1048576 0 0 0 0
+#0
+
+
+#OBJECTS
+#30000
+rotting corpse~
+a rotting corpse~
+A rotting corpse is collecting flies here.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+E
+rotting corpse~
+This corpse has been left here to rot.  The corpse is attracting many
+carrion insects like beetles, maggots, and flies.
+~
+#30001
+bloated corpse~
+a bloated corpse~
+A bloated corpse is here in the ravine.~
+~
+15 0 0
+100 0 0 0
+1 1 1
+E
+bloated corpse~
+This corpse has been left here to rot.  The corpse is attracting many
+carrion insects like beetles, maggots, and flies.  The skin has become
+bloated and is oozing puss.  There might however be something here...
+~
+#30002
+pile rubble~
+a pile of rubble~
+A pile of rubble is here on the ground.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+E
+pile rubble~
+This is just an assortment of stones, bricks, wooden timbers, and some
+bones.  There does not appear to be anything hidden away here.
+~
+#30003
+pile bricks~
+a pile of bricks~
+A pile of bricks is scattered here on the ground.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+E
+pile bricks~
+This pile of rubble is mostly bricks, but there are other things here,
+like stones and timbers, but nothing else of value.
+~
+#30004
+pile stones~
+a pile of stones~
+A bunch of stones of various sizes and shapes are piled here.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+E
+pile stones~
+This pile of rubble is mostly stones, but there are other things here,
+like bricks and timbers, but nothing else of value.
+~
+#30005
+intersection debris~
+a pile of debris~
+Various debris is scattered about here.~
+~
+15 0 0
+100 0 0 0
+1 1 1
+E
+intersection debris~
+This pile of crap consists of stone rubble, a few cracked bricks, and
+some rotting wood.  Also there are a large number of bones scattered
+about, and perhaps something else...
+~
+#30006
+few bones~
+a few bones~
+A few bones are scattered about here.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+E
+few bones~
+There are a few bones here.  Thankfully they are not moving to attack.
+~
+#30007
+lot bones~
+a lot of bones~
+A lot of bones are here on the ground.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+E
+lot bones~
+There are a few bones here.  Thankfully they are not moving to attack.
+~
+#30008
+old table~
+an old table~
+An old table is here in this building.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+E
+old table~
+This old table does not contain anything of value, except a few pieces
+of shattered pottery and some rusted forks and spoons.
+~
+#30009
+wooden crate~
+a wooden crate~
+A wooden crate is rotting away here.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+E
+wooden crate~
+Naw, this crate does not contain anything.  The whole bottom half has
+rotted away.
+~
+#30010
+wooden crate~
+a wooden crate~
+A wooden crate sits on its end here.~
+~
+15 0 0
+100 0 0 0
+1 1 1
+E
+wooden crate~
+Naw, this crate does not contain anything.  The whole bottom half has
+rotted away.  Hmm, then again, there might be something here.
+~
+#30011
+pile rubble~
+a pile of rubble~
+A pile of rubble is here on the ground.~
+~
+15 0 0
+100 0 0 0
+1 1 1
+E
+pile rubble~
+Just your basic assorted fluff item that might contain something...
+~
+#30012
+lot bones~
+a lot of bones~
+A lot of bones are here piled up outside the gatehouse.~
+~
+15 0 0
+100 0 0 0
+1 1 1
+E
+lot bones~
+Lots of bones, luckily they are not animated into some diabolic giant
+skeleton.  Best search them quickly before they start to attack...
+~
+#30013
+gate key~
+a gate key~
+A gate key has been tossed away here.~
+~
+18 0 16385
+0 0 0 0
+1 1 1
+E
+gate key~
+There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.  You sit for hours and
+hours trying to figure out what the hell it unlocks.  Maybe it should
+have been called the GATEHOUSE key.
+~
+#30014
+scrap paper~
+a scrap of paper~
+A scrap of paper has been cast away here.~
+~
+13 0 1
+0 0 0 0
+1 1 1
+E
+scrap paper~
+This scrap of paper is in relatively good condition, compared to the
+corpse it was found on.  Aside from a small bloodstain, most of it is
+still legible.  It appears to be a page from a book of artifacts.  It
+reads:
+ 
+Baalzebul's Skull:
+ 
+     In fact there were several skulls made by cult of Baalzebul.  The
+process in which the skulls were made is unknown, but the powers have
+been well documented.  Each skull has a number of healing spells cast
+upon them, much like a staff or orb.  However to activate the magical
+powers one must hold the item, causing the user to be teleported to a
+random location.  The charges are limited and when completely used, it
+explodes sending shards of crystal everywhere.  Caution should be used
+when handling one of these skulls.
+ 
+Note: Users have complained of a physical and mental burden while they
+are carring this object.  Most users either are never heard from again
+or are maimed in the skulls explosion.
+ 
+History of the Skulls:
+(The rest of the document if covered in blood and unreadable.)
+~
+#30015
+rubble broken timber~
+a broken timber~
+A large pile of broken timbers is here.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+E
+rubble broken timber~
+There is little of interest here in this pile of rubble and timbers.
+~
+#30016
+old bookcase~
+an old bookcase~
+An old bookcase sits here in the corner of the chamber.~
+~
+15 0 0
+100 0 0 0
+1 1 1
+E
+old bookcase~
+This shelving unit has seen its better day, and that was probably a
+very, very long time ago.  Perhaps there is still something of value
+here.
+~
+#30017
+ordinary key~
+an ordinary key~
+An ordinary key has been thrown aside here.~
+~
+18 0 16385
+0 0 0 0
+1 1 1
+E
+ordinary key~
+There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.
+~
+#30018
+average key~
+an average key~
+An average key has been thrown aside here.~
+~
+18 0 16385
+0 0 0 0
+1 1 1
+E
+average key~
+There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.
+~
+#30019
+trapdoor key~
+a trapdoor key~
+A trapdoor key has been cast away here.~
+~
+18 0 16385
+0 0 0 0
+35 1 1
+E
+trapdoor key~
+There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.  During your days of
+adventuring you have seen alot of keys, and this one is probably the
+heaviest one you have been forced to carry in a long time.  Damn the
+author.
+~
+#30020
+catacomb key maggots~
+a catacomb key~
+A couple maggots are here stuck on something.~
+~
+18 0 16385
+0 0 0 0
+1 1 1
+E
+catacomb key maggots~
+There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.  There is slime all
+over it from these maggots.
+~
+#30021
+cracked human skull~
+a cracked skull~
+A cracked human skull is here.~
+~
+13 128 16385
+0 0 0 0
+2 1 1
+E
+cracked human skull~
+This person might have died from a blunt object smashing into its
+head, or it could have been damaged afterward.  You do not really
+give a damn, you would just like to drop it.
+~
+#30022
+small bronze key~
+a small bronze key~
+A small bronze key is here.~
+~
+18 0 16385
+0 0 0 0
+1 1 1
+E
+small bronze key~
+There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.
+~
+#30023
+tower key~
+a tower key~
+A key used to access the tower is here.~
+~
+18 0 16385
+0 0 0 0
+1 1 1
+E
+tower key~
+There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.
+~
+#30024
+crypt key~
+a crypt key~
+A key used to access the crypt is here.~
+~
+18 0 16385
+0 0 0 0
+1 1 1
+E
+crypt key~
+There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.
+~
+#30025
+door propt~
+a coffin~
+An ancient coffin is here, placed upon catacomb floor.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+#30026
+simple coffin~
+a simple coffin~
+A simple coffin is here set against the wall on its end.~
+~
+15 0 0
+100 0 0 0
+1 1 1
+E
+simple coffin~
+Its a simple wooden coffin used by some bloodsucker.  Hopefully there
+is not anymore inside the coffin.
+~
+#30027
+wide coffin~
+a wide coffin~
+A wide coffin sits here in the center of this chamber.~
+~
+15 0 0
+100 0 0 0
+1 1 1
+E
+wide coffin~
+This is a wide coffin probably used for a big-boned vampire.
+~
+#30028
+handful earth black soil~
+a handful of earth~
+A handful of black soil has been thrown down here.~
+~
+13 144 1
+0 0 0 0
+10 1 1
+E
+handful earth black soil~
+This tainted soil was taken from the grave of a vampire.  Perhaps it
+has some kind of magical power?  No matter where you put this dirt, it
+always feels like a heavy burden, physically and spiritually.  If you
+could only ditch it or find some way to harness the power.
+~
+#30029
+handful earth black soil~
+a handful of earth~
+A handful of black soil has been thrown down here.~
+~
+26 208 1
+20 224 233 65
+20 1 1
+E
+handful earth black soil~
+This tainted soil was taken from the grave of a vampire.  Perhaps it
+has some kind of magical power?  No matter where you put this dirt, it
+always feels like a heavy burden, physically and spiritually.  If you
+could only ditch it or find some way to harness the power.
+~
+#30030
+bronze candleabra ~
+a bronze candleabra ~
+A standing candleabra made of bronze is placed here in a niche.~
+~
+1 0 0
+0 0 -1 0
+1 1 1
+E
+bronze candleabra ~
+This candle holder stands about four feet high and is securely bolted
+to the ground, sorry, no chance in stealing it.  Hell, if it was not
+already bolted down then some other adventurer would have come, taken
+it, and then pawned it off at the nearest town.
+~
+#30031
+human femur~
+a human femur~
+A human femur is half buried in the ground here.~
+~
+13 128 16385
+0 0 0 0
+2 1 1
+E
+human femur~
+This looks almost exactly the size of a human femur bone.  It could be
+an orcs or half-elves femur.  Actually its hard for you to tell, might
+you have a degree in forensic science?  No?  Then I guess you will not
+get a very damned precise description.  Now if only you could get rid
+of the thing!
+~
+#30032
+human rib~
+a human rib~
+A human rib is stuck into the ground here.~
+~
+13 128 16385
+0 0 0 0
+2 1 1
+E
+human rib~
+This was part of somebody at one time.  The thought of it makes you
+want to throw it away, but you can not seem to do it.
+~
+#30033
+writhing maggot~
+a writhing maggot~
+A small writhing maggot is on the floor here.~
+%s chomp$q on $p savoring the taste.~
+19 0 1
+1 1 0 0
+1 1 1
+E
+writhing maggot~
+Its small, its white, its high in protien, but pretty damn disgusting.
+~
+#30034
+writhing maggot~
+a writhing maggot~
+A small writhing maggot is on the floor here.~
+%s chomp$q on $p savoring the taste.~
+26 0 1
+20 -1 -1 -1 1 0
+1 1 1
+E
+writhing maggot~
+Its small, its white, its high in protien, but pretty damn disgusting.
+~
+#30035
+brown dung beetle~
+a dung beetle~
+A little brown beetle is crawling about here.~
+%s eat$q $p and spits out the hard shell.~
+19 0 1
+1 1 0 0
+10 1 1
+E
+brown dung beetle~
+This little bug likes to crawl around in...
+~
+#30036
+brown dung beetle~
+a dung beetle~
+A little brown beetle is crawling about here.~
+%s eat$q $p and spits out the hard shell.~
+26 0 1
+20 -1 -1 -1 1 0
+1 1 1
+E
+brown dung beetle~
+This little bug likes to crawl around in...
+~
+#30037
+wraith black cloak~
+a wraith cloak~
+A black cloak is resting on the ground here.~
+~
+9 4820 1025
+1 1 0 0
+5 2000 1
+E
+wraith black cloak~
+This cloak have an evil look to it.  It is faded, and weathered around
+the edges.  The material is very thin, almost sheer.
+~
+A
+37 3
+A
+36 3
+A
+18 2
+A
+5 -2
+A
+1 -2
+#30038
+obsidian black bracer~
+an obsidian bracer~
+A black bracer was placed on the ground here.~
+~
+9 4820 4097
+1 1 0 0
+3 2000 1
+E
+obsidian black bracer~
+This bracer is made of obsidian and accented with bone.  On its face
+there is a single rune made also of bone.  The rune symbolizes death
+in the form of a skull.
+~
+A
+19 -1
+A
+13 30
+#30039
+banshee black death shroud~
+a banshee shroud~
+A black death-shroud is resting on the ground here.~
+~
+9 4820 131073
+1 1 0 0
+5 2000 1
+E
+banshee black death shroud~
+This shroud is made of a dull-grey-brown mottled color.  It smells of
+the dead and is spun from wool.  This item radiates an aura of evil,
+even without magical detection.
+~
+A
+13 -10
+A
+18 2
+A
+19 2
+#30040
+instrument bone flute~
+a bone flute~
+A diabolic musical instrument has been discarded here.~
+~
+8 4820 16385
+0 0 0 0
+5 2000 1
+E
+instrument bone flute~
+This musical instrument has been made out of a human femur.  Somehow
+you think there is something sinister about this thing, you sure has
+hell do not want to keep it.
+~
+A
+13 50
+A
+12 -25
+#30041
+ghoul claws hands~
+a pair of ghoul claws~
+A pair of clawed hands have been dropped here.~
+~
+9 4820 129
+1 1 0 0
+5 2000 1
+E
+ghoul claws hands~
+These hands are somehow enchanted with an evil magical.  You could
+fit them on to your hands something like gloves, but do you really
+want to do that?  Only if you could discard these wretched things!
+~
+A
+19 3
+A
+13 -30
+#30042
+black necromancer robe~
+a necromancer robe~
+A black robe has been dropped on the ground here.~
+~
+9 576 9
+1 1 0 0
+5 500 1
+E
+black necromancer robe~
+This robe is made of a black material and covers almost all of the
+body.  It smells like a death shroud.
+~
+A
+12 10
+#30043
+black necromancer robe~
+a necromancer robe~
+A black robe has been dropped on the ground here.~
+~
+9 576 9
+1 1 0 0
+5 2000 1
+E
+black necromancer robe~
+This robe is made of a black material and covers almost all of the
+body.  It smells like a death shroud.  A silver colored thread has
+been woven into the edges of the garment for ornamentation.
+~
+A
+3 2
+A
+12 25
+#30044
+black necromancer robe~
+a necromancer robe~
+A black robe has been dropped on the ground here.~
+~
+9 576 9
+1 1 0 0
+5 2000 1
+E
+black necromancer robe~
+This robe is made of a black material and covers almost all of the
+body.  It smells like a death shroud.  A silver colored thread has
+been woven into the edges of the garment for ornamentation.
+~
+A
+12 35
+#30045
+tcod circlet darkness powerful~
+Circlet of Darkness~
+A mysterious circlet of dark metal has been discarded here.~
+~
+9 2644 17
+1 1 0 0
+1 25000 1
+E
+tcod circlet darkness powerful~
+Pray to whatever Gods you wish, for you behold a vile artifact of
+tremendous power!  Legends holds that this circlet was once worn by
+the Dark One, Venificis.  An aura of powerful magic, and great evil
+comes from the jet black circlet.  The more you gaze at this item,
+the more you either want to put it on your head or forget you ever
+saw it.  There are many stories of this item, so say it hold infinate
+power, while other stories tell of the circlet destroying its master.
+ 
+A small inscription is on the back of the circlet:
+ 
+HANDLE THIS ITEM WITH EXTREME CAUTION: IT CAN KILL YOU.
+~
+A
+12 100
+A
+13 100
+A
+14 100
+> drop_prog 95~
+if ispc($n)
+if level ($n) < 51
+mpechoat $n Something tells you, "No. You don't want to drop me $n."
+mpechoat $n Something tells you, "Just remember who is in control."
+mpechoat $n Something inside your head begins to hurt, ALOT!
+mpdamage $n 100
+mpforce $n get tcod
+endif
+~
+> get_prog 95~
+if ispc($n) 
+if level ($n) < 51
+mpechoat $n Something tells you, "Put me on! Put me on!"
+mpechoat $n <<<(The Circlet of Darkness)>>> GLOWS!
+mpforce $n emote shakes uncontrollably.
+endif
+~
+> remove_prog 95~
+if ispc($n)
+if level ($n) <51
+mpechoat $n Something tells you, "I don't think we should part yet $n"
+mpforce $n wear tcod
+endif
+~
+> wear_prog 95~
+if ispc($n)
+if level ($n) < 51
+mpechoat $n You place the Circlet atop your head.
+mpechoarround $n $n places the Circlet atop their head.
+mpforce $n scream
+mpforce $n yell Arghhhhhhh!!! My head! Someone help me!!!
+mpforce $n say MY BRAINS!!!!!
+mpechoat $n Arghhh! Something inside your head is burning...
+mpechoarround $n $n's head begins to smoke...
+mpforce $n emote collapses, either dead or near death.
+if rand (10)
+mpslay $n
+else
+if rand (25)
+mpdamage $n 250
+else
+if rand (33)
+mpdamage $n 500
+else
+if rand (50)
+mpdamage $n 1000
+else
+mpdamage $n 2000
+endif
+endif
+endif
+endif
+endif
+~
+|
+#30046
+magical skull~
+a magical skull~
+A magical skull has been left here.~
+~
+13 128 16385
+0 0 0 0
+75 25000 1
+E
+magical skull~
+This skull appears to be a magical item.  Perhaps this is not the best
+item to have in your inventory.
+~
+A
+56 2
+> wear_prog 100~
+if level ($n) < 51
+mpechoat $n You hold the skull in your hands...
+mpechoarround $n $n holds a skull in their hands...
+if rand (75)
+mprestore $n 100
+mpechoat $n The skull heals your wounds.
+else
+mpechoat $n The skull begins to vibrate viciously...
+mpforce $n remove skull
+mpforce $n drop skull
+mpjunk skull
+mpechoat $n The skull shatters into tiny shards of bone!
+mpechoarround $n The skull shatters into tiny shards of bone!
+mpdamage $n 100
+endif
+endif
+~
+|
+#30047
+wooden barrel~
+a wooden barrel~
+A wooden barrel is against the wall here.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+#30048
+wooden crate~
+a wooden crate~
+A wooden crate is against the wall here.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+#30049
+soul~
+your soul~
+A obelisk has been set here as some kind of marker.~
+~
+15 0 0
+100 0 0 0
+1 1 1
+E
+soul~
+Yes... yes indeed!  There might just be something inside your soul to
+be found.  Perhaps it seems like nothing, but then again, maybe not.
+~
+#30050
+answer~
+the answer to the question~
+The answer to a question not yet asked is here.~
+~
+13 0 16385
+0 0 0 0
+1 1 1
+E
+answer~
+You know just what the answer to any question you could ever be asked!
+The answer does not make much sense, but then again, you have not yet
+heard the question.
+~
+#30051
+fried corpse~
+a fried corpse~
+A fried corpse is here on the floor, dead.~
+~
+12 0 0
+0 0 0 0
+1 1 1
+E
+fried corpse~
+This guy was fried, nothing left but a few ashes and charred bones.
+~
+#0
+
+
+#ROOMS
+#30000
+Bottom of a Rugged Path~
+Standing here at the bottom of some jagged cliffs, a trail is visible
+leading east and up into the rugged terrain.  High above, on the top
+of the cliff, the crumbling towers of some long forgotten keep can be
+seen.  A thick, annoying mist hugs the uneven, rocky ground along the
+path.
+~
+0 4 5
+D1
+~
+~
+0 0 30001
+E
+cliffs terrain~
+The cliffs rise at least a hundred feet, maybe more.  The terrain is a
+bit difficult to make your way through, but not impossible.  For some
+reason there is an unusually large number of bones scattered about.
+~
+E
+crumbling towers keep~
+The keep and its towers are nothing more than crumbling ruins.  You
+doubt that anyone is living there.
+~
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+E
+mist~
+The mist is strange, surreal, and down right annoying.
+~
+S
+#30001
+Climbing up the Path~
+The path leads up higher into the cliffs, and back down to the bottom
+of the path to the west.  Some decrepit defensive fortifications are
+visible high above atop the cliffs.  Clearly the walls and watchtower
+are no longer used.  The mist swirls about, almost playing off your
+fears of the unknown and unexplained.
+~
+0 0 5
+D3
+~
+~
+0 0 30000
+D4
+~
+~
+0 0 30002
+E
+cliffs terrain~
+The cliffs rise at least a hundred feet, maybe more.  The terrain is a
+bit difficult to make your way through, but not impossible.  For some
+reason there is an unusually large number of bones scattered about.
+~
+E
+wall watchtower fortifications~
+The walls, watchtower, and other fortifications are all in ruin.
+~
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+E
+mist~
+The mist is strange, surreal, and down right annoying.
+~
+S
+#30002
+Bend near an Obelisk~
+The pathway winds its way up towards the ruins to the south, or back
+down towards the bottom of the cliffs.  The ruins are not visible from
+here due to mist which is appears thicker than ever.  The path is hard
+to travel because of the mist and uneven rocky ground.  Off the side
+of the path is an black obelisk.
+~
+0 0 5
+D2
+~
+~
+0 0 30003
+D5
+~
+~
+0 0 30001
+E
+cliff cliffs~
+The cliffs rise at least a hundred feet, maybe more.  The terrain is a
+bit difficult to make your way through, but not impossible.  For some
+reason there is an unusually large number of bones scattered about.
+~
+E
+mist~
+The mist is strange, surreal, and down right annoying.
+~
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+E
+black obelisk~
+The obelisk is only three feet tall, made of a black colored stone,
+and has cryptic runes scrawled about.  A few words written in common
+can be read along its eastern side.  They read:
+ 
+If one EXAMINEs their SOUL.  They might, might just have a chance.
+ 
+This area made by Cianhydle (1999).~
+S
+#30003
+Narrowing in the Path~
+The path leads north and south along a rock surface to the west and a
+sheer drop of some twenty feet to to the east.  The trail was wider at
+one time, but erosion has eaten away over half path.  There is a mist
+hanging in the air, making this section of the path dangerous.
+~
+0 512 5
+D0
+~
+~
+0 0 30002
+D2
+~
+~
+0 0 30004
+D3
+~
+~
+2120 0 30027
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.  The path was once larger, but since
+erosion has withered the path down to half of its original size.
+~
+E
+rock surface~
+Ahead, the rocks above the cliff look as if they could tumble down on
+to the pathway at any time.
+~
+E
+mist~
+The mist is strange, surreal, and down right annoying.
+~
+S
+#30004
+Tavelling along the Path~
+The path leads up higher into the cliffs, and decending to the north.
+The top of the cliffs is at least another sixty feet above.  It is odd
+that there are no plants growing along this path, not even the sturdy,
+mountain type plants.  The air is filled with a particulary thick and
+annoying mist.
+~
+0 4 5
+D0
+~
+~
+0 0 30003
+D4
+~
+~
+0 0 30005
+E
+mist~
+The mist is strange, surreal, and down right annoying.
+~
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+> act_prog p arrives from the north.~
+if ispc($n)
+mpechoat $n A large rock falls from above...
+if isgood($n)
+mpdamage $n 150
+else
+if isneutral($n)
+mpdamage $n 100
+else
+if isevil($n)
+mpdamage $n 50
+endif
+endif
+endif
+endif
+~
+|
+S
+#30005
+Bend in the Path~
+The path makes its way up towards the clifftops to the west, or back
+down towards the bottom of the cliff.  The ruins emerge again out from
+behind the rocks.  From here, crumbling keep can be seen rising up
+above a small ruined settlement.
+~
+0 0 5
+D3
+~
+~
+0 0 30006
+D5
+~
+~
+0 0 30004
+E
+ruined settlement~
+The ruins appear to have been long deserted by anything living.
+~
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+S
+#30006
+Walking down through a Ravine~
+The pathway runs down along a washed out ravine cut into the side of
+the cliffs, hiding the ruins from view.  Various debris has collected
+in this gully.  The ravine decends to the east where the path bends.
+The path itself is along the northern side of the ravine and about a
+wagons width wide.
+~
+0 0 5
+D1
+~
+~
+0 0 30005
+D3
+~
+~
+0 0 30007
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.  The ravine is three or four feet
+deep.
+~
+E
+ravive~
+There is alot of small stones falled down from above, as well as a
+corpse.
+~
+S
+#30007
+Climbing up the Path~
+To the east a ravine cuts down through the cliffs and the path follows
+it along the northern side.  Above the path begins to ascend closer to
+the ruins above which are again blocked by the terrain and thick mist.
+~
+0 0 5
+D1
+~
+~
+0 0 30006
+D4
+~
+~
+0 0 30008
+E
+mist~
+The mist is strange, surreal, and down right annoying.
+~
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+E
+terrain~
+Rocks, bluffs, crags, that kind of stuff.
+~
+S
+#30008
+Bend along the Path~
+Here the path decends down the cliffs, while leading north higher and
+higher through the rough terrain.  To the west a gorge decends fourty
+or more feet and is filled with all sizes and shapes of boulders.  A
+small ammount of debris is along the edges of the path here as well as
+the strange mist.
+~
+0 0 5
+D0
+~
+~
+0 0 30009
+D5
+~
+~
+0 0 30007
+E
+mist~
+The mist is strange, surreal, and down right annoying.
+~
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+E
+gorge~
+Better be careful or you will fall down and not be able to get up.
+~
+S
+#30009
+Ascending a Steep Grade~
+The path climbs a steep grade here, while also bending to the south,
+leading down towards the base of the cliffs.  Here the ground is dry
+and cracked, barren of any signs of life.  The air is thick with the
+strange mist.
+~
+0 0 5
+D2
+~
+~
+0 0 30008
+D4
+~
+~
+0 0 30010
+E
+mist~
+The mist is strange, surreal, and down right annoying.
+~
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.  The grade along the path is quiet
+steep.
+~
+E
+steep grade~
+The grade is slightly hard to travelled, especially if you are used to
+just sitting in front of a computer all day.
+~
+S
+#30010
+Nearing the Ruins~
+The path is drawing closer to the cliff top ruins.  Ascending from the
+steep grade the tops of the few remaining structures are seen peeking
+out from behind the rocks to the north.  To the west the pathway bends
+to the north, appearing to head into the ruins.
+~
+0 0 5
+D3
+~
+~
+0 0 30011
+D5
+~
+~
+0 0 30009
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.  The path becomes a bit wider the
+closer you come to the ruins.
+~
+E
+tops structures~
+The tops of the structures are badly damaged.  Clearly nobody can be
+living in the keep.  Just remember the definition of living.
+~
+S
+#30011
+Overlooking the Ruins~
+Here the path overlooks the ruins, and shows a ruined town surrounding
+a lone keep.  A handful of buildings and parts of the keep, can be
+seen through the mist.  Most of the structures have collapsed, or have
+caught on fire, and in any case uninhabitable.
+~
+0 1028 5
+D0
+~
+~
+0 0 30012
+D1
+~
+~
+0 0 30010
+E
+path pathway~
+The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+E
+buildings keep~
+The tops of the structures are badly damaged.  Clearly nobody can be
+living in the keep.  Just remember the definition of living.
+~
+S
+#30012
+Admist the Ruins~
+Abmist the ruins of this place you are instantly surround with an
+overwhelming feeling of dread and dispair.  From behind the ruined
+walls of old buildings things move about remaining just out of sight.
+Ahead two buildings flank both sides of a debris filled road.  Neither
+building looks safe enough to explore.  The mist is beginning to drift
+away as you enter the ruins.
+~
+0 0 1
+D0
+~
+~
+0 0 30013
+D2
+~
+~
+0 0 30011
+E
+buildings~
+The two buildings that are flanking the road are two stories tall and
+are leaning just a bit out over the street.  Looking more closely, you
+think that they could come crashing down at any minute.  Maybe going
+north is not just a groovy idea Fred.
+~
+E
+mist~
+The mist is thicker inside the ruins.
+~
+S
+#30013
+Trapped within the Ruins~
+Throwing caution to the wind, you travel deeper into the ruins.  South
+the remains of two buildings block any hopes of leaving though the way
+you entered this place.  No matter how much rubble you remove, another
+heavier stone appears behind it to take its place.  Something foul and
+evil is afoot here.
+~
+0 3153924 1
+D0
+~
+~
+0 0 30014
+E
+rubble~
+Damnit, you knew something like this was going to happen.  You will
+just have to find some other way out of this forsaken place.
+~
+> act_prog p arrives from the south.~
+if ispc($n)
+mpechoat $n The two buildings to the south collapse!
+mpechoat $n You have a bad feeling about this...
+endif
+~
+|
+S
+#30014
+Debris-Strewn Intersection~
+This was probably the main intersection of the town, now its littered
+with debris and a corpse or two.  In each direction paths lead of into
+the ruins, roughly following the old roads.  To the northeast the keep
+rises above all the other remaining structures.
+~
+0 3153924 1
+D0
+~
+~
+0 0 30028
+D1
+~
+~
+0 0 30023
+D2
+~
+~
+0 0 30013
+D3
+~
+~
+0 0 30015
+E
+roads~
+Well, they are not actually roads anymore.  They are paths admist the
+rubble.
+~
+E
+keep~
+The keep looks particularly dark and spooky.  If there is any treasure
+to be found, sure as flies on corpses, that's where it will be.  All
+advenurers know these sorts of things.
+~
+S
+#30015
+Shifting through the Rubble~
+A path runs east and west down the middle of a road.  Along the edges
+of the road, rubble in the form of stones, bricks, timbers, and the
+occassional corpse, is piled.  To the east is the main intersection,
+while the west are a few remaining buildings.  Whatever structures
+that might have been to the north and south have long since collapsed.
+~
+0 3153920 1
+D1
+~
+~
+0 0 30014
+D3
+~
+~
+0 0 30016
+E
+roads~
+Well, they are not actually roads anymore.  They are paths admist the
+rubble.
+~
+E
+buildings~
+Many have been destroyed, but there are a few to the west that are in
+good shape.  The ones to the north and south have collapsed.
+~
+S
+#30016
+Pathway between the Rubble~
+A path runs east and west down the middle of a road.  To the north is
+a burnt out shell of a building, while to the south is a sturdy, but
+still ruined, looking building.  To the east the path leads through a
+bit of rubble, while to the west are a few more buildings.
+~
+0 3153920 1
+D0
+~
+~
+0 0 30020
+D1
+~
+~
+0 0 30015
+D2
+~
+~
+3 0 30022
+D3
+~
+~
+0 0 30017
+E
+road~
+Well, they are not actually roads anymore.  They are paths admist the
+rubble.
+~
+S
+#30017
+Navigating past the Rubble~
+A path heads east towards the intersection.  To the north is a half-
+demolished building, missing its entire rooftop and a wall, and a
+partially collapsed building is to the south.  An arched doorway
+leads into a darkened building to the west.  None of these buildings
+look very safe.
+~
+0 3153920 1
+D0
+~
+~
+0 0 30019
+D1
+~
+~
+0 0 30016
+D2
+~
+~
+0 0 30021
+D3
+~
+~
+0 0 30018
+E
+demolished building~
+That place does not even look safe to explore.
+~
+E
+arched doorway~
+It leads into a dark building where things are moving.
+~
+S
+#30018
+Abandoned Stone House~
+This house has been abandoned for some time.  Some battered furniture
+are placed about the items as if someone, or something, is living, if
+you want to call it that, here.  Bones, which looking alot like those
+of a human, are scattered across the floor.  An arched doorway is to
+the east leading out into the street.
+~
+0 3153932 0
+D1
+~
+~
+0 0 30017
+E
+battered furniture~
+Junk! Junk! Junk! Junk! Junk! Junk! Junk! Junk! Junk! Junk! Junk!
+~
+E
+street~
+Yeah, sorta, more like a another through the rubble.  All kinds of
+crap is in the streets.  Aluminum cans, dirty diapers, shepard crooks,
+sticky pacifiers, etc.
+~
+S
+#30019
+Half-Demolished Brick Building~
+This building is missing its entire roof and its southern wall.  Stone
+and other debris are scattered about along with a rather large ammount
+of human bones.
+~
+0 3153924 0
+D2
+~
+~
+0 0 30017
+E
+roof~
+Yeah, its missing.  What else do you want?  You sure are looking at
+alot of crap if you are reading this.
+~
+S
+#30020
+Burnt Dwelling~
+This building is charred from a fire that burnt here long ago.  There
+is nothing left here that is not burnt to a crisp, including the two
+occupants and a sofa.  A doorframe is to the south, leading back out
+into the ruins.
+~
+0 3153932 0
+D2
+~
+~
+0 0 30016
+E
+building doorframe~
+Everything in here is burnt to a crisp.
+~
+E
+occupants~
+Yes, both of them are burnt to a crisp.  One is still alive, well,
+sorta alive.  The other is on the floor.
+~
+E
+sofa~
+The is missing all of its cushions and fabric.  The charred wooden
+frame is basically all that remains.
+~
+S
+#30021
+Partially-Collapsed Building~
+There is something dark and sinister about this building.  There is no
+sign of any little girl, or that anyone has lived here for a very long
+time.  All that remains of the building are a couple of walls and some
+broken timbers.  A sagging doorframe is to the north, leading back on
+to a road.
+~
+0 3153924 0
+D0
+~
+~
+1048576 0 30017
+E
+little girl~
+There WAS a little girl here, where did she go?
+~
+E
+building~
+There was something definately evil about this place, you will try and
+avoid this place if possible.
+~
+S
+#30022
+Ruined Stone Building~
+This stone building is missing its windows, along with its entire
+second floor.  Anything that might have once been of value has either
+been already stolen or destroyed.  A door is to the north and appears
+to be the only exit.
+~
+0 3153932 0
+D0
+~
+~
+3 0 30016
+E
+windows~
+They are gone, busted out a long time ago.
+~
+S
+#30023
+Abandoned Plaza~
+Once the brown, grey, and white ceramic tiles of this plaza were set
+straight and replaced if broken.  Now most of the tiles are broken or
+covered with the rubble of nearby buildings that have collapsed.  The
+plaza continues to the north and east, while an intersection is to the
+west.
+~
+0 3153920 1
+D0
+~
+~
+0 0 30024
+D1
+~
+~
+0 0 30026
+D3
+~
+~
+0 0 30014
+E
+ceramic tiles~
+Maybe the tiles had some ornate design when the living dwelled here,
+now they are broken.
+~
+S
+#30024
+Abandoned Plaza~
+Rubble covers most of this section of the plaza.  To the west there is
+a large pile of stones and bricks.  North and east are relative sturdy
+walls which are still partially covered in a white plaster.  Beneath
+the plaster stone bricks and wooden beams are visibile.  To the south
+is the rest of the plaza.
+~
+0 3153920 1
+D2
+~
+~
+0 0 30023
+E
+plaza~
+Mostly ceramic tiles of brown, grey, and white formed the plaza, but
+like the rest of this settlement it has been trashed by the monsters
+that are dwelling here.
+~
+E
+plaster~
+The plaster is cracked and falling from the walls.
+~
+S
+#30025
+Butcher Market~
+This building was probably once a butcher market in the conventional
+sense of the term.  Now it servers a more ghastly purpose.  A variety
+of corpses hang from the ceiling on large hooks, some still moving.
+Blood covers almost everything, including a door to the south that
+leads back into the plaza.
+~
+0 3145740 0
+D2
+~
+~
+3 0 30026
+E
+corpse hooks blood~
+Quite a ghastly scene, but you are an adventurer not just some mere
+commoner, so you can handle this kind of horrific sight without just
+turning tail and running back to the nearest village.
+~
+S
+#30026
+Abandoned Plaza~
+Once the brown, grey, and white ceramic tiles of this plaza were set
+straight and replaced if broken.  Now most of the tiles are broken or
+covered with the rubble of nearby buildings that have collapsed.  To
+the north is a relatively sturdy looking building, which still has an
+operational door.  To the west and south the plaza continues.  To the
+east is a massive pile of rubble near the edge of the settlement.
+~
+0 3153920 1
+D0
+~
+~
+3 0 30025
+D2
+~
+~
+0 0 30027
+D3
+~
+~
+0 0 30023
+E
+ceramic tiles~
+Maybe the tiles had some ornate design when the living dwelled here,
+now they are broken.
+~
+S
+#30027
+Abandoned Plaza~
+Rubble covers most of this section of the plaza.  Sticking out of the
+rubble is part of an old fountain.  The plaza continues to the north,
+while collapsed buildings block the other directions.  To the east the
+rest of the plaza has collapsed.  Although you doubt you could climb
+back up, you might be able to escape this wretched place.
+~
+0 3153920 1
+D0
+~
+~
+0 0 30026
+D1
+~
+~
+0 0 30003
+E
+east cliff~
+Yes, yes, you could escape this way.  Perhaps with the right spells,
+even return this way.
+~
+S
+#30028
+Stumbling over the Rubble~
+A path runs north and south down the middle of a road.  On each side
+of the road, whatever structures that might have been to the north and
+south have long since collapsed in on themselves creating huge piles
+of rubble.  To the south is the main intersection of the ruins.
+~
+0 3153920 1
+D0
+~
+~
+0 0 30029
+D2
+~
+~
+0 0 30014
+E
+road~
+Path through rubble is more like it.  You've stumbled quite a number
+of times trying to make your way over stones and bricks, timbers and
+corpse, and who knows what else.
+~
+> act_prog p arrives from the south.~
+if ispc($n)
+mpechoat $n You stumble over a loose stone and sprain your ankle.
+mpdamage $n 25
+endif
+~
+|
+S
+#30029
+Climbing across the Rubble~
+A path runs north and south down the middle of a road.  Another path
+leads through the rubble to the east towards a fairly solid looking
+building made of stone with a functional door.  To the northeast the
+towers of the ruined keep rise above all the remaining buildings.
+~
+0 3153920 1
+D0
+~
+~
+0 0 30032
+D1
+~
+~
+3 0 30030
+D2
+~
+~
+0 0 30028
+E
+keep~
+The keep looks like it is in a little better shape than the rest of
+the settlement.  That is probably where all the treasure is located.
+Now if you could only find a way inside.
+~
+E
+building~
+The building looks solid enough to explore, but you should probably
+use caution while exploring anything here.  There seem to be alot of
+these undead things running about causing problems.
+~
+S
+#30030
+Ruined Stone Building~
+This stone building is missing its windows, along with its entire
+second floor.  Anything that might have once been of value has either
+been already stolen or destroyed.  There is a door to the west that
+leads back into the streets.
+~
+0 3153932 0
+D3
+~
+~
+3 0 30029
+E
+windows~
+Guru meditation error!
+~
+E
+door~
+The wood is battered, but still operation.  There is no lock.
+~
+S
+#30031
+Crumbling Stone Home~
+This house has been abandoned for some time.  Some battered furniture
+are placed about the items as if someone, or something, is living, if
+you want to call it that, here.  Bones, which looking alot like those
+of a human, are scattered across the floor.  A door to the east leads
+back into the ruins.
+~
+0 3153932 0
+D1
+~
+~
+3 0 30032
+E
+door~
+The wood is battered, but still operation.  There is no lock.
+~
+E
+battered furniture~
+Broken down, useless junk.  You could not even give these chairs and
+tables away.
+~
+S
+#30032
+Shifting through the Rubble~
+The path bends to the east and south along this stretch of the ruins.
+Almost all of the buildings in this area are nothing more than piles
+of stone rubble.  The except is a stone building to the west, where
+there is still a working door in that building.  East the path leads
+closer to the keep.
+~
+0 3153920 1
+D1
+~
+~
+0 0 30033
+D2
+~
+~
+0 0 30029
+D3
+~
+~
+3 0 30031
+E
+path~
+The path looks safe to travel on.  There are plenty of places for
+amushes however.
+~
+E
+keep~
+The keep rises up above the toppled building.  The keep is to the
+north, a dozen or so buildings away.  You might have to climb over
+some rubble to get there though.
+~
+S
+#30033
+Pathway through the Rubble~
+A path runs east and west down the middle of a road.  Along the edges
+of the road, rubble in the form of stones, bricks, timbers, and the
+occassional corpse, is piled.  Whatever structures that might have
+lined this road have since collapsed in on themselves.
+~
+0 3153920 1
+D1
+~
+~
+0 0 30034
+D3
+~
+~
+0 0 30032
+E
+road~
+More like a path through the rubble.
+~
+E
+structures~
+Collapsed, destroyed, no longer exist, get the picture?
+~
+S
+#30034
+Moving across the Rubble~
+A path runs east and west down the middle of a road.  Along the edges
+of the road, rubble in the form of stones, bricks, timbers, and the
+occassional corpse, is piled.  To the south is a wooden shack that
+looks like it could fall over at any moment.  The keep grows closer
+to the east.
+~
+0 3153920 1
+D1
+~
+~
+0 0 30036
+D2
+~
+~
+3 0 30035
+D3
+~
+~
+0 0 30033
+E
+wooden shack~
+The shack is in really bad shape.  I'd be careful if I were you.  You
+don't wanna have it fall in on you, do you?
+~
+E
+keep~
+The keep has three major parts, a tall watchtower that rises around
+four levels, a two story guardtower, and a one story central building.
+Parts of all three areas are crubbling.
+~
+S
+#30035
+Delapidated Wooden Shack~
+This shack is made of old rotting timbers.  The whole building slants
+at an steep angle, exploring could be dangerous.  There is nothing of
+any value here.  A door is in the northern wall back into the ruins.
+~
+0 3153932 0
+D0
+~
+~
+3 0 30034
+E
+rotting timbers walls~
+The walls are made of rotting wood.  The building creaks as if it was
+alive or something.  You feel like you are being watched.
+~
+E
+door~
+Yeah, that looks like a good way to go...
+~
+S
+#30036
+Nearing the Gatehouse~
+A path runs east and west down the middle of a road.  Along the edges
+of the road, rubble in the form of stones, bricks, timbers, and the
+occassional corpse, is piled.  Whatever structures that might have
+lined this road have since collapsed in on themselves.  Just a bit to
+the east is the gatehouse of the keep.
+~
+0 3153924 1
+D1
+~
+~
+0 0 30037
+D3
+~
+~
+0 0 30034
+E
+gatehouse~
+The gatehouse looks like it is good enough condition.  What catches
+your is the door leading into a smaller wooden building just outside
+of the gatehouse.
+~
+S
+#30037
+Standing before the Gatehouse~
+A path runs east and west down the middle of a road.  North a large
+gatehouse allow access to the crumbling keep.  The keep itself is in
+as bad of shape as most of the other buildings.  Only a small portion
+of its original form remains.  Part of the keep and a tower remain to
+be explored.  Similiar to when you first enter the ruins, you begin to
+feel a bit uneasy looking upon the keep.  East there is a small wooden
+building with an operational door.
+~
+0 3153920 1
+D0
+~
+~
+0 0 30039
+D1
+~
+~
+3 0 30038
+D3
+~
+~
+0 0 30036
+E
+gatehouse~
+The gatehouse is to the north and is probably guarded.  A rusty gate
+is open, rusted in place.  Beyond are two doors, which look rather
+solid, leading into the keep itself.
+~
+E
+keep~
+Parts of it have collapsed, other parts are in ruin, and still other
+parts are in relatively good condition.
+~
+E
+small wooden building~
+The building is built right alongside the gatehouse.  It has a working
+door.  It is small and made of wooden logs.
+~
+S
+#30038
+Gatekeepers Abode~
+This building is made mostly of wood and is only a single, rectangular
+room.  The logs used to form the walls are rotting away, while pieces
+of the ceiling have caved-in.  The air inside this building is stale,
+dusty, and smells like decaying flesh.  There is a door to the west.
+~
+0 3145740 0
+D3
+~
+~
+3 0 30037
+S
+#30039
+Inside the Gatehouse~
+The interior of the keep is accessed through a large gate, which is
+open to the south, and small set of iron doors, which are closed to
+the north.  The ceiling is vaulted, and while a few stones have fell
+from their place, overall the gatehouse is in fairly good condition,
+although not completely functional.  Along the sides of the walls are
+brackets holding torches.
+~
+0 3153932 0
+D0
+~
+~
+8388647 30013 30040
+D2
+~
+~
+0 0 30037
+E
+iron doors~
+The iron doors leading into the keep are very thick and appear could
+be locked.  The lock mechanisms themself look relatively complicated.
+~
+S
+#30040
+Entering the Crumbling Keep~
+The inside of the keep looks better than the outside.  But that is not
+saying alot.  In the walls, wide cracks run where mortar once held the
+stones together, allowing the odd-sized stones to fall into piles near
+the edges of the chamber.  A pair of iron doors are in the south wall,
+leading into the gatehouse.
+~
+0 3153932 0
+D0
+~
+~
+0 0 30045
+D1
+~
+~
+0 0 30041
+D2
+~
+~
+8388647 30013 30039
+E
+iron doors~
+The iron doors leading into the keep are very thick and appear could
+be locked.  The lock mechanisms themself look relatively complicated.
+~
+S
+#30041
+Large Chamber within the Keep~
+The inside of the keep looks better than the outside.  But that is not
+saying alot.  For the most part, there is nothing to be found in this
+chamber, and what little is here is of little or no value.  A shredded
+painting hangs here off-center on the southern wall.
+~
+0 3153928 0
+D0
+~
+~
+0 0 30044
+D1
+~
+~
+0 0 30042
+D3
+~
+~
+0 0 30040
+E
+shredded painting~
+The painting, or more aptly the picture frame and some shreds of the
+canvas, hangs at an angle.  You have no idea what it might have been.
+~
+S
+#30042
+Large Chamber within the Keep~
+The inside of the keep looks better than the outside.  But that is not
+saying alot.  In the walls, wide cracks run where mortar once held the
+stones together, allowing the odd-sized stones to fall into piles near
+the corners of the chamber.
+~
+0 3153928 0
+D0
+~
+~
+0 0 30043
+D3
+~
+~
+0 0 30041
+S
+#30043
+Large Chamber within the Keep~
+The inside of the keep looks better than the outside.  But that is not
+saying alot.  For the most part, there is nothing to be found in this
+chamber, and what little is here is of little or no value.
+~
+0 3153928 0
+D2
+~
+~
+0 0 30042
+D3
+~
+~
+0 0 30044
+S
+#30044
+Large Chamber within the Keep~
+The inside of the keep looks better than the outside.  But that is not
+saying alot.  In the walls, wide cracks run where mortar once held the
+stones together, allowing the odd-sized stones to fall into piles near
+the edges of the chamber.
+~
+0 3153928 0
+D1
+~
+~
+0 0 30043
+D2
+~
+~
+0 0 30041
+D3
+~
+~
+0 0 30045
+S
+#30045
+Large Chamber within the Keep~
+The inside of the keep looks better than the outside.  But that is not
+saying alot.  In the walls, wide cracks run where mortar once held the
+stones together, allowing the odd-sized stones to fall into piles near
+the edges of the chamber.  A heavy wooden door is in the western wall.
+~
+0 3153932 0
+D1
+~
+~
+0 0 30044
+D2
+~
+~
+0 0 30040
+D3
+~
+~
+8388643 30017 30046
+E
+heavy wooden door~
+This door is made of wood and very solid.  It might be locked.
+~
+S
+#30046
+Interior of the Keep~
+This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  In
+the middle of the eastern wall is a heavy wooden door.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30049
+D1
+~
+~
+8388647 30017 30045
+D2
+~
+~
+0 0 30051
+D3
+~
+~
+0 0 30053
+E
+heavy wooden door~
+This door is made of wood and very solid.  It might be locked.
+~
+S
+#30047
+Middle of the Hall~
+In the middle of this hallway there is an archway to the north leading
+out on to a small porch that overlooks the cliffs.  The hall continues
+to the east and west.  In an alcove on the southern wall there is room
+for a standing candelabra.
+~
+0 3153928 0
+D0
+~
+~
+0 0 30059
+D1
+~
+~
+0 0 30050
+D3
+~
+~
+0 0 30048
+S
+#30048
+Beginning of the Hall~
+This hall could have once contained artwork or relics, now it is empty
+and bare.  The hall continues to the east, past an archway, to a heavy
+wooden door and broken window at the far end.  A sinister room filled
+with un-natural shadows is to the west.
+~
+0 3153932 0
+D1
+~
+~
+0 0 30047
+D3
+~
+~
+0 0 30049
+S
+#30049
+Interior of the Keep~
+This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  To
+the east is a narrow hallway that is connected to a couple of smaller
+chambers.
+~
+0 3153929 0
+D1
+~
+~
+0 0 30048
+D2
+~
+~
+0 0 30046
+D3
+~
+~
+0 0 30054
+S
+#30050
+End of the Hall~
+The hall comes to an end here.  In the eastern wall there was once a
+grand window, now all the remains are portions of the frame and a few
+broken pieces of glass.  Tattered curtains sway from a breeze blowing
+in from outside.  A large wooden door is to the north, while the hall
+heads back west.
+~
+0 3153928 0
+D0
+~
+~
+8389671 30023 30060
+D3
+~
+~
+0 0 30047
+E
+large wooden door~
+The door looks very solid and could be locked.
+~
+S
+#30051
+Interior of the Keep~
+This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  In
+the shadows lurks something sinister and evil.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30046
+D3
+~
+~
+0 0 30052
+S
+#30052
+Interior of the Keep~
+This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  In
+the shadows lurks something sinister and evil.  To the west there is a
+door leading, as you can tell from the missing roof-section, into a
+large, square tower.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30053
+D1
+~
+~
+0 0 30051
+D3
+~
+~
+8389671 30018 30056
+S
+#30053
+Interior of the Keep~
+This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  In
+the shadows lurks something sinister and evil.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30054
+D1
+~
+~
+0 0 30046
+D2
+~
+~
+0 0 30052
+S
+#30054
+Interior of the Keep~
+This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  In
+the shadows lurks something sinister and evil.
+~
+0 3153929 0
+D1
+~
+~
+0 0 30049
+D2
+~
+~
+0 0 30053
+S
+#30055
+Base Level of the Sqare Tower~
+The square tower is not going to fall in anytime soon but, like the
+rest of this place, anything of any value has been smash or destroyed.
+To the west there is a stair-case leading up.  South there is a door
+that leads out of the tower.
+~
+0 3153928 0
+D2
+~
+~
+0 0 30056
+D3
+~
+~
+0 0 30058
+S
+#30056
+Entering a Sqare Tower~
+The square tower is not going to fall in anytime soon but, like the
+rest of this place, anything of any value has been smash or destroyed.
+There is a door to the east leading into a sinister room filled with
+the un-natural shadows.  The tower continues to the north and west.
+~
+0 3153932 0
+D0
+~
+~
+0 0 30055
+D1
+~
+~
+8389671 30018 30052
+D3
+~
+~
+0 0 30057
+S
+#30057
+Base Level of the Sqare Tower~
+The square tower is not going to fall in anytime soon but, like the
+rest of this place, anything of any value has been smash or destroyed.
+To the north is a stair-case leading up in the tower, while east there
+is a door heading back into the rest of the keep.  Here there is a
+trapdoor set flush into the floor of the tower here.
+~
+0 3153928 0
+D0
+~
+~
+0 0 30058
+D1
+~
+~
+0 0 30056
+D5
+~
+~
+8389671 30020 30071
+E
+trapdoor ~
+This trapdoor could very easily be locked.
+~
+S
+#30058
+Bottom of a Stair-Case~
+The square tower is not going to fall in anytime soon but, like the
+rest of this place, anything of any value has been smash or destroyed.
+The tower continues to the south and east.  There is a stone stair-
+case leading up to a trapdoor in the ceiling.
+~
+0 3153928 0
+D1
+~
+~
+0 0 30055
+D2
+~
+~
+0 0 30057
+D4
+~
+~
+1063 30019 30063
+E
+stone staircase stairs~
+The stairs lead up to the upper level of the tower.  There you can see
+that there are huge holes in the upper floors ceiling.  The stair look
+safe enough to walk on, although they are in slight disrepair.
+~
+E
+trapdoor~
+The trapdoor does appear to have a lock of some sort.  The trapdoor is
+made out wood.
+~
+S
+#30059
+Looking down from the Porch~
+Standing here upon this small porch overlooking the the trail leading
+up the the cliffs, a sentry could easily spot any visitors if not for
+the thick mist below.  You wished you had turned back somewhere along
+that trail, for now you have no choice but to continue.  An archway to
+the south leads back into the hall.
+~
+0 3153920 1
+D2
+~
+~
+0 0 30047
+E
+archway~
+The archway is cracked but safe enough to pass under.
+~
+S
+#30060
+Base of the Circular Tower~
+Here inside the base of the circular tower, a flight of small steps
+up to a platform where a door can be seen.  To the south is a large
+wooden door, leading back into the narrow hall.  The tower is bare of
+any ornamentation.
+~
+0 3153928 0
+D2
+~
+~
+8389671 30023 30050
+D4
+~
+~
+0 0 30061
+E
+large wooden door~
+The door looks very solid and could be locked.
+~
+S
+#30061
+Base of the Circular Tower~
+Upon this platform a small flight of stairs lead down to a lower level
+where a door is visible leading into the hall.  Another door is to the
+east.  To the north is a window looking out over the area.  Everything
+of value in the tower has been looted or destroyed.
+~
+0 3153928 0
+D1
+~
+~
+3 0 30062
+D5
+~
+~
+0 0 30060
+E
+spiral staircase~
+The staircase rises up to the top level of this tower, some four or
+five stories above.  Something is moving about high above.
+~
+E
+window~
+The window looks out upon the bleak and dreary path leading up the
+cliffs.
+~
+S
+#30062
+Base of the Circular Tower~
+Here a set of circular stairs lead up to the next level of the tower.
+There is a wooden door to the west.  This area appears to have been
+picked over long ago by some other adventuring group, however, you can
+sense the presense of something evil waiting for you at the top of the
+spiral staircase.
+~
+0 3153928 0
+D3
+~
+~
+3 0 30061
+D4
+~
+~
+0 0 30076
+E
+spiral staircase~
+The spiral staircase runs the entire height of the circular tower.
+~
+S
+#30063
+Top of a Stair-Case~
+The second level of this tower remained largely intact except for many
+holes in the ceiling above.  Only the southeast corner is shrouded in
+complete darkness, somewhat refreshing to be out in the open once more.
+A staircase leads back down to the ground floor through a trapdoor.
+~
+0 3153928 0
+D1
+~
+~
+0 0 30064
+D2
+~
+~
+0 0 30065
+D5
+~
+~
+1063 30019 30058
+E
+darkness corner~
+The southeastern corner of the tower still has most of its roof, and
+from here you cannot tell what is there.
+~
+E
+staircase~
+The stairs lead down into a very dark part of the keep.  Within the
+darkness shapes are moving about.
+~
+E
+trapdoor~
+The trapdoor does appear to have a lock of some sort.  The trapdoor is
+made out wood.  On this side of the trapdoor there is a brass ring to
+lift with.
+~
+S
+#30064
+Beneath a Large Hole~
+The second level of this tower remained largely intact except for many
+holes in the ceiling above.  Only the southeast corner is shrouded in
+complete darkness, somewhat refreshing to be out in the open once more.
+To the south there is something in the darkness, while above is a large
+hole in the ceiling.
+~
+0 3153928 0
+D2
+~
+~
+0 0 30066
+D3
+~
+~
+0 0 30063
+E
+hole ceiling~
+There are some large holes in the ceiling, allowing a little light to
+shed this tower.
+~
+E
+darkness corner~
+The southeastern corner of the tower still has most of its roof, and
+from here you cannot tell what is there.
+~
+S
+#30065
+Corner of the Square Tower~
+The second level of this tower remained largely intact except for many
+holes in the ceiling above.  Only the southeast corner is shrouded in
+darkness, somewhat refreshing to be out in the open once more.  To the
+east there is something in the darkness.
+~
+0 3153928 0
+D0
+~
+~
+0 0 30063
+D1
+~
+~
+0 0 30066
+E
+darkness corner~
+The southeastern corner of the tower still has most of its roof, and
+from here you cannot tell what is there.
+~
+E
+ceiling~
+There are some large holes in the ceiling, allowing a little light to
+shed this tower.
+~
+S
+#30066
+Flow of Maggots~
+Here, in the darkest recess of the tower, a horde of writhing maggots
+are feeding upon whatever unlucky being wanders into the area.  While
+individually harmless, when encountered in numbers they can prove to
+be quite deadly.  They do not seem to have a preferance for living or
+undead flesh.  Various bones and trinkets are scattered about here.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30064
+D3
+~
+~
+0 0 30065
+E
+bones trinkets~
+Ah, just baubles, nothing of real value.
+~
+S
+#30067
+Well Keep Niche~
+This niche of the catacombs was probably a holding cell at one time,
+now it has been renovated by the current occupant.  Unlike almost all
+the other places you have come across here, this chamber borders on
+being called habitable.  The rest of the catacombs are to the east.
+~
+0 3153929 0
+D1
+~
+~
+0 0 30068
+S
+#30068
+Dungeon Catacombs~
+The catacombs lead off in many directions, with each alcove being dark
+and moist.  A whispy mist hangs just a few inches above the floor all
+through-out these chambers.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30075
+D1
+~
+~
+0 0 30069
+D2
+~
+~
+0 0 30074
+D3
+~
+~
+0 0 30067
+E
+mist~
+The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+S
+#30069
+Dungeon Catacombs~
+The catacombs lead off in many directions, with each alcove being dark
+and moist.  A whispy mist hangs just a few inches above the floor all
+through-out these chambers.
+~
+0 3153929 0
+D1
+~
+~
+0 0 30070
+D3
+~
+~
+0 0 30068
+D5
+~
+~
+8389671 30024 30081
+E
+mist~
+The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+S
+#30070
+Dungeon Catacombs~
+The catacombs lead off in many directions, with each alcove being dark
+and moist.  A whispy mist hangs just a few inches above the floor all
+through-out these chambers.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30072
+D1
+~
+~
+0 0 30071
+D2
+~
+~
+0 0 30073
+D3
+~
+~
+0 0 30069
+E
+mist~
+The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+S
+#30071
+Entering the Catacombs~
+Here a ladder leads back up into the square tower.  An underground
+labrynth made from the former dungeons of this keep sprawl are to the
+west.  A swirling mist hangs just above the ground, and creates a most
+disturbing and unholy atmosphere.  Above there is a trapdoor in the
+ceiling.
+~
+0 3153929 0
+D3
+~
+~
+0 0 30070
+D4
+~
+~
+8389671 30020 30057
+E
+trapdoor~
+This trapdoor could very easily be locked.
+~
+E
+mist~
+The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+S
+#30072
+Catacomb Niche~
+This chamber was probably the general holding cell, but is now the
+lair of a most horrible creature.  There is a coffin placed roughly
+in the center of this room, and from which the wispy mist which fills
+these catacombs is steadily streaming.
+~
+0 3153929 0
+D2
+~
+~
+0 0 30070
+D5
+~
+coffin~
+3 0 30079
+E
+mist~
+The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+S
+#30073
+Catacomb Niche~
+The cell has been modified to the tastes of the fiend occuping it.  A
+variety of bones and bits of flesh have been discarded or tucked away
+for later.  An un-natural mist floats covers the floor, making you a
+bit worried about pit traps.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30070
+E
+mist~
+The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+S
+#30074
+Catacomb Niche~
+The cell has been modified to the tastes of the fiend occuping it.  A
+variety of bones and bits of flesh have been discarded or tucked away
+for later.  The strange mist dances about the ground here is a chaotic
+fashion.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30068
+E
+mist~
+The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+S
+#30075
+Catacomb Niche~
+The cell has been modified to the tastes of the fiend occuping it.  A
+variety of bones and bits of flesh have been discarded or tucked away
+for later.  The white, wispy mist circles around your ankles in this
+niche.
+~
+0 3153929 0
+D2
+~
+~
+0 0 30068
+E
+mist~
+The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+S
+#30076
+Studychamber in the Tower~
+From here the spiral staircase leads up and down.  Below there is a
+large chamber at the base of the tower.  A few items of furniture are
+still here waiting to be explored, while a non-animated skeleton is
+laying near the staircase.  It appears both the furniture and skeleton
+have been here for some time.
+~
+0 3153928 0
+D4
+~
+~
+0 0 30077
+D5
+~
+~
+0 0 30062
+E
+spiral staircase~
+The spiral staircase runs the entire height of the circular tower.
+~
+E
+furniture~
+This stuff is old, dusty, and needs to be thrown out.  Some furniture
+has sheets drapped over them.
+~
+E
+skeleton~
+The skeleton is curled up next to the wall near the staircase.  It has
+been here for a very, very long time.  Thankfully, it is not animated
+and attacking you.
+~
+S
+#30077
+Bedchamber in the Tower~
+The staircase leads both up and down, while the rest of the room was
+probably used as a bedchamber.  A semi-circular set of rings are set
+around the stairs where a curtain probably once hung.  There could be
+a few items hidden away here.  For some reason, going back down sounds
+alot better than going up.
+~
+0 3153928 0
+D4
+~
+~
+0 0 30078
+D5
+~
+~
+0 0 30076
+E
+spiral staircase~
+The spiral staircase runs the entire height of the circular tower.
+~
+E
+rings~
+The rings once had a curtain attached to them to provide some privacy
+for the occupants.  There has not been any living occupants for quiet
+some time now.
+~
+S
+#30078
+Lair of the Banshee~
+Here, at the top most chamber in the tower, a dark soul resides.  The
+furniture here has not been used in ages, a think layer of dust and
+alot of cobwebs are found over everything.  There are several windows
+here looking out in each direction.  Below a spiral staircase decends
+all the way to the base of the tower.
+~
+0 3145736 0
+D5
+~
+~
+0 0 30077
+E
+spiral staircase~
+The spiral staircase runs the entire height of the circular tower.
+~
+S
+#30079
+Earthen Tunnel~
+An earthen tunnel leads deeper down into the earth.  The walls of this
+passage are bare soil, giving the area a musty, earth smell.  Above is
+a secret trapdoor that is set into the bottom of a coffin.  Put in the
+center of this chamber is yet another coffin, from which the all this
+mist has been coming.
+~
+0 3153929 0
+D4
+~
+coffin~
+3 0 30072
+D5
+The coffin appears to be locked by a tiny bronze mechanism at the top
+and bottom.  There are small holes in the sides of the coffin to allow
+mist to escape.
+~
+coffin~
+8389639 30022 30080
+S
+#30080
+Dark Recesses of the Catacombs~
+Here at the bottom of the earthen catacombs is the lair of a powerful
+undead fiend.  A few items that the creature had collected are placed
+about the chamber, center most is its coffin.  An passage leads up to
+the rest of the dungeon catacombs through a false coffin.
+~
+0 3145737 0
+D4
+~
+coffin~
+8389671 30022 30079
+S
+#30081
+Entering the Crypts~
+Entering the crypts below the tall, circular tower, the atmosphere of
+the area turns even more sinister and evil.  Stairs lead up through a
+trapdoor into the tower, while the crypts continue to the west.
+~
+0 3153933 0
+D3
+~
+~
+0 0 30082
+D4
+~
+~
+8389671 30024 30069
+E
+stairs~
+These stairs look safe enough to climb or decend.
+~
+> greet_prog p arrives from above.~
+mpechoat $n To the west the sound of bones rattling is ~
+|
+S
+#30082
+Crypts beneath the Keep~
+The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  To the east is a staircase
+leading back up the small, circular tower.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30083
+D1
+~
+~
+0 0 30081
+D2
+~
+~
+0 0 30087
+D3
+~
+~
+0 0 30085
+S
+#30083
+Crypts beneath the Keep~
+The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  The walls are made of earthen
+walls and supported by stone collumns.
+~
+0 3153929 0
+D2
+~
+~
+0 0 30082
+D3
+~
+~
+0 0 30084
+E
+earthen walls~
+The walls are made of moist earth.  They are supported by collumns and
+archways of wood.
+~
+S
+#30084
+Crypts beneath the Keep~
+The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  The walls are made of earthen
+walls and supported by stone collumns.
+~
+0 3153929 0
+D1
+~
+~
+0 0 30083
+D2
+~
+~
+0 0 30085
+E
+earthen walls~
+The walls are made of moist earth.  They are supported by collumns and
+archways of wood.
+~
+S
+#30085
+Crypts beneath the Keep~
+The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  To the south there are stairs
+leading down deeper into the crypt.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30084
+D1
+~
+~
+0 0 30082
+D2
+~
+~
+0 0 30086
+E
+staircase stairs~
+The staircase is made of stone, thats about all that can be said about
+them.  Pretty ordinary looking, aside from a few bones that are on the
+steps.
+~
+S
+#30086
+Crypts beneath the Keep~
+The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  Below a staircase leads down
+into a lower section of the crypts.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30085
+D1
+~
+~
+0 0 30087
+D5
+~
+~
+0 0 30088
+E
+staircase stairs~
+The staircase is made of stone, thats about all that can be said about
+them.  Pretty ordinary looking, aside from a few bones that are on the
+steps.
+~
+S
+#30087
+Crypts beneath the Keep~
+The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  To the west there are stairs
+leading down.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30082
+D3
+~
+~
+0 0 30086
+S
+#30088
+Decending into the Lower Crypts~
+The stairs leading down into the lower crypts are steep, while the
+passages are very narrow, and the ceiling is just a bit too low.  To
+the south there is a small wooden door set into the damp earthen wall.
+~
+0 3153933 0
+D2
+~
+~
+3 0 30089
+D4
+~
+~
+0 0 30086
+E
+small wooden door~
+The door does not appear to have form of lock or magical protection.
+~
+E
+earthen wall~
+The walls are made of moist earth.  They are supported by collumns and
+archways of wood.
+~
+S
+#30089
+Narrow Passage in the Crypts~
+To the north is a simple wooden door, and beyond a staircase leading
+out of this place.  To the south there is a narrow passage that passes
+beneath a stone archway.
+~
+0 3153929 0
+D0
+~
+~
+3 0 30088
+D2
+~
+~
+0 0 30090
+E
+stone archway~
+The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+E
+staircase~
+The stairs are made of stone blocks, they do not appear to have any
+secret compartment or traps.
+~
+S
+#30090
+Lower Depths of the Crypt~
+Here in the lower depths of the crypt the walls are made of bare earth
+and reinforced with stone collumns and archways.  There is an archway
+to the north, leading into a passage.  To the south there is another
+archway opening into a small chamber.  A foul stench comes drifts in
+from the east, from where animated corpse move about.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30089
+D1
+~
+~
+0 0 30091
+D2
+~
+~
+0 0 30095
+E
+archway~
+The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+E
+collumn~
+The collumns are about a foot wide and made of stone.  Around some of
+them are piles of skulls and bones.
+~
+E
+wall earth~
+The walls are made of moist earth.  They are supported by collumns and
+archways of wood.
+~
+S
+#30091
+Lair of the Ghouls~
+This chamber has archways leading north, east, south, and west.  North
+and south lead to different parts of some kind of undead processing
+plant, while to the east and west the crypt continues.  The air down
+here in the crypts smells like rotting flesh, only worse.
+~
+0 3153933 0
+D0
+~
+~
+16777216 0 30093
+D1
+~
+~
+1048576 0 30092
+D2
+~
+~
+16777216 0 30096
+D3
+~
+~
+1048576 0 30090
+E
+archways~
+The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+S
+#30092
+Lair of the Ghoul Lord~
+This lair if filled with bits of flesh, meat, and bones.  The air is
+enough to make someone nausious.  There are archways leading to the
+north and south into smaller chambers.  A few human skins have been
+tacked to the earthen walls here as decoration.
+~
+0 3145737 0
+D0
+~
+~
+1048576 0 30094
+D2
+~
+~
+1048576 0 30097
+D3
+~
+~
+1048576 0 30091
+E
+archways~
+The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+E
+human skins~
+These skins are stretched out on the eastern wall and held in place
+with iron spikes.
+~
+E
+flesh meat bone~
+How disgusting!
+~
+S
+#30093
+Below the Skeletal Transformer~
+At the base of the skeletal transformer the recently departed are then
+raised into skeletons.  Quiet an efficent operation actually.  In one
+of the corners there is a pile of bones that have been rejected for
+one reason or another.  A hole in the ceiling leads up to the upper
+part of the transformer.  An archway to the south heads back into the
+crypts.
+~
+0 3153929 0
+D2
+~
+~
+0 0 30091
+D4
+~
+~
+0 0 30096
+E
+archway~
+The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+S
+#30094
+Necromancer Living Quarters~
+This corner of the crypt has been converted into living quarters for
+the necromancers that have been animating all these corpses and have
+been causing all the problems.  For the most part these folk who live
+amongst the dead do not care for material wealth.  An archway to the
+south leads back into the crypt.
+~
+0 3153929 0
+D2
+~
+~
+0 0 30092
+E
+archway~
+The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+S
+#30095
+Spell Preparation Chamber~
+The earthen walled chamber is reinforced with stone collumns and an
+archway to the north that leads back into the crypt.  Upon the earth
+floor a pentagram has been scrawled and various candles luminate this
+chamber.  Various symbols have been scrawled in blood upon the walls.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30090
+E
+archway~
+The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+E
+collumn~
+These collumns are made of stone and support the earthen walls.
+~
+E
+pentagram~
+The pentagram has been scrawled in the dirt and is about five feet
+wide in diameter.  Inside the grooves of the pentagram a white, power-
+like substance you guess is bone.
+~
+E
+candles~
+The candles are white, and most are over half-way melted.  They are
+place upon spikes driven into the ground just outside of the penta-
+gram.
+~
+E
+symbol blood~
+The symbols are strange to you, and no doubt have some part in the
+animating the dead.  Many are skull-like or contain pentagrams.
+~
+S
+#30096
+Above the Skeletal Transformer~
+This room is housed by a pack of ghasts who feast upon whatever living
+creature wanders, or is placed, in this chamber.  The flesh is quickly
+devoured in a matter of seconds and the body is through into a hole in
+the center of the chamber.  An archway leads back to the crypt to the
+north.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30091
+D5
+~
+~
+0 0 30093
+E
+archway~
+The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+S
+#30097
+Necromancer Living Quarters~
+This corner of the crypt has been converted into living quarters for
+the necromancers that have been animating all these corpses and have
+been causing all the problems.  For the most part these folk who live
+amongst the dead do not care for material wealth.  An archway to the
+north leads back into the crypt, while a staircase leads down into a
+storage room.
+~
+0 3153929 0
+D0
+~
+~
+0 0 30092
+D5
+~
+~
+0 0 30098
+E
+archway~
+The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+S
+#30098
+Ill-Stocked Storage Chamber~
+This room is used for storage by the cult of necromancers living in
+the ruins.  Crates of dried food and barrels of water, along with a
+couple of spools of black cloth are all stacked orderly against the
+walls.  A staircase leads up into the crypt, while there is a wooden
+door in the south wall.
+~
+0 3153929 0
+D2
+~
+~
+1048579 0 30099
+D4
+~
+~
+0 0 30097
+E
+wooden door~
+The door looks pretty simple and does not have a lock.
+~
+E
+staircase~
+These stairs are made of large stone blocks.  They do not appear to be
+trapped or contain any hidden compartments.
+~
+E
+spool black cloth~
+The spool is about four feet tall, and contains probably hundreds of
+yards of a durable black cloth.  Obviously whoever is living down here
+does not have expensive tastes.
+~
+S
+#30099
+Lair of the Master Necromancer~
+This chamber is lined with wooden panels, and is furnished with some
+basic items.  A dim glow radiates from a globe of light placed in the
+center of the room.  Along the walls are several bookshelves that are
+filled with all kinds of manuals, tomes, and grimoires.  To the north
+is a door leading back into the crypt.
+~
+0 3145737 0
+D0
+~
+~
+1048579 0 30098
+E
+wooden panels~
+The wooden panels are fitted along the walls to give this chamber a
+bit more 'lived in' look.
+~
+E
+globe light~
+This item looks alot like the product of a continual light spell put
+into a harness and hung from the ceiling.
+~
+E
+door~
+The door looks pretty simple and does not have a lock.
+~
+S
+#0
+
+
+#RESETS
+O 0 30000 0 30001
+O 0 30049 0 30002
+P 0 30050 0 30049
+O 0 30006 0 30003
+M 0 30009 2 30004
+G 0 30032 0
+O 0 30004 0 30004
+O 0 30032 0 30005
+O 0 30001 0 30006
+O 0 30031 0 30007
+M 0 30009 2 30009
+G 0 30021 0
+O 0 30006 0 30010
+M 0 30005 1 30011
+M 0 30000 3 30012
+O 0 30002 0 30013
+O 0 30005 0 30014
+O 0 30000 0 30014
+M 0 30001 4 30015
+M 0 30001 4 30016
+O 0 30002 0 30016
+D 0 30016 2 1
+M 0 30001 4 30017
+M 0 30000 3 30018
+O 0 30006 0 30018
+O 0 30008 0 30018
+M 0 30001 4 30019
+O 0 30003 0 30019
+O 0 30007 0 30019
+M 0 30006 1 30020
+O 0 30051 0 30020
+M 0 30007 1 30021
+M 0 30000 3 30022
+D 0 30022 0 1
+O 0 30002 0 30023
+M 0 30002 1 30024
+O 0 30003 0 30024
+M 0 30004 1 30025
+D 0 30025 2 1
+D 0 30026 0 1
+M 0 30003 1 30027
+O 0 30004 0 30027
+O 0 30002 0 30028
+O 0 30004 0 30029
+D 0 30029 1 1
+M 0 30010 9 30030
+M 0 30010 9 30030
+M 0 30010 9 30030
+D 0 30030 3 1
+O 0 30006 0 30031
+M 0 30011 1 30031
+D 0 30031 1 1
+O 0 30011 0 30032
+P 0 30006 0 30011
+D 0 30032 3 1
+O 0 30002 0 30033
+O 0 30003 0 30034
+O 0 30000 0 30034
+D 0 30034 2 1
+O 0 30015 0 30035
+D 0 30035 0 1
+O 0 30006 0 30036
+O 0 30012 0 30037
+D 0 30037 1 1
+O 0 30010 0 30038
+M 0 30008 1 30038
+D 0 30038 3 1
+M 0 30012 2 30039
+M 0 30012 2 30039
+D 0 30039 0 2
+M 0 30013 2 30040
+M 0 30013 2 30040
+D 0 30040 2 2
+M 0 30029 12 30041
+G 0 30021 0
+O 0 30004 0 30042
+M 0 30029 12 30042
+G 0 30032 0
+M 0 30014 1 30043
+G 0 30017 0
+O 0 30016 0 30043
+P 0 30014 0 30016
+O 0 30011 0 30044
+M 0 30029 12 30044
+G 0 30031 0
+D 0 30045 3 1
+M 0 30015 8 30046
+M 0 30015 8 30046
+D 0 30046 1 2
+O 0 30030 0 30047
+M 0 30015 8 30049
+M 0 30015 8 30049
+M 0 30016 1 30050
+G 0 30018 0
+D 0 30050 0 2
+M 0 30015 8 30051
+M 0 30015 8 30052
+M 0 30030 1 30052
+D 0 30052 3 2
+M 0 30015 8 30053
+M 0 30015 8 30054
+M 0 30018 1 30055
+D 0 30056 1 2
+M 0 30019 1 30057
+D 0 30057 5 2
+O 0 30033 0 30058
+D 0 30058 4 2
+M 0 30017 1 30059
+G 0 30019 0
+D 0 30060 2 2
+D 0 30061 1 1
+D 0 30062 3 1
+M 0 30020 1 30063
+D 0 30063 5 2
+O 0 30004 0 30064
+O 0 30015 0 30065
+O 0 30033 0 30065
+M 0 30021 1 30066
+G 0 30020 0
+O 0 30012 0 30066
+P 0 30021 0 30012
+P 0 30033 0 30012
+O 0 30033 0 30066
+O 0 30033 0 30066
+M 0 30026 1 30067
+G 0 30022 0
+O 0 30026 0 30067
+P 0 30029 0 30026
+D 0 30069 5 2
+D 0 30071 4 2
+M 0 30025 1 30072
+O 0 30025 0 30072
+P 0 30028 0 30025
+O 0 30035 0 30072
+D 0 30072 5 1
+M 0 30023 1 30073
+O 0 30026 0 30073
+P 0 30028 0 30026
+O 0 30021 0 30073
+O 0 30006 0 30073
+M 0 30024 1 30074
+O 0 30026 0 30074
+P 0 30028 0 30026
+P 0 30036 0 30026
+O 0 30035 0 30074
+M 0 30022 1 30075
+G 0 30034 0
+O 0 30026 0 30075
+P 0 30028 0 30026
+P 0 30033 0 30026
+O 0 30033 0 30075
+M 0 30028 1 30078
+G 0 30024 0
+O 0 30025 0 30079
+D 0 30079 5 2
+D 0 30079 4 1
+M 0 30027 1 30080
+G 0 30023 0
+O 0 30027 0 30080
+P 0 30028 0 30027
+D 0 30080 4 2
+D 0 30081 4 2
+M 0 30032 6 30082
+G 0 30021 0
+G 0 30032 0
+O 0 30006 0 30082
+M 0 30032 6 30083
+G 0 30031 0
+G 0 30031 0
+O 0 30007 0 30083
+M 0 30032 6 30084
+G 0 30021 0
+G 0 30032 0
+O 0 30006 0 30084
+M 0 30032 6 30085
+G 0 30032 0
+G 0 30031 0
+O 0 30007 0 30085
+M 0 30032 6 30086
+G 0 30021 0
+G 0 30031 0
+O 0 30006 0 30086
+M 0 30032 6 30087
+G 0 30021 0
+G 0 30032 0
+O 0 30007 0 30087
+O 0 30007 0 30088
+D 0 30088 2 1
+O 0 30006 0 30089
+D 0 30089 0 1
+M 0 30031 3 30091
+M 0 30031 3 30091
+M 0 30031 3 30091
+M 0 30033 1 30092
+O 0 30006 0 30092
+M 0 30029 12 30093
+M 0 30029 12 30093
+M 0 30029 12 30093
+M 0 30029 12 30093
+M 0 30029 12 30093
+M 0 30029 12 30093
+M 0 30029 12 30093
+M 0 30029 12 30093
+M 0 30029 12 30093
+O 0 30007 0 30093
+M 0 30035 1 30094
+E 0 30042 0 5
+M 0 30034 1 30095
+E 0 30042 0 5
+M 0 30010 9 30096
+M 0 30010 9 30096
+M 0 30010 9 30096
+M 0 30010 9 30096
+M 0 30010 9 30096
+M 0 30010 9 30096
+O 0 30006 0 30096
+M 0 30036 1 30097
+E 0 30042 0 5
+M 0 30037 1 30098
+E 0 30043 0 5
+O 0 30047 0 30098
+O 0 30048 0 30098
+D 0 30098 2 1
+M 0 30038 1 30099
+E 0 30045 0 6
+E 0 30044 0 5
+O 0 30016 0 30099
+P 0 30046 0 30016
+D 0 30099 0 1
+S
+
+
+#SHOPS
+0
+
+
+#REPAIRS
+0
+
+
+#SPECIALS
+S
+
+
+#$

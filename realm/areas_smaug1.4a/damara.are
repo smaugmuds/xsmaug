@@ -1,0 +1,1286 @@
+#AREA   The Tomb of Damara~
+
+
+
+#VERSION 1
+#AUTHOR Gabriel~
+
+#RANGES
+15 25 0 65
+$
+
+#RESETMSG In the distance, you can hear a slave being scolded.~
+
+#FLAGS
+0
+
+#ECONOMY 0 1791000
+
+#CLIMATE 2 2 2
+
+#MOBILES
+#26050
+gnoll~
+an ugly gnoll~
+An ugly gnoll is less than happy with your presence.
+~
+~
+39 512 -750 C
+11 0 0 0d0+0 0d0+0
+2000 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+37 3 0 0 17 17 0
+0 0 6143 0 0 0 0 0
+#26051
+kobold guard~
+a kobold guard~
+A kobold guard is here, nursing a flask of wine.
+~
+~
+35 512 -750 C
+12 0 0 0d0+0 0d0+0
+3000 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+44 3 0 0 17 17 0
+0 0 6143 0 0 0 0 524289
+#26052
+giant toad~
+a giant toad~
+An enormous toad leaps out of the fountain as you enter.
+~
+~
+35 4194816 -750 C
+13 0 0 0d0+0 0d0+0
+5000 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+80 3 0 0 1 1 0
+0 0 1085 0 0 0 1 0
+#26053
+giant rat~
+a giant rat~
+A giant rat scurries across the floor at an amazing speed.
+~
+~
+35 512 0 C
+12 0 0 0d0+0 0d0+0
+1000 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+54 3 0 0 25 25 0
+0 0 189 0 0 0 262144 0
+#26054
+lizard shaman priest~
+the lizard shaman~
+A lizardman in the robes of a priest is disturbed at your presence.
+~
+~
+35 512 -1000 C
+15 0 0 0d0+0 0d0+0
+3000 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+13 1 0 0 1 1 0
+0 0 6143 0 0 0 0 8
+#26055
+orc miner~
+an orc miner~
+An orc is here digging at the ground at the command of his master.
+~
+~
+35 512 -1000 C
+11 0 0 0d0+0 0d0+0
+3000 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+53 3 0 0 17 17 0
+0 0 6143 0 0 0 0 0
+#26056
+orc master~
+the master miner~
+An orc in uniform is here, forcing his lessers to dig.
+~
+~
+35 512 -1000 C
+15 0 0 0d0+0 0d0+0
+3000 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+53 3 0 0 17 17 0
+0 0 6143 0 0 0 16 524289
+#26057
+goblin slavedriver~
+a goblin slavedriver~
+A goblin is here, forcing the slaves to cook their own friends.
+~
+~
+35 512 -1000 C
+15 0 0 0d0+0 0d0+0
+3000 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+39 3 0 0 17 17 0
+0 0 6143 0 0 0 16 524289
+#26058
+slave human~
+a human slave~
+A human slave is here, being forced to do unimaginable things.
+~
+~
+3 0 750 S
+8 0 0 0d0+0 0d0+0
+0 0
+112 112 1
+#26059
+gelatinous cube~
+a gelatinous cube~
+A pair of iron bracers seem to be floating in mid-air.
+~
+~
+35 4194304 -1000 C
+18 0 0 0d0+0 0d0+0
+10000 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+35 3 0 0 17 17 0
+0 0 0 8192 0 0 1073745920 0
+#26060
+carrion crawler~
+a carrion crawler~
+An enormous worm-thing is here, flashing a tentacled mouth!
+~
+~
+35 4194432 -1000 C
+20 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+70 3 0 0 1718558835 1718558834 0
+0 0 65568 0 0 0 5 524290
+> death_prog 100~
+emote slumps to the ground, and its body starts to fade away!
+mpoload 26086 1
+drop key
+mpecho There is a rusty key in place of the crawler's corpse!
+~
+|
+#26061
+predator wolf~
+Predator~
+An angry wolf snarls at you, but will not attack until commanded.
+~
+~
+3 4194304 -1000 C
+17 0 0 0d0+0 0d0+0
+10000 0
+112 112 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+69 3 0 0 1718558835 1718558834 0
+0 0 65568 0 0 0 1 0
+#26062
+crusher wolf~
+Crusher~
+An angry wolf snarls at you, but will not attack until commanded.
+~
+~
+3 4194304 -1000 C
+17 0 0 0d0+0 0d0+0
+10000 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+69 3 0 0 1718558835 1718558834 0
+0 0 65568 0 0 0 1 0
+#26063
+bonegnasher ogre~
+BoneGnasher~
+An ogre in full armor is here, not pleased with your intrusion.
+~
+~
+3 4194944 -1000 C
+25 0 0 0d0+0 0d0+0
+50000 0
+112 112 1
+18 13 13 13 13 13 13
+0 0 0 0 0
+6 3 0 0 17 16 0
+0 0 6143 0 0 0 400 524289
+> all_greet_prog 100~
+if isimmort($n)
+grovel $n
+say Please do not hurt me, oh great one!
+else
+growl $n
+say Who has disturbed Bonegnasher the Ogre's den of death and destruction?
+say A puny little human?
+say Destroy them, Crusher! Destroy them, Predator!
+mpforce crusher mpkill $n
+mpforce predator mpkill $n
+say Rip 'em to pieces! It's chow time!
+cackle
+endif
+~
+|
+#26064
+hobgoblin jailor~
+the hobgoblin jailor~
+An armed hobgoblin is here, interrogating a prisoner.
+~
+~
+3 4194304 -1000 C
+16 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+43 3 0 0 17 1 0
+0 0 6143 0 0 0 192 524288
+#26065
+taran prisoner~
+Taran~
+Taran is here, ecstatic that you have come to the rescue.
+~
+~
+3 4194304 1000 C
+20 0 0 0d0+0 0d0+0
+0 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+9 3 0 0 3 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if carryingvnum($n) == 26079
+say Is that the Ocarina of Damara you hold in your hands?!? It is!
+say Well done, $n! Those mule-brained ogres probably thought it was
+say simply an ordinary ocarina!
+chuckle
+say It is rumored that the Orb of Dragonkind is hidden in Damara's Tomb.
+say In order to get into the tomb, you must play the ocarina to reveal
+say the entrance. I do not know where it is, but I overheard that ugly
+say ogre giving his minions instructions to excavate the mines. Perhaps
+say you will have some luck there ...
+else
+emote stares up at you in amazement, and hope fills his eyes.
+say Please, you must help me! I came here searching for the Orb of
+say Dragonkind, but that blasted ogre, BoneGnasher, imprisoned me
+say before I could find it. They have not found it yet, but our time
+say is short. Please, you must help me! If that orb gets into the wrong
+say hands, it could be quite dangerous! Will you help me?
+endif
+~
+> speech_prog yes~
+say Thank you, $n! I fear I will not be able to repay you, as that
+say nasty ogre took all my possessions. However, if you find the Orb,
+say you can keep it. I trust that you will not use it for evil.
+say In order to find the Orb, you must first find the Ocarina of
+say Damara. It must be in this castle some place.
+~
+> speech_prog no~
+sigh
+say I guess I was wrong about you. Here I thought you were a brave
+say adventurer, not some cowardly fool! Leave my presence!
+emote turns his back.
+~
+> act_prog gives~
+if carryingvnum($i) == 26077
+say You've found my spellbook! Oh, thank you! I was afraid I would never
+say get this back ... I wish I had something I could give you in return,
+say but BoneGnasher took all my possessions.
+ponder
+say I've got it!
+emote flips through the pages of his spellbook.
+say Aha! Here it is.
+mpecho _blu Taran utters the words, 'jacobis illuminatus'.
+mpecho _blu A glowing sphere of light appears in Taran's hands.
+mpoload 26084 15
+give light $n
+say It's not much, but it's the least I can do for your troubles ...
+mpjunk spellbook
+endif
+~
+|
+#26066
+shadows shadow~
+The Shadow~
+An unnatural shadow maneuvers across the room in your direction.
+~
+~
+35 4194816 -1000 C
+25 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+56 3 0 0 25 25 0
+0 0 0 8192 0 1048576 1107300352 0
+> greet_prog 100~
+if isimmort($n)
+emote slithers back into the shadows.
+else
+mpecho A shadow from the corner begins to take on a humanoid shape!
+mpecho A voice echoes, 'You must defeat the shadow creature in order'
+mpecho A voice echoes, 'to receive the Orb of Dragonkind!'
+mpecho A voice echoes, 'Prepare to die!'
+mpecho An evil cackle rings throughout the room, sending chills up your spine.
+endif
+~
+|
+#26067
+pit monster~
+the pit monster~
+An unrecognizable creature stares at you with a hungry gaze.
+~
+~
+35 4194304 -1000 C
+14 0 0 0d0+0 0d0+0
+10000 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+89 3 0 0 25715 25714 0
+0 0 0 0 0 0 2 2
+#26068
+ghost mob~
+a ghost mob~
+This mob should not be visible to anyone.
+~
+~
+8388609 65538 0 S
+51 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+> speech_prog killmepleez!~
+mpdonothing
+mpdonothing
+mpslay Taran
+~
+|
+#0
+
+
+#OBJECTS
+#26050
+cell key~
+a cell key~
+An oddly shaped key hangs from a jailor's key ring here.~
+~
+18 0 1
+0 0 0 0
+1 0 0
+#26051
+fountain~
+the fountain~
+A sculpture of a dragon spews forth water into a large fountain.~
+~
+25 0 0
+0 0 0 0
+1 0 0
+#26052
+rubble junk~
+the pile of rubble~
+There is a pile of junk lying in the corner of the room.~
+~
+13 0 0
+0 0 0 0
+1 0 0
+> exa_prog 50~
+mpechoat $n You go to examine the pile of rubble.
+mpechoat $n Suddenly, you fall through a hole in the floor!
+mer $n $n examines the pile of rubble and falls through a hole in the floor!
+mptrans $n 26069
+~
+|
+#26053
+altar stone~
+the stone altar~
+An ancient stone block that used to be an altar is engraved with runes.~
+~
+12 0 0
+0 0 0 0
+1 0 0
+E
+runes~
+Engraved upon the stone block that used to be an altar is a message
+in the ancient common tongue. It reads:
+ 
+          The Orb of Dragonkind must never fall into the hands
+          Of evil. This is the dying request of Damara, King of
+          this Castle.
+~
+#26054
+well~
+the well~
+&BThere is a well with a bucket attached to it in the center of the room.~
+~
+15 0 0
+999 0 0 0
+1 0 0
+#26055
+chest~
+a wooden chest~
+There is a wooden chest leaning against the far wall.~
+~
+15 0 0
+999 5 26087 0
+1 0 0
+#26056
+throne~
+Damara's Throne~
+The throne of King Damara is propped up against the far wall.~
+~
+15 0 0
+999 0 0 0
+1 0 0
+#26057
+clay pots~
+the clay pots~
+Two clay pots lie on either side at the base of the throne.~
+~
+15 0 0
+999 0 0 0
+1 0 0
+#26058
+sign plaque~
+a sign~
+A sign is posted on the left side of the gate.~
+~
+12 0 0
+0 0 0 0
+1 0 0
+E
+sign plaque~
+You are about to enter the Tomb of Damara. Damara was an ancient
+wizard that fought for good. At his castle, he guarded the Orb of
+Dragonkind to make sure it wouldn't fall into evil hands. After he
+died, many heroes tried to find the Orb, but no one ever did.
+The castle is now in ruins and filled with danger.
+ 
+*WARNING*: The following area was designed for levels 15-25. Enter at
+           your own risk.
+ 
+This area was built by Gabriel Androctus for The Apocalypse Theatre.
+It is based heavily upon the map in the "Introduction to AD&D" kit.
+It has been changed slightly, but the original work is not my own.
+~
+#26059
+curved sword~
+a curved sword~
+A curved, rusty sword lies on the ground before you.~
+~
+5 0 8193
+8 3 6 1
+1 1250 125
+A
+18 1
+#26060
+round shield~
+a small, round shield~
+A small, round shield lies on the ground before you.~
+~
+9 0 513
+4 4 0 0
+1 0 0
+#26061
+ring protection~
+a ring of protection~
+A circle of obsidian lies here, omitting a strange glow.~
+~
+9 320 3
+2 2 0 0
+1 0 0
+A
+17 -10
+#26062
+shovel~
+an old shovel~
+An old shovel is here, leaning against the wall.~
+~
+59 0 1
+0 0 0 0
+1 500 50
+#26063
+brandy barrel~
+a barrel of brandy~
+A wooden barrel of brandy lies here collecting dust.~
+~
+17 0 1
+20 20 20 0
+1 150 15
+#26064
+black mace~
+a black mace~
+A mace crafted of obsidian is here, gleaming in the light.~
+~
+5 0 8193
+9 3 7 7
+1 0 0
+A
+19 2
+A
+4 1
+#26065
+shaman robes~
+a shaman's robes~
+A pile of intricately designed fabrics lie here in the shape of a robe.~
+~
+9 0 1025
+3 5 0 0
+1 0 0
+A
+4 2
+A
+18 1
+#26066
+chain vest~
+a chain vest~
+A chain vest lies on the ground collecting dust.~
+~
+9 0 9
+9 9 0 0
+1 0 0
+#26067
+scroll black~
+a black scroll~
+A rolled up piece of black parchment lies on the ground.~
+~
+2 0 1
+10 -1 -1 -1
+1 0 0
+'curse' 'poison' 'weaken'
+#26068
+pick axe pickaxe~
+a miner's pickaxe~
+A miner seems to have left his pickaxe behind.~
+~
+5 0 8193
+6 3 4 0
+1 0 0
+#26069
+scroll royal~
+a royal scroll~
+A scroll with the royal mark of the House of Damara lies here.~
+~
+2 0 1
+25 -1 -1 -1
+1 0 0
+'fireball' 'weaken' 'NONE'
+#26070
+crested shield~
+a crested shield~
+A large shield with the crest of the House of Damara lies here.~
+~
+9 320 513
+7 10 0 0
+9 150000 15000
+A
+17 -15
+A
+24 -5
+A
+22 -2
+A
+20 -3
+A
+23 -3
+A
+21 -5
+#26071
+orb dragonkind~
+the Orb of Dragonkind~
+A hazy blue sphere sits in a case of dragon scales before you.~
+~
+4 64 16385
+35 5 5 -1
+6 0 0
+'sanctuary'
+A
+19 3
+A
+18 3
+A
+4 1
+#26072
+potion tube healing~
+a healing potion~
+A small tube containing a clear liquid lies before you.~
+~
+10 64 1
+25 -1 -1 -1
+1 0 0
+'cure critical' 'cure critical' 'cure critical'
+#26073
+whip~
+a whip~
+It appears as though some slavedriver left his whip behind.~
+~
+5 0 8193
+12 3 7 0
+1 0 0
+A
+19 2
+A
+18 1
+#26074
+rusty dagger~
+a rusty dagger~
+A long, rusted dagger lies on the ground here.~
+~
+5 0 8193
+9 3 8 0
+1 0 0
+A
+19 3
+#26075
+iron bracer~
+an iron bracer~
+An extremely heavy, iron bracer lies on the ground here.~
+~
+9 0 4097
+6 6 0 0
+1 0 0
+A
+1 1
+A
+18 3
+A
+19 1
+#26076
+gold coins~
+a pile of gold coins~
+A pile of gold coins lie on the ground here.~
+~
+20 0 1
+136943 0 0 0
+1 0 0
+#26077
+spellbook book~
+Taran's Spellbook~
+A book engraved with elven runes lies on the ground here.~
+~
+2 64 1
+20 -1 -1 -1
+1 1000 100
+'elven beauty' 'NONE' 'NONE'
+#26078
+potion invisibility~
+a potion of invisibility~
+A beaker of clear fluid lies on the ground here.~
+~
+10 64 1
+15 -1 -1 -1
+1 0 0
+'invis' 'NONE' 'NONE'
+#26079
+damara ocarina~
+the Ocarina of Damara~
+A blue ocarina lies on the ground before you.~
+~
+4 320 16385
+20 3 3 -1
+1 0 0
+'bless'
+> use_prog 100~
+if inroom($n) == 26059
+mpechoat $n You put the ocarina to your lips and play a short song.
+mer $n $n puts the ocarin to $s lips and plays a short song.
+mpechoat $n Your melodious tune is echoed by a distant voice.
+mer $n $n's melodious tune is echoed by a distant voice.
+mpechoat $n The castle begins to shake violently.
+mer $n The castle begins to shake violently.
+mpopenpassage 26059 26068 9
+endif
+~
+|
+#26080
+combat boots~
+a pair of combat boots~
+A large pair of boots lie on the ground here.~
+~
+9 0 65
+5 5 0 0
+4 0 0
+A
+2 -1
+A
+19 2
+#26081
+chain mail leggings~
+a pair of chainmail leggings~
+A pair of chainmail leggings lie on the ground here.~
+~
+9 0 33
+6 6 0 0
+3 0 0
+A
+17 -15
+#26082
+studded girth~
+a studded girth~
+A large, studded girth that could fit an ogre lies here.~
+~
+9 0 2049
+6 6 0 0
+2 0 0
+A
+17 -10
+A
+19 2
+#26083
+spiked club~
+a spiked club~
+A giant wooden club with deadly spikes lies here.~
+~
+5 0 8193
+9 2 15 8
+1 0 0
+A
+1 1
+A
+19 5
+A
+18 -1
+#26084
+guiding light~
+The Guiding Light~
+A mass of light gathers in one place to guide you.~
+~
+1 320 1
+0 0 -1 0
+1 150000 15000
+A
+18 4
+A
+4 1
+A
+26 32
+#26085
+collar leather~
+a leathery collar~
+A strip of leather lies on the ground before you.~
+~
+9 0 5
+4 4 0 0
+2 0 0
+A
+19 1
+A
+18 1
+A
+25 -1
+A
+5 1
+#26086
+rusty key~
+a rusty key~
+A key that seems to have seen better days lies here.~
+~
+18 0 1
+0 0 0 0
+1 0 0
+#26087
+bone key~
+a bone key~
+A key carved out of the bones of some unfortunate person lies here.~
+~
+18 0 1
+0 0 0 0
+1 0 0
+#26088
+anklet bone~
+an anklet of bone~
+An anklet carved of human bone lies here collecting dust.~
+~
+9 16 2097153
+6 6 0 0
+1 0 0
+A
+1 1
+A
+18 2
+A
+19 2
+#0
+
+
+#ROOMS
+#26050
+Outside the Tomb of Damara~
+A cold wind blows through the dead trees around the ruin. Dark
+clouds make everything seem gray and lonely. The castle sits on
+top of a hill and can be seen from far away. Once it had strong
+walls and tall towers. Now the towers have fallen and the walls
+have collapsed in many places. There is a heavy door in the gate,
+but it looks like it could be opened.
+~
+0 0 2
+D0
+~
+~
+16777219 -1 26051
+S
+#26051
+The Central Room~
+This is a big room, once the main room of the castle. Now the plaster
+has fallen from the ceiling and the floor is littered with junk. The
+walls of the room show centuries of wear and lack of upkeep. There
+are four doors leading out of this room. One door leads north,
+another to the east, one to the south that leads back out of the
+castle, and one to the southwest.
+~
+0 9 0
+D0
+~
+~
+3 -1 26053
+D1
+~
+~
+3 -1 26055
+D2
+~
+~
+16777219 -1 26050
+D9
+~
+~
+3 -1 26052
+S
+#26052
+The Guard Room~
+The room is small and filled with junk. Most of it is pushed close
+to the walls, leaving a clear space in the center of the room.
+Empty flasks of alcohol scatter the room, as well as bones of what
+seems to be unfortunate adventurers.
+~
+0 9 0
+D6
+~
+~
+3 -1 26051
+S
+#26053
+The Castle Garden~
+The garden is small and tiled with flagstones. The plants that grew
+here are all dead. In the center of the garden is an old fountain
+filled with green, scummy water. The dead plants seem to fit in here.
+There is a doorway in the western wall of the garden.
+~
+0 9 0
+D2
+~
+~
+3 -1 26051
+D3
+~
+~
+3 -1 26054
+S
+#26054
+The Storeroom~
+This is a small, dusty room filled with shelves. Barrels, bags,
+pots, and jars line every shelf and are stacked on the floor.
+There is a quick scamper of little feet that stops just as you
+open the door. The only exit is back the way you came.
+~
+0 9 0
+D1
+~
+~
+3 -1 26053
+S
+#26055
+The Castle Cathedral~
+Though dirty, this room is still in good condition. Carved stone
+pillars support the arching roof. This was clearly the castle's
+chapel. At the back wall is a stone block, once the altar. The
+fine carvings on its base are nothing but chipped scars now. Even
+so, the altar still seems like it is a thing of peace and strength.
+A doorway leads south, from where you can hear mocking voices.
+Another doorway leads southeast. You can feel a breeze coming
+from under the doorway. And finally, another exit leads west,
+back to the central room.
+~
+0 9 0
+D2
+~
+~
+3 -1 26056
+D3
+~
+~
+3 -1 26051
+D8
+~
+~
+3 -1 26058
+S
+#26056
+The Dungeon~
+This small room looks like a torture chamber. There are horrible-
+looking tools on the walls. A bucket filled with hot coals sits on
+the floor. In the eastern wall lies a prison cell with iron bars.
+~
+0 9 0
+D0
+~
+~
+3 -1 26055
+D1
+~
+cell~
+7 26050 26057
+S
+#26057
+Inside a Prison Cell~
+There is nothing much to this prison cell. A pile of animal skins
+lies in the corner to serve as a bed, and a hole in the floor on the
+opposite corner serves as a latrine. Blood stains the cement floor.
+~
+0 9 0
+D3
+~
+cell~
+7 26050 26056
+S
+#26058
+An Outside Passage~
+You step through the door and find yourself outside again. This
+passage seems to have been dug out of a mountain or hill. You can
+make out the shouts of orcs coming from the southeast. Perhaps you
+should be weary about continuing forward.
+~
+0 9 0
+D7
+~
+~
+3 -1 26055
+D8
+~
+~
+0 -1 26059
+S
+#26059
+The Orc Mines~
+This room is very strange. Once it must have been a cellar dug into
+the side of a hill, but now it looks more like a mine. The walls and
+floor are all dug up and wooden beams are wedged into them to keep
+the ceiling from collapsing. It appears as though someone has been
+digging in this mine fairly recently. There is a door leading north.
+~
+0 9 0
+D0
+~
+~
+3 -1 26060
+D7
+~
+~
+0 -1 26058
+E
+mine ground~
+The ground has been ripped open recently as if someone were looking
+for something.
+~
+S
+#26060
+The Kitchen~
+The kitchen is cluttered and smelly. It is furnished with a table,
+a big fireplace, and shelves loaded with junk. While it is quite
+messy, decomposing food and such provide evidence that the facility
+has gotten some use in the past few months. There is an exit leading
+west, and another leading north. There is also a door leading south
+back to the mines, and one leading northwest.
+~
+0 9 0
+D0
+~
+~
+3 -1 26062
+D2
+~
+~
+3 -1 26059
+D3
+~
+~
+3 -1 26061
+D7
+~
+~
+3 -1 26063
+S
+#26061
+The Well~
+This room is cold and wet, almost like a cave. There is a well at
+the center. A bucket with a rope attached sits by the well. There
+is no movement and you see nothing of interest here.
+~
+0 9 0
+D1
+~
+~
+3 -1 26060
+S
+#26062
+The Armory~
+The room is crowded with shelves of battered helmets, dented shields,
+and nicked swords. The walls are lined with racks of spears and axes.
+There is an eerie presence in this room as though something is
+watching... waiting. The only exit is through the door you came in.
+~
+0 9 0
+D2
+~
+~
+3 -1 26060
+S
+#26063
+An Outside Passage~
+You find yourself wandering a path leading northwest to an unknown
+destination. The corridor stinks of decay. You can make out what
+sounds like shrieks of terror coming from further down the path.
+~
+0 9 0
+D3
+~
+~
+0 -1 26064
+D8
+~
+~
+3 -1 26060
+S
+#26064
+An Outside Passage~
+You continue down the passage, and find yourself nearing the
+bone-chilling screams. The path bends at a right angle, leading
+north. The path also leads back east, towards the kitchen.
+~
+0 9 0
+D0
+~
+~
+0 -1 26065
+D1
+~
+~
+0 -1 26063
+S
+#26065
+The End of the Outside Passage~
+You come to the end of the passage. A door lies on either side of you.
+The door to the west sounds like the source of the screaming, which
+has stopped suddenly. You are unable to make out any sounds coming
+from the door in the eastern wall.
+~
+0 9 0
+D1
+~
+~
+3 -1 26066
+D2
+~
+~
+0 -1 26064
+D3
+~
+~
+3 -1 26067
+S
+#26066
+The Treasure Room~
+This is a small windowless room, lit only by your torches. The light
+gleams and glitters on chests and treasures tumbled in a heap. In
+this room are bags of coins, pieces of armor, and potion bottles,
+along with bones, bits of stale bread, and moldy cheese.
+~
+0 9 0
+D3
+~
+~
+3 -1 26065
+S
+#26067
+Bonegnasher's Den~
+As you enter the room, the foul stench of death overwhelms you. Mangled
+corpses of what you assume used to be servants lie on the ground,
+apparently part of some creature's main course. There is a makeshift
+bed against the northern wall made up of piles of furs. Against the
+wall beside the bed lies a plain, wooden chest.
+~
+0 9 0
+D1
+~
+~
+3 -1 26065
+S
+#26068
+Damara's Tomb~
+A secret door grinds open to reveal a cold, gray stone room thick
+with dust. As the door swings open, two torches on the side walls
+mysteriously light. A large, intricate throne lies against the far
+wall engraved with runes in some ancient tongue. On either side of
+the throne are clay pots engraved with the same runes.
+~
+0 9 0
+D6
+~
+~
+0 -1 26059
+S
+#26069
+In a Dank Pit~
+You land at the bottom of the pit with a thud. Even with your torches,
+the room does not light up much. Bones of all shapes and sizes are
+scattered about the floor. Rats scurry across the floor, almost
+surprised as much that you are here as you are. There is a ladder
+built into the far wall that appears to be the only way back up.
+~
+0 9 0
+D4
+~
+~
+65664 -1 26051
+> entry_prog 100~
+mpechat $n You hit the ground with a loud *THUD*!
+mer $n $n hits the ground with a loud *THUD*!
+~
+|
+S
+#26070
+Taran's Death Room~
+This room should not be connected. This is the room Taran goes to when
+the adventurer tells him he will not help.
+~
+0 4 1
+S
+#0
+
+
+#RESETS
+O 1 26058 1 26050
+D 0 26050 0 1
+M 1 26050 2 26051
+E 1 26059 1 16
+M 1 26050 2 26051
+E 1 26059 1 16
+O 1 26052 1 26051
+D 0 26051 0 1
+D 0 26051 1 1
+D 0 26051 2 1
+D 0 26051 9 1
+M 1 26051 2 26052
+E 1 26060 1 11
+E 1 26059 1 16
+M 1 26051 2 26052
+E 1 26059 1 16
+E 1 26060 1 11
+D 0 26052 6 1
+M 1 26052 1 26053
+G 1 26061 1
+O 1 26051 1 26053
+D 0 26053 2 1
+D 0 26053 3 1
+M 1 26053 1 26054
+O 1 26062 1 26054
+O 1 26063 1 26054
+D 0 26054 1 1
+M 1 26054 1 26055
+E 1 26064 1 16
+E 1 26065 1 12
+G 1 26067 1
+O 1 26053 1 26055
+D 0 26055 2 1
+D 0 26055 3 1
+D 0 26055 8 1
+M 1 26064 1 26056
+G 1 26050 1
+E 1 26066 1 5
+E 1 26059 1 16
+D 0 26056 0 1
+D 0 26056 1 2
+M 1 26065 1 26057
+D 0 26057 3 2
+D 0 26058 7 1
+M 1 26055 2 26059
+E 1 26068 1 16
+M 1 26056 1 26059
+E 1 26068 1 16
+G 1 26072 1
+M 1 26055 2 26059
+E 1 26068 1 16
+D 0 26059 0 1
+M 1 26057 1 26060
+E 1 26073 1 16
+M 1 26058 2 26060
+M 1 26058 2 26060
+D 0 26060 0 1
+D 0 26060 2 1
+D 0 26060 3 1
+D 0 26060 7 1
+O 1 26054 1 26061
+P 0 26074 1 0
+D 0 26061 1 1
+M 1 26059 1 26062
+G 1 26075 1
+D 0 26062 2 1
+D 0 26063 8 1
+D 0 26065 1 1
+D 0 26065 3 1
+M 1 26060 1 26066
+O 1 26055 1 26066
+P 0 26077 1 0
+P 1 26076 1 0
+D 0 26066 3 1
+M 1 26066 1 26068
+O 1 26056 1 26068
+O 1 26057 1 26068
+M 1 26067 1 26069
+M 1 26063 1 26067
+E 1 26083 1 16
+E 1 26082 1 13
+E 1 26081 1 7
+E 1 26080 1 8
+G 1 26079 1
+E 1 26088 1 24
+E 1 26088 1 25
+M 1 26061 1 26067
+M 1 26062 1 26067
+O 1 26055 1 26067
+P 0 26072 1 0
+P 1 26079 1 0
+D 0 26067 1 1
+S
+
+
+#SHOPS
+0
+
+
+#REPAIRS
+0
+
+
+#SPECIALS
+M  26054 spec_cast_cleric
+M  26055 spec_cast_cleric
+M  26056 spec_cast_cleric
+M  26057 spec_cast_cleric
+S
+
+
+#$

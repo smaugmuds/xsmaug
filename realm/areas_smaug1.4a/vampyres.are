@@ -1,0 +1,2713 @@
+#AREA   Theatre de la Vampyres~
+
+
+
+#VERSION 1
+#AUTHOR Jendor~
+
+#RANGES
+20 50 10 65
+$
+
+#RESETMSG Everyone takes thier seats as the play begins.~
+
+#FLAGS
+0 15
+
+#ECONOMY 0 30437471
+
+#CLIMATE 2 2 2
+
+#MOBILES
+#50500
+act mob~
+A figment of your imagination~
+Some god abandoned a newly created act mob here.
+~
+~
+8388611 0 0 S
+51 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+> greet_prog 100~
+if ispc($n)
+  mpforce $n sit
+  close curtain
+endif
+~
+> greet_prog 100~
+mpinvis 51
+~
+|
+#50501
+act mob~
+A figment of your imagination~
+Some god abandoned a newly created act mob here.
+~
+~
+8388611 2 0 S
+51 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+> greet_prog 100~
+if ispc($n)
+  mpforce $n sit
+  close curtain
+endif
+~
+> greet_prog 100~
+mpinvis 51
+~
+|
+#50502
+Night elemental darkness~
+A night elemental~
+The avatar of Jendor an Elemental of Night hovers here
+~
+~
+1 71303296 0 C
+51 0 -100 1d1+4999 20d8+50
+0 0
+112 112 0
+21 18 18 23 18 25 10
+-10 -10 -10 -10 -10
+85 4 0 0 934651 131072 2
+30 30 0 0 9218 28 2103296 2
+#50503
+wolf large~
+The black wolf~
+A large, black wolf is here, glaring hungrily at you.
+~
+The large, grey wolf eyes you with interest while licking its lips.
+~
+-2147483583 128 -1000 C
+51 18 -100 1d100+400 2d10+10
+100000 450
+112 112 0
+20 13 13 15 13 13 13
+0 0 0 0 0
+69 0 0 0 1929409381 1929409381 2
+20 20 268502712 148 2048 33 2 3
+> act_prog p pats you on your back.~
+If isimmort($n)
+  if name == gitane
+    say Oh $n you are the most powerful Gangrel and a true friend to all wolves
+  else
+  if name == jendor
+    say Oh $n, I am grateful that you blessed me with your prescence.
+  else
+  say I am here to serve the gods.
+endif
+if ispc($n)
+  say I do not like being pet by mortals, die fool.
+  cas pro
+  cas shockshield
+  cas iceshield
+  cas fireshield
+  cas shadowform
+  cas grounding
+  cas armor
+  cas stoneskin
+  cas 'ethereal shield'
+  cas resilience
+  cas dragonskin
+  cas demonskin
+  cas bless
+endif
+~
+> all_greet_prog 100~
+if clan($n) == the Howling wolf
+or isnpc($n)
+  say Greetings my friend, may your journeys be safe.
+else
+growl $n
+endif
+~
+|
+#50504
+guard vampire ~
+A vampire guard~
+A guard stands here collecting money and admitting people to the theatre.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+67 4194472 -1000 C
+26 0 0 1d100+1000 5d10+20
+50 0
+109 109 1
+18 16 10 18 16 3 15
+0 0 0 0 0
+5 0 0 0 1 1 2
+28 20 266239 2097172 2050 33 2050 8199
+> bribe_prog 500~
+unlock n
+open n
+if ispc($n)
+  mpforce $n n
+endif
+close n
+lock n
+~
+|
+#50505
+guard vampire~
+A vampire guard~
+A guard stands here collecting money and admitting people to the theatre.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+67 4194472 -1000 C
+26 0 0 1d100+1000 5d10+20
+50 0
+109 109 1
+18 16 10 18 16 3 15
+0 0 0 0 0
+5 0 0 0 1 1 2
+0 0 266239 2097172 2050 33 2050 8199
+#50506
+human guest man ~
+A male theatre guest~
+A comely well dressed man stands here mingling with the other guests.
+~
+~
+16777409 8352 0 C
+45 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 1
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> rand_prog 2~
+say Lovely evening isnt it darling, I hear the play is going to be grand.
+dr martini
+~
+> speech_prog p I heard that~
+say Well if thats true then this is going to be one great performance.
+smile
+dr mar
+~
+|
+#50507
+guest human woman female~
+A female theatre guest~
+A beautiful woman stands here sipping at a drink while socializing.
+~
+~
+16777409 8352 0 C
+46 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 2
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> speech_prog p Lovely evening~
+say You know I heard the same thing from my closest friend who saw it,
+say just a few nights ago.
+smile
+say I heard that the male lead has come all the way from France.
+dr mar
+~
+|
+#50508
+guest human man~
+A male theatre guest~
+A comely well dressed man stands here mingling with the other guests.
+~
+~
+16777409 8352 0 C
+45 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 1
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+#50509
+human guest female woman~
+A female theatre guest~
+A beautiful woman stands here sipping at a drink while socializing.
+~
+~
+16777409 8352 0 C
+46 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 2
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+#50510
+guest human man~
+A male theatre guest~
+A comely well dressed man stands here mingling with the other guests.
+~
+~
+16777409 8352 0 C
+45 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 1
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> rand_prog 2~
+say Lovely evening isnt it darling, I hear the play is going to be grand.
+dr martini
+~
+> speech_prog p I heard that~
+say Well if thats true then this is going to be one great performance.
+smile
+dr mar;/s
+~
+|
+#50511
+human guest female woman~
+A female theatre guest~
+A beautiful woman stands here sipping at a drink while socializing.
+~
+~
+16777409 8352 0 C
+46 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 2
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> rand_prog 3~
+Say Have you seen all of the things on sale at the souvenier shop?
+~
+|
+#50512
+guest human man~
+A male theatre guest~
+A comely well dressed man stands here mingling with the other guests.
+~
+~
+16777409 8352 0 C
+45 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 1
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> rand_prog 2~
+say Lovely evening isnt it darling, I hear the play is going to be grand.
+dr martini
+~
+> speech_prog p I heard that~
+say Well if thats true then this is going to be one great performance.
+smile
+dr mar
+~
+> speech_prog p Have you seen~
+nod female
+say I went by there a little while ago the prices were a little steep.
+~
+|
+#50513
+human guest female woman~
+A female theatre guest~
+A beautiful woman stands here sipping at a drink while socializing.
+~
+~
+16777409 8352 0 C
+46 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 2
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> speech_prog p Lovely evening~
+say You know I heard the same thing from my closest friend who saw it,
+say just a few nights ago.
+smile
+say I heard that the male lead has come all the way from France.
+dr mar
+~
+> rand_prog 10~
+if ispc($n)
+  say I heard from my sister that, $n is the most Saintly people around.
+endif
+~
+|
+#50514
+guest human man~
+A male theatre guest~
+A comely well dressed man stands here mingling with the other guests.
+~
+~
+16777409 8352 0 C
+45 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 1
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> rand_prog 2~
+say Lovely evening isnt it darling, I hear the play is going to be grand.
+dr martini
+~
+> speech_prog p I heard that~
+say Well if thats true then this is going to be one great performance.
+smile
+dr mar
+~
+> speech_prog p Saintly people around.~
+if ispc($n)
+  say That wimp?
+  em laughs loudly.
+  say $n???? why $e couldn't be saintly if $s dad was the pope.
+endif
+~
+|
+#50515
+human guest female woman~
+A female theatre guest~
+A beautiful woman stands here sipping at a drink while socializing.
+~
+~
+16777409 8352 0 C
+46 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 2
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+#50516
+guest human man~
+A male theatre guest~
+A comely well dressed man stands here mingling with the other guests.
+~
+~
+16777409 8352 0 C
+45 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 1
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> rand_prog 2~
+say Lovely evening isnt it darling, I hear the play is going to be grand.
+dr martini
+~
+> speech_prog p I heard that~
+say Well if thats true then this is going to be one great performance.
+smile
+dr mar
+~
+|
+#50517
+human guest female woman~
+A female theatre guest~
+A beautiful woman stands here sipping at a drink while socializing.
+~
+~
+16777409 8352 0 C
+46 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 2
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> speech_prog p Lovely evening~
+say You know I heard the same thing from my closest friend who saw it,
+say just a few nights ago.
+smile
+say I heard that the male lead has come all the way from France.
+dr mar
+~
+|
+#50518
+guest human man~
+A male theatre guest~
+A comely well dressed man stands here mingling with the other guests.
+~
+~
+16777409 8352 0 C
+45 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 1
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+#50519
+human guest female woman~
+A female theatre guest~
+A beautiful woman stands here sipping at a drink while socializing.
+~
+~
+16777409 8352 0 C
+46 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 2
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> speech_prog p Lovely evening~
+say You know I heard the same thing from my closest friend who saw it,
+say just a few nights ago.
+smile
+say I heard that the male lead has come all the way from France.
+dr mar
+~
+|
+#50520
+guest human man~
+A male theatre guest~
+A comely well dressed man stands here mingling with the other guests.
+~
+~
+16777409 8352 0 C
+45 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 1
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> rand_prog 2~
+say Lovely evening isnt it darling, I hear the play is going to be grand.
+dr martini
+~
+> speech_prog p I heard that~
+say Well if thats true then this is going to be one great performance.
+smile
+dr mar
+~
+|
+#50521
+human guest female woman~
+A female theatre guest~
+A beautiful woman stands here sipping at a drink while socializing.
+~
+~
+16777409 8352 0 C
+46 0 -100 1d500+2000 4d10+30
+50000 0
+112 112 2
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 0
+20 20 2047 0 0 0 0 3
+> speech_prog p Lovely evening~
+say You know I heard the same thing from my closest friend who saw it,
+say just a few nights ago.
+smile
+say I heard that the male lead has come all the way from France.
+dr mar
+~
+|
+#50522
+guest human man~
+A male theatre guest~
+A comely well dressed man stands here mingling with the other guests.
+~
+~
+16777409 8352 0 C
+45 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 1
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> rand_prog 2~
+say Lovely evening isnt it darling, I hear the play is going to be grand.
+dr martini
+~
+> speech_prog p I heard that~
+say Well if thats true then this is going to be one great performance.
+smile
+dr mar
+~
+> rand_prog 5~
+if ispc($n)
+  say Why that lying piece of dirt, i knew that $n wasn't a person to
+  say be trusted.
+~
+|
+#50523
+human guest female woman~
+A female theatre guest~
+A beautiful woman stands here sipping at a drink while socializing.
+~
+~
+16777409 8352 0 C
+46 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 2
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> speech_prog p Lovely evening~
+say You know I heard the same thing from my closest friend who saw it,
+say just a few nights ago.
+smile
+say I heard that the male lead has come all the way from France.
+dr mar
+~
+|
+#50524
+guest human man~
+A male theatre guest~
+A comely well dressed man stands here mingling with the other guests.
+~
+~
+16777409 8352 0 C
+45 0 -80 1d500+1000 2d10+15
+50000 0
+112 112 1
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+#50525
+human guest female woman~
+A female theatre guest~
+A beautiful woman stands here sipping at a drink while socializing.
+~
+~
+16777409 8352 0 C
+46 0 -100 1d500+1000 2d10+15
+50000 0
+112 112 2
+16 13 13 13 17 20 16
+0 0 0 0 0
+0 3 0 0 1 1 1
+20 20 2047 0 0 0 0 3
+> speech_prog p Lovely evening~
+say You know I heard the same thing from my closest friend who saw it,
+say just a few nights ago.
+smile
+say I heard that the male lead has come all the way from France.
+dr mar
+~
+|
+#50526
+vampire usher man ~
+A vampiric usher~
+An usher stands here pointing people to thier seats.
+~
+~
+1073741827 4194432 -1000 C
+45 0 0 1d100+3000 5d10+20
+100000 0
+112 112 1
+22 3 10 20 13 13 13
+0 0 0 0 0
+5 4 0 0 1 1 2
+30 35 266239 20 2050 33 2050 3
+#50527
+vampire usher man~
+A vampiric usher~
+An usher stands here pointing people to thier seats.
+~
+~
+3 4194432 -1000 C
+45 0 0 1d100+3000 5d10+20
+100000 0
+112 112 1
+22 3 10 20 13 13 13
+0 0 0 0 0
+5 4 0 0 1 0 2
+30 35 266239 20 2050 33 2050 3
+#50528
+vampire robed actor~
+A vampiric actor~
+A robed figure stands here upon the stage acting his part.
+~
+This dark figure stands cloaked upon the stage acting out his part in
+the play.
+~
+67 524456 -1000 C
+45 0 -150 1d100+3500 3d10+10
+50 0
+109 109 1
+23 10 3 22 13 3 14
+0 0 0 0 0
+5 4 0 0 1 1 2
+30 35 4095 20 2050 33 2050 3
+#50529
+actress female vampire~
+A vampiric actress~
+A woman in dark clothing stands here, nervous with your presence on the stage.
+~
+This young woman has the most pale skin you have ever seen but her
+beauty is equal to a goddess.
+~
+67 524456 -1000 C
+45 0 -150 1d100+3250 3d10+10
+50 0
+109 109 2
+23 10 3 22 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+35 30 4095 20 2050 33 2050 3
+#50530
+Donal~
+Donal O'Connor~
+A professional looking young man stands here selling his wares.
+~
+~
+3 128 -1000 C
+51 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 25 13 13 13
+0 0 0 0 0
+5 4 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#50531
+Constanza~
+Constanza Vinti~
+A beautiful young woman stands here tending bar, and mixing drinks.
+~
+~
+3 128 -1000 C
+51 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 25 13 13 13
+0 0 0 0 0
+5 4 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#50532
+act mob~
+a newly created act mob~
+Some god abandoned a newly created act mob here.
+~
+~
+8388609 4718592 0 S
+51 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+> greet_prog 100~
+if ispc($n)
+  cas 'dispel magic' $n
+  cas 'dispel magic' $n
+  cas 'dispel magic' $n
+endif
+~
+|
+#50533
+wolf grey ~
+A grey wolf~
+An old, grey wolf lies here awaiting his part in the play.
+~
+The large, grey wolf eyes you with interest while licking its lips.
+~
+65 128 -1000 C
+35 18 -100 1d100+350 2d10+10
+0 450
+112 112 0
+20 13 13 15 13 13 13
+0 0 0 0 0
+69 4 0 0 1929409381 1929409381 2
+0 0 268502712 148 2048 33 2 3
+> all_greet_prog 100~
+if clan($n) == the Howling wolf
+or isnpc($n)
+  say Greetings my friend, may your journeys be safe.
+else
+growl $n
+murder $n
+endif
+~
+|
+#50534
+vampire waking ~
+A vampire~
+A vampire is here looking for someone to bite.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+97 98344 -1000 C
+45 0 100 1d100+300 5d20+150
+50 0
+109 109 1
+19 3 3 19 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+85 65 4095 18 2048 225 0 0
+#50535
+vampire waking~
+A vampire~
+A vampire is here looking for someone to bite.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+97 98344 -1000 C
+45 0 100 1d100+300 5d20+150
+50 0
+109 109 1
+19 3 3 19 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+85 65 4095 18 2048 225 0 0
+#50536
+vampire waking~
+A vampire~
+A vampire is here looking for someone to bite.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+97 98344 -1000 C
+45 0 100 1d100+300 5d20+150
+50 0
+109 109 1
+19 3 3 19 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+85 65 4095 18 2048 225 0 0
+#50537
+vampire waking~
+A vampire~
+A vampire is here looking for someone to bite.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+97 98344 -1000 C
+45 0 100 1d100+300 5d20+150
+50 0
+109 109 1
+19 3 3 19 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+85 65 4095 18 2048 225 0 0
+#50538
+vampire waking~
+A vampire~
+A vampire is here looking for someone to bite.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+97 98344 -1000 C
+45 0 100 1d100+300 5d20+150
+20000 0
+109 109 1
+19 3 3 19 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+85 65 4095 18 2048 225 0 0
+#50539
+vampire waking~
+A vampire~
+A vampire is here looking for someone to bite.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+97 98344 -1000 C
+45 0 100 1d100+300 5d20+150
+20000 0
+109 109 1
+19 3 3 19 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+85 65 4095 18 2048 225 0 0
+#50540
+vampire waking~
+A vampire~
+A vampire is here looking for someone to bite.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+97 98344 -1000 C
+45 0 100 1d100+300 5d20+150
+20000 0
+109 109 1
+19 3 3 19 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+85 65 4095 18 2048 225 0 0
+#50541
+vampire waking~
+A vampire~
+A vampire is here looking for someone to bite.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+97 98344 -1000 C
+45 0 100 1d100+300 5d20+150
+20000 0
+109 109 1
+19 3 3 19 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+85 65 4095 18 2048 225 0 0
+#50542
+vampire waking~
+A vampire~
+A vampire is here looking for someone to bite.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+97 98344 -1000 C
+45 0 100 1d100+300 5d20+150
+20000 0
+109 109 1
+19 3 3 19 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+85 65 4095 18 2048 225 0 0
+#50543
+vampire waking~
+A vampire~
+A vampire is here looking for someone to bite.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+97 98344 -1000 C
+45 0 100 1d100+300 5d20+150
+50 0
+109 109 1
+19 3 3 19 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+85 65 4095 18 2048 225 0 0
+#50544
+vampire waking~
+A vampire~
+A vampire is here looking for someone to bite.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+97 98344 -1000 C
+45 0 100 1d100+300 1d100+300
+50 0
+109 109 1
+19 3 3 19 13 3 14
+0 0 0 0 0
+5 4 0 0 1 0 2
+85 65 4095 18 2048 225 0 0
+#50545
+Armand~
+Armand~
+Armand the leader of the Theatre de la Vampyre's stands here.
+~
+~
+3 104890536 -1000 C
+45 0 0 1d200+3800 6d7+40
+1000000 0
+112 112 1
+20 18 12 23 16 17 15
+-5 -5 -5 -5 -5
+0 4 0 0 917531 1 2
+40 40 266239 20 3074 33 2051 532483
+#50546
+guard vampire~
+A vampire guard~
+A guard stands here collecting money and admitting people to the theatre.
+~
+He is a handsome man with golden hair and deep blue eyes. Obviously his looks
+help him capture his victims.
+~
+67 104891048 -1000 C
+40 0 0 1d100+1000 5d10+20
+200000 0
+109 109 1
+25 16 10 25 16 3 15
+0 0 0 0 0
+0 4 0 0 1 1 2
+0 30 266239 2097172 2050 33 2050 8199
+#0
+
+
+#OBJECTS
+#50500
+quest key~
+A key to Jendor's Quest~
+A silly looking key lies here~
+~
+8 0 1
+0 0 0 0
+1 0 0
+#50501
+act mob~
+a newly created act mob~
+Some god dropped a newly created act mob here.~
+~
+13 0 0
+0 0 0 0
+1 0 0
+#50504
+key~
+A key~
+A key~
+~
+13 0 1
+0 0 0 0
+1 0 0
+#50505
+dry martini~
+A dry martini~
+A dry martini sits in its glass, waiting to be used socially.~
+~
+17 0 16385
+50 50 8 0
+1 3000 300
+#50506
+sweet martini~
+A sweet martini~
+A sweet martini sits in its glass, waiting to be drank socially.~
+~
+17 0 16385
+50 50 8 0
+1 3000 300
+#50517
+cowl black actor~
+A black cowl~
+A death shroud lies here.~
+~
+9 16974420 1025
+20 20 0 0
+10 0 0
+A
+19 5
+A
+18 2
+A
+13 50
+A
+4 -1
+A
+3 -2
+#50518
+coffin stone~
+Jendor's Coffin~
+A small stone coffin occupies the room.~
+~
+15 68 1
+2000 1 0 0
+1000 0 0
+#50519
+emotion storm~
+Emotional Storm~
+A swirling mass of emotions fill the skies as a storm begins to form~
+~
+15 0 16385
+1000000 1 0 0
+1 0 0
+#50520
+vial jendor blood darkness power night~
+A small vial of liquid night~
+A small testament to Jendors power and the beauty of the night.~
+~
+10 324 16385
+50 -1 183 169
+3 0 0
+'inner warmth' 'stone skin' 'shadowform'
+#50530
+Scotch Amaretto Godfather~
+A GodFather~
+A small glass containing scotch and amaretto lies here.~
+~
+17 0 1
+4 4 8 0
+1 150 15
+#50531
+Gitane poison blood~
+Gitane's Favorite Poison~
+A small glass full of steaming blood lies here on the ground~
+~
+17 0 1
+1 1 13 255
+1 1050 105
+#50532
+Black Russian~
+Black Russian~
+A light brown creamy drink sits here in a tall glass.~
+~
+17 0 1
+10 10 7 0
+1 250 25
+#50533
+Brandy~
+A small glass of brandy~
+A small bar glass filled with brandy sits here.~
+~
+17 0 1
+4 4 8 0
+1 650 65
+#50534
+tin whiskey flask bootleg~
+A bootlegging flask~
+A small tin flask that can strap onto a leg is lying here.~
+~
+17 524290 33
+10 10 5 0
+1 150000 15000
+A
+3 -5
+A
+4 -5
+A
+56 16
+A
+56 236
+#50535
+mixed drink~
+A GodFather~
+A small glass containing scotch and amaretto lies here.~
+~
+17 0 0
+100 100 19 0
+1 150 15
+#50536
+statue demon marble red~
+A small statue of a demon~
+A small red demonic statue sits here.~
+~
+8 20 16385
+4 12 0 0
+20 200000 20000
+A
+56 210
+#50537
+poster play vampire hades~
+A poster of the play, Vampires in Hades~
+A rolled up movie poster lies here~
+~
+2 576 16385
+30 -1 49 124
+1 20000 2000
+'infravision' 'create spring' 'kindred strength'
+#50538
+face makeup make jar~
+A small jar of face makeup~
+A small makeup jar is sitting here.~
+~
+60 8192 16385
+30 1 1 100 -1 -1
+1 40000 3000
+'heal' 'heal'
+> use_prog 100~
+if ispkill($n)
+mpdamage $n 100
+endif
+~
+|
+#50539
+shovel damned~
+The Shovel of the Damned~
+An ancient shovel made of unknown materials leans against a rock~
+~
+59 0 16385
+0 0 0 0
+10 2000 200
+#50542
+Key~
+The key to Armands office~
+A key~
+~
+18 0 1
+0 0 0 0
+1 0 0
+#50545
+arm band armband gold vampire armand ruby~
+Armands Gold Armband~
+A golden armband inlaid with a large ruby sets here waiting to be worn.~
+~
+9 17515092 257
+10 10 0 0
+5 130000 13000
+A
+17 -30
+A
+2 1
+A
+25 -2
+A
+31 -1
+A
+14 -50
+A
+13 50
+A
+19 5
+A
+18 2
+A
+27 2
+#50546
+ear earring pearl ancient silver~
+An ancient pearl earring~
+An earring with a pearl drop lies here covered in dust~
+~
+9 17385473 65537
+5 5 0 0
+3 120000 12000
+A
+26 2097152
+A
+24 -5
+A
+13 10
+A
+12 -25
+A
+2 1
+#50547
+necklace neck white gold crucifix cross~
+A crucifix of white gold~
+A cross made of white gold lies here waiting to be worn again~
+~
+9 639297 5
+10 10 0 0
+5 140000 14000
+A
+13 25
+A
+18 3
+A
+19 4
+A
+20 -5
+A
+29 4
+#0
+
+
+#ROOMS
+#50500
+A clearing in the woods.~
+Moving north through the trees you come into an area where 
+everything parts into a lush garden.  The trees form a circle
+around everything and there is a spring in the center of this 
+lush but small paradise.  Flowers seem to cover every inch of 
+the ground and you try not to ruin the beauty.  However to the
+north the forest grows dim and evil permeates the air making you
+afraid to continue.
+~
+0 0 1
+D0
+Deeper into the darkened forest.
+~
+~
+0 -1 50501
+D2
+~
+~
+0 -1 6023
+S
+#50501
+A darkened path in the forest.~
+Leaving perfection and moving onward you wonder what could be 
+out here within this evil area.  There is a prescence of something
+so evil it makes you cringe.  The trees seem to grow contorted
+faces as you pass, smirking at your fear of the unknown.
+~
+0 0 1
+D0
+A Building in the clearing
+~
+~
+0 -1 50502
+D2
+Entering a peaceful clearing
+~
+~
+0 -1 50500
+S
+#50502
+The Veranda of the Theatre de la Vampyres.~
+Coming out of the forest you now face a huge gothic looking 
+building.  It must be thirty feet tall, and of the most
+beautiful architecture you have ever seen.  It also looks 
+very aged and like it has been hidden in this forest for a 
+lonng time.  But the road does appear well traveled.  There
+is a red carpet leading up to the front door, and two men in 
+dress clothing letting people into the building.
+~
+0 0 1
+D0
+Atop the stairs.
+~
+~
+0 -1 50503
+D2
+Leaving the theatre into the Dark woods.
+~
+~
+0 -1 50501
+S
+#50503
+Arched Entrance to the Theatre.~
+Walking up the red carpet you join the crowd waiting at
+the door to be let in. It seems everyone wants to see the
+show that is playing at this theatre.  Curiosity finally kills
+the cat and you join the masses in line.  Finally it is your
+turn to be admitted, the two men look at you and then 
+point to the sign next to the door.
+~
+0 1032 1
+D0
+~
+~
+1063 50504 50504
+D2
+Down the Stairs
+~
+~
+0 -1 50502
+E
+sign~
+-----------------------------------------------------------------
+|                                                               |
+|                          Welcome                              |
+|                          To  The                              |
+|                   Theatre De La Vampyres                      |
+|                                                               |
+|                                                               |
+|                  Entrance is 500 Gold Coins                   |
+|                                                               |
+|                                                               |
+-----------------------------------------------------------------
+~
+S
+#50504
+Main Reception Area~
+You now stand within the main reception area, where there are 
+many people socializing about the upcoming play.  To your north-east
+is a small refreshment stand and to the north-west is a souvenir
+stand.  A sign on the north wall states that the entrances to the 
+Performance Hall are east and west.
+~
+0 0 1
+D1
+Wandering around the theatre
+~
+~
+0 -1 50508
+D2
+Wandering around the theatre
+~
+~
+1063 50504 50503
+D3
+Wandering around the theatre
+~
+~
+0 -1 50505
+D6
+A small refreshment stand.
+~
+~
+0 -1 50527
+D7
+A souvenir shop.
+~
+~
+0 -1 50526
+S
+#50505
+Walking through the western wing.~
+Deciding to make your way to your seat before the crowd begins
+to move, you start to the west.  As you move out of the main
+reception area you notice a stairway leading up to the box 
+seats and wonder what it costs to sit in that area.
+~
+0 3153928 1
+D1
+Wandering around the theatre
+~
+~
+0 -1 50504
+D4
+Towards the Balcony Seats
+~
+~
+0 -1 50519
+D7
+Wandering around the theatre
+~
+~
+0 -1 50506
+S
+#50506
+The West Wing~
+Statues and Paintings line the walls of this hallway.  You can pick
+out several statues and paintings which must be hundreds of years old
+all adding to the theme of this theatre.  People move around you as you
+examine some of the art, and you decide that you had better find your 
+way to your seat.
+~
+0 3153928 1
+D0
+Wandering around the theatre
+~
+~
+0 -1 50507
+D8
+Wandering around the theatre
+~
+~
+0 -1 50505
+S
+#50507
+Outside the Gallery~
+An usher stands at the entrance of the Viewing gallery handing out 
+programs, and pointing people to their seats.  Holding up your ticket
+stub he nods at you and points to where you are to sit for the 
+performance.
+~
+0 3153928 1
+D1
+Wandering around the theatre
+~
+~
+0 -1 50513
+D2
+Wandering around the theatre
+~
+~
+0 -1 50506
+S
+#50508
+Walking through the eastern wing.~
+Deciding to make your way to your seat before the crowd begins
+to move, you start to the east.  As you move out of the main
+reception area you notice a stairway leading up to the box 
+seats and wonder what it costs to sit in that area.
+~
+0 3153928 1
+D3
+Wandering around the theatre
+~
+~
+0 -1 50504
+D4
+Towards the Balcony Seats
+~
+~
+0 -1 50522
+D6
+Wandering around the theatre
+~
+~
+0 -1 50509
+S
+#50509
+Eastern Wing~
+People start to follow your lead, as you move along the hall
+you start to see posters of previous plays that have been 
+preformed here.  Glancing around you take note of the fine 
+quality of the rugs along the floor, the Elizabethan lights.
+The Italian motif on the ceiling, and wonder how all this came
+to be in one building.
+~
+0 3153928 1
+D0
+Wandering around the theatre
+~
+~
+0 -1 50510
+D9
+Wandering around the theatre
+~
+~
+0 -1 50508
+S
+#50510
+Outside the Gallery~
+An usher stands before you handing out programs, and pointing 
+people to they're seats. You show him your ticket and he points
+to the row that your ticket indicates that you are to sit for
+this performance.
+~
+0 3153928 1
+D2
+Wandering around the theatre
+~
+~
+0 -1 50509
+D3
+Wandering around the theatre
+~
+~
+0 -1 50511
+S
+#50511
+Among the seats before the stage.~
+Moving into the large theatre gallery, you begin to look for your seat
+in the direction that the usher pointed.  The seats are filling up so 
+fast that you dont think you will ever find it, then luckily you spot
+an empty seat off to your left.
+~
+0 3153928 1
+D0
+Wandering around the theatre
+~
+~
+0 -1 50516
+D1
+Wandering around the theatre
+~
+~
+0 -1 50510
+D3
+Wandering around the theatre
+~
+~
+0 -1 50512
+S
+#50512
+Among the seats before the stage.~
+Moving up to your seat you avoid the people blocking your path
+thier long legs.  As you SIT down in your seat you take notice of
+something that is under your seat.
+~
+0 3153928 1
+D0
+Wandering around the theatre
+~
+~
+0 -1 50514
+D1
+Wandering around the theatre
+~
+~
+0 -1 50511
+D3
+Wandering around the theatre
+~
+~
+0 -1 50513
+E
+vampiric~
+As you glance down at the piece of parchment that is on the floor
+beneath your feet, you notice that it appears to be a hand written
+note.  It reads as follows:
+ 
+          Dear Mestophali:
+                  I am deeply sorry that you did not find our 
+performance to be satisfactory.  If you would like to discuss
+your views on how we could improve upon it, Please make your way 
+up to the stage after the performance, and go down into the pit.
+I will be happy to meet with you there.
+~
+> act_prog p sits down.~
+if ispc($n)
+  mpechoat $n _blu Sitting down you get a crinkling sensation under your
+  mpechoat $n _blu foot, you move your foot aside and look to see what was
+  mpechoat $n _blu there.
+  mpforce $n l vampiric
+endif
+~
+|
+S
+#50513
+Among the seats before the stage.~
+Wandering among the quickly filling seats you cant seem to locate the 
+seat that you were told was yours.  The show is about to start when you 
+see your seat off to your right. 
+~
+0 3153928 1
+D0
+Wandering around the theatre
+~
+~
+0 -1 50515
+D1
+Wandering around the theatre
+~
+~
+0 -1 50512
+D3
+Wandering around the theatre
+~
+~
+0 -1 50507
+S
+#50514
+Front row center stage.~
+As you look up onto the stage from the center of the front row you are
+forced to gather all of your inner strength to keep from fleeing at the
+mere sights that you now behold.  Bats hang above the stage numbering
+in the hundreds, wolves howl at the moon which can be seen above.  Dead
+decomposing corpses litter the steam covered ground, and eyes seem to 
+be centered on you from the back of the stage.
+~
+0 3153928 1
+D0
+Wandering around the theatre
+~
+~
+0 -1 50517
+D1
+Wandering around the theatre
+~
+~
+0 -1 50516
+D2
+Wandering around the theatre
+~
+~
+0 -1 50512
+D3
+Wandering around the theatre
+~
+~
+0 -1 50515
+S
+#50515
+Front row stage left.~
+Moving up to the stage to get a better look at the props, you think that
+the props alone must have set this theatre back quit a bit of gold.
+The ground appears to be made of real rock, and steam rises out of the
+pores therein.  Trees are off to the sides of the stage one of which 
+has a noose hanging from one of the branches.
+~
+0 3153928 1
+D1
+Wandering around the theatre
+~
+~
+0 -1 50514
+D2
+Wandering around the theatre
+~
+~
+0 -1 50513
+S
+#50516
+Front row stage right.~
+Stealing your way up to the front row, you are now able to get a much
+clearer view of what the play will be like.  The stage is set like a
+small patch of what you guess must be one of the nine planes of hell.
+The ground is rocky, and smoke rises from the very stones that the 
+actors stand upon.
+~
+0 3153928 1
+D2
+Wandering around the theatre
+~
+~
+0 -1 50511
+D3
+Wandering around the theatre
+~
+~
+0 -1 50514
+S
+#50517
+Upon the Stage of the Theatre de la Vampyres~
+As you move onto the stage, all of the actors begin to get very angry
+with you at your interuption of the play, but they just seem to act around
+your presence.  The stage itself is set to look like a small section of
+Hell.  The very ground you stand upon seem like real rock and steam rises
+from its pores.  Above you is what appears to be a glass domed roof and 
+you can see the moon high in the nights sky through the giant sky light.
+Wolves howl around you and you can now see real wolves on the stage
+mainly just laying around as if waiting for thier moment to come in the
+play.  In the center of the stage is a large dark pit that drops out of
+sight when you look and you dont want to think about what would happen 
+to you if you Jumped down it.
+~
+0 0 1
+D0
+~
+~
+0 -1 50518
+D2
+~
+~
+0 -1 50514
+D10
+~
+Jump~
+526336 -1 50525
+S
+#50518
+Back Stage~
+Moving across the stage and exiting behind the backdrop, you come to
+an area where all the props are stored.  Things of all make and manor 
+lay here.  There are weapons, torture devices, childrens toys, fake
+explosives, and set workings just strewn all about the floor.
+~
+0 4 1
+D2
+~
+~
+0 -1 50517
+S
+#50519
+At the Top of the Stairs.~
+After climbing the stairs away from the western hall you come to a small
+hallway that leads to the north.  The carpets are a deep lush red while
+the walls are painted a fainter hue.  At the end of the hall is a Blood
+red curtain that blocks the entrance to the balcony seats.
+~
+0 3153928 1
+D0
+Wandering around the theatre
+~
+~
+0 -1 50520
+D5
+Down towards the reception area
+~
+~
+0 -1 50505
+S
+#50520
+Outside the Balcony Seats.~
+Standing before the curtain leading to the balcony seats you now notice
+a small rope that hangs across the hallway adding a small measure of 
+security to the private seats.  There is no one in the corridor at the
+moment so you wonder if anyone would mind if you took a look inside.
+~
+0 3153928 1
+D2
+Wandering around the theatre
+~
+~
+0 -1 50519
+D6
+Wandering around the theatre
+~
+curtain~
+3 -1 50521
+S
+#50521
+The Balcony Seat.~
+Passing through the curtains you come out onto a small balcony overlooking
+the stage.  The view from up here is the most outstandingly clear view
+that you feel anyone could have.  The chairs are completely upholstered
+in red velvet and are the most comfortable seats you have ever sat upon.
+Looking out over the edge you see that the play is about to start and 
+you sit down to wait.
+~
+0 3153928 1
+D9
+Wandering around the theatre
+~
+curtain~
+3 -1 50520
+S
+#50522
+At the Top of the Stairs.~
+After climbing the stairs and moving away from the eastern hall, you come
+to a small hallway that leads to the north.  The blood red carpets are
+lush while the walls are painted a fainter shade.  At the end of the hall
+is a curtain which looks like a wall of blood, that blooks the entrance
+to the balcony seats.
+~
+0 3153928 1
+D0
+Wandering around the theatre
+~
+~
+0 -1 50523
+D5
+Down towards the reception area
+~
+~
+0 -1 50508
+S
+#50523
+Outside the Balcony Seats.~
+A rope hangs across the hall here blocking the entrance to the curtained
+balcony seats.  The blood red velvet curtains that act as a door to the
+hang loosely, and you wonder what it would be like to view the performance
+from the best seats in the house.
+~
+0 3153928 1
+D2
+Wandering around the theatre
+~
+~
+0 -1 50522
+D7
+Wandering around the theatre
+~
+curtain~
+3 -1 50524
+S
+#50524
+The Balcony Seats.~
+Passing through the curtains you come out onto a small balcony overlooking
+the stage.  The view from up here is the most outstanding clear view 
+that you feel anyone could have.  The chairs are completely upholstered
+in Red velvet and are the most comfortable seats you have ever sat upon.
+Looking out over the edge you see that the play is about to start and
+you sit down to wait.
+~
+0 3219464 1
+D8
+Wandering around the theatre
+~
+curtain~
+3 -1 50523
+> greet_prog 100~
+if ispc($n)
+  force $n sit
+  close curtain
+endif
+~
+|
+S
+#50525
+Falling Down the Pit.~
+Y
+ O
+  U
+   R
+ 
+      F
+       A
+        L
+         L
+          I
+           N
+            G
+
+              R
+               E
+                A
+                 L
+                  L
+                   Y
+
+                     F
+                      A
+                       R
+~
+0 16777220 1
+D5
+~
+~
+0 -1 50543
+> greet_prog 100~
+if ispc($n)
+  cas 'dispel magic' $n
+  cas 'dispel magic' $n
+  cas 'dispel magic' $n
+endif
+~
+|
+S
+#50526
+The Theatres Souvenir Stand~
+This small shop is full of little knick-knack's that are fashioned to
+go along with the current play, that people can take home as souveniers.
+Just about anything you can think of can be found on this table but 
+only a few things would be of value to you.
+~
+0 1049612 1
+D8
+Wandering around the theatre
+~
+~
+0 -1 50504
+S
+#50527
+The Theatre Cocktail Bar~
+The theatres cocktail bar is small but very well equipped, it is capable
+of making just about any mixed drink that your heart can imagine.  They
+do however have a few house drinks for those of you who cant think of 
+anything more original that the bartender knows how to make.
+~
+0 3154956 1
+D9
+Wandering around the theatre
+~
+~
+0 -1 50504
+S
+#50528
+The Labyrinthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins 
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50544
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50529
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50530
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50539
+S
+#50529
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50529
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50539
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50530
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50543
+S
+#50530
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50529
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50540
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50539
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50544
+S
+#50531
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50530
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50540
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50529
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50534
+S
+#50532
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50529
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50528
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50542
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50539
+S
+#50533
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50532
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50528
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50538
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50540
+S
+#50534
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50528
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50531
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50530
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50544
+S
+#50535
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50531
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50537
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50540
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50539
+S
+#50536
+Jendor's Crypt~
+All that resides within this infinte room is a small coffin made of 
+simple stone.  This room looks as though it has no end and all you can 
+see for sure is the ground.  You feel as though you have been brought 
+to the heart of the night it self.
+~
+0 516 1
+S
+#50537
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50539
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50538
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50530
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50541
+S
+#50538
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50534
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50529
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50533
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50539
+S
+#50539
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50544
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50530
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50528
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50539
+S
+#50540
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50539
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50544
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50541
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50529
+S
+#50541
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D0
+Wandering through the catacombs.
+~
+~
+0 -1 50529
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50539
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50544
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50531
+S
+#50542
+Before the Office of Armand.~
+All of a sudden all of the exits dissolve behind you and you are left
+within a cavernous chamber without any exits save for the antiqued 
+wooden door that stands before you.
+~
+0 8 13
+D2
+~
+door~
+1063 50542 50545
+S
+#50543
+Sitting upon a dusty floor.~
+Having fallen down the pit you find yourself upon the dust covered floor
+of a huge set of maze like catacombs.  Trying to figure out what in the
+world made you want to jump down into the pit, you suddenly notice some
+movement to the south-east.
+~
+0 4 1
+D4
+~
+~
+0 -1 50525
+D8
+~
+~
+0 -1 50529
+D9
+~
+~
+0 -1 50544
+S
+#50544
+The Labrynthine Catacombs~
+You are now standing within the Labyrinthine catacombs surrounded by coffins
+and many vampires startled to see you around their beds.  The walls of the
+catacombs make it difficult to tell which direction leads back to where you
+came from or which way you need to go.
+~
+0 3153933 13
+D1
+Wandering through the catacombs.
+~
+~
+0 -1 50529
+D2
+Wandering through the catacombs.
+~
+~
+0 -1 50528
+D3
+Wandering through the catacombs.
+~
+~
+0 -1 50535
+S
+#50545
+Armands Office and Resting Chamber~
+This room is a large room decorated with the most current fashion, there
+are very few things in this room that could be considered old like the
+rest of the theatre above.  All the furnishings, paintings and rugs are
+all of the best quality on the market, and all are very modern.  The 
+only thing that doesnt seem to fit in with the room is the sarcophagus 
+like coffin that resides in the corner of the room.  It appears to be 
+ancient beyond belief it is covered in jewels and made of pure ivory.
+~
+0 3145736 13
+D0
+~
+door~
+1063 50542 50542
+S
+#50546
+Floating in a void~
+~
+0 4 1
+S
+#50547
+Floating in a void~
+~
+0 4 1
+S
+#50548
+Floating in a void~
+~
+0 4 1
+S
+#50549
+Floating in a void~
+~
+0 4 1
+S
+#50550
+Floating in a void~
+~
+0 4 1
+S
+#50551
+Floating in a void~
+~
+0 4 1
+S
+#50552
+Floating in a void~
+~
+0 4 1
+S
+#50553
+Floating in a void~
+~
+0 4 1
+S
+#50554
+Floating in a void~
+~
+0 4 1
+S
+#50555
+Floating in a void~
+~
+0 4 1
+S
+#50556
+Floating in a void~
+~
+0 4 1
+S
+#50557
+Floating in a void~
+~
+0 4 1
+S
+#50558
+Floating in a void~
+~
+0 4 1
+S
+#50559
+Floating in a void~
+~
+0 4 1
+S
+#50560
+Floating in a void~
+~
+0 4 1
+S
+#50561
+Floating in a void~
+~
+0 4 1
+S
+#50562
+Floating in a void~
+~
+0 4 1
+S
+#50563
+Floating in a void~
+~
+0 4 1
+S
+#50564
+Floating in a void~
+~
+0 4 1
+S
+#50565
+Floating in a void~
+~
+0 4 1
+S
+#50566
+Floating in a void~
+~
+0 4 1
+S
+#50567
+Floating in a void~
+~
+0 4 1
+S
+#50568
+Floating in a void~
+~
+0 4 1
+S
+#50569
+Floating in a void~
+~
+0 4 1
+S
+#50570
+Floating in a void~
+~
+0 4 1
+S
+#50571
+Floating in a void~
+~
+0 4 1
+S
+#50572
+Floating in a void~
+~
+0 4 1
+S
+#50573
+Floating in a void~
+~
+0 4 1
+S
+#50574
+Floating in a void~
+~
+0 4 1
+S
+#50575
+Floating in a void~
+~
+0 4 1
+S
+#50576
+Floating in a void~
+~
+0 4 1
+S
+#50577
+Floating in a void~
+~
+0 4 1
+S
+#50578
+Floating in a void~
+~
+0 4 1
+S
+#50579
+Floating in a void~
+~
+0 4 1
+S
+#50580
+Floating in a void~
+~
+0 4 1
+S
+#50581
+Floating in a void~
+~
+0 4 1
+S
+#50582
+Floating in a void~
+~
+0 4 1
+S
+#50583
+Floating in a void~
+~
+0 4 1
+S
+#50584
+Floating in a void~
+~
+0 4 1
+S
+#50585
+Floating in a void~
+~
+0 4 1
+S
+#50586
+Floating in a void~
+~
+0 4 1
+S
+#50587
+Floating in a void~
+~
+0 4 1
+S
+#50588
+Floating in a void~
+~
+0 4 1
+S
+#50589
+Floating in a void~
+~
+0 4 1
+S
+#50590
+Floating in a void~
+~
+0 4 1
+S
+#50591
+Floating in a void~
+~
+0 4 1
+S
+#50592
+Floating in a void~
+~
+0 4 1
+S
+#50593
+Floating in a void~
+~
+0 4 1
+S
+#50594
+Floating in a void~
+~
+0 4 1
+S
+#50595
+Floating in a void~
+~
+0 4 1
+S
+#50596
+Floating in a void~
+~
+0 4 1
+S
+#50597
+Floating in a void~
+~
+0 4 1
+S
+#50598
+Floating in a void~
+~
+0 4 1
+S
+#50599
+Floating in a void~
+~
+0 4 1
+S
+#0
+
+
+#RESETS
+M 1 50503 1 50500
+M 1 50504 1 50503
+G 1 50504 1
+M 1 50505 1 50503
+D 0 50503 0 2
+M 1 50506 1 50504
+G 1 50505 1
+M 1 50507 1 50504
+E 1 50506 1 17
+D 0 50504 2 2
+M 1 50525 1 50505
+E 1 50506 1 17
+M 1 50508 1 50505
+E 1 50505 1 17
+M 1 50523 1 50506
+E 1 50506 1 17
+M 1 50524 1 50506
+E 1 50505 1 17
+M 1 50521 1 50507
+E 1 50506 1 17
+M 1 50522 1 50507
+M 1 50527 1 50507
+M 1 50509 1 50508
+E 1 50506 1 17
+M 1 50510 1 50508
+E 1 50505 1 17
+M 1 50511 1 50509
+E 1 50506 1 17
+M 1 50512 1 50509
+E 1 50505 1 17
+M 1 50513 1 50510
+E 1 50506 1 17
+M 1 50514 1 50510
+E 1 50505 1 17
+M 1 50526 1 50510
+M 1 50515 1 50511
+E 1 50506 1 17
+M 1 50516 1 50511
+E 1 50505 1 17
+M 1 50519 1 50513
+E 1 50506 1 17
+M 1 50520 1 50513
+E 1 50505 1 17
+M 1 50517 1 50514
+E 1 50506 1 17
+M 1 50518 1 50514
+E 1 50505 1 17
+M 1 50528 1 50517
+M 1 50529 1 50517
+M 1 50533 1 50517
+D 0 50520 6 1
+M 1 50501 1 50521
+D 0 50521 9 1
+D 0 50523 7 1
+M 1 50500 1 50524
+D 0 50524 8 1
+M 1 50531 1 50527
+G 1 50534 1
+G 1 50533 1
+G 1 50530 1
+G 1 50532 1
+G 1 50531 1
+M 1 50543 1 50528
+M 1 50534 1 50529
+M 1 50544 1 50530
+M 1 50535 1 50531
+M 1 50536 1 50533
+M 1 50537 1 50535
+M 1 50538 1 50537
+M 1 50539 1 50539
+M 1 50540 1 50541
+M 1 50546 1 50542
+G 1 50542 1
+D 0 50542 2 2
+M 1 50541 1 50544
+M 1 50542 1 50544
+M 1 50545 1 50545
+E 1 50545 1 10
+E 1 50547 1 3
+D 0 50545 0 2
+O 1 50546 1 50518
+M 1 50530 1 50526
+G 1 50536 1
+G 1 50537 1
+G 1 50539 1
+G 1 50538 1
+O 1 50518 1 50536
+S
+
+
+#SHOPS
+ 50530    0  0  0  0  0   120  90         0 23    ; Donal O'Connor
+ 50531    0  0  0  0  0   120  90         6 23    ; Constanza Vinti
+0
+
+
+#REPAIRS
+0
+
+
+#SPECIALS
+M  50506 spec_janitor
+M  50507 spec_janitor
+M  50508 spec_janitor
+M  50509 spec_janitor
+M  50510 spec_janitor
+M  50511 spec_janitor
+M  50512 spec_janitor
+M  50513 spec_janitor
+M  50514 spec_janitor
+M  50515 spec_janitor
+M  50516 spec_janitor
+M  50517 spec_janitor
+M  50518 spec_janitor
+M  50519 spec_janitor
+M  50520 spec_janitor
+M  50521 spec_janitor
+M  50522 spec_janitor
+M  50523 spec_janitor
+M  50524 spec_janitor
+M  50525 spec_janitor
+M  50526 spec_thief
+M  50527 spec_thief
+M  50534 spec_poison
+M  50535 spec_poison
+M  50536 spec_poison
+M  50537 spec_poison
+M  50538 spec_poison
+M  50539 spec_poison
+M  50540 spec_poison
+M  50541 spec_poison
+M  50542 spec_poison
+M  50543 spec_poison
+M  50544 spec_poison
+M  50545 spec_cast_undead
+S
+
+
+#$

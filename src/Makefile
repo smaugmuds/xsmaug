@@ -133,7 +133,7 @@ $(XSMAUG): $(O_FILES)
 	chmod g+w $(O_FILES)
 
 clean:
-	@rm -f $(C_OBJ)/*.o ../$(XSMAUG).exe dependencies.d dns_resolv.exe *~
+	@rm -f $(C_OBJ)/*.o ../$(XSMAUG).exe dependencies.d dns_resolv.exe *~ ../log/*
 
 else
 $(XSMAUG): $(O_FILES)
@@ -148,7 +148,7 @@ $(XSMAUG): $(O_FILES)
 	chmod g+w $(O_FILES)
 
 clean:
-	@rm -f $(C_OBJ)/*.o ../$(XSMAUG) dependencies.d ../dns_resolv *~
+	@rm -f $(C_OBJ)/*.o ../$(XSMAUG) dependencies.d ../dns_resolv *~ ../log/*
 endif
 
 dns: $(C_OBJ)/dns_resolv.o

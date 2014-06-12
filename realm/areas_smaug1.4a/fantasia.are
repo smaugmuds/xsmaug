@@ -1,0 +1,3130 @@
+#AREA   Fantasia~
+
+
+
+#VERSION 1
+#AUTHOR &PTemptation&D  ~
+
+#RANGES
+10 60 0 60
+$
+
+#RESETMSG A voice in the back of your head whispers, 'Do what you wish'~
+
+#FLAGS
+20 20
+
+#ECONOMY 0 30858
+
+#CLIMATE 2 2 2
+
+#MOBILES
+#18400
+falkor~
+Falkor, the Luck Dragon~
+Falkor, the Luck Dragon is resting here.
+~
+Falkor is a luck dragon. He is very large, extending almost the length of
+a football field from his muzzle to the tip of his tail. He stands about
+a story high, with confidence, yet with an aura of compassion about him.
+His eyes are large as well, ruby red in color. However, they are not 
+piercing, they are more warm and kind looking. His scales are the purest
+white you've ever seen, and shimer like the clearest ocean ever could.
+~
+67502083 4194344 0 C
+54 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+31 6 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> act_prog 'pets you.'~
+smile $n
+itch
+nuz $n
+whis $n Can you reach an itch right behind my ear?
+~
+> act_prog 'scratches you on your back.'~
+moan
+'oh yeah.. that's it!
+'Just say where you would like to go, and with a little luck I'll get you here!
+mpforce $n mount falkor
+~
+> speech_prog 'help me!'~
+mpforce $n mount falk
+mpgoto 18440
+mpforce $n look
+mpecho _whi Falkor gently lands with you mounted on his back.
+mpforce $n dismount
+mpecho _whi You suddenly feel very tired.
+mpecho _red Everything fades to black...
+mpforce $n sleep
+~
+> speech_prog p darkhaven~
+if ismounted($n)
+mea $n _dgr Falkor looks at you.
+mpgoto 21000
+mpforce $n look
+if sex($n) == 2
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off the fair maiden $n.
+endif
+if sex($n) == 1
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off the brave $n.
+endif
+if sex($n) == 0
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off $n.
+mpforce $n dimount
+endif
+mpforce $n dismount
+nuz $n
+'Remember, you can do anything, $n, with a little luck!
+chuck
+stare
+mpecho _whi The Luck Dragon once again takes flight, and is gone.
+mpgoto 18440
+else
+'I can't take you anywhere, I have this itch....
+nudge $n
+endif
+~
+> speech_prog p taliana~
+emote chuckles softly.
+'I thought you might say that..
+grin
+if ismounted($n)
+mea $n _dgr Falkor looks at you.
+mpgoto 9900
+mpforce $n look
+if sex($n) == 2
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off the fair maiden $n.
+endif
+if sex($n) == 1
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off the brave $n.
+endif
+if sex($n) == 0
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off $n.
+mpforce $n dimount
+endif
+mpforce $n dismount
+nuz $n
+'Remember, you can do anything, $n, with a little luck!
+chuck
+stare
+mpecho _whi The Luck Dragon once again takes flight, and is gone.
+mpgoto 18440
+else
+'I can't take you anywhere, I have this itch....
+nudge $n
+endif
+~
+> act_prog tells you 'possibilities'~
+nod oracle
+~
+|
+#18401
+morla~
+Morla~
+Morla sits here, staring you straight in the face, seemingly a little irritated by your presense.
+~
+A very, very large turtle, Morla is better known as The Tortoise Shell
+Mountain. He has been here in the heart of the Swamp of Sadness for
+thousands of years. Morla has had very few visitors in his lifetime but
+mysteriously knows almost everything about the Realm of Fantasia.
+~
+67239939 524288 0 C
+1 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+79 5 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> all_greet_prog 100~
+mea $n _cya Morla looks at you.
+mea $n _cya Morla gasps.
+mea $n _lbl Morla says 'We haven't seen the Auryn in a long time.'
+mea $n _lbl Morla says 'We haven't talked to anyone in thousands of years.'
+mea $n _cya Morla looks at you.
+mea $n _lbl Morla says 'Why have you disturbed my sleep?'
+~
+> speech_prog p the empress is dying~
+if($n)ispc
+mpecho _cya Morla sneezes on you.
+hmm
+sneeze
+'We don't care.
+mpecho _cya Morla looks at you.
+'We must be allergic to you.
+'We know how to save her though.
+'Not that it matters.
+mpecho _cya Morla looks at you.
+sneez
+'Why don't you just ask the Oracle?
+sneez
+'Now go away, and leave me in peace!
+mpecho _cya Morla sneezes on you.
+mpecho _lbl Morla says 'Take this with you, it might help you get out of here.
+mpoload 18406
+drop cry
+mpforce $n get cry
+mpecho _cya Morla looks at you and says 'Shoo!'
+mpforce $n e
+~
+|
+#18402
+correander man~
+Mr. Correander~
+Mr. Coreander is standing here, none to pleased with your presense.
+~
+Mr. Correander stands near the door of his office. He seems to be in his
+mid-50's to 60's. He has spindly white hair and a crotchety look to his
+face full of wrinkles. He is somewhat hunched over, no doubt from reading
+all the time. He's wearing a white dress shirt with a tan, cotton sweater-
+vest over it. He is also wearing a pair of plain, brown tweed pants with
+a pair of black dress shoes.
+~
+131075 4194432 0 C
+10 0 0 4d20+800 3d6+20
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 4
+0 0 105 0 2100224 0 113 3
+> greet_prog 100~
+mea $n _cya Mr. Coreander growls at you.  Hey, two can play it that way!
+mea $n _lbl Mr. Coreander says 'Get out of here, I don't like kids.'
+~
+|
+#18403
+Atreyu~
+The Greenskin, Atreyu~
+Atreyu, a young Grassy Ocean warrior of the Greenskin Nation is standing here.
+~
+Standing before you is a boy warrior from the Grassy Ocean. He is about ten 
+or twelve years old with green skin and blue-black hair. He comes from a 
+nation of purple buffalo hunters called the Greenskins.
+~
+3 306708648 1000 C
+55 0 0 1d1+19999 1d1+299
+1400200 0
+112 112 1
+18 13 13 18 18 13 13
+-2 -2 -2 -2 -2
+0 3 0 0 1 1 2
+85 0 617 2100224 2108428 0 577 526343
+> fight_prog 30~
+mpe _lbl The Greenskin, Atreyu says 'I don't know why you're doing this.'
+mpe _lbl The Greenskin, Atreyu says 'I was sent to help Fantasia!'
+c q $r
+c q $r
+c q $r
+mpdamage $r 700
+~
+> fight_prog 50~
+mpe _cya The Greenskin, Atreyu growls deeply.
+bite $n
+~
+> fight_prog 20~
+c acid
+disarm $n
+disarm $n
+get all
+~
+> act_prog p flees head over heals~
+mpat $n 'Can't take the heat?
+mpat $n cackle
+mpat $n mea $n _whi An arrow comes flying at you, and lodges in your chest.
+mpat $n mpdamage $n 200
+~
+> act_prog p disarms you!~
+wear sikanda
+~
+> death_prog 100~
+if rand(75)
+mpjunk sikanda
+'You have beaten me.. I can't believe it..
+cough
+'however.. you're quest is not over...
+mpecho _whi Atreyu takes on last gasping breath as he hits the ground.
+mpecho _blu The earth trembles beneath your feet!
+mpdamage all 300
+mpforce $n say FALKOR!
+else
+if rand(8)
+mpjunk sikanda
+'You have beaten me.. I can't believe it..
+cough
+'however.. you're quest is not over...
+mpecho _whi Atreyu takes on last gasping breath as he hits the ground.
+mpecho _blu The earth trembles beneath your feet!
+mpecho _pur A small piece of purple leather falls from Atreyu's ankle.
+oi 18429 50
+mpforce $n say FALKOR!
+else
+'You have beaten me.. I can't believe it..
+cough
+'You are truly.. a worthy warrior, and for that, I offer you this..
+give sikanda $n
+mpecho _whi Atreyu takes on last gasping breath as he hits the ground.
+mpecho _blu The earth trembles beneath your feet!
+mpforce $n say FALKOR!
+endif
+endif
+~
+|
+#18404
+bully~
+A bully~
+A mean looking bully stands here, seemingly intending to want to do bodily harm to you.
+~
+A tough looking fella, he seems to be someone you don't want to mess
+with. He is a little bigger then you, and twice as thick. But the blank
+dull stare of stupidity sets you at ease that in a match of wits, you would
+surely overcome. However, I don't think there's time for that, he seems
+much more interested in pounding your face in!
+~
+7 4292610 -1000 C
+50 0 0 1d1+8000 1d1+300
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 13 0 2100224 0 49 3
+> act_prog {p} boogies!~
+if level($n) >=45
+c q $n
+else
+mea $n _lbl A bully says 'Hey! What are you doing here? You better scram!'
+endif
+~
+|
+#18405
+gmork~
+Gmork~
+Gmork sits here, crouched and waiting to attack you.
+~
+Resting before you is the great, and vile Gmork. He has been pursueing
+you since you first entered Fantasia. He is a large vampire-wolf. His fur
+is thick and nearly stands straight up from his thick, muscular body.
+His eyes are deep black, yet reflective. You can see yourself staring
+back at you. His fangs are several inches long, and extremely sharp.
+~
+3 0 -1000 C
+50 0 0 1d1+29999 1d1+235
+500000 0
+112 112 1
+18 18 18 18 18 18 18
+-2 -2 -2 -2 -2
+69 9 0 0 1 1 3
+85 0 66093 0 2100224 0 1074135617 526343
+> greet_prog 100~
+snarl
+mea 0.$n _lbl Gmork says 'If you come any closer, I will rip you to shreds.'
+growl 0.$n
+mea 0.$n _lbl Gmork says 'I am Gmork, and you $n, have the honor of being my
+mea 0.$n _lbl last victim. I am the one sent to destroy the only one who
+mea 0.$n _lbl can stop The Nothing.'
+snarl
+c q $n
+~
+> death_prog 100~
+if ispc($n)
+if rand(50)
+mpecho _lbl Gmork says 'I have failed.'
+whimper
+mpecho _lbl Gmork says 'But so have you, Bastian still does not believe.'
+mpecho _lbl Gmork says 'All hope for Fantasia is lost.'
+else
+mpecho _lbl Gmork says 'I have failed.'
+whimper
+mpecho _lbl Gmork says 'But you have not....'
+mpoload 18420 48
+mpecho _cya Gmork's chest rips open and Bastian's Dreams are revealed.
+drop bastian
+cough
+endif
+endif
+~
+> act_prog circle~
+mpdamage $r 700
+mprestore self 500
+~
+> act_prog stun~
+say You cannot win. Accept that you will be my next meal!
+cackle
+mpdamage all 800
+c spiral
+c earthquake
+~
+> fight_prog 30~
+say You cannot win. Accept that you will be my next meal!
+cackle
+mpdamage all 800
+c spiral
+c earthquake
+muha
+bash
+bash
+c quantum
+~
+> act_prog backstab~
+say Ok that hurt!
+c spiral
+c spiral
+c spiral
+muha
+~
+> fight_prog 30~
+say Ouch! hurts bad....
+c heal
+c heal
+c heal
+~
+> fight_prog 5~
+c gas
+c gas
+~
+> act_prog p flees head over heals~
+mpat $n 'Can't take the heat?
+mpat $n cackle
+mpat $n mea $n _whi Gmork swipes you with his claws as you flee.
+mpat $n mpdamage $n 200
+~
+|
+#18406
+urgl~
+Urgl~
+Urgl stands here over a vat of Batwing Broth.
+~
+A small, frail looking gnome, Urgl stands before you somewhat hunched
+over. Her hair is wirey, but thick and curly. She has a bit of a long
+nose, and crooked teeth. But yet her smile is warm, and friendly with
+perhaps a touch of mischief in her eyes. She is clothed in a few layers
+of clothing, mostly drab and dull looking.
+~
+67108867 4194432 0 C
+50 0 0 0d0+0 0d0+0
+0 0
+112 112 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+14 1 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> all_greet_prog 100~
+mea 0.$n _gre Urgl looks at you.
+mea $n _lbl Urgl says 'Ahh! You're awake!'
+mea $n _cya Urgl smiles at you.
+mea $n _lbl Urgl says 'I'm making a batch of my famous Batwing Broth.'
+mea $n _lbl Urgl says 'If you would like to take some on your quest just'
+mea $n _lbl Urgl says 'type list and that will tell you my prices.'
+mea $n _cya Urgl smiles at you.
+mea 0.$n _cya Urgl nods solemnly.
+mea 0.$n _lbl Urgl says 'That's my old man over there.'
+mea 0.$n _whi Urgl points at Engywook.
+mea 0.$n _lbl Urgl says 'He's been going on and on about you, hoping you're'
+mea 0.$n _lbl Urgl says 'the one.'
+mea 0.$n _cya Urgl smiles at you.
+mea 0.$n _whi Urgl goes back to making her batwing broth.
+~
+|
+#18407
+engywook~
+Engywook~
+Engywook sits here looking over his log of information on the Southern Oracle.
+~
+A bit taller than his wife, Engy wook sits behind his desk full of books
+and scientific drawings. His hair is white, and bushy like Urgl's. He
+also is somewhat hunched over with a big toothy grin. He is wearing a
+plain brown smock with a pair of white cotton pants and no shoes.
+~
+67108867 4194432 0 C
+50 0 0 0d0+0 0d0+0
+0 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+14 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> act_prog p looks at you.~
+smile $n
+mea $n _lbl Engywook says 'Have you come to see the Oracle?
+mea $n _cya Engywook grins.
+mea $n _lbl Engywook says 'It's my scientific speciality!'
+mea 0.$n _whi Engywook whispers to you 'The most important hint I can offer'
+mea 0.$n _whi Engywook whispers to you 'you is... if you are not pure of'
+mea 0.$n _whi Engywook whispers to you 'heart, I would suggest not trying'
+mea 0.$n _whi Engywook whispers to you 'to pass through the first gate.'
+mea 0.$n _whi Engywook whispers to you 'You will not make it.'
+~
+|
+#18408
+great sphinx~
+The Great Sphinx~
+The Great Sphinx sits here eternally, waiting to eliminate those that try to pass.
+~
+Two large Sphinx stand to either side of the cavern, guarding the passage.
+They are made of stone, with eyes that open when they prepare to zap an
+unworthy questor. It would be suggested to answer the questions asked of
+of you swiftly so that you might pass on to the next gate.
+~
+1073741825 4194344 0 C
+55 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+40 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> all_greet_prog 100~
+if ispc($n)
+if isevil($n)
+mea $n _cya The Great Sphinx's eyes open.
+mea $n _lre A powerful beam shoots from the Sphinx's eyes...
+mea $n _cya Everything fades to black...
+mpslay $n
+else
+'If you answer incorrectly, you shall surely perish.
+,looks at you.
+'The first riddle..
+'I never was, am always to be,
+'No one ever saw me, nor ever will
+'And yet I am the confidence of all
+'To live and breathe on this terrestrial ball.
+'Choose your answer wisely.
+endif
+endif
+~
+> speech_prog p tomorrow~
+nod
+'Very good.
+mptrans 0.$n 18451
+mpat 18451 'Now for the second riddle.
+~
+> fight_prog 100~
+mpslay all
+~
+|
+#18409
+great sphinx2~
+The Great Sphinx~
+The Great Sphinx sits here eternally, waiting to eliminate those that try to pass.
+~
+Two large Sphinx stand to either side of the cavern, guarding the passage.
+They are made of stone, with eyes that open when they prepare to zap an
+unworthy questor. It would be suggested to answer the questions asked of
+of you swiftly so that you might pass on to the next gate.
+~
+1 4194344 0 C
+50 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+40 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> speech_prog p Now for the second riddle.~
+, looks at you.
+'The beginning of eternity
+'The end of time and space
+'The beginning of every end,
+'And the end of every place.
+, spends a few moments in thought.
+~
+> speech_prog p the letter e~
+'Very good, one more riddle, and you shall be allowed to pass.
+mptrans 0.$n 18452
+mpat 18452 'The third riddle is as follows:
+~
+> fight_prog 100~
+mpslay all
+~
+|
+#18410
+great sphinx3~
+The Great Sphinx~
+The Great Sphinx sits here eternally, waiting to eliminate those that try to pass.
+~
+Two large Sphinx stand to either side of the cavern, guarding the passage.
+They are made of stone, with eyes that open when they prepare to zap an
+unworthy questor. It would be suggested to answer the questions asked of
+of you swiftly so that you might pass on to the next gate.
+~
+1 4194344 0 C
+50 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+40 0 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> speech_prog p The third riddle is as follows:~
+, ponders a moment in thought.
+'At night they come without being fetched,
+'And by day they are lost without being stolen.
+~
+> speech_prog p the stars~
+'Very good, $n.
+'You are very wise, and have answered all my riddles correctly.
+'You shall now move on to the second gate.
+'Good luck, $n.
+mea $n _yel The Great Sphinx's eyes close.
+mea $n _yel The wind picks up behind you, nudging you forward.
+mptrans 0.$n 18453
+~
+> fight_prog 100~
+mpslay all
+~
+|
+#18411
+southern oracle~
+The Southern Oracle~
+The Southern Oracle is sitting here, starting to decay and crumble.
+~
+~
+67108867 0 0 S
+50 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+> all_greet_prog 100~
+mea $n _lbl The Southern Oracle says 'Do not be afraid, we will not harm you.
+mea $n _lbl We have been waiting for you a long time. Fantasia needs a new
+mea $n _lbl dream. No one from Fantasia can help us. Only the dreams of a
+mea $n _lbl human child can save us. If you want to save our world,
+mea $n _lbl you must hurry.'
+mea $n _cya Another large piece of rock falls from the Southern Oracle.
+mpdamage all 300
+mea $n _lbl The Southern Oracle says 'We're not sure how much longer we can
+mea $n _lbl out last The Nothing.'
+mea $n _cya Falkore pads out from behind The Southern Oracle.
+mea $n _lbl The Southern Oracle says 'Hello, Falkor, I see that you are
+mea $n _lbl accompaning $N on $S quest.'
+mea $n _lbl The Southern Oracle says 'You must take $M to the boundries of
+mea $n _lbl Fantasia.'
+mea $n _cya Falkor nods solemnly.
+mea $n _cya You mount Falkor.
+mea $n _cya Falkor takes off into the night sky.
+mea $n _whi The wind begins to pick up.
+mea $n _whi A terrible storm blows in suddenly.
+mea $n _lbl Falkor says 'I'm losing control!!'
+mea $n }red You are falling!!! &D
+mea $n _whi You hit the ground with a rousounding THUD!!
+mpforce $n sleep
+mptrans all 18481
+~
+|
+#18418
+empress~
+the Empress~
+The Empress looks up at you with large child-like eyes.
+~
+The Empress is sitting comfortably in the middle of the room. Her hair is
+neatly combed back against her head. A thin, silver tiarra settles on the
+top of her head, drawing to a "v" in the middle of her forehead. Her eyes
+are a bright blue, surrounded by long, black lashes. Her cheeks are slightly
+rouged and her lips are full, and red. She is wearing a long white gown
+that hangs from her shoulders with silken sleeves that draw to a "v" at
+the top of her hands. The dress it self is fit tightly across her torso
+but blossoms out at her hips, coming to a full and extravagant drape
+over her lower half. There are beads and diamonds strewn all throughout
+the fabric, seemingly giving her a slight glow.
+~
+67239939 128 0 S
+50 0 0 0d0+0 0d0+0
+0 0
+112 112 2
+> greet_prog 100~
+mea $n _dgr The Empress looks at you.
+mea $n _cya The Empress smiles at you.
+mea $n _lbl The Empress says 'Greetings, $n.'
+if carryingvnum($n) 18420
+mea $n _lbl The Empress says 'You have done well, $n. You have saved all
+mea $n _lbl of Fantasia.'
+Mea $n _cya The Empress smiles at you.
+mea $n _lbl The Empress says 'Please give me Bastian's Dreams.'
+else
+frown
+mea $n _lbl The Empress says 'You have not completed your quest, $n'
+mea $n _lbl The Empress says 'The fate of all Fantasia lies on your shoulders.'
+mea $n _cya The Empress hugs you.
+mea $n _lbl The Empress says 'Please don't give up, you're the only one who
+mea $n _lbl can save us.'
+mea $n _lbl The Empress says 'You're the only one that can save me...'
+sniff
+mea $n _lbl The Empress says 'Please hurry, $n. Time is running out..'
+endif
+~
+> act_prog p gives you bastian's dreams.~
+if ispc($n)
+if rand(75)
+thank $n
+mpjunk bastian's dreams
+hug $n
+wave $n
+mea $n _lbl The Empress says 'Now you must go back to the real world.'
+mptrans all 21000
+else
+thank $n
+mea $n _lbl The Empress says 'Now you must go back to the real world.'
+mea $n _lbl The Empress says 'But take this, so you don't forget us.
+mpoload 18421 50
+get grain
+give grain $n
+wink $n
+mea $n _lbl The Empress says 'Be sure to tell the others...
+wave $n
+mptrans all 21000
+endif
+endif
+~
+> all_greet_prog 100~
+savea
+mea $n _dgr The Empress looks at you.
+mea $n _cya The Empress smiles at you.
+mea $n _lbl The Empress says 'Greetings, $n.'
+if iscarrying($n) == 18420
+mea $n _lbl The Empress says 'You have done well, $n. You have saved all
+mea $n _lbl of Fantasia.'
+Mea $n _cya The Empress smiles at you.
+mea $n _lbl The Empress says 'Please give me Bastian's Dreams.'
+else
+frown
+mea $n _lbl The Empress says 'You have not completed your quest, $n'
+mea $n _lbl The Empress says 'The fate of all Fantasia lies on your shoulders.'
+mea $n _cya The Empress hugs you.
+mea $n _lbl The Empress says 'Please don't give up, you're the only one who
+mea $n _lbl can save us.'
+mea $n _lbl The Empress says 'You're the only one that can save me...'
+sniff
+mea $n _lbl The Empress says 'Please hurry, $n. Time is running out..'
+endif
+~
+> act_prog p gives you bastian's dreams.~
+if ispc($n)
+if rand(75)
+thanks $n
+mpjunk bastian's dreams
+hug $n
+wave $n
+mea $n _lbl The Empress says 'Now you must go back to the real world.'
+mptrans $n 21000
+else
+thank $n
+mea $n _lbl The Empress says 'Now you must go back to the real world.'
+mea $n _lbl The Empress says 'But take this, so you don't forget us.
+mpoload 18421 50
+get grain
+give grain $n
+wink $n
+mea $n _lbl The Empress says 'Be sure to tell the others...
+wave $n
+mptrans $n 21000
+endif
+endif
+~
+|
+#18419
+cairon~
+Cairon~
+Cairon stands here, addressing the concerned people of Fantasia.
+~
+A tall, wise looking centaur stands before you. He is dark complected,
+half-man, half-horse.  His hair is white, and curly, extending beyond 
+his shoulders and cascading down his back. He is the most skilled, and
+wisest physician in all of Fantasia, but is seemingly troubled greatly
+by the Empress' illness. Even he can't seem to save her.
+~
+131075 4194304 0 C
+50 0 0 1d1+7000 1d1+200
+0 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 2048 0 2100480 0 113 3
+> all_greet_prog 100~
+mea $n _lbl Cairon says 'I know you have come to beseech the Empress for help.'
+mea $n _lbl Cairon says 'But the Empress has fallen ill...'
+mea $n _lbl Cairon says 'There seems to be a mysterious link between her
+mea $n _lbl and the Nothing.'
+mea $n _lbl Cairon says 'Our only hope is to find a brave warrior 
+mea $n _lbl willing to take on this almost impossible quest.'
+~
+> speech_prog p I have come to save Fantasia.~
+mpecho _dgr Cairon looks at $n.
+nod
+'Then you will need this, fair warrior...
+mpoload 18403 45
+mpecho _dgr Cairon removes the Auryn from around his neck.
+give auryn $n
+'If you can not wear that, you will not be able to complete
+mpecho _lbl the quest, and should turn back now.'
+'Goodluck, and remember, all of us are counting on you.
+'Defeat the Nothing, $n, or we will all perish.
+mptrans $n 18473
+~
+|
+#18420
+blubb~
+Blubb~
+Blubb is hanging from a branch above you.
+~
+Blubb is a large bat, and Vooshvazool's mode of travel. He is somewhat
+furry and light pink in color. He has large black eyes that are closed
+most of the time as he sleeps... a lot.
+~
+131075 524416 -1000 C
+50 0 0 1d1+8000 1d1+175
+250000 0
+112 112 1
+18 15 16 18 18 13 15
+-2 -2 -2 -2 -2
+23 3 0 0 262145 262145 3
+85 0 65673 1048588 3149068 0 33554497 3
+> rand_prog 2~
+snore
+~
+|
+#18421
+gluckuk~
+Gluckuk~
+Gluckuk stands here tending to his racing snail.
+~
+Gluckuk is a tiny, almost what a munchkin might look like. He has a round
+face with rosey cheeks. He is dressed in a colorful tophat and a crimson
+tuxedo with tails.
+~
+131075 4194432 1000 C
+45 0 0 1d1+9000 1d1+250
+250000 0
+112 112 1
+13 13 13 13 13 13 13
+-1 -1 -1 -1 -1
+2 3 0 0 262145 262145 2
+0 0 201 8451 2100224 0 112 524291
+> rand_prog 1~
+'If the Empress can't save us, who can?
+sigh
+~
+|
+#18422
+Vooshvazool~
+Vooshvazool~
+Vooshvazool sits here poking at his dinner over the fire.
+~
+Vooshvazool, a Nytehob, is not a very attractive fellow. He has frizzy
+light brown hair, and a long pointed nose. Several warts reside on his 
+wrinkly face. He is clothed in a simple brown tunic and a pair of worn
+leather pants.
+~
+131075 524416 0 C
+48 0 0 1d1+9000 1d1+150
+250000 0
+112 112 1
+18 13 13 18 13 13 13
+-1 -1 -1 -1 -1
+39 3 0 0 262145 262145 2
+84 0 201 1048588 3149068 0 33554497 3
+#18423
+rock biter~
+Rock Biter~
+Rock Biter sits here chomping on limestone.
+~
+A large being stands before you, seemingly made of rock. He towers several
+stories above you. He somehow manages to have some expression to his face
+and you sence that he is greatly troubled.
+~
+131075 524416 0 C
+48 0 0 1d1+12000 1d1+190
+250000 0
+112 112 1
+18 13 13 18 18 13 13
+-1 -1 -1 -1 -1
+40 3 0 0 1 1 3
+85 0 97 1048588 3149068 0 33554497 3
+> rand_prog 1~
+'There used to be a lake back home, and all the tasty limestone we needed.
+'But then the Nothing came, and the lake dried up, and the rocks..were gone.
+'I've come to seek the Empress and try to save what's left of my people.
+~
+> fight_prog 10~
+'Why are you attacking me? Don't you know the Nothing is coming??
+sniff
+~
+> death_prog 100~
+mer $n }whi Rock Biter hits the ground so hard, the ground shakes beneath you.
+mea $n }whi Rock Biter hits the ground so hard, the ground shakes beneath you.
+mpdamage all 200
+~
+|
+#18424
+rock biter~
+Rock Biter~
+Rock Biter sits here chomping on limestone.
+~
+A large being stands before you, seemingly made of rock. He towers several
+stories above you. He somehow manages to have some expression to his face
+and you sence that he is greatly troubled.
+~
+3 524416 0 C
+48 0 0 1d1+4999 1d1+190
+250000 0
+112 112 1
+18 13 13 18 18 13 13
+0 0 0 0 0
+40 3 0 0 1 1 3
+0 0 97 1048588 3149068 0 33554497 3
+> act_prog arises~
+'They look.. like big.. strong hands... don't they?
+sigh
+shake
+sniff
+'They were not strong enough to hold onto my friends, the Nothing took
+'them away from me. So I'm going to sit here, and wait... and let it take
+'me too.
+sigh
+~
+|
+#18425
+johnston teacher math~
+Ms. Johnston~
+Your math teacher stands here, obviously perturbed you are late for her class again.
+~
+~
+3 4718760 1000 C
+40 0 0 1d1+1999 1d1+100
+50000 0
+112 112 2
+18 18 18 18 16 13 13
+-1 -2 -1 -3 -1
+0 3 0 0 1 1 2
+50 0 196 0 2099200 0 49 524291
+> greet_prog 100~
+emote looks at you.
+mea $n _cya Ms. Johnston rolls her eyes at you.
+mea $n _lbl Your math teacher says 'Late again, $n?'
+tsk
+mea $n _lbl Your math teacher says 'What until your father hears, you are in
+mea $n _lbl big trouble, $n!'
+~
+> fight_prog 10~
+'You are soooo expelled!
+growl
+~
+|
+#18426
+music teacher marmalade~
+Ms. Marmalade, your music teacher~
+Your music teacher sits here rubbing her temples in frustration.
+~
+~
+3 4718760 1000 C
+40 0 0 1d1+1999 1d1+100
+50000 0
+112 112 2
+18 18 18 18 16 13 13
+0 0 0 0 0
+0 3 0 0 1 1 2
+50 0 196 0 2099200 0 49 524291
+> rand_prog 2~
+'Everybody now...
+lala
+~
+> act_prog p goes 'la la la'~
+growl $n
+'On second thought, $n, why don't you go lunch?
+~
+> fight_prog 20~
+,grabs a music stand and smashes it over your head.
+'Take that!
+growl
+~
+|
+#18427
+Ms. Shultz art teacher~
+Ms. Shultz, your art teacher~
+Your art teacher is sitting here, getting ready for her next class.
+~
+~
+3 4718760 1000 C
+40 0 0 1d1+1999 1d1+74
+50000 0
+112 112 2
+18 18 18 18 16 13 13
+0 0 0 0 0
+0 3 0 0 1 1 2
+50 0 196 0 2099200 0 49 524291
+> greet_prog 100~
+'$n shouldn't you be in math class right now?'
+mea $n _cya Ms. Shultz, your are teacher looks at you.
+tsk 0.$n
+~
+> fight_prog 20~
+thwap $r
+mpdamage $r 200
+'Betcha wish you went and took that test..'
+~
+|
+#18428
+Mr. Turlington english teacher~
+Mr. Turlington, your math teacher~
+Your english teachers sits behind his desk, grading papers.
+~
+~
+3 4718760 1000 C
+40 0 0 1d1+1999 1d1+100
+50000 0
+112 112 1
+18 18 18 18 16 13 13
+-1 -1 -1 -1 -1
+0 3 0 0 1 1 2
+50 0 196 0 2099200 0 49 524291
+> greet_prog 100~
+mea $n _cya Mr. Turlington, your math teacher looks at you.
+smile
+mea $n _lbl Mr. Turlington says 'Ah, welcome $n, you're just in time for your'
+mea $n _lbl Mr. Turlington says 'essay examination. Please have a seat and'
+mea $n _lbl Mr. Turlington says 'begin. This test will count as 50% of your'
+mea $n _lbl Mr. Turlington says 'final grade.'
+~
+> fight_prog 20~
+'You are in big trouble, $r!
+mpdamage $r 100
+~
+|
+#18429
+racing snail~
+A racing snail~
+A racing snail sits here, peering at you.
+~
+A friendly looking snail, it's larger then then the Tiny that rides him.
+A pinked body, his skin is thick and rubbery, with a large shell on his
+back with a saddle on it for Gluckuk.
+~
+131075 128 0 C
+49 0 0 1d1+7000 1d1+100
+0 0
+112 112 0
+13 13 13 13 13 13 13
+-1 0 0 -1 0
+0 3 0 0 1 1 0
+84 0 0 0 2100224 0 0 0
+> fight_prog 10~
+mpecho _Whi A racing snail slimes you!
+mpdamage all 200
+~
+|
+#18430
+bunny~
+a furry little bunny~
+A furry little bunny hops around merrily.
+~
+~
+67239939 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+> rand_prog 3~
+mpecho _whi The bunny sits back on its haunches and sniffs the air, then goes
+mpecho _whi back to hopping around.
+~
+> act_prog p gently pets you.~
+purr
+wiggle
+~
+> act_prog p nibbles on your ear.~
+giggle
+flutter $n
+~
+> act_prog p looks at you.~
+nose
+semote $n wiggles it's nose.
+~
+|
+#18431
+falkor2~
+Falkor, the Luck Dragon~
+Falkor, the Luck Dragon is resting here.
+~
+Falkor is a luck dragon. He is very large, extending almost the length of
+a football field from his muzzle to the tip of his tail. He stands about
+a story high, with confidence, yet with an aura of compassion about him.
+His eyes are large as well, ruby red in color. However, they are not 
+piercing, they are more warm and kind looking. His scales are the purest
+white you've ever seen, and shimer like the clearest ocean ever could.
+~
+1141243907 4194344 0 C
+54 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+31 6 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> rand_prog 10~
+'Let me see your equipment, it seems to have been damaged in the fight.
+~
+|
+#18499
+Legolas~
+Legolas~
+Legolas the Elven Archer stands here, ready to do his Mistress, Temptations, biddings.
+~
+~
+262145 306184320 0 C
+55 0 0 0d0+0 0d0+0
+0 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+1 3 0 0 1 1 0
+0 0 1 0 0 0 0 0
+> act_prog p pets you.~
+purr
+nuz tempt
+~
+> act_prog p spanks you playfully.  OUCH!~
+again temptation
+beg temptation
+~
+> act_prog p mounts you.~
+'Where may I take you Mistress?
+nuz tempt
+~
+> act_prog p dismounts you.~
+pout
+'But Mistress, I love being ridden by you...
+sniff
+lap temptation
+~
+> act_prog p nibbles on your ear.~
+swoon tempt
+quiver tempt
+lap tempt
+~
+|
+#0
+
+
+#OBJECTS
+#18402
+neverending story book~
+The Neverending Story~
+The Neverending Story lies here collecting dust.~
+~
+8 8195 16385
+0 0 0 0
+1 0 0
+> exa_prog 100~
+if inroom($n) == 18417
+mpforce 0.$n drop book
+mea $n _whi As you begin to read, you start to feel strange..
+mea $n _whi Your eyelids get heavy... and everything becomes surreal.
+mpforce $n sleep
+mptrans $n 18460
+endif
+~
+|
+#18403
+auryn~
+the Auryn~
+A small metallic symbol of two woven snakes lies here.~
+Also called "The Gem" or "The Glory". Auryn is the Childlike Empress's golden amulet. It consists of two snakes, one black, one white, each biting the other's tail. On the reverse side it reads, "Do What You Wish". ~
+9 65 5
+12 12 20 0
+1 10000 -31072
+E
+auryn gem glory pendant~
+Also called "The Gem" or "The Glory". Auryn is the Childlike Empress's 
+golden amulet. It consists of two snakes, one black, one white, each biting
+the other's tail. On the reverse side it reads, "Do What You Wish". 
+~
+A
+1 2
+A
+2 1
+A
+19 6
+A
+18 4
+A
+13 50
+#18404
+Sikanda sword~
+Sikanda~
+A shimmering, magical sword lies here, seeming to create it's own light.~
+~
+5 689219 8193
+12 4 15 3 3 0
+8 100000 10000
+A
+1 2
+A
+2 1
+A
+14 -50
+A
+18 15
+A
+19 18
+A
+13 100
+A
+56 3
+> wear_prog 100~
+mer $n _whi In a brilliant flash of light, $n brings Sikanda to hand.
+mea $n _whi You feel magically more powerful as you bring Sikanda to hand.
+~
+> remove_prog 100~
+mea $n _red You feel heavy hearted as you stop wielding Sikanda.
+mer $n _red $n feels heavy hearted as $e stops wielding Sikanda.
+~
+|
+#18406
+cry~
+a cry for help~
+Someone's last hope lies here.~
+~
+8 0 16385
+0 0 0 0
+1 0 0
+> exa_prog 100~
+mea $n _cya You look up to the sky, for what you to believe is the last time.
+mpforce $n 'What is that?
+mpecho _cya As you look up you see a small white object coming closer.
+mpecho _whi As it nears, you see that it is a magical Luck Dragon.
+mpecho _whi Falkor swoops down.
+mptrans falkor
+mpforce $n drop cry
+mpforce $n 'Help me!
+~
+|
+#18411
+batwing broth~
+batwing broth~
+A spindle of batwing broth lies here.~
+~
+10 0 16385
+35 -1 -1 -1
+2 30000 300
+'kindred strength' 'NONE' 'NONE'
+#18412
+eye of newt~
+eye of newt~
+A disgusting looking eye lies here in the dirt.~
+~
+26 0 16385
+50 -1 -1 -1
+1 100000 350
+'true sight' 'NONE' 'NONE'
+#18417
+key~
+a key to the attic~
+A key labeled "Attic" lies here in the cubbyhole.~
+~
+18 8192 1
+0 0 0 0
+1 0 0
+#18420
+bastians dreams~
+Bastian's Dreams~
+The heart of Fantasia lies here.~
+~
+8 0 16385
+0 0 0 0
+1 0 0
+> exa_prog 100~
+if ispc($n)
+mpecho _whi Something is different...
+mptrans all 18479
+endif
+~
+|
+#18421
+grain sand~
+a grain of sand~
+The stuff dreams are made of lies here.~
+~
+9 65601 16385
+17 17 0 0
+1 1000 100
+A
+4 2
+A
+13 40
+A
+18 4
+A
+19 3
+#18425
+leather vest~
+a light, leather vest~
+A small pile of leather lies here.~
+~
+9 8388608 9 4
+12 12 0 0
+3 12000 500
+A
+17 -7
+A
+5 2
+A
+12 30
+A
+18 3
+A
+19 3
+#18426
+baggy leather pants~
+a pair of baggy, leather pants~
+Some god dropped a newly created baggy leather pants here.~
+~
+9 148736 33
+12 0 0 0
+1 21000 500
+A
+17 4
+A
+2 2
+A
+3 1
+A
+18 4
+A
+19 7
+#18427
+leather jacket~
+a leather jacket~
+A leather jacket is laying here in a clump~
+~
+9 150016 9 32
+12 12 0 0
+3 140000 14000
+A
+17 -10
+A
+1 1
+A
+18 3
+A
+19 4
+#18428
+plaid skirt~
+a plaid cotton skirt~
+Some god dropped a newly created plaid skirt here.~
+~
+9 0 32
+0 0 0 0
+1 0 0
+#18429
+Mark purple buffalo hunter~
+&pthe mark of the purple buffalo hunter&D~
+&pA tribal mark set in deep purple lies here.&D~
+~
+9 16926977 2097153
+12 12 0 0
+1 0 0
+A
+17 -8
+A
+1 1
+A
+18 1
+A
+19 3
+A
+13 20
+#18430
+limestone~
+a limestone~
+Some god dropped a newly created limestone here.~
+~
+26 1073741824 1
+50 -1 -1 -1
+1 1200 120
+'stone skin' 'grounding' 'NONE'
+#18450
+stream~
+a newly created stream~
+A slow moving stream babbles here quietly.~
+~
+25 0 0
+0 0 0 0
+1 0 0
+#18460
+desk~
+a newly created desk~
+A large wooden desk sits here against the wall, covered with books and paperwork.~
+~
+12 0 0
+0 0 0 0
+1 0 0
+#18461
+bookshelf~
+a newly created bookshelf~
+Tall wooden bookshelves line the walls, filled with old, dusty books.~
+~
+12 0 0
+0 0 0 0
+1 0 0
+#18462
+goblin sword~
+a goblin sword~
+A small, poorly-made sword lies here.~
+~
+5 16925201 8193
+12 7 3 11
+1 2400 240
+#18463
+chalkboard~
+a chalkboard~
+A chalkboard sits here at the front of the class~
+~
+12 0 0
+0 0 0 0
+1 0 0
+E
+chalkboard~
+A large green chalkboard, there are various math equations off to the
+side of the board, but in the center you see large letters:
+*     *  ****** ******* *     *     ******* ****** ******* *******
+* * * *  *    *    *    *     *        *    *      *          *
+*  *  *  ******    *    *******        *    ****   *******    *
+*     *  *    *    *    *     *        *    *            *    *
+*     *  *    *    *    *     *        *    ****** *******    *
+~
+#18464
+instrument closet~
+an instrument closet~
+An instrument closet sits here along the wall.~
+~
+15 0 0
+30 5 18465 15
+1 0 0
+E
+closet~
+A large wooden closet sits here against the wall. It seems to be made
+of a thick, cheap wood. It is covered by a chipped, army green paint.
+There are two large doors that sit above two lowers drawers.
+~
+#18465
+music note key~
+a music note charm necklace~
+Someone left a small, silver music note on the ground here.~
+~
+18 65 5
+0 0 0 0
+1 10000 1000
+#18466
+guitar~
+a guitar~
+A small wooden guitar sits here perched against the wall.~
+~
+8 0 16385
+0 0 0 0
+1 0 0
+E
+guitar~
+The guitar is small, but it seems to be made of the finest wood. It's
+thickly coated with a fine liquer, and the strings are in fine shape.
+~
+> wear_prog 100~
+mea $n _whi You strum across the strings as you hold the guitar in your hands.
+mer $n _whi $n strums across the strings as $e holds the guitar in $s hands.
+~
+|
+#18467
+paintbrush~
+a paintbrush~
+A plain wooden paintbrush, still damn with paint, lies here.~
+~
+5 0 8193
+12 4 4 7
+1 2000 200
+> wear_prog 100~
+mea $n _red Your fingers wrap around the paintbrush as you grin evilly.
+mer $n _red $n's fingers wrap around the paintbrush as $e grins evilly.
+~
+|
+#18468
+smock~
+a flimsy art smock~
+A flimsy art smock is lying here in a clump.~
+~
+9 0 9 128
+17 17 0 0
+1 2400 240
+A
+17 -4
+A
+2 1
+A
+4 1
+A
+18 5
+A
+19 4
+#18469
+english chalkboard~
+a chalkboard~
+A chalkboard sits here at the front of the class~
+~
+12 0 0
+0 0 0 0
+1 0 0
+E
+chalkboard~
+You see a large green chalkboard saying:
+ 
+***** ***** ***** ***** *    *   ******* ****** ******* *******
+*     *     *     *   *  *  *       *    *      *          *
+***   ***** ***** *****   *         *    ****   *******    *
+*         *     * *   *   *         *    *            *    *
+***** ***** ***** *   *   *         *    ****** *******    *
+~
+#18470
+book childhood stories~
+a book of childhood stories~
+A book of childhood stories sits here collecting dust.~
+~
+4 33554432 16385
+60 5 5 -1
+2 24800 2480
+'true sight'
+#18471
+temptation home skillet~
+Temptation's Home Skillet~
+Temptation's Home Skillet lies here, waiting to fry your ass!~
+~
+4 0 16385
+0 0 0 -1
+1 0 0
+'NONE'
+A
+1 20
+A
+4 20
+A
+3 20
+A
+5 20
+A
+2 20
+A
+25 20
+A
+31 20
+> wear_prog 100~
+mpe _whi $n wields $O and looks around for the next ass she gets to fry!
+~
+> remove_prog 100~
+mpe _whi $n asks 'Did you smell, what the $n, was cookin'?'
+~
+|
+#0
+
+
+#ROOMS
+#18400
+An Abandoned Warehouse~
+You've wandered into an abandoned warehouse. It's a rather large building
+with cement walls, painted gray but chipping. There are wooden crates
+lining the walls, and a various assundry of long tables and heavy machinery.
+There is little light, even from the windows that are high upon the walls.
+They appear to have been spray painted over with black paint. It's almost
+as if someoene was trying to hide something in here. The air is thick and
+musty, making it hard to breath. There are footprints on the dirty floor
+that appear to be recent.
+~
+0 12 0
+D0
+~
+~
+3 -1 18401
+S
+#18401
+On The Street~
+Walking out from the warehouse, thank goodness you got past those bullies,
+but it would probably be best to move along swiftly. They will be back with
+reinforcements, no doubt. The street is busy, cars fill the street, either
+parked or stuck in traffic. The exhaust is thick, and the noise is deffening.
+There are several shops lining the street. There appears to be a bookstore
+up ahead.
+~
+0 0 1
+D0
+~
+~
+0 -1 18402
+D2
+~
+~
+33 -1 18400
+S
+#18402
+On The Street~
+You are nearing the bookstore, and from here it appears to be empty. Most
+likely it will provide a quiet refuge for the time being. There's something
+mysterious about it, seemingly drawing you inside. You hear a commotion to
+the south, it seems the bullies are coming up quick, better hurry inside.
+~
+0 0 1
+D0
+~
+~
+3 -1 18403
+D1
+~
+~
+0 -1 18405
+D2
+~
+~
+0 -1 18401
+S
+#18403
+Inside The Antique Bookstore~
+As the door opens, it creaks softly and a small bell jingles overhead. The
+air is musty in here, smelling of all books, perhaps a hint of mildew as
+well. It's not particularly well lit so one would have to strain to really
+see the merchandise. It is quiet as you thought, although you can see the
+bustling traffic outside through the front window.
+~
+0 8 0
+D0
+~
+~
+0 -1 18404
+D2
+~
+~
+3 -1 18402
+S
+#18404
+Inside The Antique Bookstore~
+Venturing further into the bookstore, a man rushes up from his seat in the
+office ahead, to meet you. He was reading a book, which he quickly shut 
+before coming to greet you. He moves between you and the view of the office,
+almost seeming to want to hide what was in there. He looks rather irritated
+by your presense here. But the book is large, and you can't help but want to
+get a closer look.
+~
+0 8 0
+D0
+~
+~
+0 -1 18418
+D2
+~
+~
+0 -1 18403
+S
+#18405
+Approaching The School~
+Moving east down the street from the bookstore, once again, the traffic and
+sounds are deffening. People rush by you, not even seeming to see you. You
+hear a clock striking, then look up to see the time. Uh oh, schools started
+and you're not there. Wasn't today the day of the big math test? This day is
+already looking disasterous.
+~
+0 0 1
+D1
+~
+~
+0 -1 18406
+D3
+~
+~
+0 -1 18402
+S
+#18406
+Before The School~
+You stand before a large brick building running the entire length of the
+block. The windows are cloudy so you can't really see in. The grounds are
+well-kept and clean. Seeing as there are no other kids standing outside or
+running around, you know school has already started and you are late.
+~
+0 0 1
+D0
+~
+~
+0 -1 18407
+D3
+~
+~
+0 -1 18405
+S
+#18407
+Inside The School~
+As you enter the building, the halls are large and ominous. Not a sound as
+you walk down the hallway. You struggle to see in the small window of the
+dreaded math class, and you see they are taking a test. Maybe you should go
+find a safe place to hide out for a while?
+~
+0 8 0
+D0
+~
+~
+0 -1 18409
+D1
+~
+~
+3 -1 18408
+D2
+~
+~
+0 -1 18406
+S
+#18408
+Math Class~
+As you enter class, your stomach begins to knot. You know you should
+have just gone to the attic or something. Suddenly you're the center
+of attention as your teacher begins to scold you for being late, again.
+~
+0 0 0
+D3
+~
+~
+3 -1 18407
+S
+#18409
+At The Base Of The Stairs~
+You walk down the long hallway toward a set of metal-grate stairs. A small
+sign on the wall reads "The Attic." To the east and west are more hallways
+with several classroom doors along the dingy walls. There is hardly any
+sound to be heard here. The florescent lighting doesn't do much to pep up
+the mediocre surroundings.
+~
+0 8 0
+D1
+~
+~
+0 -1 18410
+D2
+~
+~
+0 -1 18407
+D3
+~
+~
+0 -1 18415
+D4
+~
+~
+0 -1 18414
+S
+#18410
+Along The Eastwing Of The School~
+As you walk down the darkened hallway, the only sound heard are chairs being
+scooted along the floor in the classrooms surrounding you. All the doors are
+closed, so any sound is muffled. Most of the windows are to high to see
+what's going on in them room.
+~
+0 8 0
+D0
+~
+~
+3 -1 18411
+D2
+~
+~
+3 -1 18412
+D3
+~
+~
+0 -1 18409
+S
+#18411
+Art Class~
+As you enter this room, you see the walls are covered with drawings
+and paintings. There are several cabinets lining the walls all filled
+with various art supplies. There are long tables arranged in a semi-
+circle, still covered in wet paintings.
+~
+0 8 0
+D2
+~
+~
+3 -1 18410
+S
+#18412
+Music Class~
+This room is well-lit. There are several chairs spread out 3 half
+circles around a small wooden podeum. Off to the side is a large closet
+where the school's instruments are held and kept under lock for safe
+keeping. There are large posters on the walls of various music scales
+and encouraging words. You sense the teacher really likes her job.
+~
+0 8 0
+D0
+~
+~
+3 -1 18410
+S
+#18413
+English Class~
+Upon entering this room, it smells musty, and looks like no one has
+bothered to dust for ages. The books that line the walls are old and 
+smell of mildew. The desks are aligned in four rows of eight, all
+facing forward. There are papers on each desk, still upside down.  Uh
+oh, looks like another test. 
+~
+0 8 0
+D0
+~
+~
+3 -1 18415
+S
+#18414
+At The Top Of The Stairs~
+You are now at the top of the stairs. Before you is the door to the
+old attic. There is a small cubbyhole to the right of the door that
+reads "Attic" above it. The glass is broken out, and you can see the
+key sitting inside. Behind you are the stairs back to the main floor
+of the school. It's rumored that mysterious things have happened in
+the attic. Maybe it would be safer if you just went back to math class
+and took the test...
+~
+0 8 0
+D0
+~
+~
+8389671 18417 18416
+D5
+~
+~
+0 -1 18409
+> all_greet_prog 100~
+if ispc($n)
+if level($n) <=45
+mea $n _Whi You are not ready to venture beyond the school yet.
+
+mpforce $n d
+~
+|
+S
+#18415
+Along The Westwing Of The School~
+As you walk down the darkened hallway, the only sound heard are chairs being
+scooted along the floor in the classrooms surrounding you. All the doors are
+closed, so any sound is muffled. Most of the windows are to high to see
+what's going on in them room.
+~
+0 8 0
+D1
+~
+~
+0 -1 18409
+D2
+~
+~
+3 -1 18413
+S
+#18416
+Just Inside The Attic~
+As you enter the attic, you are overwhelmed by the dust that lays
+thickly on every surface in the room. There is just a ton of junk stored
+here. Everything from old manakins, old, out-of-date schoolbooks, 
+globes, wooden desks, old gym equipment, to stuffed owls and school
+supplies.
+~
+0 8 0
+D0
+In The Middle Of The Attic
+~
+~
+0 -1 18417
+D2
+~
+~
+7 18417 18414
+S
+#18417
+In The Middle Of The Attic~
+Well, this seems to be as good'a place as any to do some light reading
+and hide from the rest of the world for a while. There is a small lamp
+in the corner of the room, once turned on, will shed some light for
+you. Also, there is a gym mattress in the middle of the floor. A
+little dusty, of course, but it still looks comfortable to sprawl out
+on. The shadows cast against the walls, over all the junk in the room
+makes for an erie ambiance.
+~
+0 12 0
+D2
+Just Inside The Attic
+~
+~
+0 -1 18416
+S
+#18418
+The Backroom of the Bookstore~
+This is where Mr. Correander's office must be. There is a desk covered
+with dusty books and various orderforms. Even though the books are old
+and dusty, Mr. Correander certainly seems to be busy. One book on the
+desk catches your eye. A thick, leatherbound book with a strange 
+insignia. The one that Mr. Correander had been reading just before you
+entered.
+~
+0 8 0
+D2
+~
+~
+0 -1 18404
+S
+#18419
+Deadly Swamp of Sadness~
+You've entered the deadly swamp of sadness. The ground is murky,
+and covered in muck and swamp. Small dead trees and mounds of gunk
+are all that makes up this area. It is rumored that once you lose
+hope, you will begin to sink, and the swamp will claim your very life.
+Don't slow down, and don't give up. You're Fantasia's only hope.
+~
+0 40902660 6
+S
+#18420
+Deadly Swamp of Sadness~
+You've entered the deadly swamp of sadness. The ground is murky, and
+covered in muck and swamp. Small dead trees and mounds of gunk are all
+that make up this area. It is rumored that once you lose hope, you will
+begin to sink, and the swamp will claim your very life. Don't slow down, 
+and don't give up. You're Fantasia's only hope.
+~
+0 40902656 6
+D1
+~
+~
+0 -1 18421
+S
+#18421
+Walking Through the Swamp~
+As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+0 41164800 6
+D0
+~
+~
+0 -1 18422
+D1
+~
+~
+0 -1 18421
+D2
+~
+~
+0 -1 18421
+D3
+~
+~
+0 -1 18420
+D6
+~
+~
+0 -1 18421
+D7
+~
+~
+0 -1 18421
+D8
+~
+~
+0 -1 18421
+D9
+~
+~
+0 -1 18421
+S
+#18422
+Walking Through the Swamp~
+As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell 
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+0 41164804 0
+D0
+~
+~
+0 -1 18421
+D1
+~
+~
+0 -1 18421
+D2
+~
+~
+0 -1 18421
+D3
+~
+~
+0 -1 18423
+D6
+~
+~
+0 -1 18424
+D7
+~
+~
+0 -1 18421
+D8
+~
+~
+0 -1 18424
+D9
+~
+~
+0 -1 18424
+S
+#18423
+Walking Through the Swamp~
+As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell 
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+0 41164804 6
+D0
+~
+~
+0 -1 18421
+D1
+~
+~
+0 -1 18423
+D2
+~
+~
+0 -1 18425
+D3
+~
+~
+0 -1 18421
+D6
+~
+~
+0 -1 18422
+D7
+~
+~
+0 -1 18422
+D8
+~
+~
+0 -1 18423
+D9
+~
+~
+0 -1 18423
+S
+#18424
+Walking Through the Swamp~
+As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell 
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+0 41164804 6
+S
+#18425
+Walking Through the Swamp~
+As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell 
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+0 41164804 6
+D0
+~
+~
+0 -1 18423
+D1
+~
+~
+0 -1 18422
+D2
+~
+~
+0 -1 18423
+D3
+~
+~
+0 -1 18426
+D6
+~
+~
+0 -1 18422
+D7
+~
+~
+0 -1 18424
+D8
+~
+~
+0 -1 18421
+D9
+~
+~
+0 -1 18421
+S
+#18426
+Walking Through the Swamp~
+As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell 
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+0 41164804 6
+D0
+~
+~
+0 -1 18427
+D1
+~
+~
+0 -1 18422
+D2
+~
+~
+0 -1 18423
+D3
+~
+~
+0 -1 18421
+D6
+~
+~
+0 -1 18421
+D7
+~
+~
+0 -1 18422
+D8
+~
+~
+0 -1 18424
+D9
+~
+~
+0 -1 18426
+S
+#18427
+Before the Great Shell Mountain~
+A huge mountain of swamp gunk lies before you. This has to be the 
+place. As you look around though, you don't see anyone. No one could
+possible live in this place, could they? Maybe you should get on top
+of the mountain and take a better look.
+~
+0 40902656 6
+D4
+~
+~
+0 -1 18428
+S
+#18428
+The Top Of Shell Mountain~
+There is a solitary twiggy little tree here. That's about all you
+can sense as far as life in this swamp. Looking around you can see
+for miles, but still all you see is swamp. No other people. You've 
+failed. Tired, and hopeless, you are not a victim of the swamp. But 
+wait, before you go back down, why don't you just try calling his 
+name? What could it hurt?
+~
+0 40902660 0
+> speech_prog p morla~
+mea $n _whi The ground begins to shake...
+mea $n *red You are falling!!
+mpopenpassage 18428 18429 5
+mpat 18428 mpforce $n down
+mpclosepassage 18428 5
+~
+|
+S
+#18429
+Standing Before The Wonderous Morla~
+The mountain rises, and you find Morla's giant turtle head staring
+you straight in the face. His very eyes are three times as large as
+you. Surely, he must be thousands of years old. It is rumored he is
+the wisest, mortal creature in the world. It makes you wonder why
+he lives here, in the middle of such despair.
+~
+0 40902656 0
+D1
+~
+~
+0 -1 18430
+S
+#18430
+Walking Through the Swamp~
+As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+0 40902660 0
+D3
+Standing Before The Wonderous Morla
+~
+~
+0 -1 18429
+S
+#18431
+Proceeding To The Mirror Gate~
+The sky is growing dim as the wind begins to pick up again. Perhaps it is
+all the sand that is pelting your skin, that is dimming the starlight. Your
+flesh is beginning to feel raw and weatherbeaten. It's hard to breathe, let
+alone see. The sand at your feet is thick as well, making each step tougher
+than the last.
+~
+0 40902660 0
+D0
+~
+~
+0 -1 18432
+D8
+~
+~
+0 -1 18453
+S
+#18432
+Before the Mirror Gate~
+Standing before what seems to be a large mirror, you see that the wind has
+died down just the slightest bit. You are thankful that the sand is no longer
+beating against your flesh. The gate is several feet higher than you, and
+probably twenty feet wide. It seems to be set in a large rock. But you've
+seen something like this before. It seems quite possible that this is some
+sort of portal you must enter. But how? The answer lies within you. Look at
+yourself honestly, and you may find a way to pass through.
+~
+0 40903168 0
+D2
+~
+~
+0 -1 18431
+D10
+~
+~
+133120 -1 18459
+S
+#18433
+The Southern Oracle~
+Here the sky is completely clear for a change. The stars in the sky burn
+brightly and seem to twinkle at different moments. The air is still, yet
+crisp, unlike most of the other places you've been thus far. The ground is
+made of dirt, packed hard and smooth. There is no sound, except the sound
+of your pounding heart, and your soft breathing. Directly before you is the
+Southern Oracle. You can't help but be hopeful about what she might be able
+to tell you about the cure for the Empress. Hopefully, she has the answer
+you seek. She is made of thick stone, several stories high as the Great
+Sphynx was, but there is a certain aura of magic about her, of hope and of
+wisdom.
+~
+0 40902660 0
+D7
+~
+~
+0 -1 18458
+S
+#18440
+Falkor's Cave~
+A cold, and dark cave, this is Falkor's home. There is a small fire lit
+in the center, shedding both light and warmth. The walls are cool and almost
+wet, yet completely smooth and shimmery. He lies near the middle, resting
+comfortably in his home.
+~
+0 40902660 13
+D1
+~
+~
+16777216 -1 18448
+S
+#18448
+Nearing the First Test~
+&Y *                           *                          *
+                         *               * 
+              *                        *
+ *                   *                              *
+ 
+          *                  *                   *         *
+ 
+        *                *                       *
+ 
+                   *                      *                      *
+                             *                             *
+ 
+          *                                *                *
+ 
+*                     *             *                    *
+&O_____________________________________________________________________
+~
+0 40902656 0
+D0
+~
+~
+0 -1 18450
+D1
+~
+~
+0 -1 18449
+D3
+~
+~
+0 -1 18440
+S
+#18449
+Engywook's Hut~
+As you enter the hut, you see it is rather cluttered with various
+scientific experiments. Some that work, some that don't. Urgl's in
+the kitchen cooking up some dinner. A rather strange scent fills the
+hut. Makes you wonder what exactly she is putting in her stew.
+~
+0 40902656 0
+D3
+~
+~
+0 -1 18448
+S
+#18450
+The First Gate~
+Before you stands the Riddle Gate. It is the first test toward finding the
+cure for the Empress and saving all of Fantasia from the Nothing. A Great
+Sphinx stands before you, surrounded by an aura of magic and power. Made of
+stone, it's got the head of a human, but the body of a lion. It stands
+several stories high, and is about 100 feet long. You get the idea that it
+would be powerful enough to stop you if you do not do as it says.
+~
+0 40903172 10
+> rand_prog 25~
+if ispc($n)
+mea $n _whi You took too long. 
+mea $n _whi You're only way out is a prayer to your deity.
+mea $n _yel The Sphinx's eyes open and a harsh wind begins to pick up.
+mpat 18454 mpecho _lbl Something is different...
+mptrans 0.$n 18454
+endif
+~
+|
+S
+#18451
+The First Gate~
+Before you stands the Riddle Gate. It is the first test toward finding the
+cure for the Empress and saving all of Fantasia from the Nothing. A Great
+Sphinx stands before you, surrounded by an aura of magic and power. Made of
+stone, it's got the head of a human, but the body of a lion. It stands
+several stories high, and is about 100 feet long. You get the idea that it
+would be powerful enough to stop you if you do not do as it says.
+~
+0 40903172 10
+> rand_prog 25~
+recho _whi You've taken to long.
+recho _whi Now you will have to beg your deity for help.
+if ispc($n)
+mea $n _whi You took too long. 
+mea $n _whi You're only way out is a prayer to your deity.
+mea $n _yel The Sphinx's eyes open and a harsh wind begins to pick up.
+mpat 18454 mpecho _lbl Something is different...
+mptrans 0.$n 18454
+endif
+~
+|
+S
+#18452
+The First Gate~
+Before you stands the Riddle Gate. It is the first test toward finding the
+cure for the Empress and saving all of Fantasia from the Nothing. A Great
+Sphinx stands before you, surrounded by an aura of magic and power. Made of
+stone, it's got the head of a human, but the body of a lion. It stands
+several stories high, and is about 100 feet long. You get the idea that it
+would be powerful enough to stop you if you do not do as it says.
+~
+0 40903172 10
+> rand_prog 25~
+recho _whi You've taken to long.
+recho _whi Now you will have to beg your deity for help.
+if ispc($n)
+mea $n _whi You took too long. 
+mea $n _whi You're only way out is a prayer to your deity.
+mea $n _yel The Sphinx's eyes open and a harsh wind begins to pick up.
+mpat 18454 mpecho _lbl Something is different...
+mptrans 0.$n 18454
+endif
+~
+|
+S
+#18453
+Beyond The First Gate~
+Well, you've made it through the first gate.  That's definetly no easy feat.
+The wind has died down once more, and things seem strangely calm. Almost,
+too much so. The ground is still sand, which makes it somewhat difficult to
+trudge through. Looking around, it seems to go on forever in all directions.
+The sky is dark, but the stars are burning brightly, lighting the area
+enough to ensure safe travels... at least for now.
+~
+0 40903168 10
+D7
+~
+~
+0 -1 18431
+S
+#18454
+A Dark Crevice~
+You look around, and notice you are in a different place. There is nothing
+but a cold void surrounding you. There is no air movement, and a dead cold
+silence. This is a deep crevice, the walls are tall and surround you. There
+appears to be no way out. The walls are ridged, and slick, impossible
+to climb. Perhaps you should call on your deity for help?
+~
+0 4194308 10
+S
+#18458
+Nearing the Southern Oracle~
+The air is thin again.  The night is clear. Stars fill the open sky
+shedding wonderous light upon any who are traveling this night. There is
+a gentle breeze blowing, perhaps it's more of a calm before the storm. This
+is no doubt a good place to rest if need be. Up ahead you can see two more
+large stone statues. A slight glow is emitting from them. There almost
+seems to be something magical about them.
+~
+0 40902660 10
+D8
+~
+~
+0 -1 18433
+S
+#18459
+Just Past The Mirror Gate~
+Once more, things are calm. The sky is clear and the stars are quite visible
+as they shimmer in the sky. The moon is high above, and full. The air is
+still, as it has been in the past, but something is different. It seems much
+more fresh, and cool. There is however, no sound still. But you are not
+alone.
+~
+0 7348228 10
+> rand_prog 100~
+if mobinworld(18403) < 1
+mpsleep 10
+mpforce $n get all atreyu
+mpforce $n sac corpse
+mppurge
+mpsleep 10
+mpecho _whi A strong wind blows and reveals a small opening to the north.
+mpecho _whi Falkor appears in the sky, and swoops down, scooping you up.
+mptrans all 18458
+endif
+~
+|
+S
+#18460
+In The Beginning~
+You find yourself in a heavily wooded area. There are large rocks and
+larger trees lining the path which you walk. The air is thick and moist
+and there is are serious feelings of dread and darkness here. In the 
+distance you can make out a large white building. Keep going east to
+make your way there.
+~
+0 40902656 3
+D1
+~
+~
+0 -1 18461
+S
+#18461
+Nearing The Ivory Tower~
+As you continue on, you can see the tower is quite large. However, you
+can see that you are still a bit of a distance off. You begin to run
+into other creatures that inhibit Fantasia. Everyone seems to be in a 
+hurry to get to the tower as well.
+~
+0 40902656 3
+D1
+~
+~
+0 -1 18462
+D3
+~
+~
+0 -1 18460
+S
+#18462
+A Small Glade~
+As you near the Ivory Tower, you begin to get a sense of it's magesty 
+and true beauty. It seemingly glows an aura of purity and light. A
+true shining star amidst all the hopelessness and despair that the
+Nothing is causing.
+~
+0 40902656 3
+D1
+~
+~
+0 -1 18463
+D3
+~
+~
+0 -1 18461
+S
+#18463
+Standing Before The Ivory Tower~
+A tall, magnificent building, the Ivory Tower stands 20 stories above
+you. The building itself seems to glow, and the air around it is
+much lighter then it has been so far along your travel. The walls are
+shimmering and glass-like. There are stairs spiriling around it to
+the top where the Empress resides.
+~
+0 40902656 3
+D3
+~
+~
+0 -1 18462
+D4
+~
+~
+0 -1 18464
+S
+#18464
+Climbing The Stairs Of The Tower~
+Climbing the stairs to the top of the tower, you notice the stairs 
+are made of the same ivory, glassy substance as the rest of the tower.
+You can hear that many have already arrived. The noise from the top
+of the tower pours down the stairs. Mostly fearful and some angry
+voices, all talking of the Nothing... and hoping the Empress can help.
+~
+0 40902656 1
+D4
+~
+~
+0 -1 18465
+D5
+~
+~
+0 -1 18463
+S
+#18465
+The Top Of The Ivory Tower~
+As your reach the top, you stand in complete awe. The heart of Fantasia
+is truly beyond your wildest dreams. There are representatives from
+each of the different lands in Fantasia, standing about. They are all
+here for the same reason. To find an answer and some hope for their
+land from the Empress. There is a large building in the center, shaped
+like a beautiful white rose. That is the home of the Empress. It 
+shimmers magically with the most beauty and life you've seen so far.
+~
+0 40902656 1
+D0
+~
+~
+0 -1 18471
+D5
+~
+~
+0 -1 18464
+D6
+~
+~
+0 -1 18466
+D7
+~
+~
+0 -1 18470
+S
+#18466
+The Main Floor Of The Tower~
+This space is completely open to the sky. The veiw from this high is
+nothing less then amazing. You can see for miles across the beautiful
+lands of Fantasia. The land around the tower remains untouched by the
+Nothing, growing, healthy and peaceful. The floors here in this area are
+made of the same substance as the stairs and walls, the shimery ivory
+make. There is a small stage type area where the Empress would address
+the people, had she been feeling up to it. There are stairs that lead
+to the rose that houses Her Magesty.
+~
+0 40902656 1
+D0
+~
+~
+0 -1 18469
+D3
+~
+~
+0 -1 18471
+D9
+~
+~
+0 -1 18465
+S
+#18467
+The Main Floor Of The Tower~
+As your reach the top, you stand in complete awe. The heart of Fantasia
+is truly beyond your wildest dreams. There are representatives from
+each of the different lands in Fantasia, standing about. They are all
+here for the same reason. To find an answer and some hope for their
+land from the Empress. There is a large building in the center, shaped
+like a beautiful white rose. That is the home of the Empress. It 
+shimmers magically with the most beauty and life you've seen so far.
+~
+0 40902656 1
+D0
+~
+~
+0 -1 18468
+D1
+~
+~
+0 -1 18471
+D8
+~
+~
+0 -1 18465
+S
+#18468
+The Main Floor Of The Tower~
+As your reach the top, you stand in complete awe. The heart of Fantasia
+is truly beyond your wildest dreams. There are representatives from
+each of the different lands in Fantasia, standing about. They are all
+here for the same reason. To find an answer and some hope for their
+land from the Empress. There is a large building in the center, shaped
+like a beautiful white rose. That is the home of the Empress. It 
+shimmers magically with the most beauty and life you've seen so far.
+~
+0 40902656 1
+D1
+~
+~
+0 -1 18470
+D2
+~
+~
+0 -1 18467
+S
+#18469
+The Main Floor Of The Tower~
+As your reach the top, you stand in complete awe. The heart of Fantasia
+is truly beyond your wildest dreams. There are representatives from
+each of the different lands in Fantasia, standing about. They are all
+here for the same reason. To find an answer and some hope for their
+land from the Empress. There is a large building in the center, shaped
+like a beautiful white rose. That is the home of the Empress. It 
+shimmers magically with the most beauty and life you've seen so far.
+~
+0 40902656 1
+D2
+~
+~
+0 -1 18466
+D3
+~
+~
+0 -1 18470
+S
+#18470
+The Center Of The Main Floor~
+This is the main stage area where the Empress would address the people
+of Fantasia. The stage is made of ivory, there are bergundy velvet
+ropes adorning the edges of the stages. A small podium is just off to
+the right, made of the same ivory, with a strange symbol cut into it.
+The symbol seems to be two intertwined snakes, one black, one white.
+There is a small doorway toward the back of the area, it seems to  be
+the enterance to where the Empress resides. Above the doorway, carved
+into the ivory is a phrase "Believe In Your Dreams."
+~
+0 40902656 1
+D0
+~
+~
+0 -1 18472
+D1
+~
+~
+0 -1 18469
+D3
+~
+~
+0 -1 18468
+D5
+~
+~
+0 -1 18471
+S
+#18471
+Standing Before The Empress' Lair~
+This space is completely open to the sky. The veiw from this high is
+nothing less then amazing. You can see for miles across the beautiful
+lands of Fantasia. The land around the tower remains untouched by the
+Nothing, it's growing, healthy and peaceful. The floors here in this area
+are made of the same substance as the stairs and walls, the shimery ivory
+make. There is a small stage type area where the Empress would address
+the people, had she been feeling up to it. There are stairs that lead
+to the rose that houses Her Magesty.
+~
+0 40902656 1
+D1
+~
+~
+0 -1 18466
+D2
+~
+~
+0 -1 18465
+D3
+~
+~
+0 -1 18467
+D4
+~
+~
+0 -1 18470
+S
+#18472
+The Lair Of The Empress~
+This is the home of the Empress. She governs over all of Fantasia from
+this very room. There is a large, white half-crescent bed in the center
+of the room. The bed, made with same ivory everything else is, the
+sheets are of white satin. Along one wall is a large desk, covered with
+papers and books. The room itself is circular, the walls are sparkly,
+but not decorated. In the middle of the wall, all the way around, is a
+large window that runs the length of the room. It gives the Empress
+the most magnificent view anyone could ever to have of Fantasia, as it
+was meant to be.
+~
+0 40902664 0
+D2
+~
+~
+0 -1 18470
+S
+#18473
+The Beginning Of An Adventure~
+Well, you find yourself at the beginning of the quest. You got yourself
+into this. But if you want to turn back, you can always just recite
+a few magic words and find yourself in the safety of your home. But
+if you choose to go on, you have the opportunity to save all of 
+Fantasia Make your choice wisely, because once you go northeast, there
+is no turning back.
+~
+0 4 1
+D6
+~
+~
+0 -1 18474
+S
+#18474
+The Plains~
+You begin your quest to find a cure for the Empress, finding yourself
+traveling across the plains. The grass is high and green, blowing gently
+in the wind as you pass through. The breeze seems to take away some of 
+the heat from the sun that is beating down on you. You can see for miles
+across the land. The view is rather breathtaking.
+~
+0 40902656 2
+D1
+~
+~
+0 -1 18475
+S
+#18475
+An Enchanted Forest~
+Here you find a safe place to rest. There is a small stream running
+down through the center of the forest. Everything is quiet and peaceful
+and the air smells fresh. You can hear the soft coos of the birds that
+are perched in the trees above, calling this place their home. Almost
+everything is so healthy and green. Flowers of every imaginable color
+decorate the landscape as well.
+~
+0 40902656 3
+D1
+~
+~
+0 -1 18476
+D3
+~
+~
+0 -1 18474
+D4
+~
+~
+2048 -1 18478
+S
+#18476
+The Silver Mountains~
+Passing through the mountains, it's rather cool. But the scenery is 
+truly amazing. Snow capped mountains, yet green toward the bottom. The 
+mountains are huge, and seem to be perfect for climbing. But you're 
+on a quest, so you best make your way past, quickly. Remember, you're
+the only hope Fantasia has.
+~
+0 40902660 5
+D3
+~
+~
+0 -1 18475
+D6
+~
+~
+0 -1 18420
+S
+#18478
+On A Tree Branch~
+You are very high up, you can see quite a bit from here. To the west are the
+plains you just came through, to the east are the Silver Mountains which you
+must travel through next. The foliage is thick however, it seems like this
+might be a good place to leave something valuable.
+~
+0 40902660 1
+D5
+~
+~
+0 -1 18475
+S
+#18479
+The Lair Of The Empress~
+This is the home of the Empress. She governs over all of Fantasia from
+this very room. There is a large, white half-crescent bed in the center
+of the room. The bed, made with same ivory everything else is, the
+sheets are of white satin. Along one wall is a large desk, covered with
+papers and books. The room itself is circular, the walls are sparkly,
+but not decorated. In the middle of the wall, all the way around, is a
+large window that runs the length of the room. It gives the Empress
+the most magnificent view anyone could ever to have of Fantasia, as it
+was meant to be.
+~
+0 40902668 1
+S
+#18481
+By the Sea of Possibilities~
+Finding yourself on the beach, everything seems calm once more. Falkor
+however, seems nowhere to be found. The waves roll in gently, and a 
+light mist from them tickles your skin. To the east a small abandoned
+shelter of some type. It seems to be the only hint of civilization.
+There is however, a dark sense of dread as you near it. But what choice
+do you really have?
+~
+0 40902660 1
+D1
+~
+~
+0 -1 18482
+S
+#18482
+In The Ruins Of Spook City~
+&O --------> --------> --------> --------> --------> --------> -------->
+ 
+ 
+&W                               .;''; ;`"';  ...
+                            _(    _(   . ) (`  )
+                        .-``    _(     ) '`.    )
+                       (_____.=( (_.:'-'   (____')
+ 
+ 
+&p                                 _,(-)
+                             `-(`  \_(        _,(-)
+                       _,(-)   //">\      `-(`  \_(
+                   `-(`  \_(                //"\>
+                     //"\ >        _,(-)
+                               `-(`  \_(
+                                 //">\
+ 
+&O --------> --------> --------> --------> --------> --------> -------->
+ 
+&WThe Grassy Plains and the Purple Buffalo
+
+~
+0 40902660 1
+D1
+~
+~
+0 -1 18483
+D3
+~
+~
+0 -1 18481
+S
+#18483
+In The Ruins Of Spook City~
+&x.&G                                   ___-------___
+                                 -''             ''-_
+                             _-'                   / '-_
+                           /'   \                 /     \
+            ____          /      \_______________/        \
+         ,-'___ '-,      /       /               \          \
+       ,'| |   |   \    /       /                 \          \
+       |o| |o__|    |  /_______/                   \__________\
+       | oo         / /        \                   /           \
+       |____       | /          \                 /             \ 
+        \___)       ||           \_______________/     _-_      //\__//
+          \___      ||------_-''-_ ------------- \ --/'   '\    || __/
+              '-----||----/'     |-------------------\      |/''''
+                (_(__/  ./     /                    \_\      \.
+ &O ,    &G                (_(___/                         \_____)_)
+&OO/
+|
+/>
+ 
+&WMorla In The Swamp of Sadness
+ 
+~
+0 40902660 1
+D1
+~
+~
+0 -1 18484
+D3
+~
+~
+0 -1 18482
+S
+#18484
+In The Ruins Of Spook City~
+&W
+                                       ____
+                ,.-''''-,__,..---'''```    ``''-.
+               //      '   `.                    `,
+              /                         )         .
+             |    \  /                  /           \,
+            : \. \\|      .          ,`            | `'.
+         ,.-' , \\``',     ;          ;             ;    `,
+        //`_),.\|\)_ .\   /          ,\          ._,'      \
+        \\)  ,+`[  e\ \.-`''--......-. '''''''       `\.     )
+        _,--`  /\   )`.`,           (_(____________  / )_.-' |
+       //,/`_)'  `''-. `/    _,.......----------'"""'``      /
+       \\)\)        &O@/&W`"   +`   ________                   _,`
+        `` `       &O/U&W    ,` ,'``         ```````'"""""""'``
+                 &O  /> &W   | /  
+                          \'_,
+ 
+Falkor
+
+~
+0 40902660 1
+D3
+~
+~
+0 -1 18483
+D6
+~
+~
+0 -1 18485
+S
+#18485
+In The Ruins Of Spook City~
+&O
+                                 /\
+                                ( ;`-v/--- ;._
+                             ,/'"/ ' < o\  '".-'\\\--,
+                           ,/",/W  u '`. -  >,._..,   )'
+                          ,/'  w  ,U'v  ;//')/')/'\;-)'
+                       ,/"'/   W` 'v  W |;         )/'
+                     ;''  |  v' v`" W }  \\
+                    "    .'\    v  `v/-W,) '\)\.)\/)
+                             `\   ,/,)'   ''')/-;'
+                                  \
+                                   '". _
+                                        \
+ 
+&WA Presense Yet Unseen
+ 
+~
+0 40902660 1
+D3
+~
+~
+0 -1 18486
+D9
+~
+~
+0 -1 18484
+S
+#18486
+In The Ruins Of Spook City~
+*                           *                          *
+                         *               * 
+              *                        *
+ *                   *                              *
+           &Y*           &W      , .-.-,_,  &Y*                            *
+      *                   &W   )`-.>'` (                     &Y*
+                 *&W          /     `\  |       &Y*
+  *                     * &W  |   _   | |    &Y         *        *
+         *     &W              \ | | / / &Y *                           *
+      *           *   &W       `=|_|/.=`        &Y   *          *
+&W                     (_______`-;`.-'_______)
+                            /     /
+                           /     /
+                          /_____/
+
+
+The Empress' Lair
+ 
+~
+0 40902660 1
+D0
+~
+~
+0 -1 18487
+D1
+~
+~
+0 -1 18485
+S
+#18487
+Gmork's Lair~
+The air here is thick, almost putrid. The walks are black, and crumbling
+in decay. There is little light, and absolutely no air movement. You can
+see that the lair extends to the north, but it is suggested you turn
+back the way you came, for only your demise awaits you ahead.
+~
+0 40902668 0
+D0
+~
+~
+0 -1 18488
+D2
+~
+~
+0 -1 18486
+S
+#18488
+Chaos and Indifference~
+And you entered, despite the warning. Here is Gmork, the servant of The
+Nothing. There is nothing but darkness here. No light. The dark is 
+thick, and it seems to be entering your very veins, overcoming and
+surging throughout your body. All hope seems to have disappeared, and 
+there is only emptiness and indifference remaining. What a terrible place
+to die. Alone, and probably never to be found.
+~
+0 7348236 0
+D2
+~
+~
+0 -1 18487
+S
+#18489
+The Center of the Main Floor~
+This is the main stage area where the Empress would address the people
+of Fantasia. The stage is made of ivory, there are bergundy velvet
+ropes adorning the edges of the stages. A small podium is just off to
+the right, made of the same ivory, with a strange symbol cut into it.
+The symbol seems to be two intertwined snakes, one black, one white.
+There is a small doorway toward the back of the area, it seems to  be
+the enterance to where the Empress resides. Above the doorway, carved
+into the ivory is a phrase "Believe In Your Dreams."
+~
+0 40902656 1
+D0
+~
+~
+0 -1 18472
+S
+#18499
+&RT&re&Rm&rp&Rt&ra&Rt&ri&Ro&rn&Rs &rD&Ro&rm&Ra&ri&Rn &ro&Rf &rD&Ra&rr&Rk&rn&Re&rs&Rs~
+&x.
+ 
+&RPlain and simple, &Wif you weren't invited, }RGET OUT!&D &WIf you were
+invited &Cwelcome. &WIf you were transed, &Rkiss your }Wass&D &Ggoodbye.
+ 
+ 
+~
+0 4 0
+S
+#0
+
+
+#RESETS
+M 1 18400 1 18440
+O 1 30 1 18440
+D 0 18407 1 1
+D 0 18403 2 1
+D 0 18402 0 1
+D 0 18415 2 1
+D 0 18416 2 2
+M 1 18401 1 18429
+O 1 18460 1 18418
+O 1 18402 1 18418
+M 1 18402 1 18404
+O 1 18461 1 18404
+M 1 18419 1 18470
+M 1 18499 1 18499
+E 1 21068 1 21
+E 1 7538 1 8
+M 1 18408 1 18450
+M 1 18409 1 18451
+M 1 18410 1 18452
+M 1 18406 1 18449
+G 1 18412 1
+G 1 18411 1
+M 1 18407 1 18449
+M 1 18418 1 18472
+M 1 18423 1 18462
+M 1 18424 1 18481
+M 1 18425 1 18408
+O 1 18463 1 18408
+D 0 18408 3 1
+D 0 18410 0 1
+D 0 18410 2 1
+M 1 18427 1 18411
+E 1 18467 1 16
+E 1 18468 1 5
+D 0 18411 2 1
+M 1 18428 1 18413
+O 1 18469 1 18413
+D 0 18413 0 1
+O 1 18470 1 18478
+M 1 18411 1 18433
+M 1 18403 1 18459
+E 1 18404 1 16
+E 1 18425 1 5
+E 1 18426 1 7
+M 1 18420 1 18461
+M 1 18421 1 18461
+M 1 18422 1 18461
+E 1 18462 1 16
+M 1 18429 1 18461
+O 1 30 1 18461
+M 1 18430 1 18475
+O 1 18450 1 18475
+O 1 20 1 18475
+O 1 18417 1 18414
+D 0 18414 0 2
+M 1 18418 2 18479
+M 1 18405 1 18488
+M 1 18426 1 18412
+E 1 18465 1 3
+O 1 18464 1 18412
+D 0 18412 0 1
+M 1 18404 1 18400
+E 1 18427 1 12
+D 0 18400 0 1
+S
+
+
+#SHOPS
+ 18406    0  0  0  0  0   120  90         0 23    ; Urgl
+0
+
+
+#REPAIRS
+ 18431    5  9 15         100   1         0 23    ; Falkor, the Luck Dragon
+0
+
+
+#SPECIALS
+M  18403 spec_breath_acid
+M  18420 spec_breath_acid
+S
+
+
+#$

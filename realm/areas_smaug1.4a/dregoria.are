@@ -1,0 +1,5991 @@
+#AREA   Dregoria~
+
+
+
+#VERSION 1
+#AUTHOR Uriel~
+
+#RANGES
+40 65 40 65
+$
+
+#RESETMSG A cold wind brings the stench of death to your nose.~
+
+#FLAGS
+4
+
+#ECONOMY 0 28770260
+
+#CLIMATE 2 2 2
+
+#MOBILES
+#20000
+A Vengeful Shadow~
+A Vengeful Shadow~
+A shadowy figure floats here
+~
+The shadows which surround the forest seem to meld into a spirit of
+vengance, which manifests itself in pure darkness. Despite the lack
+of distinguishing features, this mournful creature chills your heart.
+~
+33 0 -1000 C
+35 0 -200 3000d1+0 1d1+0
+0 0
+108 108 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+70 65 0 0 0 0 0 0
+#20001
+Arialla~
+Arialla~
+A mournful banshee floats here
+~
+As you look upon the enraged spirit of this once beautiful woman,
+you almost feel pity for her. Every wound she suffered in her death
+seems to pain her into undeath. Her ghostly form is woeful indeed.
+~
+131105 4194432 -1000 C
+50 0 0 10000d1+1 1d1+100
+0 0
+108 108 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+85 65 67 0 0 0 1107689472 258
+> fight_prog 15~
+scream
+say You FOOLS!
+c necro $n
+c 'black lightning' $n
+~
+> greet_prog 100~
+say Oh, wonderful! Visitors!
+grin
+say It has been so long since I have tasted the souls of the living...
+cackle
+~
+> fight_prog 10~
+mpecho _red Arialla utters a mournful wail which tears your soul... (500) dmg
+mpdamage $n 500
+~
+|
+#20002
+The Dark Heart of the Forest~
+The Dark Heart of the Forest~
+A malevolant entity of pure hate floats here.
+~
+~
+131105 4194432 -1000 C
+55 0 0 20000d1+0 20d6+150
+0 0
+108 108 0
+13 13 13 20 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+85 50 0 8304 0 0 0 0
+> greet_prog 100~
+growl
+say Blood, blood I seek
+say Blood, blood so sweet.
+say Your, your blood I hate.
+say Your, your blood I take!
+~
+> rand_prog 20~
+scream
+say DIE!!!!
+say I hunger!
+c necro $n
+~
+> hitprcnt_prog 20~
+say NOOOO!!!!!
+say I cannot be slain!!!
+~
+> fight_prog 10~
+say Feel my wrath!
+mpforce $n scream
+mea $n _red Chaos and hate course through you, tearing your soul. (600) dmg!
+mer $n $n's body wracks as chaotic and hateful energies assail $m (600) dmg!
+mpdamage $n 600
+cackle
+~
+> fight_prog 5~
+say Oh, the hunger!
+c necro $n
+c necro $n
+c necro $n
+grin
+~
+> death_prog 100~
+scream
+if rand(30)
+ say NOOOOOO!!!!!
+ mpecho The malevolant spirit coalesces into an Essence of pure darkness
+ mpoload 20002 50
+else
+ say NOOOOOOOOOOO!!!!!!
+ say It cannot be!!!
+ mpecho The malevolant spirit explodes in a massive brilliance which
+ mpecho assaults you with destructive energies! (1000) dmg!
+ mpdamage $n 1000
+endif
+~
+> fight_prog 15~
+say Oh, the hunger!
+c necro $n
+c necro $n
+c necro $n
+grin
+~
+|
+#20003
+Lieutenant Averan~
+Lieutenant Averan~
+A beautiful veteran soldier stands alert here.
+~
+~
+131073 4194432 1000 C
+50 0 0 20000d1+0 3d1+50
+0 0
+108 108 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+85 65 0 0 0 0 0 0
+> greet_prog 100~
+peer $n
+say Welcome, strangers, to the village of Dregoria.
+smile
+say I am Lieutenant Averan, and I run the Guard.
+say I don't put up with troublemakers, and I will kill you if thats
+say your intent.
+hmm
+say After such a long journey, you should sit down, and relax a bit.
+~
+> speech_prog "I wish to slay Aza'Thall"~
+eye
+say Do you understand the weight of what you say?
+nod
+say Yes, I beleive you do.
+ 
+say All I can tell you is that Aza'Thall has made his lair under
+say The Great Spire of Blacktalon.
+shudder
+say If you slay him, you will have done Dregoria a service that will
+ 
+say live in the annuls of history.
+smile
+say Bring his weapon as proof, of his death.
+~
+> act_prog p sits~
+say Yes, you should sit for a while.
+peer
+say On your way through Bleak Forest, did you see any signs of an army?
+say We've been at war with Aza'Thall for almost a year now.
+say His minions are strong, and numerous.
+frown
+say I fear it will not be long before his forces break the Guard.
+say It would take a strong and brave soul to slay Aza'Thall.
+~
+> fight_prog 30~
+say How dare you challenge the GUARD!
+mea $n _red Lieutenant Averan impales you with her mighty halberd! (500) dmg!
+mer $n Lieutenant Averan impales $n with her mighty halberd! (500) dmg!
+mpdamage $n 500
+~
+> act_prog p gives you The Hammer of Fury.~
+blink
+say You...
+say You have done it...
+smile
+y $n has slain Aza'Thall! Rejoyce!
+say Your valor should be rewarded...
+mpoload 20029
+take cape
+give cape $n
+say Please, take this as a gift, you are a true hero.
+smile
+mpjunk hammer
+~
+|
+#20004
+Chrys~
+Chrys~
+A beautiful woman hides in the corner of the room.
+~
+~
+1 4259968 0 S
+50 0 0 0d0+0 0d0+0
+0 0
+108 108 2
+> act_prog p gives you a woven scarf.~
+if ovnuminv(20013) == 1
+eye $n
+say My mother...
+say I pray she is well...
+shake
+say I cannot worry about here now, my job is far too critical...
+say I have found a way to seal the Realm of Aza'Thall from this world...
+sigh
+say But, I cannot defeat Aza'Thall.
+say If only I had his heart, I could seal the rift that allows him entrance
+say to this world.
+else
+say Yes, I know my mother loves me...
+mpjunk scarf
+endif
+~
+> act_prog p gives you the heart of Aza'Thall.~
+if ovnuminv(20013) == 1
+if isgood($n)
+gasp
+say Hero of Light! You have done the whole world a service of great
+say legend!
+shake
+say I cannot think how to repay you...
+say I can only pray.
+mpe _blu Chrys kneels down and expresses a devout prayer to the gods of light.
+mpe _blu The ground rumbles and and a bolt of fire falls from the sky!
+mpoload 20010
+endif
+if isneutral($n)
+gasp
+say Warrior of Balance...
+say You have restored Dregoria to its normality.
+smile
+say My gratitude is beyone expression
+mpe _blu Chrys kneels and offers a prayer to the gods of fate.
+mpe _blu The Gods of Fate answer Chrys's prayer, something coalesces from air!
+mpoload 20011
+endif
+if isevil($n)
+eye
+say Warrior of Darkness...
+say I thank you, but I do not like you.
+mpe _red Without warning, the ground cracks and fires from hell emerge!
+mpoload 20012
+endif
+mpjunk scarf
+mpjunk heart
+drop all
+endif
+~
+|
+#20005
+Dregoria Guard~
+A Dregorian Guard~
+A hardened soldier stands alert here.
+~
+~
+1 0 0 C
+50 0 0 8000d1+0 5d10+12
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+30 30 1735 0 0 0 0 0
+#20006
+Mayor Delin~
+Mayor Delin~
+A opulent man wearing fine silks sits here.
+~
+~
+1 4194304 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+> greet_prog 100~
+emote looks up from a book, with an open look of suprise.
+cough
+say Excuse me, we haven't many visitors in these parts.
+smile
+say I am Mayor Delin, and I am the Mayor of Dregoria.
+say I run Dregoria under the watchful eye of Lord Aaron.
+frown
+say Lord Aaron hasn't come from his manor in days, I do worry about him.
+chuckle
+say But he is a busy man nonetheless. I am sure he is working on some
+say project or something.
+smile
+say But, enough of that, welcome to Dregoria, make yourself at home.
+~
+> speech_prog Aaron~
+emote strokes his chin pensivley.
+say Well, Lord Aaron is an enigmatic man indeed.
+say With the war and all, he hasn't been seen much.
+chuckle
+say He's probably been leading his personal guard against Aza'Thall
+salute
+say Lord Aaron will se us to victory! He will indeed.
+smile
+say I am sure he would enjoy meeting new visitors, perahps you should
+say go to his manor. Here...
+mpoload 20015
+take key
+say This will allow you in the manor.
+smile
+give key $n
+~
+|
+#20007
+Eria Koras~
+Eria Koras~
+An elderly woman sits here, weeping.
+~
+~
+1 4194304 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 2
+> rand_prog 40~
+cry
+~
+> rand_prog 20~
+weep
+~
+> rand_prog 75~
+sniff
+~
+> rand_prog 100~
+sigh
+~
+> greet_prog 100~
+weep
+~
+> act_prog p comforts you.~
+if ovnumhere(20013) >= 1
+say Thank you
+else
+hug 0.$n
+say Thank you, so few people care now.
+sigh
+say My daughter wandered off into the forest...
+sniff
+say If you see her, would you please give her this...?
+mpoload 20013
+take scarf
+give scarf 0.$n
+smile
+endif
+~
+|
+#20008
+Nor Baalon~
+Nor Baalon~
+A wounded soldier lays here.
+~
+~
+1 4194304 0 S
+50 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+> greet_prog 100~
+moan
+say NURSE! I need water!
+emote looks up at you, startled.
+say Oh my, visitors...
+blush
+say My apologies, I would stand to greet you, but I have taken a grave wound.
+sigh
+say Damn Aza'Thall and his minions!
+groan
+~
+> act_prog p traces a ring through the air, the flow of a mystical spring emerges.~
+blink
+drink spring
+say Thank you kind soul.
+smile $n
+say For your kindness, I shall tell you a secret.
+peer
+say I once saw this magical clay, it would change into all sorts of things.
+say I think I know how to make it...
+say I will need a Ring of Mourning, Blood-stained Gauntlets, Leather boots
+say from Tyr, and a kiln to fire the clay. Bring me these things, and I
+say shall make it for you.
+~
+> act_prog p gives you~
+nod
+if ovnuminv(8334) >= 1
+if ovnuminv(20001) >= 1
+if ovnuminv(8627) >= 1
+if ovnuminv(32636) >= 1
+blink
+say These are what I need!
+say I shall make the magical clay.
+mpe _blu The old soldier fires up the kiln and begins working, the energies
+mpe _blu from the gathered items sparkling.
+say LOOK OUT!
+mpe _ora With a loud roar, the kiln explodes, destroying the gathered items.
+mpoload 20060 40
+drop clay
+mpjunk kiln
+mpjunk boots
+mpjunk gau
+mpjunk ring
+endif
+endif
+endif
+endif
+~
+|
+#20009
+Madim Krom~
+Madim Krom~
+An ancient sage sits here, lost in thought.
+~
+~
+1 4194432 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 1
+> greet_prog 100~
+emote looks up, startled at your presence.
+say Hello, hello visitors, what brings you to a place so vile as Dregoria?
+frown
+say If you wish to leave, say home, and I will send you home.
+say Or, if you wish to hear of Dregoria, sit, and I will tell my tale.
+~
+> speech_prog home~
+nod
+say Very well, I shall take you home.
+mptransfer 0.$n 8105
+~
+> act_prog p sits~
+say Yes, yes, gather around, and hear my tale.
+sigh
+say It all began years ago, when a man named Lord Aaron Dregoria was
+say appointed to rule this area by a long forgotten king. This area
+say had no real name, but was soon called the Dregos Mountains after
+say Lord Aaron. Aaron was a kind and just ruler, but not only that, he
+say was a powerful Magi. He enjoyed the solitude of his rule for the
+say very reason that he could research his art. But, Aaron was a man,
+say and time takes its toll on the mortal frame, and Aaron aged, grew
+say feeble and weak. Aaron began to seek ways to cheat death, and in a
+say stroke of madness, turned to the dark arts of Necromancy. Aaron
+say soon uncovered an ancient rite, which created a potion that would
+say bear a gruesome state of undeath upon the imbider. And thus, Aaron
+say Dregoria became a lich, the dark ruler of the Dregos Mountains. But
+say Aaron's exploits were unfinished, and his experimentation in the dark
+say arts continued fervently. And, as fate would have it, Aaron found a
+say young gold dragon named Kronia Gulga. Aaron befriended the dragon
+say under the guise of illusion, and continued for many decades. Yet, one
+say day, an experiment went awry, leaving the dragon mortally wounded.
+say Aaron hastily created another potion, of the type he had already imbided
+say years hence, and fed it to the dying dragon, curious to see the effect
+say of the dark brew upon the dragon. The dragon writhed and died, its flesh
+say flaying from its bones. And thus, Blacktalon was born. Filled with rage
+say and self-awareness of its undeath, Blacktalon began a war upon Aaron
+say which is still on going today, a lich and a dracolich locked in
+say eternal hatred.
+sigh
+say That is my tale.
+~
+|
+#20010
+Aaron Dregoria~
+Aaron Dregoria~
+A young man wearing fine robes sits, reading a tome.
+~
+~
+1 373817472 0 C
+55 0 -300 20000d1+0 0d0+0
+0 0
+108 108 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 4 0 0 1 1 0
+0 0 207 0 2097408 0 536936449 524291
+> fight_prog 25~
+say INFIDELS!
+say You will die at my hands!
+c 'black lightning' $n
+c 'black lightning' $n
+c 'black lightning' $n
+laugh
+~
+> fight_prog 15~
+say Petty fool, I control the energies of life and death!
+mea $n _red You feel your life energies be ripped from your body! (300) dmg!
+mer $n _red $n recoils in pain as $e life energies are stolen! (300) dmg!
+mpforce $n say HELP ME!
+mprestore self 300
+mpdamage $n 300
+~
+> fight_prog 15~
+say You weaklings... discover the power of true magic!
+mpecho _blu Aaron Dregoria utters the words, 'Hjib kobrdkeny'
+mpecho _blu A blinding stroke of lightning flows from Aaron's hands!
+mea $n _red Aaron's chain lightning strikes you! (800) dmg!
+mer $n _red $n is stuck by Aaron's chain lightning!
+mpdamage $n 800
+mea $r _red Aaron's chain lightning strikes you! (400) dmg!
+mer $r _red $r is stuck by Aaron's chain lightning!
+mpdamage $r 400
+mea $r _red Aaron's chain lightning strikes you! (200) dmg!
+mer $r _red $r is stuck by Aaron's chain lightning!
+ mpdamage $r 200
+mea $r _red Aaron's chain lightning strikes you! (100) dmg!
+mer $r _red $r is stuck by Aaron's chain lightning!
+ mpdamage $r 100
+~
+> fight_prog 15~
+if isgood($n)
+say Warrior of light... experience pain beyond pain...
+mea $n _red A mighty bolt of force strikes you!
+mer $n _red A mighty bolt of force strikes $n!
+mpforce $n remove all
+c necro $n
+c necro $n
+c necro $n
+else
+if isneutral($n)
+say Guardian of balance... taunt death no longer!
+mea $n _red A great pillar of black fire erupts around you!
+mer $n _red A great pillar of black fire erupts around $n!
+mpdamage $n 150
+mpdamage $n 150
+mpdamage $n 150
+mpdamage $n 150
+else
+if isevil($n)
+say Follower of Darkness... betray not your master!
+mpdamage $n 700
+endif
+endif
+endif
+~
+> all_greet_prog 100~
+emote looks up from the tome that has his attention.
+say Well, it seems the Mayor is worried about me again.
+shake
+say You realize, you are trespassing?
+emote stands and gathers his robes
+say You must pay a fine, to atone for this crime, unless...
+grin
+say Unless you will do a service for me?
+tap
+say Well, will you serve me?
+~
+> speech_prog 'I will serve'~
+smile
+say Good, good. I am glad we arrived at this.
+chuckle
+say I need you to perform a simple service. I need you to infiltrate
+say the Spire of Blacktalon and destroy the fell beast. 
+grin
+say Return to me the Phylactery of Life, and I will reward you, greatly...
+say Fail, and die by my hands.
+~
+> act_prog p gives you The Phylactery of Life.~
+laugh
+say So, it is true, you have slain my mortal foe!
+cackle
+say Yes, I should reward you, should I not?
+grin
+mpoload 20051
+mpe _blu Aaron utters an incantation, and reaches into another dimension!
+mpe _blu Aaron retreives a mighty looking gem from the shimmering portal!
+give dimen $n
+say Now, leave Dregoria, your work here is done.
+mpjunk phylactery
+~
+|
+#20011
+matrim oria dregoria woman~
+Matrim Oria Dregoria~
+A beautiful woman with pale flesh stands here.
+~
+~
+1073741857 272629888 0 C
+50 0 0 12000d1+0 20d8+175
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 0 0 0 1 1 0
+0 0 15 0 0 0 1073758208 3
+> fight_prog 20~
+scream
+say You do not know my PAIN!
+mpe _lbl Shards of freezing ice fly from Matrim Oria's fingers!
+mea $n You are struck by shards of freezing ice! (400) dmg!
+mer $n $n is struck by shards of freezing ice! (400) dmg!
+mpdamage $n 400
+~
+> death_prog 100~
+emote screams, her final death enveloping her...
+mpe Her body pulses breifly, the energies of her life forming two
+mpe small crystals...
+mpoload 20031
+mpjunk bones
+~
+|
+#20012
+servant elemental~
+An invisible servant~
+An invisible force hovers here
+~
+~
+1073741825 65538 0 S
+10 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#20013
+chaos troll~
+A Chaos Troll~
+A black, snarling beast lumbers here.
+~
+~
+131105 128 -1000 C
+45 0 0 9000d1+0 20d6+40
+0 0
+108 108 0
+20 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 3
+85 65 37 96 16 129 131843 2
+> fight_prog 100~
+mpecho You watch in horror as the Troll's wounds close!
+mprestore self 150
+~
+|
+#20014
+chaos spawn~
+A Chaos Spawn~
+A mass of shifting flesh, claws and tentacles writhes here.
+~
+~
+35 4194432 0 C
+48 0 0 15000d1+0 8d12+200
+0 0
+108 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 10
+85 0 0 0 2097152 0 0 0
+> fight_prog 15~
+mea $n _red The Chaos Spawn lashes at you with all its pseudopods!
+mer $n _red The Chaos Spawn lashes at $n with all its pseudopods!
+mpdamage $n 500
+~
+> death_prog 30~
+mpecho With a mighty gout of blood, the Chaos Spawn explodes!
+mpecho Chaos Trolls beging to form from the blood of the spawn!
+mpmload 20013
+mpmload 20013
+~
+|
+#20015
+Armanties demon~
+Armanties~
+A huge warrior-demon snarls at you.
+~
+~
+33 4194432 -1000 C
+50 0 0 10000d1+0 10d20+100
+0 0
+108 108 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+89 3 0 0 1 0 0
+85 65 0 0 2097152 0 640 524291
+> fight_prog 100~
+wield spear
+snarl
+if rand(20)
+mea $n _red Armanties impales you with his spear! (300) dmg!
+mer $n _red Armanties impales $n with his spear! (300) dmg!
+mpdamage $n 300
+endif
+~
+> hitprcnt_prog 20~
+if rand(10)
+mpecho _red Armanties's blood spills and begins to writhe, forming a troll!
+mpmload 20013
+endif
+~
+|
+#20016
+aza'thall demon warlord~
+Aza'Thall~
+A hulking demon of immense proportions stands here.
+~
+~
+35 105382016 0 C
+55 0 0 25000d1+0 0d0+0
+0 0
+108 108 1
+25 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+85 0 0 2097520 0 0 8579 3
+> all_greet_prog 100~
+sneer
+say Foolish mortals...
+say You dare disturb me?
+laugh
+say Prepare to die!
+~
+> death_prog 100~
+if rand(5)
+mpe As the Warlord dies, his eyes seek salvation...
+y Father! What have I done!?
+mpoload 20006 50
+endif
+if rand(5)
+mpe The Warlord screams his last breath, and dies.
+mpe As his soul leaves his body, an eerie calm washes over you.
+mpoload 20008 50
+endif
+if rand(5)
+mpe Thrashing, the Warlord crumples to the ground...
+y I will see you in HELL!
+mpoload 20007 50
+endif
+if rand(30)
+mpoload 20030
+emote sputters as his heart is exposed...
+endif
+~
+> fight_prog 10~
+mea $n Aza'Thall motions with his hand, and the floor swallows you!
+mer $n Aza'Thall motions with his hand, and the floor swallows $n!
+if rand(30)
+mptrans $n 20126
+else
+if rand(30)
+mptrans $n 20138
+else
+if rand(30)
+mptrans $n 20139
+else
+mptrans $n 20140
+endif
+endif
+endif
+~
+> fight_prog 20~
+mpe _red Aza'Thall screams, entering a beserk rage!
+mea $n _red Aza'Thall brings his hammer into your skull!
+mer $n _red Aza'Thall brings his hammer into $n's skull!
+mpdamage $n 500
+bash $n
+bash $r
+stun $n
+stun $r
+disarm
+~
+> fight_prog 20~
+mpe _ora Aza'Thall slams the Hammer of Fury into the ground!
+c earthquake
+mpe _ora A raging ball of flame engulfs the room!
+mea $n _red You are burnt by the raging fire!
+mea $r _red You are burnt by the raging fire!
+mpdamage $n 300
+mpdamage $n 300
+mpdamage $r 300
+mpdamage $r 300
+~
+> fight_prog 5~
+sneer
+mpe Aza'Thall summons minions from his own blood!
+mpmload 20013
+~
+> act_prog p flees head over heels!~
+y Fools! Do not flee me!
+c life
+c life
+c life
+c summon $n
+~
+|
+#20017
+caliguis demon~
+Caliguis~
+A mismatched tower of rotting flesh stands here.
+~
+~
+131105 136 0 C
+45 0 0 11000d1+0 8d8+75
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 4 0 0 1 1 0
+85 0 0 0 0 0 131073 3
+#20018
+flame fire salamander~
+A Salamander~
+An amphibious looking humanoid stands here.
+~
+~
+131105 33554432 0 C
+40 0 0 5000d1+0 9d8+50
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 65603 0 0 0 8709 3
+#20019
+shadow darkenbeast~
+The Darkenbeast~
+A creature formed of pure darkness floats here
+~
+~
+131107 4718720 -1000 C
+50 0 0 15000d1+0 20d10+175
+0 0
+108 108 0
+13 13 13 20 13 13 13
+0 0 0 0 0
+56 3 0 0 1851880007 1851880007 3
+85 0 0 0 0 0 131073 3
+> death_prog 100~
+mpe The Darkenbeast dissapates, its form slowly disintegrating...
+mpe A small fraction of the Beast is left behind...
+mpoload 20050
+~
+> fight_prog 20~
+mpe The Darkenbeast focuses its life draining energies!
+c nec $n
+c nec $n
+c nec $n
+c nec $r
+c nec $r
+~
+> fight_prog 10~
+mea $n _red The Darkenbeast assails you with a torrent of rapid strikes!
+mer $n _red The Darkenbeast assails $n with a torrent of rapid strikes!
+mpdamage $n 250
+~
+|
+#20020
+blood elemental~
+A blood elemental~
+An elemental of blood oozes here
+~
+~
+33 128 -1000 C
+45 0 0 7000d1+0 3d100+150
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 2
+85 0 0 0 0 0 384 2
+#20021
+Aver Cerin man~
+Aver Cerin~
+A hardy man with snow white hair sits here
+~
+~
+1 4194304 0 S
+50 0 0 0d0+0 0d0+0
+0 0
+108 108 1
+> act_prog p gives you a wisp of darkness.~
+blink
+say Oh, wonderful! You found something I can use!
+mpe _blu Mutters an incanation over the wisp and a suit of armor...
+mpe _blu The wisp and the armor merge!
+say Yes, it worked!
+mpoload 20032
+mpjunk wisp
+give armor $n
+say Take this, as a gift.
+smile
+~
+> all_greet_prog 100~
+smile
+say Hullo!
+say Welcome to my humble home!
+emote stands to greet you, but trips and falls on his ass!
+blush
+say Well, perhaps I should just sit...
+mutter
+say Normally I would be busy, you know, but I cannot work on my experiment.
+sigh
+say Well, make yourself at home.
+~
+> speech_prog experiment~
+smile
+say Oh, it is a most wonderful idea, let me tell you!
+beam
+say I once saw this monster of pure darkness around the Black Spire.
+say It made me wonder, if I could merge pure darkness with steel...
+say I could make light and strong armor...
+sigh
+say But, I've not seen it ever again, if only I had a sample to work with.
+shrug
+say But, what good is moping?
+chuckle
+~
+|
+#20022
+blacktalon ghost spirit~
+The Spirit of Blacktalon~
+A mournful spirit of a long dead dragon drifts here.
+~
+~
+33 273154176 -1000 C
+50 0 0 10000d1+0 0d0+0
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 0 0 112 0 147456 3
+> fight_prog 10~
+say You cannot take my soul!
+c 'acid breath' $n
+c 'fire breath' $n
+c gas
+c 'frost breath' $n
+c 'lightning breath' $n
+~
+> death_prog 100~
+mpe The spirit shrieks, and begins to fade away.
+mpe As it dies, its ethereal body coalesces into a gem...
+mpoload 20199
+drop phy
+~
+|
+#20023
+handmaiden~
+A Handmaiden~
+A Beautiful Handmaiden stands here
+~
+~
+1140850689 4194304 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 2
+> act_prog p kisses you.~
+if sex($n) == 1
+say Ohhh, Master...
+else
+if sex($n) == 2
+say Ohhh, Mistress...
+endif
+kneel $n
+caress $n
+endif
+~
+> act_prog p whispers to you 'Serve me'~
+if sex($n) == 1
+say Yes Sir.
+else
+if sex($n) == 2
+say Yes Ma'am
+endif
+endif
+kneel $n
+realkiss $n
+grope self
+moan
+~
+> act_prog p rests her head against your shoulder.~
+say Poor Mistress, you seem tense...
+massage $n
+embrace $n
+~
+> act_prog p rests his head against your shoulder.~
+say Poor Master, you seem tense...
+massage $n
+jawline $n
+~
+> speech_prog 'dance for me'~
+mpe _cya The Handmaiden dances an erotic dance, running her hands up her body
+smile
+grin
+flash
+if sex($n) == 1
+say I wish to please you, Master
+if sex($n) == 2
+say I wish to please you, Mistress
+endif
+endif
+~
+> rand_prog 2~
+if rand(20)
+say You look tired...
+massage $r
+else
+if rand(20)
+say How may I serve you?
+kneel $r
+else
+if rand(20)
+say Oh, how I love you!
+tkiss $r
+else
+if rand(20)
+say Mmm, I wish to serve you...
+wink $r
+else
+say I am yours to command...
+endif
+endif
+endif
+endif
+~
+|
+#20150
+blacktalon dragon dracolich~
+Blacktalon~
+A massive skeletal dragon stands here, glowering at you
+~
+The fell beast is truly hideous, some one hundred and fifty feet in
+length, a pure bleached skeleton of an ancient dragon. Its maw opens
+wide enough to swallow a cow whole, and its claws are each like great
+swords. This beast is a true horror of necromancy.
+~
+3 373817472 -1000 C
+55 0 -300 30000d1+0 30d12+225
+59070 0
+108 108 1
+20 20 20 25 20 3 13
+0 0 0 0 0
+31 0 0 0 1 1 6
+85 65 327681 73923 32 16 139265 1283
+> fight_prog 5~
+mpe _red Blacktalon rears back, and spews forth a stream of boiling blood!
+mea $n _red You are engulfed in the stream of boiling blood! (800) dmg!
+mpe _red The blood coalesces and comes to life!
+mpdamage $n 800
+mpmload 20020
+~
+> all_greet_prog 100~
+roar
+say You are fools, venturing into my lair...
+chuckle
+say I bet that Aaron sent you, did he not?
+sneer
+say I will give you one chance to save you from my wrath
+evil
+say Bring me Aaron's crown, his precious symbol of office.
+say Do this, and you will leave rewarded.
+~
+> act_prog p gives you Circlet of Rubies.~
+laugh
+say Well done. You have set right a crime commited many years ago.
+chuckle
+say I guess I should reward you...
+say I must have something laying around here...
+mpe Blacktalon rustles around in its horde, finding a beautiful tunic.
+say Yes, I have no use for this...
+mpoload 20052
+take tunic
+give tunic $n
+say Now, that you have completed the task I set for you...
+mptrans $n 8105
+mpat $n say You have allowed my soul to rest, brave soul, thank you.
+mpjunk circlet
+~
+> fight_prog 15~
+mpe _red The mighty dracolich lashes out with its claws!
+mea $n _red You are struck by Blacktalon! (200) dmg!
+mea $r _red You are struck by Blacktalon! (200) dmg!
+mpdamage $n 200
+mpdamage $r 200
+~
+> fight_prog 20~
+roar
+c qua $n
+c qua $n
+c qua $n
+say I know the ways of magic as well!
+~
+> death_prog 100~
+mpe The great beast falters, then drops dead!
+mpe _whi The spirit of the fell beast arises from the skeletal frame!
+mpmload 20022
+mpe _whi The spirit shoots up, to the top of the mountain, crashing
+mpe _whi through the roof, causing a cave in!
+mpdamage $n 100
+mptrans spirit 20165
+mpoload 20199
+un up
+open up
+mpjunk phylactery
+~
+|
+#0
+
+
+#OBJECTS
+#20001
+Ring of Mourning~
+Ring of Mourning~
+A golden ring set with onyx lies here~
+~
+9 513 3
+! 15 15 0 0 0 0 0 0 0 0 0 0
+1 20000 2000
+A
+13 30
+A
+12 30
+A
+25 -2
+A
+18 3
+A
+19 3
+A
+56 68
+> wear_prog 100~
+mpforce $n cry
+mer $n $n seems to age as $e wears the bleak ring.
+mea $n You seem to age as you slide the ring on your finger.
+~
+|
+#20002
+Essence of Darkness~
+Essence of Darkness~
+An aura of negative light hovers here.~
+~
+9 2643 1025 192
+! 20 20 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 75
+A
+12 75
+A
+18 16
+A
+19 16
+A
+1 -1
+A
+3 3
+A
+23 -12
+A
+24 -12
+A
+26 65536
+A
+17 -25
+> wear_prog 100~
+mer $n The purest darkness forms around $n.
+mea $n The world around you grows dim as you become one with the darkness.
+~
+|
+#20003
+Averan's Halberd~
+Averan's Halberd~
+A well fashioned halbred lies here.~
+~
+5 1282 8193
+! 0 50 5 3 0 0 0 0 0 0 0 0
+7 20000 2000
+A
+13 100
+A
+18 12
+A
+19 15
+A
+17 -50
+#20004
+Guard's Helmet~
+Guard's Helm~
+A well crafted steel helm lies here.~
+~
+9 1024 17
+! 20 20 0 0 0 0 0 0 0 0 0 0
+5 10000 1000
+A
+13 50
+A
+17 -50
+A
+18 10
+A
+19 10
+#20005
+Guard's Plate~
+Guard's Plate~
+A beautiful breastplate of fine steel lays here.~
+~
+9 525312 9 128
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+17 -50
+A
+18 10
+A
+19 10
+A
+13 50
+#20006
+Love~
+Love~
+The essence of warmth and love gathers before you.~
+~
+1 3137 1
+! 0 0 -1 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 50
+A
+18 3
+A
+19 3
+A
+25 5
+A
+26 16777216
+> wear_prog 100~
+mea $n _whi Feelings of warmth and serenity flow through you.
+mer $n _whi A halo of beauty forms around $n.
+~
+> damage_prog 100~
+mpoload 20006 
+mpforce $n take Love
+mpforce $n wear Love
+~
+|
+#20007
+Hate~
+Hate~
+Malice and hatred seem to gather here.~
+~
+1 2641 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 50
+A
+18 3
+A
+19 3
+A
+25 -5
+A
+26 4194304
+> wear_prog 100~
+mea $n _red Rage obscures your vision and you hunger for blood.
+mer $n _red Flames erupt from $n as $e is consumed with undying hate.
+~
+> damage_prog 100~
+mpoload 20007
+mpforce $n take Hate
+mpforce $n wear Hate
+~
+|
+#20008
+Balance~
+Balance~
+The forces of life and death struggle for balance here.~
+~
+1 1601 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 50
+A
+18 3
+A
+19 3
+A
+26 2
+> wear_prog 100~
+mea $n _cha The forces of the universe balance upon you.
+mer $n _cha $n fades from reality as $e now controls the forces of the world
+~
+> damage_prog 100~
+mpoload 20008
+mpforce $n take balance
+mpforce $n wear balance
+~
+|
+#20009
+An ancient statue~
+An ancient statue~
+An ancient statue~
+~
+13 0 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+E
+statue~
+The statue is carved from pure marble, and from the signs of wear, 
+it was carved a very long time ago. An inscription at the base reads:
+ 
+ 
+                          Aaron Dregoria
+~
+#20010
+The Fire of Heaven~
+The Fire of Heaven~
+An eternal flame of pure white burns here.~
+~
+5 3337 8193
+! 50 20 4 6 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 150
+A
+25 5
+A
+4 2
+A
+56 88
+A
+12 150
+A
+19 21
+A
+18 21
+A
+29 2
+A
+48 -10
+> get_prog 100~
+if isevil($n)
+mer $n $n is schorched by divine fire!
+mea $n You are burned by divine energies as you gather the fire!
+mpdamage $n 600
+endif
+if isneutral($n)
+mer $n $n is schorched by divine fire!
+mea $n You are burned by divine energies as you gather the fire!
+mpdamage $n 600
+endif
+~
+> wear_prog 100~
+if isevil($n)
+mea $n _red Your body is consumed by divine fire!
+mer $n _red $n is engulfed as divine fire consumes $e body!
+mpforce $n scream
+mpslay $n
+endif
+if isneutral($n)
+mea $n _red Your body is consumed by divine fire!
+mer $n _red $n is engulfed as divine fire consumes $e body!
+mpforce $n scream
+mpslay $n
+endif
+if isgood($n)
+mea $n _whi As you encase your hand in the fire, you feel heaven protect you!
+mer $n _whi $n is enshrouded in divine fire as $s form grows angelic.
+endif
+~
+|
+#20011
+The Force of Balance~
+The Force of Balance~
+Shadows of black and white find perfection in balance here.~
+~
+5 1801 8193
+! 0 20 4 6 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 150
+A
+12 150
+A
+18 21
+A
+19 21
+A
+29 512
+A
+48 -10
+> get_prog 100~
+if isevil($n)
+mer $n $n is dichotomized by the balancing energies!
+mea $n You are dichotomized by the energies of Balance!
+mpdamage $n 600
+endif
+if isgood($n)
+mer $n $n is dichotomized by the balancing energies!
+mea $n You are dichotomized by the energies of Balance!
+endif
+~
+> wear_prog 100~
+if isneutral($n)
+mea $n Your body aligns with the center of the universe!
+mer $n $n becomes one with the essence of creation!
+endif
+if isevil($n)
+mea $n Your mind and soul are not balanced enough to wield this weapon!
+mer $n $n begins to dematerialize!
+mpslay $n
+endif
+if isgood($n)
+mea $n Your mind and soul are not balanced enough to wield this weapon!
+mer $n $n begins to dematerialize!
+mpslay $n
+endif
+~
+|
+#20012
+Hellfire~
+Hellfire~
+Black and red flames dance here, emmiting pure darkness.~
+~
+5 2585 8193
+! 0 20 4 6 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 150
+A
+12 150
+A
+18 20
+A
+19 20
+A
+25 -5
+A
+1 3
+A
+26 33554432
+A
+27 1
+A
+29 2
+A
+48 -10
+> wear_prog 100~
+if isevil($n)
+mea 0.$n _red You are enshrouded in dark fire as you tap into the fire of hell!
+mer 0.$n _red $n is enveloped in the dark fire of hell!
+else
+mea 0.$n _red Your body is consumed by raging hellfire!
+mer 0.$n _red $n burns to ash as $e body is consumeb by hellfire!
+mpforce 0.$n scream
+mpslay 0.$n
+endif
+~
+> get_prog 100~
+if isevil($n)
+else
+mea $n _red You are burnt by the fires of hell as you reach into the flame!
+mer $n _red $n is burnt by the fires of hell as $e reaches into the flame!
+mpdamage $n 600
+endif
+~
+|
+#20013
+A woven scarf~
+a woven scarf~
+A woven scarf lays here~
+~
+13 0 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#20014
+dumb~
+a newly created dumb~
+Some god dropped a newly created dumb here.~
+~
+13 1073741824 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+> speech_prog test~
+if isimmort($n)
+mpdamage 0.$n 1000
+mer 0.$n $n is fucked!
+mea 0.$n You feel fucked!
+endif
+~
+> sac_prog 66~
+mea $n WOOOOOOOOOO
+mpoload 20007 51
+drop hate
+drop all
+mpoload 25707
+mpoload 20007
+~
+|
+#20015
+Manor Key~
+Manor Key~
+An old, steel key lays here~
+~
+18 0 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#20016
+fireplace~
+An Ancient Fireplace~
+An Ancient Fireplace rests against the wall.~
+~
+15 0 0
+! 1000 0 0 24 0 0 0 0 0 0 0 0
+1 0 0
+#20017
+bones human~
+the charred remains of a human.~
+The charred remains of someone lies here.~
+~
+13 0 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+> get_prog 100~
+if sex($n) == 2
+if inroom($n) == 20083
+mea $n _red You feel something trying to enter your body...
+mpforce $n scream
+mer $n _red $n's body begins to shake violently...
+mpforce $n say NOOOOO!!!! I AM $n!
+mpforce $n drop bones
+mer $n _red $n's body explodes, spraying blood and gore throughout thr room...
+mer $n _red From the violence, a woman coalesces from nothingness...
+mpmload 20011
+mpslay $n
+mpforce matrim take bones
+mpforce matrim tell $n I am sorry, my lovely, but you have allowed my return.
+mpforce matrim tell $n Please forgive me.
+endif
+endif
+~
+|
+#20018
+faded parchment~
+A faded parchment~
+A faded piece of parchment torn from a tome lies on the desk.~
+~
+13 0 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+E
+parchment paper~
+...and such was confirmed in the Tome of Transvissigation written in
+the early era of the Morath Empire, by an unknown wizard. The elements
+of ethereal and astral transit have only been recently confirmed in the
+Erith Regime, as the conflicting theories coalesced into one general
+theory on psychoportive and magical transportation. This theory reflects
+a popular beleif held in the Dionosus Kingdom, that space and time are
+full of discontinuituies which can be exploited with precise magical and
+psychic talent. The standard chance of error in the old theories was and
+still approaches 15% randomness. The new theory and philosophy has made
+incredible advancements in this, with an error of randomness at only 1%.
+It is also noted that in most of the rites of transit, the same words were
+found to be used by the old cultures, "Ka'a'binu". Magia philosophers
+tend to agree that this word has built an egregore of power, mostly used
+in transit rites, and that its .......
+~
+#20019
+wooden dresser~
+A Wooden Dresser~
+A Wooden Dresser rests here.~
+~
+12 0 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#20020
+note paper~
+A folded note~
+A folded note lays here~
+~
+13 0 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+E
+note paper~
+Arialla...
+ 
+Aaron has continued to fall within his own dementia, I am not sure what
+has come over him. He rarely lets me see him, and when I do, he is pale
+and sickly. He has been working in his laboratory for hours on end, and
+he will not tell me what he intends. Arialla, I fear the worst. Please,
+send for King Loran, send for help.
+ 
+         Matrim Dregoria
+~
+#20021
+book tome~
+an ancient tome~
+An ancient and faded tome lies here.~
+~
+13 0 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+E
+book tome~
+... the process is near completion. For the final steps of the ritual,
+I require the sacrifice of a woman, and so to seal my dark pact, I
+have chosen my own wife, Matrim. I shall slay her tomorrow night, in
+the darkest hour of the night. He blood, I shall use for......
+~
+E
+book tome~
+... the process is near completion. For the final steps of the ritual,
+I require the sacrifice of a woman, and so to seal my dark pact, I
+have chosen my own wife, Matrim. I shall slay her tomorrow night, in
+the darkest hour of the night. Her blood, I shall use for......
+~
+#20022
+crimson dagger~
+The Crimson Dagger~
+A dagger lays here, dripping blood~
+~
+5 16974366&12 8193
+! 0 16 5 2 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 110
+A
+18 10
+A
+19 10
+A
+66 3
+A
+31 2
+A
+2 2
+A
+56 39
+#20023
+Robe Shadow~
+Robe of Shadows~
+A thin veil of material lies here, absorbing all light~
+~
+9 6 1025 8
+! 0 12 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 20
+A
+18 6
+A
+19 6
+A
+12 100
+A
+14 25
+A
+17 -20
+A
+24 -5
+A
+26 1048576
+#20024
+circlet rubies ruby~
+Circlet of Rubies~
+A golden circlet set with rubies lies here~
+~
+9 98305&12 17
+! 0 15 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 75
+A
+12 200
+A
+18 10
+A
+19 10
+A
+27 1
+#20025
+lance spear armanties~
+The Lance of Armanties~
+A wicked spear lies here.~
+~
+5 16922&4 16777217
+! 0 51 7 2 0 0 0 0 0 0 0 0
+7 0 0
+A
+13 100
+A
+12 -100
+A
+18 20
+A
+19 25
+#20026
+shield rage~
+The Shield of Rage~
+A shield crafted of unearthly metal lies here.~
+~
+9 16794130&4 513
+! 0 25 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 125
+A
+18 5
+A
+19 20
+A
+1 3
+A
+5 3
+A
+2 -2
+A
+27 112
+#20027
+hammer fury~
+The Hammer of Fury~
+A menacing hammer glows with a pale red light.~
+~
+5 16921&4 8193
+! 0 50 5 8 0 0 0 0 0 0 0 0
+30 23000 2300
+A
+13 150
+A
+12 -50
+A
+18 18
+A
+19 23
+A
+1 4
+A
+2 -4
+A
+27 1048576
+A
+29 131072
+#20028
+rod caliguis~
+The Rod of Caliguis~
+A bar of obsidian lays here, twitching.~
+~
+5 197123 8193
+! 0 17 3 12 0 0 0 0 0 0 0 0
+1 20 2
+A
+13 80
+A
+12 150
+A
+18 15
+A
+19 5
+#20029
+cape honor~
+Cape of Honor~
+A cape sewn with gold lays here.~
+~
+9 1792 5
+! 0 30 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 100
+A
+12 50
+A
+31 3
+A
+18 12
+A
+19 12
+#20030
+heart aza'thall~
+the heart of Aza'Thall~
+The black heart of some mighty beast lays here.~
+~
+13 0 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+> get_prog 100~
+mea $n As you grasp the unearthly heart, acid spews onto your hand!
+mpdamage $n 100
+~
+|
+#20031
+seals dregos crystals~
+The Seals of Dregos~
+Shimmering sigils imbued with strong magics lie here.~
+~
+8 64 8388609
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 50
+A
+17 -10
+A
+56 246
+A
+18 7
+A
+19 7
+#20032
+shadow steel armor~
+Shadow Steel Armor~
+A light but durable set of armor lays here~
+~
+9 524322&4 9 128
+! 0 30 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 100
+A
+18 5
+A
+19 5
+A
+17 -60
+A
+12 25
+A
+2 2
+#20033
+bronze spear~
+a bronze spear~
+A smouldering bronze spear lies here.~
+~
+5 0 8193
+! 0 8 7 2 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 25
+A
+27 1
+A
+29 2
+#20034
+bottle handmaiden~
+A Handmaiden's bottle~
+A beautiful glass bottle sits here~
+~
+8 2097152 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+> sac_prog 100~
+mpmload 20023
+mpe _lbl A Handmaiden says 'I live to serve you'
+mpe _cya The Handmaiden giggles
+~
+|
+#20050
+wisp darkness~
+a wisp of darkness~
+A wisp of darkness floats here, slowly decaying~
+~
+13 32 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#20051
+dimensional crystal~
+Dimensional Crystals~
+A pair of shimmering crystals lie here~
+~
+9 35 65537
+! 0 25 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+12 100
+A
+18 7
+A
+19 7
+A
+17 -30
+A
+26 2
+A
+13 50
+> wear_prog 100~
+mea $n _whi As you attach the crystals to your ears, you shimmer slightly.
+mer $n _whi As $n attach the crystals to $m ears, $e shimmers slightly.
+~
+|
+#20052
+tunic celestial~
+The Tunic of the Celestial Heroes~
+A tunic of divine metal lays here.~
+~
+9 524547 33
+! 0 40 0 0 0 0 0 0 0 0 0 0
+1 700000 70000
+A
+12 75
+A
+18 10
+A
+19 10
+A
+17 -60
+A
+2 3
+A
+31 1
+A
+25 5
+A
+24 -15
+A
+21 -15
+A
+27 1310849
+A
+26 524308
+A
+56 224
+A
+13 50
+> wear_prog 100~
+mea $n _lbl Memories of long dead heroes shoot through you, honing your skills!
+mer $n _lbl $n seems to grow taller as $e becomes one with the heroes of legend
+~
+|
+#20060
+clay molding~
+Clay of Molding~
+A magical lump of clay has fallen here.~
+~
+8 0 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+> sac_prog 100~
+if rand(30)
+mpe _whi The clay twitches and molds into a gleaming sword!
+mpoload 20061 40
+else
+if rand(30)
+mpe _whi The clay twitches and molds into a powerful suit of armor!
+mpoload 20062 40
+else
+if rand(30)
+mpe _whi The clay twitches and molds into a shimmering robe!
+mpoload 20063 40
+else
+if rand(30)
+mpe _whi The clay twitches and molds into a gleaming shield!
+mpoload 20064 40
+else
+mpe _whi The clay twitches and molds into a shining helm!
+mpoload 20065 40
+endif
+endif
+endif
+endif
+~
+|
+#20061
+sword striking~
+a Sword of Striking~
+A gleaming blade has fallen here.~
+~
+5 147520 8193
+! 0 20 8 3 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 100
+A
+12 50
+A
+18 10
+A
+19 10
+A
+17 -20
+A
+2 2
+> sac_prog 100~
+mpe _whi The sword twitches and returns to a lump of clay!
+mpoload 20060
+~
+|
+#20062
+armor resiliance~
+Armor of Resiliance~
+A power suit of armor has been discarded here.~
+~
+9 49152&2 9
+! 0 20 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+5 3
+A
+56 206
+A
+13 75
+A
+18 5
+A
+19 5
+> sac_prog 100~
+mpe _whi The armor returns to a lump of clay!
+mpoload 20060 40
+~
+|
+#20063
+robe robes luminessence~
+Robes of Luminessence~
+Luminent robes have fallen here.~
+~
+9 98304&4 1025
+! 0 10 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+13 50
+A
+12 200
+A
+18 6
+A
+19 6
+A
+56 205
+A
+31 3
+> sac_prog 100~
+mpe _whi The robe returns to a lump of clay!
+mpoload 20060 40
+~
+|
+#20064
+shield defense~
+Shield of Defense~
+A powerful shield has fallen here.~
+~
+9 0 513
+! 0 20 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+12 20
+A
+18 4
+A
+19 4
+A
+48 20
+A
+13 50
+> sac_prog 100~
+mpe _whi The shield returns to a lump of clay!
+mpoload 20060 40
+~
+|
+#20065
+helm brilliance~
+Helm of Brilliance~
+A shining helm has fallen here.~
+~
+9 8388608 17
+! 0 15 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+12 200
+A
+18 5
+A
+19 5
+A
+3 2
+A
+56 228
+A
+13 50
+> sac_prog 100~
+mpe _whi The helm returns to a lump of clay!
+mpoload 20060 40
+~
+|
+#20199
+gem phylactery aaron~
+The Phylactery of Life~
+A large white gem glows and pulses with energy~
+~
+9 8486915 16385
+! 0 40 0 0 0 0 0 0 0 0 0 0
+1 500000 50000
+A
+13 250
+A
+12 250
+A
+18 20
+A
+19 20
+A
+4 3
+A
+3 3
+A
+24 -25
+A
+20 -25
+A
+17 -40
+A
+27 8832
+A
+26 184
+> wear_prog 100~
+mea $n _whi You feel your life instilled with new energy!
+mer $n _whi The scars on $n's body fade away as $e holds the gem.
+~
+|
+#20200
+oak desk~
+An Oaken Desk~
+An Oaken Desk sits here~
+~
+12 0 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#0
+
+
+#ROOMS
+#20000
+The Dregos Mountains~
+Your legs pulse with relief as you approach the plateau you have been
+walking towards for hours. The flat land looks larger now that you
+can see it close up. The air here chills you to the bone, and you are
+sure it's not just the altitude. An ancient guide sign stands not 
+twenty feet away, along the path leading to the east. Your eyes drift
+beyond the sign to a large, black forest, to which the path leads.
+You can barely find signs of use, but in comparison to the northern
+path, this trail seems a highway. Your eyes follow the northern road
+until a great black peak fills your vision. You feel your heart skip
+a beat looking upon this fell mountain...
+~
+0 2097156 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20101
+D1
+~
+~
+0 -1 20001
+D2
+~
+~
+0 -1 20164
+S
+#20001
+Approaching the Forest~
+The path approaching the forest slopes downward slightly, much to your
+relief. Glancing at the foliage ahead of you, you notice that the
+trees themselves look dead. Not a bird sings, no squirrels scamper
+and no wildlife can be seen. Only the shrill wind makes any noise at
+all. Shadows seem to dance about in the forest which lies to the East.
+Perhaps the Western plateau would be a better place.
+~
+0 2097156 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20002
+D3
+~
+~
+0 -1 20000
+S
+#20002
+Within the Forest~
+Despite the apparent lack of leaves on the trees, the forest canopy
+obscures all light. Shadows dance about the trees, in an all to
+lifelike manner. The only light is the path to the West which exits
+the forest. Before you, the trail forks. The Eastern path seems worn
+when compared to the Northeastern and Southeastern paths. A biting
+chill seems to pervade the Northeastern path, while the forest seems
+to grow thicker to the Southeast.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20024
+D3
+~
+~
+0 -1 20001
+D6
+~
+~
+0 -1 20003
+D8
+~
+~
+0 -1 20014
+S
+#20003
+An Ancient Path~
+The path upon which you walk seems ancient. Cobwebs obscure your
+vision, as does the dust which stirrs from the unused trail. A chill
+seems to penetrate your clothing the farther you traverse this path.
+You begin to hear an eerie song, coming from the Northeast. The song
+chills you more than the unnatural cold. Even the silent forest to
+the Southwest would seem a haven.
+~
+0 2097152 1 0 0 0 0 0
+D6
+~
+~
+0 -1 20004
+D9
+~
+~
+0 -1 20002
+S
+#20004
+Before the Ruins~
+Pushing through the layers of cobwebs, you find yourself on a decaying
+cobblestone road. To the East, you can make out the ruins of an old
+Villa. The haunting song is louder now, and obviously coming from the
+Villa to the East. The road turns Southwest here, leading to the dark
+forest.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20005
+D9
+~
+~
+0 -1 20003
+S
+#20005
+An Ancient Causeway~
+The crumbling road leads into the center of the blasted community. It
+looks like a war has been waged here in the street. Blackend rubble
+is strewn about carelessly like some giant casually tossing toys. In
+the stonework, great furrows can be seen, like a giant beast attacked
+the buildings themselves. The haunting song is much louder now, almost
+alluring, pulling you Eastward, towards the Villa itself. To the North,
+the ruins of an ancient building stand, and you catch a glimpse of
+movement inside. The road leads to the West, back towards the silent
+forest.
+~
+0 2097153 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20006
+D1
+~
+~
+0 -1 20007
+D3
+~
+~
+0 -1 20004
+S
+#20006
+Within the Ruins~
+The savage destruction outside these ruins has not been carried into
+this structure, much to your reprive. There is almost a welcoming
+feel about this place. Stone tables carved from structures in the
+floor is the only furniture present. Not even a door leads back to
+the blasted street to the South. A hint of movement catches your eye
+in the corner of the room.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20005
+S
+#20007
+Approaching the Villa~
+The blasted road leads further into the ruined Villa. The forest seems
+to incroach upon the ruins here, making the macabre seen even more
+gruesome. The Villa itself can be seen to the Northeast, the location
+of the haunting song which has tormented you this far. The road curves
+to the West, leading back to the outskirts of the Villa and the forest.
+~
+0 2097153 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20005
+D6
+~
+~
+0 -1 20008
+S
+#20008
+Before the Villa~
+You stand before the decaying structure that once was a beautiful
+Villa. You wonder how the structure still stands, as the damage
+done to the surrounding area is truly awesome. An old oaken door
+stands to the North, allowing passage into the building. An old
+and crumbling cobblestone road leads back to the blasted ruins to
+the Southwest.
+~
+0 2097153 1 0 0 0 0 0
+D0
+~
+~
+3 -1 20009
+D9
+~
+~
+0 -1 20007
+S
+#20009
+Within the Villa~
+Stepping into this ruined building takes every element of bravery you
+can muster. The reek of wooden decay fills your nostrils and the eerie
+song echoes from the North, beating into your brain. The song seems
+that it could drive you mad, if you stay too long. A heavy oaken door
+stands to the South.
+~
+0 2097153 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20010
+D2
+~
+~
+3 -1 20008
+S
+#20010
+A Junction~
+As you step from the hallway, an eerie silence overcomes you... the
+song has stopped. Has it been your imagination this whole time? You
+force yourself to disregard such delusional thoughts, and back to
+reality. A hallway branches East and West here, while a dark, and
+strangely mornful room lies to the North.
+~
+0 2097153 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20011
+D1
+~
+~
+0 -1 20012
+D2
+~
+~
+0 -1 20009
+D3
+~
+~
+0 -1 20013
+> entry_prog 100~
+if mobinarea(20001) == 1
+mea $n _whi A ghostly voice whispers to you 'So, you have come to lay with me
+mea $n _whi in death?'
+endif
+~
+|
+S
+#20011
+A Mournful Rest~
+Upon entering this room, a feeling of cold malice envelopes you. To
+your suprise, this room is pristene, well furnished, and strikingly
+beautiful. A canopy bed rests against the wall, with a figure under
+the blanket. A closer look reveals a skeleton stripped completley
+of flesh. The doorway to the South seems welcoming now, as you
+realize the source of the dreadful song...
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20010
+S
+#20012
+A Crumbling Bedroom~
+As far as you can tell, this room used to be a bedchamber. Now, it
+would appear if everything organic has entered a final state of
+decay. The walls are cracked and crumbling, almost to a point of
+caving in on themselves. A framless doorway lies on the Western
+side of the room, leading into the heart of the Villa.
+~
+0 2097153 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20010
+S
+#20013
+A Ruined Foyer~
+The remnants of this rooms purpose have been strewn about in a very
+violent manner. A fireplace rests on the East wall, unused for an
+extended period of time. Decaying bits of wooden furniture lay here
+and there. A hallway leads East, back into the Villa.
+~
+0 2097153 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20010
+S
+#20014
+Deeper in the Forest~
+The path you followed from the Northwest is quickly swallowed by the
+forest. The trees have grown dense and impassable in most places, as
+the shadows seem to encroach everywhere. The silence is deafening,
+and the trees seem to have a hungry feeling to them, a hunger for
+blood. A thorny thicket seems to be the only passable terrain, to the
+South.
+~
+0 2097153 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20015
+D7
+~
+~
+0 -1 20002
+S
+#20015
+Entering the Tangle~
+The trees become obscured by a tangle of vines once you enter the
+thicket. Much to your dismay, the vines are covered in viscious and
+disturbingly long thorns. You doubt that you could even cut your
+way through without getting pierced. The thicket grows less dense
+to the North and the East.
+~
+0 2097153 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20014
+D1
+~
+~
+0 -1 20016
+> entry_prog 100~
+mea $n Thorny spines pierce you as you move through the vines.
+mpdamage $n 20
+~
+> rand_prog 40~
+mea $n A thorny vine lashes out, piercing your flesh!
+mpdamage $n 20
+~
+|
+S
+#20016
+The End of the Tangle~
+Pushing your way through the thorny thicket is pure torture. You start
+to wonder if there will be an end to it. You try not to think about
+the first thorn that pricked you, how it sucked the blood which flowed
+free. As you begin to drown yourself in hopeless thoughts, you can see
+a clearing to the South. Something inside of you nags to keep moving
+to the East, to find the end of the thicket, or to go back to where the
+thicket started, to the West.
+~
+0 2097153 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20018
+D2
+~
+~
+0 -1 20017
+D3
+~
+~
+0 -1 20015
+> entry_prog 100~
+mea $n Thorny spines pierce you as you move through the vines.
+mpdamage $n 20
+~
+> rand_prog 40~
+mea $n A thorny vine lashes out, piercing your flesh!
+mpdamage $n 20
+~
+|
+S
+#20017
+A Wrong Turn...~
+You lunge free of the tangle of thorns and twisted branches, untill
+you look at your new surroundings. The ground explodes before you as
+a tangle of roots grasps your legs. You hack and slice at them with
+all the strength you can muster, but to no avail. You pray for a
+quick death, but your god has forsaken you, as you are buried alive.
+You are dead.
+~
+0 2097158 1 0 0 0 0 0
+S
+#20018
+Deeper in the Forest~
+The knotted tangle of thorny vines slowly gives way to the dense wood
+of the silent forest. Taking a few moments to remove the numerous
+thorns which have imbedded themselves in your flesh, you realize that
+the forest has grown more dense, if that is possible. The darkness is
+opressive, almost tangible. The thicket to the West, though painful,
+felt more secure than this. Muttering to yourself as you wonder if
+you have gotten lost in this God-forsaken forest, a movement catches
+your eye. To your amazement, the trees have parted to the East.
+~
+0 2097153 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20019
+D3
+~
+~
+0 -1 20016
+S
+#20019
+The Shadows Path~
+As you walk into this strange path, shadows begin to creep over you.
+The trees seem to be forcing you in a particular direction, and from
+what you can tell, it is directly to the center of this dread forest.
+The path leads back towards the thicket to the west, and into deeper
+shadows to the South.
+~
+0 2097153 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20018
+D8
+~
+~
+0 -1 20020
+> entry_prog 100~
+mea $n An eerie feeling creeps up your spine...
+~
+|
+S
+#20020
+Nearing the Heart~
+Continuing down the path only makes your hopes for ever seeing the 
+light of day agin sink. The shadows grow more oppressive with every
+step. You can feel a presence, something horrible, nearby. The path
+splits here, leading North and East. Every nerve in your body cries
+for you to turn back Northwest.
+~
+0 2097153 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20021
+D1
+~
+~
+0 -1 20022
+D7
+~
+~
+0 -1 20019
+S
+#20021
+Dense Wood~
+You have wandered into a dead end. The trees here form a cul de sac
+which severs you from all directions save the way you have come. As
+you consider your location, turning back may not be such a bad idea.
+~
+0 2097153 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20020
+S
+#20022
+Closer to the Heart~
+As you turn down this shadowy path, the presence of pure malice grows
+stronger. Thoughts of murdering your family course through your mind
+untill you force them away. Clearing your mind, you feel a need to
+press on, but you remind yourself that the way back is to the West.
+Whatever the source of this evil is, lies to the South.
+~
+0 2097153 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20023
+D3
+~
+~
+0 -1 20020
+> entry_prog 100~
+if mobinarea(20002) == 1
+mea $n _blu A booming voice echoes...
+mea $n _blu DOOM! DOOM! DOOM!
+mpforce $n scream
+endif
+~
+|
+S
+#20023
+The Forest Heart~
+Your mind almost looses all holds on sanity as you step into this
+clearing. The trees around here are warped and writhing, as if you
+were viewing them through murky water. The energies here are nearly
+unbearable, evil saturating every pore of your soul. You watch in
+horror as the energies coalesce into a dark and malevolent entity...
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20022
+S
+#20024
+A Well Worn Path~
+To your suprise, a well worn path runs East and West here. Regardless
+of the hideous nature of the forest, people seemed to have settled in
+this land. At least you hope its people... The silence of the forest
+continues, almost maddening. You can only hope you encounter any form
+of civilization soon.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20025
+D3
+~
+~
+0 -1 20002
+S
+#20025
+A Well Worn Path~
+The well used path continues deeper through the forest. Far in the
+distance, you can see the end of this dreary forest. It seems that the
+people here have taken the shortest route through this place. The path
+stretches West, towards the forest edge, and Northeast, towards a tiny
+clearing.
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20024
+D6
+~
+~
+0 -1 20026
+S
+#20026
+A Small Clearing~
+The canopy breaks here slightly, allowing sunlight to shine through
+the branches like a full moon. This cmall clearing in any other wood
+would be overlooked for a better resting place, but in this dreary
+forest, this clearing is a great reprive. It would appear that many
+travelers have made camp here, over the years. Southwest leads back
+towards the forest edge, while Southeast presses on.
+~
+0 2097152 1 0 0 0 0 0
+D8
+~
+~
+0 -1 20027
+D9
+~
+~
+0 -1 20025
+S
+#20027
+Nearing the Forest End~
+As you traverse the snaky path, you feel an overwhelming happiness,
+you can see the forest's end. Quickening your pace, you hope to soon
+be away from this maddening place. Sunlight breaks to the East, while
+shadows obscure the Western path.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20028
+D7
+~
+~
+0 -1 20026
+S
+#20028
+Exiting the Forest~
+Your pace quickens to a near run as you approach the cavernous opening
+to the forest. As you draw closer to the clearing, you stop in wonder.
+Before you lies a cliff which marks the edge of the plateau, and from
+it, a hazy mist obscures the bottom. Yet looking across the horizion
+is perhaps the most beautiful view you have ever seen. Finding it
+difficult to pry your eyes away, you notice a narrow cliff which leads
+to the Northeast. A small part of you remembers that the way back is to
+the West.
+~
+0 2097156 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20027
+D6
+~
+~
+0 -1 20029
+S
+#20029
+A Narrow Cliff~
+You begin to traverse this narrow and slippery cliff. The fall below
+you is obscured by a thick mist, you wonder if it might actually be
+bottomless. The cliff itself is barely wide enough for you, let alone
+anyone else. The ciff slopes upward sightly to the Northeast, and back
+to a dark forest to the Southwest.
+~
+0 2099204 1 0 0 0 0 0
+D6
+~
+~
+0 -1 20030
+D9
+~
+~
+0 -1 20028
+S
+#20030
+A Narrow Cliff~
+The Cliff begins to become steeper as you continue your ascent. The
+overwhelming view grows only more magnificient. You feel that the trek
+through the bleak forest was worth this. To the East, another plateau
+can be seen, and the cliff slopes downward to the Southwest.
+~
+0 2099200 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20031
+D9
+~
+~
+0 -1 20029
+S
+#20031
+Another Plateau~
+The cliff finally widens to allow you to walk two abreast, as you take
+in this new plateau. You are almost above the tree line at this point,
+only the most rugged vegetation can be found. To your suprise, you can
+make out the walls of a settlement to the Northeast. Any form of human
+life might be favored over the path back down the mountain to the West.
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20030
+D6
+~
+~
+0 -1 20032
+S
+#20032
+Approaching Dregoria~
+Walking farther into the plateau, you come closer and closer to the
+lone settlement in these mountains. You can make out details in the
+gatehouse, which is well armed and armored. After traversing the dark
+forest, you do not question the amount of precautions these people
+take. The Gates lie to the East, while the Southwest leads off this
+plateau.
+~
+0 2097156 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20033
+D9
+~
+~
+0 -1 20031
+S
+#20033
+The Gates of Dregoria~
+Because of the lack of vegetation on this plateau, your coming has been
+seen from quite a distance. The Gatehouse itself, while in need of new
+coats of paint, is a marvel in defensive architechture. Great ballistai
+rest on the short towers, and numerous arrow slits can be seen. Great
+butresses make the short guard towers almost impervious to any form of
+structural damage. The Gates themselves are small and short, the opening
+easily defended from large forces by only a few soldiers. Only three
+soldiers stand on active duty as of now. East lies the streets of the
+village of Dregoria, while West leads back to the plateau. North and South
+lead into the well defended guard towers.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20034
+D1
+~
+~
+0 -1 20036
+D2
+~
+~
+0 -1 20035
+D3
+~
+~
+0 -1 20032
+S
+#20034
+A Guardhouse~
+You have stepped inside the ingeniously built guard houses which hold
+the village of Dregoria from forces unknown. An impressive number of
+pikes line the walls here, as well as arrow slits that allow for the
+archers to reign death on their opponents while staying defended. The
+stone itself seems magically sown. Who built this place? To the South,
+the Gates of Dregoria can be seen.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20033
+S
+#20035
+A Guardhouse~
+You have stepped inside the ingeniously built guard houses which hold
+the village of Dregoria from forces unknown. An impressive number of
+pikes line the walls here, as well as arrow slits that allow for the
+archers to reign death on their opponents while staying defended. The
+stone itself seems magically sown. Who built this place? To the North,
+the Gates of Dregoria can be seen.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20033
+S
+#20036
+Intersection of Perimeter Road and Central Street~
+Once you clear the mighty gates, your eyes fall upon the village of
+Dregoria. At first glance, you would not give this village a second
+thought, but thats your first glance. The buildings here seem to be
+a mixture of mindless apathy and a strong need to defend the home. A
+few of the houses could hold out against small armies. Others look
+completly ransacked. To the Northeast, a great manor can be seen, up
+upon a cliff, perhaps a mile away. The East road leads towards the
+village square. The Southeast seems to run a circuit of the village.
+West leads to the gates.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20048
+D3
+~
+~
+0 -1 20033
+D6
+~
+~
+0 -1 20037
+D8
+~
+~
+0 -1 20047
+S
+#20037
+Perimeter Road~
+This narrow road follows the defensive wall, which makes a circuit of
+the village. The buildings of the village seem to make a second wall,
+making a truly formidable defense. Little signs of activity can be
+found here, it would appear that the Guard does not patrol very much.
+The road leads Northeast and Southwest.
+~
+0 2097152 1 0 0 0 0 0
+D6
+~
+~
+0 -1 20038
+D9
+~
+~
+0 -1 20036
+S
+#20038
+Perimeter Road~
+The narrow road curves here, and the defensive wall ends, running into
+a natural mountainside. In years past, work had been done to the wall
+of natural earth, remnants of murals can be found. Years of erosion has
+obviously taken its toll on the aesthetics of these people. To the East,
+an intersection can be seen, and the road continues to the Southwest.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20039
+D9
+~
+~
+0 -1 20037
+S
+#20039
+Intersection of Perimeter Road and Manor Road~
+The natural mountain wall you have been following suddenly opens into
+a large pass, leading Northward. Gazing to the North, you can make out
+a large manor. The Manor Road continues South, into the mass of grey
+buildings below.  A road runs East and West here, following the natural
+wall.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+gate~
+0 -1 20067
+D1
+~
+~
+0 -1 20040
+D2
+~
+~
+0 -1 20051
+D3
+~
+~
+0 -1 20038
+S
+#20040
+Perimeter Road~
+The road continues in its lonely circuit of the village. As you near
+the end of the natural mountain wall, you notice that the thick stone
+wall surrounding the village continues. The road curves Southeast here,
+and runs back to an intersection to the West.
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20039
+D8
+~
+~
+0 -1 20041
+S
+#20041
+Perimeter Road~
+The road here curves to follow the defensive wall which circles the
+village. Hardley any signs of recent use can be found on this road,
+which makes you think this village is truly deserted. The road circles
+to the Northwest and continues to an intersection to the Southeast.
+~
+0 2097152 1 0 0 0 0 0
+D7
+~
+~
+0 -1 20040
+D8
+~
+~
+0 -1 20042
+S
+#20042
+Intersection of Perimeter Road and Central Street~
+You have come upon an intersection between the perimeter of the city
+and the central road. This seems to be the very end of the village,
+with all roads leading in some form of West. This area is beyond silent
+and desolate. You wonder if anyone has been to this intersection in 
+the past 100 years.
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20052
+D7
+~
+~
+0 -1 20041
+D9
+~
+~
+0 -1 20043
+S
+#20043
+Perimeter Road~
+The road here follows the village wall, the only passage between the
+wall and the grey stone buildings of the village. No signs of recent
+use marks this road. To the Northeast, an intersection can be seen,
+while the roads curves to the Southwest.
+~
+0 2097152 1 0 0 0 0 0
+D6
+~
+~
+0 -1 20042
+D9
+~
+~
+0 -1 20044
+S
+#20044
+Perimeter Road~
+The road here is narrow, squeezed between the thick village wall and
+a mass of grey stone buildings. No inhabitants can be seen, as if all
+are afraid to wander in this area of the village. The road curves to
+the Northeast, and leads to an intersection to the West.
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20045
+D6
+~
+~
+0 -1 20043
+S
+#20045
+Intersection of Perimeter Road and Manor Road~
+Two small roads intersect here. A small road leads North, towards a
+small square, while the other seems to make a circuit of the village.
+Grey stone buildings bar your passage save for the roads themselves.
+One of the roads follows the village wall, leading East and West.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20054
+D1
+~
+~
+0 -1 20044
+D3
+~
+~
+0 -1 20046
+S
+#20046
+Perimeter Road~
+The wall curves to follow what you must beleive to be the natural shape
+of the plateau. Grey stone buildings bar your path in all directions
+save the road itself. The road curves to the East, and heads back to
+the gates to the Northwest
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20045
+D7
+~
+~
+0 -1 20047
+S
+#20047
+Perimeter Road~
+This small road follows the village wall. From what you remeber of the
+approach to Dregoria, only a steep cliff would lie on the otherside of
+this wall. What reason would a village have to erect a wall of this
+magnitude to defend a sheer drop? The road continues along the wall to
+the Southeast and back to the gates to the Northwest.
+~
+0 2097152 1 0 0 0 0 0
+D7
+~
+~
+0 -1 20036
+D8
+~
+~
+0 -1 20046
+S
+#20048
+Central Street~
+Central Street seems to cut straight through the middle of the small
+village. Houses stand all around you, and you notice a suprising lack
+of stores and shops in the village. Each house you pass seems to have
+been designed like a fortress rather than a place to live. Both to the
+North and the South are grey colored houses. Central Street runs to the
+East, to where you can see a small village square, and to the West, you
+can see the village gates.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20055
+D1
+~
+~
+0 -1 20049
+D2
+~
+~
+0 -1 20056
+D3
+~
+~
+0 -1 20036
+S
+#20049
+Central Street~
+The empty street continues towards the small village square in the East,
+and you notice a disturbing lack of people outside. Everyone you have
+encountered seems overly paranoid of your presence. To the North and
+South lie grey houses, and the village gates lie to the West.
+~
+0 2097156 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20058
+D1
+~
+~
+0 -1 20050
+D2
+~
+~
+0 -1 20057
+D3
+~
+~
+0 -1 20048
+S
+#20050
+Dregoria Square~
+The village square almost seems quaint, at first glance. An ancient
+statue of a handsome and well dressed man stands in the center of the
+square. Very few people mill about here, which you find odd, as this
+should be the center of commerce for Dregoria. Central Street runs
+East and West here, and Manor Road runs North and South.
+~
+0 2097156 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20051
+D1
+~
+~
+0 -1 20053
+D2
+~
+~
+0 -1 20054
+D3
+~
+~
+0 -1 20049
+S
+#20051
+Manor Road~
+This narrow street cuts between grey stone buildings. You would almost
+think that this village has been deserted from the number of people you
+see walking about. The buildings look like replica of one another, the
+same grey stone, the same fortress-like architecture. Openings lie to
+the East and West of here, and the road runs North and South.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20039
+D1
+~
+~
+0 -1 20059
+D2
+~
+~
+0 -1 20050
+D3
+~
+~
+0 -1 20060
+S
+#20052
+Central Street~
+You continue down the bleak road, as the wall to the East grows closer.
+The buildings here are the same grey stone as the rest of the village,
+which makes you wonder if this is the cause of the prevailing apathy
+which seems to afflict the people here. The street runs East and West,
+and houses are to the North and South.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20066
+D1
+~
+~
+0 -1 20042
+D2
+~
+~
+0 -1 20065
+D3
+~
+~
+0 -1 20053
+S
+#20053
+Central Street~
+The lonely road continues East and West here. The same grey buildings
+are everywhere you look. To the East, you can see a large wall in the 
+distance, presumably the end of the road you are on. The suprising 
+lack of activity in the village no longer suprises you. Houses lie to
+the North and South.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20063
+D1
+~
+~
+0 -1 20052
+D2
+~
+~
+0 -1 20064
+D3
+~
+~
+0 -1 20050
+S
+#20054
+Manor Road~
+The road narrows here, a sign of even less frequent use than you have
+been privy too. The grey stone buildings all look alike here, barely
+any distinction between aesthetic styles. A square lies to the North,
+while a grey wall can be seen to the South.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20050
+D1
+~
+~
+0 -1 20062
+D2
+~
+~
+0 -1 20045
+D3
+~
+~
+0 -1 20061
+S
+#20055
+An empty house~
+You step inside the grey stone building, perhaps hoping to find some
+form of aesthetic taste among these people. To your suprise, even the
+interior walls share the same bleak grey visage. Old dusty furniture
+lays about here, obviously unused for some time. The door leads South
+back to the road.
+~
+0 2097156 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20048
+S
+#20056
+House of Baalon~
+The interior of this home is quite quaint, with well kept furniture
+and well swept floors. You immediatley notice that this room looks 
+more like an infirmiry than a house. A goose down mattress has been
+laid in the floor. A door to the North leads to the street.
+~
+0 2098176 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20048
+S
+#20057
+House of Koras~
+Stepping within this house brings feelings of despair and lonliness to
+your gut. The furniture shows signs of negligence and the house as a
+whole is in a state of disarray. The stench of uncleaned meals fills
+your nose, making you wonder what could cause such a state of apathy.
+A door to the North leads to the street.
+~
+0 2098176 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20049
+S
+#20058
+House of Delin~
+Stepping within this house, you feel warm and welcome. A fireplace
+burns brightly, taking the bite out of the cold air. Fine rugs adorn the
+stone floor and woven tapestries cover the grey walls. Whoever resides
+here has a great deal of wealth in comparison to the neighbors. A door
+leads South to the street.
+~
+0 2098176 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20049
+S
+#20059
+An empty house~
+You step inside the grey stone building, perhaps hoping to find some
+form of aesthetic taste among these people. To your suprise, even the
+interior walls share the same bleak grey visage. Old dusty furniture
+lays about here, obviously unused for some time. The door leads West
+back to the road.
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20051
+S
+#20060
+House of Krom~
+Stepping within this house brings a sense of energy to your weary body
+as you can feel magical energies at work in the air. From the looks of
+this place, it would appear to be a neglected wizards laboratory. Old
+tome line bookshelves, and long unused beakers sit upon tables. A door
+to the East leads back to the street.
+~
+0 2098176 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20051
+S
+#20061
+A ruined house~
+Stepping within this house is like stepping into an ancient battle.
+The furniture here is smashed and strewn, and the walls bear scored
+marks of old fires. No signs of recent habitation can be found, nor
+can signs of the previous occupants. A door leads back to the street
+to the East.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20054
+S
+#20062
+House of Cerin~
+This house offers an air of welcome and peace, with no apparent feigned
+happiness. The tapestries that hang upon the wall are bright and warming
+and the floor is clean and well swept. A well tended fireplace burns
+brightly, taking the bite out of the cold mountain air. A door to the
+West leads back to the street.
+~
+0 2098176 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20054
+S
+#20063
+House of Golim~
+This house is in a state of neglected dissaray. It would appear that
+no form of cleaning has taken place in some months. It also seems that
+this residence has been deserted for the same amount of time. A door
+to the South leads back to the street.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20053
+S
+#20064
+House of Crydos~
+This house appears to be more of a fortress than a home. Weapons line
+the walls as decorations, alongside shields, suits of armor, and other
+trophies. Every piece of furniture is strategically placed to be used
+as defense during an assault. A door to the North leads back to the
+street.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20053
+S
+#20065
+An empty house~
+You step inside the grey stone building, perhaps hoping to find some
+form of aesthetic taste among these people. To your suprise, even the
+interior walls share the same bleak grey visage. Old dusty furniture
+lays about here, obviously unused for some time. The door leads North
+back to the road.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20052
+S
+#20066
+An empty house~
+You step inside the grey stone building, perhaps hoping to find some
+form of aesthetic taste among these people. To your suprise, even the
+interior walls share the same bleak grey visage. Old dusty furniture
+lays about here, obviously unused for some time. The door leads South
+back to the road.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20052
+S
+#20067
+Manor Road~
+This road cuts between two steep slopes, as if you were ascending a
+mountain pass. Dregoria begins to grow smaller and smaller as distance
+grows between you and the village. The road curves to the Northwest,
+leading towards the old manor. The village of Dregoria lies to the South.
+~
+0 2097156 1 0 0 0 0 0
+D2
+~
+gate~
+0 -1 20039
+D7
+~
+~
+0 -1 20068
+S
+#20068
+Manor Road~
+The desolate road grows even more devoid of life as you continue to
+ascend this path. Directly to the North, you can see the old manor,
+perhaps some four hundred years old by the architecture. Feelings of
+negative energy make goosebumps appear over your body, and you begin
+to consider turning back to the Southeast, back to the village.
+~
+0 2097156 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20069
+D8
+~
+~
+0 -1 20067
+S
+#20069
+Before the Manor~
+The road suddenly stops sloping and dramatically levels off, placing
+you in front of the old manor house. Years of negligence marr the walls
+and the grounds, and no signs of recent footprings can be found. To the
+North, an old, strong oaken door stands, and a hint of eletrical charge
+in the air hints of magical warding. Who ever lives in this place surely
+isn't fond of unexpected visitors. The road to the South leads back to
+the village.
+~
+0 2097156 1 0 0 0 0 0
+D0
+~
+~
+8389671 20015 20070
+D2
+~
+~
+0 -1 20068
+S
+#20070
+The Foyer~
+Stepping within this house is like stepping four hundred years into
+the past. Layers of dust cover everything, the floors, the furniture.
+At one time, this manor was perhaps a strikingly beautiful residence,
+but decades of negligence has turned it into a macabre nightmare. No
+sounds can be heard from the corridor which leads to the North, nor
+can any sign of life be seen in the rooms to the East and West. A
+sturdy oaken door lies to the South, leading outside the manor.
+~
+0 2097156 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20073
+D1
+~
+~
+0 -1 20071
+D2
+~
+~
+7 20015 20069
+D3
+~
+~
+0 -1 20072
+S
+#20071
+The East Study~
+A cloud of dust rises to obscure your vision as you step into this room.
+This room appears to have been a study, small bookshelves line the wall,
+but remain empty. A few books lie on old stools, their titles obscured
+by an impressive layer of dust. A window upon the south wall allows a
+view of the village below, and some of the forest as well. To the West,
+a door leads to a foyer.
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20070
+S
+#20072
+The West Study~
+A cloud of dust rises to obscure your vision as you step into this room.
+This room appears to have been a study, small bookshelves line the wall,
+but remain empty. A few books lie on old stools, their titles obscured
+by an impressive layer of dust. A window upon the south wall allows a
+view of the village below, and some of the forest as well. To the East,
+a door leads to a foyer.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20070
+S
+#20073
+Entering the Manor~
+Walking into this wide hallway brings you within the manor proper. A
+thick layer of dust coats everywhere it can cling, obscuring the walls
+and accompanying paintings. Once, this hallway would have been a spectacle
+to see, but now, its degenerated into this from years of neglect. To
+the South, a foyer can be seen, and a landing to the North.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20074
+D2
+~
+~
+0 -1 20070
+S
+#20074
+A Landing~
+A wide double staircase fills this room, and most of your sight along
+with it. Made of polished marble, it perhaps cost a fortune in its own
+right. Redwood walls and granite pillars adorn this chamber, and even
+after the years of negligence, it still maintains its original beauty.
+The stairs lead up to a balcony overlooking this room, and a passage can
+be seen between them to the North. A hallway lies to the South, leading
+to the main doors of the manor.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20075
+D2
+~
+~
+0 -1 20073
+D4
+~
+~
+0 -1 20091
+S
+#20075
+A Junction of Hallways~
+Stepping through a small corridor brings you to a four way junction.
+Redstone tiles adorn the floors in intricate and difficult to follow
+patterns. The walls are made from the same redwood as the rest of the
+manor appears to be. The hallway leading South leads to a landing, and
+the Northern hallway leads to a large library. East and West lead into
+the manor.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20076
+D1
+~
+~
+0 -1 20078
+D2
+~
+~
+0 -1 20074
+D3
+~
+~
+0 -1 20079
+S
+#20076
+A Great Library~
+Bookshelves fill this spacious room, perhaps more books then anyone has
+ever seen together at once. Suprisingly, this room seems to be in good
+repair as opposed to the rest of the manor. Hardly a trace of dust can
+be found. A doorway to the South leads to a hallway, and a small door
+can be seen to the North.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+3 -1 20077
+D2
+~
+~
+0 -1 20075
+> speech_prog "ka'a'binu"~
+if rand(99)
+mpecho _blu Magical energies begin to swirl and take form!
+mer $n _blu $n is gone in a flash of light!
+mea $n _blu You are blinded by a flash of light!
+mptrans $n 20096
+mpat 20096 mea $n _blu You open your eyes to find you are in a new place...
+else
+endif
+~
+|
+S
+#20077
+Aaron's Study~
+This room once appeared to be a spacious study, but now it is filled
+with cluttered notes, maps and tomes. A reading desk sits in alone
+in the corner, stacked high with scrawled notes. Maps of Dregoria and
+the surrounding areas line the walls. A small door lies on the South
+wall.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+3 -1 20076
+S
+#20078
+A Small Hallway~
+This small hallway branches from the main hallway in the manor, and
+seems to have been unused for years. Polished redstone tiles line the
+floors and stained redwood constructs the walls. Dim spheres float in
+the air, the apparent source of light in this small hallway. To the
+West you can see the main hallway, and the East, a sitting room.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20088
+D3
+~
+~
+0 -1 20075
+S
+#20079
+A Small Hallway~
+This small hallway branches from the main hallway in the manor, and
+seems to have been unused for years. Polished redstone tiles line the
+floors and stained redwood constructs the walls. Dim spheres float in
+the air, the apparent source of light in this small hallway. To the
+East you can see the main hallway, and the West, a sitting room.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20075
+D3
+~
+~
+0 -1 20080
+S
+#20080
+A Sitting Room~
+A hint of mustiness fills your nostrils as you enter this old chamber,
+awakening your senses to decaying velvet which once lined chairs and
+couches. A large portrait of a man hangs on the West wall, which holds
+your eye for a few moments. A door to the North leads to a long hallway,
+and a door to the East leads back towards the heart of the manor.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20081
+D1
+~
+~
+0 -1 20079
+E
+picture portrait~
+The picture before you is that of a handsome young man in his early
+twenties. He is adorned in fine robes, and commands an air of dignity.
+An inscription on the bottom of the frame reads:
+ 
+ 
+                             AARON DREGORIA
+~
+S
+#20081
+A Long Hallway~
+This hallway is narrow and dark, with no windows or light sources to
+be seen. Footsteps echo loudly on redstone tile, and each step rouses
+years of dust. The walls are bare, and unadorned, making this a very
+lonely place to be. A sitting room can be seen to the South, and to
+the North, the hallway stretches on.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20082
+D2
+~
+~
+0 -1 20080
+S
+#20082
+A Long Hallway~
+The hallway stretches on, long and narrow. Your footsteps echo off of
+redstone tiles, and each step kicks up years of collected dust. The
+walls are bare and greying, giving this place a very morose feel. To
+the North, a room with musical instruments can be seen, and to the South
+the hallway stretches on.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20083
+D2
+~
+~
+0 -1 20081
+S
+#20083
+A Small Den~
+This room at one time would have been quaint and cozy. A long unlit
+fireplace sits in the far wall and an old antque couch sits in front
+of it. Two small bookshelves are against the wall, holding books which
+ease the mind to read. A long hallway lies to the South, while a musty
+smell comes from the East.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20084
+D2
+~
+~
+0 -1 20082
+S
+#20084
+A Musty Hallway~
+The overbearing smell of aged water damaged wood and paper pervades
+this hallway, making it difficult to breathe. The dust here has become
+a thick layer of grime due to the excess of water. The floor cannot
+be seen and the walls are showing signs of irreperable water damage.
+To the East, a dim light shines, and a warm breeze can be felt from the
+West.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20085
+D3
+~
+~
+0 -1 20083
+S
+#20085
+Matrim's Study~
+A candle is burning upon a small desk, beside a smoky mirror, casting
+dark light throughout this room. An eerie presence can be felt here,
+as if you are being watched. A slight breeze stirrs, though you can
+find no window or source. A velvet stool sits before the desk, and you
+can see numerous books in shelves, all almost destroyed from the water.
+Hallways lead to the East and West from here.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20086
+D3
+~
+~
+0 -1 20084
+> entry_prog 100~
+if sex($n) == 2
+  if cha($n) > 15
+  mpforce $n sit
+  mpforce $n braid
+  mer $n $n begins to take on a different appearence, more mature, older...
+mea $n Who are you? I... I am Matrim Dregoria... no.. I am $n!
+  mpforce $n scream
+  mpforce $n stand
+  mpforce $n yell Aaron! Why my love? Why?
+  mpforce $n weep
+  mer $n $n slowly regains her senses...
+mea $n You slowly remember who you are...
+endif
+endif
+~
+|
+S
+#20086
+A Musty Hallway~
+The overbearing smell of aged water damaged wood and paper pervades
+this hallway, making it difficult to breathe. The dust here has become
+a thick layer of grime due to the excess of water. The floor cannot
+be seen and the walls are showing signs of irreperable water damage.
+To the West, a dim light shines, and music can be heard from the East.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20087
+D3
+~
+~
+0 -1 20085
+S
+#20087
+A Music Room~
+A cursory glance brings your attention to the nature of this room, that
+of a music room. Musical instruments are everywhere here, a large piano
+rests in the corner, and a large harp stands in the middle of the room.
+Most of the instruments appear to be in poor repair, strings corroded
+or wood tarnished. A strange energy fills this room, almost haunting.
+To the South, a long hallway can be seen, and to the West, a dank and
+dusty hall.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20089
+D3
+~
+~
+0 -1 20086
+S
+#20088
+A Sitting Room~
+A hint of must hits your nostrils as you enter this room, awakening
+your senses to the state of decay of the furniture. Moisture has turned
+wooden chairs here to pulp over the years, and etched the walls slightly.
+A portrait of a beautiful woman catches your eye for a moment, barely
+touched by the decay of the room. A door to the North leads to a long,
+dusty hallway, and a door to the East leads back towards the heart of
+the manor.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20090
+D3
+~
+~
+0 -1 20078
+E
+picture portrait~
+As you look closer at this picture, you find yourself drawn into the
+beauty of this woman. Everything about her is dazzeling. She appears
+as if she could command royalty.
+An inscription at the bottom of the frame reads:
+ 
+ 
+                     MATRIM ORIA DREGORIA
+~
+S
+#20089
+A Long Hallway~
+The hallway stretches on, long and narrow. Your footsteps echo off of
+redstone tiles, and each step kicks up years of collected dust. The
+walls are bare and greying, giving this place a very morose feel. To
+the North, a room with musical instruments can be seen, and to the South
+the hallway stretches on.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20087
+D2
+~
+~
+0 -1 20090
+S
+#20090
+A Long Hallway~
+This hallway is narrow and dark, with no windows or light sources to
+be seen. Footsteps echo loudly on redstone tile, and each step rouses
+years of dust. The walls are bare, and unadorned, making this a very
+lonely place to be. A sitting room can be seen to the South, and to
+the North, the hallway stretches on.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20089
+D2
+~
+~
+0 -1 20088
+S
+#20091
+The Balcony~
+Looking below, a beautiful landing can be seen. The polished marble
+stairs curve up to the balcony where you stand in a most beautiful
+manner. The rails here are of polished cherrywood. An intricate design
+of marble and redstone tiles is on the floor here. To the North, a
+wide hallway opens up, and down leads to the landing.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20092
+D5
+~
+~
+0 -1 20074
+S
+#20092
+A Wide Hallway~
+The balcony to the South opens up into this massive and spacious hall.
+The floors are hardwood, and the walls are polished redwood, filled with
+hanging pictures and tapestries. Your footsteps echo with each step you
+take, filling this hall with a resounding sound, much like a mourner.
+To the North, you can see the end of the hallway.
+~
+0 2097156 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20093
+D2
+~
+~
+0 -1 20091
+S
+#20093
+End of the Hallway~
+The massive hallway comes to a stop here, with two large doors on the
+East and West sides. The doors are ornatley carved, to match the decor
+in the rest of the hallway. The doors appear to have no locks, but are
+closed. For all you can tell, no one has ventured up here in years.
+~
+0 2097156 1 0 0 0 0 0
+D1
+~
+~
+3 -1 20094
+D2
+~
+~
+0 -1 20092
+D3
+~
+~
+3 -1 20095
+S
+#20094
+Aaron's Chambers~
+Horrific can be the only word used to describe this room... bloodstains
+perhaps centuries old still line the walls. The furniture here is all
+but demolished, stained with blood. The air here feels dark and very
+unwelcoming. A door stands to the West, leading back towards the hall.
+~
+0 2097156 1 0 0 0 0 0
+D3
+~
+~
+3 -1 20093
+S
+#20095
+Matrim's Chambers~
+This chamber has survived well after the years of neglect. A beautiful
+covered bed occupies the center of this room, and a dresser stands on
+the opposite side of the room. A plush carpet covers the floor wall to
+wall here. A door to the East leads back to the hallway.
+~
+0 2097156 1 0 0 0 0 0
+D1
+~
+~
+3 -1 20093
+S
+#20096
+A Stone Walkway~
+A chill enters your body as soon as you set foot in this room, stone and
+mortared walls, floors and ceiling bare. From the cold, you must assume
+that this room has been contructed far underground. The smell of ozone
+and a feeling of eletricity slowly becomes aparrent to human senses. A
+dim light flickers from the North. What manner of place is this?
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20097
+> speech_prog "ka'a'binu"~
+mpecho _blu Magical energies begin to swirl and take form!
+mer $n _blu $n is gone in a flash of light!
+mea $n _blu You are blinded by a flash of light!
+mptrans $n 20076
+mpat 20076 mea $n _blu You open your eyes to find you are in a new place...
+~
+|
+S
+#20097
+A Wizard's Laboratory~
+The stone walls continue into this chamber, which is filled with all
+sorts of strange and disturbing devices. At first guess, this could be
+a wizards laboratory, but evidence of necromantic experimentation is
+more than apparent. Devices made for vivasection and autopsy lay against
+the walls, while jars of vile concoctions rest on shelves. To the South,
+lies a stone hallway, and the laboratory continues to the North.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20098
+D2
+~
+~
+0 -1 20096
+S
+#20098
+Within the Laboratory~
+The bizzare museum of torturous apparatus' continues into this large
+chamber. The extent of horrific experimentation performed here has
+coagulated into a feeling of painful hate. You find it difficult to
+hold on to your former sanity, you hear screams that aren't really
+there. To the East, you can make out a small passageway, leading to
+a dark room. Southward, the laboratory continues, and flashes of light
+can be seen to the North.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20099
+D1
+~
+~
+0 -1 20100
+D2
+~
+~
+0 -1 20097
+S
+#20099
+A Room of Binding~
+Horror and hate coalesce into reality, swirling and warping the rest
+of the mundane world, making the pale walls seem insubstantial. This
+seems to be a focal point of negative and dark energies, summoned from
+the Abyss itself. Images of horror beyond comprehension materalize for
+a moment, then dissipate, but for all you know, they existed in this
+reality for a short time. The energies are nearly unbearable, tearing
+at your body, mind and soul. The exit to the South seems miles away,
+even though the energies here cause you unberable pain, it is like a
+putrid sweetness, a release of unbearble weight. You have visions of
+yourself, a warlord pillaging kingdoms, burning the innocent alive. You
+are a cannibal, eating the flesh from your still living and screaming
+victim. You are a necromancer, causing undescribable pain upon innocents,
+only to heal them and maim them again, you are a preist, abusing the
+power of your position to perform unspeakable acts of human sacrifice,
+you are a.... lost in an infinity of alternate personalities, lost in
+the dark side of your soul... you dream on... hate... hate...
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20098
+> entry_prog 100~
+if rand(5)
+mea $n _red The painful energies are too much for you to bear...
+mpforce $n scream
+mea $n _red You feel the sweet sleep of death roll over you...
+mer $n _red $n falls, thrashing, screaming, to the ground.
+mpslay $n
+else
+mea $n _red Your body contorts in this new reality, but you manage to live...
+mpdamage $n 500
+endif
+~
+> rand_prog 20~
+if rand(5)
+mea $n _red The painful energies are too much for you to bear...
+mpforce $n scream
+mea $n _red You feel the sweet sleep of death roll over you...
+mer $n _red $n falls, thrashing, screaming, to the ground.
+mpslay $n
+else
+mea $n _red Your body contorts in this new reality, but you manage to live...
+mpdamage $n 500
+mptransfer $n 20201
+endif
+~
+> rand_prog 90~
+mptrans $n 20201
+~
+|
+S
+#20100
+A Private Library~
+The feelings of hate and pain subside as you enter this chamber, that
+of a small, private library. The tomes and journals here are of a dark
+and insidious nature, telling dark secrets of necromancy and other dark
+forbidden arts. This must be Aaron's library. A small passageway leads
+to a laboratory to the East.
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20098
+S
+#20101
+Entering a Pass~
+The path grows shadowed as it begins to pass between two steep cliffs
+and becomes a pass, leading towards the ominous black spire. Because
+of the curvature of the path, it is almost impossible to tell what
+dangers lie ahead. The wind makes a low keening through the walls of
+the mountains, making you wish you were elsewhere. To the South, you
+can make out a plateau, and to the North, the pass deepens.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20000
+D7
+~
+~
+0 -1 20102
+S
+#20102
+Inside the Pass~
+The shadows have grown to mimic night between these two steep inclines.
+The ground is rocky and unstable, making those on foot stumble here
+and there, causing small scrapes. To the North, the pass opens into
+a small cliff, and to the South, the pass continues.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20103
+D8
+~
+~
+0 -1 20101
+> entry_prog 100~
+if isaffected($n) == flying
+or isaffected($n) == floating
+else
+mpdamage $n 20
+mea $n You trip and scrape yourself.
+mer $n $n trips and scrapes $mself.
+endif
+~
+|
+S
+#20103
+Before an Ancient Bridge~
+A large and once magnificent bridge lays before you to the North, its
+frame now showing advanced signs of decay. It crosses a deep gorge,
+some two hundred feet across. On the far side, you can see the black
+spire in its entirety. Thunderheads swim around the spire in a cyclonic
+dance, which should be impossible by all means. Shadows seem to sprint
+to and fro around the peak of the spire. Encompassed by this sight, you
+almost do not notice the old guard outpost to the East, and the pass
+leading South.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20105
+D1
+~
+~
+0 -1 20104
+D2
+~
+~
+0 -1 20102
+S
+#20104
+An Old Outpost~
+This old guard outpost once defended the bridge from anything that would
+dare send forces South, but now, barely anything remains of this small
+fortress. Black scorch marks marr the interior of this old post, and
+bloodstains mark all parts of the room. The only exit lies to the West,
+leading towards a small cliff.
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20103
+S
+#20105
+On an Ancient Bridge~
+The bridge is wider than it first appeared, holding the contents of
+two carriages side by side. The decay looks bad, and some of it appears
+unnatural, acidic and war-torn grooves in the stone structure. To the
+North the bridge continues, and to the South, you see a small cliff.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20106
+D2
+~
+~
+0 -1 20103
+S
+#20106
+On an Ancient Bridge~
+The bridge is wider than it first appeared, holding the contents of
+two carriages side by side. The decay looks bad, and some of it appears
+unnatural, acidic and war-torn grooves in the stone structure. To the
+North and to the South the bridge continues.
+~
+0 18874368 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20107
+D2
+~
+~
+0 -1 20105
+D5
+~
+~
+2048 -1 20108
+S
+#20107
+On an Ancient Bridge~
+The bridge is wider than it first appeared, holding the contents of
+two carriages side by side. The decay looks bad, and some of it appears
+unnatural, acidic and war-torn grooves in the stone structure. To the
+North lies a small cliff, and to the South, the bridge continues.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20127
+D2
+~
+~
+0 -1 20106
+S
+#20108
+Falling!~
+The bridge has given way, and you are falling!
+~
+0 18874368 1 0 0 0 0 0
+D5
+~
+~
+0 -1 20109
+S
+#20109
+Falling!~
+The bridge has given way, and you are falling!
+~
+0 18874372 1 0 0 0 0 0
+D5
+~
+~
+0 -1 20110
+S
+#20110
+Falling!~
+The bridge has given way, and you are falling!
+~
+0 18874372 1 0 0 0 0 0
+D5
+~
+~
+0 -1 20111
+S
+#20111
+Within the Gorge~
+You look up, then shake your head, then look up again. That was some
+fall, its a miracle you lived. The wall is truly unclimable, and the
+intense winds would make flying up a one way trip to the grave. You
+have landed upon a small cliff, something of a natural bridge. The
+gorge of course, continues down. You cannot see the bottom. Looking
+around, you notice a passageway to the South, an entrance to some form
+of underground structure. It would appear to be your only option at
+the moment.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20112
+S
+#20112
+The Dark Temple~
+The walls here are smooth stone, the sign of expert masonry. Markings
+have been carved into the stone, runes of some form, you must imagine.
+It would appear that this is or was some form of a temple, and from the
+looks of the runes, the diety in question is not a nice one. The darkness
+deepens to the South, while to the North, a great gorge opens up.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20111
+D2
+~
+~
+0 -1 20113
+S
+#20113
+Within the Temple~
+The runes here glow softly, a dull red pulsing, which your eyes strain
+to see. You find no signs of inhabitation, which is probably a good
+fortune. From the lack of dust, you could deduce that this temple is
+visited often, but you shudder at what might come here. Exits East and
+West lead to small rooms, while North and South leads to other areas
+of the temple.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20112
+D1
+~
+~
+0 -1 20116
+D2
+~
+~
+0 -1 20114
+D3
+~
+~
+0 -1 20117
+> entry_prog 100~
+if mobcount(20116) == 0
+if ispc($n)
+mpecho As you enter, you wince, as an alarm begins to sound...
+mpat 20116 mpforce troll yell INTRUDERS!
+mpforce $n wince
+mpat 20116 mpforce troll w
+mpat 20117 mpforce troll e
+mpforce troll kill $n
+endif
+endif
+~
+|
+S
+#20114
+Deeper within the Temple~
+The darkness grows deeper, almost opressive as the temple grows deeper
+within the mountain. The glowing runes are more numerous here, seeming
+to lead to a flickering chamber to the South. Chambers lie to the East and
+West as well, and a faint light can be seen to the North. You get a bad
+feeling about this place.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20113
+D1
+~
+~
+0 -1 20119
+D2
+~
+~
+0 -1 20115
+D3
+~
+~
+0 -1 20118
+> entry_prog 100~
+if mobcount(20119) == 0
+if ispc($n)
+mpecho A snarl can be heard from the eastern chamber...
+mpat 20118 mpforce spawn e
+mpat 20119 mpforce demon w
+endif
+endif
+~
+|
+S
+#20115
+A Flickering Chamber~
+Outside the fact that reddish grey lightning arcs throughout this room
+periodically, this chamber resembles much of the rest of the temple. The
+density of runes increases drastically here, the dull red glow now bright
+by comparison to the rest of the temple. The lightning which arcs has no
+obvious source, save the dull red runes which pulse with dark light. The
+trace hints of ozone is noticable in the air. The longer you stay here, the
+more you feel a strange pull...
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20114
+> rand_prog 75~
+mea $n You feel a strange pull!
+mptransfer $n 20120
+mpecho $n dissapears!
+~
+|
+S
+#20116
+Guard Station~
+Spartan would describe this room best, no decor, and only a straw bed
+marks any signs of inhabitation. The stench here burns your nose. Deep
+grooves which appear to be claw marks marr the walls. The only exit you
+see is to the West, back into the temple.
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20113
+S
+#20117
+Guard Station~
+Spartan would describe this room best, no decor, and only a straw bed
+marks any signs of inhabitation. The stench here burns your nose. Deep
+grooves which appear to be claw marks marr the walls. The only exit you
+see is to the East, back into the temple.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20113
+S
+#20118
+A Pit of Chaos~
+A depression sinks in the middle of this chamber, holding all mannner
+of waste products. The stench is vile, almost poisonous to your lungs.
+No markings adorn this room, only the depression makes it any less a
+plain cube. An opening to the East leads back to the temple.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20114
+S
+#20119
+Priest's Quarters~
+The chamber here does not appear to support human occupants, or even
+mortal ones for that matter. Runes cover the chamber, which glow dimly
+with red light. A weapon rack has been built into the wall, holding
+weapons of immense size. Whatever lives here isn't friendly. An opening
+leads back into the temple to the West.
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20114
+S
+#20120
+A New Reality~
+Timeless washes over you, holding you for an infinite number of lives,
+before rudely spitting you out here. The platform looks unstable, over
+a sea of boiling... blood? Where is this place? To the North lies a 
+floating palace, which connects to the platform which you are on. The
+palace doesn't seem to large, from here, anyway.
+~
+0 2097156 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20121
+S
+#20121
+Within the Stronghold~
+The walls of this palace seeom to be made of human flesh, piled upon
+itself over and over again to give it a solid illusion. The feel of this
+place is sickening. Low moans of anguished screams can be heard coming
+from all directions. The Northern path leads deeper into this hellish
+place, while the South leads to a sea of boiling blood.
+~
+0 2097156 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20122
+D2
+~
+~
+0 -1 20120
+S
+#20122
+A Final Stand~
+The design of this room looks as if it was constructed to guard against
+both the Northern and Southern routes. Structural defenses stand and serve
+as cover as well as support. A viscious sound can be heard to the North,
+something rather unpleasant. To the South lies the exit to this place. A
+close examination reveals arrow slits on the East and West walls.
+~
+0 2097156 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20125
+D1
+~
+~
+0 -1 20124
+D2
+~
+~
+0 -1 20121
+D3
+~
+~
+0 -1 20123
+S
+#20123
+A Guard's Outpost~
+This small guard room is designed for archers to fire a hail of arrows
+safely at their targets. A large supply of arrows stand ready here, for
+any possible invasion or attack. An arrow slit lies to the East, where
+the main hallway can be observed.
+~
+0 2097156 1 0 0 0 0 0
+D1
+~
+~
+1 -1 20122
+S
+#20124
+A Guard's Outpost~
+This small guard room is designed for archers to fire a hail of arrows
+safely at their targets. A large supply of arrows stand ready here, for
+any possible invasion or attack. An arrow slit lies to the West, where
+the main hallway can be observed.
+~
+0 2097156 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20122
+S
+#20125
+Chambers of the Warlord~
+Painful displays of gruesome butchery line the walls of this chamber,
+some as trophies, others as what the builders of this stronghold consider
+art. But, the most notable feature of this room is the tall, smouldering
+bronze throne which rises from the floor. The stench of burning flesh
+arises where the throne and floor meet. The occupant of this chamber
+must indeed be a twisted soul, if it even has a soul at all...
+~
+0 2097156 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20122
+S
+#20126
+Painful Oblivion~
+Pain washes over you... where are you? You feel yourself unmaking, your
+memory in the real world fading. What is this place? A void between this
+universe and your own? The pain is numbing... you know you will soon be
+dead.
+~
+0 2359424 10 0 0 0 0 0
+D0
+~
+~
+0 -1 20126
+D1
+~
+~
+0 -1 20126
+D2
+~
+~
+0 -1 20126
+D3
+~
+~
+0 -1 20126
+D4
+~
+~
+0 -1 20126
+D5
+~
+~
+0 -1 20126
+D6
+~
+~
+0 -1 20126
+D7
+~
+~
+0 -1 20126
+D8
+~
+~
+0 -1 20126
+D9
+~
+~
+0 -1 20125
+> entry_prog 100~
+mea $n _whi The sweetness of oblivion rolls over you, trying to unmake you!
+mpdamage $n 300
+~
+> rand_prog 100~
+mea $n _whi The sweetness of oblivion rolls over you, trying to unmake you!
+mpdamage $n 300
+~
+|
+S
+#20127
+Approaching the Spire~
+Leaving the ancient bridge would be a relief if it did not put you so
+close to the black spire. The land on the North side of the bridge is
+bleak and lifeless. Nothing seems to move in this land, not even the
+wind seems to stir. Gazing upon the black spire, dread rolls down your
+spine. The thunderheads swirl about at impossible speeds. The bridge
+which leads away from this place lies to the South, while the path to
+the spire is Northwest.
+~
+0 2097156 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20107
+D7
+~
+~
+0 -1 20128
+S
+#20128
+In the Shadow of the Spire~
+The view to the North slowly becomes obscured by the massive black spire,
+its massive size shadowing the surrounding area. Nothing moves here,
+not even a small breeze stirs. To the North, the path to the mountain
+can be seen, and to the Southeast lies a small bridge.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20129
+D8
+~
+~
+0 -1 20127
+S
+#20129
+The Gates of Darkness~
+The black spire now fills your entire vision as you draw closer to the
+black stone mountain. The path ends at the slope of the spire at a great
+and hideous gate. The gate is enscribed with an old dialect of the common
+speech, and seems to be sealed with runes of binding. The gates stand
+some thirty feet tall, and would be impossible to force open. To the
+South, the path away from this spire lies.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20128
+E
+gate gates~
+LET HE WHO WISHES TO PASS THESE GATES
+          SPEAK THE NAME OF THE MASTER OF THE SPIRE.
+~
+> speech_prog blacktalon~
+mpopenpassage 20129 20130 0
+mpecho A ghostly voice cackles....
+mpopenpassage 20130 20129 2
+~
+|
+S
+#20130
+Within the Spire~
+Darkness obscures everything as the gates close behind you, leaving you
+trapped within the Black Spire. An eerie silence overcomes any noise
+that is made, and every shadow seems too real for comfort. The tunnel
+here is carved from the stone itself with no care for aesthetic sense,
+winding its way into the spire. Only darkness awaits...
+~
+0 2097157 1 0 0 0 0 0
+D6
+~
+~
+0 -1 20131
+> act_prog p arrives from the south.~
+mpclosepassage 20130 2
+mpat 20129 mpclosepassage 20129 0
+mpecho A groaning creak can be heard as the gate closes behind you...
+~
+> act_prog p flies in from the south.~
+mpclosepassage 20130 2
+mpat 20129 mpclosepassage 20129 0
+mpecho A groaning creak can be heard as the gate closes behind you...
+~
+> act_prog p floats in from the south.~
+mpclosepassage 20130 2
+mpat 20129 mpclosepassage 20129 0
+mpecho A groaning creak can be heard as the gate closes behind you...
+~
+|
+S
+#20131
+Into the Darkness~
+The darkness envelopes you like a coccoon, light barely leaving your
+vicinity before being absorbed by the inky blackness. The silence is
+almost unbareable, maddening, deafining. This surreal pseudo-reality
+tears at your mind like daggers, this place is not natural. The path
+continues to wind into the mountain, leading onward to the Northeast,
+and back to a sealed exit to the Southwest.
+~
+0 2097157 1 0 0 0 0 0
+D6
+~
+~
+0 -1 20132
+D9
+~
+~
+0 -1 20130
+S
+#20132
+A Turn in the Dark~
+Feeling your way through the dark tunnel, it turns sharply to the North,
+leading more directly now towards the heart of the mountain. Unbearable
+silence beats at your brain, and the darkness is overwhelming, absorbing
+all forms of light. How much longer does this tunnel go? The tunnel turns
+to the Southwest, leading back towards the sealed exit.
+~
+0 2097157 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20133
+D9
+~
+~
+0 -1 20131
+S
+#20133
+Heated Tunnels~
+The darkness of these tunnels remains constant, though the walls have
+begun to heat slightly. Perhaps this is a volcanoe, or perhaps some
+magical form of fire awaits you. Either way, there is no turning back
+now. The tunnel continues straight to the North and South.
+~
+0 2097157 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20134
+D2
+~
+~
+0 -1 20132
+S
+#20134
+Smoky Passage~
+Like passing through a veil, the passage is suddenly filled with bitter,
+sulfuric smoke. Though not concentrated enough to pose an immediate
+threat, the sooner this is passed, the better. The passage walls are 
+hot to the touch now, and feeling your way through this tunnel is now
+becoming painful. The passage continues to the Northwest and the South.
+~
+0 2097157 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20133
+D7
+~
+~
+0 -1 20135
+S
+#20135
+Into the Mountain's Belly~
+The tunnel ends here, before a gaping hole which leads down into the
+mountain's belly. Smoke pours out of the hole in abundance, and the
+heat is noticable uncomfortable now. What ever lies down there is not
+going to be friendly. The tunnel extends Southeast from here.
+~
+0 2097157 1 0 0 0 0 0
+D5
+~
+~
+0 -1 20136
+D8
+~
+~
+0 -1 20134
+S
+#20136
+Scalding Tunnels~
+The tunnel is now hot enough to boil standing water, causing pain to
+anything unfortunate enough to live here. A dim light can be seen to
+the North, as well as occasional waves of heat. Armor becomes heavier
+by the moment, the heat sapping the strength of anything living. Up
+leads to cooler tunnels.
+~
+0 2097157 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20137
+D4
+~
+~
+0 -1 20135
+S
+#20137
+Before the Gauntlet~
+The stone in this part of the passage is begining to glow, the immense
+heat almost liquifying the solid granite. Minor blisters break out on
+your flesh, and the air is thick and heavy. To the North, you can see
+a raging inferno, carved from liquid elemental fire. South lies cooler
+tunnels, which seems a positive option.
+~
+0 2097156 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20146
+D2
+~
+~
+0 -1 20136
+S
+#20138
+Painful Oblivion~
+Pain washes over you... where are you? You feel yourself unmaking, your
+memory in the real world fading. What is this place? A void between this
+universe and your own? The pain is numbing... you know you will soon be
+dead.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20138
+D1
+~
+~
+0 -1 20138
+D2
+~
+~
+0 -1 20138
+D3
+~
+~
+0 -1 20138
+D4
+~
+~
+0 -1 20138
+D5
+~
+~
+0 -1 20125
+D6
+~
+~
+0 -1 20138
+D7
+~
+~
+0 -1 20138
+D8
+~
+~
+0 -1 20138
+D9
+~
+~
+0 -1 20138
+> entry_prog 100~
+mea $n _whi The sweetness of oblivion rolls over you, trying to unmake you!
+mpdamage $n 300
+~
+> rand_prog 100~
+mea $n _whi The sweetness of oblivion rolls over you, trying to unmake you!
+mpdamage $n 300
+~
+|
+S
+#20139
+Painful Oblivion~
+Pain washes over you... where are you? You feel yourself unmaking, your
+memory in the real world fading. What is this place? A void between this
+universe and your own? The pain is numbing... you know you will soon be
+dead.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20139
+D1
+~
+~
+0 -1 20125
+D2
+~
+~
+0 -1 20139
+D3
+~
+~
+0 -1 20139
+D4
+~
+~
+0 -1 20139
+D5
+~
+~
+0 -1 20139
+D6
+~
+~
+0 -1 20139
+D7
+~
+~
+0 -1 20139
+D8
+~
+~
+0 -1 20139
+D9
+~
+~
+0 -1 20139
+> entry_prog 100~
+mea $n _whi The sweetness of oblivion rolls over you, trying to unmake you!
+mpdamage $n 300
+~
+> rand_prog 100~
+mea $n _whi The sweetness of oblivion rolls over you, trying to unmake you!
+mpdamage $n 300
+~
+|
+S
+#20140
+Painful Oblivion~
+Pain washes over you... where are you? You feel yourself unmaking, your
+memory in the real world fading. What is this place? A void between this
+universe and your own? The pain is numbing... you know you will soon be
+dead.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20140
+D1
+~
+~
+0 -1 20140
+D2
+~
+~
+0 -1 20125
+D3
+~
+~
+0 -1 20140
+D4
+~
+~
+0 -1 20140
+D5
+~
+~
+0 -1 20140
+D6
+~
+~
+0 -1 20140
+D7
+~
+~
+0 -1 20140
+D8
+~
+~
+0 -1 20140
+D9
+~
+~
+0 -1 20140
+> entry_prog 100~
+mea $n _whi The sweetness of oblivion rolls over you, trying to unmake you!
+mpdamage $n 300
+~
+> rand_prog 100~
+mea $n _whi The sweetness of oblivion rolls over you, trying to unmake you!
+mpdamage $n 300
+~
+|
+S
+#20141
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20142
+D1
+~
+~
+0 -1 20146
+D2
+~
+~
+0 -1 20145
+D3
+~
+~
+0 -1 20142
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20142
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20145
+D1
+~
+~
+0 -1 20144
+D2
+~
+~
+0 -1 20147
+D3
+~
+~
+0 -1 20142
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20143
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20141
+D1
+~
+~
+0 -1 20144
+D2
+~
+~
+0 -1 20146
+D3
+~
+~
+0 -1 20145
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20144
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20143
+D1
+~
+~
+0 -1 20148
+D2
+~
+~
+0 -1 20145
+D3
+~
+~
+0 -1 20142
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20145
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20146
+D1
+~
+~
+0 -1 20141
+D2
+~
+~
+0 -1 20144
+D3
+~
+~
+0 -1 20142
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Intense flames sear your flesh! (500) dmg!
+mpdamage $n 500
+else
+mea $n _ora The flames consume your body!
+mpslay $n
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Intense flames sear your flesh! (500) dmg!
+mpdamage $n 500
+else
+mea $n _ora The flames consume your body!
+mpslay $n
+endif
+~
+|
+S
+#20146
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20142
+D1
+~
+~
+0 -1 20145
+D2
+~
+~
+0 -1 20147
+D3
+~
+~
+0 -1 20141
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20147
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20142
+D1
+~
+~
+0 -1 20144
+D2
+~
+~
+0 -1 20141
+D3
+~
+~
+0 -1 20148
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20148
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20145
+D1
+~
+~
+0 -1 20144
+D2
+~
+~
+0 -1 20143
+D3
+~
+~
+0 -1 20149
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20149
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20145
+D1
+~
+~
+0 -1 20142
+D2
+~
+~
+0 -1 20150
+D3
+~
+~
+0 -1 20141
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20150
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097284 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20151
+D1
+~
+~
+0 -1 20142
+D2
+~
+~
+0 -1 20146
+D3
+~
+~
+0 -1 20143
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20151
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097280 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20146
+D1
+~
+~
+0 -1 20152
+D2
+~
+~
+0 -1 20145
+D3
+~
+~
+0 -1 20142
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20152
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097280 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20153
+D1
+~
+~
+0 -1 20144
+D2
+~
+~
+0 -1 20141
+D3
+~
+~
+0 -1 20143
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20153
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097280 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20154
+D1
+~
+~
+0 -1 20141
+D2
+~
+~
+0 -1 20148
+D3
+~
+~
+0 -1 20142
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20154
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097280 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20145
+D1
+~
+~
+0 -1 20141
+D2
+~
+~
+0 -1 20155
+D3
+~
+~
+0 -1 20141
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20155
+Gauntlet of Fire~
+Fire dances all around you, burning at your flesh, the heat playing
+tricks with your mind. Tunnels dance in and out of existance in this
+realm, each one as real as a mirage, yet no other option presents itself.
+Without any form of protection, you doubt you can survive long in this
+realm of fire.
+~
+0 2097280 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20156
+D1
+~
+~
+0 -1 20145
+D2
+~
+~
+0 -1 20142
+D3
+~
+~
+0 -1 20145
+> entry_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+> rand_prog 100~
+if isaffected($n) == fireshield
+mea $n _ora Painful gouts of fire burn you... (150) dmg!
+mpdamage $n 150
+else
+mea $n _ora Painful gouts of fire burn you... (300) dmg!
+mpdamage $n 300
+endif
+~
+|
+S
+#20156
+Living Shadows~
+The torrents of fire quickly die down as you are thrust from the intense
+heat. There does not seem to be any way back to the flames, which is not
+immediatley bad, but here, the darkness is overwhelming. The shadows seem
+to be piled on top of one another, thicker and thicker, untill you are
+sure they are moving. A dim light shows an exit to the North.
+~
+0 2097157 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20157
+S
+#20157
+Nearing the Beast~
+The trial of fire recesses like a bad nightmare, almost like it was a
+dream, which left you in a void of darkness. The shadows move here, and
+some seem solid, sharp, and aggressive. You only have one way to go,
+now, which is the path curving to the Northwest. The tunnel leading to
+the South only dead ends, and the shadowbeast might not be dead.
+~
+0 2097157 1 0 0 0 0 0
+D2
+~
+~
+0 -1 20156
+D7
+~
+~
+0 -1 20158
+S
+#20158
+Closer to the Darkness~
+You are no longer certain that you lie within the black spire, but the
+darkness continues to grow and become thicker. To the West, a great
+rumbling can be heard, something not associated with the natural sounds
+of a mountain. Southeast leads to a dead end...
+~
+0 2097153 1 0 0 0 0 0
+D3
+~
+~
+0 -1 20159
+D8
+~
+~
+0 -1 20157
+S
+#20159
+The Belly of the Beast~
+A great overpowering stench can be smelt here, worse than any refuse
+imaginable. The smell of one thousand dead and decaying bodies fills
+youe nose, burning your lungs. The tunnel to the East leads back to
+a maze of liquid fire, though the way is most certanily closed by now.
+Up, leads to the lord of the Spire...
+~
+0 2097153 1 0 0 0 0 0
+D1
+~
+~
+0 -1 20158
+D4
+~
+~
+0 -1 20160
+S
+#20160
+The Lair of Blacktalon~
+This chamber is truly massive, some three hundred feet wide and across,
+a natural cavern merged with the tunneling of some great beast. The
+floor of this chamber is covered with treasure, priceless amounts of
+treasure, gold, silver and platinum. The horde clould make the Gods
+themselves jealous.
+~
+0 2097153 1 0 0 0 0 0
+D4
+~
+wall~
+1063 20199 20165
+S
+#20161
+A faint trail~
+The gates of the city slowly fade behind, leaving only a faint dirt
+path through a sparse coniferous forest. To the North, a mountainous
+reigon can be seen. The path is slowly ascending, heading towards the
+bleak mountains.
+~
+0 1075838976 1 0 0 0 0 0
+D1
+~
+~
+0 -1 32645
+D7
+~
+~
+0 -1 20162
+S
+#20162
+Into the Mountains~
+The forest slowly gives way to the foothills of the bleak mountains,
+slowly ascending into cold air. The snow capped peaks can be seen to
+the Northeast, and the gates of Tyr to the Southeast. This is obviously
+the path less traveled.
+~
+0 1075838976 1 0 0 0 0 0
+D6
+~
+~
+0 -1 20163
+D8
+~
+~
+0 -1 20161
+S
+#20163
+Lost in the Mountains~
+The foothills slowly give way to bluffs and gorges, and the cover of
+the trees slowly draws away. The path grows so faint that it is impossible
+to follow any longer, and only the contour of the land guides you. To
+the Northwest lies a natural made path, and the Southwest leads back to
+Tyr.
+~
+0 1075838976 1 0 0 0 0 0
+D7
+~
+~
+0 -1 20164
+D9
+~
+~
+0 -1 20162
+S
+#20164
+Nearing a Plateau~
+The ascent becomes steeper and steeper, nearing the halfway point of
+the bleak mountains. The trees are all but non-existant, give no cover
+to any eyes which might be about. A plateau lies to the North, while
+a nature trail runs Southeast.
+~
+0 1075838976 1 0 0 0 0 0
+D0
+~
+~
+0 -1 20000
+D8
+~
+~
+0 -1 20163
+S
+#20165
+The Top of the Spire~
+The top of the spire is precariously balanced, barely any room to move
+without plumeting down the mountainside. The thunderheads are almost
+within your grasp, blast of lightning striking too close for comfort.
+The winds are strong, and the view would be awesome if not obscured by
+the dark energies surrounding the spire.
+~
+0 1073741828 1 0 0 0 0 0
+S
+#20200
+end room~
+Dregoria is copyrighted to Jeff Tatum, 1999.
+ 
+Do not make use of this area without the express permission of the
+Author.
+~
+0 1075838980 1 0 0 0 0 0
+S
+#0
+
+
+#RESETS
+M 1 20000 1 20026
+M 1 20000 2 20002
+M 1 20000 3 20021
+M 1 20000 4 20018
+M 1 20000 5 20005
+M 1 20002 1 20023
+D 0 20008 0 1
+D 0 20009 2 1
+M 1 20001 1 20011
+E 1 20001 1 1
+M 1 20004 1 20006
+O 1 20009 1 20050
+M 1 20006 1 20058
+M 1 20007 1 20057
+D 0 20070 2 2
+D 0 20069 0 2
+M 1 20008 1 20056
+M 1 20009 1 20060
+M 1 20003 1 20033
+E 1 20003 1 16
+E 1 20004 1 6
+E 1 20005 1 5
+M 1 20005 2 20033
+E 1 20005 1 5
+E 1 20004 1 6
+M 1 20005 2 20033
+O 1 20016 1 20083
+P 0 20017 1 0
+O 1 20200 1 20076
+O 1 20018 1 20076
+D 0 20076 0 1
+D 0 20093 1 1
+D 0 20093 3 1
+O 1 20019 1 20095
+O 1 20020 1 20095
+D 0 20095 1 1
+O 1 20021 1 20094
+D 0 20094 3 1
+M 1 20010 1 20077
+E 1 20022 1 16
+E 1 20023 1 12
+E 1 20024 1 6
+D 0 20077 2 1
+M 1 20013 2 20117
+M 1 20013 2 20116
+M 1 20014 1 20118
+M 1 20015 1 20119
+E 1 20025 1 28
+M 1 20016 1 20125
+E 1 20026 1 11
+E 1 20027 1 16
+M 1 20017 1 20122
+E 1 20028 1 16
+M 1 20019 1 20156
+M 1 20021 1 20062
+M 1 20018 2 20137
+E 1 20033 1 16
+M 1 20018 2 20137
+E 1 20033 1 16
+M 1 20150 1 20160
+D 0 20160 4 2
+S
+
+
+#SHOPS
+0
+
+
+#REPAIRS
+0
+
+
+#SPECIALS
+M  20001 spec_cast_undead
+M  20010 spec_cast_mage
+M  20017 spec_cast_cleric
+M  20022 spec_cast_undead
+M  20150 spec_cast_mage
+S
+
+
+#$

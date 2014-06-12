@@ -1,0 +1,7383 @@
+#AREA   Fortress of the Dreadlord~
+
+
+
+#VERSION 1
+#AUTHOR Dominus~
+
+#RANGES
+20 50 0 60
+$
+
+#RESETMSG You hear a chaotic laughter echo throughout the fortress..~
+
+#FLAGS
+20 30
+
+#ECONOMY 0 56310683
+
+#CLIMATE 2 2 2
+
+#MOBILES
+#5600
+undead skeleton~
+An undead skeleton~
+An undead skeleton arises to protect its master's keep!
+~
+Long ago having succumbed to mortal death, these skeletal remains have
+arisen to do the bidding of the dread Lord Seth.
+~
+7 66080 -1000 C
+25 15 -10 14d15+100 3d4+4
+100 4000
+112 112 0
+18 13 13 18 13 13 13
+0 0 0 0 0
+60 3 0 0 356169 356169 0
+2 0 0 1048672 2053 0 48 1
+> speech_prog p I have come to pay homage to Lord Seth~
+bow $n
+unlock north
+open north
+~
+|
+#5601
+dirty rat~
+A dirty rat~
+A dirty rat scurries in the shadows here.
+~
+It appears to be mundane, although there may be a tint of red in its eyes.
+~
+69 98840 -200 C
+6 3 30 2d4+30 2d2+1
+0 4000
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+77 3 0 0 400407 400406 0
+0 0 0 0 0 0 0 0
+> rand_prog 9~
+mpasound A slight scratching noise can be heard from the shadows.
+~
+|
+#5602
+insane jester~
+an insane jester~
+With a jingle and a giggle, a jester clothed in gaudy colors attacks! 
+~
+The macabre Jester of Lord Seth's court leaps about with an insane glint
+in his gleaming eyes.
+~
+39 4203064 -1000 S
+22 22 -35 22d10+65 2d5+11
+13666 4000
+112 112 1
+> fight_prog 10~
+say Perish you will when you confront my Lord!
+emote flips and cackles with insane glee!
+if rand(50)
+  c curse $n
+else
+  c blind $n
+endif
+~
+|
+#5603
+ghoul warrior~
+a ghoulish warrior~
+A ghoul warrior practices the dark battle skills of his master.
+~
+One of Lord Seth's physical warriors, this ghoul has devoted its unlife
+to the servitude of his Dark God.
+~
+35 8720 -1000 C
+20 18 -20 15d10+99 8d3+5
+100 4000
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+36 3 0 0 400759 8192 0
+0 0 0 0 0 0 0 2
+> fight_prog 50 ~
+rescue ghoul
+~
+|
+#5604
+ghoul warrior leader~
+the ghoul warrior leader~
+The ghoul warrior leader resides here, engaged in weapon katas.
+~
+Decaying flesh and the smell of rot are the most noticeable aspects of
+this dark fiend of Seth's!
+~
+7 8840 -1000 C
+30 23 -40 20d10+150 3d12+5
+100 4000
+112 112 1
+16 13 13 15 13 13 13
+0 0 0 0 0
+36 3 0 0 400759 400758 0
+0 0 0 0 0 0 0 2
+> fight_prog 5~
+mpecho The Ghoul Leader mutters a few incantations and prays to his god,
+mpecho Lord Seth.  The ground beneath your feet heaves as ghoul warriors
+mpecho heed their master's call!
+mpmload 5603
+mpmload 5603
+~
+|
+#5605
+spirit bartender~
+a spirit bartender~
+A spirit-formed bartender tends his very real bar.
+~
+Serving his lord even after death, his wish is to please his master's guests.
+~
+3 1049144 -1000 C
+30 26 -50 30d12+120 13d3+2
+100 4000
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+84 3 0 0 395999 395999 0
+0 0 0 0 0 0 0 0
+> greet_prog 100 ~
+bow $n
+say Greetings $n.  How may I serve thee?
+~
+> bribe_prog 1000000~
+say I hear there be two changing rooms in the maze of chaos.
+~
+> rand_prog 3~
+, quickly wipes a spot from his bartop.
+~
+> give_prog p gives you A bloodied Pikachu hide~
+say oooo i woder what i cant do with this...
+mpecho The Bartender fiddles around with the hide
+oinvoke 55006
+give breastplate $n
+say here ya go~
+|
+#5606
+ethereal hound~
+an ethereal hound~
+A hound from an ethereal plane lunges for your throat.
+~
+This hound of the ethereal plane has apparently been summoned to serve
+the guests of Lord Seth.
+~
+97 107008 -1000 C
+25 25 -33 12d20+20 2d7+9
+0 4000
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+73 3 0 0 400855 1 0
+0 0 0 0 0 0 0 0
+> fight_prog 25~
+growl
+mpecho A hound leaps for your throat with a savage growl!
+~
+|
+#5607
+phantom guest~
+a phantom guest~
+A phantom guest haunts this great dining hall.
+~
+Obviously not of this plane, this phantom seems to be contained here by
+some other power... 
+~
+3 65546 -500 C
+22 23 -15 12d12+50 2d6+3
+0 4000
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+84 3 0 0 395999 395999 0
+0 0 0 0 0 0 0 0
+> speech_prog Hello Greetings ~
+chuckle
+snicker
+~
+> all_greet_prog 100~
+if ispc($n)
+if rand(30)
+say Good evening, $n.  Why not join us for a bit to eat?
+else
+if rand(40)
+say I understand they are serving an absolutely splendid roast of deer!
+em takes a sip from its wine glass.
+else
+if rand(45)
+em shifts uncomfortably, displeased with your arrival.
+endif
+endif
+endif
+endif
+~
+|
+#5608
+golem cook~
+the flesh golem~
+A golem constructed from flesh attends to its kitchen.
+~
+Constructed from mismatched parts of living humanoids, this flesh golem
+goes about its duty of chef with great speed and celerity.
+~
+7 512 -200 C
+30 28 -80 33d14+180 4d3+7
+9999 4000
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+40 3 0 0 400289 400289 0
+0 0 0 0 0 0 0 0
+> speech_prog food eat hungry supper diner~
+say Did I hear someone mention food?!  
+drool
+~
+> rand_prog 7~
+emote sharpens his cooking blade.
+~
+|
+#5609
+spindle demon~
+a spindle demon~
+A spindle demon, black as the shadows, attacks as you enter its lair.
+~
+An evil demon has taken its favorite form, that of a large black spider.
+~
+39 532616 -1000 C
+29 29 -90 22d16+200 5d4+8
+100 4000
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 0 0 0 0 1 2
+> all_greet_prog 100~
+c 'faerie fire' $n
+cackle
+~
+|
+#5610
+ghostly mist ghost~
+a ghost~
+A ghostly mist sweeps across the room and through you.
+~
+A guest of Lord Seth in times long post, this creature lingers near to
+its place of mortal death, forever distrustful of all it encounters.
+A mistrust well-founded.
+~
+71 1573384 -1000 C
+26 26 -60 12d14+75 3d3+4
+0 4000
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+84 3 0 0 395999 395999 0
+0 0 0 0 3072 0 0 0
+> fight_prog 75~
+moan
+c 'chill touch' $n
+~
+> act_prog p from the north.~
+north
+east
+east
+north  
+~
+> rand_prog 8~
+mpasound A low wailing arises from the darkness...
+~
+> rand_prog 8~
+mpasound A chill passes suddenly through you...
+~
+> act_prog p from the south.~
+if rand(5)
+else
+  if inroom($i) == 5616
+    south
+    west
+    north
+  else
+    if inroom($i) == 5615
+      south
+      west
+      south
+    else
+      if inroom($i) == 5634
+        south
+        west
+      endif
+    endif
+  endif
+endif
+~
+> act_prog p from the east.~
+if rand(5)
+else
+  if inroom($i) == 5633
+    east
+    north
+  endif
+endif
+~
+|
+#5611
+drooling beast~
+A hideous beast~
+A drooling, hideous beast bellows for a challenge and attacks!
+~
+Formed from ... something, this dark creature oozes dark colored slime and
+goo as it roams the hall, eternally seeking souls to feast upon.
+~
+101 42628 -1000 C
+50 32 -100 400d6+2600 25d5+10
+1000 4000
+112 112 0
+18 13 13 15 13 13 13
+0 0 0 0 -10
+0 3 0 0 1 1 0
+0 0 0 0 2100224 0 75 3
+> fight_prog 75~
+drool
+c 'lightning breath'
+~
+> speech_prog hello seth greetings pain~
+moan
+mpecho The decrepit creatures mutters something about Lord Seth,
+mpecho some torturer of his and the horrible experiments it was
+mpecho forced to endure...
+em wails in pain and anguish!
+~
+> rand_prog 10~
+drool
+if inroom($i) == 5716
+  open e
+endif
+~
+|
+#5612
+duke hell~
+The Duke of Hell~
+A visiting Demon Lord wanders the dark corridors.
+~
+Mephesto, Duke of Hell, turns his head slowly as you come into view.  As he
+approaches, he conjures a dark scythe, obviously mistaking you for his meal.
+~
+37 302523020 -1000 C
+55 39 -220 1d1+12000 9d5+40
+100 4000
+112 112 1
+18 13 13 18 18 13 18
+-10 -10 -10 -10 -10
+85 0 0 0 131073 131072 4
+80 0 8 1179827 3136 0 1375739906 525319
+> death_prog 100~
+if rand(90)
+mpjunk all
+mpe A dark pit opens under the corpse of the Duke of Hell.
+mpsleep 2
+mpe A swarm of demons come forth from the depths of hell, and drag
+mpe the corpse of the Duke of Hell, to its final resting place.
+mpsleep 5
+mpe The pit closes, as if it were never there.
+mppurge corpse
+mppurge blood
+~
+> fight_prog 100~
+if rand(1)
+if isevil($n)
+mea $n _lbl The Duke of Hell growls "You have yet to discover evel!'
+mpsleep 5
+mea $n _lbl The Duke of Hell growls 'You want evil?!?'
+mpsleep 2
+mea $n _lbl The Duke of Hell growls 'I will show you evil!'
+mpstrew $n inventory 5720 5720
+mpdamage $n 300
+mea $n _ora The Duke of Hell hits you with a small piece of hell!
+endif
+else
+if rand(20)
+mpe The Duke of Hell calls forth a mighty demon from the depths of hell!
+mpsleep 8
+mpe The mighty demon sinks his teeth and claws into your flesh.
+mpdamage $n 200
+else
+if rand(20)
+mpe The Duke of Hell points his ringed hand in your direction.
+mpsleep 4
+mpe _ora Flames burst from within the center of the ring and strike you dead
+mpe _ora square in the chest!
+mpdamage all 300
+else
+if rand(20)
+if isevil($n)
+c 'dispel evil' $n
+c 'dispel evil' $n
+c 'dispel evil' $n
+endif
+else
+if rand(18)
+c gas
+c acid
+else
+if rand(1)
+mea $n _yel You catch a glimpse into the Duke of Hell's hollow eyes.
+mea $n The lonesome feeling, from the realization of what comes after,
+mea $n is more than you can take.
+mpforce $n flee
+mpat 0.$n mpforce 0.$n tremble
+endif
+endif
+endif
+endif
+endif
+endif
+~
+|
+#5613
+chaos hound~
+A guardian hound of Chaos~
+A Chaos Hound lurks here.
+~
+Formed from the very stuff of creation this creature of chaos has been
+molded by Dread Lord Seth to guard the only passage into His true domain.
+~
+39 1672862 -1000 C
+31 31 -280 33d33+850 4d9+18
+100 4000
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 0 0 2100224 1048576 3 2
+> fight_prog 50~
+growl
+~
+|
+#5614
+chaos creature~
+A creature of chaos~
+A creature composed of pure chaos roams through this chaotic maze.
+~
+Without any stable form this chaotic creature merely attacks anything
+that moves... 
+~
+101 532488 -1000 S
+28 28 -160 33d20+350 3d9+6
+100 4000
+112 112 0
+#5615
+divine protector~
+The divine protector~
+A divine minion of goodness guards this sanctuary.
+~
+Obviously an outcast in this dark fortress it would appear that this divine
+angel has been given the duty to guard this unholy Fount of Power.
+~
+1073741827 335553192 1000 C
+37 45 -300 40d40+4500 5d8+45
+100 4000
+112 112 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+3 0 0 0 131073 5 0
+0 0 0 1048627 2166080 0 1073741824 524291
+> rand_prog 40~
+cast heal $r
+cast 'restore mana' $r
+~
+> speech_prog p How do~
+tell $n If you see the dreadlord, all you need to do is tell me.
+~
+> act_prog p has entered the game.~
+mptransfer 0.$n 21000
+~
+> speech_prog I seek the dreadlord~
+mptransfer $n 5704
+~
+|
+#5616
+Tascha~
+Tascha~
+Goddess of Passion and Pleasure, Tascha resides here.
+~
+Natasha, born from Lord Seth and some nameless demon, is by far the most
+exquisite creature you have ever laid eyes on.  Yet, despite her obvious
+physical beauty, there is a sinister aspect to her unblinking scrutiny...
+~
+7 104866440 -1000 C
+48 48 -290 1d1+15000 8d4+24
+100 4000
+112 112 2
+13 13 13 13 13 13 0
+0 0 0 0 0
+0 0 0 0 131073 7 0
+0 0 0 0 2100259 0 512 524291
+> greet_prog 100~
+if isimmort($n)
+purr $n
+say How may I be of, service, to you $n?
+wink $n
+else
+purr
+hug $n
+say I can't wait to play with your soul...once I claim it for my own!
+french $n
+mpkill $n
+endif
+~
+> fight_prog 20~
+if rand(50)
+c gas
+else
+c frost $r
+c 'fire breath' $r
+endif
+~
+> death_prog 100~
+mplog I was killed by $n
+~
+> speech_prog p dreadedone~
+mpat 5812 c quantum dread
+~
+|
+#5617
+Laura~
+Laura~
+Queen Laura has stopped by to pay her Grandfather tribute.
+~
+Although not quite as beautiful as Natasha, this goddess' most striking
+feauture is that, from head to toe, she is the color of deep jade.  She
+smiles upon your entrance but makes no hostile move against you...yet.
+~
+7 100672136 -1000 C
+55 46 -230 1d1+15000 4d6+24
+100 4000
+112 112 2
+13 13 13 13 13 13 0
+0 0 0 0 0
+3 0 0 0 131073 5 0
+100 100 0 112 2099331 0 33554944 524291
+> rand_prog 75~
+mpasound The refreshing sound of a rolling surf can be heard not far away.
+~
+> greet_prog 100~
+smile $n
+say Ah ... another mortal my grandfather has sent to amuse me...
+emote laughs wickedly as she approaches you, intent upon your death!
+mpkill $n
+~
+> fight_prog 100~
+if isnpc($n)
+mpslay $n
+endif
+if rand(15)
+pout
+say You're supposed to be dead by now..
+emote raises her arms and a giant wave crashes down on you!
+mpdamage all 800
+else
+if rand(25)
+growl
+emote emits a low rumbling sound, and raises a pale skinned hand..
+c necro $r
+c necro $r
+c necro $r
+else
+if rand(35)
+c quantum
+endif
+endif
+endif
+~
+> death_prog 100~
+mplog I was killed by $n
+if rand (30)
+mpat 5719 mpmload 5612
+mpat 5719 mpoload 5898
+mpat 5719 drop hellfire
+mpat 5719 mpforce duke get hellfire
+mpat 5719 mpforce duke wear hellfire
+mpecho With her last breath, Laura summons forth the Duke of Hell.
+mpjunk strand
+else
+endif
+~
+|
+#5618
+jade golem~
+The jade golem~
+A jade golem sits upright here
+~
+Seemingly carved from a single piece of onyx, this golem is a truly fearsome
+construction.  Golden armor covers much of its bulk.  Upon this armor appear
+squirming, dark red runes.  Despite being carved from the single formation
+of onyx, it moves with catlike grace as it descends upon you!
+~
+39 339747512 -200 C
+49 49 -290 1d1+11999 3d16+5
+100 4000
+112 112 0
+18 13 13 13 13 13 14
+0 0 0 0 -30
+3 0 0 0 131073 131073 0
+85 65 0 112 2099456 0 128 3
+> act_prog flees~
+mptrans 0.$n
+c gas
+~
+> death_prog 100~
+mpoload 5626
+mpoload 5625
+
+~
+|
+#5619
+golden golem~
+A golden golem~
+A golem forged from gold advances slowly upon you.  
+~
+Covered in the dust of ages the golem advances upon you, upset that you
+have intruded upon its blissfull slumber.  Standing twenty feet at the  
+at the shoulders it wears only a white rag which is largely decayed.
+~
+39 373301896 -200 C
+50 50 -320 99d12+8000 4d13+75
+100 4000
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 5
+40 30 0 14 2100321 0 16384 3
+> fight_prog 100~
+if rand(50)
+c frost
+c frost
+else
+disarm
+disarm
+gouge
+get all
+c 'fire breath'
+endif
+~
+|
+#5620
+Doom~
+Doom~
+Eternally unsaited darkness attempts to devour your soul!
+~
+Immortal Darkness roams his realm, the abyss.  He is known for his need
+to devour souls lest he himself be devoured by the infinite abyss.
+~
+101 335585960 -400 C
+52 52 -480 1d1+17999 20d5+50
+100 4000
+112 112 1
+13 13 13 13 13 13 0
+-9 -9 -9 -9 -9
+3 0 0 0 131073 131073 0
+0 65 0 1056768 2100480 0 512 524291
+> death_prog 100~
+mpecho You stand atop the dead corpse of the essence of darkness,
+mpecho your blade covered with his blood, and your teeth clenched
+mpecho in fury. One of his hands reaches up towards you, grasping
+mpecho your leg, and he whispers quietly as he breathes his last
+mpecho breath.....
+say You are doomed $n... now and forever...
+if rand(30)
+mpoload 5843
+else
+if rand(31)
+mpoload 5844
+else
+mpoload 5669
+endif
+endif
+mplog I was killed by $n
+~
+> fight_prog 100~
+if rand(5)
+cackle
+say Your soul shall be mine!!! My hunger temporarily appeased!!!
+cast acid
+bash
+else
+if rand(10)
+snicker
+say You foolish mortals acually think it is that easy to defeat me?
+wield darkness
+disarm
+disarm
+else
+if rand(15)
+wield darkness
+say You are doomed now!! Forever mine!!
+cackle $n
+mpechoat $n Darkness circles around you!
+mpechoaround $n Darkness circles around $n!
+mpdamage $n 500
+disarm
+disarm
+else
+if rand(20)
+cackle $r
+say Your soul belongs to me now!
+c necro $n
+c necro $n
+else
+if rand(25)
+cackle $r
+say Your blood is now mine!!
+mpechoat $r Darkness' eyes narrow and glow red, cutting through your flesh.
+mpechoar $r Darkness' eyes narrow and glow red, cutting through $r's flesh.
+mpdamage $r 900
+endif
+endif
+endif
+endif
+endif
+~
+|
+#5621
+lord Pain~
+Lord Pain~
+Lord Pain, chief torturer of the Dreadlord, caresses his scalpel...
+~
+Tall, thin, gangly and pale this greasy humanoid has an obvious aura of
+insanity about him.  Blood, both caked and wet covers much of his body.
+With an insane cackle he advances, wishing perhaps to form you into
+his next masterpiece...
+~
+39 369107624 -1000 C
+51 51 -20 1d1+12000 12d3+55
+100 4000
+112 112 1
+18 13 13 13 13 13 0
+0 0 0 0 -15
+0 0 0 0 131073 9 0
+2 1 0 80 2099201 0 96 3
+> all_greet_prog 100~
+if isimmort($n)
+  grin ($n)
+  say Greetings $n, I am honored by your presence.
+else
+  cackle $n
+  say Greetings, $n, allow me to perform my art upon your physical being!!
+  c 'acid blast' $n
+  gouge
+endif
+~
+> fight_prog 50~
+, cackles with insane zeal!
+c 'energy drain' $r
+if rand(15)
+emote slashes his scalpel across your face!
+mpdamage $n 300
+gouge
+endif
+~
+> death_prog 100~
+mplog I was killed by $n
+~
+|
+#5622
+Dreadlord Fortress~
+The Dreadlord~
+The Dreadlord watches you impassionately from his throne of twisted metal.
+~
+Even while resting in his throne, the Dreadlord is a very imposing god. Dressed
+in black armor and resting a sword which seems to be moaning acros his lap,
+he regards you with utter contempt.  A aura of darkness seems to surround him
+causing his image to waver, as if he were only an illusion.  Finding yourself 
+at the heart of his fortress, doubts enter your mind, questioning the sanity
+of confronting an entity as imposing as Lord Seth.
+~
+71 374899388 -1000 C
+55 55 -300 1d1+29999 10d10+100
+10000000 4000
+112 112 1
+18 18 18 18 18 18 18
+-30 -30 -30 -30 -30
+3 0 0 0 147583 1 5
+30 50 0 2089080 2100480 0 1073746448 524291
+> all_greet_prog 100~
+if isimmort($n)
+bow $n
+say Welcome to my domain $n, how may I be of assistance.
+else
+if isnpc($n)
+mpslay $n
+else
+say Foolish mortal!!  Thou dare to enter my Throne Room!!!
+cackle $n
+say Prepare yourself, for I wish to feast upon your soul!!
+mpe The Dreadlord arises from his throne and advances upon you.
+mpe Drawing his great blade Soul Destroyer he cackles in glee as he attacks!
+mpkill $n
+endif
+endif
+~
+> act_prog brandishes~
+glare $n
+cast 'acid blast' $n
+~
+> act_prog flees~
+mpe The Dreadlords eyes burn with fiery rage, violet energy streaking after $n.
+mpat 0.$n mpechoaround $n Violet energies streak into the room striking 
+mpat 0.$n mpechoaround $n $n squarely in the chest!
+mpat 0.$n mpechoat $n Violet energies streak into the room striking you
+mpat 0.$n mpechoat $n squarely in the chest!
+mpat 0.$n mpdamage $n 400
+~
+> fight_prog 50~
+mpat 10 remove all
+mpat 10 repair all
+mpat 10 wear soul
+mpat 10 wear shroud
+mpat 10 wear serpentine
+wear decay
+~
+> fight_prog 80~
+if rand(40)
+c heal
+c heal
+c 'acid blast' $r
+c earthquake
+else
+if rand(50)
+disarm
+disarm
+wield soul
+wield soul
+c gas $r
+else
+if rand(20)
+mer $n The Dreadlord's hands glow cold blue as he works his fould magick.
+mea $n As the Dreadlord's hands glow cold blue, a chill runs through you!
+mpforce $n shiver
+c 'chill touch' $n
+c 'chill touch' $n
+mpdamage $n 600
+else
+if rand(30)
+mpe Razor sharp talons extend from the Dreadlords hands as he rakes $n's eyes.
+gouge
+else
+if rand(40)
+mpe The Dreadlord draws upon $n's reserve of power stealing it for his own.
+c 'dispel magic' $n
+c 'energy drain' $n
+else
+if rand(10)
+c heal
+mpdamage $n 1000
+endif
+endif
+endif
+endif
+endif
+endif
+~
+> fight_prog 75~
+disarm
+wield soul
+wield soul
+~
+> fight_prog 40~
+say As fun as this has been, it must end now!
+mpe The Dreadlord raises his arms, summoning the powers of darkness!
+mpdamage $n 400
+~
+> death_prog 10~
+mplog I was killed by $n
+if rand(10)
+mpe A brilliant white beam envelopes the Dreadlord's form. In a moment of
+mpe judgement, the Dreadlord is granted absolution from a higher plane. As
+mpe the Dreadlord's form begins to fade, a tear falls from his peaceful visage,
+mpe striking his dread rune sword Soul Destroyer. A glowing white aura flows
+mpe over the blade from the teardrop, leaving a tool whose purpose is to combat
+mpe the Darkness of the Realm.
+mpat 9 remove all
+mpjunk all
+mpe _whi Alpha glows briefly with a burst of light
+mpoload 5701 50
+~
+> death_prog 5~
+mplog I was killed by $n *rare pop*
+mpe A brilliant white beam envelopes the Dreadlord's form. In a moment of
+mpe judgement, the Dreadlord is granted absolution from a higher plane. As
+mpe the Dreadlord's form begins to fade, a tear falls from his peaceful visage,
+mpe striking his dread rune sword Soul Destroyer. A glowing white aura flows
+mpe over the blade from the teardrop, leaving a tool whose purpose is to combat
+mpe the Darkness of the Realm.
+mpat 9 remove all
+mpjunk all
+mpe _whi Alpha glows briefly with a burst of light
+mpoload 5852 50
+~
+> death_prog 10~
+mplog I was killed by $n
+mpe Dark tendrils snake forth from the throne of twisted metal,
+mpe enveloping the Dreadlord. As they pierce his dismembered form,
+mpe they lift his evil soul, dragging it back into the throne...
+mpe The Dreadlord cackles with insane glee, saying "I have been granted
+mpe rulership in another plane to serve a Force darker then even I.
+mpe I shall, however, leave behind a small mark on this Realm."
+mpe With a glance at his old runesword, Soul Destroyer goes under a
+mpe frightening transformation. No longer is it a blade, but rather
+mpe a shifting aura of darkness. It calls out telepathically, and
+mpe you know it is named Lanthanesthai
+mpat 9 remove all
+mpoload 5702 50
+~
+> death_prog 5~
+mplog I was killed by $n.   *rare pop*
+mpe Dark tendrils snake forth from the throne of twisted metal,
+mpe enveloping the Dreadlord. As they pierce his dismembered form,
+mpe they lift his evil soul, dragging it back into the throne...
+mpe The Dreadlord cackles with insane glee, saying "I have been granted
+mpe rulership in another plane to serve a Force darker then even I.
+mpe I shall, however, leave behind a small mark on this Realm."
+mpe With a glance at his old runesword, Soul Destroyer goes under a
+mpe frightening transformation. No longer is it a blade, but rather
+mpe a shifting aura of darkness. It calls out telepathically, and
+mpe you know it is named Lanthanesthai
+mpat 9 remove all
+mpoload 5851 50
+~
+|
+#5623
+dracolich~
+Dracolich~
+Dracolich, the Dreadlord's undead dragon mount, ponders how it shall slay you.
+~
+Standing forty feet at the shoulders, this great dracolich is the color
+and texture of black ivory.  With a majestic air he raises his long slender
+neck and roars a challenge to any whom would count themselves his enemy.
+His eyes seem to be smoldering rubies, glowing from within his great
+skull.  As he attacks, you take notice that his breath of flame
+matches his eyes in color...
+~
+39 105390728 -1000 C
+55 50 -300 1d1+19999 22d2+9
+100 4000
+112 112 1
+13 13 13 13 13 13 0
+0 0 0 0 0
+31 0 0 0 131073 131073 3
+85 65 0 143 2100480 0 40967 3
+> greet_prog 100~
+say You were foolish to enter the house of my Lord!
+say And even more foolish to dare test your might against mine!
+mpkill $n
+c gas
+~
+> act_prog p circle~
+wince
+say Such a cruel trick, $n..
+mea $n Dracolich takes a bite out of you!
+mer $n Dracolich takes a bite out of $n!
+mpdamage $n 400
+~
+> fight_prog 100~
+if rand(10)
+stun
+else
+if rand(15)
+c 'fire breath' $r
+c 'fire breath' $r
+else
+if rand(20)
+bash
+bash
+else
+if rand(25)
+endif
+mer $n Dracolich hits $n with his massive tail!
+mpdamage $n 700
+endif
+endif
+endif
+~
+> death_prog 100~
+mpoload 5854
+if rand(20)
+mpecho A pair of boots, dark as the blackest skies forms in the corpse..
+mpoload 5855
+else
+if rand(65)
+mpe Dracolich's claw is torn from his slain corpse...
+if rand(33)
+mpoload 5856
+else
+if rand(34)
+mpoload 5857
+else
+mpoload 5858
+endif
+endif
+endif
+endif
+~
+|
+#5624
+robert prisoner~
+The prisoner Robert~
+A worn, degraded prisoner of the Dreadlord is chained here.
+~
+Mumbling to himself about his name being the Almighty James, he seems to
+have lost all grasp on humanity.  The question arises whether it would
+be kinder to free this poor soul, or to slay him in the name of the
+Sisters of Mercy...
+~
+3 4195968 0 S
+50 1 1 2d2+800 1d2+1
+100 4000
+112 112 1
+> greet_prog 100~
+if isgood($n)
+  bow $n
+  say Please help me $n, I have been imprisoned here for ages!!
+  say Free me and I shall be forever in your debt!!
+else 
+  grovel $n
+  say Plese don't hurt me!!  I beg you!!  I'll do whatever you want!!!
+ cry
+  grovel $n
+endif
+~
+> death_prog 100~
+mpecho Crying out in Pain at the monotonyof existence, Robert the
+mpecho Almighty undergoes a startling transformation.  His frame
+mpecho beings to rapidly decay, until nothing remains but his two
+mpecho skeletal hands...laying joined at the wrist upon the hard
+mpecho stone floor.
+mpoload 5629 40
+~
+|
+#5625
+cleric~
+a cleric of the Dreadlord~
+A cleric to the dark Dreadlord worships here.
+~
+Dressed in robes colored black and red, a fervent cleric of Lord Seth 
+prostrates himself here.
+~
+5 512 -850 C
+27 23 -28 30d9+55 2d7+3
+999 4000
+112 112 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 1 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if isgood($n)
+snicker $n
+say You should not have entered the House of Seth!!
+mpkill $n
+else
+smile $n
+say Tell me $n, when was the last time you confessed before Lord Seth?
+endif
+~
+|
+#5626
+priest~
+a priest of Lord Seth~
+A priest of Lord Seth in enraptured in his prayer to his dark God!
+~
+Clothed in robes of black and red he wears a platinum amulet around his
+neck. The amulet appears to be five great dragons circled around a large
+dark pyramid.
+~
+39 648 -1000 S
+32 26 -50 30d14+80 3d6+5
+100 4000
+112 112 1
+#5627
+experiment~
+An experiment in darkness~
+Once humanoid, a mutated and disfigured creature lurks here.
+~
+All sanity is gone from this wretched creature.  Driven to pain and horror
+this creature is a product of Lord Seth's experiments with dark powers.
+~
+37 41472 -600 S
+22 22 -35 33d7+45 4d4+2
+100 4000
+112 112 0
+#5628
+max maximillian~
+Maximillian~
+The junkie child god, Maximillian is tripping here.
+~
+This god seems to enjoy the form of a small child.  His eyes grow yellow from
+the large amounts of drugs he takes.  He seems to be in a state of euphoria
+and takes no notice of your entry.
+~
+39 369099400 -1000 C
+50 43 -200 44d55+4000 4d8+45
+100 4000
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 6
+0 0 0 24 3555 0 0 0
+> all_greet_prog 100~
+moan
+say Ooohh!!!  The colors!!!  The beautiful colors!!! 
+say Can you see the little butterflys playing with the imps too?!?!
+emote stumbles and falls to the ground.
+~
+> fight_prog 50~
+giggle
+c 'faerie fire'
+say See!!!  The beautiful colors!!!!
+cackle
+~
+> death_prog 100~
+say No!!!  Everything is growing dim!!!  What are you doing?!!?!?!
+whine
+~
+> act_prog sethtwo~
+mpoload 5624
+mpat 5812 give green seth
+mpat 5812 mpforce seth quaff green
+mpat 5812 giggle
+~
+|
+#5629
+mage adept~
+An adept in evil~
+An adept in the powers of evil turns its attention upon you.
+~
+~
+35 8328 0 C
+35 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 18 0 17 14 0 0
+0 0 0 0 0
+0 0 0 0 1 1 0
+0 0 0 32768 0 0 2097152 16384
+#5630
+sorcerer diablerie sethsorcerer~
+The Sorcerer of Diablerie~
+A frail reptilian humanoid coldly assaults you with its magical powers.
+~
+~
+35 100663464 0 C
+45 0 0 1d1+13333 0d0+0
+0 0
+112 112 0
+18 18 18 18 18 0 18
+0 0 0 0 0
+0 0 0 0 1 1 1
+0 0 0 763 3145728 0 0 67
+> all_greet_prog 100~
+cackle $n
+if rand(15)
+c 'acid blast' $n
+endif
+~
+> fight_prog 100~
+if rand(5)
+c ill $n
+c poison $n
+c weaken $n
+c curse $n
+c 'faerie fire' $n
+chortle
+gouge
+else
+if rand(10)
+mpe The Sorcerer quaffs one of his potions and looks much stronger...
+mpat 9 c heal
+mpat 9 c heal
+mpat 9 c heal
+mpat 9 c heal
+mpat 9 c heal
+else
+if rand(25)
+say Take this!
+c 'acid blast' $r
+c 'acid blast' $r
+c 'acid blast' $r
+if rand(40)
+c quantum $r
+c quantum $r
+say ..and that!
+endif
+else
+c fireball $r
+endif
+endif
+endif
+~
+> death_prog 100~
+mplog I was killed by $n
+~
+|
+#5631
+construct evil~
+A Construct in Evil~
+A Construct in Evil casts a shadow across the room.
+~
+~
+262147 370974889 0 C
+50 0 -300 1d10+10000 15d10+85
+0 0
+112 112 0
+18 13 13 18 18 18 0
+0 0 0 0 0
+3 0 0 0 131073 9 0
+85 65 0 1572976 65567 0 512 3
+> fight_prog 100~
+if rand(50)
+cast 'acid blast'
+else
+if rand(50)
+cast 'dispel magic'
+else
+cast fireball
+endif
+~
+|
+#5632
+being purity light~
+A being of purity~
+A being of purity and light wanders the fortress.
+~
+~
+3 128 1000 C
+1 0 0 1d1+100 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 1 0 0 1 1 0
+0 0 2047 1056768 0 0 0 0
+> death_prog 100~
+mpecho The being of light is formed again by all that is good..
+mpmload 5632
+~
+|
+#5633
+being purity light~
+A being of purity~
+A being of purity and light wanders the fortress.
+~
+~
+3 128 1000 C
+1 0 0 1d1+100 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 1 0 0 1 1 0
+0 0 2047 1056768 0 0 0 0
+> death_prog 100~
+mpecho The being of light is formed again by all that is good..
+mpmload 5633
+~
+|
+#5635
+being purity light~
+A being of purity~
+A being of purity and light wanders the fortress.
+~
+~
+3 128 1000 C
+1 0 0 1d1+100 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 1 0 0 1 1 0
+0 0 2047 1056768 0 0 0 0
+> death_prog 100~
+mpecho The being of light is formed again by all that is good..
+mpmload 5635
+~
+|
+#5636
+Tohk'vet~
+Tohk'vet~
+A giant worm is here, feeding on a decaying corpse.
+~
+~
+35 37749416 -1000 C
+55 0 0 1d1+14999 1d1+60
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+70 3 0 0 1 1 2
+80 80 0 174 2100480 1 129 2
+> all_greet_prog 100~
+if rand(25)
+mpechoat $n Tev'khot sprays rocks into your face!
+mpdamage $n 500
+endif
+~
+> death_prog 100~
+mpecho Some skin from the giant worm is ripped off..
+mpoload 5802
+~
+> act_prog p grasp~
+mpecho Tohk'vet screams out in pain!
+c 'fire breath' $n
+~
+> fight_prog 100~
+if rand(10)
+mpecho the castle guard goes into a fury
+mpdamage all 600
+else
+if rand(20)
+bash
+bash
+disarm
+disarm
+bash
+bash
+else
+if rand(30)
+bash
+stun
+else
+if rand(40)
+mpechoat $n the guard sticks his fingers in your eyes
+mpechoaround $n the guard has gouged out $n's eyes!
+mpdamage $n 200
+gouge
+gouge
+gouge
+gouge
+endif
+endif
+endif
+endif
+~
+|
+#5899
+last mob~
+a newly created last mob~
+Some god abandoned a newly created last mob here.
+~
+~
+1073741825 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+#0
+
+
+#OBJECTS
+#5600
+rusted sword~
+a rusted sword~
+A rusted sword has been left here.~
+~
+5 0 8193
+0 0 0 1
+8 100 10
+#5601
+jester hat~
+a jester's hat~
+A gaudy looking jester's hat rests here.~
+~
+9 514 17
+12 0 0 0
+3 800 80
+A
+5 1
+A
+4 -1
+A
+2 3
+A
+18 4
+#5602
+dark longsword~
+a dark longsword~
+A longsword of darkest metal lies here.~
+~
+5 524292 8193
+0 0 0 1
+11 800 80
+A
+1 1
+A
+18 4
+A
+19 2
+#5603
+longsword~
+a silvery longsword with black runes~
+A silvery longsword with black runes rests here.~
+~
+5 532 8193
+0 0 0 1
+9 1200 120
+A
+1 1
+A
+12 35
+A
+19 5
+A
+18 4
+#5604
+katana~
+a katana~
+A ivory hilted katana~
+~
+5 532 8193
+0 0 0 3
+15 1900 190
+A
+1 3
+A
+18 3
+#5605
+club~
+a wooden club~
+A slim and short club rests here.~
+~
+5 1 8193
+0 0 0 7
+15 1399 139
+#5606
+bracelet ruby~
+a bracelet of ruby~
+An astounding bracelet cut from a single ruby rests here.~
+~
+9 2 4097
+9 0 0 0
+6 488000 48800
+A
+4 1
+A
+31 1
+A
+13 10
+A
+25 1
+A
+24 -1
+#5607
+cleaver~
+a fine cleaver~
+A finely made meat cleaver lies here.~
+~
+5 512 8193
+0 0 0 1
+15 2123 212
+A
+1 3
+A
+18 3
+A
+19 3
+#5609
+collar~
+a fine mesh collar~
+A collar constructed from a finely meshed metal lies here.~
+~
+9 32 5
+13 0 0 0
+6 10233 1023
+A
+17 -10
+A
+18 3
+A
+12 -15
+A
+13 -10
+#5610
+vial potion vortex~
+a vial of chaos~
+A vial containing concentrated chaos lies here.~
+~
+10 3 1
+45 -1 -1 -1
+3 434 43
+'sanctuary' 'protection' 'stone skin'
+#5611
+beam light~
+beam of Neutrality~
+A beam of black and white energy hovers here.~
+~
+5 3 8193
+0 0 0 11
+1 19333 1933
+A
+18 4
+A
+19 4
+A
+17 -25
+#5612
+scythe~
+scythe of Eternal Damnation~
+A nine foot scythe with dark runes upon it rests here.~
+~
+5 532 8193
+0 0 0 1
+25 24933 2493
+A
+13 40
+A
+17 -25
+A
+24 8
+A
+19 6
+A
+18 6
+A
+26 4
+#5613
+thin dagger~
+a very thin dagger~
+A dagger with a jade handle rests here.~
+~
+5 2 8193
+0 0 0 11
+2 24000 2400
+A
+18 4
+A
+19 8
+A
+2 4
+A
+27 1
+A
+17 -10
+#5614
+dagger~
+a dual bladed dagger~
+A dagger who's blade is divided into two lies here.~
+~
+5 6 8193
+0 0 0 11
+4 24044 2404
+A
+18 3
+A
+19 8
+A
+2 3
+A
+13 25
+#5615
+void darkness~
+darkness~
+A thin beam of darkness three feet long hovers here.~
+~
+5 517 8193
+0 0 0 11
+1 23434 2343
+A
+12 50
+A
+19 9
+A
+18 9
+A
+13 50
+> rand_prog 3~
+if ispc($r)
+  mpechoat $r Kill them All and you can possess My power!
+endif
+~
+|
+#5616
+chain shirt~
+a fine meshed chainmail shirt~
+A chainmail shirt made of finely meshed mithril rests here.~
+~
+9 0 9
+13 13 0 0
+12 14144 1414
+A
+17 -15
+A
+3 3
+A
+2 3
+A
+26 8192
+A
+18 4
+A
+19 4
+A
+12 100
+#5617
+shroud~
+a shroud of darkness~
+A shroud of darkness hovers in the air here.~
+~
+9 531 1025
+0 0 0 0
+1 43003 4300
+A
+24 -7
+A
+12 75
+A
+13 75
+A
+18 8
+A
+19 8
+#5618
+soul destroyer~
+Soul Destroyer~
+A withering black runesword rests here, moaning in hunger for souls!~
+~
+5 540 8193
+0 0 0 11
+2 54494 5449
+A
+24 -6
+A
+17 -25
+A
+12 100
+A
+13 100
+A
+18 11
+A
+19 11
+#5619
+key~
+the Gate Key~
+The Gate Key lies here.~
+~
+18 4 16365
+0 0 0 0
+1 0 0
+#5620
+key inscribed~
+an inscribed key~
+A dark red key with inscriptions lies here.~
+~
+18 524292 1
+0 0 0 0
+1 0 0
+#5621
+razor scalpel~
+a razor sharp scalpel~
+A mithril scalpel lies here.~
+~
+5 534 8193
+0 12 3 1
+1 0 0
+A
+18 10
+A
+19 9
+A
+13 80
+A
+12 20
+> wear_prog 10~
+mpecho $n slips while wielding $O, gashing open a wrist as the
+mpecho blood flows freely through this wicked wound.
+mpdamage $n 200
+~
+|
+#5622
+violet potion~
+a dark violet potion~
+A dark violet potion lies here~
+~
+10 2 1
+48 -1 -1 -1
+1 0 0
+'curse' 'blindness' 'poison'
+#5623
+bubbling potion~
+a bubbling red potion~
+A bubbling red potion lies here.~
+~
+10 2 1
+48 -1 -1 -1
+1 0 0
+'create food' 'create spring' 'heal'
+#5624
+green potion~
+a glowing green potion~
+A glowing green potion lies here.~
+~
+10 2 1
+48 -1 -1 -1
+1 0 0
+'heal' 'heal' 'heal'
+#5625
+golden plate~
+Golden Plate~
+Gold plate mail armor with red runes upon its surface lies here.~
+~
+9 534 9
+15 15 0 0
+23 0 0
+A
+13 100
+A
+12 100
+A
+2 2
+A
+18 8
+A
+19 8
+#5626
+golden shield~
+Golden Shield~
+A gold shield with red runes upon its surface lies here.~
+~
+9 534 513
+15 15 0 0
+16 0 0
+A
+17 -15
+A
+18 6
+A
+12 55
+A
+27 16
+A
+19 5
+A
+13 75
+#5627
+staff undeath~
+the Staff of the Four Horsemen~
+A dark rune staff floats here, emanating a black auro.~
+~
+4 528 16385
+55 12 12 -1
+10 0 0
+'acid blast'
+A
+1 2
+A
+23 -30
+#5628
+platinum symbol holy~
+the holy symbol of Lord Seth~
+A platinum amulet shaped into five dragons circleing a dark pyramind lies here.~
+~
+9 2708 5
+12 0 0 0
+8 0 0
+A
+3 2
+A
+4 1
+A
+12 30
+#5629
+chains binding eternal james~
+eternal Binding~
+Banded skeletal hands lay upon the ground here.~
+~
+9 3 5
+13 13 0 0
+1 0 0
+A
+14 -500
+A
+19 -60
+A
+18 -60
+A
+1 -20
+A
+2 -20
+A
+5 -20
+> get_prog 100~
+if name($n) == Dreadlord
+mpecho _cya The Dreadlord lets loose a howl of unequaled anguish
+mpecho _cya and sorrow as he wears eternal binding around his neck!
+mpecho _red Eternal binding coils itself about the Dreadlord's neck, his
+mpecho _red clawed hands tearing at it in vain as he screams curses
+mpecho _red and begins to scream in frustration!
+mpforce $n wear binding
+else
+mpforce $n wear binding
+endif
+~
+|
+#5630
+mace~
+dark crystal mace~
+A mace of dark crystal rests here.~
+~
+5 532 8193
+0 5 0 0
+9 0 0
+A
+4 2
+A
+12 50
+A
+24 -15
+#5631
+mace~
+an iron mace~
+A mace of cold iron lies here.~
+~
+5 0 8193
+10 5 0 0
+5 0 0
+#5632
+treasure pile piles coin gold~
+a pile of gold~
+Many piles of gold litter this room.~
+~
+20 0 1
+2345834 0 0 0
+1 2345834 234583
+#5634
+fount~
+the Fount of Power~
+The Fount of Power offers its life giving waters here.~
+~
+25 0 0
+90 90 0 0
+1 0 0
+#5635
+pentacle~
+the red pentacle~
+A glowing red pentacle floats in the nothingess of the abyss.~
+~
+37 0 0
+65536 5809 0 0
+1 0 0
+#5636
+key black obsidian~
+a black obsidian key~
+A black obsidian key lies here.~
+~
+18 0 1
+0 0 0 0
+1 0 0
+#5650
+soul destroyer~
+Soul Destroyer~
+A withering black runesword rests here, moaning in hunger for souls!~
+~
+5 540 8193
+12 14 3 11
+1 100000 100000
+A
+24 -6
+A
+17 -25
+A
+12 100
+A
+13 100
+A
+18 13
+A
+19 13
+#5651
+shroud darkness~
+A shroud of darkness~
+A shroud of darkness hovers in the air here.~
+~
+9 532 1025
+14 14 0 0
+1 600000 60000
+A
+18 9
+A
+19 9
+A
+13 90
+A
+12 90
+A
+26 32768
+#5669
+aura phantasm~
+Aura of the Phantasm~
+A shifting shadowy aura flits about.~
+~
+9 528 1025
+14 14 0 0
+1 200000 20000
+A
+31 1
+A
+19 6
+A
+18 5
+A
+13 75
+A
+12 100
+> sac_prog 100~
+mpoload 5843
+mpat $n drop harness
+~
+|
+#5700
+glyph darkness cursedglyph~
+glyph of Darkness~
+A black metal coin inlaid with shimmering red runes lies here.~
+~
+2 0 16385
+50 -1 -1 -1
+1 0 0
+'blindness' 'curse' 'weaken'
+#5701
+genesis~
+Genesis~
+A shimmering white runesword rests here, waiting for a Champion to claim it.~
+~
+5 1099 8193
+0 19 2 11
+1 1 0
+A
+24 -7
+A
+17 -20
+A
+26 4
+A
+13 125
+A
+12 120
+A
+18 18
+A
+19 18
+> wear_prog 100~
+mpecho A chorus of angelic voices briefly sing out as $n wields $I!
+~
+> remove_prog 100~
+mpecho The glowing aura of $I dims upon $n's decision it is not useful.
+~
+> sac_prog 100~
+mplog Sacrificed by $n
+if rand(66)
+mpecho $n kneels down, in abject worship of the Gods of Good, invoking
+mpecho an ancient prayer known only to the most holy of adventurers.
+mpecho $I undergoes a startling transformation in response to $n's needs.
+mpecho Its form softens and shrinks, slowly transforming itself into
+mpecho A veil glowing with angelic power!
+mpoload 5703
+mpat $n drop facade
+mplog $n popped a Facade of Deific Fury
+endif
+~
+|
+#5702
+oblivion~
+Oblivion~
+A shifting form of darkness and evil lies here.~
+~
+5 536 8193
+0 19 2 11
+1 1 0
+A
+17 -25
+A
+24 -10
+A
+27 2
+A
+32 85
+A
+30 246
+A
+13 130
+A
+12 110
+A
+18 17
+A
+19 17
+> greet_prog 100~
+if isgood($n)
+if rand(50)
+mpecho $I howls a cry of dark desire as $n enters the room.
+endif
+endif
+~
+> wear_prog 100~
+mpecho The skies darken as $n wields $I.
+~
+> remove_prog 100~
+mpecho The aura of terror surrounding $n fades away.
+~
+> sac_prog 100~
+mplog Sacrificed by $n
+if rand(66)
+mpecho Dark tendrils of energy flow from the dematerializing blade, seeping
+mpecho $n's soul. $n's eyes grow dark as the Dreadlord gives a portion of his
+mpecho evil essence to this host.
+mpoload 5810
+mplog $n popped an Unhallowed Eminence
+mpat $n drop unhallowed
+endif
+~
+|
+#5703
+facade deific fury~
+Facade of Deific Fury~
+A veil formed from the love and blessings of the gods glows here.~
+~
+9 1025 17
+15 15 0 0
+1 1 0
+A
+24 -8
+A
+12 80
+A
+13 80
+A
+18 9
+A
+19 9
+A
+26 8192
+A
+57 3
+> wear_prog 100~
+mpecho As $n dons the $I an aura of bright energy surrounds $m.
+~
+> remove_prog 100~
+mpecho $n's quest to purge the land of evil ends as $e removes $I.
+~
+|
+#5750
+crystal pipe~
+a shimmering crystal pipe~
+A shimmering crystal pipe lies on the ground here.~
+~
+30 0 16385
+90 0 0 0
+1 0 0
+> drop_prog 100~
+opecho $n bows in homage as he presents $I to a trusted and honored friend.
+~
+|
+#5751
+kind bud~
+fresh kind bud~
+Some god dropped a newly created kind bud here.~
+~
+32 0 1
+30 30 0 0
+1 0 0
+#5775
+decay impropriety~
+Decay of Impropriety~
+A murky red aura hovers here.~
+~
+1 528 16385
+0 0 -1 0
+1 500000 50000
+A
+18 4
+A
+19 4
+A
+13 50
+A
+12 50
+> damage_prog 100~
+if ispc($n)
+mpoload 5775
+mpat 0.$n drop decay
+mpforce $n get decay
+mpforce $n wear decay
+endif
+~
+|
+#5776
+serpentine sussuration~
+Serpentine Sussuration~
+A whisper seems to float about on the wind here.~
+~
+9 528 65537
+15 15 0 0
+1 0 0
+A
+18 6
+A
+19 6
+A
+13 50
+A
+12 50
+#5777
+a dark black potion~
+a dark black potion~
+A dark black potion of clan Defiance~
+~
+10 8192 1
+65 -1 -1 -1
+1 0 0
+'protection' 'eldritch sphere' 'shockshield'
+#5800
+vial black liquid~
+a vial of black liquid~
+A vial of black liquid lies here~
+~
+10 0 1
+0 -1 -1 -1
+1 0 0
+'sanctuary' 'fireshield' 'shockshield'
+#5801
+potion violet~
+a violet potion~
+A violet potion lies here.~
+~
+10 0 1
+50 -1 -1 -1
+1 0 0
+'heal' 'heal' 'heal'
+#5802
+twisted skin worm~
+Twisted Skin of the Worm~
+A tangled mass of worm skin lies here.~
+~
+9 393744 4097
+13 13 0 0
+3 300 30
+A
+18 3
+A
+19 4
+A
+13 15
+A
+20 -3
+#5810
+unhallowed eminence~
+Unhallowed Eminence~
+A dark cloud hovers in the air nearby, enticing you to examine further.~
+~
+9 512 17
+15 15 0 0
+1 1 0
+A
+17 -25
+A
+24 -10
+A
+12 50
+A
+13 100
+A
+18 10
+A
+19 10
+> wear_prog 100~
+mpecho $n is surrounded by a black aura as $e wears $I.
+~
+> remove_prog 100~
+mpecho Light returns to the world as $n removes $I.
+~
+|
+#5837
+Matrix Desolution~
+Matrix of Desolution~
+A spirling black form of despair hovers here.~
+~
+9 532 16385
+15 15 0 0
+1 0 100000
+A
+19 6
+A
+18 6
+A
+13 60
+A
+24 -10
+A
+27 1048576
+A
+12 125
+#5839
+Inferno~
+Inferno~
+An elongated beam of pure darkness hovers before you.~
+~
+5 541 8193
+0 14 3 11
+1 686868 68686
+A
+17 -30
+A
+24 -8
+A
+2 1
+A
+12 70
+A
+13 85
+A
+18 9
+A
+19 11
+A
+27 2
+#5842
+strand jade polished~
+a strand of polished jade~
+Sleeves of made of a Deep Green Jade Lays here on the Floor.~
+~
+9 528 257
+14 14 0 0
+5 470000 47000
+A
+18 5
+A
+19 7
+A
+27 1048576
+A
+13 50
+A
+2 -2
+A
+26 -2147483648
+#5843
+harness infernal enslavement~
+Harness of Infernal Enslavement~
+A collar of the abyss, and eternal servitude lies here, gleaming brightly~
+~
+9 528 5
+15 15 0 0
+4 200000 50000
+A
+18 4
+A
+19 4
+A
+31 2
+A
+13 30
+A
+27 8192
+> sac_prog 100~
+mpoload 5844
+mpat $n drop inevitable
+~
+|
+#5844
+inevitable death~
+Inevitable Death~
+The clawed hand of darkness lies here, glowing with an aura of terror and hatred~
+~
+9 528 129
+14 14 0 0
+4 200000 20000
+A
+18 4
+A
+19 7
+A
+13 25
+A
+31 -1
+A
+17 -10
+> sac_prog 100~
+mpoload 5669 
+mpat $n drop aura
+~
+|
+#5845
+stars helm ancient~
+helm of the stars~
+An ancient helm lies here.~
+~
+9 528 17
+20 20 0 0
+1 0 0
+A
+18 4
+A
+19 5
+A
+13 25
+A
+26 8
+#5851
+oblivion~
+Oblivion~
+A shifting form of darkness and evil lies here.~
+~
+5 536 8193
+12 20 2 6
+1 1 0
+A
+17 -25
+A
+24 -10
+A
+27 2
+A
+32 85
+A
+30 246
+A
+13 130
+A
+12 110
+A
+18 17
+A
+19 17
+> greet_prog 100~
+if isgood($n)
+if rand(50)
+mpecho $I howls a cry of dark desire as $n enters the room.
+endif
+endif
+~
+> wear_prog 100~
+mpe _cya The skies darken as $n wields $I.
+~
+> remove_prog 100~
+mpecho The aura of terror surrounding $n fades away.
+~
+> sac_prog 100~
+mplog Sacrificed by $n
+if rand(88)
+mpecho Dark tendrils of energy flow from the dematerializing blade, seeping
+mpecho $n's soul.  $n's eyes gro wdark as Seth gives a portion of his
+mpecho evil essence to this host.
+mpoload 5810
+mplog $n popped an Unhallowed Eminence
+mpat $n drop unhallowed
+endif
+~
+|
+#5852
+genesis~
+Genesis~
+A shimmering white runesword rests here, waiting for a Champion to claim it.~
+~
+5 1099 8193
+0 20 2 6
+1 1 0
+A
+24 -7
+A
+17 -20
+A
+26 4
+A
+13 125
+A
+12 120
+A
+18 18
+A
+19 18
+> wear_prog 100~
+mpecho A chorus of angelic voices briefly sing out as $n wields $I!
+~
+> remove_prog 100~
+mpecho The glowing aura of $I dims upon $n's decision it is not useful.
+~
+> sac_prog 100~
+mplog Sacrificed by $n
+if rand(88)
+mpecho $n kneels down, in abject worship of the Gods of Good, invoking
+mpecho an ancient prayer known only to the most holy of adventurers.
+mpecho $I undergoes a startling transformation in response to $n's needs.
+mpecho Its form softens and shrinks, slowly transforming itself into
+mpecho A veil glowing with angelic power!
+mpoload 5703
+mpat $n drop facade
+mplog $n popped a Facade of Deific Fury
+endif
+~
+|
+#5853
+brand forsaken blackened bracer~
+The brand of the Forsaken~
+A black bracer lies here, burning the ground it lays upon.~
+~
+9 6 4097
+15 15 0 0
+1 666 66
+A
+18 4
+A
+19 4
+A
+13 25
+A
+12 25
+A
+1 1
+#5854
+blackhole~
+Blackhole~
+A empty void is here, black as the darkest part of space.~
+~
+15 84 1
+10000 0 0 0
+1 1 0
+#5855
+boots midnight~
+Boots of Midnight~
+A pair of boots, black as midnight lie here.~
+~
+9 1073873428 65
+13 13 0 0
+1 1 0
+A
+18 1
+A
+19 6
+A
+13 25
+A
+12 10
+A
+1 -1
+A
+31 -1
+#5856
+dracolich claw~
+Claw of Dracolich~
+A giant black claw lies here.~
+~
+5 2124 8193
+0 19 2 5
+1 0 0
+A
+18 12
+A
+19 12
+A
+13 100
+A
+12 120
+A
+3 2
+A
+31 1
+#5857
+claw dracolich~
+Claw of Dracolich~
+A giant black claw lies here.~
+~
+5 588 8193
+0 19 2 5
+1 0 0
+A
+18 12
+A
+19 12
+A
+13 100
+A
+12 120
+A
+3 2
+A
+31 1
+#5858
+claw dracolich~
+Claw of Dracolich~
+A giant black claw lies here.~
+~
+5 1100 8193
+0 19 2 5
+1 0 0
+A
+18 12
+A
+19 12
+A
+13 100
+A
+12 120
+A
+3 2
+A
+31 1
+#5898
+hellfire ring~
+Ring of Hellfire~
+A hole in the ground has opened, sending forth a ring of Hell fire.~
+~
+9 25298517 3
+12 12 0 0
+1 20000 2000
+A
+12 60
+A
+18 8
+A
+26 33554432
+A
+13 80
+A
+25 -2
+A
+1 1
+A
+19 8
+> wear_prog 100~
+if ispc($n)
+mea $n _red The flesh is burned away from your finger as the Hellfire slips
+mea $n _red into place.
+mer $n _red The flesh is burned away from $n's finger as the Hellfire slips
+mer $n _red into place.
+mpdamage $n 100
+mpdelay $n 7
+mpsleep 15
+mea $n The room starts to fade, as the pain increases.
+mer $n $n looks pale and faint.
+mpdamage $n 100
+mpsleep 15
+mea $n Your last waking moments are spent in shear agony.
+mpdamage $n 100
+mpsleep 10
+mea $n You pass out from the pain.
+mer $n $n slips into a light comma.
+mpdamage $n 100
+mpsleep 40
+mea $n _whi A bright blinding light, awakens you, and you slowly climb to your
+mea $n _whi feet.
+mer $n $n slowly awakens and climbs to $s feet.
+mpsleep 5
+mea $n As you slowly regain your senses, you realize that in all your life,
+mea $n you have never felt such pain.
+endif
+~
+> remove_prog 100~
+mea $n The sheer heat of the Hellfire is more than you can handle.
+mpdamage $n 100
+mpforce $n drop Hellfire
+mpdelay $n 2
+mpe _ora A dark pit opens where the Hellfire landed.
+mpsleep 2
+mpe A swarm of demons comes forth, and takes the Hellfire back into the
+mpe depths of Hell.
+mpsleep 2
+mpdamage all 100
+mpe As the pit starts to close, fire flares out, striking you.
+mppurge hellfire
+~
+|
+#5899
+last object~
+a newly created last object~
+Some god dropped a newly created last object here.~
+~
+13 1073741824 0
+0 0 0 0
+1 0 0
+#0
+
+
+#ROOMS
+#5600
+A Mist-Covered Path in a Dark Forest~
+The thin dirt path runs through a dark, mist filled forest.  A low moan
+seems to accompany the wind as it passes through the shadowy tree tops.  The
+mist is causing a light film of water to rest upon your body, although there
+seems to be a red tint to this liquid...
+~
+0 1025 3
+D0
+The narrow path continues into the darkness...
+~
+~
+0 -1 5601
+D2
+Inside the cave
+~
+rock~
+1 -1 6022
+S
+#5601
+A Mist-Covered Path in a Dark Forest~
+The thin dirt path runs through a dark, mist filled forest.  A low moan
+seems to accompany the wind as it passes through the shadowy tree tops.  The
+mist is causing a light film of water to rest upon your body, although there
+seems to be a red tint to this liquid...
+~
+0 1 3
+D1
+The narrow path continues into the darkness...
+~
+~
+0 -1 5602
+D2
+The narrow path continues into the darkness...
+~
+~
+0 -1 5600
+S
+#5602
+A Mist-Covered Path in a Dark Forest~
+The thin dirt path runs through a dark, mist filled forest.  A low moan
+seems to accompany the wind as it passes through the shadowy tree tops.  The
+mist is causing a light film of water to rest upon your body, although there
+seems to be a red tint to this liquid...
+~
+0 1 3
+D2
+The narrow path continues into the darkness...
+~
+~
+0 -1 5603
+D3
+The narrow path continues into the darkness...
+~
+~
+0 -1 5601
+S
+#5603
+A Mist-Covered Path in a Dark Forest~
+The thin dirt path runs through a dark, mist filled forest.  A low moan
+seems to accompany the wind as it passes through the shadowy tree tops.  The
+mist is causing a light film of water to rest upon your body, although there
+seems to be a red tint to this liquid...
+~
+0 1 3
+D0
+The narrow path continues into the darkness...
+~
+~
+0 -1 5602
+D1
+The narrow path continues into the darkness...
+~
+~
+0 -1 5604
+S
+#5604
+A Mist-Covered Path in a Dark Forest~
+The thin dirt path runs through a dark, mist filled forest.  A low moan
+seems to accompany teh wind as it passes through the shadowy tree tops.  The
+mist is causing a light film of water to rest upon your body, although there
+seems to be a red tint to this liquid...
+~
+0 1 3
+D0
+The narrow path continues into the darknesss...
+~
+~
+0 -1 5605
+D3
+The narrow path continues into the darkness...
+~
+~
+0 -1 5603
+S
+#5605
+A Clearing Cloaked in Shadows~
+You have come upon a clearing in this dreary forest.  The edges seem to 
+be just barely lost in the flickering shadows.  The ground is littered with 
+the twisted remains of countless mortals, slain in meaningless combat.  The
+evils seems to be almost tangible in this place, causing the hair on your
+neck to rise.
+~
+0 2097161 2
+D0
+A dark gate forms from the shadows...
+~
+barrier~
+1031 5619 5606
+D2
+The narrow path continues into the darkness...
+~
+~
+0 -1 5604
+S
+#5606
+Dark Gate of the Dreadlord's Fortress~
+You stand before the keep of the Dreadlord. The entire structure is built
+seemingly from black marble.  Dark vines grow wild upon the walls,
+climbing a full one-hundred feet to the battlements.  An eerie silence
+pervades the atmosphere, and flickering shadows seem to harbor menacing
+creatures ... though from the history of this place, little is as it would
+seem... 
+~
+0 2105344 2
+D0
+Through the dark gate.
+~
+gate~
+1025 -1 5607
+> rand_prog 80~
+mpecho A cold breeze howls from around the battlements.
+close n
+~
+|
+S
+#5607
+Foyer of the Fortress of the Dreadlord~
+Blocks of a dark marble form square columns which tower into the blackness
+overhead.  Footsteps echo loudly with an unnerving distant resonance as you
+move forward, and you notice that there oddly is no settled dust upon the
+floor, something you would expect from an apparently deserted fortress...
+Great archways lift the darkness along both the eastern and western walls,
+while the howling wind of the courtyard brings chill air from the south.
+~
+0 2105353 0
+D1
+A hallway in Lord Seth's Fortress
+~
+~
+0 -1 5617
+D2
+Back through the dark gate
+~
+gate~
+1025 -1 5606
+D3
+A hallway in Lord Seth's Fortress
+~
+~
+0 -1 5608
+S
+#5608
+A Hallway Within the Fortress~
+Constructed from the same dark marble seen elsewhere in the fortress, its
+ends hidden in the shadows, the hallway stretches onward to both the east
+and west.  A thick wooden door is recessed into the northern wall, a low
+moan emanating from behind its frame.
+~
+0 2105353 0
+D0
+Too dark to tell
+~
+~
+3 -1 5616
+D1
+A hallway in Lord Seth's Fortresss
+~
+~
+0 -1 5607
+D3
+A hallway in Lord Seth's Fortress
+~
+~
+0 -1 5609
+S
+#5609
+A Hallway Within the Fortress~
+Constructed from the same dark marble seen elsewhere in the fortress, its
+ends hidden in the shadows, the hallway stretches onward to both the east
+and west.  A plain wooden door stands ajar on the northern wall.
+~
+0 2105353 0
+D0
+Too dark to tell
+~
+~
+3 -1 5615
+D1
+A hallway in Lord Seth's Fortress
+~
+~
+0 -1 5608
+D3
+A hallway in Lord Seth's Fortress
+~
+~
+0 -1 5610
+S
+#5610
+A Hallway Within the Fortress~
+The hallway continues onward, stretching far to the east while the dim
+light to the west fades to total darkness.  Thick yet plain wooden doors
+lie on the northern and southern walls, and from behind the former can
+be heard a faint giggle, as if some child were being amused.
+~
+0 2105353 0
+D0
+Too dark to tell
+~
+~
+3 -1 5612
+D1
+A hallway in Lord Seth's Fortress
+~
+~
+0 -1 5609
+D2
+Too dark to tell
+~
+~
+3 -1 5613
+D3
+The end of the hallway
+~
+~
+0 -1 5611
+S
+#5611
+The Hallway's End~
+The hallway ends abruptly here.  Covering the western wall is a mural of
+dark legions marching through the countryside, while a great figure mounted
+upon an undead dragon hovers above the expansive army composed entirely of
+creatures of darkness and death.
+~
+0 2105353 0
+D1
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5610
+S
+#5612
+A Small Makeshift Bedroom~
+A small pile of stuffed animals and dolls is piled in the northwestern
+corner of this room.  Shredded stuffed bears and decapitated dolls along
+with earless bunnies form a grisly, deeply disturbing scene.  Upon closer
+inspection one of the larger dolls seems to be moving.  Indeed, this doll
+in the form of a jester is licking a dagger, grinning icily at you...
+~
+0 2105353 0
+D2
+A hallway in Lord Seth's fortress
+~
+~
+3 -1 5610
+S
+#5613
+A Barren Room~
+A smallish chamber, perhaps fifteen by fifteen and barren of any usable
+furnishings.  The only features of interest are a small door which hangs
+half open and half off its hinges on the western wall.  The cold air of
+the main hallway comes through the larger wooden door to the north.
+~
+0 2105353 0
+D0
+A hallway in Lord Seth's fortress
+~
+~
+3 -1 5610
+D3
+Too dark to tell
+~
+~
+3 -1 5614
+S
+#5614
+A Small Closet~
+This small closet is completely empty.  
+~
+0 2105353 0
+D1
+A small room
+~
+~
+3 -1 5613
+> entry_prog 100~
+mpecho The door slams shut behind you!
+close e
+~
+|
+S
+#5615
+A Barren Chamber~
+Within the confines of the large fortress, beyond the empty hallways and
+cold columns of black marble, you find a tucked away room.  A disturbing,
+eerie silence fills the air, broken only by your own hollow steps echoing
+through this empty space once used as a resting chamber for some visitor
+unfortunate enough to have been the Dreadlord's guest.
+~
+0 2105353 0
+D2
+A hallway in Lord Seth's fortress
+~
+~
+3 -1 5609
+S
+#5616
+A Barren Chamber~
+Within the confines of the large fortress, beyond the empty hallways and
+cold columns of black marble, you find a tucked away room.  A disturbing,
+eerie silence fills the air, broken only by your own hollow steps echoing
+through this empty space once used as a resting chamber for some visitor
+unfortunate enough to have been Seth's guest.
+~
+0 2105353 0
+D2
+A hallway in Lord Seth's fortress
+~
+~
+3 -1 5608
+S
+#5617
+A Corner in the Hallway~
+Constructed from the same dark marble seen elsewhere in the fortress,
+the hallway here turns quickly to the north.  A large metal door juts
+from the eastern wall, and from beyond can be heard the unmistakable
+sounds of combat ... and unidentifiable shouts of unknown creatures.
+~
+0 2105353 0
+D0
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5620
+D1
+Too dark to tell
+~
+~
+1027 -1 5618
+D3
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5607
+S
+#5618
+A Chamber of Training~
+As you step into the room, your confusion is swept away as the sights and
+smells of a training chamber assault your senses.  Rotting limbs lay along
+the walls, and splatters of foul green blood criss-cross the walls.  The
+main hallway lies back to the west through a large metal door, while a
+smaller such door is set into the northern wall.  Either choice might be
+acceptable should the ghouls commence a practice of their art upon you.
+~
+0 2105353 0
+D0
+Too dark to tell
+~
+~
+1027 -1 5619
+D3
+A corner in the hallway
+~
+~
+1027 -1 5617
+S
+#5619
+The Leader's Quarters~
+A large wooden table fills the space in this room.  As with the the walls
+around you, much of the surface area of the table is dominated by quite
+detailed maps of the Realms in their entirety.
+~
+0 2105353 0
+D2
+Training grounds
+~
+~
+1027 -1 5618
+S
+#5620
+A Hallway Within the Fortress~
+The dark marble hallway continues on to the north and south, and from
+somewhere up ahead to the north emanates a slight breeze.
+~
+0 2105353 0
+D0
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5621
+D2
+A corner in the hallway
+~
+~
+0 -1 5617
+S
+#5621
+A Hallway Within the Fortress~
+The dark marble hallway drones onward to the north and back to the south.
+~
+0 2105353 0
+D0
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5622
+D2
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5620
+S
+#5622
+A Hallway Within the Fortress~
+The dark marble hallway drones onward to the north and back to the south.
+~
+0 2105353 0
+D0
+A corner in the hallway
+~
+~
+0 -1 5623
+D2
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5621
+S
+#5623
+A Corner in the Hallway~
+Here your light reveals a sharp turn in the black stone, as the hallway
+now travels either south or west.  A high door plated in gold dominates
+the eastern wall, and a set of of wide double doors leads to the north.
+~
+0 2105353 0
+D0
+Too dark to tell
+~
+~
+1027 -1 5628
+D1
+Too dark to tell
+~
+~
+1027 -1 5629
+D2
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5622
+D3
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5624
+S
+#5624
+A Hall Within the Fortress~
+The dark marbled walls continue ever onward to both the east and west.
+~
+0 2105353 0
+D1
+A corner in the hallway
+~
+~
+0 -1 5623
+D3
+A corner in the hallway
+~
+~
+0 -1 5625
+S
+#5625
+A Corner in the Hallway~
+The dark stone turns here, continuing either east or south.  Thick wooden
+doors stand on both the northern and western walls, and from behind one
+of these can be heard a low wail.
+~
+0 2105353 0
+D0
+Too dark to tell
+~
+~
+3 -1 5634
+D1
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5624
+D2
+A corner in the hallway
+~
+~
+0 -1 5626
+D3
+Too dark to tell
+~
+~
+3 -1 5633
+S
+#5626
+A Corner in the Hallway~
+The black marble blocks turn here, continuing to both the north and west.
+In the eastern wall is a heavy wooden door, from behind which low growls
+can clearly be heard despite the obvious density of the door.
+~
+0 2105353 0
+D0
+A corner in the hallway
+~
+~
+0 -1 5625
+D1
+Too dark to tell
+~
+~
+1027 -1 5627
+D3
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5635
+S
+#5627
+The Kennel~
+Bones caked with blood line the floor of this room.  The edges of the
+morbid chamber seem to be cloaked in shadows, with strange shapes
+moving just beyond your range of vision.
+~
+0 2105353 0
+D3
+Too dark to tell
+~
+~
+1027 -1 5626
+S
+#5628
+The Eastern End of the Bar~
+A long, well-polished bartop runs the northern length of this room, and
+scattered tables lay about in no apparent order.  At your entrance a
+bottle floats off the shelf and begins filling a glass...
+~
+0 2105353 0
+D2
+A corner in the hallway
+~
+~
+1027 -1 5623
+D3
+Western end of the bar
+~
+~
+0 -1 5632
+S
+#5629
+The Center of the Art Gallery~
+Cracked sculptures and decayed paintings lay scattered about in this cold
+room.  Obviously a looted room, it must have once contained many beautiful
+works of art.  Now only wreckage remains.
+~
+0 2105353 0
+D0
+Northern end of the gallery
+~
+~
+0 -1 5630
+D2
+Southern end of the gallery
+~
+~
+0 -1 5631
+D3
+A corner in the hallway
+~
+~
+1027 -1 5623
+S
+#5630
+Northern End of the Art Gallery~
+An area which once contained the great sculptures of the infiniverse now
+lies in simple ruin and disarry.
+~
+0 2105353 0
+D2
+Center of the art gallery
+~
+~
+0 -1 5629
+S
+#5631
+Southern End of the Art Gallery~
+An area which once contained the great paintings of the infiniverse now
+lies in simple ruin and disarry.
+~
+0 2105353 0
+D0
+Center of the art gallery
+~
+~
+0 -1 5629
+S
+#5632
+Western End of the Bar~
+The bar running along the north wall stretches off to the east.  A thick
+cloud of smoke prevents one from obtaining a clear view of the room.
+Something in the distance causes the mist to swirl about...
+~
+0 2105353 0
+D1
+Eastern end of the bar
+~
+~
+0 -1 5628
+S
+#5633
+A Small Room~
+Deeper inside the large fortress, beyond the cold hallways, you stumble
+in to a tucked away room.  A disturbing, eerie silence fills the air,
+broken only by your own hollow steps echoing through this empty space
+once used as a resting chamber for a visitor unfortunate enough to have
+been a guest of the Dreadlord.
+~
+0 2105353 0
+D1
+A corner in the hallway
+~
+~
+3 -1 5625
+S
+#5634
+A Small Room~
+Deeper inside the large fortress, beyond the cold hallways, you stumble
+in to a tucked away room.  A disturbing, eerie silence fills the air,
+broken only by your own hollow steps echoing through this empty space
+once used as a resting chamber for a visitor unfortunate enough to have
+been a guest of the Dreadlord.
+~
+0 2105353 0
+D2
+A corner in the hallway 
+~
+~
+3 -1 5625
+S
+#5635
+A Hallway Within the Fortress~
+The black stone walls continue ever onward to both the east and west,
+but of interest is a high, wide door of polished oak in the southern
+wall from behind which emanate the clinks of dinnerware and the
+murmur of strange converation.
+~
+0 2105353 0
+D1
+A corner in the hallway
+~
+~
+0 -1 5626
+D2
+Too dark to tell
+~
+~
+1027 -1 5637
+D3
+A corner in the hallway
+~
+~
+0 -1 5636
+S
+#5636
+A Corner in the Hallway~
+The dark marble blocks turn here, continuing on to both the north and east.
+~
+0 2105353 0
+D0
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5639
+D1
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5635
+S
+#5637
+The Grand Dining Hall~
+A long, graceful oaken table rests in the middle of this grand hall, while
+a warm hearth burns in the western wall.  To the east is a door leading to
+what sounds like a kitchen.
+~
+0 2105353 0
+D0
+A hallway in Lord Seth's fortress
+~
+~
+1027 -1 5635
+D1
+Too dark to tell
+~
+~
+3 -1 5638
+S
+#5638
+The Kitchen~
+You are somewhat shocked to see that this large, clean kitchen is in
+working order.  Soup is boiling in pots and a roast is being cooked
+over an open pit.  It all seems out of place within this fortress.
+~
+0 2105353 0
+D3
+The dining room
+~
+~
+3 -1 5637
+S
+#5639
+A Hallway Within the Fortress~
+The walls of dark marble continuing onward into the shadows to both the
+north and south.  The outline of a single large block can be seen flush
+with the western wall.
+~
+0 2105353 0
+D0
+A corner in the hallway
+~
+~
+0 -1 5640
+D2
+A corner in the hallway
+~
+~
+0 -1 5636
+D3
+~
+marble block~
+1035 -1 5642
+S
+#5640
+A Corner in the Hallway~
+The hallway turns quickly here, the dark marble walls now heading either
+east or south.  From somewhere to the east you sense a faint breeze.
+~
+0 2105353 0
+D1
+A corner in the hallway
+~
+~
+0 -1 5641
+D2
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5639
+S
+#5641
+A Corner in the Hallway~
+The hallway turns quickly here, the dark marble walls now heading either
+north or west.  A breeze comes from somewhere to the north.
+~
+0 2105353 0
+D0
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5661
+D3
+A corner in the hallway
+~
+~
+0 -1 5640
+S
+#5642
+A Hallway in the Dreadlord's Fortress~
+The marble hallway suddenly comes to a stop here as the dark stone blocks
+come solidly together.  A single block of stone comprises the eastern wall.
+~
+0 2105353 0
+D1
+~
+block marble~
+1035 -1 5639
+D3
+A corner in the hallway
+~
+~
+0 -1 5643
+S
+#5643
+A Corner in the Hallway~
+The hallway runs from this corner to the south and another to the east.  A
+large set of black doors lead to the north.
+~
+0 2105353 0
+D0
+Too dark to tell
+~
+~
+3 -1 5644
+D1
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5642
+D2
+A corner in the hallway
+~
+~
+0 -1 5645
+S
+#5644
+The Temple of Lord Seth~
+Gothic columns run up to a shadowy ceiling in this great cathedral.  Dark
+red and black candles, unlit, are placed upon bronze holders next to each
+of the columns.  A low hymn can be heard throughout this place of evil. 
+~
+0 2105353 0
+D0
+The Temple of Lord Seth
+~
+~
+0 -1 5646
+D1
+The Temple of Lord Seth
+~
+~
+0 -1 5657
+D2
+Too dark to tell
+~
+~
+3 -1 5643
+D3
+The Temple of Lord Seth
+~
+~
+0 -1 5656
+S
+#5645
+A Corner in the Hallway~
+The hallway leads to the north.  To the east is a large, iron bound door.
+Hysterical hoots and hollers can be heard from behind this door, as can a 
+faint scratching noise...
+~
+0 2105353 0
+D0
+A corner in the hallway
+~
+~
+0 -1 5643
+D1
+Too dark to tell
+~
+~
+7 5620 5649
+S
+#5646
+The Temple of Lord Seth~
+Gothic columns run up to a ceiling in this great cathedral.  Dark red and 
+black candles, in bronze holders, are placed next to each of the expansive 
+columns.
+~
+0 2105353 0
+D0
+The Temple of Lord Seth
+~
+~
+0 -1 5647
+D1
+The Temple of Lord Seth 
+~
+~
+0 -1 5648
+D2
+The Temple of Lord Seth
+~
+~
+0 -1 5644
+D3
+The Temple of Lord Seth
+~
+~
+0 -1 5655
+S
+#5647
+The Temple of Lord Seth~
+Gothic columns rise to the vaulted ceiling here.  Candles in holders
+of bronze making rest near each of the columns.  The hymn has grown
+stronger in volume.
+~
+0 2105353 0
+D0
+The Altar
+~
+~
+0 -1 5658
+D1
+The Temple of Lord Seth
+~
+~
+0 -1 5659
+D2
+The Temple of Lord Seth
+~
+~
+0 -1 5646
+D3
+The Temple of Lord Seth
+~
+~
+0 -1 5660
+S
+#5648
+The Temple of Lord Seth~
+Rows of benches fill this part of the temple.  Although empty a dark
+presence seems to lurk over them.
+~
+0 2105353 0
+D0
+The Temple of Lord Seth
+~
+~
+0 -1 5659
+D2
+The Temple of Lord Seth
+~
+~
+0 -1 5657
+D3
+The Temple of Lord Seth
+~
+~
+0 -1 5646
+S
+#5649
+Eternal Darkness~
+~
+0 2105353 0
+D2
+Too dark to tell
+~
+~
+0 -1 5650
+D3
+Too dark to tell
+~
+~
+7 5620 5645
+S
+#5650
+Eternal Darkness~
+~
+0 2105353 0
+D0
+Too dark to tell
+~
+~
+0 -1 5649
+D1
+Too dark to tell
+~
+~
+0 -1 5651
+D2
+Too dark to tell
+~
+~
+0 -1 5652
+D3
+Too dark to tell
+~
+~
+0 -1 5653
+S
+#5651
+Eternal Darkness~
+~
+0 2105353 0
+D3
+Too dark to tell
+~
+~
+0 -1 5650
+S
+#5652
+Eternal Darkness~
+~
+0 2105353 0
+D0
+Too dark to tell
+~
+~
+0 -1 5650
+D3
+Too dark to tell
+~
+~
+0 -1 5654
+S
+#5653
+Eternal Darkness~
+~
+0 2105353 0
+D2
+Too dark to tell
+~
+~
+0 -1 5654
+S
+#5654
+Eternal Darkness~
+~
+0 2105353 0
+D0
+Too dark to tell
+~
+~
+0 -1 5653
+D1
+Too dark to tell
+~
+~
+0 -1 5652
+S
+#5655
+The Temple of Lord Seth~
+Rows of benches fill this part of the temple.  Although empty a dark 
+presence seems to lurk over them.
+~
+0 2105353 0
+D0
+The Temple of Lord Seth
+~
+~
+0 -1 5660
+D1
+The Temple of Lord Seth
+~
+~
+0 -1 5646
+D2
+The Temple of Lord Seth
+~
+~
+0 -1 5656
+S
+#5656
+The Temple of Lord Seth~
+Rows of benches fill this part of the temple.  Although empty a dark
+presence seems to lurk over them.
+~
+0 2105353 0
+D0
+The Temple of Lord Seth
+~
+~
+0 -1 5655
+D1
+The Temple of Lord Seth
+~
+~
+0 -1 5644
+S
+#5657
+The Temple of Lord Seth~
+Rows of benches fill this part of the temple.  Although empty a dark
+presence seems to lurk over them.
+~
+0 2105353 0
+D0
+The Temple of Lord Seth
+~
+~
+0 -1 5648
+D3
+The Temple of Lord Seth
+~
+~
+0 -1 5644
+S
+#5658
+The Altar~
+Here lies the altar to Lord Seth.  Upon it are the grisly remains of
+what could only have been a young virgin.  The Carnage is spread all
+over the altar and the surrounding walls.  This room is fairly simple
+in design, built for function rather then design.  It would appear
+that Lord Seth simply wishes his followers to perform a sacrifice
+while in an act of passion...
+~
+0 9 0
+D2
+The Temple of Lord Seth
+~
+~
+0 -1 5647
+S
+#5659
+The Temple of Lord Seth~
+Rows of benches fill this part of the temple.  Although empty a dark  
+presence seems to lurk over them.
+~
+0 2105353 0
+D2
+The Temple of Lord Seth
+~
+~
+0 -1 5648
+D3
+The Temple of Lord Seth
+~
+~
+0 -1 5647
+S
+#5660
+The Temple of Lord Seth~
+Rows of benches fill this part of the temple.  Although empty a dark
+presence seems to lurk over them.
+~
+0 2105353 0
+D1
+The Temple of Lord Seth
+~
+~
+0 -1 5647
+D2
+The Temple of Lord Seth
+~
+~
+0 -1 5655
+S
+#5661
+A Hallway Within the Fortress~
+The black walls continue onward to the north, or back to the south.
+The air here has grown rather cold, and your skin has become damp.
+~
+0 2105353 0
+D0
+An intersection in Lord Seth's fortress
+~
+~
+0 -1 5662
+D2
+A corner in the hallway
+~
+~
+0 -1 5641
+S
+#5662
+An Intersection in the Fortress Hallways~
+The northbound hallway suddenly ends here as the dark blocks of marble
+begining curving around to both the northeast and northwest.  From both
+directions flows a damp, chilling wind leaving a sheen of moisture upon
+your exposed skin.
+~
+0 2105353 0
+D2
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5661
+D6
+~
+~
+0 -1 5664
+D7
+~
+~
+0 -1 5666
+S
+#5663
+Atop a Dark Shaft~
+A foul stench assaults your sense of smell as you enter this downward shaft.
+Large black webbing takes up much of the wide space.  So thick are these
+strands that it would be possible to climb down the shaft.  Whatever
+foul creature made this place could not possibly be mundane...
+~
+0 2105353 0
+D1
+A corner in the hallway
+~
+~
+0 -1 5665
+D3
+A corner in the hallway
+~
+~
+0 -1 5667
+D5
+Too dark to tell
+~
+~
+0 -1 5668
+S
+#5664
+A Curving Passage~
+The marble passage curves here from southwest to northwest, the narrow span
+increasing the strength of the damp, chill wind coming from up ahead.
+~
+0 2105353 0
+D7
+~
+~
+0 -1 5665
+D9
+An intersection in the fortress hallways
+~
+~
+0 -1 5662
+S
+#5665
+A Curving Passage~
+The narrow passage curves around to the southeast, and approaches an open
+shaft to the west.  From the shaft wafts an unbearably foul odor.
+~
+0 2105353 0
+D3
+Too dark to tell
+~
+~
+0 -1 5663
+D8
+A curving passage
+~
+~
+0 -1 5664
+S
+#5666
+A Curving Passage~
+The marble passage curves here from southeast to northeast, the narrow span
+increasing the strength of the damp, chill wind coming from up ahead.
+~
+0 2105353 0
+D6
+~
+~
+0 -1 5667
+D8
+An intersection in the fortress hallways
+~
+~
+0 -1 5662
+S
+#5667
+A Curving Passage~
+The narrow passage curves around to the southwest, and approaches an open
+shaft to the east.  From the shaft wafts an unbearably foul odor.
+~
+0 2105353 0
+D1
+Too dark to tell
+~
+~
+0 -1 5663
+D9
+A curving passage
+~
+~
+0 -1 5666
+S
+#5668
+Bottom of the Shaft~
+The bottom of the shaft is dark and windy.  While the gale is always strong,
+it alternates between hot and cold, and violently twists the thick strands
+of webbing which anchor themselves to the corners of this chamber.
+~
+0 2105353 0
+D0
+A storm front
+~
+~
+0 -1 5669
+D4
+Too dark to tell
+~
+~
+0 -1 5663
+S
+#5669
+Standing Before the Chaos Maze~
+You stand at the edge of a raging maelstrom of chaos.
+There is a twisted sign here, beaten down by the forceful wind of chaos.
+~
+0 2105353 0
+D0
+The maze of chaos
+~
+~
+0 -1 5670
+D2
+Bottom of the shaft
+~
+~
+0 -1 5668
+E
+sign twisted~
+Through the twisted charcoal semblance of metal,
+blood red scrawl howls the warning:
+"Fearful may the most intrepid traveler be,
+for reality skewed is dangerous indeed!"
+
+***************************************
+Darkness and Despair brought to you by
+Lord Dominus   May 1994
+**************************************
+~
+> act_prog p makes like xena and puffs out~
+mptransfer $n 5704
+mpat 0.$n mpechoat $n *BOOM* You have been guided through the chaos maze...
+mpat 0.$n mpechoat $n Remember, $n , tell NO ONE about this secret!
+~
+|
+S
+#5670
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5677
+D1
+The maze of chaos
+~
+~
+0 -1 5696
+D2
+The maze of chaos
+~
+~
+0 -1 5686
+D3
+The maze of chaos
+~
+~
+0 -1 5674
+S
+#5671
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5678
+D1
+The maze of chaos
+~
+~
+0 -1 5672
+D2
+The maze of chaos
+~
+~
+0 -1 5691
+D3
+The maze of chaos
+~
+~
+0 -1 5670
+S
+#5672
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5679
+D1
+The maze of chaos
+~
+~
+0 -1 5678
+D2
+The maze of chaos
+~
+~
+0 -1 5678
+D3
+The maze of chaos
+~
+~
+0 -1 5671
+S
+#5673
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5675
+D1
+The maze of chaos
+~
+~
+0 -1 5674
+D2
+The maze of chaos
+~
+~
+0 -1 5688
+D3
+The maze of chaos
+~
+~
+0 -1 5683
+S
+#5674
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5676
+D1
+The maze of chaos
+~
+~
+0 -1 5670
+D2
+The maze of chaos
+~
+~
+0 -1 5679
+D3
+The maze of chaos
+~
+~
+0 -1 5673
+S
+#5675
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5680
+D1
+The maze of chaos
+~
+~
+0 -1 5676
+D2
+The maze of chaos
+~
+~
+0 -1 5673
+D3
+The maze of chaos
+~
+~
+0 -1 5679
+S
+#5676
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2359296 1
+D0
+The maze of chaos
+~
+~
+0 -1 5681
+D1
+The maze of chaos
+~
+~
+0 -1 5677
+D2
+The maze of chaos
+~
+~
+0 -1 5674
+D3
+The maze of chaos
+~
+~
+0 -1 5675
+S
+#5677
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5682
+D1
+The maze of chaos
+~
+~
+0 -1 5678
+D2
+The maze of chaos
+~
+~
+0 -1 5670
+D3
+The maze of chaos
+~
+~
+0 -1 5676
+S
+#5678
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367616 1
+D0
+The maze of chaos
+~
+~
+0 -1 5683
+D1
+The maze of chaos
+~
+~
+0 -1 5679
+D2
+The maze of chaos
+~
+~
+0 -1 5671
+D3
+The maze of chaos
+~
+~
+0 -1 5677
+S
+#5679
+The Chaos Maze~
+Swirling chaos assaults your senses!  
+~
+0 2359296 1
+D0
+The maze of chaos
+~
+~
+0 -1 5684
+D1
+The maze of chaos
+~
+~
+0 -1 5689
+D2
+The maze of chaos
+~
+~
+0 -1 5672
+D3
+The maze of chaos
+~
+~
+0 -1 5678
+S
+#5680
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367616 1
+D0
+The maze of chaos
+~
+~
+0 -1 5685
+D1
+The maze of chaos
+~
+~
+0 -1 5681
+D2
+The maze of chaos
+~
+~
+0 -1 5675
+D3
+The maze of chaos
+~
+~
+0 -1 5682
+S
+#5681
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367616 1
+D0
+The maze of chaos
+~
+~
+0 -1 5686
+D1
+The maze of chaos
+~
+~
+0 -1 5683
+D2
+The maze of chaos
+~
+~
+0 -1 5850
+D3
+The maze of chaos
+~
+~
+0 -1 5680
+S
+#5682
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5692
+D1
+The maze of chaos
+~
+~
+0 -1 5683
+D2
+The maze of chaos
+~
+~
+0 -1 5677
+D3
+The maze of chaos
+~
+~
+0 -1 5681
+S
+#5683
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 6553728 1 50 5673 0
+D0
+The maze of chaos
+~
+~
+0 -1 5688
+D1
+The maze of chaos
+~
+~
+0 -1 5684
+D2
+The maze of chaos
+~
+~
+0 -1 5678
+D3
+The maze of chaos
+~
+~
+0 -1 5682
+S
+#5684
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2359424 1
+D0
+The maze of chaos
+~
+~
+0 -1 5689
+D1
+The maze of chaos
+~
+~
+0 -1 5683
+D2
+The maze of chaos
+~
+~
+0 -1 5679
+D3
+The maze of chaos
+~
+~
+0 -1 5683
+S
+#5685
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2105472 1
+D0
+The maze of chaos
+~
+~
+0 -1 5690
+D1
+The maze of chaos
+~
+~
+0 -1 5686
+D2
+The maze of chaos
+~
+~
+0 -1 5680
+D3
+The maze of chaos
+~
+~
+0 -1 5684
+S
+#5686
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2359296 1
+D0
+The maze of chaos
+~
+~
+0 -1 5691
+D1
+The maze of chaos
+~
+~
+0 -1 5688
+D2
+The maze of chaos
+~
+~
+0 -1 5681
+D3
+The maze of chaos
+~
+~
+0 -1 5685
+S
+#5687
+The Fount of Power~
+You have entered an island of calm in the sea of chaos.  Upon this solid
+platform of hard black marble rests a fountain.  Its dark form is beautifully
+simplistic, ands its aura of power strong.  No water lies within this
+fountain however, but rather a strange, shimmering violet liquid.
+~
+0 3153928 1
+D0
+The maze of chaos
+~
+~
+0 -1 5692
+D1
+The maze of chaos
+~
+~
+0 -1 5688
+D2
+The maze of chaos
+~
+~
+0 -1 5682
+D3
+The maze of chaos
+~
+~
+0 -1 5686
+S
+#5688
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5693
+D1
+The maze of chaos
+~
+~
+0 -1 5689
+D2
+The maze of chaos
+~
+~
+0 -1 5683
+D3
+The maze of chaos
+~
+~
+0 -1 5686
+S
+#5689
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2105472 1
+D0
+The maze of chaos
+~
+~
+0 -1 5694
+D1
+The maze of chaos
+~
+~
+0 -1 5693
+D2
+The maze of chaos
+~
+~
+0 -1 5684
+D3
+The maze of chaos
+~
+~
+0 -1 5688
+S
+#5690
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2097152 1
+D0
+The maze of chaos
+~
+~
+0 -1 5688
+D1
+The maze of chaos
+~
+~
+0 -1 5691
+D2
+The maze of chaos
+~
+~
+0 -1 5685
+D3
+The maze of chaos
+~
+~
+0 -1 5693
+S
+#5691
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2105472 1
+D0
+The maze of chaos
+~
+~
+0 -1 5682
+D1
+The maze of chaos
+~
+~
+0 -1 5692
+D2
+The maze of chaos
+~
+~
+0 -1 5681
+D3
+The maze of chaos
+~
+~
+0 -1 5690
+S
+#5692
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2105472 1
+D0
+The maze of chaos
+~
+~
+0 -1 5688
+D1
+The maze of chaos
+~
+~
+0 -1 5693
+D2
+The maze of chaos
+~
+~
+0 -1 5682
+D3
+The maze of chaos
+~
+~
+0 -1 5691
+S
+#5693
+The Chaos Maze~
+Swirling chaos assaults your senses! 
+~
+0 2367616 1
+D0
+The maze of chaos
+~
+~
+0 -1 5690
+D1
+The maze of chaos
+~
+~
+0 -1 5694
+D2
+The maze of chaos
+~
+~
+0 -1 5688
+D3
+The maze of chaos
+~
+~
+0 -1 5692
+S
+#5694
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367616 1
+D0
+The maze of chaos
+~
+~
+0 -1 5694
+D1
+The maze of chaos
+~
+~
+0 -1 5691
+D2
+The maze of chaos
+~
+~
+0 -1 5689
+D3
+The maze of chaos
+~
+~
+0 -1 5693
+S
+#5696
+The Chaos Maze~
+Swirling chaos assaults your senses! 
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5693
+D1
+The maze of chaos
+~
+~
+0 -1 5684
+D2
+The maze of chaos
+~
+~
+0 -1 5688
+D3
+The maze of chaos
+~
+~
+0 -1 5677
+S
+#5697
+The Chaos Maze~
+Swirling chaos assaults your senses! 
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5850
+D1
+The maze of chaos
+~
+~
+0 -1 5698
+D2
+The maze of chaos
+~
+~
+0 -1 5683
+D3
+The maze of chaos
+~
+~
+0 -1 5692
+S
+#5698
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5699
+D1
+The maze of chaos
+~
+~
+0 -1 5671
+D2
+The maze of chaos
+~
+~
+0 -1 5699
+D3
+The maze of chaos
+~
+~
+0 -1 5692
+S
+#5699
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5674
+D1
+The maze of chaos
+~
+~
+0 -1 5680
+D2
+The maze of chaos
+~
+~
+0 -1 5675
+D3
+The maze of chaos
+~
+~
+0 -1 5700
+S
+#5700
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367488 1
+D0
+The maze of chaos
+~
+~
+0 -1 5671
+D1
+The maze of chaos
+~
+~
+0 -1 5674
+D2
+The maze of chaos
+~
+~
+0 -1 5701
+D3
+The maze of chaos
+~
+~
+0 -1 5684
+> entry_prog 25~
+if rand(25)
+mpforce $n east
+else
+if rand(25)
+mpforce $n west
+endif
+endif
+~
+|
+S
+#5701
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2367616 1
+D0
+The maze of chaos
+~
+~
+0 -1 5694
+D1
+The maze of chaos
+~
+~
+0 -1 5683
+D2
+The maze of chaos
+~
+~
+0 -1 5702
+D3
+The maze of chaos
+~
+~
+0 -1 5688
+> entry_prog 100~
+if rand(20)
+mptransfer $n 5674
+else
+if rand(25)
+    mptransfer all 5682
+  endif
+endif
+~
+|
+S
+#5702
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2368000 1 20 5680 0
+D0
+The maze of chaos
+~
+~
+0 -1 5682
+D1
+The maze of chaos
+~
+~
+0 -1 5691
+D2
+The maze of chaos
+~
+~
+0 -1 5691
+D3
+The maze of chaos
+~
+~
+0 -1 5703
+> entry_prog 100~
+if rand(15)
+mptransfer all 5685
+else
+if rand(25)
+mptransfer $n 5683
+  endif
+endif
+~
+> rand_prog 35~
+mptransfer $r 5675
+~
+|
+S
+#5703
+The Chaos Maze~
+Swirling chaos assaaults your senses!
+~
+0 7340036 1 100 5687 0
+D0
+The maze of chaos
+~
+~
+0 -1 5671
+D1
+The maze of chaos
+~
+~
+0 -1 5701
+D2
+The maze of chaos
+~
+~
+0 -1 5681
+D3
+The maze of chaos
+~
+~
+0 -1 5685
+S
+#5704
+Top of the Stairs~
+You stand upon a platform outside of chaos, whose only exit that does
+not lead back to the Chaos Maze is down.  The stairs are dark, the stone
+floor cold, and from below a mournful wail can be heard.  Of course, it
+may simply be the wind...
+~
+0 3153929 0
+D2
+The end of the Chaos Maze
+~
+~
+0 -1 5673
+D5
+Descending into...
+~
+~
+0 -1 5705
+S
+#5705
+The Stairway~
+As you begin to descend the stairs, the sad wail suddenly cuts off with
+shocking abruptness.  A chill runs down your spine as you realize the
+wind is no more, that somehow this ancient place is a barrier even
+to the unimaginable power of Chaos.
+~
+0 3153928 0
+D4
+Too dark to tell
+~
+~
+0 -1 5704
+D5
+~
+~
+0 -1 5706
+S
+#5706
+Bottom of the Stairs~
+You have descended to the next level of the Dreadlord's fortress. The
+stones here are cut from the same black marble as the rest of his
+fortress, but an eerie, dark red whisper of smoke seems to slowly float
+beyond the wall. Its movement is hypnotic, and you fear that if you were
+to look at it too long it would draw your soul to join its restless
+travel. 
+~
+0 3153933 0
+D2
+A corner in the hallway
+~
+~
+0 -1 5707
+D4
+Too dark to tell
+~
+~
+0 -1 5705
+S
+#5707
+A Corner in the Hallway~
+The hallway continues to the north and east.  
+~
+0 3153929 0
+D0
+The bottom of the stairs
+~
+~
+0 -1 5706
+D1
+A halway in Lord Seth's fortress
+~
+~
+0 -1 5708
+S
+#5708
+A Hallway in the Dreadlord's Fortress~
+The dark hallway continues to the east and west.  To the south is a wooden
+door.
+~
+0 3153929 0
+D1
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5709
+D2
+Too dark to tell
+~
+~
+3 -1 5722
+D3
+A corner in the hallway
+~
+~
+0 -1 5707
+S
+#5709
+A Hallway in the Dreadlord's Fortress~
+The hallway continues to the east and west.  To the north lies a wooden
+door.
+~
+0 3153929 0
+D0
+Too dark to tell
+~
+~
+3 -1 5723
+D1
+A corner in the hallway
+~
+~
+0 -1 5710
+D3
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5708
+S
+#5710
+A Corner in the Hallway~
+The hallway continues to the south and west.  Suspended from the wall
+on strong chains is the corpse of a large demon.  It has apparently been
+tortured, for a look of absolute terror and fear still lingers on its
+monstrous face.  To the north and east are wooden doors.
+~
+0 3153929 0
+D0
+Too dark to tell
+~
+~
+3 -1 5725
+D1
+Too dark to tell
+~
+~
+3 -1 5724
+D2
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5711
+D3
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5709
+E
+demon corpse~
+The mighty demon appears to have once been a Duke of Hell by the name of
+Orcus.  It has long been know that his chief rival, Mephesto, has been
+imploring Lord Seth to step in and remove Orcus.  It would seem that
+no creature, however powerful, is beyond Lord Seth's power...
+~
+S
+#5711
+A Hallway in the Dreadlord's Fortress~
+The hallway leads to the north and south.  To the east is a wooden door and
+to the west lies a large steel door, inscribed with runes of containment...
+~
+0 3153929 0
+D0
+A corner in the hallway
+~
+~
+0 -1 5710
+D1
+Too dark to tell
+~
+~
+3 -1 5826
+D2
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5712
+D3
+Too dark to tell
+~
+~
+1 -1 5716
+S
+#5712
+A Hallway in the Dreadlord's Fortress~
+The dark hallway leads to the north and south.  A wooden door lies in the
+east wall.  From behind this door a slight moan can be heard...
+~
+0 3145737 0
+D0
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5711
+D1
+Too dark to tell
+~
+~
+3 -1 5824
+D2
+A corner in the hallway
+~
+~
+0 -1 5713
+S
+#5713
+A Corner in the Hallway~
+The hallway continues to the north and west.  To the east is a wooden door,
+and a large black stone door leads to the south.  Runes of protection lie
+upon its surface.
+~
+0 3153933 0
+D0
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5712
+D1
+Too dark to tell
+~
+~
+3 -1 5825
+D2
+Too dark to tell
+~
+~
+3 -1 5717
+D3
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5714
+S
+#5714
+A Hallway in the Dreadlord's Fortress~
+The hallway continues to the east and west.  A jade stone door rests in the
+north wall.  Strangely alluring, it exudes a deep calm and the feeling that
+you could sink within its depth for eternity...
+~
+0 3153929 0
+D0
+Too dark to tell
+~
+~
+3 -1 5715
+D1
+A corner in the hallway
+~
+~
+0 -1 5713
+D3
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5719
+S
+#5715
+Guest Bedroom~
+You have entered a plushly furnished bedroom.  The walls, carpet and
+furniture are strangely all the color of jade.  To the west is a closet
+door, and the hallway lies to the south.  The feeling of being submerged
+enters your mind, and the urge to leave this room is very compelling.
+~
+0 3153929 8
+D2
+A hallway in Lord Seth's fortress
+~
+~
+3 -1 5714
+S
+#5716
+Containment Cell~
+This large room's interior walls are covered with runes.  Their apparent
+function is to ensure a specific creature does not have the ability to
+leave this cell.  The darkness here seems to be pushing against your
+field of light.
+~
+0 3153929 0
+D1
+A hallway in Lord Seth's fortress
+~
+~
+1 -1 5711
+S
+#5717
+Spell Yard~
+This large room is inlaid with dark runes.  Their purpose is to ensure that
+magical forces do not damage their structure.  Even with this protectve magic
+there are numerous burn marks upon the walls, hinting at the power of the mage
+that controls such forces.
+~
+0 3153929 0
+D0
+A corner in the hallway
+~
+~
+3 -1 5713
+D3
+Too dark to tell
+~
+~
+1063 5636 5718
+S
+#5718
+Master Spellbinder's Chamber~
+You have entered what could only be a mage's study.  Books and tomes lay
+in a bookshelf covering the entire southern wall.  Strange magical devices
+lay about on the oaken desk and on numerous shelves.  
+~
+0 3153929 0
+D1
+Too dark to tell
+~
+~
+1063 5636 5717
+S
+#5719
+A Hallway in the Dreadlord's Fortress~
+The dark marble hallway continues to the east and west.  The darkness here
+seems to be almost sentient as needles of blackness attempt to pierce your
+shield of light...
+~
+0 3153929 0
+D1
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5714
+D2
+Too dark to tell
+~
+~
+3 -1 5827
+D3
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5720
+S
+#5720
+A Hallway in the Dreadlord's Fortress~
+The dark marble hallway continues to the east and west.
+~
+0 3153929 0
+D1
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5719
+D3
+An intersection in the hallway
+~
+~
+0 -1 5727
+S
+#5721
+A closet~
+This is Jade's closet.
+~
+0 2105353 0
+D1
+Too dark to tell
+~
+~
+3 -1 5715
+S
+#5722
+In the Air~
+~
+0 19931141 9
+D0
+~
+~
+1 -1 5708
+D5
+~
+~
+0 -1 5600
+S
+#5723
+In the Air~
+~
+0 19931141 9
+D2
+~
+~
+1 -1 5709
+D5
+~
+~
+0 -1 5600
+S
+#5724
+In the Air~
+~
+0 19931141 9
+D3
+~
+~
+1 -1 5710
+D5
+~
+~
+0 -1 5600
+S
+#5725
+In the Air~
+~
+0 19931137 9
+D2
+~
+~
+1 -1 5710
+D5
+~
+~
+0 -1 5600
+S
+#5726
+In the air~
+~
+0 19922949 0
+D3
+~
+~
+0 -1 5725
+D5
+~
+~
+0 -1 5604
+S
+#5727
+An Intersection in the Hallway~
+The east to west hallway of dark marble ends here at a corridor which runs
+to the north and south.
+~
+0 3153933 0
+D0
+A corridor in Lord Seth's fortress 
+~
+~
+0 -1 5728
+D1
+A hallway in Lord Seth's fortress
+~
+~
+0 -1 5720
+D2
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5740
+S
+#5728
+A Corridor in the Dreadlord's Fortress~
+The corridor continues to the north and south.  
+~
+0 3153929 0
+D0
+An intersection in the corridor
+~
+~
+0 -1 5729
+D2
+An intersection in the corridor
+~
+~
+0 -1 5727
+S
+#5729
+An Intersection in the Corridor~
+The hallway continues to the north and south.  Another corridor connects
+here and leads to the west.  A red ivory door leads to the east.
+~
+0 3153929 0
+D0
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5776
+D1
+Too dark to tell
+~
+~
+3 -1 5749
+D2
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5728
+D3
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5730
+S
+#5730
+A Corridor in the Dreadlord's Fortress~
+The corridor leads to the east and west.
+~
+0 3153929 0
+D1
+An intersection in Lord Seth's fortress 
+~
+~
+0 -1 5729
+D3
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5731
+S
+#5731
+A Corridor in the Dreadlord's Fortress~
+The corridor continues to the east and west.
+~
+0 3153929 0
+D0
+~
+~
+0 -1 5816
+D1
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5730
+D3
+A corner in the corridor
+~
+~
+0 -1 5732
+S
+#5732
+A Corner in the Corridor~
+The corridor continues east and south.
+~
+0 3153929 0
+D1
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5731
+D2
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5733
+S
+#5733
+A Corridor in the Dreadlord's Fortress~
+The corridor continues to the north and south.    
+~
+0 3153929 0
+D0
+A corner in the corridor
+~
+~
+0 -1 5732
+D2
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5734
+S
+#5734
+A Corridor in the Dreadlord's Fortress~
+The corridor continues to the north and south.  A large back door leads
+to the east.
+~
+0 3153929 0
+D0
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5733
+D1
+Too dark to tell
+~
+~
+3 -1 5741
+D2
+A corridor in Lord Seth's fortres
+~
+~
+0 -1 5735
+S
+#5735
+A Corridor in the Dreadlord's Fortress~
+The corridor runs north and south.  A wooden jail door is set into the 
+west wall.
+~
+0 3153929 0
+D0
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5734
+D2
+A corner in the corridor
+~
+~
+0 -1 5736
+D3
+Too dark to tell
+~
+~
+3 -1 5751
+S
+#5736
+A Corner in the Corridor~
+The corridor leads to the north and east.  A faint whimpering can be heard
+from the north.
+~
+0 3153929 0
+D0
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5735
+D1
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5737
+S
+#5737
+A Corridor in the Dreadlord's Fortress~
+The corridor continues to the east and west.  A red and blue banded door
+leads to the south.  A sound like that of a cat's purr can be heard from
+behind it.
+~
+0 3153929 0
+D1
+A corridor in Lord Seth's fortress 
+~
+~
+0 -1 5738
+D2
+Too dark to tell
+~
+~
+3 -1 5747
+D3
+A corner in the corridor
+~
+~
+0 -1 5736
+S
+#5738
+A Corridor in the Dreadlord's Fortress~
+The corridor continues to the east and west.  A high pitched cackle suddenly
+arises from the west.  When you try to locate its source, it ends as abruptly
+as it started.
+~
+0 3153929 0
+D1
+C corner in the hallway
+~
+~
+0 -1 5739
+D3
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5737
+S
+#5739
+A Corner in the Corridor~
+The corridor continues to the north and west.
+~
+0 3153929 0
+D0
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5740
+D3
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5738
+S
+#5740
+A Corridor in the Dreadlord's Fortress~
+The corridor continues to the north and south.  The east wall seems to
+vibrate as if some large creature on the other side rubbed against it.
+~
+0 3153929 0
+D0
+An intersection in Lord Seth's fortress
+~
+~
+0 -1 5727
+D2
+A corner in the corridor
+~
+~
+0 -1 5739
+S
+#5741
+A Large Cavern~
+The ceiling of this expansive cavern is lost in darkness, and piles of
+ash litter the ground, as if a large number of campfires once burned here.
+The darkness continues to the north, east and south.  A corrider lies to
+the west.
+~
+0 3153929 0
+D0
+Too dark to tell
+~
+~
+0 -1 5746
+D1
+Too dark to tell
+~
+~
+0 -1 5744
+D2
+Too dark to tell
+~
+~
+0 -1 5742
+D3
+A corridor in Lord Seth's fortress
+~
+~
+3 -1 5734
+S
+#5742
+A large cavern~
+The ceiling of this expansive cavern is lost in darkness, and piles of ash
+litter the ground, as if a large number of campfires once burned here.  The
+darkness continues to the east and north.
+~
+0 3153929 0
+D0
+Too dark to tell
+~
+~
+0 -1 5741
+D1
+Too dark to tell
+~
+~
+0 -1 5743
+S
+#5743
+A large cavern~
+The ceiling of this expansive cavern is lost in darkness, and piles of ash
+litter the ground, as if a large number of campfires once burned here.  The
+darkness continues to the west and north.
+~
+0 3153929 0
+D0
+Too dark to tell
+~
+~
+0 -1 5744
+D3
+Too dark to tell
+~
+~
+0 -1 5742
+S
+#5744
+A large cavern~
+The ceiling of this expansive cavern is lost in darkness, and piles of ash
+litter the ground, as if a large number of campfires once burned here.  The
+darkness continues to the north, west and south.
+~
+0 3153929 0
+D0
+Too dark to tell
+~
+~
+0 -1 5745
+D2
+Too dark to tell
+~
+~
+0 -1 5743
+D3
+Too dark to tell
+~
+~
+0 -1 5741
+S
+#5745
+A large cavern~
+The ceiling of this expansive cavern is lost in darkness, and piles of ash
+litter the ground, as if a large number of campfires once burned here.  The
+darkness continues to the west and south.
+~
+0 3153929 0
+D2
+Too dark to tell
+~
+~
+0 -1 5744
+D3
+Too dark to tell
+~
+~
+0 -1 5746
+S
+#5746
+A large cavern~
+The ceiling of this expansive cavern is lost in darkness, and piles of ash
+litter the ground, as if a large number of campfires once burned here.  The
+darkness continues to the east and south.
+~
+0 3153929 0
+D1
+Too dark to tell
+~
+~
+0 -1 5745
+D2
+Too dark to tell
+~
+~
+0 -1 5741
+S
+#5747
+Maximillian's Lair~
+The room you have just entered is completely barren of any furnishings.
+However, all about on the floor are scattered hundreds of empty vials.
+A door leads to the east, and the hallway lies to the north.
+~
+0 3153929 0
+D0
+A corridor in Lord Seth's fortress
+~
+~
+3 -1 5737
+D1
+A closet
+~
+~
+3 -1 5748
+S
+#5748
+Max's Closet~
+As barren as the other room, this closet has one feature which makes it
+stand out from Maximillian's bedroom.  Here there a number of full vials.
+Who could guess as to what function they perform.
+~
+0 3153929 0
+D3
+Maximillian's room
+~
+~
+3 -1 5747
+S
+#5749
+Natasha's Bedroom~
+You have entered an extremely plush bedroom.  The dominant feature here
+is a large, soft bed.  Built for comfort and designed for pleasure, it 
+requires a full third of the floor space.  To the south is a wooden
+door and the door to the west leads to the corridor.
+~
+0 3153929 0
+D2
+~
+~
+3 -1 5750
+D3
+A corridor in Lord Seth's fortress
+~
+~
+3 -1 5729
+S
+#5750
+A Closet~
+This closet is completely empty.  Not surprising considering a god such
+as Natasha can easily create anything she may need or desire.
+~
+0 3153929 0
+D0
+Natasha's bedroom
+~
+~
+3 -1 5749
+S
+#5751
+Prisoner's Cell~
+This room is basically empty, except for the disgusting hole used
+for a bathroom and a small wooden bench.  It would be a miracle if
+anyone could live long in these conditions.
+~
+0 3153929 0
+D1
+Too dark to tell
+~
+~
+3 -1 5735
+S
+#5776
+A Corridor in the Dreadlord's Fortress~
+The corridor continues to the north and south.  A complete lack of sound
+can be sensed to the north, causing a shiver to run down your spine.
+~
+0 3153929 0
+D0
+Before the Abyss
+~
+~
+0 -1 5777
+D2
+An intersection in the corridor
+~
+~
+0 -1 5729
+S
+#5777
+Before the Abyss~
+You stand before the great Abyss.  Before you all that is visible is the
+unending blackness of eternity.  It is rumored that the Dreadlord's Throne Room
+lies beyond the Abyss, created by his will alone.  Can the abyss be crossed
+you wonder?  Even if it can, what sort of guardian might the Dreadlord have
+placed within it?  
+~
+0 3153933 0
+D0
+Eternal darkness
+~
+~
+0 -1 5786
+D2
+A corridor in Lord Seth's fortress
+~
+~
+0 -1 5776
+S
+#5779
+Storage room~
+This room is stacked with various crates and bags containing all the
+supplies needed to sustain a few mortal retainers.
+~
+0 3153929 0
+D2
+Too dark to tell
+~
+~
+3 -1 5732
+S
+#5780
+Storage room~
+This room is stacked with various crates and bags containing all the
+supplies needed to sustain a few mortal retainers.
+~
+0 3153929 0
+D1
+Too dark to tell
+~
+~
+3 -1 5733
+S
+#5784
+The Abyss~
+The eternal abyss surrounds you. 
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5789
+D1
+The Abyss
+~
+~
+0 -1 5789
+D2
+The Abyss
+~
+~
+0 -1 5785
+D3
+The Abyss
+~
+~
+0 -1 5804
+D4
+The Abyss
+~
+~
+0 -1 5804
+D5
+The Abyss
+~
+~
+0 -1 5788
+S
+#5785
+The Abyss~
+The eternal abyss surrounds you. 
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5790
+D1
+The Abyss
+~
+~
+0 -1 5790
+D2
+The Abyss
+~
+~
+0 -1 5805
+D3
+The Abyss
+~
+~
+0 -1 5805
+D4
+The Abyss
+~
+~
+0 -1 5784
+D5
+The Abyss
+~
+~
+0 -1 5786
+S
+#5786
+The Abyss~
+The eternal abyss surrounds you. 
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5777
+D1
+The Abyss
+~
+~
+0 -1 5787
+D2
+The Abyss
+~
+~
+0 -1 5791
+D3
+The Abyss
+~
+~
+0 -1 5806
+D4
+The Abyss
+~
+~
+0 -1 5785
+D5
+The Abyss
+~
+~
+0 -1 5791
+S
+#5787
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5792
+D1
+The Abyss
+~
+~
+0 -1 5792
+D2
+The Abyss
+~
+~
+0 -1 5788
+D3
+The Abyss
+~
+~
+0 -1 5807
+D4
+The Abyss
+~
+~
+0 -1 5786
+D5
+The Abyss
+~
+~
+0 -1 5807
+S
+#5788
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5808
+D1
+The Abyss
+~
+~
+0 -1 5787
+D2
+The Abyss
+~
+~
+0 -1 5808
+D3
+The Abyss
+~
+~
+0 -1 5793
+D4
+The Abyss
+~
+~
+0 -1 5784
+D5
+The Abyss
+~
+~
+0 -1 5793
+S
+#5789
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5794
+D1
+The Abyss
+~
+~
+0 -1 5793
+D2
+The Abyss
+~
+~
+0 -1 5794
+D3
+The Abyss
+~
+~
+0 -1 5784
+D4
+The Abyss
+~
+~
+0 -1 5790
+D5
+The Abyss
+~
+~
+0 -1 5784
+S
+#5790
+The Abyss~
+The eternal abyss surrounds you. 
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5785
+D1
+The Abyss
+~
+~
+0 -1 5789
+D2
+The Abyss
+~
+~
+0 -1 5795
+D3
+The Abyss
+~
+~
+0 -1 5791
+D4
+The Abyss
+~
+~
+0 -1 5795
+D5
+The Abyss
+~
+~
+0 -1 5785
+S
+#5791
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5786
+D1
+The Abyss
+~
+~
+0 -1 5792
+D2
+The Abyss
+~
+~
+0 -1 5786
+D3
+The Abyss
+~
+~
+0 -1 5796
+D4
+The Abyss
+~
+~
+0 -1 5796
+D5
+The Abyss
+~
+~
+0 -1 5790
+S
+#5792
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5793
+D1
+The Abyss
+~
+~
+0 -1 5787
+D2
+The Abyss
+~
+~
+0 -1 5787
+D3
+The Abyss
+~
+~
+0 -1 5791
+D4
+The Abyss
+~
+~
+0 -1 5797
+D5
+The Abyss
+~
+~
+0 -1 5797
+S
+#5793
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5789
+D1
+The Abyss
+~
+~
+0 -1 5788
+D2
+The Abyss
+~
+~
+0 -1 5798
+D3
+The Abyss
+~
+~
+0 -1 5798
+D4
+The Abyss
+~
+~
+0 -1 5788
+D5
+The Abyss
+~
+~
+0 -1 5792
+S
+#5794
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5799
+D1
+The Abyss
+~
+~
+0 -1 5798
+D2
+The Abyss
+~
+~
+0 -1 5799
+D3
+The Abyss
+~
+~
+0 -1 5789
+D4
+The Abyss
+~
+~
+0 -1 5789
+D5
+The Abyss
+~
+~
+0 -1 5795
+S
+#5795
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5790
+D1
+The Abyss
+~
+~
+0 -1 5790
+D2
+The Abyss
+~
+~
+0 -1 5800
+D3
+The Abyss
+~
+~
+0 -1 5800
+D4
+The Abyss
+~
+~
+0 -1 5796
+D5
+The Abyss
+~
+~
+0 -1 5794
+S
+#5796
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5791
+D1
+The Abyss
+~
+~
+0 -1 5801
+D2
+The Abyss
+~
+~
+0 -1 5797
+D3
+The Abyss
+~
+~
+0 -1 5791
+D4
+The Abyss
+~
+~
+0 -1 5801
+D5
+The Abyss
+~
+~
+0 -1 5795
+S
+#5797
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5798
+D1
+The Abyss
+~
+~
+0 -1 5802
+D2
+The Abyss
+~
+~
+0 -1 5796
+D3
+The Abyss
+~
+~
+0 -1 5802
+D4
+The Abyss
+~
+~
+0 -1 5792
+D5
+The Abyss
+~
+~
+0 -1 5792
+S
+#5798
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5794
+D1
+The Abyss
+~
+~
+0 -1 5793
+D2
+The Abyss
+~
+~
+0 -1 5797
+D3
+The Abyss
+~
+~
+0 -1 5803
+D4
+The Abyss
+~
+~
+0 -1 5793
+D5
+The Abyss
+~
+~
+0 -1 5803
+S
+#5799
+The Abyss~
+The eternal abyss surrounds you.  
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5804
+D1
+The Abyss
+~
+~
+0 -1 5803
+D2
+The Abyss
+~
+~
+0 -1 5794
+D3
+The Abyss
+~
+~
+0 -1 5800
+D4
+The Abyss
+~
+~
+0 -1 5794
+D5
+The Abyss
+~
+~
+0 -1 5804
+S
+#5800
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5805
+D1
+The Abyss
+~
+~
+0 -1 5799
+D2
+The Abyss
+~
+~
+0 -1 5795
+D3
+The Abyss
+~
+~
+0 -1 5795
+D4
+The Abyss
+~
+~
+0 -1 5805
+D5
+The Abyss
+~
+~
+0 -1 5801
+S
+#5801
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5806
+D1
+The Abyss
+~
+~
+0 -1 5796
+D2
+The Abyss
+~
+~
+0 -1 5806
+D3
+The Abyss
+~
+~
+0 -1 5800
+D4
+The Abyss
+~
+~
+0 -1 5802
+D5
+The Abyss
+~
+~
+0 -1 5796
+S
+#5802
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5797
+D1
+The Abyss
+~
+~
+0 -1 5803
+D2
+The Abyss
+~
+~
+0 -1 5807
+D3
+The Abyss
+~
+~
+0 -1 5798
+D4
+The Abyss
+~
+~
+0 -1 5807
+D5
+The Abyss
+~
+~
+0 -1 5801
+S
+#5803
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5802
+D1
+The Abyss
+~
+~
+0 -1 5808
+D2
+The Abyss
+~
+~
+0 -1 5808
+D3
+The Abyss
+~
+~
+0 -1 5798
+D4
+The Abyss
+~
+~
+0 -1 5798
+D5
+The Abyss
+~
+~
+0 -1 5800
+S
+#5804
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5799
+D1
+The Abyss
+~
+~
+0 -1 5784
+D2
+The Abyss
+~
+~
+0 -1 5784
+D3
+The Abyss
+~
+~
+0 -1 5799
+D4
+The Abyss
+~
+~
+0 -1 5808
+D5
+The Abyss
+~
+~
+0 -1 5805
+S
+#5805
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5804
+D1
+The Abyss
+~
+~
+0 -1 5785
+D2
+The Abyss
+~
+~
+0 -1 5800
+D3
+The Abyss
+~
+~
+0 -1 5800
+D4
+The Abyss
+~
+~
+0 -1 5806
+D5
+The Abyss
+~
+~
+0 -1 5785
+S
+#5806
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5807
+D1
+The Abyss
+~
+~
+0 -1 5786
+D2
+The Abyss
+~
+~
+0 -1 5801
+D3
+The Abyss
+~
+~
+0 -1 5801
+D4
+The Abyss
+~
+~
+0 -1 5786
+D5
+The Abyss
+~
+~
+0 -1 5805
+S
+#5807
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5797
+D1
+The Abss
+~
+~
+0 -1 5806
+D2
+The Abyss
+~
+~
+0 -1 5802
+D3
+The Abyss
+~
+~
+0 -1 5808
+D4
+The Abyss
+~
+~
+0 -1 5802
+D5
+The Abyss
+~
+~
+0 -1 5787
+S
+#5808
+The Abyss~
+The eternal abyss surrounds you.
+~
+0 2105345 9
+D0
+The Abyss
+~
+~
+0 -1 5807
+D1
+The Abyss
+~
+~
+0 -1 5803
+D3
+The Abyss
+~
+~
+0 -1 5803
+D4
+The Abyss
+~
+~
+0 -1 5804
+D5
+The Abyss
+~
+~
+0 -1 5788
+S
+#5809
+The Black Dais~
+Forming out of the infinite abyss is a dais made from black marble, its
+steps leading to up to a platform before a huge double door.  Upon this
+dark red metal door are hundreds of molded faces, appearing to be
+screaming out in pain.
+~
+0 3153925 0
+D0
+Too dark to tell
+~
+~
+1027 -1 5810
+D2
+The Abyss
+~
+~
+0 -1 5808
+E
+door doors double damned~
+Men and women, children and elders all lay upon this monstrousity. To your
+horror, as you pear closer at the door, you notice that the faces are moving
+very slowly and with great pain.  It is now that you understand these are the
+eternally doomed souls of those who have tested Lord Seth's fortress.  Perhaps
+you too will become one of these poor beings...
+~
+S
+#5810
+The Great Hall~
+You have entered a large vaulted hall. Gothic columns rise to the dark
+ceiling.  In many aspects this room reminds you of the temple in the
+first level of this dark fortress.  Here, however, are artifacts from
+throughout history.  Strange devices and beautiful works of art are
+displayed in a well thought out format.  All these objects seem to be
+protected by nearly clear fields of force, preventing a closer look -
+and theft.  A large double door leads to the south, and the Great Hall
+continues to the north.
+~
+0 3153929 0
+D0
+The Great Hall
+~
+~
+0 -1 5811
+D2
+Too dark to tell
+~
+~
+1027 -1 5809
+S
+#5811
+The Great Hall~
+You stand at the northern end of the great hall.  Gothic colums rise to
+the dark ceiling some one hundred feet high.  Works of art and artifacts
+of power are displayed here.  From the north a dark chill can be felt,
+seeping into your very bones.  The door to the north, while large, is
+completely plain.  The Great Hall continues to the south.
+To the east and west twin grey doors lead to unknown treasures,
+or possibly dooms ...
+~
+0 2105353 0
+D0
+Too dark to tell
+~
+~
+1063 5837 5812
+D1
+~
+door~
+7 5837 5813
+D2
+The Great Hall
+~
+~
+0 -1 5810
+D3
+~
+door~
+7 5837 5814
+S
+#5812
+The Dreadlord's Throne Room~
+You have entered the Dreadlord's throne room.  A three stepped dais leads up to
+a great throne of twisted metal.  Upon this framework tendrils of darkness
+wither up and down the lengths of black metal.  A sound akin to thousands of
+voices speaking in a hushed tone begins as you enter the room, threatening
+to drive you insane.
+~
+0 2105353 0
+D2
+Too dark to tell
+~
+~
+1057 5837 5811
+S
+#5813
+The Vault~
+Piles of gold coins litter this room.  Seemingly neglected for centuries,
+large amounts of dust have settled upon them.  As your light strikes them
+the hall is illuminated with a golden light.
+~
+0 2105353 0 0 0 3
+D3
+~
+door~
+7 5837 5811
+S
+#5814
+Lord Pain's Domain~
+You have entered a room similar in appearance to the treasury, but instead
+of gold littering the floor, hundreds of devices of pain and interrogation
+rest here.  Blood, both dry and wet, covers the equipment, sending a sudden
+urge of nausea to your gut.  The moans of those who have died here assault
+your hearing.  These voices are not understandable, however, in that all
+intelligence has be driven from their minds from by pain they once
+experienced here.  
+~
+0 2105353 0
+D1
+~
+door~
+7 5837 5811
+S
+#5815
+Entrance to a Small Tunnel~
+This cave is dark and damp, the stench of rotting flesh fills the air.
+~
+0 3153929 1
+D0
+~
+~
+0 -1 5816
+S
+#5816
+Inside a Dark Tunnel~
+The tunnel gets darker and the stench gets worse.
+~
+0 3153929 0
+D0
+~
+~
+0 -1 5817
+D2
+~
+~
+0 -1 5731
+S
+#5817
+Inside a Dark Tunnel~
+The tunnel gets darker and the stench gets worse.
+~
+0 3153929 0
+D2
+~
+~
+0 -1 5816
+D3
+~
+~
+0 -1 5818
+S
+#5818
+Inside a Dark Tunnel~
+The tunnel gets darker and the stench gets worse.
+~
+0 3153929 0
+D0
+~
+~
+0 -1 5819
+D1
+~
+~
+0 -1 5817
+S
+#5819
+Inside a Dark Tunnel~
+The tunnel appears to end towards the north, although the walls here
+are coated with a slimy substance, and loud noises are coming from
+the north.
+~
+0 3153929 0
+D0
+~
+~
+0 -1 5820
+D2
+~
+~
+0 -1 5818
+S
+#5820
+The Worm's Lair~
+The walls and floor here are covered in a clear sticky goo, and the
+smell of death is absolutely terrible.  A few mangled corpses have
+been piled in the corner, half-eaten.  This is truly the home of a
+horrific beast.
+~
+0 3153929 0
+D2
+~
+~
+0 -1 5819
+S
+#5824
+In the Air~
+~
+0 19931141 9
+D3
+~
+~
+1 -1 5712
+D5
+~
+~
+0 -1 5600
+S
+#5825
+In the Air~
+~
+0 3153925 9
+D3
+~
+~
+1 -1 5713
+D5
+~
+~
+0 -1 5600
+S
+#5826
+In the Air~
+~
+0 19931141 9
+D3
+~
+~
+1 -1 5711
+D5
+~
+~
+0 -1 5600
+S
+#5827
+In the Air~
+~
+0 3153925 2
+D0
+~
+~
+0 -1 5719
+D5
+~
+~
+0 -1 5600
+S
+#5828
+Drop storage, do not remain in this room~
+Do not take items from this room.
+-Dominus
+~
+0 3154060 1
+S
+#5850
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2359296 1
+D0
+The maze of chaos
+~
+~
+0 -1 5672
+D1
+The maze of chaos
+~
+~
+0 -1 5671
+D2
+The maze of chaos
+~
+~
+0 -1 5681
+D3
+The maze of chaos
+~
+~
+0 -1 5851
+S
+#5851
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2359296 1
+D0
+The maze of chaos
+~
+~
+0 -1 5852
+D1
+The maze of chaos
+~
+~
+0 -1 5850
+D2
+The maze of chaos
+~
+~
+0 -1 5675
+D3
+The maze of chaos
+~
+~
+0 -1 5674
+S
+#5852
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2359424 1
+D0
+The maze of chaos
+~
+~
+0 -1 5677
+D1
+The maze of chaos
+~
+~
+0 -1 5853
+D2
+The maze of chaos
+~
+~
+0 -1 5688
+D3
+The maze of chaos
+~
+~
+0 -1 5851
+S
+#5853
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2359296 1
+D0
+The maze of chaos
+~
+~
+0 -1 5852
+D1
+The maze of chaos
+~
+~
+0 -1 5693
+D2
+The maze of chaos
+~
+~
+0 -1 5684
+D3
+The maze of chaos
+~
+~
+0 -1 5854
+S
+#5854
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2359296 1
+D0
+The maze of chaos
+~
+~
+0 -1 5855
+D1
+The maze of chaos
+~
+~
+0 -1 5692
+D2
+The maze of chaos
+~
+~
+0 -1 5853
+D3
+The maze of chaos
+~
+~
+0 -1 5677
+S
+#5855
+The Chaos Maze~
+Swirling chaos assaults your senses!
+~
+0 2359424 1
+D0
+The maze of chaos
+~
+~
+0 -1 5697
+D1
+The maze of chaos
+~
+~
+0 -1 5688
+D2
+The maze of chaos
+~
+~
+0 -1 5854
+D3
+The maze of chaos
+~
+~
+0 -1 5678
+S
+#5898
+Floating in a void~
+~
+0 1073741828 1
+S
+#5899
+Nothing Important~
+Now get the hell out.
+~
+0 1075838980 1
+S
+#0
+
+
+#RESETS
+R 0 5697 4
+R 0 5698 4
+R 0 5699 4
+R 0 5700 3
+R 0 5701 3
+R 0 5701 4
+R 0 5702 3
+R 0 5702 4
+R 0 5703 4
+R 0 5784 6
+R 0 5785 6
+R 0 5786 6
+R 0 5787 6
+R 0 5788 6
+R 0 5789 6
+R 0 5790 6
+R 0 5791 6
+R 0 5792 6
+R 0 5793 6
+R 0 5794 6
+R 0 5795 6
+R 0 5796 6
+R 0 5797 6
+R 0 5798 6
+R 0 5799 6
+R 0 5800 6
+R 0 5801 6
+R 0 5802 6
+R 0 5803 6
+R 0 5804 6
+R 0 5805 6
+R 0 5806 6
+R 0 5807 6
+R 0 5808 5
+R 0 5850 4
+R 0 5851 4
+R 0 5852 4
+R 0 5853 4
+R 0 5854 4
+R 0 5855 4
+D 0 5600 2 0
+M 1 5600 4 5605
+G 1 5619 1
+E 1 5600 1 16
+M 1 5600 4 5605
+G 1 5619 1
+E 1 5600 1 16
+M 1 5600 4 5605
+G 1 5619 1
+E 1 5600 1 16
+M 1 5600 4 5605
+G 1 5619 1
+E 1 5600 1 16
+D 0 5605 0 2
+D 0 5606 0 0
+D 0 5607 2 0
+D 0 5608 0 1
+M 1 5601 3 5609
+D 0 5609 0 1
+D 0 5610 0 1
+D 0 5610 2 1
+M 1 5602 1 5612
+G 1 5620 1
+E 1 5601 1 16
+D 0 5612 2 1
+D 0 5613 0 1
+D 0 5613 3 1
+D 0 5614 1 1
+D 0 5615 2 1
+M 1 5610 2 5616
+G 1 5606 1
+D 0 5616 2 1
+D 0 5617 1 1
+M 1 5603 3 5618
+E 1 5602 1 16
+M 1 5603 3 5618
+E 1 5602 1 16
+M 1 5603 3 5618
+E 1 5602 1 16
+D 0 5618 0 1
+D 0 5618 3 1
+M 1 5604 1 5619
+G 1 5604 1
+E 1 5603 1 16
+D 0 5619 2 1
+D 0 5623 0 1
+D 0 5623 1 1
+D 0 5625 0 1
+D 0 5625 3 1
+D 0 5626 1 1
+M 1 5606 3 5627
+M 1 5606 3 5627
+M 1 5606 3 5627
+D 0 5627 3 1
+M 1 5605 1 5628
+E 1 5605 1 16
+D 0 5628 2 1
+D 0 5629 3 1
+M 1 5610 2 5633
+G 1 5606 1
+D 0 5633 1 1
+D 0 5634 2 1
+D 0 5635 2 1
+M 1 5607 1 5637
+D 0 5637 0 1
+D 0 5637 1 1
+M 1 5608 1 5638
+E 1 5607 1 16
+D 0 5638 3 1
+D 0 5639 3 1
+D 0 5642 1 1
+D 0 5643 0 1
+M 1 5625 5 5644
+E 1 5631 1 16
+D 0 5644 2 1
+D 0 5645 1 2
+M 1 5625 5 5646
+E 1 5631 1 16
+M 1 5625 5 5646
+E 1 5631 1 16
+M 1 5625 5 5648
+E 1 5631 1 16
+D 0 5649 3 2
+M 1 5601 3 5650
+M 1 5627 1 5653
+M 1 5626 1 5658
+E 1 5628 1 3
+E 1 5630 1 16
+M 1 5625 5 5660
+E 1 5631 1 16
+M 1 5609 1 5663
+M 1 5613 1 5669
+E 1 5609 1 3
+M 1 5614 10 5671
+M 1 5614 10 5673
+M 1 5614 10 5676
+G 1 5610 1
+M 1 5614 10 5678
+G 1 5610 1
+M 1 5614 10 5680
+M 1 5601 3 5681
+M 1 5615 1 5687
+E 1 5611 1 16
+O 1 5634 1 5687
+M 1 5614 10 5690
+G 1 5610 1
+M 1 5614 10 5692
+M 1 5614 10 5693
+M 1 5614 10 5694
+G 1 5610 1
+T 5 6 6 5703
+D 0 5708 2 1
+D 0 5709 0 1
+D 0 5710 0 1
+D 0 5710 1 1
+D 0 5711 1 1
+D 0 5711 3 0
+D 0 5712 1 1
+D 0 5713 1 1
+D 0 5713 2 1
+D 0 5714 0 1
+M 1 5617 1 5715
+E 1 5842 1 10
+E 1 5616 1 5
+E 1 5613 1 16
+D 0 5715 2 1
+M 1 5611 1 5716
+D 0 5716 1 0
+M 1 5629 3 5717
+G 1 5636 1
+M 1 5629 3 5717
+G 1 5636 1
+M 1 5629 3 5717
+G 1 5636 1
+D 0 5717 0 1
+D 0 5717 3 2
+M 1 5630 1 5718
+G 1 5837 1
+D 0 5718 1 2
+D 0 5719 2 1
+D 0 5721 1 1
+D 0 5722 0 0
+D 0 5723 2 0
+D 0 5724 3 0
+D 0 5725 2 0
+M 1 5618 1 5727
+D 0 5729 1 1
+D 0 5734 1 1
+D 0 5735 3 1
+D 0 5737 2 1
+D 0 5741 3 1
+M 1 5623 1 5744
+M 1 5628 1 5747
+G 1 5624 1
+G 1 5623 1
+G 1 5622 1
+G 1 5751 1
+G 1 5750 1
+D 0 5747 0 1
+D 0 5747 1 1
+D 0 5748 3 1
+M 1 5616 1 5749
+E 1 5845 1 6
+E 1 5616 1 5
+E 1 5614 1 16
+D 0 5749 2 1
+D 0 5749 3 1
+D 0 5750 0 1
+M 1 5624 1 5751
+D 0 5751 1 1
+D 0 5779 2 1
+D 0 5780 1 1
+M 1 5620 1 5792
+G 1 5839 1
+O 1 5635 1 5808
+D 0 5809 0 1
+D 0 5810 2 1
+D 0 5811 0 2
+D 0 5811 1 2
+D 0 5811 3 2
+M 1 5619 1 5813
+O 1 5632 1 5813
+D 0 5813 3 2
+M 1 5621 1 5814
+E 1 5621 1 16
+D 0 5814 1 2
+M 1 5636 1 5820
+D 0 5824 3 0
+D 0 5825 3 0
+D 0 5826 3 0
+M 1 5614 10 5850
+G 1 5610 1
+M 1 5622 1 5812
+E 1 5651 1 12
+E 1 5776 1 19
+E 1 5618 1 16
+E 1 5775 1 0
+O 1 22 1 5812
+D 0 5812 2 0
+S
+
+
+#SHOPS
+ 5623    0  0  0  0  0   120  90         0 23    ; Dracolich
+0
+
+
+#REPAIRS
+ 5624    5  9 15         100   1         0 23    ; The prisoner Robert
+0
+
+
+#SPECIALS
+M  5601 spec_poison
+M  5602 spec_cast_mage
+M  5606 spec_breath_fire
+M  5609 spec_poison
+M  5611 spec_breath_fire
+M  5612 spec_cast_mage
+M  5613 spec_breath_any
+M  5614 spec_breath_gas
+M  5615 spec_cast_mage
+M  5616 spec_breath_any
+M  5617 spec_cast_mage
+M  5618 spec_breath_gas
+M  5619 spec_breath_any
+M  5620 spec_breath_any
+M  5621 spec_breath_any
+M  5623 spec_breath_any
+M  5625 spec_cast_cleric
+M  5626 spec_cast_cleric
+M  5627 spec_breath_any
+M  5629 spec_cast_mage
+M  5630 spec_breath_any
+M  5631 spec_poison
+S
+
+
+#$

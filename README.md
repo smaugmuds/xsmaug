@@ -103,6 +103,14 @@ Changes made to areas:
 	- Will not be backward compatible with any Smaug mud that does not employ the reset fix.
 	- Areas written for Smaug 1.02a, 1.4, and 1.4a should load without a problem and remain compatible.
 
+New Areas:
+
+	- sesamest.are
+	- chess.are
+	- warner.are
+	- troy.are
+	- buds.are
+
 
 #### ChangeLog
 

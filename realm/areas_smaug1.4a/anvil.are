@@ -1,0 +1,2699 @@
+#AREA   The Sun's Anvil~
+
+#AUTHOR Narwhal~
+
+#RANGES
+55 75 55 75
+$
+
+#RESETMSG The wind misteriously starts to flow, later to fall into nothingness~
+
+#FLAGS
+4 10
+
+#ECONOMY 0 0
+
+#MOBILES
+#1000
+merchant slave master~
+The merchant slave master~
+A slave master
+~
+This man soared by its numerous wounds and scars, old mercenary of His Royal
+masjesty the emperor, now follows only one god, Quar, his lord and only master. 
+Sometimes 'finds' some good beings in this desert and gives them free
+transportation to the market, where he will gain good money for its sold. ~
+65 1077936640 -500 C
+65 0 -200 150d100+1250 3d8+20
+65000 0
+8 8 1
+20 15 15 17 25 10 14
+0 5 5 6 5
+0 4 180 65 1 1 4
+50 59 3 48 1050624 8256 240 2621441
+> fight_prog 95~
+if rand(50)
+say My god Quar, help me in my duty against thy enemies!!
+stun
+disarm
+kick
+gouge
+kick
+disarm
+gouge
+take all
+else
+if rand(40)
+shout Beware sad Mortal, and watch the almighty wrath of Quar!!
+mpe _red An Ethereal fist appears from nowhere and with a single blow, thrases your equipment!! 
+mpforce $n remove all
+mpdamage $n 250
+gouge
+gouge
+gouge
+else
+if rand(35)
+ca heal 
+c 'cure blindness'
+c 'dispel evil'
+c 'dispel magic'
+else
+if rand(30)
+mpe Picks a strange gem of one of his pockets and shouts:
+mpe This is the price for those that oppose to Quar designs!!
+mpe _red Suddenly the gem channels a blinding ray of light and /\/\**ObLiTeRaTeS**/\/\ you!!
+mpdamage $n 500
+shout If you want more, come.. and I will get you SOME!!
+muhaha
+else
+if rand(25)
+wield sword
+disarm
+punch
+else
+c 'faerie fire' $r
+c 'galvanic whip' $r
+c 'quatum spike' $r
+endif
+endif
+endif
+endif
+endif~
+> greet_prog 100~
+smile
+Say Ave Adhali.
+bow $n
+say I can offer you many priceless objects and potions brought from the far seas of Khurdin.
+decir Accept and I will promise that you wont be deceived.
+if wis($n) < 20
+mea $n Please, say yes, and I will offer you what I have...
+else
+mea $n Run!! What the merchant really wants is to sold you as another good!!
+endif~
+> speech_prog p yes~
+mea $n Smiles at you as his face turns into the one of a beast.
+mpechoar $n $n accepts the contract of the slave master.
+grin
+mea $n The slave master whispers a soft chant...
+mpechoar $n The slave master whispers a song and points a finger to $n!
+mpforce $n rest
+mpforce $n sleep
+shout How Good!! Another one for the collection!!
+mpe $n rests into a deep slumber.
+shout And Now DIE!! Because what I want from you it is your SOUL!!!
+mpkill $n
+disarm
+disarm
+gouge
+stun
+kick
+gouge
+take all
+~
+> speech_prog p no~
+decir Damm you $n!!
+, whisper some words
+insult $n
+~
+|
+#1001
+wyrling dragon snake wyvern~
+A sand wyvern~
+The huge Sand Wyvern looks at you as if you were its next meal.
+~
+It is one of the last ones of its race. The race, proud, intelligent and powerful
+in ancient times, was brought here by the gods, to protect the world from its
+menace. They are beings of 12 meters of lenght, and almost 7 meters tall. Its 
+scales, now exchanged by a thick layer of skin, shine with a strange red glow;
+its wings are now but two bone like appendix ending into a sharpened claw
+and its eyes, now located at each side of the head, glow evily.. This traits
+always inspire a preternatural terror on its victims.~
+16777285 41000 0 C
+65 0 -75 120d100+3000 10d8+20
+45000 0
+8 8 0
+23 20 18 20 22 3 18
+0 0 1 3 4
+89 3 700 500 67585 1 3
+60 65 271351819 1048864 3584 8274 131363 2629634
+> greet_prog 100~
+if ispc($n)
+frown
+emote stares at you with not much interest.
+snarl $n
+else
+emote scratches its skin against the sand to free itself from the parasites.
+endif~
+> death_prog 25~
+mpechoar As the beast dies, a bone it is stripped violently from its body.
+mpoload 1003 65
+drop axe~
+|
+#1002
+swarm mosquito~
+A deadly swarm~
+A deadly swarm attacks you in search of your blood.
+~
+It is an insect plague of all colors, sizes and kinds. They move through the 
+desert searching for victims to drink the vital fluids to sustain themselves.~
+65 77598780 -200 C
+65 0 -100 100d10+3000 20d8+100
+45000 0
+8 8 0
+10 9 9 15 15 2 18
+-7 -6 -5 -5 -5
+83 4 0 0 256 256 2
+45 65 32768 2050 8194 1048832 1074008065 1024
+> fight_prog 50~
+c 'unravel defenses' $n
+c 'drain life' $n
+c poison $n
+c curse $n
+c weaken $n~
+|
+#1003
+Golem blood~
+A blood golem~
+The Blood Golem glances at you with glee.
+~
+They are the result of dark and arcane magic upon a race of humans that lived in
+the desert. Isn´t known how or when, but what common lore explain, is that 
+a powerful mage, during the 2nd era, called upon the powers of a demon to possess
+to the desert people..., and this is the result... evil creatures without will
+and with only one thought... Kill!!.~
+65 335546368 -500 C
+69 0 -200 100d12+3000 21d10+100
+0 0
+8 8 0
+15 15 10 18 18 10 18
+-5 -5 -5 -5 -8
+40 3 0 0 81921 65537 4
+50 65 262149 135 2097160 2080 536871043 2097153
+> greet_prog 100~
+kill $n~
+|
+#1004
+Drist beetle~
+A drist beetle~
+A drist beetle stares stupidly at you with its compound eyes
+~
+You find yourself with a being with the body of a mountain, and a brain the size
+of the head of a needle. The drist beetles are known by their brutality, but not
+for their intelligence. Also they are known to attack adventures like you and 
+satiate their hunger with their flesh!.~
+65 1073750824 100 C
+64 0 -250 100d16+2000 40d10+50
+0 0
+8 8 0
+25 2 2 11 25 1 10
+4 4 4 2 1
+83 4 0 0 257 1 2
+75 75 6358016 1048576 2056 33 35652097 10240
+> greet_prog 100~
+say Ddddrrrrrriiiiiiiiiisssssssssttttttttt!!!!!~
+|
+#1005
+snail beast insect~
+An insect-like beast~
+A sand snail, as big as a truck, attacks you!!
+~
+It is a snail with red to brown colours, developing through all its body. Has 
+twenty pairs of legs and one pair of frightening jaws. With its size, it is the
+biggest predator of all the desert.~
+97 106536 -300 C
+67 0 -300 100d30+1000 10d10+20
+0 0
+8 8 0
+18 18 18 22 25 12 18
+4 5 5 5 -5
+83 3 0 0 1 1 5
+65 50 67502096 8192 1050755 4144 37754882 27392
+#1006
+Jamella merchant world end~
+Jamella, Merchant of the end of the world~
+Jamella, Merchant of the end of the world
+~
+She is Jamella, I dont know if you will or wont recognize her, because the time
+has passed since she came from the land of Tristram. She is dressed with travel
+clothes, surely because she has arrived recently from a long journey.
+She sells goods of all trades, but some of those items... are just sold here,
+and beleive me if I tell you this, If you have arrived here, you have to be a
+skillfull and resourcefull adventurer to have survived to the tricks and beasts
+of this desert.~
+67141697 380119740 1000 C
+65 0 -500 500d100+20000 100d4+150
+0 0
+8 8 0
+25 25 25 25 25 25 25
+10 10 10 10 10
+90 6 0 0 32769 1 5
+75 100 1791 2048 3162111 0 0 7897087
+> greet_prog 100~
+say Salve, Adhali
+smile
+say as you can see, I have some things that maybe those should be of your interest....
+~
+|
+#1007
+Dragon Azogue~
+The Azogue Dragon~
+The Azogue Dragon snarls at you sadistically
+~
+It is a dragon-like beast, with the body of a snake and the wings of a bat.
+Its huge reptilian body, his sharpened wits, mortal breath and wizard spells, 
+turn him to be, the most lethal beast of this desert. Not only thinks evily, but
+he feeds on evil, bathes on evil. However, not everything its that bad..., because
+as the legend says, they bear wonderful treasures and magic objects along with
+themselves... (if you can survive, of course)~
+65633 111673916 -1000 C
+70 0 -200 100d95+5500 40d12+100
+120000 0
+8 8 1
+20 25 25 20 20 5 15
+-4 -4 -4 -4 -4
+31 0 0 0 2049 2049 4
+85 100 5898265 519 1050888 8304 604549124 6148
+#1008
+wolf man lupine~
+A lupine~
+A magic flesh-craft, in between a man and a wolf, is here
+~
+It is an anomaly of this desert, which is connected to diverse realities of the
+time plane, and that summons all the evil in the worlds in its-self. The lupine
+its a magic being, not summoned by any maddened wizard, but created by the desert
+as a reflection of the people's anger. The lupine it is a social creature, as it
+is seen in groups of 3 to 4 beings, and will not doubt in killing you if you stay
+to close of its sharpened claws.~
+97 1082163768 -1000 C
+66 0 -150 100d100+3000 20d100+75
+65000 0
+8 8 0
+15 15 15 15 15 15 15
+0 0 0 0 0
+0 0 0 0 4097 4097 0
+85 100 134479888 3 1049106 8224 134219843 2050
+> fight_prog 75~
+say You Will now pay for your daring, you fool!!
+warmup
+gouge
+gouge
+disarm
+disarm
+stun
+kick
+jump
+~
+|
+#1009
+sand shark~
+A sand shark~
+A creature with the size of a bull and covered with scales, is here.
+~
+Known among mortals with the name of sand shark, the bulette is a wonderful 
+predator that only lives to eat. It is universally feared, also by other
+creatures, because it charges brutally against any foe, to later hardly bite 
+any body-part that comes at his mouth. The body of the bulette is blue-grayish
+and covered by scales into a scale-like design. Its claws and teeth are made 
+of ivory, and his eyes, are yellow-greenish.~
+65633 1082196156 150 C
+65 0 -300 90d100+4500 30d10+50
+100000 0
+8 8 1
+25 2 10 25 25 1 15
+5 5 8 8 7
+50 3 0 0 65536 65536 4
+85 100 302186501 284 1059459 2105440 524839 4099
+#1010
+Djiin genie guard~
+A Djiin~
+A Djiin, noble among the genies, looks at you with patience.
+~
+He is one of the djiins that the gods once gave to its most precious followers.
+Actually, also serve a mortal lord, but have been commanded to protect this 
+desert. However, not many of them understand this, but they dont say a thing,
+because they dont want to suffer gods's anger.~
+65601 567996 1000 C
+70 0 -250 100d100+3000 10d20+50
+150000 0
+8 8 1
+22 18 19 20 21 20 19
+4 4 4 4 4
+90 6 0 0 32775 32769 4
+75 85 32867 48 1064351 2097216 4202594 2467
+> greet_prog 85~
+say Greetings , Sahid, what can I do for you?
+if isgood($n)
+say Wait a little my friend, and I shall give you some aditional help in your journey....
+c sanctuary $n
+c protection $n
+c armor $n
+c shield $n
+else
+say Get out from here, Hideous beast, of you will check how well sharpened my blade is!!
+endif
+
+~
+|
+#0
+
+
+#OBJECTS
+#1000
+thick skin layer~
+A thick layer of skin~
+The skin of one of the wyverns of this desert.~
+~
+9 33556992 9
+50 65 0 10
+8 150000 15000
+A
+5 2
+A
+13 25
+A
+17 50
+A
+36 15
+A
+40 25
+A
+56 102
+#1001
+merchant quar armor~
+The Armor of Quar~
+The armor of a merchant of the god Quar.~
+~
+9 1 9
+95 95 0 10 87 0
+2 300000 30000
+A
+59 -1
+A
+28 207
+A
+2 3
+A
+18 6
+A
+31 4
+A
+40 35
+A
+1 2
+A
+3 2
+#1002
+unspeakable sword~
+The sword of the Unspeakable~
+The sword of the Unspeakable~
+The Snarling slash~
+5 67111180 8193
+45 7 8 205
+2 10000000 1000000
+A
+18 8
+A
+19 10
+A
+31 3
+A
+2 2
+A
+17 60
+A
+30 109
+A
+56 88
+A
+13 150
+> wear_prog 100~
+mpe _lbl No te defraudaré $n lo juro por Quar!!~
+> remove_prog 100~
+mpe _red Noooooo!!! Se presa de mi Ira, $n!
+mpdamage $n 150~
+|
+#1003
+axe wurm~
+The Wurm-Hals Axe~
+A bone of the wyvern.~
+~
+5 0 8193
+35 1 50 208
+4 100000 100000
+A
+19 -20
+A
+1 -5
+A
+34 -35
+> wear_prog 100~
+c 'trollish vigor'
+c 'elvish beauty'
+c heal
+c shield 
+c fly
+c float
+c agility
+c 'eldritch sphere'
+c invisivility~
+|
+#1004
+flask fluid colors prism~
+A prism-like flask~
+A prism-like flask~
+~
+10 256 8193
+65 227 212 228
+2 25000 2500
+A
+3 2
+A
+31 2
+#1005
+jar honey~
+A pot of honey~
+A pot of honey~
+~
+10 1 8193
+65 111 225 89
+1 0 0
+A
+31 2
+#1006
+blood red vial~
+A blood vial~
+A vial full of blood... Yuck!!
+~
+~
+10 4 8193
+69 21 59 207
+2 34000 3400
+A
+50 20
+#1007
+beast eye~
+The beast eye~
+The beast eye, stares at you evily.~
+~
+9 524885 131073
+75 75 0 0
+3 10000000 1000000
+A
+12 100
+A
+66 20
+A
+14 150
+A
+13 125
+A
+25 -2
+A
+4 -2
+A
+1 2
+A
+3 -1
+A
+56 207
+#1008
+sand moisture flask~
+A flask full of a sand moisture~
+A little flask with a small moisture of sand inside.
+~
+~
+10 5 1
+35 102 224 236
+3 17000 1700
+#1009
+vial hydragirum~
+A Hydragirum vial~
+It is a potion made of Hydragirum, a plant unknown in this dimension.~
+~
+10 5 1
+45 217 28 290
+1 18000 1800
+#1010
+flask Mhir ptaf~
+A flask of ptaf~
+A flask of ptaf.~
+~
+10 5 1
+35 82 14 222
+1 50000 5000
+#1011
+werlig staff~
+A werlig Staff~
+This is a staff made of the wood of a werlig, a tree known to have magical
+properties.~
+The Colour Explosion~
+5 8945989 8193
+0 10 8 203
+4 500000 50000
+A
+18 8
+A
+19 8
+A
+3 3
+A
+5 2
+A
+17 100
+> fight_prog 75~
+c rayo $r
+~
+|
+#1012
+azogue skin~
+The Azogue Skin~
+This is the skin of the evil dragon that lives in the desert of the Sun's Anvil.
+It is very shiny, by the numerous gold pieces and gems that lie embedded in it,
+but also it is flexible, by the bones that are in between the coins and gems.
+Those bones once belonged to the dead enemies of the dragon.~
+~
+9 0 9
+100 100 0 0
+4 45000000 4500000
+A
+25 3
+A
+17 100
+A
+1 2
+A
+3 2
+A
+48 25
+A
+56 207
+A
+12 100
+A
+66 5
+A
+13 150
+> wear_prog 25~
+c sacntuary
+c protection
+c 'eldritch sphere'
+c 'stone skin'
+c shield
+c 'electric shield'
+c 'iceshield'
+c 'fireshield'
+c armor
+c 'demon skin'
+c 'dragon skin'
+
+~
+|
+#1013
+potion cyan~
+A cyan potion~
+A cyan potion~
+~
+10 65 1
+60 88 213 74
+2 1000000 10000
+#1014
+Pyrosulfate anthodic mixture~
+A mixture of Pyrosulfate anthodic~
+It is a potion made of the root of the ptaf.
+~
+~
+10 2053 1
+45 227 221 77
+2 50000 5000
+#1015
+mail armor~
+A mail amor~
+It is the shell of the bulette, that may give you protection if you wield it.~
+~
+9 16828737 9
+150 150 0 0
+5 20000000 2000000
+A
+17 -150
+A
+19 10
+A
+14 -100
+A
+1 3
+A
+5 3
+#1016
+belt Djiin~
+A belt of purple silk~
+A belt of purple silk stays here on the floor.
+~
+~
+9 3393 0
+75 75 0 0
+2 2500000 250000
+A
+14 100
+A
+12 200
+A
+13 100
+A
+25 3
+A
+4 3
+A
+2 3
+A
+18 10
+#1017
+Djiin sword~
+The Sword of the Djiin~
+A huge and mighty sword remains forgotten here.~
+The Mighty Slash~
+5 527681 8193
+0 10 8 281
+3 1000000 100000
+A
+18 8
+A
+19 12
+A
+2 2
+A
+24 10
+A
+56 36
+A
+1 3
+#1018
+Djiin Bracers~
+The Bracers of the Djiin~
+They are the golden bracers of the djiin, a magnificient piece of art-work.~
+~
+9 1345 257
+75 75 0 0
+2 10000000 1000000
+A
+18 10
+A
+48 25
+A
+35 25
+A
+41 25
+A
+40 25
+A
+2 3
+A
+1 -1
+#1019
+large flask~
+A large flask~
+A large flask.~
+~
+10 524288 1
+60 112 67 206
+2 35000 2000
+#0
+
+
+#ROOMS
+#1000
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+0 2105344 10
+D0
+~
+~
+0 0 1001
+D1
+~
+~
+0 0 1002
+D3
+~
+~
+0 0 1003
+D7
+~
+~
+0 0 1007
+D5
+~
+~
+0 0 1024
+S
+#1001
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+0 2105344 10
+D3
+~
+~
+0 0 1000
+D1
+~
+~
+0 0 1000
+D2
+~
+~
+0 0 1002
+D0
+~
+~
+0 0 1003
+D5
+~
+~
+0 0 1036
+S
+#1002
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+0 2105344 10
+D3
+~
+~
+0 0 1000
+D0
+~
+~
+0 0 1001
+D2
+~
+~
+0 0 1003
+S
+#1003
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+0 2105344 10
+D1
+~
+~
+0 0 1000
+D2
+~
+~
+0 0 1001
+D0
+~
+~
+0 0 1002
+S
+#1004
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+0 2105344 10
+D0
+~
+~
+0 0 1007
+D2
+~
+~
+0 0 1004
+D1
+~
+~
+0 0 1005
+S
+#1005
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+0 2105344 10
+D2
+~
+~
+0 0 1007
+D3
+~
+~
+0 0 1004
+D1
+~
+~
+0 0 1006
+S
+#1006
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+0 2105344 10
+D3
+~
+~
+0 0 1005
+D2
+~
+~
+0 0 1006
+D0
+~
+~
+0 0 1006
+D2
+~
+~
+0 0 1007
+S
+#1007
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+0 2105344 10
+D2
+~
+~
+0 0 1004
+D0
+~
+~
+0 0 1006
+D3
+~
+~
+0 0 1008
+D8
+~
+~
+0 0 1000
+D9
+~
+~
+0 0 1011
+S
+#1008
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+0 2105344 10
+D0
+~
+~
+0 0 1007
+D2
+~
+~
+0 0 1009
+D3
+~
+~
+0 0 1010
+D1
+~
+~
+0 0 1009
+S
+#1009
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+0 2105344 10
+D0
+~
+~
+0 0 1008
+D3
+~
+~
+0 0 1040
+D1
+~
+~
+0 0 1010
+D9
+~
+~
+0 0 1009
+D6
+~
+~
+0 0 1009
+S
+#1010
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+0 2105344 10
+D1
+~
+~
+0 0 1008
+D3
+~
+~
+0 0 1009
+D0
+~
+~
+0 0 1011
+D8
+~
+~
+0 0 1012
+D9
+~
+~
+0 0 1013
+D2
+~
+~
+0 0 1018
+S
+#1011
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+0 2105344 10
+D6
+~
+~
+0 0 1007
+D0
+~
+~
+0 0 1014
+D2
+~
+~
+0 0 1010
+D7
+~
+~
+0 0 1012
+S
+#1012
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+0 2105344 10
+D7
+~
+~
+0 0 1010
+D8
+~
+~
+0 0 1011
+D0
+~
+~
+0 0 1013
+D2
+~
+~
+0 0 1020
+S
+#1013
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+0 2105344 10
+D2
+~
+~
+0 0 1012
+D0
+~
+~
+0 0 1021
+D6
+~
+~
+0 0 1010
+D7
+~
+~
+0 0 1015
+S
+#1014
+A way in the desert~
+The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+0 2105344 10
+D2
+~
+~
+0 0 1011
+D3
+~
+~
+0 0 1016
+D0
+~
+~
+0 0 1015
+S
+#1015
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D8
+~
+~
+0 0 1013
+D2
+~
+~
+0 0 1014
+D6
+~
+~
+0 0 1030
+D9
+~
+~
+0 0 1029
+S
+#1016
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D1
+~
+~
+0 0 1014
+D0
+~
+~
+0 0 1018
+D2
+~
+~
+0 0 1022
+D3
+~
+~
+0 0 1026
+S
+#1017
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D0
+~
+~
+0 0 1012
+D6
+~
+~
+0 0 1029
+D8
+~
+~
+0 0 1023
+S
+#1018
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D2
+~
+~
+0 0 1016
+D6
+~
+~
+0 0 1025
+D0
+~
+~
+0 0 1010
+D1
+~
+~
+0 0 1001
+S
+#1019
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D4
+~
+~
+0 0 1029
+D7
+~
+~
+0 0 1038
+D8
+~
+~
+0 0 1044
+S
+#1020
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D0
+~
+~
+0 0 1012
+D1
+~
+~
+0 0 1021
+D9
+~
+~
+0 0 1030
+D7
+~
+~
+0 0 1031
+D3
+~
+~
+0 0 1040
+S
+#1021
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D2
+~
+~
+0 0 1013
+D3
+~
+~
+0 0 1020
+D4
+~
+~
+0 0 1040
+D0
+~
+~
+0 0 1035
+S
+#1022
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D0
+~
+~
+0 0 1016
+D9
+~
+~
+0 0 1009
+D3
+~
+~
+0 0 1040
+S
+#1023
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D7
+~
+~
+0 0 1017
+D8
+~
+~
+0 0 1033
+S
+#1024
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D5
+~
+~
+0 0 1025
+D1
+~
+~
+0 0 1040
+D4
+~
+~
+0 0 1000
+S
+#1025
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D9
+~
+~
+0 0 1018
+D0
+~
+~
+0 0 1030
+D4
+~
+~
+0 0 1024
+S
+#1026
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D1
+~
+~
+0 0 1016
+D3
+~
+~
+0 0 1050
+S
+#1027
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D0
+~
+~
+0 0 1028
+D7
+~
+~
+0 0 1029
+D8
+~
+~
+0 0 1031
+D4
+~
+~
+0 0 1049
+S
+#1028
+The Sun's Anvil~
+The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+0 2105344 10
+D2
+~
+~
+0 0 1027
+D0
+~
+~
+0 0 1060
+D7
+~
+~
+0 0 1030
+D9
+~
+~
+0 0 1031
+D6
+~
+~
+0 0 1040
+S
+#1029
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D6
+~
+~
+0 0 1015
+D9
+~
+~
+0 0 1017
+D5
+~
+~
+0 0 1019
+D8
+~
+~
+0 0 1027
+S
+#1030
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D2
+~
+~
+0 0 1025
+D9
+~
+~
+0 0 1035
+D6
+~
+~
+0 0 1020
+D8
+~
+~
+0 0 1028
+S
+#1031
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D8
+~
+~
+0 0 1020
+D7
+~
+~
+0 0 1027
+D6
+~
+~
+0 0 1028
+S
+#1032
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D0
+~
+~
+0 0 1010
+D2
+~
+~
+0 0 1010
+D7
+~
+~
+0 0 1033
+D4
+~
+~
+0 0 1059
+S
+#1033
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D8
+~
+~
+0 0 1032
+D7
+~
+~
+0 0 1023
+D4
+~
+~
+0 0 1034
+S
+#1034
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D4
+~
+~
+0 0 1035
+D1
+~
+~
+0 0 1036
+D3
+~
+~
+0 0 1037
+D0
+~
+~
+0 0 1047
+D2
+~
+~
+0 0 1043
+D5
+~
+~
+0 0 1033
+S
+#1035
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D6
+~
+~
+0 0 1030
+D0
+~
+~
+0 0 1050
+D2
+~
+~
+0 0 1021
+D5
+~
+~
+0 0 1034
+D8
+~
+~
+0 0 1043
+D7
+~
+~
+0 0 1053
+S
+#1036
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D3
+~
+~
+0 0 1034
+D4
+~
+~
+0 0 1001
+D0
+~
+~
+0 0 1041
+S
+#1037
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D1
+~
+~
+0 0 1034
+D0
+~
+~
+0 0 1037
+D2
+~
+~
+0 0 1037
+S
+#1038
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D7
+~
+~
+0 0 1040
+D6
+~
+~
+0 0 1039
+D8
+~
+~
+0 0 1019
+D9
+~
+~
+0 0 1041
+S
+#1039
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D9
+~
+~
+0 0 1038
+D2
+~
+~
+0 0 1050
+D0
+~
+~
+0 0 1049
+D1
+~
+~
+0 0 1061
+S
+#1040
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D1
+~
+~
+0 0 1020
+D5
+~
+~
+0 0 1021
+D3
+~
+~
+0 0 1024
+D9
+~
+~
+0 0 1028
+D8
+~
+~
+0 0 1038
+S
+#1041
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D6
+~
+~
+0 0 1038
+D7
+~
+~
+0 0 1015
+D2
+~
+~
+0 0 1036
+S
+#1042
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D2
+~
+~
+0 0 1012
+D0
+~
+~
+0 0 1042
+S
+#1043
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D0
+~
+~
+0 0 1034
+D7
+~
+~
+0 0 1035
+D1
+~
+~
+0 0 1036
+S
+#1044
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D0
+~
+~
+0 0 1045
+D7
+~
+~
+0 0 1019
+D5
+~
+~
+0 0 1050
+S
+#1045
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D2
+~
+~
+0 0 1044
+D4
+~
+~
+0 0 1054
+D7
+~
+~
+0 0 1052
+S
+#1046
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D8
+~
+~
+0 0 1044
+D6
+~
+~
+0 0 1046
+D9
+~
+~
+0 0 1046
+D0
+~
+~
+0 0 1030
+S
+#1047
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D2
+~
+~
+0 0 1034
+D6
+~
+~
+0 0 1049
+S
+#1048
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D0
+~
+~
+0 0 1047
+D8
+~
+~
+0 0 1051
+D3
+~
+~
+0 0 1016
+S
+#1049
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D5
+~
+~
+0 0 1027
+D2
+~
+~
+0 0 1039
+D9
+~
+~
+0 0 1047
+S
+#1050
+Into a sand sea~
+Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+0 2105344 10
+D2
+~
+~
+0 0 1035
+D6
+~
+~
+0 0 1055
+D1
+~
+~
+0 0 1026
+D4
+~
+~
+0 0 1060
+D0
+~
+~
+0 0 1039
+S
+#1051
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D7
+~
+~
+0 0 1048
+S
+#1052
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D8
+~
+~
+0 0 1045
+D9
+~
+~
+0 0 1052
+D5
+~
+~
+0 0 1052
+D0
+~
+~
+0 0 1053
+D4
+~
+~
+0 0 1055
+S
+#1053
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D2
+~
+~
+0 0 1052
+D8
+~
+~
+0 0 1035
+D0
+~
+~
+0 0 1060
+D3
+~
+~
+0 0 1055
+S
+#1054
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D5
+~
+~
+0 0 1045
+D0
+~
+~
+0 0 1055
+D9
+~
+~
+0 0 1056
+S
+#1055
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D9
+~
+~
+0 0 1050
+D6
+~
+~
+0 0 1063
+D5
+~
+~
+0 0 1052
+D1
+~
+~
+0 0 1053
+D2
+~
+~
+0 0 1054
+S
+#1056
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D6
+~
+~
+0 0 1054
+D4
+~
+~
+0 0 1060
+D0
+~
+~
+0 0 1057
+S
+#1057
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 0
+D2
+~
+~
+0 0 1056
+D0
+~
+~
+0 0 1058
+S
+#1058
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D2
+~
+~
+0 0 1057
+D0
+~
+~
+0 0 1059
+S
+#1059
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D5
+~
+~
+0 0 1032
+D2
+~
+~
+0 0 1058
+D5
+~
+~
+0 0 1060
+S
+#1060
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D2
+~
+~
+0 0 1028
+D7
+~
+~
+0 0 1061
+D6
+~
+~
+0 0 1055
+D5
+~
+~
+0 0 1050
+D4
+~
+~
+0 0 1059
+S
+#1061
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D8
+~
+~
+0 0 1060
+D0
+~
+~
+0 0 1062
+D3
+~
+~
+0 0 1039
+S
+#1062
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D2
+~
+~
+0 0 1061
+D0
+~
+~
+0 0 1063
+S
+#1063
+Along the desert~
+The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+0 2105344 10
+D9
+~
+~
+0 0 1055
+D2
+~
+~
+0 0 1062
+D7
+~
+~
+0 0 1064
+S
+#1064
+A stone-covered way~
+Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+0 2105344 10
+D8
+~
+~
+0 0 1063
+D0
+~
+~
+0 0 1066
+D8
+~
+~
+0 0 1065
+E
+horizon~
+*             *
+        *     *          *         *
+                   *           *
+           *              *
+       |      |=
+       |      |
+      / \||||/ \
+      | |||||| |
+ |    | |_--_| |    |  |  |  |  |
+/ \   | |_||_| |   / \/ \/ \/ \/ \
+--------****----------------------------------
+---------****---------------------------------
+----------****--------------------------------
+----------****--------------------------------
+---------****---------------------------------
+----------****--------------------------------
+-----------***--------------------------------
+------------***-------------------------------
+-------------***------------------------------
+-------------**-------------------------------
+--------------**------------------------------
+---------------**-----------------------------   ~
+S
+#1065
+A stone-covered way~
+The nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+0 2105344 5
+D7
+~
+~
+0 0 1064
+S
+#1066
+A stone-covered way~
+Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+0 2105344 0
+D2
+~
+~
+0 0 1064
+D4
+~
+~
+0 0 1067
+D0
+~
+~
+0 0 1069
+S
+#1067
+A stone-covered way~
+Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+0 2105344 0
+D5
+~
+~
+0 0 1066
+D0
+~
+~
+0 0 1068
+D9
+~
+~
+0 0 1069
+S
+#1068
+A stone-covered way~
+Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+0 2105344 0
+D2
+~
+~
+0 0 1067
+D0
+~
+~
+0 0 1069
+S
+#1069
+A stone-covered way~
+Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+0 2105344 0
+D2
+~
+~
+0 0 1066
+D0
+~
+~
+0 0 1070
+D6
+~
+~
+0 0 1067
+S
+#1070
+A stone-covered way~
+Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+0 35954820 0
+D2
+~
+~
+0 0 1069
+D0
+~
+~
+0 0 1071
+S
+#1071
+A passage to eternity~
+A wooden door lies before you. You open it, and you discover that you are in a 
+shop full of extrange and unknown items... some for the client to buy the products
+and so, make richer to the owner. The floor, made of black marble, the ceiling
+sustained by four columms, that neither hercule would have been able to crush, 
+and in the environment that surrounds you, the essence of aromatic plants, burning
+on brass pots, give an exotic touch to the room, making in an unspeakable way 
+feeling the best you could or would have ever been.
+~
+0 36971652 0
+D2
+~
+~
+0 0 1070
+S
+#0
+
+
+#RESETS
+R 0 1000 1
+R 0 1001 2
+M 0 1003 1 1001
+G 0 1006 0
+R 0 1002 3
+R 0 1003 3
+R 0 1004 0
+M 0 1000 1 1004
+E 0 1001 0 5
+R 0 1005 1
+R 0 1006 0
+M 0 1003 2 1006
+G 0 1006 0
+M 0 1010 1 1006
+E 0 1017 0 16
+E 0 1016 0 13
+E 0 1018 0 10
+R 0 1007 1
+M 0 1001 2 1007
+E 0 1000 0 12
+R 0 1008 1
+R 0 1009 1
+M 0 1010 1 1009
+E 0 1018 0 10
+E 0 1017 0 16
+M 0 1003 1 1010
+G 0 1006 0
+M 0 1010 1 1012
+E 0 1017 0 16
+E 0 1018 0 10
+E 0 1016 0 13
+M 0 1003 2 1013
+G 0 1006 0
+M 0 1000 1 1014
+E 0 1002 0 16
+E 0 1001 0 5
+M 0 1000 1 1016
+E 0 1001 0 5
+M 0 1010 1 1021
+E 0 1017 0 16
+E 0 1016 0 13
+M 0 1010 1 1024
+E 0 1018 0 10
+E 0 1017 0 16
+M 0 1000 1 1026
+E 0 1001 0 5
+M 0 1008 1 1026
+M 0 1004 1 1028
+G 0 1010 0
+M 0 1010 1 1028
+E 0 1016 0 13
+M 0 1001 1 1029
+E 0 1000 0 12
+M 0 1008 2 1030
+M 0 1001 1 1031
+E 0 1000 0 12
+M 0 1008 2 1032
+M 0 1007 1 1033
+E 0 1012 0 5
+M 0 1002 3 1034
+G 0 1004 0
+M 0 1001 1 1034
+G 0 1000 0
+M 0 1004 1 1034
+G 0 1005 0
+M 0 1001 1 1035
+E 0 1000 0 5
+M 0 1001 2 1036
+E 0 1000 0 5
+M 0 1004 1 1036
+M 0 1010 2 1036
+E 0 1016 0 13
+E 0 1017 0 16
+E 0 1018 0 10
+M 0 1002 2 1037
+E 0 1005 0 17
+M 0 1002 1 1040
+G 0 1004 0
+M 0 1001 1 1041
+E 0 1000 0 12
+M 0 1004 1 1041
+G 0 1010 0
+M 0 1010 1 1041
+E 0 1017 0 16
+E 0 1016 0 13
+E 0 1018 0 10
+M 0 1001 1 1044
+E 0 1000 0 12
+M 0 1010 1 1046
+E 0 1018 0 16
+E 0 1016 0 13
+M 0 1002 4 1047
+G 0 1004 0
+M 0 1004 1 1047
+G 0 1008 0
+M 0 1008 2 1047
+M 0 1007 1 1050
+E 0 1012 0 5
+M 0 1010 1 1051
+E 0 1018 0 10
+E 0 1017 0 16
+M 0 1000 1 1053
+E 0 1002 0 16
+E 0 1001 0 5
+M 0 1003 1 1054
+G 0 1006 0
+M 0 1002 1 1054
+M 0 1002 1 1054
+G 0 1006 0
+M 0 1009 1 1055
+E 0 1015 0 5
+M 0 1008 2 1056
+M 0 1005 1 1057
+E 0 1007 0 20
+M 0 1010 1 1058
+E 0 1017 0 16
+E 0 1018 0 10
+G 0 1019 0
+M 0 1000 1 1061
+E 0 1002 0 16
+E 0 1001 0 5
+M 0 1010 1 1065
+E 0 1017 0 16
+E 0 1016 0 13
+E 0 1018 0 10
+M 0 1006 1 1071
+G 0 1014 0
+G 0 1013 0
+G 0 1006 0
+G 0 1011 0
+G 0 1009 0
+G 0 1010 0
+G 0 1004 0
+G 0 1008 0
+G 0 1019 0
+S
+
+
+#SHOPS
+ 1006   10  5  0  0  0   130 125         1 23    ; Jamella, Merchant of the end of the world
+0
+
+
+#REPAIRS
+0
+
+
+#SPECIALS
+M  1000 spec_guard
+M  1001 spec_breath_any
+M  1002 spec_fido
+M  1006 spec_cast_cleric
+M  1007 spec_cast_mage
+M  1010 spec_guard
+S
+
+
+#$
