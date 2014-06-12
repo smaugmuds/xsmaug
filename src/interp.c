@@ -1,1482 +1,988 @@
-/***************************************************************************
- *  Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,        *
- *  Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.   *
- *                                                                         *
- *  Merc Diku Mud improvments copyright (C) 1992, 1993 by Michael          *
- *  Chastain, Michael Quan, and Mitchell Tse.                              *
- *                                                                         *
- *  In order to use any part of this Merc Diku Mud, you must comply with   *
- *  both the original Diku license in 'license.doc' as well the Merc       *
- *  license in 'license.txt'.  In particular, you may not remove either of *
- *  these copyright notices.                                               *
- *                                                                         *
- *  Much time and thought has gone into this software and you are          *
- *  benefitting.  We hope that you share your changes too.  What goes      *
- *  around, comes around.                                                  *
- ***************************************************************************/
+/****************************************************************************
+ * [S]imulated [M]edieval [A]dventure multi[U]ser [G]ame      |   \\._.//   *
+ * -----------------------------------------------------------|   (0...0)   *
+ * SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider      |    ).:.(    *
+ * -----------------------------------------------------------|    {o o}    *
+ * SMAUG code team: Thoric, Altrag, Blodkai, Narn, Haus,      |   / ' ' \   *
+ * Scryn, Rennard, Swordbearer, Gorog, Grishnakh, Nivek,      |~'~.VxvxV.~'~*
+ * Tricops, Fireblade, Edmond, Conran                         |             *
+ * ------------------------------------------------------------------------ *
+ * Merc 2.1 Diku Mud improvments copyright (C) 1992, 1993 by Michael        *
+ * Chastain, Michael Quan, and Mitchell Tse.                                *
+ * Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,          *
+ * Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     *
+ * ------------------------------------------------------------------------ *
+ *			 Command interpretation module			    *
+ ****************************************************************************/
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
-#endif
 #include <ctype.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "xmerc.h"
+#include "xsmaug.h"
+#ifdef USE_IMC
+#include "icec-mercbase.h"
+#endif
 
-
-
-bool check_social args( ( CHAR_DATA * ch, char *command, char *argument ) );
-bool MP_Commands args( ( CHAR_DATA * ch ) );
 
 /*
- * Command logging types.
+ * Externals
  */
-#define LOG_NORMAL	0
-#define LOG_ALWAYS	1
-#define LOG_NEVER	2
+void refresh_page( CHAR_DATA *ch );
+void subtract_times( struct timeval *etime, struct timeval *stime );
 
-/*
- * God Levels
- */
-#define L_GOD		MAX_LEVEL
-#define L_SUP		L_GOD - 1
-#define L_DEI		L_SUP - 1
-#define L_ANG		L_DEI - 1
-#define L_HER		L_ANG - 1
+bool	check_social	args( ( CHAR_DATA *ch, char *command,
+			    char *argument ) );
+char *check_cmd_flags args( ( CHAR_DATA *ch, CMDTYPE *cmd ) );
+
 
 
 /*
  * Log-all switch.
  */
-bool fLogAll = FALSE;
+bool				fLogAll		= FALSE;
 
+
+CMDTYPE	   *command_hash[126];	/* hash table for cmd_table */
+SOCIALTYPE *social_index[27];   /* hash table for socials   */
+
+/*
+ * Character not in position for command?
+ */
+bool check_pos( CHAR_DATA *ch, sh_int position )
+{
+
+    if ( IS_NPC( ch ) && ch->position > 3 ) /*Band-aid alert?  -- Blod*/
+      return TRUE;
+
+    if ( ch->position < position )
+    {
+	switch( ch->position )
+	{
+	case POS_DEAD:
+	    send_to_char( "A little difficult to do when you are DEAD...\n\r", ch );
+	    break;
+
+	case POS_MORTAL:
+	case POS_INCAP:
+	    send_to_char( "You are hurt far too bad for that.\n\r", ch );
+	    break;
+
+	case POS_STUNNED:
+	    send_to_char( "You are too stunned to do that.\n\r", ch );
+	    break;
+
+	case POS_SLEEPING:
+	    send_to_char( "In your dreams, or what?\n\r", ch );
+	    break;
+
+	case POS_RESTING:
+	    send_to_char( "Nah... You feel too relaxed...\n\r", ch);
+	    break;
+
+	case POS_SITTING:
+	    send_to_char( "You can't do that sitting down.\n\r", ch);
+	    break;
+
+	case POS_FIGHTING:
+            if(position<=POS_EVASIVE){
+	      send_to_char( "This fighting style is too demanding for that!\n\r", ch);
+            } else {
+	      send_to_char( "No way!  You are still fighting!\n\r", ch);
+             }
+	    break;
+    	case POS_DEFENSIVE:
+            if(position<=POS_EVASIVE){
+	      send_to_char( "This fighting style is too demanding for that!\n\r", ch);
+            } else {
+	    send_to_char( "No way!  You are still fighting!\n\r", ch);
+            }
+	    break;
+    	case POS_AGGRESSIVE:
+            if(position<=POS_EVASIVE){
+	      send_to_char( "This fighting style is too demanding for that!\n\r", ch);
+            } else {
+	    send_to_char( "No way!  You are still fighting!\n\r", ch);
+            }
+	    break;
+    	case POS_BERSERK:
+            if(position<=POS_EVASIVE){
+	      send_to_char( "This fighting style is too demanding for that!\n\r", ch);
+            } else {
+	       send_to_char( "No way!  You are still fighting!\n\r", ch);
+            }
+	    break;
+    	case POS_EVASIVE:
+	    send_to_char( "No way!  You are still fighting!\n\r", ch);
+	    break;
+
+	}
+	return FALSE;
+    }
+    return TRUE;
+}
+
+extern char lastplayercmd[MAX_INPUT_LENGTH*2];
 
 
 /*
- * Command table.
+ * Determine if this input line is eligible for writing to a watch file.
+ * We don't want to write movement commands like (n, s, e, w, etc.)
  */
-const struct cmd_type cmd_table[] = {
-   /*
-    * Common movement commands.
-    */
-   {"north", do_north, POS_STANDING, 0, LOG_NORMAL},
-   {"east", do_east, POS_STANDING, 0, LOG_NORMAL},
-   {"south", do_south, POS_STANDING, 0, LOG_NORMAL},
-   {"west", do_west, POS_STANDING, 0, LOG_NORMAL},
-   {"up", do_up, POS_STANDING, 0, LOG_NORMAL},
-   {"down", do_down, POS_STANDING, 0, LOG_NORMAL},
+bool valid_watch( char *logline )
+{
+int  len = strlen(logline);
+char c   = logline[0];
 
-   /*
-    * Common other commands.
-    * Placed here so one and two letter abbreviations work.
-    */
-   {"buy", do_buy, POS_RESTING, 0, LOG_NORMAL},
-   {"cast", do_cast, POS_FIGHTING, 0, LOG_NORMAL},
-   {"exits", do_exits, POS_RESTING, 0, LOG_NORMAL},
-   {"get", do_get, POS_RESTING, 0, LOG_NORMAL},
-   {"inventory", do_inventory, POS_DEAD, 0, LOG_NORMAL},
-   {"kill", do_kill, POS_FIGHTING, 0, LOG_NORMAL},
-   {"look", do_look, POS_RESTING, 0, LOG_NORMAL},
-   {"order", do_order, POS_RESTING, 0, LOG_ALWAYS},
-   {"rest", do_rest, POS_RESTING, 0, LOG_NORMAL},
-   {"sleep", do_sleep, POS_SLEEPING, 0, LOG_NORMAL},
-   {"stand", do_stand, POS_SLEEPING, 0, LOG_NORMAL},
-   {"tell", do_tell, POS_RESTING, 0, LOG_NORMAL},
-   {"wield", do_wear, POS_RESTING, 0, LOG_NORMAL},
-   {"wizhelp", do_wizhelp, POS_DEAD, L_HER, LOG_NORMAL},
+if ( len==1 && (c=='l' || c=='n' || c=='s' || c=='e' || c=='w' || c=='u' || c=='d') )
+   return FALSE;
+if ( len==2 && c=='n' && (logline[1]=='e' || logline[1]=='w') )
+   return FALSE;
+if ( len==2 && c=='s' && (logline[1]=='e' || logline[1]=='w') )
+   return FALSE;
 
-   /*
-    * Informational commands.
-    */
-   {"areas", do_areas, POS_DEAD, 0, LOG_NORMAL},
-   {"bug", do_bug, POS_DEAD, 0, LOG_NORMAL},
-   {"commands", do_commands, POS_DEAD, 0, LOG_NORMAL},
-   {"compare", do_compare, POS_RESTING, 0, LOG_NORMAL},
-   {"consider", do_consider, POS_RESTING, 0, LOG_NORMAL},
-   {"credits", do_credits, POS_DEAD, 0, LOG_NORMAL},
-   {"equipment", do_equipment, POS_DEAD, 0, LOG_NORMAL},
-   {"examine", do_examine, POS_RESTING, 0, LOG_NORMAL},
-   {"help", do_help, POS_DEAD, 0, LOG_NORMAL},
-   {"idea", do_idea, POS_DEAD, 0, LOG_NORMAL},
-   {"report", do_report, POS_DEAD, 0, LOG_NORMAL},
-   {"pagelength", do_pagelen, POS_DEAD, 0, LOG_NORMAL},
-   {"score", do_score, POS_DEAD, 0, LOG_NORMAL},
-   {"slist", do_slist, POS_DEAD, 0, LOG_NORMAL},
-   {"socials", do_socials, POS_DEAD, 0, LOG_NORMAL},
-   {"time", do_time, POS_DEAD, 0, LOG_NORMAL},
-   {"typo", do_typo, POS_DEAD, 0, LOG_NORMAL},
-   {"weather", do_weather, POS_RESTING, 0, LOG_NORMAL},
-   {"who", do_who, POS_DEAD, 0, LOG_NORMAL},
-   {"wizlist", do_wizlist, POS_DEAD, 0, LOG_NORMAL},
-
-   /*
-    * Configuration commands.
-    */
-   {"auto", do_auto, POS_DEAD, 0, LOG_NORMAL},
-   {"autoexit", do_autoexit, POS_DEAD, 0, LOG_NORMAL},
-   {"autoloot", do_autoloot, POS_DEAD, 0, LOG_NORMAL},
-   {"autosac", do_autosac, POS_DEAD, 0, LOG_NORMAL},
-   {"blank", do_blank, POS_DEAD, 0, LOG_NORMAL},
-   {"brief", do_brief, POS_DEAD, 0, LOG_NORMAL},
-   {"channels", do_channels, POS_DEAD, 0, LOG_NORMAL},
-   {"combine", do_combine, POS_DEAD, 0, LOG_NORMAL},
-   {"config", do_config, POS_DEAD, 0, LOG_NORMAL},
-   {"description", do_description, POS_DEAD, 0, LOG_NORMAL},
-   {"password", do_password, POS_DEAD, 0, LOG_NEVER},
-   {"prompt", do_prompt, POS_DEAD, 0, LOG_NORMAL},
-   {"title", do_title, POS_DEAD, 0, LOG_NORMAL},
-   {"wimpy", do_wimpy, POS_DEAD, 0, LOG_NORMAL},
-
-   /*
-    * Communication commands.
-    */
-   {"answer", do_answer, POS_SLEEPING, 0, LOG_NORMAL},
-   {"auction", do_auction, POS_SLEEPING, 0, LOG_NORMAL},
-   {"chat", do_chat, POS_SLEEPING, 0, LOG_NORMAL},
-   {".", do_chat, POS_SLEEPING, 0, LOG_NORMAL},
-   {"emote", do_emote, POS_RESTING, 0, LOG_NORMAL},
-   {",", do_emote, POS_RESTING, 0, LOG_NORMAL},
-   {"gtell", do_gtell, POS_DEAD, 0, LOG_NORMAL},
-   {";", do_gtell, POS_DEAD, 0, LOG_NORMAL},
-   {"music", do_music, POS_SLEEPING, 0, LOG_NORMAL},
-   {"note", do_note, POS_SLEEPING, 0, LOG_NORMAL},
-   {"pose", do_pose, POS_RESTING, 0, LOG_NORMAL},
-   {"question", do_question, POS_SLEEPING, 0, LOG_NORMAL},
-   {"reply", do_reply, POS_RESTING, 0, LOG_NORMAL},
-   {"say", do_say, POS_RESTING, 0, LOG_NORMAL},
-   {"'", do_say, POS_RESTING, 0, LOG_NORMAL},
-   {"shout", do_shout, POS_RESTING, 3, LOG_NORMAL},
-   {"yell", do_yell, POS_RESTING, 0, LOG_NORMAL},
-
-   /*
-    * Object manipulation commands.
-    */
-   {"brandish", do_brandish, POS_RESTING, 0, LOG_NORMAL},
-   {"close", do_close, POS_RESTING, 0, LOG_NORMAL},
-   {"drink", do_drink, POS_RESTING, 0, LOG_NORMAL},
-   {"drop", do_drop, POS_RESTING, 0, LOG_NORMAL},
-   {"eat", do_eat, POS_RESTING, 0, LOG_NORMAL},
-   {"fill", do_fill, POS_RESTING, 0, LOG_NORMAL},
-   {"give", do_give, POS_RESTING, 0, LOG_NORMAL},
-   {"hold", do_wear, POS_RESTING, 0, LOG_NORMAL},
-   {"list", do_list, POS_RESTING, 0, LOG_NORMAL},
-   {"lock", do_lock, POS_RESTING, 0, LOG_NORMAL},
-   {"open", do_open, POS_RESTING, 0, LOG_NORMAL},
-   {"pick", do_pick, POS_RESTING, 0, LOG_NORMAL},
-   {"put", do_put, POS_RESTING, 0, LOG_NORMAL},
-   {"quaff", do_quaff, POS_RESTING, 0, LOG_NORMAL},
-   {"recite", do_recite, POS_RESTING, 0, LOG_NORMAL},
-   {"remove", do_remove, POS_RESTING, 0, LOG_NORMAL},
-   {"sell", do_sell, POS_RESTING, 0, LOG_NORMAL},
-   {"take", do_get, POS_RESTING, 0, LOG_NORMAL},
-   {"sacrifice", do_sacrifice, POS_RESTING, 0, LOG_NORMAL},
-   {"unlock", do_unlock, POS_RESTING, 0, LOG_NORMAL},
-   {"value", do_value, POS_RESTING, 0, LOG_NORMAL},
-   {"wear", do_wear, POS_RESTING, 0, LOG_NORMAL},
-   {"zap", do_zap, POS_RESTING, 0, LOG_NORMAL},
-
-   /*
-    * Combat commands.
-    */
-   {"backstab", do_backstab, POS_STANDING, 0, LOG_NORMAL},
-   {"bs", do_backstab, POS_STANDING, 0, LOG_NORMAL},
-   {"disarm", do_disarm, POS_FIGHTING, 0, LOG_NORMAL},
-   {"flee", do_flee, POS_FIGHTING, 0, LOG_NORMAL},
-   {"kick", do_kick, POS_FIGHTING, 0, LOG_NORMAL},
-   {"murde", do_murde, POS_FIGHTING, 5, LOG_NORMAL},
-   {"murder", do_murder, POS_FIGHTING, 5, LOG_ALWAYS},
-   {"rescue", do_rescue, POS_FIGHTING, 0, LOG_NORMAL},
-
-   /*
-    * Miscellaneous commands.
-    */
-   {"follow", do_follow, POS_RESTING, 0, LOG_NORMAL},
-   {"group", do_group, POS_SLEEPING, 0, LOG_NORMAL},
-   {"hide", do_hide, POS_RESTING, 0, LOG_NORMAL},
-   {"practice", do_practice, POS_SLEEPING, 0, LOG_NORMAL},
-   {"qui", do_qui, POS_DEAD, 0, LOG_NORMAL},
-   {"quit", do_quit, POS_DEAD, 0, LOG_NORMAL},
-   {"recall", do_recall, POS_FIGHTING, 0, LOG_NORMAL},
-   {"/", do_recall, POS_FIGHTING, 0, LOG_NORMAL},
-   {"rent", do_rent, POS_DEAD, 0, LOG_NORMAL},
-   {"save", do_save, POS_DEAD, 0, LOG_NORMAL},
-   {"sleep", do_sleep, POS_SLEEPING, 0, LOG_NORMAL},
-   {"sneak", do_sneak, POS_STANDING, 0, LOG_NORMAL},
-   {"spells", do_spells, POS_SLEEPING, 0, LOG_NORMAL},
-   {"split", do_split, POS_RESTING, 0, LOG_NORMAL},
-   {"steal", do_steal, POS_STANDING, 0, LOG_NORMAL},
-   {"train", do_train, POS_RESTING, 0, LOG_NORMAL},
-   {"visible", do_visible, POS_SLEEPING, 0, LOG_NORMAL},
-   {"wake", do_wake, POS_SLEEPING, 0, LOG_NORMAL},
-   {"where", do_where, POS_RESTING, 0, LOG_NORMAL},
-
-
-
-   /*
-    * Immortal commands.
-    */
-   {"advance", do_advance, POS_DEAD, L_GOD, LOG_ALWAYS},
-   {"trust", do_trust, POS_DEAD, L_GOD, LOG_ALWAYS},
-
-   {"allow", do_allow, POS_DEAD, L_SUP, LOG_ALWAYS},
-   {"ban", do_ban, POS_DEAD, L_SUP, LOG_ALWAYS},
-   {"deny", do_deny, POS_DEAD, L_SUP, LOG_ALWAYS},
-   {"disconnect", do_disconnect, POS_DEAD, L_SUP, LOG_ALWAYS},
-   {"freeze", do_freeze, POS_DEAD, L_SUP, LOG_ALWAYS},
-   {"reboo", do_reboo, POS_DEAD, L_SUP, LOG_NORMAL},
-   {"reboot", do_reboot, POS_DEAD, L_SUP, LOG_ALWAYS},
-   {"shutdow", do_shutdow, POS_DEAD, L_SUP, LOG_NORMAL},
-   {"shutdown", do_shutdown, POS_DEAD, L_SUP, LOG_ALWAYS},
-   {"users", do_users, POS_DEAD, L_SUP, LOG_NORMAL},
-   {"wizify", do_wizify, POS_DEAD, L_SUP, LOG_ALWAYS},
-   {"wizlock", do_wizlock, POS_DEAD, L_SUP, LOG_ALWAYS},
-
-   {"force", do_force, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"log", do_log, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"mload", do_mload, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"mset", do_mset, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"noemote", do_noemote, POS_DEAD, L_DEI, LOG_NORMAL},
-   {"notell", do_notell, POS_DEAD, L_DEI, LOG_NORMAL},
-   {"oload", do_oload, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"oset", do_oset, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"owhere", do_owhere, POS_DEAD, L_DEI, LOG_NORMAL},
-   {"pardon", do_pardon, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"peace", do_peace, POS_DEAD, L_DEI, LOG_NORMAL},
-   {"purge", do_purge, POS_DEAD, L_DEI, LOG_NORMAL},
-   {"restore", do_restore, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"rset", do_rset, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"silence", do_silence, POS_DEAD, L_DEI, LOG_NORMAL},
-   {"sla", do_sla, POS_DEAD, L_DEI, LOG_NORMAL},
-   {"slay", do_slay, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"snoop", do_snoop, POS_DEAD, L_DEI, LOG_NORMAL},
-   {"sset", do_sset, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"transfer", do_transfer, POS_DEAD, L_DEI, LOG_ALWAYS},
-   {"mpstat", do_mpstat, POS_DEAD, L_DEI, LOG_NORMAL},
-
-   {"at", do_at, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"bamfin", do_bamfin, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"bamfout", do_bamfout, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"echo", do_echo, POS_DEAD, L_ANG, LOG_ALWAYS},
-   {"goto", do_goto, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"holylight", do_holylight, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"invis", do_invis, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"memory", do_memory, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"mfind", do_mfind, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"mstat", do_mstat, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"mwhere", do_mwhere, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"ofind", do_ofind, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"ostat", do_ostat, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"recho", do_recho, POS_DEAD, L_ANG, LOG_ALWAYS},
-   {"return", do_return, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"rstat", do_rstat, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"slookup", do_slookup, POS_DEAD, L_ANG, LOG_NORMAL},
-   {"switch", do_switch, POS_DEAD, L_ANG, LOG_ALWAYS},
-
-   {"immtalk", do_immtalk, POS_DEAD, L_ANG, LOG_NORMAL},
-   {":", do_immtalk, POS_DEAD, L_ANG, LOG_NORMAL},
-
-   /*
-    * MOBprogram commands.
-    */
-   {"mpasound", do_mpasound, POS_DEAD, 41, LOG_NORMAL},
-   {"mpjunk", do_mpjunk, POS_DEAD, 41, LOG_NORMAL},
-   {"mpecho", do_mpecho, POS_DEAD, 41, LOG_NORMAL},
-   {"mpechoat", do_mpechoat, POS_DEAD, 41, LOG_NORMAL},
-   {"mpechoaround", do_mpechoaround, POS_DEAD, 41, LOG_NORMAL},
-   {"mpkill", do_mpkill, POS_DEAD, 41, LOG_NORMAL},
-   {"mpmload", do_mpmload, POS_DEAD, 41, LOG_NORMAL},
-   {"mpoload", do_mpoload, POS_DEAD, 41, LOG_NORMAL},
-   {"mppurge", do_mppurge, POS_DEAD, 41, LOG_NORMAL},
-   {"mpgoto", do_mpgoto, POS_DEAD, 41, LOG_NORMAL},
-   {"mpat", do_mpat, POS_DEAD, 41, LOG_NORMAL},
-   {"mptransfer", do_mptransfer, POS_DEAD, 41, LOG_NORMAL},
-   {"mpforce", do_mpforce, POS_DEAD, 41, LOG_NORMAL},
-
-   /*
-    * End of list.
-    */
-   {"", 0, POS_DEAD, 0, LOG_NORMAL}
-};
-
+return TRUE;
+}
 
 
 /*
- * The social table.
- * Add new socials here.
- * Alphabetical order is not required.
+ * Write input line to watch files if applicable
  */
-const struct social_type social_table[] = {
-   {
-    "accuse",
-    "Accuse whom?",
-    "$n is in an accusing mood.",
-    "You look accusingly at $M.",
-    "$n looks accusingly at $N.",
-    "$n looks accusingly at you.",
-    "You accuse yourself.",
-    "$n seems to have a bad conscience."},
-
-   {
-    "applaud",
-    "Clap, clap, clap.",
-    "$n gives a round of applause.",
-    "You clap at $S actions.",
-    "$n claps at $N's actions.",
-    "$n gives you a round of applause.  You MUST'VE done something good!",
-    "You applaud at yourself.  Boy, are we conceited!",
-    "$n applauds at $mself.  Boy, are we conceited!"},
-
-   {
-    "bark",
-    "Woof!  Woof!",
-    "$n barks like a dog.",
-    "You bark at $M.",
-    "$n barks at $N.",
-    "$n barks at you.",
-    "You bark at yourself.  Woof!  Woof!",
-    "$n barks at $mself.  Woof!  Woof!"},
-
-   {
-    "beer",
-    "You down a cold, frosty beer.",
-    "$n downs a cold, frosty beer.",
-    "You draw a cold, frosty beer for $N.",
-    "$n draws a cold, frosty beer for $N.",
-    "$n draws a cold, frosty beer for you.",
-    "You draw yourself a beer.",
-    "$n draws $mself a beer."},
-
-   {
-    "beg",
-    "You beg the gods for mercy.",
-    "The gods fall down laughing at $n's request for mercy.",
-    "You desperately try to squeeze a few coins from $M.",
-    "$n begs $N for a gold piece!",
-    "$n begs you for money.",
-    "Begging yourself for money doesn't help.",
-    "$n begs himself for money."},
-
-   {
-    "blush",
-    "Your cheeks are burning.",
-    "$n blushes.",
-    "You get all flustered up seeing $M.",
-    "$n blushes as $e sees $N here.",
-    "$n blushes as $e sees you here.  Such an effect on people!",
-    "You blush at your own folly.",
-    "$n blushes as $e notices $s boo-boo."},
-
-   {
-    "bounce",
-    "BOIINNNNNNGG!",
-    "$n bounces around.",
-    "You bounce onto $S lap.",
-    "$n bounces onto $N's lap.",
-    "$n bounces onto your lap.",
-    "You bounce your head like a basketball.",
-    "$n plays basketball with $s head."},
-
-   {
-    "bow",
-    "You bow deeply.",
-    "$n bows deeply.",
-    "You bow before $M.",
-    "$n bows before $N.",
-    "$n bows before you.",
-    "You kiss your toes.",
-    "$n folds up like a jack knife and kisses $s own toes."},
-
-   {
-    "burp",
-    "You burp loudly.",
-    "$n burps loudly.",
-    "You burp loudly to $M in response.",
-    "$n burps loudly in response to $N's remark.",
-    "$n burps loudly in response to your remark.",
-    "You burp at yourself.",
-    "$n burps at $mself.  What a sick sight."},
-
-   {
-    "cackle",
-    "You throw back your head and cackle with insane glee!",
-    "$n throws back $s head and cackles with insane glee!",
-    "You cackle gleefully at $N",
-    "$n cackles gleefully at $N.",
-    "$n cackles gleefully at you.  Better keep your distance from $m.",
-    "You cackle at yourself.  Now, THAT'S strange!",
-    "$n is really crazy now!  $e cackles at $mself."},
-
-   {
-    "chuckle",
-    "You chuckle politely.",
-    "$n chuckles politely.",
-    "You chuckle at $S joke.",
-    "$n chuckles at $N's joke.",
-    "$n chuckles at your joke.",
-    "You chuckle at your own joke, since no one else would.",
-    "$n chuckles at $s own joke, since none of you would."},
-
-   {
-    "clap",
-    "You clap your hands together.",
-    "$n shows $s approval by clapping $s hands together.",
-    "You clap at $S performance.",
-    "$n claps at $N's performance.",
-    "$n claps at your performance.",
-    "You clap at your own performance.",
-    "$n claps at $s own performance."},
-
-   {
-    "comb",
-    "You comb your hair - perfect.",
-    "$n combs $s hair, how dashing!",
-    "You patiently untangle $N's hair - what a mess!",
-    "$n tries patiently to untangle $N's hair.",
-    "$n pulls your hair in an attempt to comb it.",
-    "You pull your hair, but it will not be combed.",
-    "$n tries to comb $s tangled hair."},
-
-   {
-    "comfort",
-    "Do you feel uncomfortable?",
-    NULL,
-    "You comfort $M.",
-    "$n comforts $N.",
-    "$n comforts you.",
-    "You make a vain attempt to comfort yourself.",
-    "$n has no one to comfort $m but $mself."},
-
-   {
-    "cringe",
-    "You cringe in terror.",
-    "$n cringes in terror!",
-    "You cringe away from $M.",
-    "$n cringes away from $N in mortal terror.",
-    "$n cringes away from you.",
-    "I beg your pardon?",
-    NULL},
-
-   {
-    "cry",
-    "Waaaaah ...",
-    "$n bursts into tears.",
-    "You cry on $S shoulder.",
-    "$n cries on $N's shoulder.",
-    "$n cries on your shoulder.",
-    "You cry to yourself.",
-    "$n sobs quietly to $mself."},
-
-   {
-    "cuddle",
-    "Whom do you feel like cuddling today?",
-    NULL,
-    "You cuddle $M.",
-    "$n cuddles $N.",
-    "$n cuddles you.",
-    "You must feel very cuddly indeed ... :)",
-    "$n cuddles up to $s shadow.  What a sorry sight."},
-
-   {
-    "curse",
-    "You swear loudly for a long time.",
-    "$n swears: @*&^%@*&!",
-    "You swear at $M.",
-    "$n swears at $N.",
-    "$n swears at you!  Where are $s manners?",
-    "You swear at your own mistakes.",
-    "$n starts swearing at $mself.  Why don't you help?"},
-
-   {
-    "curtsey",
-    "You curtsey to your audience.",
-    "$n curtseys gracefully.",
-    "You curtsey to $M.",
-    "$n curtseys gracefully to $N.",
-    "$n curtseys gracefully for you.",
-    "You curtsey to your audience (yourself).",
-    "$n curtseys to $mself, since no one is paying attention to $m."},
-
-   {
-    "dance",
-    "Feels silly, doesn't it?",
-    "$n tries to break dance, but nearly breaks $s neck!",
-    "You sweep $M into a romantic waltz.",
-    "$n sweeps $N into a romantic waltz.",
-    "$n sweeps you into a romantic waltz.",
-    "You skip and dance around by yourself.",
-    "$n dances a pas-de-une."},
-
-   /*
-    * This one's for Baka, Penn, and Onethumb!
-    */
-   {
-    "drool",
-    "You drool on yourself.",
-    "$n drools on $mself.",
-    "You drool all over $N.",
-    "$n drools all over $N.",
-    "$n drools all over you.",
-    "You drool on yourself.",
-    "$n drools on $mself."},
-
-   {
-    "fart",
-    "Where are your manners?",
-    "$n lets off a real rip-roarer ... a greenish cloud envelops $n!",
-    "You fart at $M.  Boy, you are sick.",
-    "$n farts in $N's direction.  Better flee before $e turns to you!",
-    "$n farts in your direction.  You gasp for air.",
-    "You fart at yourself.  You deserve it.",
-    "$n farts at $mself.  Better $m than you."},
-
-   {
-    "flip",
-    "You flip head over heels.",
-    "$n flips head over heels.",
-    "You flip $M over your shoulder.",
-    "$n flips $N over $s shoulder.",
-    "$n flips you over $s shoulder.  Hmmmm.",
-    "You tumble all over the room.",
-    "$n does some nice tumbling and gymnastics."},
-
-   {
-    "fondle",
-    "Who needs to be fondled?",
-    NULL,
-    "You fondly fondle $M.",
-    "$n fondly fondles $N.",
-    "$n fondly fondles you.",
-    "You fondly fondle yourself, feels funny doesn't it ?",
-    "$n fondly fondles $mself - this is going too far !!"},
-
-   {
-    "french",
-    "Kiss whom?",
-    NULL,
-    "You give $N a long and passionate kiss.",
-    "$n kisses $N passionately.",
-    "$n gives you a long and passionate kiss.",
-    "You gather yourself in your arms and try to kiss yourself.",
-    "$n makes an attempt at kissing $mself."},
-
-   {
-    "frown",
-    "What's bothering you ?",
-    "$n frowns.",
-    "You frown at what $E did.",
-    "$n frowns at what $E did.",
-    "$n frowns at what you did.",
-    "You frown at yourself.  Poor baby.",
-    "$n frowns at $mself.  Poor baby."},
-
-   {
-    "fume",
-    "You grit your teeth and fume with rage.",
-    "$n grits $s teeth and fumes with rage.",
-    "You stare at $M, fuming.",
-    "$n stares at $N, fuming with rage.",
-    "$n stares at you, fuming with rage!",
-    "That's right - hate yourself!",
-    "$n clenches $s fists and stomps his feet, fuming with anger."},
-
-   {
-    "gasp",
-    "You gasp in astonishment.",
-    "$n gasps in astonishment.",
-    "You gasp as you realize what $e did.",
-    "$n gasps as $e realizes what $N did.",
-    "$n gasps as $e realizes what you did.",
-    "You look at yourself and gasp!",
-    "$n takes one look at $mself and gasps in astonisment!"},
-
-   {
-    "giggle",
-    "You giggle.",
-    "$n giggles.",
-    "You giggle in $S's presence.",
-    "$n giggles at $N's actions.",
-    "$n giggles at you.  Hope it's not contagious!",
-    "You giggle at yourself.  You must be nervous or something.",
-    "$n giggles at $mself.  $e must be nervous or something."},
-
-   {
-    "glare",
-    "You glare at nothing in particular.",
-    "$n glares around $m.",
-    "You glare icily at $M.",
-    "$n glares at $N.",
-    "$n glares icily at you, you feel cold to your bones.",
-    "You glare icily at your feet, they are suddenly very cold.",
-    "$n glares at $s feet, what is bothering $m?"},
-
-   {
-    "grin",
-    "You grin evilly.",
-    "$n grins evilly.",
-    "You grin evilly at $M.",
-    "$n grins evilly at $N.",
-    "$n grins evilly at you.  Hmmm.  Better keep your distance.",
-    "You grin at yourself.  You must be getting very bad thoughts.",
-    "$n grins at $mself.  You must wonder what's in $s mind."},
-
-   {
-    "groan",
-    "You groan loudly.",
-    "$n groans loudly.",
-    "You groan at the sight of $M.",
-    "$n groans at the sight of $N.",
-    "$n groans at the sight of you.",
-    "You groan as you realize what you have done.",
-    "$n groans as $e realizes what $e has done."},
-
-   {
-    "grope",
-    "Whom do you wish to grope?",
-    NULL,
-    "Well, what sort of noise do you expect here?",
-    "$n gropes $N.",
-    "$n gropes you.",
-    "You grope yourself - YUCK.",
-    "$n gropes $mself - YUCK."},
-
-   {
-    "grovel",
-    "You grovel in the dirt.",
-    "$n grovels in the dirt.",
-    "You grovel before $M.",
-    "$n grovels in the dirt before $N.",
-    "$n grovels in the dirt before you.",
-    "That seems a little silly to me.",
-    NULL},
-
-   {
-    "growl",
-    "Grrrrrrrrrr ...",
-    "$n growls.",
-    "Grrrrrrrrrr ... take that, $N!",
-    "$n growls at $N.  Better leave the room before the fighting starts.",
-    "$n growls at you.  Hey, two can play it that way!",
-    "You growl at yourself.  Boy, do you feel bitter!",
-    "$n growls at $mself.  This could get interesting..."},
-
-   {
-    "grumble",
-    "You grumble.",
-    "$n grumbles.",
-    "You grumble to $M.",
-    "$n grumbles to $N.",
-    "$n grumbles to you.",
-    "You grumble under your breath.",
-    "$n grumbles under $s breath."},
-
-   {
-    "grunt",
-    "GRNNNHTTTT.",
-    "$n grunts like a pig.",
-    "GRNNNHTTTT.",
-    "$n grunts to $N.  What a pig!",
-    "$n grunts to you.  What a pig!",
-    "GRNNNHTTTT.",
-    "$n grunts to nobody in particular.  What a pig!"},
-
-   {
-    "hand",
-    "Kiss whose hand?",
-    NULL,
-    "You kiss $S hand.",
-    "$n kisses $N's hand.  How continental!",
-    "$n kisses your hand.  How continental!",
-    "You kiss your own hand.",
-    "$n kisses $s own hand."},
-
-   {
-    "hop",
-    "You hop around like a little kid.",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL},
-
-   {
-    "hug",
-    "Hug whom?",
-    NULL,
-    "You hug $M.",
-    "$n hugs $N.",
-    "$n hugs you.",
-    "You hug yourself.",
-    "$n hugs $mself in a vain attempt to get friendship."},
-
-   {
-    "kiss",
-    "Isn't there someone you want to kiss?",
-    NULL,
-    "You kiss $M.",
-    "$n kisses $N.",
-    "$n kisses you.",
-    "All the lonely people :(",
-    NULL},
-
-   {
-    "laugh",
-    "You laugh.",
-    "$n laughs.",
-    "You laugh at $N mercilessly.",
-    "$n laughs at $N mercilessly.",
-    "$n laughs at you mercilessly.  Hmmmmph.",
-    "You laugh at yourself.  I would, too.",
-    "$n laughs at $mself.  Let's all join in!!!"},
-
-   {
-    "lick",
-    "You lick your lips and smile.",
-    "$n licks $s lips and smiles.",
-    "You lick $M.",
-    "$n licks $N.",
-    "$n licks you.",
-    "You lick yourself.",
-    "$n licks $mself - YUCK."},
-
-   {
-    "love",
-    "You love the whole world.",
-    "$n loves everybody in the world.",
-    "You tell your true feelings to $N.",
-    "$n whispers softly to $N.",
-    "$n whispers to you sweet words of love.",
-    "Well, we already know you love yourself (lucky someone does!)",
-    "$n loves $mself, can you believe it ?"},
-
-   {
-    "massage",
-    "Massage what?  Thin air?",
-    NULL,
-    "You gently massage $N's shoulders.",
-    "$n massages $N's shoulders.",
-    "$n gently massages your shoulders.  Ahhhhhhhhhh ...",
-    "You practice yoga as you try to massage yourself.",
-    "$n gives a show on yoga positions, trying to massage $mself."},
-
-   {
-    "moan",
-    "You start to moan.",
-    "$n starts moaning.",
-    "You moan for the loss of $m.",
-    "$n moans for the loss of $N.",
-    "$n moans at the sight of you.  Hmmmm.",
-    "You moan at yourself.",
-    "$n makes $mself moan."},
-
-   {
-    "nibble",
-    "Nibble on whom?",
-    NULL,
-    "You nibble on $N's ear.",
-    "$n nibbles on $N's ear.",
-    "$n nibbles on your ear.",
-    "You nibble on your OWN ear.",
-    "$n nibbles on $s OWN ear."},
-
-   {
-    "nod",
-    "You nod your silly head off.",
-    "$n nods $s silly head off.",
-    "You nod in recognition to $M.",
-    "$n nods in recognition to $N.",
-    "$n nods in recognition to you.  You DO know $m, right?",
-    "You nod at yourself.  Are you getting senile?",
-    "$n nods at $mself.  $e must be getting senile."},
-
-   {
-    "nudge",
-    "Nudge whom?",
-    NULL,
-    "You nudge $M.",
-    "$n nudges $N.",
-    "$n nudges you.",
-    "You nudge yourself, for some strange reason.",
-    "$n nudges $mself, to keep $mself awake."},
-
-   {
-    "nuzzle",
-    "Nuzzle whom?",
-    NULL,
-    "You nuzzle $S neck softly.",
-    "$n softly nuzzles $N's neck.",
-    "$n softly nuzzles your neck.",
-    "I'm sorry, friend, but that's impossible.",
-    NULL},
-
-   {
-    "pat",
-    "Pat whom?",
-    NULL,
-    "You pat $N on $S ass.",
-    "$n pats $N on $S ass.",
-    "$n pats you on your ass.",
-    "You pat yourself on your ass, very sensual.",
-    "$n pats $mself on the ass."},
-
-   {
-    "point",
-    "Point at whom?",
-    NULL,
-    "You point at $M accusingly.",
-    "$n points at $N accusingly.",
-    "$n points at you accusingly.",
-    "You point proudly at yourself.",
-    "$n points proudly at $mself."},
-
-   {
-    "poke",
-    "Poke whom?",
-    NULL,
-    "You poke $M in the ribs.",
-    "$n pokes $N in the ribs.",
-    "$n pokes you in the ribs.",
-    "You poke yourself in the ribs, feeling very silly.",
-    "$n pokes $mself in the ribs, looking very sheepish."},
-
-   {
-    "ponder",
-    "You ponder the question.",
-    "$n sits down and thinks deeply.",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL},
-
-   {
-    "pout",
-    "Ah, don't take it so hard.",
-    "$n pouts.",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL},
-
-   {
-    "pray",
-    "You feel righteous, and maybe a little foolish.",
-    "$n begs and grovels to the powers that be.",
-    "You crawl in the dust before $M.",
-    "$n falls down and grovels in the dirt before $N.",
-    "$n kisses the dirt at your feet.",
-    "Talk about narcissism ...",
-    "$n mumbles a prayer to $mself."},
-
-   {
-    "puke",
-    "You puke ... chunks everywhere!",
-    "$n pukes.",
-    "You puke on $M.",
-    "$n pukes on $N.",
-    "$n spews vomit and pukes all over your clothing!",
-    "You puke on yourself.",
-    "$n pukes on $s clothes."},
-
-   {
-    "punch",
-    "Punch whom?",
-    NULL,
-    "You punch $M playfully.",
-    "$n punches $N playfully.",
-    "$n punches you playfully.  OUCH!",
-    "You punch yourself.  You deserve it.",
-    "$n punches $mself.  Why don't you join in?"},
-
-   {
-    "purr",
-    "MMMMEEEEEEEEOOOOOOOOOWWWWWWWWWWWW.",
-    "$n purrs contentedly.",
-    "You purr contentedly in $M lap.",
-    "$n purrs contentedly in $N's lap.",
-    "$n purrs contentedly in your lap.",
-    "You purr at yourself.",
-    "$n purrs at $mself.  Must be a cat thing."},
-
-   {
-    "ruffle",
-    "You've got to ruffle SOMEONE.",
-    NULL,
-    "You ruffle $N's hair playfully.",
-    "$n ruffles $N's hair playfully.",
-    "$n ruffles your hair playfully.",
-    "You ruffle your hair.",
-    "$n ruffles $s hair."},
-
-   {
-    "scream",
-    "ARRRRRRRRRRGH!!!!!",
-    "$n screams loudly!",
-    "ARRRRRRRRRRGH!!!!!  Yes, it MUST have been $S fault!!!",
-    "$n screams loudly at $N.  Better leave before $n blames you, too!!!",
-    "$n screams at you!  That's not nice!  *sniff*",
-    "You scream at yourself.  Yes, that's ONE way of relieving tension!",
-    "$n screams loudly at $mself!  Is there a full moon up?"},
-
-   {
-    "shake",
-    "You shake your head.",
-    "$n shakes $s head.",
-    "You shake $S hand.",
-    "$n shakes $N's hand.",
-    "$n shakes your hand.",
-    "You are shaken by yourself.",
-    "$n shakes and quivers like a bowl full of jelly."},
-
-   {
-    "shiver",
-    "Brrrrrrrrr.",
-    "$n shivers uncomfortably.",
-    "You shiver at the thought of fighting $M.",
-    "$n shivers at the thought of fighting $N.",
-    "$n shivers at the suicidal thought of fighting you.",
-    "You shiver to yourself?",
-    "$n scares $mself to shivers."},
-
-   {
-    "shrug",
-    "You shrug.",
-    "$n shrugs helplessly.",
-    "You shrug in response to $s question.",
-    "$n shrugs in response to $N's question.",
-    "$n shrugs in respopnse to your question.",
-    "You shrug to yourself.",
-    "$n shrugs to $mself.  What a strange person."},
-
-   {
-    "sigh",
-    "You sigh.",
-    "$n sighs loudly.",
-    "You sigh as you think of $M.",
-    "$n sighs at the sight of $N.",
-    "$n sighs as $e thinks of you.  Touching, huh?",
-    "You sigh at yourself.  You MUST be lonely.",
-    "$n sighs at $mself.  What a sorry sight."},
-
-   {
-    "sing",
-    "You raise your clear voice towards the sky.",
-    "$n has begun to sing.",
-    "You sing a ballad to $m.",
-    "$n sings a ballad to $N.",
-    "$n sings a ballad to you!  How sweet!",
-    "You sing a little ditty to yourself.",
-    "$n sings a little ditty to $mself."},
-
-   {
-    "smile",
-    "You smile happily.",
-    "$n smiles happily.",
-    "You smile at $M.",
-    "$n beams a smile at $N.",
-    "$n smiles at you.",
-    "You smile at yourself.",
-    "$n smiles at $mself."},
-
-   {
-    "smirk",
-    "You smirk.",
-    "$n smirks.",
-    "You smirk at $S saying.",
-    "$n smirks at $N's saying.",
-    "$n smirks at your saying.",
-    "You smirk at yourself.  Okay ...",
-    "$n smirks at $s own 'wisdom'."},
-
-   {
-    "snap",
-    "PRONTO ! You snap your fingers.",
-    "$n snaps $s fingers.",
-    "You snap back at $M.",
-    "$n snaps back at $N.",
-    "$n snaps back at you!",
-    "You snap yourself to attention.",
-    "$n snaps $mself to attention."},
-
-   {
-    "snarl",
-    "You grizzle your teeth and look mean.",
-    "$n snarls angrily.",
-    "You snarl at $M.",
-    "$n snarls at $N.",
-    "$n snarls at you, for some reason.",
-    "You snarl at yourself.",
-    "$n snarls at $mself."},
-
-   {
-    "sneeze",
-    "Gesundheit!",
-    "$n sneezes.",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL},
-
-   {
-    "snicker",
-    "You snicker softly.",
-    "$n snickers softly.",
-    "You snicker with $M about your shared secret.",
-    "$n snickers with $N about their shared secret.",
-    "$n snickers with you about your shared secret.",
-    "You snicker at your own evil thoughts.",
-    "$n snickers at $s own evil thoughts."},
-
-   {
-    "sniff",
-    "You sniff sadly. *SNIFF*",
-    "$n sniffs sadly.",
-    "You sniff sadly at the way $E is treating you.",
-    "$n sniffs sadly at the way $N is treating $m.",
-    "$n sniffs sadly at the way you are treating $m.",
-    "You sniff sadly at your lost opportunities.",
-    "$n sniffs sadly at $mself.  Something MUST be bothering $m."},
-
-   {
-    "snore",
-    "Zzzzzzzzzzzzzzzzz.",
-    "$n snores loudly.",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL},
-
-   {
-    "snowball",
-    "Whom do you want to throw a snowball at?",
-    NULL,
-    "You throw a snowball in $N's face.",
-    "$n throws a snowball at $N.",
-    "$n throws a snowball at you.",
-    "You throw a snowball at yourself.",
-    "$n throws a snowball at $mself."},
-
-   {
-    "snuggle",
-    "Who?",
-    NULL,
-    "you snuggle $M.",
-    "$n snuggles up to $N.",
-    "$n snuggles up to you.",
-    "You snuggle up, getting ready to sleep.",
-    "$n snuggles up, getting ready to sleep."},
-
-   {
-    "spank",
-    "Spank whom?",
-    NULL,
-    "You spank $M playfully.",
-    "$n spanks $N playfully.",
-    "$n spanks you playfully.  OUCH!",
-    "You spank yourself.  Kinky!",
-    "$n spanks $mself.  Kinky!"},
-
-   {
-    "squeeze",
-    "Where, what, how, whom?",
-    NULL,
-    "You squeeze $M fondly.",
-    "$n squeezes $N fondly.",
-    "$n squeezes you fondly.",
-    "You squeeze yourself - try to relax a little!",
-    "$n squeezes $mself."},
-
-   {
-    "stare",
-    "You stare at the sky.",
-    "$n stares at the sky.",
-    "You stare dreamily at $N, completely lost in $S eyes..",
-    "$n stares dreamily at $N.",
-    "$n stares dreamily at you, completely lost in your eyes.",
-    "You stare dreamily at yourself - enough narcissism for now.",
-    "$n stares dreamily at $mself - NARCISSIST!"},
-
-   {
-    "strut",
-    "Strut your stuff.",
-    "$n struts proudly.",
-    "You strut to get $S attention.",
-    "$n struts, hoping to get $N's attention.",
-    "$n struts, hoping to get your attention.",
-    "You strut to yourself, lost in your own world.",
-    "$n struts to $mself, lost in $s own world."},
-
-   {
-    "sulk",
-    "You sulk.",
-    "$n sulks in the corner.",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL},
-
-   {
-    "thank",
-    "Thank you too.",
-    NULL,
-    "You thank $N heartily.",
-    "$n thanks $N heartily.",
-    "$n thanks you heartily.",
-    "You thank yourself since nobody else wants to !",
-    "$n thanks $mself since you won't."},
-
-   {
-    "tickle",
-    "Whom do you want to tickle?",
-    NULL,
-    "You tickle $N.",
-    "$n tickles $N.",
-    "$n tickles you - hee hee hee.",
-    "You tickle yourself, how funny!",
-    "$n tickles $mself."},
-
-   {
-    "twiddle",
-    "You patiently twiddle your thumbs.",
-    "$n patiently twiddles $s thumbs.",
-    "You twiddle $S ears.",
-    "$n twiddles $N's ears.",
-    "$n twiddles your ears.",
-    "You twiddle your ears like Dumbo.",
-    "$n twiddles $s own ears like Dumbo."},
-
-   {
-    "wave",
-    "You wave.",
-    "$n waves happily.",
-    "You wave goodbye to $N.",
-    "$n waves goodbye to $N.",
-    "$n waves goodbye to you.  Have a good journey.",
-    "Are you going on adventures as well?",
-    "$n waves goodbye to $mself."},
-
-   {
-    "whistle",
-    "You whistle appreciatively.",
-    "$n whistles appreciatively.",
-    "You whistle at the sight of $M.",
-    "$n whistles at the sight of $N.",
-    "$n whistles at the sight of you.",
-    "You whistle a little tune to yourself.",
-    "$n whistles a little tune to $mself."},
-
-   {
-    "wiggle",
-    "Your wiggle your bottom.",
-    "$n wiggles $s bottom.",
-    "You wiggle your bottom toward $M.",
-    "$n wiggles $s bottom toward $N.",
-    "$n wiggles his bottom toward you.",
-    "You wiggle about like a fish.",
-    "$n wiggles about like a fish."},
-
-   {
-    "wince",
-    "You wince.  Ouch!",
-    "$n winces.  Ouch!",
-    "You wince at $M.",
-    "$n winces at $N.",
-    "$n winces at you.",
-    "You wince at yourself.  Ouch!",
-    "$n winces at $mself.  Ouch!"},
-
-   {
-    "wink",
-    "You wink suggestively.",
-    "$n winks suggestively.",
-    "You wink suggestively at $N.",
-    "$n winks at $N.",
-    "$n winks suggestively at you.",
-    "You wink at yourself ?? - what are you up to ?",
-    "$n winks at $mself - something strange is going on..."},
-
-   {
-    "yawn",
-    "You must be tired.",
-    "$n yawns.",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL},
-
-   {
-    "",
-    NULL, NULL, NULL, NULL, NULL, NULL, NULL}
-};
-
+void write_watch_files( CHAR_DATA *ch, CMDTYPE *cmd, char *logline )
+{
+WATCH_DATA *pw;
+FILE *fp;
+char fname[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH];
+struct tm *t = localtime(&current_time);
+
+if (!first_watch)         /* no active watches */
+   return;
+
+/* if we're watching a command we need to do some special stuff */
+/* to avoid duplicating log lines - relies upon watch list being */
+/* sorted by imm name */
+if(cmd)
+{
+	char *cur_imm;
+	bool found;
+	
+	pw = first_watch;
+	while(pw)
+	{
+		found = FALSE;
+		
+		for(cur_imm = pw->imm_name;
+			pw && !strcmp(pw->imm_name, cur_imm); pw = pw->next)
+		{
+
+                        if(!found && ch->desc && get_trust(ch) < pw->imm_level 
+                        &&((pw->target_name&&!strcmp(cmd->name,pw->target_name))
+                        || (pw->player_site && 
+                        !str_prefix(pw->player_site, ch->desc->host))))
+			{
+				sprintf( fname, "%s%s", WATCH_DIR, strlower( pw->imm_name ) );
+				if ( !(fp = fopen(fname, "a+")) )
+   				{
+       	   				sprintf( buf, "%s%s", "Write_watch_files: Cannot open ", fname);
+          				bug( buf, 0 );
+          				perror(fname);
+          				return;
+       				}
+       				sprintf(buf, "%.2d/%.2d %.2d:%.2d %s: %s\n\r",
+               				t->tm_mon+1, t->tm_mday, t->tm_hour, t->tm_min,
+               				ch->name, logline );
+       				fputs(buf, fp);
+       				fclose(fp);
+				found = TRUE;
+			}
+		}
+	}
+}
+else
+{
+	for ( pw = first_watch; pw; pw = pw->next )
+                if (((pw->target_name && !str_cmp   (pw->target_name, ch->name))
+                ||    (pw->player_site 
+                && !str_prefix(pw->player_site, ch->desc->host)) )
+                &&    get_trust(ch) < pw->imm_level
+                &&    ch->desc )
+    		{
+			sprintf( fname, "%s%s", WATCH_DIR, strlower( pw->imm_name ) );
+			if ( !(fp = fopen(fname, "a+")) )
+   			{
+       	   			sprintf( buf, "%s%s", "Write_watch_files: Cannot open ", fname);
+          			bug( buf, 0 );
+          			perror(fname);
+          			return;
+       			}
+       			sprintf(buf, "%.2d/%.2d %.2d:%.2d %s: %s\n\r",
+               			t->tm_mon+1, t->tm_mday, t->tm_hour, t->tm_min,
+               			ch->name, logline );
+       			fputs(buf, fp);
+       			fclose(fp);
+    		}
+}
+
+return;
+}
 
 
 /*
  * The main entry point for executing commands.
  * Can be recursively called from 'at', 'order', 'force'.
  */
-void interpret( CHAR_DATA * ch, char *argument )
+void interpret( CHAR_DATA *ch, char *argument )
 {
-   char command[MAX_INPUT_LENGTH];
-   char logline[MAX_INPUT_LENGTH];
-   int cmd;
-   int trust;
-   bool found;
+    char command[MAX_INPUT_LENGTH];
+    char logline[MAX_INPUT_LENGTH];
+    char logname[MAX_INPUT_LENGTH];
+    char newcommand[MAX_INPUT_LENGTH];
+    char arg2[MAX_INPUT_LENGTH];
+    char *buf;
+	char *origarg = argument;
+    TIMER *timer = NULL;
+    CMDTYPE *cmd = NULL;
+    int trust;
+    int loglvl;
+    bool found;
+    struct timeval time_used;
+    long tmptime;
 
-   /*
-    * Strip leading spaces.
-    */
-   while( isspace( *argument ) )
-      argument++;
-   if( argument[0] == '\0' )
-      return;
 
-   /*
-    * No hiding.
-    */
-   REMOVE_BIT( ch->affected_by, AFF_HIDE );
+    if ( !ch )
+    {
+	bug( "interpret: null ch!", 0 );
+	return;
+    }
 
-   /*
-    * Implement freeze command.
-    */
-   if( !IS_NPC( ch ) && IS_SET( ch->act, PLR_FREEZE ) )
-   {
-      send_to_char( "You're totally frozen!\r\n", ch );
-      return;
+    if ( !ch->in_room )
+    {
+    	bug( "interpret: null in_room!", 0 );
+	return;
+    }
+    found = FALSE;
+    if ( ch->substate == SUB_REPEATCMD )
+    {
+	DO_FUN *fun;
+
+	if ( (fun=ch->last_cmd) == NULL )
+	{
+	    ch->substate = SUB_NONE;
+	    bug( "interpret: SUB_REPEATCMD with NULL last_cmd", 0 );
+	    return;
+	}
+	else
+	{
+	    int x;
+
+	    /*
+	     * yes... we lose out on the hashing speediness here...
+	     * but the only REPEATCMDS are wizcommands (currently)
+	     */
+	    for ( x = 0; x < 126; x++ )
+	    {
+		for ( cmd = command_hash[x]; cmd; cmd = cmd->next )
+		   if ( cmd->do_fun == fun )
+		   {
+			found = TRUE;
+			break;
+		   }
+		if ( found )
+		   break;
+	    }
+	    if ( !found )
+	    {
+		cmd = NULL;
+		bug( "interpret: SUB_REPEATCMD: last_cmd invalid", 0 );
+		return;
+	    }
+	    sprintf( logline, "(%s) %s", cmd->name, argument );
+	}
+    }
+
+    if ( !cmd )
+    {
+	/* Changed the order of these ifchecks to prevent crashing. */
+	if ( !argument || !strcmp(argument,"") ) 
+	{
+	    bug( "interpret: null argument!", 0 );
+	    return;
+	}
+
+	/*
+	 * Strip leading spaces.
+	 */
+	while ( isspace(*argument) )
+	    argument++;
+	if ( argument[0] == '\0' )
+	    return;
+
+	/* xREMOVE_BIT( ch->affected_by, AFF_HIDE ); */
+
+	/*
+	 * Implement freeze command.
+	 */
+	if ( !IS_NPC(ch) && xIS_SET(ch->act, PLR_FREEZE) )
+	{
+	    send_to_char( "You're totally frozen!\n\r", ch );
+	    return;
+	}
+
+	/*
+	 * Grab the command word.
+	 * Special parsing so ' can be a command,
+	 *   also no spaces needed after punctuation.
+	 */
+	strcpy( logline, argument );
+	if ( !isalpha(argument[0]) && !isdigit(argument[0]) )
+	{
+	    command[0] = argument[0];
+	    command[1] = '\0';
+	    argument++;
+	    while ( isspace(*argument) )
+		argument++;
+	}
+	else
+	    argument = one_argument( argument, command );
+
+	/*
+	 * Look for command in command table.
+	 * Check for council powers and/or bestowments
+	 */
+	trust = get_trust( ch );
+	for ( cmd = command_hash[LOWER(command[0])%126]; cmd; cmd = cmd->next )
+	    if ( !str_prefix( command, cmd->name )
+	    &&   (cmd->level <= trust
+	    ||  (!IS_NPC(ch) && ch->pcdata->council
+	    &&    is_name( cmd->name, ch->pcdata->council->powers )
+	    &&    cmd->level <= (trust+MAX_CPD))
+	    ||  ( !IS_NPC(ch) && IS_SET(ch->pcdata->flags, PCFLAG_RETIRED)
+	    && IS_SET(cmd->flags, CMD_FLAG_RETIRED))
+	    ||  (!IS_NPC(ch) && ch->pcdata->bestowments && ch->pcdata->bestowments[0] != '\0'
+	    &&    is_name( cmd->name, ch->pcdata->bestowments )
+	    &&    cmd->level <= (trust+sysdata.bestow_dif)) ) )
+	    {
+		found = TRUE;
+		break;
+	    }
+
+	/*
+	 * Turn off afk bit when any command performed.
+	 */
+	if ( !IS_NPC( ch ) && xIS_SET ( ch->act, PLR_AFK)  && (str_cmp(command, "AFK")))
+	{
+	    xREMOVE_BIT( ch->act, PLR_AFK );
+/*
+     	    act( AT_GREY, "$n is no longer afk.", ch, NULL, NULL, TO_ROOM );
+*/
+     	    act( AT_GREY, "$n is no longer afk.", ch, NULL, NULL, TO_CANSEE );
+	}
+    }
+
+    /*
+     * Log and snoop.
+     */
+/*
+    sprintf( lastplayercmd, "** %s: %s", ch->name, logline );
+*/
+    sprintf( lastplayercmd, "%s used %s", ch->name, logline );
+
+
+    if ( found && cmd->log == LOG_NEVER )
+	strcpy( logline, "XXXXXXXX XXXXXXXX XXXXXXXX" );
+
+    loglvl = found ? cmd->log : LOG_NORMAL;
+
+/* Cause people said it was spammy, even though they asked for it in the
+first place.  Whaddya gonna do? */
+/* Uncommented and checked for the same things as valid_watch to reduce
+   the spammage caused from moovement and looking */
+    if ( IS_NPC(ch) && IS_AFFECTED(ch, AFF_POSSESS) 
+		&& valid_watch( logline ) ) 
+		{
+        char log_buf[MAX_STRING_LENGTH];
+        if ( ch->desc && ch->desc->original && ch->short_descr ) {
+           sprintf( log_buf, "%s possessed %s:  %s.", ch->desc->original->name,
+		ch->short_descr, logline );
+           log_string_plus( log_buf, LOG_NORMAL, 58 );
+        }
    }
 
-   /*
-    * Grab the command word.
-    * Special parsing so ' can be a command,
-    *   also no spaces needed after punctuation.
-    */
-   strcpy( logline, argument );
-   if( !isalpha( argument[0] ) && !isdigit( argument[0] ) )
-   {
-      command[0] = argument[0];
-      command[1] = '\0';
-      argument++;
-      while( isspace( *argument ) )
-         argument++;
-   }
-   else
-   {
-      argument = one_argument( argument, command );
-   }
 
-   /*
-    * Look for command in command table.
-    */
-   found = FALSE;
-   trust = get_trust( ch );
-   for( cmd = 0; cmd_table[cmd].name[0] != '\0'; cmd++ )
-   {
-      if( command[0] == cmd_table[cmd].name[0]
-          && !str_prefix( command, cmd_table[cmd].name ) && ( cmd_table[cmd].level <= trust || MP_Commands( ch ) ) )
-      {
-         found = TRUE;
-         break;
-      }
-   }
+    /*
+     * Write input line to watch files if applicable
+     */
+    if ( !IS_NPC(ch) && ch->desc
+    && valid_watch(logline) )
+    {
+    	if(found && IS_SET(cmd->flags, CMD_WATCH))
+    		write_watch_files(ch, cmd, logline);
+        /* temporarily commented to test change */
+    	/*else if(IS_SET(ch->pcdata->flags, PCFLAG_WATCH))*/
+    	if(IS_SET(ch->pcdata->flags, PCFLAG_WATCH))
+    		write_watch_files(ch, NULL, logline);
+    }
 
-   /*
-    * Log and snoop.
-    */
-   if( cmd_table[cmd].log == LOG_NEVER )
-      strcpy( logline, "XXXXXXXX XXXXXXXX XXXXXXXX" );
 
-   if( ( !IS_NPC( ch ) && IS_SET( ch->act, PLR_LOG ) ) || fLogAll || cmd_table[cmd].log == LOG_ALWAYS )
-   {
-      sprintf( log_buf, "Log %s: %s", ch->name, logline );
-      log_string( log_buf );
-   }
+    if ( ( !IS_NPC(ch) && xIS_SET(ch->act, PLR_LOG) )
+    ||   fLogAll
+    ||	 loglvl == LOG_BUILD
+    ||   loglvl == LOG_HIGH
+    ||   loglvl == LOG_ALWAYS )
+    {
+        /* Added by Narn to show who is switched into a mob that executes
+           a logged command.  Check for descriptor in case force is used. */
+        if ( ch->desc && ch->desc->original ) 
+          sprintf( log_buf, "Log %s (%s): %s", ch->name,
+                   ch->desc->original->name, logline );
+        else
+          sprintf( log_buf, "Log %s: %s", ch->name, logline );
 
-   if( ch->desc != NULL && ch->desc->snoop_by != NULL )
-   {
-      write_to_buffer( ch->desc->snoop_by, "% ", 2 );
-      write_to_buffer( ch->desc->snoop_by, logline, 0 );
-      write_to_buffer( ch->desc->snoop_by, "\r\n", 2 );
-   }
+	/*
+	 * Make it so a 'log all' will send most output to the log
+	 * file only, and not spam the log channel to death	-Thoric
+	 */
+	if ( fLogAll && loglvl == LOG_NORMAL
+	&&  (IS_NPC(ch) || !xIS_SET(ch->act, PLR_LOG)) )
+	  loglvl = LOG_ALL;
 
-   if( !found )
-   {
-      /*
-       * Look for command in socials table.
-       */
-      if( !check_social( ch, command, argument )
-#ifdef IMC
-          && !imc_command_hook( ch, command, argument )
+	/* This is handled in get_trust already */
+/*	if ( ch->desc && ch->desc->original )
+	  log_string_plus( log_buf, loglvl,
+		ch->desc->original->level );
+	else*/
+	  log_string_plus( log_buf, loglvl, get_trust(ch) );
+    }
+
+    if ( ch->desc && ch->desc->snoop_by )
+    {
+  	sprintf( logname, "%s", ch->name);
+	write_to_buffer( ch->desc->snoop_by, logname, 0 );
+	write_to_buffer( ch->desc->snoop_by, "% ",    2 );
+	write_to_buffer( ch->desc->snoop_by, logline, 0 );
+	write_to_buffer( ch->desc->snoop_by, "\n\r",  2 );
+    }
+
+    /* BUILD INTERFACE (start)*/
+    if( ch->inter_type == OBJ_TYPE )
+    {
+	MENU_DATA *m_data = NULL;
+	int i;
+        switch (ch->inter_page)
+	{
+          case OBJ_PAGE_A:  m_data=obj_page_a_data;
+			    break;
+          case OBJ_PAGE_B:  m_data=obj_page_b_data;
+			    break;
+          case OBJ_PAGE_C:  m_data=obj_page_c_data;
+			    break;
+          case OBJ_PAGE_D:  m_data=obj_page_d_data;
+			    break;
+          case OBJ_PAGE_E:  m_data=obj_page_e_data;
+			    break;
+          case OBJ_HELP_PAGE:  m_data=obj_help_page_data;
+			    break;
+        }
+	if( m_data )
+	{
+	  for(i=0;m_data[i].ptrType!= (int) NULL;i++)
+	  {
+             /*IF 1st char matches && 2nd CHAR MATCHES...*/
+	     if(! strcmp(m_data[i].sectionNum,command))
+	     {
+	       if(! strncmp(m_data[i].charChoice,argument,1) )   /* just check the 1st char */
+	       {
+	          /* ...then MAKE NEW_COMMAND, and */
+	          switch (m_data[i].cmdArgs)
+	          {
+                    case 1: 
+		       sprintf(newcommand,m_data[i].cmdString,ch->inter_editing);
+		       break;
+                    case 2: 
+		       argument = one_argument( argument, arg2 );
+		       sprintf(newcommand,m_data[i].cmdString,ch->inter_editing, argument);
+		       break;
+                    case 0: 
+	            default:
+		       sprintf(newcommand,m_data[i].cmdString);
+	          }
+		  send_to_char( newcommand, ch );
+		  send_to_char( "\n\r", ch );
+	          /* ... interpret NEW_COMMAND */
+	          interpret( ch, newcommand );
+		  refresh_page( ch );
+	          return;
+	       }
+             }
+          }
+          if(!strcmp("+",command) && get_obj_world(ch, argument))
+          {
+             sprintf(newcommand,"omenu %s %c",argument,ch->inter_page);
+		  send_to_char( newcommand, ch );
+		  send_to_char( "\n\r", ch );
+	     interpret( ch, newcommand );
+	     refresh_page( ch );
+	     return;
+          }
+        }
+    }
+    if( ch->inter_type == MOB_TYPE )
+    {
+	MENU_DATA *m_data = NULL;
+	int i;
+        switch (ch->inter_page)
+	{
+          case MOB_PAGE_A:  m_data=mob_page_a_data;
+			    break;
+          case MOB_PAGE_B:  m_data=mob_page_b_data;
+			    break;
+          case MOB_PAGE_C:  m_data=mob_page_c_data;
+			    break;
+          case MOB_PAGE_D:  m_data=mob_page_d_data;
+			    break;
+          case MOB_PAGE_E:  m_data=mob_page_e_data;
+			    break;
+          case MOB_PAGE_F:  m_data=mob_page_f_data;   /* 7/19 */
+			    break;
+          case MOB_HELP_PAGE:  m_data=mob_help_page_data;
+			    break;
+        }
+	if( m_data )
+	{
+	  for(i=0;m_data[i].ptrType!=(int)NULL;i++)
+	  {
+             /*IF 1st char matches && 2nd CHAR MATCHES...*/
+	     if(! strcmp(m_data[i].sectionNum,command))
+	     {
+	       if(! strncmp(m_data[i].charChoice,argument,1) )   /* just check the 1st char */
+	       {
+	          /* ...then MAKE NEW_COMMAND, and */
+	          switch (m_data[i].cmdArgs)
+	          {
+                    case 1: 
+		       sprintf(newcommand,m_data[i].cmdString,ch->inter_editing);
+		       break;
+                    case 2: 
+		       argument = one_argument( argument, arg2 );
+		       sprintf(newcommand,m_data[i].cmdString,ch->inter_editing, argument);
+		       break;
+                    case 0: 
+	            default:
+		       sprintf(newcommand,m_data[i].cmdString);
+	          }
+		  send_to_char( newcommand, ch );
+		  send_to_char( "\n\r", ch );
+	          /* ... interpret NEW_COMMAND */
+	          interpret( ch, newcommand );
+		  refresh_page( ch );
+	          return;
+	       }
+             }
+          }
+          if(!strcmp("+",command) && get_char_world(ch, argument))
+          {
+             sprintf(newcommand,"mmenu %s %c",argument,ch->inter_page);
+		  send_to_char( newcommand, ch );
+		  send_to_char( "\n\r", ch );
+	     interpret( ch, newcommand );
+	     refresh_page( ch );
+	     return;
+          }
+        }
+    }
+    if( ch->inter_type == ROOM_TYPE )
+    {
+	MENU_DATA *m_data = NULL;
+	int i;
+        switch (ch->inter_page)
+	{
+          case ROOM_PAGE_A:  m_data=room_page_a_data;
+			    break;
+          case ROOM_PAGE_B:  m_data=room_page_b_data;
+			    break;
+          case ROOM_PAGE_C:  m_data=room_page_c_data;
+			    break;
+          case ROOM_HELP_PAGE:  m_data=room_help_page_data;
+			    break;
+        }
+	if( m_data )
+	{
+	  for(i=0;m_data[i].ptrType!=(int)NULL;i++)
+	  {
+             /*IF 1st char matches && 2nd CHAR MATCHES...*/
+	     if(! strcmp(m_data[i].sectionNum,command))
+	     {
+	       if(! strncmp(m_data[i].charChoice,argument,1) )   /* just check the 1st char */
+	       {
+	          /* ...then MAKE NEW_COMMAND, and */
+	          switch (m_data[i].cmdArgs)
+	          {
+                    case 1: 
+		       argument = one_argument( argument, arg2 ); /* new */
+		       argument = one_argument( argument, arg2 ); /* new */
+		       sprintf(newcommand,m_data[i].cmdString,
+					  argument);  /* different than mobs */
+		       break;                         /* on purpose */
+                    case 2: 
+		       argument = one_argument( argument, arg2 );
+		       sprintf(newcommand,m_data[i].cmdString,
+					  ch->inter_editing, 
+					  argument);
+		       break;
+                    case 0: 
+	            default:
+		       sprintf(newcommand,m_data[i].cmdString);
+	          }
+		  send_to_char( newcommand, ch );
+		  send_to_char( "\n\r", ch );
+	          /* ... interpret NEW_COMMAND */
+	          interpret( ch, newcommand );
+		  refresh_page( ch );
+	          return;
+	       }
+             }
+          }
+        }
+    }  
+    /* BUILD INTERFACE ( end )*/
+
+    /* check for a timer delayed command (search, dig, detrap, etc) */
+    if ( ( (timer=get_timerptr(ch, TIMER_DO_FUN)) != NULL )
+		&& ( !found || !IS_SET( cmd->flags, CMD_FLAG_NO_ABORT ) ) )
+    {
+	int tempsub;
+
+	tempsub = ch->substate;
+	ch->substate = SUB_TIMER_DO_ABORT;
+	(timer->do_fun)(ch,"");
+	if ( char_died(ch) )
+	    return;
+	if ( ch->substate != SUB_TIMER_CANT_ABORT )
+	{
+	    ch->substate = tempsub;
+	    extract_timer( ch, timer );
+	}
+	else
+	{
+	    ch->substate = tempsub;
+	    return;
+	}
+    }
+
+    /*
+     * Look for command in skill and socials table.
+     */
+    if ( !found )
+    {
+	if ( !check_skill( ch, command, argument )
+	&&   !rprog_command_trigger( ch, origarg )
+	&&   !mprog_command_trigger( ch, origarg )
+	&&   !oprog_command_trigger( ch, origarg )
+	&&   !check_social( ch, command, argument )
+        &&   !news_cmd_hook(ch, command, argument)
+
+#ifdef USE_IMC
+	&&   !icec_command_hook( ch, command, argument ) )
+#else
+	)
 #endif
-          )
-         send_to_char( "Huh?\r\n", ch );
-      return;
-   }
+	{
+	    EXIT_DATA *pexit;
 
-   /*
-    * Character not in position for command?
-    */
-   if( ch->position < cmd_table[cmd].position )
-   {
-      switch ( ch->position )
-      {
-         case POS_DEAD:
-            send_to_char( "Lie still; you are DEAD.\r\n", ch );
-            break;
+	    /* check for an auto-matic exit command */
+	    if ( (pexit = find_door( ch, command, TRUE )) != NULL
+	    &&   IS_SET( pexit->exit_info, EX_xAUTO ))
+	    {
+		if ( IS_SET(pexit->exit_info, EX_CLOSED)
+		&& (!IS_AFFECTED(ch, AFF_PASS_DOOR)
+		||   IS_SET(pexit->exit_info, EX_NOPASSDOOR)) )
+		{
+		  if ( !IS_SET( pexit->exit_info, EX_SECRET ) )
+		    act( AT_PLAIN, "The $d is closed.", ch, NULL, pexit->keyword, TO_CHAR );
+		  else
+		    send_to_char( "You cannot do that here.\n\r", ch );
+		  return;
+		}
+		move_char( ch, pexit, 0 );
+		return;
+	    }
+	    send_to_char( "Huh?\n\r", ch );
+	}
+	return;
+    }
 
-         case POS_MORTAL:
-         case POS_INCAP:
-            send_to_char( "You are hurt far too bad for that.\r\n", ch );
-            break;
+    /*
+     * Character not in position for command?
+     */
+    if ( !check_pos( ch, cmd->position ) )
+	return;
+    
+    /* Berserk check for flee.. maybe add drunk to this?.. but too much
+       hardcoding is annoying.. -- Altrag
+       This wasn't catching wimpy --- Blod
+    if ( !str_cmp(cmd->name, "flee") &&
+          IS_AFFECTED(ch, AFF_BERSERK) )
+    {
+	send_to_char( "You aren't thinking very clearly..\n\r", ch);
+	return;
+    } */
 
-         case POS_STUNNED:
-            send_to_char( "You are too stunned to do that.\r\n", ch );
-            break;
+    /*  So we can check commands for things like Posses and Polymorph
+     *  But still keep the online editing ability.  -- Shaddai
+     *  Send back the message to print out, so we have the option
+     *  this function might be usefull elsewhere.  Also using the
+     *  send_to_char_color so we can colorize the strings if need be. --Shaddai
+     */
 
-         case POS_SLEEPING:
-            send_to_char( "In your dreams, or what?\r\n", ch );
-            break;
+    buf = check_cmd_flags ( ch, cmd );
 
-         case POS_RESTING:
-            send_to_char( "Nah... You feel too relaxed...\r\n", ch );
-            break;
+    if ( buf[0] != '\0'  ) {
+        send_to_char_color( buf, ch );
+        return;
+    }
 
-         case POS_FIGHTING:
-            send_to_char( "No way!  You are still fighting!\r\n", ch );
-            break;
+    /*
+     * Nuisance stuff -- Shaddai
+     */
+ 
+    if ( !IS_NPC(ch) && ch->pcdata->nuisance && ch->pcdata->nuisance->flags > 9 
+         && number_percent() < ((ch->pcdata->nuisance->flags-9)*10
+         *ch->pcdata->nuisance->power))
+    {
+	send_to_char("You can't seem to do that just now.\n\r", ch );
+	return;	
+    }
+    	
+    /*
+     * Dispatch the command.
+     */
+    ch->prev_cmd = ch->last_cmd;    /* haus, for automapping */
+    ch->last_cmd = cmd->do_fun;
+    start_timer(&time_used);
+    (*cmd->do_fun) ( ch, argument );
+    end_timer(&time_used);
+    /*
+     * Update the record of how many times this command has been used (haus)
+     */
+    update_userec(&time_used, &cmd->userec);
+    tmptime = UMIN(time_used.tv_sec,19) * 1000000 + time_used.tv_usec;
 
-      }
-      return;
-   }
+    /* laggy command notice: command took longer than 1.5 seconds */
+    if ( tmptime > 1500000 )
+    {
+#ifdef sun
+        sprintf(log_buf, "[*****] LAG: %s: %s %s (R:%d S:%ld.%06ld)", ch->name,
+                cmd->name, (cmd->log == LOG_NEVER ? "XXX" : argument),
+		ch->in_room ? ch->in_room->vnum : 0,
+		time_used.tv_sec, time_used.tv_usec );
+#else
+        sprintf(log_buf, "[*****] LAG: %s: %s %s (R:%d S:%ld.%06ld)", ch->name,
+                cmd->name, (cmd->log == LOG_NEVER ? "XXX" : argument),
+		ch->in_room ? ch->in_room->vnum : 0,
+		(long)time_used.tv_sec, (long)time_used.tv_usec );
+#endif
+	log_string_plus(log_buf, LOG_NORMAL, get_trust(ch));
+	cmd->lag_count++;	/* count the lag flags */
+    }
 
-   /*
-    * Dispatch the command.
-    */
-   ( *cmd_table[cmd].do_fun ) ( ch, argument );
-
-   tail_chain(  );
-   return;
+    tail_chain( );
 }
 
-
-
-bool check_social( CHAR_DATA * ch, char *command, char *argument )
+CMDTYPE *find_command( char *command )
 {
-   char arg[MAX_INPUT_LENGTH];
-   CHAR_DATA *victim;
-   int cmd;
-   bool found;
+    CMDTYPE *cmd;
+    int hash;
 
-   found = FALSE;
-   for( cmd = 0; social_table[cmd].name[0] != '\0'; cmd++ )
-   {
-      if( command[0] == social_table[cmd].name[0] && !str_prefix( command, social_table[cmd].name ) )
-      {
-         found = TRUE;
-         break;
-      }
-   }
+    hash = LOWER(command[0]) % 126;
 
-   if( !found )
-      return FALSE;
+    for ( cmd = command_hash[hash]; cmd; cmd = cmd->next )
+	if ( !str_prefix( command, cmd->name ) )
+	    return cmd;
 
-   if( !IS_NPC( ch ) && IS_SET( ch->act, PLR_NO_EMOTE ) )
-   {
-      send_to_char( "You are anti-social!\r\n", ch );
-      return TRUE;
-   }
+    return NULL;
+}
 
-   switch ( ch->position )
-   {
-      case POS_DEAD:
-         send_to_char( "Lie still; you are DEAD.\r\n", ch );
-         return TRUE;
+SOCIALTYPE *find_social( char *command )
+{
+    SOCIALTYPE *social;
+    int hash;
 
-      case POS_INCAP:
-      case POS_MORTAL:
-         send_to_char( "You are hurt far too bad for that.\r\n", ch );
-         return TRUE;
+    if ( command[0] < 'a' || command[0] > 'z' )
+	hash = 0;
+    else
+	hash = (command[0] - 'a') + 1;
 
-      case POS_STUNNED:
-         send_to_char( "You are too stunned to do that.\r\n", ch );
-         return TRUE;
+    for ( social = social_index[hash]; social; social = social->next )
+	if ( !str_prefix( command, social->name ) )
+	    return social;
 
-      case POS_SLEEPING:
-         /*
-          * I just know this is the path to a 12" 'if' statement.  :(
-          * But two players asked for it already!  -- Furey
-          */
-         if( !str_cmp( social_table[cmd].name, "snore" ) )
-            break;
-         send_to_char( "In your dreams, or what?\r\n", ch );
-         return TRUE;
+    return NULL;
+}
 
-   }
+bool check_social( CHAR_DATA *ch, char *command, char *argument )
+{
+    char arg[MAX_INPUT_LENGTH];
+    CHAR_DATA *victim, *victim_next;
+    SOCIALTYPE *social;
+    CHAR_DATA *remfirst, *remlast, *remtemp; /* for ignore cmnd */
 
-   one_argument( argument, arg );
-   victim = NULL;
-   if( arg[0] == '\0' )
-   {
-      act( social_table[cmd].others_no_arg, ch, NULL, victim, TO_ROOM );
-      act( social_table[cmd].char_no_arg, ch, NULL, victim, TO_CHAR );
-   }
-   else if( ( victim = get_char_room( ch, arg ) ) == NULL )
-   {
-      send_to_char( "They aren't here.\r\n", ch );
-   }
-   else if( victim == ch )
-   {
-      act( social_table[cmd].others_auto, ch, NULL, victim, TO_ROOM );
-      act( social_table[cmd].char_auto, ch, NULL, victim, TO_CHAR );
-   }
-   else
-   {
-      act( social_table[cmd].others_found, ch, NULL, victim, TO_NOTVICT );
-      act( social_table[cmd].char_found, ch, NULL, victim, TO_CHAR );
-      act( social_table[cmd].vict_found, ch, NULL, victim, TO_VICT );
+    if ( (social=find_social(command)) == NULL )
+	return FALSE;
 
-      if( !IS_NPC( ch ) && IS_NPC( victim ) && !IS_AFFECTED( victim, AFF_CHARM ) && IS_AWAKE( victim ) )
-      {
-         switch ( number_bits( 4 ) )
-         {
-            case 0:
-               multi_hit( victim, ch, TYPE_UNDEFINED );
-               break;
+    if ( !IS_NPC(ch) && xIS_SET(ch->act, PLR_NO_EMOTE) )
+    {
+	send_to_char( "You are anti-social!\n\r", ch );
+	return TRUE;
+    }
+   
+    switch ( ch->position )
+    {
+    case POS_DEAD:
+	send_to_char( "Lie still; you are DEAD.\n\r", ch );
+	return TRUE;
 
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-               act( social_table[cmd].others_found, victim, NULL, ch, TO_NOTVICT );
-               act( social_table[cmd].char_found, victim, NULL, ch, TO_CHAR );
-               act( social_table[cmd].vict_found, victim, NULL, ch, TO_VICT );
-               break;
+    case POS_INCAP:
+    case POS_MORTAL:
+	send_to_char( "You are hurt far too bad for that.\n\r", ch );
+	return TRUE;
 
-            case 9:
-            case 10:
-            case 11:
-            case 12:
-               act( "$n slaps $N.", victim, NULL, ch, TO_NOTVICT );
-               act( "You slap $N.", victim, NULL, ch, TO_CHAR );
-               act( "$n slaps you.", victim, NULL, ch, TO_VICT );
-               break;
-         }
-      }
-   }
+    case POS_STUNNED:
+	send_to_char( "You are too stunned to do that.\n\r", ch );
+	return TRUE;
 
-   return TRUE;
+    case POS_SLEEPING:
+	/*
+	 * I just know this is the path to a 12" 'if' statement.  :(
+	 * But two players asked for it already!  -- Furey
+	 */
+	if ( !str_cmp( social->name, "snore" ) )
+	    break;
+	send_to_char( "In your dreams, or what?\n\r", ch );
+	return TRUE;
+
+    }
+
+    remfirst = NULL;
+    remlast = NULL;
+    remtemp = NULL;
+    
+    /* Search room for chars ignoring social sender and */
+    /* remove them from the room until social has been  */
+    /* completed					*/
+	/* Bug fix for ignore from Valcados 1/02 */
+    for(victim = ch->in_room->first_person;victim;victim = victim_next)
+    {
+		victim_next = victim->next_in_room;
+    	if(is_ignoring(victim, ch))
+    	{
+    		if(!IS_IMMORTAL(ch) || get_trust(victim) > get_trust(ch))
+    		{
+    			char_from_room(victim);
+    			LINK(victim, remfirst, remlast, next_in_room,
+    				prev_in_room);
+    		}
+    		else
+    		{
+    			set_char_color(AT_IGNORE, victim);
+    			ch_printf(victim, "You attempt to ignore %s,"
+    				" but are unable to do so.\n\r", !can_see(victim, ch) ? "Someone" : ch->name);
+    		}
+    	}
+    }
+
+    one_argument( argument, arg );
+    victim = NULL;
+    if ( arg[0] == '\0' )
+    {
+	act( AT_SOCIAL, social->others_no_arg, ch, NULL, victim, TO_ROOM    );
+	act( AT_SOCIAL, social->char_no_arg,   ch, NULL, victim, TO_CHAR    );
+    }
+    else if ( ( victim = get_char_room( ch, arg ) ) == NULL )
+    {
+    	/* If they aren't in the room, they may be in the list of */
+    	/* people ignoring...					  */
+    	for(victim = remfirst; victim; victim = victim->next_in_room)
+    	{
+    		if(nifty_is_name(victim->name,arg) ||
+    			nifty_is_name_prefix(arg,victim->name))
+    		{
+    			set_char_color(AT_IGNORE, ch);
+    			ch_printf(ch,"%s is ignoring you.\n\r",
+    				victim->name);
+    			break;
+    		}
+    	}
+    	
+    	if(!victim)
+		send_to_char( "They aren't here.\n\r", ch );
+    }
+    else if ( victim == ch )
+    {
+	act( AT_SOCIAL, social->others_auto,   ch, NULL, victim, TO_ROOM    );
+	act( AT_SOCIAL, social->char_auto,     ch, NULL, victim, TO_CHAR    );
+    }
+    else
+    {
+	act( AT_SOCIAL, social->others_found,  ch, NULL, victim, TO_NOTVICT );
+	act( AT_SOCIAL, social->char_found,    ch, NULL, victim, TO_CHAR    );
+	act( AT_SOCIAL, social->vict_found,    ch, NULL, victim, TO_VICT    );
+
+	if ( !IS_NPC(ch) && IS_NPC(victim)
+	&&   !IS_AFFECTED(victim, AFF_CHARM)
+	&&   IS_AWAKE(victim) 
+	&&   !victim->desc	// This was just really annoying.. lemme do my own socials! -- Alty
+	&&   !HAS_PROG(victim->pIndexData, ACT_PROG) )
+	{
+	    switch ( number_bits( 4 ) )
+	    {
+	    case 0:
+		if (IS_EVIL(ch) && !is_safe(victim, ch, TRUE)) /* was IS_EVIL(ch) ||.... didn't make sense to me - FB */
+		  multi_hit( victim, ch, TYPE_UNDEFINED );
+		else
+		if ( IS_NEUTRAL(ch) )
+		{
+		    act( AT_ACTION, "$n slaps $N.",  victim, NULL, ch, TO_NOTVICT );
+		    act( AT_ACTION, "You slap $N.",  victim, NULL, ch, TO_CHAR    );
+		    act( AT_ACTION, "$n slaps you.", victim, NULL, ch, TO_VICT    );
+		}
+		else
+		{
+		    act( AT_ACTION, "$n acts like $N doesn't even exist.",  victim, NULL, ch, TO_NOTVICT );
+		    act( AT_ACTION, "You just ignore $N.",  victim, NULL, ch, TO_CHAR    );
+		    act( AT_ACTION, "$n appears to be ignoring you.", victim, NULL, ch, TO_VICT    );
+		}
+		break;
+
+	    case 1: case 2: case 3: case 4:
+	    case 5: case 6: case 7: case 8:
+		act( AT_SOCIAL, social->others_found,
+		    victim, NULL, ch, TO_NOTVICT );
+		act( AT_SOCIAL, social->char_found,
+		    victim, NULL, ch, TO_CHAR    );
+		act( AT_SOCIAL, social->vict_found,
+		    victim, NULL, ch, TO_VICT    );
+		break;
+
+	    case 9: case 10: case 11: case 12:
+		act( AT_ACTION, "$n slaps $N.",  victim, NULL, ch, TO_NOTVICT );
+		act( AT_ACTION, "You slap $N.",  victim, NULL, ch, TO_CHAR    );
+		act( AT_ACTION, "$n slaps you.", victim, NULL, ch, TO_VICT    );
+		break;
+	    }
+	}
+    }
+    
+    /* Replace the chars in the ignoring list to the room */
+    /* note that the ordering of the players in the room  */
+    /* might change					  */
+    for(victim = remfirst; victim; victim = remtemp)
+    {
+    	remtemp = victim->next_in_room;
+    	char_to_room(victim, ch->in_room);
+    }
+
+    return TRUE;
 }
 
 
@@ -1486,19 +992,23 @@ bool check_social( CHAR_DATA * ch, char *command, char *argument )
  */
 bool is_number( char *arg )
 {
-   if( *arg == '\0' )
-      return FALSE;
+    bool first = TRUE;
+    if ( *arg == '\0' )
+	return FALSE;
 
-   if( *arg == '+' || *arg == '-' )
-      arg++;
+    for ( ; *arg != '\0'; arg++ )
+    {
+        if ( first && *arg == '-')	
+	{
+		first = FALSE;
+		continue; 
+	}
+	if ( !isdigit(*arg) )
+	    return FALSE;
+	first = FALSE;
+    }
 
-   for( ; *arg != '\0'; arg++ )
-   {
-      if( !isdigit( *arg ) )
-         return FALSE;
-   }
-
-   return TRUE;
+    return TRUE;
 }
 
 
@@ -1508,23 +1018,23 @@ bool is_number( char *arg )
  */
 int number_argument( char *argument, char *arg )
 {
-   char *pdot;
-   int number;
+    char *pdot;
+    int number;
 
-   for( pdot = argument; *pdot != '\0'; pdot++ )
-   {
-      if( *pdot == '.' )
-      {
-         *pdot = '\0';
-         number = atoi( argument );
-         *pdot = '.';
-         strcpy( arg, pdot + 1 );
-         return number;
-      }
-   }
+    for ( pdot = argument; *pdot != '\0'; pdot++ )
+    {
+	if ( *pdot == '.' )
+	{
+	    *pdot = '\0';
+	    number = atoi( argument );
+	    *pdot = '.';
+	    strcpy( arg, pdot+1 );
+	    return number;
+	}
+    }
 
-   strcpy( arg, argument );
-   return 1;
+    strcpy( arg, argument );
+    return 1;
 }
 
 
@@ -1535,56 +1045,263 @@ int number_argument( char *argument, char *arg )
  */
 char *one_argument( char *argument, char *arg_first )
 {
-   char cEnd;
+    char cEnd;
+    sh_int count;
 
-   while( isspace( *argument ) )
-      argument++;
+    count = 0;
 
-   cEnd = ' ';
-   if( *argument == '\'' || *argument == '"' )
-      cEnd = *argument++;
+    if ( !argument || argument[0] == '\0' )
+    {
+    	arg_first[0] = '\0';
+	return argument;
+    }
 
-   while( *argument != '\0' )
-   {
-      if( *argument == cEnd )
-      {
+    while ( isspace(*argument) )
+	argument++;
+
+    cEnd = ' ';
+    if ( *argument == '\'' || *argument == '"' )
+	cEnd = *argument++;
+
+    while ( *argument != '\0' || ++count >= 255 )
+    {
+	if ( *argument == cEnd )
+	{
+	    argument++;
+	    break;
+	}
+	*arg_first = LOWER(*argument);
+	arg_first++;
+	argument++;
+    }
+    *arg_first = '\0';
+
+    while ( isspace(*argument) )
+	argument++;
+
+    return argument;
+}
+
+/*
+ * Pick off one argument from a string and return the rest.
+ * Understands quotes.
+ * Doesn't smash case.  For use with things like password command. -- Alty
+ */
+char *case_argument( char *argument, char *arg_first )
+{
+    char cEnd;
+    sh_int count;
+
+    count = 0;
+
+    if ( !argument || argument[0] == '\0' )
+    {
+    	arg_first[0] = '\0';
+	return argument;
+    }
+
+    while ( isspace(*argument) )
+	argument++;
+
+    cEnd = ' ';
+    if ( *argument == '\'' || *argument == '"' )
+	cEnd = *argument++;
+
+    while ( *argument != '\0' || ++count >= 255 )
+    {
+	if ( *argument == cEnd )
+	{
+	    argument++;
+	    break;
+	}
+	*arg_first = *argument;
+	arg_first++;
+	argument++;
+    }
+    *arg_first = '\0';
+
+    while ( isspace(*argument) )
+	argument++;
+
+    return argument;
+}
+
+/*
+ * Pick off one argument from a string and return the rest.
+ * Understands quotes.  Delimiters = { ' ', '-' }
+ */
+/* Changed to fix a bug with arguments like "two-handed" - Luc 08/2000 */
+char *one_argument2( register char *argument, char *arg_first ) {
+   int count = 0;
+   register char ch;
+   register char quote = 0;
+
+   if ( !argument || !argument[0] ) {
+      arg_first[0] = '\0';
+      return argument;
+      }
+   ch = *argument;
+   while ( isspace( ch ) || ch == '-' )
+      ch = *++argument;
+   if ( ch == '\'' || ch == '"' ) {
+      quote = ch;
+      ch = *++argument;
+      }
+   while ( ch || ++count >= 255 ) {
+      if ( quote ? ch == quote : isspace( ch ) || ch == '-' ) {
          argument++;
          break;
+         }
+      *(arg_first++) = LOWER( ch );
+      ch = *++argument;
       }
-      *arg_first = LOWER( *argument );
-      arg_first++;
-      argument++;
-   }
    *arg_first = '\0';
-
-   while( isspace( *argument ) )
-      argument++;
-
+   ch = *argument;
+   while ( isspace( ch ) || ch == '-' )
+      ch = *++argument;
    return argument;
-}
+   }
 
-bool IS_SWITCHED( CHAR_DATA * ch )
+
+void do_timecmd( CHAR_DATA *ch, char *argument )
 {
-   if( !IS_NPC( ch ) )
-      return FALSE;
-
-   if( ch->desc == NULL )
-      return FALSE;
-
-   return TRUE;
-
+  struct timeval stime;
+  struct timeval etime;
+  static bool timing;
+  extern CHAR_DATA *timechar;
+  char arg[MAX_INPUT_LENGTH];
+  
+  send_to_char("Timing\n\r",ch);
+  if ( timing )
+    return;
+  one_argument(argument, arg);
+  if ( !*arg )
+  {
+    send_to_char( "No command to time.\n\r", ch );
+    return;
+  }
+  if ( !str_cmp(arg, "update") )
+  {
+    if ( timechar )
+      send_to_char( "Another person is already timing updates.\n\r", ch );
+    else
+    {
+      timechar = ch;
+      send_to_char( "Setting up to record next update loop.\n\r", ch );
+    }
+    return;
+  }
+  set_char_color(AT_PLAIN, ch);
+  send_to_char( "Starting timer.\n\r", ch );
+  timing = TRUE;
+  gettimeofday(&stime, NULL);
+  interpret(ch, argument);
+  gettimeofday(&etime, NULL);
+  timing = FALSE;
+  set_char_color(AT_PLAIN, ch);
+  send_to_char( "Timing complete.\n\r", ch );
+  subtract_times(&etime, &stime);
+  ch_printf( ch, "Timing took %d.%06d seconds.\n\r",
+      etime.tv_sec, etime.tv_usec );
+  return;
 }
 
-bool MP_Commands( CHAR_DATA * ch )  /* Can MOBProged mobs
-                                     * use mpcommands? TRUE if yes.
-                                     * - Kahn */
+void start_timer(struct timeval *stime)
 {
-   if( IS_SWITCHED( ch ) )
-      return FALSE;
-
-   if( IS_NPC( ch ) && ch->pIndexData->progtypes && !IS_AFFECTED( ch, AFF_CHARM ) )
-      return TRUE;
-
-   return FALSE;
-
+  if ( !stime )
+  {
+    bug( "Start_timer: NULL stime.", 0 );
+    return;
+  }
+  gettimeofday(stime, NULL);
+  return;
 }
+
+time_t end_timer(struct timeval *stime)
+{
+  struct timeval etime;
+  
+  /* Mark etime before checking stime, so that we get a better reading.. */
+  gettimeofday(&etime, NULL);
+  if ( !stime || (!stime->tv_sec && !stime->tv_usec) )
+  {
+    bug( "End_timer: bad stime.", 0 );
+    return 0;
+  }
+  subtract_times(&etime, stime);
+  /* stime becomes time used */
+  *stime = etime;
+  return (etime.tv_sec*1000000)+etime.tv_usec;
+}
+
+void send_timer(struct timerset *vtime, CHAR_DATA *ch)
+{
+  struct timeval ntime;
+  int carry;
+  
+  if ( vtime->num_uses == 0 )
+    return;
+  ntime.tv_sec  = vtime->total_time.tv_sec / vtime->num_uses;
+  carry = (vtime->total_time.tv_sec % vtime->num_uses) * 1000000;
+  ntime.tv_usec = (vtime->total_time.tv_usec + carry) / vtime->num_uses;
+  ch_printf(ch, "Has been used %d times this boot.\n\r", vtime->num_uses);
+  ch_printf(ch, "Time (in secs): min %d.%0.6d; avg: %d.%0.6d; max %d.%0.6d"
+      "\n\r", vtime->min_time.tv_sec, vtime->min_time.tv_usec, ntime.tv_sec,
+      ntime.tv_usec, vtime->max_time.tv_sec, vtime->max_time.tv_usec);
+  return;
+}
+
+void update_userec(struct timeval *time_used, struct timerset *userec)
+{
+  userec->num_uses++;
+  if ( !timerisset(&userec->min_time)
+  ||    timercmp(time_used, &userec->min_time, <) )
+  {
+    userec->min_time.tv_sec  = time_used->tv_sec;
+    userec->min_time.tv_usec = time_used->tv_usec;
+  }
+  if ( !timerisset(&userec->max_time)
+  ||    timercmp(time_used, &userec->max_time, >) )
+  {
+    userec->max_time.tv_sec  = time_used->tv_sec;
+    userec->max_time.tv_usec = time_used->tv_usec;
+  }
+  userec->total_time.tv_sec  += time_used->tv_sec;
+  userec->total_time.tv_usec += time_used->tv_usec;
+  while ( userec->total_time.tv_usec >= 1000000 )
+  {
+    userec->total_time.tv_sec++;
+    userec->total_time.tv_usec -= 1000000;
+  }
+  return;
+}
+
+/*
+ *  This function checks the command against the command flags to make
+ *  sure they can use the command online.  This allows the commands to be
+ *  edited online to allow or disallow certain situations.  May be an idea
+ *  to rework this so we can edit the message sent back online, as well as
+ *  maybe a crude parsing language so we can add in new checks online without
+ *  haveing to hard-code them in.     -- Shaddai   August 25, 1997
+ */
+
+/* Needed a global here */
+char cmd_flag_buf[MAX_STRING_LENGTH];
+
+char *
+check_cmd_flags ( CHAR_DATA *ch, CMDTYPE *cmd )
+{
+
+  if ( IS_AFFECTED (ch, AFF_POSSESS) && IS_SET( cmd->flags, CMD_FLAG_POSSESS )) 
+        sprintf ( cmd_flag_buf, "You can't %s while you are possessing someone!\n\r",
+                cmd->name );
+  else if ( ch->morph != NULL
+            && IS_SET( cmd->flags, CMD_FLAG_POLYMORPHED ) )
+        sprintf ( cmd_flag_buf, "You can't %s while you are polymorphed!\n\r",
+                cmd->name );
+  else
+        cmd_flag_buf[0] = '\0';
+
+  return cmd_flag_buf;
+}
+

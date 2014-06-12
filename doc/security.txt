@@ -1,8 +1,9 @@
-Merc Release 2.2
-Wednesday 24 November 1993
+Merc Release 2.1
+Sunday 01 August 1993
 
-Kahn
-Hatchet
+Furey	mec@shell.portal.com
+Hatchet	hatchet@uclink.berkeley.edu
+Kahn	michael@uclink.berkeley.edu
 
 
 
@@ -14,15 +15,15 @@ is done by setting the LOG_ALWAYS attribute in interp.c.  LOG_NEVER is also
 available for commands which are never logged (specifically 'password').
 'Log all' logs ALL commands executed by the server.
 
-The 'deny' command can be used to set a character's PLR_DENY bit.  This bit
-cannot be reset from within the server (and the player can't log on anyways to
-get it reset).  In order to un-deny a player, edit their save file, and
-subtract the value of PLR_DENY (1048576) from their 'AffectedBy' bits.
+The 'deny' command can be used to set a character's PLR_DENY bit.
+To remove this, the player must be loaded up (loadup), and the deny bit
+removed with the 'mset' command.
 
 You can also 'deny' a player off-line by editing his or her player file and
 adding in the PLR_DENY bit (1048576) to their 'AffectedBy' bits.
 
 The 'ban' command can be used to ban sites or domains.
+Bans persist across reboots.
 
 The 'startup' script automatically saves log files in the the directory ../log
 (i.e. a 'log' directory which is a sibling of the current directory).  You
@@ -44,9 +45,9 @@ There are level limits on grouping.
 
 Objects have level restrictions on their use.
 
-There are limits on saved items.  Keys and potions do not save.  Items which
-are higher level than the character are not saved.  This protects against
-storage characters.
+There are limits on saved items.  Keys do not save.  Items which are higher
+level than the character are not saved.  This protects against storage
+characters.
 
 If you do need to confiscate equipment, just fire up your favorite editor and
 edit the player files.
@@ -63,11 +64,7 @@ In summary, the best way out of combat is fleeing.
 Offensive spells start combat -- no free attempts at 'sleep', 'dispel magic',
 or other such spells.  Offensive spells may not be cast on other players.
 
-Players no longer gain experience from pkilling.
-
-The 'summon' spell will not summon a character into a different area.
-
-The 'tell' command will not 'tell' to mobiles which are not in the room.
+The 'summon' spell will not always summon a character into a different area.
 
 The 'tick' interval, as well as other game intervals such as the zone reset
 interval, have random variation.
@@ -77,7 +74,7 @@ possible to 'run past' aggressive mobiles.
 
 It is not possible to leave the game without an auto-save being done (e.g.
 by breaking link).  The game auto-saves players on death, and it auto-saves
-players periodically (one player each tick).
+players periodically.
 
 The 'R' reset command may be used to scramble room exits on area reset, so that
 players have to map a maze each time they enter.

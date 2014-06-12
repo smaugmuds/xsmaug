@@ -1,0 +1,68 @@
+--- /smaug/src/comm.c	Thu Feb  6 09:22:48 1997
++++ /game/dist/src/comm.c	Fri May 30 17:10:55 1997
+@@ -910,7 +910,7 @@
+     }
+ 
+ 
+-    if ( !DoNotUnlink )
++     if ( !DoNotUnlink )
+     {
+ 	/* make sure loop doesn't get messed up */
+ 	if ( d_next == dclose )
+@@ -1666,7 +1666,7 @@
+ 	buf[0] = '\0';
+ 	for ( iRace = 0; iRace < MAX_RACE; iRace++ )
+ 	{
+-	  if (iRace != RACE_VAMPIRE
++	  if ((iRace != RACE_VAMPIRE || iRace != RACE_DEMON)
+ 	  && race_table[iRace].race_name && race_table[iRace].race_name[0] != '\0'
+ 	  && !IS_SET(race_table[iRace].class_restriction, 1 << ch->class) )
+ 	  {
+@@ -1720,7 +1720,7 @@
+ 
+     if ( iRace == MAX_RACE
+     ||  !race_table[iRace].race_name || race_table[iRace].race_name[0] == '\0'
+-    ||   iRace == RACE_VAMPIRE
++    ||   iRace == RACE_VAMPIRE || iRace == RACE_DEMON
+     ||   IS_SET(race_table[iRace].class_restriction, 1 << ch->class) )
+ 	{
+ 	    write_to_buffer( d,
+@@ -2741,7 +2741,7 @@
+   static char buf[60];
+ 
+   strcpy(buf, "&w<&Y%hhp ");
+-  if ( IS_VAMPIRE(ch) )
++  if ( IS_VAMPIRE(ch) || IS_DEMON(ch) )
+     strcat(buf, "&R%bbp");
+   else
+     strcat(buf, "&C%mm");
+@@ -2861,25 +2861,25 @@
+ 	stat = ch->max_hit;
+ 	break;
+       case 'm':
+-	if ( IS_VAMPIRE(ch) )
++	if ( IS_VAMPIRE(ch) || IS_DEMON(ch) )
+ 	  stat = 0;
+ 	else
+ 	  stat = ch->mana;
+ 	break;
+       case 'M':
+-	if ( IS_VAMPIRE(ch) )
++	if ( IS_VAMPIRE(ch) || IS_DEMON(ch) )
+ 	  stat = 0;
+ 	else
+ 	  stat = ch->max_mana;
+ 	break;
+       case 'b':
+-	if ( IS_VAMPIRE(ch) )
++	if ( IS_VAMPIRE(ch) || IS_DEMON(ch) )
+ 	  stat = ch->pcdata->condition[COND_BLOODTHIRST];
+ 	else
+ 	  stat = 0;
+ 	break;
+       case 'B':
+-	if ( IS_VAMPIRE(ch) )
++	if ( IS_VAMPIRE(ch) || IS_DEMON(ch) )
+ 	  stat = ch->level + 10;
+ 	else
+ 	  stat = 0;

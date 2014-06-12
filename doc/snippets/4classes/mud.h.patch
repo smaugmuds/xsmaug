@@ -1,0 +1,104 @@
+--- /smaug/src/mud.h	Thu Feb  6 09:22:50 1997
++++ /game/dist/src/mud.h	Fri May 30 17:14:30 1997
+@@ -188,8 +188,8 @@
+ #define MIN_EXP_WORTH		   20
+ 
+ #define MAX_REXITS		   20	/* Maximum exits allowed in 1 room */
+-#define MAX_SKILL		  225
+-#define MAX_CLASS           	    8   /* Increased to 8 for Augurer - SB*/
++#define MAX_SKILL		  250
++#define MAX_CLASS           	   12   /* Increased to 8 for Augurer - SB*/
+ #define MAX_NPC_CLASS		   26
+ #define MAX_RACE		   14
+ #define MAX_NPC_RACE		   91
+@@ -452,13 +452,13 @@
+ #define RACE_DWARF          2
+ #define RACE_HALFLING       3
+ #define RACE_PIXIE          4
+-#define RACE_VAMPIRE        5
+-#define RACE_HALF_OGRE      6
+-#define RACE_HALF_ORC       7
+-#define RACE_HALF_TROLL     8
+-#define RACE_HALF_ELF       9
+-#define RACE_GITH           10
+-
++#define RACE_HALF_OGRE      5
++#define RACE_HALF_ORC       6
++#define RACE_HALF_TROLL     7
++#define RACE_HALF_ELF       8
++#define RACE_GITH           9
++#define RACE_VAMPIRE        10
++#define RACE_DEMON          11
+ /* npc races */
+ #define	RACE_DRAGON	    31
+ 
+@@ -471,12 +471,14 @@
+ #define CLASS_DRUID	    5
+ #define CLASS_RANGER	    6
+ #define CLASS_AUGURER	    7 /* 7-7-96 SB */
++#define CLASS_ARCHER        8
++#define CLASS_ASSASSIN      9
++#define CLASS_DEMON	    10
++#define CLASS_ANGEL	    11
+ /*
+-#define CLASS_WEREWOLF	    8
+-#define CLASS_LYCANTHROPE   9
+-#define CLASS_LICH	    10
+ */
+ 
++
+ /*
+  * Languages -- Altrag
+  */
+@@ -1939,7 +1942,6 @@
+ };
+ 
+ 
+-
+ /*
+  * Liquids.
+  */
+@@ -2376,6 +2378,8 @@
+ extern	sh_int	gsn_third_attack;
+ extern	sh_int	gsn_fourth_attack;
+ extern	sh_int	gsn_fifth_attack;
++extern	sh_int	gsn_sixth_attack;
++extern	sh_int	gsn_seventh_attack;
+ extern	sh_int	gsn_dual_wield;
+ 
+ extern	sh_int	gsn_feed;
+@@ -2648,6 +2652,9 @@
+ #define IS_VAMPIRE(ch)		(!IS_NPC(ch)				    \
+ 				&& ((ch)->race==RACE_VAMPIRE		    \
+ 				||  (ch)->class==CLASS_VAMPIRE))
++#define IS_DEMON(ch)		(!IS_NPC(ch)				    \
++				&& ((ch)->race==RACE_DEMON		    \
++				||  (ch)->class==CLASS_DEMON))
+ #define IS_GOOD(ch)		((ch)->alignment >= 350)
+ #define IS_EVIL(ch)		((ch)->alignment <= -350)
+ #define IS_NEUTRAL(ch)		(!IS_GOOD(ch) && !IS_EVIL(ch))
+@@ -3371,6 +3379,7 @@
+ DECLARE_SPELL_FUN(	spell_dispel_magic	);
+ DECLARE_SPELL_FUN(      spell_dream             );
+ DECLARE_SPELL_FUN(	spell_earthquake	);
++DECLARE_SPELL_FUN(	spell_enchant_armor	);
+ DECLARE_SPELL_FUN(	spell_enchant_weapon	);
+ DECLARE_SPELL_FUN(	spell_energy_drain	);
+ DECLARE_SPELL_FUN(	spell_faerie_fire	);
+@@ -3422,6 +3432,9 @@
+ DECLARE_SPELL_FUN(      spell_hand_of_chaos                 );
+ DECLARE_SPELL_FUN(      spell_disruption                    );
+ DECLARE_SPELL_FUN(      spell_sonic_resonance               );
++DECLARE_SPELL_FUN(      spell_death                         );
++DECLARE_SPELL_FUN(      spell_assassinate                   );
+ DECLARE_SPELL_FUN(      spell_mind_wrack                    );
+ DECLARE_SPELL_FUN(      spell_mind_wrench                   );
+ DECLARE_SPELL_FUN(      spell_revive                        );
+@@ -3431,6 +3444,7 @@
+ DECLARE_SPELL_FUN(      spell_galvanic_whip                 );
+ DECLARE_SPELL_FUN(      spell_magnetic_thrust               );
+ DECLARE_SPELL_FUN(      spell_quantum_spike                 );
++DECLARE_SPELL_FUN(      spell_grasp_suspiria                );
+ DECLARE_SPELL_FUN(      spell_black_hand                    );
+ DECLARE_SPELL_FUN(      spell_black_fist                    );
+ DECLARE_SPELL_FUN(      spell_black_lightning               );

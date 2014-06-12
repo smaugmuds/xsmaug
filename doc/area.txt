@@ -1,17 +1,7 @@
-Merc Release 2.2
-Wednesday 24 November 1993
+SMAUG Release 1.4
+Monday June 12, 1995
 
-Kahn
-Hatchet
-
-
-=== Acknowledgement
-
-This document contains information from 'database.doc', 'dbsup.doc', and
-'values.doc', part of the original Diku mud release and copyrighted by the
-Diku folks.  See their 'license.doc'.
-
-
+Thoric   thoric@realms.game.org
 
 === Overview of Areas
 
@@ -20,20 +10,7 @@ All of our area files have the extension '.are', but you can call your area
 files anything you want.
 
 Because each area is defined in one file, it is easy to incorporate new areas
-into Merc, or to send Merc areas to others for use.
-
-All of our areas may be freely distributed, as long as the internal notices
-(such as those on plaques, signs, graffiti, or tombstones) are kept.  If you
-write new areas, and would like to contribute them back to Merc, just e-mail to
-one of the addresses above.  As you can see from typing 'areas' in the game, we
-credit the original authors whenever we can find them.
-
-Although the format of Merc areas is (mostly) compatible with other Diku muds,
-Merc ignores many of the fields in the area files, generating its own values
-based on mobile and object levels.  We adopted this policy in order to maintain
-balance between areas originally written by many different authors.
-
-
+into SMAUG, or to send SMAUG areas to others for use.
 
 === Sections of an Area
 
@@ -59,28 +36,6 @@ Each of the sections contains its own format.  For #MOBILES, #OBJECTS, #ROOMS,
 and #RESETS, this format is upward compatible with the original Diku formats
 for tinyworld.mob, tinyworld.obj, tinyworld.wld, and tinyworld.zon,
 respectively.  The #HELPS, #SHOPS, and #SPECIALS sections have new formats.
-
-
-
-=== Memory Usage
-
-In order to simplify the code, the Merc server has a fixed maximum size on
-strings in the area database.  This size is defined at the beginning of 'db.c'
-'db.c' with a '#define' statement.  As distributed, this size is:
-
-    #define MAX_STRING	 900000
-
-This size is 10% larger than needed for the areas we distribute.  Thus, you
-can add about 4 more areas without touching the server at all.  The server
-will tell you when the string table overflows, and you can simply increase the
-maximum limit and recompile.  The immortal 'memory' command will show you
-memory usage from within the game.
-
-There is no other limit on area sizes or memory usage.
-
-We decided to use a fixed size because it simplifies our job.  It also allows
-significant performance improvements: compare our load time and memory usage
-versus other Diku muds with the same quantity of areas.
 
 
 
@@ -128,7 +83,7 @@ that the parallel elements may be present in any order.
 
 All other characters in the syntax description are literal characters.
 
-The file 'merc.h' lists the meanings of most of the flags and values.  The
+The file 'mud.h' lists the meanings of most of the flags and values.  The
 section useful to area builders is set off by big comments; you can't miss it.
 The file 'const.c' contains the spell list with slot numbers, and the file
 'special.c' contains the list of special procedures.
@@ -151,9 +106,9 @@ The syntax of this section is:
     #AREA	<area-name:string>
 
 The 'area-name' can be any string.  The 'areas' command provides a list of
-areas, so it's worth while to follow the standard Merc format for this string:
+areas, so it's worth while to follow the standard SMAUG format for this string:
 
-    #AREA	{ 5 35} Merc    Prototype for New Area~
+    #AREA	{ 5 35} SMAUG    Prototype for New Area~
 
 The first two numbers are recommended level range.  The name is the name of the
 original author of the area.  The last phrase is the name of the area.
@@ -202,12 +157,17 @@ The syntax of this section is:
 	<short-description:string>
 	<long-description:string>
 	<description:string>
-	<act-flags:number> <affected-flags:number> <alignment:number> S
+	<act-flags:number> <affected-flags:number> <alignment:number> S or C
 	<level:number> <hitroll:number> <armor:number>			\
 	<hitnodice:number> d <hitsizedice:number> + <hitplus:number>	\
 	<damnodice:number> d <damsizedice:number> + <damroll:number>
 	<gold:number> <exp:number>
 	<position:number> <position:number> <sex:number>
+--- These lines only for C type mobs
+	<str int wis dex con cha lck:number>
+        <sav1 sav2 sav3 sav4 sav5:number> 
+	<race class height weight speaks speaking numattacks:number>
+	<hitroll damroll xflas res imm sus attacks defenses:number>
     }
     #0
 
@@ -232,20 +192,18 @@ certain spells ('protection' and 'dispel evil') give characters fighting evil
 monsters an advantage, and that experience earned is influenced by alignment.
 
 The literal letter 'S' must be present after the alignment.  In the original
-Diku mob format, 'S' stands for simple.  Merc supports only simple mobs, so the
-'S' is redundant.  It is retained not only for compatibility with the Diku
-format, but also because it helps the server report errors more accurately.
+Diku mob format, 'S' stands for simple.  SMAUG supports simple mobs, as well
+special complex mobs ('C').
 
-The 'level' is typically a number from 1 to 35, although there is no upper
+The 'level' is typically a number from 1 to 100, although there is no upper
 limit.
 
 The 'hitroll', 'armor', 'hitnodice, 'hitsizedice', 'hitplus', 'damnodice',
-'damsizedice', 'damroll', 'gold', 'exp', 'position', and 'position' fields are
-present for compatibility with original Diku mud, but their values are ignored.
-Merc generates these values internally based on the level of the mobile.
+'damsizedice', 'damroll' fields are used, but will be auto-generated if they
+are set to zero ( 0d0+0 ).  This is to remain in compatibility with original 
+Merc mud areas.
 
 The 'sex' value may be 0 for neutral, 1 for male, and 2 for female.
-
 
 
 === The #OBJECTS section
@@ -260,7 +218,7 @@ The syntax of this section is:
 	<long-description:string>
 	<action-description:string>
 	<item-type:number> <extra-flags:number> <wear-flags:number>
-	<value-0:number> <value-1:number> <value-2:number> <value-3:number>
+	<value0 value1 value2 value3 value4 value5:number>
 	<weight:number> <cost:number> <cost-per-day:number>
 	{
 	    E
@@ -300,7 +258,7 @@ object.  Interpretations are given below.
 The 'weight' of the object is just that.
 
 'Cost' and 'cost-per-day' are ignored.  'Cost' is generated internally based on
-the level of the object.  Because Merc has no rent, 'cost-per-day' is
+the level of the object.  Because SMAUG has no rent, 'cost-per-day' is
 completely ignored.
 
 The optional 'E' sections and 'A' sections come after the main data.
@@ -327,7 +285,7 @@ The syntax of this section is:
 	#<vnum:number>
 	<name:string>
 	<description:string>
-	<area:number> <room-flags:number> <sector-type:number>
+	<area room-flags sector-type:number> (optional: teledelay televnum)
 	{
 	    D <door:number>
 	    <description:string>
@@ -358,6 +316,9 @@ The 'sector-type' identifies the type of terrain.  This affects movement cost
 through the room.  Certain sector types (air and boat) require special
 capabilities to enter.
 
+The 'teledelay' specifies an optional delay to teleport everyone out of the
+room and into the room specified by 'televnum'.
+
 Unlike mobiles and objects, rooms don't have any keywords associated with them.
 One may not manipulate a room in the same way one manipulates a mobile or
 object.
@@ -371,6 +332,11 @@ section contains a 'door' in the range from 0 to 5:
 	3	west
 	4	up
 	5	down
+	6	northeast
+	7	northwest
+	8	southeast
+	9	southwest
+       10	somewhere
 
 A 'D' command also contains a 'description' for that direction, and 'keywords'
 for manipulating the door.  'Doors' include not just real door, but any kind of
@@ -407,6 +373,10 @@ The syntax of this section is:
 	<comment:to_eol>
     }
     {
+	H <:number> <obj-vnum:number> <:number>				\
+	<comment:to_eol>
+    }
+    {
 	P <:number> <obj-vnum:number> <:number> <obj-vnum:number>	\
 	<comment:to_eol>
     }
@@ -426,6 +396,10 @@ The syntax of this section is:
 	R <:number> <room-vnum:number> <last-door:number>		\
 	<comment:to_eol>
     }
+    {
+	T <flags>  <types>  <charges>  <vnum:number>			\
+	<comment:to_eol>
+    }
     S
 
 To reset an area, the server executes each command in the list of reset
@@ -436,7 +410,7 @@ area-minute mark, each (awake) player in the area is warned of the impending
 reset.  These values are coded into the function 'reset_area' in 'db.c'.
 
 An 'area-minute' varies between 30 and 90 seconds of real time, with an
-average of 60 seconds.  The variation defeats area timekeepers.
+average of 70 seconds.  The variation defeats area timekeepers.
 
 The 'resets' section contains a series of single lines.  The backslashes and
 line splitting above are for readability; they are not part of the file format.
@@ -453,6 +427,8 @@ The reset commands are:
     E	equip object to mobile
     D	set state of door
     R	randomize room exits
+    T	trap an object or room/door
+    H	hide an object
     S	stop (end of list)
 
 The '*' lines contain comments.  The 'S' line is the last line of the section.
@@ -509,6 +485,11 @@ number are shuffled.  The room will still have the same exits leading to the
 same other rooms as before, but the directions will be different.  Thus, a door
 number of 4 makes a two-dimensional maze room; a door number of 6 makes a
 three-dimensional maze room.
+
+For the 'T' command, the first number is a the combination of all flags
+wanted on the trap.  The second number is the type of trap, the third number
+is the number of charges, and the fourth number is the VNUM of either the
+OBJECT the trap is on, or the ROOM the trap is in, (for room and door traps). 
 
 Use of both the 'D' and 'R' commands on the same room will yield unpredicatable
 results.
@@ -601,7 +582,7 @@ To add a new special function:
 (2) Add a line for translating the ascii name of the function into a function
     pointer to the function 'spec_lookup' in 'special.c'.
 
-(3) Write the spec-fun and add it to 'special.c'.  Note that Merc special
+(3) Write the spec-fun and add it to 'special.c'.  Note that SMAUG special
     functions take a single parameter, rather than the three parameters of
     Diku.  If you have an Ansi C compiler, you're protected against accidental
     mismatches.
@@ -654,11 +635,10 @@ negative sn means 'no spell'.
    value[3]	sn
 
 05 ITEM_WEAPON
-   value[0]	unused (server sets this to the minimum damage automatically)
-   value[1]	unused (server sets this to the maximum damage automatically)
-   value[2]	unused
+   value[0]	condition
+   value[1]	number dice	v1 and v2 are optional and will be
+   value[2]	size dice	autogenerated if set to 0
    value[3]	weapon type:
-      00	   hit
       01	   slice
       02	   stab
       03	   slash
@@ -667,20 +647,20 @@ negative sn means 'no spell'.
       06	   blast
       07	   pound
       08	   crush
-      09	   grep
+      09	   grep???
       10	   bite
       11	   pierce
       12	   suction
 
 08 ITEM_TREASURE
-   value[0]	unused
-   value[1]	unused
+   value[0]	(treasure type)
+   value[1]	(condition)
    value[2]	unused
    value[3]	unused
 
 09 ITEM_ARMOR
-   value[0]	unused (server sets to the random armor value automatically)
-   value[1]	unused
+   value[0]	AC adjust/current condition
+   value[1]	Original AC
    value[2]	unused
    value[3]	unused
 
@@ -706,7 +686,7 @@ negative sn means 'no spell'.
    value[0]	weight capacity
    value[1]	flags: 1 closeable, 2 pickproof, 4 closed, 8 locked
    value[2]	key vnum
-   value[3]	unused
+   value[3]	durability
 
 17 ITEM_DRINK_CON
    value[0]	capacity
@@ -722,7 +702,7 @@ negative sn means 'no spell'.
 
 19 ITEM_FOOD
    value[0]	hours of food value
-   value[1]	unused
+   value[1]	(condition)
    value[2]	unused
    value[3]	if non-zero, food is poisoned
 
@@ -762,6 +742,12 @@ negative sn means 'no spell'.
    value[2]	sn 2
    value[3]	sn 3
 
+44 ITEM_TRAP
+   value[0]     charges
+   value[1]     type
+   value[2]     level
+   value[3]     flags
+
 
 
 === Slot Numbers
@@ -772,6 +758,7 @@ do not use slot numbers; they use names instead.
 	  0	NULL
 	 70	acid blast
 	  1	armor
+	 90	astral walk 
 	  3	bless
 	  4	blindness
 	  5	burning hands
@@ -785,6 +772,7 @@ do not use slot numbers; they use names instead.
 	 10	colour spray
 	 57	continual light
 	 11	control weather
+	 85	create fire
 	 12	create food
 	 80	create spring
 	 13	create water
@@ -799,6 +787,7 @@ do not use slot numbers; they use names instead.
 	 19	detect invis
 	 20	detect magic
 	 21	detect poison
+	 86	detect trap
 	 22	dispel evil
 	 59	dispel magic
 	 23	earthquake
@@ -807,6 +796,7 @@ do not use slot numbers; they use names instead.
 	 72	faerie fire
 	 73	faerie fog
 	 26	fireball
+	 88	fireshield
 	 65	flamestrike
 	 56	fly
 	 83	gate
@@ -826,9 +816,12 @@ do not use slot numbers; they use names instead.
 	 34	protection
 	 81	refresh
 	 35	remove curse
+	 87	remove trap
 	 36	sanctuary
+	 91	scry
 	 67	shield
 	 37	shocking grasp
+	 89	shockshield
 	 38	sleep
 	 66	stone skin
 	 40	summon
@@ -847,7 +840,7 @@ do not use slot numbers; they use names instead.
 
 === Booting and Testing Areas
 
-When the Merc server starts, it reads a file named 'area.lst' in the current
+When the SMAUG server starts, it reads a file named 'area.lst' in the current
 directory.  This file contains a list of all the area files to read in.  To add
 or delete areas, simply edit area.lst.
 
@@ -858,12 +851,12 @@ completely memory-based, zone resets are fast, too.  (And paradoxically, moving
 to a memory-based system allowed certain memory optimizations to be made,
 cutting memory usage by 50% from Merc 1.0).
 
-You can test areas by running Merc in a different directory with a different
+You can test areas by running SMAUG in a different directory with a different
 'area.lst' file with new areas dropped into it.  Setting up an appropriate
 directory structure is an exercise for the student.  (You DID say you're
 running a mud because you wanted to learn more about system administration,
 right?)  Hint: you can run a program in another directory just by invoking its
-full name: '../src/merc', for example.
+full name: '../src/mud', for example.
 
 The server reports syntax errors, including the area file name and a line
 number.  Take the line number with a grain of salt; some kinds of errors cause
@@ -875,7 +868,7 @@ mobiles, objects, or rooms.
 
 Error recovery is simply not possible without far more sophisticated input
 parsing than we're willing to write.  (Hey, feel free to write your own.)
-Thus the server exits after reporting any error.  Merc takes only a few seconds
+Thus the server exits after reporting any error.  SMAUG takes only a few seconds
 to load, however, so it's quite practical to use the whole server as a syntax
 checker.
 
@@ -883,7 +876,7 @@ checker.
 
 === Compressing the Area Files
 
-It is possible to run Merc with a single combined, compressed area file.
+It is possible to run SMAUG with a single combined, compressed area file.
 Here's how to do this on a Unix system:
 
 (1) In 'area.lst', remove the last line (the '$' line).
@@ -898,19 +891,19 @@ Here's how to do this on a Unix system:
 
 (4) Edit 'startup'.  Change the line:
 
-	../src/merc 4000 >&! $logfile
+	../src/mud $port >&! $logfile
 
     to:
 
-	zcat all_area.Z | ../src/merc 4000 >&! $logfile
+	zcat all_area.Z | ../src/mud $port >&! $logfile
 
-(5) Test the changes so far.  Merc should start up normally, although it
+(5) Test the changes so far.  SMAUG should start up normally, although it
     may take a few seconds longer to zcat everything.
 
 Now you can remove all the original *.are files.
 
 Notice that all of the compression and decompression takes place outside of the
-Merc server.  Thus, you can substitute any archiving program of your choice, as
+SMAUG server.  Thus, you can substitute any archiving program of your choice, as
 long as it can write its output to standard output.
 
 You can recover the original areas simply by running 'uncompress all_area.Z'
@@ -922,7 +915,7 @@ without closing standard input).  Diagnostic messages are given with the full
 name (e.g. '-arachnos.are'), but the line number will be reported as zero.
 
 You can freely mix areas from standard input with ordinary area files.  Thus,
-you could compress all the Merc standard zones into a file such as merc_area.Z,
+you could compress all the SMAUG standard zones into a file such as smaug_area.Z,
 prefixing them with '-' in 'area.lst'.  Then you could add your own areas
 anywhere in the file (beginning, middle, end, wherever your areas need to go),
 and omit the '-' on the lines for your areas.

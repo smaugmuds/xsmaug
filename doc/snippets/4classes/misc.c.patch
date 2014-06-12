@@ -1,0 +1,11 @@
+--- /smaug/src/misc.c	Thu Feb  6 09:22:49 1997
++++ /game/dist/src/misc.c	Fri May 30 00:54:20 1997
+@@ -500,7 +500,7 @@
+ 	break;
+ 
+     case ITEM_BLOOD:
+-	if ( IS_VAMPIRE(ch) && !IS_NPC(ch) )
++	if (( IS_VAMPIRE(ch) && !IS_NPC(ch) ) || ( IS_DEMON(ch) && !IS_NPC(ch)) )
+ 	{
+ 	    if ( obj->timer > 0		/* if timer, must be spilled blood */
+ 	    &&   ch->level > 5

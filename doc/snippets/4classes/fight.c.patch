@@ -1,0 +1,68 @@
+--- /smaug/src/fight.c	Thu Feb  6 09:22:48 1997
++++ /game/dist/src/fight.c	Fri May 30 00:54:18 1997
+@@ -150,7 +150,7 @@
+  */
+ sh_int VAMP_AC( CHAR_DATA * ch )
+ {
+   if ( IS_VAMPIRE( ch ) || IS_OUTSIDE( ch ) )
+   {
+     switch(weather_info.sunlight)
+     {
+@@ -606,7 +606,7 @@
+     /* Very high chance of hitting compared to chance of going berserk */
+     /* 40% or higher is always hit.. don't learn anything here though. */
+     /* -- Altrag */
+-    chance = IS_NPC(ch) ? 100 : (ch->pcdata->learned[gsn_berserk]*5/2);
++    chance = IS_NPC(ch) ? 100 : (ch->pcdata->learned[gsn_berserk]*6/2);
+     if ( IS_AFFECTED(ch, AFF_BERSERK) && number_percent() < chance )
+       if ( (retcode = one_hit( ch, victim, dt )) != rNONE ||
+             who_fighting( ch ) != victim )
+@@ -694,6 +694,30 @@
+     else
+ 	learn_from_failure( ch, gsn_fifth_attack );
+ 
++    chance = IS_NPC(ch) ? ch->level
++	   : (int) ((ch->pcdata->learned[gsn_sixth_attack]+(dual_bonus*4))/4);
++    if ( number_percent( ) < chance )
++    {
++	learn_from_success( ch, gsn_sixth_attack );
++	retcode = one_hit( ch, victim, dt );
++	if ( retcode != rNONE || who_fighting( ch ) != victim )
++	    return retcode;
++    }
++    else
++	learn_from_failure( ch, gsn_sixth_attack );
++
++    chance = IS_NPC(ch) ? ch->level
++	   : (int) ((ch->pcdata->learned[gsn_seventh_attack]+(dual_bonus*5))/4);
++    if ( number_percent( ) < chance )
++    {
++	learn_from_success( ch, gsn_seventh_attack );
++	retcode = one_hit( ch, victim, dt );
++	if ( retcode != rNONE || who_fighting( ch ) != victim )
++	    return retcode;
++    }
++    else
++	learn_from_failure( ch, gsn_seventh_attack );
++
+     retcode = rNONE;
+ 
+     chance = IS_NPC(ch) ? (int) (ch->level / 2) : 0;
+@@ -1715,7 +1739,7 @@
+     /*
+      * Vampire self preservation				-Thoric
+      */
+-    if ( IS_VAMPIRE(victim) )
++    if ( IS_VAMPIRE(victim) || IS_DEMON(victim) )
+     {
+       if ( dam >= (victim->max_hit / 10) )	/* get hit hard, lose blood */
+ 	gain_condition(victim, COND_BLOODTHIRST, -1 - (victim->level / 20));
+@@ -2647,7 +2671,7 @@
+     }
+     victim->pcdata->condition[COND_FULL]   = 12;
+     victim->pcdata->condition[COND_THIRST] = 12;
+-    if ( IS_VAMPIRE( victim ) )
++    if ( IS_VAMPIRE( victim ) || IS_DEMON( victim ) )
+       victim->pcdata->condition[COND_BLOODTHIRST] = (victim->level / 2);
+ 
+     if ( IS_SET( sysdata.save_flags, SV_DEATH ) )

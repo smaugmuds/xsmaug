@@ -1,22 +1,24 @@
-Merc Release 2.2
-Wednesday 24 November 1993
+Merc Release 2.1
+Sunday 01 August 1993
 
-Kahn
-Hatchet
+Furey	mec@shell.portal.com
+Hatchet	hatchet@uclink.berkeley.edu
+Kahn	michael@uclink.berkeley.edu
+
 
 
 === Classes
 
 The central organizing table for classes is class_table, which is an array of
-type 'struct class_type' (defined in 'merc.h') and is defined in 'const.c'.
+type 'struct class_type' (defined in 'mud.h') and is defined in 'const.c'.
 Mobs have class 0, and players have classes 0 through MAX_CLASS-1.
 
 The fields of class_table are:
 
     char *	who_name;
 
-	This three-letter name is used for the 'who' listing.  It's also used
-	for the list of classes shown to new characters for selecting a class,
+	This name is used for the 'who' listing.  It's also used for the list
+	of classes shown to new characters for selecting a class,
 	and for matching the player's input in selecting a class.
 
     sh_int	attr_prime;
@@ -79,7 +81,7 @@ The fields of class_table are:
 
 Here's how to add a new class:
 
-(1) Increment 'MAX_CLASS' in 'merc.h'
+(1) Increment 'MAX_CLASS' in 'mud.h'
 
 (2) Add a new entry to 'class_table' in 'const.c'.
 
@@ -88,33 +90,19 @@ Here's how to add a new class:
 
 (4) Add an entire new block of titles to 'title_table' in 'const.c'.
 
-(5) Add new lines to 'pose_table' in act_comm.c.  You need two lines at each
-    level for that class.  To keep the 'pose' messages from looking like
-    'emote' messages, avoid putting the name of the character (the '$n'
-    construct) at the beginning of the line.
-
-
 
 
 === Immortal Levels
 
 Here are the immortal levels:
 
-36	Hero	This is the highest level ordinary players can reach by
-		accumulating experience points.  Heros and heroines can
-		participate in 'immtalk' and read notes addressed to
-		'immortal'.  They no longer receive experience points.
-
-37	Angel	Immortals at this level can observe most aspects of the game,
-		but have very few active commands.  One command they do have
-		is 'switch' so that they can help run quests.
-
-38	Deity	Immortals at this level have all the commands needed to affect
-		game elements within the game, such as 'mload', 'mset',
-		'oload', and 'oset'.
-
-39	Supreme	Immortals at this level have site and connection level
-		commands, such as 'reboot' and 'shutdown'.  In fact, this level
-		has access to all immortal commands except 'advance'.
-
-40	God	Immortals at this level have 'advance'.
+51 Immortal		- Newbie immortal (probation period)
+52 Creator		- Can edit rooms if given a room vnum assignment
+53 Saint		- Can edit objs and mobs if given vnum assignments
+54 Demi God		- Can edit mudprogs if given vnum assignents
+55 Lesser God
+56 God
+57 Greater God
+58 Exalted God
+59 Ancient
+60 Supreme Entity

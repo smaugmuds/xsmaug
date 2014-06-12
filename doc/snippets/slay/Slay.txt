@@ -1,0 +1,41 @@
+Installation instructions for Slay V1.1 Smaug port
+--------------------------------------------------
+
+1. To install the main function in the file slay.c, you can use one of
+   2 methods:
+
+   A. Cut/Paste the code into act_wiz.c somewhere as is.
+   B. Copy slay.c into your code directory, then add slay.o and slay.c
+	to the appropriate locations in your Makefile.
+
+2. Add the following define below MAX_HERB in mud.h:
+
+   #define MAX_SLAY_TYPES		9
+
+3. Add the following code in mud.h near the other structures:
+   
+struct slay_type
+{
+  char *        owner;		/* only this player can use this option */
+  char *        title;		/* each one must have a unique title!   */
+  int  	    color;        /* color to send with messages */
+  char *        char_msg;	/* is sent to the "slayer"		*/
+  char *        vict_msg;	/* is sent to the "slayee" (poor sucker)*/
+  char *        room_msg;	/* is sent to everyone else in the room */
+};
+
+4. Find the do_slay function in fight.c and comment it out.
+
+5. Make clean, and then recompile.
+
+This should complete the installation process. If I've missed anything
+or you have problems incorporating it into your code, feel free to email
+me at samson@aviastar.net with the subject: SLAY CODE
+
+This snippet has been tested on both a stock 1.02a distribution as well
+as one running Matthew's color code snippet, so everything should come
+out quite nicely.
+
+To configure new slay options, follow the examples in the code, or refer
+to slay.hlp for instructions. Be sure and raise MAX_SLAY_TYPES by the
+number of new slays you add :)

@@ -1,16 +1,20 @@
-Merc Release 2.2
-Wednesday 24 November 1993
+SMAUG release 1.4
+December 15, 1996
 
-Kahn
-Hatchet
+Thoric thoric@realms.game.org
 
 
 === Commands
 
-The central organizing table for skills and spells is cmd_table, an array
-of type 'struct cmd_type', and is defined in 'interp.c'.
+All commands are loaded from the file 'commands.dat' in the system directory,
+and put into a hash table of linked lists of type 'struct cmd_type' defined
+in 'mud.h'.
 
 The fields of cmd_table are:
+
+    CMDTYPE *   next;
+
+	A pointer to the next command in this hash bucket.
 
     char *	name;
 
@@ -42,17 +46,29 @@ The fields of cmd_table are:
 
 === How to Add a Command
 
-(1) Add a line for the command in 'cmd_table' in 'interp.c'.
+(1) Add a line for the command in 'skill_name' in tables.c
+    Make sure the command starts with "do_" to keep it easy for other
+    coders to find.
+    Example line: if ( skill == do_mycmd ) return "do_mycmd";
 
-(2) Add a 'DECLARE_DO_FUN' line for the command function to 'merc.h'.
+(2) Add a line for the command in 'skill_function' in tables.c
+    Make sure to put this in the proper location in the switch statement.
+    Example line: if ( !str_cmp( name, "do_mycmd" )) return do_mycmd;
 
-(3) Write the function and put it into an appropriate 'act_*.c' file.
+(3) Add a 'DECLARE_DO_FUN' line for the command function to 'mud.h'.
 
-(4) Write a help section for the function.  See 'help.are' for the format of
+(4) Write the function and put it into an appropriate '*.c' file.
+
+(5) Either use 'cedit <name> create' to create the command online, or
+    edit the 'commands.dat' file offline to put the command in the
+    appropriate location.  You can use 'cedit <name> raise' and
+    'cedit <name> lower' to adjust a command's position in the hash table.
+
+(6) Write a help section for the function.  See 'help.are' for the format of
     help entries.  We suggest you start your own file of customized help rather
     than adding into 'help.are'.  This will make it easier for you to upgrade
-    to future releases of Merc (which will have upgraded 'help.are' files).
-    Merc supports as many help files as you want.
+    to future releases of SMAUG (which will have upgraded 'help.are' files).
+    SMAUG supports as many help files as you want.
 
 That's ALL there is to it!
 
@@ -61,43 +77,51 @@ That's ALL there is to it!
 === Social Commands
 
 Social commands add to the atmosphere of the game.  The social commands are
-contained in 'social_table' in 'interp.c'.  The fields of this table are:
+contained in 'socials.dat' in the system directory.
+The socials are loaded into a hash table of linked lists which are insert
+sorted when added.
 
-    char *	name;
+The fields of this table are:
+
+    SOCIALTYPE * next;
+
+	Pointer to the next social in this hash bucket.
+
+    char *	 name;
 
 	The name of the social command.
 
-    char *	char_no_arg;
+    char *	 char_no_arg;
 
 	The message sent to the character when no argument is given.
 
-    char *	others_no_arg;
+    char *	 others_no_arg;
 
 	The message sent to others when no argument is given.
 
-    char *	char_found;
+    char *	 char_found;
 
 	The message sent to the character when a victim is found.
 
-    char *	others_found;
+    char *	 others_found;
 
 	The message sent to others when a victim is found.
 
-    char *	vict_found;
+    char *	 vict_found;
 
 	The message sent to the victim when a victim is found.
 
-    char *	char_auto;
+    char *	 char_auto;
 
 	The message sent to the character when the victim IS the character.
 
-    char *	others_auto;
+    char *	 others_auto;
 
 	The message sent to others when the victim IS the character.
 
 All of these messages are 'act' messages and may use any '$' sequences (the
 'act' function is documented in 'act.txt').  If the command is not found in the
-regular command table, the function 'check_social' looks in 'social_table' for
+regular command table, the function 'check_social' looks in 'social_index' for
 a match.  This is the last stop before rejecting the command.
 
 Socials without arguments, such as 'hop', may have NULL for the strings sent
@@ -107,7 +131,7 @@ when arguments are present.
 
 === How to Add a Social Command
 
-(1) Write a new section into 'social_table' in 'interp.c' with the eight
-    messages in it.  The sections need not be alphabetized.
+(1) Use the 'sedit' command to add a social online (see 'help sedit')
+    or edit 'socials.dat' offline if you wish.
 
 That's ALL there is to it.

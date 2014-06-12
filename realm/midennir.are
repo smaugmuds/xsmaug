@@ -1,128 +1,409 @@
-#AREA	{ 5 15} Copper  Miden'nir~
+#AREA   Miden'nir~
 
 
+
+#AUTHOR Copper~
+
+#RANGES
+5 15 0 60
+$
+
+#FLAGS
+0
+
+#ECONOMY 0 35006290
 
 #MOBILES
 #3500
-wyvern~
-the wyvern~
-A monstrous wyvern slowly circles just above your head.
+gypsy~
+a Black Forest gypsy~
+A swift little creature scrounges for nifty items.
 ~
-This huge winged creature looks really menacing.  You are happy it doesn't
-APPEAR to be very hungry ... yet.
+She looks like a sneaky little creature. Don't take your eyes off of her for
+toooooo long.
 ~
-65 8 -200 S
-8 10 1 8d8+80 2d6+1
-0 3575
-8 8 0
+69 98824 -570 C
+8 10 1 8d10+80 2d6+1
+600 3575
+8 8 2
+10 13 13 18 13 13 18
+0 0 0 0 0
+0 3 0 0 1 1 1
+0 0 263725 0 0 0 2 524288
 #3501
-goblin mountain~
-the goblin~
-A mountain goblin is wandering about, mumbling to himself.
+mountain goblin spy inhabitant~
+a goblin spy~
+An inhabitant of the forest prowls about, protecting his mountain.
 ~
-You see before you a small and twisted creature with knotted muscles.
+Prowling the Black Forest, this predator represents the initial line of
+defense against those who might try to infiltrate the mighty mountain.
 ~
-608 0 -500 S
-6 15 6 4d4+60 1d8+4
-150 800
+97 0 -500 C
+6 15 6 5d7+55 1d10+4
+30 800
 8 8 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+39 3 0 0 1 1 0
+0 0 1775 0 0 0 0 0
 #3502
-boy small~
-the small boy~
-A small boy sits here, licking his wounds.
+jacob finn elf~
+Jacob, the young Finn elf~
+A young, shivering elf quietly drops tears onto the dirt below.
 ~
-The poor boy has numerous cuts and scratches, but appears to be all right.
-He is apparently the only survivor of the ambush.
+Jacob looks as though he narrowly missed the evildoings of the dark
+goblins of Miden'nir. It looks, sadly, as though his brethren did not
+share his good fortune.
 ~
-146 0 500 S
-4 17 6 1d12+47 1d8+0
+147 65536 500 C
+7 17 6 1d12+47 1d8+0
 0 600
 5 5 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 1
+0 0 1735 0 0 0 64 2
 #3503
-innkeeper~
-the Innkeeper~
-The Innkeeper stands here, cleaning glasses.
+black jack bartender man~
+Jack~
+A tall, chubby man focuses on making the best drinks possible for his patrons.
 ~
-The Innkeeper now spends most of his days waiting for customers, while the
-nights are spent watching out for goblins.  His inn is no longer the happy
-place that is used to be in days past.
+"Black" Jack's been employed here for much longer than he can remember. He
+drinks as much profit as he makes. Standing 6'4" and weighing about 310
+lbs., though, who's going to tell him different?
 ~
-66 0 400 S
+67 0 400 C
 10 8 1 1d12+200 2d8+1
 1500 7000
 8 8 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 1
+0 0 1775 0 0 0 64 3
+> greet_prog 100~
+tell $n Have ye tasted my specialized green beverage, $n?
+~
+> speech_prog nope no~
+tell $n Really? Disgraceful...
+shake
+tell $n Ye must try it, 'tis the best green winter ale in these parts...
+~
+> speech_prog yup yes uh-huh yawp yesireebob~
+tell $n Aye? Did ya find it to yer likin'?
+wink $n
+~
+|
 #3504
-bard~
-the bard~
-A sullen bard is here, drinking away his problems.
+dave bard soul man~
+Dave the introspective bard~
+A pensive soul sits at a table, randomly questioning his liquor bottle.
 ~
-You can smell the alcohol on his breath from across the room.  This poor bard
-has been sitting here quite a while, drinking himself into oblivion.
+Dave doesn't get out too often. Actually, he has not left his seat other
+than to sleep or relieve himself. He seems pretty content, though, for a
+person with no social life.
 ~
-66 8 600 S
-8 13 3 1d12+110 2d6+0
-1500 3750
+67 8 600 C
+8 13 3 2d6+92 2d6+3
+10 3750
 6 6 1
+12 18 18 10 10 10 10
+0 0 0 0 0
+1 2 0 0 1 1 1
+0 0 1775 256 0 1048576 80 0
+> greet_prog 57~
+if isnpc($n)
+else
+  emote looks up from his sorry condition for a moment.
+  grumble
+  tell $n What do ye want with me, peasant?!
+  emote lowers his weary head down to the warmth of the table.
+  snore
+endif
+~
+|
 #3505
-horseman dark~
-the dark horseman~
-A dark horseman is here, mounted on his black steed.
+doom elite goblin figure~
+A Doom elite~
+A massive goblin prowls the Circle of Doom, protecting his king.
 ~
-The man is obviously an outlaw, and has no qualms about slashing you into
-little bits.
+Created from Brajtkomu's own magic, this predator's duty is to rid the
+nucleus of Mount Doom of unwanted visitors. He kills on sight.
 ~
-196 32768 -900 S
-8 12 4 1d12+97 1d5+7
-1000 4000
+97 33448 -1000 C
+16 12 4 5d7+190 5d7+4
+10 4000
 8 8 1
+18 10 10 16 16 8 10
+-5 0 0 -3 0
+39 3 0 0 1 1 1
+0 0 165 8192 256 1048577 96 524291
+> greet_prog 100~
+if ispc ($n)
+tell $n You have not been invited to this place by my king, $n
+growl $n
+else
+endif
+~
+|
 #3506
-goblin lieutenant~
-the goblin lieutenant~
-A goblin lieutenant stands here, attempting to get his men in order.
+goblin doom protector~
+a Doom goblin~
+A protector of the mountain is here, foaming at the mouth.
 ~
-The goblin lieutenant is rather angry, and looking for one of his men to
-beat up upon, but maybe you will do just fine ...
+Sworn to protect Mount Doom from invaders, this fierce warrior would do
+whatever he could to destroy all who sought to infiltrate his home.
 ~
-608 0 -600 S
-7 15 3 1d12+100 2d5+1
-300 2000
+97 520 -1000 C
+10 15 3 2d6+130 2d6+2
+2000 2000
 8 8 1
+16 13 13 13 13 8 13
+0 0 0 0 0
+39 3 0 0 16384 16384 0
+0 0 1775 0 0 0 0 0
+> all_greet_prog 100~
+if ispc ($n)
+snarl
+yell Children of Doom, the enemy is upon us!! To your weapons!!
+else
+endif
+~
+|
 #3507
-goblin leader~
-the goblin leader~
-The goblin leader surveys the room.
+goblin dark king figure brajtkomu~
+Brajtkomu, the Goblin King~
+A lone, dark figure growls at himself from his black, decaying throne.
 ~
-The leader doesn't look too happy that you have found him here.  He grabs
-for his shortsword and lunges for your neck.
+The shadows somehow seem to converge upon themselves, creating this horrid,
+though wondrous, creature. Brajtkomu did not gain his position and status
+only by looking so mean...
 ~
-614 8 -900 S
-9 10 1 1d12+120 2d5+3
-1000 8000
+35 684 -1000 C
+15 10 1 6d4+170 4d7+4
+3500 8000
 8 8 1
+18 10 16 16 13 10 16
+0 0 0 0 0
+39 3 0 0 135464987 16385 1
+0 0 13 0 0 0 32 2
+> greet_prog 100~
+tell $n Welcome, $n...
+grin
+tell $n Have you come to meet your DOOM?!?!
+muhaha
+ 
+~
+|
+#3508
+jed innkeeper proprietor man~
+Innkeeper Jed~
+The proprietor sits at his desk, slowly paging through his favorite book.
+~
+Jed makes you feel right at home in this strange place. His bushy, brown
+beard is, remarkably, groomed to near perfection. He peers up at you with
+warm blue eyes, and you feel a sudden urge to rent a room. What a suave
+businessman, eh?
+~
+1073741831 0 0 C
+10 0 0 1d1+88 2d6+2
+50 0
+8 8 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 2 0 0 1 1 0
+0 0 141 0 0 1048576 0 2
+#3550
+final mob~
+a newly created final mob~
+Some god abandoned a newly created final mob here.
+~
+~
+1073741825 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+8 8 0
 #0
-
 
 
 #OBJECTS
+#3500
+crescent white deerbone~
+a white deerbone crescent~
+An earring of the purest white rests in the dirt.~
+~
+9 524356 65537
+4 6 0 0
+1 10 1
+A
+2 1
+#3501
+green beer winter ale~
+"Black" Jack's Green Winter Ale~
+A big bottle of green ooze has been wisely discarded on the ground.~
+~
+17 0 16385
+10 10 4 0
+1 10 1
+#3502
+book~
+Jed's favorite book of tales~
+An old, worn book rests quietly on the ground, pages intact.~
+~
+12 0 16385
+0 0 0 0
+3 35 3
+A
+3 2
+A
+12 10
+#3503
+black key~
+a strange black key~
+An old, black key draws your attention.~
+~
+18 524292 16385
+0 0 0 0
+2 0 0
+E
+key~
+The key is obviously quite old. Upon it have been inscribed some arcane
+scribblings.
+~
+E
+scribblings~
+You cannot seem to decipher the strange runes.
+~
+#3504
+vat~
+Jack's brewing vat~
+A big vat sits majestically in the middle of the room.~
+~
+15 524288 0
+190 0 0 0
+90 0 0
+E
+vat~
+The vat gets put to good use whenever Jack actually has to make a fresh batch
+of his Green Winter Ale. In other words, not too often.
+~
+#3505
+doom skeleton key~
+the key of Doom~
+A shadowy skeleton key darkens the ground below.~
+~
+18 524294 16385
+0 0 0 0
+2 0 0
+#3506
+doom cape~
+a long, black Doom insignia cape~
+A long, dark cape casts strange shadows upon the ground.~
+~
+9 70 1025
+10 4 0 0
+3 3000 300
+A
+3 -2
+A
+1 2
+A
+18 3
+A
+19 1
+> wear_prog 100~
+mpforce $n muhaha
+~
+|
+#3507
+doom visor~
+a black Doom insignia visor~
+A dark visor casts strange shadows on the ground.~
+~
+9 524294 131073
+10 3 0 0
+2 5700 570
+A
+19 1
+A
+18 1
+A
+1 -2
+A
+31 -2
+A
+25 -2
+A
+3 -2
+A
+13 10
+#3508
+doom sceptre~
+Brajtkomu's sceptre of Doom~
+A darkened sceptre envelopes the ground in an evil mist.~
+~
+9 524311 16385
+8 10 0 0
+6 190000 19000
+A
+12 30
+A
+13 10
+A
+19 2
+#3509
+clogs~
+a pair of clogs made of Black Forest bark~
+Some black clogs have been discarded on the ground.~
+~
+9 262144 65
+8 6 0 0
+6 10 1
+A
+2 2
+A
+13 10
+#3510
+doom arm armguards guards black~
+a pair of black Doom insignia armguards~
+A pair of dark metal armguards casts strange shadows onto the ground.~
+~
+9 524308 257
+8 8 0 0
+4 6000 600
+A
+19 1
+A
+18 1
+#3511
+signobj~
+the sign~
+An old sign made of wood tilts a bit to the left.~
+~
+12 0 0
+0 0 0 0
+0 0 0
+#3550
+final object~
+a newly created final object~
+Some god dropped a newly created final object here.~
+~
+13 1073741824 0
+0 0 0 0
+0 0 0
 #0
-
 
 
 #ROOMS
 #3500
 The Plains~
-   You are standing on the plains. This is a vast desolate place where the
+You are standing on the plains. This is a vast desolate place where the
 wind can howl undisturbed since nothing but you bars its way. However you
 are not the first to wander here. Before you somebody has left a small path.
 The path looks rather bewildered and is not the kind of path to lead to
 anywhere significant or important but it seems to have made up its mind to
 enter the hills far away north.
 ~
-30 0 1
-D0
-~
-~
-0 0 4000
+0 0 1
 D2
 ~
 ~
@@ -130,11 +411,11 @@ D2
 S
 #3501
 The Lane~
-   You are strolling along a pleasant, shady lane. The road is lined on both
+You are strolling along a pleasant, shady lane. The road is lined on both
 sides by tall, stately trees which lend the scene with a sense of quiet
 serenity. You can follow the road north or south.
 ~
-30 0 1
+0 0 1
 D0
 ~
 ~
@@ -145,13 +426,17 @@ D2
 0 0 3502
 S
 #3502
-The Cross Roads~
-The roads cross here.  Midgaard is to the west.  To the east, you see the
-stately oaks and poplars of the holy grove.  A wide path leads south through
-the dwarven forest, and another path leads down.  To the north is a very
-desolate trail.
+The Cross Roads on the Hilltop~
+You stand atop a hill upon which several roads cross.  The great city of
+Darkhaven can be seen a short distance to the west, while to the east the
+stately oaks and poplars of the holy grove wave slowly in the wind.  A
+wide, flat path leads due south through the stark landscape of the dwarven
+forest, while the tree-line lane to the north is rumoured to rapidly give
+way to desolate, open plains.  An small path leads northeast to the base
+of the hill and the mouth of a small tunnel, which you can only assume to
+be the engineering of dwarves.
 ~
-30 0 1
+0 0 1
 D0
 ~
 ~
@@ -159,770 +444,1522 @@ D0
 D1
 ~
 ~
-0 0 8904
-D2
-~
-~
-0 0 5261
+0 -1 8904
 D3
 ~
 ~
 0 0 3503
-D5
+D6
+A small path leads to the base of the hill and a dwarven village.
 ~
 ~
-0 0 6500
+0 -1 6500
+> speech_prog p I seek the ruins~
+if ispc($n)
+ if ispkill($n)
+   mea 0.$n _red A shiver rushes through your body as you return to the ruins.
+   mer 0.$n _red A chill washes over you as $n fades into nothingness...
+   mptrans 0.$n 3053
+   mpat 0.$n mpforce 0.$n look
+ else
+   mea 0.$n _red The Umbrageous Ruins is a place for murderers and thieves!
+   mea 0.$n _red It is surely a realm in which you would perish...
+ endif
+endif
+~
+|
 S
 #3503
-City Entrance~
-   You stand on the outskirts of a large city - Midgaard; the capital of this
-land. The road leads east into the peace and quiet - and dangers - of the
-forest; and to the west it becomes the main street of the town; surrounded by
-a confusion of shops, bars, and market places.  Another path wanders off to
-the south.
+Outskirts of Darkhaven~
+You stand on the outskirts of the city of Darkhaven; the primary city of
+this land.  The road leads east into the peace and quiet of the forest;
+while to the west comes to the western gate of the city, surrounded by a
+confusion of shops, bars, and market places.  Another path meanders off
+through the forest to the southeast.
 ~
-30 4 1
+0 4 1
 D1
+Several roads crest atop a hill...
 ~
 ~
 0 0 3502
-D2
-~
-~
-0 0 1501
 D3
+The great eastern gate of Darkhaven...
 ~
 ~
-0 0 3053
+0 0 21112
+D8
+A pathway meaders into the forest...
+~
+~
+0 -1 3586
 S
 #3504
-The South Bridge~
-     You are standing on a small, rickety bridge leading from the Midgaard
-City Dump, to the forest of Miden'nir (Goblinic for Green Blood). You can
-smell the Dump to the north, or go south where there is fresh air and
-greenery.
+On a Long, Rusted Bridge~
+Much reluctance plagues your thoughts as you stumble onto the old bridge 
+leading south into the Black Forest, in which there is rumored to be an 
+ancient mountain, within which lies a labyrinth of untold riches. None
+who have ever gone looking for the treasure, though, have returned
+to verify the rumors (or perhaps chose for some reason to be silent).
 ~
-35 0 3
+0 0 1
 D0
-You can see the clutter of the City Dump.
 ~
 ~
-0 0 3030
+0 -1 21075
 D2
-If you go south, you will enter the Miden'nir.
+The dark forest beckons...
 ~
 ~
 0 0 3505
-E
-credits credit author~
-+-------------------------------------------------+
-| This area originally written for Copper II DIKU |
-|   by ?                                          |
-| Modifications and alterations for MERCmud DIKU  |
-|   by VampLestat                        1 JAN 93 |
-+-------------------------------------------------+
+D5
+A crag can be seen below, but getting there from here would be impossible.
 ~
+~
+33554432 -1 3590
+E
+sign~
+The sign, covered with a strange green substance, reads:
+ 
+                        B E W A R E ! ! !
+ 
+       THERE BE MEAN, VICIOUS GOBLINS CLOSE BY IN THE SOUTH!
+ 
+                      PROCEED AT OWN RISK
+ 
+~
+> rand_prog 3~
+mpecho The wind whistles through the unstable planks of the rickety bridge.
+~
+> speech_prog p I seek the ruins~
+if ispc($n)
+ if ispkill($n)
+   mea 0.$n _red A shiver rushes through your body as you return to the ruins.
+   mer 0.$n _red A chill washes over you as $n fades into nothingness...
+   mptrans 0.$n 3030
+   mpat 0.$n mpforce 0.$n look
+ else
+   mea 0.$n _red The Umbrageous Ruins is a place for murderers and thieves!
+   mea 0.$n _red It is surely a realm in which you would perish...
+ endif
+endif
+~
+|
 S
 #3505
-The Trail to Miden'nir~
-     You are in a light forest. A path leads south, but the passage to the
-east is easy enough. To the west, smoke can be seen rising above the
-treetops. The sprawl of Midgaard lies north of here.
+Before the Black Forest~
+Looking back, the sanctuary of New Darkhaven seems to beckon you now more
+than ever before. The woods to the south project feelings of despair and
+misery. The bards used to tell you stories of horror about mighty
+adventurers who would traverse into the heart of the Black Forest, never
+to return. And who knows how long the old, rusted bridge to the north
+will hold out? Better to not take that chance, perhaps.
 ~
-35 0 3
+0 0 3
 D0
-To the north, you see the bridge to Midgaard.
+The sanctity of New Darkhaven beckons...
 ~
 ~
 0 0 3504
-D1
-More light forest.
-~
-~
-0 0 3506
 D2
-This path cuts through the darkness of the Miden'nir.
+The darkness slowly creeps in...
 ~
 ~
 0 0 3507
 D3
-The Woodsman's Inn.
+A strange building lies to the west...
 ~
 ~
 0 0 3570
 S
 #3506
-The Miden'nir~
-     You are in a dark forest. To the east, mountains block passage. From
-here, only the lighter forest to the west or south offer a way to travel.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
 ~
-35 0 3
+0 1 3
 D1
+The forest concedes to the vast darkness...
 ~
 ~
 0 -1 3550
 D2
-The forest is darker to the south.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3509
-D3
-The forest gets lighter as you go west.
-~
-~
-0 0 3505
 S
 #3507
-The Miden'nir~
-     The forest is deep here and the wind blows through the trees and
-through your hair. To the north, the forest gets lighter. However, the
-southern and western paths place you even deeper in the wood.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
 ~
-35 0 3
+0 1 3
 D0
-The forest is lighter in this direction.
+The edge of the forest might be a welcome sight...
 ~
 ~
 0 0 3505
 D2
-More and darker woods.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3510
 D3
-There is a small path leading west.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3508
 S
 #3508
-On a Small Path~
-     A path is here, leading east and south through the dark woods of
-Miden'nir. Mountains slash the scenery to the west of here.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
 ~
-35 0 3
+0 1 3
 D1
-Wind-swept forest.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3507
 D2
-To the south, the trail continues.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3511
 S
 #3509
-The Miden'nir~
-     The trees of Miden'nir are lush and green, hiding the evil that lurks
-in these woods. The trees become too thick to the west, but you may go
-north, south or travel toward the mountains that lie east of here.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
 ~
-35 0 3
+0 1 3
 D0
-The trees lighten up a bit this way.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3506
 D1
-Huge grey mountains lie in this direction.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3512
 D2
-The forest continues.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3514
 S
 #3510
-A Crossroads~
-     Here footworn paths meet leading north, south and east. The trees seem to
-be closing in on you at this point, and you can barely see the sky
-through the thick branches above your head.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
 ~
-35 0 3
+0 1 3
 D0
-Trees as far as the eye can see.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3507
 D1
-There is an especially dark part of the forest this way.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3514
 D2
-There is an especially dark section of forest this way.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3516
 S
 #3511
-The Trail~
-     You are on a north-south trail through the woods. To the west, impassable
-mountains glare at you, and the thick woods and undergrowth prevent any
-movement westward.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest appears to grow darker and darker.
 ~
-35 0 3
+0 1 3
 D0
-The trail bends to the north.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3508
 D2
-To the south, the path re-enters the forest.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3515
 S
 #3512
-The Miden'nir~
-     The trees of Miden'nir are lush and green, hiding the evil that lurks
-in these woods. You can go north toward the mountains, or west to the
-forest, but the steep mountains prevent any movement east.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
 ~
-35 0 3
-D0
-~
-~
-0 -1 3550
+0 1 3
 D2
-A light section of forest.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3513
 D3
-The forest continues here.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3509
 S
 #3513
-The Miden'nir~
-    The forest is dark, and becomes even darker west.  You sense
-that there is something evil hidden in these woods.  The forest gets
-lighter to the north.  The wind kicks up as you ponder your options.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
 ~
-35 0 3
+0 1 3
 D0
-There is a small clearing to the north.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3512
+D1
+A trail of some sort rips through the darkened trees...
+~
+~
+0 -1 3584
 D3
-It gets darker and thicker this way.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3514
 S
 #3514
-Deep Forest~
-     It is quite dark here, forest surrounds you. With each step, the forest
-seems to close around you, and get darker and more foreboding.  It might just
-be time to head back to somewhere safe.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
 ~
-35 0 3
+0 1 3
 D0
-More forest.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3509
 D1
-Lighter forest and mountains in the distance.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3513
 D2
-More trees.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3517
 D3
-The forest continues.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3510
 S
 #3515
-Light Forest~
-     The forest is light here and you can easily pick your way through the 
-trail.  To the east, the forest becomes thick and darker. South, the trail
-continues.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
 ~
-35 0 3
+0 1 3
 D0
-A trail leading north-south.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3511
 D1
-The trees get thicker as you go east.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3516
 D2
-More trees and some small hills.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3518
 S
 #3516
-Muddy Ground~
-     The ground is quite muddy here and puddles are all around. Your boots
-make a disgusting SQUISH as you walk here. You can go in any of the
-four cardinal directions from here. Hopefully, it will be dryer.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
 ~
-35 0 3
+0 1 3
 D0
-The Miden'nir continues.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3510
 D1
-More trees.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3517
 D2
-The trees get VERY thick to the south. You can barely see...
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3519
 D3
-Some light trees and daylight.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3515
 S
 #3517
-Near the Mountains~
-    The most prominent feature here is the mountains that lie to the east.
-You can only go north and west from here as the rocks stop all other
-movement.
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
 ~
-35 0 3
+0 1 3
 D0
-Many trees to the north.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3514
 D3
-There is a bit of a slope downward to the west.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3516
 S
 #3518
-The Fading Trail~
-     The trail becomes nearly unpassable here. You can go north
-as the forest is relatively light. To the south, you can see a path.
+Heart of the Black Forest~
+You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
 ~
-35 0 3
+0 1 3
 D0
-You can see a trail this way.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3515
-D1
-The trees are nearly trunk-to-trunk this way.
-~
-~
-0 0 -1
 D2
-Dark forests.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3522
 S
 #3519
-The Dark Path~
-     You are hemmed in by trees on either side of you.  The path
-continues north and south, and while is much to thick to explore west,
-you can head off into the woods to the west.
+Heart of the Black Forest~
+You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
 ~
-35 0 3
+0 1 3
 D0
-The forest gets lighter this way.
+The forest concedes to the vast darkness...
 ~
 ~
 0 0 3516
 D1
-The forest continues.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3520
 D2
-There is a strong stench coming from this direction.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3521
-D3
-The trees are nearly trunk-to-trunk this way.
-~
-~
-0 0 -1
 S
 #3520
-The Dark Forest~
-     You stomp your way through the underbrush.  The dark forest of Miden'nir
-get pretty thick here, and the branches high above your head are so thick that
-they block out all direct sunlight.  While it is much too thick to go
-further east, you might be able to make your way though the forest to the
-south and west.
+Heart of the Black Forest~
+You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
 ~
-35 0 3
+0 1 3
 D2
-The thick forest continues.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3523
 D3
-The thick forest continues.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3519
 S
 #3521
-Carnage~
-     Here, you see a gruesome sight. Blood is everywhere... on the trees and
-soaked into the ground. Two carcasses lie in front of you, seeming to look
-up at you. The forest is impassible to the south, but the other directions
-look ok.
+Heart of the Black Forest~
+You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
 ~
-35 1 3
+0 1 3
 D0
-Darkness...
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3519
 D1
-Your light does not extend that far.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3523
 D3
-More dark forest.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3522
-E
-carcass body corpse carcasses bodies corpses~
-   The corpses looked as if they have been pierced by a large, jagged
-spear. The damage these people sustained is simply amazing. Worse, the
-lips on the bodies are a light shade of blue, hinting at poison in
-their systems.
-~
 S
 #3522
-Deep in the Forest of Miden'nir~
-   There is a sickening stench here. It smells of blood and death.
-To the north, you catch glimpses of daylight. To the east, you
-simply cannot see. The trees are close and stifling.
+Heart of the Black Forest~
+You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
 ~
-35 0 3
+0 1 3
 D0
-You see daylight and a trail to follow.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3518
 D1
-The stench seems to becoming from this direction.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3521
 S
 #3523
-The Dark Forest~
-   The branches above you block out all direct sunlight, making the forest
-in this area rather dark.  The forest continues east, where it meets the
-mountains. The air is still and stuffy - a stench comes from the west and an
-ugly feeling causes the hair to rise on the back of your neck!
+Heart of the Black Forest~
+You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
 ~
-35 0 3
+0 1 3
 D0
-It appears to get much darker that direction.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3520
 D1
+The dark trees become less dense to the east...
 ~
 ~
 0 -1 3551
 D3
-The sky becomes lighter in this direction.
+Darkness consumes the forest in a terrifying void...
 ~
 ~
 0 0 3521
 S
-#3550
-At The Foot of The Mountains~
-     You find yourself at the foot of the mountains, where it is much to steep
-to continue north or east.  You see the lush, green forest of Miden'nir to the
-south and west.
+#3524
+Underbelly of Mount Doom~
+The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
 ~
-35 0 5
+0 9 0
+D0
+Into the darkness...
+~
+~
+0 -1 3525
+D1
+A shadowy passage...
+~
+~
+0 -1 3533
+D4
+A strange odor emanates from this direction...
+~
+grate~
+15 3505 3531
+S
+#3525
+Underbelly of Mount Doom~
+The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
+~
+0 9 0
+D0
+Into the darkness...
+~
+~
+0 -1 3526
 D2
-The forest of Miden'nir spreads out before you.
+Into the darkness...
 ~
 ~
-0 -1 3512
+0 -1 3524
 D3
-The forest of Miden'nir spreads out before you.
+A shadowy passage...
+~
+~
+0 -1 3535
+S
+#3526
+Underbelly of Mount Doom~
+The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
+~
+0 9 0
+D0
+Into the darkness...
+~
+~
+0 -1 3527
+D1
+A shadowy passage...
+~
+~
+0 -1 3537
+D2
+Into the darkness...
+~
+~
+0 -1 3525
+S
+#3527
+Underbelly of Mount Doom~
+The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
+~
+0 9 0
+D0
+Into the darkness...
+~
+~
+0 -1 3528
+D2
+Into the darkness...
+~
+~
+0 -1 3526
+D3
+A shadowy passage...
+~
+~
+0 -1 3539
+S
+#3528
+Underbelly of Mount Doom~
+The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
+~
+0 9 0
+D0
+Into the darkness...
+~
+~
+0 -1 3529
+D1
+A shadowy passage...
+~
+~
+0 -1 3541
+D2
+Into the darkness...
+~
+~
+0 -1 3527
+S
+#3529
+Underbelly of Mount Doom~
+The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
+~
+0 9 0
+D0
+A tiny spec of light slips through the dense darkness...
+~
+~
+0 -1 3532
+D2
+~
+~
+0 -1 3528
+D3
+A shadowy passage...
+~
+~
+0 -1 3543
+S
+#3530
+A Long, Cavernous Tunnel~
+By now, the water has been totally drained from the tunnel. The chants have
+become frighteningly close. Also of notice in this portion of the tunnel is
+a repugnant stench. That is not to say that the rest of the tunnel didn't
+stink, only that the smell is a bit different and the severity is much worse
+here than there.
+~
+0 265 0
+D0
+The dark tunnel continues...
+~
+~
+0 -1 3556
+D2
+A strange odor emanates from this direction...
+~
+~
+0 -1 3531
+S
+#3531
+A Massive Pile of Slop~
+Alas, the goblins of this mountain obviously have not heard of proper waste
+disposal. A gigantic pile of something has been left here for some unknown
+reason. Maybe goblins just really like slop, or maybe there might be some
+other reason for this hygienic atrocity. Difficult to tell.
+~
+0 265 0
+D0
+Back into the dark tunnel...
+~
+~
+0 -1 3530
+D5
+Looks pretty scary down there...
+~
+grate~
+2097167 3505 3524
+S
+#3532
+Underbelly of Mount Doom~
+The tunnel, which looked to have continued north for some time, stops
+abruptly at this point. The torches on the walls are lit, highlighting the
+scarlet-stained spots on the sides of the tunnel. The chant-like noises that
+had disappeared momentarily have now resurfaced, louder than before. Also,
+an old, faded drawing on the north wall catches your attention.
+~
+0 8 0
+D0
+An old, broken ladder can be seen faintly through the darkness...
+~
+drawing~
+139 -1 3545
+D2
+Back into the darkness...
+~
+~
+0 -1 3529
+E
+drawing~
+The drawing depicts an old, broken ladder. At the bottom of the ladder, a
+pile of bones litters blood-soaked ground.
+~
+S
+#3533
+A Damp Passage~
+Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+0 9 0
+D0
+A tiny alcove...
+~
+~
+0 -1 3534
+D3
+Back into the main tunnel of the underbelly...
+~
+~
+0 -1 3524
+S
+#3534
+A Dark Alcove~
+Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+0 9 0
+D2
+Back into the shadowy passage...
+~
+~
+0 -1 3533
+S
+#3535
+A Damp Passage~
+Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+0 9 0
+D0
+A tiny alcove...
+~
+~
+0 -1 3536
+D1
+Back into the main tunnel of the underbelly...
+~
+~
+0 -1 3525
+S
+#3536
+A Dark Alcove~
+Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+0 9 0
+D2
+Back into the shadowy passage...
+~
+~
+0 -1 3535
+S
+#3537
+A Damp Passage~
+Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+0 9 0
+D0
+A tiny alcove...
+~
+~
+0 -1 3538
+D3
+Back into the main tunnel of the underbelly...
+~
+~
+0 -1 3526
+S
+#3538
+A Dark Alcove~
+Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+0 9 0
+D2
+Back into the shadowy passage...
+~
+~
+0 -1 3537
+S
+#3539
+A Damp Passage~
+Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+0 9 0
+D0
+A tiny alcove...
+~
+~
+0 -1 3540
+D1
+Back into the main tunnel of the underbelly...
+~
+~
+0 -1 3527
+S
+#3540
+A Dark Alcove~
+Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+0 9 0
+D2
+Back into the shadowy passage...
+~
+~
+0 -1 3539
+S
+#3541
+A Damp Passage~
+Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+0 9 0
+D0
+A tiny alcove...
+~
+~
+0 -1 3542
+D3
+Back into the main tunnel of the underbelly...
+~
+~
+0 -1 3528
+S
+#3542
+A Dark Alcove~
+Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+0 9 0
+D2
+Back into the shadowy passage...
+~
+~
+0 -1 3541
+S
+#3543
+A Damp Passage~
+Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+0 9 0
+D0
+A tiny alcove...
+~
+~
+0 -1 3544
+D1
+Back into the main tunnel of the underbelly...
+~
+~
+0 -1 3529
+S
+#3544
+A Dark Alcove~
+Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+0 9 0
+D2
+Back into the shadowy passage...
+~
+~
+0 -1 3543
+S
+#3545
+An Old, Broken Ladder~
+The distance to the bottom of this hole is much more than anyone in their
+right mind would care to plunge. Fortunately, the ladder looks sturdy enough
+to carry even slightly-heavy souls down into the depths of the underbelly.
+Probably not the wisest thing to test its might, though. Also, a weathered
+drawing of some sort can be viewed on the wall on the south side of the room.
+~
+0 9 0
+D2
+Back into the darkness...
+~
+drawing~
+11 -1 3532
+D5
+A descent into mystery...
+~
+~
+128 -1 3546
+E
+drawing~
+The drawing depicts a shadowy, massive figure apparently toying with a group
+of blood-soaked adventurers.
+~
+S
+#3546
+An Old, Broken Ladder~
+The old ladder continues to bend, though refusing to break beneath the same
+weight it has weathered thousands of times before. The bottom of the hole
+appears close, though through the darkness it is difficult to tell.
+~
+0 9 0
+D4
+Up the old, broken ladder...
+~
+~
+128 -1 3545
+D5
+A descent into mystery...
+~
+~
+128 -1 3547
+S
+#3547
+An Old, Broken Ladder~
+The bottom of the hole is definitely close now. The ridged ground below can
+be slightly uncovered through the shadows that race back and forth across
+the old ladder's rungs. A vile stench seems to emanate from below, causing
+slight nausea, though it is not nearly potent enough at this point to make
+you decide to turn back.
+~
+0 9 0
+D4
+Up the old, broken ladder...
+~
+~
+128 -1 3546
+D5
+The bottom of the old, broken ladder...
+~
+~
+0 -1 3548
+S
+#3548
+The Bottom of the Ladder~
+The stink has now become an unfortunate reality. No matter how much breath
+is held, the odor continues to unwantedly sneak into your nasal passages.
+The curiosity of what lies beyond this spot makes the unbearable odors
+temporarily subside, however.
+~
+0 13 0
+D0
+Impending Doom...
+~
+~
+0 -1 3549
+D4
+Up the old, broken ladder...
+~
+~
+0 -1 3547
+S
+#3549
+The Circle Of Doom~
+An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+0 9 0
+D2
+Back towards the old, broken ladder...
+~
+~
+0 -1 3548
+D6
+Impending Doom...
+~
+~
+0 -1 3557
+D7
+Impending Doom...
+~
+~
+0 -1 3558
+S
+#3550
+Within the Black Forest~
+Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+0 1 3
+D3
+The forest concedes to the vast darkness...
 ~
 ~
 0 -1 3506
 S
 #3551
-The Deep in the Forest of Miden'nir~
-   The branches above you block out all direct sunlight, making the forest
-in this area very dark.  The forest continues west, but mountains block
-further exploration in all other directions, except south, where you notice a
-small tunnel dug into the mountainside.
+Gazing Upon Mount Doom~
+The forest is abruptly left in the distance. Gazing up, the mountain peers
+down upon you like a vulture carefully monitoring its prey. Though this
+place looks quite serene from the outside, the stories and tales about Mount
+Doom have discredited that notion of serenity long before now.
 ~
-35 1 3
+0 1 1
 D2
+The mysteries of the mountain beckon...
 ~
-~
-0 -1 3552
+boulder~
+7 3503 3552
 D3
 ~
 ~
 0 -1 3523
 S
 #3552
-A Tunnel in the Mountains~
-     The walls of this tunnel were carved out many years ago by the goblins of
-this forest.  The floor is well worn, and continues south, into the
-mountain, or back north out into the forest.
+A Long, Cavernous Tunnel~
+Though cold and dreary-looking from the outside, the temperature within the
+mountain is relatively comfortable. The tunnel appears to stretch for some
+distance southward, though traversing too far into this accursed place does
+not look to be a very wise decision.
 ~
-35 1 1
+0 265 0
 D0
-Outside, you see the forest of Miden'nir.
+The dark forest awaits...
 ~
-~
-0 -1 3551
+boulder~
+7 3503 3551
 D2
-The tunnel continues to the south.
+The dark tunnel continues...
 ~
 ~
 0 -1 3553
 S
 #3553
-A Tunnel in the Mountains~
-     The tunnel gets lighter to the north, presumably leading out, while to
-the south the passage gets smaller and smaller.  A small alcove has been
-carved into the east wall.
+A Long, Cavernous Tunnel~
+The tunnel continues to run southward, with no immediate end in sight. The
+cavern walls have begun to trickle water onto the dirt below, making it
+quite difficult to sneak about as there are puddles splishing and splashing
+with each step.
 ~
-35 1 1
+0 265 0
 D0
-The tunnel gets wider in this direction.
+The dark tunnel continues...
 ~
 ~
 0 -1 3552
-D1
-You see a small alcove.
-~
-~
-0 -1 3554
 D2
-The tunnel gets smaller in this direction.
+The dark tunnel continues...
 ~
 ~
 0 -1 3555
 S
 #3554
-A Small Alcove~
-     A small alcove has been carved out here.  There are a bunch of twigs
-and leaves thrown into a pile here, probably serving as a bed.
+Green Winter Ale Brewery~
+Ahh, the good ol' Green Winter Ale Brewery. This is the place in which all
+of Jack's "magic" begins (and, fortunately, ends). The dust that covers most
+of the floor would suggest that Jack has not needed to brew any fresh Green
+Ale in quite some time. Maybe the shelf lives of the existing bottles is
+just very long. Probably not, though.
 ~
-35 1 1
-D3
-You see the main passageway.
+0 9 0
+D4
 ~
-~
-0 -1 3553
-E
-twigs leaves bead~
-     The twigs and leaves have all been piled together as a makeshift bed for
-some small humanoid.
-~
+trapdoor~
+11 -1 3576
 S
 #3555
-A Tunnel in the Mountains~
-     As you explore further into the mountainside, the tunnel gets smaller and
-smaller to the south.  You almost have to hunch over to make your way thru
-this area.  A small archway to the south leads into a large chamber.
+A Long, Cavernous Tunnel~
+The puddles have now become a single, massive pool enveloping the floor
+of the tunnel. To the south, strange, chant-like noises beckon investigation
+in that direction. The journey now has become one of survival, not only
+a search for riches. The labyrinth depicted in tales of olde must be close,
+though in which direction is totally unclear.
 ~
-35 1 1
+0 265 0
 D0
-The tunnel continues north.
+The dark tunnel continues...
 ~
 ~
 0 -1 3553
 D2
-You see a small cavern.
+The dark tunnel continues...
 ~
 ~
 0 -1 3556
 S
 #3556
-The Goblin Headquarters~
-     The tunnel widens into a large (well, large for goblins) cavern that
-serves as the living quarters for the goblins of Miden'nir.  The bones of
-numbers woodland creatures are strewn about the room, the remanents of a
-recent meal.
+A Long, Cavernous Tunnel~
+At this point in the tunnel, tiny cracks have become evident in the lower
+parts of the walls. What might have caused them is anybody's guess. The
+strange thing is that all of the water from the floor of the tunnel seems to
+be gravitating towards the cracks. From the south, the chant-like noises
+have become louder.
 ~
-35 1 1
+0 265 0
 D0
-The tunnel heads north.
+The dark tunnel continues...
 ~
 ~
 0 -1 3555
+D2
+The dark tunnel continues...
+~
+~
+0 -1 3530
+S
+#3557
+The Circle of Doom~
+An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+0 9 0
+D0
+Impending Doom...
+~
+~
+0 -1 3559
+D9
+Impending Doom...
+~
+~
+0 -1 3549
+S
+#3558
+The Circle of Doom~
+An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+0 9 0
+D0
+Impending Doom...
+~
+~
+0 -1 3560
+D8
+Impending Doom...
+~
+~
+0 -1 3549
+S
+#3559
+The Circle of Doom~
+An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+0 9 0
+D2
+Impending Doom...
+~
+~
+0 -1 3557
+D7
+Impending Doom...
+~
+~
+0 -1 3561
+S
+#3560
+The Circle of Doom~
+An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+0 9 0
+D2
+Impending Doom...
+~
+~
+0 -1 3558
+D6
+Impending Doom...
+~
+~
+0 -1 3562
+S
+#3561
+The Circle of Doom~
+An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+0 9 0
+D7
+Impending Doom...
+~
+~
+0 -1 3563
+D8
+Impending Doom...
+~
+~
+0 -1 3559
+S
+#3562
+The Circle of Doom~
+An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+0 9 0
+D6
+Impending Doom...
+~
+~
+0 -1 3563
+D9
+Impending Doom...
+~
+~
+0 -1 3560
+S
+#3563
+The Circle of Doom~
+An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+0 9 0
+D0
+A soft green glow emanates from this direction...
+~
+~
+0 -1 3564
+D8
+Impending Doom...
+~
+~
+0 -1 3561
+D9
+Impending Doom...
+~
+~
+0 -1 3562
+S
+#3564
+A Skull-filled Tunnel~
+Each and every piece of this particular tunnel seems to have been built with
+the skulls of different creatures- those creatures that foolishly traversed
+into the Circle of Doom. Though no torches appear in sight, a soft, though
+eerie, glow pulsates out from beneath the skulls. Shadows created by the
+mysterious glow reach all about, as if cradling the tunnel in some sort of
+devious embrace.
+~
+0 269 0
+D0
+The mysterious tunnel continues...
+~
+~
+0 -1 3565
+D2
+Impending Doom...
+~
+~
+0 -1 3563
+S
+#3565
+A Skull-filled Tunnel~
+Each and every piece of this particular tunnel seems to have been built with
+the skulls of different creatures- those creatures that foolishly traversed
+into the Circle Of Doom. Though no torches appear in sight, a soft, though
+eerie, glow pulsates out from beneath the skulls. Shadows created by the
+mysterious glow reach all about, as if cradling the tunnel in some sort of
+devious embrace.
+~
+0 265 0
+D0
+The mysterious tunnel continues...
+~
+~
+0 -1 3566
+D2
+The mysterious tunnel continues...
+~
+~
+0 -1 3564
+S
+#3566
+A Skull-filled Tunnel~
+Each and every piece of this particular tunnel seems to have been built with
+the skulls of different creatures- those creatures that foolishly traversed
+into the Circle of Doom. Though no torches appear in sight, a soft, though
+eerie, glow pulsates out from beneath the skulls. Shadows created by the
+mysterious glow reach all about, as if cradling the tunnel in some sort of
+devious embrace.
+~
+0 265 0
+D0
+Darkness, once again, prevails...
+~
+~
+0 -1 3567
+D2
+The mysterious tunnel continues...
+~
+~
+0 -1 3565
+S
+#3567
+The Dark Landing~
+The skulls trail off as the tunnel turns into a dark, gloomy landing. An
+even darker set of stairs leads down into possible doom. Thoughts and
+questions begin to take shape. Have any souls ever made it this deep into
+the evil mountain? If so, have they made it out alive? Only glory remains
+now.
+~
+0 9 0
+D2
+A soft green glow emanates from the mysterious tunnel...
+~
+~
+0 -1 3566
+D5
+This sort of darkness you have not before witnessed...
+~
+~
+0 -1 3568
+S
+#3568
+Lair of the Goblin King~
+Spiderwebs blanket the ceiling and cracks of the goblin king's throne room.
+A massive, crumbling granite throne sits darkly in the middle of the dirt-
+covered floor, casting visions of terror upon the four walls. The room's
+temperature must be close to freezing, and you think that whoever or whatever
+lives in this place must not be too warm itself.
+~
+0 3153993 0
+D4
+Back towards the mysterious tunnel...
+~
+~
+0 -1 3567
+S
+#3569
+Diov a ni gnitaolf~
+~
+0 1073741828 1
 S
 #3570
-The Front of the Inn~
-     You are standing on a well-worn path which opens into a clearing.
-An old, wooden building is here with smoke billowing from its
-chimney. A painted sign is visible on the porch to the west. You
-could go north or south around the building or leave this place and
-return to the forest.
+Outside a Mysterious Inn~
+The darkness engulfing the forest lessens as the inn becomes near. Equipped
+with battered shutters and chipped paint, this place still seems to oddly
+possess a heightened sense of warmth and friendliness. There is, however,
+a not-so-fresh scent creeping out from the entrance of the inn.
 ~
-4 0 3
-D0
-You can go north around the inn.
-~
-~
-0 0 3571
+0 4 1
 D1
-Back through the trees to the Miden'nir.
+The darkness creeps in...
 ~
 ~
 0 0 3505
-D2
-You can go south around the inn.
-~
-~
-0 0 3572
 D3
-The front door of the inn beckons.
+The interior of the Green Gobble Inn lies to the west...
 ~
 ~
-0 0 3574
-E
-sign~
-The sign reads:
-   The Woodsman
-~
-E
-credits credit author~
-+-------------------------------------------------+
-| This zone originally written for Copper II DIKU |
-|   by ?                                          |
-| Modification and alterations for MERCmud DIKU   |
-|   by VampLestat                        1 JAN 93 |
-+-------------------------------------------------+
-~
+0 -1 3574
 S
 #3571
-North of the Inn~
-     You are standing north of the inn. Things don't look much different
-from this angle.  The air here is filled with smells of smoke and cooking.
-South, the front porch is waiting for you... or you can see if there is
-a back door.
+The Clover Suite~
+So named because of its odd shape, the room contains three tiny alcoves-
+one in the north wall, one in the east, and one in the west. A bed lies in
+the northern alcove, while a dresser lies in the east and a small desk in
+the west. A large oriental rug covers the spacious center of the room.
 ~
-4 0 3
-D2
-You see the front of the Inn.
+0 8 0
+D1
+Back towards the scary stairs...
 ~
 ~
-0 -1 3570
+0 -1 3579
 S
 #3572
-South of the Inn~
-     You are standing south of the inn.  You could easily go north and enter
-through the front door, or west and to the rear of the establishment.  You
-here some muffled cries from a tiny trail leading south of here.
+The King's Suite~
+Jed has reserved this room for the distant possibility that a king of some
+sort might actually stay here sometime. You are pretty certain that there
+won't be an occupant here anytime in the near future.
 ~
-4 0 3
-D0
-This way leads to the front of the inn.
-~
-~
-0 0 3570
+0 8 0
 D2
-The trail heads south.
+Back towards the scary stairs...
 ~
 ~
-0 0 3575
-D3
-This way leads to the back of the inn.
-~
-~
-0 0 3573
+0 -1 3579
 S
 #3573
-Behind the Inn~
-     You now stand behind the inn. The smell here is not so pleasant as
-the keeper and his help throw a good deal of garbage here. A couple of
-piles of rubbish are to the west, but you will smell the worse for
-meddling there. As a clean alternative, you can go north or east around
-the inn.
+The Recovery Room~
+This shabby, threadbare room appears to serve the purpose of housing those
+individuals who have consumed a bit too much of Jack's green winter ale and
+are quite unable to make the journey home on the same night. A messy double
+bed- the only piece of furniture in the room- rests in the middle of the
+floor and looks as though it has not been made up nor laundered in quite
+some time.
 ~
-4 0 3
-D1
-You can go around the inn this way.
-~
-~
-0 0 3572
-D3
-Only rats and fool adventurers play in garbage.
+0 8 0
+D0
+Back towards the scary stairs...
 ~
 ~
-0 0 3578
+0 -1 3579
 S
 #3574
-The Woodsman Inn~
-    You are in the common room of the Woodsman Inn. A thin haze of smoke sits
-in the air here. The Inn is often empty, as the forest has become overrun by
-goblins as of late, and it is no longer safe in these parts. The bar is just
-north of here. If you'd rather have your own table, one is empty to the
-south.
+Jed's Desk~
+The Green Gobble actually is much bigger on the inside than it appears from
+the shadowy forest. An unspectacular reception desk beckons you from the
+southwest corner of the room. Directly to the east of the front desk, a
+flight of stairs trails up to the guest rooms.
 ~
-4 12 1
+0 12 0
 D0
-The bar is here, manned by the innkeeper.
+A sign reads, simply, 'Saloon.'
 ~
 ~
 0 0 3576
 D1
-You can leave now and return to fresher air.
 ~
 ~
-0 0 3570
-D2
-An empty table is a rare commodity.
-~
-~
-0 0 3579
+0 -1 3570
 D3
+The warm light of the inn becomes more dim...
 ~
 ~
 0 0 3577
+D4
+A flight of scary stairs...
+~
+~
+0 -1 3579
 S
 #3575
-The Ambush Point~
-     This is a overgrown foot-trail south of the inn. It leads west, but you
-would be hard pressed to follow it far. A number of bushes are trampled on
-and some medium sized branches have been knocked down.  Obviously there has
-been a battle here rather recently.
+The Bloodsoaked Brambles~
+The darkened trail comes to an abrupt stop at this point. Floating all about
+is an overshadowing sense of loss. There seem to have been rose bushes on
+the sides of the path. They all have been trampled and now drip with blood.
+You can only hope that whatever horrors took place here do not soon return.
 ~
-4 0 3
-D0
-The inn lies to the north.
-~
-~
-0 0 3572
+0 1 3
 D3
 A trail thru the woods.
 ~
@@ -930,149 +1967,336 @@ A trail thru the woods.
 0 0 3581
 S
 #3576
-The Bar~
-     This is where people use to come and enjoy the food, drink and hospitality
-of the innkeeper, but as of late, he only serves the few adventurers that
-manage to survive a trip thru the forest. You can leave south and return to the
-common room.
+"Black" Jack's Dusty Saloon~
+Mounds of dust cover the floor. The tables look as though they might have
+been strewn about in a skirmish and long forgotten. There is, however, a
+single, upright table in the southeast corner of the bar- possibly an
+indication of just how much business "Black" Jack does nowadays.
 ~
-4 0 1
+0 8 0
 D2
-You may retreat south back to the common room.
+You can stumble back towards Jed.
 ~
 ~
 0 0 3574
+D5
+~
+trapdoor~
+2097163 -1 3554
 S
 #3577
-The Bard's Table~
-     You are in a darker corner in the Inn.  A large round table with a few
-wooden chairs sits here.  There is a large stain on the table, the remnants
-of a spilled drink.
+A Dark Corner Room~
+The atmosphere in this part of the inn is one of solemnity. There are but
+three lonely tables taking up space in a room that could easily host ten or
+so. Though the mood here is nothing short of morose, it is quite a bit better
+than Jack's place.
 ~
-4 8 1
+0 8 0
 D1
-You see the main floor of the Inn to the east.
+Back towards Jed...
 ~
 ~
 0 0 3574
 S
 #3578
-Garbage dump~
-You stand knee deep in garbage.  YECCH!!! It smells terrible and who knows
-what vermin live in these piles of filth ...
+A Dark, Dusty Attic~
+Despite a tiny layer of dust on the ground, the attic actually seems to be
+the cleanest part of the inn. Scattered boxes and miscellaneous items of
+mostly-insignificant worth litter the floor. There is, however, one box,
+in particular, that catches your attention. Also, there is a sign posted
+on the western wall of the attic.
 ~
-4 0 3
-D1
-You can return to cleaner lands this way.
+0 9 0
+D5
 ~
 ~
-0 0 3573
+0 -1 3579
+E
+sign~
+The sign, worn and torn throughout the years, reads:
+ 
+ 
+                  DO NOT feed the rodents!!
+ 
+          (Management assumes no responsibility for injuries
+           that result from negligent rodent relations)
+ 
+ 
+ 
+                                             - Jed
+ 
+~
+E
+box~
+It appears to have caught your attention because of Jed's stinky old shoes
+and undergarments contained within. Better to leave this box alone.
+~
 S
 #3579
-A Quieter Section of the Inn~
-There seems to be no one in this end of the Woodsman, probably a safe place
-to rest and lick your wounds ...
+A Creepy Corridor~
+The second floor to this place is no more spectacular than the first. The
+corridor is filled with dust, and the floorboards make loud, unsettling
+creaking noises as you arrive at the top of the stairs. The corridor
+hosts three guestrooms, though you highly doubt that they are occupied.
 ~
-4 8 0
+0 8 0
 D0
-You see the common room.
+A "majestic" room lies to the north...
 ~
 ~
-0 0 3574
+0 -1 3572
+D2
+A dingy room lies to the south...
+~
+~
+0 -1 3573
+D3
+A strangely-shaped room lies to the west...
+~
+~
+0 -1 3571
+D4
+~
+~
+0 -1 3578
+D5
+A flight of scary stairs...
+~
+~
+0 -1 3574
+S
+#3580
+Floating in a void~
+~
+0 1073741828 1
 S
 #3581
-On the Trail of the Horsemen~
-  The path continues east and west of here.  You notice fresh tracks in
-the soft ground that show the horsemen fled to the west.
+On a Darkened Trail~
+A tiny trail of blood runs to the east, becoming more and more dense as the
+footprints seem to blend together. Also, the once serene breeze has now
+become a dark, dreary whisper.
 ~
-4 0 3
+0 1 3
 D1
-Back to ambush point.
+The darkened trail appears to stop...
 ~
 ~
 0 0 3575
 D3
-The trail continues.
+The darkened trail continues...
 ~
 ~
 0 -1 3582
 S
 #3582
-On the Trail of the Horsemen~
-  The path continues east and south.  You notice fresh tracks in
-the soft ground that show the horsemen turned, and fled south.
+On a Darkened Trail~
+Here, you think you can almost make out tiny footprints in the visible parts
+of the dirt. Beside the tiny footprints lie bigger, uglier footprints. You
+can only wonder why two creatures of such differing size would choose to
+travel together.
 ~
-4 0 3
+0 1 3
 D1
-The trail continues.
+The darkened trail continues...
 ~
 ~
 0 0 3581
 D2
-The tracks lead south.
+The darkened trail continues...
 ~
 ~
 0 -1 3583
 S
 #3583
-On the Trail of the Horsemen~
-  The trail of the horsemen continues east and north along this path through
-the forest.  The tracks are still fresh, so they must be near.
+On a Darkened Trail~
+The trail becomes darker to the north. The trampling of the trees and plant
+life appears to become more intense in that direction, also. A frightful,
+though serene, breeze blows through what remains of the treetops.
 ~
-4 0 3
+0 1 3
 D0
-The trail continues.
+The darkened trail continues...
 ~
 ~
 0 -1 3582
 D3
-The tracks lead east.
+The darkened trail twists toward the forest...
 ~
 ~
 0 -1 3584
 S
 #3584
-A Dead End Trail~
-  The path comes to an abrupt end here, as the trees close around you and
-make any further exploration impossible.  Fresh tracks cover the ground, and
-end right here.  The horsemen must be nearby.
+On a Darkened Trail~
+The forest narrows into what looks to have been a recently-constructed path
+of some sort. The forest looks as though it has been deliberately pushed
+aside to make room for some dark, mighty force.
 ~
-4 0 3
+0 1 3
 D1
-Back to along the trail.
+The darkened trail continues...
 ~
 ~
 0 0 3583
+D3
+The forest concedes to the vast darkness...
+~
+~
+0 -1 3513
+S
+#3585
+Beside a murky river~
+You've clambered down between several large rocks resting on the steep
+banks of a murky river.  The only exit appears to be back from where
+you came.
+~
+0 4 3
+S
+#3586
+Inside the Forest's Edge~
+You stand just inside the forest's edge in a narrow trail.  To the
+northwest runs a large, busy road, while the trail itself heads into
+the relative quiet of the forest to the southwest.
+~
+0 0 2
+D7
+The outskirts of Darkhaven...
+~
+~
+0 -1 3503
+D9
+The trail continues into the forest...
+~
+~
+0 -1 3587
+S
+#3587
+Along a Quiet Trail~
+You travel down a quiet, narrow trail through the forest.  The sounds of
+civilization can be heard roughly north of here, while the forest changes
+gradually to the south. 
+~
+0 0 2
+D2
+The trail continues...
+~
+~
+0 -1 3588
+D6
+The trail continues toward the forest's edge.
+~
+~
+0 -1 3586
+S
+#3588
+A Quiet Trail~
+You travel down a quiet, narrow trail through the forest.  The sounds of
+civilization can be heard roughly north of here, while the forest changes
+gradually to the south. 
+~
+0 0 2
+D0
+Along the quiet trail...
+~
+~
+0 -1 3587
+D8
+A bend in the trail...
+~
+~
+0 -1 1501
+S
+#3589
+Floating in a void~
+~
+0 1073741828 1
+S
+#3590
+Beneath a rusted bridge~
+Here opens a small crag just outside an steep earth embankment, and just
+beneath what appears to be a large and somewhat decrepit bridge.  The
+stench of sewage wafts from the gaping hole in the embankment, and the
+nearby rush of what sounds like a large river can be heard, though you
+can't seem to see it from here.  You can climb up to the bridge from
+this spot, though from the looks of it the narrow passage upward would
+be too precarious to enable you to make it back down.
+~
+0 0 4
+D0
+A gaping hole in the embankment.
+~
+~
+0 -1 7031
+D4
+~
+~
+67584 -1 3504
 S
 #0
 
 
-
 #RESETS
-M 0 3500 2 3521       Load Wyvern at Carnage  * This area written for *
-M 0 3500 2 3521            Wyvern at Carnage  *   Copper II by ?      *
-M 0 3501 8 3512       Load Goblin in forest   * Heavy Modificatios    *
-M 0 3501 8 3512            Goblin in forest   *   by VampLestat       *
-M 0 3501 8 3509            Goblin in forest   *   for Merc Mud        *
-M 0 3501 8 3506            Goblin in forest
-M 0 3501 8 3513            Goblin in forest
-M 0 3501 8 3556            Goblin in Cavern
-M 0 3506 4 3551       Load Lieutenant at Entrance
-M 0 3506 4 3556            Lieutenant at Cavern
-M 0 3507 1 3556       Load Leader at Cavern
-M 0 3502 1 3575       Load Small Boy at Ambush
-M 0 3503 1 3576       Load Innkeeper at Bar
-M 0 3504 1 3577       Load Bard at Table
-M 0 3505 4 3584       Load Horseman at End of Trail
-M 0 3505 4 3584            Horseman at End of Trail
+M 0 3500 2 3521
+E 1 3509 2 8
+M 0 3500 2 3521
+E 1 3509 2 8
+M 0 3501 8 3512
+M 0 3501 8 3512
+M 0 3501 8 3509
+M 0 3501 8 3506
+M 0 3501 8 3513
+M 0 3501 8 3551
+M 0 3501 8 3551
+M 0 3506 4 3552
+E 1 3510 4 10
+M 0 3506 4 3530
+E 1 3510 4 10
+M 0 3502 1 3575
+E 1 3500 1 19
+M 0 3503 1 3576
+G 1 3501 3503
+M 0 3504 1 3577
+M 0 3508 1 3574
+E 1 3502 1 17
+O 0 3504 1 3554
+P 1 3503 1 3504
+M 0 3506 4 3555
+E 1 3510 4 10
+M 0 3506 4 3551
+E 1 3510 4 10
+G 1 3505 1
+M 0 3501 8 3522
+M 0 3507 1 3568
+E 1 3508 1 17
+M 0 3505 2 3559
+E 1 3506 2 12
+E 1 3507 2 20
+M 0 3505 2 3560
+E 1 3506 2 12
+E 1 3507 2 20
+D 0 3531 5 2
+D 0 3524 4 2
+D 0 3552 0 2
+D 0 3551 2 2
+D 0 3576 5 1
+D 0 3554 4 1
+D 0 3545 2 1
+D 0 3532 0 1
+O 0 3511 1 3504
 S
 
+
+#SHOPS
+ 3503   17  0  0  0  0   130  90         7 21    ; Jack
+0
+
+
+#REPAIRS
+0
 
 
 #SPECIALS
-M  3500 spec_poison
+M  3500 spec_thief
 S
-
 
 
 #$

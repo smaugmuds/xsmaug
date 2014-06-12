@@ -1,24 +1,32 @@
 #!/usr/bin/make -f
 
  ############################################################################
+ # [S]imulated [M]edieval [A]dventure multi[U]ser [G]ame      |   \\._.//   # 
+ # -----------------------------------------------------------|   (0...0)   #
+ # SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider      |    ).:.(    #
+ # -----------------------------------------------------------|    {o o}    #
+ # SMAUG code team: Thoric, Altrag, Blodkai, Narn, Haus,      |   / ' ' \   #
+ # Scryn, Rennard, Swordbearer, Gorog, Grishnakh, Nivek,      |~'~.VxvxV.~'~#
+ # Tricops, Fireblade, Edmond, Conran                         |             #
+ # ------------------------------------------------------------------------ #
  # Merc 2.2 Diku Mud improvments copyright (C) 1992, 1993 by Michael        #
  # Chastain, Michael Quan, and Mitchell Tse.                                #
  # Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,          #
  # Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     #
  # ------------------------------------------------------------------------ #
- # XMERC 2.4 (C) 2014 by Antonio Cao (BuRZuM-iSHi)                          #
+ # XSMAUG (C) 2014 by Antonio Cao (BuRZuM-iSHi)                             #
  # ------------------------------------------------------------------------ #
- #                             XMERC Makefile                               #
+ #                             XSMAUG Makefile                              #
  ############################################################################
 
-XMERC = xmerc
-VERSION = 2.4
+XSMAUG = xsmaug
+VERSION = 2.0
 
 CC      = gcc
 #PROF    = -p
 NOCRYPT =
 
-C_OBJ = c.objetc
+C_OBJ = c.object
 
 # Uncomment the two lines below if compiling on a Solaris box
 #SOLARIS_FLAG = -Dsun -DSYSV
@@ -46,26 +54,35 @@ NEED_CRYPT = -lcrypt
 
 #DBUGFLG = -DREQUESTS -Wall -Wuninitialized
 
-BLDFLG = -Wno-all -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast -Wno-overflow -Wno-pointer-arith -Wno-redundant-decls -Wno-cast-align
+BLDFLG = -Wno-all -Wno-pointer-to-int-cast -Wno-int-to-pointer-cast -Wno-overflow -Wno-pointer-arith -Wno-redundant-decls -Wno-cast-align -Wno-unused-result -Wno-format-security
 #W_FLAGS = -Wall -Werror -Wshadow -Wformat-security -Wpointer-arith -Wcast-align -Wredundant-decls
 
 #Uncomment the line below if you want a performance increase though beware
 #your core files may not be as much of a benefit if you do.
 OPT_FLAG = -finline-functions -funroll-loops -fdefer-pop -fstrength-reduce
 
-C_FLAGS = $(OPT_FLAG) -O -g3 $(BLDFLG) $(PROF) $(NOCRYPT) $(DBUGFLG) -DMERC $(SOLARIS_FLAG) $(TIME) $(REG) $(EXPORT_SYMBOLS)
+C_FLAGS = $(OPT_FLAG) -O -g3 $(BLDFLG) $(PROF) $(NOCRYPT) $(DBUGFLG) -DSMAUG $(SOLARIS_FLAG) $(TIME) $(REG) $(EXPORT_SYMBOLS)
 L_FLAGS = $(OPT_FLAG) $(PROF) $(SOLARIS_LINK) $(NEED_CRYPT) $(NEED_DL)
 
 #Uncomment the next three comments below if you want to use IMC
-USE_IMC    = -DIMCMERC -DIMC
+USE_IMC    = -DIMCSMAUG -DIMC
 
-C_FILES = act_comm.c act_move.c act_wiz.c const.c fight.c magic.c mob_prog.c sha256.c update.c \
-	act_info.c act_obj.c comm.c db.c handler.c interp.c mob_commands.c save.c special.c
+IMC_CFILES = imc.c imc-mail.c imc-interp.c imc-util.c imc-config.c \
+        imc-events.c imc-version.c imc-mercbase.c ice.c icec.c icec-mercbase.c
+
+C_FILES = sha256.c act_comm.c act_info.c act_move.c act_obj.c act_wiz.c boards.c \
+          build.c clans.c comm.c comments.c const.c db.c deity.c fight.c \
+          handler.c hashstr.c ibuild.c ident.c interp.c magic.c makeobjs.c \
+          mapout.c misc.c mpxset.c mud_comm.c mud_prog.c player.c polymorph.c \
+          requests.c reset.c save.c shops.c skills.c special.c tables.c \
+          track.c update.c grub.c stat_obj.c ban.c services.c planes.c \
+          imm_host.c colorize.c stances.c adminlist.c \
+          hint.c starmap.c house.c variables.c news.c
 
 H_FILES = $(wildcard *.h)
 
 ifdef USE_IMC
-   C_FILES := imc.c $(C_FILES)
+   C_FILES := $(IMC_CFILES) $(C_FILES)
    C_FLAGS := $(C_FLAGS) $(USE_IMC)
 endif
 
@@ -74,31 +91,39 @@ O_FILES := $(patsubst %.c,$(C_OBJ)/%.o,$(C_FILES))
 all:
 	@echo ""
 	@echo " ############################################################################"
+	@echo " # [S]imulated [M]edieval [A]dventure multi[U]ser [G]ame      |   \\._.//   #"
+	@echo " # -----------------------------------------------------------|   (0...0)   #"
+	@echo " # SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider      |    ).:.(    #"
+	@echo " # -----------------------------------------------------------|    {o o}    #"
+	@echo " # SMAUG code team: Thoric, Altrag, Blodkai, Narn, Haus,      |   / ' ' \   #"
+	@echo " # Scryn, Rennard, Swordbearer, Gorog, Grishnakh, Nivek,      |~'~.VxvxV.~'~#"
+	@echo " # Tricops, Fireblade, Edmond, Conran                         |             #"
+	@echo " # ------------------------------------------------------------------------ #"
 	@echo " # Merc 2.1 Diku Mud improvments copyright (C) 1992, 1993 by Michael        #"
 	@echo " # Chastain, Michael Quan, and Mitchell Tse.                                #"
 	@echo " # Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,          #"
 	@echo " # Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     #"
 	@echo " # ------------------------------------------------------------------------ #"
-	@echo " # XMERC 2.4 (C) 2014 by Antonio Cao [BuRZuM-iSHi]                          #"
+	@echo " # XSMAUG (C) 2014 by Antonio Cao [BuRZuM-iSHi]                             #"
 	@echo " # ------------------------------------------------------------------------ #"
-	@echo " #                             XMERC Build                                  #"
+	@echo " #                             XSMAUG Build                                 #"
 	@echo " ############################################################################"
 	@echo ""
 	mkdir $(C_OBJ)
-	make $(XMERC)
+	make $(XSMAUG)
 
 # pull in dependency info for *existing* .o files
 -include dependencies.d
 
-$(XMERC): $(O_FILES)
-	rm -f $(XMERC)
-	$(CC) -export-dynamic -o ../$(XMERC) $(O_FILES) $(L_FLAGS)
+$(XSMAUG): $(O_FILES)
+	rm -f $(XSMAUG)
+	$(CC) -export-dynamic -o ../$(XSMAUG) $(O_FILES) $(L_FLAGS)
 	@echo "Generating dependency file ...";
 	@$(CC) -MM $(C_FLAGS) $(C_FILES) > dependencies.d
 	@perl -pi -e 's.^([a-z]).o/$$1.g' dependencies.d
-	@echo "Done building $(XMERC).";
-	chmod g+w ../$(XMERC)
-	chmod a+x ../$(XMERC)
+	@echo "Done building $(XSMAUG).";
+	chmod g+w ../$(XSMAUG)
+	chmod a+x ../$(XSMAUG)
 	chmod g+w $(O_FILES)
 
 $(C_OBJ)/%.o: %.c
@@ -107,4 +132,4 @@ $(C_OBJ)/%.o: %.c
 	echo " done";
 
 clean:
-	rm -rf $(C_OBJ) ../$(XMERC) *~ dependencies.d
+	rm -rf $(C_OBJ) ../$(XSMAUG) ../log/* *~ dependencies.d

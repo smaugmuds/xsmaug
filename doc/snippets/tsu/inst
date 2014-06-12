@@ -1,0 +1,71 @@
+clear
+more README
+echo "Do You Want To Continue?"
+echo "[Y] or [N]"
+read response
+clear
+case $response in
+
+N|n) echo "Exiting Patch"
+echo "Suggested: Download Original Distribution Smaug v1.02a."
+echo "Or, you can just patch your code with pico..."
+exit;;
+
+Y|y)echo "Good, Continuing.";;
+esac
+
+sleep 1
+clear
+
+echo "please enter the directory where the source, class, and system"
+echo "directories are located."
+read mud_dir
+src_dir=$mud_dir/src
+sys_dir=$mud_dir/system
+class_dir=$mud_dir/classes
+clear
+echo "Patching..."
+sleep 1
+patch $src_dir/act_comm.c act_comm.c.pat
+patch $src_dir/act_move.c act_move.c.pat
+patch $src_dir/act_obj.c act_obj.c.pat
+patch $src_dir/act_wiz.c act_wiz.c.pat
+patch $src_dir/build.c build.c.pat
+patch $src_dir/comm.c comm.c.pat
+patch $sys_dir/commands.dat commands.dat.pat
+patch $src_dir/const.c const.c.pat
+patch $src_dir/db.c db.c.pat
+patch $src_dir/fight.c fight.c.pat
+patch $src_dir/grub.c grub.c.pat
+patch $src_dir/handler.c handler.c.pat
+patch $src_dir/ibuild.c ibuild.c.pat
+patch $src_dir/magic.c magic.c.pat
+patch $src_dir/misc.c misc.c.pat
+patch $src_dir/mud.h mud.h.pat
+patch $src_dir/mud_prog.c mud_prog.c.pat
+patch $src_dir/player.c player.c.pat
+patch $src_dir/shops.c shops.c.pat
+patch $src_dir/skills.c skills.c.pat
+patch $sys_dir/skills.dat skills.dat.pat
+patch $src_dir/tables.c tables.c.pat
+patch $src_dir/update.c update.c.pat
+mv class/* $class_dir
+mkdir oldsrc
+mkdir oldsys
+mv $src_dir/*.orig ./oldsrc
+mv $sys_dir/*.orig ./oldsys
+clear
+echo "Do You Wish To Compile The Code Now?"
+echo "[Y] or [N]"
+read compcode
+clear
+
+case $compcode in
+N|n) echo "Ok, You Can Compile it later."
+exit;;
+
+Y|y)echo "Good, Continuing.";;
+esac
+
+cd $src_dir
+make

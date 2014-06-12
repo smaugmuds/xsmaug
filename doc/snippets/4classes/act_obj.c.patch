@@ -1,0 +1,35 @@
+--- /smaug/src/act_obj.c	Thu Feb  6 09:22:47 1997
++++ /game/dist/src/act_obj.c	Fri May 30 16:55:34 1997
+@@ -1211,15 +1211,21 @@
+ 	&& ch->class == CLASS_MAGE					)
+     ||   ( IS_OBJ_STAT(obj, ITEM_ANTI_THIEF)
+ 	&& ch->class == CLASS_THIEF					)
++    ||   ( IS_OBJ_STAT(obj, ITEM_ANTI_THIEF)
++	&& ch->class == CLASS_ASSASSIN					)
+     ||   ( IS_OBJ_STAT(obj, ITEM_ANTI_VAMPIRE)
+ 	&& ch->class == CLASS_VAMPIRE					)
++    ||   ( IS_OBJ_STAT(obj, ITEM_ANTI_VAMPIRE)
++	&& ch->class == CLASS_DEMON					)
+     ||   ( IS_OBJ_STAT(obj, ITEM_ANTI_DRUID)
+ 	&& ch->class == CLASS_DRUID					)
+     ||   ( IS_OBJ_STAT(obj, ITEM_ANTI_WARRIOR)
+ 	&& ch->class == CLASS_RANGER					)
++    ||   ( IS_OBJ_STAT(obj, ITEM_ANTI_WARRIOR)
++	&& ch->class == CLASS_ARCHER					)
+     ||	 ( IS_OBJ_STAT(obj, ITEM_ANTI_MAGE)
+ 	&& ch->class == CLASS_AUGURER					)
+     ||   ( IS_OBJ_STAT(obj, ITEM_ANTI_CLERIC)
++	&& ch->class == CLASS_ANGEL					)
++    ||   ( IS_OBJ_STAT(obj, ITEM_ANTI_CLERIC)
+ 	&& ch->class == CLASS_CLERIC					)) )
+     {
+ 	act( AT_MAGIC, "You are forbidden to use that item.", ch, NULL, NULL, TO_CHAR );
+@@ -1894,7 +1900,7 @@
+     }
+     else
+     {
+-	strcpy( name, "Thoric" );
++	strcpy( name, "Tsunami" );
+     }
+     ch->gold += 1;
+     if ( obj->item_type == ITEM_CORPSE_NPC

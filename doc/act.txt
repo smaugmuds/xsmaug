@@ -1,9 +1,7 @@
-Merc Release 2.2
-Wednesday 24 November 1993
+SMAUG release 1.0
+December 15, 1996
 
-Kahn
-Hatchet
-
+Thoric  thoric@realms.game.org
 
 === The function 'send_to_char'
 
@@ -17,6 +15,18 @@ The interface for send_to_char is:
 The string 'txt' is sent to the character 'ch'.  That's all there is to it.
 
 
+=== The function 'ch_printf'
+
+This function acts just like 'printf', except you specify the character
+it is going to.
+
+The interface for ch_printf is:
+
+    void ch_printf( CHAR_DATA *ch, char *fmt, ... )
+
+The string 'fmt' is a standard printf type format string.  If you
+know how to use printf, you will know how to use ch_printf.
+
 
 === The function 'act'
 
@@ -26,8 +36,13 @@ strings look like, then you should read some code which uses 'act' (such as
 some of the spell functions in magic.c) to get a concrete introduction to this
 function.
 
-    void act( const char *str, CHAR_DATA *ch, OBJ_DATA *obj, const void *vo,
-	int type )
+    void act( sh_int AType, const char *str, CHAR_DATA *ch,
+	const void *arg1, const void *arg2, int type )
+
+    sh_int AType;
+
+	This is a color code defined in 'mud.h'.  Colors are only sent
+	to players who have ANSI color enabled.
 
     const char *str;
 
@@ -39,11 +54,12 @@ function.
 
 	This is the subject of the sentence.
 
-    OBJ_DATA *obj;
+    const void *arg1;
 
-	This is the object of the sentence.
+	This is the object of the sentence.  This may be either an object or
+	possibly a text string.
 
-    const void *vo;
+    const void *arg2;
 
 	This is the target of the sentence, as well as possibly the object of
 	the sentence.  This may be either a victim, an object, or possibly a
@@ -54,22 +70,17 @@ function.
 	This is the 'to' type of the sentence.  Values are:
 
 	    TO_CHAR	Send only to 'ch'.
-	    TO_VICT	Send only to 'vo' (and then only if vo != ch).
+	    TO_VICT	Send only to 'arg2' (and then only if arg2 != ch).
 	    TO_ROOM	Send to all chars in room except 'ch'.
 	    TO_NOTVICT	Send to all chars in room except 'ch' and 'vict'.
 
 	In every case, only characters in the same room as 'ch' are considered.
 
-    Global boolean MOBTRIGGER;
-
-	This is the global variable used to allow the mobprograms to trigger.
-	It is default TRUE.
-
 Each awake character in the same room as 'ch' is considered for output.  (Thus
 'ch' must always be a legitimate character whose location is not NOWHERE).  If
 the target character meets the 'type' requirements, then the formatting string
 'str' is used to construct an output string, with '$' sequences substituted
-using values from 'ch', 'obj', and 'vo'.
+using values from 'ch', 'arg1', and 'arg2'.
 
 In the substitution of '$' sequences, attention is paid to visibility by
 calling 'can_see' and 'can_see_obj' as needed.
@@ -83,49 +94,53 @@ The first character of the output string is always capitalized.
 
 Here are all the '$' sequences supported by 'act':
 
+    $t
+	Result is the 'arg1' argument interpreted as a string.
+
     $T
-	Result is simply the 'vo' argument interpreted as a string.
+	Result is the 'arg2' argument interpreted as a string.
 
     $n
 	Result is the name of 'ch'.  If 'ch' is not visible to the target
 	character, result is the string 'someone'.
 
     $N
-	Result is the name of 'vo' (considered as a victim).  If 'vo' is not
-	visible to the target character, result is the string 'someone'.
+	Result is the name of 'arg2' (considered as a victim).  If 'arg2' is
+	not visible to the target character, result is the string 'someone'.
 
     $e
 	Result is 'he', 'she', or 'it', depending on the sex of 'ch'.
 
     $E
-	Result is 'he', 'she', or 'it', depending on the sex of 'vo'
+	Result is 'he', 'she', or 'it', depending on the sex of 'arg2'
 	(considered as a victim).
 
     $m
 	Result is 'him', 'her', or 'it', depending on the sex of 'ch'.
 
     $M
-	Result is 'him', 'her', or 'it', depending on the sex of 'vo'
+	Result is 'him', 'her', or 'it', depending on the sex of 'arg2'
 	(considered as a victim).
 
     $s
 	Result is 'his', 'her', or 'its', depending on the sex of 'ch'.
 
     $S
-	Result is 'his', 'her', or 'its', depending on the sex of 'vo'
+	Result is 'his', 'her', or 'its', depending on the sex of 'arg2'
 	(considered as a victim).
 
     $p
-	Result is the short description of 'obj'.  If 'obj' is invisible to the
-	target character, result is the string 'something'.
+	Result is the short description of 'arg1' (considered as an object).
+	If 'arg1' is invisible to the target character, result is the string
+	'something'.
 
     $P
-	Result is the short description of 'vo', considered as an object.  If
-	'vo' is invisible to the target character, result is the string
+	Result is the short description of 'arg2' (considered as an object).
+	If 'arg2' is invisible to the target character, result is the string
 	'something'.
 
     $d
-	Result is the first word in 'vo', considered as a string.  If 'vo' is
-	NULL, result is the string 'door'.  This is meant for extracting the
+	Result is the first word in 'arg2', considered as a string.  If 'arg2'
+	is NULL, result is the string 'door'.  This is meant for extracting the
 	name from a door's keyword list, but may be used in general for other
 	keyword lists.

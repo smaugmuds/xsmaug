@@ -1,8 +1,9 @@
-Merc Release 2.2
-Wednesday 24 November 1993
+Merc Release 2.1
+Sunday 01 August 1993
 
-Kahn
-Hatchet
+Furey	mec@shell.portal.com
+Hatchet	hatchet@uclink.berkeley.edu
+Kahn	michael@uclink.berkeley.edu
 
 
 
@@ -128,10 +129,7 @@ you need to find out.
 	   but learn the hell out of it
 	   you should know EVERY command in your editor
 
-'ctags'	-- makes 'tags' for your vi editor
-	   allows you to goto functions by name in any source file
-
-'etags' -- makes 'tags' for your emacs editor
+'ctags'	-- makes 'tags' for your editor
 	   allows you to goto functions by name in any source file
 
 '>'
@@ -270,6 +268,81 @@ information is valuable for debugging as well as performance analysis.
 
 Availability of 'prof' and 'gprof' varies from system to system.  Almost every
 Unix system has 'prof'.  Only some systems have 'gprof'.
+
+
+
+=== Schedule versus Features versus Quality
+
+Now for a few words on project management.
+
+Sooner or later, almost any project faces a trade-off between schedule,
+features, and quality.  Consider a student writing a term paper on the last
+night.  He has three unpalatable choices: he can turn it in late (miss the
+schedule).  He can turn in a shorter paper that doesn't cover everything
+(reduce the features).  Or he can churn out gibberish (lower the quality).
+
+Similarly in a software project, one often has a choice between making the
+release date, or dropping features, or shipping everything on time and
+hoping that it works (it usually doesn't).
+
+The most important thing to realize about this decision is that it IS a
+decision.  One can't get out of it by hoping that some miracle will occur.
+If you don't react consciously, then external circumstances will drive the
+decision.
+
+Ok, so suppose you are faced with the trade-off and go for a schedule slip.
+Don't take a small slip ... take a big impressive slip.  If you say
+'I'll just fix this one problem and finish ASAP', then likely you will
+wish you had taken just a little more time later.  If you say 'I think I
+need another day, so I'll slip by a week', then it's much more likely
+that what you'll have at the end of the week will do the job.  It's better
+to slip a large block of time once then to slip day-by-day or hour-by-hour
+repeatedly.
+
+If you go for dropping features, again, carve off a big hunk.  Don't be
+timid and pretend that you're going to do that work 'if you just get a
+little spare time.'  That feature of your project is GONE, exploit the
+lessened requirements for all the savings you can!
+
+I can't offer much advise on how to reduce quality, because that's always
+my last choice for what to drop on a project.
+
+
+
+=== Sleeping
+
+Simple and obvious, but true ... engineering takes an alert mind.
+
+It's very easy, very seductive, to throw a lot of consecutive hours at a
+problem.  One can get into a 'flow' state where one's mind becomes filled
+with the problem, and the work just pours out, hour after hour.  Many
+writers report that they watch a story take place, and just transcribe
+what they see, pounding out page after page of text.  Many software
+engineers have experienced a similar feeling, where the code appears
+to arise spontaneously as they watch themselves type.
+
+I believe most real work gets done in this state.
+
+My experience, however, is that the 'flow' period can end subtly and
+gradually.  Without ever noticing a change, I notice that new work isn't
+flowing out of my hands anymore, that I'm spending lots of time fixing
+up mistakes I made just a few moments ago.  Instead of ideas flashing
+confidently through my mind, doubts and questions arise.
+
+At this point there is a temptation to throw some more hours at the problem.
+'I'm here, and I was getting a lot of work done, why don't I just stay all
+night until I figure this out?'  This is a trap!  Don't do it!
+
+Instead, I suggest: go home, eat, shower, sleep, put yourself back together
+again.  Resume the next day.  While you sleep, your mind will work on the
+problem anyways, and you'll probably wake up with new ideas.  You'll get
+more done between 10:00 am and 2:00 pm the next day, then if you stayed up
+between midnight and 10:00 am.
+
+There is a problem with this strategy: remotivating yourself in the morning.
+If the project is one of your choice, that's usually not a problem.  If it's
+something you have to do but don't enjoy, you have to balance the remotivation
+problem versus the very low productivity of working without sleep.
 
 
 

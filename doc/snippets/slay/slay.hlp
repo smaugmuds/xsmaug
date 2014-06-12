@@ -1,0 +1,63 @@
+58 Slay~
+
+  Syntax: slay (who) <option>
+
+  Where the "option" is one of the predefined "slay types".  Your coder can
+  set up new types for each person who has access to the slay command.  To
+  set up a new type is fairly straight forward, there are three messages,
+  one sent to you (as the one who used the slay command), one sent to the
+  poor victim, and one sent to everyone else in the room.  There are a few
+  variables you can set in your slay type, including your name, the
+  victims name, the sex of each, things like 'him','her','his','hers',etc.
+  The format for using these variables goes like this:
+
+  (Keep in mind, that "ch" stands for the "character" who used the slay
+  command, "arg2" is the victim, which I would think, is self-eplanatory)
+
+    $n  Result is the name of 'ch'.  If 'ch' is not visible to the target
+        character, result is the string 'someone'.
+
+    $N  Result is the name of 'arg2' (considered as a victim).  If 'arg2'
+        is not visible to the target character, result is the string
+        'someone'.
+
+    $e  Result is 'he', 'she', or 'it', depending on the sex of 'ch'.
+
+    $E  Result is 'he', 'she', or 'it', depending on the sex of 'arg2'
+        (considered as a victim).
+
+    $m  Result is 'him', 'her', or 'it', depending on the sex of 'ch'.
+    $M  Result is 'him', 'her', or 'it', depending on the sex of 'arg2'
+        (considered as a victim).
+
+    $s  Result is 'his', 'her', or 'its', depending on the sex of 'ch'.
+
+    $S  Result is 'his', 'her', or 'its', depending on the sex of 'arg2'
+        (considered as a victim).
+
+   A few examples follow:
+
+    Rand
+    Rand's balefire
+    Siezing Saidin, you blast $N with a bolt of blazing balefire!
+    Your vision goes negative as $n's searing bolt of balefire anhilates you!
+    $n's blast of balefire rips $N from the pattern!
+
+    In the above example, "Rand" means that only the character known as
+    "Rand" can use this slay type, or will even see it as an option.
+
+    "Rand's balefire" is the name of the slay option itself. The "Keyword"
+    that you would use on the command line. *note* You can abbreviate the
+    keyword as long as it's unique, exampe: "slay jonas balefire" would
+    slay the poor slob jonas, using "Rand's balefire" as the slay option.
+
+    The next three lines, are the "TO_CHAR" (to you) "TO_VICTIM" and
+    "TO_ROOM" messages, with variables, that get sent to the appropriate
+    people.
+
+
+This "Slay" command was written by Gary McNickle <gary@dharvest.com>
+at Dark Harvest Systems.
+
+~
+
