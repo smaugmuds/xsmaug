@@ -15,7 +15,7 @@ Enjoy creating your own mud!
 
 ### XSMAUG Releases
 
- * **[XSMAUG Release 2.0] (https://github.com/smaugmuds/xsmaug/releases/tag/2.0)**
+ * **[XSMAUG Phoenix Release 2.0] (https://github.com/smaugmuds/xsmaug/releases/tag/2.0)**
 
 #### Contents of the Release
 
@@ -118,7 +118,7 @@ Feel free to contribute with **XSMAUG in GitHub**.
 
 Having trouble with **XSMAUG**?
 
-First, read the documentation in the **'doc'** directory.  We rewrote all of the documentation files from scratch for the 2.0 Alpha release, and have been keeping them up-to-date since.
+First, read the documentation in the **'doc'** directory.  We rewrote all of the documentation files from scratch for the **XSMAUG 2.0 Phoenix Release**, and have been keeping them up-to-date since.
 
 Also check the **'wizhelp'** command and read the **'help'** descriptions for the individual immortal commands.
 
