@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Xmerc by smaugmuds</title>
+    <title>XSMAUG by smaugmuds</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -15,59 +15,124 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Xmerc</h1>
-        <p>Next Generation of MERC Source Code</p>
+        <h1>XSMAUG</h1>
+        <p>Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame</p>
 
-        <p class="view"><a href="https://github.com/smaugmuds/xmerc">View the Project on GitHub <small>smaugmuds/xmerc</small></a></p>
+        <p class="view"><a href="https://github.com/smaugmuds/xsmaug">View the Project on GitHub <small>smaugmuds/xsmaug</small></a></p>
 
 
         <ul>
-          <li><a href="https://github.com/smaugmuds/xmerc/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/smaugmuds/xmerc/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/smaugmuds/xmerc">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/smaugmuds/xsmaug/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/smaugmuds/xsmaug/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/smaugmuds/xsmaug">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
         <h2>
-<a name="xmerc" class="anchor" href="#xmerc"><span class="octicon octicon-link"></span></a><a href="http://smaugmuds.github.io/xmerc">XMERC</a>
+<a name="xsmaug" class="anchor" href="#xsmaug"><span class="octicon octicon-link"></span></a><a href="http://smaugmuds.github.io/xsmaug">XSMAUG</a>
 </h2>
 
 <h3>
 <a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h3>
 
-<p><strong>XMERC</strong> is a <strong>Next Generation MUD</strong> derivative of <strong>Merc 2.2</strong>.</p>
+<p><strong>Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame</strong></p>
 
-<p><strong>Merc Diku Mud</strong> is a <strong>Diku Mud</strong> with many enhancements and contributions. See our <strong>'contrib.txt'</strong> and <strong>'help merc'</strong> for acknowledgements.  Send us your contribution, and you'll be in there too!</p>
+<p><strong>XSMAUG</strong> is an enhancenment of <strong>SMAUG</strong>.</p>
 
-<p>Enjoy creating your next generation mud!</p>
+<p><strong>SMAUG</strong> is the base code that runs the popular <strong>Realms of Despair</strong> MUD. Through the years it has been tweaked, modified, and enhanced to become one of the most feature packed branches of the MERC family of codebases.</p>
+
+<p><strong>SMAUG</strong> is a derivative of <strong>Merc Diku Mud</strong> is a <strong>Diku Mud</strong> with many enhancements and contributions. See our <strong>'contrib.txt'</strong> and <strong>'help merc'</strong> for acknowledgements.  Send us your contribution, and you'll be in there too!</p>
+
+<p>Enjoy creating your own mud!</p>
 
 <h3>
-<a name="xmerc-releases" class="anchor" href="#xmerc-releases"><span class="octicon octicon-link"></span></a>XMERC Releases</h3>
+<a name="xsmaug-releases" class="anchor" href="#xsmaug-releases"><span class="octicon octicon-link"></span></a>XSMAUG Releases</h3>
 
 <ul>
-<li><strong><a href="https://github.com/smaugmuds/xmerc/releases/tag/2.4">XMERC Release 2.4</a></strong></li>
+<li><strong><a href="https://github.com/smaugmuds/xsmaug/releases/tag/2.0">XSMAUG Release 2.0</a></strong></li>
 </ul><h4>
 <a name="contents-of-the-release" class="anchor" href="#contents-of-the-release"><span class="octicon octicon-link"></span></a>Contents of the Release</h4>
 
-<pre><code>- realm:  Realm Area files.
-- doc:    Documentation.
-- log:    Log files    (initially empty).
-- player: Player files (initially empty).
-- imc:    IMC files.
-- src:    Source files.
-- conf:   XMERC Server Config File
-- xmercd: XMERC Server Boot Script
+<pre><code>- realm:         Realm Area files.
+- doc:           Documentation.
+- log:           Log files    (initially empty).
+- player:        Player files (initially empty).
+- imc:           IMC files.
+- src:           Source files.
+- xsmaug.conf:   XSMAUG Server Config File.
+- xsmaug-server: XSMAUG Server Boot Script.
+- vault:     Guilds Vaults
+- races:     Races files.
+- houses:    House files.
+- gods:          God players.
+- deity:     Deities.
+- councils:  Councils files.
+- classes:       Classes files.
+- clans:         Clans files.
+- boards:        Boards files.
+- corpses:       Death players corpses (initially empty).
+- mudprogs:      MUD Program files.
+- system:        MUD Game System files.
+</code></pre>
+
+<h4>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h4>
+
+<p>Here are just some of the extra features XSMAUG has:</p>
+
+<pre><code>- Full featured, bug-free command-line online building
+- (including shops, resets, repairshops, etc)
+- Optional easy to use menu-based online building
+- Damageable and repairable equipment
+- MUDPrograms/scripts (mob, obj and room programs)
+- Monsters that will remember you, hunt you down, and summon you
+- Levers, switches, pullchains, buttons and traps
+- Searchable hidden objects and doors
+- More flexibility to command syntax
+- Delayed teleport rooms, tunnels
+- Clans, pkilling, guilds, orders and councils
+- Revamped experience and skill/spell learning system
+- Unlimited bulletin boards that can be added online
+- Private mail and comments on players
+- Automatic daily scheduled rebooting
+- Advanced immortal heirarchy
+- Complicated monsters with stats, attacks, defenses and bodyparts
+- Resistances, Immunities and Susceptibilities
+- More spells, more skills, more classes, more races
+- Weapon proficiencies
+- Pipes and herb smoking
+- Full featured container commands... fill, empty, etc
+- Extra exits - ne, nw, se, sw and more -
+- Special exit flags, floorless rooms (falling)
+- More room, mob and object flags, class restricted items
+- Languages, improved string hashing code
+- All kinds of 'spelled equipment' support
+- A new flexible spell system that allows online creation and editing
+- Object grouping, items hidden under other items, layered clothing
+- The ability to dig up and bury items
+- Player corpses are saved in case of crash or reboot
+- Stable code with hundreds of bug fixes
+- A fully configurable deity system
+- Many new admin commands such as an extensive ban, immhost ipcompare and more
+- Polymorph code that can be added, edited and deleted online
+- Different prompts when you are fighting and when you are not
+- Pets saving with their owners
+- Configurable color codes online
+- Projectiles are fully supported
+- Extended bit vectors for when 32 are just not enough
+- SHA256 player passwords encryption
+- Mounts and much much more
 </code></pre>
 
 <h4>
 <a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>ChangeLog</h4>
 
-<pre><code>* MERC 2.2 -&gt; XMERC 2.4
+<pre><code>* SMAUG 1.8b -&gt; XSMAUG 2.0
 
-    - Added: xmerc.conf &amp; xmercd
+    - Added: xsmaug.conf &amp; xsmaug-server
     - Added: New Makefile
     - Added: Name Change
-    - Moved: merc.h to xmerc.h
+    - Moved: mud.h to xsmaug.h
     - Added: SHA256 Encryption to Player passwords.
 </code></pre>
 
@@ -84,22 +149,15 @@
 <h3>
 <a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-<p><strong>XMERC</strong> Release by <strong>Antonio Cao</strong> (<a href="https://github.com/burzumishi">@burzumishi</a>)
+<p><strong>XSMAUG</strong> Release by <strong>Antonio Cao</strong> (<a href="https://github.com/burzumishi">@burzumishi</a>)
 Wed Jun 11 14:49:27 CEST 2014</p>
 
-<p>Based on: <strong>Merc Release 2.2</strong> by Kahn Hatchet (Wednesday 24 November 1993)</p>
-
-<p>Originally released 11/24/1993.
-Updated for GCC4 compatibility 2/22/2006 by Samson.</p>
-
-<p>Feel free to contribute with <strong>XMERC in GitHub</strong>.</p>
-
-<p><strong>MERC Industries</strong> had officially disolved October 13, 1993.  <strong>MERC 2.2</strong> is a compilation of various bug and typo fixes along with a few new worlds.  <strong>MERC 2.2</strong> also has a variable line pager, MOBPrograms, and player settable prompt.</p>
+<p>Feel free to contribute with <strong>XSMAUG in GitHub</strong>.</p>
 
 <h3>
 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with <strong>XMERC</strong>?</p>
+<p>Having trouble with <strong>XSMAUG</strong>?</p>
 
 <p>First, read the documentation in the <strong>'doc'</strong> directory.  We rewrote all of the documentation files from scratch for the 2.0 Alpha release, and have been keeping them up-to-date since.</p>
 
@@ -109,7 +167,7 @@ Updated for GCC4 compatibility 2/22/2006 by Samson.</p>
 
 <p>Specific information means: an adb or gdb stack trace (if you're reporting a crash), or a syslog with the relevant commands logged.  The player files are ascii files -- dump them into your mail message too.</p>
 
-<p>Check out the documentation at <strong><a href="https://github.com/smaugmuds/xmerc/wiki">XMERC Wiki</a></strong> or send an Issue and we’ll help you sort it out.</p>
+<p>Check out the documentation at <strong><a href="https://github.com/smaugmuds/xmerc/wiki">XSMAUG Wiki</a></strong> or send an Issue and we’ll help you sort it out.</p>
 
 <h3>
 <a name="copyright-and-license" class="anchor" href="#copyright-and-license"><span class="octicon octicon-link"></span></a>Copyright and License</h3>
@@ -120,11 +178,15 @@ Updated for GCC4 compatibility 2/22/2006 by Samson.</p>
 
 <p>The license terms boil down to this: the people who wrote this mud want due credit for their work.</p>
 
-<p><strong>XMERC</strong> is a derivative of the original <strong>Merc Diku Mud</strong> and is subject to their copyright and license agreement.  <strong>XMERC Diku Mud</strong> contains substantial enhancements to <strong>Merc Diku Mud</strong>.  These enhancements are copyright 2014 by <strong>Antonio Cao</strong> (<a href="https://github.com/burzumishi">@burzumishi</a>) under the <strong>'GNU GPL v2 LICENSE'</strong>.</p>
+<p><strong>MERC Industries</strong> had officially disolved October 13, 1993.  <strong>MERC 2.2</strong> is a compilation of various bug and typo fixes along with a few new worlds.  <strong>MERC 2.2</strong> also has a variable line pager, MOBPrograms, and player settable prompt.</p>
+
+<p><strong>SMAUG</strong> is a derivative of the version <strong>2.1</strong> distribution of <strong>Merc Diku Mud</strong>. <strong>SMAUG</strong> contains substantial enhancements to <strong>Merc Diku Mud</strong>, including some features of the original <strong>Diku Mud</strong> that were removed by the Merc team.</p>
+
+<p><strong>XSMAUG</strong> is a derivative of the original <strong>SMAUG</strong> and is subject to their copyright and license agreement.  <strong>XSMAUG</strong> contains substantial enhancements to <strong>SMAUG</strong>.  These enhancements are copyright 2014 by <strong>Antonio Cao</strong> (<a href="https://github.com/burzumishi">@burzumishi</a>) under the <strong>'GNU GPL v2 LICENSE'</strong>.</p>
 
 <h1></h1>
 
-<p><em><strong>XMERC</strong> (c) 2014</em></p>
+<p><em><strong>XSMAUG</strong> (c) 2014</em></p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/smaugmuds">smaugmuds</a></p>
