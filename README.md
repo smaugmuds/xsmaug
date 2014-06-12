@@ -154,7 +154,7 @@ When you write us, we need to know what kind of machine you're running on.  If y
 
 Specific information means: an adb or gdb stack trace (if you're reporting a crash), or a syslog with the relevant commands logged.  The player files are ascii files -- dump them into your mail message too.
 
-You can also read the OLD SMAUG Documentation in the **'doc'** directory.
+You can also read the Documentation in the **'doc'** directory.
 
 
 
