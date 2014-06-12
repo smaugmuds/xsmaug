@@ -172,6 +172,7 @@ The license terms boil down to this: the people who wrote this mud want due cred
 
 **XSMAUG** is a derivative of the original **SMAUG** and is subject to their copyright and license agreement.  **XSMAUG** contains substantial enhancements to **SMAUG**.  These enhancements are copyright 2014 by **Antonio Cao** ([@burzumishi] (https://github.com/burzumishi)) under the **'GNU GPL v2 LICENSE'**.
 
+**Thanks to the SMAUG Code Team!**
 
 ==============
 
