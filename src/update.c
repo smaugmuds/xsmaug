@@ -181,7 +181,7 @@ void gain_exp( CHAR_DATA * ch, int gain )
     * xp cap to prevent any one event from giving enuf xp to 
     * gain more than one level - FB 
     */
-   modgain = UMIN( (int)modgain, exp_level( ch, ch->level + 2 ) - exp_level( ch, ch->level + 1 ) );
+   modgain = UMIN( ( int )modgain, exp_level( ch, ch->level + 2 ) - exp_level( ch, ch->level + 1 ) );
 
    ch->exp = UMAX( 0, ch->exp + ( int )modgain );
 
@@ -1999,7 +1999,7 @@ void update_handler( void )
 
       auth_update(  );  /* Gorog */
       time_update(  );  /* If looking for slower passing time, move this to just above char_calendar_update(  ); */
-      UpdateWeather(  ); /* New Weather Updater -Kayle */
+      UpdateWeather(  );   /* New Weather Updater -Kayle */
       hint_update(  );
       char_update(  );
       obj_update(  );
@@ -2287,7 +2287,7 @@ void time_update( void )
    echo = NULL;
    echo_color = AT_GREY;
 
-   ++time_info.hour; 
+   ++time_info.hour;
 
    if( time_info.hour == sysdata.hourdaybegin || time_info.hour == sysdata.hoursunrise
        || time_info.hour == sysdata.hournoon || time_info.hour == sysdata.hoursunset
@@ -2299,7 +2299,7 @@ void time_update( void )
          {
             struct WeatherCell *cell = getWeatherCell( d->character->in_room->area );
 
-            switch( time_info.hour )
+            switch ( time_info.hour )
             {
                case 6:
                {

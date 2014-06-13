@@ -197,7 +197,7 @@ void map_stats( CHAR_DATA * ch, int *rooms, int *rows, int *cols )
    return;
 }
 
-void do_mapout( CHAR_DATA* ch, const char* argument)
+void do_mapout( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    OBJ_DATA *map_obj;   /* an obj made with map as an ed */

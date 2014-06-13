@@ -1,0 +1,1156 @@
+#XSMAUGAREA
+#AREADATA
+Version      1
+Name         Dwarven Catacombs~
+Author       Raff~
+WeatherX     0
+WeatherY     0
+Ranges       10 20 0 65
+Economy      0 1654500
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       2001
+Keywords   bat~
+Short      a bat~
+Long       A bat flaps wildly at you!
+~
+Desc       Your typical smelly, blind flying mammal.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc sentinel aggressive~
+Affected   detect_hidden~
+Stats1     0 5 18 5 0 500
+Stats2     5 5 50
+Stats3     2 3 3
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2002
+Keywords   page templar~
+Short      a templar page~
+Long       A templar page in training is here looking mildly confused.
+~
+Desc       He has lost his family and everything of his former life.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc wimpy~
+Stats1     200 7 14 4 600 1500
+Stats2     7 7 70
+Stats3     1 9 4
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2003
+Keywords   spelunker explorer~
+Short      a spelunker~
+Long       A spelunker knows his way around these tunnels.
+~
+Desc       He recently discovered these catacombs and wants to see where they lead.
+He just hopes he doesn't get killed in the process.  He carries only
+essential exploration gear; if there IS anything down here, he
+probably won't last long.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc scavenger wimpy~
+Affected   detect_hidden~
+Stats1     100 8 13 4 800 2000
+Stats2     8 8 80
+Stats3     2 5 1
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2004
+Keywords   gravedigger digger robber graverobber~
+Short      a graverobber~
+Long       A graverobber uncovers dead bodies.
+~
+Desc       Working for an evil necromancer isn't the greatest thing in the world.
+They seem like little more than zombie servants themselves.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc scavenger aggressive~
+Stats1     -500 9 12 3 100 2000
+Stats2     9 9 90
+Stats3     2 6 1
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2005
+Keywords   mist swirling~
+Short      some mist~
+Long       Some mist swirls about you here ... it seems ALIVE!
+~
+Desc       In fact it IS alive in a magical sort of sense.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc~
+Affected   sanctuary sneak pass_door~
+Stats1     0 10 10 6 200 2500
+Stats2     10 10 100
+Stats3     2 6 4
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2006
+Keywords   ~
+Short      It~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc aggressive~
+Stats1     0 10 10 2 1000 3000
+Stats2     10 10 100
+Stats3     3 3 6
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2007
+Keywords   skeleton skeletal soldier~
+Short      a skeleton~
+Long       A skeletal soldier fights in the battle of the underworld.
+~
+Desc       Even though he has died in the physical sense of the word, the battle
+continues for him in his charmed state.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_undead~
+Gender     male~
+Actflags   npc scavenger aggressive~
+Stats1     -290 11 10 4 1100 4000
+Stats2     11 11 110
+Stats3     2 8 1
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2008
+Keywords   templar~
+Short      a templar~
+Long       A templar shouts "AKK! SLAY THE INFIDEL!"
+~
+Desc       As you peer closely he peers back at you
+
+A templar peers closely at you.
+A templar tells you, "You are an evil force trying to spread your ways!".
+A templar tells you, "You must die for your sin!".
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc scavenger aggressive~
+Stats1     600 12 9 3 500 5000
+Stats2     12 12 120
+Stats3     1 4 8
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2009
+Keywords   wraith~
+Short      a mysterious wraith~
+Long       A mysterious ghostly wraith forms before your eyes.
+~
+Desc       Hard to tell much about the mysterious form even upon further inspection.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_undead~
+Gender     male~
+Actflags   npc scavenger aggressive~
+Affected   detect_hidden pass_door~
+Stats1     0 12 9 2 600 5000
+Stats2     12 12 120
+Stats3     2 7 1
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2010
+Keywords   officer templar~
+Short      the templar officer~
+Long       A templar officer keeps an eye on things here.
+~
+Desc       A templar officer tells you "Better move along evil one!"
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc aggressive~
+Affected   detect_invis~
+Stats1     700 13 8 2 600 7000
+Stats2     13 13 130
+Stats3     1 6 8
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2011
+Keywords   zombie mage~
+Short      zombie~
+Long       A blank-faced zombie mage joins the battle.
+~
+Desc       He seems to lack real interest in what he is doing.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_mage~
+Gender     male~
+Actflags   npc scavenger aggressive~
+Stats1     -100 13 8 5 550 9000
+Stats2     13 13 130
+Stats3     1 4 8
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2012
+Keywords   shadow shadows~
+Short      the shadow~
+Long       Eerie shadows fill the room.
+~
+Desc       Looks vaguely you-shaped.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc~
+Affected   detect_hidden sneak pass_door~
+Stats1     0 14 6 1 800 10900
+Stats2     14 14 140
+Stats3     2 9 1
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2013
+Keywords   bat vampire~
+Short      The vampire~
+Long       A bat flaps wildly at you!
+~
+Desc       A rather LARGE "bat" ...
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_undead~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   detect_hidden~
+Stats1     -100 15 6 5 1000 17000
+Stats2     15 15 150
+Stats3     1 10 7
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2014
+Keywords   necromancer necro cleric~
+Short      the evil necromancer~
+Long       The evil necromancer makes undead soldiers from corpses.
+~
+Desc       Though he seems absorbed in his work, you'd bet he'd take the time out
+to kill you to get a fresh corpse!
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_undead~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Stats1     -888 15 8 -5 1100 15000
+Stats2     15 15 150
+Stats3     1 8 8
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2015
+Keywords   grand templar leader~
+Short      the grand templar~
+Long       The grand templar stands here quietly observing your actions
+~
+Desc       A slight, tolerant smile comes briefly across his face.  In the blink
+of an eye he seems stern again.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel~
+Affected   detect_invis detect_hidden sanctuary~
+Stats1     1000 16 5 -5 1500 20000
+Stats2     16 16 160
+Stats3     1 8 12
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2016
+Keywords   prism dragon prismdragon~
+Short      the prism dragon~
+Long       The light shines off a beautiful but dangerous dragon lurking here.
+~
+Desc       The spray of colored light bouncing off his scales is almost blinding.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_breath_any~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   detect_invis detect_hidden~
+Stats1     -303 20 0 -5 30000 30000
+Stats2     20 20 200
+Stats3     6 3 14
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       2017
+Keywords   darken dark beast darkenbeast~
+Short      The DarkenBeast~
+Long       You hear and smell the presense of the darkenbeast.
+~
+Desc       You see nothing more than the sense of darkness and evil.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_poison~
+Gender     neuter~
+Actflags   npc sentinel aggressive~
+Stats1     -1000 24 -2 -12 20000 80000
+Stats2     24 24 240
+Stats3     3 7 7
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#OBJECT
+Vnum     2001
+Keywords glowing key~
+Type     key~
+Short    a glowing key~
+Long     A circular, glowing key radiates a bright aura around it.~
+Flags    glow hum magic~
+WFlags   take~
+Values   39 0 0 0 0 0
+Stats    1 10000 1000000 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2002
+Keywords granite plate mail platemail~
+Type     armor~
+Short    a suit of granite platemail~
+Long     A suit of platemail hewn from granite stands by itself in the corner.~
+Flags    antigood~
+Values   9 0 0 0 0 0
+Stats    55 42300 1000 0 0
+Affect       -1 -1 -1 2 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2003
+Keywords onyx ring~
+Type     armor~
+Short    an onyx ring~
+Long     A ring with a very dark onyx stone in it has been left in the dirt.~
+Flags    antigood~
+WFlags   take finger~
+Values   5 0 0 0 0 0
+Stats    1 11010 200 0 0
+Affect       -1 -1 1 4 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2004
+Keywords neutralizer sword~
+Type     weapon~
+Short    the neutralizer~
+Long     A long thin sword with a wide blade makes you wonder.~
+Flags    hum~
+Values   0 4 5 3 0 0
+Stats    9 3304 99 0 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2005
+Keywords sword excalibur~
+Type     weapon~
+Short    The sword Excalibur~
+Long     A sword gleams by the light of its magical silvery blade.~
+Flags    glow~
+Values   0 5 4 3 0 0
+Stats    15 12157 50 0 0
+Affect       -1 -1 3 18 0
+Affect       -1 -1 1 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2006
+Keywords crown~
+Type     key~
+Short    A kingly crown~
+Long     The crown of a long lost King lies forgotten here.~
+Flags    bless~
+WFlags   take head~
+Values   15 0 0 0 0 0
+Stats    10 15900 720 0 0
+Affect       -1 -1 -8 17 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2007
+Keywords stone~
+Type     container~
+Short    stone~
+Long     The stone is surrounded by a bright glow, better look closer.~
+Flags    glow~
+Values   15 15 2006 0 0 0
+Stats    2000 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2008
+Keywords holy water flask~
+Type     potion~
+Short    a flask of holy water~
+Long     A flask of holy water is here.~
+Flags    glow~
+WFlags   take hold~
+Values   25 -1 -1 -1 0 0
+Stats    2 5000 10 0 0
+Spells   'bless' 'sanctuary' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2009
+Keywords chainmail chain mail suit~
+Type     armor~
+Short    a suit of chainmail~
+Long     A nice suit of chainmail has been left behind.~
+Flags    bless~
+WFlags   take body~
+Values   5 0 0 0 0 0
+Stats    20 1111 25 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2010
+Keywords white cape~
+Type     armor~
+Short    a white cape~
+Long     A blazing cape of white lies in a careful pile.~
+Flags    glow~
+WFlags   take neck~
+Values   5 0 0 0 0 0
+Stats    3 5000 10 0 0
+Affect       -1 -1 1 18 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2011
+Keywords shield defense~
+Type     armor~
+Short    the shield of defense~
+Long     A large shield lies protecting the ground.~
+Flags    magic~
+WFlags   take shield~
+Values   15 0 0 0 0 0
+Stats    15 33000 212 0 0
+Affect       -1 -1 10 12 0
+Affect       -1 -1 10 13 0
+Affect       -1 -1 -2 18 0
+Affect       -1 -1 -1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2012
+Keywords scale shield dragonscale~
+Type     armor~
+Short    a dragonscale shield~
+Long     A shield from from the scales of a large dragon lies here.~
+WFlags   take shield~
+Values   8 0 0 0 0 0
+Stats    18 8000 100 0 0
+Affect       -1 -1 3 23 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2013
+Keywords prism wand~
+Type     wand~
+Short    a prism wand~
+Long     A wand made of a triangular prism twinkles in the dust.~
+Flags    glow magic~
+WFlags   take hold~
+Values   11 4 4 -1 0 0
+Stats    4 7070 20 0 0
+Spells   'colour spray'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2014
+Keywords shadow cloak~
+Type     armor~
+Short    a shadow cloak~
+Long     The shadows in the corner of the room seems strange ...~
+Flags    magic~
+WFlags   take about~
+Values   10 0 0 0 0 0
+Stats    1 4000 1 0 0
+Affect       -1 -1 -30 14 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     2015
+Keywords misty potion~
+Type     potion~
+Short    a misty potion~
+Long     A potion of swirling mist-like substance is here.~
+WFlags   take hold~
+Values   10 -1 -1 -1 0 0
+Stats    1 1000 10 0 0
+Spells   'pass door' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     2016
+Keywords templar templars sword wooden~
+Type     weapon~
+Short    a templar's sword~
+Long     A sword made of wood has been left here.~
+Flags    bless~
+WFlags   take wield~
+Values   0 2 6 3 0 0
+Stats    6 2900 50 0 0
+Affect       -1 -1 1 18 0
+#ENDOBJECT
+
+#ROOM
+Vnum     2048
+Name     Twisty cavern~
+Sector   field~
+Flags    dark indoors tunnel~
+Desc     The way twist this way and that and its all you can do to keep your head
+from spinning.  The air is very cold here and layers of ice on the wall.
+The sounds of metal on ice echo through the cavern. A side passage leads
+east and the main passage goes north and south.
+~
+#EXIT
+Direction east~
+ToRoom    2049
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2056
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2049
+Name     Striped tunnel~
+Sector   field~
+Flags    dark indoors tunnel~
+Desc     The walls of the tunnels have many brilliant colors in them from the
+various veins of crystals running in them.  An odd twinkling comes from
+the east.
+~
+#EXIT
+Direction east~
+ToRoom    2050
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2048
+#ENDEXIT
+
+Reset M 0 2006 7 2049
+#ENDROOM
+
+#ROOM
+Vnum     2050
+Name     Prism cave~
+Sector   mountain~
+Flags    indoors~
+Desc     The roof of this cave peaks over a hundred feet high making it one of
+the biggest in the catacombs.  Crystals of every color cast prismatic
+sprays of light everywhere.  The light from your lamp causes almost a
+blinding flare of brilliance as more light is added to the multi-colored
+twinkling phenomenon that exists here.  This is also the lair of the
+fabled and feared Prism Dragon.
+~
+#EXIT
+Direction east~
+ToRoom    2058
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2057
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2049
+#ENDEXIT
+
+Reset M 0 2016 1 2050
+  Reset E 1 2012 9 5
+  Reset E 1 2013 9 17
+#ENDROOM
+
+#ROOM
+Vnum     2051
+Name     Ruined monument~
+Sector   hills~
+Flags    dark indoors~
+Desc     A monument to a famous king once stood here. Not much is left to even
+signify that is was here at all.  A building of some sort can be entered
+through a basement to the east.  The southern gate of the grounds is to
+the south.
+~
+#EXIT
+Direction east~
+ToRoom    2052
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2054
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2052
+Name     Basement~
+Sector   hills~
+Flags    dark indoors~
+Desc     Its dark and it smells like. ...BATS down here!  All you see is a swirl
+of the darkness and lots of scratching bats madly flailing around. A set
+of stairs go up into the building and a broken window leads west.
+~
+#EXIT
+Direction west~
+ToRoom    2051
+#ENDEXIT
+
+Reset M 0 2001 6 2052
+Reset M 0 2001 6 2052
+Reset M 0 2001 6 2052
+Reset M 0 2013 1 2052
+  Reset E 1 2004 9 16
+Reset M 0 2001 6 2052
+Reset M 0 2001 6 2052
+Reset M 0 2001 6 2052
+#ENDROOM
+
+#ROOM
+Vnum     2053
+Name     Fresh graves~
+Sector   hills~
+Flags    dark indoors~
+Desc     The graves here seem very recent.  You notice many signs of digging and
+defilement.  There are piles of fresh bodies here awaiting burial.  A
+strange sense of evil magic from the south makes the hairs on the back
+of your neck to stand on end!
+~
+#EXIT
+Direction south~
+ToRoom    2055
+#ENDEXIT
+
+Reset M 0 2004 4 2053
+Reset M 0 2004 4 2053
+Reset M 0 2011 4 2053
+#ENDROOM
+
+#ROOM
+Vnum     2054
+Name     Southern gate~
+Sector   field~
+Flags    dark indoors~
+Desc     A rusty gate here no longer keeps anyone out or in.  You see a lonely
+E/W passage to the south.  A little used trail winds east through a
+crack in the wall.
+~
+#EXIT
+Direction north~
+ToRoom    2051
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2066
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2059
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2055
+Name     Scene of ghastly horror~
+Sector   mountain~
+Flags    dark indoors~
+Desc     An army of undead creatures of all types are lined up patiently. Their
+leader is an evil demonoid necromancer.  His plans to use his army of
+undead to take over the world seem about ready to get underway.
+~
+#EXIT
+Direction north~
+ToRoom    2053
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2062
+#ENDEXIT
+
+Reset M 0 2004 4 2055
+Reset M 0 2004 4 2055
+Reset M 0 2014 1 2055
+  Reset E 1 2011 9 11
+#ENDROOM
+
+#ROOM
+Vnum     2056
+Name     Twisty passage~
+Sector   field~
+Flags    dark indoors tunnel~
+Desc     The passage bends north and east here.  To the east your not certain
+what lies ahead due to all the twists and turns you've made.  To the
+north is seems cold.
+~
+#EXIT
+Direction north~
+ToRoom    2048
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2057
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2057
+Name     Cross of caverns~
+Sector   field~
+Flags    dark indoors tunnel~
+Desc     A little-used cavern enters from the south. A passage twists away to
+the west.  An odd twinkling comes from the cave to the north.
+~
+#EXIT
+Direction north~
+ToRoom    2050
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2066
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2056
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2058
+Name     Lonely tunnel~
+Sector   field~
+Flags    dark indoors tunnel~
+Desc     Something indescribable makes you feel lonesome and sad here. Its just
+a feeling you get from this tunnel.  The tunnel east and west.
+~
+#EXIT
+Direction east~
+ToRoom    2059
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2050
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2059
+Name     Lonely tunnel~
+Sector   field~
+Flags    dark indoors tunnel~
+Desc     Something indescribable makes you feel lonesome and sad here. You see a
+gate to a burial ground to the north.  This lonesome tunnel sighs along
+west and east.
+~
+#EXIT
+Direction north~
+ToRoom    2054
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2060
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2058
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2060
+Name     Bend in the lonely tunnel~
+Sector   field~
+Flags    dark indoors tunnel~
+Desc     Something indescribable makes you feel lonesome and sad here. The
+tunnel bends west and south.
+~
+#EXIT
+Direction south~
+ToRoom    2061
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2059
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2061
+Name     Lonely tunnel~
+Sector   field~
+Flags    dark indoors tunnel~
+Desc     Something indescribable makes you feel lonesome and sad here. The very
+walls of the tunnel seems to groan.  to the north the tunnel bends and
+east is an intersection.
+~
+#EXIT
+Direction north~
+ToRoom    2060
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2062
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2062
+Name     Intersection~
+Sector   field~
+Flags    dark indoors tunnel~
+Desc     To the north you enter the burial grounds.  a trail of blood leads that
+direction.  Also you feel an ominous sense of evil magic from there.
+The tunnel to the west creaks and sighs as if alive.  To the south you
+smell a hint of fresh air.
+~
+#EXIT
+Direction north~
+ToRoom    2055
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2063
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2061
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2063
+Name     Tunnel~
+Sector   field~
+Flags    dark indoors tunnel~
+Desc     The tunnel heads north and south.  North you see an intersection and
+far to the south you sense light and smell a fresh breeze.
+~
+#EXIT
+Direction north~
+ToRoom    2062
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2064
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2064
+Name     Tunnel~
+Sector   field~
+Flags    dark indoors tunnel~
+Desc     The tunnel slopes noticeably down to the north and you sense the surface
+could be reached to the south.
+~
+#EXIT
+Direction north~
+ToRoom    2063
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2065
+#ENDEXIT
+
+Reset M 0 2003 2 2064
+#ENDROOM
+
+#ROOM
+Vnum     2065
+Name     Southern entrance to the catacombs~
+Sector   field~
+Flags    nomob~
+Desc     Through a trapdoor above you streams light.  Through a doorway to
+the south streams darkness.  A message has been scrawled upon the wall
+here.  The message reads:
+     Adventure for the strong yet calculating
+     Death for the weak and shallow
+     Treasure for the smart and lucky
+     Death for the stupid and accursed
+An ancient Glyph above the entrance keeps monsters from wandering up
+from the catacombs.
+~
+#EXIT
+Direction north~
+ToRoom    2064
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    6527
+Keywords  floorboard board~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 2065 4 1
+#ENDROOM
+
+#ROOM
+Vnum     2066
+Name     Unknown passage~
+Sector   field~
+Flags    dark nomob indoors tunnel~
+Desc     Oh dear you seem to have lost your way.  You look back from whence you
+came but there's no exit there anymore.  There are exits in other
+directions but you have a feeling that you are hopelessly lost.
+~
+#EXIT
+Direction east~
+ToRoom    2067
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2068
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2067
+Name     Unknown passage~
+Sector   field~
+Flags    dark nomob indoors tunnel~
+Desc     Oh dear you seem to have lost your way.  You look back from whence you
+came but there's no exit there anymore.  There are exits in other
+directions but you have a feeling that you are hopelessly lost.
+~
+#EXIT
+Direction south~
+ToRoom    2069
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2066
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2068
+Name     Unknown passage~
+Sector   field~
+Flags    dark nomob indoors tunnel~
+Desc     Oh dear you seem to have lost your way.  You look back from whence you
+came but there's no exit there anymore.  There are exits in other
+directions but you have a feeling that you are hopelessly lost.
+~
+#EXIT
+Direction north~
+ToRoom    2066
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2069
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     2069
+Name     Unknown passage~
+Sector   field~
+Flags    dark nomob indoors tunnel~
+Desc     Oh dear you seem to have lost your way.  You look back from whence you
+came but there's no exit there anymore.  There are exits in other
+directions but you have a feeling that you are hopelessly lost.
+~
+#EXIT
+Direction north~
+ToRoom    2067
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2068
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

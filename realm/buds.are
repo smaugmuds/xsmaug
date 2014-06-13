@@ -1,759 +1,962 @@
-#AREA Cannabis~
+#XSMAUGAREA
+#AREADATA
+Version      1
+Name         Buddies~
+Author       Garth~
+WeatherX     0
+WeatherY     0
+Ranges       40 60 65 65
+Economy      40 0
+ResetMsg     ~
+#ENDAREADATA
 
-#AUTHOR Garth~
-
-#RANGES
-40 60 65 65
-$
-
-#RESETMSG ~
-
-#FLAGS
-0 0
-
-#ECONOMY 40 0
-
-#MOBILES
-#30232
-cannabis sativa~
-Cannabis Sativa~
-The Mother of all Cannabis tempts your ability to resist.
+#MOBILE
+Vnum       30232
+Keywords   cannabis sativa~
+Short      Cannabis Sativa~
+Long       The Mother of all Cannabis tempts your ability to resist.
 ~
-This giant plant is covered with bud. It looks like it could
+Desc       This giant plant is covered with bud. It looks like it could
 smoke you.
 ~
-192 524424 -500 C
-55 0 0 0d0+0 0d0+0
-0 0
-8 8 2
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30233
-cannabis indica~
-Cannabis Indica~
-The Father of all Cannabis is the ultimate in plant evolution.
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc stayarea wimpy~
+Affected   detect_invis sanctuary flying~
+Stats1     -500 55 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30233
+Keywords   cannabis indica~
+Short      Cannabis Indica~
+Long       The Father of all Cannabis is the ultimate in plant evolution.
 ~
-The bud of this giant bush weighs its leaves to the ground.
+Desc       The bud of this giant bush weighs its leaves to the ground.
 It is a blend of beautiful orange, red, and blue hairs. Just a
 fraction of this plant would be enough to keep you happy for a year.
 ~
-66 524424 -500 C
-60 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30234
-small joint~
-A Small Joint~
-A small joint sits here smoking.
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   detect_invis sanctuary flying~
+Stats1     -500 60 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30234
+Keywords   small joint~
+Short      A Small Joint~
+Long       A small joint sits here smoking.
 ~
-This wrapping of reefer is just what you might need after a hard
+Desc       This wrapping of reefer is just what you might need after a hard
 day of work.
 ~
-192 557056 -350 C
-40 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30235
-blunt~
-A Blunt~
-An empty cigar skin looks filled with a green substance.
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea wimpy~
+Affected   sneak flying~
+Stats1     -350 40 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30235
+Keywords   blunt~
+Short      A Blunt~
+Long       An empty cigar skin looks filled with a green substance.
 ~
-What used to be a cigar is now filled with enough bud to get the
+Desc       What used to be a cigar is now filled with enough bud to get the
 owner 5 years.
 ~
-64 524288 -350 C
-46 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30236
-bowlful resinated bud~
-A Bowlful of Resinated Bud~
-A bowl of resinated bud looks like just the refill you need.
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   flying~
+Stats1     -350 46 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30236
+Keywords   bowlful resinated bud~
+Short      A Bowlful of Resinated Bud~
+Long       A bowl of resinated bud looks like just the refill you need.
 ~
-While not a large quanitity of weed, it's probably enough to get
+Desc       While not a large quanitity of weed, it's probably enough to get
 you by for an hour or two.
 ~
-192 524296 -250 C
-43 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30237
-dea agent~
-The DEA Agent~
-A DEA Agent flashes his badge and throws you against the wall.
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea wimpy~
+Affected   detect_invis flying~
+Stats1     -250 43 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30237
+Keywords   dea agent~
+Short      The DEA Agent~
+Long       A DEA Agent flashes his badge and throws you against the wall.
 ~
-This burly, buzzcutted fellow just joined the DEA after being fired
+Desc       This burly, buzzcutted fellow just joined the DEA after being fired
 from the ATF for shooting an innocent child. He's not the type to be
 messed with. Of course if you've been smoking any of this weed, you
 wouldn't really care.
 ~
-192 32776 350 C
-51 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30238
-smuggler~
-The Smuggler~
-A Smuggler is hiding from the DEA.
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea wimpy~
+Affected   detect_invis sneak~
+Stats1     350 51 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30238
+Keywords   smuggler~
+Short      The Smuggler~
+Long       A Smuggler is hiding from the DEA.
 ~
-A big Central American looks at you and says,
+Desc       A big Central American looks at you and says,
 "Hola amigo, muchos dinenos."
 ~
-576 98304 -300 C
-43 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30239
-munchies~
-The Munchies~
-You are starving!
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea train~
+Affected   sneak hide~
+Stats1     -300 43 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30239
+Keywords   munchies~
+Short      The Munchies~
+Long       You are starving!
 ~
-Just the sweet fragrance of the air is enough to give you
+Desc       Just the sweet fragrance of the air is enough to give you
 the munchies.
 ~
-96 10 0 C
-38 0 0 0d0+0 0d0+0
-0 0
-8 8 0
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30240
-tom petty~
-Tom Petty~
-Tom Petty stands here strumming a guitar.
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc aggressive stayarea~
+Affected   invisible detect_invis~
+Stats1     0 38 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30240
+Keywords   tom petty~
+Short      Tom Petty~
+Long       Tom Petty stands here strumming a guitar.
 ~
-He breaks into timeless verse singing,
+Desc       He breaks into timeless verse singing,
 "Lemme get to the point, lets roll another joint."
 ~
-64 557192 500 C
-57 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#0
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_invis sanctuary sneak flying~
+Stats1     500 57 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
 
-#OBJECTS
-#30232
-bong clear blue graffix glass~
-a 4 Foot Blue Glass Graffix(R)~
-A Beautiful Blue Glass Bong has a full bowl of weed.~
-~
-5 513 1 0
-0 1 6 12
-7 0 0
-A
-18 10
-A
-19 12
-A
-3 -1
-#30233
-hit joint~
-a Hit from the Joint~
-A few of these while playing and you're having more fun than most mudders!~
-~
-10 1 1 0
-40 29 36 28
-1 0 0
-#30234
-brownie weed~
-a Brownie~
-A Brownie cooked with THC oil awaits your bite.~
-~
-26 1 1 0
-30 1 56 77
-1 0 0
-#30235
-badge dea~
-a Badge~
-A badge with the letters DEA inscribed.~
-~
-9 64 1 0
-0 1 6 11
-2 0 0
-A
-1 2
-#30236
-bowl~
-a Bowl~
-An ornate bowl with a clear red chamber for resinating bud.~
-~
-5 1025 1 0
-0 1 6 12
-6 0 0
-A
-13 10
-A
-19 10
-A
-12 35
-#30237
-joint everburning~
-an Everburning Joint~
-The flame of this joint will never run out~
-~
-1 1 1 0
-0 1 -1 11
-5 0 0
-A
-12 25
-A
-2 2
-#30238
-plate wings~
-a plate of Buffalo Wings~
-When you've got the munchies, what better snack than buffalo wings.~
-~
-19 0 1 0
--1 1 6 11
-5 0 0
-#0
+#OBJECT
+Vnum     30232
+Keywords bong clear blue graffix glass~
+Type     weapon~
+Short    a 4 Foot Blue Glass Graffix(R)~
+Long     A Beautiful Blue Glass Bong has a full bowl of weed.~
+Flags    glow antigood~
+WFlags   take~
+Values   0 1 6 12 0 0
+Stats    7 0 0 0 0
+Affect       -1 -1 10 18 0
+Affect       -1 -1 12 19 0
+Affect       -1 -1 -1 3 0
+#ENDOBJECT
 
-#ROOMS
-#30232
-Welcome to Cannabis~
-This area is intended to be humorous.
+#OBJECT
+Vnum     30233
+Keywords hit joint~
+Type     potion~
+Short    a Hit from the Joint~
+Long     A few of these while playing and you're having more fun than most mudders!~
+Flags    glow~
+WFlags   take~
+Values   40 -1 -1 -1 0 0
+Stats    1 0 0 0 0
+Spells   'invis' 'sanctuary' 'heal'
+#ENDOBJECT
+
+#OBJECT
+Vnum     30234
+Keywords brownie weed~
+Type     pill~
+Short    a Brownie~
+Long     A Brownie cooked with THC oil awaits your bite.~
+Flags    glow~
+WFlags   take~
+Values   30 -1 -1 -1 0 0
+Stats    1 0 0 0 0
+Spells   'armor' 'fly' 'infravision'
+#ENDOBJECT
+
+#OBJECT
+Vnum     30235
+Keywords badge dea~
+Type     armor~
+Short    a Badge~
+Long     A badge with the letters DEA inscribed.~
+Flags    magic~
+WFlags   take~
+Values   0 1 6 11 0 0
+Stats    2 0 0 0 0
+Affect       -1 -1 2 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     30236
+Keywords bowl~
+Type     weapon~
+Short    a Bowl~
+Long     An ornate bowl with a clear red chamber for resinating bud.~
+Flags    glow antievil~
+WFlags   take~
+Values   0 1 6 12 0 0
+Stats    6 0 0 0 0
+Affect       -1 -1 10 13 0
+Affect       -1 -1 10 19 0
+Affect       -1 -1 35 12 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     30237
+Keywords joint everburning~
+Type     light~
+Short    an Everburning Joint~
+Long     The flame of this joint will never run out~
+Flags    glow~
+WFlags   take~
+Values   0 1 -1 11 0 0
+Stats    5 0 0 0 0
+Affect       -1 -1 25 12 0
+Affect       -1 -1 2 2 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     30238
+Keywords plate wings~
+Type     food~
+Short    a plate of Buffalo Wings~
+Long     When you've got the munchies, what better snack than buffalo wings.~
+WFlags   take~
+Values   -1 1 6 11 0 0
+Stats    5 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     30232
+Name     Welcome to Cannabis~
+Sector   inside~
+Flags    nomob~
+Desc     This area is intended to be humorous.
 Do not enter if you have a poor sense of humor or are under level 40.
 You have been warned. You try being creative after a few screwdrivers.
 ~
-0 4 0 0 0 0
-D0
-~
-~
-0 -1 30233 0
-D3
-~
-~
-0 -1 164 0
-S
-#30233
-Base of the Plant~
-You are at the base of a giant plant with leaves of seven points.
+#EXIT
+Direction north~
+ToRoom    30233
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30233
+Name     Base of the Plant~
+Sector   forest~
+Desc     You are at the base of a giant plant with leaves of seven points.
 You notice a sweet smell in the air, and begin to feel lightheaded
 as you inhale this tasty air. As you look up you see buds of orange,
 red, blue, green, and purple. The beautiful colors and the way you
 are feeling invite you to explore further.
 ~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 -1 0
-D2
-~
-~
-0 -1 30232 0
-D4
-~
-~
-0 -1 30234 0
-S
-#30234
-The Stem of the Plant~
-You are travelling up the stem of the plant. You see leaves of the
+#EXIT
+Direction south~
+ToRoom    30232
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30234
+#ENDEXIT
+
+Reset M 0 30234 1 30233
+  Reset G 1 30233 100
+Reset M 0 30239 1 30233
+  Reset G 1 30238 100
+#ENDROOM
+
+#ROOM
+Vnum     30234
+Name     The Stem of the Plant~
+Sector   forest~
+Desc     You are travelling up the stem of the plant. You see leaves of the
 plant to the left and the right of you. As before, the air is filled
 with a sweet fragrance which relaxes you and enhances your senses.
 ~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30250 0
-D1
-~
-~
-0 -1 30236 0
-D2
-~
-~
-0 -1 30253 0
-D3
-~
-~
-0 -1 30235 0
-D4
-~
-~
-0 -1 30241 0
-D5
-~
-~
-0 -1 30233 0
-S
-#30235
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction north~
+ToRoom    30250
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30236
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30253
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30235
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30241
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30233
+#ENDEXIT
+
+Reset M 0 30234 1 30234
+  Reset G 1 30233 100
+#ENDROOM
+
+#ROOM
+Vnum     30235
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D1
-~
-~
-0 -1 30234 0
-D3
-~
-~
-0 -1 30239 0
-S
-#30236
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction east~
+ToRoom    30234
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30239
+#ENDEXIT
+
+Reset M 0 30235 1 30235
+#ENDROOM
+
+#ROOM
+Vnum     30236
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D1
-~
-~
-0 -1 30237 0
-D3
-~
-~
-0 -1 30234 0
-S
-#30237
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction east~
+ToRoom    30237
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30234
+#ENDEXIT
+
+Reset M 0 30235 1 30236
+#ENDROOM
+
+#ROOM
+Vnum     30237
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D1
-~
-~
-0 -1 30238 0
-D3
-~
-~
-0 -1 30236 0
-S
-#30238
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction east~
+ToRoom    30238
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30236
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30238
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D3
-~
-~
-0 -1 30237 0
-S
-#30239
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction west~
+ToRoom    30237
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30239
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D1
-~
-~
-0 -1 30235 0
-D3
-~
-~
-0 -1 30240 0
-S
-#30240
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction east~
+ToRoom    30235
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30240
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30240
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D1
-~
-~
-0 -1 30239 0
-S
-#30241
-The Stem of the Plant~
-You are travelling up the stem of the plant. You see leaves of the
+#EXIT
+Direction east~
+ToRoom    30239
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30241
+Name     The Stem of the Plant~
+Sector   forest~
+Desc     You are travelling up the stem of the plant. You see leaves of the
 plant to the left and the right of you. As before, the air is filled
 with a sweet fragrance which relaxes you and enhances your senses.
 ~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30256 0
-D1
-~
-~
-0 -1 30244 0
-D2
-~
-~
-0 -1 30258 0
-D3
-~
-~
-0 -1 30242 0
-D4
-~
-~
-0 -1 30246 0
-D5
-~
-~
-0 -1 30234 0
-S
-#30242
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction north~
+ToRoom    30256
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30244
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30258
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30242
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30246
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30234
+#ENDEXIT
+
+Reset M 0 30240 1 30241
+  Reset E 1 30237 100 0
+#ENDROOM
+
+#ROOM
+Vnum     30242
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D1
-~
-~
-0 -1 30241 0
-D3
-~
-~
-0 -1 30243 0
-S
-#30243
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction east~
+ToRoom    30241
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30243
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30243
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D1
-~
-~
-0 -1 30242 0
-S
-#30244
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction east~
+ToRoom    30242
+#ENDEXIT
+
+Reset M 0 30236 1 30243
+  Reset G 1 30234 100
+#ENDROOM
+
+#ROOM
+Vnum     30244
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D1
-~
-~
-0 -1 30245 0
-D3
-~
-~
-0 -1 30241 0
-S
-#30245
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction east~
+ToRoom    30245
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30241
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30245
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D3
-~
-~
-0 -1 30244 0
-S
-#30246
-The Stem of the Plant~
-You are travelling up the stem of the plant. You see leaves of the
+#EXIT
+Direction west~
+ToRoom    30244
+#ENDEXIT
+
+Reset M 0 30237 1 30245
+  Reset E 1 30235 100 17
+#ENDROOM
+
+#ROOM
+Vnum     30246
+Name     The Stem of the Plant~
+Sector   forest~
+Desc     You are travelling up the stem of the plant. You see leaves of the
 plant to the left and the right of you. As before, the air is filled
 with a sweet fragrance which relaxes you and enhances your senses.
 ~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30260 0
-D1
-~
-~
-0 -1 30247 0
-D2
-~
-~
-0 -1 30261 0
-D3
-~
-~
-0 -1 30248 0
-D4
-~
-~
-0 -1 30249 0
-D5
-~
-~
-0 -1 30241 0
-S
-#30247
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction north~
+ToRoom    30260
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30247
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30261
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30248
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30249
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30241
+#ENDEXIT
+
+Reset M 0 30232 1 30246
+  Reset E 1 30236 100 16
+#ENDROOM
+
+#ROOM
+Vnum     30247
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D3
-~
-~
-0 -1 30246 0
-S
-#30248
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
+#EXIT
+Direction west~
+ToRoom    30246
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30248
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
 becoming stuck in the hairs of the plant. You look around and all
 you see is sheer beauty. If only real life could be this perfect.
 ~
-0 0 3 0 0 0
-D1
-~
-~
-0 -1 30246 0
-S
-#30249
-The Top of the Plant~
-You have reached the top this wonderful bundle of bud. You remember
+#EXIT
+Direction east~
+ToRoom    30246
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30249
+Name     The Top of the Plant~
+Sector   forest~
+Desc     You have reached the top this wonderful bundle of bud. You remember
 when you were young and you were told to say no to drugs. But were
 you ever told how they could expand your mind and give you fun new
 experiences?
 ~
-0 0 3 0 0 0
-D5
-~
-~
-0 -1 30246 0
-S
-#30250
-A Leaf of the Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30251 0
-D2
-~
-~
-0 -1 30234 0
-S
-#30251
-A Leaf of The Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30252 0
-D2
-~
-~
-0 -1 30250 0
-S
-#30252
-A Leaf of The Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D2
-~
-~
-0 -1 30251 0
-S
-#30253
-A Leaf of The Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30234 0
-D2
-~
-~
-0 -1 30254 0
-S
-#30254
-A Leaf of The Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30253 0
-D2
-~
-~
-0 -1 30255 0
-S
-#30255
-A Leaf of The Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30254 0
-S
-#30256
-A Leaf of The Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30257 0
-D2
-~
-~
-0 -1 30241 0
-S
-#30257
-A Leaf of The Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D2
-~
-~
-0 -1 30256 0
-S
-#30258
-A Leaf of The Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30241 0
-D2
-~
-~
-0 -1 30259 0
-S
-#30259
-A Leaf of The Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30258 0
-S
-#30260
-A Leaf of The Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D2
-~
-~
-0 -1 30246 0
-S
-#30261
-A Leaf of The Plant~
-You are travelling on the leaves of the plant. You feel yourself
-becoming stuck in the hairs of the plant. You look around and all
-you see is sheer beauty. If only real life could be this perfect.
-~
-0 0 3 0 0 0
-D0
-~
-~
-0 -1 30246 0
-S
-#0
+#EXIT
+Direction down~
+ToRoom    30246
+#ENDEXIT
 
-#RESETS
-M 1 30233 1 30249  Cannabis Indica to The Top of the Plant
-E 1 30232 100 16  ; -- Equip: #30232 a 4 Foot Blue Glass Graffix(R) (Wield)
-M 1 30232 1 30246  Cannabis Sativa to The Stem of the Plant
-E 1 30236 100 16  ; -- Equip: #30236 a Bowl (Wield)
-M 1 30240 1 30241  Tom Petty to The Stem of the Plant
-E 1 30237 100 0  ; -- Equip: #30237 an Everburning Joint (Light)
-M 1 30236 1 30256  A Bowlful of Resinated Bud to A Leaf of The Plant
-M 1 30236 1 30258  A Bowlful of Resinated Bud to A Leaf of The Plant
-M 1 30235 1 30236  A Blunt to A Leaf of the Plant
-M 1 30235 1 30235  A Blunt to A Leaf of the Plant
-M 1 30234 1 30233  A Small Joint to Base of the Plant
-G 1 30233 100 ; -- Give:  #30233 a Hit from the Joint
-M 1 30239 1 30233  The Munchies to Base of the Plant
-G 1 30238 100 ; -- Give:  #30238 a plate of Buffalo Wings
-M 1 30234 1 30234  A Small Joint to The Stem of the Plant
-G 1 30233 100 ; -- Give:  #30233 a Hit from the Joint
-M 1 30237 1 30252  The DEA Agent to A Leaf of The Plant
-E 1 30235 100 17  ; -- Equip: #30235 a Badge (Hold)
-M 1 30238 1 30255  The Smuggler to A Leaf of The Plant
-G 1 30234 100 ; -- Give:  #30234 a Brownie
-M 1 30237 1 30245  The DEA Agent to A Leaf of the Plant
-E 1 30235 100 17  ; -- Equip: #30235 a Badge (Hold)
-M 1 30236 1 30243  A Bowlful of Resinated Bud to A Leaf of the Plant
-G 1 30234 100 ; -- Give:  #30234 a Brownie
-S
+Reset M 0 30233 1 30249
+  Reset E 1 30232 100 16
+#ENDROOM
 
-#SPECIALS
-S
+#ROOM
+Vnum     30250
+Name     A Leaf of the Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction north~
+ToRoom    30251
+#ENDEXIT
 
-#$
+#EXIT
+Direction south~
+ToRoom    30234
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30251
+Name     A Leaf of The Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction north~
+ToRoom    30252
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30250
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30252
+Name     A Leaf of The Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction south~
+ToRoom    30251
+#ENDEXIT
+
+Reset M 0 30237 1 30252
+  Reset E 1 30235 100 17
+#ENDROOM
+
+#ROOM
+Vnum     30253
+Name     A Leaf of The Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction north~
+ToRoom    30234
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30254
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30254
+Name     A Leaf of The Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction north~
+ToRoom    30253
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30255
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30255
+Name     A Leaf of The Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction north~
+ToRoom    30254
+#ENDEXIT
+
+Reset M 0 30238 1 30255
+  Reset G 1 30234 100
+#ENDROOM
+
+#ROOM
+Vnum     30256
+Name     A Leaf of The Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction north~
+ToRoom    30257
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30241
+#ENDEXIT
+
+Reset M 0 30236 1 30256
+#ENDROOM
+
+#ROOM
+Vnum     30257
+Name     A Leaf of The Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction south~
+ToRoom    30256
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30258
+Name     A Leaf of The Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction north~
+ToRoom    30241
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30259
+#ENDEXIT
+
+Reset M 0 30236 1 30258
+#ENDROOM
+
+#ROOM
+Vnum     30259
+Name     A Leaf of The Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction north~
+ToRoom    30258
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30260
+Name     A Leaf of The Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction south~
+ToRoom    30246
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30261
+Name     A Leaf of The Plant~
+Sector   forest~
+Desc     You are travelling on the leaves of the plant. You feel yourself
+becoming stuck in the hairs of the plant. You look around and all
+you see is sheer beauty. If only real life could be this perfect.
+~
+#EXIT
+Direction north~
+ToRoom    30246
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

@@ -354,7 +354,7 @@ void load_deity(  )
    return;
 }
 
-void do_setdeity( CHAR_DATA* ch, const char* argument)
+void do_setdeity( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -908,7 +908,7 @@ void do_setdeity( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_showdeity( CHAR_DATA* ch, const char* argument)
+void do_showdeity( CHAR_DATA * ch, const char *argument )
 {
    DEITY_DATA *deity;
 
@@ -962,7 +962,7 @@ void do_showdeity( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_makedeity( CHAR_DATA* ch, const char* argument)
+void do_makedeity( CHAR_DATA * ch, const char *argument )
 {
    DEITY_DATA *deity;
 
@@ -990,7 +990,7 @@ void do_makedeity( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_devote( CHAR_DATA* ch, const char* argument)
+void do_devote( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    DEITY_DATA *deity;
@@ -1105,7 +1105,7 @@ void do_devote( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_deities( CHAR_DATA* ch, const char* argument)
+void do_deities( CHAR_DATA * ch, const char *argument )
 {
    DEITY_DATA *deity;
    int count = 0;
@@ -1139,7 +1139,7 @@ void do_deities( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_supplicate( CHAR_DATA* ch, const char* argument)
+void do_supplicate( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    char buf[MAX_STRING_LENGTH];

@@ -962,7 +962,7 @@ void stop_editing( CHAR_DATA * ch )
    ch->desc->connected = CON_PLAYING;
 }
 
-void do_goto( CHAR_DATA* ch, const char* argument)
+void do_goto( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    ROOM_INDEX_DATA *location, *in_room;
@@ -1086,7 +1086,7 @@ void do_goto( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mset( CHAR_DATA* ch, const char* argument)
+void do_mset( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -3108,7 +3108,7 @@ void do_mset( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_oset( CHAR_DATA* ch, const char* argument)
+void do_oset( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH], arg3[MAX_INPUT_LENGTH];
    char buf[MAX_STRING_LENGTH], outbuf[MAX_STRING_LENGTH];
@@ -4058,7 +4058,7 @@ void do_oset( CHAR_DATA* ch, const char* argument)
 }
 
 /* rdig command by Dracones */
-void do_rdig( CHAR_DATA* ch, const char* argument)
+void do_rdig( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    char tmpcmd[MAX_INPUT_LENGTH];
@@ -4153,7 +4153,7 @@ void do_rdig( CHAR_DATA* ch, const char* argument)
 }
 
 /* rgrid command by Dracones */
-void do_rgrid( CHAR_DATA* ch, const char* argument)
+void do_rgrid( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -4646,7 +4646,7 @@ void remove_room_affect( ROOM_INDEX_DATA * location, CHAR_DATA * ch, bool indexa
    return;
 }
 
-void do_redit( CHAR_DATA* ch, const char* argument)
+void do_redit( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -5421,7 +5421,7 @@ void do_redit( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_ocreate( CHAR_DATA* ch, const char* argument)
+void do_ocreate( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -5497,7 +5497,7 @@ void do_ocreate( CHAR_DATA* ch, const char* argument)
                     pObjIndex->short_descr, pObjIndex->vnum, pObjIndex->name );
 }
 
-void do_mcreate( CHAR_DATA* ch, const char* argument)
+void do_mcreate( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -5965,7 +5965,7 @@ void assign_area( CHAR_DATA * ch )
    }
 }
 
-void do_aassign( CHAR_DATA* ch, const char* argument)
+void do_aassign( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    AREA_DATA *tarea, *tmp;
@@ -6156,7 +6156,7 @@ bool DelOExtraProto( OBJ_INDEX_DATA * obj, const char *keywords )
    return TRUE;
 }
 
-void fwrite_fuss_exdesc( FILE * fpout, EXTRA_DESCR_DATA * ed )
+void fwrite_xsmaug_exdesc( FILE * fpout, EXTRA_DESCR_DATA * ed )
 {
    fprintf( fpout, "%s", "#EXDESC\n" );
    fprintf( fpout, "ExDescKey    %s~\n", ed->keyword );
@@ -6165,7 +6165,7 @@ void fwrite_fuss_exdesc( FILE * fpout, EXTRA_DESCR_DATA * ed )
    fprintf( fpout, "%s", "#ENDEXDESC\n\n" );
 }
 
-void fwrite_fuss_exit( FILE * fpout, EXIT_DATA * pexit )
+void fwrite_xsmaug_exit( FILE * fpout, EXIT_DATA * pexit )
 {
    fprintf( fpout, "%s", "#EXIT\n" );
    fprintf( fpout, "Direction %s~\n", strip_cr( dir_name[pexit->vdir] ) );
@@ -6185,7 +6185,7 @@ void fwrite_fuss_exit( FILE * fpout, EXIT_DATA * pexit )
    fprintf( fpout, "%s", "#ENDEXIT\n\n" );
 }
 
-void fwrite_fuss_affect( FILE * fp, AFFECT_DATA * paf )
+void fwrite_xsmaug_affect( FILE * fp, AFFECT_DATA * paf )
 {
    if( paf->type < 0 || paf->type >= num_skills )
    {
@@ -6273,7 +6273,7 @@ void save_reset_level( FILE * fpout, RESET_DATA * start_reset, const int level )
    }  /* end of looping through resets */
 }  /* end of save_reset_level */
 
-void fwrite_fuss_room( FILE * fpout, ROOM_INDEX_DATA * room, bool install )
+void fwrite_xsmaug_room( FILE * fpout, ROOM_INDEX_DATA * room, bool install )
 {
    EXIT_DATA *xit;
    AFFECT_DATA *paf;
@@ -6324,16 +6324,16 @@ void fwrite_fuss_room( FILE * fpout, ROOM_INDEX_DATA * room, bool install )
       if( IS_SET( xit->exit_info, EX_PORTAL ) ) /* don't fold portals */
          continue;
 
-      fwrite_fuss_exit( fpout, xit );
+      fwrite_xsmaug_exit( fpout, xit );
    }
 
    save_reset_level( fpout, room->first_reset, 0 );
 
    for( paf = room->first_permaffect; paf; paf = paf->next )
-      fwrite_fuss_affect( fpout, paf );
+      fwrite_xsmaug_affect( fpout, paf );
 
    for( ed = room->first_extradesc; ed; ed = ed->next )
-      fwrite_fuss_exdesc( fpout, ed );
+      fwrite_xsmaug_exdesc( fpout, ed );
 
    if( room->mudprogs )
    {
@@ -6343,7 +6343,7 @@ void fwrite_fuss_room( FILE * fpout, ROOM_INDEX_DATA * room, bool install )
    fprintf( fpout, "%s", "#ENDROOM\n\n" );
 }
 
-void fwrite_fuss_object( FILE * fpout, OBJ_INDEX_DATA * pObjIndex, bool install )
+void fwrite_xsmaug_object( FILE * fpout, OBJ_INDEX_DATA * pObjIndex, bool install )
 {
    AFFECT_DATA *paf;
    EXTRA_DESCR_DATA *ed;
@@ -6417,7 +6417,7 @@ void fwrite_fuss_object( FILE * fpout, OBJ_INDEX_DATA * pObjIndex, bool install 
             pObjIndex->level, pObjIndex->layers );
 
    for( paf = pObjIndex->first_affect; paf; paf = paf->next )
-      fwrite_fuss_affect( fpout, paf );
+      fwrite_xsmaug_affect( fpout, paf );
 
    switch ( pObjIndex->item_type )
    {
@@ -6446,7 +6446,7 @@ void fwrite_fuss_object( FILE * fpout, OBJ_INDEX_DATA * pObjIndex, bool install 
    }
 
    for( ed = pObjIndex->first_extradesc; ed; ed = ed->next )
-      fwrite_fuss_exdesc( fpout, ed );
+      fwrite_xsmaug_exdesc( fpout, ed );
 
    if( pObjIndex->mudprogs )
    {
@@ -6457,7 +6457,7 @@ void fwrite_fuss_object( FILE * fpout, OBJ_INDEX_DATA * pObjIndex, bool install 
    fprintf( fpout, "%s", "#ENDOBJECT\n\n" );
 }
 
-void fwrite_fuss_mobile( FILE * fpout, MOB_INDEX_DATA * pMobIndex, bool install )
+void fwrite_xsmaug_mobile( FILE * fpout, MOB_INDEX_DATA * pMobIndex, bool install )
 {
    SHOP_DATA *pShop;
    REPAIR_DATA *pRepair;
@@ -6589,7 +6589,7 @@ void fold_area( AREA_DATA * tarea, const char *fname, bool install )
 
    tarea->version = AREA_VERSION_WRITE;
 
-   fprintf( fpout, "%s", "#FUSSAREA\n" );
+   fprintf( fpout, "%s", "#XSMAUGAREA\n" );
 
    fwrite_area_header( fpout, tarea, install );
 
@@ -6597,21 +6597,21 @@ void fold_area( AREA_DATA * tarea, const char *fname, bool install )
    {
       if( !( pMobIndex = get_mob_index( vnum ) ) )
          continue;
-      fwrite_fuss_mobile( fpout, pMobIndex, install );
+      fwrite_xsmaug_mobile( fpout, pMobIndex, install );
    }
 
    for( vnum = tarea->low_o_vnum; vnum <= tarea->hi_o_vnum; ++vnum )
    {
       if( !( pObjIndex = get_obj_index( vnum ) ) )
          continue;
-      fwrite_fuss_object( fpout, pObjIndex, install );
+      fwrite_xsmaug_object( fpout, pObjIndex, install );
    }
 
    for( vnum = tarea->low_r_vnum; vnum <= tarea->hi_r_vnum; ++vnum )
    {
       if( !( pRoomIndex = get_room_index( vnum ) ) )
          continue;
-      fwrite_fuss_room( fpout, pRoomIndex, install );
+      fwrite_xsmaug_room( fpout, pRoomIndex, install );
    }
 
    fprintf( fpout, "%s", "#ENDAREA\n" );
@@ -7126,7 +7126,7 @@ void old_fold_area( AREA_DATA * tarea, char *filename, bool install )
    return;
 }
 
-void do_savearea( CHAR_DATA* ch, const char* argument)
+void do_savearea( CHAR_DATA * ch, const char *argument )
 {
    AREA_DATA *tarea;
    char filename[256];
@@ -7190,7 +7190,7 @@ void do_savearea( CHAR_DATA* ch, const char* argument)
    send_to_char( "Done.\r\n", ch );
 }
 
-void do_loadarea( CHAR_DATA* ch, const char* argument)
+void do_loadarea( CHAR_DATA * ch, const char *argument )
 {
    AREA_DATA *tarea;
    char filename[256];
@@ -7279,7 +7279,7 @@ void do_loadarea( CHAR_DATA* ch, const char* argument)
  *
  * NOTE: Use of this command is not recommended.		-Thoric
  */
-void do_unfoldarea( CHAR_DATA* ch, const char* argument)
+void do_unfoldarea( CHAR_DATA * ch, const char *argument )
 {
 
    set_char_color( AT_IMMORT, ch );
@@ -7298,7 +7298,7 @@ void do_unfoldarea( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_foldarea( CHAR_DATA* ch, const char* argument)
+void do_foldarea( CHAR_DATA * ch, const char *argument )
 {
    AREA_DATA *tarea;
 
@@ -7356,7 +7356,7 @@ void write_area_list( void )
  * A complicated to use command as it currently exists.		-Thoric
  * Once area->author and area->name are cleaned up... it will be easier
  */
-void do_installarea( CHAR_DATA* ch, const char* argument)
+void do_installarea( CHAR_DATA * ch, const char *argument )
 {
    AREA_DATA *tarea;
    char arg[MAX_INPUT_LENGTH];
@@ -7455,7 +7455,7 @@ void do_installarea( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_astat( CHAR_DATA* ch, const char* argument)
+void do_astat( CHAR_DATA * ch, const char *argument )
 {
    AREA_DATA *tarea;
    bool proto, found;
@@ -7551,7 +7551,7 @@ bool check_for_area_conflicts( AREA_DATA * carea, int lo, int hi )
    return FALSE;
 }
 
-void do_aset( CHAR_DATA* ch, const char* argument)
+void do_aset( CHAR_DATA * ch, const char *argument )
 {
    AREA_DATA *tarea;
    char arg1[MAX_INPUT_LENGTH];
@@ -7573,7 +7573,7 @@ void do_aset( CHAR_DATA* ch, const char* argument)
       send_to_char( "  name filename low_soft hi_soft low_hard hi_hard\r\n", ch );
       send_to_char( "  author credits resetmsg resetfreq flags\r\n", ch );
       if( get_trust( ch ) >= LEVEL_ASCENDANT )
-		send_to_char( "  weatherx weathery\r\n", ch );
+         send_to_char( "  weatherx weathery\r\n", ch );
       return;
    }
 
@@ -7673,7 +7673,7 @@ void do_aset( CHAR_DATA* ch, const char* argument)
    if( !str_cmp( arg2, "weatherx" ) )
    {
       if( get_trust( ch ) < LEVEL_ASCENDANT )
-         send_to_char( "I don't recognize that field. Please double check.\r\n",ch );
+         send_to_char( "I don't recognize that field. Please double check.\r\n", ch );
       else
       {
          tarea->weatherx = vnum;
@@ -7916,7 +7916,7 @@ void do_aset( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_rlist( CHAR_DATA* ch, const char* argument)
+void do_rlist( CHAR_DATA * ch, const char *argument )
 {
    ROOM_INDEX_DATA *room;
    int vnum;
@@ -7989,7 +7989,7 @@ void do_rlist( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_olist( CHAR_DATA* ch, const char* argument)
+void do_olist( CHAR_DATA * ch, const char *argument )
 {
    OBJ_INDEX_DATA *obj;
    int vnum;
@@ -8047,7 +8047,7 @@ void do_olist( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mlist( CHAR_DATA* ch, const char* argument)
+void do_mlist( CHAR_DATA * ch, const char *argument )
 {
    MOB_INDEX_DATA *mob;
    int vnum;
@@ -8121,7 +8121,7 @@ void mpedit( CHAR_DATA * ch, MPROG_DATA * mprg, int mptype, const char *argument
 /*
  * Mobprogram editing - cumbersome				-Thoric
  */
-void do_mpedit( CHAR_DATA* ch, const char* argument)
+void do_mpedit( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -8444,7 +8444,7 @@ void do_mpedit( CHAR_DATA* ch, const char* argument)
    do_mpedit( ch, "" );
 }
 
-void do_opedit( CHAR_DATA* ch, const char* argument)
+void do_opedit( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -8749,7 +8749,7 @@ void rpedit( CHAR_DATA * ch, MPROG_DATA * mprg, int mptype, char *argument )
    return;
 }
 
-void do_rpedit( CHAR_DATA* ch, const char* argument)
+void do_rpedit( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -9008,7 +9008,7 @@ void do_rpedit( CHAR_DATA* ch, const char* argument)
    do_rpedit( ch, "" );
 }
 
-void do_rdelete( CHAR_DATA* ch, const char* argument)
+void do_rdelete( CHAR_DATA * ch, const char *argument )
 {
    ROOM_INDEX_DATA *location;
 
@@ -9049,7 +9049,7 @@ void do_rdelete( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_odelete( CHAR_DATA* ch, const char* argument)
+void do_odelete( CHAR_DATA * ch, const char *argument )
 {
    OBJ_INDEX_DATA *obj;
    int vnum;
@@ -9097,7 +9097,7 @@ void do_odelete( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mdelete( CHAR_DATA* ch, const char* argument)
+void do_mdelete( CHAR_DATA * ch, const char *argument )
 {
    MOB_INDEX_DATA *mob;
    int vnum;
@@ -9161,7 +9161,7 @@ void mpcopy( MPROG_DATA * source, MPROG_DATA * destination )
    destination->next = NULL;
 }
 
-void do_opcopy( CHAR_DATA* ch, const char* argument)
+void do_opcopy( CHAR_DATA * ch, const char *argument )
 {
    char sobj[MAX_INPUT_LENGTH];
    char prog[MAX_INPUT_LENGTH];
@@ -9344,7 +9344,7 @@ void do_opcopy( CHAR_DATA* ch, const char* argument)
    do_opcopy( ch, "" );
 }
 
-void do_mpcopy( CHAR_DATA* ch, const char* argument)
+void do_mpcopy( CHAR_DATA * ch, const char *argument )
 {
    char smob[MAX_INPUT_LENGTH];
    char prog[MAX_INPUT_LENGTH];
@@ -9530,7 +9530,7 @@ void do_mpcopy( CHAR_DATA* ch, const char* argument)
    do_mpcopy( ch, "" );
 }
 
-void do_rpcopy( CHAR_DATA* ch, const char* argument)
+void do_rpcopy( CHAR_DATA * ch, const char *argument )
 {
    char sroom[MAX_INPUT_LENGTH];
    char prog[MAX_INPUT_LENGTH];
@@ -9765,7 +9765,7 @@ void RelDestroy( relation_type tp, void *actor, void *subject )
       }
 }
 
-void do_findexit( CHAR_DATA* ch, const char* argument)
+void do_findexit( CHAR_DATA * ch, const char *argument )
 {
    ROOM_INDEX_DATA *room;
    EXIT_DATA *pexit;
@@ -9858,7 +9858,7 @@ void do_findexit( CHAR_DATA* ch, const char* argument)
  * Modified to include a "reverse" option similar to Smaug 1.8, plus provided
  * a colorized version.  Slightly reworked the logic too. - Luc 06/2007
  */
-void do_alinks( CHAR_DATA* ch, const char* argument)
+void do_alinks( CHAR_DATA * ch, const char *argument )
 {
    static const char *dirs[] = { "n", "e", "s", "w", "u", "d", "ne", "nw", "se", "sw", "--" };
    char buf[MAX_INPUT_LENGTH];

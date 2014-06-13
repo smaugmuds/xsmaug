@@ -178,7 +178,7 @@ bool check_immortal_domain( CHAR_DATA * ch, const char *host )
       return FALSE;
 }
 
-void do_add_imm_host( CHAR_DATA* ch, const char* argument)
+void do_add_imm_host( CHAR_DATA * ch, const char *argument )
 {
    char type[MAX_INPUT_LENGTH];
    char arg1[MAX_INPUT_LENGTH];

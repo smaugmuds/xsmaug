@@ -57,9 +57,9 @@
 struct mssp_info *mssp_info;
 void fread_mssp_info( FILE * fp );
 bool write_to_descriptor( DESCRIPTOR_DATA * d, const char *txt, int length );
-void write_to_descriptor_printf( DESCRIPTOR_DATA * desc, const char *fmt, ... ) GNUC_FORMAT( 2, 3 ); 
+void write_to_descriptor_printf( DESCRIPTOR_DATA * desc, const char *fmt, ... ) GNUC_FORMAT( 2, 3 );
 
-void free_mssp_info( void )
+     void free_mssp_info( void )
 {
    DISPOSE( mssp_info->hostname );
    DISPOSE( mssp_info->contact );
@@ -366,13 +366,13 @@ void show_mssp( CHAR_DATA * ch )
    ch_printf( ch, "&zPay4Perks         &W%s\r\n", MSSP_YN( mssp_info->pay4perks ) );
    ch_printf( ch, "&zHiringBuilders    &W%s\r\n", MSSP_YN( mssp_info->hiringBuilders ) );
    ch_printf( ch, "&zHiringCoders      &W%s\r\n", MSSP_YN( mssp_info->hiringCoders ) );
-   ch_printf( ch, "&zAdultMaterial     &W%s\r\n", MSSP_YN( mssp_info->adultMaterial ));
-   ch_printf( ch, "&zMulticlassing     &W%s\r\n", MSSP_YN( mssp_info->multiclassing ));
-   ch_printf( ch, "&zNewbieFriendly    &W%s\r\n", MSSP_YN( mssp_info->newbieFriendly ));
-   ch_printf( ch, "&zPlayerCities      &W%s\r\n", MSSP_YN( mssp_info->playerCities ));
-   ch_printf( ch, "&zPlayerClans       &W%s\r\n", MSSP_YN( mssp_info->playerClans ));
-   ch_printf( ch, "&zPlayerCrafting    &W%s\r\n", MSSP_YN( mssp_info->playerCrafting ));
-   ch_printf( ch, "&zPlayerGuilds      &W%s\r\n", MSSP_YN( mssp_info->playerGuilds ));
+   ch_printf( ch, "&zAdultMaterial     &W%s\r\n", MSSP_YN( mssp_info->adultMaterial ) );
+   ch_printf( ch, "&zMulticlassing     &W%s\r\n", MSSP_YN( mssp_info->multiclassing ) );
+   ch_printf( ch, "&zNewbieFriendly    &W%s\r\n", MSSP_YN( mssp_info->newbieFriendly ) );
+   ch_printf( ch, "&zPlayerCities      &W%s\r\n", MSSP_YN( mssp_info->playerCities ) );
+   ch_printf( ch, "&zPlayerClans       &W%s\r\n", MSSP_YN( mssp_info->playerClans ) );
+   ch_printf( ch, "&zPlayerCrafting    &W%s\r\n", MSSP_YN( mssp_info->playerCrafting ) );
+   ch_printf( ch, "&zPlayerGuilds      &W%s\r\n", MSSP_YN( mssp_info->playerGuilds ) );
    ch_printf( ch, "&zEquipmentSystem   &W%s\r\n", mssp_info->equipmentSystem );
    ch_printf( ch, "&zMultiplaying      &W%s\r\n", mssp_info->multiplaying );
    ch_printf( ch, "&zPlayerKilling     &W%s\r\n", mssp_info->playerKilling );
@@ -382,7 +382,7 @@ void show_mssp( CHAR_DATA * ch )
    ch_printf( ch, "&zWorldOriginality  &W%s\r\n", mssp_info->worldOriginality );
 }
 
-void do_setmssp( CHAR_DATA *ch, const char* argument )
+void do_setmssp( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MIL];
    char **strptr = NULL;
@@ -407,7 +407,7 @@ void do_setmssp( CHAR_DATA *ch, const char* argument )
       send_to_char( "pay2play       pay4perks         hiring_builders    hiring_coders    adult_material\r\n", ch );
       send_to_char( "multiclassing  newbie_friendly   player_cities      player_clans     player_crafting\r\n", ch );
       send_to_char( "player_guilds  equipment_system  multiplaying       player_killing   quest_system\r\n", ch );
-      send_to_char( "roleplaying    training_system   world_originality\r\n", ch );    
+      send_to_char( "roleplaying    training_system   world_originality\r\n", ch );
 
       return;
    }
@@ -536,12 +536,12 @@ void do_setmssp( CHAR_DATA *ch, const char* argument )
       save_mssp_info(  );
       return;
    }
-   else if( !str_cmp( arg1, "multiplaying" ) || !str_cmp( arg1, "player_killing" ) ) 
+   else if( !str_cmp( arg1, "multiplaying" ) || !str_cmp( arg1, "player_killing" ) )
    {
-      if( strcmp( argument, "None" ) && strcmp( argument, "Restricted" ) && str_cmp( argument, "Full" ) ) 
+      if( strcmp( argument, "None" ) && strcmp( argument, "Restricted" ) && str_cmp( argument, "Full" ) )
       {
          ch_printf( ch, "Valid choices for %s are: None, Restricted or Full\r\n", arg1 );
-         return; 
+         return;
       }
       if( !str_cmp( arg1, "multiplaying" ) )
       {
@@ -559,7 +559,8 @@ void do_setmssp( CHAR_DATA *ch, const char* argument )
    }
    else if( !str_cmp( arg1, "training_system" ) || !str_cmp( arg1, "equipment_system" ) )
    {
-      if( strcmp( argument, "None" ) && strcmp( argument, "Level" ) && str_cmp( argument, "Skill" ) && str_cmp( argument, "Both" ))
+      if( strcmp( argument, "None" ) && strcmp( argument, "Level" ) && str_cmp( argument, "Skill" )
+          && str_cmp( argument, "Both" ) )
       {
          ch_printf( ch, "Valid choices for %s are: None, Level, Skill or Both\r\n", arg1 );
          return;
@@ -580,7 +581,8 @@ void do_setmssp( CHAR_DATA *ch, const char* argument )
    }
    else if( !str_cmp( arg1, "quest_system" ) )
    {
-      if( strcmp( argument, "None" ) && strcmp( argument, "Immortal Run" ) && str_cmp( argument, "Automated" ) && str_cmp( argument, "Integrated" ))
+      if( strcmp( argument, "None" ) && strcmp( argument, "Immortal Run" ) && str_cmp( argument, "Automated" )
+          && str_cmp( argument, "Integrated" ) )
       {
          ch_printf( ch, "Valid choices for %s are: None, Immortal Run, Automated or Integrated\r\n", arg1 );
          return;
@@ -593,7 +595,8 @@ void do_setmssp( CHAR_DATA *ch, const char* argument )
    }
    else if( !str_cmp( arg1, "roleplaying" ) )
    {
-      if( strcmp( argument, "None" ) && strcmp( argument, "Accepted" ) && str_cmp( argument, "Encouraged" ) && str_cmp( argument, "Enforced" ))
+      if( strcmp( argument, "None" ) && strcmp( argument, "Accepted" ) && str_cmp( argument, "Encouraged" )
+          && str_cmp( argument, "Enforced" ) )
       {
          ch_printf( ch, "Valid choices for %s are: None, Accepted, Encouraged or Enforced\r\n", arg1 );
          return;
@@ -606,7 +609,8 @@ void do_setmssp( CHAR_DATA *ch, const char* argument )
    }
    else if( !str_cmp( arg1, "world_originality" ) )
    {
-      if( strcmp( argument, "All Stock" ) && strcmp( argument, "Mostly Stock" ) && str_cmp( argument, "Mostly Original" ) && str_cmp( argument, "All Original" ))
+      if( strcmp( argument, "All Stock" ) && strcmp( argument, "Mostly Stock" ) && str_cmp( argument, "Mostly Original" )
+          && str_cmp( argument, "All Original" ) )
       {
          ch_printf( ch, "Valid choices for %s are: All Stock, Mostly Stock, Mostly Original or All Original\r\n", arg1 );
          return;
@@ -698,8 +702,8 @@ void send_mssp_data( DESCRIPTOR_DATA * d )
 
    mssp_reply( d, "HOSTNAME", "%s", mssp_info->hostname );
    mssp_reply( d, "PORT", "%d", port );
-   mssp_reply( d, "UPTIME", "%d", (int)mud_start_time );
-   mssp_reply( d, "PLAYERS", "%d", player_count( ) );
+   mssp_reply( d, "UPTIME", "%d", ( int )mud_start_time );
+   mssp_reply( d, "PLAYERS", "%d", player_count(  ) );
    mssp_reply( d, "CODEBASE", "%s", codebase );
    mssp_reply( d, "CONTACT", "%s", mssp_info->contact );
    mssp_reply( d, "CREATED", "%d", mssp_info->created );
@@ -760,13 +764,13 @@ void send_mssp_data( DESCRIPTOR_DATA * d )
 
 void write_to_descriptor_printf( DESCRIPTOR_DATA * desc, const char *fmt, ... )
 {
-    char buf[MAX_STRING_LENGTH * 2];
+   char buf[MAX_STRING_LENGTH * 2];
 
-    va_list args;
+   va_list args;
 
-    va_start( args, fmt );
-    vsprintf( buf, fmt, args );
-    va_end( args );
+   va_start( args, fmt );
+   vsprintf( buf, fmt, args );
+   va_end( args );
 
-    write_to_descriptor( desc, buf, strlen( buf ) );
+   write_to_descriptor( desc, buf, strlen( buf ) );
 }

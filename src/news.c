@@ -49,7 +49,7 @@ int top_news_type;
 const char *news_command_table[NEWS_MAX_TYPES];
 
 /* olc editnews command */
-void do_editnews( CHAR_DATA* ch, const char* argument)
+void do_editnews( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
 

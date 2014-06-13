@@ -869,7 +869,7 @@ void free_game( GAME_BOARD_DATA * board )
 
    if( board->player1 )
    {
-      if( CHAR_DATA *ch = get_char_world( supermob, board->player1 ) ) // Added for bugfix - Findecano 23/11/07
+      if( CHAR_DATA * ch = get_char_world( supermob, board->player1 ) ) // Added for bugfix - Findecano 23/11/07
       {
          ch_printf( ch, "The game has been stopped at %d total moves.\r\n", board->turn );
          ch->pcdata->game_board = NULL;
@@ -878,7 +878,7 @@ void free_game( GAME_BOARD_DATA * board )
 
    if( board->player2 )
    {
-      if( CHAR_DATA *ch = get_char_world( supermob, board->player2 ) ) // Added for bugfix - Findecano 23/11/07
+      if( CHAR_DATA * ch = get_char_world( supermob, board->player2 ) ) // Added for bugfix - Findecano 23/11/07
       {
          ch_printf( ch, "The game has been stopped at %d total moves.\r\n", board->turn );
          ch->pcdata->game_board = NULL;
@@ -889,7 +889,7 @@ void free_game( GAME_BOARD_DATA * board )
    DISPOSE( board );
 }
 
-void do_chess( CHAR_DATA* ch, const char* argument)
+void do_chess( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
 

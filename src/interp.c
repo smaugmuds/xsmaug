@@ -223,11 +223,11 @@ void write_watch_files( CHAR_DATA * ch, CMDTYPE * cmd, char *logline )
    return;
 }
 
-void interpret( CHAR_DATA * ch, const char* argument)
+void interpret( CHAR_DATA * ch, const char *argument )
 {
-    char* temp = strdup(argument);
-    interpret(ch, temp);
-    free(temp);
+   char *temp = strdup( argument );
+   interpret( ch, temp );
+   free( temp );
 }
 
 /*
@@ -811,13 +811,13 @@ int number_argument( const char *argument, char *arg )
    {
       if( *pdot == '.' )
       {
-         char* numPortion = (char*) malloc(pdot-argument+1);
-         memcpy(numPortion, argument, pdot-argument);
-         numPortion[pdot-argument] = '\0';
+         char *numPortion = ( char * )malloc( pdot - argument + 1 );
+         memcpy( numPortion, argument, pdot - argument );
+         numPortion[pdot - argument] = '\0';
 
          number = atoi( numPortion );
 
-         free(numPortion);
+         free( numPortion );
 
          strcpy( arg, pdot + 1 );
          return number;
@@ -830,7 +830,7 @@ int number_argument( const char *argument, char *arg )
 
 char *one_argument( char *argument, char *arg_first )
 {
-    return (char*) one_argument((const char*) argument, arg_first);
+   return ( char * )one_argument( ( const char * )argument, arg_first );
 }
 
 /*
@@ -914,7 +914,7 @@ const char *one_argument2( const char *argument, char *arg_first )
    return argument;
 }
 
-void do_timecmd( CHAR_DATA* ch, const char* argument)
+void do_timecmd( CHAR_DATA * ch, const char *argument )
 {
    struct timeval sttime;
    struct timeval etime;

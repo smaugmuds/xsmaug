@@ -22,6 +22,8 @@
 XSMAUG = xsmaug
 VERSION = 2.0
 
+ARCH    = $$(uname -m)
+
 CC      = g++
 #PROF    = -p
 
@@ -66,12 +68,12 @@ NEED_CRYPT = -lcrypt
 IMC = -DIMCSMAUG -DIMC
 
 # W_FLAGS = -Wall -Werror -Wshadow -Wformat-security -Wpointer-arith -Wcast-align -Wredundant-decls
-B_FLAGS = -Wno-all -Wno-cast-align
+B_FLAGS = -Wno-all -Wno-cast-align -Wno-unused-result
 
-C_FLAGS = -g2 $(B_FLAGS) $(W_FLAGS) $(SOLARIS_FLAG) $(PROF) $(EXPORT_SYMBOLS)
+C_FLAGS = -g2 -O -pipe $(B_FLAGS) $(W_FLAGS) $(SOLARIS_FLAG) $(PROF) $(EXPORT_SYMBOLS)
 L_FLAGS = $(PROF) $(SOLARIS_LINK) -lz $(NEED_DL)
 #D_FLAGS : For the DNS Slave process. No need in linking all the extra libs for this.
-D_FLAGS = -g2 -O $(PROF) $(SOLARIS_LINK)
+D_FLAGS = -g2 -O -pipe $(PROF) $(SOLARIS_LINK)
 
 C_FILES = act_comm.c act_info.c act_move.c act_obj.c act_wiz.c ban.c boards.c \
           build.c calendar.c chess.c clans.c color.c comm.c comments.c const.c db.c deity.c \
@@ -108,7 +110,7 @@ all:
 	@echo " # ------------------------------------------------------------------------ #"
 	@echo " # XSMAUG (C) 2014 by Antonio Cao [BuRZuM-iSHi]                             #"
 	@echo " # ------------------------------------------------------------------------ #"
-	@echo " #                             XSMAUG Build                                 #"
+	@echo " #                             XSMAUG $(ARCH) Build                            #"
 	@echo " ############################################################################"
 	@echo ""
 	mkdir -p $(C_OBJ)
@@ -133,7 +135,11 @@ $(XSMAUG): $(O_FILES)
 	chmod g+w $(O_FILES)
 
 clean:
-	@rm -f $(C_OBJ)/*.o ../$(XSMAUG).exe dependencies.d dns_resolv.exe *~ ../log/*
+	@rm -rfv $(C_OBJ) ../$(XSMAUG).exe dependencies.d dns_resolv.exe *~ ../realm/*.bak
+
+cleanall:
+	@rm -rfv $(C_OBJ) ../$(XSMAUG).exe dependencies.d dns_resolv.exe *~ ../log/* ../realm/*.bak ../realm/*~ ../hotboot/*
+
 
 else
 $(XSMAUG): $(O_FILES)
@@ -148,7 +154,11 @@ $(XSMAUG): $(O_FILES)
 	chmod g+w $(O_FILES)
 
 clean:
-	@rm -f $(C_OBJ)/*.o ../$(XSMAUG) dependencies.d ../dns_resolv *~ ../log/*
+	@rm -rfv $(C_OBJ) ../$(XSMAUG) dependencies.d ../dns_resolv *~ ../realm/*.bak
+
+cleanall:
+	@rm -rfv $(C_OBJ) ../$(XSMAUG) dependencies.d ../dns_resolv *~ ../log/* ../realm/*.bak ../realm/*~ ../hotboot/*
+
 endif
 
 dns: $(C_OBJ)/dns_resolv.o

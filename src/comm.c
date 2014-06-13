@@ -328,7 +328,7 @@ void cleanup_memory( void )
 
    // MSSP Info
    fprintf( stdout, "%s", "MSSP Info.\n" );
-   free_mssp_info();
+   free_mssp_info(  );
 
    /*
     * System Data 
@@ -634,12 +634,16 @@ int child_exit_status = 0;
 
 static void clean_up_child_process( int signal_number )
 {
-   /* Clean up the child process. */
+   /*
+    * Clean up the child process. 
+    */
    int status;
 
    wait( &status );
 
-   /* Store its exit status in a global variable. */
+   /*
+    * Store its exit status in a global variable. 
+    */
    child_exit_status = status;
 }
 
@@ -1083,7 +1087,7 @@ void new_descriptor( int new_desc )
    /*
     * MCCP Compression 
     */
-   write_to_buffer( dnew, (const char *)will_compress2_str, 0 );
+   write_to_buffer( dnew, ( const char * )will_compress2_str, 0 );
 
    /*
     * Send the greeting.
@@ -1518,7 +1522,7 @@ bool flush_buffer( DESCRIPTOR_DATA * d, bool fPrompt )
       }
 
       if( xIS_SET( ch->act, PLR_TELNET_GA ) )
-         write_to_buffer( d, (const char *)go_ahead_str, 0 );
+         write_to_buffer( d, ( const char * )go_ahead_str, 0 );
    }
 
    /*
@@ -1978,7 +1982,7 @@ void nanny_get_name( DESCRIPTOR_DATA * d, char *argument )
        * Old player
        */
       write_to_buffer( d, "Password: ", 0 );
-      write_to_buffer( d, (const char *)echo_off_str, 0 );
+      write_to_buffer( d, ( const char * )echo_off_str, 0 );
       d->connected = CON_GET_OLD_PASSWORD;
       return;
    }
@@ -2034,7 +2038,7 @@ void nanny_get_old_password( DESCRIPTOR_DATA * d, char *argument )
       return;
    }
 
-   write_to_buffer( d, (const char *)echo_on_str, 0 );
+   write_to_buffer( d, ( const char * )echo_on_str, 0 );
 
    if( check_playing( d, ch->pcdata->filename, TRUE ) )
       return;
@@ -2141,7 +2145,7 @@ void nanny_confirm_new_password( DESCRIPTOR_DATA * d, char *argument )
       return;
    }
 
-   write_to_buffer( d, (const char *)echo_on_str, 0 );
+   write_to_buffer( d, ( const char * )echo_on_str, 0 );
    write_to_buffer( d, "\r\nWhat is your sex (M/F/N)? ", 0 );
    d->connected = CON_GET_NEW_SEX;
 }
@@ -2991,8 +2995,8 @@ char *act_string( const char *format, CHAR_DATA * to, CHAR_DATA * ch, const void
                }
                else
                   i = should_upper ?
-                   !can_see( to, ch ) ? "It" : capitalize( he_she[URANGE( 0, ch->sex, 2 )] ) :
-                   !can_see( to, ch ) ? "it" : he_she[URANGE( 0, ch->sex, 2 )];
+                     !can_see( to, ch ) ? "It" : capitalize( he_she[URANGE( 0, ch->sex, 2 )] ) :
+                     !can_see( to, ch ) ? "it" : he_she[URANGE( 0, ch->sex, 2 )];
                break;
 
             case 'E':
@@ -3003,8 +3007,8 @@ char *act_string( const char *format, CHAR_DATA * to, CHAR_DATA * ch, const void
                }
                else
                   i = should_upper ?
-                   !can_see( to, vch ) ? "It" : capitalize( he_she[URANGE( 0, vch->sex, 2 )] ) :
-                   !can_see( to, vch ) ? "it" : he_she[URANGE( 0, vch->sex, 2 )];
+                     !can_see( to, vch ) ? "It" : capitalize( he_she[URANGE( 0, vch->sex, 2 )] ) :
+                     !can_see( to, vch ) ? "it" : he_she[URANGE( 0, vch->sex, 2 )];
                break;
 
             case 'm':
@@ -3015,8 +3019,8 @@ char *act_string( const char *format, CHAR_DATA * to, CHAR_DATA * ch, const void
                }
                else
                   i = should_upper ?
-                   !can_see( to, ch ) ? "It" : capitalize( him_her[URANGE( 0, ch->sex, 2 )] ) :
-                   !can_see( to, ch ) ? "it" : him_her[URANGE( 0, ch->sex, 2 )];
+                     !can_see( to, ch ) ? "It" : capitalize( him_her[URANGE( 0, ch->sex, 2 )] ) :
+                     !can_see( to, ch ) ? "it" : him_her[URANGE( 0, ch->sex, 2 )];
                break;
 
             case 'M':
@@ -3027,8 +3031,8 @@ char *act_string( const char *format, CHAR_DATA * to, CHAR_DATA * ch, const void
                }
                else
                   i = should_upper ?
-                   !can_see( to, vch ) ? "It" : capitalize( him_her[URANGE( 0, vch->sex, 2 )] ) :
-                   !can_see( to, vch ) ? "it" : him_her[URANGE( 0, vch->sex, 2 )];
+                     !can_see( to, vch ) ? "It" : capitalize( him_her[URANGE( 0, vch->sex, 2 )] ) :
+                     !can_see( to, vch ) ? "it" : him_her[URANGE( 0, vch->sex, 2 )];
                break;
 
             case 'n':
@@ -3059,7 +3063,7 @@ char *act_string( const char *format, CHAR_DATA * to, CHAR_DATA * ch, const void
                }
                else
                   i = should_upper ? ( ( !to || can_see_obj( to, obj1 ) ) ? capitalize( obj_short( obj1 ) ) : "Something" )
-                                     :( ( !to || can_see_obj( to, obj1 ) ) ? obj_short( obj1 ) : "something" );
+                     : ( ( !to || can_see_obj( to, obj1 ) ) ? obj_short( obj1 ) : "something" );
                break;
 
             case 'P':
@@ -3069,8 +3073,8 @@ char *act_string( const char *format, CHAR_DATA * to, CHAR_DATA * ch, const void
                   i = "something";
                }
                else
-                  i = should_upper ? (  !to || can_see_obj( to, obj2 ) ? capitalize( obj_short( obj2 ) ) : "Something" )
-                                     :(  !to || can_see_obj( to, obj2 ) ? obj_short( obj2 ) : "something" );
+                  i = should_upper ? ( !to || can_see_obj( to, obj2 ) ? capitalize( obj_short( obj2 ) ) : "Something" )
+                     : ( !to || can_see_obj( to, obj2 ) ? obj_short( obj2 ) : "something" );
                break;
 
             case 'q':
@@ -3087,9 +3091,9 @@ char *act_string( const char *format, CHAR_DATA * to, CHAR_DATA * ch, const void
                   i = should_upper ? "It" : "it";
                }
                else
-                  i = should_upper ? 
-                   !can_see( to, ch ) ? "It" : capitalize( his_her[URANGE( 0, ch->sex, 2 )] ) :
-                   !can_see( to, ch ) ? "it" : his_her[URANGE( 0, ch->sex, 2 )];
+                  i = should_upper ?
+                     !can_see( to, ch ) ? "It" : capitalize( his_her[URANGE( 0, ch->sex, 2 )] ) :
+                     !can_see( to, ch ) ? "it" : his_her[URANGE( 0, ch->sex, 2 )];
                break;
 
             case 'S':
@@ -3099,9 +3103,9 @@ char *act_string( const char *format, CHAR_DATA * to, CHAR_DATA * ch, const void
                   i = should_upper ? "It" : "it";
                }
                else
-                  i = should_upper ? 
-                   !can_see( to, vch ) ? "It" : capitalize( his_her[URANGE( 0, vch->sex, 2 )] ) :
-                   !can_see( to, vch ) ? "it" : his_her[URANGE( 0, vch->sex, 2 )];
+                  i = should_upper ?
+                     !can_see( to, vch ) ? "It" : capitalize( his_her[URANGE( 0, vch->sex, 2 )] ) :
+                     !can_see( to, vch ) ? "it" : his_her[URANGE( 0, vch->sex, 2 )];
                break;
 
             case 't':
@@ -3120,32 +3124,37 @@ char *act_string( const char *format, CHAR_DATA * to, CHAR_DATA * ch, const void
    mudstrlcpy( point, "\r\n", MSL );
    if( !DONT_UPPER )
    {
-      bool bUppercase = true;     //Always uppercase first letter
+      bool bUppercase = true; //Always uppercase first letter
       char *astr = buf;
-      for( char c = *astr; c; c= *++astr )
+      for( char c = *astr; c; c = *++astr )
       {
-          if( c == '&' )
-          {
-               //Color Code
-               c = *++astr;     //Read Color Code
-               if( c == '[' )
+         if( c == '&' )
+         {
+            //Color Code
+            c = *++astr;   //Read Color Code
+            if( c == '[' )
+            {
+               //Extended color code, skip until ']'
+               do
                {
-                    //Extended color code, skip until ']'
-                    do { c = *++astr; } while ( c && c != ']' );
+                  c = *++astr;
                }
+               while( c && c != ']' );
+            }
 
-               if( !c )
-                   break;
-          }
-          else if( bUppercase && isalpha( c ) )
-          {
-               *astr = toupper(c);
-               bUppercase = false;
-          }
-     }
+            if( !c )
+               break;
+         }
+         else if( bUppercase && isalpha( c ) )
+         {
+            *astr = toupper( c );
+            bUppercase = false;
+         }
+      }
    }
    return buf;
 }
+
 #undef NAME
 
 void act( short AType, const char *format, CHAR_DATA * ch, const void *arg1, const void *arg2, int type )
@@ -3159,8 +3168,8 @@ void act( short AType, const char *format, CHAR_DATA * ch, const void *arg1, con
 #define ACTF_CH   BV01
 #define ACTF_OBJ  BV02
 
-   const OBJ_DATA *obj1 = ( const OBJ_DATA * ) arg1;
-   const OBJ_DATA *obj2 = ( const OBJ_DATA * ) arg2;
+   const OBJ_DATA *obj1 = ( const OBJ_DATA * )arg1;
+   const OBJ_DATA *obj2 = ( const OBJ_DATA * )arg2;
    int flags1 = ACTF_NONE, flags2 = ACTF_NONE;
 
    /*
@@ -3305,8 +3314,8 @@ void act( short AType, const char *format, CHAR_DATA * ch, const void *arg1, con
       if( type == TO_CANSEE && ( to == ch ||
                                  ( !IS_IMMORTAL( to ) && !IS_NPC( ch ) && ( xIS_SET( ch->act, PLR_WIZINVIS )
                                                                             && ( get_trust( to ) <
-                                                                                 ( ch->pcdata ? ch->pcdata->
-                                                                                   wizinvis : 0 ) ) ) ) ) )
+                                                                                 ( ch->pcdata ? ch->
+                                                                                   pcdata->wizinvis : 0 ) ) ) ) ) )
          continue;
 
       if( IS_IMMORTAL( to ) )
@@ -3331,7 +3340,7 @@ void act( short AType, const char *format, CHAR_DATA * ch, const void *arg1, con
    return;
 }
 
-void do_name( CHAR_DATA* ch, const char* argument)
+void do_name( CHAR_DATA * ch, const char *argument )
 {
    char ucase_argument[MAX_STRING_LENGTH];
    char fname[1024];
@@ -3721,7 +3730,7 @@ void display_prompt( DESCRIPTOR_DATA * d )
                   break;
             }
             if( pstat != 0x80000000 )
-               snprintf( pbuf, MAX_STRING_LENGTH - strlen (buf), "%d", pstat );
+               snprintf( pbuf, MAX_STRING_LENGTH - strlen( buf ), "%d", pstat );
             pbuf += strlen( pbuf );
             break;
       }

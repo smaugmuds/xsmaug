@@ -61,8 +61,8 @@ struct holiday_data
 {
    HOLIDAY_DATA *next;
    HOLIDAY_DATA *prev;
-   short month;  /* Month the holiday falls in */
-   short day; /* Day the holiday falls on */
+   short month;   /* Month the holiday falls in */
+   short day;  /* Day the holiday falls on */
    char *name; /* Name of the holiday */
    char *announce;   /* Message to announce the holiday with */
 };

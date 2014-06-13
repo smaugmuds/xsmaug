@@ -38,7 +38,7 @@ const char *const hemisphere_name[] = {
 const char *const climate_names[] = {
    "rainforest", "savanna", "desert", "steppe", "chapparal",
    "grasslands", "deciduous_forest", "taiga", "tundra", "alpine",
-   "arctic" 
+   "arctic"
 };
 
 int get_hemisphere( char *type )
@@ -63,32 +63,32 @@ int get_climate( char *type )
 
 struct WeatherCell
 {
-   int climate;        // Climate flag for the cell
-   int hemisphere;     // Hemisphere flag for the cell
-   int temperature;    // Fahrenheit because I'm American, by god
-   int pressure;       // 0..100 for now, later change to barometric pressures
-   int cloudcover;     // 0..100, amount of clouds in the sky
-   int humidity;       // 0+
-   int precipitation;  // 0..100
-   int energy;			// 0..100 Storm Energy, chance of storm.
+   int climate;   // Climate flag for the cell
+   int hemisphere;   // Hemisphere flag for the cell
+   int temperature;  // Fahrenheit because I'm American, by god
+   int pressure;  // 0..100 for now, later change to barometric pressures
+   int cloudcover;   // 0..100, amount of clouds in the sky
+   int humidity;  // 0+
+   int precipitation;   // 0..100
+   int energy; // 0..100 Storm Energy, chance of storm.
    /*
-   *  Instead of a wind direction we use an X/Y speed
-   *  It makes the math below much simpler this way.
-   *  Its not hard to determine a basic cardinal direction from this
-   *  If you want to, a good rule of thumb is that if one directional
-   *  speed is more than double that of the other, ignore it; that is
-   *  if you have speed X = 15 and speed Y = 3, the wind is obviously
-   *  to the east.  If X = 15 and Y = 10, then its a south-east wind. 
-   */
-   int windSpeedX;    //  < 0 = west, > 0 = east
-   int windSpeedY;    //  < 0 = north, > 0 = south
+    *  Instead of a wind direction we use an X/Y speed
+    *  It makes the math below much simpler this way.
+    *  Its not hard to determine a basic cardinal direction from this
+    *  If you want to, a good rule of thumb is that if one directional
+    *  speed is more than double that of the other, ignore it; that is
+    *  if you have speed X = 15 and speed Y = 3, the wind is obviously
+    *  to the east.  If X = 15 and Y = 10, then its a south-east wind. 
+    */
+   int windSpeedX;   //  < 0 = west, > 0 = east
+   int windSpeedY;   //  < 0 = north, > 0 = south
 };
 
 /*
 *	This is the Weather Map.  It is a grid of cells representing X-mile square
 *	areas of weather
 */
-struct WeatherCell	weatherMap[WEATHER_SIZE_X][WEATHER_SIZE_Y];
+struct WeatherCell weatherMap[WEATHER_SIZE_X][WEATHER_SIZE_Y];
 
 /*
 *	This is the Weather Delta Map.  It is used to accumulate changes to be
@@ -101,9 +101,9 @@ struct WeatherCell	weatherMap[WEATHER_SIZE_X][WEATHER_SIZE_Y];
 *	Instead, we determine all the changes that should occur based on the current
 *	'snapshot' of weather, than apply them all at once!
 */
-struct WeatherCell	weatherDelta[WEATHER_SIZE_X][WEATHER_SIZE_Y];
+struct WeatherCell weatherDelta[WEATHER_SIZE_X][WEATHER_SIZE_Y];
 
-//	Set everything up with random non-equal values to prevent equalibrium
+// Set everything up with random non-equal values to prevent equalibrium
 void InitializeWeatherMap( void )
 {
    int x, y;
@@ -115,30 +115,30 @@ void InitializeWeatherMap( void )
       {
          struct WeatherCell *cell = &weatherMap[x][y];
 
-         cell->climate        = number_range( 0, 10 );
-         cell->hemisphere     = number_range( 0, 1 );
-         cell->temperature    = number_range( -30, 100 );	
-         cell->pressure       = number_range( 0, 100 );	
-         cell->cloudcover     = number_range( 0, 100 );	
-         cell->humidity       = number_range( 0, 100 );	
-         cell->precipitation  = number_range( 0, 100 );	
-         cell->windSpeedX     = number_range( -100, 100 );	
-         cell->windSpeedY     = number_range( -100, 100 );
-         cell->energy         = number_range( 0, 100 );
+         cell->climate = number_range( 0, 10 );
+         cell->hemisphere = number_range( 0, 1 );
+         cell->temperature = number_range( -30, 100 );
+         cell->pressure = number_range( 0, 100 );
+         cell->cloudcover = number_range( 0, 100 );
+         cell->humidity = number_range( 0, 100 );
+         cell->precipitation = number_range( 0, 100 );
+         cell->windSpeedX = number_range( -100, 100 );
+         cell->windSpeedY = number_range( -100, 100 );
+         cell->energy = number_range( 0, 100 );
       }
    }
 }
 
 //Used to determine whether a field exceeds a certain number, see Weather messages for examples
-bool ExceedsThreshold( int initial, int delta, int threshold ) 
+bool ExceedsThreshold( int initial, int delta, int threshold )
 {
    return ( ( initial < threshold ) && ( initial + delta >= threshold ) );
 }
 
 //Used to determin whether a field drops below a certain point, see Weather messages for examples.
 bool DropsBelowThreshold( int initial, int delta, int threshold )
-{ 
-   return ( ( initial >= threshold ) && ( initial + delta < threshold ) ); 
+{
+   return ( ( initial >= threshold ) && ( initial + delta < threshold ) );
 }
 
 //Send a message to a player in the area, assuming they are outside, and awake.
@@ -156,7 +156,7 @@ void WeatherMessage( const char *txt, int x, int y )
             if( d->connected == CON_PLAYING )
             {
                if( d->character && ( d->character->in_room->area == pArea ) && IS_OUTSIDE( d->character )
-                  && !NO_WEATHER_SECT( d->character->in_room->sector_type ) && IS_AWAKE( d->character ) )
+                   && !NO_WEATHER_SECT( d->character->in_room->sector_type ) && IS_AWAKE( d->character ) )
                   send_to_char( txt, d->character );
             }
          }
@@ -167,7 +167,7 @@ void WeatherMessage( const char *txt, int x, int y )
 // This is where we apply all the functions and determine what message to send.
 void ApplyDeltaChanges( void )
 {
-   int x, y; 
+   int x, y;
 
    for( y = 0; y < WEATHER_SIZE_Y; y++ )
    {
@@ -181,30 +181,38 @@ void ApplyDeltaChanges( void )
             if( DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe rain turns to snow as it continues to come down blizzard-like.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
-               WeatherMessage( "&BThe blizzard turns to a cold rain as it continues to come in a torrential downpour.&D\r\n", x, y );
+               WeatherMessage( "&BThe blizzard turns to a cold rain as it continues to come in a torrential downpour.&D\r\n",
+                               x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 91 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe rain begins to increase in intensity falling heavily and quickly.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe rain begins to increase in intensity falling heavily and quickly.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe rain begins to increase in intensity falling heavily and quickly.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 91 ) 
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
-               WeatherMessage( "&WThe rain changes over to snow as the intensity increases, making a blinding white wall.&D\r\n", x, y );
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 91 )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+               WeatherMessage
+                  ( "&WThe rain changes over to snow as the intensity increases, making a blinding white wall.&D\r\n", x,
+                    y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 91 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe heavy snow increases and freezes creating a blizzard.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 91 ) 
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 91 )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe snow changes over to rain as it pounds down heavier.&D\r\n&YThunder and lightning begin to shake the gound and light up the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe snow changes over to rain as it pounds down heavier.&D\r\n&YThunder and lightning begin to shake the gound and light up the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe snow changes over to rain as it pounds down heavier.&D\r\n", x, y );
+            else if( cell->temperature <= 32 )
+               WeatherMessage( "&WThe snow falls down fast and steady creating a blizzard.&D\r\n", x, y );
+            else if( isStormy( getEnergy( cell ) ) )
+               WeatherMessage
+                  ( "&BThe rain continues to pound the earth in a downpour.&D\r\n&YThunder and lightning boom and cackle and light up the sky.&D\r\n",
+                    x, y );
             else
-               if( cell->temperature <= 32 )
-                  WeatherMessage( "&WThe snow falls down fast and steady creating a blizzard.&D\r\n", x, y );
-               else if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe rain continues to pound the earth in a downpour.&D\r\n&YThunder and lightning boom and cackle and light up the sky.&D\r\n", x, y );
-               else
-                  WeatherMessage( "&BThe rain continues to pound the earth in a downpour.&D\r\n", x, y );
+               WeatherMessage( "&BThe rain continues to pound the earth in a downpour.&D\r\n", x, y );
 
 
          }
@@ -216,43 +224,52 @@ void ApplyDeltaChanges( void )
                WeatherMessage( "&BThe heavy snow turns into a heavy rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 90 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe heavy, fierce rain eases a bit, but continues to drum down.&D\r\n&YThunder and lightling light up the sky and shake the earth.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe heavy, fierce rain eases a bit, but continues to drum down.&D\r\n&YThunder and lightling light up the sky and shake the earth.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe heavy, fierce rain eases a bit, but still continues to drum down.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 90 )
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WAs the heavy, fierce rain lessens a bit, it changes over to a steady snow.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 90 )
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe snow lessens and changes to a heavy rain.&D\r\n&YThunder and lightning begin to shake the ground and light up the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe snow lessens and changes to a heavy rain.&D\r\n&YThunder and lightning begin to shake the ground and light up the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe snow lessens and changes to a heavy rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 90 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe intense snow lessens a little.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 80 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe rain increases in intensity.&D\r\n&YThunder and lightning begin to shake the ground and light up the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe rain increases in intensity.&D\r\n&YThunder and lightning begin to shake the ground and light up the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe rain increases in intensity.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 80 ) 
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 80 )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe rain changes over to snow and begins to come down even harder.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 80 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe snows falls harder creating a wall of white.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 80 ) 
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 80 )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe snow increases in intensity a bit and changes over to a heavy rain.&D\r\n&YThunder and lightning begin to shake the ground and light up the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe snow increases in intensity a bit and changes over to a heavy rain.&D\r\n&YThunder and lightning begin to shake the ground and light up the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe snow increases in intensity a bit and changes over to a heavy rain.&D\r\n", x, y );
+            else if( cell->temperature <= 32 )
+               WeatherMessage( "&WThe snow comes down heavy creating a wall of white.&D\r\n", x, y );
+            else if( isStormy( getEnergy( cell ) ) )
+               WeatherMessage
+                  ( "&BThe rain comes down in big, heavy droplets.&D\r\n&YThunder and lightning boom, cackle and light up the sky.&D\r\n",
+                    x, y );
             else
-               if( cell->temperature <= 32 )
-                  WeatherMessage( "&WThe snow comes down heavy creating a wall of white.&D\r\n", x, y );
-               else if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe rain comes down in big, heavy droplets.&D\r\n&YThunder and lightning boom, cackle and light up the sky.&D\r\n", x, y );
-               else
-                  WeatherMessage( "&BThe rain comes down in big, heavy droplets.&D\r\n", x, y );
+               WeatherMessage( "&BThe rain comes down in big, heavy droplets.&D\r\n", x, y );
          }
          else if( isPouring( getPrecip( cell ) ) )
          {
@@ -262,14 +279,16 @@ void ApplyDeltaChanges( void )
                WeatherMessage( "&BThe heavy snow changes over to a pouring rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 80 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe heavy rain lessens a little.&D\r\n&YThunder and lightning boom, cackle, and light up the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe heavy rain lessens a little.&D\r\n&YThunder and lightning boom, cackle, and light up the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe heavy rain lessens but still continues to pour down.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 80 )
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe rain lessens and turns to a heavy snow.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 80 )
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
                   WeatherMessage( "&BThe wall of snow lessens as it turns to a pouring rain.&D\r\n", x, y );
                else
@@ -278,27 +297,32 @@ void ApplyDeltaChanges( void )
                WeatherMessage( "&WThe intense snowfall lessens and continues coming down heavily.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 70 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe rain begins to pound down hard into a pouring rain.&D\r\n&YLightning flashes in the sky, accompanied shortly by booming thunder.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe rain begins to pound down hard into a pouring rain.&D\r\n&YLightning flashes in the sky, accompanied shortly by booming thunder.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe steady rain begins to come down harder.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 70 ) 
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 70 )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe heavy rain increases in intensity and changes over to snow.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 70 ) && cell->temperature <= 32 )
                WeatherMessage( "&The snow begins to fall more heavily and coat the ground quickly.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 70 ) 
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 70 )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe heavy snow changes over to rain and begins to pour down.&D\r\n&YLightning and thunder begin to light up the sky and shake the ground.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe heavy snow changes over to rain and begins to pour down.&D\r\n&YLightning and thunder begin to light up the sky and shake the ground.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe heavy snow changes over to rain and begins to pour down.&D\r\n", x, y );
+            else if( cell->temperature <= 32 )
+               WeatherMessage( "&WThe snow comes down heavily.&D\r\n", x, y );
+            else if( isStormy( getEnergy( cell ) ) )
+               WeatherMessage
+                  ( "&BThe rain pours down on the ground.&D\r\n&YLightning and thunder light up the sky and shake the ground.&D\r\n",
+                    x, y );
             else
-               if( cell->temperature <= 32 )
-                  WeatherMessage( "&WThe snow comes down heavily.&D\r\n", x, y );
-               else if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe rain pours down on the ground.&D\r\n&YLightning and thunder light up the sky and shake the ground.&D\r\n", x, y );
-               else
-                  WeatherMessage( "&BThe rain pours down on the ground.&D\r\n", x, y );
+               WeatherMessage( "&BThe rain pours down on the ground.&D\r\n", x, y );
          }
          else if( isRaingingHeavily( getPrecip( cell ) ) )
          {
@@ -308,43 +332,54 @@ void ApplyDeltaChanges( void )
                WeatherMessage( "&BThe steady snow changes over to a heavy rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 70 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe pouring rain lessens a little.&D\r\n&YLightning and thunder begin to light up the sky and shake the ground.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe pouring rain lessens a little.&D\r\n&YLightning and thunder begin to light up the sky and shake the ground.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe pouring rain lessens a little.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 70 )
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe pouring rain lessens but changes over to a steady snow.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 70 )
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe heavy snow changes over to a heavy rain.&D\r\n&YThunder cracks, and lightning flashes in the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe heavy snow changes over to a heavy rain.&D\r\n&YThunder cracks, and lightning flashes in the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe heavy snow lessens a bit and changes over to a steady rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 70 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe heavy snow lessens a bit to a steady snow.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 60 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe pouring rain increases in intensity.  Lightning and thunder begin to light up the sky and shake the ground.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe pouring rain increases in intensity.  Lightning and thunder begin to light up the sky and shake the ground.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe pouring rain begins to come down harder pounding the ground.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 60 ) 
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
-               WeatherMessage( "&WThe pouring rain begins to increase in intensity and change over to a heavy snow.&D\r\n", x, y );
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 60 )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+               WeatherMessage( "&WThe pouring rain begins to increase in intensity and change over to a heavy snow.&D\r\n",
+                               x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 60 ) && cell->temperature <= 32 )
-               WeatherMessage( "&WThe heavy snow increases in intensity creating a blanket of white on the ground.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 60 ) 
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+               WeatherMessage( "&WThe heavy snow increases in intensity creating a blanket of white on the ground.&D\r\n", x,
+                               y );
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 60 )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe steady snow changes over to an increasingly heavier rain.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe steady snow changes over to an increasingly heavier rain.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe steady snow changes over to an increasingly heavier rain.&D\r\n", x, y );
+            else if( cell->temperature <= 32 )
+               WeatherMessage( "&WSnow falls heavily down on the ground.&D\r\n", x, y );
+            else if( isStormy( getEnergy( cell ) ) )
+               WeatherMessage
+                  ( "&BRain falls heavily down on the ground.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n",
+                    x, y );
             else
-               if( cell->temperature <= 32 )
-                  WeatherMessage( "&WSnow falls heavily down on the ground.&D\r\n", x, y );
-               else if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BRain falls heavily down on the ground.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n", x, y );
-               else
-                  WeatherMessage( "&BRain falls heavily down on the ground.&D\r\n", x, y );
+               WeatherMessage( "&BRain falls heavily down on the ground.&D\r\n", x, y );
          }
          else if( isDownpour( getPrecip( cell ) ) )
          {
@@ -354,43 +389,55 @@ void ApplyDeltaChanges( void )
                WeatherMessage( "&BThe steady snow changes over to rain and lessens a bit.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 60 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe heavy rain lessens a bit.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe heavy rain lessens a bit.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe heavy rain lessens a bit.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 60 )
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
-               WeatherMessage( "&BThe heavy rain lessens a bit and changes over to snow covering the ground in a blanket of white.&D\r\n", x, y );
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+               WeatherMessage
+                  ( "&BThe heavy rain lessens a bit and changes over to snow covering the ground in a blanket of white.&D\r\n",
+                    x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 60 )
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe heavy snow lessens a bit as it changes over to a steady rain.&D\r\n&YLightning and thunder cackle, rattle, and light up the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe heavy snow lessens a bit as it changes over to a steady rain.&D\r\n&YLightning and thunder cackle, rattle, and light up the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe heavy snow lessens a bit as it changes over to a steady rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 60 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe heavy snow eases a bit.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 50 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe heavy snow eases up a bit as it changes over to a steady rain.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe heavy snow eases up a bit as it changes over to a steady rain.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe heavy snow eases up a bit as it changes over to a steady rain.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 50 ) 
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 50 )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe steady rain picks up and changes over to a heavy, steady snow.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 50 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe steady snow picks up a bit creating a blanket of white on the ground.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 50 ) 
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 50 )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe steady snow increases in intensity as it changes over to a pouring rain.&D\r\n&YLightning streaks accross the sky and thunder booms shaking the ground.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe steady snow increases in intensity as it changes over to a pouring rain.&D\r\n&YLightning streaks accross the sky and thunder booms shaking the ground.&D\r\n",
+                       x, y );
                else
-                  WeatherMessage( "&BThe steady snow increases in intensity as it changes over to a pouring rain.&D\r\n", x, y );
+                  WeatherMessage( "&BThe steady snow increases in intensity as it changes over to a pouring rain.&D\r\n", x,
+                                  y );
+            else if( cell->temperature <= 32 )
+               WeatherMessage( "&WSnow falls steadily down.&D\r\n", x, y );
+            else if( isStormy( getEnergy( cell ) ) )
+               WeatherMessage
+                  ( "&BThe rain pours down.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n", x,
+                    y );
             else
-               if( cell->temperature <= 32 )
-                  WeatherMessage( "&WSnow falls steadily down.&D\r\n", x, y );
-               else if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe rain pours down.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n", x, y );
-               else
-                  WeatherMessage( "&BThe rain pours down.&D\r\n", x, y );
+               WeatherMessage( "&BThe rain pours down.&D\r\n", x, y );
          }
          else if( isRainingSteadily( getPrecip( cell ) ) )
          {
@@ -400,43 +447,52 @@ void ApplyDeltaChanges( void )
                WeatherMessage( "&BThe steady snow changes over to a steady rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 50 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe intense rain eases a bit to a steady rain.&D\r\n&YLightning makes the sky glow while thunder booms constantly.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe intense rain eases a bit to a steady rain.&D\r\n&YLightning makes the sky glow while thunder booms constantly.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe intense rain eases a bit to a steady rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 50 )
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe pouring rain lessens a bit and changes over to a steady snow.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 50 )
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe blanket of snow lessens a bit as it changes over to a steady rain.&D\r\n&YLightning lights up the sky and thunder shakes the ground.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe blanket of snow lessens a bit as it changes over to a steady rain.&D\r\n&YLightning lights up the sky and thunder shakes the ground.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe blanket of snow lessens a bit as it changes over to a steady rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 50 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe blanket of snow eases up a bit to a steady snow.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 40 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe rain picks up in intensity.&D\r\n&YThunder shakes the ground and lightning illuminates the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe rain picks up in intensity.&D\r\n&YThunder shakes the ground and lightning illuminates the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe rain picks up in intensity.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 40 ) 
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 40 )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe rain picks up and changes over to a steady snow.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 40 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe snow picks up in intensity.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 40 ) 
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 40 )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe snow picks up in intensity as it changes over to a steady rain.&D\r\n&YLightning and thunder illuminate the sky and make the ground shake.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe snow picks up in intensity as it changes over to a steady rain.&D\r\n&YLightning and thunder illuminate the sky and make the ground shake.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe snow picks up a bit as it changes over to a steady rain.&D\r\n", x, y );
+            else if( cell->temperature <= 32 )
+               WeatherMessage( "&WThe snow falls steadily.&D\r\n", x, y );
+            else if( isStormy( getEnergy( cell ) ) )
+               WeatherMessage
+                  ( "&BThe rain falls steadily.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n",
+                    x, y );
             else
-               if( cell->temperature <= 32 )
-                  WeatherMessage( "&WThe snow falls steadily.&D\r\n", x, y );
-               else if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe rain falls steadily.&D\r\n&YThunder and lightning shake the ground and light up the sky.&D\r\n", x, y );
-               else
-                  WeatherMessage( "&BThe rain falls steadily.&D\r\n", x, y );
+               WeatherMessage( "&BThe rain falls steadily.&D\r\n", x, y );
          }
          else if( isRaining( getPrecip( cell ) ) )
          {
@@ -446,16 +502,20 @@ void ApplyDeltaChanges( void )
                WeatherMessage( "&BThe snow changes over to rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 40 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe steady rain eases up a bit.&D\r\n&YTightning and thunder illuminate the sky and shake the ground.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe steady rain eases up a bit.&D\r\n&YTightning and thunder illuminate the sky and shake the ground.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe steady rain eases up a bit.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 40 )
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe steady rain eases a bit as it changes over to snow.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 40 )
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe steady snow eases a bit as it changes over to rain.&D\r\n&YThunder and lightning begin to shake the ground and illuminate the sky.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe steady snow eases a bit as it changes over to rain.&D\r\n&YThunder and lightning begin to shake the ground and illuminate the sky.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe steady snow eases up a bit as it changes over to rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 40 ) && cell->temperature <= 32 )
@@ -465,24 +525,27 @@ void ApplyDeltaChanges( void )
                   WeatherMessage( "&BThe light rain picks up a bit.&D\r\n&YLightning illuminates the sky.&D\r\n", x, y );
                else
                   WeatherMessage( "&BThe light rain picks up a bit.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 30 ) 
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 30 )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe light rain picks up a bit as it changes over to snow.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 30 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe light snow picks up a bit.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 30 ) 
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 30 )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BThe light snow increases in intensity as it changes over to rain.&D\r\n&YThunder booms and shakes the ground.&D\r\n", x, y );
+                  WeatherMessage
+                     ( "&BThe light snow increases in intensity as it changes over to rain.&D\r\n&YThunder booms and shakes the ground.&D\r\n",
+                       x, y );
                else
                   WeatherMessage( "&BThe light snow increases in intensity as it changes over to rain.&D\r\n", x, y );
+            else if( cell->temperature <= 32 )
+               WeatherMessage( "&WSnow continues to fall from the sky.&D\r\n", x, y );
+            else if( isStormy( getEnergy( cell ) ) )
+               WeatherMessage
+                  ( "&BRain continues to fall from the sky.&D\r\n&YThunder and lightning boom, cackle, and shake the ground.&D\r\n",
+                    x, y );
             else
-               if( cell->temperature <= 32 )
-                  WeatherMessage( "&WSnow continues to fall from the sky.&D\r\n", x, y );
-               else if( isStormy( getEnergy( cell ) ) )
-                  WeatherMessage( "&BRain continues to fall from the sky.&D\r\n&YThunder and lightning boom, cackle, and shake the ground.&D\r\n", x, y );
-               else
-                  WeatherMessage( "&BRain continues to fall from the sky.&D\r\n", x, y );
+               WeatherMessage( "&BRain continues to fall from the sky.&D\r\n", x, y );
          }
          else if( isRainingLightly( getPrecip( cell ) ) )
          {
@@ -493,28 +556,27 @@ void ApplyDeltaChanges( void )
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 30 ) )
                WeatherMessage( "&BThe rain eases a bit creating a light rain falling.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 30 )
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe rain eases a bit and changes over to a light snow.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 30 )
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&BThe snow eases a bit as it changes over to a light rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 30 ) && cell->temperature <= 32 )
                WeatherMessage( "The snow eases up a bit to a light snow.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 20 ) )
                WeatherMessage( "&BThe drizzle picks up a bit to a light rain.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 20 ) 
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 20 )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe drizzle picks up a bit and changes over to a light snow.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 20 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe flurries pick up a bit to a light snow.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 20 ) 
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 20 )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&BThe flurries pick up a bit and change over to a light rain.&D\r\n", x, y );
+            else if( cell->temperature <= 32 )
+               WeatherMessage( "&WThe light snow continues to fall gently on the ground.&D\r\n", x, y );
             else
-               if( cell->temperature <= 32 )
-                  WeatherMessage( "&WThe light snow continues to fall gently on the ground.&D\r\n", x, y );
-               else
-                  WeatherMessage( "&BThe light rain continues to fall gently on the ground.&D\r\n", x, y );
+               WeatherMessage( "&BThe light rain continues to fall gently on the ground.&D\r\n", x, y );
          }
          else if( isDrizzling( getPrecip( cell ) ) )
          {
@@ -525,28 +587,27 @@ void ApplyDeltaChanges( void )
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 20 ) )
                WeatherMessage( "&BThe light rain eases up a bit to just a drizzle.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 20 )
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe light rain eases up a bit and changes over to a few flurries.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 20 )
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&BThe light snow eases up a bit and changes over to just a drizzle.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 20 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe light snow lessens to just a few flurries.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 10 ) )
                WeatherMessage( "&BThe mist picks up a bit to a drizzling rain.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 10 ) 
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 10 )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe mist picks up a bit and changes over to some flurries.&D\r\n", x, y );
             else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 10 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe scattered flakes pick up a bit to some flurries.&D\r\n", x, y );
-            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 10 ) 
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( ExceedsThreshold( cell->precipitation, delta->precipitation, 10 )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&BThe few scattered flakes pick up and change over to a drizzling rain.&D\r\n", x, y );
+            else if( cell->temperature <= 32 )
+               WeatherMessage( "&WFlurries of snow fall to the ground.&D\r\n", x, y );
             else
-               if( cell->temperature <= 32 )
-                  WeatherMessage( "&WFlurries of snow fall to the ground.&D\r\n", x, y );
-               else
-                  WeatherMessage( "&BA light drizzling rain falls to the ground.&D\r\n", x, y );
+               WeatherMessage( "&BA light drizzling rain falls to the ground.&D\r\n", x, y );
          }
          else if( isMisting( getPrecip( cell ) ) )
          {
@@ -556,19 +617,18 @@ void ApplyDeltaChanges( void )
                WeatherMessage( "&BThe few scattered snowflakes change over to a misting rain.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 10 ) )
                WeatherMessage( "&BThe drizzle lessens down to a light mist.&D\r\n", x, y );
-            else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 10 ) 
-               && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 10 )
+                     && DropsBelowThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&WThe drizzle lessens and changes over to just a few scattered snowflakes.&D\r\n", x, y );
             else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 10 ) && cell->temperature <= 32 )
                WeatherMessage( "&WThe flurries of snow lessen to just a few scattered snowflakes.&D\r\n", x, y );
-            else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 10 ) 
-               && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
+            else if( DropsBelowThreshold( cell->precipitation, delta->precipitation, 10 )
+                     && ExceedsThreshold( cell->temperature, delta->temperature, 32 ) )
                WeatherMessage( "&BThe flurries of snow lessen and change over to a light mist.&D\r\n", x, y );
+            else if( cell->temperature <= 32 )
+               WeatherMessage( "&WA few scattered snowflakes fall to the ground.&D\r\n", x, y );
             else
-               if( cell->temperature <= 32 )
-                  WeatherMessage( "&WA few scattered snowflakes fall to the ground.&D\r\n", x, y );
-               else
-                  WeatherMessage( "&BA light mist falls to the ground.&D\r\n", x, y );				
+               WeatherMessage( "&BA light mist falls to the ground.&D\r\n", x, y );
          }
          else
          {
@@ -589,7 +649,7 @@ void ApplyDeltaChanges( void )
                   WeatherMessage( "&wMany clouds cover the sky.&D\r\n", x, y );
             }
             else if( isPartlyCloudy( getCloudCover( cell ) ) )
-            {				
+            {
                if( ExceedsThreshold( cell->cloudcover, delta->cloudcover, 40 ) )
                   WeatherMessage( "&wMore clouds roll in making it partly cloudy.&D\r\n", x, y );
                else if( DropsBelowThreshold( cell->cloudcover, delta->cloudcover, 60 ) )
@@ -602,7 +662,8 @@ void ApplyDeltaChanges( void )
                if( ExceedsThreshold( cell->cloudcover, delta->cloudcover, 20 ) )
                   WeatherMessage( "&wA few clouds begin to roll into the sky.&D\r\n", x, y );
                else if( DropsBelowThreshold( cell->cloudcover, delta->cloudcover, 40 ) )
-                  WeatherMessage( "&wA few of the clouds begin to move out leaving only a few clouds left behind.&D\r\n", x, y );
+                  WeatherMessage( "&wA few of the clouds begin to move out leaving only a few clouds left behind.&D\r\n", x,
+                                  y );
                else
                   WeatherMessage( "&wA few clouds hover in the sky.&D\r\n", x, y );
             }
@@ -610,137 +671,139 @@ void ApplyDeltaChanges( void )
             {
                if( DropsBelowThreshold( cell->cloudcover, delta->cloudcover, 20 ) )
                   WeatherMessage( "&wThe few remaining clouds begin to roll out.&D\r\n", x, y );
-               else
-                  if( isSwelteringHeat( getTemp( cell ) ) )
-                  {
-                     if( ExceedsThreshold( cell->temperature, delta->temperature, 90 ) )
-                        WeatherMessage( "&OIt begins to warm up making the already intense heat almost unbearable.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&OThe heat is almost unbearable.&D\r\n", x, y );
-                  }
-                  else if( isVeryHot( getTemp( cell ) ) )
-                  { 
-                     if( ExceedsThreshold( cell->temperature, delta->temperature, 80 ) )
-                        WeatherMessage( "&OAs the temperature increases, the heat begins to become intense.&D\r\n", x, y );
-                     else if( DropsBelowThreshold( cell->temperature, delta->temperature, 90 ) )
-                        WeatherMessage( "&OThe unbearable heat eases a bit.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&OIt is very hot.&D\r\n", x, y );
-                  }
-                  else if( isHot( getTemp( cell ) ) )
-                  {
-                     if( ExceedsThreshold( cell->temperature, delta->temperature, 70 ) )
-                        WeatherMessage( "&OThe temperature rises making it quite hot.&D\r\n", x, y );
-                     else if( DropsBelowThreshold( cell->temperature, delta->temperature, 80 ) )
-                        WeatherMessage( "&OThe temperature lessens slightly, making it a little more bearable.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&OIt is hot.&D\r\n", x, y );
-                  }
-                  else if( isWarm( getTemp( cell ) ) )
-                  {
-                     if( ExceedsThreshold( cell->temperature, delta->temperature, 60 ) )
-                        WeatherMessage( "&OThe nice temperature heats up a little making it warm.&D\r\n", x, y );
-                     else if( DropsBelowThreshold( cell->temperature, delta->temperature, 70 ) )
-                        WeatherMessage( "&OThe heat becomes a little less intense making it warm.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&OIt is a little warm.&D\r\n", x, y );
-                  }
-                  else if( isTemperate( getTemp( cell ) ) )
-                  {
-                     if( ExceedsThreshold( cell->temperature, delta->temperature, 50 ) )
-                        WeatherMessage( "&OIt warms a little bit taking away the chill and making it nice and pleasant.&D\r\n", x, y );
-                     else if( DropsBelowThreshold( cell->temperature, delta->temperature, 60 ) )
-                        WeatherMessage( "&OThe heat eases and makes it nice and pleasant.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&OThe temperature is nice and pleasant.&D\r\n", x, y );
-                  }
-                  else if( isCool( getTemp( cell ) ) )
-                  {
-                     if( ExceedsThreshold( cell->temperature, delta->temperature, 40 ) )
-                        WeatherMessage( "&CThe chilly air warms up a bit leaving it cool.&D\r\n", x, y );
-                     else if( DropsBelowThreshold( cell->temperature, delta->temperature, 50 ) )
-                        WeatherMessage( "&CThe temperature drops leaving it a little cool.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&CThe temperature is cool.&D\r\n", x, y );
-                  }
-                  else if( isChilly( getTemp( cell ) ) )
-                  {
-                     if( ExceedsThreshold( cell->temperature, delta->temperature, 30 ) )
-                        WeatherMessage( "&CThe temperature rises a little bit but there is still a chill in the air.&D\r\n", x, y );
-                     else if( DropsBelowThreshold( cell->temperature, delta->temperature, 40 ) )
-                        WeatherMessage( "&CThe temperature drops as the air takes on a chilly feel.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&CIt is quite chilly.&D\r\n", x, y );
-                  }
-                  else if( isCold( getTemp( cell ) ) )
-                  {
-                     if( ExceedsThreshold( cell->temperature, delta->temperature, 20 ) )
-                        WeatherMessage( "&CThe frigid temperature warms up a tad making it chilly.&D\r\n", x, y );
-                     else if( DropsBelowThreshold( cell->temperature, delta->temperature, 30 ) )
-                        WeatherMessage( "&CThe temperature drops making it cold.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&CIt is cold.&D\r\n", x, y );
-                  }
-                  else if( isFrosty( getTemp( cell ) ) )
-                  {
-                     if( ExceedsThreshold( cell->temperature, delta->temperature, 10 ) )
-                        WeatherMessage( "&CThe freezing temperature warms up a bit leaving it frigid.&D\r\n", x, y );
-                     else if( DropsBelowThreshold( cell->temperature, delta->temperature, 20 ) )
-                        WeatherMessage( "&The cold temperature drops making it frigid.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&CThe temperate is very frigid.&D\r\n", x, y );
-                  }
-                  else if( isFreezing( getTemp( cell ) ) )
-                  {
-                     if( ExceedsThreshold( cell->temperature, delta->temperature, 0 ) )
-                        WeatherMessage( "&CThe freezing cold begins to warm up slightly.&D\r\n", x, y );
-                     else if( DropsBelowThreshold( cell->temperature, delta->temperature, 10 ) )
-                        WeatherMessage( "&CThe frigid temperature drops making it freezing.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&CIt is freezing cold.&D\r\n", x, y );
-                  }
-                  else if( isReallyCold( getTemp( cell ) ) )
-                  {
-                     if( DropsBelowThreshold( cell->temperature, delta->temperature, 0 ) )
-                        WeatherMessage( "&CThe temperature drops making the freezing cold worse.&D\r\n", x, y );
-                     else if( ExceedsThreshold( cell->temperature, delta->temperature, -10 ) )
-                        WeatherMessage( "&CThe temperature warms up the very cold air a little.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&CIt is really cold.&D\r\n", x, y );
-                  }
-                  else if( isVeryCold( getTemp( cell ) ) )
-                  {
-                     if( DropsBelowThreshold( cell->temperature, delta->temperature, -10 ) )
-                        WeatherMessage( "&CThe temperature drops making it all the more cold.&D\r\n", x, y );
-                     else if( ExceedsThreshold( cell->temperature, delta->temperature, -20 ) )
-                        WeatherMessage( "&CThe temperature rises making the unbearable cold a little better.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&CIt is very cold.&D\r\n", x, y );
-                  }
-                  else if( isExtremelyCold( getTemp( cell ) ) )
-                  {
-                     if( DropsBelowThreshold( cell->temperature, delta->temperature, -20 ) )
-                        WeatherMessage( "&CThe already very cold temperature drops making it unbearable.&D\r\n", x, y );
-                     else
-                        WeatherMessage( "&CIt is unbearablly cold.&D\r\n", x, y );
-                  }
+               else if( isSwelteringHeat( getTemp( cell ) ) )
+               {
+                  if( ExceedsThreshold( cell->temperature, delta->temperature, 90 ) )
+                     WeatherMessage( "&OIt begins to warm up making the already intense heat almost unbearable.&D\r\n", x,
+                                     y );
+                  else
+                     WeatherMessage( "&OThe heat is almost unbearable.&D\r\n", x, y );
+               }
+               else if( isVeryHot( getTemp( cell ) ) )
+               {
+                  if( ExceedsThreshold( cell->temperature, delta->temperature, 80 ) )
+                     WeatherMessage( "&OAs the temperature increases, the heat begins to become intense.&D\r\n", x, y );
+                  else if( DropsBelowThreshold( cell->temperature, delta->temperature, 90 ) )
+                     WeatherMessage( "&OThe unbearable heat eases a bit.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&OIt is very hot.&D\r\n", x, y );
+               }
+               else if( isHot( getTemp( cell ) ) )
+               {
+                  if( ExceedsThreshold( cell->temperature, delta->temperature, 70 ) )
+                     WeatherMessage( "&OThe temperature rises making it quite hot.&D\r\n", x, y );
+                  else if( DropsBelowThreshold( cell->temperature, delta->temperature, 80 ) )
+                     WeatherMessage( "&OThe temperature lessens slightly, making it a little more bearable.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&OIt is hot.&D\r\n", x, y );
+               }
+               else if( isWarm( getTemp( cell ) ) )
+               {
+                  if( ExceedsThreshold( cell->temperature, delta->temperature, 60 ) )
+                     WeatherMessage( "&OThe nice temperature heats up a little making it warm.&D\r\n", x, y );
+                  else if( DropsBelowThreshold( cell->temperature, delta->temperature, 70 ) )
+                     WeatherMessage( "&OThe heat becomes a little less intense making it warm.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&OIt is a little warm.&D\r\n", x, y );
+               }
+               else if( isTemperate( getTemp( cell ) ) )
+               {
+                  if( ExceedsThreshold( cell->temperature, delta->temperature, 50 ) )
+                     WeatherMessage( "&OIt warms a little bit taking away the chill and making it nice and pleasant.&D\r\n",
+                                     x, y );
+                  else if( DropsBelowThreshold( cell->temperature, delta->temperature, 60 ) )
+                     WeatherMessage( "&OThe heat eases and makes it nice and pleasant.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&OThe temperature is nice and pleasant.&D\r\n", x, y );
+               }
+               else if( isCool( getTemp( cell ) ) )
+               {
+                  if( ExceedsThreshold( cell->temperature, delta->temperature, 40 ) )
+                     WeatherMessage( "&CThe chilly air warms up a bit leaving it cool.&D\r\n", x, y );
+                  else if( DropsBelowThreshold( cell->temperature, delta->temperature, 50 ) )
+                     WeatherMessage( "&CThe temperature drops leaving it a little cool.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&CThe temperature is cool.&D\r\n", x, y );
+               }
+               else if( isChilly( getTemp( cell ) ) )
+               {
+                  if( ExceedsThreshold( cell->temperature, delta->temperature, 30 ) )
+                     WeatherMessage( "&CThe temperature rises a little bit but there is still a chill in the air.&D\r\n", x,
+                                     y );
+                  else if( DropsBelowThreshold( cell->temperature, delta->temperature, 40 ) )
+                     WeatherMessage( "&CThe temperature drops as the air takes on a chilly feel.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&CIt is quite chilly.&D\r\n", x, y );
+               }
+               else if( isCold( getTemp( cell ) ) )
+               {
+                  if( ExceedsThreshold( cell->temperature, delta->temperature, 20 ) )
+                     WeatherMessage( "&CThe frigid temperature warms up a tad making it chilly.&D\r\n", x, y );
+                  else if( DropsBelowThreshold( cell->temperature, delta->temperature, 30 ) )
+                     WeatherMessage( "&CThe temperature drops making it cold.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&CIt is cold.&D\r\n", x, y );
+               }
+               else if( isFrosty( getTemp( cell ) ) )
+               {
+                  if( ExceedsThreshold( cell->temperature, delta->temperature, 10 ) )
+                     WeatherMessage( "&CThe freezing temperature warms up a bit leaving it frigid.&D\r\n", x, y );
+                  else if( DropsBelowThreshold( cell->temperature, delta->temperature, 20 ) )
+                     WeatherMessage( "&The cold temperature drops making it frigid.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&CThe temperate is very frigid.&D\r\n", x, y );
+               }
+               else if( isFreezing( getTemp( cell ) ) )
+               {
+                  if( ExceedsThreshold( cell->temperature, delta->temperature, 0 ) )
+                     WeatherMessage( "&CThe freezing cold begins to warm up slightly.&D\r\n", x, y );
+                  else if( DropsBelowThreshold( cell->temperature, delta->temperature, 10 ) )
+                     WeatherMessage( "&CThe frigid temperature drops making it freezing.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&CIt is freezing cold.&D\r\n", x, y );
+               }
+               else if( isReallyCold( getTemp( cell ) ) )
+               {
+                  if( DropsBelowThreshold( cell->temperature, delta->temperature, 0 ) )
+                     WeatherMessage( "&CThe temperature drops making the freezing cold worse.&D\r\n", x, y );
+                  else if( ExceedsThreshold( cell->temperature, delta->temperature, -10 ) )
+                     WeatherMessage( "&CThe temperature warms up the very cold air a little.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&CIt is really cold.&D\r\n", x, y );
+               }
+               else if( isVeryCold( getTemp( cell ) ) )
+               {
+                  if( DropsBelowThreshold( cell->temperature, delta->temperature, -10 ) )
+                     WeatherMessage( "&CThe temperature drops making it all the more cold.&D\r\n", x, y );
+                  else if( ExceedsThreshold( cell->temperature, delta->temperature, -20 ) )
+                     WeatherMessage( "&CThe temperature rises making the unbearable cold a little better.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&CIt is very cold.&D\r\n", x, y );
+               }
+               else if( isExtremelyCold( getTemp( cell ) ) )
+               {
+                  if( DropsBelowThreshold( cell->temperature, delta->temperature, -20 ) )
+                     WeatherMessage( "&CThe already very cold temperature drops making it unbearable.&D\r\n", x, y );
+                  else
+                     WeatherMessage( "&CIt is unbearablly cold.&D\r\n", x, y );
+               }
             }
          }
          //Here we actually apply the changes making sure they stay within specific bounds
-         cell->temperature	= URANGE( -30, cell->temperature + delta->temperature, 100 );
-         cell->pressure		= URANGE( 0, cell->pressure + delta->pressure, 100 );
-         cell->cloudcover    = URANGE( 0, cell->cloudcover + delta->cloudcover, 100 );
-         cell->energy		= URANGE( 0, cell->energy + delta->energy, 100 );
-         cell->humidity		= URANGE( 0, cell->humidity + delta->humidity, 100 );
+         cell->temperature = URANGE( -30, cell->temperature + delta->temperature, 100 );
+         cell->pressure = URANGE( 0, cell->pressure + delta->pressure, 100 );
+         cell->cloudcover = URANGE( 0, cell->cloudcover + delta->cloudcover, 100 );
+         cell->energy = URANGE( 0, cell->energy + delta->energy, 100 );
+         cell->humidity = URANGE( 0, cell->humidity + delta->humidity, 100 );
          cell->precipitation = URANGE( 0, cell->precipitation + delta->precipitation, 100 );
-         cell->windSpeedX	= URANGE( -100, cell->windSpeedX + delta->windSpeedX, 100 );
-         cell->windSpeedY	= URANGE( -100, cell->windSpeedY + delta->windSpeedY, 100 );
+         cell->windSpeedX = URANGE( -100, cell->windSpeedX + delta->windSpeedX, 100 );
+         cell->windSpeedY = URANGE( -100, cell->windSpeedY + delta->windSpeedY, 100 );
       }
    }
 }
 
 void ClearWeatherDeltas( void )
-{	//  Clear delta map
+{  //  Clear delta map
    memset( weatherDelta, 0, sizeof( weatherDelta ) );
 }
 
@@ -750,62 +813,62 @@ void CalculateCellToCellChanges( void )
    int rand;
 
    /*
-   *  Randomly pick a cell to apply a random change to prevent equilibrium
-   */
+    *  Randomly pick a cell to apply a random change to prevent equilibrium
+    */
    x = number_range( 0, WEATHER_SIZE_X );
    y = number_range( 0, WEATHER_SIZE_Y );
 
-   struct    WeatherCell *randcell = &weatherMap[x][y]; // Weather Cell
+   struct WeatherCell *randcell = &weatherMap[x][y];  // Weather Cell
    rand = number_range( -10, 10 );
 
-   switch( dice( 1, 8 ) )
+   switch ( dice( 1, 8 ) )
    {
-   case 1:
-      randcell->cloudcover += rand;
-      break;
-   case 2:
-      randcell->energy += rand;
-      break;
-   case 3:
-      randcell->humidity += rand;
-      break;
-   case 4:
-      randcell->precipitation += rand;
-      break;
-   case 5:
-      randcell->pressure += rand;
-      break;
-   case 6:
-      randcell->temperature += rand;
-      break;
-   case 7:
-      randcell->windSpeedX += rand;
-      break;
-   case 8:
-      randcell->windSpeedY += rand;
-      break;
+      case 1:
+         randcell->cloudcover += rand;
+         break;
+      case 2:
+         randcell->energy += rand;
+         break;
+      case 3:
+         randcell->humidity += rand;
+         break;
+      case 4:
+         randcell->precipitation += rand;
+         break;
+      case 5:
+         randcell->pressure += rand;
+         break;
+      case 6:
+         randcell->temperature += rand;
+         break;
+      case 7:
+         randcell->windSpeedX += rand;
+         break;
+      case 8:
+         randcell->windSpeedY += rand;
+         break;
    }
 
 
 
 
    /*
-   *  Iterate over every cell and set up the changes
-   *  that will occur in that cell and it's neighbors
-   *  based on the weather
-   */
+    *  Iterate over every cell and set up the changes
+    *  that will occur in that cell and it's neighbors
+    *  based on the weather
+    */
    for( y = 0; y < WEATHER_SIZE_Y; y++ )
    {
       for( x = 0; x < WEATHER_SIZE_X; x++ )
       {
 
-         struct	WeatherCell *cell = &weatherMap[x][y];    //  Weather cell
-         struct	WeatherCell *delta = &weatherDelta[x][y]; //  Where we accumulate the changes to apply
+         struct WeatherCell *cell = &weatherMap[x][y];   //  Weather cell
+         struct WeatherCell *delta = &weatherDelta[x][y];   //  Where we accumulate the changes to apply
 
          /*
-         *  Here we force the system to take day/night into account
-         *  when determining temperature change.
-         */
+          *  Here we force the system to take day/night into account
+          *  when determining temperature change.
+          */
          if( ( time_info.sunlight == SUN_RISE ) || ( time_info.sunlight == SUN_LIGHT ) )
             delta->temperature += ( number_range( -1, 2 ) + ( ( ( getCloudCover( cell ) / 10 ) > 5 ) ? -1 : 1 ) );
          if( ( time_info.sunlight == SUN_SET ) || ( time_info.sunlight == SUN_DARK ) )
@@ -813,27 +876,27 @@ void CalculateCellToCellChanges( void )
 
          //  Precipitation drops humidity by 5% of precip level
          if( cell->precipitation > 40 )
-            delta->humidity -= ( cell->precipitation / 20 ); 
+            delta->humidity -= ( cell->precipitation / 20 );
          else
             delta->humidity += number_range( 0, 3 );
 
          //  Humidity and pressure can affect the precipitation level
          int humidityAndPressure = ( cell->humidity + cell->pressure );
          if( ( humidityAndPressure / 2 ) >= 60 )
-            delta->precipitation	+= ( cell->humidity / 10 );
+            delta->precipitation += ( cell->humidity / 10 );
          else if( ( humidityAndPressure / 2 ) < 60 && ( humidityAndPressure / 2 ) > 40 )
-            delta->precipitation	+= number_range( -2, 2 );
+            delta->precipitation += number_range( -2, 2 );
          else if( ( humidityAndPressure / 2 ) <= 40 )
-            delta->precipitation	-= ( cell->humidity / 5 );
+            delta->precipitation -= ( cell->humidity / 5 );
 
          //  Humidity and precipitation can affect the cloud cover
          int humidityAndPrecip = ( cell->humidity + cell->precipitation );
          if( ( humidityAndPrecip / 2 ) >= 60 )
-            delta->cloudcover	-= ( cell->humidity / 10 );
+            delta->cloudcover -= ( cell->humidity / 10 );
          else if( ( humidityAndPrecip / 2 ) < 60 && ( humidityAndPrecip / 2 ) > 40 )
-            delta->cloudcover	+= number_range( -2, 2 );
+            delta->cloudcover += number_range( -2, 2 );
          else if( ( humidityAndPrecip / 2 ) <= 40 )
-            delta->cloudcover	+= ( cell->humidity / 5 );
+            delta->cloudcover += ( cell->humidity / 5 );
 
 
          int totalPressure = cell->pressure;
@@ -861,46 +924,46 @@ void CalculateCellToCellChanges( void )
                struct WeatherCell *neighborDelta = &weatherDelta[nx][ny];
 
                /*
-               *  We'll apply wind changes here
-               *  Wind speeds up in a given direction based on pressure
+                *  We'll apply wind changes here
+                *  Wind speeds up in a given direction based on pressure
+                
+                *  1/4 of the pressure difference applied to wind speed
+                
+                *  Wind should move from higher pressure to lower pressure
+                *  and some of our pressure difference should go with it!
+                *  If we are pressure 60, and they are pressure 40
+                *  then with a difference of 20, lets make that a 4 mph
+                *  wind increase towards them!
+                *  So if they are west neighbor (dx < 0)
+                */
 
-               *  1/4 of the pressure difference applied to wind speed
-
-               *  Wind should move from higher pressure to lower pressure
-               *  and some of our pressure difference should go with it!
-               *  If we are pressure 60, and they are pressure 40
-               *  then with a difference of 20, lets make that a 4 mph
-               *  wind increase towards them!
-               *  So if they are west neighbor (dx < 0)
-               */
-
-               int	pressureDelta = cell->pressure - neighborCell->pressure;
+               int pressureDelta = cell->pressure - neighborCell->pressure;
                int windSpeedDelta = pressureDelta / 4;
 
-               if( dx != 0 )		//	Neighbor to east or west
-                  delta->windSpeedX += ( windSpeedDelta * dx );	//	dx = -1 or 1
-               if( dy != 0 )		//	Neighbor to north or south
-                  delta->windSpeedY += ( windSpeedDelta * dy );	//	dy = -1 or 1
+               if( dx != 0 )  // Neighbor to east or west
+                  delta->windSpeedX += ( windSpeedDelta * dx );   // dx = -1 or 1
+               if( dy != 0 )  // Neighbor to north or south
+                  delta->windSpeedY += ( windSpeedDelta * dy );   // dy = -1 or 1
 
-               totalPressure += neighborCell->pressure; ++numPressureCells;
+               totalPressure += neighborCell->pressure;
+               ++numPressureCells;
 
                //  Now GIVE them a bit of temperature and humidity change
                //  IF our wind is blowing towards them
-               int temperatureDelta =  ( cell->temperature - neighborCell->temperature );
+               int temperatureDelta = ( cell->temperature - neighborCell->temperature );
                temperatureDelta /= 16;
 
                int humidityDelta = cell->humidity - neighborCell->humidity;
                humidityDelta /= 16;
 
 
-               if(   ( cell->windSpeedX < 0 && dx < 0 )
-                  || ( cell->windSpeedX > 0 && dx > 0 )
-                  || ( cell->windSpeedY < 0 && dy < 0 )
-                  || ( cell->windSpeedY > 0 && dy > 0 ) )
+               if( ( cell->windSpeedX < 0 && dx < 0 )
+                   || ( cell->windSpeedX > 0 && dx > 0 )
+                   || ( cell->windSpeedY < 0 && dy < 0 ) || ( cell->windSpeedY > 0 && dy > 0 ) )
                {
-                  neighborDelta->temperature += temperatureDelta; 
+                  neighborDelta->temperature += temperatureDelta;
                   neighborDelta->humidity += humidityDelta;
-                  delta->temperature -= temperatureDelta; 
+                  delta->temperature -= temperatureDelta;
                   delta->humidity -= humidityDelta;
                }
                // Determine change in the energy of this particular Cell
@@ -911,11 +974,11 @@ void CalculateCellToCellChanges( void )
          //  Subtract because if positive means we are higher
          delta->pressure = ( ( totalPressure / numPressureCells ) - cell->pressure );
 
-         /* 
-         * Precipitation should screw with pressure to keep the system from
-         * reaching a balancing point.
-         */
-         if( cell->precipitation >= 70 ) 
+         /*
+          * Precipitation should screw with pressure to keep the system from
+          * reaching a balancing point.
+          */
+         if( cell->precipitation >= 70 )
             delta->pressure -= ( cell->pressure / 2 );
          else if( cell->precipitation < 70 && cell->precipitation > 30 )
             delta->pressure += number_range( -5, 5 );
@@ -930,292 +993,220 @@ void EnforceClimateConditions( void )
    int x, y;
 
    /*
-   * This function is used to enforce certain conditions to be upheld
-   * within cells.  The cells should have a climate set to them, which
-   * tells this function which conditions to enforce. Conditions are pretty
-   * straight forward, and tend to mesh with climate conditions around
-   * Earth.
-   */
+    * This function is used to enforce certain conditions to be upheld
+    * within cells.  The cells should have a climate set to them, which
+    * tells this function which conditions to enforce. Conditions are pretty
+    * straight forward, and tend to mesh with climate conditions around
+    * Earth.
+    */
    for( y = 0; y < WEATHER_SIZE_Y; y++ )
    {
       for( x = 0; x < WEATHER_SIZE_X; x++ )
       {
 
-         struct	WeatherCell *cell = &weatherMap[x][y];    //  Weather cell
-         struct	WeatherCell *delta = &weatherDelta[x][y];
+         struct WeatherCell *cell = &weatherMap[x][y];   //  Weather cell
+         struct WeatherCell *delta = &weatherDelta[x][y];
 
-         if( cell->climate == CLIMATE_RAINFOREST )  
+         if( cell->climate == CLIMATE_RAINFOREST )
          {
-            if(  cell->temperature < 80 ) 
+            if( cell->temperature < 80 )
                delta->temperature += 3;
             else if( cell->humidity < 50 )
                delta->humidity += 2;
          }
-         else if( cell->climate == CLIMATE_SAVANNA )  
+         else if( cell->climate == CLIMATE_SAVANNA )
          {
-            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->humidity > 0 ) 
+            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->humidity > 0 )
                delta->humidity += -5;
-            else if( cell->temperature < 60  )
+            else if( cell->temperature < 60 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->humidity < 50 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->humidity < 50 )
                delta->humidity += 5;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->humidity > 0 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->humidity > 0 )
                delta->humidity += -5;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->humidity < 50 ) 
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->humidity < 50 )
                delta->humidity += 5;
          }
-         else if( cell->climate == CLIMATE_DESERT )  
+         else if( cell->climate == CLIMATE_DESERT )
          {
-            if( ( time_info.sunlight == SUN_SET || time_info.sunlight == SUN_DARK ) && cell->temperature > 30 ) 
+            if( ( time_info.sunlight == SUN_SET || time_info.sunlight == SUN_DARK ) && cell->temperature > 30 )
                delta->temperature += -5;
             else if( ( time_info.sunlight == SUN_RISE || time_info.sunlight == SUN_LIGHT ) && cell->temperature < 64 )
                delta->temperature += 2;
-            else if(  cell->humidity > 10 ) 
+            else if( cell->humidity > 10 )
                delta->humidity += -2;
-            else if(  cell->pressure < 50 ) 
+            else if( cell->pressure < 50 )
                delta->pressure += 2;
          }
-         else if( cell->climate == CLIMATE_STEPPE )  
+         else if( cell->climate == CLIMATE_STEPPE )
          {
-            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 50 ) 
+            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 50 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature < 50 )
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature < 50 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 50 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 50 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature < 50 )
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature < 50 )
                delta->temperature += 2;
-            else if( cell->humidity > 60 ) 
+            else if( cell->humidity > 60 )
                delta->temperature += -2;
-            else if( cell->humidity < 30 ) 
+            else if( cell->humidity < 30 )
                delta->temperature += 2;
          }
-         else if( cell->climate == CLIMATE_CHAPPARAL )  
+         else if( cell->climate == CLIMATE_CHAPPARAL )
          {
-            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 50  ) 
+            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 50 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature < 75  )
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature < 75 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->humidity > 30 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->humidity > 30 )
                delta->humidity += -2;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->humidity < 30 ) 
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->humidity < 30 )
                delta->humidity += 2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 50  ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 50 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature < 75  )
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature < 75 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->humidity > 30 ) 
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->humidity > 30 )
                delta->humidity += -2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->humidity < 30 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->humidity < 30 )
                delta->humidity += 2;
          }
-         else if( cell->climate == CLIMATE_GRASSLANDS )  
+         else if( cell->climate == CLIMATE_GRASSLANDS )
          {
-            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 50  ) 
+            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 50 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature < 75  )
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature < 75 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->humidity > 40 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->humidity > 40 )
                delta->humidity += -2;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->humidity < 30 ) 
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->humidity < 30 )
                delta->humidity += 2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 50  ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 50 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature < 75  )
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature < 75 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->humidity > 40 ) 
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->humidity > 40 )
                delta->humidity += -2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->humidity < 30 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->humidity < 30 )
                delta->humidity += 2;
          }
-         else if( cell->climate == CLIMATE_DECIDUOUS )  
+         else if( cell->climate == CLIMATE_DECIDUOUS )
          {
-            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 40  ) 
+            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 40 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature < 65  )
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature < 65 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 40  ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 40 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature < 65  )
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature < 65 )
                delta->temperature += 2;
-            else if(  cell->humidity < 30 ) 
+            else if( cell->humidity < 30 )
                delta->humidity += 2;
          }
-         else if( cell->climate == CLIMATE_TAIGA )  
+         else if( cell->climate == CLIMATE_TAIGA )
          {
-            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 30 ) 
+            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 30 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature < 40 )
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature < 40 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 30 ) 
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 30 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 30 ) 
+            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 30 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->humidity < 50 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->humidity < 50 )
                delta->humidity += 2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->humidity > 20 ) 
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH && cell->humidity > 20 )
                delta->humidity += -2;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->humidity > 20 ) 
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->humidity > 20 )
                delta->humidity += -2;
-            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->humidity > 20 ) 
+            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_NORTH && cell->humidity > 20 )
                delta->humidity += -2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 30 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 30 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature < 40 )
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature < 40 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 30 ) 
+            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 30 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 30 ) 
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 30 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->humidity < 50 ) 
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->humidity < 50 )
                delta->humidity += 2;
-            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->humidity > 20 ) 
+            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_SOUTH && cell->humidity > 20 )
                delta->humidity += -2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->humidity > 20 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->humidity > 20 )
                delta->humidity += -2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->humidity > 20 ) 
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH && cell->humidity > 20 )
                delta->humidity += -2;
          }
-         else if( cell->climate == CLIMATE_TUNDRA )  
+         else if( cell->climate == CLIMATE_TUNDRA )
          {
-            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 20 ) 
+            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 20 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature < 50 )
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature < 50 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 25 ) 
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 25 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 25 ) 
+            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 25 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 20 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 20 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature < 50 )
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature < 50 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 25 ) 
+            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 25 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 25 ) 
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 25 )
                delta->temperature += -2;
          }
-         else if( cell->climate == CLIMATE_ALPINE )  
+         else if( cell->climate == CLIMATE_ALPINE )
          {
-            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 20 ) 
+            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 20 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 50 )
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 50 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 25 ) 
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 25 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_NORTH
-               && cell->temperature > 25 ) 
+            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 25 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 20 ) 
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 20 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 50 )
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 50 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 25 ) 
+            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 25 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH
-               && cell->temperature > 25 ) 
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 25 )
                delta->temperature += -2;
          }
-         else if( cell->climate == CLIMATE_ARCTIC )  
+         else if( cell->climate == CLIMATE_ARCTIC )
          {
-            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH 
-               && cell->temperature > -10 ) 
+            if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > -10 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH 
-               && cell->temperature > -10 ) 
+            else if( time_info.season == SEASON_WINTER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > -10 )
                delta->temperature += 3;
-            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_NORTH 
-               && cell->temperature > -10 ) 
+            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > -10 )
                delta->temperature += -3;
-            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_SOUTH 
-               && cell->temperature > -10 ) 
+            else if( time_info.season == SEASON_FALL && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > -10 )
                delta->temperature += 3;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH 
-               && cell->temperature < -5 )
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature < -5 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH 
-               && cell->temperature < -5 )
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature < -5 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH 
-               && cell->temperature > 10 )
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 10 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH 
-               && cell->temperature > 10 )
+            else if( time_info.season == SEASON_SUMMER && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 10 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH 
-               && cell->temperature < -5 )
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature < -5 )
                delta->temperature += 2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH 
-               && cell->temperature < -5 )
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature < -5 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH 
-               && cell->temperature > 10 )
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_NORTH && cell->temperature > 10 )
                delta->temperature += -2;
-            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH 
-               && cell->temperature > 10 )
+            else if( time_info.season == SEASON_SPRING && cell->hemisphere == HEMISPHERE_SOUTH && cell->temperature > 10 )
                delta->temperature += 2;
 
-            if( time_info.season == SEASON_WINTER ) 
+            if( time_info.season == SEASON_WINTER )
                delta->humidity += -1;
-            else if( time_info.season == SEASON_FALL ) 
+            else if( time_info.season == SEASON_FALL )
                delta->humidity += 1;
             else if( time_info.season == SEASON_SUMMER )
                delta->humidity += 2;
@@ -1240,518 +1231,518 @@ void RandomizeCells( void )
 {
    int x, y;
    /*
-   * This function came about because of the inexplicable ability
-   * of the system, to find its way around anything I coded, and
-   * still manage to completely throw itself off based on a single
-   * value reaching the Max or Min for that value.
-   * What this does:
-   * Every night at midnight(as per the single call to this function
-   * in time_update()) It will randomize the values in each cell, 
-   * based on hemisphere, climate, and season. 
-   */
+    * This function came about because of the inexplicable ability
+    * of the system, to find its way around anything I coded, and
+    * still manage to completely throw itself off based on a single
+    * value reaching the Max or Min for that value.
+    * What this does:
+    * Every night at midnight(as per the single call to this function
+    * in time_update()) It will randomize the values in each cell, 
+    * based on hemisphere, climate, and season. 
+    */
    for( y = 0; y < WEATHER_SIZE_Y; y++ )
    {
       for( x = 0; x < WEATHER_SIZE_X; x++ )
       {
 
-         struct	WeatherCell *cell = &weatherMap[x][y];    //  Weather cell
+         struct WeatherCell *cell = &weatherMap[x][y];   //  Weather cell
 
          if( cell->hemisphere == HEMISPHERE_NORTH )
          {
             if( time_info.season == SEASON_SPRING )
             {
-               if( cell->climate == CLIMATE_RAINFOREST )  
+               if( cell->climate == CLIMATE_RAINFOREST )
                {
-                  cell->temperature	= number_range( 70, 90 );	
-                  cell->pressure		= number_range( 30, 60 );	
-                  cell->cloudcover    = number_range( 50, 70 );	
-                  cell->humidity		= number_range( 70, 100 );	
-                  cell->precipitation	= number_range( 70, 100 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 70, 90 );
+                  cell->pressure = number_range( 30, 60 );
+                  cell->cloudcover = number_range( 50, 70 );
+                  cell->humidity = number_range( 70, 100 );
+                  cell->precipitation = number_range( 70, 100 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_SAVANNA )  
+               else if( cell->climate == CLIMATE_SAVANNA )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 20, 40 );	
-                  cell->humidity		= number_range( 60, 80 );	
-                  cell->precipitation	= number_range( 60, 80 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 20, 40 );
+                  cell->humidity = number_range( 60, 80 );
+                  cell->precipitation = number_range( 60, 80 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DESERT )  
+               else if( cell->climate == CLIMATE_DESERT )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 70, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 10 );	
-                  cell->precipitation	= number_range( 0, 10 );	
-                  cell->windSpeedX	= number_range( -10, 10 );	
-                  cell->windSpeedY	= number_range( -10, 10 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 70, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 10 );
+                  cell->precipitation = number_range( 0, 10 );
+                  cell->windSpeedX = number_range( -10, 10 );
+                  cell->windSpeedY = number_range( -10, 10 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_STEPPE )  
+               else if( cell->climate == CLIMATE_STEPPE )
                {
-                  cell->temperature	= number_range( 40, 70 );	
-                  cell->pressure		= number_range( 20, 40 );	
-                  cell->cloudcover    = number_range( 50, 70 );	
-                  cell->humidity		= number_range( 50, 70 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -30, 30 );	
-                  cell->windSpeedY	= number_range( -30, 30 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 40, 70 );
+                  cell->pressure = number_range( 20, 40 );
+                  cell->cloudcover = number_range( 50, 70 );
+                  cell->humidity = number_range( 50, 70 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -30, 30 );
+                  cell->windSpeedY = number_range( -30, 30 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_CHAPPARAL )  
+               else if( cell->climate == CLIMATE_CHAPPARAL )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 50, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 50, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_GRASSLANDS )  
+               else if( cell->climate == CLIMATE_GRASSLANDS )
                {
-                  cell->temperature	= number_range( 30, 50 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 30, 50 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DECIDUOUS )  
+               else if( cell->climate == CLIMATE_DECIDUOUS )
                {
-                  cell->temperature	= number_range( 45, 65 );	
-                  cell->pressure		= number_range( 20, 40 );	
-                  cell->cloudcover    = number_range( 40, 60 );	
-                  cell->humidity		= number_range( 40, 60 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 45, 65 );
+                  cell->pressure = number_range( 20, 40 );
+                  cell->cloudcover = number_range( 40, 60 );
+                  cell->humidity = number_range( 40, 60 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TAIGA )  
+               else if( cell->climate == CLIMATE_TAIGA )
                {
-                  cell->temperature	= number_range( 0, 30 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -50, 50 );	
-                  cell->windSpeedY	= number_range( -50, 50 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 0, 30 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -50, 50 );
+                  cell->windSpeedY = number_range( -50, 50 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TUNDRA )  
+               else if( cell->climate == CLIMATE_TUNDRA )
                {
-                  cell->temperature	= number_range( 10, 40 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 10, 40 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ALPINE )  
+               else if( cell->climate == CLIMATE_ALPINE )
                {
-                  cell->temperature	= number_range( 20, 50 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 60, 80 );	
-                  cell->humidity		= number_range( 50, 70 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 20, 50 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 60, 80 );
+                  cell->humidity = number_range( 50, 70 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ARCTIC )  
+               else if( cell->climate == CLIMATE_ARCTIC )
                {
-                  cell->temperature	= number_range( 0, 20 );	
-                  cell->pressure		= number_range( 85, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 0, 20 );
+                  cell->pressure = number_range( 85, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
             }
             else if( time_info.season == SEASON_SUMMER )
             {
-               if( cell->climate == CLIMATE_RAINFOREST )  
+               if( cell->climate == CLIMATE_RAINFOREST )
                {
-                  cell->temperature	= number_range( 70, 90 );	
-                  cell->pressure		= number_range( 30, 60 );	
-                  cell->cloudcover    = number_range( 50, 70 );	
-                  cell->humidity		= number_range( 70, 100 );	
-                  cell->precipitation	= number_range( 70, 100 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 70, 90 );
+                  cell->pressure = number_range( 30, 60 );
+                  cell->cloudcover = number_range( 50, 70 );
+                  cell->humidity = number_range( 70, 100 );
+                  cell->precipitation = number_range( 70, 100 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_SAVANNA )  
+               else if( cell->climate == CLIMATE_SAVANNA )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 20, 40 );	
-                  cell->humidity		= number_range( 60, 80 );	
-                  cell->precipitation	= number_range( 60, 80 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 20, 40 );
+                  cell->humidity = number_range( 60, 80 );
+                  cell->precipitation = number_range( 60, 80 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DESERT )  
+               else if( cell->climate == CLIMATE_DESERT )
                {
-                  cell->temperature	= number_range( 80, 100 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 10 );	
-                  cell->precipitation	= number_range( 0, 10 );	
-                  cell->windSpeedX	= number_range( -10, 10 );	
-                  cell->windSpeedY	= number_range( -10, 10 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 80, 100 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 10 );
+                  cell->precipitation = number_range( 0, 10 );
+                  cell->windSpeedX = number_range( -10, 10 );
+                  cell->windSpeedY = number_range( -10, 10 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_STEPPE )  
+               else if( cell->climate == CLIMATE_STEPPE )
                {
-                  cell->temperature	= number_range( 70, 90 );	
-                  cell->pressure		= number_range( 70, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -30, 30 );	
-                  cell->windSpeedY	= number_range( -30, 30 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 70, 90 );
+                  cell->pressure = number_range( 70, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -30, 30 );
+                  cell->windSpeedY = number_range( -30, 30 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_CHAPPARAL )  
+               else if( cell->climate == CLIMATE_CHAPPARAL )
                {
-                  cell->temperature	= number_range( 80, 100 );	
-                  cell->pressure		= number_range( 50, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 80, 100 );
+                  cell->pressure = number_range( 50, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_GRASSLANDS )  
+               else if( cell->climate == CLIMATE_GRASSLANDS )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DECIDUOUS )  
+               else if( cell->climate == CLIMATE_DECIDUOUS )
                {
-                  cell->temperature	= number_range( 65, 95 );	
-                  cell->pressure		= number_range( 60, 90 );	
-                  cell->cloudcover    = number_range( 10, 30 );	
-                  cell->humidity		= number_range( 10, 30 );	
-                  cell->precipitation	= number_range( 10, 30 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 65, 95 );
+                  cell->pressure = number_range( 60, 90 );
+                  cell->cloudcover = number_range( 10, 30 );
+                  cell->humidity = number_range( 10, 30 );
+                  cell->precipitation = number_range( 10, 30 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TAIGA )  
+               else if( cell->climate == CLIMATE_TAIGA )
                {
-                  cell->temperature	= number_range( 30, 70 );	
-                  cell->pressure		= number_range( 40, 60 );	
-                  cell->cloudcover    = number_range( 20, 50 );	
-                  cell->humidity		= number_range( 20, 50 );	
-                  cell->precipitation	= number_range( 20, 50 );	
-                  cell->windSpeedX	= number_range( -50, 50 );	
-                  cell->windSpeedY	= number_range( -50, 50 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 30, 70 );
+                  cell->pressure = number_range( 40, 60 );
+                  cell->cloudcover = number_range( 20, 50 );
+                  cell->humidity = number_range( 20, 50 );
+                  cell->precipitation = number_range( 20, 50 );
+                  cell->windSpeedX = number_range( -50, 50 );
+                  cell->windSpeedY = number_range( -50, 50 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TUNDRA )  
+               else if( cell->climate == CLIMATE_TUNDRA )
                {
-                  cell->temperature	= number_range( 40, 70 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 40, 70 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ALPINE )  
+               else if( cell->climate == CLIMATE_ALPINE )
                {
-                  cell->temperature	= number_range( 30, 60 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 60, 80 );	
-                  cell->humidity		= number_range( 50, 70 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 30, 60 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 60, 80 );
+                  cell->humidity = number_range( 50, 70 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ARCTIC )  
+               else if( cell->climate == CLIMATE_ARCTIC )
                {
-                  cell->temperature	= number_range( -30, -10 );	
-                  cell->pressure		= number_range( 85, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( -30, -10 );
+                  cell->pressure = number_range( 85, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
             }
             else if( time_info.season == SEASON_FALL )
             {
-               if( cell->climate == CLIMATE_RAINFOREST )  
+               if( cell->climate == CLIMATE_RAINFOREST )
                {
-                  cell->temperature	= number_range( 70, 90 );	
-                  cell->pressure		= number_range( 30, 60 );	
-                  cell->cloudcover    = number_range( 50, 70 );	
-                  cell->humidity		= number_range( 70, 100 );	
-                  cell->precipitation	= number_range( 70, 100 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 70, 90 );
+                  cell->pressure = number_range( 30, 60 );
+                  cell->cloudcover = number_range( 50, 70 );
+                  cell->humidity = number_range( 70, 100 );
+                  cell->precipitation = number_range( 70, 100 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_SAVANNA )  
+               else if( cell->climate == CLIMATE_SAVANNA )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 60, 80 );	
-                  cell->cloudcover    = number_range( 10, 30 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 60, 80 );
+                  cell->cloudcover = number_range( 10, 30 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DESERT )  
+               else if( cell->climate == CLIMATE_DESERT )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 70, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 10 );	
-                  cell->precipitation	= number_range( 0, 10 );	
-                  cell->windSpeedX	= number_range( -10, 10 );	
-                  cell->windSpeedY	= number_range( -10, 10 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 70, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 10 );
+                  cell->precipitation = number_range( 0, 10 );
+                  cell->windSpeedX = number_range( -10, 10 );
+                  cell->windSpeedY = number_range( -10, 10 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_STEPPE )  
+               else if( cell->climate == CLIMATE_STEPPE )
                {
-                  cell->temperature	= number_range( 40, 70 );	
-                  cell->pressure		= number_range( 20, 40 );	
-                  cell->cloudcover    = number_range( 50, 70 );	
-                  cell->humidity		= number_range( 50, 70 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -30, 30 );	
-                  cell->windSpeedY	= number_range( -30, 30 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 40, 70 );
+                  cell->pressure = number_range( 20, 40 );
+                  cell->cloudcover = number_range( 50, 70 );
+                  cell->humidity = number_range( 50, 70 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -30, 30 );
+                  cell->windSpeedY = number_range( -30, 30 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_CHAPPARAL )  
+               else if( cell->climate == CLIMATE_CHAPPARAL )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 30, 70 );	
-                  cell->cloudcover    = number_range( 40, 60 );	
-                  cell->humidity		= number_range( 40, 60 );	
-                  cell->precipitation	= number_range( 20, 40 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 30, 70 );
+                  cell->cloudcover = number_range( 40, 60 );
+                  cell->humidity = number_range( 40, 60 );
+                  cell->precipitation = number_range( 20, 40 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_GRASSLANDS )  
+               else if( cell->climate == CLIMATE_GRASSLANDS )
                {
-                  cell->temperature	= number_range( 30, 50 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 30, 50 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DECIDUOUS )  
+               else if( cell->climate == CLIMATE_DECIDUOUS )
                {
-                  cell->temperature	= number_range( 55, 75 );	
-                  cell->pressure		= number_range( 40, 60 );	
-                  cell->cloudcover    = number_range( 40, 60 );	
-                  cell->humidity		= number_range( 40, 60 );	
-                  cell->precipitation	= number_range( 40, 60 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 55, 75 );
+                  cell->pressure = number_range( 40, 60 );
+                  cell->cloudcover = number_range( 40, 60 );
+                  cell->humidity = number_range( 40, 60 );
+                  cell->precipitation = number_range( 40, 60 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TAIGA )  
+               else if( cell->climate == CLIMATE_TAIGA )
                {
-                  cell->temperature	= number_range( 0, 30 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -50, 50 );	
-                  cell->windSpeedY	= number_range( -50, 50 );
-                  cell->energy		= number_range( 0, 100 );
-               }	
-               else if( cell->climate == CLIMATE_TUNDRA )  
-               {
-                  cell->temperature	= number_range( 10, 40 );	
-                  cell->pressure		= number_range( 40, 60 );	
-                  cell->cloudcover    = number_range( 20, 60 );	
-                  cell->humidity		= number_range( 20, 60 );	
-                  cell->precipitation	= number_range( 20, 60 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 0, 30 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -50, 50 );
+                  cell->windSpeedY = number_range( -50, 50 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ALPINE )  
-               {	
-                  cell->temperature	= number_range( 20, 50 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 60, 80 );	
-                  cell->humidity		= number_range( 50, 70 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
-               }
-               else if( cell->climate == CLIMATE_ARCTIC )  
+               else if( cell->climate == CLIMATE_TUNDRA )
                {
-                  cell->temperature	= number_range( 0, 20 );	
-                  cell->pressure		= number_range( 85, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
-               }	
+                  cell->temperature = number_range( 10, 40 );
+                  cell->pressure = number_range( 40, 60 );
+                  cell->cloudcover = number_range( 20, 60 );
+                  cell->humidity = number_range( 20, 60 );
+                  cell->precipitation = number_range( 20, 60 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
+               }
+               else if( cell->climate == CLIMATE_ALPINE )
+               {
+                  cell->temperature = number_range( 20, 50 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 60, 80 );
+                  cell->humidity = number_range( 50, 70 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
+               }
+               else if( cell->climate == CLIMATE_ARCTIC )
+               {
+                  cell->temperature = number_range( 0, 20 );
+                  cell->pressure = number_range( 85, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
+               }
             }
             else if( time_info.season == SEASON_WINTER )
-            {	
-               if( cell->climate == CLIMATE_RAINFOREST )  
+            {
+               if( cell->climate == CLIMATE_RAINFOREST )
                {
-                  cell->temperature	= number_range( 70, 90 );	
-                  cell->pressure		= number_range( 30, 60 );	
-                  cell->cloudcover    = number_range( 50, 70 );	
-                  cell->humidity		= number_range( 70, 100 );	
-                  cell->precipitation	= number_range( 70, 100 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 70, 90 );
+                  cell->pressure = number_range( 30, 60 );
+                  cell->cloudcover = number_range( 50, 70 );
+                  cell->humidity = number_range( 70, 100 );
+                  cell->precipitation = number_range( 70, 100 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_SAVANNA )  
+               else if( cell->climate == CLIMATE_SAVANNA )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 60, 80 );	
-                  cell->cloudcover    = number_range( 10, 30 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 60, 80 );
+                  cell->cloudcover = number_range( 10, 30 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DESERT )  
-               {	
-                  cell->temperature	= number_range( 50, 70 );	
-                  cell->pressure		= number_range( 70, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 10 );	
-                  cell->precipitation	= number_range( 0, 10 );	
-                  cell->windSpeedX	= number_range( -10, 10 );	
-                  cell->windSpeedY	= number_range( -10, 10 );
-                  cell->energy		= number_range( 0, 100 );
-               }
-               else if( cell->climate == CLIMATE_STEPPE )  
+               else if( cell->climate == CLIMATE_DESERT )
                {
-                  cell->temperature	= number_range( -10, 20 );	
-                  cell->pressure		= number_range( 70, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -30, 30 );	
-                  cell->windSpeedY	= number_range( -30, 30 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 50, 70 );
+                  cell->pressure = number_range( 70, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 10 );
+                  cell->precipitation = number_range( 0, 10 );
+                  cell->windSpeedX = number_range( -10, 10 );
+                  cell->windSpeedY = number_range( -10, 10 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_CHAPPARAL )  
+               else if( cell->climate == CLIMATE_STEPPE )
                {
-                  cell->temperature	= number_range( 40, 60 );	
-                  cell->pressure		= number_range( 30, 60 );	
-                  cell->cloudcover    = number_range( 60, 80 );	
-                  cell->humidity		= number_range( 60, 80 );	
-                  cell->precipitation	= number_range( 40, 60 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( -10, 20 );
+                  cell->pressure = number_range( 70, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -30, 30 );
+                  cell->windSpeedY = number_range( -30, 30 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_GRASSLANDS )  
-               {	
-                  cell->temperature	= number_range( -30, 0 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
-               }
-               else if( cell->climate == CLIMATE_DECIDUOUS )	
+               else if( cell->climate == CLIMATE_CHAPPARAL )
                {
-                  cell->temperature	= number_range( 10, 30 );	
-                  cell->pressure		= number_range( 40, 60 );	
-                  cell->cloudcover    = number_range( 40, 60 );	
-                  cell->humidity		= number_range( 40, 60 );	
-                  cell->precipitation	= number_range( 40, 60 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 40, 60 );
+                  cell->pressure = number_range( 30, 60 );
+                  cell->cloudcover = number_range( 60, 80 );
+                  cell->humidity = number_range( 60, 80 );
+                  cell->precipitation = number_range( 40, 60 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TAIGA )  
+               else if( cell->climate == CLIMATE_GRASSLANDS )
                {
-                  cell->temperature	= number_range( -30, 0 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -50, 50 );	
-                  cell->windSpeedY	= number_range( -50, 50 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( -30, 0 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TUNDRA )  
+               else if( cell->climate == CLIMATE_DECIDUOUS )
                {
-                  cell->temperature	= number_range( -10, 20 );	
-                  cell->pressure		= number_range( 40, 60 );	
-                  cell->cloudcover    = number_range( 20, 60 );	
-                  cell->humidity		= number_range( 20, 60 );	
-                  cell->precipitation	= number_range( 20, 60 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 10, 30 );
+                  cell->pressure = number_range( 40, 60 );
+                  cell->cloudcover = number_range( 40, 60 );
+                  cell->humidity = number_range( 40, 60 );
+                  cell->precipitation = number_range( 40, 60 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ALPINE )  
+               else if( cell->climate == CLIMATE_TAIGA )
                {
-                  cell->temperature	= number_range( -30, 10 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 60, 80 );	
-                  cell->humidity		= number_range( 50, 70 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( -30, 0 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -50, 50 );
+                  cell->windSpeedY = number_range( -50, 50 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ARCTIC )  
+               else if( cell->climate == CLIMATE_TUNDRA )
                {
-                  cell->temperature	= number_range( 30, 60 );	
-                  cell->pressure		= number_range( 85, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( -10, 20 );
+                  cell->pressure = number_range( 40, 60 );
+                  cell->cloudcover = number_range( 20, 60 );
+                  cell->humidity = number_range( 20, 60 );
+                  cell->precipitation = number_range( 20, 60 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
+               }
+               else if( cell->climate == CLIMATE_ALPINE )
+               {
+                  cell->temperature = number_range( -30, 10 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 60, 80 );
+                  cell->humidity = number_range( 50, 70 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
+               }
+               else if( cell->climate == CLIMATE_ARCTIC )
+               {
+                  cell->temperature = number_range( 30, 60 );
+                  cell->pressure = number_range( 85, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
             }
          }
@@ -1759,498 +1750,498 @@ void RandomizeCells( void )
          {
             if( time_info.season == SEASON_SPRING )
             {
-               if( cell->climate == CLIMATE_RAINFOREST )  
+               if( cell->climate == CLIMATE_RAINFOREST )
                {
-                  cell->temperature	= number_range( 70, 90 );	
-                  cell->pressure		= number_range( 30, 60 );	
-                  cell->cloudcover    = number_range( 50, 70 );	
-                  cell->humidity		= number_range( 70, 100 );	
-                  cell->precipitation	= number_range( 70, 100 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 70, 90 );
+                  cell->pressure = number_range( 30, 60 );
+                  cell->cloudcover = number_range( 50, 70 );
+                  cell->humidity = number_range( 70, 100 );
+                  cell->precipitation = number_range( 70, 100 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_SAVANNA )  
-               {	
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 60, 80 );	
-                  cell->cloudcover    = number_range( 10, 30 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
-               }
-               else if( cell->climate == CLIMATE_DESERT )  
+               else if( cell->climate == CLIMATE_SAVANNA )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 70, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 10 );	
-                  cell->precipitation	= number_range( 0, 10 );	
-                  cell->windSpeedX	= number_range( -10, 10 );	
-                  cell->windSpeedY	= number_range( -10, 10 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 60, 80 );
+                  cell->cloudcover = number_range( 10, 30 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_STEPPE )  
+               else if( cell->climate == CLIMATE_DESERT )
                {
-                  cell->temperature	= number_range( 40, 70 );	
-                  cell->pressure		= number_range( 70, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -30, 30 );	
-                  cell->windSpeedY	= number_range( -30, 30 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 70, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 10 );
+                  cell->precipitation = number_range( 0, 10 );
+                  cell->windSpeedX = number_range( -10, 10 );
+                  cell->windSpeedY = number_range( -10, 10 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_CHAPPARAL )  
+               else if( cell->climate == CLIMATE_STEPPE )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 30, 70 );	
-                  cell->cloudcover    = number_range( 40, 60 );	
-                  cell->humidity		= number_range( 40, 60 );	
-                  cell->precipitation	= number_range( 20, 40 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 40, 70 );
+                  cell->pressure = number_range( 70, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -30, 30 );
+                  cell->windSpeedY = number_range( -30, 30 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_GRASSLANDS )  
+               else if( cell->climate == CLIMATE_CHAPPARAL )
                {
-                  cell->temperature	= number_range( 30, 50 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 30, 70 );
+                  cell->cloudcover = number_range( 40, 60 );
+                  cell->humidity = number_range( 40, 60 );
+                  cell->precipitation = number_range( 20, 40 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DECIDUOUS )  
+               else if( cell->climate == CLIMATE_GRASSLANDS )
                {
-                  cell->temperature	= number_range( 55, 75 );	
-                  cell->pressure		= number_range( 40, 60 );	
-                  cell->cloudcover    = number_range( 40, 60 );	
-                  cell->humidity		= number_range( 40, 60 );	
-                  cell->precipitation	= number_range( 40, 60 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 30, 50 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TAIGA )  
+               else if( cell->climate == CLIMATE_DECIDUOUS )
                {
-                  cell->temperature	= number_range( 0, 30 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -50, 50 );	
-                  cell->windSpeedY	= number_range( -50, 50 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 55, 75 );
+                  cell->pressure = number_range( 40, 60 );
+                  cell->cloudcover = number_range( 40, 60 );
+                  cell->humidity = number_range( 40, 60 );
+                  cell->precipitation = number_range( 40, 60 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TUNDRA )  
+               else if( cell->climate == CLIMATE_TAIGA )
                {
-                  cell->temperature	= number_range( 10, 40 );	
-                  cell->pressure		= number_range( 40, 60 );	
-                  cell->cloudcover    = number_range( 20, 60 );	
-                  cell->humidity		= number_range( 20, 60 );	
-                  cell->precipitation	= number_range( 20, 60 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 0, 30 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -50, 50 );
+                  cell->windSpeedY = number_range( -50, 50 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ALPINE )  
+               else if( cell->climate == CLIMATE_TUNDRA )
                {
-                  cell->temperature	= number_range( 20, 50 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 60, 80 );	
-                  cell->humidity		= number_range( 50, 70 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 10, 40 );
+                  cell->pressure = number_range( 40, 60 );
+                  cell->cloudcover = number_range( 20, 60 );
+                  cell->humidity = number_range( 20, 60 );
+                  cell->precipitation = number_range( 20, 60 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ARCTIC )  
+               else if( cell->climate == CLIMATE_ALPINE )
                {
-                  cell->temperature	= number_range( 0, 20 );	
-                  cell->pressure		= number_range( 85, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 20, 50 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 60, 80 );
+                  cell->humidity = number_range( 50, 70 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
+               }
+               else if( cell->climate == CLIMATE_ARCTIC )
+               {
+                  cell->temperature = number_range( 0, 20 );
+                  cell->pressure = number_range( 85, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
             }
             else if( time_info.season == SEASON_SUMMER )
             {
-               if( cell->climate == CLIMATE_RAINFOREST )  
+               if( cell->climate == CLIMATE_RAINFOREST )
                {
-                  cell->temperature	= number_range( 70, 90 );	
-                  cell->pressure		= number_range( 30, 60 );	
-                  cell->cloudcover    = number_range( 50, 70 );	
-                  cell->humidity		= number_range( 70, 100 );	
-                  cell->precipitation	= number_range( 70, 100 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 70, 90 );
+                  cell->pressure = number_range( 30, 60 );
+                  cell->cloudcover = number_range( 50, 70 );
+                  cell->humidity = number_range( 70, 100 );
+                  cell->precipitation = number_range( 70, 100 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_SAVANNA )  
+               else if( cell->climate == CLIMATE_SAVANNA )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 60, 80 );	
-                  cell->cloudcover    = number_range( 10, 30 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 60, 80 );
+                  cell->cloudcover = number_range( 10, 30 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DESERT )  
+               else if( cell->climate == CLIMATE_DESERT )
                {
-                  cell->temperature	= number_range( 80, 100 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 10 );	
-                  cell->precipitation	= number_range( 0, 10 );	
-                  cell->windSpeedX	= number_range( -10, 10 );	
-                  cell->windSpeedY	= number_range( -10, 10 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 80, 100 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 10 );
+                  cell->precipitation = number_range( 0, 10 );
+                  cell->windSpeedX = number_range( -10, 10 );
+                  cell->windSpeedY = number_range( -10, 10 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_STEPPE )  
+               else if( cell->climate == CLIMATE_STEPPE )
                {
-                  cell->temperature	= number_range( 40, 60 );	
-                  cell->pressure		= number_range( 30, 60 );	
-                  cell->cloudcover    = number_range( 60, 80 );	
-                  cell->humidity		= number_range( 60, 80 );	
-                  cell->precipitation	= number_range( 40, 60 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 40, 60 );
+                  cell->pressure = number_range( 30, 60 );
+                  cell->cloudcover = number_range( 60, 80 );
+                  cell->humidity = number_range( 60, 80 );
+                  cell->precipitation = number_range( 40, 60 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_CHAPPARAL )  
+               else if( cell->climate == CLIMATE_CHAPPARAL )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 50, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 50, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_GRASSLANDS )  
+               else if( cell->climate == CLIMATE_GRASSLANDS )
                {
-                  cell->temperature	= number_range( -30, 0 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( -30, 0 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DECIDUOUS )  
+               else if( cell->climate == CLIMATE_DECIDUOUS )
                {
-                  cell->temperature	= number_range( 10, 30 );	
-                  cell->pressure		= number_range( 40, 60 );	
-                  cell->cloudcover    = number_range( 40, 60 );	
-                  cell->humidity		= number_range( 40, 60 );	
-                  cell->precipitation	= number_range( 40, 60 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 10, 30 );
+                  cell->pressure = number_range( 40, 60 );
+                  cell->cloudcover = number_range( 40, 60 );
+                  cell->humidity = number_range( 40, 60 );
+                  cell->precipitation = number_range( 40, 60 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TAIGA )  
+               else if( cell->climate == CLIMATE_TAIGA )
                {
-                  cell->temperature	= number_range( -30, 0 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -50, 50 );	
-                  cell->windSpeedY	= number_range( -50, 50 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( -30, 0 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -50, 50 );
+                  cell->windSpeedY = number_range( -50, 50 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TUNDRA )  
+               else if( cell->climate == CLIMATE_TUNDRA )
                {
-                  cell->temperature	= number_range( -10, 20 );	
-                  cell->pressure		= number_range( 40, 60 );	
-                  cell->cloudcover    = number_range( 20, 60 );	
-                  cell->humidity		= number_range( 20, 60 );	
-                  cell->precipitation	= number_range( 20, 60 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( -10, 20 );
+                  cell->pressure = number_range( 40, 60 );
+                  cell->cloudcover = number_range( 20, 60 );
+                  cell->humidity = number_range( 20, 60 );
+                  cell->precipitation = number_range( 20, 60 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ALPINE )  
+               else if( cell->climate == CLIMATE_ALPINE )
                {
-                  cell->temperature	= number_range( -30, 10 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 60, 80 );	
-                  cell->humidity		= number_range( 50, 70 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( -30, 10 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 60, 80 );
+                  cell->humidity = number_range( 50, 70 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ARCTIC )  
-               {	
-                  cell->temperature	= number_range( 30, 60 );	
-                  cell->pressure		= number_range( 85, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+               else if( cell->climate == CLIMATE_ARCTIC )
+               {
+                  cell->temperature = number_range( 30, 60 );
+                  cell->pressure = number_range( 85, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
             }
             else if( time_info.season == SEASON_FALL )
-            {	
-               if( cell->climate == CLIMATE_RAINFOREST )  
+            {
+               if( cell->climate == CLIMATE_RAINFOREST )
                {
-                  cell->temperature	= number_range( 70, 90 );	
-                  cell->pressure		= number_range( 30, 60 );	
-                  cell->cloudcover    = number_range( 50, 70 );	
-                  cell->humidity		= number_range( 70, 100 );	
-                  cell->precipitation	= number_range( 70, 100 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 70, 90 );
+                  cell->pressure = number_range( 30, 60 );
+                  cell->cloudcover = number_range( 50, 70 );
+                  cell->humidity = number_range( 70, 100 );
+                  cell->precipitation = number_range( 70, 100 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_SAVANNA )  
+               else if( cell->climate == CLIMATE_SAVANNA )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 20, 40 );	
-                  cell->humidity		= number_range( 60, 80 );	
-                  cell->precipitation	= number_range( 60, 80 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 20, 40 );
+                  cell->humidity = number_range( 60, 80 );
+                  cell->precipitation = number_range( 60, 80 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DESERT )  
+               else if( cell->climate == CLIMATE_DESERT )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 70, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 10 );	
-                  cell->precipitation	= number_range( 0, 10 );	
-                  cell->windSpeedX	= number_range( -10, 10 );	
-                  cell->windSpeedY	= number_range( -10, 10 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 70, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 10 );
+                  cell->precipitation = number_range( 0, 10 );
+                  cell->windSpeedX = number_range( -10, 10 );
+                  cell->windSpeedY = number_range( -10, 10 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_STEPPE )  
+               else if( cell->climate == CLIMATE_STEPPE )
                {
-                  cell->temperature	= number_range( 40, 70 );	
-                  cell->pressure		= number_range( 20, 40 );	
-                  cell->cloudcover    = number_range( 50, 70 );	
-                  cell->humidity		= number_range( 50, 70 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -30, 30 );	
-                  cell->windSpeedY	= number_range( -30, 30 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 40, 70 );
+                  cell->pressure = number_range( 20, 40 );
+                  cell->cloudcover = number_range( 50, 70 );
+                  cell->humidity = number_range( 50, 70 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -30, 30 );
+                  cell->windSpeedY = number_range( -30, 30 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_CHAPPARAL )  
+               else if( cell->climate == CLIMATE_CHAPPARAL )
                {
-                  cell->temperature	= number_range( -10, 20 );	
-                  cell->pressure		= number_range( 70, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -30, 30 );	
-                  cell->windSpeedY	= number_range( -30, 30 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( -10, 20 );
+                  cell->pressure = number_range( 70, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -30, 30 );
+                  cell->windSpeedY = number_range( -30, 30 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_GRASSLANDS )  
+               else if( cell->climate == CLIMATE_GRASSLANDS )
                {
-                  cell->temperature	= number_range( 30, 50 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 30, 50 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DECIDUOUS )  
+               else if( cell->climate == CLIMATE_DECIDUOUS )
                {
-                  cell->temperature	= number_range( 45, 65 );	
-                  cell->pressure		= number_range( 20, 40 );	
-                  cell->cloudcover    = number_range( 40, 60 );	
-                  cell->humidity		= number_range( 40, 60 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 45, 65 );
+                  cell->pressure = number_range( 20, 40 );
+                  cell->cloudcover = number_range( 40, 60 );
+                  cell->humidity = number_range( 40, 60 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TAIGA )  
+               else if( cell->climate == CLIMATE_TAIGA )
                {
-                  cell->temperature	= number_range( 0, 30 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -50, 50 );	
-                  cell->windSpeedY	= number_range( -50, 50 );
-                  cell->energy		= number_range( 0, 100 );
-               }	
-               else if( cell->climate == CLIMATE_TUNDRA )  
-               {
-                  cell->temperature	= number_range( 10, 40 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 0, 30 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -50, 50 );
+                  cell->windSpeedY = number_range( -50, 50 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ALPINE )  
-               {	
-                  cell->temperature	= number_range( 20, 50 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 60, 80 );	
-                  cell->humidity		= number_range( 50, 70 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
-               }
-               else if( cell->climate == CLIMATE_ARCTIC )  
+               else if( cell->climate == CLIMATE_TUNDRA )
                {
-                  cell->temperature	= number_range( 0, 20 );	
-                  cell->pressure		= number_range( 85, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
-               }	
+                  cell->temperature = number_range( 10, 40 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
+               }
+               else if( cell->climate == CLIMATE_ALPINE )
+               {
+                  cell->temperature = number_range( 20, 50 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 60, 80 );
+                  cell->humidity = number_range( 50, 70 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
+               }
+               else if( cell->climate == CLIMATE_ARCTIC )
+               {
+                  cell->temperature = number_range( 0, 20 );
+                  cell->pressure = number_range( 85, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
+               }
             }
             else if( time_info.season == SEASON_WINTER )
-            {	
-               if( cell->climate == CLIMATE_RAINFOREST )  
+            {
+               if( cell->climate == CLIMATE_RAINFOREST )
                {
-                  cell->temperature	= number_range( 70, 90 );	
-                  cell->pressure		= number_range( 30, 60 );	
-                  cell->cloudcover    = number_range( 50, 70 );	
-                  cell->humidity		= number_range( 70, 100 );	
-                  cell->precipitation	= number_range( 70, 100 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 70, 90 );
+                  cell->pressure = number_range( 30, 60 );
+                  cell->cloudcover = number_range( 50, 70 );
+                  cell->humidity = number_range( 70, 100 );
+                  cell->precipitation = number_range( 70, 100 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_SAVANNA )  
+               else if( cell->climate == CLIMATE_SAVANNA )
                {
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 20, 40 );	
-                  cell->humidity		= number_range( 60, 80 );	
-                  cell->precipitation	= number_range( 60, 80 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 20, 40 );
+                  cell->humidity = number_range( 60, 80 );
+                  cell->precipitation = number_range( 60, 80 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_DESERT )  
-               {	
-                  cell->temperature	= number_range( 50, 70 );	
-                  cell->pressure		= number_range( 70, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 10 );	
-                  cell->precipitation	= number_range( 0, 10 );	
-                  cell->windSpeedX	= number_range( -10, 10 );	
-                  cell->windSpeedY	= number_range( -10, 10 );
-                  cell->energy		= number_range( 0, 100 );
-               }
-               else if( cell->climate == CLIMATE_STEPPE )  
+               else if( cell->climate == CLIMATE_DESERT )
                {
-                  cell->temperature	= number_range( 70, 90 );	
-                  cell->pressure		= number_range( 70, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -30, 30 );	
-                  cell->windSpeedY	= number_range( -30, 30 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 50, 70 );
+                  cell->pressure = number_range( 70, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 10 );
+                  cell->precipitation = number_range( 0, 10 );
+                  cell->windSpeedX = number_range( -10, 10 );
+                  cell->windSpeedY = number_range( -10, 10 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_CHAPPARAL )  
+               else if( cell->climate == CLIMATE_STEPPE )
                {
-                  cell->temperature	= number_range( 80, 100 );	
-                  cell->pressure		= number_range( 50, 90 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 70, 90 );
+                  cell->pressure = number_range( 70, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -30, 30 );
+                  cell->windSpeedY = number_range( -30, 30 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_GRASSLANDS )  
-               {	
-                  cell->temperature	= number_range( 60, 80 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
-               }
-               else if( cell->climate == CLIMATE_DECIDUOUS )	
+               else if( cell->climate == CLIMATE_CHAPPARAL )
                {
-                  cell->temperature	= number_range( 65, 95 );	
-                  cell->pressure		= number_range( 60, 90 );	
-                  cell->cloudcover    = number_range( 10, 30 );	
-                  cell->humidity		= number_range( 10, 30 );	
-                  cell->precipitation	= number_range( 10, 30 );	
-                  cell->windSpeedX	= number_range( -40, 40 );	
-                  cell->windSpeedY	= number_range( -40, 40 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 80, 100 );
+                  cell->pressure = number_range( 50, 90 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TAIGA )  
+               else if( cell->climate == CLIMATE_GRASSLANDS )
                {
-                  cell->temperature	= number_range( 30, 70 );	
-                  cell->pressure		= number_range( 40, 60 );	
-                  cell->cloudcover    = number_range( 20, 50 );	
-                  cell->humidity		= number_range( 20, 50 );	
-                  cell->precipitation	= number_range( 20, 50 );	
-                  cell->windSpeedX	= number_range( -50, 50 );	
-                  cell->windSpeedY	= number_range( -50, 50 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 60, 80 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_TUNDRA )  
+               else if( cell->climate == CLIMATE_DECIDUOUS )
                {
-                  cell->temperature	= number_range( 40, 70 );	
-                  cell->pressure		= number_range( 80, 100 );	
-                  cell->cloudcover    = number_range( 0, 20 );	
-                  cell->humidity		= number_range( 0, 20 );	
-                  cell->precipitation	= number_range( 0, 20 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 65, 95 );
+                  cell->pressure = number_range( 60, 90 );
+                  cell->cloudcover = number_range( 10, 30 );
+                  cell->humidity = number_range( 10, 30 );
+                  cell->precipitation = number_range( 10, 30 );
+                  cell->windSpeedX = number_range( -40, 40 );
+                  cell->windSpeedY = number_range( -40, 40 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ALPINE )  
+               else if( cell->climate == CLIMATE_TAIGA )
                {
-                  cell->temperature	= number_range( 30, 60 );	
-                  cell->pressure		= number_range( 30, 50 );	
-                  cell->cloudcover    = number_range( 60, 80 );	
-                  cell->humidity		= number_range( 50, 70 );	
-                  cell->precipitation	= number_range( 50, 70 );	
-                  cell->windSpeedX	= number_range( -60, 60 );	
-                  cell->windSpeedY	= number_range( -60, 60 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 30, 70 );
+                  cell->pressure = number_range( 40, 60 );
+                  cell->cloudcover = number_range( 20, 50 );
+                  cell->humidity = number_range( 20, 50 );
+                  cell->precipitation = number_range( 20, 50 );
+                  cell->windSpeedX = number_range( -50, 50 );
+                  cell->windSpeedY = number_range( -50, 50 );
+                  cell->energy = number_range( 0, 100 );
                }
-               else if( cell->climate == CLIMATE_ARCTIC )  
+               else if( cell->climate == CLIMATE_TUNDRA )
                {
-                  cell->temperature	= number_range( -30, -10 );	
-                  cell->pressure		= number_range( 85, 100 );	
-                  cell->cloudcover    = number_range( 0, 15 );	
-                  cell->humidity		= number_range( 0, 15 );	
-                  cell->precipitation	= number_range( 0, 15 );	
-                  cell->windSpeedX	= number_range( -20, 20 );	
-                  cell->windSpeedY	= number_range( -20, 20 );
-                  cell->energy		= number_range( 0, 100 );
+                  cell->temperature = number_range( 40, 70 );
+                  cell->pressure = number_range( 80, 100 );
+                  cell->cloudcover = number_range( 0, 20 );
+                  cell->humidity = number_range( 0, 20 );
+                  cell->precipitation = number_range( 0, 20 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
+               }
+               else if( cell->climate == CLIMATE_ALPINE )
+               {
+                  cell->temperature = number_range( 30, 60 );
+                  cell->pressure = number_range( 30, 50 );
+                  cell->cloudcover = number_range( 60, 80 );
+                  cell->humidity = number_range( 50, 70 );
+                  cell->precipitation = number_range( 50, 70 );
+                  cell->windSpeedX = number_range( -60, 60 );
+                  cell->windSpeedY = number_range( -60, 60 );
+                  cell->energy = number_range( 0, 100 );
+               }
+               else if( cell->climate == CLIMATE_ARCTIC )
+               {
+                  cell->temperature = number_range( -30, -10 );
+                  cell->pressure = number_range( 85, 100 );
+                  cell->cloudcover = number_range( 0, 15 );
+                  cell->humidity = number_range( 0, 15 );
+                  cell->precipitation = number_range( 0, 15 );
+                  cell->windSpeedX = number_range( -20, 20 );
+                  cell->windSpeedY = number_range( -20, 20 );
+                  cell->energy = number_range( 0, 100 );
                }
             }
          }
@@ -2277,17 +2268,17 @@ void save_weathermap( void )
 
    fprintf( fp, "#VERSION %d\n\n", weatherVersion );
 
-   for ( y = 0; y < WEATHER_SIZE_Y; y++)
+   for( y = 0; y < WEATHER_SIZE_Y; y++ )
    {
-      for ( x = 0; x < WEATHER_SIZE_X; x++)
+      for( x = 0; x < WEATHER_SIZE_X; x++ )
       {
-         struct	WeatherCell *cell = &weatherMap[x][y];
+         struct WeatherCell *cell = &weatherMap[x][y];
 
          fprintf( fp, "#CELL		%d %d\n", x, y );
          fprintf( fp, "Climate     %s~\n", climate_names[cell->climate] );
-         fprintf( fp, "Hemisphere  %s~\n", hemisphere_name[cell->hemisphere] ); 
-         fprintf( fp, "State       %d %d %d %d %d %d %d %d\n", cell->cloudcover, cell->energy, cell->humidity, 
-            cell->precipitation, cell->pressure, cell->temperature, cell->windSpeedX, cell->windSpeedY );
+         fprintf( fp, "Hemisphere  %s~\n", hemisphere_name[cell->hemisphere] );
+         fprintf( fp, "State       %d %d %d %d %d %d %d %d\n", cell->cloudcover, cell->energy, cell->humidity,
+                  cell->precipitation, cell->pressure, cell->temperature, cell->windSpeedX, cell->windSpeedY );
          fprintf( fp, "End\n\n" );
       }
    }
@@ -2311,84 +2302,84 @@ void fread_cell( FILE * fp, int x, int y )
 
       switch ( UPPER( word[0] ) )
       {
-      case '*':
-         fread_to_eol( fp );
-         break;
-
-      case 'C':
-         if( !str_cmp( word, "Climate" ) )
-         {
-            if( version >= 1 )
-            {
-               const char *climate = NULL;
-
-               climate = fread_flagstring( fp );
-
-               while( climate[0] != '\0' )
-               {
-                  climate = one_argument( climate, flag );
-                  value = get_climate( flag );
-                  if( value < 0 || value >= MAX_CLIMATE )
-                     bug( "Unknown climate: %s", flag );
-                  else
-                     cell->climate = value;
-               }
-               fMatch = TRUE;
-               break;
-            }
-            else
-               cell->climate = fread_number( fp );
-            fMatch = TRUE;
-         }
-         break;
-
-      case 'E':
-         if( !str_cmp( word, "End" ) )
-            return;
-         break;
-
-      case 'H':
-         if( !str_cmp( word, "Hemisphere" ) )
-         {
-            if( version >= 1 )
-            {
-               const char *hemisphere = NULL;
-
-               hemisphere = fread_flagstring( fp );
-
-               while( hemisphere[0] != '\0' )
-               {
-                  hemisphere = one_argument( hemisphere, flag );
-                  value = get_hemisphere( flag );
-                  if( value < 0 || value >= HEMISPHERE_MAX )
-                     bug( "Unknown hemisphere: %s", flag );
-                  else
-                     cell->hemisphere = value;
-               }
-               fMatch = TRUE;
-               break;
-            }
-            else
-               cell->hemisphere = fread_number( fp );
-            fMatch = TRUE;
-         }
-         break;
-
-      case 'S':
-         if( !str_cmp( word, "State" ) )
-         {
-            cell->cloudcover = fread_number( fp );
-            cell->energy = fread_number( fp );
-            cell->humidity = fread_number( fp );
-            cell->precipitation = fread_number( fp );
-            cell->pressure = fread_number( fp );
-            cell->temperature = fread_number( fp );
-            cell->windSpeedX = fread_number( fp );
-            cell->windSpeedY = fread_number( fp );
-            fMatch = TRUE;
+         case '*':
+            fread_to_eol( fp );
             break;
-         }
-         break;
+
+         case 'C':
+            if( !str_cmp( word, "Climate" ) )
+            {
+               if( version >= 1 )
+               {
+                  const char *climate = NULL;
+
+                  climate = fread_flagstring( fp );
+
+                  while( climate[0] != '\0' )
+                  {
+                     climate = one_argument( climate, flag );
+                     value = get_climate( flag );
+                     if( value < 0 || value >= MAX_CLIMATE )
+                        bug( "Unknown climate: %s", flag );
+                     else
+                        cell->climate = value;
+                  }
+                  fMatch = TRUE;
+                  break;
+               }
+               else
+                  cell->climate = fread_number( fp );
+               fMatch = TRUE;
+            }
+            break;
+
+         case 'E':
+            if( !str_cmp( word, "End" ) )
+               return;
+            break;
+
+         case 'H':
+            if( !str_cmp( word, "Hemisphere" ) )
+            {
+               if( version >= 1 )
+               {
+                  const char *hemisphere = NULL;
+
+                  hemisphere = fread_flagstring( fp );
+
+                  while( hemisphere[0] != '\0' )
+                  {
+                     hemisphere = one_argument( hemisphere, flag );
+                     value = get_hemisphere( flag );
+                     if( value < 0 || value >= HEMISPHERE_MAX )
+                        bug( "Unknown hemisphere: %s", flag );
+                     else
+                        cell->hemisphere = value;
+                  }
+                  fMatch = TRUE;
+                  break;
+               }
+               else
+                  cell->hemisphere = fread_number( fp );
+               fMatch = TRUE;
+            }
+            break;
+
+         case 'S':
+            if( !str_cmp( word, "State" ) )
+            {
+               cell->cloudcover = fread_number( fp );
+               cell->energy = fread_number( fp );
+               cell->humidity = fread_number( fp );
+               cell->precipitation = fread_number( fp );
+               cell->pressure = fread_number( fp );
+               cell->temperature = fread_number( fp );
+               cell->windSpeedX = fread_number( fp );
+               cell->windSpeedY = fread_number( fp );
+               fMatch = TRUE;
+               break;
+            }
+            break;
       }
       if( !fMatch )
       {
@@ -2431,13 +2422,13 @@ bool load_weathermap( void )
       }
 
       word = fread_word( fp );
-      if( !str_cmp( word, "VERSION" ) ) 
-      { 
+      if( !str_cmp( word, "VERSION" ) )
+      {
          version = fread_number( fp );
          continue;
       }
-      if( !str_cmp( word, "CELL" ) ) 
-      { 
+      if( !str_cmp( word, "CELL" ) )
+      {
          x = fread_number( fp );
          y = fread_number( fp );
          fread_cell( fp, x, y );
@@ -2460,10 +2451,10 @@ bool load_weathermap( void )
 * Weather Utility Functions
 * Designed to attempt to emulate encapsulation.
 */
-struct WeatherCell *getWeatherCell( AREA_DATA *pArea  )
+struct WeatherCell *getWeatherCell( AREA_DATA * pArea )
 {
    return &weatherMap[pArea->weatherx][pArea->weathery];
-}	
+}
 
 void IncreaseTemp( struct WeatherCell *cell, int change )
 {
@@ -2550,14 +2541,14 @@ void DecreaseWindY( struct WeatherCell *cell, int change )
 /* Cloud cover Information */
 int getCloudCover( struct WeatherCell *cell )
 {
-   return cell->cloudcover; 
+   return cell->cloudcover;
 }
 
 bool isExtremelyCloudy( int cloudCover )
 {
    if( cloudCover > 80 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2565,7 +2556,7 @@ bool isModeratelyCloudy( int cloudCover )
 {
    if( cloudCover > 60 && cloudCover <= 80 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2588,14 +2579,14 @@ bool isCloudy( int cloudCover )
 /* Temperature Information */
 int getTemp( struct WeatherCell *cell )
 {
-   return cell->temperature; 
+   return cell->temperature;
 }
 
 bool isSwelteringHeat( int temp )
 {
    if( temp > 90 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2603,7 +2594,7 @@ bool isVeryHot( int temp )
 {
    if( temp > 80 && temp <= 90 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2627,7 +2618,7 @@ bool isTemperate( int temp )
 {
    if( temp > 50 && temp <= 60 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2651,7 +2642,7 @@ bool isCold( int temp )
 {
    if( temp > 20 && temp <= 30 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2675,7 +2666,7 @@ bool isReallyCold( int temp )
 {
    if( temp > -10 && temp <= 0 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2698,28 +2689,28 @@ bool isExtremelyCold( int temp )
 /* Energy Information */
 int getEnergy( struct WeatherCell *cell )
 {
-   return cell->energy; 
+   return cell->energy;
 }
 
 bool isStormy( int energy )
 {
    if( energy > 50 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
 /* Pressure Information */
 int getPressure( struct WeatherCell *cell )
 {
-   return cell->pressure; 
+   return cell->pressure;
 }
 
 bool isHighPressure( int pressure )
 {
    if( pressure > 50 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2735,14 +2726,14 @@ bool isLowPressure( int pressure )
 /* Humidity Information */
 int getHumidity( struct WeatherCell *cell )
 {
-   return cell->humidity; 
+   return cell->humidity;
 }
 
 bool isExtremelyHumid( int humidity )
 {
    if( humidity > 80 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2750,7 +2741,7 @@ bool isModeratelyHumid( int humidity )
 {
    if( humidity > 60 && humidity < 80 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2773,14 +2764,14 @@ bool isHumid( int humidity )
 /* Precipitation Information */
 int getPrecip( struct WeatherCell *cell )
 {
-   return cell->precipitation; 
+   return cell->precipitation;
 }
 
 bool isTorrentialDownpour( int precip )
 {
    if( precip > 90 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2788,7 +2779,7 @@ bool isRainingCatsAndDogs( int precip )
 {
    if( precip > 80 && precip <= 90 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2812,7 +2803,7 @@ bool isDownpour( int precip )
 {
    if( precip > 50 && precip <= 60 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2836,7 +2827,7 @@ bool isRainingLightly( int precip )
 {
    if( precip > 20 && precip <= 30 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2859,14 +2850,14 @@ bool isMisting( int precip )
 /* WindX Information */
 int getWindX( struct WeatherCell *cell )
 {
-   return cell->windSpeedX; 
+   return cell->windSpeedX;
 }
 
 bool isCalmWindE( int windx )
 {
    if( windx > 0 && windx <= 10 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2874,7 +2865,7 @@ bool isBreezyWindE( int windx )
 {
    if( windx > 10 && windx <= 20 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2914,7 +2905,7 @@ bool isCalmWindW( int windx )
 {
    if( windx < 0 && windx >= -10 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2922,7 +2913,7 @@ bool isBreezyWindW( int windx )
 {
    if( windx < -10 && windx >= -20 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2961,14 +2952,14 @@ bool isGaleForceWindW( int windx )
 /* WindY Information */
 int getWindY( struct WeatherCell *cell )
 {
-   return cell->windSpeedY; 
+   return cell->windSpeedY;
 }
 
 bool isCalmWindN( int windy )
 {
    if( windy > 0 && windy <= 10 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -2976,7 +2967,7 @@ bool isBreezyWindN( int windy )
 {
    if( windy > 10 && windy <= 20 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -3016,7 +3007,7 @@ bool isCalmWindS( int windy )
 {
    if( windy < 0 && windy >= -10 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -3024,7 +3015,7 @@ bool isBreezyWindS( int windy )
 {
    if( windy < -10 && windy >= -20 )
       return TRUE;
-   else 
+   else
       return FALSE;
 }
 
@@ -3058,10 +3049,10 @@ bool isGaleForceWindS( int windy )
       return TRUE;
    else
       return FALSE;
-} 
+}
 
 
-void do_setweather( CHAR_DATA* ch, const char* argument)
+void do_setweather( CHAR_DATA * ch, const char *argument )
 {
    char arg[MIL], arg2[MIL], arg3[MIL], arg4[MIL];
    int value, x, y;
@@ -3168,7 +3159,7 @@ void do_setweather( CHAR_DATA* ch, const char* argument)
    }
 }
 
-void do_showweather( CHAR_DATA* ch, const char* argument)
+void do_showweather( CHAR_DATA * ch, const char *argument )
 {
    char arg[MIL], arg2[MIL];
    int x, y;
@@ -3188,7 +3179,7 @@ void do_showweather( CHAR_DATA* ch, const char* argument)
       return;
    }
 
-   if( arg[0] == '\0' || arg2[0] == '\0'  )
+   if( arg[0] == '\0' || arg2[0] == '\0' )
    {
       send_to_char( "Syntax: showweather <x> <y>\r\n", ch );
       return;
@@ -3199,9 +3190,9 @@ void do_showweather( CHAR_DATA* ch, const char* argument)
 
    if( x < 0 || x > WEATHER_SIZE_X - 1 )
    {
-      ch_printf( ch, "X value must be between 0 and %d.\r\n", WEATHER_SIZE_X - 1);
+      ch_printf( ch, "X value must be between 0 and %d.\r\n", WEATHER_SIZE_X - 1 );
       return;
-   }	
+   }
 
    if( y < 0 || y > WEATHER_SIZE_Y - 1 )
    {
@@ -3225,7 +3216,7 @@ void do_showweather( CHAR_DATA* ch, const char* argument)
    ch_printf_color( ch, "&WWind Speed YAxis:  &w%d&D\r\n", cell->windSpeedY );
 }
 
-void do_weather( CHAR_DATA* ch, const char* argument)
+void do_weather( CHAR_DATA * ch, const char *argument )
 {
    struct WeatherCell *cell = getWeatherCell( ch->in_room->area );
 
@@ -3358,7 +3349,7 @@ void do_weather( CHAR_DATA* ch, const char* argument)
    {
       if( isCalmWindE( getWindX( cell ) ) && isCalmWindS( getWindY( cell ) ) )
          ch_printf_color( ch, "&GA calm wind brushes your skin from the southeast.&D\r\n" );
-      else if( isCalmWindE( getWindX( cell ) ) && isCalmWindN( getWindY( cell ) ) ) 
+      else if( isCalmWindE( getWindX( cell ) ) && isCalmWindN( getWindY( cell ) ) )
          ch_printf_color( ch, "&GA calm wind brushes your skin from the northeast.&D\r\n" );
       else if( isBreezyWindE( getWindX( cell ) ) && isBreezyWindS( getWindY( cell ) ) )
          ch_printf_color( ch, "&GA steady breeze emanates from the southeast.&D\r\n" );
@@ -3383,7 +3374,7 @@ void do_weather( CHAR_DATA* ch, const char* argument)
 
       else if( isCalmWindW( getWindX( cell ) ) && isCalmWindS( getWindY( cell ) ) )
          ch_printf_color( ch, "&GA calm wind brushes your skin from the southwest.&D\r\n" );
-      else if( isCalmWindW( getWindX( cell ) ) && isCalmWindN( getWindY( cell ) ) ) 
+      else if( isCalmWindW( getWindX( cell ) ) && isCalmWindN( getWindY( cell ) ) )
          ch_printf_color( ch, "&GA calm wind brushes your skin from the northwest.&D\r\n" );
       else if( isBreezyWindW( getWindX( cell ) ) && isBreezyWindS( getWindY( cell ) ) )
          ch_printf_color( ch, "&GA steady breeze emanates from the southwest.&D\r\n" );
@@ -3407,7 +3398,8 @@ void do_weather( CHAR_DATA* ch, const char* argument)
          ch_printf_color( ch, "&GA gale force wind is tearing through the air from the northwest.&D\r\n" );
 
       else
-         ch_printf_color( ch, "&GThe wind is blowing in such a chaotic manner, You can't tell where it's coming from!&D\r\n" );
+         ch_printf_color( ch,
+                          "&GThe wind is blowing in such a chaotic manner, You can't tell where it's coming from!&D\r\n" );
    }
    else if( getWindX( cell ) != 0 && getWindY( cell ) == 0 )
    {

@@ -26,14 +26,14 @@
  */
 const char *tiny_affect_loc_name( int location );
 
-void do_gold( CHAR_DATA* ch, const char* argument)
+void do_gold( CHAR_DATA * ch, const char *argument )
 {
    set_char_color( AT_GOLD, ch );
    ch_printf( ch, "You have %s gold pieces.\r\n", num_punct( ch->gold ) );
    return;
 }
 
-void do_worth( CHAR_DATA* ch, const char* argument)
+void do_worth( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    char buf2[MAX_STRING_LENGTH];
@@ -139,45 +139,47 @@ void do_worth( CHAR_DATA* ch, const char* argument)
 /*
  * New score command by Haus
  */
-void do_score( CHAR_DATA* ch, const char* argument )
+void do_score( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    AFFECT_DATA *paf;
    int iLang;
-   /*const char *suf;
-   short day;
-
-   day = ch->pcdata->day + 1;
-
-   if( day > 4 && day < 20 )
-      suf = "th";
-   else if( day % 10 == 1 )
-      suf = "st";
-   else if( day % 10 == 2 )
-      suf = "nd";
-   else if( day % 10 == 3 )
-      suf = "rd";
-   else
-      suf = "th";
-   * - Uncomment this if you want Birthdays dispayed on score for players - Kayle 1/22/08
-   */
+   /*
+    * const char *suf;
+    * short day;
+    * 
+    * day = ch->pcdata->day + 1;
+    * 
+    * if( day > 4 && day < 20 )
+    * suf = "th";
+    * else if( day % 10 == 1 )
+    * suf = "st";
+    * else if( day % 10 == 2 )
+    * suf = "nd";
+    * else if( day % 10 == 3 )
+    * suf = "rd";
+    * else
+    * suf = "th";
+    * * - Uncomment this if you want Birthdays dispayed on score for players - Kayle 1/22/08
+    */
 
    set_pager_color( AT_SCORE, ch );
 
-   pager_printf( ch, "\r\nScore for %s%s.\r\n", ch->name, IS_NPC(ch) ? "" : ch->pcdata->title );
+   pager_printf( ch, "\r\nScore for %s%s.\r\n", ch->name, IS_NPC( ch ) ? "" : ch->pcdata->title );
    if( get_trust( ch ) != ch->level )
       pager_printf( ch, "You are trusted at level %d.\r\n", get_trust( ch ) );
 
    send_to_pager( "----------------------------------------------------------------------------\r\n", ch );
 
-   /*if( time_info.day == ch->pcdata->day && time_info.month == ch->pcdata->month )
-      send_to_char( "Today is your birthday!\r\n", ch );
-   else
-      ch_printf( ch, "Your birthday is: Day of %s, %d%s day in the Month of %s, in the year %d.\r\n",
-                 day_name[ch->pcdata->day % sysdata.daysperweek], day, suf, month_name[ch->pcdata->month], ch->pcdata->year );
-   send_to_pager( "----------------------------------------------------------------------------\r\n", ch );
-   * - Uncomment this if you want players to see their birthday's on score. - Kayle 1/22/08
-   */
+   /*
+    * if( time_info.day == ch->pcdata->day && time_info.month == ch->pcdata->month )
+    * send_to_char( "Today is your birthday!\r\n", ch );
+    * else
+    * ch_printf( ch, "Your birthday is: Day of %s, %d%s day in the Month of %s, in the year %d.\r\n",
+    * day_name[ch->pcdata->day % sysdata.daysperweek], day, suf, month_name[ch->pcdata->month], ch->pcdata->year );
+    * send_to_pager( "----------------------------------------------------------------------------\r\n", ch );
+    * * - Uncomment this if you want players to see their birthday's on score. - Kayle 1/22/08
+    */
 
    pager_printf( ch, "LEVEL: %-3d         Race : %-10.10s        Played: %ld hours\r\n",
                  ch->level, capitalize( get_race( ch ) ), ( long int )GET_TIME_PLAYED( ch ) );
@@ -793,7 +795,7 @@ const char *get_race( CHAR_DATA * ch )
 /*								-Thoric
  * Display your current exp, level, and surrounding level exp requirements
  */
-void do_level( CHAR_DATA* ch, const char* argument)
+void do_level( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    char buf2[MAX_STRING_LENGTH];
@@ -816,7 +818,7 @@ void do_level( CHAR_DATA* ch, const char* argument)
 }
 
 /* 1997, Blodkai */
-void do_remains( CHAR_DATA* ch, const char* argument)
+void do_remains( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    OBJ_DATA *obj;
@@ -859,7 +861,7 @@ void do_remains( CHAR_DATA* ch, const char* argument)
 }
 
 /* Affects-at-a-glance, Blodkai */
-void do_affected( CHAR_DATA* ch, const char* argument)
+void do_affected( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    AFFECT_DATA *paf;
@@ -924,7 +926,7 @@ void do_affected( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_inventory( CHAR_DATA* ch, const char* argument)
+void do_inventory( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
 
@@ -948,7 +950,7 @@ void do_inventory( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_equipment( CHAR_DATA* ch, const char* argument)
+void do_equipment( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *obj;
    int iWear;
@@ -1005,7 +1007,7 @@ void set_title( CHAR_DATA * ch, const char *title )
    ch->pcdata->title = STRALLOC( buf );
 }
 
-void do_title( CHAR_DATA* ch, const char* argument)
+void do_title( CHAR_DATA * ch, const char *argument )
 {
    if( IS_NPC( ch ) )
       return;
@@ -1030,7 +1032,7 @@ void do_title( CHAR_DATA* ch, const char* argument)
    }
 
    char title[50];
-   mudstrlcpy(title, argument, 50);
+   mudstrlcpy( title, argument, 50 );
 
    smash_tilde( title );
    set_title( ch, title );
@@ -1038,7 +1040,7 @@ void do_title( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_homepage( CHAR_DATA* ch, const char* argument)
+void do_homepage( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
 
@@ -1087,7 +1089,7 @@ void do_homepage( CHAR_DATA* ch, const char* argument)
 /*
  * Set your personal description				-Thoric
  */
-void do_description( CHAR_DATA* ch, const char* argument)
+void do_description( CHAR_DATA * ch, const char *argument )
 {
    if( IS_NPC( ch ) )
    {
@@ -1126,7 +1128,7 @@ void do_description( CHAR_DATA* ch, const char* argument)
 }
 
 /* Ripped off do_description for whois bio's -- Scryn*/
-void do_bio( CHAR_DATA* ch, const char* argument)
+void do_bio( CHAR_DATA * ch, const char *argument )
 {
    if( IS_NPC( ch ) )
    {
@@ -1173,7 +1175,7 @@ void do_bio( CHAR_DATA* ch, const char* argument)
  * New stat and statreport command coded by Morphina
  * Bug fixes by Shaddai
  */
-void do_statreport( CHAR_DATA* ch, const char* argument)
+void do_statreport( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
 
@@ -1218,7 +1220,7 @@ void do_statreport( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_stat( CHAR_DATA* ch, const char* argument)
+void do_stat( CHAR_DATA * ch, const char *argument )
 {
    if( IS_NPC( ch ) )
    {
@@ -1244,7 +1246,7 @@ void do_stat( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_report( CHAR_DATA* ch, const char* argument)
+void do_report( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_INPUT_LENGTH];
 
@@ -1281,7 +1283,7 @@ void do_report( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_fprompt( CHAR_DATA* ch, const char* argument)
+void do_fprompt( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
 
@@ -1310,7 +1312,7 @@ void do_fprompt( CHAR_DATA* ch, const char* argument)
       STRFREE( ch->pcdata->fprompt );
 
    char prompt[128];
-   mudstrlcpy(prompt, argument, 128);
+   mudstrlcpy( prompt, argument, 128 );
 
    /*
     * Can add a list of pre-set prompts here if wanted.. perhaps
@@ -1323,7 +1325,7 @@ void do_fprompt( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_prompt( CHAR_DATA* ch, const char* argument)
+void do_prompt( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
 
@@ -1352,7 +1354,7 @@ void do_prompt( CHAR_DATA* ch, const char* argument)
       STRFREE( ch->pcdata->prompt );
 
    char prompt[128];
-   mudstrlcpy(prompt, argument, 128);
+   mudstrlcpy( prompt, argument, 128 );
 
    /*
     * Can add a list of pre-set prompts here if wanted.. perhaps

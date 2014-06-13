@@ -29,8 +29,8 @@
 
 static char rcsid[] = "$Id: services.c,v 1.5 1998/09/11 04:34:10 shaddai Exp $"; /* RCS revision id */
 
-#define THIS_SERVICE "SMAUG"
-#define THIS_SERVICE_DISPLAY "SMAUG for Win32"
+#define THIS_SERVICE "XSMAUG"
+#define THIS_SERVICE_DISPLAY "XSMAUG for Win32"
 
 int main( int argc, char **argv );
 void mainthread( int argc, char **argv );
@@ -103,7 +103,7 @@ Get the command line parameters and see what the user wants us to do.
          status = get_service_status( &svcstatus, TRUE );
          if( status == 0 && svcstatus.dwCurrentState == SERVICE_RUNNING )
          {
-            fprintf( stderr, "The SMAUG is already running as a service.\n" );
+            fprintf( stderr, "The XSMAUG is already running as a service.\n" );
             return 1;
          }
          worker_thread( NULL );
@@ -123,7 +123,7 @@ Get the command line parameters and see what the user wants us to do.
       status = get_service_status( &svcstatus, TRUE );
       if( status == 0 && svcstatus.dwCurrentState == SERVICE_RUNNING )
       {
-         fprintf( stderr, "The SMAUG is already running as a service.\n" );
+         fprintf( stderr, "The XSMAUG is already running as a service.\n" );
          return 1;
       }
 
@@ -143,11 +143,11 @@ Get the command line parameters and see what the user wants us to do.
        * 
        */
 
-      fprintf( stderr, "Attempting to start SMAUG as a service ...\n" );
+      fprintf( stderr, "Attempting to start XSMAUG as a service ...\n" );
       if( !StartServiceCtrlDispatcher( dispatchTable ) )
       {
          fprintf( stderr, "Unable to start service, assuming running console-mode application.\n" );
-         fprintf( stderr, "You can save time on the next invocation by specifying: SMAUG /run\n" );
+         fprintf( stderr, "You can save time on the next invocation by specifying: XSMAUG /run\n" );
          worker_thread( NULL );
       }
 

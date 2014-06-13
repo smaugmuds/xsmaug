@@ -365,7 +365,7 @@ OBJ_DATA *find_quill( CHAR_DATA * ch )
    return NULL;
 }
 
-void do_noteroom( CHAR_DATA* ch, const char* argument)
+void do_noteroom( CHAR_DATA * ch, const char *argument )
 {
    BOARD_DATA *board;
    char arg[MAX_STRING_LENGTH];
@@ -409,7 +409,7 @@ void do_noteroom( CHAR_DATA* ch, const char* argument)
    }
 }
 
-void do_mailroom( CHAR_DATA* ch, const char* argument)
+void do_mailroom( CHAR_DATA * ch, const char *argument )
 {
    BOARD_DATA *board;
    char arg[MAX_STRING_LENGTH];
@@ -1026,7 +1026,7 @@ void do_note( CHAR_DATA * ch, const char *arg_passed, bool IS_MAIL )
 
       // this is very, very evil and should not be done.
       // but I don't feel like making a temporary string here.
-      ((char*)arg_passed)[0] = UPPER( arg_passed[0] );
+      ( ( char * )arg_passed )[0] = UPPER( arg_passed[0] );
 
       snprintf( fname, 1024, "%s%c/%s", PLAYER_DIR, tolower( arg_passed[0] ), capitalize( arg_passed ) );
 
@@ -1519,7 +1519,7 @@ void load_boards( void )
 }
 
 
-void do_makeboard( CHAR_DATA* ch, const char* argument)
+void do_makeboard( CHAR_DATA * ch, const char *argument )
 {
    BOARD_DATA *board;
 
@@ -1541,7 +1541,7 @@ void do_makeboard( CHAR_DATA* ch, const char* argument)
    board->extra_removers = str_dup( "" );
 }
 
-void do_bset( CHAR_DATA* ch, const char* argument)
+void do_bset( CHAR_DATA * ch, const char *argument )
 {
    BOARD_DATA *board;
    bool found;
@@ -1884,7 +1884,7 @@ void do_bset( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_bstat( CHAR_DATA* ch, const char* argument)
+void do_bstat( CHAR_DATA * ch, const char *argument )
 {
    BOARD_DATA *board;
    bool found;
@@ -1936,7 +1936,7 @@ void do_bstat( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_boards( CHAR_DATA* ch, const char* argument)
+void do_boards( CHAR_DATA * ch, const char *argument )
 {
    BOARD_DATA *board;
 

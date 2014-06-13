@@ -94,7 +94,7 @@ const char *mprog_type_to_name( int type )
  * enough to identify the mob and give its basic condition.  It does however,
  * show the MUDprograms which are set.
  */
-void do_mpstat( CHAR_DATA* ch, const char* argument)
+void do_mpstat( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    MPROG_DATA *mprg;
@@ -150,7 +150,7 @@ void do_mpstat( CHAR_DATA* ch, const char* argument)
 }
 
 /* Opstat - Scryn 8/12*/
-void do_opstat( CHAR_DATA* ch, const char* argument)
+void do_opstat( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    MPROG_DATA *mprg;
@@ -188,7 +188,7 @@ void do_opstat( CHAR_DATA* ch, const char* argument)
 }
 
 /* Rpstat - Scryn 8/12 */
-void do_rpstat( CHAR_DATA* ch, const char* argument)
+void do_rpstat( CHAR_DATA * ch, const char *argument )
 {
    MPROG_DATA *mprg;
 
@@ -206,7 +206,7 @@ void do_rpstat( CHAR_DATA* ch, const char* argument)
 }
 
 /* Woowoo - Blodkai, November 1997 */
-void do_mpasupress( CHAR_DATA* ch, const char* argument)
+void do_mpasupress( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -251,7 +251,7 @@ void do_mpasupress( CHAR_DATA* ch, const char* argument)
 }
 
 /* lets the mobile kill any player or mobile without murder*/
-void do_mpkill( CHAR_DATA* ch, const char* argument)
+void do_mpkill( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -305,7 +305,7 @@ void do_mpkill( CHAR_DATA* ch, const char* argument)
    it can also destroy a worn object and it can destroy
    items using all.xxxxx or just plain all of them */
 
-void do_mpjunk( CHAR_DATA* ch, const char* argument)
+void do_mpjunk( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    OBJ_DATA *obj;
@@ -376,7 +376,7 @@ int get_color( const char *argument )  /* get color code from command string */
 }
 
 /* Prints the argument to all the rooms around the mobile */
-void do_mpasound( CHAR_DATA* ch, const char* argument)
+void do_mpasound( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    ROOM_INDEX_DATA *was_in_room;
@@ -423,7 +423,7 @@ void do_mpasound( CHAR_DATA* ch, const char* argument)
 }
 
 /* prints the message to all in the room other than the mob and victim */
-void do_mpechoaround( CHAR_DATA* ch, const char* argument)
+void do_mpechoaround( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -472,7 +472,7 @@ void do_mpechoaround( CHAR_DATA* ch, const char* argument)
 
 /* prints message only to victim */
 
-void do_mpechoat( CHAR_DATA* ch, const char* argument)
+void do_mpechoat( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -522,7 +522,7 @@ void do_mpechoat( CHAR_DATA* ch, const char* argument)
 
 /* prints message to room at large. */
 
-void do_mpecho( CHAR_DATA* ch, const char* argument)
+void do_mpecho( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    short color;
@@ -553,7 +553,7 @@ void do_mpecho( CHAR_DATA* ch, const char* argument)
 
 /* sound support -haus */
 
-void do_mpsoundaround( CHAR_DATA* ch, const char* argument)
+void do_mpsoundaround( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    char sound[MAX_INPUT_LENGTH];
@@ -593,7 +593,7 @@ void do_mpsoundaround( CHAR_DATA* ch, const char* argument)
 
 /* prints message only to victim */
 
-void do_mpsoundat( CHAR_DATA* ch, const char* argument)
+void do_mpsoundat( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    char sound[MAX_INPUT_LENGTH];
@@ -633,7 +633,7 @@ void do_mpsoundat( CHAR_DATA* ch, const char* argument)
 
 /* prints message to room at large. */
 
-void do_mpsound( CHAR_DATA* ch, const char* argument)
+void do_mpsound( CHAR_DATA * ch, const char *argument )
 {
    char sound[MAX_INPUT_LENGTH];
    EXT_BV actflags;
@@ -663,7 +663,7 @@ void do_mpsound( CHAR_DATA* ch, const char* argument)
 /* end sound stuff ----------------------------------------*/
 
 /* Music stuff, same as above, at zMUD coders' request -- Blodkai */
-void do_mpmusicaround( CHAR_DATA* ch, const char* argument)
+void do_mpmusicaround( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    char music[MAX_INPUT_LENGTH];
@@ -694,7 +694,8 @@ void do_mpmusicaround( CHAR_DATA* ch, const char* argument)
    ch->act = actflags;
    return;
 }
-void do_mpmusic( CHAR_DATA* ch, const char* argument)
+
+void do_mpmusic( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    char music[MAX_INPUT_LENGTH];
@@ -725,7 +726,8 @@ void do_mpmusic( CHAR_DATA* ch, const char* argument)
    ch->act = actflags;
    return;
 }
-void do_mpmusicat( CHAR_DATA* ch, const char* argument)
+
+void do_mpmusicat( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    char music[MAX_INPUT_LENGTH];
@@ -760,7 +762,7 @@ void do_mpmusicat( CHAR_DATA* ch, const char* argument)
 /* lets the mobile load an item or mobile.  All items
 are loaded into inventory.  you can specify a level with
 the load object portion as well. */
-void do_mpmload( CHAR_DATA* ch, const char* argument)
+void do_mpmload( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    MOB_INDEX_DATA *pMobIndex;
@@ -791,7 +793,7 @@ void do_mpmload( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mpoload( CHAR_DATA* ch, const char* argument)
+void do_mpoload( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -862,7 +864,7 @@ void do_mpoload( CHAR_DATA* ch, const char* argument)
 }
 
 /* Just a hack of do_pardon from act_wiz.c -- Blodkai, 6/15/97 */
-void do_mppardon( CHAR_DATA* ch, const char* argument)
+void do_mppardon( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -944,7 +946,7 @@ void do_mppardon( CHAR_DATA* ch, const char* argument)
    or purge a specified object or mob in the room.  It can purge
    itself, but this had best be the last command in the MUDprogram
    otherwise ugly stuff will happen */
-void do_mppurge( CHAR_DATA* ch, const char* argument)
+void do_mppurge( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -1011,7 +1013,7 @@ void do_mppurge( CHAR_DATA* ch, const char* argument)
 }
 
 /* Allow mobiles to go wizinvis with programs -- SB */
-void do_mpinvis( CHAR_DATA* ch, const char* argument)
+void do_mpinvis( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    short level;
@@ -1063,7 +1065,7 @@ void do_mpinvis( CHAR_DATA* ch, const char* argument)
 
 /* lets the mobile goto any location it wishes that is not private */
 /* Mounted chars follow their mobiles now - Blod, 11/97 */
-void do_mpgoto( CHAR_DATA* ch, const char* argument)
+void do_mpgoto( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    ROOM_INDEX_DATA *location;
@@ -1110,7 +1112,7 @@ void do_mpgoto( CHAR_DATA* ch, const char* argument)
 
 /* lets the mobile do a command at another location. Very useful */
 
-void do_mpat( CHAR_DATA* ch, const char* argument)
+void do_mpat( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    ROOM_INDEX_DATA *location;
@@ -1152,7 +1154,7 @@ void do_mpat( CHAR_DATA* ch, const char* argument)
 }
 
 /* allow a mobile to advance a player's level... very dangerous */
-void do_mpadvance( CHAR_DATA* ch, const char* argument)
+void do_mpadvance( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -1281,7 +1283,7 @@ void do_mpadvance( CHAR_DATA* ch, const char* argument)
    everyone in the current room to the specified location 
    the area argument transfers everyone in the current area to the
    specified location */
-void do_mptransfer( CHAR_DATA* ch, const char* argument)
+void do_mptransfer( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
    ROOM_INDEX_DATA *location;
@@ -1361,7 +1363,7 @@ void do_mptransfer( CHAR_DATA* ch, const char* argument)
 
 /* lets the mobile force someone to do something.  must be mortal level
    and the all argument only affects those in the room with the mobile */
-void do_mpforce( CHAR_DATA* ch, const char* argument)
+void do_mpforce( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
 
@@ -1427,7 +1429,7 @@ void do_mpforce( CHAR_DATA* ch, const char* argument)
  * mpnuisance mpunnuisance just incase we need them later --Shaddai
  */
 
-void do_mpnuisance( CHAR_DATA* ch, const char* argument)
+void do_mpnuisance( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    char arg1[MAX_STRING_LENGTH];
@@ -1479,7 +1481,7 @@ void do_mpnuisance( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mpunnuisance( CHAR_DATA* ch, const char* argument)
+void do_mpunnuisance( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    TIMER *timer, *timer_next;
@@ -1536,7 +1538,7 @@ void do_mpunnuisance( CHAR_DATA* ch, const char* argument)
 /*
  * mpbodybag for mobs to do cr's  --Shaddai
  */
-void do_mpbodybag( CHAR_DATA* ch, const char* argument)
+void do_mpbodybag( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    OBJ_DATA *obj;
@@ -1594,7 +1596,7 @@ void do_mpbodybag( CHAR_DATA* ch, const char* argument)
  * mpmorph and mpunmorph for morphing people with mobs. --Shaddai
  */
 
-void do_mpmorph( CHAR_DATA* ch, const char* argument)
+void do_mpmorph( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    MORPH_DATA *morph;
@@ -1642,7 +1644,7 @@ void do_mpmorph( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mpunmorph( CHAR_DATA* ch, const char* argument)
+void do_mpunmorph( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    char arg[MAX_STRING_LENGTH];
@@ -1720,7 +1722,7 @@ void do_mpechozone( CHAR_DATA * ch, const char *argument )  /* Blod, late 97 */
  * syntax:  mppractice victim spell_name max%
  *
  */
-void do_mp_practice( CHAR_DATA* ch, const char* argument)
+void do_mp_practice( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -1820,7 +1822,7 @@ void do_mp_practice( CHAR_DATA* ch, const char* argument)
 
 }
 
-void do_mpstrew( CHAR_DATA* ch, const char* argument)
+void do_mpstrew( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -1912,7 +1914,7 @@ void do_mpstrew( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mpscatter( CHAR_DATA* ch, const char* argument)
+void do_mpscatter( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_STRING_LENGTH];
    char arg2[MAX_STRING_LENGTH];
@@ -1998,7 +2000,7 @@ void do_mpscatter( CHAR_DATA* ch, const char* argument)
 /*
  * syntax: mpslay (character)
  */
-void do_mp_slay( CHAR_DATA* ch, const char* argument)
+void do_mp_slay( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -2062,7 +2064,7 @@ void do_mp_slay( CHAR_DATA* ch, const char* argument)
 /*
  * syntax: mpdamage (character) (#hps)
  */
-void do_mp_damage( CHAR_DATA* ch, const char* argument)
+void do_mp_damage( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -2142,7 +2144,7 @@ void do_mp_damage( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mp_log( CHAR_DATA* ch, const char* argument)
+void do_mp_log( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    struct tm *t = localtime( &current_time );
@@ -2167,7 +2169,7 @@ void do_mp_log( CHAR_DATA* ch, const char* argument)
 /*
  * syntax: mprestore (character) (#hps)                Gorog
  */
-void do_mp_restore( CHAR_DATA* ch, const char* argument)
+void do_mp_restore( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -2220,7 +2222,7 @@ void do_mp_restore( CHAR_DATA* ch, const char* argument)
  * Syntax mpfavor target number
  * Raise a player's favor in progs.
  */
-void do_mpfavor( CHAR_DATA* ch, const char* argument)
+void do_mpfavor( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -2298,7 +2300,7 @@ void do_mpfavor( CHAR_DATA* ch, const char* argument)
  *
  *  won't mess with existing exits
  */
-void do_mp_open_passage( CHAR_DATA* ch, const char* argument)
+void do_mp_open_passage( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -2391,7 +2393,7 @@ void do_mp_open_passage( CHAR_DATA* ch, const char* argument)
  * Syntax mp_fillin x
  * Simply closes the door
  */
-void do_mp_fill_in( CHAR_DATA* ch, const char* argument)
+void do_mp_fill_in( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    EXIT_DATA *pexit;
@@ -2420,7 +2422,7 @@ void do_mp_fill_in( CHAR_DATA* ch, const char* argument)
  *
  * the exit must have EX_PASSAGE set
  */
-void do_mp_close_passage( CHAR_DATA* ch, const char* argument)
+void do_mp_close_passage( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -2500,7 +2502,7 @@ void do_mp_close_passage( CHAR_DATA* ch, const char* argument)
 /*
  * Does nothing.  Used for scripts.
  */
-void do_mpnothing( CHAR_DATA* ch, const char* argument)
+void do_mpnothing( CHAR_DATA * ch, const char *argument )
 {
    if( !IS_NPC( ch ) || ch->desc || IS_AFFECTED( ch, AFF_CHARM ) )
    {
@@ -2517,7 +2519,7 @@ void do_mpnothing( CHAR_DATA* ch, const char* argument)
  *    with room sleep_progs
  *
  */
-void do_mpdream( CHAR_DATA* ch, const char* argument)
+void do_mpdream( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_STRING_LENGTH];
    CHAR_DATA *vict;
@@ -2545,7 +2547,7 @@ void do_mpdream( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mpapply( CHAR_DATA* ch, const char* argument)
+void do_mpapply( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    char log_buf[MAX_STRING_LENGTH];
@@ -2590,7 +2592,7 @@ void do_mpapply( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mpapplyb( CHAR_DATA* ch, const char* argument)
+void do_mpapplyb( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    char log_buf[MAX_STRING_LENGTH];
@@ -2708,7 +2710,7 @@ void do_mpapplyb( CHAR_DATA* ch, const char* argument)
 /*
  * Deposit some gold into the current area's economy		-Thoric
  */
-void do_mp_deposit( CHAR_DATA* ch, const char* argument)
+void do_mp_deposit( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_STRING_LENGTH];
    int gold;
@@ -2738,7 +2740,7 @@ void do_mp_deposit( CHAR_DATA* ch, const char* argument)
 /*
  * Withdraw some gold from the current area's economy		-Thoric
  */
-void do_mp_withdraw( CHAR_DATA* ch, const char* argument)
+void do_mp_withdraw( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_STRING_LENGTH];
    int gold;
@@ -2765,7 +2767,7 @@ void do_mp_withdraw( CHAR_DATA* ch, const char* argument)
    }
 }
 
-void do_mpdelay( CHAR_DATA* ch, const char* argument)
+void do_mpdelay( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -2815,7 +2817,7 @@ void do_mpdelay( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mppeace( CHAR_DATA* ch, const char* argument)
+void do_mppeace( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *rch;
@@ -2868,7 +2870,7 @@ void do_mppeace( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mppkset( CHAR_DATA* ch, const char* argument)
+void do_mppkset( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    char arg[MAX_STRING_LENGTH];
@@ -3124,7 +3126,7 @@ ch_ret simple_damage( CHAR_DATA * ch, CHAR_DATA * victim, int dam, int dt )
 }
 
 /* New mob hate, hunt, and fear code courtesy Rjael of Saltwind MUD */
-void do_mphate( CHAR_DATA* ch, const char* argument)
+void do_mphate( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
    CHAR_DATA *victim, *master, *mob;
@@ -3200,7 +3202,7 @@ void do_mphate( CHAR_DATA* ch, const char* argument)
    }
 }
 
-void do_mphunt( CHAR_DATA* ch, const char* argument)
+void do_mphunt( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
    CHAR_DATA *victim, *master, *mob;
@@ -3276,7 +3278,7 @@ void do_mphunt( CHAR_DATA* ch, const char* argument)
    }
 }
 
-void do_mpfear( CHAR_DATA* ch, const char* argument)
+void do_mpfear( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
    CHAR_DATA *victim, *master, *mob;
@@ -3355,7 +3357,7 @@ void do_mpfear( CHAR_DATA* ch, const char* argument)
 /*
  * Make an object owned by a char. --Shaddai
  */
-void do_mpoowner( CHAR_DATA* ch, const char* argument)
+void do_mpoowner( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *obj;
    CHAR_DATA *victim = NULL;

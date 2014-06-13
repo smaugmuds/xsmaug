@@ -38,7 +38,7 @@ bool cur_obj_extracted;
 obj_ret global_objcode;
 
 OBJ_DATA *group_object( OBJ_DATA * obj1, OBJ_DATA * obj2 );
-void update_room_reset( CHAR_DATA *ch, bool setting );
+void update_room_reset( CHAR_DATA * ch, bool setting );
 bool in_magic_container( OBJ_DATA * obj );
 void delete_reset( RESET_DATA * pReset );
 
@@ -111,7 +111,7 @@ TRV_DATA *trvch_create( CHAR_DATA * ch, trv_type tp )
       bug( "%s: malloc() failure for %d nodes.", __FUNCTION__, count );
       return NULL;
    }
-   New->el = (void**) malloc( count * sizeof(void*) );
+   New->el = ( void ** )malloc( count * sizeof( void * ) );
    if( !New->el )
    {
       bug( "%s: malloc() failure for %d nodes.", __FUNCTION__, count );
@@ -270,7 +270,7 @@ TRV_DATA *trvobj_create( OBJ_DATA * obj, trv_type tp )
       bug( "%s: malloc() failure, %d nodes, type %d.", __FUNCTION__, count, tp );
       return NULL;
    }
-   New->el = (void**) malloc(count * sizeof(void*) );
+   New->el = ( void ** )malloc( count * sizeof( void * ) );
    if( !New->el )
    {
       bug( "%s: malloc() failure, %d nodes, type %d.", __FUNCTION__, count, tp );
@@ -315,7 +315,7 @@ void trv_dispose( TRV_DATA ** p )
 {
    if( *p )
    {
-      free( (*p)->el );
+      free( ( *p )->el );
       free( *p );
       *p = NULL;
    }
@@ -1274,11 +1274,8 @@ void affect_modify( CHAR_DATA * ch, AFFECT_DATA * paf, bool fAdd )
           */
       case APPLY_WEARSPELL:
       case APPLY_REMOVESPELL:
-         if( xIS_SET( ch->in_room->room_flags, ROOM_NO_MAGIC ) || IS_SET( ch->immune, RIS_MAGIC )
-          || ( ( paf->location % REVERSE_APPLY ) == APPLY_WEARSPELL && !fAdd )
-          || ( ( paf->location % REVERSE_APPLY ) == APPLY_REMOVESPELL && fAdd )
-          || saving_char == ch   /* so save/quit doesn't trigger */
-          || loading_char == ch )   /* so loading doesn't trigger */
+         if( xIS_SET( ch->in_room->room_flags, ROOM_NO_MAGIC ) || IS_SET( ch->immune, RIS_MAGIC ) || ( ( paf->location % REVERSE_APPLY ) == APPLY_WEARSPELL && !fAdd ) || ( ( paf->location % REVERSE_APPLY ) == APPLY_REMOVESPELL && fAdd ) || saving_char == ch /* so save/quit doesn't trigger */
+             || loading_char == ch )   /* so loading doesn't trigger */
             return;
 
          mod = abs( mod );

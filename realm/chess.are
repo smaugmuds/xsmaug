@@ -1,1648 +1,2136 @@
-#AREA Chess~
+#XSMAUGAREA
+#AREADATA
+Version      1
+Name         Chess~
+Author       Garth~
+WeatherX     0
+WeatherY     0
+Ranges       45 65 45 65
+Economy      0 5000000
+ResetMsg     ~
+Flags        nopkill~
+#ENDAREADATA
 
-#AUTHOR Garth~
+#MOBILE
+Vnum       30600
+Keywords   white pawn~
+Short      the white Pawn~
+Long       A white Pawn is looking around in fear for anything black.
+~
+Desc       The white Pawn looks at you and tries to flee.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea wimpy~
+Affected   sneak~
+Stats1     750 44 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
 
-#RANGES
-45 65 45 65
-$
+#MOBILE
+Vnum       30601
+Keywords   black pawn~
+Short      the black Pawn~
+Long       A black Pawn is looking around in fear of anything white.
+~
+Desc       The black Pawn looks at you and tries to flee.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc aggressive stayarea wimpy~
+Affected   sneak~
+Stats1     -750 46 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
 
-#RESETMSG ~
+#MOBILE
+Vnum       30602
+Keywords   white king~
+Short      the white King~
+Long       The King of the white army stands here in all his royalty.
+~
+Desc       He is not afraid of anyone except the black Queen.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_invis detect_hidden sanctuary infrared protect~
+Stats1     1000 56 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
 
-#FLAGS
-1 0
+#MOBILE
+Vnum       30603
+Keywords   black king~
+Short      the black King~
+Long       The King of the black army stands here in all his royalty.
+~
+Desc       He is not afraid of anyone except the white Queen.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_invis detect_hidden sanctuary infrared protect~
+Stats1     -1000 57 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
 
-#ECONOMY 0 0
+#MOBILE
+Vnum       30604
+Keywords   white queen~
+Short      the white Queen~
+Long       A Queen carved of ivory is here looking for the black King.
+~
+Desc       The Queen is very feminine for a piece of rock.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc stayarea~
+Affected   detect_invis detect_hidden infrared protect sneak~
+Stats1     750 61 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
 
-#MOBILES
-#30600
-white pawn~
-the white Pawn~
-A white Pawn is looking around in fear for anything black.
+#MOBILE
+Vnum       30605
+Keywords   black queen~
+Short      the black Queen~
+Long       A Queen carved of ebony is here looking for the white King.
 ~
-The white Pawn looks at you and tries to flee.
+Desc       The Queen is very feminine for a piece of rock.
 ~
-192 32768 750 C
-44 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30601
-black pawn~
-the black Pawn~
-A black Pawn is looking around in fear of anything white.
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc stayarea~
+Affected   detect_invis detect_hidden infrared protect sneak~
+Stats1     -750 60 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30606
+Keywords   black rook~
+Short      the black Rook~
+Long       A black castle is here to protect his King.
 ~
-The black Pawn looks at you and tries to flee.
-~
-224 32768 -750 C
-46 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30602
-white king~
-the white King~
-The King of the white army stands here in all his royalty.
-~
-He is not afraid of anyone except the black Queen.
-~
-64 8872 1000 C
-56 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30603
-black king~
-the black King~
-The King of the black army stands here in all his royalty.
-~
-He is not afraid of anyone except the white Queen.
-~
-64 8872 -1000 C
-57 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30604
-white queen~
-the white Queen~
-A Queen carved of ivory is here looking for the black King.
-~
-The Queen is very feminine for a piece of rock.
-~
-64 41512 750 C
-61 0 0 0d0+0 0d0+0
-0 0
-8 8 2
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30605
-black queen~
-the black Queen~
-A Queen carved of ebony is here looking for the white King.
-~
-The Queen is very feminine for a piece of rock.
-~
-64 41512 -750 C
-60 0 0 0d0+0 0d0+0
-0 0
-8 8 2
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30606
-black rook~
-the black Rook~
-A black castle is here to protect his King.
-~
-The rook is strong and formidable enough to protect his King from anyone the
+Desc       The rook is strong and formidable enough to protect his King from anyone the
 white army might send to assassinate him.
 ~
-64 8744 -600 C
-54 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30607
-white rook~
-the white Rook~
-A white castle is here to protect his King.
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_invis detect_hidden infrared protect~
+Stats1     -600 54 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30607
+Keywords   white rook~
+Short      the white Rook~
+Long       A white castle is here to protect his King.
 ~
-The rook is strong and formidable enough to protect his King from anyone the
+Desc       The rook is strong and formidable enough to protect his King from anyone the
 black army might send to assassinate him.
 ~
-64 8744 600 C
-53 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30608
-black knight~
-the black Knight~
-A black Knight mounted on his steed is in search of the white King.
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_invis detect_hidden infrared protect~
+Stats1     600 53 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30608
+Keywords   black knight~
+Short      the black Knight~
+Long       A black Knight mounted on his steed is in search of the white King.
 ~
-He is strong and covered in armor.  His mighty horse neighs and lifts its
+Desc       He is strong and covered in armor.  His mighty horse neighs and lifts its
 forelegs off the ground to pound you.
 ~
-64 8744 -350 C
-50 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30609
-white knight~
-the white Knight~
-A white Knight mounted on his steed is in search of the black King.
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_invis detect_hidden infrared protect~
+Stats1     -350 50 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30609
+Keywords   white knight~
+Short      the white Knight~
+Long       A white Knight mounted on his steed is in search of the black King.
 ~
-He is strong and covered in armor.  His mighty steed neighs and lifts his
+Desc       He is strong and covered in armor.  His mighty steed neighs and lifts his
 forelegs off the ground to pound you.
 ~
-64 8744 350 C
-49 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30610
-the black bishop~
-the black Bishop~
-A black Bishop is here protecting his King.
-~
-The black Bishop prepares a spell to harm you.
-~
-192 8744 -650 C
-49 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30611
-white bishop~
-the white Bishop~
-A white Bishop is here protecting his King.
-~
-The white Bishop prepares a spell to heal his King.
-~
-192 8744 650 C
-48 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30612
-white pawn~
-the white Pawn~
-A white Pawn is looking around in fear for anything black.
-~
-The white Pawn looks at you and tries to flee.
-~
-192 32768 750 C
-48 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#30613
-black pawn~
-the black Pawn~
-A black Pawn is looking around in fear of anything white.
-~
-The black Pawn looks at you and tries to flee.
-~
-224 32768 -750 C
-45 0 0 0d0+0 0d0+0
-0 0
-8 8 1
-13 13 13 13 13 13 13
-0 0 0 0 0
-0 3 0 0 0 0 0
-0 0 0 0 0 0 0 0
-#0
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_invis detect_hidden infrared protect~
+Stats1     350 49 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
 
-#OBJECTS
-#30600
-king's sceptre~
-the King's sceptre~
-A rod of gold with an ornate ball on the end was left on the ground.~
+#MOBILE
+Vnum       30610
+Keywords   the black bishop~
+Short      the black Bishop~
+Long       A black Bishop is here protecting his King.
 ~
-1 65 1 0
-0 0 -1 0
-2 0 0
-A
-4 3
-A
-12 50
-A
-13 35
-#30601
-knight's armor~
-knight's armor~
-The armor of a knight is on the ground.~
+Desc       The black Bishop prepares a spell to harm you.
 ~
-9 0 1 0
-4 0 0 0
-5 0 0
-A
-19 4
-#30602
-crown marble~
-a marble crown~
-A crown of marble was dropped here.~
-~
-9 64 1 0
-4 0 0 0
-5 0 0
-A
-5 3
-A
-19 3
-#30603
-rosary pearl string~
-a pearl rosary~
-A string of small white pearls lie tangled on the ground.~
-~
-9 65 1 0
-3 0 0 0
-5 0 0
-A
-12 75
-#0
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_cleric~
+Gender     male~
+Actflags   npc stayarea wimpy~
+Affected   detect_invis detect_hidden infrared protect~
+Stats1     -650 49 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
 
-#ROOMS
-#30600
-Entrance to the Chessboard~
-As you step out of the forest into a clearing,  you see many black and
+#MOBILE
+Vnum       30611
+Keywords   white bishop~
+Short      the white Bishop~
+Long       A white Bishop is here protecting his King.
+~
+Desc       The white Bishop prepares a spell to heal his King.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_cleric~
+Gender     male~
+Actflags   npc stayarea wimpy~
+Affected   detect_invis detect_hidden infrared protect~
+Stats1     650 48 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30612
+Keywords   white pawn~
+Short      the white Pawn~
+Long       A white Pawn is looking around in fear for anything black.
+~
+Desc       The white Pawn looks at you and tries to flee.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea wimpy~
+Affected   sneak~
+Stats1     750 48 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       30613
+Keywords   black pawn~
+Short      the black Pawn~
+Long       A black Pawn is looking around in fear of anything white.
+~
+Desc       The black Pawn looks at you and tries to flee.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc aggressive stayarea wimpy~
+Affected   sneak~
+Stats1     -750 45 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#OBJECT
+Vnum     30600
+Keywords king's sceptre~
+Type     light~
+Short    the King's sceptre~
+Long     A rod of gold with an ornate ball on the end was left on the ground.~
+Flags    glow magic~
+WFlags   take~
+Values   0 0 -1 0 0 0
+Stats    2 0 0 0 0
+Affect       -1 -1 3 4 0
+Affect       -1 -1 50 12 0
+Affect       -1 -1 35 13 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     30601
+Keywords knight's armor~
+Type     armor~
+Short    knight's armor~
+Long     The armor of a knight is on the ground.~
+WFlags   take~
+Values   4 0 0 0 0 0
+Stats    5 0 0 0 0
+Affect       -1 -1 4 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     30602
+Keywords crown marble~
+Type     armor~
+Short    a marble crown~
+Long     A crown of marble was dropped here.~
+Flags    magic~
+WFlags   take~
+Values   4 0 0 0 0 0
+Stats    5 0 0 0 0
+Affect       -1 -1 3 5 0
+Affect       -1 -1 3 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     30603
+Keywords rosary pearl string~
+Type     armor~
+Short    a pearl rosary~
+Long     A string of small white pearls lie tangled on the ground.~
+Flags    glow magic~
+WFlags   take~
+Values   3 0 0 0 0 0
+Stats    5 0 0 0 0
+Affect       -1 -1 75 12 0
+#ENDOBJECT
+
+#ROOM
+Vnum     30600
+Name     Entrance to the Chessboard~
+Sector   city~
+Flags    nomob~
+Desc     As you step out of the forest into a clearing,  you see many black and
 white squares.  On them are a bunch of wierdly cut ebony and ivory figurines,
 running and fighting.
 ~
-0 4 1 0 0 0
-D0
-~
-~
-0 -1 30601 0
-S
-#30601
-A Black Square~
-You are standing on the southeast corner of a battlefield.  As far as
+#EXIT
+Direction north~
+ToRoom    30601
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30601
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on the southeast corner of a battlefield.  As far as
 you can see are black and white squares.
 ~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30602 0
-D2
-~
-~
-0 -1 30600 0
-D3
-~
-~
-0 -1 30609 0
-S
-#30602
-A White Square~
-You are standing on a white square on the east side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30603 0
-D2
-~
-~
-0 -1 30601 0
-D3
-~
-~
-0 -1 30610 0
-S
-#30603
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30604 0
-D2
-~
-~
-0 -1 30602 0
-D3
-~
-~
-0 -1 30611 0
-S
-#30604
-A White Square~
-You are standing on a white square on the east side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30605 0
-D2
-~
-~
-0 -1 30603 0
-D3
-~
-~
-0 -1 30612 0
-S
-#30605
-A Black Square~
-You are standing on a black square on the east side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30606 0
-D2
-~
-~
-0 -1 30604 0
-D3
-~
-~
-0 -1 30613 0
-S
-#30606
-A White Square~
-You are standing on a white square on the east side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30607 0
-D2
-~
-~
-0 -1 30605 0
-D3
-~
-~
-0 -1 30614 0
-S
-#30607
-A Black Square~
-You are standing on a black square on the east side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30608 0
-D2
-~
-~
-0 -1 30606 0
-D3
-~
-~
-0 -1 30615 0
-S
-#30608
-A White Square~
-You are standing on a white square on the northeast corner of the
-battlefield.
-~
-0 0 0 0 0 0
-D2
-~
-~
-0 -1 30607 0
-D3
-~
-~
-0 -1 30616 0
-S
-#30609
-A White Square~
-You are standing on a white square on the south side of the
-battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30610 0
-D1
-~
-~
-0 -1 30601 0
-D3
-~
-~
-0 -1 30617 0
-S
-#30610
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30611 0
-D1
-~
-~
-0 -1 30602 0
-D2
-~
-~
-0 -1 30609 0
-D3
-~
-~
-0 -1 30618 0
-S
-#30611
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30612 0
-D1
-~
-~
-0 -1 30603 0
-D2
-~
-~
-0 -1 30610 0
-D3
-~
-~
-0 -1 30619 0
-S
-#30612
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30613 0
-D1
-~
-~
-0 -1 30604 0
-D2
-~
-~
-0 -1 30611 0
-D3
-~
-~
-0 -1 30620 0
-S
-#30613
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30614 0
-D1
-~
-~
-0 -1 30605 0
-D2
-~
-~
-0 -1 30612 0
-D3
-~
-~
-0 -1 30621 0
-S
-#30614
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30615 0
-D1
-~
-~
-0 -1 30606 0
-D2
-~
-~
-0 -1 30613 0
-D3
-~
-~
-0 -1 30622 0
-S
-#30615
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30616 0
-D1
-~
-~
-0 -1 30607 0
-D2
-~
-~
-0 -1 30614 0
-D3
-~
-~
-0 -1 30623 0
-S
-#30616
-A Black Square~
-You are standing on a black square on the north side of the
-battlefield.
-~
-0 0 1 0 0 0
-D1
-~
-~
-0 -1 30608 0
-D2
-~
-~
-0 -1 30615 0
-D3
-~
-~
-0 -1 30624 0
-S
-#30617
-A Black Square~
-You are standing on a black square on the south side of the
-battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30618 0
-D1
-~
-~
-0 -1 30609 0
-D3
-~
-~
-0 -1 30625 0
-S
-#30618
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30619 0
-D1
-~
-~
-0 -1 30610 0
-D2
-~
-~
-0 -1 30617 0
-D3
-~
-~
-0 -1 30626 0
-S
-#30619
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30620 0
-D1
-~
-~
-0 -1 30611 0
-D2
-~
-~
-0 -1 30618 0
-D3
-~
-~
-0 -1 30627 0
-S
-#30620
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30621 0
-D1
-~
-~
-0 -1 30612 0
-D2
-~
-~
-0 -1 30619 0
-D3
-~
-~
-0 -1 30628 0
-S
-#30621
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30622 0
-D1
-~
-~
-0 -1 30613 0
-D2
-~
-~
-0 -1 30620 0
-D3
-~
-~
-0 -1 30629 0
-S
-#30622
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30623 0
-D1
-~
-~
-0 -1 30614 0
-D2
-~
-~
-0 -1 30621 0
-D3
-~
-~
-0 -1 30630 0
-S
-#30623
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30624 0
-D1
-~
-~
-0 -1 30615 0
-D2
-~
-~
-0 -1 30622 0
-D3
-~
-~
-0 -1 30631 0
-S
-#30624
-A White Square~
-You are standing on a white square on the north side of the
-battlefield.
-~
-0 0 1 0 0 0
-D1
-~
-~
-0 -1 30616 0
-D2
-~
-~
-0 -1 30623 0
-D3
-~
-~
-0 -1 30632 0
-S
-#30625
-A White Square~
-You are standing on a white square on the south side of the
-battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30626 0
-D1
-~
-~
-0 -1 30617 0
-D3
-~
-~
-0 -1 30633 0
-S
-#30626
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30627 0
-D1
-~
-~
-0 -1 30618 0
-D2
-~
-~
-0 -1 30625 0
-D3
-~
-~
-0 -1 30634 0
-S
-#30627
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30628 0
-D1
-~
-~
-0 -1 30619 0
-D2
-~
-~
-0 -1 30626 0
-D3
-~
-~
-0 -1 30635 0
-S
-#30628
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30629 0
-D1
-~
-~
-0 -1 30620 0
-D2
-~
-~
-0 -1 30627 0
-D3
-~
-~
-0 -1 30636 0
-S
-#30629
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30630 0
-D1
-~
-~
-0 -1 30621 0
-D2
-~
-~
-0 -1 30628 0
-D3
-~
-~
-0 -1 30637 0
-S
-#30630
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30631 0
-D1
-~
-~
-0 -1 30622 0
-D2
-~
-~
-0 -1 30629 0
-D3
-~
-~
-0 -1 30638 0
-S
-#30631
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30632 0
-D1
-~
-~
-0 -1 30623 0
-D2
-~
-~
-0 -1 30630 0
-D3
-~
-~
-0 -1 30639 0
-S
-#30632
-A Black Square~
-You are standing on a black square on the north side of the
-battlefield.
-~
-0 0 1 0 0 0
-D1
-~
-~
-0 -1 30624 0
-D2
-~
-~
-0 -1 30631 0
-D3
-~
-~
-0 -1 30640 0
-S
-#30633
-A Black Square~
-You are standing on a black square on the south side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30634 0
-D1
-~
-~
-0 -1 30625 0
-D3
-~
-~
-0 -1 30641 0
-S
-#30634
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30635 0
-D1
-~
-~
-0 -1 30626 0
-D2
-~
-~
-0 -1 30633 0
-D3
-~
-~
-0 -1 30642 0
-S
-#30635
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30636 0
-D1
-~
-~
-0 -1 30627 0
-D2
-~
-~
-0 -1 30634 0
-D3
-~
-~
-0 -1 30643 0
-S
-#30636
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30637 0
-D1
-~
-~
-0 -1 30628 0
-D2
-~
-~
-0 -1 30635 0
-D3
-~
-~
-0 -1 30644 0
-S
-#30637
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30638 0
-D1
-~
-~
-0 -1 30629 0
-D2
-~
-~
-0 -1 30636 0
-D3
-~
-~
-0 -1 30645 0
-S
-#30638
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30639 0
-D1
-~
-~
-0 -1 30630 0
-D2
-~
-~
-0 -1 30637 0
-D3
-~
-~
-0 -1 30646 0
-S
-#30639
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30640 0
-D1
-~
-~
-0 -1 30631 0
-D2
-~
-~
-0 -1 30638 0
-D3
-~
-~
-0 -1 30647 0
-S
-#30640
-A White Square~
-You are standing on a white square on the north side of the
-battlefield.
-~
-0 0 1 0 0 0
-D1
-~
-~
-0 -1 30632 0
-D2
-~
-~
-0 -1 30639 0
-D3
-~
-~
-0 -1 30648 0
-S
-#30641
-A White Square~
-You are standing on a white square on the south side of the
-battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30642 0
-D1
-~
-~
-0 -1 30633 0
-D3
-~
-~
-0 -1 30649 0
-S
-#30642
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30643 0
-D1
-~
-~
-0 -1 30634 0
-D2
-~
-~
-0 -1 30641 0
-D3
-~
-~
-0 -1 30650 0
-S
-#30643
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30644 0
-D1
-~
-~
-0 -1 30635 0
-D2
-~
-~
-0 -1 30642 0
-D3
-~
-~
-0 -1 30651 0
-S
-#30644
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30645 0
-D1
-~
-~
-0 -1 30636 0
-D2
-~
-~
-0 -1 30643 0
-D3
-~
-~
-0 -1 30652 0
-S
-#30645
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30646 0
-D1
-~
-~
-0 -1 30637 0
-D2
-~
-~
-0 -1 30644 0
-D3
-~
-~
-0 -1 30653 0
-S
-#30646
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30647 0
-D1
-~
-~
-0 -1 30638 0
-D2
-~
-~
-0 -1 30645 0
-D3
-~
-~
-0 -1 30654 0
-S
-#30647
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30648 0
-D1
-~
-~
-0 -1 30639 0
-D2
-~
-~
-0 -1 30646 0
-D3
-~
-~
-0 -1 30655 0
-S
-#30648
-A Black Square~
-You are standing on a black square on the north side of the
-battlefield.
-~
-0 0 1 0 0 0
-D1
-~
-~
-0 -1 30640 0
-D2
-~
-~
-0 -1 30647 0
-D3
-~
-~
-0 -1 30656 0
-S
-#30649
-A Black Square~
-You are standing on a black square on the south side of the
-battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30650 0
-D1
-~
-~
-0 -1 30641 0
-D3
-~
-~
-0 -1 30657 0
-S
-#30650
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30651 0
-D1
-~
-~
-0 -1 30642 0
-D2
-~
-~
-0 -1 30649 0
-D3
-~
-~
-0 -1 30658 0
-S
-#30651
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30652 0
-D1
-~
-~
-0 -1 30643 0
-D2
-~
-~
-0 -1 30650 0
-D3
-~
-~
-0 -1 30659 0
-S
-#30652
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30653 0
-D1
-~
-~
-0 -1 30644 0
-D2
-~
-~
-0 -1 30651 0
-D3
-~
-~
-0 -1 30660 0
-S
-#30653
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30654 0
-D1
-~
-~
-0 -1 30645 0
-D2
-~
-~
-0 -1 30652 0
-D3
-~
-~
-0 -1 30661 0
-S
-#30654
-A White Square~
-You are standing on a white square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30655 0
-D1
-~
-~
-0 -1 30646 0
-D2
-~
-~
-0 -1 30653 0
-D3
-~
-~
-0 -1 30662 0
-S
-#30655
-A Black Square~
-You are standing on a black square.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30656 0
-D1
-~
-~
-0 -1 30647 0
-D2
-~
-~
-0 -1 30654 0
-D3
-~
-~
-0 -1 30663 0
-S
-#30656
-A White Square~
-You are standing on a white square on the north side of the
-battlefield.
-~
-0 0 1 0 0 0
-D1
-~
-~
-0 -1 30648 0
-D2
-~
-~
-0 -1 30655 0
-D3
-~
-~
-0 -1 30664 0
-S
-#30657
-A White Square~
-You are standing on a white square on the southwest corner of the
-battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30658 0
-D1
-~
-~
-0 -1 30649 0
-S
-#30658
-A Black Square~
-You are standing on a black square on the west side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30659 0
-D1
-~
-~
-0 -1 30650 0
-D2
-~
-~
-0 -1 30657 0
-S
-#30659
-A White Square~
-You are standing on a white square on the west side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30660 0
-D1
-~
-~
-0 -1 30651 0
-D2
-~
-~
-0 -1 30658 0
-S
-#30660
-A Black Square~
-You are standing on a black square on the east side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30661 0
-D1
-~
-~
-0 -1 30652 0
-D2
-~
-~
-0 -1 30659 0
-S
-#30661
-A White Square~
-You are standing on a white square on the west side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30662 0
-D1
-~
-~
-0 -1 30653 0
-D2
-~
-~
-0 -1 30660 0
-S
-#30662
-A Black Square~
-You are standing on a black square on the west side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30663 0
-D1
-~
-~
-0 -1 30654 0
-D2
-~
-~
-0 -1 30661 0
-S
-#30663
-A White Square~
-You are standing on a white square on the west side of the battlefield.
-~
-0 0 1 0 0 0
-D0
-~
-~
-0 -1 30664 0
-D1
-~
-~
-0 -1 30655 0
-D2
-~
-~
-0 -1 30662 0
-S
-#30664
-A Black Square~
-You are standing on a black square on the northwest corner of the
-battlefield.
-~
-0 0 1 0 0 0
-D1
-~
-~
-0 -1 30656 0
-D2
-~
-~
-0 -1 30663 0
-S
-#0
+#EXIT
+Direction north~
+ToRoom    30602
+#ENDEXIT
 
-#RESETS
-M 1 30600 1 30609  the white pawn to A White Square
-M 1 30600 1 30610  the white pawn to A Black Square
-M 1 30600 1 30611  the white pawn to A White Square
-M 1 30600 1 30612  the white pawn to A Black Square
-M 1 30600 1 30613  the white pawn to A White Square
-M 1 30600 1 30614  the white pawn to A Black Square
-M 1 30600 1 30615  the white pawn to A White Square
-M 1 30600 1 30616  the white pawn to A Black Square
-M 1 30601 1 30649  the black pawn to A Black Square
-M 1 30601 1 30650  the black pawn to A White Square
-M 1 30601 1 30651  the black pawn to A Black Square
-M 1 30601 1 30653  the black pawn to A Black Square
-M 1 30601 1 30654  the black pawn to A White Square
-M 1 30601 1 30655  the black pawn to A Black Square
-M 1 30601 1 30656  the black pawn to A White Square
-M 1 30607 1 30601  the white Rook to A Black Square
-M 1 30609 1 30602  the white Knight to A White Square
-E 1 30601 100 5  ; -- Equip: #30601 knight's armor (Body)
-M 1 30611 1 30603  the white Bishop to A Black Square
-E 1 30603 100 3  ; -- Equip: #30603 a pearl rosary (Neck-1)
-M 1 30604 1 30604  the white Queen to A White Square
-E 1 30602 100 6  ; -- Equip: #30602 a marble crown (Head)
-M 1 30602 1 30605  the white King to A Black Square
-E 1 30600 100 0  ; -- Equip: #30600 the King's sceptre (Light)
-M 1 30611 1 30606  the white Bishop to A White Square
-E 1 30603 100 3  ; -- Equip: #30603 a pearl rosary (Neck-1)
-M 1 30609 1 30607  the white Knight to A Black Square
-E 1 30601 100 5  ; -- Equip: #30601 knight's armor (Body)
-M 1 30607 1 30608  the white Rook to A White Square
-M 1 30601 1 30652  the black Pawn to A White Square
-M 1 30606 1 30657  the black Rook to A White Square
-M 1 30608 1 30658  the black Knight to A Black Square
-E 1 30601 100 5  ; -- Equip: #30601 knight's armor (Body)
-M 1 30610 1 30659  the black Bishop to A White Square
-E 1 30603 100 3  ; -- Equip: #30603 a pearl rosary (Neck-1)
-M 1 30605 1 30660  the black Queen to A Black Square
-E 1 30602 100 6  ; -- Equip: #30602 a marble crown (Head)
-M 1 30603 1 30661  the black King to A White Square
-E 1 30600 100 0  ; -- Equip: #30600 the King's sceptre (Light)
-M 1 30608 1 30663  the black Knight to A White Square
-E 1 30601 100 5  ; -- Equip: #30601 knight's armor (Body)
-M 1 30606 1 30664  the black Rook to A Black Square
-M 1 30610 1 30662  the black Bishop to A Black Square
-E 1 30603 100 3  ; -- Equip: #30603 a pearl rosary (Neck-1)
-S
+#EXIT
+Direction south~
+ToRoom    30600
+#ENDEXIT
 
-#SPECIALS
-M 30610 spec_cast_cleric   ; the black Bishop
-M 30611 spec_cast_cleric   ; the white Bishop
-S
+#EXIT
+Direction west~
+ToRoom    30609
+#ENDEXIT
 
-#$
+Reset M 0 30607 1 30601
+#ENDROOM
+
+#ROOM
+Vnum     30602
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the east side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30603
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30601
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30610
+#ENDEXIT
+
+Reset M 0 30609 1 30602
+  Reset E 1 30601 100 5
+#ENDROOM
+
+#ROOM
+Vnum     30603
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30604
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30602
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30611
+#ENDEXIT
+
+Reset M 0 30611 1 30603
+  Reset E 1 30603 100 3
+#ENDROOM
+
+#ROOM
+Vnum     30604
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the east side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30605
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30603
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30612
+#ENDEXIT
+
+Reset M 0 30604 1 30604
+  Reset E 1 30602 100 6
+#ENDROOM
+
+#ROOM
+Vnum     30605
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the east side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30606
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30604
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30613
+#ENDEXIT
+
+Reset M 0 30602 1 30605
+  Reset E 1 30600 100 0
+#ENDROOM
+
+#ROOM
+Vnum     30606
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the east side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30607
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30605
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30614
+#ENDEXIT
+
+Reset M 0 30611 1 30606
+  Reset E 1 30603 100 3
+#ENDROOM
+
+#ROOM
+Vnum     30607
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the east side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30608
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30606
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30615
+#ENDEXIT
+
+Reset M 0 30609 1 30607
+  Reset E 1 30601 100 5
+#ENDROOM
+
+#ROOM
+Vnum     30608
+Name     A White Square~
+Sector   inside~
+Desc     You are standing on a white square on the northeast corner of the
+battlefield.
+~
+#EXIT
+Direction south~
+ToRoom    30607
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30616
+#ENDEXIT
+
+Reset M 0 30607 1 30608
+#ENDROOM
+
+#ROOM
+Vnum     30609
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the south side of the
+battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30610
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30601
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30617
+#ENDEXIT
+
+Reset M 0 30600 1 30609
+#ENDROOM
+
+#ROOM
+Vnum     30610
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30611
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30602
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30609
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30618
+#ENDEXIT
+
+Reset M 0 30600 1 30610
+#ENDROOM
+
+#ROOM
+Vnum     30611
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30612
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30603
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30610
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30619
+#ENDEXIT
+
+Reset M 0 30600 1 30611
+#ENDROOM
+
+#ROOM
+Vnum     30612
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30613
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30604
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30611
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30620
+#ENDEXIT
+
+Reset M 0 30600 1 30612
+#ENDROOM
+
+#ROOM
+Vnum     30613
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30614
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30605
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30612
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30621
+#ENDEXIT
+
+Reset M 0 30600 1 30613
+#ENDROOM
+
+#ROOM
+Vnum     30614
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30615
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30606
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30613
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30622
+#ENDEXIT
+
+Reset M 0 30600 1 30614
+#ENDROOM
+
+#ROOM
+Vnum     30615
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30616
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30607
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30614
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30623
+#ENDEXIT
+
+Reset M 0 30600 1 30615
+#ENDROOM
+
+#ROOM
+Vnum     30616
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the north side of the
+battlefield.
+~
+#EXIT
+Direction east~
+ToRoom    30608
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30615
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30624
+#ENDEXIT
+
+Reset M 0 30600 1 30616
+#ENDROOM
+
+#ROOM
+Vnum     30617
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the south side of the
+battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30618
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30609
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30625
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30618
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30619
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30610
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30617
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30626
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30619
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30620
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30611
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30618
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30627
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30620
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30621
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30612
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30619
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30628
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30621
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30622
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30613
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30620
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30629
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30622
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30623
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30614
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30621
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30630
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30623
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30624
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30615
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30622
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30631
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30624
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the north side of the
+battlefield.
+~
+#EXIT
+Direction east~
+ToRoom    30616
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30623
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30632
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30625
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the south side of the
+battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30626
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30617
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30633
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30626
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30627
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30618
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30625
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30634
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30627
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30628
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30619
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30626
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30635
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30628
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30629
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30620
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30627
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30636
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30629
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30630
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30621
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30628
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30637
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30630
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30631
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30622
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30629
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30638
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30631
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30632
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30623
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30630
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30639
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30632
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the north side of the
+battlefield.
+~
+#EXIT
+Direction east~
+ToRoom    30624
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30631
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30640
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30633
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the south side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30634
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30625
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30641
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30634
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30635
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30626
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30633
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30642
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30635
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30636
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30627
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30634
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30643
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30636
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30637
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30628
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30635
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30644
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30637
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30638
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30629
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30636
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30645
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30638
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30639
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30630
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30637
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30646
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30639
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30640
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30631
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30638
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30647
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30640
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the north side of the
+battlefield.
+~
+#EXIT
+Direction east~
+ToRoom    30632
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30639
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30648
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30641
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the south side of the
+battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30642
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30633
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30649
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30642
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30643
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30634
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30641
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30650
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30643
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30644
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30635
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30642
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30651
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30644
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30645
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30636
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30643
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30652
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30645
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30646
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30637
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30644
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30653
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30646
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30647
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30638
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30645
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30654
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30647
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30648
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30639
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30646
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30655
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30648
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the north side of the
+battlefield.
+~
+#EXIT
+Direction east~
+ToRoom    30640
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30647
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30656
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     30649
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the south side of the
+battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30650
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30641
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30657
+#ENDEXIT
+
+Reset M 0 30601 1 30649
+#ENDROOM
+
+#ROOM
+Vnum     30650
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30651
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30642
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30649
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30658
+#ENDEXIT
+
+Reset M 0 30601 1 30650
+#ENDROOM
+
+#ROOM
+Vnum     30651
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30652
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30643
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30650
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30659
+#ENDEXIT
+
+Reset M 0 30601 1 30651
+#ENDROOM
+
+#ROOM
+Vnum     30652
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30653
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30644
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30651
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30660
+#ENDEXIT
+
+Reset M 0 30601 1 30652
+#ENDROOM
+
+#ROOM
+Vnum     30653
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30654
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30645
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30652
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30661
+#ENDEXIT
+
+Reset M 0 30601 1 30653
+#ENDROOM
+
+#ROOM
+Vnum     30654
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square.
+~
+#EXIT
+Direction north~
+ToRoom    30655
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30646
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30653
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30662
+#ENDEXIT
+
+Reset M 0 30601 1 30654
+#ENDROOM
+
+#ROOM
+Vnum     30655
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square.
+~
+#EXIT
+Direction north~
+ToRoom    30656
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30647
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30654
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30663
+#ENDEXIT
+
+Reset M 0 30601 1 30655
+#ENDROOM
+
+#ROOM
+Vnum     30656
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the north side of the
+battlefield.
+~
+#EXIT
+Direction east~
+ToRoom    30648
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30655
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30664
+#ENDEXIT
+
+Reset M 0 30601 1 30656
+#ENDROOM
+
+#ROOM
+Vnum     30657
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the southwest corner of the
+battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30658
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30649
+#ENDEXIT
+
+Reset M 0 30606 1 30657
+#ENDROOM
+
+#ROOM
+Vnum     30658
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the west side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30659
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30650
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30657
+#ENDEXIT
+
+Reset M 0 30608 1 30658
+  Reset E 1 30601 100 5
+#ENDROOM
+
+#ROOM
+Vnum     30659
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the west side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30660
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30651
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30658
+#ENDEXIT
+
+Reset M 0 30610 1 30659
+  Reset E 1 30603 100 3
+#ENDROOM
+
+#ROOM
+Vnum     30660
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the east side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30661
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30652
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30659
+#ENDEXIT
+
+Reset M 0 30605 1 30660
+  Reset E 1 30602 100 6
+#ENDROOM
+
+#ROOM
+Vnum     30661
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the west side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30662
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30653
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30660
+#ENDEXIT
+
+Reset M 0 30603 1 30661
+  Reset E 1 30600 100 0
+#ENDROOM
+
+#ROOM
+Vnum     30662
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the west side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30663
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30654
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30661
+#ENDEXIT
+
+Reset M 0 30610 1 30662
+  Reset E 1 30603 100 3
+#ENDROOM
+
+#ROOM
+Vnum     30663
+Name     A White Square~
+Sector   city~
+Desc     You are standing on a white square on the west side of the battlefield.
+~
+#EXIT
+Direction north~
+ToRoom    30664
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30655
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30662
+#ENDEXIT
+
+Reset M 0 30608 1 30663
+  Reset E 1 30601 100 5
+#ENDROOM
+
+#ROOM
+Vnum     30664
+Name     A Black Square~
+Sector   city~
+Desc     You are standing on a black square on the northwest corner of the
+battlefield.
+~
+#EXIT
+Direction east~
+ToRoom    30656
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30663
+#ENDEXIT
+
+Reset M 0 30606 1 30664
+#ENDROOM
+
+#ENDAREA

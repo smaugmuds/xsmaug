@@ -84,7 +84,7 @@ int imcwait;   /* Reconnect timer */
 int imcconnect_attempts;   /* How many times have we tried to reconnect? */
 unsigned long imc_sequencenumber;   /* sequence# for outgoing packets */
 bool imcpacketdebug = FALSE;
-bool default_packets_registered = FALSE; // Cheesy global for a stupid problem!
+bool default_packets_registered = FALSE;  // Cheesy global for a stupid problem!
 time_t imcucache_clock; /* prune ucache stuff regularly */
 time_t imc_time;  /* Current clock time for the client */
 
@@ -434,11 +434,11 @@ void imc_to_char( const char *txt, CHAR_DATA * ch )
 #if defined(IMCSMAUG)
    send_to_char_color( buf, ch );
 #elif defined(IMCCIRCLE)
- #if _CIRCLEMUD < CIRCLEMUD_VERSION(3,0,21)
+#if _CIRCLEMUD < CIRCLEMUD_VERSION(3,0,21)
    send_to_char( buf, ch );
- #else
+#else
    send_to_char( ch, "%s", buf );
- #endif
+#endif
 #elif defined(IMCSTANDALONE)
    fprintf( stderr, "%s\n", buf );
 #else
@@ -1405,7 +1405,7 @@ char *imc_getData( char *output, const char *key, const char *packet )
 
    while( ( current = find_next_esign( packet, current ) ) >= 0 )
    {
-      if( strlen( key ) > ( size_t )current )
+      if( strlen( key ) > ( size_t ) current )
          continue;
 
       i = current - strlen( key );
@@ -3241,7 +3241,7 @@ bool imc_read_socket( void )
    {
       int nRead;
 
-      if( ++loop_count > 100 ) // Yay hackish error traps! 100 loops likely means she's stuck. Break out with whatever is there.
+      if( ++loop_count > 100 )   // Yay hackish error traps! 100 loops likely means she's stuck. Break out with whatever is there.
          break;
 
       nRead = recv( this_imcmud->desc, this_imcmud->inbuf + iStart, sizeof( this_imcmud->inbuf ) - 10 - iStart, 0 );
@@ -7489,9 +7489,10 @@ const char *imc_find_social( CHAR_DATA * ch, const char *sname, const char *pers
 #if defined(SMAUGSOCIAL)
    // lower-case the social name before asking the MUD
    static char lcSocName[LGST];
-   for (int i = 0; i < LGST; i++) {
+   for( int i = 0; i < LGST; i++ )
+   {
       if( sname[i] != '\0' )
-         lcSocName[i] = tolower(sname[i]);
+         lcSocName[i] = tolower( sname[i] );
       else
          lcSocName[i] = '\0';
    }

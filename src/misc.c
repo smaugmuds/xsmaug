@@ -25,7 +25,7 @@
 
 extern int top_exit;
 
-void do_eat( CHAR_DATA* ch, const char* argument)
+void do_eat( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    OBJ_DATA *obj;
@@ -190,7 +190,7 @@ void do_eat( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_quaff( CHAR_DATA* ch, const char* argument)
+void do_quaff( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *obj;
    ch_ret retcode;
@@ -321,7 +321,7 @@ void do_quaff( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_recite( CHAR_DATA* ch, const char* argument)
+void do_recite( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -820,7 +820,7 @@ void pullorpush( CHAR_DATA * ch, OBJ_DATA * obj, bool pull )
    }
 }
 
-void do_pull( CHAR_DATA* ch, const char* argument)
+void do_pull( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    OBJ_DATA *obj;
@@ -844,7 +844,7 @@ void do_pull( CHAR_DATA* ch, const char* argument)
    pullorpush( ch, obj, TRUE );
 }
 
-void do_push( CHAR_DATA* ch, const char* argument)
+void do_push( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    OBJ_DATA *obj;
@@ -868,7 +868,7 @@ void do_push( CHAR_DATA* ch, const char* argument)
    pullorpush( ch, obj, FALSE );
 }
 
-void do_rap( CHAR_DATA* ch, const char* argument)
+void do_rap( CHAR_DATA * ch, const char *argument )
 {
    EXIT_DATA *pexit;
    char arg[MAX_INPUT_LENGTH];
@@ -919,7 +919,7 @@ void do_rap( CHAR_DATA* ch, const char* argument)
 }
 
 /* pipe commands (light, tamp, smoke) by Thoric */
-void do_tamp( CHAR_DATA* ch, const char* argument)
+void do_tamp( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *opipe;
    char arg[MAX_INPUT_LENGTH];
@@ -954,7 +954,7 @@ void do_tamp( CHAR_DATA* ch, const char* argument)
    send_to_char( "It doesn't need tamping.\r\n", ch );
 }
 
-void do_smoke( CHAR_DATA* ch, const char* argument)
+void do_smoke( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *opipe;
    char arg[MAX_INPUT_LENGTH];
@@ -1018,7 +1018,7 @@ void do_smoke( CHAR_DATA* ch, const char* argument)
    }
 }
 
-void do_light( CHAR_DATA* ch, const char* argument)
+void do_light( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *opipe;
    char arg[MAX_INPUT_LENGTH];
@@ -1063,7 +1063,7 @@ void do_light( CHAR_DATA* ch, const char* argument)
  * Apply a salve/ointment					-Thoric
  * Support for applying to others.  Pkill concerns dealt with elsewhere.
  */
-void do_apply( CHAR_DATA* ch, const char* argument)
+void do_apply( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];

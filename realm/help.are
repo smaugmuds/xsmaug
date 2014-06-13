@@ -4958,25 +4958,17 @@ resides in a chamber which prevents the usage of magic...
 
 -1 GREETING~
 .
-         /     _      _            _      _    _____
-        /      |\    /|     /\     |      |   /     \     ***************
-       /       | \  / |    /  \    |      |  |            *   \\._.//   *
-      /        |  \/  |   /    \   |      |  |            *   (0...0)   *
-     /_______  |      |  |______|  |      |  |            *    ).:.(    *
-            /  |      |  |      |  |      |  |            *    {o o}    *
-           /   |      |  |      |  |      |  |     __     *   / ' ' \   *
-          /    |      |  |      |  |      |  |       |    *-'^^.VxvxV.^^'-*
-         /     |      |  |      |   \____/    \_____/     ***************
-        / 
 
-SmaugFUSS 1.9 changes by Samson. Other bugfixes and changes provided by
-various members of the SMAUG community. Their contributions are greatly
-appreciated.
-SMAUG 1.4 written by Thoric (Derek Snider) with Altrag, Blodkai, Haus, Narn,
-Scryn, Swordbearer, Tricops, Gorog, Rennard, Grishnakh, Fireblade and Nivek.
-Original MERC 2.1 code by Hatchet, Furey, and Kahn.
-Original DikuMUD code by:
-Hans Staerfeldt, Katja Nyboe, Tom Madsen, Michael Seifert && Sebastian Hammer
+  X      X  ******* **    **  ******  **    **  ******    ***************
+   X    X  ******** ***  *** ******** **    ** ********   *   \\._.//   *
+    X  X   **       ******** **    ** **    ** **         *   (0...0)   *
+     XX    *******  ******** ******** **    ** **  ****   *    ).:.(    *
+     XX     ******* ** ** ** ******** **    ** **  ****   *    {o o}    *
+    X  X         ** **    ** **    ** **    ** **    **   *   / ' ' \   *
+   X    X  ******** **    ** **    ** ******** ********   *-'^^.VxvxV.^^'-*
+  X      X *******  **    ** **    **  ******   ******    ***************
+
+Welcome to the Realm of Darkness!
 
 Enter your character's name, or type new: ~
 
@@ -11576,7 +11568,21 @@ them or lose them.  This policy prevents wholesale abuse of pets.
  
 You are responsible for the actions of your pets.
  
-See also &WHelp PETSAVE &w
+See also &WHelp PETSAVE PETFIND &w
+~
+
+1 PETFIND~
+&BSyntax: &Ypetfind&D
+
+This command will show you what room any pets you have are in.
+~
+
+51 PETFIND~
+&BSyntax: &Ypetfind <victim>&D
+
+This command will show you what room any pets you or your victim have are in.
+This will also show vnums to immortals for both the pet and the room, but the
+option of including a victim is only available to immortals.
 ~
 
 1 PETSAVE~

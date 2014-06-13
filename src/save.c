@@ -47,8 +47,8 @@ void fread_comment( CHAR_DATA * ch, FILE * fp );
 void fwrite_variables( CHAR_DATA * ch, FILE * fp );
 void fread_variable( CHAR_DATA * ch, FILE * fp );
 bool check_parse_name( const char *name, bool newchar );
-void fwrite_fuss_exdesc( FILE * fpout, EXTRA_DESCR_DATA * ed );
-void fwrite_fuss_affect( FILE * fp, AFFECT_DATA * paf );
+void fwrite_xsmaug_exdesc( FILE * fpout, EXTRA_DESCR_DATA * ed );
+void fwrite_xsmaug_affect( FILE * fp, AFFECT_DATA * paf );
 
 /*
  * Array of containers read for proper re-nesting of objects.
@@ -219,7 +219,7 @@ short find_old_age( CHAR_DATA * ch )
    if( IS_NPC( ch ) )
       return -1;
 
-   age = ch->played / 86400;   /* Calculate realtime number of days played */
+   age = ch->played / 86400;  /* Calculate realtime number of days played */
 
    age = age / 7; /* Calculates rough estimate on number of mud years played */
 
@@ -359,8 +359,7 @@ void fwrite_char( CHAR_DATA * ch, FILE * fp )
    fprintf( fp, "Sex          %d\n", ch->sex );
    fprintf( fp, "Class        %d\n", ch->Class );
    fprintf( fp, "Race         %d\n", ch->race );
-   fprintf( fp, "Age          %d %d %d %d\n",
-            ch->pcdata->age_bonus, ch->pcdata->day, ch->pcdata->month, ch->pcdata->year );
+   fprintf( fp, "Age          %d %d %d %d\n", ch->pcdata->age_bonus, ch->pcdata->day, ch->pcdata->month, ch->pcdata->year );
    fprintf( fp, "Languages    %d %d\n", ch->speaks, ch->speaking );
    fprintf( fp, "Level        %d\n", ch->level );
    fprintf( fp, "Played       %d\n", ch->played + ( int )( current_time - ch->logon ) );
@@ -729,11 +728,11 @@ void fwrite_obj( CHAR_DATA * ch, OBJ_DATA * obj, FILE * fp, int iNest, short os_
       /*
        * Save extra object affects           -Thoric
        */
-      fwrite_fuss_affect( fp, paf );
+      fwrite_xsmaug_affect( fp, paf );
    }
 
    for( ed = obj->first_extradesc; ed; ed = ed->next )
-      fwrite_fuss_exdesc( fp, ed );
+      fwrite_xsmaug_exdesc( fp, ed );
 
    fprintf( fp, "End\n\n" );
 
@@ -1808,7 +1807,7 @@ void fread_char( CHAR_DATA * ch, FILE * fp, bool preload, bool copyover )
                break;
             }
             KEY( "Trust", ch->trust, fread_number( fp ) );
-            KEY( "Timezone", ch->pcdata->timezone, fread_number( fp )); 
+            KEY( "Timezone", ch->pcdata->timezone, fread_number( fp ) );
             /*
              * Let no character be trusted higher than one below maxlevel -- Narn 
              */
@@ -2260,7 +2259,7 @@ void set_alarm( long seconds )
 /*
  * Based on last time modified, show when a player was last on	-Thoric
  */
-void do_last( CHAR_DATA* ch, const char* argument)
+void do_last( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    char arg[MAX_INPUT_LENGTH];

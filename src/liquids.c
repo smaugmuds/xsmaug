@@ -450,7 +450,7 @@ MIX_TABLE *get_mix( const char *str )
 }
 
 /* Function to display liquid list. - Tarl 9 Jan 03 */
-void do_showliquid( CHAR_DATA* ch, const char* argument)
+void do_showliquid( CHAR_DATA * ch, const char *argument )
 {
    LIQ_TABLE *liq = NULL;
    int i;
@@ -497,7 +497,7 @@ void do_showliquid( CHAR_DATA* ch, const char* argument)
 }
 
 /* olc function for liquids   -Nopey */
-void do_setliquid( CHAR_DATA* ch, const char* argument)
+void do_setliquid( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
 
@@ -762,7 +762,7 @@ void displaymixture( CHAR_DATA * ch, MIX_TABLE * mix )
 }
 
 /* Function for showmixture - Tarl 9 Jan 03 */
-void do_showmixture( CHAR_DATA* ch, const char* argument)
+void do_showmixture( CHAR_DATA * ch, const char *argument )
 {
    MIX_TABLE *mix = NULL;
 
@@ -800,7 +800,7 @@ void do_showmixture( CHAR_DATA* ch, const char* argument)
 }
 
 /* olc funciton for mixtures  -Nopey */
-void do_setmixture( CHAR_DATA* ch, const char* argument)
+void do_setmixture( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    LIQ_TABLE *liq = NULL;
@@ -1119,7 +1119,7 @@ LIQ_TABLE *liqobj_can_mix( OBJ_DATA * iObj, OBJ_DATA * oLiq )
 }
 
 /* the actual -mix- funciton  -Nopey */
-void do_mix( CHAR_DATA* ch, const char* argument)
+void do_mix( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    OBJ_DATA *iObj, *tObj = NULL;
@@ -1202,7 +1202,7 @@ void do_mix( CHAR_DATA* ch, const char* argument)
 }
 
 /* modified do_drink function -Nopey */
-void do_drink( CHAR_DATA* ch, const char* argument)
+void do_drink( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    OBJ_DATA *obj;
@@ -1486,7 +1486,7 @@ void do_drink( CHAR_DATA* ch, const char* argument)
 }
 
 /* standard liquid functions           -Nopey */
-void do_fill( CHAR_DATA* ch, const char* argument)
+void do_fill( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
    OBJ_DATA *obj;
@@ -1899,7 +1899,7 @@ void do_fill( CHAR_DATA* ch, const char* argument)
    }
 }
 
-void do_empty( CHAR_DATA* ch, const char* argument)
+void do_empty( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *obj;
    char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
@@ -1909,7 +1909,7 @@ void do_empty( CHAR_DATA* ch, const char* argument)
    if( !str_cmp( arg2, "into" ) && argument[0] != '\0' )
       argument = one_argument( argument, arg2 );
 
-   if( EMPTYSTR(arg1) )
+   if( EMPTYSTR( arg1 ) )
    {
       send_to_char( "Empty what?\r\n", ch );
       return;
@@ -1964,7 +1964,7 @@ void do_empty( CHAR_DATA* ch, const char* argument)
             send_to_char( "It's already empty.\r\n", ch );
             return;
          }
-         if( EMPTYSTR(arg2) )
+         if( EMPTYSTR( arg2 ) )
          {
             if( xIS_SET( ch->in_room->room_flags, ROOM_NODROP ) || xIS_SET( ch->act, PLR_LITTERBUG ) )
             {

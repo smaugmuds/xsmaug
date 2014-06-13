@@ -346,7 +346,7 @@ void save_morphs( void )
  *  as 1d2+10.  No boundry checks are in place yet on those, so care must
  *  be taken when using these.  --Shaddai
  */
-void do_morphset( CHAR_DATA* ch, const char* argument)
+void do_morphset( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH], arg3[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH];
    const char *origarg = argument;
@@ -1159,7 +1159,7 @@ void do_morphset( CHAR_DATA* ch, const char* argument)
  *  To see the description and help file, must use morphstat <morph> help
  *  Shaddai
  */
-void do_morphstat( CHAR_DATA* ch, const char* argument)
+void do_morphstat( CHAR_DATA * ch, const char *argument )
 {
    MORPH_DATA *morph;
    char arg[MAX_INPUT_LENGTH];
@@ -1576,7 +1576,7 @@ void do_unmorph_char( CHAR_DATA * ch )
 }
 
 /* Morph revert command ( God only knows why the Smaugers left this out ) - Samson 6-14-99 */
-void do_revert( CHAR_DATA* ch, const char* argument)
+void do_revert( CHAR_DATA * ch, const char *argument )
 {
    if( !ch->morph )
    {
@@ -2054,7 +2054,7 @@ void copy_morph( MORPH_DATA * morph, MORPH_DATA * temp )
 /*
  * Player command to create a new morph
  */
-void do_morphcreate( CHAR_DATA* ch, const char* argument)
+void do_morphcreate( CHAR_DATA * ch, const char *argument )
 {
    MORPH_DATA *morph, *temp = NULL;
    char arg1[MAX_INPUT_LENGTH];
@@ -2120,7 +2120,7 @@ void unmorph_all( MORPH_DATA * morph )
  * Player function to delete a morph. --Shaddai
  * NOTE Need to check all players and force them to unmorph first
  */
-void do_morphdestroy( CHAR_DATA* ch, const char* argument)
+void do_morphdestroy( CHAR_DATA * ch, const char *argument )
 {
    MORPH_DATA *morph;
 
@@ -2367,7 +2367,7 @@ void fread_morph_data( CHAR_DATA * ch, FILE * fp )
 /* 
  * Following functions are for immortal testing purposes.
  */
-void do_imm_morph( CHAR_DATA* ch, const char* argument)
+void do_imm_morph( CHAR_DATA * ch, const char *argument )
 {
    MORPH_DATA *morph;
    CHAR_DATA *victim = NULL;
@@ -2416,7 +2416,7 @@ void do_imm_morph( CHAR_DATA* ch, const char* argument)
 /*
  * This is just a wrapper.  --Shaddai
  */
-void do_imm_unmorph( CHAR_DATA* ch, const char* argument)
+void do_imm_unmorph( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim = NULL;
 
@@ -2439,7 +2439,7 @@ void do_imm_unmorph( CHAR_DATA* ch, const char* argument)
 }
 
 /* Added by Samson 6-13-99 - lists available polymorph forms */
-void do_morphlist( CHAR_DATA* ch, const char* argument)
+void do_morphlist( CHAR_DATA * ch, const char *argument )
 {
    MORPH_DATA *morph;
 

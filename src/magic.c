@@ -71,7 +71,7 @@ int ch_slookup( CHAR_DATA * ch, const char *name )
    // Make sure that:
    // (a) ch knows this skill
    // and, (b) ch's level is high enough
-   if( IS_NPC(ch) )
+   if( IS_NPC( ch ) )
       return sn;
    if( ch->pcdata->learned[sn] > 0
        && ( ch->level >= skill_table[sn]->skill_level[ch->Class] || ch->level >= skill_table[sn]->race_level[ch->race] ) )
@@ -1359,7 +1359,7 @@ const char *ranged_target_name = NULL;
 /*
  * Cast a spell.  Multi-caster and component support by Thoric
  */
-void do_cast( CHAR_DATA* ch, const char* argument)
+void do_cast( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -2901,7 +2901,8 @@ ch_ret spell_enchant_weapon( int sn, int level, CHAR_DATA * ch, void *vo )
    OBJ_DATA *obj = ( OBJ_DATA * ) vo;
    AFFECT_DATA *paf;
 
-   if( obj->item_type != ITEM_WEAPON || IS_OBJ_STAT( obj, ITEM_MAGIC ) || IS_OBJ_STAT( obj, ITEM_ENCHANTED ) || obj->first_affect )
+   if( obj->item_type != ITEM_WEAPON || IS_OBJ_STAT( obj, ITEM_MAGIC ) || IS_OBJ_STAT( obj, ITEM_ENCHANTED )
+       || obj->first_affect )
    {
       act( AT_MAGIC, "Your magic twists and winds around $p but cannot take hold.", ch, obj, NULL, TO_CHAR );
       act( AT_MAGIC, "$n's magic twists and winds around $p but cannot take hold.", ch, obj, NULL, TO_NOTVICT );
@@ -2985,7 +2986,7 @@ ch_ret spell_disenchant_weapon( int sn, int level, CHAR_DATA * ch, void *vo )
    {
       xREMOVE_BIT( obj->extra_flags, ITEM_ANTI_EVIL );
       xREMOVE_BIT( obj->extra_flags, ITEM_ANTI_GOOD );
-      act( AT_YELLOW, "$p momentarily absorbs all disquieting light around it.", ch, obj, NULL, TO_CHAR );  
+      act( AT_YELLOW, "$p momentarily absorbs all disquieting light around it.", ch, obj, NULL, TO_CHAR );
    }
    if( IS_OBJ_STAT( obj, ITEM_ANTI_GOOD ) )
    {
@@ -3191,16 +3192,14 @@ ch_ret spell_identify( int sn, int level, CHAR_DATA * ch, void *vo )
    if( ( obj = get_obj_carry( ch, target_name ) ) != NULL )
    {
       set_char_color( AT_LBLUE, ch );
-      ch_printf( ch, "\r\nObject '%s' is %s",
-                 obj->short_descr, aoran( item_type_name( obj ) ) );
+      ch_printf( ch, "\r\nObject '%s' is %s", obj->short_descr, aoran( item_type_name( obj ) ) );
       if( obj->item_type != ITEM_LIGHT && obj->wear_flags - 1 > 0 )
          ch_printf( ch, ", with wear location:  %s\r\n", flag_string( obj->wear_flags, w_flags ) );
       else
          send_to_char( ".\r\n", ch );
       ch_printf( ch,
                  "Special properties:  %s\r\nIts weight is %d, value is %d, and level is %d.\r\n",
-                 extra_bit_name( &obj->extra_flags ),
-                 obj->weight, obj->cost, obj->level );
+                 extra_bit_name( &obj->extra_flags ), obj->weight, obj->cost, obj->level );
       if( IS_OBJ_STAT( obj, ITEM_PERSONAL ) && obj->owner[0] != '\0' )
          ch_printf( ch, "&cOwner: &Y%s\r\n", obj->owner );
       set_char_color( AT_MAGIC, ch );

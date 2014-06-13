@@ -40,9 +40,9 @@
 #endif
 
 #ifndef __cplusplus
-    typedef unsigned char bool;
-    #define true 1
-    #define false 0
+typedef unsigned char bool;
+#define true 1
+#define false 0
 #endif
 
 typedef int ch_ret;
@@ -213,7 +213,7 @@ typedef bool SPEC_FUN( CHAR_DATA * ch );
 #define MAX_STRING_LENGTH	 4096 /* buf */
 #define MAX_INPUT_LENGTH	 1024 /* arg */
 #define MAX_INBUF_SIZE		 1024
-#define MSL                    MAX_STRING_LENGTH 
+#define MSL                    MAX_STRING_LENGTH
 #define MIL                    MAX_INPUT_LENGTH
 
 #define HASHSTR   /* use string hashing */
@@ -385,8 +385,8 @@ struct extended_bitvector
 #include "color.h"
 #include "dns.h"
 #include "hotboot.h"
-#include "calendar.h" /* AFKMud Calendar Replacement - Samson */
-#include "weather.h"  /* Weather System Replacement - Kayle */
+#include "calendar.h"   /* AFKMud Calendar Replacement - Samson */
+#include "weather.h" /* Weather System Replacement - Kayle */
 #include "liquids.h" /* SMAUG Liquidtable Replacement - Nopey */
 #ifdef IMC
 #include "imc.h"
@@ -1011,7 +1011,7 @@ struct mpsleep_data
     */
    int ignorelevel;
    int iflevel;
-   bool ifstate[MAX_IFS][DO_ELSE+1];
+   bool ifstate[MAX_IFS][DO_ELSE + 1];
 
    /*
     * mprog_driver arguments 
@@ -2617,8 +2617,8 @@ struct area_data
    short reset_frequency;
    short max_players;
    short version;
-   short weatherx; /* Weather Cell Assignment for the X-Axis */
-   short weathery; /* Weather Cell Assignment for the Y-Axis */
+   short weatherx;   /* Weather Cell Assignment for the X-Axis */
+   short weathery;   /* Weather Cell Assignment for the Y-Axis */
 };
 
 /*
@@ -2696,14 +2696,18 @@ struct system_data
    bool WAIT_FOR_AUTH;  /* New players must be auth'ed */
    bool wizlock;  /* Wizlock status */
    int maxholiday;
-   /* Settings Things for calendar - Most changable in cset */
-   int secpertick; 
+   /*
+    * Settings Things for calendar - Most changable in cset 
+    */
+   int secpertick;
    int pulsepersec;
    int pulsetick;
    int pulseviolence;
    int pulsemobile;
    int pulsecalendar;
-   /* direct influence over the calendar */
+   /*
+    * direct influence over the calendar 
+    */
    int hoursperday;
    int daysperweek;
    int dayspermonth;
@@ -3873,6 +3877,7 @@ DECLARE_DO_FUN( do_peace );
 DECLARE_DO_FUN( do_pick );
 DECLARE_DO_FUN( do_plist );
 DECLARE_DO_FUN( do_poison_weapon );
+DECLARE_DO_FUN( do_petfind );
 DECLARE_DO_FUN( do_pose );
 DECLARE_DO_FUN( do_practice );
 DECLARE_DO_FUN( do_project );
@@ -4217,18 +4222,19 @@ DECLARE_SPELL_FUN( spell_sacral_divinity );
  */
 #define PLAYER_DIR	"../player/"   /* Player files         */
 #define BACKUP_DIR	"../backup/"   /* Backup Player files   */
-#define GOD_DIR		"../gods/"  /* God Info Dir         */
-#define BOARD_DIR	      "../boards/"   /* Board data dir    */
-#define CLAN_DIR	      "../clans/" /* Clan data dir     */
+#define GOD_DIR		"../gods/"     /* God Info Dir         */
+#define BOARD_DIR	"../boards/"   /* Board data dir    */
+#define CLAN_DIR	"../clans/"    /* Clan data dir     */
 #define COUNCIL_DIR  	"../councils/" /* Council data dir    */
-#define DEITY_DIR	      "../deity/" /* Deity data dir    */
+#define DEITY_DIR	"../deity/"    /* Deity data dir    */
 #define BUILD_DIR       "../building/" /* Online building save dir     */
 #define SYSTEM_DIR	"../system/"   /* Main system files    */
-#define PROG_DIR	      "../mudprogs/" /* MUDProg files     */
+#define PROG_DIR	"../mudprogs/" /* MUDProg files     */
 #define CORPSE_DIR	"../corpses/"  /* Corpses        */
-#define CLASS_DIR	      "../classes/"  /* Classes        */
-#define RACE_DIR 	      "../races/" /* Races */
-#define WATCH_DIR	      "../watch/" /* Imm watch files --Gorog      */
+#define CLASS_DIR	"../classes/"  /* Classes        */
+#define RACE_DIR 	"../races/"    /* Races */
+#define WATCH_DIR	"../watch/"    /* Imm watch files --Gorog      */
+#define LOG_DIR		"../log/"      /* Store logs */
 
 /*
  * The watch directory contains a maximum of one file for each immortal
@@ -4236,44 +4242,44 @@ DECLARE_SPELL_FUN( spell_sacral_divinity );
  * in this directory is the name of the immortal who requested the watch
  */
 
-#define AREA_LIST	      "area.lst"  /* List of areas     */
-#define WATCH_LIST      "watch.lst" /* List of watches              */
-#define BAN_LIST        "ban.lst"   /* List of bans                 */
+#define AREA_LIST	"area.lst"     /* List of areas     */
+#define WATCH_LIST      "watch.lst"    /* List of watches              */
+#define BAN_LIST        "ban.lst"      /* List of bans                 */
 #define RESERVED_LIST	"reserved.lst" /* List of reserved names  */
-#define CLAN_LIST	      "clan.lst"  /* List of clans     */
+#define CLAN_LIST	"clan.lst"     /* List of clans     */
 #define COUNCIL_LIST	"council.lst"  /* List of councils     */
-#define GUILD_LIST      "guild.lst" /* List of guilds               */
-#define GOD_LIST	      "gods.lst"  /* List of gods         */
-#define DEITY_LIST	"deity.lst" /* List of deities      */
-#define CLASS_LIST	"class.lst" /* List of classes      */
-#define RACE_LIST	      "race.lst"  /* List of races     */
-#define MORPH_FILE      "morph.dat" /* For morph data */
-#define BOARD_FILE	"boards.txt"   /* For bulletin boards   */
-#define SHUTDOWN_FILE	"shutdown.txt" /* For 'shutdown'  */
+#define GUILD_LIST      "guild.lst"    /* List of guilds               */
+#define GOD_LIST	"gods.lst"     /* List of gods         */
+#define DEITY_LIST	"deity.lst"    /* List of deities      */
+#define CLASS_LIST	"class.lst"    /* List of classes      */
+#define RACE_LIST	"race.lst"     /* List of races     */
+#define MORPH_FILE      "morph.dat"    /* For morph data */
+#define BOARD_FILE	"boards.dat"   /* For bulletin boards   */
+#define SHUTDOWN_FILE	LOG_DIR    "shutdown.log"  /* For 'shutdown'  */
 #define IMM_HOST_FILE   SYSTEM_DIR "immortal.host" /* For stoping hackers */
 #define RIPSCREEN_FILE	SYSTEM_DIR "mudrip.rip"
 #define RIPTITLE_FILE	SYSTEM_DIR "mudtitle.rip"
 #define ANSITITLE_FILE	SYSTEM_DIR "mudtitle.ans"
 #define ASCTITLE_FILE	SYSTEM_DIR "mudtitle.asc"
-#define BOOTLOG_FILE	SYSTEM_DIR "boot.txt"   /* Boot up error file  */
-#define PBUG_FILE	      SYSTEM_DIR "pbugs.txt"  /* For 'bug' command   */
-#define IDEA_FILE	      SYSTEM_DIR "ideas.txt"  /* For 'idea'       */
-#define TYPO_FILE	      SYSTEM_DIR "typos.txt"  /* For 'typo'       */
-#define FIXED_FILE	SYSTEM_DIR "fixed.txt"  /* For 'fixed' command */
-#define LOG_FILE	      SYSTEM_DIR "log.txt" /* For talking in logged rooms */
-#define MOBLOG_FILE	SYSTEM_DIR "moblog.txt" /* For mplog messages  */
-#define WIZLIST_FILE	SYSTEM_DIR "WIZLIST" /* Wizlist       */
-#define WHO_FILE	      SYSTEM_DIR "WHO"  /* Who output file  */
-#define WEBWHO_FILE	SYSTEM_DIR "WEBWHO"  /* WWW Who output file */
-#define REQUEST_PIPE	SYSTEM_DIR "REQUESTS"   /* Request FIFO  */
+#define BOOTLOG_FILE	LOG_DIR "boot.log"   /* Boot up error file  */
+#define PBUG_FILE	LOG_DIR "pbugs.log"  /* For 'bug' command   */
+#define IDEA_FILE	LOG_DIR "ideas.log"  /* For 'idea'       */
+#define TYPO_FILE	LOG_DIR "typos.log"  /* For 'typo'       */
+#define FIXED_FILE	LOG_DIR "fixed.log"  /* For 'fixed' command */
+#define LOG_FILE	LOG_DIR "talk.log"   /* For talking in logged rooms */
+#define MOBLOG_FILE	LOG_DIR "mob.log"    /* For mplog messages  */
+#define WIZLIST_FILE	SYSTEM_DIR "wiz.lst" /* Wizlist       */
+#define WHO_FILE	SYSTEM_DIR "who.lst" /* Who output file  */
+#define WEBWHO_FILE	SYSTEM_DIR "webwho.lst"    /* WWW Who output file */
+#define REQUEST_PIPE	SYSTEM_DIR "requests.dat"  /* Request FIFO  */
 #define SKILL_FILE	SYSTEM_DIR "skills.dat" /* Skill table   */
-#define LOGIN_MSG	"login.msg" /* List of login msgs      */
-#define HERB_FILE	      SYSTEM_DIR "herbs.dat"  /* Herb table       */
+#define LOGIN_MSG	SYSTEM_DIR "login.msg"  /* List of login msgs      */
+#define HERB_FILE	SYSTEM_DIR "herbs.dat"  /* Herb table       */
 #define TONGUE_FILE	SYSTEM_DIR "tongues.dat"   /* Tongue tables    */
 #define SOCIAL_FILE	SYSTEM_DIR "socials.dat"   /* Socials       */
 #define COMMAND_FILE	SYSTEM_DIR "commands.dat"  /* Commands      */
-#define PROJECTS_FILE	SYSTEM_DIR "projects.txt"  /* For projects  */
-#define PLANE_FILE	SYSTEM_DIR "planes.dat" /* For planes       */
+#define PROJECTS_FILE	SYSTEM_DIR "projects.dat"  /* For projects  */
+#define PLANE_FILE	SYSTEM_DIR "planes.dat"    /* For planes       */
 
 /*
  * Our function prototypes.
@@ -4481,8 +4487,8 @@ int number_mm args( ( void ) );
 int dice args( ( int number, int size ) );
 int interpolate args( ( int level, int value_00, int value_32 ) );
 void smash_tilde args( ( char *str ) );
-const char* smash_tilde args( ( const char *str ) );
-char* smash_tilde_copy args( ( const char *str ) );
+const char *smash_tilde args( ( const char *str ) );
+char *smash_tilde_copy args( ( const char *str ) );
 void hide_tilde args( ( char *str ) );
 const char *show_tilde args( ( const char *str ) );
 bool str_cmp args( ( const char *astr, const char *bstr ) );
@@ -4571,7 +4577,8 @@ EXT_BV multimeb( int bit, ... );
 const char *mprog_type_to_name( int type );
 
 /* mud_prog.c */
-bool mprog_wordlist_check( const char *arg, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * object, const void *vo, int type );
+bool mprog_wordlist_check( const char *arg, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * object, const void *vo,
+                           int type );
 void mprog_percent_check( CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * object, void *vo, int type );
 void mprog_act_trigger( const char *buf, CHAR_DATA * mob, CHAR_DATA * ch, OBJ_DATA * obj, const void *vo );
 void mprog_bribe_trigger( CHAR_DATA * mob, CHAR_DATA * ch, int amount );
@@ -5025,7 +5032,7 @@ struct trv_data
    trv_type type;
    void *ext_mark;
    void *where;
-   void ** el;
+   void **el;
 };
 typedef struct trv_data TRV_DATA;
 

@@ -13,7 +13,7 @@
  * Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     *
  * ------------------------------------------------------------------------ *
  *                  Game Reset Handler and Editing Module                   *
- *                         SmaugFUSS 1.8 Version                            *
+ *                         Smaug 1.8 Version                                *
  ****************************************************************************/
 
 #include <stdio.h>
@@ -376,7 +376,7 @@ void wipe_area_resets( AREA_DATA * area )
 }
 
 /* Function modified from original form - Samson */
-void do_instaroom( CHAR_DATA* ch, const char* argument)
+void do_instaroom( CHAR_DATA * ch, const char *argument )
 {
    bool dodoors;
 
@@ -405,7 +405,7 @@ void do_instaroom( CHAR_DATA* ch, const char* argument)
 }
 
 /* Function modified from original form - Samson */
-void do_instazone( CHAR_DATA* ch, const char* argument)
+void do_instazone( CHAR_DATA * ch, const char *argument )
 {
    AREA_DATA *pArea;
    ROOM_INDEX_DATA *pRoom;
@@ -1040,7 +1040,7 @@ RESET_DATA *find_oreset( ROOM_INDEX_DATA * room, const char *oname )
    return NULL;
 }
 
-void do_reset( CHAR_DATA* ch, const char* argument)
+void do_reset( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
 
@@ -1325,7 +1325,7 @@ void do_reset( CHAR_DATA* ch, const char* argument)
 }
 
 /* Update the mobile resets to let it know to reset it again */
-void update_room_reset( CHAR_DATA *ch, bool setting )
+void update_room_reset( CHAR_DATA * ch, bool setting )
 {
    ROOM_INDEX_DATA *room;
    RESET_DATA *pReset, *tReset, *pReset_next, *tReset_next, *gReset, *gReset_next;

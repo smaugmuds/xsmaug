@@ -158,9 +158,12 @@ void free_prog_actlists( void )
 char *mprog_next_command( char *clist );
 bool mprog_seval( const char *lhs, const char *opr, const char *rhs, CHAR_DATA * mob );
 bool mprog_veval( int lhs, char *opr, int rhs, CHAR_DATA * mob );
-int mprog_do_ifcheck( const char *ifcheck, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo, CHAR_DATA * rndm );
-void mprog_translate( char ch, char *t, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo, CHAR_DATA * rndm );
-void mprog_driver( const char *com_list, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo, bool single_step );
+int mprog_do_ifcheck( const char *ifcheck, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo,
+                      CHAR_DATA * rndm );
+void mprog_translate( char ch, char *t, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo,
+                      CHAR_DATA * rndm );
+void mprog_driver( const char *com_list, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo,
+                   bool single_step );
 bool mprog_keyword_check( const char *argu, const char *argl );
 bool oprog_wordlist_check( const char *arg, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo, int type,
                            OBJ_DATA * iobj );
@@ -266,7 +269,8 @@ bool mprog_veval( int lhs, char *opr, int rhs, CHAR_DATA * mob )
  * Redone by Altrag.. kill all that big copy-code that performs the
  * same action on each variable..
  */
-int mprog_do_ifcheck( const char *ifcheck, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo, CHAR_DATA * rndm )
+int mprog_do_ifcheck( const char *ifcheck, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo,
+                      CHAR_DATA * rndm )
 {
    char buf[MAX_STRING_LENGTH];
    char opr[MAX_INPUT_LENGTH];
@@ -1540,7 +1544,8 @@ int mprog_do_ifcheck( const char *ifcheck, CHAR_DATA * mob, CHAR_DATA * actor, O
  *
  *  Added char_died and obj_extracted checks	-Thoric
  */
-void mprog_translate( char ch, char *t, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo, CHAR_DATA * rndm )
+void mprog_translate( char ch, char *t, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo,
+                      CHAR_DATA * rndm )
 {
    static const char *he_she[] = { "it", "he", "she" };
    static const char *him_her[] = { "it", "him", "her" };
@@ -1878,7 +1883,8 @@ void mprog_translate( char ch, char *t, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_
  *  This function rewritten by Narn for Realms of Despair, Dec/95.
  *
  */
-void mprog_driver( const char *com_list, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo, bool single_step )
+void mprog_driver( const char *com_list, CHAR_DATA * mob, CHAR_DATA * actor, OBJ_DATA * obj, const void *vo,
+                   bool single_step )
 {
    char tmpcmndlst[MAX_STRING_LENGTH];
    char arg[MAX_INPUT_LENGTH];
@@ -2030,8 +2036,8 @@ void mprog_driver( const char *com_list, CHAR_DATA * mob, CHAR_DATA * actor, OBJ
       one_argument( cmnd, arg );
       if( !str_cmp( arg, "mpsleep" ) )
       {
-         if( ( ifstate[iflevel][IN_IF] == TRUE && ifstate[iflevel][DO_IF] == FALSE ) ||  // if we are in an if/else and we
-           ( ifstate[iflevel][IN_ELSE] == TRUE && ifstate[iflevel][DO_ELSE] == FALSE ) ) // dont want to execute, dont..
+         if( ( ifstate[iflevel][IN_IF] == TRUE && ifstate[iflevel][DO_IF] == FALSE ) ||   // if we are in an if/else and we
+             ( ifstate[iflevel][IN_ELSE] == TRUE && ifstate[iflevel][DO_ELSE] == FALSE ) )   // dont want to execute, dont..
          {
          }
          else

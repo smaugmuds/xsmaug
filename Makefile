@@ -27,3 +27,11 @@ all:
 clean:
 
 	@cd src; make clean
+
+cleanall:
+
+	@cd src; make cleanall
+
+indent:
+
+	@cd src; make indent

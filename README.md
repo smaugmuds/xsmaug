@@ -88,6 +88,7 @@ Here are just some of the extra features XSMAUG has:
 	- Polymorph code that can be added, edited and deleted online
 	- Different prompts when you are fighting and when you are not
 	- Pets saving with their owners
+	- Pet Finding.
 	- Configurable color codes online
 	- Projectiles are fully supported
 	- Extended bit vectors for when 32 are just not enough
@@ -105,13 +106,24 @@ Changes made to areas:
 	- Will not be backward compatible with any Smaug mud that does not employ the reset fix.
 	- Areas written for Smaug 1.02a, 1.4, and 1.4a should load without a problem and remain compatible.
 
-New Areas:
+New Imported Areas:
 
 	- sesamest.are
 	- chess.are
 	- warner.are
 	- troy.are
 	- buds.are
+	- thalos.are
+	- prehist.are
+	- gauntlet.are
+	- chapelgods.are
+	- catacomb.are
+	- bazaar.are
+	- pground.are
+	- abyss.are
+	- kheltower.are
+	- isledead.are
+	- hood.are
 
 
 #### ChangeLog
@@ -121,6 +133,8 @@ New Areas:
 		- Added: xsmaug.conf & xsmaug-server
 		- Added: New Makefile
 		- Added: Name Change
+		- Added: New Clases & Skills
+		- Added: New Imported Areas
 
 
 #### Supported Operating Systems

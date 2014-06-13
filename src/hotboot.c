@@ -42,7 +42,7 @@ static OBJ_DATA *rgObjNest[MAX_NEST];
 
 bool write_to_descriptor( DESCRIPTOR_DATA * d, const char *txt, int length );
 bool write_to_descriptor_old( int desc, const char *txt, int length );
-void update_room_reset( CHAR_DATA *ch, bool setting );
+void update_room_reset( CHAR_DATA * ch, bool setting );
 
 extern ROOM_INDEX_DATA *room_index_hash[MAX_KEY_HASH];
 
@@ -579,7 +579,7 @@ void load_world( void )
 }
 
 /*  Warm reboot stuff, gotta make sure to thank Erwin for this :) */
-void do_hotboot( CHAR_DATA* ch, const char* argument)
+void do_hotboot( CHAR_DATA * ch, const char *argument )
 {
    FILE *fp;
    CHAR_DATA *victim = NULL;
@@ -708,7 +708,7 @@ void do_hotboot( CHAR_DATA* ch, const char* argument)
 
    set_alarm( 0 );
    dlclose( sysdata.dlHandle );
-   execl( EXE_FILE, "smaug", buf, "hotboot", buf2, buf3, ( char * )NULL );
+   execl( EXE_FILE, "xsmaug", buf, "hotboot", buf2, buf3, ( char * )NULL );
 
    /*
     * Failed - sucessful exec will not return 

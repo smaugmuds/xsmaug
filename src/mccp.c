@@ -129,7 +129,7 @@ bool compressStart( DESCRIPTOR_DATA * d )
       return FALSE;
    }
 
-   write_to_descriptor( d, (const char *)start_compress2_str, 0 );
+   write_to_descriptor( d, ( const char * )start_compress2_str, 0 );
 
    d->can_compress = TRUE;
    d->mccp->out_compress = s;
@@ -157,7 +157,7 @@ bool compressEnd( DESCRIPTOR_DATA * d )
    return TRUE;
 }
 
-void do_compress( CHAR_DATA* ch, const char* argument)
+void do_compress( CHAR_DATA * ch, const char *argument )
 {
    if( !ch->desc )
    {

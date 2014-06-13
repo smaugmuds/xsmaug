@@ -186,7 +186,7 @@ bool is_valid_tag( const char *tagname )
 /*
  * mptag <victim> <tag> [value]
  */
-void do_mptag( CHAR_DATA* ch, const char* argument)
+void do_mptag( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    VARIABLE_DATA *vd;
@@ -247,7 +247,7 @@ void do_mptag( CHAR_DATA* ch, const char* argument)
    }
    error = FALSE;
 
-   const char* p2;
+   const char *p2;
    for( p2 = argument; *p2; p2++ )
    {
       if( !isdigit( *p2 ) && !isspace( *p2 ) )
@@ -273,7 +273,7 @@ void do_mptag( CHAR_DATA* ch, const char* argument)
 /*
  * mprmtag <victim> <tag>
  */
-void do_mprmtag( CHAR_DATA* ch, const char* argument)
+void do_mprmtag( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    char *p;
@@ -327,7 +327,7 @@ void do_mprmtag( CHAR_DATA* ch, const char* argument)
 /*
  * mpflag <victim> <tag> <flag>
  */
-void do_mpflag( CHAR_DATA* ch, const char* argument)
+void do_mpflag( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    VARIABLE_DATA *vd;
@@ -429,7 +429,7 @@ void do_mpflag( CHAR_DATA* ch, const char* argument)
 /*
  * mprmflag <victim> <tag> <flag>
  */
-void do_mprmflag( CHAR_DATA* ch, const char* argument)
+void do_mprmflag( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    VARIABLE_DATA *vd;

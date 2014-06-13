@@ -1792,7 +1792,7 @@ void do_glance( CHAR_DATA * ch, const char *argument )
    return;
 }
 
-void do_examine( CHAR_DATA* ch, const char* argument)
+void do_examine( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    char arg[MAX_INPUT_LENGTH];
@@ -2033,7 +2033,7 @@ void do_examine( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_exits( CHAR_DATA* ch, const char* argument)
+void do_exits( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    EXIT_DATA *pexit;
@@ -2140,7 +2140,7 @@ HELP_DATA *get_help( CHAR_DATA * ch, const char *argument )
 /*
  * LAWS command
  */
-void do_laws( CHAR_DATA* ch, const char* argument)
+void do_laws( CHAR_DATA * ch, const char *argument )
 {
    char buf[1024];
 
@@ -2157,7 +2157,7 @@ void do_laws( CHAR_DATA* ch, const char* argument)
  * Now this is cleaner
  */
 /* Updated do_help command provided by Remcon of The Lands of Pabulum 03/20/2004 */
-void do_help( CHAR_DATA* ch, const char* argument)
+void do_help( CHAR_DATA * ch, const char *argument )
 {
    HELP_DATA *pHelp;
    const char *keyword;
@@ -2297,7 +2297,7 @@ void free_helps( void )
 /*
  * Help editor							-Thoric
  */
-void do_hedit( CHAR_DATA* ch, const char* argument)
+void do_hedit( CHAR_DATA * ch, const char *argument )
 {
    HELP_DATA *pHelp;
 
@@ -2379,7 +2379,7 @@ const char *help_fix( const char *text )
    return fixed;
 }
 
-void do_hset( CHAR_DATA* ch, const char* argument)
+void do_hset( CHAR_DATA * ch, const char *argument )
 {
    HELP_DATA *pHelp;
    char arg1[MAX_INPUT_LENGTH];
@@ -2473,7 +2473,7 @@ void do_hset( CHAR_DATA* ch, const char* argument)
    do_hset( ch, "" );
 }
 
-void do_hl( CHAR_DATA* ch, const char* argument)
+void do_hl( CHAR_DATA * ch, const char *argument )
 {
    send_to_char( "If you want to use HLIST, spell it out.\r\n", ch );
    return;
@@ -2484,7 +2484,7 @@ void do_hl( CHAR_DATA* ch, const char* argument)
  * Idea suggested by Gorog
  * prefix keyword indexing added by Fireblade
  */
-void do_hlist( CHAR_DATA* ch, const char* argument)
+void do_hlist( CHAR_DATA * ch, const char *argument )
 {
    int min, max, minlimit, maxlimit, cnt;
    char arg[MAX_INPUT_LENGTH];
@@ -2707,7 +2707,7 @@ void create_whogr( CHAR_DATA * looker )
       }
 }
 
-void do_who( CHAR_DATA* ch, const char* argument)
+void do_who( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    char clan_name[MAX_INPUT_LENGTH];
@@ -3272,7 +3272,7 @@ void do_who( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_compare( CHAR_DATA* ch, const char* argument)
+void do_compare( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -3367,7 +3367,7 @@ void do_compare( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_where( CHAR_DATA* ch, const char* argument)
+void do_where( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -3434,7 +3434,7 @@ void do_where( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_consider( CHAR_DATA* ch, const char* argument)
+void do_consider( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -3511,7 +3511,7 @@ void do_consider( CHAR_DATA* ch, const char* argument)
  */
 #define CANT_PRAC "Tongue"
 
-void do_practice( CHAR_DATA* ch, const char* argument)
+void do_practice( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *mob;
    char buf[MAX_STRING_LENGTH];
@@ -3738,7 +3738,7 @@ void do_practice( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_wimpy( CHAR_DATA* ch, const char* argument)
+void do_wimpy( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    int wimpy;
@@ -3777,7 +3777,7 @@ void do_wimpy( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_password( CHAR_DATA* ch, const char* argument)
+void do_password( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
    char *pArg, *pwdnew;
@@ -3867,7 +3867,7 @@ void do_password( CHAR_DATA* ch, const char* argument)
    send_to_char( "Ok.\r\n", ch );
 }
 
-void do_socials( CHAR_DATA* ch, const char* argument)
+void do_socials( CHAR_DATA * ch, const char *argument )
 {
    int iHash;
    int col = 0;
@@ -3887,7 +3887,7 @@ void do_socials( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_commands( CHAR_DATA* ch, const char* argument)
+void do_commands( CHAR_DATA * ch, const char *argument )
 {
    int col;
    bool found;
@@ -3933,7 +3933,7 @@ void do_commands( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_channels( CHAR_DATA* ch, const char* argument)
+void do_channels( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    one_argument( argument, arg );
@@ -4192,7 +4192,7 @@ void do_channels( CHAR_DATA* ch, const char* argument)
 /*
  * display WIZLIST file						-Thoric
  */
-void do_wizlist( CHAR_DATA* ch, const char* argument)
+void do_wizlist( CHAR_DATA * ch, const char *argument )
 {
    set_pager_color( AT_IMMORT, ch );
    show_file( ch, WIZLIST_FILE );
@@ -4202,7 +4202,7 @@ void do_wizlist( CHAR_DATA* ch, const char* argument)
  * Contributed by Grodyn.
  * Display completely overhauled, 2/97 -- Blodkai
  */
-void do_config( CHAR_DATA* ch, const char* argument)
+void do_config( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
 
@@ -4400,7 +4400,7 @@ void do_config( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_credits( CHAR_DATA* ch, const char* argument)
+void do_credits( CHAR_DATA * ch, const char *argument )
 {
    do_help( ch, "credits" );
 }
@@ -4418,9 +4418,10 @@ extern int top_area;
  *           area old        ->      list areas in order loaded
  *
  */
-void do_areas( CHAR_DATA* ch, const char* argument)
+void do_areas( CHAR_DATA * ch, const char *argument )
 {
-   const char *header_string1 = "\r\n   Author    |             Area" "                     | " "Recommended |  Enforced\r\n";
+   const char *header_string1 =
+      "\r\n   Author    |             Area" "                     | " "Recommended |  Enforced\r\n";
    const char *header_string2 = "-------------+-----------------" "---------------------+----" "---------+-----------\r\n";
    const char *print_string = "%-12s | %-36s | %4d - %-4d | %3d - " "%-3d \r\n";
 
@@ -4504,7 +4505,7 @@ void do_areas( CHAR_DATA* ch, const char* argument)
    }
 }
 
-void do_afk( CHAR_DATA* ch, const char* argument)
+void do_afk( CHAR_DATA * ch, const char *argument )
 {
    if( IS_NPC( ch ) )
       return;
@@ -4524,7 +4525,7 @@ void do_afk( CHAR_DATA* ch, const char* argument)
    }
 }
 
-void do_slist( CHAR_DATA* ch, const char* argument)
+void do_slist( CHAR_DATA * ch, const char *argument )
 {
    int sn, i, lFound;
    char skn[MAX_INPUT_LENGTH];
@@ -4680,7 +4681,7 @@ void do_slist( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_whois( CHAR_DATA* ch, const char* argument)
+void do_whois( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    char buf[MAX_STRING_LENGTH];
@@ -4819,7 +4820,7 @@ void do_whois( CHAR_DATA* ch, const char* argument)
    }
 }
 
-void do_pager( CHAR_DATA* ch, const char* argument)
+void do_pager( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
 
@@ -4869,7 +4870,7 @@ void do_pager( CHAR_DATA* ch, const char* argument)
  * Last Modified: June 26, 1997
  * - Fireblade
  */
-void do_ignore( CHAR_DATA* ch, const char* argument)
+void do_ignore( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    IGNORE_DATA *temp, *next;
@@ -5056,13 +5057,13 @@ bool is_ignoring( CHAR_DATA * ch, CHAR_DATA * ign_ch )
 }
 
 /* Version info -- Scryn */
-void do_version( CHAR_DATA* ch, const char* argument)
+void do_version( CHAR_DATA * ch, const char *argument )
 {
    if( IS_NPC( ch ) )
       return;
 
    set_char_color( AT_YELLOW, ch );
-   ch_printf( ch, "SMAUG %s.%s\r\n", SMAUG_VERSION_MAJOR, SMAUG_VERSION_MINOR );
+   ch_printf( ch, "XSMAUG %s.%s\r\n", SMAUG_VERSION_MAJOR, SMAUG_VERSION_MINOR );
 
    if( IS_IMMORTAL( ch ) )
       ch_printf( ch, "Compiled on %s at %s.\r\n", __DATE__, __TIME__ );

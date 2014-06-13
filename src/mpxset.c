@@ -19,7 +19,7 @@
 
 extern int top_affect;
 
-void do_mpmset( CHAR_DATA* ch, const char* argument)
+void do_mpmset( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -994,7 +994,7 @@ void do_mpmset( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_mposet( CHAR_DATA* ch, const char* argument)
+void do_mposet( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];

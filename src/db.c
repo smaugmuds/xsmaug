@@ -429,7 +429,7 @@ void boot_db( bool fCopyOver )
    make_wizlist(  );
 
    log_string( "Loading MSSP Data..." );
-   load_mssp_data( );
+   load_mssp_data(  );
 
    fBootDb = TRUE;
 
@@ -1067,8 +1067,8 @@ void load_mobiles( AREA_DATA * tarea, FILE * fp )
 
       // well, it's pretty nasty to cast, but we know that we own this
       // memory because we just created it.
-      ((char*)pMobIndex->long_descr)[0] = UPPER( pMobIndex->long_descr[0] );
-      ((char*)pMobIndex->description)[0] = UPPER( pMobIndex->description[0] );
+      ( ( char * )pMobIndex->long_descr )[0] = UPPER( pMobIndex->long_descr[0] );
+      ( ( char * )pMobIndex->description )[0] = UPPER( pMobIndex->description[0] );
 
       pMobIndex->act = fread_bitvector( fp );
       xSET_BIT( pMobIndex->act, ACT_IS_NPC );
@@ -1435,7 +1435,7 @@ void load_objects( AREA_DATA * tarea, FILE * fp )
        */
 
       // we just created this, so we know we can touch the string
-      ((char*)pObjIndex->description)[0] = UPPER( pObjIndex->description[0] );
+      ( ( char * )pObjIndex->description )[0] = UPPER( pObjIndex->description[0] );
 
       pObjIndex->item_type = fread_number( fp );
       pObjIndex->extra_flags = fread_bitvector( fp );
@@ -3725,7 +3725,7 @@ char *fread_word( FILE * fp )
    return NULL;
 }
 
-void do_memory( CHAR_DATA* ch, const char* argument)
+void do_memory( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    int hash;
@@ -3949,19 +3949,19 @@ void smash_tilde( char *str )
    return;
 }
 
-const char* smash_tilde( const char *str )
+const char *smash_tilde( const char *str )
 {
-    static char buf[MAX_STRING_LENGTH];
-    mudstrlcpy( buf, str, MAX_STRING_LENGTH );
-    smash_tilde( buf );
-    return buf;
+   static char buf[MAX_STRING_LENGTH];
+   mudstrlcpy( buf, str, MAX_STRING_LENGTH );
+   smash_tilde( buf );
+   return buf;
 }
 
-char* smash_tilde_copy( const char *str )
+char *smash_tilde_copy( const char *str )
 {
-    char* result = strdup(str);
-    smash_tilde(result);
-    return result;
+   char *result = strdup( str );
+   smash_tilde( result );
+   return result;
 }
 
 /*
@@ -4365,7 +4365,7 @@ void show_file( CHAR_DATA * ch, const char *filename )
 /*
  * Show the boot log file					-Thoric
  */
-void do_dmesg( CHAR_DATA* ch, const char* argument)
+void do_dmesg( CHAR_DATA * ch, const char *argument )
 {
    set_pager_color( AT_LOG, ch );
    show_file( ch, BOOTLOG_FILE );
@@ -4661,7 +4661,7 @@ void make_wizlist(  )
    last_wiz = NULL;
 }
 
-void do_makewizlist( CHAR_DATA* ch, const char* argument)
+void do_makewizlist( CHAR_DATA * ch, const char *argument )
 {
    make_wizlist(  );
 }
@@ -5426,8 +5426,8 @@ OBJ_INDEX_DATA *make_object( int vnum, int cvnum, const char *name )
       pObjIndex->action_desc = STRALLOC( "" );
 
       // it's safe to cast these because we just created the object
-      ((char*)pObjIndex->short_descr)[0] = LOWER( pObjIndex->short_descr[0] );
-      ((char*)pObjIndex->description)[0] = UPPER( pObjIndex->description[0] );
+      ( ( char * )pObjIndex->short_descr )[0] = LOWER( pObjIndex->short_descr[0] );
+      ( ( char * )pObjIndex->description )[0] = UPPER( pObjIndex->description[0] );
       pObjIndex->item_type = ITEM_TRASH;
       xCLEAR_BITS( pObjIndex->extra_flags );
       xSET_BIT( pObjIndex->extra_flags, ITEM_PROTOTYPE );
@@ -5517,9 +5517,9 @@ MOB_INDEX_DATA *make_mobile( int vnum, int cvnum, const char *name )
       pMobIndex->long_descr = STRALLOC( buf );
       pMobIndex->description = STRALLOC( "" );
       // it's safe to cast these because we just created the object
-      ((char*)pMobIndex->short_descr)[0] = LOWER( pMobIndex->short_descr[0] );
-      ((char*)pMobIndex->long_descr)[0] = UPPER( pMobIndex->long_descr[0] );
-      ((char*)pMobIndex->description)[0] = UPPER( pMobIndex->description[0] );
+      ( ( char * )pMobIndex->short_descr )[0] = LOWER( pMobIndex->short_descr[0] );
+      ( ( char * )pMobIndex->long_descr )[0] = UPPER( pMobIndex->long_descr[0] );
+      ( ( char * )pMobIndex->description )[0] = UPPER( pMobIndex->description[0] );
       xCLEAR_BITS( pMobIndex->act );
       xSET_BIT( pMobIndex->act, ACT_IS_NPC );
       xSET_BIT( pMobIndex->act, ACT_PROTOTYPE );
@@ -5741,7 +5741,7 @@ void process_sorting( AREA_DATA * tarea )
    SET_BIT( tarea->status, AREA_LOADED );
 }
 
-EXTRA_DESCR_DATA *fread_fuss_exdesc( FILE * fp )
+EXTRA_DESCR_DATA *fread_xsmaug_exdesc( FILE * fp )
 {
    EXTRA_DESCR_DATA *ed;
    bool fMatch;   // Unused, but needed to shut the compiler up about the KEY macro
@@ -5796,7 +5796,7 @@ EXTRA_DESCR_DATA *fread_fuss_exdesc( FILE * fp )
    return NULL;
 }
 
-AFFECT_DATA *fread_fuss_affect( FILE * fp, const char *word )
+AFFECT_DATA *fread_xsmaug_affect( FILE * fp, const char *word )
 {
    AFFECT_DATA *paf;
    int pafmod;
@@ -5832,7 +5832,7 @@ AFFECT_DATA *fread_fuss_affect( FILE * fp, const char *word )
    return paf;
 }
 
-void fread_fuss_exit( FILE * fp, ROOM_INDEX_DATA * pRoomIndex )
+void fread_xsmaug_exit( FILE * fp, ROOM_INDEX_DATA * pRoomIndex )
 {
    EXIT_DATA *pexit = NULL;
    bool fMatch;   // Unused, but needed to shut the compiler up about the KEY macro
@@ -6037,7 +6037,7 @@ void rprog_file_read( ROOM_INDEX_DATA * prog_target, const char *f )
    return;
 }
 
-void fread_fuss_roomprog( FILE * fp, MPROG_DATA * mprg, ROOM_INDEX_DATA * prog_target )
+void fread_xsmaug_roomprog( FILE * fp, MPROG_DATA * mprg, ROOM_INDEX_DATA * prog_target )
 {
    bool fMatch;   // Unused, but needed to shut the compiler up about the KEY macro
 
@@ -6095,7 +6095,7 @@ void fread_fuss_roomprog( FILE * fp, MPROG_DATA * mprg, ROOM_INDEX_DATA * prog_t
    }
 }
 
-void fread_fuss_room( FILE * fp, AREA_DATA * tarea )
+void fread_xsmaug_room( FILE * fp, AREA_DATA * tarea )
 {
    ROOM_INDEX_DATA *pRoomIndex = NULL;
    bool oldroom = false;
@@ -6137,13 +6137,13 @@ void fread_fuss_room( FILE * fp, AREA_DATA * tarea )
 
             if( !str_cmp( word, "#EXIT" ) )
             {
-               fread_fuss_exit( fp, pRoomIndex );
+               fread_xsmaug_exit( fp, pRoomIndex );
                break;
             }
 
             if( !str_cmp( word, "#EXDESC" ) )
             {
-               EXTRA_DESCR_DATA *ed = fread_fuss_exdesc( fp );
+               EXTRA_DESCR_DATA *ed = fread_xsmaug_exdesc( fp );
 
                if( ed )
                   LINK( ed, pRoomIndex->first_extradesc, pRoomIndex->last_extradesc, next, prev );
@@ -6155,7 +6155,7 @@ void fread_fuss_room( FILE * fp, AREA_DATA * tarea )
                MPROG_DATA *mprg;
 
                CREATE( mprg, MPROG_DATA, 1 );
-               fread_fuss_roomprog( fp, mprg, pRoomIndex );
+               fread_xsmaug_roomprog( fp, mprg, pRoomIndex );
                mprg->next = pRoomIndex->mudprogs;
                pRoomIndex->mudprogs = mprg;
                break;
@@ -6165,7 +6165,7 @@ void fread_fuss_room( FILE * fp, AREA_DATA * tarea )
          case 'A':
             if( !str_cmp( word, "Affect" ) || !str_cmp( word, "AffectData" ) )
             {
-               AFFECT_DATA *af = fread_fuss_affect( fp, word );
+               AFFECT_DATA *af = fread_xsmaug_affect( fp, word );
 
                if( af )
                   LINK( af, pRoomIndex->first_permaffect, pRoomIndex->last_permaffect, next, prev );
@@ -6402,7 +6402,7 @@ void oprog_file_read( OBJ_INDEX_DATA * prog_target, const char *f )
    return;
 }
 
-void fread_fuss_objprog( FILE * fp, MPROG_DATA * mprg, OBJ_INDEX_DATA * prog_target )
+void fread_xsmaug_objprog( FILE * fp, MPROG_DATA * mprg, OBJ_INDEX_DATA * prog_target )
 {
    bool fMatch;   // Unused, but needed to shut the compiler up about the KEY macro
 
@@ -6460,7 +6460,7 @@ void fread_fuss_objprog( FILE * fp, MPROG_DATA * mprg, OBJ_INDEX_DATA * prog_tar
    }
 }
 
-void fread_fuss_object( FILE * fp, AREA_DATA * tarea )
+void fread_xsmaug_object( FILE * fp, AREA_DATA * tarea )
 {
    OBJ_INDEX_DATA *pObjIndex = NULL;
    bool oldobj = false;
@@ -6505,7 +6505,7 @@ void fread_fuss_object( FILE * fp, AREA_DATA * tarea )
 
             if( !str_cmp( word, "#EXDESC" ) )
             {
-               EXTRA_DESCR_DATA *ed = fread_fuss_exdesc( fp );
+               EXTRA_DESCR_DATA *ed = fread_xsmaug_exdesc( fp );
                if( ed )
                   LINK( ed, pObjIndex->first_extradesc, pObjIndex->last_extradesc, next, prev );
                break;
@@ -6516,7 +6516,7 @@ void fread_fuss_object( FILE * fp, AREA_DATA * tarea )
                MPROG_DATA *mprg;
 
                CREATE( mprg, MPROG_DATA, 1 );
-               fread_fuss_objprog( fp, mprg, pObjIndex );
+               fread_xsmaug_objprog( fp, mprg, pObjIndex );
                mprg->next = pObjIndex->mudprogs;
                pObjIndex->mudprogs = mprg;
                break;
@@ -6528,7 +6528,7 @@ void fread_fuss_object( FILE * fp, AREA_DATA * tarea )
 
             if( !str_cmp( word, "Affect" ) || !str_cmp( word, "AffectData" ) )
             {
-               AFFECT_DATA *af = fread_fuss_affect( fp, word );
+               AFFECT_DATA *af = fread_xsmaug_affect( fp, word );
 
                if( af )
                   LINK( af, pObjIndex->first_affect, pObjIndex->last_affect, next, prev );
@@ -6820,7 +6820,7 @@ void mprog_file_read( MOB_INDEX_DATA * prog_target, const char *f )
    return;
 }
 
-void fread_fuss_mobprog( FILE * fp, MPROG_DATA * mprg, MOB_INDEX_DATA * prog_target )
+void fread_xsmaug_mobprog( FILE * fp, MPROG_DATA * mprg, MOB_INDEX_DATA * prog_target )
 {
    bool fMatch;   // Unused, but needed to shut the compiler up about the KEY macro
 
@@ -6878,7 +6878,7 @@ void fread_fuss_mobprog( FILE * fp, MPROG_DATA * mprg, MOB_INDEX_DATA * prog_tar
    }
 }
 
-void fread_fuss_mobile( FILE * fp, AREA_DATA * tarea )
+void fread_xsmaug_mobile( FILE * fp, AREA_DATA * tarea )
 {
    MOB_INDEX_DATA *pMobIndex = NULL;
    bool oldmob = false;
@@ -6908,7 +6908,7 @@ void fread_fuss_mobile( FILE * fp, AREA_DATA * tarea )
             {
                MPROG_DATA *mprg;
                CREATE( mprg, MPROG_DATA, 1 );
-               fread_fuss_mobprog( fp, mprg, pMobIndex );
+               fread_xsmaug_mobprog( fp, mprg, pMobIndex );
                mprg->next = pMobIndex->mudprogs;
                pMobIndex->mudprogs = mprg;
                break;
@@ -7254,7 +7254,7 @@ void fread_fuss_mobile( FILE * fp, AREA_DATA * tarea )
                   value = get_langnum( flag );
                   if( value < 0 || value > 31 )
                      bug( "Unknown speaking language: %s", flag );
-          	      else
+                  else
                      SET_BIT( pMobIndex->speaking, 1 << value );
                }
 
@@ -7415,7 +7415,7 @@ void fread_fuss_mobile( FILE * fp, AREA_DATA * tarea )
    }
 }
 
-void fread_fuss_areadata( FILE * fp, AREA_DATA * tarea )
+void fread_xsmaug_areadata( FILE * fp, AREA_DATA * tarea )
 {
    bool fMatch;   // Unused, but needed to shut the compiler up about the KEY macro
 
@@ -7561,7 +7561,7 @@ AREA_DATA *create_area( void )
    return pArea;
 }
 
-AREA_DATA *fread_fuss_area( AREA_DATA * tarea, FILE * fp )
+AREA_DATA *fread_xsmaug_area( AREA_DATA * tarea, FILE * fp )
 {
    for( ;; )
    {
@@ -7595,14 +7595,14 @@ AREA_DATA *fread_fuss_area( AREA_DATA * tarea, FILE * fp )
       {
          if( !tarea )
             tarea = create_area(  );
-         fread_fuss_areadata( fp, tarea );
+         fread_xsmaug_areadata( fp, tarea );
       }
       else if( !str_cmp( word, "MOBILE" ) )
-         fread_fuss_mobile( fp, tarea );
+         fread_xsmaug_mobile( fp, tarea );
       else if( !str_cmp( word, "OBJECT" ) )
-         fread_fuss_object( fp, tarea );
+         fread_xsmaug_object( fp, tarea );
       else if( !str_cmp( word, "ROOM" ) )
-         fread_fuss_room( fp, tarea );
+         fread_xsmaug_room( fp, tarea );
       else if( !str_cmp( word, "ENDAREA" ) )
          break;
       else
@@ -7644,10 +7644,10 @@ void load_area_file( AREA_DATA * tarea, const char *filename )
 
    word = fread_word( fpArea );
 
-   // New FUSS area format support -- Samson 7/5/07
-   if( !str_cmp( word, "FUSSAREA" ) )
+   // New XSMAUG & FUSS area format support -- Samson 7/5/07
+   if( !str_cmp( word, "XSMAUGAREA" ) )
    {
-      tarea = fread_fuss_area( tarea, fpArea );
+      tarea = fread_xsmaug_area( tarea, fpArea );
       fclose( fpArea );
       fpArea = NULL;
 
@@ -8079,7 +8079,7 @@ void show_vnums( CHAR_DATA * ch, int low, int high, bool proto, bool shownl, con
 /*
  * Shows prototype vnums ranges, and if loaded
  */
-void do_vnums( CHAR_DATA* ch, const char* argument)
+void do_vnums( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -8101,7 +8101,7 @@ void do_vnums( CHAR_DATA* ch, const char* argument)
 /*
  * Shows installed areas, sorted.  Mark unloaded areas with an X
  */
-void do_zones( CHAR_DATA* ch, const char* argument)
+void do_zones( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -8123,7 +8123,7 @@ void do_zones( CHAR_DATA* ch, const char* argument)
 /*
  * Show prototype areas, sorted.  Only show loaded areas
  */
-void do_newzones( CHAR_DATA* ch, const char* argument)
+void do_newzones( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -8293,7 +8293,7 @@ void fread_sysdata( SYSTEM_DATA * sys, FILE * fp )
             break;
 
          case 'M':
-            KEY( "Maxholiday", sys->maxholiday, fread_number( fp ) );	
+            KEY( "Maxholiday", sys->maxholiday, fread_number( fp ) );
             KEY( "Monthsperyear", sys->monthsperyear, fread_number( fp ) );
             KEY( "MorphOpt", sys->morph_opt, fread_number( fp ) );
             KEY( "Msetplayer", sys->level_mset_player, fread_number( fp ) );
@@ -8461,7 +8461,7 @@ void load_watchlist( void )
 
 /* Check to make sure range of vnums is free - Scryn 2/27/96 */
 
-void do_check_vnums( CHAR_DATA* ch, const char* argument)
+void do_check_vnums( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    AREA_DATA *pArea;

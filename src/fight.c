@@ -3809,7 +3809,7 @@ void dam_message( CHAR_DATA * ch, CHAR_DATA * victim, int dam, int dt )
 }
 #endif
 
-void do_kill( CHAR_DATA* ch, const char* argument)
+void do_kill( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -3886,13 +3886,13 @@ void do_kill( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_murde( CHAR_DATA* ch, const char* argument)
+void do_murde( CHAR_DATA * ch, const char *argument )
 {
    send_to_char( "If you want to MURDER, spell it out.\r\n", ch );
    return;
 }
 
-void do_murder( CHAR_DATA* ch, const char* argument)
+void do_murder( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    char arg[MAX_INPUT_LENGTH];
@@ -4017,7 +4017,7 @@ bool check_illegal_pk( CHAR_DATA * ch, CHAR_DATA * victim )
    return FALSE;
 }
 
-void do_flee( CHAR_DATA* ch, const char* argument)
+void do_flee( CHAR_DATA * ch, const char *argument )
 {
    ROOM_INDEX_DATA *was_in;
    ROOM_INDEX_DATA *now_in;
@@ -4119,13 +4119,13 @@ void do_flee( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_sla( CHAR_DATA* ch, const char* argument)
+void do_sla( CHAR_DATA * ch, const char *argument )
 {
    send_to_char( "If you want to SLAY, spell it out.\r\n", ch );
    return;
 }
 
-void do_slay( CHAR_DATA* ch, const char* argument)
+void do_slay( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    char arg[MAX_INPUT_LENGTH];

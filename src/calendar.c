@@ -99,7 +99,7 @@ int tzone_lookup( const char *arg )
    return -1;
 }
 
-void do_timezone( CHAR_DATA* ch, const char* argument)
+void do_timezone( CHAR_DATA * ch, const char *argument )
 {
    int i;
 
@@ -371,10 +371,12 @@ void fread_timedata( FILE * fp )
             KEY( "Mmonth", time_info.month, fread_number( fp ) );
             KEY( "Myear", time_info.year, fread_number( fp ) );
             break;
-         /* Uncomment if you have Samson's Pfile Cleanup Snippet installed.
-		 case 'P':
-            KEY( "Purgetime", new_pfile_time_t, fread_number( fp ) );
-            break; */
+            /*
+             * Uncomment if you have Samson's Pfile Cleanup Snippet installed.
+             * case 'P':
+             * KEY( "Purgetime", new_pfile_time_t, fread_number( fp ) );
+             * break; 
+             */
       }
 
       if( !fMatch )
@@ -458,7 +460,7 @@ void save_timedata( void )
       fprintf( fp, "Mmonth	%d\n", time_info.month );
       fprintf( fp, "Myear	%d\n", time_info.year );
       // Uncomment if you have Samson's Pfile Cleanup Snippet installed.
-	  //fprintf( fp, "Purgetime %ld\n", ( long int )new_pfile_time_t );
+      //fprintf( fp, "Purgetime %ld\n", ( long int )new_pfile_time_t );
       fprintf( fp, "%s", "End\n\n" );
       fprintf( fp, "%s", "#END\n" );
    }
@@ -466,7 +468,7 @@ void save_timedata( void )
    return;
 }
 
-void do_time( CHAR_DATA* ch, const char* argument)
+void do_time( CHAR_DATA * ch, const char *argument )
 {
    HOLIDAY_DATA *holiday;
    extern char str_boot_time[];
@@ -509,18 +511,20 @@ void do_time( CHAR_DATA* ch, const char* argument)
          send_to_char( "&WToday is your &Pb&pi&Yr&Oth&Yd&pa&Py&R!&D\r\n", ch );
    }
 
-  /* Uncomment if you have Samson's Pfile Cleanup Snippet installed.
-   if( IS_IMMORTAL( ch ) && sysdata.CLEANPFILES == TRUE )
-   {
-      long ptime, curtime;
-
-      ptime = ( long int )( new_pfile_time_t );
-      curtime = ( long int )( current_time );
-
-      buf[0] = '\0';
-      sec_to_hms( ptime - curtime, buf );
-      ch_printf( ch, "&wThe next pfile cleanup is in&W %s&w.&D\r\n", buf );
-   } */
+   /*
+    * Uncomment if you have Samson's Pfile Cleanup Snippet installed.
+    * if( IS_IMMORTAL( ch ) && sysdata.CLEANPFILES == TRUE )
+    * {
+    * long ptime, curtime;
+    * 
+    * ptime = ( long int )( new_pfile_time_t );
+    * curtime = ( long int )( current_time );
+    * 
+    * buf[0] = '\0';
+    * sec_to_hms( ptime - curtime, buf );
+    * ch_printf( ch, "&wThe next pfile cleanup is in&W %s&w.&D\r\n", buf );
+    * } 
+    */
    return;
 }
 
@@ -695,7 +699,7 @@ void free_holidays( void )
    return;
 }
 
-void do_holidays( CHAR_DATA* ch, const char* argument)
+void do_holidays( CHAR_DATA * ch, const char *argument )
 {
    HOLIDAY_DATA *day;
 
@@ -851,7 +855,7 @@ void save_holidays( void )
    return;
 }
 
-void do_saveholiday( CHAR_DATA* ch, const char* argument)
+void do_saveholiday( CHAR_DATA * ch, const char *argument )
 {
    save_holidays(  );
    send_to_char( "Holiday chart saved.\r\n", ch );
@@ -860,7 +864,7 @@ void do_saveholiday( CHAR_DATA* ch, const char* argument)
 
 /* Holiday OLC command - (c)Andrew Wilkie May-20-2005*/
 /* Calendar code (c)The Alsherok Team*/
-void do_setholiday( CHAR_DATA* ch, const char* argument)
+void do_setholiday( CHAR_DATA * ch, const char *argument )
 {
    HOLIDAY_DATA *day, *newday;
    int count = 0;
@@ -958,14 +962,14 @@ void do_setholiday( CHAR_DATA* ch, const char* argument)
 
 /* List all the months with a counter next to them*/
          count = 1;
-         while( month_name[x] != '\0' && str_cmp(month_name[x], " ") && x < sysdata.monthsperyear)
+         while( month_name[x] != '\0' && str_cmp( month_name[x], " " ) && x < sysdata.monthsperyear )
 
          {
             ch_printf( ch, "&R(&W%d&R)&Y%s\r\n", count, month_name[x] );
             x++;
             count++;
          }
-return;
+         return;
       }
 
 

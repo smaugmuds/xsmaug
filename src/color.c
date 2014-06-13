@@ -281,7 +281,7 @@ void reset_colors( CHAR_DATA * ch )
       log_printf( "%s: Attempting to reset NPC colors: %s", __FUNCTION__, ch->short_descr );
 }
 
-void do_color( CHAR_DATA* ch, const char* argument)
+void do_color( CHAR_DATA * ch, const char *argument )
 {
    bool dMatch, cMatch;
    short count = 0, y = 0;

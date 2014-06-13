@@ -756,7 +756,7 @@ bool check_skill( CHAR_DATA * ch, char *command, char *argument )
    return TRUE;
 }
 
-void do_skin( CHAR_DATA* ch, const char* argument)
+void do_skin( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *korps;
    OBJ_DATA *corpse;
@@ -824,7 +824,7 @@ void do_skin( CHAR_DATA* ch, const char* argument)
  * Lookup a skills information
  * High god command
  */
-void do_slookup( CHAR_DATA* ch, const char* argument)
+void do_slookup( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    char arg[MAX_INPUT_LENGTH];
@@ -1040,7 +1040,7 @@ void do_slookup( CHAR_DATA* ch, const char* argument)
  * Set a skill's attributes or what skills a player has.
  * High god command, with support for creating skills/spells/herbs/etc
  */
-void do_sset( CHAR_DATA* ch, const char* argument)
+void do_sset( CHAR_DATA * ch, const char *argument )
 {
    char arg1[MAX_INPUT_LENGTH];
    char arg2[MAX_INPUT_LENGTH];
@@ -1920,7 +1920,7 @@ void learn_from_failure( CHAR_DATA * ch, int sn )
       ch->pcdata->learned[sn] = UMIN( adept, ch->pcdata->learned[sn] + 1 );
 }
 
-void do_gouge( CHAR_DATA* ch, const char* argument)
+void do_gouge( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    AFFECT_DATA af;
@@ -2012,7 +2012,7 @@ void do_gouge( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_detrap( CHAR_DATA* ch, const char* argument)
+void do_detrap( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    OBJ_DATA *obj;
@@ -2132,7 +2132,7 @@ void do_detrap( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_dig( CHAR_DATA* ch, const char* argument)
+void do_dig( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    OBJ_DATA *obj;
@@ -2296,7 +2296,7 @@ void do_dig( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_search( CHAR_DATA* ch, const char* argument)
+void do_search( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    OBJ_DATA *obj;
@@ -2421,7 +2421,7 @@ void do_search( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_steal( CHAR_DATA* ch, const char* argument)
+void do_steal( CHAR_DATA * ch, const char *argument )
 {
    char buf[MAX_STRING_LENGTH];
    char arg1[MAX_INPUT_LENGTH];
@@ -2613,7 +2613,7 @@ void do_steal( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_backstab( CHAR_DATA* ch, const char* argument)
+void do_backstab( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -2707,7 +2707,7 @@ void do_backstab( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_rescue( CHAR_DATA* ch, const char* argument)
+void do_rescue( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -2811,7 +2811,7 @@ void do_rescue( CHAR_DATA* ch, const char* argument)
 
 
 
-void do_kick( CHAR_DATA* ch, const char* argument)
+void do_kick( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
 
@@ -2847,7 +2847,7 @@ void do_kick( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_punch( CHAR_DATA* ch, const char* argument)
+void do_punch( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
 
@@ -2884,7 +2884,7 @@ void do_punch( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_bite( CHAR_DATA* ch, const char* argument)
+void do_bite( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
 
@@ -2921,7 +2921,7 @@ void do_bite( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_claw( CHAR_DATA* ch, const char* argument)
+void do_claw( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
 
@@ -2952,7 +2952,7 @@ void do_claw( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_sting( CHAR_DATA* ch, const char* argument)
+void do_sting( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
 
@@ -2989,7 +2989,7 @@ void do_sting( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_tail( CHAR_DATA* ch, const char* argument)
+void do_tail( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
 
@@ -3026,7 +3026,7 @@ void do_tail( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_bash( CHAR_DATA* ch, const char* argument)
+void do_bash( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    int schance;
@@ -3075,7 +3075,7 @@ void do_bash( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_stun( CHAR_DATA* ch, const char* argument)
+void do_stun( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    AFFECT_DATA af;
@@ -3161,7 +3161,7 @@ void do_stun( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_bloodlet( CHAR_DATA* ch, const char* argument)
+void do_bloodlet( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *obj;
 
@@ -3201,7 +3201,7 @@ void do_bloodlet( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_feed( CHAR_DATA* ch, const char* argument)
+void do_feed( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    short dam;
@@ -3325,7 +3325,7 @@ void disarm( CHAR_DATA * ch, CHAR_DATA * victim )
 }
 
 
-void do_disarm( CHAR_DATA* ch, const char* argument)
+void do_disarm( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
    OBJ_DATA *obj;
@@ -3413,7 +3413,7 @@ void trip( CHAR_DATA * ch, CHAR_DATA * victim )
 }
 
 /* Converted to function well as a skill for vampires -- Blodkai */
-void do_mistwalk( CHAR_DATA* ch, const char* argument)
+void do_mistwalk( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -3480,7 +3480,7 @@ void do_mistwalk( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_broach( CHAR_DATA* ch, const char* argument)
+void do_broach( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    EXIT_DATA *pexit;
@@ -3531,7 +3531,7 @@ void do_broach( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_pick( CHAR_DATA* ch, const char* argument)
+void do_pick( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *gch;
@@ -3688,7 +3688,7 @@ void do_pick( CHAR_DATA* ch, const char* argument)
 
 
 
-void do_sneak( CHAR_DATA* ch, const char* argument)
+void do_sneak( CHAR_DATA * ch, const char *argument )
 {
    AFFECT_DATA af;
 
@@ -3725,7 +3725,7 @@ void do_sneak( CHAR_DATA* ch, const char* argument)
 
 
 
-void do_hide( CHAR_DATA* ch, const char* argument)
+void do_hide( CHAR_DATA * ch, const char *argument )
 {
    if( IS_NPC( ch ) && IS_AFFECTED( ch, AFF_CHARM ) )
    {
@@ -3759,7 +3759,7 @@ void do_hide( CHAR_DATA* ch, const char* argument)
 /*
  * Contributed by Alander.
  */
-void do_visible( CHAR_DATA* ch, const char* argument)
+void do_visible( CHAR_DATA * ch, const char *argument )
 {
    affect_strip( ch, gsn_invis );
    affect_strip( ch, gsn_mass_invis );
@@ -3772,7 +3772,7 @@ void do_visible( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_recall( CHAR_DATA* ch, const char* argument)
+void do_recall( CHAR_DATA * ch, const char *argument )
 {
    ROOM_INDEX_DATA *location;
    CHAR_DATA *opponent;
@@ -3853,7 +3853,7 @@ void do_recall( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_aid( CHAR_DATA* ch, const char* argument)
+void do_aid( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -3930,7 +3930,7 @@ void do_aid( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_mount( CHAR_DATA* ch, const char* argument)
+void do_mount( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
 
@@ -3998,7 +3998,7 @@ void do_mount( CHAR_DATA* ch, const char* argument)
 }
 
 
-void do_dismount( CHAR_DATA* ch, const char* argument)
+void do_dismount( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *victim;
 
@@ -4152,7 +4152,7 @@ bool check_tumble( CHAR_DATA * ch, CHAR_DATA * victim )
    return TRUE;
 }
 
-void do_poison_weapon( CHAR_DATA* ch, const char* argument)
+void do_poison_weapon( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *obj;
    OBJ_DATA *pobj;
@@ -4296,7 +4296,7 @@ void do_poison_weapon( CHAR_DATA* ch, const char* argument)
    return;
 }
 
-void do_scribe( CHAR_DATA* ch, const char* argument)
+void do_scribe( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *scroll;
    int sn;
@@ -4407,7 +4407,7 @@ void do_scribe( CHAR_DATA* ch, const char* argument)
 
 }
 
-void do_brew( CHAR_DATA* ch, const char* argument)
+void do_brew( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *potion;
    OBJ_DATA *fire;
@@ -4568,7 +4568,7 @@ bool check_grip( CHAR_DATA * ch, CHAR_DATA * victim )
    return TRUE;
 }
 
-void do_circle( CHAR_DATA* ch, const char* argument)
+void do_circle( CHAR_DATA * ch, const char *argument )
 {
    char arg[MAX_INPUT_LENGTH];
    CHAR_DATA *victim;
@@ -4656,7 +4656,7 @@ void do_circle( CHAR_DATA* ch, const char* argument)
 }
 
 /* Berserk and HitAll. -- Altrag */
-void do_berserk( CHAR_DATA* ch, const char* argument)
+void do_berserk( CHAR_DATA * ch, const char *argument )
 {
    short percent;
    AFFECT_DATA af;
@@ -4703,7 +4703,7 @@ void do_berserk( CHAR_DATA* ch, const char* argument)
 
 /* External from fight.c */
 ch_ret one_hit args( ( CHAR_DATA * ch, CHAR_DATA * victim, int dt ) );
-void do_hitall( CHAR_DATA* ch, const char* argument)
+void do_hitall( CHAR_DATA * ch, const char *argument )
 {
    CHAR_DATA *vch;
    CHAR_DATA *vch_next;
@@ -4784,7 +4784,7 @@ bool check_illegal_psteal( CHAR_DATA * ch, CHAR_DATA * victim )
    return FALSE;
 }
 
-void do_scan( CHAR_DATA* ch, const char* argument)
+void do_scan( CHAR_DATA * ch, const char *argument )
 {
    ROOM_INDEX_DATA *was_in_room;
    EXIT_DATA *pexit;
@@ -5516,7 +5516,7 @@ ch_ret ranged_attack( CHAR_DATA * ch, const char *argument, OBJ_DATA * weapon, O
  * Support code (see projectile_hit(), quiver support, other changes to
  * fight.c, etc by Thoric.
  */
-void do_fire( CHAR_DATA* ch, const char* argument)
+void do_fire( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *arrow;
    OBJ_DATA *bow;
@@ -5697,7 +5697,7 @@ void do_throw( CHAR_DATA* ch, const char* argument)
     }
 }*/
 
-void do_slice( CHAR_DATA* ch, const char* argument)
+void do_slice( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *corpse;
    OBJ_DATA *obj;
@@ -6005,7 +6005,7 @@ bool can_use_skill( CHAR_DATA * ch, int percent, int gsn )
 /*
  * Cook was coded by Blackmane and heavily modified by Shaddai
  */
-void do_cook( CHAR_DATA* ch, const char* argument)
+void do_cook( CHAR_DATA * ch, const char *argument )
 {
    OBJ_DATA *food, *fire;
    char arg[MAX_INPUT_LENGTH];
@@ -6096,4 +6096,46 @@ void do_cook( CHAR_DATA* ch, const char* argument)
       food->value[2]++;
    }
    learn_from_success( ch, gsn_cook );
+}
+
+/*
+* do_petfind
+*/
+void do_petfind( CHAR_DATA * ch, const char *argument )
+{
+   char arg[MAX_INPUT_LENGTH];
+   CHAR_DATA *victim, *mob;
+   bool found;
+   set_pager_color( AT_PLAIN, ch );
+   one_argument( argument, arg );
+   if( IS_NPC( ch ) )
+      return;
+   if( !IS_IMMORTAL( ch ) )
+      victim = ch;
+   else if( ( victim = get_char_world( ch, arg ) ) == NULL || !victim->pcdata || IS_NPC( victim ) )
+   {
+      send_to_char( "&CWho?&D\r\n", ch );
+      return;
+   }
+   if( !victim )
+      victim = ch;
+   found = FALSE;
+   for( mob = first_char; mob; mob = mob->next )
+   {
+      if( IS_NPC( mob ) && mob->in_room && victim == mob->master )
+      {
+         found = TRUE;
+         if( IS_IMMORTAL( ch ) )
+            pager_printf( ch, "[%5d] %-28s [%5d] %s\r\n", mob->pIndexData->vnum, mob->short_descr, mob->in_room->vnum,
+                          mob->in_room->name );
+         else
+            pager_printf( ch, "%-28s %s\r\n", mob->short_descr, mob->in_room->name );
+      }
+   }
+
+   if( !found && victim != ch )
+      send_to_char( "You didn't find any pets, are you sure they had one?", ch );
+   else if( !found )
+      send_to_char( "You didn't find any pets, are you sure you had one?", ch );
+   return;
 }

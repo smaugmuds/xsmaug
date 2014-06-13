@@ -93,7 +93,7 @@ struct mssp_info
    bool playerClans;
    bool playerCrafting;
    bool playerGuilds;
-};    
+};
 
 #define MSSP_FILE SYSTEM_DIR "mssp.dat"
 
@@ -113,9 +113,9 @@ void free_mssp_info( void );
 
 //GNUC_FORMAT macro was contrived by Elanthis
 #ifdef __GNUC__
-#  define GNUC_FORMAT(fmt,args) __attribute__ ((format (printf, fmt, args)))
+#define GNUC_FORMAT(fmt,args) __attribute__ ((format (printf, fmt, args)))
 #else
-#  define GNUC_FORMAT(fmt,args)
+#define GNUC_FORMAT(fmt,args)
 #endif
 
 void mssp_reply( DESCRIPTOR_DATA * d, const char *var, const char *fmt, ... ) GNUC_FORMAT( 3, 4 );
