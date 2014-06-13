@@ -1,0 +1,126 @@
+Line editor - Formatting command
+--------------------------------
+
+Author: Shogar
+Updated by Sadiq
+
+What this code does
+-------------------
+
+Adds an edit buffer formatting tool to the standard Smaug line editor.
+Formats the text in the buffer to the standard 80 lines that will fit
+nicely on a telnet window.
+
+Installation Instructions
+-------------------------
+
+1. In build.c, function edit_buffer, find the following location:
+
+      if ( !str_cmp( cmd+1, "i" ) )
+	{
+	    if ( edit->numlines >= max_buf_lines )
+		send_to_char( "Buffer is full.\n\r> ", ch );
+	    else
+	    {
+
+
+    Add the following code immediately above there:
+
+      /* added format command - shogar */
+	/* This has been redone to be more efficient, and to make format
+	   start at beginning of buffer, not whatever line you happened
+	   to be on, at the time.   */
+
+      if ( !str_cmp( cmd+1, "f" ) )
+	{
+	    char   temp_buf[MAX_STRING_LENGTH+max_buf_lines];
+	    int    x, ep, old_p, end_mark; 
+	    int    p = 0;
+	    
+          pager_printf( ch, "Reformating...\n\r");
+
+	    for ( x = 0; x < edit->numlines; x++ )
+	    {
+	       strcpy ( temp_buf+p , edit->line[x] );
+	       p += strlen( edit->line[x] );
+	       temp_buf[p] = ' ';
+	       p++;
+	    }
+	    
+	    temp_buf[p] = '\0';
+	    end_mark = p;
+	    p = 75;
+	    old_p =0;
+	    edit->on_line =0;
+	    edit->numlines =0;
+	    
+	    while ( old_p < end_mark )
+	    {
+	        while ( temp_buf[p] != ' ' && p > old_p )
+	          p--;
+	          
+	        if ( p == old_p )
+	          p +=75;
+	        
+	        if ( p > end_mark )
+	          p = end_mark;
+	        
+	        ep =0;
+	        for ( x= old_p ; x < p ; x++ )  
+	        {
+	           edit->line[edit->on_line][ep] = temp_buf[x];
+                   ep++;
+                }
+                edit->line[edit->on_line][ep] = '\0';
+
+	        edit->on_line++;
+	        edit->numlines++;
+	        
+	        old_p = p+1 ;
+	        p += 75;
+	        
+	    }
+          pager_printf( ch, "Reformating done.\n\r> ");
+	    return;
+	}
+
+2. In the same function, locate this code:
+
+      if ( !str_cmp( cmd+1, "?" ) )
+	{
+	    send_to_char( "Editing commands\n\r---------------------------------\n\r", ch );
+	    send_to_char( "/l              list buffer\n\r",	ch );
+	    send_to_char( "/c              clear buffer\n\r",	ch );
+	    send_to_char( "/d [line]       delete line\n\r",	ch );
+	    send_to_char( "/g <line>       goto line\n\r",	ch );
+	    send_to_char( "/i <line>       insert line\n\r",	ch );
+	    send_to_char( "/r <old> <new>  global replace\n\r",	ch );
+	    send_to_char( "/a              abort editing\n\r",	ch );
+
+    and insert this line between a pair:
+
+	    send_to_char( "/f <format>     format text in buffer\n\r", ch );
+
+3. Recompile, your done.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on AFKMud version 1.2 and higher.
+AFKMud is a Smaug 1.02a derivitive which has been modified significantly enough
+that I can make no guarantees that it will work with your code as is, some
+modifications may be necessary to make it work with your mud. AFKMud has been
+developed under Redhat Linux from versions 6.0 to 8.0 using GCC compilers and
+therefore Linux is the only platform I can offer support for. Users of BSD, Windows,
+or Macintosh platforms are on their own since I have no experience with coding for
+them. Snippet files obtained from a source other than my own website cannot be
+supported due to the potential for outside modifications. If you've downloaded
+this from a site other than mine and are having problems, try downloading what
+I have and installing it before asking for help.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+Intermud-3 and IMC2 contact: Samson@Alsherok

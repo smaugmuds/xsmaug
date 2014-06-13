@@ -1321,7 +1321,7 @@ struct smaug_affect
 #define ACT_IS_NPC		  0   /* Auto set for mobs */
 #define ACT_SENTINEL		  1   /* Stays in one room */
 #define ACT_SCAVENGER		  2   /* Picks up objects  */
-/* 3 is available for use */
+#define ACT_HEALER		  3   /* New Healer */
 /* 4 is available for use */
 #define ACT_AGGRESSIVE		  5   /* Attacks PC's      */
 #define ACT_STAY_AREA		  6   /* Won't leave area  */
@@ -3764,6 +3764,7 @@ DECLARE_DO_FUN( do_gtell );
 DECLARE_DO_FUN( do_guilds );
 DECLARE_DO_FUN( do_guildtalk );
 DECLARE_DO_FUN( do_gwhere );
+DECLARE_DO_FUN( do_heal );
 DECLARE_DO_FUN( do_hedit );
 DECLARE_DO_FUN( do_hell );
 DECLARE_DO_FUN( do_help );
@@ -4222,19 +4223,19 @@ DECLARE_SPELL_FUN( spell_sacral_divinity );
  */
 #define PLAYER_DIR	"../player/"   /* Player files         */
 #define BACKUP_DIR	"../backup/"   /* Backup Player files   */
-#define GOD_DIR		"../gods/"     /* God Info Dir         */
+#define GOD_DIR		"../gods/"  /* God Info Dir         */
 #define BOARD_DIR	"../boards/"   /* Board data dir    */
-#define CLAN_DIR	"../clans/"    /* Clan data dir     */
+#define CLAN_DIR	"../clans/" /* Clan data dir     */
 #define COUNCIL_DIR  	"../councils/" /* Council data dir    */
-#define DEITY_DIR	"../deity/"    /* Deity data dir    */
+#define DEITY_DIR	"../deity/" /* Deity data dir    */
 #define BUILD_DIR       "../building/" /* Online building save dir     */
 #define SYSTEM_DIR	"../system/"   /* Main system files    */
 #define PROG_DIR	"../mudprogs/" /* MUDProg files     */
 #define CORPSE_DIR	"../corpses/"  /* Corpses        */
 #define CLASS_DIR	"../classes/"  /* Classes        */
-#define RACE_DIR 	"../races/"    /* Races */
-#define WATCH_DIR	"../watch/"    /* Imm watch files --Gorog      */
-#define LOG_DIR		"../log/"      /* Store logs */
+#define RACE_DIR 	"../races/" /* Races */
+#define WATCH_DIR	"../watch/" /* Imm watch files --Gorog      */
+#define LOG_DIR		"../log/"   /* Store logs */
 
 /*
  * The watch directory contains a maximum of one file for each immortal
@@ -4242,18 +4243,18 @@ DECLARE_SPELL_FUN( spell_sacral_divinity );
  * in this directory is the name of the immortal who requested the watch
  */
 
-#define AREA_LIST	"area.lst"     /* List of areas     */
-#define WATCH_LIST      "watch.lst"    /* List of watches              */
-#define BAN_LIST        "ban.lst"      /* List of bans                 */
+#define AREA_LIST	"area.lst"  /* List of areas     */
+#define WATCH_LIST      "watch.lst" /* List of watches              */
+#define BAN_LIST        "ban.lst"   /* List of bans                 */
 #define RESERVED_LIST	"reserved.lst" /* List of reserved names  */
-#define CLAN_LIST	"clan.lst"     /* List of clans     */
+#define CLAN_LIST	"clan.lst"  /* List of clans     */
 #define COUNCIL_LIST	"council.lst"  /* List of councils     */
-#define GUILD_LIST      "guild.lst"    /* List of guilds               */
-#define GOD_LIST	"gods.lst"     /* List of gods         */
-#define DEITY_LIST	"deity.lst"    /* List of deities      */
-#define CLASS_LIST	"class.lst"    /* List of classes      */
-#define RACE_LIST	"race.lst"     /* List of races     */
-#define MORPH_FILE      "morph.dat"    /* For morph data */
+#define GUILD_LIST      "guild.lst" /* List of guilds               */
+#define GOD_LIST	"gods.lst"  /* List of gods         */
+#define DEITY_LIST	"deity.lst" /* List of deities      */
+#define CLASS_LIST	"class.lst" /* List of classes      */
+#define RACE_LIST	"race.lst"  /* List of races     */
+#define MORPH_FILE      "morph.dat" /* For morph data */
 #define BOARD_FILE	"boards.dat"   /* For bulletin boards   */
 #define SHUTDOWN_FILE	LOG_DIR    "shutdown.log"  /* For 'shutdown'  */
 #define IMM_HOST_FILE   SYSTEM_DIR "immortal.host" /* For stoping hackers */
@@ -4267,10 +4268,10 @@ DECLARE_SPELL_FUN( spell_sacral_divinity );
 #define TYPO_FILE	LOG_DIR "typos.log"  /* For 'typo'       */
 #define FIXED_FILE	LOG_DIR "fixed.log"  /* For 'fixed' command */
 #define LOG_FILE	LOG_DIR "talk.log"   /* For talking in logged rooms */
-#define MOBLOG_FILE	LOG_DIR "mob.log"    /* For mplog messages  */
+#define MOBLOG_FILE	LOG_DIR "mob.log" /* For mplog messages  */
 #define WIZLIST_FILE	SYSTEM_DIR "wiz.lst" /* Wizlist       */
 #define WHO_FILE	SYSTEM_DIR "who.lst" /* Who output file  */
-#define WEBWHO_FILE	SYSTEM_DIR "webwho.lst"    /* WWW Who output file */
+#define WEBWHO_FILE	SYSTEM_DIR "webwho.lst" /* WWW Who output file */
 #define REQUEST_PIPE	SYSTEM_DIR "requests.dat"  /* Request FIFO  */
 #define SKILL_FILE	SYSTEM_DIR "skills.dat" /* Skill table   */
 #define LOGIN_MSG	SYSTEM_DIR "login.msg"  /* List of login msgs      */
@@ -4279,7 +4280,7 @@ DECLARE_SPELL_FUN( spell_sacral_divinity );
 #define SOCIAL_FILE	SYSTEM_DIR "socials.dat"   /* Socials       */
 #define COMMAND_FILE	SYSTEM_DIR "commands.dat"  /* Commands      */
 #define PROJECTS_FILE	SYSTEM_DIR "projects.dat"  /* For projects  */
-#define PLANE_FILE	SYSTEM_DIR "planes.dat"    /* For planes       */
+#define PLANE_FILE	SYSTEM_DIR "planes.dat" /* For planes       */
 
 /*
  * Our function prototypes.

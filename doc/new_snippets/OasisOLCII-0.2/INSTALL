@@ -1,0 +1,7 @@
+For sake of clarity, I'll refer to your base mud dir as "/dist" even if you
+have renamed it to something else.
+
+* Go into /dist/src, do 'patch < OasisOLC.patch'
+* Go into /dist/system, do 'patch < OasisOLC-commands.patch'
+* back in /dist/src, make clean, then make..and reboot/restart your
+  mud.

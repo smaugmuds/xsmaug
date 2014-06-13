@@ -441,7 +441,7 @@ Class      mage~
 Position   standing~
 DefPos     standing~
 Gender     male~
-Actflags   npc r1 stayarea nowander secretive mobinvis noassist pacifist~
+Actflags   npc healer stayarea nowander secretive mobinvis noassist pacifist~
 Affected   sanctuary protect truesight~
 Stats1     1000 105 0 -300 0 0
 Stats2     50 10 31000
@@ -927,7 +927,7 @@ Class      mage~
 Position   standing~
 DefPos     standing~
 Gender     male~
-Actflags   npc sentinel r1 stayarea~
+Actflags   npc sentinel healer stayarea~
 Affected   detect_evil detect_invis detect_magic detect_hidden sanctuary infrared protect truesight detect_traps scrying fireshield shockshield iceshield~
 Stats1     0 102 0 -300 8700 0
 Stats2     1 1 30000
@@ -1213,7 +1213,7 @@ Class      mage~
 Position   standing~
 DefPos     standing~
 Gender     female~
-Actflags   npc sentinel r1 stayarea pacifist~
+Actflags   npc sentinel healer stayarea pacifist~
 Affected   detect_invis detect_hidden infrared protect truesight~
 Stats1     0 100 0 -71 160 0
 Stats2     50 10 30000
@@ -1332,7 +1332,7 @@ Class      mage~
 Position   standing~
 DefPos     standing~
 Gender     neuter~
-Actflags   npc sentinel r1 stayarea pacifist~
+Actflags   npc sentinel healer stayarea pacifist~
 Affected   sanctuary protect truesight fireshield shockshield iceshield~
 Stats1     0 105 0 -76 0 0
 Stats2     50 10 31000
@@ -2200,7 +2200,7 @@ Position   standing~
 DefPos     standing~
 Specfun    spec_breath_frost~
 Gender     neuter~
-Actflags   npc r1 aggressive stayarea mobinvis~
+Actflags   npc healer aggressive stayarea mobinvis~
 Affected   detect_hidden sanctuary infrared protect flying~
 Stats1     0 95 0 -65 0 0
 Stats2     12 48 25000

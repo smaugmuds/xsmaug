@@ -1,0 +1,32 @@
+                             HEALER
+
+        /* display price list */
+	act(AT_PLAIN,"$N says 'I offer the following spells:'",ch,NULL,mob,TO_CHAR);
+	send_to_char("  light: cure light wounds          10 gold\n\r",ch);
+	send_to_char("  serious: cure serious wounds      15 gold\n\r",ch);
+	send_to_char("  critical: cure critical wounds    25 gold\n\r",ch);
+	send_to_char("  heal: healing spell               50 gold\n\r",ch);
+	send_to_char("  blind: cure blindness             20 gold\n\r",ch);
+	send_to_char("  poison:  cure poison              25 gold\n\r",ch); 
+	send_to_char("  curse: remove curse               50 gold\n\r",ch);
+	send_to_char("  refresh: restore movement          5 gold\n\r",ch);
+	send_to_char("  mana:  restore mana	          10 gold\n\r",ch);
+	send_to_char(" Type heal <type> to be healed.\n\r",ch);
+
+6.- You must add the command in /SYSTEM/COMMANDS.DAT:
+
+#COMMAND
+Name        heal~
+Code        do_heal
+Position    100
+Level       1
+Log         0
+End
+
+
+To mset an act_flag to a mob, it must be a prototype, so you must do:
+mset <mobname> flags prototype
+mset <mobname> flags healer
+mset <mobname> flags prototype
+foldarea <area_file>
+

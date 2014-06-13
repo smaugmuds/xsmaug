@@ -1,0 +1,22 @@
+/* This snippet installs a new command called Petfind that lets mortals see   *
+ * where they left their pet(s) and lets immortals do the same but also for   *
+ * other people's pets too.                                                   */
+
+#COMMAND
+Name        petfind~
+Code        do_petfind
+Position    100
+Level       2
+Log         0
+End
+
+Syntax: petfind
+
+This command will show you what room any pets you have are in.
+
+Syntax: petfind <victim>
+
+This command will show you what room any pets you or your victim have are in.
+This will also show vnums to immortals for both the pet and the room, but the
+option of including a victim is only available to immortals.
+

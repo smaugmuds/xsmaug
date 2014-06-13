@@ -1,0 +1,270 @@
+Charge skill for SMAUG1.02a - 
+
+Okies here is how I made a "charge" skill for my mud. Charge allows PCs to
+charge a "blank" wand with a cetain spell. It is very similar to the
+"scribe" and "brew" skills. It also creates a new spell flag called
+"nocharge" which you can put on spells, to prevent them from being charged
+into a wand. (For example, putting "nocharge" on the "recharge" spell comes
+to mind - wouldn't do, to have a wand that keeps recharging other wands,
+now, eh? )
+
+Okies....here's how to do it
+============================================================================
+Go into your mud, and create a prototype wand object. I put mine in 
+limbo.are, along with the blank scroll, empty flask, etc. Note the vnum
+of the wand. Set it up how you like, but the following fields MUST be set
+this way:
+	wear:	take hold
+	v0:	-1
+	v1:	-1
+	v2:	-1
+	v3:	-1
+(Note: After everything is set up, and you, or a PC invokes, buys, whatever,
+ a charging wand, it will appear with the values v0, v1, and v2 set to 1.
+ This is normal and won't affect the function. v3 MUST always be -1 prior
+ to actually using the charge skill, or the skill will fail. If you set the
+ prototype's v3 to -1, it will change, when invoked, or created, etc.)
+
+Remember to foldarea to save the object.
+
+Now, in MUD.H:
+
+around line 1130, add:
+#define SF_NOCHARGE               BV30  /* cannot be charged            */
+
+around line 1234, add:
+#define OBJ_VNUM_WAND_CHARGING       <vnum of wand>
+
+around line 2430 add:
+extern  sh_int  gsn_charge;
+
+around line 3018 add:
+DECLARE_DO_FUN( do_charge       );
+
+
+Then, in DB.C:
+
+around line 151 add:
+sh_int                  gsn_charge;
+
+around line 516, add:
+        ASSIGN_GSN( gsn_charge,         "charge" );
+
+
+Then, in SKILLS.C:
+
+around line 26, make:
+
+char * const spell_flag[] =
+{ "water", "earth", "air", "astral", "area", "distant", "reverse",
+"save_half_dam", "save_negates", "accumulative", "recastable", "noscribe",
+"nobrew", "group", "object", "character", "secretskill", "pksensitive" };
+
+look like this:
+
+char * const spell_flag[] =
+{ "water", "earth", "air", "astral", "area", "distant", "reverse",
+"save_half_dam", "save_negates", "accumulative", "recastable", "noscribe",
+"nobrew", "group", "object", "character", "secretskill", "pksensitive",
+"stoponfail", "nocharge" };
+
+(NOTE: the flag "stoponfail" must be added to preserve the "nocharge" flag's
+BV position...at this time I am unsure whether "stoponfail" is supported
+or not.)
+
+Then, in TABLES.C:
+
+Add the appropriate "do_charge" lines, in both places.
+
+Then, go to the end of the skills.c file, and drop in the following 
+function:
+
+----------------------------- begin code -----------------------------------
+
+/* Charge code written by Sadiq - April 28, 1998    *
+ * e-mail to sadiq@a-znet.com                       */
+
+void do_charge( CHAR_DATA *ch, char *argument )
+{
+    OBJ_DATA *wand;
+    int sn;
+    char buf1[MAX_STRING_LENGTH];
+    char buf2[MAX_STRING_LENGTH];
+    char buf3[MAX_STRING_LENGTH];
+    int mana;
+    int max_charge;
+    int charge;
+ 
+    if ( IS_NPC(ch) )
+        return;
+ 
+    if ( !IS_NPC(ch) &&   ch->level < skill_table[gsn_charge]->skill_level[ch->class] )
+    {
+        send_to_char( "A skill such as this is presently beyond your comprehension.\n\r", ch);
+        return;
+    }
+ 
+    if ( argument[0] == '\0' || !str_cmp(argument, "") )
+    {
+        send_to_char( "Charge what?\n\r", ch );
+        return;
+    }
+ 
+    if ( ms_find_obj(ch) )
+        return;
+ 
+    if ( (sn = find_spell( ch, argument, TRUE )) < 0 )
+    {
+         send_to_char( "You have not learned that spell.\n\r", ch );
+         return;
+    }
+ 
+    if ( skill_table[sn]->spell_fun == spell_null )
+    {
+        send_to_char( "That's not a spell!\n\r", ch );
+        return;
+    }
+ 
+    if ( SPELL_FLAG(skill_table[sn], SF_NOCHARGE) )
+    {
+        send_to_char( "You cannot charge that spell.\n\r", ch );
+        return;
+    }
+ 
+    mana = IS_NPC(ch) ? 0 : UMAX(skill_table[sn]->min_mana,
+     100 / ( 2 + ch->level - skill_table[sn]->skill_level[ch->class] ) );
+ 
+    mana *=3;
+ 
+    if ( !IS_NPC(ch) && ch->mana < mana )
+    {
+        send_to_char( "You don't have enough mana.\n\r", ch );
+         return;
+    }
+ 
+     if ( ( wand = get_eq_char( ch, WEAR_HOLD ) ) == NULL )
+     {
+        send_to_char( "You must be holding a suitable wand to charge it.\n\r", ch );
+        return;
+     }
+ 
+     if( wand->pIndexData->vnum != OBJ_VNUM_WAND_CHARGING )
+     {
+        send_to_char( "You must be holding a suitable wand to charge it.\n\r", ch );
+        return;
+     }
+ 
+     if ( ( wand->value[3] != -1 )
+     && ( wand->pIndexData->vnum == OBJ_VNUM_WAND_CHARGING ) )
+     {
+        send_to_char( "That wand has already been charged.\n\r", ch);
+        return;
+     }
+ 
+     if ( !process_spell_components( ch, sn ) )
+     {
+        send_to_char( "The spell fizzles and dies due to a lack of the proper components.\n\r", ch);
+        ch->mana -= (mana / 2);
+        return;
+     }
+ 
+     if ( !IS_NPC(ch) && number_percent( ) > ch->pcdata->learned[gsn_charge] )
+     {
+       set_char_color ( AT_MAGIC, ch );
+       send_to_char("Your spell fails and the distortions in the magic destroy the wand!\n\r", ch);
+       learn_from_failure( ch, gsn_charge );
+       extract_obj( wand );
+       ch->mana -= (mana / 2);
+         return;
+     }
+ 
+     max_charge = abs( ch->level / 2 );
+     charge = abs( ch->mana / mana );
+ 
+     if ( charge > max_charge )
+     {
+        charge = max_charge;
+     }
+ 
+     wand->level = ch->level;
+     wand->value[0] = ch->level;
+     wand->value[1] = charge;
+     wand->value[2] = charge;
+     wand->value[3] = sn;
+     sprintf(buf1, "wand of %s", skill_table[sn]->name);
+     STRFREE(wand->short_descr);
+     wand->short_descr = STRALLOC( aoran(buf1) );
+     sprintf(buf2, "A polished wand of '%s' has been left here.", skill_table[sn]->name);
+     STRFREE(wand->description);
+     wand->description = STRALLOC(buf2);
+     sprintf(buf3, "wand charging  %s", skill_table[sn]->name);
+     STRFREE(wand->name);
+     wand->name = STRALLOC(buf3);
+     act( AT_MAGIC, "$n magically charges $p.",   ch,wand, NULL, TO_ROOM );
+     act( AT_MAGIC, "You magically charge $p.",   ch,wand, NULL, TO_CHAR );
+ 
+     learn_from_success( ch, gsn_charge );
+ 
+     ch->mana -= (mana * charge);
+ 
+}
+
+---------------------------- end code --------------------------------------
+
+Make clean and recompile.
+
+Then, go back into your mud, and use sset to create the skill. Use these
+commands:
+	sset create skill charge
+	sset charge code do_charge
+	sset charge type skill
+	sset charge target objinv
+	sset charge minpos 8
+	sset charge beats 12 /* or whatever - 1 beat = 1/4 second */
+	sset charge wearoff !charge!
+	sset save skill table
+
+Reboot the mud, and enjoy! :)  You will still need to set the appropriate
+levels and adept level for each class, for the skill. Also, you may want to
+go through your spells, and add the "nocharge" flag to those spells you
+don't want to have charged into wands. Remember that when you change a spell
+or skill, the change won't take effect, until the mud is rebooted. Now, you
+just need to make the help file for the new skill. Here's the one I made for
+my mud:
+
+0 CHARGE~
+Syntax: Charge <spell>
+ 
+Charge allows a mana user to magically charge a suitably prepared
+wand with a spell. The wand must be held. Once the command to charge
+a wand is given, several things happen at once. First a maximum amount
+of charges that can be placed upon the wand is determined, based
+primarily on the caster's level. Next, the amount of mana required
+for each charge is determined, based on the spell that the wand is
+being charged with. The total current mana that the caster has is
+divided by the cost per charge and, provided it doesn't exceed the
+maximum charge figure, that figure is the amount of charges that the
+wand will get if the charge is successful. The total number of charges
+is multiplied by the cost per charge and that total is deducted from
+the caster's mana. Basically, the less mana it takes to cast the
+particular spell, the more charges a wand of that spell will get,
+modified by the amount of mana the caster has at the time, when
+charging.
+ 
+NOTE: If the charge itself fails, the wand is destroyed.
+      There are some spells that cannot be charged into a wand at
+      all.
+      A successful charge will always leave the caster almost completely
+      drained of mana.
+ 
+ 
+SEE: SCRIBE, BREW
+
+
+
+Also, add this line to the end of the "spellflags" help file:
+
+nocharge       cannot be charged into a wand
+
+
+And there you go! :)

@@ -145,7 +145,7 @@ const char *const a_flags[] = {
 };
 
 const char *const act_flags[] = {
-   "npc", "sentinel", "scavenger", "r1", "r2", "aggressive", "stayarea",
+   "npc", "sentinel", "scavenger", "healer", "r2", "aggressive", "stayarea",
    "wimpy", "pet", "train", "practice", "immortal", "deadly", "polyself",
    "meta_aggr", "guardian", "running", "nowander", "mountable", "mounted",
    "scholar", "secretive", "hardhat", "mobinvis", "noassist", "autonomous",

@@ -17,7 +17,8 @@ Due to the ability to edit most everything online, you will most likely find the
 
 ### XSMAUG Releases
 
- * **[XSMAUG Phoenix Release 2.0] (https://github.com/smaugmuds/xsmaug/releases/tag/2.0)**
+ * **[XSMAUG Phoenix Release 2.0] (https://github.com/smaugmuds/xsmaug/releases/tag/2.0)** **¡¡¡NEW!!!**
+ * **[XSMAUG Phoenix Release 2.1] (https://github.com/smaugmuds/xsmaug/releases/tag/2.1)** **¡Update!**
 
 #### Contents of the Release
 
@@ -89,6 +90,7 @@ Here are just some of the extra features XSMAUG has:
 	- Different prompts when you are fighting and when you are not
 	- Pets saving with their owners
 	- Pet Finding.
+	- New Healer.
 	- Configurable color codes online
 	- Projectiles are fully supported
 	- Extended bit vectors for when 32 are just not enough
@@ -128,6 +130,15 @@ New Imported Areas:
 
 #### ChangeLog
 
+	* XSMAUG 2.0 -> XSMAUG 2.1
+
+		- Added: Command 'petfind' (do_petfind)
+		- Added: New Healer: 'heal' (do_heal)
+		- Updated: Makefile
+		- Updated: Areas
+		- Updated: Documentation
+		- Updated: Tools
+
 	* SMAUGFuss 1.9  -> XSMAUG 2.0
 
 		- Added: xsmaug.conf & xsmaug-server
@@ -135,7 +146,7 @@ New Imported Areas:
 		- Added: Name Change
 		- Added: New Clases & Skills
 		- Added: New Imported Areas
-
+	
 
 #### Supported Operating Systems
 

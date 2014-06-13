@@ -1,0 +1,528 @@
+This code will make it so any room flagged clanstoreroom
+will automatically save its contents. It is just a mix
+of code from the grux utility and the existing storeroom
+code, so I take only credit for taking the time to make
+it in snippet form.
+
+-Rhys (rhiannon@bendcable.com)
+http://opticburn.dhs.org/snippets/
+
+[act_obj.c]
+-----------
+
+In get_obj(), around line 176, find:
+
+    /* Clan storeroom checks */
+    if ( IS_SET(ch->in_room->room_flags, ROOM_CLANSTOREROOM) 
+    && (!container || container->carried_by == NULL) )
+    {
+/*	if (!char_died) save_char_obj(ch); */
+	for ( clan = first_clan; clan; clan = clan->next )
+	  if ( clan->storeroom == ch->in_room->vnum )
+	    save_clan_storeroom(ch, clan);
+    }
+
+And make it look like this:
+
+    /* Clan storeroom checks */
+    if ( IS_SET(ch->in_room->room_flags, ROOM_CLANSTOREROOM)
+         && (!container || container->carried_by == NULL) )
+    {
+        save_clan_storeroom( ch );
+    }
+
+In do_put(), around line 760, find:
+
+	/* Clan storeroom check */
+	if ( IS_SET(ch->in_room->room_flags, ROOM_CLANSTOREROOM) 
+	&&   container->carried_by == NULL)
+	{
+/*	   if (!char_died && !save_char ) save_char_obj(ch); */
+	   for ( clan = first_clan; clan; clan = clan->next )
+	      if ( clan->storeroom == ch->in_room->vnum )
+		save_clan_storeroom(ch, clan);
+	}
+
+And make it look like this:
+
+        /* Clan storeroom check */
+        if ( IS_SET(ch->in_room->room_flags, ROOM_CLANSTOREROOM)
+             && container->carried_by == NULL)
+        {
+            save_clan_storeroom( ch );
+        }
+
+And then further down, in the same function, around line 849, find:
+
+	/* Clan storeroom check */
+        if ( IS_SET(ch->in_room->room_flags, ROOM_CLANSTOREROOM) 
+	&& container->carried_by == NULL )
+	{
+/*	  if (!char_died && !save_char) save_char_obj(ch); */
+	  for ( clan = first_clan; clan; clan = clan->next )
+	     if ( clan->storeroom == ch->in_room->vnum )
+        	save_clan_storeroom(ch, clan);
+	}
+
+Make it look like this:
+
+	/* Clan storeroom check */
+        if ( IS_SET(ch->in_room->room_flags, ROOM_CLANSTOREROOM) 
+             && container->carried_by == NULL )
+	{
+            save_clan_storeroom( ch );
+	}
+
+In the function do_drop(), around line 980, find:
+
+	/* Clan storeroom saving */
+	if ( IS_SET(ch->in_room->room_flags, ROOM_CLANSTOREROOM) )
+	{
+/*	   if (!char_died) save_char_obj(ch); */
+	   for ( clan = first_clan; clan; clan = clan->next )
+ 	      if ( clan->storeroom == ch->in_room->vnum )
+		save_clan_storeroom(ch, clan);
+	}
+
+And make it look like this:
+
+	/* Clan storeroom saving */
+        if ( IS_SET(ch->in_room->room_flags, ROOM_CLANSTOREROOM) )
+        {
+            save_clan_storeroom( ch );
+	}
+
+
+Now find the function save_clan_storeroom(), around line 2437:
+
+/*
+ * Save items in a clan storage room			-Scryn & Thoric
+ */
+void save_clan_storeroom( CHAR_DATA *ch, CLAN_DATA *clan )
+{
+    FILE *fp;
+    char filename[256];
+    sh_int templvl;
+    OBJ_DATA *contents;
+
+    if ( !clan )
+    {
+	bug( "save_clan_storeroom: Null clan pointer!", 0 );
+	return;
+    }
+
+    if ( !ch )
+    {
+	bug ("save_clan_storeroom: Null ch pointer!", 0);
+	return;
+    }
+
+    sprintf( filename, "%s%s.vault", CLAN_DIR, clan->filename );
+    if ( ( fp = fopen( filename, "w" ) ) == NULL )
+    {
+	bug( "save_clan_storeroom: fopen", 0 );
+	perror( filename );
+    }
+    else
+    {
+	templvl = ch->level;
+	ch->level = LEVEL_HERO;		/* make sure EQ doesn't get lost */
+        contents = ch->in_room->last_content;
+        if (contents)
+	  fwrite_obj(ch, contents, fp, 0, OS_CARRY );
+	fprintf( fp, "#END\n" );
+	ch->level = templvl;
+	fclose( fp );
+	return;
+    }
+    return;
+}
+
+And make it look like this:
+
+void save_clan_storeroom( CHAR_DATA *ch )
+{
+    FILE *fp;
+    char filename[256];
+    sh_int templvl;
+    OBJ_DATA *contents;
+
+    if ( !ch )
+    {
+        bug ("save_clan_storeroom: Null ch pointer!", 0);
+        return;
+    }
+
+    sprintf( filename, "%s%d.vault", STORAGE_DIR, ch->in_room->vnum );
+    if ( ( fp = fopen( filename, "w" ) ) == NULL )
+    {
+        bug( "save_clan_storeroom: fopen", 0 );
+        perror( filename );
+    }
+    else
+    {
+	templvl = ch->level;
+        ch->level = LEVEL_HERO;		/* make sure EQ doesn't get lost */
+        contents = ch->in_room->last_content;
+        fprintf( fp, "#VNUM %d\n", ch->in_room->vnum );
+        if (contents && !IS_OBJ_STAT( contents, ITEM_CLANOBJECT))
+	  fwrite_obj(ch, contents, fp, 0, OS_CARRY );
+	fprintf( fp, "#END\n" );
+	ch->level = templvl;
+	fclose( fp );
+	return;
+    }
+    return;
+}
+
+Save act_obj.c and close it.
+
+
+
+[clans.c]
+---------
+
+Find the function load_clan_file, around line 535, and replace the entire function with this:
+
+
+/*
+ * Load a clan file
+ */
+
+bool load_clan_file( char *clanfile )
+{
+    char filename[256];
+    CLAN_DATA *clan;
+    FILE *fp;
+    bool found;
+
+    CREATE( clan, CLAN_DATA, 1 );
+
+    /* Make sure we default these to 0 --Shaddai */
+    clan->pkills[0] = 0;
+    clan->pkills[1] = 0;
+    clan->pkills[2] = 0;
+    clan->pkills[3] = 0;
+    clan->pkills[4] = 0;
+    clan->pkills[5] = 0;
+    clan->pkills[6] = 0;
+    clan->pdeaths[0]= 0;
+    clan->pdeaths[1]= 0;
+    clan->pdeaths[2]= 0;
+    clan->pdeaths[3]= 0;
+    clan->pdeaths[4]= 0;
+    clan->pdeaths[5]= 0;
+    clan->pdeaths[6]= 0;
+
+    found = FALSE;
+    sprintf( filename, "%s%s", CLAN_DIR, clanfile );
+
+    if ( ( fp = fopen( filename, "r" ) ) != NULL )
+    {
+
+	found = TRUE;
+	for ( ; ; )
+	{
+	    char letter;
+	    char *word;
+
+	    letter = fread_letter( fp );
+	    if ( letter == '*' )
+	    {
+		fread_to_eol( fp );
+		continue;
+	    }
+
+	    if ( letter != '#' )
+	    {
+		bug( "Load_clan_file: # not found.", 0 );
+		break;
+	    }
+
+	    word = fread_word( fp );
+	    if ( !str_cmp( word, "CLAN"	) )
+	    {
+	    	fread_clan( clan, fp );
+	    	break;
+	    }
+	    else
+	    if ( !str_cmp( word, "END"	) )
+	        break;
+	    else
+	    {
+		char buf[MAX_STRING_LENGTH];
+
+		sprintf( buf, "Load_clan_file: bad section: %s.", word );
+		bug( buf, 0 );
+		break;
+	    }
+	}
+	fclose( fp );
+    }
+
+    if ( found )
+    {
+	LINK( clan, first_clan, last_clan, next, prev );
+    }
+    else
+      DISPOSE( clan );
+
+
+    return found;
+}
+
+
+
+Save clans.c and close it
+
+ 
+[db.c]
+------
+
+Near the top of the file, just after the includes (around line 32) find:
+
+extern	int	_filbuf		args( (FILE *) );
+
+On the next line add this:
+
+static  OBJ_DATA *      rgObjNest       [MAX_NEST];
+
+
+
+
+Then find this declaration (around line 287):
+
+PROJECT_DATA *read_project args( ( char *filename, FILE *fp ) );
+
+Insert these lines BEFORE that one:
+
+void    load_storages   args( ( void ) );
+void    load_storage    args( ( char *filename ) );
+
+
+
+
+In the function boot_db, around line 723 find this call:
+
+        load_morphs( );
+
+Add these two lines right after it:
+
+        log_string( "Loading storerooms" );
+        load_storages( );
+
+
+
+Now drop these two function at the bottom of the file:
+
+void load_storages( void )
+{
+    DIR *dp;
+    struct dirent *dentry;
+
+    dp = opendir( STORAGE_DIR );
+    dentry = readdir( dp );
+    while ( dentry )
+    {
+        if ( dentry->d_name[0] != '.' )
+            load_storage( dentry->d_name );
+
+        dentry = readdir( dp );
+    }
+    closedir( dp );
+}
+
+void load_storage( char *filename )
+{
+    char buf[MAX_STRING_LENGTH];
+    FILE *fp;
+
+    sprintf( buf, "%s%s", STORAGE_DIR, filename );
+
+    if ( ( fp = fopen( buf, "r" ) ) != NULL )
+    {
+        int iNest;
+        bool found;
+        OBJ_DATA *tobj, *tobj_next;
+        int vnum;
+        ROOM_INDEX_DATA *room = NULL;
+
+        log_string( "Loading storage room" );
+        for ( iNest = 0; iNest < MAX_NEST; iNest++ )
+            rgObjNest[iNest] = NULL;
+
+        found = TRUE;
+        for ( ; ; )
+        {
+            char letter;
+            char *word;
+
+            letter = fread_letter( fp );
+            if ( letter == '*' )
+            {
+                fread_to_eol( fp );
+                continue;
+            }
+
+            if ( letter != '#' )
+            {
+                bug( "Load_storeroom: # not found.", 0 );
+                break;
+            }
+
+            word = fread_word( fp );
+            if ( !str_cmp( word, "OBJECT" ) )
+                fread_obj( supermob, fp, OS_CARRY );
+            else if( !str_cmp( word, "VNUM" ) )
+            {
+                vnum = fread_number( fp );
+                if(( room = get_room_index( vnum )) == NULL )
+                {
+                    bug( "load_storeroom: bad vnum.", 0 );
+                    return;
+                }
+                else
+                {
+                    rset_supermob( room );
+                }
+            }
+            else if ( !str_cmp( word, "END"    ) )
+                    break;
+                else
+                {
+                    bug( "Load_storeroom: bad section.", 0 );
+                    break;
+                }
+        }
+        fclose( fp );
+        for ( tobj = supermob->first_carrying; tobj; tobj = tobj_next )
+        {
+            tobj_next = tobj->next_content;
+            obj_from_char( tobj );
+            obj_to_room( tobj, room );
+        }
+        release_supermob();
+    }
+    else
+        log_string( "Cannot load vault" );
+}
+
+
+
+Save db.c and close it
+
+
+
+[mud.h]
+-------
+
+find this line, around 4382:
+
+#define CLAN_DIR	"../clans/"	/* Clan data dir		*/
+
+Right after that, add:
+
+#define STORAGE_DIR     "../storage/"   /* Storage dir                  */
+
+NOTE: Don't forget to actually go in and create the storage directory!
+
+
+
+Down in the list of declarations, find the group for act_obj.c and find this:
+
+void    save_clan_storeroom args( ( CHAR_DATA *ch, CLAN_DATA *clan ) );
+
+Make it look like this:
+
+void    save_clan_storeroom args( ( CHAR_DATA *ch ) );
+
+
+
+Save mud.h and close it.
+
+
+
+
+[build.c]
+---------
+
+
+In the function do_redit - in the part that deals with setting room flags (around line 4483) find these lines:
+
+	    if ( value < 0 || value > 31 )
+		ch_printf( ch, "Unknown flag: %s\n\r", arg2 );
+	    else
+	    {
+		if ( 1 << value == ROOM_PROTOTYPE
+		&&   get_trust( ch ) < LEVEL_GREATER )
+		    send_to_char( "You cannot change the prototype flag.\n\r", ch );
+		else
+		    TOGGLE_BIT( location->room_flags, 1 << value );
+	    }
+
+Make them look like this:
+
+	    if ( value < 0 || value > 31 )
+		ch_printf( ch, "Unknown flag: %s\n\r", arg2 );
+	    else
+	    {
+                if( 1 << value == ROOM_CLANSTOREROOM )
+                    if( IS_SET( location->room_flags, ROOM_CLANSTOREROOM ) )
+                    {
+                        char buf[MAX_STRING_LENGTH];
+                        FILE *fp;
+
+                        sprintf( buf, "%s%d.vault", STORAGE_DIR, location->vnum );
+                        if( ( fp = fopen( buf, "w" )) != NULL )
+                            fclose( fp );
+                    }
+
+                if( 1 << value == ROOM_PROTOTYPE
+                    && get_trust( ch ) < LEVEL_GREATER )
+                {
+		    send_to_char( "You cannot change the prototype flag.\n\r", ch );
+                    return;
+                }
+		else
+		    TOGGLE_BIT( location->room_flags, 1 << value );
+	    }
+
+
+
+Save build.c and close it.
+
+
+Do a clean make of the mud.
+
+
+That should be it, existing storerooms will disappear next time you
+reboot, so make sure you have everyone clean up first. If you want to
+trim your code up a bit you can remove the storeroom variables from
+clan_data, and when you compile you will see some unused variables,
+you can safely remove those. 
+
+[ed. Personally, I'd leave them in. Keeping track of a clan's storeroom
+could still come in handy. Say, for donation code - for example. -Sadiq]
+
+As an optional utility you can use this function to keep track of what
+rooms are flagged clanstoreroom:
+
+void do_find_clanstoreroom( CHAR_DATA *ch, char *argument )
+{
+    ROOM_INDEX_DATA *room;
+    int hash;
+
+    for( hash = 0; hash < MAX_KEY_HASH; hash++ )
+        for( room = room_index_hash[hash];
+             room;
+             room = room->next )
+            if( IS_SET( room->room_flags, ROOM_CLANSTOREROOM ) )
+                pager_printf( ch, "[%7d] %s\n\r",
+                              room->vnum, room->name );
+
+    return;
+}
+
+Don't forget to add the correct entries to mud.h and tables.c
+If you find this snippet usefull or have any questions/suggestions
+feel free to email me.

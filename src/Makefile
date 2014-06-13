@@ -53,7 +53,7 @@ EXPORT_SYMBOLS = -export-dynamic
 REG = -DREGEX
 
 #Uncomment the line below if you are getting undefined re_exec errors
-NEED_REG = -lgnuregex
+# NEED_REG = -lgnuregex
 
 #Uncomment the line below if you are getting undefined crypt errors
 NEED_CRYPT = -lcrypt
@@ -68,17 +68,17 @@ NEED_CRYPT = -lcrypt
 IMC = -DIMCSMAUG -DIMC
 
 # W_FLAGS = -Wall -Werror -Wshadow -Wformat-security -Wpointer-arith -Wcast-align -Wredundant-decls
-B_FLAGS = -Wno-all -Wno-cast-align -Wno-unused-result
+B_FLAGS = -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
 
-C_FLAGS = -g2 -O -pipe $(B_FLAGS) $(W_FLAGS) $(SOLARIS_FLAG) $(PROF) $(EXPORT_SYMBOLS)
-L_FLAGS = $(PROF) $(SOLARIS_LINK) -lz $(NEED_DL)
+C_FLAGS = -g2 -O -pipe $(B_FLAGS) $(W_FLAGS) $(SOLARIS_FLAG) $(PROF) $(EXPORT_SYMBOLS) $(REG) $(TIME) -DSMAUG
+L_FLAGS = $(PROF) $(SOLARIS_LINK) -lz $(NEED_DL) $(NEED_REG) $(NEED_CRYPT)
 #D_FLAGS : For the DNS Slave process. No need in linking all the extra libs for this.
-D_FLAGS = -g2 -O -pipe $(PROF) $(SOLARIS_LINK)
+D_FLAGS = -g2 -O -pipe $(PROF) $(SOLARIS_LINK) $(NEED_DL) $(REG)
 
 C_FILES = act_comm.c act_info.c act_move.c act_obj.c act_wiz.c ban.c boards.c \
           build.c calendar.c chess.c clans.c color.c comm.c comments.c const.c db.c deity.c \
           dns.c fight.c handler.c hashstr.c hint.c hotboot.c imm_host.c interp.c \
-          liquids.c magic.c makeobjs.c mapout.c mapper.c mccp.c \
+          liquids.c magic.c makeobjs.c mapout.c mapper.c mccp.c healer.c \
           misc.c mpxset.c mssp.c mud_comm.c mud_prog.c news.c planes.c player.c polymorph.c \
           renumber.c reset.c save.c services.c sha256.c shops.c skills.c special.c tables.c \
           track.c update.c variables.c weather.c
