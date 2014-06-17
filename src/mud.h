@@ -4251,7 +4251,7 @@ DECLARE_SPELL_FUN (spell_sacral_divinity);
 #define CLASS_DIR	"../classes/"	/* Classes        */
 #define RACE_DIR 	"../races/"	/* Races */
 #define WATCH_DIR	"../watch/"	/* Imm watch files --Gorog      */
-#define LOG_DIR		"../log/"	/* Store logs */
+#define LOG_DIR		"/opt/xsmaug/var/log/xsmaug/"	/* Store logs */
 
 /*
  * The watch directory contains a maximum of one file for each immortal
