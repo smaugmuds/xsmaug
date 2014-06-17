@@ -134,7 +134,8 @@ New Imported Areas:
 	* XSMAUG 2.1 -> XSMAUG 2.2
 
 		- Conversion to GNU Package: configure, make, make install
-		- indented code with GNU style.
+		- Configure checks for cc, gcc, g++, (g)awk, -ldl, -lz, -lcrypt, basic c libraries, headers and functions
+		- Indented code with GNU style.
 		- New structure.
 
 	* XSMAUG 2.0 -> XSMAUG 2.1
