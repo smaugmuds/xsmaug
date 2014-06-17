@@ -19,6 +19,7 @@ Due to the ability to edit most everything online, you will most likely find the
 
  * **[XSMAUG Phoenix Release 2.0] (https://github.com/smaugmuds/xsmaug/releases/tag/2.0)** **¡¡¡NEW!!!**
  * **[XSMAUG Phoenix Release 2.1] (https://github.com/smaugmuds/xsmaug/releases/tag/2.1)** **¡Update!**
+ * **[XSMAUG Phoenix Release 2.2] (https://github.com/smaugmuds/xsmaug/releases/tag/2.2)** **¡Update!**
 
 #### Contents of the Release
 
