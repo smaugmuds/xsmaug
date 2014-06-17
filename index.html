@@ -37,7 +37,7 @@
 
 <p><strong>Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame</strong></p>
 
-<p><strong>XSMAUG</strong> is an enhancenment of <strong>SMAUGFuss 1.9</strong>, an fixed <strong>SMAUG 1.8b</strong> which is a heavily modified derivative of the <strong>Merc 2.1</strong> distribution.</p>
+<p><strong>XSMAUG</strong> is an enhancenment of <strong>SMAUGFuss 1.9</strong>, an fixed <strong>SMAUG 1.4a</strong> which is a heavily modified derivative of the <strong>Merc 2.1</strong> distribution.</p>
 
 <p><strong>SMAUG 1.4a</strong> is close to six times the size of <strong>Merc 2.1</strong>, and has major changes to the inner workings of the code, hence making porting of code from other Diku-derivatives non-trivial to the non-coder.</p>
 
@@ -51,35 +51,43 @@
 <a name="xsmaug-releases" class="anchor" href="#xsmaug-releases"><span class="octicon octicon-link"></span></a>XSMAUG Releases</h3>
 
 <ul>
-<li><strong><a href="https://github.com/smaugmuds/xsmaug/releases/tag/2.0">XSMAUG Phoenix Release 2.0</a></strong></li>
+<li>
+<strong><a href="https://github.com/smaugmuds/xsmaug/releases/tag/2.0">XSMAUG Phoenix Release 2.0</a></strong> <strong>¡¡¡NEW!!!</strong>
+</li>
+<li>
+<strong><a href="https://github.com/smaugmuds/xsmaug/releases/tag/2.1">XSMAUG Phoenix Release 2.1</a></strong> <strong>¡Update!</strong>
+</li>
+<li>
+<strong><a href="https://github.com/smaugmuds/xsmaug/releases/tag/2.2">XSMAUG Phoenix Release 2.2</a></strong> <strong>¡Update!</strong>
+</li>
 </ul><h4>
 <a name="contents-of-the-release" class="anchor" href="#contents-of-the-release"><span class="octicon octicon-link"></span></a>Contents of the Release</h4>
 
-<pre><code>- realm:         Realm Area files.
+<pre><code>- src:           Source files.
 - doc:           Documentation.
-- log:           Log files    (initially empty).
-- player:        Player files (initially empty).
-- imc:           IMC files.
-- src:           Source files.
 - xsmaug.conf:   XSMAUG Server Config File.
 - xsmaug-server: XSMAUG Server Boot Script.
-- vault:     Guilds Vaults
-- races:     Races files.
-- houses:    House files.
-- gods:          God players.
-- deity:     Deities.
-- councils:  Councils files.
-- classes:       Classes files.
-- clans:         Clans files.
-- boards:        Boards files.
-- corpses:       Death players corpses (initially empty).
-- mudprogs:      MUD Program files.
-- system:        MUD Game System files.
-- building:      Building System files.
-- classes:       Player Class files.
-- color:     MUD Color files.
-- hotboot:       Fast boot config files.
 - tools:         Developer tools.
+- data:
+    - realm:         Realm Area files.
+    - player:        Player files (initially empty).
+    - imc:           IMC files.
+    - vault:     Guilds Vaults
+    - races:     Races files.
+    - houses:    House files.
+    - gods:          God players.
+    - deity:     Deities.
+    - councils:  Councils files.
+    - classes:       Classes files.
+    - clans:         Clans files.
+    - boards:        Boards files.
+    - corpses:       Death players corpses (initially empty).
+    - mudprogs:      MUD Program files.
+    - system:        MUD Game System files.
+    - building:      Building System files.
+    - classes:       Player Class files.
+    - color:     MUD Color files.
+    - hotboot:       Fast boot config files.
 </code></pre>
 
 <h4>
@@ -125,6 +133,7 @@
 - Different prompts when you are fighting and when you are not
 - Pets saving with their owners
 - Pet Finding.
+- New Healer.
 - Configurable color codes online
 - Projectiles are fully supported
 - Extended bit vectors for when 32 are just not enough
@@ -167,7 +176,22 @@
 <h4>
 <a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>ChangeLog</h4>
 
-<pre><code>* SMAUGFuss 1.9  -&gt; XSMAUG 2.0
+<pre><code>* XSMAUG 2.1 -&gt; XSMAUG 2.2
+
+    - Conversion to GNU Package: configure, make, make install
+    - indented code with GNU style.
+    - New structure.
+
+* XSMAUG 2.0 -&gt; XSMAUG 2.1
+
+    - Added: Command 'petfind' (do_petfind)
+    - Added: New Healer: 'heal' (do_heal)
+    - Updated: Makefile
+    - Updated: Areas
+    - Updated: Documentation
+    - Updated: Tools
+
+* SMAUGFuss 1.9  -&gt; XSMAUG 2.0
 
     - Added: xsmaug.conf &amp; xsmaug-server
     - Added: New Makefile
@@ -201,7 +225,7 @@ Wed Jun 11 14:49:27 CEST 2014</p>
 
 <p>First, check out the documentation at <strong><a href="https://github.com/smaugmuds/xmerc/wiki">XSMAUG Wiki</a></strong> or send an Issue and we’ll help you sort it out.</p>
 
-<p>We rewrote all of the documentation files from scratch for the <strong>XSMAUG 2.0 Phoenix Release</strong>, and have been keeping them up-to-date since.</p>
+<p>We rewrote all of the documentation files for the <strong>XSMAUG 2.0 Phoenix Release</strong>, and have been keeping them up-to-date since.</p>
 
 <p>Also check the <strong>'wizhelp'</strong> command and read the <strong>'help'</strong> descriptions for the individual immortal commands.</p>
 
