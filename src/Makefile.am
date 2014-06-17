@@ -1,0 +1,11 @@
+CC = g++
+CPP = g++
+CXX = g++
+
+bin_PROGRAMS = xsmaug dnsresolv
+xsmaug_SOURCES = act_comm.c act_info.c act_move.c act_obj.c act_wiz.c ban.c boards.c build.c calendar.c chess.c clans.c color.c comm.c comments.c const.c db.c deity.c dns.c fight.c handler.c hashstr.c healer.c hint.c hotboot.c imc.c imm_host.c interp.c liquids.c magic.c makeobjs.c mapout.c mapper.c mccp.c misc.c mpxset.c mssp.c mud_comm.c mud_prog.c news.c petfind.c planes.c player.c polymorph.c renumber.c reset.c save.c services.c sha256.c shops.c skills.c special.c tables.c track.c update.c variables.c weather.c
+dnsresolv_SOURCES = dnsresolv.c
+include_HEADERS = mud.h imc.h
+xsmaug_LDADD = -lz -ldl -lcrypt
+xsmaug_CXXFLAGS = -g2 -O -pipe -export-dynamic -DIMCSMAUG -DIMC -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
+xsmaug_CFLAGS = -g2 -O -pipe -export-dynamic -DIMCSMAUG -DIMC -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings

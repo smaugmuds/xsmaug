@@ -1,0 +1,4000 @@
+#AREA   Hidden Worlds of the Portal Stones~
+
+
+
+#VERSION 1
+#AUTHOR Saroth/Celeborn/Rashka~
+
+#RANGES
+0 65 0 65
+$
+
+#FLAGS
+4 15
+
+#ECONOMY 0 45147200
+
+#CLIMATE 2 2 2
+
+#MOBILES
+#106004
+barkeep deirdre kendrick~
+Deirdre Kendrick~
+Deirdre Kendrick is busy keeping her inn as clean as possible.
+~
+~
+1 0 0 C
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+1 3 0 0 3 2 0
+0 0 0 0 0 0 0 0
+#106051
+Gloomwing~
+The Gloomwing~
+A two foot long Gloomwing flutters around the room.
+~
+This creature commonly called the gloomwing is the adult
+stage of the tenebtrous worm. These huge moths are native
+to the demi-plane of shadow. Its body and wings are 
+covered with shimmering geomatric patterns of black and 
+silver. It has large, fern-like black antennae tipped with
+white and eight legs each ending in a pearly claw.
+~
+17039619 524968 0 C
+30 0 -123 10d100+1000 0d0+5
+0 0
+112 112 2
+13 13 13 13 13 13 13
+-10 -5 -20 -20 4
+83 1 0 0 1 0 5
+2 5 361216 8909 3153158 2048 0 2635777
+> act_prog p hugs you.~
+mpechoar $n The gloomwing turns around and shoots something from its behind!
+mpechoar $n $n is covered by glittering dust!
+mpechoat $n The gloomwing turns around and shoots something from its behind!
+mpechoat $n You are covered by glittering dust!
+cast fly $n
+~
+> act_prog p mounts you.~
+if isimmort($n)
+mpechoat $n The gloomwing chirps as you mount it.
+mpechoar $n The gloomwing chirps as $n mounts it.
+else
+mpechoat $n The gloomwing throws you off and stings you!
+mpechoar $n The gloomwing throws $n off and stings $m!
+mpechoat celeborn $n is trying to mount your gloomwing!
+mpforce $n dismount
+mpdamage $n 500
+endif
+~
+> act_prog p i'm DYING here!'~
+if level($n) < 10
+mpechoar $n The gloomwing suddenly flies towards $n!
+mpechoat $n The gloomwing suddenly flies towards you!
+cast heal $n
+cast heal $n
+cast sanctuary $n
+cast refresh $n
+else
+shake $n
+mpechoat $n The gloomwing ignores you.
+endif
+~
+> fight_prog 80~
+mpechoar $n The gloomwing stings $n and $e starts to dissolve!
+mpechoat $n The gloomwing stings you and you start to dissolve!
+mpforce $n shout I'M MELTING i'm. m.......
+mpdamage $n 5000
+~
+> act_prog p cuddles you.~
+mpechoar $n The gloomwing turns around and shoots something from its behind!
+mpechoar $n $n is covered by green slime!
+mpechoat $n The gloomwing turns around and shoots something from its behind!
+mpechoat $n You are covered by green slime!
+cast fireshield $n
+cast shockshield $n
+cast iceshield $n
+cast armor $n
+cast shield $n
+cast sanc $n
+~
+|
+#106052
+Dwarf~
+A dwarf worker~
+A Dwarf worker from Highmoon is working on some architecture.
+~
+~
+67108929 0 0 C
+10 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+16 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#106200
+giant bat~
+a giant bat~
+A giant bat swoops down from the rafters at you!
+~
+~
+4197 4817026 0 C
+41 0 -300 3000d0+0 0d0+0
+5000 0
+108 108 1
+15 13 13 15 13 13 13
+0 0 0 0 0
+23 3 0 0 1632444519 1632444518 0
+30 30 34361 0 0 129 1 4097
+#106201
+pool stick~
+a pool stick~
+A pool stick springs to life before you!
+~
+~
+103 4292738 0 C
+44 0 -200 4500d0+0 0d0+0
+10000 0
+108 108 0
+15 13 13 13 13 13 13
+0 0 0 0 0
+1 3 0 0 3 2 0
+30 30 1719 0 0 0 512 3
+#106202
+giant cockroach~
+a giant cockroach~
+A giant cockroach makes a run towards your feet!
+~
+~
+103 4202624 0 C
+43 0 -200 5000d0+0 0d0+0
+10000 0
+108 108 0
+15 13 13 13 13 13 13
+0 0 0 0 0
+83 3 0 0 1 0 0
+30 30 1061 0 0 3 262176 8194
+#106203
+dangling spider~
+a dangling spider~
+A huge spider drops down from the ceiling in front of you.
+~
+~
+4199 4300930 0 C
+44 0 -300 5500d0+0 10d10+500
+10000 0
+108 108 2
+15 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+30 30 1085 0 0 3 264193 2051
+#106204
+crimson liquid monster wine~
+A puddle of crimson wine~
+A puddle of crimson colored liquid spills from the racks.
+~
+~
+4199 4300928 0 C
+40 0 -300 6000d0+0 0d0+0
+0 0
+108 108 0
+25 13 13 13 13 13 13
+0 0 0 0 0
+81 3 0 0 1685217659 1685217658 0
+30 30 48 0 0 3 262208 2
+#106205
+barmaid jade ghost~
+the ghost of Jade Inn~
+The ghost of old barmaid lurks in the shadows...
+~
+~
+4199 373399682 0 C
+46 0 -300 6500d0+0 15d15+500
+0 0
+108 108 2
+15 13 13 15 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 2
+30 30 1855 0 0 513 864 2621447
+> act_prog p DISARMS you!~
+get all
+wear all
+get dagger
+wield dagger
+~
+|
+#106206
+Rycen baby~
+Rycen~
+Rycen, Rashka's daughter, crawls around on the floor here.
+~
+This gentle pixie smiles up at you from her playful activities.  Her 
+hair is brightly colored in pastels and her emerald green eyes pierce
+your heart.  She is the daughter of Rashka and Mase.  Conceived in love
+and cherished by many.  Be careful not to make her cry though...a mother's
+wrath is nothing to joke about!
+~
+67108865 4726912 0 C
+50 0 0 700d7000+5000 0d0+0
+0 0
+108 108 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+4 4 0 0 9 8 0
+0 0 0 0 0 0 0 0
+> greet_prog 30~
+, looks up at $n
+smile $n
+drool
+~
+> rand_prog 5~
+mpecho The baby crawls around.
+~
+|
+#106402
+Priestess of LLiira~
+Priestess of LLiira~
+A Priestess of LLiira smiles at you.
+~
+~
+1073741825 0 1000 C
+25 0 0 50d10+1 20d10+50
+5000 0
+108 108 0
+9 13 16 13 13 13 13
+0 0 0 0 0
+0 1 0 0 1 1 0
+0 0 0 1048576 128 2096 16777728 4
+#106500
+Tlaloc~
+Tlaloc~
+Tlaloc rages in a storm like fury.
+~
+The aztec god of rain and death is a fearsome sight. His skin is dry
+and tight, giving a skeletal immpression. His eyes change, a deep 
+storm raging within them.
+~
+99 4194472 -1000 C
+50 0 -300 5d5+16950 5d5+45
+53700 0
+112 112 1
+25 25 13 25 25 13 25
+0 0 0 0 -10
+31 3 0 0 1969906241 1 4
+60 0 3407875 5 2104320 520 8470528 3
+> all_greet_prog 100~
+Yell You defile this temple with your mortal presence!!!
+c unravel $n
+~
+> fight_prog 35~
+Say You think you can stand up to the might of the storms?!
+mpecho Tlaloc unleases the fury of the storms!!!
+mpechoat $n Great winds whip you and hail pelts your body (700) dmg
+mpdamage $n 700
+~
+> fight_prog 20~
+c curse $n 
+c weaken $n
+c poison $n
+c heal self
+c heal self
+~
+> act_prog p DISARMS you!~
+get all
+wear tlaloc
+wear tlaloc
+wear tlaloc
+wield tlaloc
+c weaken $n
+c weaken $n
+c weaken $n
+disarm $n
+get all
+~
+> death_prog 100~
+say You have bested me?!!! It is possible??!!
+, mumbles his dying words... 'dig....dig down..... for... your... doom!!!"
+~
+|
+#106501
+Tezcatlipoca~
+Tezcatlipoca~
+The dark god of sorcery is deep within a trance.
+~
+Tezcatlipoca is a huge muscular being. His true shape is unknown
+but he appears as a man now. A long feathered headdress falls down 
+to his back.
+~
+99 4194472 -1000 C
+50 0 -300 5d5+20435 5d5+60
+53700 0
+112 112 1
+25 25 13 25 25 13 25
+0 0 0 -10 0
+31 0 0 0 1969906241 1 4
+70 0 3 5 3072 520 8388608 3
+> fight_prog 50~
+c fireball $n
+c blazebane $n
+c flamewave $n
+c acetum $n
+c unravel $n
+~
+> fight_prog 25~
+c curse $n 
+c weaken $n
+c 'dispel magic' $n
+c sanc tez
+c quantum $n
+c quantum $n
+c quantum $n
+~
+> fight_prog 10~
+mpechoat $n Tezcatlipoca calls down the magik powers of darkness!
+mpechoat $n Your soul is ripped from your body! (1000) dmg
+mpdamage $n 1000
+~
+|
+#106502
+astral priest spirit wanderer~
+An astral priest~
+A faint glowing being floats in the endless sky.
+~
+~
+67 7340160 0 C
+1 0 -300 10d4+500 0d0+0
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 2
+0 0 0 0 11264 0 134217728 2
+> act_prog p A ball of light bursts from of the pillar.~
+say testing testing 1 2 3 
+~
+|
+#106503
+astral wander being~
+An astral wanderer~
+~
+~
+65601 6291456 0 C
+1 0 -300 10d4+500 0d0+0
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 2
+0 0 0 0 11264 0 134217728 2
+#106504
+Astral being~
+The astral god~
+A huge glowing shape fills the plane.
+~
+~
+65 7340160 1000 C
+40 0 -300 10d4+5000 0d0+0
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 0 0 0 1 1 2
+0 0 0 0 11264 0 134217728 2
+> fight_prog 30~
+c unravel $n
+c weaken $n
+c quantum $n
+c quantum $n
+c quantum $n
+~
+|
+#106505
+crab crabs~
+some crabs~
+Tiny crabs run sideways across the sand.
+~
+~
+65537 512 -1000 C
+5 16 5 5d5+50 2d4+0
+0 600
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+82 3 0 0 1986816339 1986816339 1
+0 0 67245 0 0 0 0 0
+#106506
+gnome tiggy~
+Tiggy the Gnome~
+A tiny gnome bouces around singing to himself.
+~
+~
+67 4194304 600 C
+25 0 -30 10d4+150 6d2+0
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+14 6 0 0 1 1 1
+20 0 1 0 0 0 16 2
+> speech_prog help ~
+say help? help you say? The monkey. NOT AGAIN!!!!!
+scream
+say oh very well. Take this for help that damn monkey.
+rem bow
+give bow $n
+bow
+, mutters about that infernal monkey.
+mpoload 106507 15
+wear bow
+~
+|
+#106507
+monkey~
+A cute monkey~
+A cute monkey swings from the rafters.
+~
+~
+7 0 0 C
+14 0 -10 0d0+0 0d0+0
+200 0
+112 112 1
+13 20 13 13 13 13 13
+0 0 0 0 0
+89 3 0 0 1 1 0
+20 6 0 0 0 0 134479872 2
+> greet_prog 75~
+bounce
+say oh me oh my.....
+say what can I do what can I do. 
+, looks at you and hope dawns on his face.
+say You can help yes you you!
+bounce
+say go tell tiggy that I need help! He'll know what to do! tell him tell him
+say You'll have to find his house under the big rock! Go now help!
+bounce
+~
+|
+#106600
+Shroom Warrior~
+a newly created Shroom Warrior~
+Some god abandoned a newly created Shroom Warrior here.
+~
+~
+81 0 0 C
+20 0 0 0d450+450 10d10+0
+0 0
+112 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+59 3 0 0 8192 8192 1
+50 50 199 112 0 0 0 0
+> rand_prog 5~
+growl
+~
+> rand_prog 5~
+snicker
+~
+> rand_prog 5~
+yawn
+~
+|
+#106601
+Shroom Baby~
+A baby shroom~
+A baby shroom flees from your light.
+~
+The baby shroom is at once cute and ugly, like most babies.  He
+eeps and runs from you, showing you his cute little baby tushie.
+~
+81 32768 0 C
+1 0 0 0d10+10 0d10+10
+0 0
+112 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+59 3 0 0 8192 8192 1
+0 0 199 112 0 0 0 0
+> rand_prog 5~
+giggle
+~
+> rand_prog 5~
+tongue
+~
+> rand_prog 5~
+fart
+~
+> rand_prog 5~
+cry
+~
+> rand_prog 5~
+burp
+~
+|
+#106602
+Shroom Nanny~
+A Shroom Nanny~
+A shroom nanny is here, knitting.
+~
+~
+1 0 0 C
+25 0 0 0d500+500 10d20+0
+0 0
+112 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+59 3 0 0 1919247219 8192 1
+75 65 199 112 0 0 0 0
+> rand_prog 5~
+shhh
+~
+> rand_prog 5~
+snore
+~
+> rand_prog 5~
+manners
+~
+|
+#106603
+hydra head~
+A hydra's head~
+A long, dragonesque head pokes out of the murky water.
+~
+The hydra's head resembles that of a dragon, but far smaller,
+being only about as long as your forearm.  It sits atop a 
+long, snaky neck which rises from the pool of water.
+~
+35 0 0 C
+20 0 0 0d50+50 0d50+50
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+31 3 0 0 1969906241 1969906241 1
+50 50 1 0 0 0 1 2
+> rand_prog 10~
+sneeze
+mutter
+say Damn allergies!
+~
+> rand_prog 10~
+sneer
+~
+> rand_prog 10~
+snarl
+~
+> death_prog 100~
+mpecho The head screams in agony and dies, but as it does,
+mpecho two more heads grow to replace it!!!
+mpmload 106603
+mpmload 106603
+~
+|
+#106604
+hydra's body~
+A hydra's body~
+A hydra's body swims in the murky water here.
+~
+~
+3 0 0 C
+30 0 0 0d100+100 0d100+100
+0 0
+108 108 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 1
+50 50 0 0 0 0 128 0
+> death_prog 100~
+mpat 106604 mppurge
+mpoload 106600 20
+mpoload 106601 20
+~
+> rand_prog 10~
+mpecho The hydra farts loudly, and a torrent of bubbles rises to the surface.
+~
+|
+#106705
+captain Gar'tok~
+A captain of the Gar'tok~
+A captain of the Gar'tok oversees the activity.
+~
+~
+1073741825 0 0 C
+50 0 -300 0d0+0 0d0+0
+0 0
+108 108 1
+20 16 14 20 20 13 15
+0 0 0 0 0
+0 3 0 0 1 1 2
+0 0 0 64 2099201 0 176 524291
+> speech_prog montaine~
+say Those damn Montaine lords of Arabel are REAL scum!
+growl
+say ...Just like the King of Shadowdale, they pilfer our treasures and have
+say no repect for our customs! Disgusting men! We'll show them...
+cackle
+say We outnumber them 1000 to 1 on the field of battle...
+say They will surely perish under our blades!
+~
+> speech_prog gar'tok~
+say Har har har! We are a great people of the plains...
+say We live well and do our duty to men and our Gods, and we of the military
+say live and die under the commands of Commandant Krackyn.
+ 
+~
+> speech_prog krackyn~
+bow
+say Commandant Krackyn is our fearless leader.
+say Unfortunately, he has been acting quite oddly since the arch-mage brought
+say him that diamond crusted knife to hang as a decoration in his chambers.
+say If you wish to speak with him, surely he is about.
+say Shout "I wish to speak with Krackyn" to get his attention."
+~
+|
+#106706
+montaine lord~
+A well dressed Montaine lord of Arabel~
+A well dressed Montaine lord of Arabel stands imperiously over you.
+~
+~
+1073741825 0 0 C
+50 0 -300 0d0+0 0d0+0
+0 0
+108 108 1
+20 16 14 20 20 13 15
+0 0 0 0 0
+0 3 0 0 1 1 2
+0 0 0 64 2099201 0 176 524291
+> speech_prog gar'tok~
+say Those FILTHY Gar'tok are coming to trample us into the dirt!
+say Those morons think they can massacre anyone they want just because they
+say get a little splinter in their ass!
+say Even the king of Shadowdale knew the old shield belonged to us! 
+say ...but that's ancient history.. now the Gar'tok come because they think
+say we stole some of their women! LIES, ALL LIES!!!!
+~
+> speech_prog montaine~
+say We Montaine lords have resided in Arabel for years... we keep the 
+say ancient treasures of the world well guarded in conjuction with the
+say musuem in Shadowdale. We mean no ill intent unto the Gar'tok 
+say barbarians!
+~
+> speech_prog krackyn~
+say Commandant Krackyn de Quintar of the Gar'tok was once a well respected man.
+say Unfortunately, his recent bloodlust over a simple misunderstanding has
+say made a monster of him. His right hand man, that blasted arch-mage, has
+say ALWAYS been a pain in the ass. 
+say Strangely, our overlord has been acting different ever since Krackyn went
+say on the war path...
+~
+|
+#108000
+placeholder~
+a newly created placeholder~
+Some god abandoned a newly created placeholder here.
+~
+~
+1073741825 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#0
+
+
+#OBJECTS
+#106000
+stone pillar~
+A stone pillar~
+A pillar made of a rare blue granite is set firmly in the ground.~
+~
+12 -2147483646 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+#106001
+glass pillar~
+A stone pillar~
+A pillar made of a rare green glass is set firmly in the ground.~
+~
+12 -2147483646 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar glass~
+This small pillar seems to be made out of transparent glass, or is it
+crystal? It could be one of those magical lenses you've heared about.
+~
+#106002
+Pillar~
+A pillar~
+A pillar made from pure water is held together by strong magic.~
+~
+25 -2147483646 0
+! 10000 10000 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar water~
+Its strange how the pillar keeps its shape. As you glance into the
+water, for a second you think you see a rune, floating around, but
+it dissapears the moment you try to examine it.
+~
+#106003
+moss pillar~
+A stone pillar~
+An ancient pillar is covered with moss.~
+~
+12 -2147483646 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106004
+pillar red volcanic~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -2147483646 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106005
+pillar reserved~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -1073741822 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106006
+pillar reserved~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -1073741822 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106007
+pillar reserved~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -1073741822 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106008
+pillar reserved~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -1073741822 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106009
+pillar reserved~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -1073741822 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106010
+pillar reserved~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -1073741822 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106011
+pillar reserved~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -1073741822 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106012
+pillar reserved~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -1073741822 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106013
+pillar reserved~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -1073741822 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106014
+pillar reserved~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -1073741822 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106015
+pillar reserved~
+A stone pillar~
+A pillar reserved for future use.~
+~
+12 -1073741822 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+50000 0 0
+E
+pillar granite~
+As you look closer, you see a small golden rune etched in the granite.
+~
+E
+pillar granite~
+On the side of the short pillar you notice a small rune etched in the
+granite.
+~
+E
+pillar red volcanic.~
+~
+E
+pillar red volcanic~
+You hear the soft bubbling of mana inside the pillar.
+~
+#106016
+Dream crystals~
+A pair of dream crystals~
+A pair of dream crystals lay here on the ground.~
+~
+8 2097216 8388609
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 1000000 100000
+E
+crystals~
+These crystals have been designed to increase the wearer's awareness 
+while dreaming, it blocks all unwanted dreams, and puts the wearer in 
+a land of friends, pleasure and excitement! Rare as they are, you are 
+almost sure these are the only ones in existence.
+
+On the back of one of the crystals is inscribed: 'Try to pay attention 
+When you sleep. You will feel emotions more intense and experience
+Adventures bigger than you ever could experience in the waking world.
+- A gift from your dreamtraveler, Celeborn.
+~
+A
+27 2048
+A
+13 42
+A
+17 -100
+A
+31 4
+A
+26 -2146435070
+#106017
+A Precious looking casing~
+A Precious looking casing~
+A Precious looking casing protects something valuable.~
+~
+15 2097216 16385
+! 220 5 -1 0 0 0 0 0 0 0 0 0
+2 15000 1500
+#106018
+Cloak of Deception~
+The cloak of dwarven deception~
+The cloak of dwarven deception lays here on the ground.~
+~
+9 262144 5
+! 9 0 0 0 0 0 0 0 0 0 0 0
+3 25 2
+A
+13 200
+> wear_prog 100~
+emote masks Celeborn, Changing him into a Dwarf!
+~
+> remove_prog 100~
+emote changes Celeborn from dwarf into... DROW!?!? CELEBORN IS A DROW!?
+~
+|
+#106019
+blood sucking leach~
+A blood sucking leach~
+A blood sucking leach crawls along the floor, bringing doom everywhere.~
+~
+8 1075839040 4194305
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 500000 50000
+#106052
+Dwarf~
+a newly created Dwarf~
+Some god dropped a newly created Dwarf here.~
+~
+13 1073741824 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#106100
+A small magical gem~
+A small magical gem~
+A small gemstone illuminates the room with magical light.~
+~
+8 2097216 4194305
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 500000 50000
+#106101
+pair strange crystal objects~
+A pair of strange crystal objects~
+A pair of strange crystal objects lay here next to each other.~
+~
+8 2097216 8388609
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#106200
+gem of jade~
+Gem of Jade~
+A gem made of jade lies here on the ground.~
+~
+8 2097216 4194305
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 500000 50000
+A
+31 2
+A
+56 89
+A
+13 50
+A
+17 -35
+A
+18 5
+#106201
+Crystals of Crimson~
+Crystals of Crimson~
+Crimson colored crystals are scattered about the ground.~
+~
+8 2097217 8388609
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 750000 75000
+A
+25 2
+A
+12 20
+A
+56 88
+A
+13 45
+A
+19 10
+#106202
+jade dagger~
+Jade Dagger~
+A dagger with a handle made of jade is lying here.~
+~
+5 2097216 8193
+! 12 25 15 11 0 0 0 0 0 0 0 0
+1 500000 50000
+A
+13 25
+A
+1 2
+A
+32 20
+A
+18 10
+A
+19 10
+#106203
+Rycens Rattle~
+Rycen's baby rattle~
+Rycen has dropped her baby rattle here.~
+~
+5 2097153 8193
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 500000 50000
+#106401
+Some bones~
+Some bones~
+Some old bones lay inside the coffin.~
+~
+13 0 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#106500
+gem of tlaloc~
+Gem of Tlaloc~
+A small gem lying on the floor seems to contain a raging thunderstorm.~
+~
+8 2624 4194305
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 1000000 100000
+A
+17 -10
+A
+13 50
+A
+18 4
+A
+19 4
+A
+24 -3
+A
+56 221
+#106501
+Gem of Tezcatlipoca~
+Gem of Tezcatlipoca~
+A dark chunk of obsidianlies here, tossed aside.~
+~
+8 65604&4 8388609
+! 0 0 70 0 0 0 0 0 0 0 0 0
+1 50000 5000
+A
+17 -5
+A
+12 100
+A
+66 8
+A
+24 -7
+A
+56 224
+#106502
+aztec spear of death tlaloc~
+Tlaloc's Spear~
+Many feathers adorn the spear that lies here.~
+~
+5 2120 16777217
+! 70 20 50 1 0 0 0 0 0 0 0 0
+5 80000 8000
+A
+17 -60
+A
+12 10
+A
+18 15
+A
+19 15
+A
+53 25
+#106503
+astral symbiote~
+An astral symbiote~
+A faint intangible spirit floats in the air.~
+~
+9 264193&32 4194305
+! 5 5 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+56 292
+A
+56 84
+A
+3 2
+A
+24 -5
+A
+12 50
+A
+66 4
+#106504
+rock boulder~
+a rock boulder~
+A huge boulder lies half buried in the ground.~
+~
+38 0 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+100 0 0
+#106505
+tree trunk palm~
+a palm tree~
+A few palm trees wave in the breeze.~
+~
+13 0 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+100 0 0
+E
+tree climb palm~
+say type leave tree
+~
+#106506
+rocks and pebbles~
+rocks and pebbles~
+Small pebbles and rocks lie in the sand.~
+~
+13 0 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+100 0 0
+#106507
+shortbow bow short~
+A shortbow~
+A small bow collects dust.~
+~
+56 264192 262145
+! 50 0 50 14 3 0 0 0 0 0 0 0
+5 500000 50000
+A
+14 20
+A
+18 10
+A
+12 30
+#106508
+arrow~
+a tiny arrow~
+An arrow lies on the ground.~
+~
+57 0 1
+! 0 0 40 14 3 0 0 0 0 0 0 0
+1 0 0
+#106600
+hydra's horn~
+a hydra's horn~
+A long, sharp horn is here.~
+~
+8 0 4194305
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+26 -2147483648
+A
+14 25
+> rand_prog 1~
+opecho The horn hums faintly...
+opechoaround The horn hums faintly...
+oprestore $n 5
+~
+|
+#106601
+stalactite shards~
+Stalactite Shards~
+Some pieces of stalactite are lying here.~
+~
+8 0 8388609
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+A
+18 2
+A
+19 2
+A
+17 2
+A
+56 66
+#108000
+Placeholder~
+a newly created Placeholder~
+Some god dropped a newly created Placeholder here.~
+~
+13 1073741824 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#0
+
+
+#ROOMS
+#106000
+Southern gate of Highmoon~
+If it wasn't for the enormous tower reaching up at the clouds, you
+would have walked past this city without noticing it. The forest 
+complete blocks vision of the walls, that are covered with all 
+sorts of vines and flowers.  You take a deep breath and smell the 
+forest, mixed with the fragrance of freshly baked bread and sweet 
+elven wine coming from inside the gate.
+~
+0 0 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106001
+S
+#106001
+South of Highmoon Square~
+It's almost like you never left the forest, as the trees here are just 
+as densely packed as the forest outside the city walls. The smell 
+of fresh bread and elven wine seems to be coming from a large 
+natural cave to your west.
+~
+0 0 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106002
+D2
+~
+~
+0 -1 106000
+D3
+~
+~
+0 -1 106004
+S
+#106002
+Highmoon Square~
+You are standing in what is regarded as the center of Highmoon.
+The main road surrounds a large magical pond in the middle of 
+an open field. Several wooden benches are placed around the pond, 
+each protected from the sun by a large willow.
+~
+0 301990912 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106018
+D2
+~
+~
+0 -1 106001
+D3
+~
+~
+0 -1 106024
+S
+#106004
+The Cave Inn~
+The inn is packed with customers eating and talking. Altough 
+a little dark the inn is lighted with candles, placed into 
+small alcoves in the rocky walls, giving it a romantic 
+atmosphere. You see a handsome female elf in an open kitchen 
+preparing elvish dishes that are making your mouth water. You 
+feel the urge to sit down for a good meal.
+~
+0 0 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106001
+D3
+~
+~
+0 -1 106005
+S
+#106005
+A Small Cave~
+Stairs have been cut into the walls, slowly circling down into the
+depths of the earth. Candles light this area, placed into small 
+alcoves in the walls. You smell the smell of elvish dishes coming
+from the east.
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106004
+D5
+~
+~
+0 -1 106006
+S
+#106006
+A Small Cave~
+Stairs have been cut into the walls, slowly circling up to the
+top of the earth. Candles light this area, placed into small 
+alcoves in the walls. You smell the smell of elvish dishes coming
+from the above.
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106007
+D4
+~
+~
+0 -1 106005
+S
+#106007
+A Small Cave - East 1~
+Candles light this area, placed into small alcoves in the walls.
+You smell the faint smell of elvish dishes coming from the west.
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106008
+D3
+~
+~
+0 -1 106006
+S
+#106008
+A Small Cave - East 2~
+Candles light this area, placed into small alcoves in the walls.
+You smell the faint smell of elvish dishes coming from the west.
+ 
+The hall to the east seems blurred and distorted. You feel something
+is really wrong there.
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106009
+D3
+~
+~
+0 -1 106007
+S
+#106009
+A Small Cave - East 3~
+Candles light this area, placed into small alcoves in the walls.
+You smell the faint smell of elvish dishes coming from the west.
+~
+0 1073741826 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106016
+D3
+~
+~
+0 -1 106008
+S
+#106010
+Plane of pillars~
+~
+0 1076896772 1 0 0 0 0 0
+S
+#106016
+House - For Sale~
+An empty house waiting for a new owner
+~
+0 0 1 0 0 0 1 0
+D2
+~
+~
+0 -1 106009
+S
+#106018
+One east of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106019
+D3
+~
+~
+0 -1 106002
+S
+#106019
+Two east of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106020
+D3
+~
+~
+0 -1 106018
+S
+#106020
+Three east of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106021
+D3
+~
+~
+0 -1 106019
+S
+#106021
+Four east of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106022
+D3
+~
+~
+0 -1 106020
+S
+#106022
+Five east of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106023
+D3
+~
+~
+0 -1 106021
+S
+#106023
+Six east of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D3
+~
+~
+0 -1 106022
+S
+#106024
+One west of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106002
+D3
+~
+~
+0 -1 106025
+S
+#106025
+Two west of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106024
+D2
+~
+~
+0 -1 106030
+D3
+~
+~
+0 -1 106026
+S
+#106026
+Three west of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106025
+D3
+~
+~
+0 -1 106027
+S
+#106027
+Four west of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106026
+D3
+~
+~
+0 -1 106028
+S
+#106028
+Five west of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106027
+D3
+~
+~
+0 -1 106029
+S
+#106029
+Six west of Highmoon Square~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106028
+S
+#106030
+The Highmoon Adventurer.~
+You are now standing inside a shop of wonders.
+Behind the counter you can see a valid permit to sell goods.
+We are pleased to announce that we have the facility to take money
+direct from you bank account, should you find that you are not carrying
+enough gold.  Have a nice day !
+~
+0 1073741824 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106025
+S
+#106200
+Inside the Old Jade Tavern~
+Looking around your surroundings, you start to wonder...where the HELL are
+you?!?!  You can barely make out the old moss covered sign on the wall.  It
+looks like it says "Jade Tavern".  The musty smell in the air gives you the
+chills and you consider jumping back into the pillar.  There is a small sign
+leaning against the wall, and you strain to read what it says.
+~
+0 3145728 0 0 0 0 0 0
+D1
+~
+~
+0 -1 106201
+E
+sign~
+The Old Jade Tavern - Abandoned
+This area is designed for levels 30 to 40, you have been warned!
+~
+S
+#106201
+Down the Dusty Hall~
+Cobwebs consume every inch of this hallway.  Your skin crawls from the
+disgusting nature of the floors and the bugs crawling along it.  You
+try to move quickly to avoid anything that might crawl up your leg.
+~
+0 1076887552 0 0 0 0 0 0
+D0
+~
+~
+0 -1 106202
+D3
+~
+~
+0 -1 106200
+S
+#106202
+Pool Anyone?~
+You come across a couple pool tables that you decide have probably seen
+better days.  Its obvious that many games have been played on these.  Just
+exactly how old is this Tavern anyway?
+~
+0 1076887552 0 0 0 0 0 0
+D0
+~
+~
+3 -1 106203
+D1
+~
+~
+0 -1 106204
+D2
+~
+~
+0 -1 106201
+S
+#106203
+Restrooms~
+The foul stench in this tile covered room could only mean one thing...
+bathroom.  The broken light fixture above your head refuses to turn on
+as you watch what looks to be a couple cockroaches scamper across your
+feet and over to one of the broken stalls.
+~
+0 1076887552 0 0 0 0 0 0
+D2
+~
+~
+3 -1 106202
+S
+#106204
+The Old Bar and Grill~
+An inch of dust covers the bar, as you glance over the rows of glasses
+once used to hold many a gallon of fine ale and beer.  This bar has been
+out of use for a while.  The taps are all dry, and the mirror on the wall
+behind it has a huge crack down the middle.  Dont sit on the stools!
+~
+0 1076887552 0 0 0 0 0 0
+D1
+~
+~
+0 -1 106205
+D3
+~
+~
+0 -1 106202
+S
+#106205
+Overturned Chairs~
+The old tables and chairs in this dining area haven't seen a piece of
+chicken or a good steak in a long time.  Some legs are missing from a
+couple of the overturned chairs, but the tables seem pretty sturdy.
+~
+0 1076887552 0 0 0 0 0 0
+D0
+~
+~
+0 -1 106206
+D3
+~
+~
+0 -1 106204
+D5
+~
+~
+64 -1 106207
+S
+#106206
+The Closet~
+Nothing but empty hangers occupy this small closet once used for hanging
+up coats.  A spider dangles from rack in front of you, and you shudder in
+disgust of the creature.
+~
+0 1076887552 0 0 0 0 0 0
+D2
+~
+~
+0 -1 106205
+S
+#106207
+Under the Bar~
+Stairs!  They obviously lead downstairs underneath this old place.  The
+air is moist under here, and you step carefully as the floorboards
+creak under the weight of your body.
+~
+0 1076887552 0 0 0 0 0 0
+D3
+~
+~
+0 -1 106208
+D4
+~
+~
+64 -1 106205
+S
+#106208
+Wine Cellar~
+Rows and rows of wine bottles cover the north wall of this room.  Some of
+the bottles go back several hundred years.  There is broken glass on the
+floor, and a few red stains on the cement.  
+~
+0 1076887552 0 0 0 0 0 0
+D1
+~
+~
+0 -1 106207
+D2
+~
+~
+0 -1 106209
+S
+#106209
+What the Hell?~
+The room is dark as you enter, and you trip over something on the floor.
+In front of you, you can distinctly hear the sound of breathing, but you
+cant seem to make out any figures.  
+~
+0 1076887552 0 0 0 0 0 0
+D0
+~
+~
+0 -1 106208
+S
+#106210
+Floating in a void~
+~
+0 1073741828 1 0 0 0 0 0
+S
+#106301
+Tree of Hope and Despair~
+You appear in a place that you had not planned on going. You see
+ocean surrounding you, but when you turn around you see an unusual
+tree. Half of the tree is full of life and is healthy possible. The
+other half is rotting and looks like it will fall apart. The tree
+seems to represent a balance in nature. They need each other to
+remain standing. With out one the other half would fall into the
+ocean.
+~
+0 1076895744 1 0 0 0 0 0
+D2
+~
+~
+0 -1 106302
+S
+#106302
+Bottom of the Tree~
+Standing in the tree you see that there is a line between the hope
+and despare where the two merge peacefully. Around the inside of
+the tree are stares carved out of the wood. The stairs spiral up
+the inside, and just the outside half of them are rotting and the
+other appears to be healthy solid wood. The stairs go through each
+half of despare and hope twice.
+~
+0 1076895744 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106301
+D4
+~
+~
+0 -1 106303
+S
+#106303
+Bottom Part of the Tree~
+Standing here you can see a clearly see the split in the tree and
+how hope and despair affect the tree. The half of despair is bended,
+twisted and rotting. The half of hope is perfect in almost every
+way. It is strong and healthy. you walk up and touch the half that
+is rotting. When you touch it a strange feeling overcomes you. You
+look up and you can see the leaves on the top of the tree and the
+blue sky.
+~
+0 1076895744 1 0 0 0 0 0
+D4
+~
+~
+0 -1 106304
+D5
+~
+~
+0 -1 106302
+S
+#106304
+Half Hope and Half Despair~
+~
+0 1076895744 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106307
+D3
+~
+~
+0 -1 106305
+D4
+~
+~
+0 -1 106309
+D5
+~
+~
+0 -1 106303
+S
+#106305
+Branches of Despair~
+~
+0 1076895744 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106304
+D9
+~
+~
+0 -1 106306
+S
+#106306
+End of the Rotting Branch~
+~
+0 1076895744 1 0 0 0 0 0
+D6
+~
+~
+0 -1 106305
+S
+#106307
+Branches of Hope~
+~
+0 1076895744 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106308
+D3
+~
+~
+0 -1 106304
+S
+#106308
+Along a Branch of Hope~
+~
+0 1076895744 1 0 0 0 0 0
+D3
+~
+~
+0 -1 106307
+S
+#106309
+Almost to the Top of the Tree~
+~
+0 1073741824 1 0 0 0 0 0
+D5
+~
+~
+0 -1 106304
+S
+#106401
+A small coffin~
+You are cramped in what seems to be a small box. The air is stale and
+you feel something nasty poking your back, probably some bones. As
+you glance around the box, you see the top of a pillar sticking into
+the box from the outside. You get some sand in your mouth trying to reach
+for the teleporter pillar.
+~
+0 1076895756 1 0 0 0 0 0
+S
+#106402
+A Balcony~
+You walk onto a balcony and feel a fresh breeze of wind in your face.
+You seem to be several floors high here, as you look over the balcony 
+edge you see a large forest stretching out below you. When you glance 
+in the distance huge mountains block further vision in all directions. 
+The balcony is decorated with figurines of small birds and animals.
+~
+0 1076895744 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106406
+S
+#106403
+Temple of LLiira~
+This hallway is almost totally filled with burning candles. They all 
+are the same length and don't seem to get smaller over time. You hear
+the echo of singing birds coming from the west.
+~
+0 1076895752 1 0 0 0 0 0
+D3
+~
+~
+0 -1 106406
+S
+#106404
+Temple of LLiira~
+You stand at a small altar. The altar is filled with fresh berries and fruit, 
+all offerings to the great LLiira. The altar is made out of one single piece 
+of wood, carved from the heart of a redwood tree.
+~
+0 1076895752 1 0 0 0 0 0
+D2
+~
+~
+0 -1 106406
+S
+#106406
+Temple of LLiira~
+You are standing in the center of a large white temple. Sunlight drops 
+in trough the coloured glass windows and makes all sorts of beautifull 
+patterns on the decorated floortiles. The air in here is refreshing
+and you hear birds singing outside.
+~
+0 1076895752 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106404
+D1
+~
+~
+0 -1 106403
+D2
+~
+~
+0 -1 106402
+S
+#106500
+An Aztec Temple~
+The dense jungle trees crowd around you. Dark green leaves 
+and wet vines block out the sky above. Strange noises chatter 
+and crash through the underbrush. The sounds of wildlife. A
+small stone temple crouches in the shade. It is almost covered
+by the moss and greenery that grows over it. Long dead skulls
+and bones, bleached white and cracked from age, are stacked
+along the temple walls. This area is for high levels only!! Enter
+at your own risk!!
+~
+0 2097152 3 0 0 0 0 0
+D0
+~
+temple door north~
+11 -1 106501
+S
+#106501
+In the Temple~
+The interior of the temple sprawls out to the north. It's golden 
+tiles refect the scant light a thousand fold. Reflected rays of light 
+bounce off golden idols and statues, cutting through the dusty air.
+A red carpet leads into the temple proper and a small hidden door 
+leads out into the steamy jungle. This place has a feel of great
+age and of long vacancy.
+~
+0 2097152 0 0 0 0 0 0
+D0
+~
+~
+0 -1 106502
+D2
+~
+temple door north~
+9 -1 106500
+S
+#106502
+Temple Center~
+Gilded ornaments and idols sparkle in the light of the temple proper.
+A golden sun outlined in bright red rubies  fills the center floor of the
+chamber. Candles glow like miniature suns themselves and their
+rays of light bounce of the golden surroundings lighting the
+room without shadows at all. Great images paint the walls. The
+frightening visages of the aztec gods. Four smaller chambers 
+lead off this main room. One in each direction.
+~
+0 2097152 13 0 0 0 0 0
+D0
+~
+~
+0 -1 106503
+D1
+~
+~
+0 -1 106505
+D2
+~
+~
+0 -1 106501
+D3
+~
+~
+0 -1 106504
+> act_prog p begins digging...~
+mpecho The floor crumbles and shakes. Suddenly the whole thing
+mpecho caves in and everything crashes to a floor somewhere below.
+mpechoat $n You tumble down into the darkness.
+mptransfer $n 106507
+~
+|
+S
+#106503
+Dia de las Muertos~
+Dia de las Muertos is the aztec day of the dead. This room is an altar
+for the aztec gods of death. Small skeletons bow to an idol of toltec in 
+the middle of the room. Their bony forms are white and cracked with age.
+A large mural of masked worshipers covers the ceiling. Four candles of
+insense burn brightly, their smell drifting through the air.
+~
+0 2097152 0 0 0 0 0 0
+D2
+~
+~
+0 -1 106502
+D4
+~
+mural panal~
+9 -1 106506
+S
+#106504
+Idol of Xiuhtecuhtle~
+Small buring pyres light the four corners of this chamber. Thousands of
+candles run up the far wall like a serpent of fire. A golden idol surveys
+the room from an emerald throne. The two remaining walls are adorned
+with images of Xiuhtecuhtle the god of fire. 
+~
+0 2097152 0 0 0 0 0 0
+D1
+~
+~
+0 -1 106502
+S
+#106505
+Idol of Coatlicue~
+Snakes and serpents squirm and slither across the temple floor. Four
+flickering torches barely provide enough light to see the dim chamber. 
+A large gold and silver staue stands amidst a moving mass of snakes.
+The idols skirt is made of serpents as well for it represents Coatlicue
+the serpent goddess. 
+~
+0 2097152 0 0 0 0 0 0
+D3
+~
+~
+0 -1 106502
+S
+#106506
+Tlaloc the Rain God~
+The imagery of death continues into this alcove from the chamber
+of the dead below. Dying people and drenching thunderstorms are
+both depicted in the old drawings and paintings. Only a few candles
+light the area. Each a small world in it's own. A large golden throne
+stands watch over everything else in the room. On it sits the
+aztec god of rain and death. Tlaloc.
+~
+0 2097152 0 0 0 0 0 0
+D5
+~
+mural panal~
+11 -1 106503
+S
+#106507
+Under the Temple~
+Earthen walls and broken rock form what has to be the sub level 
+of the aztec temple. The air is dank, dark, and damp. Small rodents
+and insects chatter and sreech at you from their hidden homes. Even
+with your light not much can be seen.
+~
+0 2097152 13 0 0 0 0 0
+D4
+~
+~
+0 -1 106502
+> act_prog p begins digging...~
+mpecho The floor crumbles and shakes. Suddenly the whole thing
+mpecho caves in and everything crashes to a floor somewhere below.
+mpechoat $n You tumble down into the darkness.
+mptransfer $n 106508
+~
+|
+S
+#106508
+Deep in the Earth~
+Dirt crumbles and falls off the walls, wet and sticky from the incredible
+dampness. The air is rank and thick with fumes. It chokes the life out
+of you slowly but surely. Rotting piles of mushrooms and grass release
+the gases, a warning to intruders. A small cramped tunnel leads north and
+slopes downwards slightly.
+~
+0 2097152 13 0 0 0 0 0
+D0
+~
+~
+128 -1 106509
+D4
+~
+~
+0 -1 106507
+S
+#106509
+Poison Gases~
+This low spot in the tunnel is choked full of gases. Poison racks your
+body from the horrid fumes. Rotting vegetation is stacked in bundles.
+The piles barely recognizable they have been here so long. Water
+drips from the muddy ceiling and adds to the general discomfort.
+~
+0 2097152 13 0 0 0 0 0
+D0
+~
+~
+128 -1 106510
+D2
+~
+~
+128 -1 106508
+S
+#106510
+In the Presence of Tezcatlipoca~
+Obsidian mirriors reflect back your image a hundredfold. Far into the
+distance you see only yourself. Then suddenly behind you stands a
+huge man wearing  feathered headdress.  Tezcatlipoca. The god of sorcery
+and destiny. The god of smoky mirriors. The all father of the aztec 
+pantheon.
+~
+0 2097152 13 0 0 0 0 0
+D2
+~
+~
+128 -1 106509
+S
+#106511
+The Astral Plane~
+White clouds float aimlessly across the astral plane. Hues of 
+pink, orange, and yellow tinge the clouds making a vibrant sunset
+of colors. The astral plane is not connected to the real world in any
+real sense. It's apart with its own laws and rules. Like a spirit world
+nothing here is what it seems. Also once entered the astral plane
+is all but impossible to leave! 
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106512
+S
+#106512
+The Astral Plane~
+Fuffy white clouds float amidst pink and orange hues. A feeling of peace 
+and well being eminate from this plane. Up and down, left and right,
+all directions have no meaning. Intangible shapes of other astral
+travellers float by.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106513
+D1
+~
+~
+0 -1 106517
+D2
+~
+~
+0 -1 106514
+D3
+~
+~
+0 -1 106518
+D4
+~
+~
+0 -1 106523
+D5
+~
+~
+0 -1 106523
+D6
+~
+~
+0 -1 106516
+D7
+~
+~
+0 -1 106518
+D8
+~
+~
+0 -1 106515
+D9
+~
+~
+0 -1 106516
+S
+#106513
+The Astral Plane~
+Fuffy white clouds float amidst pink and orange hues. A feeling of peace
+and well being eminate from this plane. Up and down, left and right,
+all directions have no meaning. Intangible shapes of other astral
+travellers float by.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106514
+D1
+~
+~
+0 -1 106516
+D2
+~
+~
+0 -1 106512
+D3
+~
+~
+0 -1 106519
+D4
+~
+~
+0 -1 106522
+D5
+~
+~
+0 -1 106522
+D6
+~
+~
+0 -1 106515
+D7
+~
+~
+0 -1 106520
+D8
+~
+~
+0 -1 106517
+D9
+~
+~
+0 -1 106520
+S
+#106514
+The Astral Plane~
+You float across the astral plane. Your intangible body only half visable
+even to yourself. White clouds pass through you with an eerie silence.
+There are no sounds in this strange plane of exsitance. Spirit shapes
+wander aimlessly. Some are people who could not find their bodies to 
+return too and are now trapped forever.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106512
+D1
+~
+~
+0 -1 106515
+D2
+~
+~
+0 -1 106513
+D3
+~
+~
+0 -1 106520
+D4
+~
+~
+0 -1 106521
+D5
+~
+~
+0 -1 106521
+D6
+~
+~
+0 -1 106517
+D7
+~
+~
+0 -1 106518
+D8
+~
+~
+0 -1 106519
+D9
+~
+~
+0 -1 106516
+S
+#106515
+The Astral Plane~
+White clouds surround your misty body. Some pass through you with
+a faint chill. Strange spirits and other astral wanderers float past. Thier
+silence slightly unnerving. No sounds can he heard across the astral
+plane, only a faint feeling of silent echos.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106517
+D1
+~
+~
+0 -1 106520
+D2
+~
+~
+0 -1 106516
+D3
+~
+~
+0 -1 106514
+D4
+~
+~
+0 -1 106524
+D5
+~
+~
+0 -1 106524
+D6
+~
+~
+0 -1 106514
+D7
+~
+~
+0 -1 106512
+D8
+~
+~
+0 -1 106519
+D9
+~
+~
+0 -1 106513
+S
+#106516
+The Astral Plane~
+Fuffy white clouds float amidst pink and orange hues. A feeling of peace
+and well being eminate from this plane. Up and down, left and right,
+all directions have no meaning. Intangible shapes of other astral
+travellers float by.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106515
+D1
+~
+~
+0 -1 106519
+D2
+~
+~
+0 -1 106517
+D3
+~
+~
+0 -1 106513
+D4
+~
+~
+0 -1 106525
+D5
+~
+~
+0 -1 106525
+D6
+~
+~
+0 -1 106520
+D7
+~
+~
+0 -1 106514
+D8
+~
+~
+0 -1 106518
+D9
+~
+~
+0 -1 106512
+S
+#106517
+The Astral Plane~
+White clouds surround your misty body. Some pass through you with
+a faint chill. Strange spirits and other astral wanderers float past. Thier
+silence slightly unnerving. No sounds can he heard across the astral
+plane, only a faint feeling of silent echos.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106516
+D1
+~
+~
+0 -1 106518
+D2
+~
+~
+0 -1 106515
+D3
+~
+~
+0 -1 106512
+D4
+~
+~
+0 -1 106526
+D5
+~
+~
+0 -1 106526
+D6
+~
+~
+0 -1 106519
+D7
+~
+~
+0 -1 106513
+D8
+~
+~
+0 -1 106520
+D9
+~
+~
+0 -1 106514
+S
+#106518
+The Astral Plane~
+Fuffy white clouds float amidst pink and orange hues. A feeling of peace
+and well being eminate from this plane. Up and down, left and right,
+all directions have no meaning. Intangible shapes of other astral
+travellers float by.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106519
+D1
+~
+~
+0 -1 106512
+D2
+~
+~
+0 -1 106520
+D3
+~
+~
+0 -1 106517
+D4
+~
+~
+0 -1 106529
+D5
+~
+~
+0 -1 106529
+D6
+~
+~
+0 -1 106513
+D7
+~
+~
+0 -1 106516
+D8
+~
+~
+0 -1 106512
+D9
+~
+~
+0 -1 106515
+S
+#106519
+The Astral Plane~
+You float across the astral plane. Your intangible body only half visable
+even to yourself. White clouds pass through you with an eerie silence.
+There are no sounds in this strange plane of exsitance. Spirit shapes
+wander aimlessly. Some are people who could not find their bodies to 
+return too and are now trapped forever.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106520
+D1
+~
+~
+0 -1 106512
+D2
+~
+~
+0 -1 106518
+D3
+~
+~
+0 -1 106517
+D4
+~
+~
+0 -1 106528
+D5
+~
+~
+0 -1 106528
+D6
+~
+~
+0 -1 106513
+D7
+~
+~
+0 -1 106516
+D8
+~
+~
+0 -1 106514
+D9
+~
+~
+0 -1 106515
+S
+#106520
+The Astral Plane~
+White clouds surround your misty body. Some pass through you with
+a faint chill. Strange spirits and other astral wanderers float past. Their
+silence slightly unnerving. No sounds can he heard across the astral
+plane, only a faint feeling of silent echos.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106518
+D1
+~
+~
+0 -1 106513
+D2
+~
+~
+0 -1 106519
+D3
+~
+~
+0 -1 106512
+D4
+~
+~
+0 -1 106527
+D5
+~
+~
+0 -1 106527
+D6
+~
+~
+0 -1 106513
+D7
+~
+~
+0 -1 106517
+D8
+~
+~
+0 -1 106513
+D9
+~
+~
+0 -1 106516
+S
+#106521
+The Astral Plane~
+You float across the astral plane. Your intangible body only half visable
+even to yourself. White clouds pass through you with an eerie silence.
+There are no sounds in this strange plane of exsitance. Spirit shapes
+wander aimlessly. Some are people who could not find their bodies to 
+return too and are now trapped forever.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106523
+D1
+~
+~
+0 -1 106524
+D2
+~
+~
+0 -1 106522
+D3
+~
+~
+0 -1 106527
+D4
+~
+~
+0 -1 106514
+D5
+~
+~
+0 -1 106514
+D6
+~
+~
+0 -1 106528
+D7
+~
+~
+0 -1 106529
+D8
+~
+~
+0 -1 106528
+D9
+~
+~
+0 -1 106529
+S
+#106522
+The Astral Plane~
+You float across the astral plane. Your intangible body only half visable
+even to yourself. White clouds pass through you with an eerie silence.
+There are no sounds in this strange plane of exsitance. Spirit shapes
+wander aimlessly. Some are people who could not find their bodies to 
+return too and are now trapped forever.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106521
+D1
+~
+~
+0 -1 106519
+D2
+~
+~
+0 -1 106523
+D3
+~
+~
+0 -1 106528
+D4
+~
+~
+0 -1 106513
+D5
+~
+~
+0 -1 106513
+D6
+~
+~
+0 -1 106524
+D7
+~
+~
+0 -1 106529
+D8
+~
+~
+0 -1 106528
+D9
+~
+~
+0 -1 106529
+S
+#106523
+The Astral Plane~
+Fuffy white clouds float amidst pink and orange hues. A feeling of peace
+and well being eminate from this plane. Up and down, left and right,
+all directions have no meaning. Intangible shapes of other astral
+travellers float by.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106522
+D1
+~
+~
+0 -1 106526
+D2
+~
+~
+0 -1 106521
+D3
+~
+~
+0 -1 106529
+D4
+~
+~
+0 -1 106512
+D5
+~
+~
+0 -1 106512
+D6
+~
+~
+0 -1 106525
+D7
+~
+~
+0 -1 106528
+D8
+~
+~
+0 -1 106524
+D9
+~
+~
+0 -1 106527
+S
+#106524
+The Astral Plane~
+Fuffy white clouds float amidst pink and orange hues. A feeling of peace
+and well being eminate from this plane. Up and down, left and right,
+all directions have no meaning. Intangible shapes of other astral
+travellers float by.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106528
+D1
+~
+~
+0 -1 106521
+D2
+~
+~
+0 -1 106528
+D3
+~
+~
+0 -1 106527
+D4
+~
+~
+0 -1 106515
+D5
+~
+~
+0 -1 106515
+D6
+~
+~
+0 -1 106527
+D7
+~
+~
+0 -1 106526
+D8
+~
+~
+0 -1 106526
+D9
+~
+~
+0 -1 106522
+S
+#106525
+The Astral Plane~
+Fuffy white clouds float amidst pink and orange hues. A feeling of peace
+and well being eminate from this plane. Up and down, left and right,
+all directions have no meaning. Intangible shapes of other astral
+travellers float by.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106524
+D1
+~
+~
+0 -1 106528
+D2
+~
+~
+0 -1 106526
+D3
+~
+~
+0 -1 106522
+D4
+~
+~
+0 -1 106516
+D5
+~
+~
+0 -1 106516
+D6
+~
+~
+0 -1 106527
+D7
+~
+~
+0 -1 106521
+D8
+~
+~
+0 -1 106530
+D9
+~
+~
+0 -1 106523
+S
+#106526
+The Astral Plane~
+Fuffy white clouds float amidst pink and orange hues. A feeling of peace
+and well being eminate from this plane. Up and down, left and right,
+all directions have no meaning. Intangible shapes of other astral
+travellers float by.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106524
+D1
+~
+~
+0 -1 106529
+D2
+~
+~
+0 -1 106524
+D3
+~
+~
+0 -1 106523
+D4
+~
+~
+0 -1 106517
+D5
+~
+~
+0 -1 106517
+D6
+~
+~
+0 -1 106528
+D7
+~
+~
+0 -1 106522
+D8
+~
+~
+0 -1 106527
+D9
+~
+~
+0 -1 106521
+S
+#106527
+The Astral Plane~
+Fuffy white clouds float amidst pink and orange hues. A feeling of peace
+and well being eminate from this plane. Up and down, left and right,
+all directions have no meaning. Intangible shapes of other astral
+travellers float by.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106529
+D1
+~
+~
+0 -1 106521
+D2
+~
+~
+0 -1 106528
+D3
+~
+~
+0 -1 106524
+D4
+~
+~
+0 -1 106520
+D5
+~
+~
+0 -1 106520
+D6
+~
+~
+0 -1 106523
+D7
+~
+~
+0 -1 106521
+D8
+~
+~
+0 -1 106522
+D9
+~
+~
+0 -1 106526
+S
+#106528
+The Astral Plane~
+Fuffy white clouds float amidst pink and orange hues. A feeling of peace
+and well being eminate from this plane. Up and down, left and right,
+all directions have no meaning. Intangible shapes of other astral
+travellers float by.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106527
+D1
+~
+~
+0 -1 106522
+D2
+~
+~
+0 -1 106513
+D3
+~
+~
+0 -1 106525
+D4
+~
+~
+0 -1 106519
+D5
+~
+~
+0 -1 106519
+D6
+~
+~
+0 -1 106521
+D7
+~
+~
+0 -1 106521
+D8
+~
+~
+0 -1 106514
+D9
+~
+~
+0 -1 106521
+S
+#106529
+The Astral Plane~
+You float across the astral plane. Your intangible body only half visable
+even to yourself. White clouds pass through you with an eerie silence.
+There are no sounds in this strange plane of exsitance. Spirit shapes
+wander aimlessly. Some are people who could not find their bodies to 
+return too and are now trapped forever.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106528
+D1
+~
+~
+0 -1 106523
+D2
+~
+~
+0 -1 106527
+D3
+~
+~
+0 -1 106526
+D4
+~
+~
+0 -1 106518
+D5
+~
+~
+0 -1 106518
+D6
+~
+~
+0 -1 106521
+D7
+~
+~
+0 -1 106521
+D8
+~
+~
+0 -1 106521
+D9
+~
+~
+0 -1 106524
+S
+#106530
+The Astral Plane~
+The clouds and endless sky are still all around, yet you feel something
+slighty different about this section of the astral plane. The light seems
+brighter if such things truely have meaning here and a feeling of 
+power eminates from..somewhere.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106515
+D1
+~
+~
+0 -1 106528
+D2
+~
+~
+0 -1 106517
+D3
+~
+~
+0 -1 106522
+D4
+~
+~
+0 -1 106516
+D5
+~
+~
+0 -1 106531
+D6
+~
+~
+0 -1 106513
+D7
+~
+~
+0 -1 106516
+D8
+~
+~
+0 -1 106522
+D9
+~
+~
+0 -1 106521
+S
+#106531
+The Astral Being~
+A huge glowing mass of..nothing..yet something...pulses with a faint
+light. Clouds pass through it jsut as they do to you yet it seems more
+...solid...more real. A mix of emotions eminate from it's form. Varying
+from anger to love to pain to confusion.
+~
+0 2105344 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106525
+D1
+~
+~
+0 -1 106519
+D2
+~
+~
+0 -1 106515
+D3
+~
+~
+0 -1 106523
+D4
+~
+~
+0 -1 106530
+D5
+~
+~
+0 -1 106530
+D6
+~
+~
+0 -1 106523
+D7
+~
+~
+0 -1 106527
+D8
+~
+~
+0 -1 106518
+D9
+~
+~
+0 -1 106517
+S
+#106532
+Beachfront~
+The soothing crash of the waves sound across the white sound beach.
+A tropical breeze brings the sent of salt and water from the ocean. Small
+crabs scurry across the sand, running sideways. Tall palm trees line the
+edge of the beach front. Their long trunks casting shadows almost all the
+way down to the water. The beach is a calm place and even the newest
+of adventurers should have no problem. 
+~
+0 2097156 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106538
+D2
+~
+~
+0 -1 106537
+D3
+~
+~
+0 -1 106533
+S
+#106533
+Beachfront~
+White sand covers the ground from the waterfront all the way to the line
+of palm trees that shade this small island. A few crabs and little lizards
+run across the hot beach heading for the water or the cooling shade. 
+A few boulders stand like sentinels looking out over the bay. 
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106532
+D7
+~
+~
+0 -1 106534
+S
+#106534
+Beachfront~
+A huge mound of boulders lies directly south of there, towards the sea.
+There doesnt' seem to be anyway to scale them, as way around will
+have to be found. A few sea gulls wing their way across the bright bue sky
+looking for unwary fish below.
+~
+0 2097152 1 0 0 0 0 0
+D8
+~
+~
+0 -1 106533
+D9
+~
+~
+0 -1 106535
+S
+#106535
+Beachfront~
+A large collection of rocky outcrops lies east of here. The sea shore
+crashes against the white beach with a great fury. White spray flies into
+the air and sprinkles down amidst a rainbow of colors. Over head the sun
+sends int's warmth down, sheltering everything on the beach.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106536
+D6
+~
+~
+0 -1 106534
+S
+#106536
+Beachfront~
+You huddle down in a small cove of boulders and stones. White sand
+pads the ground and makes a comfortable resting place. Little crabs, 
+snails, and sea urchins play in on the the shallow pools that litter the
+cove. 
+~
+0 2097152 1 0 0 0 0 0
+D3
+~
+~
+0 -1 106535
+S
+#106537
+In the water~
+Water laps around you waist as you stand in the surf of a great sea.
+The water stretches farther then your eyes can see. Clear, green, tropical
+water. Small schools of brightly colored fish swim around your ankels.
+Starfish, crayfish and other bottom feeders wallow through the sandy
+bottom looking for food.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106532
+D6
+~
+~
+0 -1 106538
+S
+#106538
+Beachfront~
+The roar of the ocean is very loud. The waves are gentle as they roll onto
+sand but the noise echos, bouncing off the line of trees that boarder the
+beach. A small path leads into the trees and away from the sea. The 
+path is small and partially overgrown. 
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106539
+D1
+~
+~
+0 -1 106540
+D3
+~
+~
+0 -1 106532
+D8
+~
+~
+0 -1 106541
+D9
+~
+~
+0 -1 106537
+S
+#106539
+Beachfront~
+The waving tops of great palm trees shades this portion of the beach.
+The sand is more brown then white, more dirt the sand. Green vines 
+hand from above and green plants grown in the moist ground. One
+tree in particular grabs your attention. A small circular staircase is
+carved into its trunk. A small pathway leads back to the main part of the
+beach.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 106538
+D8
+~
+~
+0 -1 106540
+D10
+~
+tree tree palm~
+917505 -1 106551
+S
+#106540
+Beachfront~
+A small peninsula extends of the beach here and runs out into the
+ocean. Some birds of various type pick at the sandy ground, thier 
+beaks snapping up tiny animals. Little crabs and sand lizards dart 
+to and fro leaving tiny foot prints behind.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106543
+D2
+~
+~
+0 -1 106541
+D3
+~
+~
+0 -1 106538
+D6
+~
+~
+0 -1 106544
+D7
+~
+~
+0 -1 106539
+D8
+~
+~
+0 -1 106542
+S
+#106541
+Beachfront~
+You stand on the western side of a small peninsula that reaches
+out into the deep blue sea. Small hermit crabs, sporting the stolen
+shells of snails and urchins, scurry past your. Their tiny legs moving
+them along sideways at a rapid pace. A few flying fish arc their way
+gracefully across the waves in the distance.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106540
+D1
+~
+~
+0 -1 106542
+D6
+~
+~
+0 -1 106543
+D7
+~
+~
+0 -1 106538
+S
+#106542
+Beachfront~
+You stand on the eastern side of a small peninsula that reaches
+out into the deep blue sea. A few pebbles mar the beauty of the
+endless white beaches that line the coast. A few larger rocks can
+be seen far to the east. The smell and taste of the salty ocean is
+strong and floats on the slight breeze. 
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106543
+D3
+~
+~
+0 -1 106541
+D7
+~
+~
+0 -1 106540
+S
+#106543
+Beachfront~
+A small peninsula extends of the beach here and runs out into the
+ocean. A great rocky outcrop casts it's shadow on you from it's resting
+spot east of here. More boulders and rocks cover the sand to the northeast.
+The normal crab and bird tracks are present in the sand but thier seem
+to be human prints as well. Only they are much to small to be human.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106544
+D1
+~
+~
+0 -1 106547
+D2
+~
+~
+0 -1 106542
+D3
+~
+~
+0 -1 106540
+D9
+~
+~
+0 -1 106541
+S
+#106544
+Beachfront~
+A grove of palms reaches skyward and thickens farther to the north.
+The rocky headlands and the white sandy beach both lie south. A 
+peacful breeze flows in from the ocean. The salty smell filling the air.
+Seagulls fly overhead, darting about in play.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 106543
+D6
+~
+~
+0 -1 106546
+D9
+~
+~
+0 -1 106540
+S
+#106545
+Beachfront~
+The grove of palms thin as the ground becomes rocky. Boulders of
+all shapes and sizes crouch on the beach. Some much bigger then you
+are. The sea breeze brings a salty tang with it as it cools the air.
+ 
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106546
+D1
+~
+~
+0 -1 106549
+D8
+~
+~
+0 -1 106548
+S
+#106546
+Beachfront~
+The tops of the draping palms shade the tropical floor from overhead.
+Monkeys chirp and screech from their lofty perches, angry at being
+distrurbed.The ground is covered in a maze of different tracks. The
+glade thins out to the south and the southwest.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 106545
+D9
+~
+~
+0 -1 106544
+S
+#106547
+Beachfront~
+The ocean waves roll over the white beach and brush against your
+feet. Tiny bubbles rise from the hermit crab holes in the sand when the
+water passes over them. A few clam shells sparkle in the light. In the
+middle of the beach, right before you, lies a huge boulder. Totaly out of
+place. It look like a giant hand pointing to sea.
+~
+0 2097152 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106548
+D3
+~
+~
+0 -1 106543
+D6
+~
+~
+0 -1 106549
+> act_prog p pushes a rock boulder.~
+mpe With a grunt the rock moves out of the way to reveal a hidden
+mpe passage to a small cave. 
+mpechoat $n You stumble down the hole and fall into a dim room.
+mptransfer $n 106550
+~
+> act_prog p pulls a rock boulder.~
+mpe With a grunt the rock moves out of the way to reveal a hidden
+mpe passage to a small cave. 
+mpechoat $n You stumble down the hole and fall into a dim room.
+mptransfer $n 106550
+~
+|
+S
+#106548
+Beachfront~
+A swarm of tiny jelly fish have washed up on the beach and died.
+The translucent forms are littered the length of the beach, all the way
+down to the great rock west of here. Sand dollars and shells dot the
+beach and add a sense of wonder to this peaceful island.
+~
+0 2097152 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106549
+D3
+~
+~
+0 -1 106547
+D7
+~
+~
+0 -1 106545
+S
+#106549
+Beachfront~
+The sand thins and turns to rocky slabs as you travel farther inland.
+Small shoals are filled with water from rain adn high tide. Different 
+creatures swim about their depths. Each a world in it's own. Far to the
+north a line of palm trees edge the rocky plain.
+~
+0 2097152 1 0 0 0 0 0
+D2
+~
+~
+0 -1 106548
+D3
+~
+~
+0 -1 106545
+D9
+~
+~
+0 -1 106547
+S
+#106550
+Under a Rock~
+The huge rock on the beach above forms the ceiling for this tiny
+shelter. The sandstone walls have small pictures carved into them.
+The house is complete to the smallest detail. Even tiny curtain hang along 
+the walls. A little red and blue rug lies in the center of the room. Obviously
+someone ever small lives here.
+~
+0 2097152 1 0 0 0 0 0
+D4
+~
+~
+0 -1 106547
+S
+#106551
+A Treehouse~
+This small treehouse is ramshackle and looks like it will fall apart at
+in second. The ground can be seem bewteen the floorboards far far
+below. The roof is thatch made from palm leaves. The leaves long
+dead and dried. A few small tables lie smashed across the one room
+house. Everything looks like it was trashed in a fit of rage.
+~
+0 1075838976 1 0 0 0 0 0
+D5
+~
+~
+0 -1 106539
+S
+#106600
+A dark, dank cavern.~
+You find yourself in a large, stuffy damp, cavern.  Although the space
+is large, the warmth, moisture and darkness press in, like a tomb. You begin
+to find it a bit hard to breath normally. There is a stench of mold and mildew
+in the air, and of something else...blood, perhaps?
+~
+0 2097165 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106601
+> entry_prog 100~
+if level($n) > 30
+mpecho You feel a fearsome presence, and runewalk away!!!
+ mpforce $n runewalk 1
+endif
+~
+|
+S
+#106601
+A Fungi Filled Cavern~
+Well, you've found the source of the stench.  The next room is
+smaller, and is filled with dozens of different kinds of foul smelling
+molds and fungi.  Unused to light in this place of eternal darkness some
+of the molds and fungi actually begin to shrivel and die when exposed to it.
+A man sized mushroom mumbles something and moves away from your light.  What
+the hell?
+~
+0 2097165 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106602
+D1
+~
+~
+0 -1 106604
+D2
+~
+~
+0 -1 106603
+D3
+~
+~
+0 -1 106600
+S
+#106602
+Shroom's Nest~
+This end of the cavern is chock full of mushroom matter.  The
+spongy material fills the cavern, and the stench is overwhelming.
+Little baby shrooms squeak and run from your light as the Shroom
+Warriors rush to the attack.
+~
+0 2097165 1 0 0 0 0 0
+D2
+~
+~
+0 -1 106601
+S
+#106603
+Shroom's Nest~
+This end of the cavern is chock full of mushroom matter.  The
+spongy material fills the cavern, and the stench is overwhelming.
+Little baby shrooms squeak and run from your light as the Shroom
+Warriors rush to the attack.
+~
+0 2097165 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106601
+S
+#106604
+The Murky Pool of Water~
+This smaller cavern is almost filled by a spring fed pool of water.
+Unlike most such pools in cave systems, this pool is murky, almost
+black.  Nevertheless, you get a glimpse of something moving beneath the
+water.  What could that be?
+~
+0 2097165 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106605
+D3
+~
+~
+0 -1 106601
+S
+#106605
+In the Murky Water~
+You are in a warm and murky pool of water, splashing about blindly.
+You feel things...things mind you...moving about in the water around
+you, startled by your intrusion.  Its times like these that you wish you
+didn't have the adventuring spirit.
+~
+0 2097165 8 0 0 0 0 0
+D3
+~
+~
+0 -1 106604
+S
+#106625
+Antechamber of a Forbidden Shrine~
+You find yourself in the antechamber of a stange shrine.
+The only light is from dozens of candles upon the altar, far
+to the north.  In the dim light, you think you can see
+shapes moving in the corner of the room, or is it only your
+imagination?  To the north, worshipers chant quietly,
+filling the shrine with their eerie song of worship.
+~
+0 1073741824 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106626
+S
+#106626
+Among the Worshippers~
+You step north, and find yourself among the throngs of
+chanting worshippers.  Unless most churches, which make
+allowances for the comfort of the faithful, there are no
+pews, or even mats here, the worshippers kneel upon the
+hard, cold, stone floor and pay homage to their deity.  You
+feel a strange to continue north, to see the altar up close.
+~
+0 1073741824 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106627
+D2
+~
+~
+0 -1 106625
+S
+#106627
+Before the Altar of Bones~
+The altar, if you can call it that, is made of the long
+bones of the worshippers sacrificed to the Skull.  The
+skulls of the worshippers are set in small alcoves in the
+walls, each with a lit candle in it's jaws, providing light
+for the shrine.  A chill runs up your spine, and you freeze
+in a state of absolute horror.
+~
+0 1073741824 1 0 0 0 0 0
+D0
+~
+~
+0 -1 106629
+D2
+~
+~
+0 -1 106626
+S
+#106628
+Kaine's Alcove~
+This is the small alcove of Kaine, the Skull's chief worshipper,
+guard and executioner. He stands here ready to do his master's
+bidding. 
+~
+0 1073741824 1 0 0 0 0 0
+D3
+~
+~
+0 -1 106629
+S
+#106629
+Behind the Altar~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106628
+D2
+~
+~
+0 -1 106627
+D3
+~
+~
+0 -1 106630
+S
+#106630
+Alcove of the Skull~
+~
+0 1073741824 1 0 0 0 0 0
+D1
+~
+~
+0 -1 106629
+S
+#106631
+Floating in a void~
+~
+0 1073741828 1 0 0 0 0 0
+S
+#108000
+Last room reserved for Castle code~
+~
+0 4 1 0 0 0 0 0
+S
+#0
+
+
+#RESETS
+O 1 106003 1 106200
+M 1 106200 1 106201
+M 1 106201 1 106202
+D 0 106202 0 1
+M 1 106202 1 106203
+D 0 106203 2 1
+M 1 106203 1 106206
+M 1 106204 1 106208
+M 1 106205 1 106209
+E 1 106200 1 26
+E 1 106201 1 27
+E 1 106202 1 16
+E 1 106202 1 18
+G 1 106200 1
+G 1 106201 1
+O 1 106401 1 106401
+O 1 106003 1 106401
+M 1 106402 1 106404
+O 1 106003 1 106406
+O 1 106003 1 106500
+D 0 106500 0 1
+D 0 106501 2 0
+D 0 106503 4 0
+M 1 106500 1 106506
+E 1 106500 1 26
+E 1 106502 1 28
+D 0 106506 5 1
+M 1 106501 1 106510
+E 1 106501 1 27
+M 1 106502 1 106511
+O 1 106003 1 106511
+M 1 106503 6 106513
+M 1 106503 6 106514
+M 1 106503 6 106520
+G 1 106203 1
+M 1 106503 6 106522
+M 1 106503 6 106524
+M 1 106503 6 106529
+M 1 106504 1 106531
+E 1 106503 1 26
+O 1 106003 1 106532
+O 1 106506 1 106533
+M 1 106505 6 106534
+M 1 106505 6 106536
+O 1 106506 1 106539
+O 1 106505 1 106539
+D 0 106539 10 0
+O 1 106506 1 106543
+M 1 106505 6 106544
+O 1 106506 1 106544
+M 1 106505 6 106545
+M 1 106505 6 106546
+M 1 106505 6 106547
+O 1 106504 1 106547
+O 1 106506 1 106549
+M 1 106506 1 106550
+E 1 106507 1 21
+O 1 106508 1 106550
+M 1 106507 1 106551
+M 1 106601 1 106601
+M 1 106600 1 106602
+M 1 106602 1 106603
+M 1 106604 1 106605
+M 1 106603 1 106604
+S
+
+
+#SHOPS
+0
+
+
+#REPAIRS
+0
+
+
+#SPECIALS
+M  106501 spec_cast_mage
+M  106502 spec_cast_mage
+M  106503 spec_cast_mage
+M  106504 spec_cast_mage
+M  106507 spec_thief
+S
+
+
+#$

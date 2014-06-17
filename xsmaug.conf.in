@@ -1,0 +1,15 @@
+#
+# @PACKAGE@ Server Config
+#
+
+@PACKAGE@=@PACKAGE@
+version="@VERSION@"
+
+bin="@bindir@"
+data="@datarootdir@/@PACKAGE@"
+realm="realm"
+
+host="localhost"
+port="4000"
+
+log="@localstatedir@/log/@PACKAGE@/@PACKAGE@-server.log"

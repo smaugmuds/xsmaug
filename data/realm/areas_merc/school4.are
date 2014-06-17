@@ -1,0 +1,1864 @@
+#AREA {1 3} Yaegar The Tower of Training~
+
+#MOBILES
+#3700
+first acolyte~
+the first acolyte~
+An acolyte clad in robes of white smiles and bids you welcome.
+~
+This fellow is a loyal devotee of the powers of the world, and is here to
+assist in the training of new arrivals. You see the wisdom of many decades
+of life reflected in his eyes.
+~
+2|64|33554432 128 1000 S
+10 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_act~
+smiles at you.~
+E
+.arrive_say~
+Welcome, traveller, to the Tower of Training.~
+E
+.look_say~
+Look at the plaques and signs, not me.~
+E
+.leave_say~
+Don't forget to read everything you see!~
+#3701
+lady second acolyte~
+the second acolyte~
+An elderly lady clad in purple robes greets you.
+~
+This woman is a loyal devotee of the powers of the world, and is here to
+assist in the training of new arrivals. You see the wisdom of many decades
+of life reflected in her eyes.
+~
+2|64|33554432 128 1000 S
+20 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_act~
+smiles at you.~
+E
+.arrive_say~
+Welcome, traveller, to the Second Tier.~
+E
+.look_say~
+Look at the plaques and signs, not me.~
+E
+.leave_say~
+Try every room on each level!~
+#3702
+first adept~
+the first adept~
+A man clad in green robes sits behind a desk here, reading an old tome.
+~
+This adept is in charge of the lesser acolytes, and also assists in the
+training of newcomers by helping them enhance their statistics. For more
+information, read the signs or type HELP ENHANCE.
+~
+2|64|512|33554432 128 1000 S
+30 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_act~
+looks up briefly from his book, points to a plaque, and says nothing.~
+E
+.look_say~
+Type HELP ENHANCE.~
+E
+.say_say~
+Don't just stand there! Enhance!~
+E
+.leave_tell~
+Have you used all yuor enhances?~
+#3703
+shopkeeper~
+a stout shopkeeper~
+A short, stout man stands here, looking at you expectantly.
+~
+This stout yeoman negotiates the vending of necessities to new entrants to
+the lands, at a reasonable price (he is subsidised by the Curate). He will
+be happy to sell you a variety of foods and drinks.
+~
+2|64|33554432 128 1000 S
+5 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_say~
+Can I help you?~
+E
+.arrive_act~
+raises his eyebropws expectantly.~
+E
+.look_act~
+raises his eyebrows in question.~
+E
+.leave_tell~
+good luck, traveller!~
+#3704
+third acolyte~
+the third acolyte~
+A small man clad in leather armor smiles at you.
+~
+This is the third acolyte, who is in charge of the combat cages, where new
+players are able to increase their combat skills. He will be happy to help
+heal any injuries you sustain during your travails.
+~
+2|64|2048|33554432 128 1000 S
+40 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_act~
+smiles and bows.~
+E
+.arrive_say~
+Make sure you enter all four cages, and take the equipment you find.~
+E
+.arrive_say~
+The monsters do regenerate, so be not afraid to tarry and gain experience.~
+E
+.leave_tell~
+Are you wearing all your new equipment?~
+#3705
+plains goblin~
+a plains goblin~
+A small, wiry goblin is kept locked in this cage.
+~
+This foul little goblinkin is one of hundreds that roam the vast Plains of
+Blood, scavenging the leavings of bigger creatures. It shouldn't be too
+difficult to slay.
+~
+2|64 512 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_act~
+grunts at you.~
+E
+.attack_act~
+lets out a high-pitched wail and attacks!~
+E
+.die_act~
+collapses in a pool of its own gore.~
+#3706
+kobold~
+a river kobold~
+A slimy kobold sneers at you.
+~
+This repulsive creature is a river kobold- small, slimy denizens of the mud
+flats near the banks of the River Anon. It is very cowardly and weak, and
+shouldn't be too hard to overcome.
+~
+2|64 512 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_act~
+eyes you nervously.~
+E
+.look_act~
+Tries to avoid your gaze.~
+#3707
+gnome~
+a rabid gnome~
+A wizened old gnome sits in one corner of this cage, gibbering.
+~
+Normally a benevolent race, the gnomes have, like all other races at one
+time or another, produced abberations, and this twisted individual is one
+of them. Cast out of his village after his penchant for gnome flesh was
+uncovered, he is now kept here to help train newcomers.
+~
+2|64 512 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_act~
+gibbers and drools all over himself.~
+E
+.attack_yell~
+Dieeeeee!~
+E
+.look_act~
+snarls angrily at you.~
+E
+.die_say~
+Aieeeeee!~
+#3708
+skeleton~
+a skeleton~
+A pile of bones springs to life as you enter!
+~
+The Adept has used advanced magicks to bring the skeleton of a former student
+to life, to serve both as a warning to newcomers as to what awaits them if
+they fail, and as a decent challenge for new students.
+~
+2|32|64 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 0 0
+E
+.arrive_act~
+steps toward you.~
+E
+.die_act~
+collapses to the floor, reverting to the pile of old bones it once was.~
+#3709
+corpse zombie~
+a zombie~
+A rotting corpse lurches towards you.
+~
+This is the reanimated remains of a former student who perished in these
+rooms. Best be careful!
+~
+64|8388608 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 0 0
+E
+.arrive_act~
+staggers toward you, death in its cold grey eyes.~
+E
+.attack_act~
+groans as your blows meet with its pulpy flesh.~
+E
+.die_act~
+staggers once, then falls lifeless to the ground.~
+#3710
+wolf~
+a scrawny wolf~
+A scrawny wolf slinks past you.
+~
+This underfed scavenger was snatched from the plains months ago and set
+loose here to serve as target practice for new students.
+~
+64|128|8388608 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_act~
+doesn't seem to keen to fight you.~
+E
+.attack_act~
+yelps in surprise and fear.~
+#3711
+spider~
+a spider~
+A spider the size of your hand scuttles toward you.
+~
+The spiders of Arachnos are legendary both for their size and their appetite
+for fresh meat; both attributes make you feel remarkably uneasy.
+~
+64|8388608 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 0 0
+E
+.arrive_act~
+scuttles along the ground. It looks quite hideous.~
+E
+.say_act~
+has been alerted to yuor presence by your voice.~
+E
+.die_act~
+explodes under the impact of your final blow, sending ichor spraying everywhere.~
+#3712
+rat~
+a giant rat~
+A giant rat scurries out of a crack in the wall.
+~
+The acolytes snatched several large rats from the network of lairs that lies
+east of town, and set them loose in here, to serve as prey for newcomers.
+~
+64|8388608 512 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_act~
+squeaks noisly and begins to gnaw on an old bone.~
+E
+.attack_act~
+shrieks and attempts to sink its teeth into your leg.~
+#3713
+cockroach~
+a cockroach~
+A cockroach the size of your forearm runs along the floor here.
+~
+A boat from Freeport docked near the city recently, and the astonished
+dockworkers found these specimens among its cargo. The acolytes were called,
+and the cockroaches were brought here.
+~
+64|8388608 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+0 0 0
+E
+.arrive_act~
+scuttles by. You are amazed at its size.~
+E
+.attack_act~
+, to your amazement, fights back!~
+E
+.die_act~
+shudders as your blows crushes its carapace, and squirts out some white ooze.~
+#3714
+fourth acolyte~
+the fourth acolyte~
+A stern half elf clad in black robes stares grimly at you.
+~
+This acolyte observes trainees in their efforts on this tier. He will not
+interfere in any combat, though he will cure the injuries of those injured
+in the process of advancement.
+~
+2|64|2048|33554432 128 1000 S
+40 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_say~
+Welcome, traveller, to the Fifth Tier. Fight well, and keep your eyes open.~
+E
+.look_say~
+Don't stand there gaping! Go and do battle!~
+E
+.leave_tell~
+Keep your wits about you, and come back here if you need healing.~
+#3715
+monster tower~
+the monster of the tower~
+A huge, bestial man strides out of the shadows.
+~
+This mutant is the aptly-named monster of the tower, and is the final foe
+all trainees must face before leaving.
+~
+2|64 0 0 S
+3 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_act~
+rushes towards you.~
+E
+.arrive_yell~
+RRRRRROOOOOOAAAARRRRRRR!~
+E
+.look_act~
+swipes at your head.~
+E
+.die_act~
+screams horribly and dies.~
+#3716
+curate~
+the curate~
+An elderly gentleman clad in robes trimmed with silver greets you.
+~
+The curate will give you your reward for completing the trials you have
+just faced, in the form of a book of knowledge that will aid you
+immeasurably in your travels ahead. Simply talk to him and he will hand
+it over.
+~
+2|64|2048|33554432 128 1000 S
+60 0 0 0d0+0 0d0+0
+0 0
+0 0 1
+E
+.arrive_act~
+smiles.~
+E
+.arrive_say~
+Well done!~
+E
+.look_give~
+3722~
+E
+.tell_tell~
+Another one? Oh alright.~
+E
+.tell_give~
+3722~
+#0
+
+#OBJECTS
+#3700
+sickle~
+a sickle~
+You see a steel sickle lying here.~
+~
+5 64 1|8192
+0 2 3 7
+5 0 5
+A
+12 5
+A
+18 3
+A
+19 1
+#3701
+dagger~
+a small dagger~
+You see a short thrusting dagger here.~
+~
+5 64 1|8192
+0 2 3 11
+5 0 5
+A
+12 5
+A
+18 3
+A
+19 1
+#3702
+broadsword sword~
+a broadsword~
+You see a heavy broadsword here.~
+~
+5 64 1|8192
+0 2 3 3
+5 0 5
+A
+18 3
+A
+19 1
+#3703
+gambeson~
+a leather gambeson~
+A sweaty, smelly gambeson is here.~
+~
+9 0 1|8
+0 0 0 0 
+1 0 0
+A
+5 1
+E
+gambeson~
+This gambeson is slightly moist with sweat and smells REALLY bad.
+~
+#3704
+shield~
+a target shield~
+You see a small shield here.~
+~
+9 0 1|512
+2 0 0 0
+5 0 5
+A
+17 -3
+#3705
+goatskin water skin~
+a water skin~
+A goatskin full of water is here.~
+~
+17 0 1|16384
+5 5 0 0 
+1 0 0
+#3706
+bowl gruel~
+a bowl of watery gruel~
+A bowl of watery gruel coagulates here.~
+~
+19 0 1|16384
+7 0 0 0 
+1 0 0
+#3707
+sweetmeats~
+sweetmeats~
+Some sweetmeats lie here.~
+~
+19 0 1|16384
+7 0 0 0 
+1 0 0
+#3708
+black bread~
+a piece of black bread~
+A coarse-mealed piece of black bread lies here.~
+~
+19 0 1|16384
+7 0 0 0 
+1 0 0
+#3709
+bowl frumenty~
+a bowl of frumenty~
+A bowl of boiled wheat grain sits here.~
+~
+19 0 1|16384
+7 0 0 0 
+1 0 0
+#3710
+dirty grey cloak~
+a dirty grey cloak~
+A dirty grey cloak has been discarded here.~
+~
+9 0 1|1024
+0 0 0 0 
+1 0 0
+A
+19 1
+#3711
+leather wristband~
+a leather wristband~
+A strip of leather lies on the ground here.~
+~
+9 0 1|4096
+0 0 0 0 
+1 0 0
+A
+1 1
+#3712
+crude leather necklace~
+a crude leather necklace~
+A leather thing with a piece of quartz affixed to it lies here.~
+~
+9 0 1|4
+0 0 0 0 
+1 0 0
+A
+19 1
+#3713
+breeches~
+a pair of stained leather breeches~
+These leather breeches have been soiled by a past owner.~
+~
+9 0 1|32
+0 0 0 0
+5 0 0
+A
+2 1
+#3714
+boots~
+a pair of deerskin boots~
+A pair of boots fashioned from deerskin lie here. They look very comfortable.~
+~
+9 0 1|64
+0 0 0 0 
+1 0 0
+A
+14 20
+A
+25 1
+#3715
+pair leather gauntlets~
+a pair of leather gauntlets~
+A pair of leather gauntlets lie here.~
+~
+9 0 1|128
+0 0 0 0 
+1 0 0
+A
+18 1
+A
+25 -1
+#3716
+torch switch~
+a pitch-soaked switch~
+This pitch-soaked switch serves as a decent, though smoky, torch.~
+~
+1 1|64 1
+0 0 200 0
+1 0 0
+A
+23 -1
+A
+24 -1
+#3717
+leather helm~
+a leather helm~
+This leather helm has seen better days. So has its former owner.~
+~
+9 0 1|16
+0 0 0 0 
+1 0 0
+A
+4 1
+#3718
+armband~
+a copper armband~
+A copper armband has been left here.~
+~
+9 0 1|256
+0 0 0 0 
+1 0 0
+A
+5 1
+#3719
+rope belt~
+a rope belt~
+A soiled rope belt is here.~
+~
+9 0 1|2048    
+0 0 0 0
+1 0 0
+A
+13 5
+#3720
+garbage~
+a piece of garbage~
+A piece of garbage.~
+~
+9 0 1
+0 0 0 0
+1 0 0
+#3721
+whip~
+an official AnonyMud whip~
+You see an official AnonyMud whip here.~
+~
+5 64 1|8192
+0 2 3 4
+5 0 5
+A
+2 1
+A
+18 3
+A
+19 1
+#3722
+book knowledge~  
+A book of knowledge~
+A thick book lies here.~
+~
+13 0 1|16384
+0 0 0 0
+1 0 0
+A
+1 1
+A
+2 1
+A
+3 1
+A
+4 1
+A
+5 1
+A
+12 5
+A
+13 5
+A
+14 5
+A
+18 1
+A
+19 1
+#3723
+portal~
+a portal~
+A magic portal floats in the center of the room.~
+~
+33 1|2 0
+3739 0 0 0
+1 0 0
+E
+portal~
+This portal is one of many magical gateways that can be found across the
+world of Anon, and they allow you to reach areas instantly that would take
+ages to reach by foot, or even to reach other dimensions. For more
+information, type HELP PORTAL. There is a portal chamber in town with 
+portals that can take you to other worlds. There are also several portals 
+in the village green, located north of the temple in town.
+
+When you are done on this level, type ENTER PORTAL to proceed to the final
+stages of the tower. But only when you are done, for it will not be possible
+to return this way. A block on the portal will prevent you from entering if
+you are level 1.
+~
+#3724
+key~
+a red key~
+A small red key lies here.~
+~
+18 0 1|16384
+0 0 0 0
+1 0 0
+#3725
+portal~
+a portal~
+A magic portal floats in the center of the room.~
+~
+33 1|2 0
+31001 0 0 0
+1 0 0
+#3726
+chain~
+a long chain~
+A long chain hangs from the trapdoor above. There is a sign next to it.~
+~
+15 70 0
+1 0 0 0
+1 0 0
+E
+.trigo_dooropen~
+up~
+E
+sign~
+Try pulling the chain- PULL CHAIN should work nicely.~
+#23400
+tower ring~
+a tower ring~
+This ring is worn by graduates of the Tower of Training.~
+~
+9 1 1|2
+0 0 0 0
+1 0 0
+A
+18 1
+A
+19 1
+#23401
+sword~
+a plain sword~
+A nondescript sword lies here.~
+~
+5 0 1|8192
+0 0 0 11
+5 0 0
+A
+18 1
+A
+19 1
+#23402
+sack~
+a small sack~
+You can use this sack to carry items you find.~
+~
+15 0 1|16384
+25 1 0 0
+1 0 0
+#0
+
+#ROOMS
+#3700
+The First Tier of the Tower~
+You emerge from the portal into a spacious hall, the walls and ceiling of
+which are mirrored, giving one the feeling of having stepped into a hall
+of infinite proportions. In the center of this hall, upon a small marble
+dais is seated a robed figure, who beckons you to approach. A large plaque,
+carved from marble and inlaid with gilt letters, has been placed on one wall
+next to a silver staircase that ascends to the next tier.
+~
+0 8 0
+D0
+~
+~
+0 -1 3702
+D1
+~
+~
+0 -1 3703
+D3
+~
+~
+0 -1 3701
+D4
+~
+~
+0 -1 3704
+E
+Plaque~
+The plaque reads-
+
+Welcome, adventurer, to the first tier! As a complete novice in the ways of
+this world, you have much to learn. Hopefully, however, the acolytes of the
+tower will be able to aid you in your progress. From here, you should
+journey to the other three rooms on this level before continuing upwards.
+To travel anywhere in the world, simply enter the first letter of the
+desired direction, i.e, n s e w u or d.
+~
+S
+#3701
+The Chamber of Communication~
+You pass from the mirrored hall into a small room filled with murals
+depicting people of all races talking with one another. From far away you
+can hear the murmur of many, many voices, speaking in tones subdued, angry,
+happy, friendly, sad and arrogant. Such is the imagery of this place you
+feel as though you were actually standing within a crowded room. There is a
+plaque on one wall.
+~
+0 8 0
+D1
+~
+~
+0 -1 3700
+E
+plaque~
+(From the book of Tongues, 1.2)- "And then, seeing the many races mingling
+upon the surface of their world, and having no way to communicate, the Gods
+did grant upon them the gift of tongues, so that they would be able to
+communicate freely with each other, and there was great happiness."
+
+You can communicate with your fellow adventurers using the many communication
+channels available. The channels currently available to you are- TELL, HERO,
+SAY, EMOTE, YELL. Other channels will become available when you become more
+experienced. These are- CHAT, SHOUT, MUSIC, QUESTION, GRATZ. For more
+information on any of these channels, type HELP <channel name>.
+~
+S
+#3702
+The Room of Awareness~
+This small stone chamber is bare save for a huge lidless eye painted upon the
+far wall. You find yourself growing uncomfortable under its scrutinizing
+gaze, such is the striking realism of this depiction. A small plaque has
+been attached to the wall beneath it.
+~
+0 8 0
+D2
+~
+~
+0 -1 3700
+E
+plaque~
+(From the Book of Beginnings, 1.17) "...and so that their creations could
+interact with their home, the Gods gave them the gift of thr senses, of
+sight, of smell, of hearing, of touch and of taste. And their many creations
+ventured forth into the world with new joy in their hearts, for they could
+now fully appreciate the wonders of it all."
+
+The gods have given you the same gifts, and these senses, most importantly
+sight, can play a crucial role in your adventuring. To examine any object,
+room or person that you may encounter, type LOOK <name> or EXAMINE <name>.
+For information, type HELP LOOK. In addition, you can instantly see all the
+visible adventurers around you by typing WHO- this will display them all.
+Typing WHERE will show the ones that are near you.
+~
+S
+#3703
+The Chamber of Objects~
+This chamber is crammed to the rafters with wooden chests, boxes and caskets,
+all of which are tightly locked, though a quick push indicates they are full
+of many heavy objects. You have no idea what purpose they serve, but you do
+notice a plaque nailed to one of the larger crates.
+~
+0 8 0
+D3
+~
+~
+0 -1 3700
+E
+Plaque~
+(From the Book of Travails, 7.13) "Such became the peoples' desire for
+possessions that they searched far and wide, buying, borrowing, taking or
+stealing every manner of object they could find. And the avaricious peoples'
+collections grew so large that their lust for possessions necessitated the
+construct of increasingly ponderous domiciles."
+
+Like any other adventurer, you too will experience the desire to obtain large
+amounts of possessions, both arcane and mundane, and will need to know how to
+acquire such items. To pick up items, type GET <item>, while to remove them
+simply type DROP or REMOVE <item>. To use the items, type WEAR, WIELD or HOLD
+<item>, as appropriate. To see what you are currently wearing, type EQ, and
+to see what you are carrying but not using, type INV. For more information,
+consult the appropriate help files. Items you don't want can be sold, as you
+will be taught later, or DONATED. Donated items appear in a special room in
+the city, which you will find later. To donate simply type DONATE <object>.
+~
+S
+#3704
+The Second Tier~
+You enter a long, narrow corridor that has four wooden doors, one at each
+of the four cardinal directions. In the center of the room rests a massive
+oak chair, next to a blazing fire in a hearth. Seated in the chair is the
+Second Acolyte, who nods and beckons you over. There is a plaque hanging
+above the hearth.
+~
+0 8 0
+D0
+~
+~
+1 0 3705
+D1
+~
+~
+1 0 3708
+D2
+~
+~
+1 0 3707
+D3
+~
+~
+1 0 3706
+D4
+~
+~
+0 -1 3709
+D5
+~
+~
+0 -1 3700
+E
+plaque~
+On the second tier, you will continue your learning process, by passing
+through the doors to the north, south, east and west. To open the doors,
+simply type OPEN <direction>, and then head into the room beyond. Further
+information will follow.
+~
+S
+#3705
+The Room of Self-Awareness~
+You pass into what appears to be a small study. A sturdy desk fashioned of
+what appears to be cedar rests in the center of the floor, upon a delicately-
+embroidered rug. Several shelves filled with tomes of arcane lore line the
+walls. You are surprised to see that there are no chairs in the room-
+evidently someone doesn't wish for you to tarry too long in here. There is
+a piece of paper lying on the desk you may wish to read.
+~
+0 8 0
+D2
+~
+~
+1 0 3704
+E
+piece paper~
+On the piece of paper, someone has hastily scrawled the following-
+(From the Book of Enlightenment, 4.23) "And as the races progressed, they
+gradually became more cognizant of their abilities and limitations, and
+developed ways to more accurately measure this. Learned scholars and sages,
+who could previosuly so easily determine the attributes of an item, could
+now do the same with a humanoid." You too can find out what your abilities
+and limitations are, by typing SCORE. This will output your character sheet,
+detailing all the important information. For a more detailed report, type
+STATUS. To see what enchantments are currently affecting you, type AFF. More
+information is as usual available in the help files.
+~
+S
+#3706
+The Chapel~
+You have entered a small, serene chapel with wood pannelled walls, a shrine
+to the Gods of the world. A plain wooden altar covered with a white sheet
+stands near the far wall. Upon it you can see a small silver plaque.
+~
+0 8 0
+D1
+~
+~
+1 0 3704
+E
+plaque~
+(From the Book of Beginnings, 2.19) "The Gods were many in number, and great
+was their power and their wisdom. For it was through their munificence that
+the world and all its peoples came into being, and it is well that we should
+give thanks to these the creators." You may see who the gods of the world are
+by typing WIZLIST. For more information on the gods and immortality, try
+HELP IMMORTALS or HELP WIZLIST.
+~
+S
+#3707
+The Room of Access~
+This large, dusty chamber is lined with doors, windows and other portals, and
+is filled with chests and boxes, opened and closed. The air in here is rather
+musty, and you sneeze as you inhale some of the dust you stirred up as you
+entered. There is a piece of slate with some chalk lying next to it on the
+floor.
+~
+0 8 0
+D0
+~
+~
+1 0 3704
+E
+slate~
+Someone has scribbled the following-
+(From the Book of the Kender, 1.7) "None can open things as the Kender; their
+gift for unfastening the most securely locked portals or chests is
+legendary. Indeed, it was this ability which caused them to first suffer the
+wrath of the other races of the world..." Now not all adventurers have the
+same abilities as the Kender, but all possess the ability to open and close
+doors, as you have been shown, as well as objects. You can open a chest, box
+or similar by typing OPEN <item>, then you can look in it by typing LOOK IN
+<item>. Fetching whatever is in there is achieved by typing GET <item>
+<container>. Some containers or portals may be locked- if you have a key
+you may bypass this by typing UNLOCK <item>. This command will be important
+further up the tower. Thsese commands can be reversed simply by typing CLOSE
+<item>, PUT <item><container> or LOCK <container>.
+~
+S
+#3708
+The Chamber of Nature~
+When you first enter this room, you have to blink and shake your head to
+convince yourself you're not dreaming, for it appears that you have entered
+a sylvan glade. But what appeared so real at first turns out to be naught but
+an extremely good mosaic, and you shake your head in disbelief. There is a
+small sign hanging from the "branch" of a nearby "tree".
+~
+0 8 0
+D3
+~
+~
+1 0 3704
+E
+sign branch tree~
+(From the Book of Nature Lore, 1.4) "and then didst the Gods bring the
+elements to the world, fire, water, earth and air, and the influence they
+wrought was great. The world was molded and shaped by these elements, as
+well as by the action of elements acting in concert, as the ages passed."
+You can keep well informed of meteorological phenomena in the world by
+typing WEATHER. Typing TIME will inform you of the current date, as well as
+the time in other worlds. Weather is important, as inclement weather can
+adversely affect certain abilities you possess. Time is also important, as
+certain shops are only open for limited hours in the day.
+~
+S
+#3709
+The Third Tier~
+This entire level is dominated by a large circular chamber, which seems to
+be a combined library and museum. You see rows and rows of bookshelves
+alongside large marble and granite scupltures of beings as yet unknown to
+you. Wall-length paintings adorn the walls, and several antique vases and
+pots can be seen in a glass cabinet. A large desk is situated in the center
+of the room, and behind this desk is seated the First Adept, who gives you
+a cursory glance as you enter, before returning to his book. A set of
+stairs leads up to the next tier, and beside this hangs a small sign.
+~
+0 8 0
+D4
+~
+~
+0 -1 3710
+D5
+~
+~
+0 -1 3704
+E
+Sign~
+(From the Book of Conflicts, 7.23) "...and the mortals made themselves even
+more competent by enhancing their abilities beyond those of their fellows,
+granting them superior strength, dexterity, intelligence, wisdom, charisma
+and constitution,  and making them foes to be feared." You can enhance your
+statistics here with the Adept. He will Enhance the stats you desire. To
+enable this, simply type ENHANCE <stat name, i.e, str int wis dex con chr>.
+But before you rush in and enhance, take a minute to read HELP PRACTICE,
+HELP PRACTICES, HELP SECONDARY and HELP <your race> for good advice on what
+exactly to enhance.
+~
+S
+#3710
+The Fourth Tier~
+You have entered a small corridor with a coarse, heavy rug on the floor, deep
+purple in color. Silver chandeliers hang from the white-washed ceiling,
+illuminating the mirrored walls. You feel quite dizzy. There is a marble
+plinth near one wall, with a book resting half opened on it. Curiously,
+there is no Acolyte here- evidently they have given you what aid they
+deem necessary. Small passages lead off the corridor in all four directions.
+~
+0 8 0
+D0
+~
+~
+0 -1 3711
+D1
+~
+~
+0 -1 3712
+D2
+~
+~
+0 -1 3713
+D3
+~
+~
+0 -1 3714
+D4
+The sign reads- PULL THE CHAIN!
+~
+trapdoor~
+1 -1 3715
+D5
+~
+~
+0 -1 3709
+E
+book plinth~
+The book is open to The Book of Beginnings, Chapter 9 verse 34)- "And then
+the peoples paused in their activities, to ponder all they had learned thus
+far. And while there was much to assimilate, their minds were agile and they
+gained great understanding. Then they resumed their advancement..." You can
+stop here and have a read of the many help files that have been recommended
+to you thus far, then continue at your leisure. Investigate the four rooms
+on this tier before continuing upwards, though.
+~
+S
+#3711
+The Bedchamber~
+This well-appointed chamber is dominated by a massive four-poster bed,
+carved from some dark red wood, which is covered with veils of satin and lace,
+and deep, soft bedding. You feel a great sense of fatigue when you gaze upon
+it, and sudenly realize how tired you are. Perhaps you would care to rest for
+a period? But first, stop and read the small note someone has attached to
+the foot of the bed.
+~
+0 8 0
+D2
+~
+~
+0 -1 3710
+E
+note~
+Someone has written, in a carefully-formed flowing script, the following-
+(The Book of Beginnings, Ch.23, v.23) "And then the Gods, exhausted by their
+efforts, fell into a deep slumber from which they did not awaken for seventy
+seven years, to regenerate their tired forms. And when they awoke, they were
+as new, and set about once more their many tasks." You will also find your
+reserves depleted from time to time. Sleeping is a quick and efficient way
+of recharging your lost energy, but it leaves you defenseless. You can
+spend time in a stae of semi-wakefulness by typing REST, so that none may
+surprise you. To rise from either state, type STAND. To move from SLEEP to
+REST, type WAKE.
+~
+S
+#3712
+An Apothecary~
+You have entered a quaint, well-stocked apothecary. The shelves are lined
+with all manner of poultices and brews, though most are quite beyond your
+price range. There is a small brass plaque behind the stout shopkeeper which
+may be of interest.
+~
+0 8 0
+D3
+~
+~
+0 0 3710
+E
+plaque~
+(From the Book of Commerce, 1.3) "...all manner of businesses sprang up,
+as mercantilism struck like a bolt from heaven the avaricious peoples of the
+world. All manner of goods were bought and sold, and all at once trade and
+commerce brought people from all over the world together, simply to negotiate
+the vending of rare and exotic goods." You will often find yourself in need
+of a shop, either to re-equip yourself or to sell unwanted equipment. You
+can experiment with the following commands with the shopkeeper in this room-
+LIST- lists all the products for sale; BUY <product> purchases a product;
+SELL <product> sells one of your products; VALUE <product> tells you what
+the shopkeeper is willing to pay for your item. NOTE- you can limit the
+commands to list items of a certain type or level, i.e, LIST SHIELD will list
+all shield for sale, and LIST 20 30 will list all items that fall within that
+range. If there are multiple items of the same type in the list, type BUY
+x.<item> to buy the one you want, where x is the number the item is on the
+list. You can also buy multiple items of the same type buy typing BUY x <item>,
+i.e, BUY 6 BREAD will buy you six loaves of bread.
+~
+S
+#3713
+The Chamber of Transport~
+You enter a chamber with grey stone walls and a polished wooden floor.
+Pictures of horses, carts, boats and other stranger items hang from the walls.
+There is a small wooden plaque affixed to the far wall.
+~
+0 8 0
+D0
+~
+~
+0 0 3710
+E
+Plaque~
+(From the Book of Commerce, Ch.3, v.10) "To make transport and the transfer
+of goods easier, the peoples did ingeniously harness the materials the Gods
+supplied and fashioned alternatives. The peoples begain to ride the lesser
+animals, to ride in carts and buggies, and to sail the wide seas in great
+ships of wood and steel." Besides walking, there are many other ways you
+can move about the world. Firstly, you can ride certain animals, most
+notably those available from the stables in town, which you will visit later.
+These can be ridden using the MOUNT command. Boats and carts can be used
+using the ENTER command, i.e, ENTER BOAT, and then by moving normally. Typing
+OUT will allow you to exit. One rather special means of movement is the
+RECALL command, which will transport you instantly to the city center, from
+any part of the world. For more information, type HELP RECALL.
+~
+S
+#3714
+The Chamber of Salvation~
+You have entered a rather depressing room, which is "decorated" with a mural
+depicting cursed souls falling into a blazing abyss, their earthly possessions
+disappearing as they fall. However, on the other wall, you see the same souls
+emerging from the abyss, and returning to the physical world to reclaim their
+goods. There is a metal plaque which will hopefully explain this bizarre
+scene.
+~
+0 8 0
+D1
+~
+~
+0 0 3710
+E
+plaque~
+(From the Book of the Dead, 1.1)"There comes a time when all mortals face
+the grim spectre of death, and are hurled into the burning depths of the
+abyss, their souls torn asunder. The Gods however, in their benevolence,
+have effectively cheated death by granting instant rebirth to those who
+have died, so that they may return to their world and travel again." Death
+is a cold, hard fact of life in this world, and you will undoubtedly perish
+many times at the hands of foul, evil monsters more powerful than yourself.
+But despair not! For upon dying, your soul flies back to the place of recall,
+and you may set out to reclaim your possessions from the place where you
+were slain. But there may be many dangers in between you and your corpse,
+and you may not reach it before it decays. In that event, you will be forced
+to acquire new equipment.
+~
+S
+#3715
+The Fourth Tier~
+You emerge onto a small metal platform that joins four metal cages, these
+cages depending from massive metal chains connected to the ceiling. In each
+of these cages you can see a small huddled shape. An Acolyte stands here,
+smiling and beckoning you onward. You see a large glowing sign floating in
+mid air above his head. There is also a plaque nailed to one of the cages.
+It is recommended you stay here until you reach second level.
+~
+0 8 0
+D0
+~
+~
+0 -1 3716
+D1
+~
+~
+0 -1 3717
+D2
+~
+~
+0 -1 3718
+D3
+~
+~
+0 -1 3719
+D4
+~
+~
+0 -1 3720
+D5
+~
+~
+1 0 3710
+E
+sign~
+(From the Book of Conflict, 1.12) "And the peoples of the world found
+themselves in constant conflict with the many hostile beasts of the lands,
+and thus developed measures to protect themselves. And as they threats
+increased, so too did the abilities of the peoples to defend themselves."
+The acolytes have captured some small creatures from the Plains of Blood
+and caged them here to help novices practice their combat abilities. You
+may at any time head on in and try your hand at battling them. Victory will
+earn you the items the Acolytes have placed on them. In order to see how
+you match up against a mob, type CON <name of mob>.  If you decide that 
+you want to challenge it, type KILL <name of mob>.  However, sometimes 
+a mob can just be more than you expected.  To escape from fighting, type 
+FLEE.  However, this only gives a chance of escaping, and does not guarantee
+that you do.  A safeguard to take is to decide on a level of hp that you 
+would always like to try to flee at.  You can set your character to 
+automatically try by typing WIMPY <#hp>. Typing WIMPY with no figure will
+automatically set this at 20% of your maximum hitpoints. Try this right now
+by typing WIMPY 15. This will cause you to automatically flee a fight if your
+hit points drop below this number.
+~
+E
+Plaque~
+Now is your first chance to do some killing.  Before you start, be 
+sure that your wimpy is set, in case you get in trouble.  You should have 
+autoloot and autosac on (type info to check).  This will automatically 
+check each corpse for equipment and take it, and then sacrifice the empty 
+body.  To do this manually, simply type L CORPSE, GET ALL CORPSE, SAC CORPSE.
+To turn off the autos, type CONFIG -<configuation>.  The man in this 
+room will heal you between fights, so don't attack her (she'll kill you).
+As an added feature, this excellent Mud supports abbreviations, so that if
+you wish to battle a mob with a name like Chuzzlewit, you can type simply
+'k chuz', instead of 'kill chuzzlewit'.
+~
+S
+#3716
+A Small Dirty Cage~
+These cages are cramped and filthy and you pity the poor creatures the
+Acolytes have cages up in them. However, you are aware that these pathetic
+creatures are real dangers to travellers across the Plains of Blood, and
+vow to do your best to slay them.
+~
+0 8 0
+D2
+~
+~
+0 -1 3715
+S
+#3717
+A Small Dirty Cage~
+These cages are cramped and filthy and you pity the poor creatures the
+Acolytes have cages up in them. However, you are aware that these pathetic
+creatures are real dangers to travellers across the Plains of Blood, and
+vow to do your best to slay them.
+~
+0 8 0
+D3
+~
+~
+0 -1 3715
+S
+#3718
+A Small Dirty Cage~
+These cages are cramped and filthy and you pity the poor creatures the
+Acolytes have cages up in them. However, you are aware that these pathetic
+creatures are real dangers to travellers across the Plains of Blood, and
+vow to do your best to slay them.
+~
+0 8 0
+D0
+~
+~
+0 -1 3715
+S
+#3719
+A Small Dirty Cage~
+These cages are cramped and filthy and you pity the poor creatures the
+Acolytes have cages up in them. However, you are aware that these pathetic
+creatures are real dangers to travellers across the Plains of Blood, and
+vow to do your best to slay them.
+~
+0 8 0
+D1
+~
+~
+0 -1 3715
+S
+#3720
+The Fifth Tier~
+This Tier, like the Third Tier, is one large chamber, though unlike the
+Third Tier it is not filled with books and artifacts. Instead, it is filled
+with broken swords and shields, as well as the skeletons of slain animals
+and adventurers. Blood stains cover much of the floor, and a good deal is
+smeared on the walls as well. There is no sign here, but there is an
+Acolyte, who glares sternly at you. Stairs lead up to the second half of
+this Tier.
+~
+0 8 0
+D0
+~
+~
+0 -1 3722
+D1
+~
+~
+0 -1 3725
+D2
+~
+~
+0 -1 3727
+D3
+~
+~
+0 -1 3724
+D4
+~
+~
+0 -1 3729
+D5
+~
+~
+0 -1 3715
+S
+#3721
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D1
+~
+~
+0 -1 3722
+D2
+~
+~
+0 -1 3724
+S
+#3722
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D1
+~
+~
+0 -1 3723
+D2
+~
+~
+0 -1 3720
+D3
+~
+~
+0 -1 3721
+S
+#3723
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D2
+~
+~
+0 -1 3725
+D3
+~
+~
+0 -1 3722
+S
+#3724
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D0
+~
+~
+0 -1 3721
+D1
+~
+~
+0 -1 3720
+D2
+~
+~
+0 -1 3726
+S
+#3725
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D0
+~
+~
+0 -1 3723
+D2
+~
+~
+0 -1 3728
+D3
+~
+~
+0 -1 3720
+S
+#3726
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D0
+~
+~
+0 -1 3724
+D1
+~
+~
+0 -1 3727
+S
+#3727
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D0
+~
+~
+0 -1 3720
+D1
+~
+~
+0 -1 3728
+D3
+~
+~
+0 -1 3726
+S
+#3728
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D0
+~
+~
+0 -1 3725
+D3
+~
+~
+0 -1 3727
+S
+#3729
+Second Half of the Fifth Tier~
+This Tier, like the Third Tier, is one large chamber, though unlike the
+Third Tier it is not filled with books and artifacts. Instead, it is filled
+with broken swords and shields, as well as the skeletons of slain animals
+and adventurers. Blood stains cover much of the floor, and a good deal is
+smeared on the walls as well.
+
+A translucent forcefield prevents adventurers leaving before attaining third
+level.
+~
+0 8 0
+D0
+~
+~
+0 -1 3731
+D1
+~
+~
+0 -1 3734
+D2
+~
+~
+0 -1 3736
+D3
+~
+~
+0 -1 3733
+D4
+~
+~
+0 -1 3738
+D5
+~
+~
+0 -1 3720
+S
+#3730
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D1
+~
+~
+0 -1 3731
+D2
+~
+~
+0 -1 3733
+S
+#3731
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D1
+~
+~
+0 -1 3732
+D2
+~
+~
+0 -1 3729
+D3
+~
+~
+0 -1 3730
+S
+#3732
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D2
+~
+~
+0 -1 3734
+D3
+~
+~
+0 -1 3731
+S
+#3733
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D0
+~
+~
+0 -1 3730
+D1
+~
+~
+0 -1 3729
+D2
+~
+~
+0 -1 3735
+S
+#3734
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D0
+~
+~
+0 -1 3732
+D2
+~
+~
+0 -1 3737
+D3
+~
+~
+0 -1 3729
+S
+#3735
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D0
+~
+~
+0 -1 3733
+D1
+~
+~
+0 -1 3736
+S
+#3736
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D0
+~
+~
+0 -1 3729
+D1
+~
+~
+0 -1 3737
+D3
+~
+~
+0 -1 3735
+S
+#3737
+The Fifth Tier~
+Small, shadowy beasts slink away as you advance into the depths of this
+eerie level. Shouts and screams can be heard, quite close by, as well as
+the occasional gurgle or moan. You grip your weapon tightly and advance.
+~
+0 8 1
+D0
+~
+~
+0 -1 3734
+D3
+~
+~
+0 -1 3736
+S
+#3738
+The Sixth Tier~
+You have almost finished the Tower of Training. You have come to the second
+highest Tier of the tower, where a stern Acolyte stands silently. Floating in
+the center of this plain circular room is a shimmering portal. You may wish
+to examine it. There is also a metal plaque affixed to one wall.
+~
+0 8 0
+D5
+~
+~
+0 -1 3729
+E
+plaque~
+You have passed through most of the difficult sections of the Tower. Up
+ahead lies the final beast, the Monster of the Tower, whom you must defeat
+to exit the Tower. He also has the Heart Key, which you will need to unlock
+the gates above. 
+~
+E
+.trigr_bounce_below~
+2~
+S
+#3739
+The Monster of the Tower~
+You pass through the portal into the Seventh Tier, where your final
+challenge awaits you. Make sure you are fully rested before attempting to
+slay this last foe. There is a plaque hanging on a door to the north.
+~
+0 8 0
+D0
+~
+~
+1 3724 3740
+E
+plaque~
+(From the Book of the Beasts Ch.9 v.17) "And finally, there is the dire
+Tower beast, a horrid fiend with huge claws and fangs that constantly
+slaver in anticipation of an imminent feast on humanoid flesh. And while these
+beasts are relatively easy to kill, many an adventurer has met his end at
+its claws, after underestimating its strength and size."
+~
+S
+#3740
+The Final Chamber~
+Here, in this spacious, well-lit chamber the Curate of the Tower awaits,
+ready to give you your Tome of the Tower, as proof that you completed the
+trials within this place. Bona Fortuna! A portal here will take you to the
+center of the City of Anon, north of which lies the village green, where you
+should proceed next to new adventures!
+~
+0 8 0
+D2
+~
+~
+1 0 3739
+S
+#0
+
+#RESETS
+D 1 3704 0 1
+D 1 3704 1 1
+D 1 3704 2 1
+D 1 3704 3 1
+D 1 3705 2 1
+D 1 3706 1 1
+D 1 3707 0 1
+D 1 3708 3 1
+D 1 3710 4 1
+D 1 3715 5 1
+D 1 3739 0 2
+D 1 3740 2 2
+*
+O 1 3723 1 3738      loads portal
+O 1 3725 1 3740
+*
+O 1 3726 1 3710      loads chain
+*
+M 1 3700 1 3700      loads first acolyte
+*
+M 1 3701 1 3704      loads second acolyte
+*
+M 1 3702 1 3709      loads first adept
+*
+M 1 3703 1 3712      loads shopkeeper
+G 1 3705 0 0         stock
+G 1 3706 0 0
+G 1 3707 0 0
+G 1 3708 0 0
+G 1 3709 0 0
+G 1 3716 0 0
+G 1 23402 0 0
+
+*
+M 1 3704 1 3715      loads third acolyte
+*
+M 1 3705 1 3716      loads goblin
+E 1 3711 1 14        wears bracelets
+E 1 3711 1 15
+E 1 3714 1 8         wears boots
+*
+M 1 3706 1 3717      loads kobold
+E 1 3712 1 3         wears necklace
+E 1 3715 1 9         wears gauntlets
+*
+M 1 3707 1 3718      loads gnome
+E 1 3710 1 12        wears cloak
+E 1 3713 1 7         wears breeches
+E 1 3719 1 13        wears belt
+*
+M 1 3708 1 3719      loads skeleton
+E 1 23401 1 16       wields sword
+E 1 3717 1 6         wears helm
+*
+M 1 3709 6 3721      loads zombies
+E 1 3718 1 10        wears armbands
+*
+M 1 3710 6 3724      loads wolves
+*
+M 1 3711 6 3727      loads spiders
+*
+M 1 3712 6 3730      loads rats
+*
+M 1 3713 6 3733      loads cockroaches
+*
+M 1 3714 1 3720      loads fourth acolyte
+*
+M 1 3715 1 3739      loads monster
+E 1 23400 1 1        loads ring
+G 1 3724 0 0         gives key
+*
+M 1 3716 1 3740      loads curate
+G 1 3723 0 0         gives book
+*
+S
+
+#SHOPS
+3703 17 19 13 0 0 180 20 0 23
+0
+
+#SPECIALS
+M 3704 spec_cast_adept
+M 3714 spec_cast_adept
+S
+
+#TRIGGERS
+M 3700 trigm_alive
+M 3701 trigm_alive
+M 3702 trigm_alive
+M 3703 trigm_alive
+M 3704 trigm_alive
+M 3705 trigm_alive
+M 3706 trigm_alive
+M 3707 trigm_alive
+M 3708 trigm_alive
+M 3709 trigm_alive
+M 3710 trigm_alive
+M 3711 trigm_alive
+M 3712 trigm_alive
+M 3713 trigm_alive
+M 3714 trigm_alive
+M 3715 trigm_alive
+M 3716 trigm_alive
+O 3726 trigo_dooropen
+R 3738 trigr_bounce 
+S
+
+#$
+
+
+
+
+
+
+
+

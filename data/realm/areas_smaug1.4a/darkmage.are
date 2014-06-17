@@ -1,0 +1,2675 @@
+#AREA   The Swamp of the Dark Mage~
+
+
+
+#VERSION 1
+#AUTHOR Lorac~
+
+#RANGES
+30 65 10 65
+$
+
+#FLAGS
+0
+
+#ECONOMY 0 616972
+
+#CLIMATE 3 4 2
+
+#MOBILES
+#27100
+ogre beserker~
+An ogre beserker~
+An ogre beserker is here, frothing at the mouth in a battle frenzy
+~
+This ogre looks really mad! Better watch out
+~
+97 512 -400 C
+34 0 -160 5d10+710 0d0+0
+2500 0
+112 112 1
+19 10 10 13 17 5 10
+-15 0 -15 0 0
+6 3 0 0 17 16 1
+0 1 1775 2097152 2048 0 0 2
+#27101
+ogre swamplord~
+The Ogre Swamplord~
+The lord of this swamp stands here watching you
+~
+This exceptionally large and powerful ogre is obviously the ruler of this
+village and the surrounding swamp.
+~
+67 66216 100 C
+36 0 -190 4d35+875 0d0+0
+7000 0
+112 112 1
+19 12 12 14 17 9 14
+-15 0 -15 0 0
+6 3 0 0 17 16 0
+10 11 207 2097408 3072 0 256 524289
+#27102
+giant leech~
+A giant leech~
+A giant leech is searching for fresh blood here
+~
+This is one big bloodsucker
+~
+65 512 0 C
+10 0 0 1d10+105 1d2+1
+100 0
+112 112 0
+10 4 4 10 8 4 13
+0 0 0 0 0
+70 3 0 0 1802661751 1802661751 1
+2 0 40 256 3072 1 0 0
+#27103
+demon guardian~
+A greater Demon Guardian~
+A large demon stands here guarding his master's study from intruders
+~
+This leathery, black skinned demon has been ordered to let no one disturb
+his master.
+~
+99 34079400 -800 C
+39 0 -100 3d15+1110 0d0+0
+5000 0
+112 112 1
+17 11 12 14 15 13 13
+-10 -10 -10 -10 -10
+85 3 0 0 3044453 3044453 1
+0 0 1409199 73 3072 0 4 2
+#27104
+Koraz dark mage~
+Koraz~
+Koraz the Dark Mage is here, mixing together spell components
+~
+A renegade necromancer, Koraz prefers to live a life of solitary study in the
+arts of black magic.
+~
+99 373293224 -800 C
+50 0 -260 2d25+1500 0d0+0
+17000 0
+112 112 1
+14 22 20 15 13 15 15
+-15 -15 -15 -15 -15
+0 0 0 0 1 1 1
+50 33 2031 778 3072 0 8388624 18
+> all_greet_prog 100~
+if isimmort ($n)
+say Soon the power you wield will be mine as well...
+grin $n
+else
+say How dare you disturb my study!
+say Prepare to be the victim of my newest spell!
+c 'change sex' $n
+endif
+~
+|
+#27105
+skeleton deadite~
+A deadite~
+A skeletal deadite stands here
+~
+Once a mighty warrior, now reduced to only a skeletal form to serve the evil
+black dragon in undeath.
+~
+97 512 -600 C
+29 0 -30 4d13+840 0d0+0
+800 0
+112 112 0
+15 12 12 14 14 13 13
+-5 0 0 0 0
+60 3 0 0 1634497281 1634497280 0
+0 0 135 778 3072 1 64 2
+#27106
+cave troll~
+A cave troll~
+A cave troll glares at you in hatred
+~
+Forced to share his cavern home with the deadites, this troll clearly 
+isn't very happy at seeing you here as well.
+~
+197 512 -100 C
+22 0 -50 3d8+570 0d0+0
+300 0
+112 112 1
+18 10 10 12 16 10 13
+0 0 0 0 0
+8 3 0 0 65 64 1
+0 0 111 2097408 0 129 0 1
+#27107
+a wandering Ogre~
+A wandering Ogre~
+A wandering ogre is searching for food here
+~
+This Ogre is covered in mud and filth.
+~
+65 512 0 C
+31 0 -85 3d10+630 0d0+0
+1500 0
+112 112 1
+18 11 11 13 16 7 12
+-5 0 -5 0 0
+6 3 0 0 17 16 2
+1 4 47 2097152 0 0 0 2
+#27108
+large scorpion~
+A large scorpion~
+A very large scorpion with its stinger raised is hunting here
+~
+This is the biggest scorpion you have ever seen. Don't get too close, or it
+may be the last one you will ever see.
+~
+65 512 0 C
+19 0 0 2d10+340 0d0+0
+50 0
+112 112 0
+12 4 4 15 10 6 13
+0 0 0 0 0
+89 3 0 0 1634683905 1634683904 0
+3 0 65581 256 0 0 8 0
+#27109
+death knight~
+A Death Knight~
+A knight with blazing fire for eyes, dressed in black armor stands here to defend his master
+~
+Once a brave and honorable knight who fell into cowardice and dishonor, he 
+has been cursed with undeath and now serves the black dragon as her personal
+guardian. 
+~
+99 672 -1000 C
+50 0 0 3d10+1985 0d0+0
+13000 0
+112 112 1
+25 15 15 16 16 12 11
+-10 -10 -10 -10 -10
+67 3 0 0 7499637 7499636 2
+57 51 1991 527 3328 0 464 524323
+> greet_prog 100~
+say NONE SHALL PASS!
+~
+|
+#27110
+Malice black dragon~
+Malice~
+Malice, the black dragon, rests here upon a pile of melted bone and gold
+~
+The most cunning and deadly of all black dragons, Malice has made these 
+caverns her lair. Her reptialian eyes glare at you from underneath the two
+razor sharp horns on her head which point forward. She stands and spreads her
+scaly wings, filling the entire room with her massive body. An evil smile
+reveals rows of sharp teeth. 
+~
+99 4719288 -1000 C
+53 0 -80 1d40+8360 0d0+0
+20000 0
+112 112 2
+25 22 22 20 23 15 18
+0 0 0 0 0
+31 7 0 0 1879074163 1879074162 1
+63 60 4558815 15 3968 0 66 18
+> all_greet_prog 100~
+if isimmort ($n)
+say Welcome to my lair, $n
+wink $n
+say Care to stay for awhile?
+mpecho You never knew a black dragon could be such a flirt...
+else
+mpecho The entire cavern shudders as the gigantic body of Malyinxtorvaz
+mpecho bursts through a massive pile of bones and gold. Debris rains down and
+mpecho as the dust settles, the black dragon lunges forward to attack.
+c 'acid breath' $n
+endif
+~
+|
+#27111
+deadite king~
+The King of the Deadites~
+A powerful skeletal being stands here giving orders to his followers
+~
+Some flesh still hangs from the Kings bones and you sense he is of 
+exceptional power in both sword and spell. While ordering his deadite
+subjects around, he mumbles something about protecting his book.
+~
+67 680 -1000 C
+33 0 -130 3d15+1038 0d0+0
+4000 0
+112 112 1
+17 13 13 16 14 12 16
+-5 -5 -5 -5 -5
+60 3 0 0 1634497281 1634497280 0
+0 0 135 778 3072 1 33554624 524289
+> greet_prog 100~
+say You will never obtain the Necronomican!
+~
+|
+#27112
+crusader king~
+The King of Crusaders~
+A crusading king is kneeling in prayer for victory over the evil black dragon
+~
+Before you is a grand and noble king. His hair is long and white with age
+but his body possesses an inner strength. Although his eyes are grey and
+shine with years of wisdom and experience, his skin shows little signs of
+aging.
+~
+99 4203196 1000 C
+55 0 0 7d12+2485 0d0+0
+20000 0
+112 112 1
+25 22 23 23 24 22 21
+-15 -15 -15 -15 -15
+0 3 0 0 1 1 3
+70 65 2047 643 3328 0 496 35
+> act_prog disarms you~
+get falchion
+wield falchion
+laugh $n
+~
+> death_prog 100~
+mpecho Clutching at his bloody wounds, the great king falls to one knee.
+mpecho He looks carefully at you one last time, and his eyes widen with 
+mpecho shock and dismay as he suddenly realizes he mistook you for one of
+mpecho Malice's cruel henchmen. 
+say Only now as I breathe my last do I see my error, forgive me!
+mpecho The king falls forward to the ground, lifeless.
+~
+> all_greet_prog 100~
+if isimmort($n)
+bow $n
+else
+say Minion of Malice! Prepare to meet your maker!
+endif
+~
+|
+#27113
+Tagscephos archer hunter~
+Tagscephos, the Dragon Hunter~
+Tagscephos, the Dragon Hunter, stands here in magical imprisonment
+~
+A wood elf whose skill with the bow is unequaled. Tagscephos waits for the 
+day when she will be released from her prison.
+~
+67 4202684 1000 C
+51 0 -300 8d5+2375 0d0+0
+18000 0
+112 112 2
+15 17 17 25 11 19 20
+0 0 0 0 0
+1 6 0 0 3 2 4
+45 35 1775 515 3456 0 672 7
+> rand_prog 25~
+sigh
+~
+> greet_prog 100~
+if isimmort($n)
+kiss $n
+hug $n
+smile 
+endif
+~
+|
+#27114
+marsh imp~
+A marsh imp~
+A small leathery skinned creature watches you, its eyes glinting with mischief
+~
+Darting about and moving in silence, this little guy is probably more of a 
+nuisance than anything else. It might be a good idea to watch your coin pouch.
+~
+1 98856 0 C
+13 0 -50 2d15+240 0d0+0
+500 0
+112 112 1
+11 15 15 16 9 10 13
+0 0 0 0 0
+85 2 0 0 3044453 3044453 0
+2 0 1115887 1048576 2048 0 512 3
+#27115
+cleric chaos healer~
+The Cleric of Chaos~
+A Cleric of Chaos stands here, ready to assist you
+~
+This is the Cleric of Chaos who is willing to help heal you between
+adventures. However, should you need special preparations before facing 
+the dangers of the realms , by saying the words 'Sanctuary', 
+'Heal me', 'Give me strength', and 'Make me pure', he will
+provide you with the extra protection you need.
+~
+67 4194432 0 C
+53 0 0 1d1+30000 0d0+0
+0 0
+112 112 1
+15 25 25 17 12 16 19
+0 0 0 0 0
+0 1 0 0 1 1 0
+0 0 0 0 1059840 0 0 0
+> speech_prog p Sanctuary~
+say Very well
+cast 'sanctuary' $n
+~
+> speech_prog p Give me strength~
+say Very well
+cast 'kindred strength' $n
+cast 'slink' $n
+cast 'dragon wit' $n
+cast 'sagacity' $n
+c 'trollish vigor' $n
+~
+> speech_prog p Make me pure~
+say Very well
+cast 'remove curse' $n
+cast 'refresh' $n
+cast 'refresh' $n
+~
+> speech_prog p heal me~
+c 'life force' $n
+c 'life force' $n
+say I hope you are feeling better now
+smile
+~
+> speech_prog p restore my mana~
+c 'restore mana' $n
+c 'restore mana' $n
+~
+> speech_prog p hide me~
+cast invis $n
+~
+|
+#27116
+Chaos Guardian~
+A Chaos Guardian~
+A Chaos Guardian patrols the tower gate
+~
+With skin of the strongest stone, bat like wings, pointed horns and 
+flickering red eyes, you feel confident that this gargoyle guardian has
+never failed in his duty to keep intruders away.
+~
+67 4194304 200 C
+48 0 -300 3d25+1845 0d0+0
+0 0
+112 112 1
+19 13 13 16 17 13 15
+0 0 0 0 0
+34 3 0 0 1919908193 1919908193 5
+55 55 0 0 11264 0 560 3
+> all_greet_prog 100~
+if clan ($n) == Harbingers of Chaos
+or isimmort ($n)
+open west
+say Greetings worthy one!
+smile $n
+else
+close west
+say Turn back now! Only death awaits you here.
+snarl $n
+endif
+~
+|
+#27117
+Dowyl Blacksmith~
+Dowyl the Blacksmith~
+Dowyl is busy tending to the forge
+~
+Short, even for a dwarf, Dowyl is still one of the finest blacksmiths in
+all the realms
+~
+67 4194304 0 C
+50 0 0 1d15000+15000 0d0+0
+0 0
+112 112 1
+21 14 14 17 19 13 13
+0 0 0 0 0
+2 22 0 0 5 4 4
+0 0 1927 0 1059840 0 48 3
+#27118
+Steles shopkeeper~
+Steles the Clan Shopkeeper~
+Steles the shopkeeper stands here behind the counter
+~
+~
+67 4194304 0 C
+50 0 -130 1d25000+1 0d0+0
+0 0
+112 112 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 22 0 0 1 1 4
+0 0 1551 0 1059840 0 560 7
+#27119
+Marceles Barkeeper~
+Marceles the Barkeeper~
+Marceles the Barkeeper is here wiping the counter
+~
+A middle aged man with a long, thin mustache and broad shoulders. A 
+former adventurer like yourself, Marceles now spends his time serving 
+drinks
+~
+67 4194304 0 C
+50 0 -200 1d24000+24000 0d0+0
+0 0
+112 112 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 5
+0 0 0 0 1059840 0 48 3
+#27120
+Robed Figure~
+A mysterious robed figure~
+A mysterious robed figure dressed in red hisses softly 
+~
+~
+67 4194304 0 C
+50 0 -250 1d1+30000 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+45 3 0 0 6488067 6488067 6
+0 0 1671 0 1059840 0 560 3
+> all_greet_prog 100~
+say What is your destination?
+~
+> speech_prog p ASQ~
+say As you wish
+mpechoat $n The robed figure begins to chant in an arcane tongue
+mpechoat $n With a wild wave of his hands and a bright flash, you
+mpechoat $n find that your surroundings have changed...
+mptrans $n 21000
+~
+> speech_prog p SGT~
+say As you wish
+mpechoat $n The robed figure begins to chant in an arcane tongue
+mpechoat $n With a clap of his hands and a bright flash, you
+mpechoat $n find that your surroundings have changed...
+mptrans $n 7923
+~
+> speech_prog p KMQ~
+say As you wish
+mpechoat $n The robed figure begins to chant in an arcane tongue
+mpechoat $n With a stomp of his foot and a bright flash, you
+mpechoat $n find that your surroundings have changed...
+mptrans $n 14919
+~
+> speech_prog p SSQ~
+say As you wish
+mpechoat $n The robed figure begins to chant in an arcane tongue
+mpechoat $n With a snap of his fingers and a bright flash, you
+mpechoat $n find that your surroundings have changed...
+mptrans $n 8105
+~
+|
+#27121
+Chaos Lord Trainer~
+the Chaos Lord~
+A powerful Lord of Chaos awaits to instruct you
+~
+~
+1091 4194432 0 C
+51 0 -150 1d30000+30000 0d0+0
+0 0
+112 112 1
+20 17 18 15 17 18 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+40 60 1999 0 1059840 0 48 3
+#27122
+silverpain practice dummy~
+Silverpain~
+Silverpain the meat popsicile cowers here.
+~
+~
+3 4194304 0 S
+1 0 0 30000d1+0 0d0+0
+0 0
+112 112 0
+> greet_prog 100~
+tell $n Bah, go away, or I will hurt you.
+tell $n Say STOP when you've had enough.
+~
+> death_prog 100~
+mpmload 27122
+~
+|
+#0
+
+
+#OBJECTS
+#27100
+dirty helm~
+a dirty helm~
+A helm covered in dirt and mud lies here~
+~
+9 17448960 17
+! 10 10 0 0 0 0 0 0 0 0 0 0
+4 500 50
+A
+5 1
+A
+1 1
+A
+13 5
+#27101
+amulet servitude~
+the Amulet of Servitude~
+A shiny black amulet from another plane lies here~
+~
+9 4240 5
+! 1 0 0 0 0 0 0 0 0 0 0 0
+1 5000 500
+A
+3 -5
+A
+31 -8
+A
+56 17
+#27102
+heavy mace~
+a heavy mace~
+A rather large, spiked mace has been left here~
+~
+5 540672 8193
+! 12 12 4 8 0 0 0 0 0 0 0 0
+9 700 70
+A
+19 5
+A
+18 3
+#27103
+light leather armor~
+light leather armor~
+Although light in weight, this leather armor offers good protection~
+~
+9 278528 9
+! 12 0 0 0 0 0 0 0 0 0 0 0
+4 300 30
+A
+2 2
+A
+17 -5
+#27104
+halberd~
+a halberd~
+A halberd has been carelessy left here~
+~
+5 147456 8193
+! 12 8 4 3 0 0 0 0 0 0 0 0
+8 300 100
+A
+17 -5
+A
+19 4
+A
+13 10
+#27105
+Swamp armor~
+the Swamp Armor~
+An unusual suit of armor from a swamp has been left here~
+~
+9 393284 9
+! 15 15 0 0 0 0 0 0 0 0 0 0
+7 700 1500
+A
+1 1
+A
+19 3
+A
+13 20
+A
+17 -15
+#27106
+Swamp gauntlets~
+the Swamp gauntlets~
+A strange pair of gauntlets have been tossed aside here~
+~
+9 393284 129
+! 10 0 0 0 0 0 0 0 0 0 0 0
+3 1000 1000
+A
+17 -5
+A
+18 5
+A
+19 2
+#27107
+blackened warhammer~
+a blackened warhammer~
+A fire scorched warhammer lies here waiting to be used in battle again~
+~
+5 557060 8193
+! 12 5 9 8 0 0 0 0 0 0 0 0
+6 1000 500
+A
+1 2
+A
+18 2
+A
+19 3
+A
+13 15
+A
+31 -2
+#27108
+Swamp shoes~
+the Swamp shoes~
+These are the weirdest looking shoes you have ever seen!~
+~
+9 262212 65
+! 11 0 0 0 0 0 0 0 0 0 0 0
+2 1100 200
+A
+17 -5
+A
+14 65
+A
+13 15
+A
+26 32768
+A
+3 -1
+#27109
+Swamp leggings~
+the Swamp leggings~
+A pair of leggings crafted in a swamp have been left here~
+~
+9 262212 33
+! 9 0 0 0 0 0 0 0 0 0 0 0
+3 900 500
+A
+17 -5
+A
+13 15
+A
+14 50
+A
+2 1
+A
+26 32768
+#27110
+Swamp arm guards~
+the Swamp arm guards~
+A pair of arm guards from a swamp have been left here~
+~
+9 393284 257
+! 10 0 0 0 0 0 0 0 0 0 0 0
+3 700 500
+A
+17 -10
+A
+13 10
+A
+18 3
+#27111
+claw greater demon~
+the claw of a Greater Demon~
+A sharp, glistening claw radiating pure evil lies here~
+~
+5 2576 8193
+! 12 12 7 5 0 0 0 0 0 0 0 0
+4 2000 200
+A
+18 2
+A
+19 5
+A
+25 -2
+A
+30 33
+A
+56 210
+#27112
+Darkwood Staff~
+Darkwood Staff~
+A staff covered in mystic runes shimmers with raw magical power~
+~
+9 98901 16385
+! 10 0 0 0 0 0 0 0 0 0 0 0
+2 250 2500
+A
+18 8
+A
+19 3
+A
+12 90
+A
+17 -35
+#27113
+mystic robes dark power~
+Mystic Robes of Dark Power~
+These long, flowing robes crackle under blue bolts of immense power~
+~
+9 8487511 1025
+! 14 0 0 0 0 0 0 0 0 0 0 0
+2 700 3000
+A
+12 90
+A
+17 -20
+A
+3 2
+A
+4 2
+A
+24 -5
+A
+23 -5
+#27114
+mask dark desire~
+Mask of Dark Desire~
+A black mask tempts you to wear it~
+~
+9 596 1048577
+! 16 0 0 0 0 0 0 0 0 0 0 0
+1 1000 1000
+A
+17 -25
+A
+12 40
+A
+26 32
+A
+14 -80
+A
+18 2
+A
+18 2
+A
+13 50
+#27115
+Shield Damned~
+the Shield of the Damned~
+The screams of the damned echo from a large, black shield resting here~
+~
+9 525014 513
+! 16 16 0 0 0 0 0 0 0 0 0 0
+13 3500 5000
+A
+17 -45
+A
+12 30
+A
+19 4
+A
+25 -1
+A
+31 -1
+#27116
+Gloves Torment~
+the Gloves of Torment~
+A pair of gloves burn with an eternal cold, blue flame~
+~
+9 4689 129
+! 14 0 0 0 0 0 0 0 0 0 0 0
+2 4000 1500
+A
+17 -20
+A
+18 3
+A
+19 3
+A
+1 2
+A
+13 15
+#27117
+flaming black steel broadsword~
+a flaming, black steel broadsword~
+The blade of this black broadsword burns with an evil flame~
+~
+5 17449557 8193
+! 0 33 5 1 0 0 0 0 0 0 0 0
+17 830 50000
+A
+27 512
+A
+13 90
+A
+19 13
+A
+18 10
+#27118
+bracer undead might~
+a bracer of undead might~
+A bracer lies here radiating an aura of unholy power~
+~
+9 524884 4097
+! 15 15 0 0 0 0 0 0 0 0 0 0
+4 1700 300
+A
+17 -10
+A
+1 1
+A
+18 3
+#27119
+plate mail corruption~
+the Plate Mail of Corruption~
+An ancient suit of plate mail calls out to your dark side~
+~
+9 524374 9
+! 25 25 0 0 0 0 0 0 0 0 0 0
+15 800 80000
+A
+17 -40
+A
+1 3
+A
+27 1
+A
+27 2
+A
+13 40
+#27120
+Helmet Deception~
+the Helmet of Deception~
+A strange helmet of mixed colors seems to blend in with its surroundings~
+~
+9 524369 17
+! 14 14 0 0 0 0 0 0 0 0 0 0
+5 1300 3000
+A
+17 -15
+A
+2 2
+A
+4 2
+A
+3 2
+A
+25 1
+A
+31 1
+A
+14 -30
+#27121
+black rose cloak~
+a Black Rose Cloak~
+A long cloak as black as night with the emblem of a rose rests here~
+~
+9 2644&4 1025 16
+! 15 15 0 0 0 0 0 0 0 0 0 0
+2 1000 4500
+A
+17 -210
+A
+13 130
+A
+18 2
+A
+19 17
+A
+31 5
+A
+56 210
+A
+56 212
+A
+56 213
+#27122
+Black Fang~
+Black Fang~
+A large, curved tooth from a black dragon gleams with evil menace~
+~
+5 66128 8193
+! 0 20 5 2 0 0 0 0 0 0 0 0
+9 125 125000
+A
+2 2
+A
+32 25
+A
+13 90
+A
+18 14
+A
+19 11
+#27123
+Acid Armor~
+the Acid Armor~
+A suit of black dragonscale armor has been left here~
+~
+9 17449041 9 16
+! 20 20 0 0 0 0 0 0 0 0 0 0
+14 1000 100000
+A
+17 -35
+A
+13 90
+A
+24 -15
+A
+23 -15
+A
+27 128
+A
+1 2
+A
+5 2
+#27124
+Acid Earrings~
+the Acid Earrings~
+Some earrings fashioned from the scales of a black dragon lie here~
+~
+9 524369 65537
+! 11 11 0 0 0 0 0 0 0 0 0 0
+1 2000 80000
+A
+17 -5
+A
+3 1
+A
+12 60
+A
+4 1
+A
+13 10
+#27125
+Acid Arm Guards~
+the Acid Arm Guards~
+A pair of arm guards made of black dragonscale rest here~
+~
+9 597 257
+! 16 16 0 0 0 0 0 0 0 0 0 0
+5 900 90000
+A
+17 -30
+A
+13 40
+#27126
+Gauntlets Malice~
+the Gauntlets of Malice~
+A pair of gauntlets crafted from the scales of a black dragon lie here~
+~
+9 524885 129
+! 14 14 0 0 0 0 0 0 0 0 0 0
+4 1000 100000
+A
+17 -20
+A
+13 30
+A
+24 -5
+#27127
+Leggings Black Dragon Scale~
+leggings of black dragonscale~
+A set of black dragonscale leggings have been left here~
+~
+9 524373 33
+! 12 12 0 0 0 0 0 0 0 0 0 0
+3 500 50
+A
+17 -10
+A
+14 90
+A
+2 2
+#27128
+Black Dragon Scale Helm~
+a black dragonscale helm~
+A helm made of black dragonscale lies here~
+~
+9 524373 17
+! 15 15 0 0 0 0 0 0 0 0 0 0
+4 1000 100000
+A
+17 -15
+A
+9 -40
+A
+13 40
+A
+18 5
+A
+19 4
+#27129
+black sash~
+a black sash~
+This sash once belonged to a powerful mage~
+~
+9 84 2049
+! 13 0 0 0 0 0 0 0 0 0 0 0
+1 1000 100
+A
+13 35
+A
+4 1
+A
+12 40
+A
+27 4
+A
+24 -5
+#27130
+Cat's Eye~
+Cat's Eye~
+This gleaming orb resembles the eye of a fierce feline~
+~
+1 65 1
+! 0 0 -1 0 0 0 0 0 0 0 0 0
+1 500 5000
+A
+25 2
+A
+2 1
+A
+17 -5
+#27131
+ring vengeance~
+Ring of Vengeance~
+A ruby ring glints with a red shade of vengeance~
+~
+9 8914177 3
+! 8 8 0 0 0 0 0 0 0 0 0 0
+1 1000 10000
+A
+17 -5
+A
+13 10
+A
+18 1
+A
+19 1
+#27132
+Acid Orb~
+the Acid Orb~
+A crystal orb of bubbling acid lies here~
+~
+4 81 16385
+! 50 6 6 -1 0 0 0 0 0 0 0 0
+1 2500 25000
+'sanctuary'
+#27133
+Blessed Gauntlets~
+Blessed Gauntlets~
+The gauntlets of a benevolent diety lie here waiting to serve an avatar~
+~
+9 527683 129 1
+! 20 20 0 0 0 0 0 0 0 0 0 0
+3 250 250000
+A
+17 -40
+A
+12 60
+A
+4 2
+A
+56 3
+A
+13 60
+A
+18 7
+A
+19 10
+#27134
+Dragon Key~
+the Dragon Key~
+A small acid burned key lies here~
+~
+18 524356 1
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#27135
+gleaming white falchion~
+a gleaming white falchion~
+A pure white falchion lies here, shining with divine brillance~
+~
+5 544075 8193
+! 0 9 3 3 0 0 0 0 0 0 0 0
+14 350 350000
+A
+13 40
+A
+18 7
+A
+9 -20
+A
+31 2
+A
+25 2
+#27136
+armor devotion~
+the Armor of Devotion~
+The armor of a great crusader for justice has been left here~
+~
+9 8949059 9 2
+! 30 30 0 0 0 0 0 0 0 0 0 0
+15 400 400000
+A
+17 -65
+A
+56 36
+A
+27 1048576
+A
+29 8
+A
+14 -20
+A
+12 111
+A
+13 600
+A
+19 2
+#27137
+Armageddon Amulet~
+the Armageddon Amulet~
+A fiery, jeweled amulet burning with the flames of judgement lies here~
+~
+9 1345 5
+! 16 16 0 0 0 0 0 0 0 0 0 0
+1 150 150000
+A
+17 -15
+A
+13 25
+A
+3 1
+A
+4 1
+A
+12 25
+A
+24 -10
+#27138
+Wyrm's Bane lance~
+Wyrm's Bane~
+The beauty of this hand carved lance disguises its deadly purpose~
+~
+5 148801 8193
+! 0 14 3 6 0 0 0 0 0 0 0 0
+4 800 300000
+A
+2 2
+A
+18 18
+A
+19 5
+A
+27 1
+A
+27 128
+A
+27 2
+#27139
+cat nine tails whip~
+a cat of nine tails~
+This whip could really put the hurt on someone~
+~
+5 0 8193
+! 0 4 7 4 0 0 0 0 0 0 0 0
+3 200 20
+A
+17 -5
+A
+18 4
+A
+19 4
+#27140
+book dead~
+the Book of the Dead~
+A book bound in human flesh and inked in blood lies here~
+~
+3 80 16385
+! 40 5 5 -1 0 0 0 0 0 0 0 0
+3 200 2000
+'necromantic touch'
+#27143
+adamantium chainmail~
+Adamantium chainmail~
+A fine suit of magical chainmail lies here forgotten~
+~
+9 524353 9
+! 25 25 0 0 0 0 0 0 0 0 0 0
+8 4500 45000
+A
+18 16
+A
+19 16
+A
+1 3
+A
+2 1
+A
+4 1
+A
+5 1
+A
+13 150
+A
+17 -90
+A
+24 -10
+A
+27 8192
+#27144
+blood red ruby medallion~
+a blood red ruby medallion~
+A beautiful red ruby medallion sparkles with an inner glow~
+~
+9 65 5
+! 20 20 0 0 0 0 0 0 0 0 0 0
+1 750 75000
+A
+17 -25
+A
+13 40
+A
+18 6
+A
+12 50
+A
+25 3
+A
+23 -10
+A
+24 -10
+A
+28 1
+#27145
+Eye Entropy~
+the Eye of Entropy~
+A small ball of swirling chaotic energy lies on the ground here~
+~
+1 2105665 16385
+! 0 0 -1 0 0 0 0 0 0 0 0 0
+1 2800 175
+A
+13 20
+A
+17 -15
+A
+18 3
+A
+19 3
+A
+24 -5
+#27146
+Ring Ruin~
+the Ring of Ruin~
+A small ring in the shape of two serpents wrapped around each other lies here~
+~
+9 2629713 3
+! 13 13 0 0 0 0 0 0 0 0 0 0
+1 4000 430
+A
+17 -15
+A
+13 20
+A
+5 1
+A
+18 4
+A
+19 5
+#27147
+chaos cross~
+the Chaos Cross~
+A small, silver ornament floats just inches off the ground~
+~
+9 2629953 65537
+! 0 15 0 0 0 0 0 0 0 0 0 0
+1 1900 540
+A
+17 -20
+A
+13 25
+A
+18 4
+A
+56 56
+A
+24 -5
+A
+2 2
+#27148
+leggings spectral shifting~
+the Leggings of Spectral Shifting~
+These leggings are constantly changing through all the colors of the spectrum~
+~
+9 2629696 33
+! 25 25 0 0 0 0 0 0 0 0 0 0
+5 750 696
+A
+17 -25
+A
+13 65
+A
+18 6
+A
+19 4
+A
+14 80
+#27149
+beyond~
+the beyond~
+A vortex of darkness is here, a gateway to another dimension~
+~
+15 2105414 16385
+! 5000 0 0 0 0 0 0 0 0 0 0 0
+3 3900 80
+#27150
+epoxy potion~
+an Epoxy potion~
+Thin coils of smoke arise from this potion~
+~
+10 2105344 1
+! 50 -1 93 93 0 0 0 0 0 0 0 0
+1 1500 110
+'heal' 'heal' 'heal'
+#27151
+weirding potion~
+a weirding potion~
+This potion bubbles with magical energy~
+~
+10 2097152 1
+! 34 -1 140 140 0 0 0 0 0 0 0 0
+1 2000 90
+'restore mana' 'restore mana' 'restore mana'
+#27152
+potion shielding~
+A potion of shielding~
+A potion of magical shields lies here~
+~
+10 2097152 1
+! 31 -1 149 -1 0 0 0 0 0 0 0 0
+1 2150 215
+'iceshield' 'shockshield' 'NONE'
+#27153
+can spinach~
+a can of spinach~
+A tasty can of spinach has been carelessly left here~
+~
+26 2105344 1
+! 40 -1 -1 -1 0 0 0 0 0 0 0 0
+1 720 72
+'heal' 'NONE' 'NONE'
+#27154
+potion elemental skin~
+a potion of elemental skin~
+A potion labeled 'Elemental Skin' lies here~
+~
+10 2105344 1
+! 15 -1 158 147 0 0 0 0 0 0 0 0
+1 3300 145
+'Wrath of Dominus' 'stone skin' 'shield'
+#27155
+potion flesh change~
+a potion of flesh change~
+A potion labeled 'Flesh Change' has been left here~
+~
+10 2105344 1
+! 31 -1 47 62 0 0 0 0 0 0 0 0
+1 4000 130
+'dragonskin' 'demonskin' 'eldritch sphere'
+#27156
+visionary pill~
+a visionary pill~
+Description A small pill offering you sight beyond sight has been left here~
+~
+26 8192 1
+! 34 -1 -1 167 0 0 0 0 0 0 0 0
+1 3100 230
+'NONE' 'NONE' 'true sight'
+#27157
+impetus statue gold~
+A golden statue of Impetus~
+A massive golden statue of a famous leader stands here~
+~
+12 4097 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#27158
+serpent fountain~
+A serpent fountain~
+A serpentine fountain is here~
+~
+25 4096 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#27159
+Harbinger message board~
+the Harbinger message board~
+A message board hangs upon the wall here~
+~
+12 4096 0
+! 0 0 0 0 0 0 0 0 0 0 0 0
+9999 0 0
+#27160
+shot vodka~
+a shot of vodka~
+A shot glass filled with vodka rests here~
+~
+17 8192 1
+! 8 1 7 0 0 0 0 0 0 0 0 0
+1 250 25
+#27161
+bottle rum~
+a bottle of rum~
+A bottle of rum lies on its side here~
+~
+17 8192 1
+! 10 4 7 0 0 0 0 0 0 0 0 0
+1 400 40
+#27162
+clan cocktail~
+a clan cocktail~
+A small glass of the clan's special mixed drink is here~
+~
+17 8192 1
+! 5 2 8 0 0 0 0 0 0 0 0 0
+1 500 50
+#27163
+gnixie roll hoc harbingers chaos~
+a Gnixie Roll of Chaos~
+A pixie heart wrapped up in gnome flesh bound together by the power of chaos.~
+~
+19 0 1
+! 40 0 0 0 0 0 0 0 0 0 0 0
+1 0 0
+#0
+
+
+#ROOMS
+#27100
+A Small Tributary~
+The water here is dark and still.  Swirling mud clouds your vision from
+seeing what lies beneath the murky water's surface.  The tributary appears
+to narrow further ahead and then gradually empties into a foreboding swamp.
+~
+0 4 7 0 0 0 0 0
+D0
+~
+~
+134217728 -1 21297 163 163 163 0 0
+D2
+~
+~
+0 -1 27101 0 0 0 0 0
+S
+#27101
+A Lifeless Bog~
+Here the tributary from the river shallows out and drains away into the muddy
+earth. Blackened tree trunks lie scattered across the ground, partially sunk
+in the muck. It is difficult to walk and even see for that matter. A shadowy
+fog blankets the area in perpetual darkness.
+~
+0 0 3 0 0 0 0 0
+D0
+~
+~
+0 -1 27100 0 0 0 0 0
+D2
+~
+~
+0 -1 27102 0 0 0 0 0
+S
+#27102
+A Foul-Smelling Swamp~
+The land here is firmer than that to the north, although still quite wet and 
+soft. However, the stench of this place is awful! Rotting vegetation mixed
+with the putrid water has filled the air with a nauseous gas. A few sickly
+trees have somehow managed to survive over the years and stand twisted and
+warped. A jet black crow perches on the branch of one of these trees. It
+fixes you with an icy stare before flying off, cawing loudly. It appears life
+lives here after all.
+~
+0 0 3 0 0 0 0 0
+D0
+~
+~
+0 -1 27101 0 0 0 0 0
+D2
+~
+~
+0 -1 27103 0 0 0 0 0
+S
+#27103
+Rotting Lands~
+A sense of evil pervades this place. Although the landscape is flat and 
+barren, save for a few diseased trees, you feel as if someone or something is
+watching you. Lying in the soft ground, almost completely covered in mud, is
+the skull of a long dead adventurer. A large crack runs down the forehead of
+the skull, an obvious sign that this person was not welcome here.
+~
+0 0 3 0 0 0 0 0
+D0
+~
+~
+0 -1 27102 0 0 0 0 0
+D1
+~
+~
+0 -1 27112 0 0 0 0 0
+D2
+~
+~
+0 -1 27106 0 0 0 0 0
+D3
+~
+~
+0 -1 27104 0 0 0 0 0
+D8
+~
+~
+0 -1 27107 0 0 0 0 0
+S
+#27104
+Sense of Danger~
+A terrible feeling of death and danger permeates the air. Although the
+landscape still looks the same, something just doesn't feel right. Knocked over
+on its side is an aged wooden sign. Stepping closer, some letters can be
+discerned carved into the old wood.
+~
+0 0 3 0 0 0 0 0
+D1
+~
+~
+0 -1 27103 0 0 0 0 0
+D9
+~
+~
+0 -1 27105 0 0 0 0 0
+E
+sign~
+The writing is hard to read and part of it has been scratched away...
+                              WARNING!!!
+                             Q........
+is all you can make out.
+~
+S
+#27105
+Quicksand!~
+Perhaps you should not have come this way. The ground here is incredibely
+soft, almost like a thick liquid. The more you struggle to escape, the 
+faster you sink. Your last hope is that death comes quickly and painlessly.
+~
+0 8198 1 0 0 0 0 0
+S
+#27106
+In the Swamp~
+Mud splashes on your boots as you walk through this place of decay. Eerie
+sounds echo from the trees and you catch glimpses of glowing red eyes
+watching your movement from within the safety of the tall weeds. Many large
+footprints in the soft earth show this place is inhabited. Maybe it isn't
+the best idea to trespass.
+~
+0 0 3 0 0 0 0 0
+D0
+~
+~
+0 -1 27103 0 0 0 0 0
+D1
+~
+~
+0 -1 27107 0 0 0 0 0
+D9
+~
+~
+0 -1 27111 0 0 0 0 0
+S
+#27107
+In the Swamp~
+Mud splashes on your boots as you walk through this place of decay. Eerie
+sounds echo from the trees and you catch glimpses of glowing red eyes 
+watching your movement from within the safety of the tall weeds. Many large
+footprints in the soft earth show this place is inhabited. Maybe it isn't
+the best idea to trespass.
+~
+0 0 3 0 0 0 0 0
+D2
+~
+~
+0 -1 27108 0 0 0 0 0
+D3
+~
+~
+0 -1 27106 0 0 0 0 0
+D7
+~
+~
+0 -1 27103 0 0 0 0 0
+S
+#27108
+In the Swamp~
+Mud splashes on your boots as you walk through this place of decay. Eerie
+sounds echo from the trees and you catch glimpses of glowing red eyes 
+watching your movement from within the safety of the tall weeds. Many large
+footprints in the soft earth show this place is inhabited. Maybe it isn't
+the best idea to trespass.
+~
+0 0 3 0 0 0 0 0
+D0
+~
+~
+0 -1 27107 0 0 0 0 0
+D9
+~
+~
+0 -1 27109 0 0 0 0 0
+S
+#27109
+Deeper Within the Swamp~
+This section of the swamp seems much darker than the rest. However, something
+seems seriously wrong...  All the other animal sounds are quiet. An uneasy
+silence blankets the area, but listening carefully, some strange grunting
+sounds can be heard. Looking around, you notice several of the large mud
+made mounds here are actually homes to a tribe of wild ogres.
+~
+0 0 3 0 0 0 0 0
+D2
+~
+~
+0 -1 90100 0 0 0 0 0
+D3
+~
+~
+0 -1 27110 0 0 0 0 0
+D6
+~
+~
+0 -1 27108 0 0 0 0 0
+E
+mounds~
+Packed together from wet mud and then allowed to dry, these mounds provide
+simple homes for the ogres who live in them. 
+~
+S
+#27110
+In the Village~
+The homes of the ogres are little more than mud packed into large mounds and
+then dried. Each home has only one doorway, covered with curtains made from
+flesh. The mounds are fairly distant from one another, making the village
+appear larger than it really is. The bones of many different creatures lay
+strewn all over. It would seem the ogres don't care about picking up after
+meals.
+~
+0 0 3 0 0 0 0 0
+D0
+~
+~
+0 -1 27111 0 0 0 0 0
+D1
+~
+~
+0 -1 27109 0 0 0 0 0
+S
+#27111
+Deeper Within the Swamp~
+This section of the swamp seems much darker than the rest. However, something
+seems seriously wrong... All the other animal sounds are quiet. An uneasy
+silence blankets the area, but listening carefully, some strange grunting
+sounds can be heard. Looking around, you notice several of the large mud
+made mounds here are actually homes to a tribe of wild ogres.
+~
+0 0 3 0 0 0 0 0
+D2
+~
+~
+0 -1 27110 0 0 0 0 0
+D6
+~
+~
+0 -1 27106 0 0 0 0 0
+E
+mounds~
+Packed together from wet mud and then allowed to dry, these mounds provide
+simple homes for the ogres who live in them.
+~
+S
+#27112
+A Less Traveled Trail~
+At one time, this might have been a well used path, but now it is overgrown.
+To the east, the swamp continues into what was once a beautiful forest, now
+corrupted and ugly to behold. The west leads into the heart of the swamp.
+~
+0 0 3 0 0 0 0 0
+D1
+~
+~
+0 -1 27113 0 0 0 0 0
+D3
+~
+~
+0 -1 27103 0 0 0 0 0
+S
+#27113
+Edge of a Dark Forest~
+The ground here is no longer soft and muddy, but the tall dark trees provide
+evidence that this land is poisoned from the swamp further to the west. The
+humid, warm air hosts thousands of small, blood sucking, flying insects.
+Haunting calls of distant predatory animals echo through the trees. This does
+not appear to be a friendly place.
+~
+0 0 3 0 0 0 0 0
+D1
+~
+~
+0 -1 27114 0 0 0 0 0
+D3
+~
+~
+0 -1 27112 0 0 0 0 0
+D8
+~
+~
+0 -1 27121 0 0 0 0 0
+S
+#27114
+Inside a Dark Forest~
+Every tree is devoid of leaves and the branches twist amongst each other to
+form a sort of canopy that blocks out the sunlight. The forest floor is 
+rocky and laced with many thorny vines, making progress difficult. 
+~
+0 0 3 0 0 0 0 0
+D0
+~
+~
+0 -1 27116 0 0 0 0 0
+D1
+~
+~
+0 -1 27115 0 0 0 0 0
+D3
+~
+~
+0 -1 27113 0 0 0 0 0
+S
+#27115
+Wall of Thorns~
+Someone doesn't want you to go any further in this direction. A massive wall
+made of thick, thorny vines blocks further passage through this portion of
+the forest. The wall stands at least ten feet tall and stretches as far as you
+can see. As you step closer to the thorns, the wall itself trembles as if it
+senses your presence. The thorns glisten with a wet substance, a poison of 
+some sort. A strong feeling of evil magic power radiates from the wall.
+~
+0 0 3 0 0 0 0 0
+D3
+~
+~
+0 -1 27114 0 0 0 0 0
+D5
+grate
+~
+thorns~
+1071 27134 27139 0 0 0 0 0
+D7
+~
+~
+0 -1 27116 0 0 0 0 0
+E
+wall~
+There is nothing natural about this wall. The vines look to be dead, yet 
+they twist and wind around each other. The thorns are large with 
+dangerously sharp tips, coated with a deadly poison. 
+~
+S
+#27116
+A Misty Path through the Forest~
+Everything about this part of the forest is the same as the rest, except for
+one thing. Hovering just a few inches above the ground is a grey mist which
+forms a trail of sorts leading to the northeast. As you step into the mist, 
+your feet are chilled with an intense cold but the feeling subsides almost
+immediately. The mist beckons you to follow, even though it is against your
+better judgement.
+~
+0 0 3 0 0 0 0 0
+D2
+~
+~
+0 -1 27114 0 0 0 0 0
+D6
+~
+~
+0 -1 27117 0 0 0 0 0
+D8
+~
+~
+0 -1 27115 0 0 0 0 0
+S
+#27117
+Before a Giant Tree~
+This is by far the biggest tree you have ever seen! None of the other trees
+can compare to the size of this monstrous tree. The wood seems to glow with
+an evil radiance and you feel that a powerful source of magic is nearby. 
+Looking upwards, the trunk disappears into a black cloud, hiding the rest of
+the tree from view. A simple oval shaped, metal door built into the base is
+the only entrance to the inside.
+~
+0 0 3 0 0 0 0 0
+D1
+~
+door~
+3 -1 27118 0 0 0 0 0
+D9
+~
+~
+0 -1 27116 0 0 0 0 0
+S
+#27118
+Bottom of the Tree~
+The inside of this tree is dimly lighted by several glowing spheres attached
+to the wooden walls. The air is very still and stuffy, making breathing
+uncomfortable. This room is rather barren except for a few arcane scribblings
+on the floor. A winding staircase has been made from out of the wall but it
+doesn't quite look like whoever made it knew what they were doing. The steps
+are slanted and rough but provide the only means of travelling upwards.
+~
+0 0 0 0 0 0 0 0
+D3
+~
+door~
+3 -1 27117 0 0 0 0 0
+D4
+~
+~
+128 -1 27119 0 0 0 0 0
+S
+#27119
+Top of the Tree~
+Your climb up the stairs has landed you here, on the top and only floor of 
+this residence. This room is dark, except for the flickering light cast by a
+strange ghostly fire that burns from a black bowl. Strangely, the flames give
+off a penetrating cold rather than heat. A door leads into an adjacent room,
+unfortunately, it is guarded by a rather large demon.
+~
+0 0 0 0 0 0 0 0
+D1
+~
+door~
+3 -1 27120 0 0 0 0 0
+D5
+~
+~
+128 -1 27118 0 0 0 0 0
+S
+#27120
+Chamber of the Dark Mage~
+Unlike the other room, this one is very well lit. Hundreds of candles
+illuminate the large shelves of countless spellbooks, beakers of bubbling
+potions, and a work desk where a man dressed in black robes sits. As you enter
+he looks up from the ancient scroll he was studying before your unwelcome
+interruption. This is the home of Koraz, the infamous mage, and he is about
+to show you how much he hates visitors. 
+~
+0 0 0 0 0 0 0 0
+D3
+~
+door~
+3 -1 27119 0 0 0 0 0
+S
+#27121
+A Rocky Forest Path~
+The path here is marked with many small rocks and pebbles. It leads from the
+forest towards higher and drier ground.
+~
+0 0 3 0 0 0 0 0
+D7
+~
+~
+0 -1 27113 0 0 0 0 0
+D8
+~
+~
+0 -1 27122 0 0 0 0 0
+S
+#27122
+Charred Timber~
+Massive destruction best describes the sight before you now. Every tree has 
+either been ripped up from its roots or severely burned. What could have 
+caused all this? To the southwest is the entrance to a cave in the hillside. 
+Something tells you that your answer lies in there.
+~
+0 0 3 0 0 0 0 0
+D7
+~
+~
+0 -1 27121 0 0 0 0 0
+D9
+~
+~
+0 -1 27123 0 0 0 0 0
+S
+#27123
+Cave Entrance~
+The opening in the hillside resembles the black, gaping maw of some fiendish
+creature. The hanging stalagmites look like large sharp teeth ready to devour
+anything that enters. The air reeks of something large and reptilian and the
+many deep claw gashes into the very rock itself point out the obvious. A 
+dragon lurks somewhere below.
+~
+0 0 4 0 0 0 0 0
+D5
+~
+~
+0 -1 27124 0 0 0 0 0
+D6
+~
+~
+0 -1 27122 0 0 0 0 0
+S
+#27124
+Cave Tunnel~
+Gazing up, the dim light from the entrance to these caves can be seen. The 
+light casts strange shadows upon the floor and somewhere below can be heard 
+the sound of dripping water. The walls here are also scratched and of a dark
+red color. Stepping closer, you are horrified to discover the color is not 
+natural for the stone. It is dried blood. 
+~
+0 260 13 0 0 1 0 0
+D4
+~
+~
+0 -1 27123 0 0 0 0 0
+D5
+~
+~
+0 -1 27125 0 0 0 0 0
+S
+#27125
+Caverns~
+The tunnel downward ends here, in a giant underground cavern. The natural
+rock formations that may at one time have been wonderous to behold, are now
+scarred and broken. From somewhere, a deep rumbling sound resonates through
+the cave, shaking the walls and causing a few small rocks to fall loose. The 
+floor is wet, slippery, and shows signs that several other things have passed
+through here recently.
+~
+0 0 13 0 0 0 0 0
+D2
+~
+~
+0 -1 27127 0 0 0 0 0
+D4
+~
+~
+0 -1 27124 0 0 0 0 0
+D8
+~
+~
+0 -1 27128 0 0 0 0 0
+D9
+~
+~
+0 -1 27126 0 0 0 0 0
+S
+#27126
+In the Caverns~
+These caverns are vast and wide. A long time ago, these were once beautiful
+and majestic displays of nature. Now it is nothing more than a dark home to
+many evil beings. 
+~
+0 0 13 0 0 0 0 0
+D2
+~
+~
+0 -1 27131 0 0 0 0 0
+D3
+~
+~
+0 -1 27129 0 0 0 0 0
+D6
+~
+~
+0 -1 27125 0 0 0 0 0
+D9
+~
+~
+0 -1 27130 0 0 0 0 0
+S
+#27127
+In the Caverns~
+These caverns are vast and wide. A long time ago, these were once beautiful
+and majestic displays of nature. Now it is nothing more than a dark home to 
+many evil beings.
+~
+0 0 13 0 0 0 0 0
+D0
+~
+~
+0 -1 27125 0 0 0 0 0
+D2
+~
+~
+0 -1 27132 0 0 0 0 0
+D8
+~
+~
+0 -1 27133 0 0 0 0 0
+D9
+~
+~
+0 -1 27131 0 0 0 0 0
+S
+#27128
+In the Caverns~
+These caverns are vast and wide. A long time ago, these were once beautiful
+and majestic displays of nature. Now it is nothing more than a dark home to 
+many evil beings.
+~
+0 0 13 0 0 0 0 0
+D1
+~
+~
+0 -1 27135 0 0 0 0 0
+D2
+~
+~
+0 -1 27133 0 0 0 0 0
+D7
+~
+~
+0 -1 27125 0 0 0 0 0
+D8
+~
+~
+0 -1 27134 0 0 0 0 0
+S
+#27129
+Bone Room~
+Bones everywhere and lots of them. Thousands of dried bones from hundreds of
+creatures lie here in piles. All of them appear to have been picked clean of
+the flesh that was once on them. Across the far side of this horrific place
+is a throne, made from polished bones. The undead in these caves appear to 
+have a leader.
+~
+0 0 13 0 0 0 0 0
+D1
+~
+~
+0 -1 27126 0 0 0 0 0
+S
+#27130
+Forgotten Tombs~
+A truly remarkable and yet startling discovery. These caves were indeed once
+inhabited by an ancient race, the likes of which you have never seen or heard
+of before. Hundreds of coffins lie here, made of dark crystal and the walls
+have been masterfully carved into spaces to hold more bodies. Runes have been
+etched on almost every surface in here. Whatever race once lived here became
+extinct with the arrival of the dragon and all trace of their existence
+vanished from the realms. One thing in particular is very disturbing, and that
+is most of the coffins are empty.
+~
+0 0 13 0 0 0 0 0
+D6
+~
+~
+0 -1 27126 0 0 0 0 0
+S
+#27131
+In the Caverns~
+These caverns are vast and wide. A long time ago, these were once beautiful
+and majestic displays of nature. Now it is nothing more than a dark home to
+many evil beings.
+~
+0 0 13 0 0 0 0 0
+D0
+~
+~
+0 -1 27126 0 0 0 0 0
+D6
+~
+~
+0 -1 27127 0 0 0 0 0
+S
+#27132
+Collapsed Tunnel~
+Whatever lay at the end of this narrow, long passage will forever be lost.
+Large stones have fallen from the ceiling, blocking off any further travel. 
+~
+0 0 13 0 0 0 0 0
+D0
+~
+~
+0 -1 27127 0 0 0 0 0
+S
+#27133
+In the Caverns~
+These caverns are vast and wide. A long time ago, these were once beautiful
+and majestic displays of nature. Now it is nothing more than a dark home to 
+many evil beings.
+~
+0 0 13 0 0 0 0 0
+D0
+~
+~
+0 -1 27128 0 0 0 0 0
+D7
+~
+~
+0 -1 27127 0 0 0 0 0
+S
+#27134
+Caverns End~
+Quite simply, the caverns just don't go any further. Soft vibrations can be
+felt in the rock wall and floor. The dragon must be somewhere nearby.
+~
+0 0 13 0 0 0 0 0
+D7
+~
+~
+0 -1 27128 0 0 0 0 0
+S
+#27135
+In the Caverns~
+These caverns are vast and wide. A long time ago, these were once beautiful
+and majestic displays of nature. Now it is nothing more than a dark home to
+many evil beings.
+~
+0 0 13 0 0 0 0 0
+D1
+~
+~
+0 -1 27136 0 0 0 0 0
+D3
+~
+~
+0 -1 27128 0 0 0 0 0
+S
+#27136
+The Dragon Door~
+This is by far the biggest door you have ever seen. It stretches from the
+cavern floor to the ceiling. Made from a strange, dark metal, this door 
+seems to absorb any light that comes near it. Sculpted into the surface of
+this gigantic door are many symbolic pictures and events. The one that 
+catches your attention over all others is a scene showing an army of undead
+waging war across the realms, led by a powerful black dragon. 
+~
+0 0 13 0 0 0 0 0
+D3
+~
+~
+0 -1 27135 0 0 0 0 0
+D5
+~
+door~
+39 27134 27137 0 0 0 0 0
+S
+#27137
+Unholy Guardian~
+This is the antechamber for the room to the south. Torches line the walls of
+the room which form a perfect circle. Four crystaline pillars make a square
+formation and standing in the center of it all is a man dressed in the 
+blackest of armor. His face is hidden under his helmet, but as you approach
+you feel a freezing cold being radiated from his body. Once a noble knight, 
+turned to evil and now forced to serve his master as undead. The death
+knight allows no one to pass.
+~
+0 0 13 0 0 0 0 0
+D2
+~
+~
+0 -1 27138 0 0 0 0 0
+D4
+~
+door~
+39 27134 27136 0 0 0 0 0
+S
+#27138
+The Lair of Malyinxtorvaz~
+Hundreds of precious gems lie embedded in the cave walls. The light that 
+hits them reflects back the colors of the rainbow. The floor is littered
+with bones and gold that have somehow almost been melted together. A loud 
+roar shakes the entire cave. The black dragon arises from under the treasure
+it was resting beneath. Aware of your presence, she grins wickedly at the 
+thought of adding you to her collection of undead minions.
+~
+0 0 13 0 0 0 0 0
+D0
+~
+~
+0 -1 27137 0 0 0 0 0
+D4
+~
+door~
+39 27134 27136 0 0 0 0 0
+S
+#27139
+A hidden passageway~
+This room is dark and mysterious. It leads beneath the wall of thorns above
+and along what appears to be a man made tunnel to the east. A dim light 
+comes from the east and it is there that you will find what this passageway
+holds.
+~
+0 256 13 0 0 3 0 0
+D1
+~
+~
+0 -1 27140 0 0 0 0 0
+D4
+~
+thorns~
+1071 27134 27115 0 0 0 0 0
+S
+#27140
+Prison of Malice~
+You have found the secret prison area where the black dragon keeps those who
+have enough power to thwart her evil plans. Although it appears to be just 
+a carved tunnel, a strong magic spell holds the prisoners from ever leaving.
+Their years of solitude and confinement have not weakened the prisoners, but
+has only made them grow stronger in their resolve. In this section of the
+prison is the greatest champion to honor and justice that the realms has ever
+known. 
+~
+0 0 13 0 0 3 0 0
+D1
+~
+~
+0 -1 27141 0 0 0 0 0
+D3
+~
+~
+0 -1 27139 0 0 0 0 0
+S
+#27141
+Prison of Malice~
+Here the tunnel ends in a small alcove which holds the other prisoner that 
+Malice has seen as a threat to her schemes. The only other way out is back 
+to the west where the tunnel slopes towards the surface.
+~
+0 0 13 0 0 3 0 0
+D3
+~
+~
+0 -1 27140 0 0 0 0 0
+S
+#27142
+Gravel Path~
+This pathway of small rocks runs into Clan Avenue to the north. Gazing down
+the path to the west looms a mighty tower where the Harbingers of Chaos
+reside. There appears to be no windows, and the tower itself reaches towards
+the clouds, casting an imposing shadow over the Forbidden Realms.
+~
+0 3146756 1 0 0 0 0 0
+D0
+~
+~
+0 -1 90915 0 0 0 0 0
+D3
+~
+~
+0 -1 27143 0 0 0 0 0
+> entry_prog 100~
+if isimmort($n)
+or clan($n) == Harbingers of Chaos
+else
+mpechoat $n You may not trespass inside this clan's domain...
+mptrans $n 90915
+force $n look
+endif
+~
+|
+S
+#27143
+Spiked Gate~
+Here stands a massive gate made of shining steel which surrounds the entire
+tower. The top of the gate is marked with sharp spikes, making it unwise to
+try to scale it. Only a few chosen elite may pass through to the tower.
+~
+0 3145728 1 0 0 0 0 0
+D1
+~
+~
+0 -1 27142 0 0 0 0 0
+D3
+~
+gate~
+1 -1 27144 0 0 0 0 0
+S
+#27144
+Courtyard of Chaos~
+The courtyard before the tower has an uneasy silence to it. Several marble
+statues depict great champions of chaos, idols to be revered for their 
+wisdom and skill. The branches of the few trees which line the path into the
+tower sway gently, but oddly enough, there is no breeze.
+~
+0 3145728 1 0 0 0 0 0
+D1
+~
+gate~
+1 -1 27143 0 0 0 0 0
+D3
+~
+~
+0 -1 27145 0 0 0 0 0
+E
+statue~
+This statue is made entirely of gold and shaped in the likeness of the
+clan founder and its first leader, Impetus. 
+~
+S
+#27145
+Harbinger Hall~
+The main floor of the tower is truly massive and awe inspiring. Exquisite
+paintings of epic battles and tapestries made of exotic fabric line the walls.
+A crystal chandelier illuminates the room in brillant light and in the middle
+of the hall is a fountain, shaped in the likeness of a fierce serpent,
+coiled and mouth open ready to strike. From the fangs pours forth the very
+essence of life. A spiral staircase leads up and down from here. 
+~
+0 3145728 0 0 0 0 0 0
+D1
+~
+~
+0 -1 27144 0 0 0 0 0
+D3
+~
+~
+0 -1 27147 0 0 0 0 0
+D4
+~
+~
+0 -1 27149 0 0 0 0 0
+D5
+~
+~
+0 -1 27146 0 0 0 0 0
+> speech_prog 'Let the power of chaos relieve my famine'~
+if clan($n) == Harbingers of Chaos
+or level($n) >= 51
+ mpoload 27163 1
+endif
+~
+|
+S
+#27146
+Tower Basement~
+Although somewhat musty, it is quite obvious this room is used often.
+Candles along the wall provide sufficient light to see mysterious runes 
+etched into every stone tile in the floor. In the corner is an odd looking
+pedastal and a robed figure standing next to it. Lizard-like eyes peer at
+you from underneath the hood, and you are directed to stand on the pedastal.
+You notice a plaque on the wall.
+~
+0 3145728 0 0 0 0 0 0
+D4
+~
+~
+0 -1 27145 0 0 0 0 0
+E
+plaque~
+For teleportaion to the following areas:
+Shadowdale Square --- "SSQ"
+Arabel Square --- "ASQ"
+Kendermore Square --- "KMQ"
+Southern Gate of Trise --- "SGT"
+~
+S
+#27147
+Trophy Room~
+Incense burns constantly in this room, filling it with a fine smokey haze.
+The walls and floor are made of dark red stone and lying scattered all over
+the room are the grisly prizes kept from many battle victories. Skins left
+here are testimony to your glory and worth as a clan member.
+~
+0 1076903936 0 0 0 0 22 0
+D1
+~
+~
+0 -1 27145 0 0 0 0 0
+D2
+~
+~
+0 -1 27148 0 0 0 0 0
+S
+#27148
+Harbinger Happy Hour~
+You are now standing inside a shop of wonders.
+Behind the counter you can see a valid permit to sell goods.
+We are pleased to announce that we have the facility to take money
+direct from you bank account, should you find that you are not carrying
+enough gold.  Have a nice day !
+~
+0 3145728 0 0 0 0 0 0
+D0
+~
+~
+0 -1 27147 0 0 0 0 0
+> speech_prog stop~
+mppurge silverpain
+mpmload 27122
+~
+|
+S
+#27149
+Chaos Chamber~
+The second floor of the tower is obviously a meeting room of sort. A very
+long table stretches across almost the entire length of the room. A chair at
+each end is designated for the leader and number one to sit. Everything here
+has a very professional atmosphere to it, as if killing were a business....
+and business is good. A message board rests upon one wall and there are 
+several exits to rooms with special clan services. The spiral staircase
+continues up into the vaults of Chaos and back down to the main floor.
+~
+0 36701184 0 0 0 0 0 0
+D0
+~
+~
+0 -1 27154 0 0 0 0 0
+D1
+~
+~
+0 -1 27152 0 0 0 0 0
+D2
+~
+~
+0 -1 27155 0 0 0 0 0
+D3
+~
+~
+0 -1 27153 0 0 0 0 0
+D4
+~
+~
+0 -1 27150 0 0 0 0 0
+D5
+~
+~
+0 -1 27145 0 0 0 0 0
+S
+#27150
+Chaos Vault of Weaponry~
+This giant room serves only one purpose, to store weapons for the future use
+of other clan members who may need them later. Racks of weapons of all 
+types are here. Feel free to take what you need and drop off what you don't.
+~
+0 1077428224 0 0 0 0 22 0
+D4
+~
+~
+0 -1 27151 0 0 0 0 0
+D5
+~
+~
+0 -1 27149 0 0 0 0 0
+S
+#27151
+Chaos Vault of Armor and Items~
+The top room of the tower is similar to the one below it, except that this
+vault is devoted to storing only armor and other miscellaneous items. Take
+what you need, but be sure to try to replace it at some time and drop off
+any equipment that a fellow clan member may want.
+~
+0 3162112 0 0 0 0 22 0
+D5
+~
+~
+0 -1 27150 0 0 0 0 0
+S
+#27152
+Clan Blacksmith~
+An uncomfortable heat fills the blacksmith store, as well as the pounding of
+metal on hot steel. Racks of weapons and other assortments of armory line the
+walls, all in different states of disrepair. The blacksmith must be a busy
+man, but taking care of clan equipment is his top priority. 
+~
+0 3146752 0 0 0 0 0 0
+D3
+~
+~
+0 -1 27149 0 0 0 0 0
+S
+#27153
+Clan Healer~
+Upon entering this room, you are filled with a great sense of calm and well
+being. The floor seems to drift away beneath your feet and a strange fog
+engulfs your body. A mellow, chanting voice can be heard echoing as if from
+a great distance, yet very close. 
+~
+0 3687424 0 0 0 0 0 0
+D1
+~
+~
+0 -1 27149 0 0 0 0 0
+S
+#27154
+Clan Shop~
+You are now standing inside a shop of wonders.
+We are pleased to announce that we have the facility to take money
+direct from you bank account, should you find that you are not carrying
+enough gold.  Have a nice day !
+~
+0 3146752 0 0 0 0 0 0
+D2
+~
+~
+0 -1 27149 0 0 0 0 0
+S
+#27155
+Clan Trainer~
+A hard, polished wooden floor and the soft padded walls are about the only
+distinguishing features of this room. A middle aged man stands in the center
+of the room, his body well toned and his eyes shine with intelligence. 
+A very cunning and educated person, it is best that you listen to his lessons.
+~
+0 3146752 0 0 0 0 0 0
+D0
+~
+~
+0 -1 27149 0 0 0 0 0
+S
+#0
+
+
+#RESETS
+M 1 27102 2 27102
+M 1 27102 2 27102
+M 1 27107 4 27103
+M 1 27107 4 27107
+M 1 27107 4 27108
+M 1 27101 1 27110
+E 1 27105 1 5
+E 1 27106 1 9
+E 1 27109 1 7
+E 1 27110 1 10
+E 1 27107 1 16
+E 1 27108 1 8
+M 1 27114 2 27110
+E 1 27139 1 16
+E 1 27103 1 5
+E 1 27100 1 6
+M 1 27100 2 27112
+E 1 27102 1 16
+M 1 27107 4 27113
+M 1 27100 2 27114
+E 1 27102 1 16
+D 0 27115 5 2
+D 0 27117 1 1
+D 0 27118 3 1
+M 1 27103 1 27119
+E 1 27101 1 3
+E 1 27111 1 16
+D 0 27119 1 1
+M 1 27104 1 27120
+E 1 27112 1 17
+E 1 27129 1 13
+E 1 27114 1 20
+E 1 27113 1 12
+D 0 27120 3 1
+M 1 27114 2 27123
+E 1 27103 1 5
+E 1 27100 1 6
+E 1 27139 1 16
+M 1 27105 5 27126
+M 1 27108 2 27128
+M 1 27111 1 27129
+E 1 27140 1 17
+G 1 27134 1
+M 1 27106 2 27130
+E 1 27104 1 16
+M 1 27108 2 27131
+M 1 27105 5 27131
+M 1 27106 2 27133
+E 1 27104 1 16
+M 1 27105 5 27135
+M 1 27105 5 27135
+M 1 27105 5 27136
+D 0 27136 5 2
+M 1 27110 1 27138
+E 1 27123 1 5
+E 1 27124 1 19
+E 1 27125 1 10
+E 1 27126 1 9
+E 1 27127 1 7
+E 1 27128 1 6
+G 1 27132 1
+E 1 27122 1 16
+D 0 27138 4 2
+D 0 27139 4 2
+M 1 27112 1 27140
+E 1 27133 1 9
+E 1 27136 1 5
+E 1 27135 1 16
+E 1 27137 1 3
+M 1 27116 1 27143
+D 0 27143 3 0
+O 1 27157 1 27144
+D 0 27144 1 0
+O 1 27158 1 27145
+M 1 27120 1 27146
+M 1 27122 1 27148
+O 1 27159 1 27149
+M 1 27117 1 27152
+M 1 27115 2 27153
+M 1 27121 2 27155
+M 1 27113 1 27141
+E 1 27131 1 1
+E 1 27130 1 0
+E 1 27138 1 16
+M 1 27109 1 27137
+E 1 27116 1 9
+E 1 27118 1 14
+E 1 27119 1 5
+E 1 27115 1 11
+E 1 27117 1 16
+E 1 27120 1 6
+E 1 27121 1 12
+D 0 27137 4 2
+S
+
+
+#SHOPS
+0
+
+
+#REPAIRS
+ 27117    5  9 15         100   1         0 23    ; Dowyl the Blacksmith
+0
+
+
+#SPECIALS
+M  27103 spec_poison
+M  27104 spec_cast_mage
+M  27107 spec_fido
+M  27109 spec_cast_undead
+M  27110 spec_breath_acid
+M  27111 spec_cast_mage
+M  27112 spec_cast_mage
+M  27114 spec_thief
+M  27115 spec_cast_adept
+M  27116 spec_guard
+S
+
+
+#$

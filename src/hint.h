@@ -15,24 +15,24 @@
  *                 Online Hints module by Zedd of Slips in Time             *
  ****************************************************************************/
 
-#define HINT_FILE       SYSTEM_DIR "hints.txt"  /* For Hints */
+#define HINT_FILE       SYSTEM_DIR "hints.txt"	/* For Hints */
 #define HINT_UPDATEFREQ         1
 
-DECLARE_DO_FUN( do_hintedit );
+DECLARE_DO_FUN (do_hintedit);
 
 typedef struct hint_data HINT_DATA;
 struct hint_data
 {
-   HINT_DATA *next;
-   HINT_DATA *prev;
-   const char *text;
-   int low;
-   int high;
+  HINT_DATA *next;
+  HINT_DATA *prev;
+  const char *text;
+  int low;
+  int high;
 };
 
 extern HINT_DATA *hint;
 extern HINT_DATA *first_hint;
 extern HINT_DATA *last_hint;
 
-const char *get_hint( int level );
-void hint_update( void );
+const char *get_hint (int level);
+void hint_update (void);

@@ -21,14 +21,14 @@
 
 struct game_board_data
 {
-   const char *player1;
-   const char *player2;
-   int board[8][8];
-   int turn;
-   int type;
+  const char *player1;
+  const char *player2;
+  int board[8][8];
+  int turn;
+  int type;
 };
 
-void free_game( GAME_BOARD_DATA * board );
+void free_game (GAME_BOARD_DATA * board);
 
 #define NO_PIECE	0
 

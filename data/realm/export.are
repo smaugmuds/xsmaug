@@ -1,0 +1,4603 @@
+#XSMAUGAREA
+#AREADATA
+Version      1
+Name         Dragon Exports~
+Author       Sandman~
+WeatherX     0
+WeatherY     0
+Ranges       5 25 0 60
+Economy      0 6672836
+ResetMsg     A hollow chant can be heard from somewhere far below...~
+#ENDAREADATA
+
+#MOBILE
+Vnum       9800
+Keywords   Kylara cult receptionist~
+Short      Kylara~
+Long       The Dragon Exports receptionist greets you with a smile.
+~
+Desc       Kylara is a woman of average beauty, but her smile is warming and genuine.
+It is her job to keep the doors to the Dragon Exports building closed and
+locked to all who do not know the cult's password.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   detect_invis detect_hidden sanctuary infrared truesight~
+Stats1     0 4 17 6 100 400
+Stats2     1 0 9999
+Stats3     1 4 3
+Stats4     0 0 0 0 0
+Attribs    15 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs guts hands feet ear eye~
+Resist     nonmagic magic~
+Immune     sleep charm~
+Attacks    trip~
+Defenses   dodge~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if level($n) >= 51
+else
+if isnpc($n)
+say We do not allow your type in here $n!
+mpforce $n south
+else
+if isgood($n)
+smile $n
+mpechoat $n Kylara says 'You may find this place distasteful. However,
+mpechoat $n if you know the password, I shall unlock the door for you.'
+else
+mpechoat $n Kylara says 'Ah yes, you are exactly the type they look for here.
+mpechoat $n If you know the password, I shall unlock the door for you.'
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p worship dragons~
+Comlist   if ispc($n)
+mpechoat $n Kylara smiles at you.
+mpechoat $n Kylara says 'Enjoy your stay in Dragon Exports.'
+mpechoaround $n $n leaves north.
+mpechoat $n Kylara helps you through the Dragon Exports front door.
+mptransfer 0.$n 9851
+mpat 0.$n mpechoat $n Kylara closes the door behind you.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if rand(33)
+mpoload 9825 1
+mpecho Kylara gasps as the life drains from her body.
+mpecho as she falls the the ground, a key is dropped from her hand.
+drop key
+else
+cackle
+say Now you cannot pass, I take the door key with me into my next life!
+mpecho Kylara takes a last glance at the painting on the west wall.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9801
+Keywords   minor priest~
+Short      the minor priest~
+Long       A minor priest of the Dragon Cult scuffles along.
+~
+Desc       The minor priest seems preoccupied with his worship, so that he barely
+realizes you are here.  He almost seems to be in a trance of some sort.
+~
+Race       human~
+Class      cleric~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_invis~
+Stats1     -100 12 17 0 100 400
+Stats2     1 4 250
+Stats3     2 5 7
+Stats4     0 0 0 3 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart guts hands feet ear eye~
+Attacks    kick trip~
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       9802
+Keywords   robed priest~
+Short      the robed priest~
+Long       A robed priest of the Dragon Cult seems startled by your presence.
+~
+Desc       Thie priest is not someone you want to mess with.  He is wearing
+thick ornate robes and wields a sharp dagger.  His eyes have a look
+of craziness to them, like this man lives in a world of his own.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   detect_magic detect_hidden~
+Stats1     -200 14 17 0 100 400
+Stats2     1 4 300
+Stats3     1 4 12
+Stats4     0 0 0 0 2
+Attribs    15 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Attacks    bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum       9803
+Keywords   S'goral draconian knight~
+Short      S'goral~
+Long       A Draconian Knight stands here formidably.
+~
+Desc       While human seeming, subtle signs give you another indication. A slight
+green tinge to the skin, combined with a hint of vestigial scales, show
+this creature to have more of a reptilian origin. His sole purpose in
+life it to kill the people who pass here without an invitation.
+~
+Race       dragon~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   detect_invis detect_magic detect_hidden sanctuary infrared~
+Stats1     -400 16 17 -20 100 400
+Stats2     1 4 400
+Stats3     2 5 15
+Stats4     0 0 0 4 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs guts hands feet ear eye scales~
+Resist     fire~
+Immune     charm~
+Suscept    energy~
+Attacks    kick~
+Defenses   dodge~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+or isimmort($n)
+else
+mpechoat $n The Draconian Knight leaps in an angry attack!
+mpechoat $n This will teach you to enter sacred grounds without an invitation!
+  c magic $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9804
+Keywords   Cosira high priestess mistress~
+Short      Mistress Cosira~
+Long       The High Priestess of the Dragon Cult is infuriated by your intrusion!
+~
+Desc       This woman is beautiful, with a haunting strangeness to her. Her form
+is that of a well endowed human female, but you can tell she is not
+actually human. A slight green tinge to the skin, combined with a hint
+of vestigial scales, show this woman to have more of a reptilian origin.
+~
+Race       dragon~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_mage~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   detect_invis detect_magic detect_hidden sanctuary protect~
+Stats1     -600 18 17 -25 100 400
+Stats2     1 4 400
+Stats3     5 4 8
+Stats4     0 0 0 4 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs guts hands feet ear eye~
+Resist     fire~
+Immune     charm~
+Attacks    bite~
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   20~
+Comlist   close n
+close e
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+or isimmort($n)
+else
+  c dragonskin
+  cackle
+  c flamestrike $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9805
+Keywords   Prilla virgin sacrifice~
+Short      Prilla~
+Long       A virgin is here, weeping over her pending death.
+~
+Desc       This innocent, beautiful girl is waiting for some brave, 
+handsome warrior to save her.
+~
+Race       pixie~
+Class      druid~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel~
+Affected   infrared~
+Stats1     0 5 17 6 100 400
+Stats2     1 5 50
+Stats3     1 4 3
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     pixie~
+Speaking   common pixie~
+Bodyparts  head arms legs guts hands feet ear eye~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   scream
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+else
+  grovel
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   6~
+Comlist   sniff
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   4~
+Comlist   say Please let me go! Please! I am only 14, I am too young to die!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   cry
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9806
+Keywords   dragon wyrmling~
+Short      the Black Dragon Wyrmling~
+Long       A Black Dragon Wyrmling is here, moving to feed on you...
+~
+Desc       The Black Dragon Wyrmling is the center of this obscure Dragon Cult.
+It is viciuos and has a nasty bite, so you better be ready!
+~
+Race       dragon~
+Class      thief~
+Position   standing~
+DefPos     standing~
+Specfun    spec_thief~
+Gender     male~
+Actflags   npc sentinel scavenger aggressive~
+Affected   detect_invis sanctuary infrared~
+Stats1     -1000 25 -15 -12 50000 1000000
+Stats2     10 20 600
+Stats3     3 10 12
+Stats4     0 0 0 4 2
+Attribs    18 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs guts eye tail~
+Resist     fire slash~
+Immune     charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   33~
+Comlist   if isaffected($i) == blind
+  , squints its eyes, looking for a target.
+else
+  mea 0.$r The Wyrmling takes a deep breath and breathes fire onto you!
+  mer 0.$r The Wyrmling takes a deep breath and breathes fire onto $r!
+  mpdamage $n 30
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9807
+Keywords   minor priest~
+Short      the minor priest~
+Long       A minor priest of the Dragon Cult is here, tending to the call of nature.
+~
+Desc       The minor priest seems preoccupied.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   detect_invis protect~
+Stats1     -100 12 17 0 100 400
+Stats2     1 4 9
+Stats3     1 4 3
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   blush $n
+mpechoat $n The minor priest says 'You should learn to knock first!'
+mpechoat $n The priest makes himself presentable.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9808
+Keywords   fanatic monk~
+Short      a fanatic monk~
+Long       A fanatic monk raves about the day of the great black death!
+~
+Desc       A sincere, if looney, monk ... he wears a look of utter terror.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc~
+Affected   detect_invis~
+Stats1     0 6 17 6 100 400
+Stats2     1 4 60
+Stats3     1 4 10
+Stats4     0 0 2 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     charm~
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   6~
+Comlist   , falls to the ground and sobs.
+say I saw it!  Them!  Above the astral plane!
+say The dark mages were right, the time is near!
+, buries his face in his hands.
+mpasound Not far away, an odd monk can be seen sobbing.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9809
+Keywords   Belesdan director~
+Short      Belesdan~
+Long       Belesdan, the head merchandiser, greets you with a smarmy smile.
+~
+Desc       Belesdan strikes you as a fast talking, slick deal maker. His smile is
+not quite genuine, but draws you in all the same. His eyes are always
+darting about, making sure he is not missing a thing. At first look
+he appeared human, until you notice his almost too skinny build and
+pointed ears. His elven features are tamed well by his human blood.
+~
+Race       half-elf~
+Class      thief~
+Position   standing~
+DefPos     standing~
+Specfun    spec_thief~
+Gender     male~
+Actflags   npc sentinel scavenger stayarea~
+Affected   detect_invis detect_hidden infrared~
+Stats1     -1000 7 17 6 100 400
+Stats2     1 20 60
+Stats3     1 4 3
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common elvish~
+Speaking   common elvish~
+Bodyparts  head arms legs guts hands feet ear eye~
+Immune     charm~
+Attacks    kick~
+Defenses   dodge curelight~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   close east
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if name($n) == Gemma coordinator
+say Oh, hello Gemma dear. How is everything today?
+mpecho Belesdan tries hard to look busy, and fails miserably.
+blush Gemma
+else
+if name($n) == Moretta
+say Moretta, can you please be a little more careful with my things.
+say I mean really, do you not know how to do your work properly?
+nudge moretta
+else
+if isnpc($n)
+glare $n
+say You do not belong in here.
+mpforce $n west
+else
+if isimmort($n)
+grovel $n
+say Immortals are always welcome here. How may I serve you, $n?
+else
+say Ah, a mere mortal.  What is your business here, $n?
+mpechoat $n I hope you understand, Dragon Exports is by invitation only.
+mpechoat $n I suggest you visit Fandarel about your needs.
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p you feel cold to your bones.~
+Comlist   if name($n) == Gemma coordinator
+grovel Gemma
+say I can not help myself, your beauty overtakes my senses.
+say I will try harder. If only you were not so fetching in that dress.
+sigh gemma
+else
+growl $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p frowns at what you did.~
+Comlist   if name($n) == Moretta
+say Watch your attitude wench, or you will find yourself out of a job.
+say Only by MY grace do you even remain, such a high horse you ride.
+grin $n
+else
+glare $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9810
+Keywords   Moretta~
+Short      Moretta~
+Long       Moretta wanders about here, keeping everything neat and tidy.
+~
+Desc       Moretta is the maid of this fine institution.  She is sort of mousey
+and quiet, like she is afraid of her own shadow.  She never seems to
+stop working, as if by sheer will she can clean the evil out of this
+place.  She barely glances at you, then goes back to scrubbing.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc scavenger stayarea~
+Affected   detect_invis infrared~
+Stats1     200 12 17 6 100 400
+Stats2     5 15 120
+Stats3     1 4 3
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs guts hands feet ear eye~
+Attacks    trip~
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mpecho Moretta kneels and begins to scrub the floor.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpecho Moretta stands on her tip-toes, trying to clean the ceiling.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p spanks you playfully.  OUCH!~
+Comlist   if name($n) == Jerint sales director
+growl jerint
+say If not for me, this place would crumble about your very ears!
+mpecho Moretta arranges the items on the shelves as she dusts.
+say I'll be leaving now, try not to be so messy, Jerint.
+poke jerint
+else
+say Hey now, do I look like that type o'girl to ya?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p smiles at you.~
+Comlist   if name($n) == Jerint sales director
+say Good! I hope it bruised you. Stop giving me such grief!
+wave jerint
+east
+south
+else
+nod $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p nudges you.~
+Comlist   if name($n) == Belesdan director
+say You know I am always careful with things, even if they are yours.
+frown $n
+else
+say Hey now, don't go pushing me around.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p Better keep your distance.~
+Comlist   if name($n) == Belesdan director
+say Go ahead and fire me, you worthless pile of meat.
+say No one can equal my loyalty or dedication, and I could use the vacation!
+smirk belesdan
+west
+else
+stare $n
+say I just love a friendly flirt!
+wink $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p stares at you, fuming with rage!~
+Comlist   if name($n) == Fandarel boss
+say Oh, pardon me. I thought you were alone.
+frown
+else
+shiver $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p you.  Have a good journey.~
+Comlist   if name($n) == Fandarel boss
+say Very well, sir.
+grumble
+south
+else
+smile $n
+say Good bye to you $n.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9811
+Keywords   Gemma coordinator~
+Short      Gemma~
+Long       Gemma, the office coordinator, bustles around the office.
+~
+Desc       Gemma looks very busy. She runs around the office to make sure everything
+runs well.  She might be attractive if she weren't so work oriented.  Her
+boss, Fandarel, keeps her more busy than necessary, probably for personal
+reasons.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc stayarea~
+Affected   detect_invis infrared~
+Stats1     -1000 14 17 0 100 400
+Stats2     5 20 190
+Stats3     1 15 4
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs guts hands feet ear eye~
+Immune     charm~
+Attacks    kick trip~
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mpecho Gemma rustles some papers in an attempt to put them in order.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   sigh
+say I really wish Fandarel would be more organized.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p smiles at you.~
+Comlist   if name($n) == Jerint sales director
+chuckle
+say Ah, Jerint, you know Fandarel would fire me if I ever slowed.
+wink $n
+else
+smile $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p waves goodbye to you.  Have a good journey.~
+Comlist   if name($n) == Jerint sales director
+say Good day to you too, Jerint.
+wave jerint
+east
+else
+smile $n
+say Have a good journey $n.
+endif
+ 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p Such an effect on people!~
+Comlist   if name($n) == Belesdan director
+say Belesdan, I have asked you several times not to call me dear.
+glare Belesdan
+else
+say Oh, sorry $n, I did not mean to embarass you.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p Touching, huh?~
+Comlist   if name($n) == Belesdan director
+say I am not going to take this from you, Belesdan.
+say I get it enough from your Uncle Fandarel.  Cad must be a family trait.
+snarl Belesdan
+west
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p winks suggestively at you.~
+Comlist   if name($n) == Fandarel boss
+groan
+say Please, Fandarel, I want to keep our relationship professional.
+say I came by to see if you had any new papers that require processing.
+smile $n
+else
+blush $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p whistles at the sight of you.~
+Comlist   if name($n) == Fandarel boss
+mpecho Gemma stands up quickly, and straightens her dress.
+gasp fandarel
+say Good day, Mr. Fandarel.
+south
+else
+blush $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9812
+Keywords   Fandarel boss~
+Short      Fandarel~
+Long       Fandarel sits here, smoking a pipe and looking important.
+~
+Desc       Fandarel is good at being bossy, but makes for an awful person to work
+for.  He basically sits around in his office all  day. He does take time
+out to yell at those working under him, and to take a break in Gemma's
+office.  He seems awful interested in watching her work, maybe hoping
+to get a look up her skirt.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   detect_invis infrared~
+Stats1     -500 12 17 -10 100 400
+Stats2     1 4 300
+Stats3     1 4 11
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs guts hands feet ear eye~
+Attacks    kick~
+Defenses   dodge~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if name($n) == Gemma coordinator
+say Hello, Gemma, babe. You are sure candy to to the eyes.
+wink gemma
+else
+if name($n) == Moretta
+growl
+say Moretta, if I have told you once, I have told you a hundred times...
+say Do not come in here unless I am alone.
+fume Moretta
+else
+if isnpc($n)
+else
+if sex($n) == 2
+lick
+say Hello $n. Would you care to join me for a coffee?
+wink $n
+else
+shake $n
+say Hello $n. Do you have business here in Dragon Cult?
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p smiles at you.~
+Comlist   if name($n) == Gemma coordinator
+say Well yes, Gemma, I have a few items for you.
+mpecho Fandarel holds out a few papers, but drops them as Gemma grabs for them.
+say Oh dear, clumsy me. Please get those for me.
+mpecho Gemma bends down and begins to collect the scattered papers.
+whistle gemma
+else
+grin $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   frowns.~
+Comlist   if name($n) == Moretta
+say Well, get about your work and be quick about it. I will not wait all day.
+mpecho Moretta dusts the desk quickly, then empties the ashtray.
+say Thats enough for now girl. You can finish after this meeting is done.
+wave Moretta
+else
+say Hrmph, don't be frowning in here.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpoload 9865 7
+mpoload 9866 7
+fill pipe nip
+tamp pipe
+light pipe
+smoke pipe
+empty pipe
+mpjunk pipe
+ 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 9865 10
+mpoload 9866 10
+mpoload 9866 10
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9813
+Keywords   Wilam torturer~
+Short      Wilam~
+Long       Wilam, the Cult Torturer, is ready to inflict great pain upon you.
+~
+Desc       This is one of the most handsome men you have ever seen. His hair is
+a fiery red, shoulder length and wavy. His face has the ruged chiseled
+look. His muscles are well defined, but not overly large. You can not
+believe someone like this could torture people...  that is until he
+smiles. There is an odd twist to his mouth, something dark and flickering
+behind the eyes. A calculating madness lurks deep within that disturbing
+smile. Resisting the urge to shiver, you pull your eyes away.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel scavenger stayarea~
+Affected   detect_invis infrared truesight~
+Stats1     -1000 12 17 -30 100 400
+Stats2     20 10 500
+Stats3     1 7 5
+Stats4     0 0 0 4 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs guts hands feet ear eye~
+Resist     fire energy~
+Immune     sleep charm~
+Suscept    cold~
+Attacks    trip~
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   6~
+Comlist   close door
+close secret
+lock door
+lock secret
+mpjunk all
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   if isnpc($r)
+growl
+else
+grin $r
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   cackle
+say No one leaves this room as long as I live and breathe!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpecho Wilam drops a hunk of metal on the ground.
+mpecho Wilam kicks the key, and it skitters across the floor, out of sight.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   close door
+lock door
+close secret
+lock secret
+mpechoat $n Wilam says 'Welcome to my chamber of torture.. How may I hurt you?'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9814
+Keywords   Jerint sales director~
+Short      Jerint~
+Long       The Portable Dragon's vendor eyes you from bottom to top as you enter.
+~
+Desc       First thing you notice about this man is his eyes, as they scan you from
+bottom to top, they are a vivid steel grey color, full of witty intellect
+and genuine warmth.  Exuding an aura of confidence, this is a man that
+is completely comfortable in his masculinity.  His face is that of an
+older gentleman, slightly wrinkled from many years of laughter and sun.
+He sports a full head of salt and pepper hair and a handlebar mustache
+with more salt than pepper.  His face breaks into a friendly smile at 
+your appraisal.
+~
+Race       human~
+Class      cleric~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_cleric~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   detect_invis detect_hidden sanctuary infrared protect~
+Stats1     750 15 17 0 100 400
+Stats2     5 10 150
+Stats3     1 8 4
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs guts hands feet ear eye~
+Immune     sleep charm~
+Suscept    fire~
+Attacks    punch kick trip gouge~
+Defenses   parry dodge heal curelight~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if name($n) == Gemma coordinator
+say Stop your fretting, Gemma, it will give you wrinkles. Go take a break!
+smile gemma
+else
+if name($n) == Moretta
+say Woman, you clean this place so a man can not feel comfortable!
+say Ever heard "dirty enough to be happy, clean enough to be healthy"?
+spank Moretta
+else
+if isnpc($n)
+force $n east
+else
+if isimmort($n)
+say Hello $n, pleasure to serve those of the Immortal ranks!
+else
+say Welcome to my shop $n. What may I interest you in today?
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p winks suggestively at you.~
+Comlist   if name($n) == Gemma coordinator
+sigh
+say You may be right there, lass, sad to say.
+say Maybe he shall lighten his mood as he gains years.
+say Ah well, have a good day, Gemma!
+wave Gemma
+else
+say My, you are a flirt, $n!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p pokes you in the ribs.~
+Comlist   if name($n) == Moretta
+say Ouch! Wench, that tickles. Now get outta here and bug someone else.
+smile Moretta
+else
+poke $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9815
+Keywords   zombie zmee~
+Short      the zombie~
+Long       The decayed remains of a hapless Dragonslayer.
+~
+Desc       This zombie is pretty fresh.  Not much of the flesh has begun to rot
+off. This used to be a strong Dragonslayer, and chances are he carried
+a lot of that strength into his undeath.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel aggressive stayarea~
+Affected   detect_invis sanctuary~
+Stats1     -1000 15 17 6 100 400
+Stats2     10 10 150
+Stats3     1 7 7
+Stats4     0 0 0 3 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs guts hands feet ear eye~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 9893 1
+mpecho The Zombie yells 'Master! Help me.'
+mpecho The Zombie falls to the ground, in a pile of rotting flesh.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9816
+Keywords   Adrathom lich priest~
+Short      Adrathom~
+Long       The Lich Priest glares at you through dead eyes.
+~
+Desc       This is the living corpse of a once powerfull priest of the cult.  In his
+quest for power he learned the ways of the mage and made himself a 
+monstrocity.  He is a creature to be reckoned with, and unless the
+gods are in your favor he will probably kill you.
+~
+Race       undead~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel aggressive stayarea~
+Affected   detect_magic detect_hidden sanctuary fireshield~
+Stats1     -1000 37 17 -75 100 400
+Stats2     10 30 750
+Stats3     5 4 12
+Stats4     0 0 0 4 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs guts eye~
+Resist     magic~
+Immune     charm paralysis~
+Attacks    bite trip~
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       9817
+Keywords   G'narish old monk~
+Short      G'narish~
+Long       An old, dangerous looking monk is here attempting to sell you candy.
+~
+Desc       This monk is so old, he looks as if he should be long dead and buried.
+His face is a series of wrinkles, blurring all his features.  His
+breath is awful, and as you look closer, you can see why.  His teeth
+are rotten and his tongue is a disgusting black.
+~
+Race       ghoul~
+Class      cleric~
+Position   standing~
+DefPos     standing~
+Specfun    spec_fido~
+Gender     male~
+Actflags   npc sentinel~
+Affected   detect_invis detect_hidden sanctuary protect truesight~
+Stats1     -200 20 17 -300 100 400
+Stats2     1 1 10000
+Stats3     10 5 10
+Stats4     0 0 3 3 0
+Attribs    13 13 13 16 13 13 13
+Saves      0 0 0 0 -3
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms heart brains guts feet fingers ear~
+Immune     blunt pierce sleep charm nonmagic~
+Attacks    bite punch trip gouge flamestrike colorspray~
+Defenses   dodge curecritical dispelevil sanctuary~
+ShopData   26 0 0 0 0 205 200 0 23
+#MUDPROG
+Progtype  rand_prog~
+Arglist   25~
+Comlist   if goldamt($i) > 50000
+mpat 5475 drop 40000 coins
+mpat 5475 mppurge coins
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   , runs a blackened tongue over his rotting teeth, then grins.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       9863
+Keywords   priest~
+Short      the robed priest~
+Long       A trusted priest of the Dragon Cult wanders here, deep in worship.
+~
+Desc       Thie priest is not someone you want to mess with.  He is wearing
+thick ornate robes and wields a sharp dagger.  His eyes have a look
+of craziness to them, like this man lives in a world of his own.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_magic detect_hidden~
+Stats1     -200 14 17 0 100 400
+Stats2     1 4 300
+Stats3     1 4 12
+Stats4     0 0 0 0 0
+Attribs    15 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Attacks    bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum       9899
+Keywords   spacer mob~
+Short      a newly created spacer mob~
+Long       Some god abandoned a newly created spacer mob here.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc prototype~
+Stats1     0 1 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#OBJECT
+Vnum     9810
+Keywords altar~
+Type     trash~
+Short    a newly created altar~
+Long     Some god dropped a newly created altar here.~
+Flags    prototype~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9825
+Keywords black key~
+Type     key~
+Short    a black key~
+Long     You see a very important key here!~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9826
+Keywords primitive key~
+Type     key~
+Short    a primitive key~
+Long     You see a primitive key here!~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9827
+Keywords skull key~
+Type     key~
+Short    a skull key~
+Long     You see a skull key here!~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9828
+Keywords bone sword~
+Type     weapon~
+Short    a bone sword~
+Long     A sharp piece of bone lays here.~
+Flags    antigood~
+WFlags   take wield~
+Values   0 0 0 1 0 0
+Stats    40 4000 400 0 0
+Affect       -1 -1 2 1 0
+Affect       -1 -1 2 2 0
+Affect       -1 -1 -1 3 0
+Affect       -1 -1 1 19 0
+Affect       -1 -1 1 18 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9829
+Keywords skull helm dragon~
+Type     armor~
+Short    a helm made from a dragon's skull~
+Long     The skull of a dragon lies here.~
+Flags    glow~
+WFlags   take head~
+Values   0 0 0 0 0 0
+Stats    15 4000 400 0 0
+Affect       -1 -1 -1 3 0
+Affect       -1 -1 2 5 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9830
+Keywords dark robes~
+Type     armor~
+Short    some dark robes~
+Long     Some dark robes lay here.~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Stats    5 1000 100 0 0
+Affect       -1 -1 30 12 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9831
+Keywords black pen~
+Type     weapon~
+Short    a black pen~
+Long     A black pen catches your eye.~
+WFlags   take wield~
+Values   0 0 0 11 0 0
+Stats    8 300 30 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9832
+Keywords evil black dagger~
+Type     weapon~
+Short    an evil looking black dagger~
+Long     A black dagger is here radiating evil.~
+Flags    evil~
+WFlags   take wield~
+Values   0 0 0 11 0 0
+Stats    10 300 30 0 0
+Affect       -1 -1 3 19 0
+Affect       -1 -1 2 18 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9833
+Keywords black staff~
+Type     weapon~
+Short    a black staff~
+Long     A long, blackened stick is here.~
+Flags    evil antivampire~
+WFlags   take wield~
+Values   0 0 0 7 0 0
+Stats    10 300 30 0 0
+Affect       -1 -1 3 18 0
+Affect       -1 -1 1 3 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9834
+Keywords heap scales black dragonscale robes~
+Type     armor~
+Short    dragonscale robes~
+Long     You see a shimering black heap of scales.~
+Flags    evil magic antigood antineutral~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Stats    20 5000 500 0 0
+Affect       -1 -1 50 12 0
+Affect       -1 -1 3 3 0
+Affect       -1 -1 3 4 0
+Affect       -1 -1 25 13 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9835
+Keywords ornate robes~
+Type     armor~
+Short    ornate robes~
+Long     You see a pile of finely woven cloth.~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Stats    20 5000 500 0 0
+Affect       -1 -1 1 3 0
+Affect       -1 -1 1 4 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9836
+Keywords white dress torn~
+Type     armor~
+Short    a torn white dress~
+Long     A once pretty dress is lying here with holes torn in it.~
+WFlags   take body~
+Values   0 0 0 0 0 0
+Stats    5 10 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9837
+Keywords rusty key~
+Type     key~
+Short    a rusty key~
+Long     A hunk of metal is on the ground.~
+Flags    hidden~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9838
+Keywords cheap plaid pants pair~
+Type     armor~
+Short    a pair of cheap plaid pants~
+Long     Some really ugly pants are on the ground here.~
+WFlags   take legs~
+Values   0 0 0 0 0 0
+Stats    5 1000 100 0 0
+Affect       -1 -1 -4 25 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9839
+Keywords donut~
+Type     food~
+Short    a donut~
+Long     There is a jelly filled donut here.~
+WFlags   take~
+Values   100 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9840
+Keywords coffee~
+Type     drinkcon~
+Short    a cup of coffee~
+Long     There is a piping hot cup of coffee here~
+WFlags   take~
+Values   15 15 12 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9841
+Keywords dragon candy~
+Type     pill~
+Short    dragon candy~
+Long     A piece of Dragon candy.~
+WFlags   take~
+Values   0 -1 -1 -1 0 0
+Stats    1 200 20 0 0
+Spells   'blindness' 'harm' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9842
+Keywords zombie candy~
+Type     pill~
+Short    zombie candy~
+Long     A piece of Zombie candy.~
+WFlags   take~
+Values   0 -1 -1 -1 0 0
+Stats    1 320 32 0 0
+Spells   'blindness' 'teleport' 'curse'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9843
+Keywords lich candy~
+Type     pill~
+Short    lich candy~
+Long     A piece of Lich candy.~
+WFlags   take~
+Values   0 -1 -1 -1 0 0
+Stats    1 50 5 0 0
+Spells   'poison' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9844
+Keywords vampire candy~
+Type     pill~
+Short    vampire candy~
+Long     A piece of Vampire candy.~
+WFlags   take~
+Values   0 -1 -1 -1 0 0
+Stats    1 100 10 0 0
+Spells   'energy drain' 'energy drain' 'energy drain'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9845
+Keywords beholder candy~
+Type     pill~
+Short    beholder candy~
+Long     A piece of Beholder candy.~
+WFlags   take~
+Values   0 -1 -1 -1 0 0
+Stats    1 1000 100 0 0
+Spells   'detect hidden' 'detect invis' 'detect magic'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9846
+Keywords ogre candy~
+Type     pill~
+Short    ogre candy~
+Long     A piece of Ogre candy.~
+WFlags   take~
+Values   1 -1 -1 -1 0 0
+Stats    1 2000 200 0 0
+Spells   'kindred strength' 'stone skin' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9847
+Keywords troll candy~
+Type     pill~
+Short    troll candy~
+Long     A piece of Troll candy.~
+WFlags   take~
+Values   0 -1 -1 -1 0 0
+Stats    1 1500 150 0 0
+Spells   'cure light' 'cure light' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9848
+Keywords death candy~
+Type     pill~
+Short    death candy~
+Long     A piece of Death candy.~
+WFlags   take~
+Values   0 -1 -1 -1 0 0
+Stats    1 15000 1500 0 0
+Spells   'sanctuary' 'stone skin' 'shield'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9849
+Keywords emerald stone~
+Type     treasure~
+Short    an emerald stone~
+Long     A dark green stone lies here forgotten~
+Flags    glow~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    16960 0 0 0 0
+Affect       -1 -1 2 1 0
+Affect       -1 -1 2 2 0
+Affect       -1 -1 2 3 0
+Affect       -1 -1 2 4 0
+Affect       -1 -1 2 5 0
+Affect       -1 -1 50 12 0
+Affect       -1 -1 50 13 0
+Affect       -1 -1 15 17 0
+Affect       -1 -1 15 18 0
+Affect       -1 -1 15 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9850
+Keywords brochure~
+Type     trash~
+Short    a brochure~
+Long     A sharp looking flyer flutters here in the breeze.~
+Flags    nodrop noremove~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#EXDESC
+ExDescKey    brochure~
+ExDesc       The brochure reads:
+ ____________________________________
+ | C U L T  O F  T H E  D R A G O N |
+ |                                  |
+ | Join today and you too can share |
+ | in the many benefits of a cult.  |
+ | Advantages like:                 |
+ |   - never having a heating bill! |
+ |     (dragons, heat, get it?)     |
+ |   - attractive robes!            |
+ |   - virgin sacrifices!           |
+ |   - sophisticated hairstyle!     |
+ |                                  |
+ | Remember - vote 'no' on prop.13, |
+ |  a Darkhaven ban on Dragon Cult  |
+ |             activity!            |
+ |       If you feel like we do     |
+ |       kill the Duke, TODAY!      |
+ |__________________________________|
+ 
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     9851
+Keywords glowing caution sign~
+Type     furniture~
+Short    a brightly glowing sign of caution~
+Long     A new, brightly glowing caution sign beckons to you.~
+Flags    glow hum~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#EXDESC
+ExDescKey    glowing sign caution~
+ExDesc       This area has been updated to take advantage of special functions and
+capabilites found in the Realms, as well as to challenge the relative
+strength of low level characters.  The area is easily accessible, and
+provides excellent equipment for those who come prepared.  Those who
+are not should seek adventure elsewhere.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     9852
+Keywords ornate robes~
+Type     armor~
+Short    ornate robes~
+Long     You see a pile of finely woven cloth.~
+Flags    glow~
+WFlags   take neck~
+Values   0 0 0 0 0 0
+Stats    7 5000 500 0 0
+Affect       -1 -1 1 3 0
+Affect       -1 -1 1 4 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9855
+Keywords statue~
+Type     trash~
+Short    a statues of a dragon~
+Long     A pure gold dragon statue stands in the center of the room.~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#EXDESC
+ExDescKey    statue~
+ExDesc       This statue is made from gold, molded into the shape of a majestic
+dragon. The detail is extraordinary.  You can make out each scale
+and curve of the body.  The mouth is pulled back in a snarl, showing
+a mouth full of sharp teeth.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     9860
+Keywords brown dragon staff~
+Type     staff~
+Short    a brown dragon staff~
+Long     Here lies a staff carved in a dark brown wood in the shape of a dragon.~
+Flags    glow magic organic~
+WFlags   take hold~
+Values   40 1 1 -1 0 0
+Stats    15 10000 1000 0 0
+Spells   'dragon wit'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9861
+Keywords golden dragon statuette~
+Type     armor~
+Short    a golden dragon statuette~
+Long     A golden statuette, carved into the shape of a dragon, lies here.~
+Flags    hum magic~
+WFlags   take hold~
+Values   5 7 0 0 0 0
+Stats    12 75000 7500 0 0
+Affect       -1 -1 2 31 0
+Affect       -1 -1 1 3 0
+Affect       -1 -1 20 12 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9862
+Keywords red dragon wand~
+Type     wand~
+Short    a red dragon wand~
+Long     A red wand with the grip carved into the shape of a dragon.~
+Flags    glow magic~
+WFlags   take hold~
+Values   20 1 1 -1 0 0
+Stats    10 95000 9500 0 0
+Spells   'dragonskin'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9863
+Keywords black dragon potion~
+Type     potion~
+Short    a black dragon potion~
+Long     A black liquid, inside a dragon shaped flask, lies here bubbling.~
+Flags    glow hum magic nodrop~
+WFlags   take~
+Values   30 -1 -1 -1 0 0
+Stats    20 111111 11111 0 0
+Spells   'dispel magic' 'bless' 'armor'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9864
+Keywords leaky quill~
+Type     weapon~
+Short    a leaky quill~
+Long     A battered quill lies here, leaking ink everywhere.~
+Flags    glow hum magic~
+WFlags   take wield~
+Values   0 0 0 11 0 0
+Stats    8 300 30 0 0
+Affect       -1 -1 -1 25 0
+Affect       -1 -1 4 13 0
+Affect       -1 -1 2 19 0
+Affect       -1 -1 3 18 0
+#MUDPROG
+Progtype  use_prog~
+Arglist   100~
+Comlist   mpechoat $n As you wield this quill, ink splashes on your armour.
+mpechoat $n You become less attractive to those around you.
+mpechoaround $n $n splashes ink on $s armour, making $m look messy.
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     9865
+Keywords meerschaum dragon pipe~
+Type     pipe~
+Short    a meerschaum dragon pipe~
+Long     Here lies a pipe bowl, carved from white meerschaum, in the shape of a dragon.~
+Flags    glow~
+WFlags   take~
+Values   90 0 0 0 0 0
+Stats    5 12500 1250 0 0
+#EXDESC
+ExDescKey    pipe~
+ExDesc       This pipe is made from a white clay, called meerschaum.  It is carved
+into the shape of a dragon head caught in mid-growl.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     9866
+Keywords dragon nip herb~
+Type     herb~
+Short    a pinch of dragon nip herb~
+Long     A brown herb lies here in a small pile.~
+Flags    organic~
+WFlags   take~
+Values   30 30 0 0 0 0
+Stats    3 1100 110 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9892
+Keywords Dragon candy~
+Type     pill~
+Short    dragon candy~
+Long     A piece of Dragon candy.~
+WFlags   take~
+Values   5 -1 -1 -1 0 0
+Stats    1 450 45 0 0
+Spells   'dragon wit' 'create fire' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     9893
+Keywords rusty key~
+Type     key~
+Short    a rusty key~
+Long     A hunk of metal is on the ground.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     9899
+Keywords spacerobj~
+Type     trash~
+Short    a newly created spacerobj~
+Long     Some god dropped a newly created spacerobj here.~
+Flags    prototype~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     9810
+Name     Winter Altar~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction south~
+ToRoom    9833
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    9834
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9811
+Name     The Winter Pit~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction south~
+ToRoom    9895
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9812
+Name     A dark cell~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9813
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9812 1 1
+#ENDROOM
+
+#ROOM
+Vnum     9813
+Name     North Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9814
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9836
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9812
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9813 3 1
+#ENDROOM
+
+#ROOM
+Vnum     9814
+Name     North Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9815
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9813
+#ENDEXIT
+
+Reset D 0 9814 1 1
+#ENDROOM
+
+#ROOM
+Vnum     9815
+Name     Spring~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9816
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9814
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9815 3 1
+#ENDROOM
+
+#ROOM
+Vnum     9816
+Name     Spring Altar~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction west~
+ToRoom    9815
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    9838
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9817
+Name     The Spring Pit~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction south~
+ToRoom    9897
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9818
+Name     A dark cell~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction south~
+ToRoom    9819
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9818 2 1
+#ENDROOM
+
+#ROOM
+Vnum     9819
+Name     East Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9818
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9820
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9840
+#ENDEXIT
+
+Reset D 0 9819 0 1
+#ENDROOM
+
+#ROOM
+Vnum     9820
+Name     East Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9819
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9821
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9820 2 1
+#ENDROOM
+
+#ROOM
+Vnum     9821
+Name     Summer~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9820
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9822
+#ENDEXIT
+
+Reset D 0 9821 0 1
+#ENDROOM
+
+#ROOM
+Vnum     9822
+Name     Summer Altar~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9821
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9823
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    9842
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9823
+Name     The Summer Pit~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9897
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9822
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9824
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9823 3 1
+#ENDROOM
+
+#ROOM
+Vnum     9824
+Name     A dark cell~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9823
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9825
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9824 1 1
+Reset D 0 9824 3 1
+#ENDROOM
+
+#ROOM
+Vnum     9825
+Name     South Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9844
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9824
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9826
+#ENDEXIT
+
+Reset D 0 9825 1 1
+#ENDROOM
+
+#ROOM
+Vnum     9826
+Name     South Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9825
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9827
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9826 3 1
+#ENDROOM
+
+#ROOM
+Vnum     9827
+Name     Autumn~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9826
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9828
+#ENDEXIT
+
+Reset D 0 9827 1 1
+#ENDROOM
+
+#ROOM
+Vnum     9828
+Name     Autumn Altar~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9827
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    9846
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9829
+Name     The Autumn Pit~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9895
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9830
+Name     A dark cell~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9831
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9829
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9830 0 1
+Reset D 0 9830 2 1
+#ENDROOM
+
+#ROOM
+Vnum     9831
+Name     West Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9832
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9848
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9830
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9831 2 1
+#ENDROOM
+
+#ROOM
+Vnum     9832
+Name     West Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9833
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9831
+#ENDEXIT
+
+Reset D 0 9832 0 1
+#ENDROOM
+
+#ROOM
+Vnum     9833
+Name     Winter~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9810
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9832
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9833 2 1
+#ENDROOM
+
+#ROOM
+Vnum     9834
+Name     Winter Attendant~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction northwest~
+ToRoom    9810
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    9835
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9835
+Name     Winter Liar~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction down~
+ToRoom    9811
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    9834
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9836
+Name     North Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9813
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9837
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9837
+Name     North Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9836
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9891
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9838
+Name     Spring Attendant~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction northeast~
+ToRoom    9816
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    9839
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9839
+Name     Spring Liar~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction down~
+ToRoom    9817
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    9838
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9840
+Name     East Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9819
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9841
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9841
+Name     East Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9840
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9891
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9842
+Name     Summer Attendant~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction northwest~
+ToRoom    9843
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    9822
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9843
+Name     Summer Liar~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction down~
+ToRoom    9823
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    9842
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9844
+Name     South Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9845
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9825
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9845
+Name     South Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9891
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9844
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9846
+Name     Autumn Attendant~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction northeast~
+ToRoom    9847
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    9828
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9847
+Name     Autumn Liar~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction down~
+ToRoom    9829
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    9846
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9848
+Name     West Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9849
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9831
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9849
+Name     West Mage Route~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction east~
+ToRoom    9891
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9848
+#ENDEXIT
+
+Reset M 0 9802 4 9849
+  Reset E 1 9832 6 16
+  Reset E 1 9852 4 3
+#ENDROOM
+
+#ROOM
+Vnum     9850
+Name     Dragon Exports front desk~
+Sector   forest~
+Flags    dark nomob indoors~
+Desc     You have entered a very orderly office.  The room is painted in a light
+gold with a few sparse paintings on the east wall and a massive painting
+on the west wall.  In the center of the room is a carved desk, impressive
+in stature and design.  A few potted plants stand sentry along the north
+wall, framing a door that blocks travel deeper into this building.  A
+small, golden plaque is attached to the north wall.
+~
+#EXIT
+Direction north~
+ToRoom    9851
+Key       9825
+Desc      A door leads into the temple.
+~
+Keywords  door~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    21019
+Desc      To the south is Law Avenue, of the town of Darkhaven.
+~
+#ENDEXIT
+
+Reset M 0 9800 1 9850
+Reset D 0 9850 0 2
+#EXDESC
+ExDescKey    west~
+ExDesc       A massive picture adorns the west wall, barely allowing the light
+gold from the walls to be seen.  The painting is done in oils,
+giving a sheen to the subject it presents to you.  It is a massive
+dragon, larger then any you have seen in your adventures.  The
+beast looks to stand about 40 feet from ground to nose tip and the
+beasts body is about 300 feet long based by the the buildings in
+the background.  At his feet are several men, all kneeling, and a
+female dressed in white.  You think the artist captured a virgin
+sacrifice on this canvas.  On the lower frame is a small brass
+plate reading:  'worship dragons'
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    walls~
+ExDesc       The walls here a well cleaned and painted a light gold.  On the 'east'
+you see several small pictures and one massive picture on the 'west'.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    wall~
+ExDesc       The walls here a well cleaned and painted a light gold.  On the 'east'
+you see several small pictures and one massive picture on the 'west'.
+A small, golden plaque is attached to the north wall.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    east paintings~
+ExDesc       On the east wall there are five small paintings.  Each painting features
+one dragon with a detailed background.  The pictures are arranged with
+one in the center and the other four positioned around it.  The center
+picture is that of a wyrmling, named because it looks like a serpent
+with wings.  The painting at 2'oclock is of a smallish brown dragon in
+a background of budding trees and new grasses of early spring.  The
+painting at 4'oclock is that of a golden colored dragon basking in the
+bright sun of mid-summer.  The painting at 8'oclock is a large red dragon
+surrounded by falling leaves of the autumn season.  The final picture,
+placed at 10'oclock to the wyrmling, represents a huge dragon of the
+deepest black perched on a snow-covered cliffside.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    w~
+ExDesc       A massive picture adorns the west wall, barely allowing the light
+gold from the walls to be seen.  The painting is done in oils,
+giving a sheen to the subject it presents to you.  It is a massive
+dragon, larger then any you have seen in your adventures.  The
+beast looks to stand about 40 feet from ground to nose tip and the
+beasts body is about 300 feet long based by the the buildings in
+the background.  At his feet are several men, all kneeling, and a
+female dressed in white.  You think the artist captured a virgin
+sacrifice on this canvas.  On the lower frame is a small brass
+plate reading:  'worship dragons'
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    e~
+ExDesc       On the east wall there are five small paintings.  Each painting features
+one dragon with a detailed background.  The pictures are arranged with
+one in the center and the other four positioned around it.  The center
+picture is that of a wyrmling, named because it looks like a serpent
+with wings.  The painting at 2'oclock is of a smallish brown dragon in
+a background of budding trees and new grasses of early spring.  The
+painting at 4'oclock is that of a golden colored dragon basking in the
+bright sun of mid-summer.  The painting at 8'oclock is a large red dragon
+surrounded by falling leaves of the autumn season.  The final picture,
+placed at 10'oclock to the wyrmling, represents a huge dragon of the
+deepest black perched on a snow-covered cliffside.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    painting~
+ExDesc       A massive picture adorns the west wall, barely allowing the light
+blue from the walls to be seen.  The painting is done in oils,
+giving a sheen to the subject it presents to you.  It is a massive
+dragon, larger then any you have seen in your adventures.  The
+beast looks to stand about 40 feet from ground to nose tip and the
+beasts body is about 300 feet long based by the the buildings in
+the background.  At his feet are several men, all kneeling, and a
+female dressed in white.  You think the artist captured a virgin
+sacrifice on this canvas.  On the lower frame is a small brass
+plate reading:  'worship dragons'
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    potted plants~
+ExDesc       On each side of the northern door are several potted plants.  Each plant
+is a different variety of a miniature tree.  The green they add to this
+room tames the otherwise antiseptic office.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    desk~
+ExDesc       This desk looks like it was built to last several lifetimes.  It is
+about six feet wide and three feet tall.  The wood is a mahogany,
+carved and stained to a gorgeous finish.  The thing looks to weigh
+at least a hundred pounds.  As you look it over, you wonder if it
+was built in this room, because it does not appear to be able to fit
+through either doorway here.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    plaque~
+ExDesc       This dragon exports has had a major renovation recently, and there are
+plans to add another section soon.  Please let me know if you like the
+changes or have suggestions for the upcoming addition.  Enjoy your time
+adventuring amongst those who worship dragons.
+ 
+Brittany Seccunda-DethBlayde, Godmother
+July 30, 1996
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9851
+Name     A dimly lit corridor~
+Sector   inside~
+Flags    dark nomob indoors~
+Desc     It takes a few moments for your eyes to adjust to the sudden darkness
+of this hallway.  The room is completely bare of color and decor.  The
+emptiness appears purposeful, a ruse to make the building appear bland
+enough to deter potential adventurers.
+~
+#EXIT
+Direction north~
+ToRoom    9852
+Desc      The Corridor continues North.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9850
+Key       9825
+Desc      A door leads into the Reception Area.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9851 2 1
+#ENDROOM
+
+#ROOM
+Vnum     9852
+Name     Dragon Hall Foyer~
+Sector   inside~
+Flags    dark nomob indoors~
+Desc     This is the formal foyer for the Dragon Exports office.  The room is a
+stark contrast to the hallway leading into it.  The walls are painted
+in a flat gold color.  There are two paintings on the east wall and two
+paintings on the west wall.  To the north is an open doorway, leading
+to a brightly lit room.  South is the hallway leading back toward the
+reception area.
+~
+#EXIT
+Direction north~
+ToRoom    9853
+Desc      You see an office.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9851
+Desc      You see a corridor.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    walls~
+ExDesc       The walls have intricate paintings of dragons upon them.  You see none of
+the good dragons in the paintings though, they are all of famous evil
+dragons. Those like Tiamat and Shimmergloom.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    walls paintings~
+ExDesc       Four separate paintings adorn the walls here.  Two on the east wall
+and two on the west.  All four painting feature infamous dragons, 
+in various forms of celebration.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    wall~
+ExDesc       The walls have intricate paintings of dragons upon them.  You see none of
+the good dragons in the paintings though, they are all of famous evil
+dragons. Those like Tiamat and Shimmergloom.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9853
+Name     The Front Office~
+Sector   inside~
+Flags    dark indoors~
+Desc     You have reached the front office of the Dragon Exports.  The decor here
+is somewhat gaudy compared to the parts of the building you have seen so
+far.  The walls maintain the flat golden hue, but the knick knacks are
+more overblown.  Bigger and brighter seems to be the theme here.  The
+variety of colors and styles almost turns your stomach.
+~
+#EXIT
+Direction east~
+ToRoom    9880
+Desc      There is a door to the east, with a sign reading: Caution -- Do not enter!
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9852
+Desc      You see Dragon Hall.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9871
+Desc      You see the waiting room.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9854
+Desc      There is a trapdoor leading down.
+~
+Keywords  trapdoor~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 9809 1 9853
+  Reset E 1 9838 2 7
+  Reset E 1 9864 2 16
+Reset D 0 9853 1 1
+Reset D 0 9853 5 1
+#EXDESC
+ExDescKey    plaque~
+ExDesc       The Dragon Cult Temple was created by Sandman,
+late one night, when he should have been studying
+for finals.  12/13/93
+ 
+Dragon Cult Temple revised & expanded 
+Spring Break '94 by Sandman when he
+should have been his paper.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    brochure~
+ExDesc       ____________________________________
+      | C U L T  O F  T H E  D R A G O N |
+      |                                  |
+      | Join today and you too can share |
+      | in the many benefits a cult      |
+      | member can have.                 |
+      | advantages like:                 |
+      |   - never having a heating bill  |
+      |   - those cool robes             |
+      |   - free virgin sacrifice        | 
+      |     tickets!                     |
+      |   - a cool haircut               |
+      |                                  |
+      | For all this and more call       |
+      | 1-800-FOR-DRGN                   |
+      |                                  |
+      | Remember: vote no on 13          |
+      | Citizens of Darkhaven ban on     |
+      | Draconian activity.  If you      |
+      | feel like we do, Kill the Duke   |
+      | TODAY!                           |
+      |__________________________________|         
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    door east~
+ExDesc       There is a door to the east, with a sign reading: Caution -- Do not enter!
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9854
+Name     A five-way intersection~
+Sector   inside~
+Flags    dark indoors~
+Desc     You stand at a wide intersection of hallways.  There are exits to the
+north, south, east, and west.  Above you, you can see the outlines of
+a trap door.  From the south you notice a bright glow, catching your
+attention.
+~
+#EXIT
+Direction north~
+ToRoom    9856
+Desc      There is an exit.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9857
+Desc      A hallway leads east.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9855
+Desc      You see a bright light.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9859
+Desc      You see a hallway.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    9853
+Desc      As you look up you can see a trapdoor.
+~
+Keywords  trapdoor~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+Reset M 0 9802 4 9854
+  Reset E 1 9832 6 16
+  Reset E 1 9835 4 5
+Reset D 0 9854 4 1
+#ENDROOM
+
+#ROOM
+Vnum     9855
+Name     The Candlelit Shrine~
+Sector   inside~
+Flags    indoors~
+Desc     The light in this place is overwhelming.  Candles completely cover
+the walls, making this place hot as well as bright.  This place is
+a place of worship, and the idol is a golden dragon statue.
+~
+#EXIT
+Direction north~
+ToRoom    9854
+Desc      You see the intersection.
+~
+#ENDEXIT
+
+Reset M 0 9801 7 9855
+  Reset E 1 9830 8 5
+Reset O 0 9855 1 9855
+#ENDROOM
+
+#ROOM
+Vnum     9856
+Name     The Tapestry Room~
+Sector   inside~
+Flags    dark indoors~
+Desc     The walls of this room are covered with tapestries depicting various dragon
+scenes.  Befitting the theme seen throughout this building, there are five
+distinct tapestries - two to the north, two to the south, and one large
+tapestry to the east.  As you begin to look them over in detail, you see
+the east tapestry begin to move.  This may not be the best places to hang
+around.
+~
+#EXIT
+Direction east~
+ToRoom    9886
+Desc      A beautiful tapestry of a wyrmling covers a passageway to the east.
+~
+Keywords  tapestry~
+Flags     isdoor closed nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9854
+Desc      You see the intersection.
+~
+#ENDEXIT
+
+Reset M 0 9801 7 9856
+  Reset E 1 9830 8 5
+  Reset E 1 9833 6 16
+Reset M 0 9801 7 9856
+  Reset E 1 9830 8 5
+  Reset E 1 9833 6 16
+Reset D 0 9856 1 1
+#EXDESC
+ExDescKey    w west~
+ExDesc       The two tapestries on the west wall feature an early spring and
+a summer scene.  The spring tapestry is a portrait of a smallish
+brown dragon, perched on a hillside.  The trees around him are just
+beginning to bud with new leaves and the grass has that bright, new
+growth, green.  The dragon looks very prideful, sitting upright, it's
+tail twisted in several loops, crossing the front of his hind legs.
+His eyes are an orange color and seem to follow as you move.  His 
+wings are touching above his back, somewhat flexed in case he needs
+to take off for a quick flight.  Even in this relaxed, prancing state
+this dragon is an impressive desplay of strength.
+The summer tapestry is strikingly different.  It catches a majestic
+golden dragon in mid flight.  It's wings spread far wider than this
+tapestry can hold.  In the background, you can see it is summertime,
+the sun out in full heat.  It looks hot, and the dragon appears to
+enjoy it immensely.  The dragon flies, eyes closed, far above the
+grassy hills.  His tail whipped up behind him, like a scorpion.  He
+looks as if nothing could break his utter contentment of flight.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    n north~
+ExDesc       The two tapestries on the north wall feature an autumn and winter
+scene. The autumn tapestry is a portrait of a mammoth red dragon.
+He is deep in a forest, surrounded by gorgeous leaves of vivid
+colors of fall.  His is sitting on his hind legs, his tail wrapped
+around them.  His front legs are perched lightly on his tail, allowing
+his to stand taller than if he were on all fours.  His chest appears
+puffed up, like he is trying to look even more large then he already
+is. He definitely makes a magestic statement, even in this medium.
+The winter tapestry is so well done, it appears that your fingers would
+freeze upon touching it.  It lacks much in the way of color, just the
+stark white of frozen winter and the deepest black of the immense
+dragon perching on the iced cliff.  The harsh contrast of the dragons
+coloring to the background is shocking, stealing the more exact
+deletes of it's being.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    walls wall tapestry tapestries~
+ExDesc       The walls have several tapestries, to get a better look at them,
+try 'look north', 'look west', and 'look east'.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    e east~
+ExDesc       A large tapestry covers the entire eastern wall.  The tapestry portrays
+a dragon wyrmling, feasting on a virgin sacrifice.  The tapestry appears
+to be shielding an opening in the wall.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9857
+Name     An ordinary hallway.~
+Sector   inside~
+Flags    dark indoors~
+Desc     This is a small hallway, leading away from the more busy parts of the
+temple area.  The walls here are deprived of color and decor.  Only
+the doors have any color.  One door leads off the the east and the
+other to the north.
+~
+#EXIT
+Direction north~
+ToRoom    9892
+Desc      You see a small store.
+~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9858
+Desc      You see a door.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9854
+Desc      You see the intersection.
+~
+#ENDEXIT
+
+Reset D 0 9857 0 1
+Reset D 0 9857 1 1
+#ENDROOM
+
+#ROOM
+Vnum     9858
+Name     The lavatory~
+Sector   inside~
+Flags    dark indoors~
+Desc     A horrible stench assaults your nostrils as you enter this room.  The
+presence of defecation and urine is heavy in the air.  While appearing
+to come from the much abused toilet, the scent could in fact be sourced
+to several places within this putrid room.  You allow the strange and
+powerfully mystic writings on the walls to draw your attention from the
+awful smell.
+~
+#EXIT
+Direction west~
+ToRoom    9857
+Desc      You see a door.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 9807 1 9858
+Reset D 0 9858 3 1
+#ENDROOM
+
+#ROOM
+Vnum     9859
+Name     A hallway~
+Sector   inside~
+Flags    indoors~
+Desc     This portion of the hallway is lit by a strange glow that seems to be
+rising from the floor.  It's as if the stones had an internal light,
+making them radiate this faint lambency.  No matter how closely you
+peer into the flooring, you cannot locate the source of this power.
+~
+#EXIT
+Direction east~
+ToRoom    9854
+Desc      You see the intersection.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9860
+Desc      You see a bend in the hallway.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    floor stones flooring~
+ExDesc       The stones covering the floor are glowing with an undefined power.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9860
+Name     Bend in the hallway~
+Sector   inside~
+Flags    dark indoors~
+Desc     You have come to a bend in the hallway of this strange place.  The
+room is dark and dismal, devoid of all light and color.  The walls
+look as if they have never experienced a cleaning, and the floors
+are scuffed from the passing of many feet over time.
+~
+#EXIT
+Direction north~
+ToRoom    9861
+Desc      Its too far to make out.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9859
+Desc      You see a hallway.
+~
+#ENDEXIT
+
+Reset M 0 9801 7 9860
+  Reset E 1 9830 8 5
+  Reset E 1 9833 6 16
+Reset M 0 9801 7 9860
+  Reset E 1 9830 8 5
+  Reset E 1 9833 6 16
+Reset M 0 9801 7 9860
+  Reset E 1 9830 8 5
+  Reset E 1 9833 6 16
+#ENDROOM
+
+#ROOM
+Vnum     9861
+Name     A place of worship~
+Sector   inside~
+Flags    dark indoors~
+Desc     This darkened room is where the minor priests celebrate the passing
+of vows and rituals, prerequisites to being allowed to descend deeper
+into the temple.  On the floor are patterns, drawings, and recordings
+of the rites performed here.  Worked into the patterning on the floor
+is an image of a door, a seeming trapdoor leading to the heart of the
+temple.
+~
+#EXIT
+Direction north~
+ToRoom    9894
+Desc      You see a staircase.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9860
+Desc      You still can run back to the hallway.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9862
+Desc      A trapdoor leads deeper into the Dragon cult temple.
+~
+Keywords  trapdoor~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 9802 4 9861
+  Reset E 1 9832 6 16
+  Reset E 1 9852 4 3
+Reset M 0 9801 7 9861
+  Reset E 1 9830 8 5
+Reset D 0 9861 5 1
+#EXDESC
+ExDescKey    floor~
+ExDesc       Drawn and scratched into the floor are hundreds of patterns, drawings,
+and recordings of rituals preformed here.  The overall theme seems to
+be that of dragons and sacrifice.  The whole place feels dark and evil.
+You see a trapdoor in the middle of the room, but are you brave or
+foolish enough to descend where it leads?
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    trapdoor door~
+ExDesc       This is a heavy wooden door, leading down into the temple.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    patterns drawings recordings~
+ExDesc       Drawn and scratched into the floor are hundreds of patterns, drawings,
+and recordings of rituals preformed here.  The overall theme seems to
+be that of dragons and sacrifice.  The whole place feels dark and evil.
+You see a trapdoor in the middle of the room, but are you brave or
+foolish enough to descend where it leads?
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9862
+Name     Dark Room~
+Sector   inside~
+Flags    dark indoors~
+Desc     The darkness is everpresent here.  The light you have barely breaks through
+its tight grip.  Above is a small ladder, leading up to the minor priests'
+section of the temple.  To the south is a circular room.
+~
+#EXIT
+Direction south~
+ToRoom    9863
+Desc      It's too dark to see anything.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    9861
+Desc      You see a trapdoor.
+~
+Keywords  trapdoor~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9862 4 1
+#EXDESC
+ExDescKey    ladder~
+ExDesc       This small ladder looks like it will support your weight, but not
+much else.  It will take you to the upper levels of the temple.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9863
+Name     The Inner Circle~
+Sector   inside~
+Flags    dark indoors~
+Desc     Dark and foreboding, this place of worship has a penetrating evil about
+it. The priests barely maintain human form, as if turning into the very
+dragons they so devotedly worship.  The walls are splashed with a maroon
+red, that you can imagine used to be blood.  The room is a half circle,
+the south wall being a perfect curve.  In the center of the room is a
+long, rectangular table, painted blood red.  Attached to each corner is
+thick leather straps.  The leather appears to be used for restaints.
+~
+#EXIT
+Direction north~
+ToRoom    9862
+Desc      It's very dark.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9864
+Desc      You see a room.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9865
+Desc      You see a corridor.
+~
+Flags     nomob~
+#ENDEXIT
+
+Reset M 0 9863 2 9863
+  Reset E 1 9835 4 3
+  Reset E 1 9832 6 16
+Reset M 0 9863 2 9863
+  Reset E 1 9835 4 3
+  Reset E 1 9832 6 16
+#EXDESC
+ExDescKey    walls~
+ExDesc       The walls are a dark, chiselled rock, bare except for splashings of
+long dried blood.  The south wall is carved like a half moon, making
+the whole room appear roundish.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    table~
+ExDesc       This table is large enough to lay out a full grown man.  The leather straps
+at each corner look strong enough to tie down a bull.  This table looks to
+be used for sacrifices.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    wall s south~
+ExDesc       The south wall is carved like a half moon, making the whole room
+appear roundish.  The walls are a dark, chiselled rock, bare
+except for splashings of long dried blood.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9864
+Name     Priest Quarters~
+Sector   inside~
+Flags    dark indoors~
+Desc     The Priests of the Dragon Cult sleep here.  The room is very neat and tidy,
+except for one large tile on the floor with dirt around the edges.  The
+only way out is west.
+~
+#EXIT
+Direction west~
+ToRoom    9863
+Desc      You see the inner circle.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9888
+Desc      A small stairway leads down into a pit, deep under the ground.
+~
+Keywords  tile~
+Flags     isdoor closed nomob~
+#ENDEXIT
+
+Reset M 0 9802 4 9864
+  Reset E 1 9852 4 3
+Reset D 0 9864 5 1
+#EXDESC
+ExDescKey    tile~
+ExDesc       This heavy tile appears to be placed directly over a hole in the ground.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9865
+Name     A foreboding corridor~
+Sector   inside~
+Flags    dark indoors~
+Desc     A cold chill soaks through your garments as you enter this room.  You
+hear echos of soft weeping resounding through this darkened corridor.
+A small cell lies to the north.  The hall continues east and west.
+~
+#EXIT
+Direction north~
+ToRoom    9866
+Key       9826
+Desc      There is a cell door here.
+~
+Keywords  cell~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9863
+Desc      You see the inner circle.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9867
+Desc      It's not a safe place to go.
+~
+#ENDEXIT
+
+Reset M 0 9803 1 9865
+  Reset G 1 9826 1
+  Reset E 1 9828 1 16
+  Reset E 1 9829 1 6
+Reset D 0 9865 0 2
+#ENDROOM
+
+#ROOM
+Vnum     9866
+Name     The Virgins' Cell~
+Sector   inside~
+Flags    dark indoors~
+Desc     This dark, damp place is apparently where the Virgin Sacrifices are kept.
+This room's size alone is enough to impose the feeling of impending doom
+that the virgins that are forced to wait here must feel.  The mortar walls
+show scratch marks along the seems, where countless maidens have tried
+to claw their way to freedom.  One corner has straw packed in what must
+be the excrement of the one waiting now.
+~
+#EXIT
+Direction south~
+ToRoom    9865
+Desc      You see a cell door.
+~
+Keywords  cell~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    9873
+Key       3
+Desc      Back to the glowing room.
+~
+Keywords  trapdoor~
+Flags     isdoor closed climb can_climb~
+#ENDEXIT
+
+Reset M 0 9805 1 9866
+  Reset E 1 9836 1 5
+Reset D 0 9866 2 2
+Reset D 0 9866 4 1
+#ENDROOM
+
+#ROOM
+Vnum     9867
+Name     An even more forboding corridor...~
+Sector   inside~
+Flags    dark indoors~
+Desc     You're really getting somewhere now.  This you can tell by the knots
+forming in your stomach.  Exits open to the east and, if you really
+wish to continue, to the west.
+~
+#EXIT
+Direction east~
+ToRoom    9865
+Desc      It's the hallway you just came from.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9868
+Desc      The chamber of a powerful being.
+~
+Keywords  door~
+Flags     isdoor closed nopassdoor~
+#ENDEXIT
+
+Reset D 0 9867 3 1
+#ENDROOM
+
+#ROOM
+Vnum     9868
+Name     The Chamber of the High Priestess~
+Sector   inside~
+Flags    dark indoors~
+Desc     This is the bed chamber of Mistress Cosira, the High Priestess of the
+Dragon cult.  Being caught in here could cause you serious trouble.  A
+huge bed occupies the southern part of the room.  The room is lit by
+candle light, as hundreds of candles flicker in holders along the walls.
+It is rumored that his priestess beds the dragons, and that she is perhaps
+herself half dragon.
+~
+#EXIT
+Direction north~
+ToRoom    9869
+Desc      A foul stench floats in from the north.
+~
+Flags     isdoor closed nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9867
+Desc      The forboding hallway isn't NEARLY as forboding as what lies beyond it.
+~
+Keywords  door~
+Flags     isdoor closed nopassdoor~
+#ENDEXIT
+
+Reset M 0 9804 1 9868
+  Reset G 1 9827 1
+  Reset E 1 9834 1 5
+Reset D 0 9868 0 1
+Reset D 0 9868 1 1
+#EXDESC
+ExDescKey    bed~
+ExDesc       This bed is by far larger than any you have seen before.  It is very
+possibly large enough to sleep a full grown dragon.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    walls candles~
+ExDesc       The wall is covered in candle holders, each housing a lit candle.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9869
+Name     A foul smelling hallway~
+Sector   inside~
+Flags    dark indoors~
+Desc     Stench assults your senses as you enter this room.  Putrid wafts of
+stale air surround you, making you think of death and decay.  Your
+eyes begin to accept the darkness of the room, yet water in response
+to the awful scent.  Along the walls are skeletal remains of humanoid
+figures, posed in bizarre positions.  A single altar sits in the middle
+of the room, covered in a dried liquid you can only assume was once
+blood. You must get out of this gruesome place!  There are two doors
+leading from this room, once back to the south and a wide door leading
+to the north.
+~
+#EXIT
+Direction north~
+ToRoom    9870
+Key       9827
+Desc      A huge steel door.
+~
+Keywords  door~
+Flags     isdoor closed locked nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9868
+Desc      You see the room in which the High Priestess resides.
+~
+Flags     isdoor closed nopassdoor~
+#ENDEXIT
+
+Reset D 0 9869 0 2
+Reset D 0 9869 2 1
+#ENDROOM
+
+#ROOM
+Vnum     9870
+Name     Chamber of the Wyrmling~
+Sector   inside~
+Flags    dark indoors~
+Desc     You feel eyes on you the instant you enter this room.  As you fall silent,
+you can hear the rumbling breathing of a large beast.  In the north corner
+is a huge creature, looking at you like you're going to be its next meal.
+It's then that you notice the gnawed bones and large piles of dragon feces
+littering the ground.  You give a shudder of revulsion as you absorb the
+state of this place.  You suddenly feel you should leave, and soon.
+~
+#EXIT
+Direction south~
+ToRoom    9869
+Key       9826
+Desc      A huge steel door, probably meant to keep the Wyrmling in.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 9806 1 9870
+Reset D 0 9870 2 1
+#ENDROOM
+
+#ROOM
+Vnum     9871
+Name     A Waiting Room~
+Sector   inside~
+Flags    dark indoors~
+Desc     This room is filled with chairs, coffee tables and parchments.  You may
+sit and rest here until your appointment.  The office has a number of
+employees about, doing their jobs.  The front office is to the east and
+the workshops, the Portable Dragon, and the main offices can be found
+to the north.
+~
+#EXIT
+Direction north~
+ToRoom    9872
+Desc      Heading deeper into the building.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9853
+Desc      You see the front office.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9873
+Desc      You see an evil glow.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9871 3 1
+#ENDROOM
+
+#ROOM
+Vnum     9872
+Name     Dragon Exports central hall~
+Sector   inside~
+Flags    dark indoors~
+Desc     This room is all a bustle with employees and visitors to the Dragon
+Exports.  Most here are in transit from one section of the office to
+another, as this is the middle hallway.  West is where the fruits
+their labor are sold, the Portable Dragon.  North is the Gemma's
+office, she is the export coordinator, though you will usually find
+her running about elsewhere.  East is the main workshop, where the
+creations are made to supply to the shop.  This is quite an active
+export business, for all its outward attempts to remain unnoticed
+by the Darkhaven population.
+~
+#EXIT
+Direction north~
+ToRoom    9874
+Desc      You see a hallway in the office.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9878
+Desc      You see the main workshop.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9871
+Desc      You see the waiting room.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9879
+Desc      The Portable Dragon shop.
+~
+#ENDEXIT
+
+Reset M 0 9811 1 9872
+#ENDROOM
+
+#ROOM
+Vnum     9873
+Name     A strange, glowing room...~
+Sector   inside~
+Flags    dark indoors~
+Desc     The door snaps shut and you are left standing, locked in a small, tight,
+glowing room ... it does not look like there is any way out, so you may
+as well lie down on the rug that covers the floor.
+~
+#EXIT
+Direction east~
+ToRoom    9871
+Key       9850
+Keywords  door~
+Flags     isdoor closed locked secret pickproof nopassdoor hidden searchable~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9866
+Desc      A dark, damp cell.
+~
+Keywords  trapdoor~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9873 1 2
+Reset D 0 9873 5 1
+#EXDESC
+ExDescKey    rug~
+ExDesc       It's pretty big rug, but it isn't nailed down or anything....
+Hey, you think there could be something under it?
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    under~
+ExDesc       Yep you found it, a trapdoor....
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    floor~
+ExDesc       It's pretty big rug, but it isn't nailed down or anything....
+Hey, you think there could be something under it?
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9874
+Name     A hallway in the office~
+Sector   inside~
+Flags    dark indoors~
+Desc     This is a basic hallway, free from any furnishing or decoration,
+save one large painting on the east wall.  This hall sees much less
+traffic than the one south, as only Gemma's office and an odd door
+can be accessed from this direction.
+~
+#EXIT
+Direction north~
+ToRoom    9893
+Desc      You see a staircase.
+~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9872
+Desc      You see the central hall on the Dragon Cult building.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9875
+Desc      You see Gemma's office to the west.
+~
+#ENDEXIT
+
+Reset D 0 9874 0 1
+#EXDESC
+ExDescKey    door~
+ExDesc       This is a door made of a thick metal, unlike anything else so far
+witnessed in this building.  The door leaves north from here.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    painting east wall~
+ExDesc       This is a large painting of an adult Wyrmling dragon.  It is a
+immense serpent with fleshy wings and a pointed head.  He looks
+fierce and deadly, even through this portrait.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9875
+Name     Gemma's office~
+Sector   inside~
+Flags    dark indoors~
+Desc     This office is very clean, almost too clean for the amount of work
+Gemma does around here.  This office is painted an off white and
+the doorframe and windows are trimmed in a dark brown.  Both windows
+are on the western wall, facing out to Vertic Avenue of the town of
+Darkhaven. There is a desk placed directly under one of the windows,
+allowing the person sitting there to gaze about the town as they
+work.  The windows sure add a brightness and goodness to the room,
+wiping out the tinge of darkness and evil felt throughout the rest
+of the building.
+~
+#EXIT
+Direction east~
+ToRoom    9874
+Desc      You see a hallway in the office.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    windows window~
+ExDesc       You can look out upon the town of Darkhaven, on the Vertic Avenue.
+Many towns people and avdenturers can be seen going about their
+business, not noticing you at all.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    wall west western w~
+ExDesc       The walls here are painted an off white and the windows trimmed in
+a dark brown.  Below one of the two windows is a large desk.  As
+you gaze out the windows, you see the Vertic Avenue of Darkhaven.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    desk~
+ExDesc       This is an average desk, in size and structure.  The top is free
+from clutter.  Everything appears to be kept neatly filed in the
+drawers.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9876
+Name     Fandarel's office~
+Sector   inside~
+Flags    dark indoors~
+Desc     Fandarel's office is the epitome of disarray.  There are parchments,
+ashtrays, and coffee cups littering his desk.  It's amazing that any
+work could be accomplished amongst this disaster.  Actually, by the
+look of things, you doubt he really does any work around here.  Back
+to the south you can see the workshop, and can hear the people as they
+work and talk.
+~
+#EXIT
+Direction south~
+ToRoom    9878
+Desc      You see a large workshop directly south if this office.
+~
+#ENDEXIT
+
+Reset M 0 9812 1 9876
+#EXDESC
+ExDescKey    desk~
+ExDesc       This desk is in shambles, stained and littered.  It's amazing that any
+work can be done amongst the garbage here.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9877
+Name     A small break room~
+Sector   inside~
+Flags    dark indoors~
+Desc     This room sees a lot less activity than would be expected from a business
+this large.  Fandarel prefers his workers to break at their workstation
+rather than spend the extra two minutes walking between rooms.  On lunch
+break, the workers prefer to leave the building to get away from their
+employer's dark mood and fits of ill temper.
+~
+#EXIT
+Direction south~
+ToRoom    9882
+Desc      The supply room.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9878
+Name     A large workshop~
+Sector   inside~
+Flags    dark indoors~
+Desc     This room, though oddly placed, is well equiped for crafting the
+items sold at the shop.  The entire south wall is workbenches and
+stools, broken up into individual work sections by short wooden
+dividers.  As you peer north, you realize that the main boss has
+designed the workshop directly south of his office, he can watch
+the progress without leaving his desk.  To the east is the storage
+and supply room.
+~
+#EXIT
+Direction north~
+ToRoom    9876
+Desc      Fandarel office lies to the north.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9882
+Desc      The supply room.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9872
+Desc      Dragon Cult central hall is west from here.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    workbenches~
+ExDesc       This is one long counter, about four feet high, divided into 
+several work stations.  It is not fancy, but looks very sturdy
+and likely to withstand several years of use.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9879
+Name     The Portable Dragon~
+Sector   inside~
+Flags    dark indoors nosummon noastral~
+Desc     This shop appears to be the central point of this organization.  A place
+to sell the items crafted in the attached workshops.  All items are dragon
+related, in shape or spell, as a way to worship these enormous, fantastical
+beasts.  There are four separate shelves attached to the back wall.  Each
+is dedicated to a certain color of dragon items, rather than particular
+style of dragon.  The only furnishing here is a counter and a tall stool
+for the shopkeeper.  The counter is somewhat cluttered with parchments
+and various items.
+~
+#EXIT
+Direction east~
+ToRoom    9872
+Desc      You see the entranceway to the office.
+~
+#ENDEXIT
+
+Reset M 0 9814 1 9879
+  Reset G 1 9860 1
+  Reset G 1 9861 1
+  Reset G 1 9862 1
+  Reset G 1 9863 1
+#EXDESC
+ExDescKey    shelves~
+ExDesc       There are four shelves here, each heavily ladden with dragon items.
+Each shelf is dedicated to one particular dragon color.  The first 
+shelf has many dragon styles carved into brown staves.  The next 
+shelf has several types of golden dragon statuettes, each a silent
+tribute the the beast they liken.  The third shelf is full of red
+wands, each with a grip carved into the form of a dragon.  The last
+shelf is stacked full of black potions, held in magical, dragon
+shaped flasks.  They definitely worship dragons here.  Nothing but
+tributes to these fantastical beasts are sold here.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    counter~
+ExDesc       This counter is nothing fancy, but sturdy and well used.  The wood is
+a strong oak, built to last through many years of service.  The top
+is somewhat stained with liquid rings, probably from the coffee cups
+littering it currently.  A few pieces of parchment clutter the middle
+in a haphazard pile. 
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    stool~
+ExDesc       This stool looks rickety.  You would not sit on it.  In fact, you
+are in fear of breathing, should the breeze from your exhale knock
+the shopkeeper to the floor in a heap.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9880
+Name     A back hallway~
+Sector   inside~
+Flags    dark indoors~
+Desc     This hallway is used by the employees to bypass the busier parts
+of the building.  It is bare from any decor, except the same flat
+gold paint on the walls of the entrance hall and the front office.
+You wonder again at the caution posted on the door that lead here, 
+as nothing dangerous appears to be lurking here.  The hallway leads
+further north and there is a door to the west, leading back to the
+front office.
+~
+#EXIT
+Direction north~
+ToRoom    9881
+Desc      The hallway ends.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9853
+Desc      You see an open door leading to the front office.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9880 3 1
+#ENDROOM
+
+#ROOM
+Vnum     9881
+Name     End of the hallway~
+Sector   inside~
+Flags    dark nomob indoors~
+Desc     This hallway is completely bare.  You can not understand the reason for
+the cautions on the doors leading here.  The hallway continues south and
+there is a door leading west.  There is also a closed door to the north.
+~
+#EXIT
+Direction north~
+ToRoom    9887
+Desc      A dark room, you can not even make out the floor.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9880
+Desc      The beginning of the back hallway.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9882
+Desc      You see a door.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9881 0 1
+Reset D 0 9881 3 1
+#EXDESC
+ExDescKey    door~
+ExDesc       There is a door to the north, with a sign reading: 
+Caution -- Do not enter!
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9882
+Name     Storage and supplies~
+Sector   inside~
+Flags    dark indoors~
+Desc     This room is stacked with several shelves ladden with raw materials
+used in the creation of Dragon Exports crafts.  Many types of woods,
+herbs, liquids, and clays line the shelves.  There are even a few
+items you have never seen before, and are not sure you would want
+to touch.  North from here is the employee breakroom.  There is a
+closed door to the east.  You can leave to the west back to the
+workshop.
+~
+#EXIT
+Direction north~
+ToRoom    9877
+Desc      You see the break room.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9881
+Desc      You see a door, with a sign that says: Do not enter.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9878
+Desc      You see the middle of the office.
+~
+#ENDEXIT
+
+Reset M 0 9810 1 9882
+Reset D 0 9882 1 1
+#EXDESC
+ExDescKey    door east~
+ExDesc       There is a door to the east, with a sign reading: Caution -- Do not enter!
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9883
+Name     The dungeon~
+Sector   inside~
+Flags    dark indoors~
+Desc     You now find yourself at the bottom of a long, dark, vertical tunnel.
+More than fifty feet above is the Dragon Cult's export business.  As
+you peer about the room, it becomes obvious what a farse this business
+really is.  You begin to wonder what they are hiding to go to such
+extremes in disguising their true purpose here.  To the west is a door,
+possibly offering the chance to discover just what secrets these walls
+truly hold.
+~
+#EXIT
+Direction west~
+ToRoom    9884
+Key       9893
+Desc      You see a big rusty iron door.
+~
+Keywords  door~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset M 0 9815 1 9883
+Reset D 0 9883 3 2
+#ENDROOM
+
+#ROOM
+Vnum     9884
+Name     The torture chamber~
+Sector   inside~
+Flags    dark indoors nosummon noastral~
+Desc     All sorts of horrible devices, implements of pain, are strewn about the
+room.  A decomposing corpse rots on a rack in the south corner.  This
+room holds nothing but pain and torture for those unlucky enough to find
+it.  You will want to leave here, as quickly, and hopefully painlessly,
+as you possibly can.  There are two exits out of here, one to the north
+and one to the east, but they are both locked!  You must find the key.
+~
+#EXIT
+Direction north~
+ToRoom    9886
+Key       9837
+Keywords  secret~
+Flags     isdoor closed locked pickproof nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9883
+Key       9837
+Desc      You see a big rusty iron door.
+~
+Keywords  door~
+Flags     isdoor closed locked pickproof nopassdoor~
+#ENDEXIT
+
+Reset M 0 9813 1 9884
+  Reset G 1 9837 1
+Reset D 0 9884 0 2
+Reset D 0 9884 1 2
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if name($n) == Wilam torturer
+mpoload 9837 1
+drop key
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     9885
+Name     Sliding down the tunnel~
+Sector   inside~
+Flags    dark indoors norecall nosummon noastral~
+Desc     You're falling down...  You manage to stop your fall about midway
+down this long drop in the tunnel.  You look up to where you were, 
+and see you dropped a good twenty-five feet.  The sides are far too
+slick here to make your way back up.  Now, do you let go and fall
+the last twenty feet to the bottom?  It appears you have no choice.
+~
+#EXIT
+Direction up~
+ToRoom    9887
+Flags     climb can_climb~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9883
+Desc      The tunnel ends at a dark dungeon.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9886
+Name     A secret passageway~
+Sector   inside~
+Flags    dark nomob indoors~
+Desc     This is a dark, damp passageway, with spiders and cob webs all around.
+Excluding all the twists and turns it takes, there appears to be one
+way out.  To the west you can see the backside of a huge tapestry, 
+it hides this passageway from those who might happen into that room.
+You also notice worn scratches in the floor, before the panelled wall
+to the south.  It looks like a great weight was dragged through the
+crack between the wall and the floor.
+~
+#EXIT
+Direction south~
+ToRoom    9884
+Key       9886
+Desc      As the panels move aside, you see a chamber behind the wall.
+~
+Keywords  wall panel paneling~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9856
+Desc      You see the room to the front of the tapestry.
+~
+Keywords  tapestry~
+Flags     isdoor closed nopassdoor~
+#ENDEXIT
+
+Reset D 0 9886 2 1
+Reset D 0 9886 3 1
+#EXDESC
+ExDescKey    wall panel panelling~
+ExDesc       The panelled wall seems oddly out of place here, like it is more
+for purpose of disguise than decor.  As you look closer, you see
+a small handle, maybe it opens the wall?
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    tapestry~
+ExDesc       The colors on this tapestry are dull and fragmentary.  The picture
+on the front is indistinguishable from here.  You can move the
+tapestry and pass into the next room.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9887
+Name     A Downward Tunnel~
+Sector   inside~
+Flags    dark indoors nofloor~
+Desc     This looks like a large air vent, leading from deep in the
+ground to well above your head.  Looking up, you can see the
+tunnel closes to a small hole about five feet up.  Below, you
+can see the tunnel disappear into a bottomless darkness.  To
+continue further downward would be to flirt with death. There
+is a definite stench flowing through this room, the miasmas
+of death and decay.  Whatever is down there may not like your
+presence, perhaps you should head back to the hallway to the
+south.
+~
+#EXIT
+Direction south~
+ToRoom    9881
+Desc      Sliding down the vertical tunnel, into the darkness.
+~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9885
+Desc      sliding down the vertical tunnel.
+~
+#ENDEXIT
+
+Reset D 0 9887 2 1
+#ENDROOM
+
+#ROOM
+Vnum     9888
+Name     Deeper into the pit~
+Sector   inside~
+Flags    dark indoors~
+Desc     A great evil seems to radiates from the earth below.  The darkness is
+not only visual, but has a distinct presence.  This staircase leads
+away from the Priests Quarters, to the deepest parts of the Cultists
+Temple. The stairs are sturdy, but seem to not welcome your intrusion.
+~
+#EXIT
+Direction up~
+ToRoom    9864
+Desc      Above you is the sleeping quarters of the Cultist Priests.
+~
+Keywords  tile door trapdoor trap~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9889
+Desc      You see a spiral staircase leading down, deep into the ground.
+~
+#ENDEXIT
+
+Reset D 0 9888 4 1
+#ENDROOM
+
+#ROOM
+Vnum     9889
+Name     A darkened landing~
+Sector   inside~
+Flags    dark indoors~
+Desc     You have reached a landing on the staircase.  To the east is a small
+doorway, leading away from the stairwell.  In the middle of the floor
+is a gaping whole, leading to the bottom of the pit.  You can see
+movement below, but have trouble finding the cause.  Should you explore
+below, investigate to the east, or return to relative safety above?
+~
+#EXIT
+Direction east~
+ToRoom    9890
+Desc      There is an intersting alcove to the east.  It is well lit, a relief from this darkness.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    9888
+Desc      The stairway leads up from this pit, to the safety of the Priests.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9891
+Desc      Below you is the bottom of this deep pit.
+~
+#ENDEXIT
+
+Reset D 0 9889 1 1
+#ENDROOM
+
+#ROOM
+Vnum     9890
+Name     A dark alcove~
+Sector   inside~
+Flags    dark indoors~
+Desc     This darkened alcove appears to be used as a changing room.  There
+is a spigot in the upper southeast corner, dripping a steady flow of
+water.  This looks like a place for bathing.  On the eastern wall are
+several hooks, holding various articles of clothing.
+~
+#EXIT
+Direction west~
+ToRoom    9889
+Desc      To the west is a landing of a staircase, leading back to the upper temple.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 9890 3 1
+#EXDESC
+ExDescKey    wall~
+ExDesc       The wall is plain, without paint or polish.  Attached in several places
+are hooks, used for hanging clothes.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    spigot~
+ExDesc       This water faucet streams a steady flow of fresh water, allowing 
+the opportunity to wash.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     9891
+Name     The bottom of the pit~
+Sector   inside~
+Flags    dark indoors~
+Desc     You are surrounded by corpses in various stages of decay.  A coldness
+sinks into your spine as you realize the full magnitude of what you've
+stumbled upon.  This is the home of Adrathom, a powerful lich, and he
+does not look pleased at your intrusion.
+~
+#EXIT
+Direction up~
+ToRoom    9889
+Desc      It is too dark to see.
+~
+#ENDEXIT
+
+Reset M 0 9816 1 9891
+#ENDROOM
+
+#ROOM
+Vnum     9892
+Name     Cultic Candies~
+Sector   inside~
+Flags    dark nomob indoors~
+Desc     This backroom is where the cultists keep and sell their candies.  Each
+candy is a secret brew of magical ingredients.  You should be cautious
+of eating anything you buy here, as the place does not look clean.  The
+walls are covered in a thick layer of dust, and so is the shopkeeper!
+~
+#EXIT
+Direction south~
+ToRoom    9857
+Desc      You see the hallway.
+~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 9817 1 9892
+  Reset G 1 9892 3
+  Reset G 1 9842 1
+  Reset G 1 9843 1
+  Reset G 1 9844 1
+  Reset G 1 9845 1
+  Reset G 1 9846 1
+  Reset G 1 9847 1
+  Reset G 1 9848 1
+Reset D 0 9892 2 1
+#ENDROOM
+
+#ROOM
+Vnum     9893
+Name     Top of the staircase~
+Sector   inside~
+Flags    dark nomob indoors~
+Desc     This is a staircase that leads downward, into a darkness that is
+not only seen, but felt.  The walls change from the painted walls
+of the office area to a dark stone surface.  Whatever is below,
+they do not want to make you feel too welcome.
+~
+#EXIT
+Direction south~
+ToRoom    9874
+Desc      You see a hallway in the office.
+~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9894
+Desc      You see the bottom of the staircase.
+~
+#ENDEXIT
+
+Reset D 0 9893 2 1
+#ENDROOM
+
+#ROOM
+Vnum     9894
+Name     Bottom of the staircase~
+Sector   inside~
+Flags    dark nomob indoors~
+Desc     As you stand at the bottom of this staircase, you wonder why anyone
+would want to be down here.  The darkness is so dense as to have an
+almost physical presence.  The result is oppressive.  The cold, harsh
+stone walls seem to close in on you as you listen to the mezmerizing
+chants coming from the south.
+~
+#EXIT
+Direction south~
+ToRoom    9861
+Desc      It is to blurred to see anything of note.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    9893
+Desc      You see the top of the staircase.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9895
+Name     The deepest pit~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9811
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9896
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9829
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9896
+Name     The fire pit~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9898
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9897
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9895
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9897
+Name     The deepest pit~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction north~
+ToRoom    9817
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9823
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9896
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9898
+Name     The Passage to the pits~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction south~
+ToRoom    9896
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    9899
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     9899
+Name     The servants passage~
+Sector   inside~
+Flags    dark indoors~
+#EXIT
+Direction south~
+ToRoom    9890
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9898
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

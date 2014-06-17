@@ -59,25 +59,25 @@ extern bool winter_freeze;
 
 struct holiday_data
 {
-   HOLIDAY_DATA *next;
-   HOLIDAY_DATA *prev;
-   short month;   /* Month the holiday falls in */
-   short day;  /* Day the holiday falls on */
-   char *name; /* Name of the holiday */
-   char *announce;   /* Message to announce the holiday with */
+  HOLIDAY_DATA *next;
+  HOLIDAY_DATA *prev;
+  short month;			/* Month the holiday falls in */
+  short day;			/* Day the holiday falls on */
+  char *name;			/* Name of the holiday */
+  char *announce;		/* Message to announce the holiday with */
 };
 
 
-void calc_season( void );
-char *mini_c_time( time_t curtime, int tz );
-char *c_time( time_t curtime, int tz );
-bool load_timedata( void );
-void load_holidays( void );
-void save_timedata( void );
-void update_timers( void );
-void update_calendar( void );
+void calc_season (void);
+char *mini_c_time (time_t curtime, int tz);
+char *c_time (time_t curtime, int tz);
+bool load_timedata (void);
+void load_holidays (void);
+void save_timedata (void);
+void update_timers (void);
+void update_calendar (void);
 
-DECLARE_DO_FUN( do_timezone );
-DECLARE_DO_FUN( do_holidays );
-DECLARE_DO_FUN( do_saveholiday );
-DECLARE_DO_FUN( do_setholiday );
+DECLARE_DO_FUN (do_timezone);
+DECLARE_DO_FUN (do_holidays);
+DECLARE_DO_FUN (do_saveholiday);
+DECLARE_DO_FUN (do_setholiday);

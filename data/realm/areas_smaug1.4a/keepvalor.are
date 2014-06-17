@@ -1,0 +1,3205 @@
+#AREA   The Keep of Valor~
+
+
+
+#VERSION 1
+#AUTHOR Uriel~
+
+#RANGES
+2 25 2 65
+$
+
+#RESETMSG A bell sounds across the land.~
+
+#FLAGS
+0
+
+#ECONOMY 0 7447600
+
+#CLIMATE 2 2 2
+
+#MOBILES
+#22000
+master lugard blacksmith~
+Master Lugard~
+A soot coverd man with arms like trees stands here.
+~
+~
+3 4194432 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#22001
+Ariad the Baker~
+Ariad the Baker~
+A dark skinned baker stands here, smiling.
+~
+~
+3 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#22002
+guard guard1 gate man~
+the Gate Guard~
+A jovial guard stands here, greeting you.
+~
+~
+1 0 1000 C
+15 0 0 0d0+0 10d4+20
+10000 0
+108 108 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 231 0 0 0 0 1
+> all_greet_prog 100~
+smile
+say Welcome to Keep Valor, my friends!
+chuckle
+say Enjoy your visit here.
+say And remember, respect others at all times.
+~
+|
+#22003
+man merchant jewler~
+the Jewler~
+An opulant buisnessman wearing fine silks stands here.
+~
+~
+3 0 0 S
+1 0 0 0d0+0 0d0+0
+50000 0
+108 108 1
+#22004
+guard guard2 man~
+the Gate Guard~
+A stoic guard stands at the palace gates, greeting visitors.
+~
+~
+1 0 0 C
+15 0 0 0d0+0 10d4+20
+10000 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 195 0 0 0 0 3
+> fight_prog 100~
+if level($n) > 25
+say Fool, you are too experienced for this place!
+mpslay $n
+endif
+~
+> all_greet_prog 100~
+smile
+say Welcome to Palace Valor.
+say I'm sure that King Roland would love to meet you...
+frown
+say But seems some ill fortune has befallen him.
+say But, if you'd like to try the Arena of Valor, just say ARENA.
+smile
+~
+> speech_prog arena~
+say Oh, brave one, eh?
+wink $n
+say Well, of it is, then.
+mptrans $n 22017
+tell $n If you wish to leave the arena, just say HOME and I'll pull you out.
+tell $n I'll see you no matter where you are in the arena.
+~
+|
+#22005
+champion arena gladiator~
+the Champion of the Arena~
+The Champion of the Arena stands here proudly.
+~
+~
+3 4194432 0 C
+15 0 -50 0d0+0 10d5+30
+10000 0
+108 108 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 2
+0 0 1731 0 0 0 0 3
+#22006
+gladiator weak~
+a young gladiator~
+A young gladiator wanders here.
+~
+~
+65 0 1000 C
+3 0 0 0d0+0 0d0+0
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 7 0 2048 0 0 0
+#22007
+gladiator medium learned~
+an experienced gladiator~
+An experienced gladiator looks for glory.
+~
+~
+65 0 1000 S
+6 0 0 0d0+0 5d4+10
+0 0
+112 112 1
+#22008
+gladiator veteran~
+a veteran gladiator~
+A veteran gladiator wanders the arena, looking for battle.
+~
+~
+1 0 1000 C
+10 0 0 0d0+0 10d4+20
+0 0
+112 112 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 75 0 0 0 0 0
+#22009
+king roland~
+King Roland~
+A kindly man sits upon the Throne of Valor.
+~
+~
+1 4194432 1000 C
+25 0 0 1000d1+0 10d6+45
+20000 0
+108 108 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 24 0 0 1 1 3
+0 0 719 0 0 0 0 3
+> greet_prog 100~
+if level($n) < 26
+say Oh, woe is me, my crown has been stolen.
+weep
+say Oh, visitors...
+mpe _cya King Roland smiles weakley
+say Greetings, newcomers, I fear I am not in a visiting mood.
+sigh
+say My crown has been stolen from me.
+say Would you help me recover it?
+say Say YES if you would help me.
+else
+say You are too experienced for this job.
+endif
+~
+> rand_prog 10~
+weep
+say My precious crown...
+~
+> speech_prog yes~
+if level($n) < 26
+if mobinworld(22011) == 0
+mpat 22075 mpmload 22011
+say Well met, my friends.
+smile
+say You have offered your services, and made me very happy.
+say The Grand Knight is leading the investigation.
+hmm
+say He is quite suspicious, here give him these.
+mpoload 22014
+give orders $n
+say Good luck, my friends
+endif
+else
+endif
+~
+> fight_prog 100~
+if level($n) > 30
+say This fight is not fair!
+mpslay $n
+mprestore self 1000
+else
+if rand(20)
+say Fools, attacking the King?
+kick
+elbow
+disarm
+endif
+endif
+~
+> death_prog 100~
+if level($n) > 30
+say You shall not have my sword!
+remove all
+mpjunk all
+endif
+~
+> act_prog p gives you The Crown of Valor.~
+gasp
+say You found it!
+blink
+if level($n) < 26
+if rand(50)
+mpoload 22035 20
+say Brave warrior, take this as your reward.
+give armor $n
+smile $n
+else
+mpoload 22036 20
+say Brave warrior, take this as your reward.
+give helm $n
+smile $n
+endif
+endif
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+~
+|
+#22010
+knight grand~
+the Grand Knight~
+The Grand Knight stands here, peering about.
+~
+~
+1 168 1000 S
+24 0 0 0d0+0 0d0+0
+0 0
+108 108 1
+> act_prog p gives you Orders from King Roland.~
+if level($n) < 26
+if mobinworld(22012) == 0
+mpe _cya The Grand Knight harrumphs loudly.
+say Well, if King Roland wishes to hire riff raff, so be it.
+mpjunk orders
+say Well, here's how it is. I have some suspects to the theft.
+say I want you to investigate them, and bring me proof that they are innocent.
+say Or guilty, if the case may be.
+mpat 22075 mpmload 22012
+say Well, go talk to the jester.
+say I'll be waiting here.
+endif
+else
+say Bah, get out of my sight, ye ain't no newbie.
+endif
+~
+> act_prog p gives you a Note from the Mistress of the Harem.~
+if mobinworld(22031) == 0
+if mobinworld(22025) == 1
+mpe _cya The Grand Knight peruses the note.
+say Well, it would appear that this is not our culprit.
+mpjunk note
+hmm
+say Very well, the next suspect would be the court mage.
+mpat 22075 mpmload 22031
+say Go talk with him.
+endif
+endif
+~
+> fight_prog 100~
+if level($n) > 30
+say Pick on someone your own size.
+mpslay $n
+endif
+~
+> death_prog 100~
+if level($n) > 30
+say You'll not have my EQ, bully.
+remove all
+mpjunk all
+endif
+~
+> act_prog p gives you The Mage's Potion.~
+if mobinworld(22032) == 1
+if level($n) < 26
+if mobinworld(22033) == 0
+mpat 22075 mpmload 22033
+say Well, it would look as if the Mage is innocent.
+mpe _cya As the Knight shake the potion, the potion grows unstable...
+say Uh oh...
+mpe _ora The potion explodes in a purple flash!
+cough
+say Damn Mage!
+cough
+mpjunk potion
+say Go talk to the Queen... she has to be the one
+endif
+endif
+endif
+~
+> act_prog p gives you The Crown of Valor.~
+blink
+say Give this to the King!
+give crown $n
+~
+|
+#22011
+switch1 king~
+a newly created switch1 king~
+Some god abandoned a newly created switch1 king here.
+~
+~
+1 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#22012
+switch2 grandknight~
+a newly created switch2 grandknight~
+Some god abandoned a newly created switch2 grandknight here.
+~
+~
+1 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#22013
+maid washroom maid1~
+a washmaid~
+A young maid stands here, toiling over dishes.
+~
+~
+3 0 500 C
+10 0 0 0d0+0 0d0+0
+0 0
+108 108 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 167 0 0 0 0 0
+> rand_prog 5~
+say Harrumph
+say We'll never get done.
+~
+> rand_prog 5~
+say I saw the Jester in here the other day...
+sigh
+say He's so dreamy.
+~
+> rand_prog 5~
+grimace
+say That Jester, always in the Harem's rooms...
+mpe _cya The washmaid drops a dish and it shatters...
+say Bloody...
+~
+|
+#22014
+maid washroom maid2~
+an elderly washmaid~
+An elderly maid washes dishes, muttering occasionaly.
+~
+~
+1 0 0 C
+15 0 0 0d0+0 0d0+0
+0 0
+108 108 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 103 0 0 0 0 0
+> rand_prog 5~
+say Will these dishes ever get clean?
+mutter
+~
+|
+#22015
+cook kitchen~
+the cook~
+A grimy cook stands here, manning the ovens.
+~
+~
+1 0 0 C
+15 0 0 0d0+0 0d0+0
+0 0
+108 108 1
+20 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 2
+0 0 167 0 0 0 0 0
+#22016
+harem girl woman~
+a harem girl~
+A young harem girl sits here, primming herself.
+~
+~
+1 0 0 C
+10 0 0 0d0+0 0d0+0
+0 0
+108 108 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 2 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#22017
+harem girl woman2~
+a mature harem girl~
+A mature harem girl lounges here.
+~
+~
+1 0 0 C
+15 0 0 0d0+0 0d0+0
+0 0
+108 108 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 2 0 0 1 1 0
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if sex($n) == 1
+laugh
+say Well, read the sign... NO MEN!
+shake
+mpe _cya The harem girl tosses your hair a bit.
+say But... I can help you in the process...
+c 'change sex' $n
+c elven $n
+giggle
+say Now, you look beautiful...
+mpforce $n e
+clo e
+mpat $n mpe _cya Giggling can be heard from the West.
+else
+wink $n
+say You're a pretty one, aren't you?
+endif
+~
+|
+#22018
+jester~
+the Jester~
+A man in a silly hat with bells juggles wooden balls boredly.
+~
+~
+3 4194432 0 C
+20 0 0 500d1+0 4d6+20
+0 0
+108 108 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 135 0 0 0 0 0
+> greet_prog 100~
+if level($n) < 26
+if mobinworld(22012) == 1
+if mobinworld(22025) == 0
+mpat 22075 mpmload 22025
+say Well, well, if it isn't the private investigators of the Knight.
+sigh
+say Well, I fear I must dissapoint you, I did not take the fool King's crown.
+eye $n
+say Would you like proof?
+frown
+say Very well, proof you shall have. I was in the Harem's chambers that night.
+mpoload 22030
+give note $n
+say This note will explain everything.
+endif
+endif
+endif
+~
+> fight_prog 100~
+if level($n) > 30
+say And I thought I was a fool...
+chuckle
+mpslay $n
+endif
+~
+> death_prog 100~
+if level($n) > 30
+say Nope, can't have it.
+rem all
+mpjunk all
+endif
+~
+|
+#22019
+man merchant weapons~
+a merchant~
+A burly merchant stands here, examining the quality of a sword.
+~
+~
+3 0 0 S
+1 0 0 0d0+0 0d0+0
+50000 0
+108 108 0
+#22020
+maid laundry~
+a laundry maid~
+A maid stands here, washing clothes.
+~
+~
+1 0 0 C
+10 0 0 0d0+0 0d0+0
+0 0
+108 108 2
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 167 0 0 0 0 0
+#22021
+mage court~
+The Court Mage~
+A bumbling wizard paces in a dazed state.
+~
+~
+3 4194432 1000 C
+20 0 0 750d1+0 10d3+25
+0 0
+108 108 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 0 0 0 1 1 0
+0 0 135 0 0 0 0 0
+> greet_prog 100~
+mumble
+say Now where did I put that wand...
+boggle
+~
+> act_prog p gives you Wand of Wonder.~
+if mobinworld(22032) == 0
+if mobinworld(22031) == 1
+if level($n) < 26
+blink
+say That is the wand I was looking for...
+mpjunk wand
+say Well, I guess you want something to prove my innocence, eh?
+mpoload 22028
+give potion $n
+say Take that to the Knight.
+smile
+say It was what I was working on at the time.
+mpat 22075 mpmload 22032
+endif
+endif
+endif
+~
+> rand_prog 2~
+hmm
+say E is equal to M C..... doh
+boggle
+~
+> speech_prog squared~
+say Thats it!
+smile $n
+if level($n) < 26
+c sanc $n
+say Thank you
+endif
+~
+> fight_prog 100~
+if level($n) > 30
+say Go pick on something your own size...
+mpslay $n
+endif
+~
+> death_prog 100~
+if level($n) > 30
+say Heh, try again, sucker.
+rem all
+mpjunk all
+endif
+~
+|
+#22025
+switch3 jester~
+a newly created switch3 jester~
+Some god abandoned a newly created switch3 jester here.
+~
+~
+1 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#22026
+queen victoria~
+Queen Victoria~
+A beautiful woman in fine silks sits here.
+~
+~
+1 4194432 0 C
+25 0 0 1000d1+0 10d4+25
+0 0
+108 108 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 25 0 0 1 1 3
+0 0 0 0 0 0 0 0
+> greet_prog 100~
+if mobinworld(22033) == 1
+if level($n) < 26
+say Well, did the grand knight send you?
+eye $n
+say Yes or no?
+endif
+endif
+~
+> fight_prog 100~
+if level($n) > 30
+say Pick on someone your own size.
+mpslay $n
+endif
+~
+> death_prog 100~
+if level($n) > 30
+snicker
+rem all
+mpjunk all
+endif
+~
+> speech_prog yes~
+if mobinworld(22033) == 1
+sigh
+say Well, what have you come for then?
+mpat 22075 mpmload 22034
+endif
+~
+> speech_prog no~
+if mobinworld(22033) == 1
+if level($n) < 26
+grin
+say Well now, you are a LIAR!
+c magic $n
+endif
+endif
+~
+> speech_prog crown~
+if mobinworld(22035) == 0
+if mobinworld(22034) == 1
+sigh
+say Very well... I did steal the crown.
+mpoload 22034
+mpat 22075 mpmload 22035
+say Take it, I do not want it any longer.
+weep
+give crown $n
+endif
+endif
+~
+|
+#22030
+note jester~
+a newly created note jester~
+Some god abandoned a newly created note jester here.
+~
+~
+1 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#22031
+switch4 grandknight~
+a newly created switch4 grandknight~
+Some god abandoned a newly created switch4 grandknight here.
+~
+~
+1 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#22032
+switch5 mage~
+a newly created switch5 mage~
+Some god abandoned a newly created switch5 mage here.
+~
+~
+1 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#22033
+switch6 knight~
+a newly created switch6 knight~
+Some god abandoned a newly created switch6 knight here.
+~
+~
+1 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#22034
+switch7 queen~
+a newly created switch7 queen~
+Some god abandoned a newly created switch7 queen here.
+~
+~
+1 0 0 S
+1 0 0 0d0+0 0d0+0
+0 0
+108 108 0
+#0
+
+
+#OBJECTS
+#22000
+new sign~
+A New Sign~
+A well tended sign stands here~
+~
+12 0 0
+0 0 0 0
+1 0 0
+E
+sign~
+KEEP VALOR: 2 MILES
+ 
+ 
+                          ENJOY YOUR VISIT!
+~
+#22001
+fountain market~
+a newly created fountain market~
+A beautiful marble fountain stands here.~
+~
+25 0 0
+0 0 0 0
+1 0 0
+#22002
+mutton~
+A mutton leg~
+A leg of lamb has fallen here.~
+~
+19 8192 1
+20 0 0 0
+1 100 10
+#22003
+carrot vegetable~
+a bright orange carrot~
+A bright orange carrot lies here.~
+~
+26 8192 1
+15 -1 97 47
+1 1000 100
+'detect invis' 'infravision' 'detect hidden'
+#22004
+lettuce head vegetable~
+a head of lettuce~
+A head of lettuce lies here.~
+~
+26 8192 1
+15 -1 42 126
+1 1000 100
+'cure light' 'cure poison' 'remove curse'
+#22005
+loaf bread~
+a loaf of bread~
+A loaf of bread lies here.~
+~
+19 8192 1
+10 0 0 0
+1 100 10
+#22006
+sword valor guard~
+a Sword of Valor~
+A blade of shining metal lies here.~
+~
+5 0 8193
+0 10 5 1
+7 50000 5000
+A
+18 3
+A
+19 3
+#22007
+chainmail breastplate~
+a chainmail breastplate~
+A chainmail brestplate has fallen here.~
+~
+9 0 9
+0 7 0 0
+5 6000 600
+A
+17 -10
+A
+18 3
+#22008
+helm steel~
+a steel helm~
+A steel helm has fallen here~
+~
+9 0 17
+0 7 0 0
+1 5000 500
+A
+3 1
+A
+4 2
+#22009
+chainmail leggings~
+chainmail leggings~
+A set of chainmail leggings has fallen here.~
+~
+9 0 33
+0 7 0 0
+1 10000 1000
+A
+17 -10
+A
+2 2
+#22010
+leather boots~
+soft leather boots~
+A pair of soft leather boots lies here.~
+~
+9 0 65
+0 7 0 0
+1 1000 100
+A
+17 -5
+A
+47 10
+#22011
+gladius champion~
+the Champion's Gladius~
+A beautiful short sword lies here.~
+~
+5 16924993 8193
+0 15 3 2
+1 10000 1000
+A
+13 10
+A
+18 2
+A
+19 2
+#22012
+ring mail gladiator~
+Gladiator's Ring Mail~
+A fine set of ring mail has fallen here.~
+~
+9 0 9
+0 7 0 0
+1 30000 3000
+A
+17 -20
+A
+2 2
+A
+18 3
+A
+19 2
+A
+13 10
+#22013
+throne valor~
+The Throne of Valor~
+A Throne of aged oak and worked gold sits here.~
+~
+12 0 0
+0 0 0 0
+1 0 0
+#22014
+parchment orders~
+Orders from King Roland~
+A rolled sheet of parchment with the King's seal lies here.~
+~
+13 0 1
+0 0 0 0
+1 0 0
+#22015
+sword roland~
+Roland's Sword~
+A king's sword has fallen here.~
+~
+5 8389896 8193
+0 20 6 3
+6 30000 2000
+A
+13 15
+A
+18 4
+A
+19 3
+A
+4 2
+A
+12 25
+#22016
+crest valor~
+The Crest of Valor~
+A breastplate of white steel lies here.~
+~
+9 0 9
+0 10 0 0
+1 30000 3000
+A
+17 -15
+A
+13 30
+A
+12 30
+A
+18 3
+A
+19 3
+A
+31 2
+#22017
+velvet robe robes~
+velvet robes~
+A wonderful velvet robe has fallen here.~
+~
+9 0 1025
+0 5 0 0
+1 0 0
+A
+2 3
+#22018
+ring signet king~
+Signet of Valor~
+A king's signet has fallen here.~
+~
+9 0 3
+0 7 0 0
+1 20000 2000
+A
+13 20
+A
+18 2
+A
+19 2
+A
+12 50
+#22019
+maid apron wash~
+a wash apron~
+A heavy linen apron has fallen here.~
+~
+9 0 9
+0 6 0 0
+1 50 5
+A
+3 1
+A
+4 1
+#22020
+apron cook cook's~
+a cook's apron~
+A heavy leather apron has fallen here.~
+~
+9 0 9
+0 10 0 0
+1 50 5
+A
+13 5
+A
+1 1
+A
+5 1
+A
+67 10
+#22021
+silk stockings~
+silk stockings~
+A pair of violet silk stockings has fallen here.~
+~
+9 0 33
+0 3 0 0
+1 500 50
+A
+25 3
+#22022
+halter top shirt~
+a see-through halter top~
+A violet see-through halter top has been discarded here.~
+~
+9 0 9
+0 3 0 0
+1 500 50
+A
+25 1
+A
+2 1
+A
+56 226
+#22023
+veil thin~
+a thin veil~
+A paper thin veil lies here.~
+~
+9 0 131073
+0 1 0 0
+1 500 50
+A
+25 1
+A
+56 91
+#22024
+hat jester~
+The Jester's Hat~
+A silly hat with bells attached lies here.~
+~
+9 0 17
+0 10 0 0
+1 4000 400
+A
+4 -1
+A
+3 -1
+A
+2 1
+A
+31 2
+#22025
+bed large canopy~
+a large canopy bed~
+A large canopy bed stands here.~
+~
+12 0 0
+0 0 0 0
+1 0 0
+#22026
+robes magus~
+Robes of the Magus~
+A sparkling robe has fallen here.~
+~
+9 8486977 9
+0 10 0 0
+1 10000 1000
+A
+12 100
+A
+18 2
+A
+19 2
+A
+56 20
+#22027
+wand wonder~
+Wand of Wonder~
+A very interesting wand lies here.~
+~
+3 0 16385
+20 10 10 -1
+1 0 0
+'teleport'
+> wear_prog 100~
+mea $n _blu As you hold the wand, reality shifts!
+mpforce $n zap self
+~
+|
+#22028
+potion mage~
+The Mage's Potion~
+A glowing potion sits here.~
+~
+8 0 1
+0 0 0 0
+1 0 0
+#22029
+queen dress queen's~
+The Queen's Dress~
+A dress of fine silks lies here.~
+~
+9 0 9
+0 4 0 0
+1 0 0
+A
+13 30
+A
+18 2
+A
+19 2
+#22030
+note jester~
+a Note from the Mistress of the Harem~
+A note has ben discarded here.~
+~
+13 0 1
+0 0 0 0
+1 0 0
+#22034
+crown roland valor~
+The Crown of Valor~
+A beautiful golden crown has been discarded here.~
+~
+8 0 1
+0 0 0 0
+1 0 0
+#22035
+armor valor~
+The Armor of Valor~
+A beautiful set of polished steel plate has fallen here.~
+~
+9 0 9
+0 15 0 0
+1 0 0
+A
+13 20
+A
+18 3
+A
+19 3
+A
+31 1
+A
+4 1
+A
+1 1
+#22036
+helm valor~
+The Helm of Valor~
+A beautiful steel helmet has fallen here.~
+~
+9 0 17
+0 10 0 0
+1 0 0
+A
+13 15
+A
+18 2
+A
+19 2
+A
+3 1
+A
+4 1
+#0
+
+
+#ROOMS
+#22000
+The Path to Keep Valor~
+Hilly ground dominates this reigon, with numerous copses of trees and
+clusters of wildflowers to be seen everywhere. A road cuts through the
+hills, and seems to be well tended and the bearer of heavy traffic. A
+songbird chimes in the distance, and the wind brings the scent of well
+cooked meals. The road curves to the Northeast, leading into the hills,
+and a sign stands here, informing all of the destination of the road.
+~
+0 0 1
+D6
+~
+~
+0 -1 22001
+S
+#22001
+Approaching Keep Valor~
+The road cuts through the hilly ground, pleasantly passing a copse of
+trees and verdant wildflower growth. Cottages can be seen here and there
+and the people wave and smile to each other. This land seems to command
+a presence of peace and relaxation. The road curves to the North and
+to the Southwest.
+~
+0 0 1
+D0
+~
+~
+0 -1 22002
+D9
+~
+~
+0 -1 22000
+S
+#22002
+Nearing the Keep~
+The road continues cutting through the hilly terrain, passing beautiful
+gardens and houses. The cottages now growing in size, some approaching
+the size of Lord's manors. The people, though more opulent, are no less
+friendly to visitors. To the Northeast, a great white wall can be seen,
+reflecting the sunlight in all its glory.
+~
+0 0 1
+D2
+~
+~
+0 -1 22001
+D6
+~
+~
+0 -1 22003
+S
+#22003
+Before the Gates of Valor~
+The walls of the massive keep shine to the North, and the mighty and
+impressive gatehouse stands welcoming all visitors. The keep bustles
+with activity, trade and the march of the guard both. The people here
+hold friendly attitudes and jovial natures. The road to the Southwest
+leads away from the keep, while the gates stand open to the North.
+~
+0 0 1
+D0
+~
+~
+0 -1 22004
+D9
+~
+~
+0 -1 22002
+S
+#22004
+Within the Gatehouse~
+Entering the gatehouse reveals how mighty the keep truly is. The walls
+must be over ten feet thick, with arrow slits to defend against seiges.
+The gates themselves are thick oak, reinforced with steel beams and studs.
+Guards muster about here, waving to merchants and nobles, even helping
+to lead a horse now and then. Small doors lead to chambers within the
+gatehouse to the East and Weat, while to the North, the Keep grounds can
+be seen.
+~
+0 0 1
+D0
+~
+~
+0 -1 22007
+D1
+~
+~
+0 -1 22006
+D2
+~
+~
+0 -1 22003
+D3
+~
+~
+0 -1 22005
+S
+#22005
+A Guard Room~
+This chamber holds all manner of weapons and defensive devices in the
+event of an attack. The South wall is lined with arrow slits to allow
+archers to rain death upon attacking forces without exposing themselves.
+This also seems to be a chamber to allow the guards of Keep Valor to
+kick back and relax. A small door on the East wall leads to the main
+floor of the Gatehouse.
+~
+0 0 1
+D1
+~
+~
+0 -1 22004
+S
+#22006
+A Guard Room~
+This chamber holds all manner of weapons and defensive devices in the
+event of an attack. The South wall is lined with arrow slits to allow
+archers to rain death upon attacking forces without exposing themselves.
+This also seems to be a chamber to allow the guards of Keep Valor to
+kick back and relax. A small door on the West wall leads to the main
+floor of the Gatehouse.
+~
+0 0 1
+D3
+~
+~
+0 -1 22004
+S
+#22007
+The Market Place~
+The impressive gatehouse and castle walls quickly give way to a busy
+and bustling marketplace. The cobblestone road is filled with all manner
+of people, each one seems friendly and laughing. Shops lie to the East
+and West, and all manner of goods can be found. The road runs North and
+South, towards the Palace and the Gatehouse respectivley.
+~
+0 0 1
+D0
+~
+~
+0 -1 22010
+D1
+~
+~
+0 -1 22009
+D2
+~
+~
+0 -1 22004
+D3
+~
+~
+0 -1 22008
+S
+#22008
+Player Shop~
+Reserved for player shops if available
+~
+0 0 1
+D1
+~
+~
+0 -1 22007
+S
+#22009
+Player Shop~
+Reserved for player shops if available
+~
+0 0 1
+D3
+~
+~
+0 -1 22007
+S
+#22010
+The Market Place~
+The cobblestobe road continues, passing merchant's tents and the many
+patrons seeking goods. The smell of baked goods and the smoke from a
+forge drift together, creating a strange scent, though not offensive
+to the people who smell it. To the North, the palace can be seen, and
+a mighty gatehouse stands to the South.
+~
+0 0 1
+D0
+~
+~
+0 -1 22013
+D1
+~
+~
+0 -1 22011
+D2
+~
+~
+0 -1 22007
+D3
+~
+~
+0 -1 22012
+S
+#22011
+The Anvil's Pound~
+Entering this tent is like entering an oven, the heat is unbearable.
+A heavy forge stands in the center of this tent, the coals which heat
+it glow bright red. The constant ring of a hammer marks this as the
+blacksmith's tent, as do the soot covered patrons. The tent opens to
+the West, leading back to the market place.
+~
+0 1024 1
+D3
+~
+~
+0 -1 22010
+S
+#22012
+Meats and Treats~
+The scent of wonderful bakery hangs in the air, as this tent is filled
+with all manner of baked goods. Patrons bustle in and out, stopping here
+to escape the heat of midday and to relax with a snack or two. The tent
+exits to the East, leading back to the market place.
+~
+0 1024 1
+D1
+~
+~
+0 -1 22010
+S
+#22013
+The Market Place~
+The Market Place stretches on, passing more tents and patrons in the
+process. The tent to the West seems to hold the interest of the merchant's
+guards, while the tent to the East seems to attract a more opulent crowd.
+To the North, the beautiful Palace Valor stands in all its glory, its
+golden banners waving proudly for all to see.
+~
+0 0 1
+D0
+~
+~
+0 -1 22016
+D1
+~
+~
+0 -1 22014
+D2
+~
+~
+0 -1 22010
+D3
+~
+~
+0 -1 22015
+S
+#22014
+The Glittering Diamond~
+This tent is almost deserted, save for a few rich merchants who seem
+to be perusing the goods. Glass cases have been assembled to display
+many fine gems and pieces of jewlery. The scent of fine perfume hangs
+in the air, as many nobles and ladies visit this shop often. The tent
+exits to the West, leading back to the marketplace.
+~
+0 1024 1
+D3
+~
+~
+0 -1 22013
+S
+#22015
+The Arms Merchant~
+The smell of sweat and unwashed men hangs in the air in this tent, as
+many merchant's guards and mercenaries frequent this buisness. Weapons
+and armor are on display here, most of poor quality, but some pieces do
+seem worth a glance. The tent exits to the East, leading back to the
+Market Place.
+~
+0 1024 1
+D1
+~
+~
+0 -1 22013
+S
+#22016
+The Palace Gates~
+The great gates of Valor stand to the North, which allows passage in
+the mighty palace which looms ahead. Visitors are welcomed here, and
+many peasants and nobles can be seen entering, to give their blessings
+to the kindly King Roland. The palace, while well defended and is quite
+the military fortress, holds a pleasant air, which is welcoming to all.
+A marketplace spans to the South, where many items of necessity can be
+found.
+~
+0 0 1
+D0
+~
+~
+0 -1 22042
+D2
+~
+~
+0 -1 22013
+S
+#22017
+Northwest corner of the Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D1
+~
+~
+0 -1 22022
+D2
+~
+~
+0 -1 22018
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22018
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22017
+D1
+~
+~
+0 -1 22023
+D2
+~
+~
+0 -1 22019
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22019
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22018
+D1
+~
+~
+0 -1 22024
+D2
+~
+~
+0 -1 22020
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22020
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22019
+D1
+~
+~
+0 -1 22025
+D2
+~
+~
+0 -1 22021
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22021
+Southwest corner of the Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22020
+D1
+~
+~
+0 -1 22026
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22022
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D1
+~
+~
+0 -1 22027
+D2
+~
+~
+0 -1 22023
+D3
+~
+~
+0 -1 22017
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22023
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22022
+D1
+~
+~
+0 -1 22028
+D2
+~
+~
+0 -1 22024
+D3
+~
+~
+0 -1 22018
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22024
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22023
+D1
+~
+~
+0 -1 22029
+D2
+~
+~
+0 -1 22025
+D3
+~
+~
+0 -1 22019
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22025
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22024
+D1
+~
+~
+0 -1 22030
+D2
+~
+~
+0 -1 22026
+D3
+~
+~
+0 -1 22020
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22026
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22025
+D1
+~
+~
+0 -1 22031
+D3
+~
+~
+0 -1 22021
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22027
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D1
+~
+~
+0 -1 22032
+D2
+~
+~
+0 -1 22028
+D3
+~
+~
+0 -1 22022
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22028
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22027
+D1
+~
+~
+0 -1 22033
+D2
+~
+~
+0 -1 22029
+D3
+~
+~
+0 -1 22023
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22029
+Center of the Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22028
+D1
+~
+~
+0 -1 22034
+D2
+~
+~
+0 -1 22030
+D3
+~
+~
+0 -1 22024
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22030
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22029
+D1
+~
+~
+0 -1 22035
+D2
+~
+~
+0 -1 22031
+D3
+~
+~
+0 -1 22025
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22031
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22030
+D1
+~
+~
+0 -1 22036
+D3
+~
+~
+0 -1 22026
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22032
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D1
+~
+~
+0 -1 22037
+D2
+~
+~
+0 -1 22033
+D3
+~
+~
+0 -1 22027
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22033
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22032
+D1
+~
+~
+0 -1 22038
+D2
+~
+~
+0 -1 22034
+D3
+~
+~
+0 -1 22028
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22034
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22033
+D1
+~
+~
+0 -1 22039
+D2
+~
+~
+0 -1 22035
+D3
+~
+~
+0 -1 22029
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22035
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22034
+D1
+~
+~
+0 -1 22040
+D2
+~
+~
+0 -1 22036
+D3
+~
+~
+0 -1 22030
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22036
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22035
+D1
+~
+~
+0 -1 22041
+D3
+~
+~
+0 -1 22031
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22037
+Northeast corner of the Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D2
+~
+~
+0 -1 22038
+D3
+~
+~
+0 -1 22032
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22038
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22037
+D2
+~
+~
+0 -1 22039
+D3
+~
+~
+0 -1 22033
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22039
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22038
+D2
+~
+~
+0 -1 22040
+D3
+~
+~
+0 -1 22034
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22040
+The Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22039
+D2
+~
+~
+0 -1 22041
+D3
+~
+~
+0 -1 22035
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22041
+Southeast corner of the Arena of Valor~
+The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+0 0 1
+D0
+~
+~
+0 -1 22040
+D3
+~
+~
+0 -1 22036
+> speech_prog home~
+mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+|
+S
+#22042
+Within the Palace of Valor~
+This is the main hall of the Palace of Valor, and its beauty is quite
+impressive to say the least. Marble columns line the wall, and the floor
+is polished marble tile. Between the columns, fantastic portraits can
+be seen, adding to the beauty of this palace. The hallway continues to
+the North, leading deeper into the palace, and to the South, to where
+the palace gates stand.
+~
+0 0 0
+D0
+~
+~
+0 -1 22043
+D2
+~
+~
+0 -1 22016
+S
+#22043
+An Intersection of Hallways~
+The main hall of the Palace intersects another, smaller hallway here,
+in this massive and busy foyer. A stairway leads up to a glorious and
+intricate landing, which overlooks this room and with the use of large
+windows, overlooks the marketplace as well. The hallway running East and
+West seems to lead to servants quarters and other mundane functions of
+the Palace. To the North lies the glorious Throne of Valor.
+~
+0 0 0
+D0
+~
+~
+0 -1 22046
+D1
+~
+~
+0 -1 22044
+D2
+~
+~
+0 -1 22042
+D3
+~
+~
+0 -1 22045
+D4
+~
+~
+0 -1 22048
+S
+#22044
+Entering the East Wing~
+The East wing of the Palace is where many of the mundane activities of
+the palace are accomplished. The halls here are no less impressive, if
+somewhat smaller. Polished marble tiles line the floor and small granite
+columns run along the walls. Servants can be seen bustling about, setting
+to chores and tasks of necessity. To the West, the main hall of the Palace
+can be seen. To the East lies the servant's quarters and other such things.
+~
+0 0 0
+D1
+~
+~
+0 -1 22049
+D3
+~
+~
+0 -1 22043
+S
+#22045
+Entering the West Wing~
+The West wing of the Palace is where many of the mundane activities of
+the palace are accomplished. The halls here are no less impressive, if
+somewhat smaller. Polished marble tiles line the floor and small granite
+columns run along the walls. Servants can be seen bustling about, setting
+to chores and tasks of necessity. To the East, the main hall of the Palace
+can be seen. To the West lies the servant's quarters and other such things.
+~
+0 0 0
+D1
+~
+~
+0 -1 22043
+D3
+~
+~
+0 -1 22058
+S
+#22046
+Before the Throne of Valor~
+The main hallway ends here, in this large sitting room where people of
+all kinds wait to meet King Roland. The advisors of the King bustle in
+and out, politley greeting the peasants and the noblemen alike. A plush
+velvet carpet adorns the floor, and beautiful tapestries line the wall.
+To the North, King Roland himself oversees the daily events of his loyal
+servants.
+~
+0 0 0
+D0
+~
+~
+0 -1 22047
+D2
+~
+~
+0 -1 22043
+S
+#22047
+The Throne of Valor~
+The Throneroom of Valor is quite breathtaking in its beauty. The Throne
+itself sits upon a small dias, carved of pure marble and polished to a
+smoothness which makes it seem slick. The tapestries which hang to the
+South are like dirty rags compared to those which hang in the Throneroom.
+King Roland rules his kingdom justly and fairly from this place.
+~
+0 0 0
+D2
+~
+~
+0 -1 22046
+S
+#22048
+The Balcony~
+A double stairway slopes up to this balcony, enhancing its grandiose
+appearance. Marble railing and polished marble tiles add to the utter
+brilliance of this Palace. A large sun window lies to the South, which
+allows nobles and royalty to observe the market place from here. A strip
+of plush carpet leads North, to an immense banquet hall.
+~
+0 0 0
+D0
+~
+~
+0 -1 22066
+D5
+~
+~
+0 -1 22043
+S
+#22049
+A Bend in the Corridor~
+The shining halls of the servants turns to the North here, and scents
+of cooking are thick. Servants bustle about, setting to tasks, bowing
+or dropping a curtsey to newcomers or nobles. Most of the servants are
+focusing their attention to the North, and a few run off to the West,
+to where the Grand Hall of the Palace lies.
+~
+0 4 0
+D0
+~
+~
+0 -1 22050
+D3
+~
+~
+0 -1 22044
+S
+#22050
+The East Wing~
+The halls of the East Wing shimmer with a determined shine, displaying
+the servants pride in their work and their King. Marble columns line
+the walls at even spaces, displaying the grandeur of the Palace as a
+whole. The East Wing runs North and South, with occasional doors that
+lead East or West.
+~
+0 4 0
+D0
+~
+~
+0 -1 22051
+D1
+~
+~
+1 -1 22052
+D2
+~
+~
+0 -1 22049
+S
+#22051
+The East Wing~
+The halls of the East Wing shimmer with a determined shine, displaying
+the servants pride in their work and their King. Marble columns line
+the walls at even spaces, displaying the grandeur of the Palace as a
+whole. The East Wing runs North and South, with occasional doors that
+lead East or West.
+~
+0 0 0
+D0
+~
+~
+0 -1 22054
+D1
+~
+~
+1 -1 22053
+D2
+~
+~
+0 -1 22050
+S
+#22052
+The Washroom~
+Sinks and large copper tubs fill this room, each filled with filthy
+dishes and cooking utensils. Piles of clean dishes lay in stacks to
+be arranged by other servants. A few maids toil away at the dishes,
+gossiping among themselves. A door to the North leads to the kitchens,
+while a door to the West leads back to the East Wing.
+~
+0 0 0
+D0
+~
+~
+1 -1 22053
+D3
+~
+~
+1 -1 22050
+S
+#22053
+The Kitchens~
+A wave of heat lingers in this brightly lit room, coupled with smells
+of freshly cooked food. Three large ovens stand against the East wall,
+each one in service. Pantrys and sinks stand against the North wall, a
+testament to the activity of this chamber. A door on the South wall
+leads to the washroom, and a door to the West leads back to the East
+wing.
+~
+0 0 0
+D2
+~
+~
+1 -1 22052
+D3
+~
+~
+1 -1 22051
+S
+#22054
+The East Wing~
+The halls of the East Wing shimmer with a determined shine, displaying
+the servants pride in their work and their King. Marble columns line
+the walls at even spaces, displaying the grandeur of the Palace as a
+whole. The East Wing runs North and South, with occasional doors that
+lead East or West.
+~
+0 0 0
+D0
+~
+~
+0 -1 22055
+D2
+~
+~
+0 -1 22051
+S
+#22055
+The East Wing~
+The halls of the East Wing shimmer with a determined shine, displaying
+the servants pride in their work and their King. Marble columns line
+the walls at even spaces, displaying the grandeur of the Palace as a
+whole. The East Wing runs North and South, with occasional doors that
+lead East or West. A large door lies to the North.
+~
+0 0 0
+D0
+~
+~
+3 -1 22071
+D2
+~
+~
+0 -1 22054
+D3
+~
+~
+3 -1 22056
+S
+#22056
+The Harem's Lounge~
+Plush carpet adorns the floor, in a deep shade of violet, to match the
+other liveries of this chamber. Intricate furniture sits around the room,
+tall stools and high backed chairs stand out. A tall mirror and a desk
+stand agains the South wall, holding various make-ups and other feminine
+necessities. A thin veil to the West leads into another chamber, while
+a solid door stands to the East. A sign above the viel reads NO MEN.
+~
+0 0 0
+D1
+~
+~
+1 -1 22055
+D3
+~
+~
+0 -1 22057
+S
+#22057
+The Harem's Studio~
+Thin silk tapestries and hangings decorate this room in a very petite
+fashion. The whole atosphere is sultry, and to hammer that point home,
+many circular beds lay about the chamber. A large copper tub sits at
+the center of the room, capable of holding many people at once. A thin
+veil leads to the East.
+~
+0 0 0
+D1
+~
+~
+0 -1 22056
+S
+#22058
+The West Wing~
+The West Wing, while smaller than the main hall of the Palace, is no
+less glorious. Polished marble tiles line the floor in intriate and
+dazzeling patterns. The walls are flanked with marble columns and a
+few expensive tapestries. The air here smells very clean, and smells
+of soap and polish hang in the air. Doors occasionaly can be seen to
+the East or West.
+~
+0 4 0
+D0
+~
+~
+0 -1 22059
+D1
+~
+~
+0 -1 22045
+S
+#22059
+The West Wing~
+The West Wing, while smaller than the main hall of the Palace, is no
+less glorious. Polished marble tiles line the floor in intriate and
+dazzeling patterns. The walls are flanked with marble columns and a
+few expensive tapestries. The air here smells very clean, and smells
+of soap and polish hang in the air. Doors occasionaly can be seen to
+the East or West.
+~
+0 4 0
+D0
+~
+~
+0 -1 22060
+D2
+~
+~
+0 -1 22058
+D3
+~
+~
+1 -1 22065
+S
+#22060
+The West Wing~
+The West Wing, while smaller than the main hall of the Palace, is no
+less glorious. Polished marble tiles line the floor in intriate and
+dazzeling patterns. The walls are flanked with marble columns and a
+few expensive tapestries. The air here smells very clean, and smells
+of soap and polish hang in the air. Doors occasionaly can be seen to
+the East or West.
+~
+0 4 0
+D0
+~
+~
+0 -1 22061
+D2
+~
+~
+0 -1 22059
+D3
+~
+~
+1 -1 22064
+S
+#22061
+The West Wing~
+The West Wing, while smaller than the main hall of the Palace, is no
+less glorious. Polished marble tiles line the floor in intriate and
+dazzeling patterns. The walls are flanked with marble columns and a
+few expensive tapestries. The air here smells very clean, and smells
+of soap and polish hang in the air. Doors occasionaly can be seen to
+the East or West.
+~
+0 0 0
+D0
+~
+~
+0 -1 22062
+D2
+~
+~
+0 -1 22060
+S
+#22062
+The West Wing~
+The West Wing, while smaller than the main hall of the Palace, is no
+less glorious. Polished marble tiles line the floor in intriate and
+dazzeling patterns. The walls are flanked with marble columns and a
+few expensive tapestries. The air here smells very clean, and smells
+of soap and polish hang in the air. Doors occasionaly can be seen to
+the East or West. A large door lies to the North.
+~
+0 0 0
+D0
+~
+~
+3 -1 22082
+D1
+~
+~
+1 -1 22063
+D2
+~
+~
+0 -1 22061
+S
+#22063
+A Storeroom~
+Shelves line the walls in this dark chamber, storing all manner of goods
+for the running of the Keep. Even here, the floors are polished tiles and
+are kept very clean. Most of the things in this chamber are cleaning and
+washing supplies, though other trinkets can be found here and there. A
+door stands to the West, leading back to the West Wing.
+~
+0 0 0
+D3
+~
+~
+1 -1 22062
+S
+#22064
+A Storeroom~
+Shelves line the walls in this dark chamber, storing all manner of goods
+for the running of the Keep. Even here, the floors are polished tiles and
+are kept very clean. Most of the things in this chamber are cleaning and
+washing supplies, though other trinkets can be found here and there. A
+door stands to the East, leading back to the West Wing.
+~
+0 0 0
+D1
+~
+~
+1 -1 22060
+S
+#22065
+The Laundry Room~
+An overpowering smell of soap lingers in the air, making the rest of
+the Keep seem dirty by comparison. Several wash basins line the walls,
+and piles of dirty laundry are strewn about. The clean linen is hustled
+out by maids and new loads of dirty laundry is dropped off. The activity
+here never seems to end. A door stands to the East, leading back to the
+West Wing.
+~
+0 0 0
+D1
+~
+~
+1 -1 22059
+S
+#22066
+The Banquet Hall~
+As beautiful as the rest of the Palace is, it is no comparison to this
+large chamber. A large cherrywood banquet table stands in the center,
+polished and aged. Twenty chairs surround it, with a large high backed
+chair for the King. Plush velvet carpet covers the floor, and tapestries
+of untold worth adorn the walls. Trophies of battle can also be seen upon
+the walls, marking great victories of the Keep of Valor. A large double
+door stands to the North.
+~
+0 0 0
+D0
+~
+~
+3 -1 22067
+D2
+~
+~
+0 -1 22048
+S
+#22067
+Entering the Royal Apartments~
+Velvet carpet covers the floor here, leading to the hallway to the North.
+The walls are polish oak, aged beyond the span of a human's life. This
+small waiting room is the entrance to the Royal Apartments, where the King
+himself resides. A set of double doors lies to the South.
+~
+0 0 0
+D0
+~
+~
+0 -1 22068
+D2
+~
+~
+3 -1 22066
+S
+#22068
+A Magnificient Hallway~
+This hallway embodies the essence of royalty. A plush velvet carpet runs
+the length alongside polished oak walls. Portraits of past kings and other
+members of the royal family can be seen at spaced intervals. Chandeliers
+provide light, and crystal vases stand in small alcoves holding rare and
+beautiful plants. Doors can be seen to the East and West.
+~
+0 0 0
+D0
+~
+~
+0 -1 22069
+D1
+~
+~
+3 -1 22073
+D2
+~
+~
+0 -1 22067
+D3
+~
+~
+3 -1 22072
+S
+#22069
+A Magnificient Hallway~
+This hallway embodies the essence of royalty. A plush velvet carpet runs
+the length alongside polished oak walls. Portraits of past kings and other
+members of the royal family can be seen at spaced intervals. Chandeliers
+provide light, and crystal vases stand in small alcoves holding rare and
+beautiful plants. Doors can be seen to the East and West.
+~
+0 0 0
+D0
+~
+~
+0 -1 22070
+D1
+~
+~
+3 -1 22074
+D2
+~
+~
+0 -1 22068
+D3
+~
+~
+3 -1 22076
+S
+#22070
+A Magnificient Hallway~
+This hallway embodies the essence of royalty. A plush velvet carpet runs
+the length alongside polished oak walls. Portraits of past kings and other
+members of the royal family can be seen at spaced intervals. Chandeliers
+provide light, and crystal vases stand in small alcoves holding rare and
+beautiful plants. Doors can be seen to the East and West.
+~
+0 0 0
+D1
+~
+~
+3 -1 22078
+D2
+~
+~
+0 -1 22069
+D3
+~
+~
+3 -1 22077
+S
+#22071
+The Back Courtyard~
+Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes. A small door stands to the South
+~
+0 0 1
+D0
+~
+~
+0 -1 22087
+D2
+~
+~
+3 -1 22055
+D3
+~
+~
+0 -1 22079
+S
+#22072
+Guest Apartments~
+This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the East, leading back towards
+the Royal Apartments.
+~
+0 4 1
+D1
+~
+~
+1 -1 22068
+S
+#22073
+Guest Apartments~
+This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the West, leading back towards
+the Royal Apartments.
+~
+0 4 1
+D3
+~
+~
+1 -1 22068
+S
+#22074
+Guest Apartments~
+This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the West, leading back towards
+the Royal Apartments.
+~
+0 4 1
+D3
+~
+~
+3 -1 22069
+S
+#22075
+Control room~
+Do not toy with any of the mobs that invoke here, they are used as
+switches and triggers.
+~
+0 4 1
+S
+#22076
+Guest Apartments~
+This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the East, leading back towards
+the Royal Apartments.
+~
+0 4 1
+D1
+~
+~
+1 -1 22069
+S
+#22077
+The King's Chambers~
+This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the East, leading back towards
+the Royal Apartments.
+~
+0 4 1
+D1
+~
+~
+1 -1 22070
+S
+#22078
+The Queen's Chambers~
+This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the West, leading back towards
+the Royal Apartments.
+~
+0 4 1
+D3
+~
+~
+1 -1 22070
+S
+#22079
+The Back Courtyard~
+Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+0 4 1
+D0
+~
+~
+0 -1 22086
+D1
+~
+~
+0 -1 22071
+D3
+~
+~
+0 -1 22080
+S
+#22080
+The Back Courtyard~
+Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+0 0 1
+D0
+~
+~
+0 -1 22085
+D1
+~
+~
+0 -1 22079
+D3
+~
+~
+0 -1 22081
+S
+#22081
+The Back Courtyard~
+Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+0 0 1
+D0
+~
+~
+0 -1 22084
+D1
+~
+~
+0 -1 22080
+D3
+~
+~
+0 -1 22082
+S
+#22082
+The Back Courtyard~
+Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes. A small door stands to the South.
+~
+0 0 1
+D0
+~
+~
+0 -1 22083
+D1
+~
+~
+0 -1 22081
+D2
+~
+~
+1 -1 22062
+S
+#22083
+The Back Courtyard~
+Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+0 0 1
+D1
+~
+~
+0 -1 22084
+D2
+~
+~
+0 -1 22082
+S
+#22084
+The Back Courtyard~
+Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+0 0 1
+D1
+~
+~
+0 -1 22085
+D2
+~
+~
+0 -1 22081
+D3
+~
+~
+0 -1 22083
+S
+#22085
+The Back Courtyard~
+Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes. A mages tower stands
+to the North.
+~
+0 0 1
+D0
+~
+~
+3 -1 22088
+D1
+~
+~
+0 -1 22086
+D2
+~
+~
+0 -1 22080
+D3
+~
+~
+0 -1 22084
+S
+#22086
+The Back Courtyard~
+Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+0 0 1
+D1
+~
+~
+0 -1 22087
+D2
+~
+~
+0 -1 22079
+D3
+~
+~
+0 -1 22085
+S
+#22087
+The Back Courtyard~
+Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+0 0 1
+D2
+~
+~
+0 -1 22071
+D3
+~
+~
+0 -1 22086
+S
+#22088
+The Mage's Tower~
+The bottom room of this squat, circular tower is quite large, but very
+cluttered. Tables and desks are covered in notes and books, shelves are
+filled to bursting. Balls of light hover about, with seeming minds of
+their own, lighting the room and its arcane clutter. An obsure door lies
+to the South, and a spiral stariway leads up to the top of the tower.
+~
+0 0 1
+D2
+~
+~
+1 -1 22085
+D4
+~
+~
+0 -1 22089
+S
+#22089
+The Mage's Study~
+This large circular chamber is almost thirty paces across. Laboratory
+tables stand to one side, with glowing liquids coursing through glass
+tubing. Strewn notes and books litter the floor and failed attempts at
+making magical items lay in one pile, some of the myriad items sparking
+occassionaly. A spiral stairway leads down to the base of the tower.
+~
+0 0 1
+D5
+~
+~
+0 -1 22088
+S
+#22090
+Floating in a void~
+~
+0 4 1
+S
+#0
+
+
+#RESETS
+O 1 22000 1 22000
+O 1 22001 1 22010
+M 1 22000 1 22011
+M 1 22001 1 22012
+G 1 22002 1
+G 1 22003 1
+G 1 22004 1
+G 1 22005 1
+M 1 22003 1 22014
+M 1 22002 1 22004
+E 1 22010 1 8
+E 1 22006 1 16
+E 1 22009 1 7
+E 1 22007 1 5
+E 1 22008 1 6
+M 1 22004 1 22016
+E 1 22010 1 8
+E 1 22009 1 7
+E 1 22007 1 5
+E 1 22006 1 16
+E 1 22008 1 6
+M 1 22005 1 22029
+E 1 22011 1 16
+E 1 22012 1 5
+M 1 22006 1 22017
+M 1 22006 2 22019
+M 1 22007 1 22025
+M 1 22007 2 22035
+M 1 22006 3 22038
+M 1 22006 4 22032
+M 1 22008 1 22033
+M 1 22008 2 22041
+M 1 22007 3 22024
+M 1 22006 5 22021
+M 1 22010 1 22046
+M 1 22009 1 22047
+E 1 22015 1 16
+E 1 22016 1 5
+E 1 22017 1 12
+E 1 22018 1 1
+O 1 22013 1 22047
+M 1 22013 1 22052
+E 1 22019 1 5
+M 1 22014 1 22052
+E 1 22019 1 5
+D 0 22052 0 0
+D 0 22052 3 0
+M 1 22015 1 22053
+E 1 22020 1 5
+D 0 22053 2 0
+D 0 22053 3 0
+M 1 22016 1 22056
+E 1 22021 1 7
+E 1 22022 1 5
+E 1 22023 1 20
+M 1 22017 1 22056
+E 1 22021 1 7
+E 1 22022 1 5
+E 1 22023 1 20
+D 0 22056 1 0
+M 1 22018 1 22057
+E 1 22024 1 6
+D 0 22055 0 1
+D 0 22055 3 1
+M 1 22020 1 22065
+E 1 22019 1 5
+D 0 22065 1 0
+D 0 22066 0 1
+D 0 22067 2 1
+D 0 22070 1 1
+D 0 22070 3 1
+D 0 22069 1 1
+D 0 22069 3 1
+D 0 22068 1 1
+D 0 22068 3 1
+O 1 22025 1 22072
+D 0 22072 1 0
+O 1 22025 1 22073
+D 0 22073 3 0
+O 1 22025 1 22076
+D 0 22076 1 0
+O 1 22025 1 22077
+D 0 22077 1 0
+D 0 22062 0 1
+D 0 22062 1 0
+D 0 22085 0 1
+D 0 22071 2 1
+M 1 22021 1 22089
+E 1 22026 1 5
+O 1 22027 1 22063
+D 0 22063 3 0
+M 1 22026 1 22074
+E 1 22029 1 5
+O 1 22025 1 22074
+D 0 22074 3 1
+M 1 22026 2 22078
+E 1 22029 1 5
+O 1 22025 1 22078
+D 0 22078 3 0
+M 1 22019 1 22015
+S
+
+
+#SHOPS
+ 22001    0  0  0  0  0   120  90         0 23    ; Ariad the Baker
+ 22003    8  0  0  0  0   120  90         0 23    ; the Jewler
+ 22019    5  9  0  0  0   120  90         0 23    ; a merchant
+0
+
+
+#REPAIRS
+ 22000    5  9  0          15   1         0 23    ; Master Lugard
+0
+
+
+#SPECIALS
+M  22009 spec_cast_cleric
+M  22021 spec_cast_mage
+S
+
+
+#$

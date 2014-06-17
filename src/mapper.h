@@ -29,11 +29,11 @@ typedef struct map_type MAP_TYPE;
 struct map_type
 {
 //   EXT_BV info;
-   char tegn;  /* Character to print at this map coord */
-   int vnum;   /* Room this coord represents */
-   int depth;  /* Recursive depth this coord was found at */
-   int sector; /* Sector type of the map space */
-   bool can_see;
+  char tegn;			/* Character to print at this map coord */
+  int vnum;			/* Room this coord represents */
+  int depth;			/* Recursive depth this coord was found at */
+  int sector;			/* Sector type of the map space */
+  bool can_see;
 };
 
-void draw_room_map( CHAR_DATA * ch, const char *desc );
+void draw_room_map (CHAR_DATA * ch, const char *desc);

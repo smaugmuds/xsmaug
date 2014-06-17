@@ -1,0 +1,3177 @@
+#XSMAUGAREA
+#AREADATA
+Version      1
+Name         The Bazaar~
+Author       Yaegar~
+WeatherX     0
+WeatherY     0
+Ranges       0 65 0 65
+Economy      0 51200000
+#ENDAREADATA
+
+#MOBILE
+Vnum       14100
+Keywords   armor merchant dealer abdul~
+Short      an armor merchant~
+Long       A merchant specializing in armor offers to sell you a good shield.
+~
+Desc       This wily fellow has stock from all around the world. He will offer you a
+price for your own armor, should you wish to sell it, though you can be
+guaranteed of him selling it for a big profit.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   9 0 0 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14101
+Keywords   arms merchant hazid~
+Short      an arms merchant~
+Long       A merchant specializing in a variety of weapons shows you a nice dagger.
+~
+Desc       This fellow, Hazid by name, is the brother of the the armor merchant. They
+are vicious rivals, each determined to rake in the most gold through sale
+of items of warfare. So far, Hazid's brother Abdul is the clear winner- it
+would seem most people are more concerned with protecting their own life
+than with taking others.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   5 0 0 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14102
+Keywords   goods dealer~
+Short      a goods dealer~
+Long       A dealer in basic goods smiles happily and rubs her hands together.
+~
+Desc       She sure seems pleased to see you, especially when her greedy eyes light upon
+that bulge in your... money pouch. She stocks a variety of basic adventuring
+goods that you may be interested in.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   1 12 15 17 18 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14103
+Keywords   chef~
+Short      a chef~
+Long       A busy chef is here preparing and selling hot meals.
+~
+Desc       You can feast on felafels, kebabs or fried capsicum here, all cooked by the
+fine chef standing before you. The smell is mouth watering.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   19 0 0 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14104
+Keywords   thaumaturgist~
+Short      a thaumaturgist~
+Long       A thaumaturgist offers to show you some nice wands.
+~
+Desc       The thaumaturgist is a travelling mage who collects rods, staves and wands.
+he has no potions or scrolls, nor is he interested in them. For them you
+must go to the herbalist or the scribe.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_mage~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   1 3 4 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14105
+Keywords   herbalist~
+Short      a herbalist~
+Long       A herbalist grins as you enter and puts out some of her wares.
+~
+Desc       This lady specializes in herbs, pills and other digestible magical
+substances, including potions (she has branched out to fill the gap in the
+market).
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   10 26 0 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14106
+Keywords   tailor~
+Short      a tailor~
+Long       A tailor leaps up and begins to measure you for a suit.
+~
+Desc       This fellow is the finest clothier in the bazaar. Well, he's actually the
+ONLY clothier in the bazaar. Oh well.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   9 13 0 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14107
+Keywords   sage~
+Short      a wise old sage~
+Long       A wise old sage offers to identify your equipment.
+~
+Desc       This fellow is a wise and learned and very expensive scholar of legend lore,
+the divination of the properties of items both arcane and mundane. Just
+give him the item you want identified and he will do so.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea nowander~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14108
+Keywords   blacksmith smith~
+Short      a blacksmith~
+Long       Smith, the blacksmith, sniffs as you enter.
+~
+Desc       Smith can repair any type of armor you have, for a price. And don't be
+surprised by a rude outburst if you waste his time by giving him something
+that isn't broken to mend.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea mountable~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14109
+Keywords   scribe~
+Short      a scribe~
+Long       A scribe offers to show you his range of scrolls.
+~
+Desc       This felloe is an avid collector of rare and magical scrolls, and has quite
+a few he sells to the discerning public. Have a browse.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   2 0 0 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14110
+Keywords   shipwright ship wright~
+Short      a shipwright~
+Long       A shipwright smiles and offers you a ship.
+~
+Desc       This fellow has been making and selling all types of water craft for decades.
+He's quite good at it too.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   22 0 0 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14111
+Keywords   animal trainer~
+Short      an animal trainer~
+Long       An animal trainer playfully punches a gorilla as you enter.
+~
+Desc       She is going to do that once too often, you think to yourself as you see
+the gorilla glower. Still, she's a big enough lass to make you doubt the
+gorilla's chances in a scrap.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   0 0 0 0 0 105 100 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14112
+Keywords   slave trainer~
+Short      a slave trainer~
+Long       A slave trainer is whipping some slaves into combat readiness.
+~
+Desc       If you want to, you can buy one of this fellow's slaves to aid you in combat.
+They don't talk back, they follow orderd fanatically, and they are quite
+tough.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   0 0 0 0 0 105 100 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14113
+Keywords   healer monk~
+Short      a monk~
+Long       A wandering monk sits crosslegged here, healing the ill.
+~
+Desc       This fellow wanders the land, spreading the word of his god, and healing
+the injuries of his fellow beings.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_adept~
+Gender     male~
+Actflags   npc sentinel stayarea immortal~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14114
+Keywords   fruiterer~
+Short      a fruiterer~
+Long       A fruiterer offers you a magical pear.
+~
+Desc       The fruit that this pretty girl sells is magically enchanted, as it is
+grown in a field of magical energy in a secret location only she knows. Thus
+she has the market cornered so to speak. Buy a piece and eat it, it may be
+greatly beneficial.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   19 0 0 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14115
+Keywords   dave peddler~
+Short      Dave the peddler~
+Long       A wandering peddler attempts to sell you some of his goods.
+~
+Desc       This fellow wanders from market to market across the world, selling the many
+things he has acquired on his journeys. You may find something of interest,
+maybe not.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   protect~
+Stats1     0 36 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   8 15 17 18 9 150 50 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14116
+Keywords   agitator~
+Short      an agitator~
+Long       An agitator is here stirring up the public (or attempting to).
+~
+Desc       Market places and the like are always popular places for demagogues, public
+speakers and other agitators, for they have a ready-made captive audience.
+Listening to this woman babble on, you suddenly remember that a shop near
+here sells tomatoes...
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea wimpy~
+Affected   protect~
+Stats1     0 22 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14117
+Keywords   shopper~
+Short      a shopper~
+Long       A shopper moves about the bazaar.
+~
+Desc       A customer of the merchants here, just like you. A little poorer perhaps,
+and a damn sight less violent, but a shopper nonetheless.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea wimpy~
+Stats1     0 8 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14118
+Keywords   shopper~
+Short      a shopper~
+Long       A shopper moves about the bazaar.
+~
+Desc       A customer of the merchants here, just like you. A little poorer perhaps,
+and a damn sight less violent, but a shopper nonetheless.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc stayarea wimpy~
+Stats1     0 8 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14119
+Keywords   thief scoundrel~
+Short      a thieving scoundrel~
+Long       A thieving scoundrel skulks about here.
+~
+Desc       Market places are like a magnet for thieves in every nation, and this one is
+no exception. With so many fat merchants waddling around with such fat
+purses, who wouldn't feel a little larcenous?
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_thief~
+Gender     male~
+Actflags   npc stayarea wimpy~
+Affected   detect_invis detect_hidden sneak hide~
+Stats1     -500 10 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14120
+Keywords   beggar~
+Short      a beggar~
+Long       A beggar cries out for alms.
+~
+Desc       Market places are popular gathering spots for beggars, the poor souls hoping
+for a coin from a fat merchant or busy shopper. Unfortunately they are very
+rarely lucky.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_fido~
+Gender     male~
+Actflags   npc sentinel stayarea wimpy~
+Stats1     0 4 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14121
+Keywords   guard~
+Short      a guard~
+Long       A black-robed guard swaggers past you.
+~
+Desc       These guards are actually a squad of mercenaries hired by the Merchant's
+Union to keep the peace in the bazaar. They approach their task with great
+relish, delighting in terrorising anyone they don't like.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_guard~
+Gender     male~
+Actflags   npc healer stayarea~
+Affected   detect_invis detect_hidden infrared~
+Stats1     -400 19 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14122
+Keywords   princess fatima~
+Short      the princess fatima~
+Long       Princes Fatima glares imperiously at you.
+~
+Desc       The princess is a frequent customer of the bazaar. She is used to having
+people grovel before her, and she seems affronted by your refusal to do
+so.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_breath_frost~
+Gender     female~
+Actflags   npc sentinel stayarea wimpy~
+Affected   sanctuary~
+Stats1     -400 45 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14123
+Keywords   spice merchant~
+Short      a spice merchant~
+Long       A spice merchant sneezes as he gets a noseful of pepper.
+~
+Desc       This stout fellow has a wide variety of spices gathered from all parts of
+the world. Most of them are of little use to an adventurer, though it is
+said that some spices have a rejuvenating effect on people...
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   10 26 19 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14124
+Keywords   florist~
+Short      a florist~
+Long       A florist offers to sell you a rose.
+~
+Desc       This florist stocks a good range of flora. Most of it isn't of immediate
+practical use to an adventurer, though in this magical land one can never
+tell just what could be useful...
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   10 26 13 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14125
+Keywords   jeweller~
+Short      a jeweller~
+Long       A jeweller shows you some fine rubies.
+~
+Desc       This half elf is a superb jeweller- she has even created jewellery for
+royalty. Her products are very expensive but also very good.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary infrared protect~
+Stats1     0 89 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+ShopData   8 0 0 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum       14126
+Keywords   slave~
+Short      a slave~
+Long       A male slave hauls his master's goods along.
+~
+Desc       This fellow is burdened with several chests full of goods recently acquired
+by his master.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_janitor~
+Gender     male~
+Actflags   npc sentinel stayarea wimpy~
+Stats1     0 7 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14127
+Keywords   slave whore~
+Short      a whore~
+Long       A whore stands here, waiting for a "client".
+~
+Desc       This girl has been placed by the merchants to provide "services" for any
+patron of the bazaar who is so inclined. She is obedient, well-groomed and
+very broad-minded.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Stats1     0 5 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14128
+Keywords   chimp chimpanzee~
+Short      the chimpanzee~
+Long       The chimpanzee squeaks and scratches its ass.
+~
+Desc       The chimp looks like a fierce fighter.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc pet~
+Stats1     0 5 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14129
+Keywords   jaguar~
+Short      the jaguar~
+Long       The jaguar growls menacingly at you.
+~
+Desc       The jaguar looks like a fierce fighter.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc pet~
+Stats1     0 10 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14130
+Keywords   gorilla~
+Short      the gorilla~
+Long       The gorilla beats its chest and roars!
+~
+Desc       The gorilla looks like a fierce fighter.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc pet~
+Stats1     0 16 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14131
+Keywords   spearman~
+Short      the spearman~
+Long       The spearman stands rigidly at attention.
+~
+Desc       The spearman looks like a fierce fighter.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc pet~
+Stats1     0 13 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14132
+Keywords   bowman~
+Short      the bowman~
+Long       The bowman strings his bow.
+~
+Desc       The bowman looks like a fierce fighter.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc pet~
+Stats1     0 22 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14133
+Keywords   swordsman~
+Short      the swordsman~
+Long       The swordsman flashes his scimitars.
+~
+Desc       The swordsman looks like a fierce fighter.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc pet~
+Stats1     0 28 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14134
+Keywords   busker~
+Short      a busker~
+Long       A busker is here playing his sitar.
+~
+Desc       This fellow is plying his trade to make a few pennies for his family.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea wimpy~
+Stats1     0 7 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14135
+Keywords   snake charmer~
+Short      a snake charmer~
+Long       A snake charmer entices a cobra from a basket.
+~
+Desc       This game fellow charms the cobras he keeps with a small flute. Sometimes it
+works, sometimes a new snake charmer gets a job...
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea wimpy~
+Stats1     0 9 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#MOBILE
+Vnum       14136
+Keywords   cobra~
+Short      a cobra~
+Long       A cobra rears from the basket, fangs bared.
+~
+Desc       This snake is for the present quite harmless, as it has been charmed by the
+snake charmer's hypnotic tune.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_poison~
+Gender     neuter~
+Actflags   npc sentinel stayarea wimpy~
+Affected   charm~
+Stats1     -400 10 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#OBJECT
+Vnum     14100
+Keywords chainmail tunic~
+Type     armor~
+Short    a chainmail tunic~
+Long     A chainmail tunic has been left here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    5 0 0 0 0
+Affect       -1 -1 -5 17 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14101
+Keywords leather breeches~
+Type     armor~
+Short    a pair of leather breeches~
+Long     A pair of leather breeches has been left here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+Affect       -1 -1 1 5 0
+Affect       -1 -1 5 14 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14102
+Keywords helmet~
+Type     armor~
+Short    an iron helmet~
+Long     An iron helmer is here. It looks heavy.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    10 0 0 0 0
+Affect       -1 -1 -1 3 0
+Affect       -1 -1 5 13 0
+Affect       -1 -1 -10 17 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14103
+Keywords mithril gauntlets~
+Type     armor~
+Short    a pair of mithril gauntlets~
+Long     A pair of mithril gauntlets are here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+Affect       -1 -1 1 2 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 1 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14104
+Keywords scimitar~
+Type     weapon~
+Short    a scimitar~
+Long     A scimitar has been dropped here.~
+WFlags   take~
+Values   0 0 0 1 0 0
+Stats    5 0 0 0 0
+Affect       -1 -1 1 18 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14105
+Keywords shamsheer~
+Type     weapon~
+Short    a huge shamsheer~
+Long     A huge shamsheer is lying on the ground here.~
+WFlags   take~
+Values   0 0 0 3 0 0
+Stats    20 0 0 0 0
+Affect       -1 -1 3 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14106
+Keywords spear~
+Type     weapon~
+Short    a short spear~
+Long     A short spear is stuck in the ground here.~
+WFlags   take~
+Values   0 0 0 2 0 0
+Stats    5 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14107
+Keywords dagger~
+Type     weapon~
+Short    a silver dagger~
+Long     A dagger lined with silver to increase accuracy is here.~
+WFlags   take~
+Values   0 0 0 11 0 0
+Stats    1 0 0 0 0
+Affect       -1 -1 2 18 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14108
+Keywords blanket~
+Type     armor~
+Short    a coarse blanket~
+Long     A coarse blanket lies here.~
+WFlags   take~
+Values   1 0 0 0 0 0
+Stats    2 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14109
+Keywords torch~
+Type     light~
+Short    a torch~
+Long     A torch has been discarded here.~
+WFlags   take~
+Values   0 0 12 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14110
+Keywords brass lantern~
+Type     light~
+Short    a brass lantern~
+Long     A brass lantern has been discarded here.~
+WFlags   take~
+Values   0 0 24 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14111
+Keywords pouch belt~
+Type     container~
+Short    a pouch belt~
+Long     A pouch belt lies here.~
+WFlags   take~
+Values   25 1 0 0 0 0
+Stats    2 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14112
+Keywords felafel~
+Type     food~
+Short    a felafel~
+Long     A tasty felafel lies here.~
+WFlags   take~
+Values   4 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14113
+Keywords beef shish kebab~
+Type     food~
+Short    a beef shish kebab~
+Long     (Hot) A beef shisk kebab steams away here.~
+WFlags   take~
+Values   6 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14114
+Keywords lamb doner kebab~
+Type     food~
+Short    a lamb doner kebab~
+Long     (Tasty) A lamb doner kebab is here.~
+WFlags   take~
+Values   12 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14115
+Keywords fried capsicum~
+Type     food~
+Short    fried capsicum~
+Long     (Hmmm) Fried capsicum lies here.~
+WFlags   take~
+Values   2 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14116
+Keywords bone staff~
+Type     staff~
+Short    a bone staff~
+Long     A bone staff is here.~
+Flags    hum~
+WFlags   take~
+Values   10 5 5 -1 0 0
+Stats    2 0 0 0 0
+Spells   'cure blindness'
+#EXDESC
+ExDescKey    bone staff~
+ExDesc       An inscription reads- "Let them SEE!"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     14117
+Keywords ivory wand~
+Type     wand~
+Short    a slender ivory wand~
+Long     A slender ivory wand lies here.~
+Flags    glow~
+WFlags   take~
+Values   10 5 5 -1 0 0
+Stats    1 0 0 0 0
+Spells   'detect invis'
+#EXDESC
+ExDescKey    ivory wand~
+ExDesc       An inscription reads- "See what is not seen!"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     14118
+Keywords oak staff~
+Type     staff~
+Short    an oak staff~
+Long     An oak staff lays here.~
+Flags    hum~
+WFlags   take~
+Values   10 5 5 -1 0 0
+Stats    2 0 0 0 0
+Spells   'armor'
+#EXDESC
+ExDescKey    oak staff~
+ExDesc       An inscription reads- "Let them be armored!"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     14119
+Keywords black wand~
+Type     wand~
+Short    a short black wand~
+Long     A short black wand hums strangely here.~
+Flags    hum~
+Values   10 5 5 -1 0 0
+Stats    2 0 0 0 0
+Spells   'weaken'
+#EXDESC
+ExDescKey    black wand~
+ExDesc       An inscription reads- "Let them be stricken!"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     14120
+Keywords yellow herb~
+Type     pill~
+Short    a yellow herb~
+Long     A yellow herb is here.~
+Flags    magic~
+WFlags   take~
+Values   10 -1 -1 -1 0 0
+Stats    1 500 50 0 0
+Spells   'armor' 'bless' 'NONE'
+#EXDESC
+ExDescKey    yellow herb~
+ExDesc       This herb will increase your defenses and engender the blessing of the Gods.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     14121
+Keywords red herb~
+Type     pill~
+Short    a red herb~
+Long     A red herb is here.~
+Flags    magic~
+WFlags   take~
+Values   10 -1 -1 -1 0 0
+Stats    1 500 50 0 0
+Spells   'infravision' 'detect invis' 'detect hidden'
+#EXDESC
+ExDescKey    red herb~
+ExDesc       This herb will greatly increase your powers of perception.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     14122
+Keywords green herb~
+Type     pill~
+Short    a green herb~
+Long     A green herb is here.~
+Flags    magic~
+WFlags   take~
+Values   10 -1 -1 -1 0 0
+Stats    1 500 50 0 0
+Spells   'invis' 'protection' 'NONE'
+#EXDESC
+ExDescKey    green herb~
+ExDesc       This herb will conceal and protect you.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     14123
+Keywords white herb~
+Type     pill~
+Short    a white herb~
+Long     A white herb is here.~
+Flags    magic~
+WFlags   take~
+Values   10 -1 -1 -1 0 0
+Stats    1 500 50 0 0
+Spells   'cure serious' 'refresh' 'NONE'
+#EXDESC
+ExDescKey    white herb~
+ExDesc       This herb will heal and refresh you.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     14124
+Keywords fez~
+Type     armor~
+Short    a bright red fez~
+Long     A bright red fez with a yellow tassel sits here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14125
+Keywords camelhair jacket~
+Type     armor~
+Short    a camelhair jacket~
+Long     Someone has left their very fashionable camelhair jacket here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14126
+Keywords silk trousers~
+Type     armor~
+Short    a pair of silk trousers~
+Long     A pair of silk trousers has been left here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 2000 200 0 0
+Affect       -1 -1 10 17 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14127
+Keywords curled boots~
+Type     armor~
+Short    a pair of curled boots~
+Long     A pair of curled boots are here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14128
+Keywords scroll~
+Type     scroll~
+Short    a scroll~
+Long     A scroll. That's it. A SCROLL.~
+Flags    magic~
+WFlags   take~
+Values   12 -1 -1 -1 0 0
+Stats    1 0 0 0 0
+Spells   'armor' 'teleport' 'change sex'
+#ENDOBJECT
+
+#OBJECT
+Vnum     14129
+Keywords scroll~
+Type     scroll~
+Short    a scroll~
+Long     A scroll. That's it. A SCROLL.~
+Flags    magic~
+WFlags   take~
+Values   12 -1 -1 -1 0 0
+Stats    1 0 0 0 0
+Spells   'blindness' 'cure light' 'faerie fire'
+#ENDOBJECT
+
+#OBJECT
+Vnum     14130
+Keywords scroll~
+Type     scroll~
+Short    a scroll~
+Long     A scroll. That's it. A SCROLL.~
+Flags    magic~
+WFlags   take~
+Values   12 -1 -1 -1 0 0
+Stats    1 0 0 0 0
+Spells   'weaken' 'heal' 'sleep'
+#ENDOBJECT
+
+#OBJECT
+Vnum     14131
+Keywords scroll~
+Type     scroll~
+Short    a scroll~
+Long     A scroll. That's it. A SCROLL.~
+Flags    magic~
+WFlags   take~
+Values   12 -1 -1 -1 0 0
+Stats    1 0 0 0 0
+Spells   'invis' 'fly' 'fireball'
+#ENDOBJECT
+
+#OBJECT
+Vnum     14132
+Keywords skiff~
+Type     boat~
+Short    a skiff~
+Long     A skiff sits here, unwanted.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    10 500 50 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14133
+Keywords junk~
+Type     boat~
+Short    a chinese junk~
+Long     A chinese junk with sail down sits here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    50 1000 100 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14134
+Keywords small galley~
+Type     boat~
+Short    a small galley~
+Long     A small galley with battering ram lies on its side here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    250 10000 1000 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14135
+Keywords scow~
+Type     boat~
+Short    a scow~
+Long     A scow full of crap is here.~
+Flags    hum~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    50 1500 150 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14136
+Keywords tomato~
+Type     food~
+Short    an overripe tomato~
+Long     An overripe tomato squelches here.~
+WFlags   take~
+Values   1 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14137
+Keywords juicy pear~
+Type     food~
+Short    a juicy pear~
+Long     A juicy pear rolls about on the ground.~
+WFlags   take~
+Values   1 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14138
+Keywords crunchy apple~
+Type     food~
+Short    a crunchy apple~
+Long     A red crunchy apple is here.~
+WFlags   take~
+Values   1 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14139
+Keywords melon~
+Type     food~
+Short    a juicy melon~
+Long     A juicy melon has been left here.~
+WFlags   take~
+Values   4 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14140
+Keywords tin cup~
+Type     container~
+Short    a tin cup~
+Long     A tin cup lies here.~
+WFlags   take~
+Values   1 1 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14141
+Keywords rusty knife~
+Type     weapon~
+Short    a rusty knife~
+Long     A rusty knife lies here.~
+WFlags   take~
+Values   0 0 0 11 0 0
+Stats    1 0 0 0 0
+Affect       -1 -1 -2 18 0
+Affect       -1 -1 -2 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14142
+Keywords potion~
+Type     potion~
+Short    a potion~
+Long     A murky potion is here.~
+Flags    hum~
+WFlags   take~
+Values   1 -1 -1 -1 0 0
+Stats    1 0 0 0 0
+Spells   'poison' 'poison' 'poison'
+#ENDOBJECT
+
+#OBJECT
+Vnum     14143
+Keywords pouch~
+Type     container~
+Short    a small pouch~
+Long     A small pouch has been tossed aside here.~
+WFlags   take~
+Values   5 1 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14144
+Keywords mysterious powder~
+Type     pill~
+Short    a mysterious powder~
+Long     A mysterious powder is scattered about here.~
+Flags    hum~
+WFlags   take~
+Values   1 -1 -1 -1 0 0
+Stats    1 100 10 0 0
+Spells   'invis' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     14145
+Keywords vest~
+Type     armor~
+Short    a studded vest~
+Long     A studded vest lies here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+Affect       -1 -1 2 5 0
+Affect       -1 -1 20 13 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14146
+Keywords veil~
+Type     armor~
+Short    a veil~
+Long     A silk veil lies here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+Affect       -1 -1 3 3 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14147
+Keywords slippers~
+Type     armor~
+Short    a pair of soft slippers~
+Long     A pair of soft slippers rests here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+Affect       -1 -1 2 2 0
+Affect       -1 -1 25 14 0
+Affect       -1 -1 -4 23 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14148
+Keywords nipple ring~
+Type     armor~
+Short    a gold nipple ring~
+Long     A gold nipple ring from the breast of a princess lies here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+Affect       -1 -1 -25 17 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14149
+Keywords sachet spice~
+Type     food~
+Short    a sachet of exotic spices~
+Long     A sachet of exotic spices has been left here.~
+WFlags   take~
+Values   24 0 0 0 0 0
+Stats    1 1000 100 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14150
+Keywords sachet spice~
+Type     pill~
+Short    a sachet of exotic spices~
+Long     A sachet of exotic spices has been left here.~
+WFlags   take~
+Values   20 -1 -1 -1 0 0
+Stats    1 1000 100 0 0
+Spells   'stone skin' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     14151
+Keywords sachet spice~
+Type     trash~
+Short    a sachet of exotic spices~
+Long     A sachet of exotic spices has been left here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 1000 100 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14152
+Keywords sachet spice~
+Type     container~
+Short    a sachet of exotic spices~
+Long     A sachet of exotic spices has been left here.~
+WFlags   take~
+Values   1 0 0 0 0 0
+Stats    1 1000 100 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14153
+Keywords flower wildflower~
+Type     trash~
+Short    a wildflower~
+Long     A wildflower has been left here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 100 10 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14154
+Keywords rose~
+Type     pill~
+Short    a rose~
+Long     A red rose has been left here.~
+WFlags   take~
+Values   5 -1 -1 -1 0 0
+Stats    1 100 10 0 0
+Spells   'armor' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     14155
+Keywords carnation~
+Type     armor~
+Short    a carnation~
+Long     A carnation has been left here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14156
+Keywords daisy~
+Type     light~
+Short    a daisy~
+Long     A daisy has been left here.~
+WFlags   take~
+Values   0 0 24 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14157
+Keywords ruby pendant~
+Type     treasure~
+Short    a ruby pendant~
+Long     A ruby pendant is here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 10000 1000 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14158
+Keywords sun jewel~
+Type     light~
+Short    a sun jewel~
+Long     A sun jewel is here.~
+WFlags   take~
+Values   0 0 -1 0 0 0
+Stats    1 10000 1000 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14159
+Keywords sapphire ring~
+Type     treasure~
+Short    a sapphire ring~
+Long     A sapphire ring is here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 10000 1000 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14160
+Keywords diamond~
+Type     treasure~
+Short    a diamond necklace~
+Long     A diamond necklace is here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 10000 1000 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14161
+Keywords turban~
+Type     armor~
+Short    a turban~
+Long     A turban sits here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14162
+Keywords sitar~
+Type     furniture~
+Short    a sitar~
+Long     A sitar has been left here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    5 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14163
+Keywords basket~
+Type     container~
+Short    a wicker basket~
+Long     A wicker basket sits on the floor here.~
+WFlags   take~
+Values   100 0 0 0 0 0
+Stats    5 500 50 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     14164
+Keywords flute~
+Type     furniture~
+Short    a flute~
+Long     A flute is lying on the floor here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     14100
+Name     Entrance to the Bazaar~
+Sector   city~
+Flags    nomob~
+Desc     You are walking toward the Bazaar, a huge marketplace full of brightly-
+colored tents, within which dozens of merchants hawk their wares to the
+public. The market is always crowded, and you quickly break out in a sweat
+as you elbow your way through the teeming hordes of people.
+~
+#EXIT
+Direction north~
+ToRoom    14101
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14101
+Name     An Open Area~
+Sector   city~
+Desc     You have entered the first part of the bazaar, an open area which is lined
+by tents to the far east, south and west, and which stretches away to a
+market square to the north. Merchants, traders, slaves, vagrants and thieves
+all rush by you, and you find yourself feeling quite dizzy.
+~
+#EXIT
+Direction north~
+ToRoom    14108
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14105
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14100
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14102
+#ENDEXIT
+
+Reset M 0 14120 8 14101
+  Reset E 1 14140 1 17
+Reset M 0 14121 10 14101
+  Reset E 1 14145 1 5
+  Reset E 1 14101 1 7
+  Reset E 1 14102 1 6
+  Reset E 1 14105 1 16
+#ENDROOM
+
+#ROOM
+Vnum     14102
+Name     An Open Area~
+Sector   city~
+Desc     You have entered the first part of the bazaar, an open area which is lined
+by tents to the far east, south and west, and which stretches away to a
+market square to the north. Merchants, traders, slaves, vagrants and thieves
+all rush by you, and you find yourself feeling quite dizzy.
+
+To the south lies a herbalist's tent, and to the west a tailor.
+~
+#EXIT
+Direction north~
+ToRoom    14150
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14101
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14103
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14104
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14103
+Name     A Herbalist's Tent~
+Sector   inside~
+Flags    indoors~
+Desc     The interior of this tent is pungent with the aroma of a variety of herbs
+and salves sold by this merchant. Bags used for storing and preserving the
+herbs line the rear wall of the tent, hanging above a large counter which
+is lined with the herbalist's best products.
+~
+#EXIT
+Direction north~
+ToRoom    14102
+#ENDEXIT
+
+Reset M 0 14105 1 14103
+  Reset G 1 14120 0
+  Reset G 1 14121 0
+  Reset G 1 14122 0
+  Reset G 1 14123 0
+#ENDROOM
+
+#ROOM
+Vnum     14104
+Name     A Tailor's Tent~
+Sector   inside~
+Flags    indoors~
+Desc     You make your way past a row of clothes horses and clothes racks and come to
+a small counter covered with scraps of expensive material. A small tailor
+is busy making alterations to the robes of some nobleman, and he tells you
+around a mouthful of pins that he won't be long.
+~
+#EXIT
+Direction east~
+ToRoom    14102
+#ENDEXIT
+
+Reset M 0 14106 1 14104
+  Reset G 1 14124 0
+  Reset G 1 14125 0
+  Reset G 1 14126 0
+  Reset G 1 14127 0
+#ENDROOM
+
+#ROOM
+Vnum     14105
+Name     An Open Area~
+Sector   city~
+Desc     You have entered the first part of the bazaar, an open area which is lined
+by tents to the far east, south and west, and which stretches away to a
+market square to the north. Merchants, traders, slaves, vagrants and thieves
+all rush by you, and you find yourself feeling quite dizzy.
+
+To the south lies a scribe's tent, and to the east a goods merchant.
+~
+#EXIT
+Direction north~
+ToRoom    14111
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14107
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14106
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14101
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14106
+Name     A Scribe's Tent~
+Sector   inside~
+Flags    indoors~
+Desc     The interior of this tent is fairly plain, being dominated by a single
+writing desk and a rack of scrolls. There is also a map on the back wall, of
+a land you have never heard of.
+~
+#EXIT
+Direction north~
+ToRoom    14105
+#ENDEXIT
+
+Reset M 0 14109 1 14106
+  Reset G 1 14128 0
+  Reset G 1 14129 0
+  Reset G 1 14130 0
+  Reset G 1 14131 0
+#ENDROOM
+
+#ROOM
+Vnum     14107
+Name     A Goods Merchant~
+Sector   inside~
+Flags    indoors~
+Desc     This tent is full of items such as blankets, tents, belt pouches, lanterns,
+ropes, packs and other adventuring gear that you may find of use. In
+addition, there is sometimes a collection of items sold by other adventurers
+such as keys, treasures and lights.
+~
+#EXIT
+Direction west~
+ToRoom    14105
+#ENDEXIT
+
+Reset M 0 14102 1 14107
+  Reset G 1 14108 0
+  Reset G 1 14109 0
+  Reset G 1 14110 0
+  Reset G 1 14111 0
+#ENDROOM
+
+#ROOM
+Vnum     14108
+Name     A Slave Auction~
+Sector   city~
+Flags    petshop~
+Desc     At this point in the central area, a dais has been erected, and atop it stands
+a burly man selling some of his trained warrior slaves. If you wish you can
+stop and examine his merchandise, or proceed north into the center of the
+market square, or east or west along Buyer's Lane, which dissects the square
+at this point.
+~
+#EXIT
+Direction north~
+ToRoom    14113
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14111
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14101
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14150
+#ENDEXIT
+
+Reset M 0 14112 1 14108
+Reset M 0 14118 8 14108
+Reset M 0 14135 4 14108
+  Reset E 1 14161 1 6
+  Reset E 1 14164 1 17
+Reset M 0 14136 1 14108
+Reset O 0 14163 1 14108
+#ENDROOM
+
+#ROOM
+Vnum     14109
+Name     Slave Storage~
+Sector   inside~
+Flags    nomob~
+Desc     The slave master stores his slaves in this small room. It looks very
+uncomfortable.
+~
+Reset M 0 14131 1 14109
+Reset M 0 14132 1 14109
+Reset M 0 14133 1 14109
+#ENDROOM
+
+#ROOM
+Vnum     14110
+Name     Buyer's Lane~
+Sector   city~
+Desc     This narrow lane runs the perimeter of the Bazaar, heading west from here
+for a while before bending north to follow the wall that surrounds the
+bazaar, and heading east back toward the market square.
+~
+#EXIT
+Direction east~
+ToRoom    14150
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14134
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14111
+Name     The Market Square~
+Sector   city~
+Desc     This is the center of the bazaar, and the primary gathering point for the
+hordes of people who visit the bazaar every day and night. You see strangely-
+clad visitors from many foreign lands clamoring to buy and sell every
+conceivable item known to humanity. The air is thick with the stench of stale
+sweat, camel manure and exotic spices.
+
+At this point Buyer's Lane cuts through the square, running east-west.
+~
+#EXIT
+Direction north~
+ToRoom    14116
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14112
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14105
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14108
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14112
+Name     Buyer's Lane~
+Sector   city~
+Desc     This narrow lane runs the perimeter of the Bazaar, heading east from here
+for a while before bending north to follow the wall that surrounds the
+bazaar, and heading west back toward the market square.
+~
+#EXIT
+Direction east~
+ToRoom    14132
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14111
+#ENDEXIT
+
+Reset M 0 14134 8 14112
+  Reset E 1 14161 1 6
+  Reset E 1 14162 1 17
+#ENDROOM
+
+#ROOM
+Vnum     14113
+Name     The Center of the Square~
+Sector   city~
+Desc     You are at the hub of the bazaar- the center of the market square. People
+rush to and fro on business of their own, as merchants flog their wares to
+them mercilessly. Slaves, whores, beggars and thieves mingle with the crowd,
+each of them attempting to elicit a few coppers from any generous souls by
+one means or another.
+~
+#EXIT
+Direction north~
+ToRoom    14118
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14116
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14108
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14114
+#ENDEXIT
+
+Reset M 0 14116 1 14113
+Reset M 0 14126 8 14113
+#ENDROOM
+
+#ROOM
+Vnum     14114
+Name     The Market Square~
+Sector   city~
+Desc     This is the center of the bazaar, and the primary gathering point for the
+hordes of people who visit the bazaar every day and night. You see strangely-
+clad visitors from many foreign lands clamoring to buy and sell every
+conceivable item known to humanity. The air is thick with the stench of stale
+sweat, camel manure and exotic spices.
+
+The odor of baked food comes from the west.
+~
+#EXIT
+Direction north~
+ToRoom    14119
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14113
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14150
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14115
+#ENDEXIT
+
+Reset M 0 14120 8 14114
+  Reset E 1 14140 1 17
+Reset M 0 14135 4 14114
+  Reset E 1 14161 1 6
+  Reset E 1 14164 1 17
+Reset M 0 14136 4 14114
+Reset O 0 14163 1 14114
+#ENDROOM
+
+#ROOM
+Vnum     14115
+Name     A Food Tent~
+Sector   inside~
+Flags    indoors~
+Desc     A skilled chef is here busily preparing and serving a variety of middle
+eastern dishes to a horde of hungry merchants. It is very hot in here, and
+the air is thick with smoke and grease, but the food still smells very
+good.
+~
+#EXIT
+Direction east~
+ToRoom    14114
+#ENDEXIT
+
+Reset M 0 14103 1 14115
+  Reset G 1 14112 0
+  Reset G 1 14113 0
+  Reset G 1 14114 0
+  Reset G 1 14115 0
+#ENDROOM
+
+#ROOM
+Vnum     14116
+Name     The Market Square~
+Sector   city~
+Desc     This is the center of the bazaar, and the primary gathering point for the
+hordes of people who visit the bazaar every day and night. You see strangely-
+clad visitors from many foreign lands clamoring to buy and sell every
+conceivable item known to humanity. The air is thick with the stench of stale
+sweat, camel manure and exotic spices.
+~
+#EXIT
+Direction north~
+ToRoom    14121
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14117
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14111
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14113
+#ENDEXIT
+
+Reset M 0 14120 8 14116
+  Reset E 1 14140 1 17
+Reset M 0 14135 4 14116
+  Reset E 1 14161 1 6
+  Reset E 1 14164 1 17
+Reset M 0 14135 4 14116
+Reset O 0 14163 1 14116
+#ENDROOM
+
+#ROOM
+Vnum     14117
+Name     Produce Tent~
+Sector   inside~
+Flags    indoors~
+Desc     Fresh (or reasonably fresh) fruit and vegetables are for sale in this tent.
+A mob of farmers file in and out in a steady stream, dropping off cases of
+produce for sale to the constant flow of customers.
+~
+#EXIT
+Direction west~
+ToRoom    14116
+#ENDEXIT
+
+Reset M 0 14114 1 14117
+  Reset G 1 14136 0
+  Reset G 1 14137 0
+  Reset G 1 14138 0
+  Reset G 1 14139 0
+#ENDROOM
+
+#ROOM
+Vnum     14118
+Name     The Market Square~
+Sector   city~
+Desc     This is the center of the bazaar, and the primary gathering point for the
+hordes of people who visit the bazaar every day and night. You see strangely-
+clad visitors from many foreign lands clamoring to buy and sell every
+conceivable item known to humanity. The air is thick with the stench of stale
+sweat, camel manure and exotic spices.
+~
+#EXIT
+Direction north~
+ToRoom    14128
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14121
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14113
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14119
+#ENDEXIT
+
+Reset M 0 14113 1 14118
+Reset M 0 14119 2 14118
+Reset M 0 14135 4 14118
+  Reset E 1 14161 1 6
+  Reset E 1 14164 1 17
+Reset M 0 14135 4 14118
+Reset O 0 14163 1 14118
+#ENDROOM
+
+#ROOM
+Vnum     14119
+Name     The Market Square~
+Sector   city~
+Desc     This is the center of the bazaar, and the primary gathering point for the
+hordes of people who visit the bazaar every day and night. You see strangely-
+clad visitors from many foreign lands clamoring to buy and sell every
+conceivable item known to humanity. The air is thick with the stench of stale
+sweat, camel manure and exotic spices.
+~
+#EXIT
+Direction north~
+ToRoom    14127
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14118
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14114
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14120
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14120
+Name     A Side Road~
+Sector   city~
+Desc     This narrow lane cuts across the north of market square, heading back to
+buyers' lane to the west, and the square itself to the east. Tents line
+even this thoroughfare- no part of the bazaar is empty of customers.
+~
+#EXIT
+Direction north~
+ToRoom    14126
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14119
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14124
+#ENDEXIT
+
+Reset M 0 14120 8 14120
+  Reset E 1 14140 1 17
+#ENDROOM
+
+#ROOM
+Vnum     14121
+Name     The Market Square~
+Sector   city~
+Desc     This is the center of the bazaar, and the primary gathering point for the
+hordes of people who visit the bazaar every day and night. You see strangely-
+clad visitors from many foreign lands clamoring to buy and sell every
+conceivable item known to humanity. The air is thick with the stench of stale
+sweat, camel manure and exotic spices.
+~
+#EXIT
+Direction north~
+ToRoom    14129
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14122
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14116
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14118
+#ENDEXIT
+
+Reset M 0 14134 8 14121
+  Reset E 1 14161 1 6
+  Reset E 1 14162 1 17
+#ENDROOM
+
+#ROOM
+Vnum     14122
+Name     A Side Road~
+Sector   city~
+Desc     This narrow lane cuts across the north of market square, heading back to
+buyers' lane to the east, and the square itself to the west. Tents line
+even this thoroughfare- no part of the bazaar is empty of customers.
+~
+#EXIT
+Direction north~
+ToRoom    14130
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14123
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14121
+#ENDEXIT
+
+Reset M 0 14120 8 14122
+  Reset E 1 14140 1 17
+#ENDROOM
+
+#ROOM
+Vnum     14123
+Name     A Junction~
+Sector   city~
+Desc     Here Buyer's Lane, running north-south, is met by Market Lane from the east.
+There is a conglomeration of people here, all curiously staring at something
+or someone. With a gasp, you realize that that someone is Princess Fatima,
+ruler of a great empire of the east.
+~
+#EXIT
+Direction north~
+ToRoom    14131
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14149
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14133
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14122
+#ENDEXIT
+
+Reset M 0 14118 8 14123
+#ENDROOM
+
+#ROOM
+Vnum     14124
+Name     A Junction~
+Sector   city~
+Desc     Here Buyer's Lane, running north-south, is met by Market Lane from the east.
+A crowd of noisy revellers suddenly rush past, heading from one party to
+the next somewhere in the bazaar, or maybe in the rooms that lie to the
+east in the wall of the bazaar.
+~
+#EXIT
+Direction north~
+ToRoom    14125
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14120
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14135
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14145
+#ENDEXIT
+
+Reset M 0 14118 8 14124
+Reset M 0 14122 1 14124
+  Reset E 1 14146 1 6
+  Reset E 1 14147 1 8
+  Reset E 1 14148 1 5
+Reset M 0 14126 8 14124
+#ENDROOM
+
+#ROOM
+Vnum     14125
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the western part of Buyer's Lane, past the market on
+the right, and the houses and shops built into the wall on the left. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction north~
+ToRoom    14136
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14124
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14151
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14126
+Name     A Spice Tent~
+Sector   inside~
+Flags    indoors~
+Desc     As you enter, you are almost overwhelmed by the overpowering aroma of hundreds
+of exotic spices, and you are not surprised to see that the proprietor is
+wearing nose plugs. This makes more sense still when he explains to you that
+many of his herbs have magical or addictive qualities, either or both of
+which can take effect with but a single sniff...
+~
+#EXIT
+Direction south~
+ToRoom    14120
+#ENDEXIT
+
+Reset M 0 14123 1 14126
+  Reset G 1 14149 0
+  Reset G 1 14150 0
+  Reset G 1 14151 0
+  Reset G 1 14152 0
+#ENDROOM
+
+#ROOM
+Vnum     14127
+Name     A Florist~
+Sector   inside~
+Flags    indoors~
+Desc     This tent is actually a small greenhouse lined with rows of potted plants and
+flowers on metal shelves, kept constantly moist by a fine mist that emanates
+from metal pipes in the roof to belay the debilitating effects of the summer
+heat. There is also a wide variety of picked flowers for sale, arranged in
+metal and ceramic containers near the entrance.
+~
+#EXIT
+Direction south~
+ToRoom    14119
+#ENDEXIT
+
+Reset M 0 14124 1 14127
+  Reset G 1 14153 0
+  Reset G 1 14154 0
+  Reset G 1 14155 0
+  Reset G 1 14156 0
+#ENDROOM
+
+#ROOM
+Vnum     14128
+Name     A Magical Shop~
+Sector   inside~
+Flags    indoors~
+Desc     This small tent is rather spartan, having only a small table, a wooden
+chair, and two wooden cases containing a variety of rods, staves and wands.
+Feel free to browse.
+~
+#EXIT
+Direction south~
+ToRoom    14118
+#ENDEXIT
+
+Reset M 0 14104 1 14128
+  Reset G 1 14116 0
+  Reset G 1 14117 0
+  Reset G 1 14118 0
+  Reset G 1 14119 0
+#ENDROOM
+
+#ROOM
+Vnum     14129
+Name     A Blacksmith's Forge~
+Sector   inside~
+Flags    indoors~
+Desc     This tent serves as a workplace for the blacksmith. A forge rests in one
+corner, beneath a circular hole in the leather hide that comprises the roof
+of this tent, which allows smoke to escape. A variety of hammers, tongs and
+pliers line one wall, hanging from a wooden rack stained with oil and grease.
+A pail of oil rests near a large anvil, and atop it lies a huge hammer.
+~
+#EXIT
+Direction south~
+ToRoom    14121
+#ENDEXIT
+
+Reset M 0 14108 1 14129
+#ENDROOM
+
+#ROOM
+Vnum     14130
+Name     A Jeweller's Tent~
+Sector   inside~
+Flags    indoors~
+Desc     This small tent has four glass cabinets full of costume jewellery made of
+plastic and paste, all the items being replicas of the real items the
+jeweller offers, should you be interested (you don't think he is foolish
+enough to keep his REAL products here, do you?). However, the jeweller does
+keep a small stock of genuine jewellery for customers who don't wish to
+wait for weeks to obtain their ornaments.
+~
+#EXIT
+Direction south~
+ToRoom    14122
+#ENDEXIT
+
+Reset M 0 14125 1 14130
+  Reset G 1 14157 0
+  Reset G 1 14158 0
+  Reset G 1 14159 0
+  Reset G 1 14160 0
+#ENDROOM
+
+#ROOM
+Vnum     14131
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the eastern part of Buyer's Lane, past the market on
+the left, and the houses and shops built into the wall on the right. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction north~
+ToRoom    14137
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14150
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14123
+#ENDEXIT
+
+Reset M 0 14126 8 14131
+#ENDROOM
+
+#ROOM
+Vnum     14132
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the eastern part of Buyer's Lane, past the market on
+the left, and the houses and shops built into the wall on the right. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+
+The road to the east changes into Port Lane, and heads toward the docks.
+~
+#EXIT
+Direction north~
+ToRoom    14133
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14147
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14112
+#ENDEXIT
+
+Reset M 0 14117 8 14132
+#ENDROOM
+
+#ROOM
+Vnum     14133
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the eastern part of Buyer's Lane, past the market on
+the left, and the houses and shops built into the wall on the right. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction north~
+ToRoom    14123
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14132
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14134
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the western part of Buyer's Lane, past the market on
+the right, and the houses and shops built into the wall on the left. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction north~
+ToRoom    14135
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14110
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14143
+#ENDEXIT
+
+Reset M 0 14115 1 14134
+  Reset G 1 14140 0
+  Reset G 1 14141 0
+  Reset G 1 14142 0
+  Reset G 1 14143 0
+Reset M 0 14117 8 14134
+#ENDROOM
+
+#ROOM
+Vnum     14135
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the western part of Buyer's Lane, past the market on
+the right, and the houses and shops built into the wall on the left. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction north~
+ToRoom    14124
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14134
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14144
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14136
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the northern part of Buyer's Lane, past the market to
+the south, and the houses and shops built into the wall to the north. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction east~
+ToRoom    14138
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14125
+#ENDEXIT
+
+Reset M 0 14117 8 14136
+#ENDROOM
+
+#ROOM
+Vnum     14137
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the northern part of Buyer's Lane, past the market to
+the south, and the houses and shops built into the wall to the north. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction south~
+ToRoom    14131
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14142
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14138
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the northern part of Buyer's Lane, past the market to
+the south, and the houses and shops built into the wall to the north. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction east~
+ToRoom    14139
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14136
+#ENDEXIT
+
+Reset M 0 14126 8 14138
+#ENDROOM
+
+#ROOM
+Vnum     14139
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the northern part of Buyer's Lane, past the market to
+the south, and the houses and shops built into the wall to the north. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction east~
+ToRoom    14140
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14138
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14140
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the northern part of Buyer's Lane, past the market to
+the south, and the houses and shops built into the wall to the north. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction east~
+ToRoom    14141
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14139
+#ENDEXIT
+
+Reset M 0 14118 8 14140
+Reset M 0 14119 2 14140
+Reset M 0 14134 8 14140
+  Reset E 1 14162 1 17
+  Reset E 1 14161 1 6
+#ENDROOM
+
+#ROOM
+Vnum     14141
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the northern part of Buyer's Lane, past the market to
+the south, and the houses and shops built into the wall to the north. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction east~
+ToRoom    14142
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14140
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14142
+Name     The Wall of the Bazaar~
+Sector   city~
+Desc     You are heading along the northern part of Buyer's Lane, past the market to
+the south, and the houses and shops built into the wall to the north. People
+enter and exit many of these houses as you watch, and you surmise that no
+place in the bazaar is free of mercantilism- everyone has something to sell.
+~
+#EXIT
+Direction east~
+ToRoom    14137
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14141
+#ENDEXIT
+
+Reset M 0 14117 8 14142
+Reset M 0 14121 10 14142
+  Reset E 1 14145 1 5
+  Reset E 1 14101 1 7
+  Reset E 1 14102 1 6
+  Reset E 1 14105 1 16
+#ENDROOM
+
+#ROOM
+Vnum     14143
+Name     A Weapons Shop~
+Sector   inside~
+Flags    indoors~
+Desc     This store, built into the wall of the bazaar, is lined with weapons of
+every variety, crafted from bronze, iron, steel, copper and even gold. You
+look around and see several of interest.
+~
+#EXIT
+Direction east~
+ToRoom    14134
+#ENDEXIT
+
+Reset M 0 14101 1 14143
+  Reset G 1 14104 0
+  Reset G 1 14105 0
+  Reset G 1 14106 0
+  Reset G 1 14107 0
+#ENDROOM
+
+#ROOM
+Vnum     14144
+Name     An Armor Shop~
+Sector   inside~
+Flags    indoors~
+Desc     This store, built into the wall of the bazaar, is lined with suits of armor
+every variety, crafted from bronze, iron, steel, copper and even gold. You
+look around and see several items of interest.
+~
+#EXIT
+Direction east~
+ToRoom    14135
+#ENDEXIT
+
+Reset M 0 14100 1 14144
+  Reset G 1 14100 0
+  Reset G 1 14101 0
+  Reset G 1 14102 0
+  Reset G 1 14103 0
+#ENDROOM
+
+#ROOM
+Vnum     14145
+Name     A Brothel~
+Sector   inside~
+Flags    indoors~
+Desc     Several merchants look away with embarrassment as you catch their eyes upon
+entering. Evidently visiting such places is not considered good for business,
+if you are caught. Several attractive men and women smile seductively at
+you, and you gulp nervously. Have you had your shots?
+~
+#EXIT
+Direction east~
+ToRoom    14124
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14146
+Name     A Guard House~
+Sector   inside~
+Flags    indoors~
+Desc     This room serves as quarters for the market guards. There are rarely many
+guards in here at any one time- the market is so busy and so prone to
+crime that they rarely have time to relax.
+~
+#EXIT
+Direction east~
+ToRoom    14125
+#ENDEXIT
+
+Reset M 0 14121 10 14146
+  Reset E 1 14145 1 5
+  Reset E 1 14101 1 7
+  Reset E 1 14102 1 6
+  Reset E 1 14105 1 16
+#ENDROOM
+
+#ROOM
+Vnum     14147
+Name     Near the Docks~
+Sector   inside~
+Flags    indoors~
+Desc     You are standing near the docks of the city, which lie upon the massive
+harbour it is nestled in. Ships of all nations sail back and forth, either
+delivering or picking up cargo, passengers or illicit goods. Near here there
+is a large warehouse, wherein ships are constructed for anyone with the
+interest and the financial means.
+~
+#EXIT
+Direction north~
+ToRoom    14148
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14132
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     14148
+Name     A Shipyard~
+Sector   inside~
+Flags    indoors~
+Desc     Here you may negotiate the purchase of a seagoing vessel to suit your needs.
+There is no shortage of supply in a huge port such as this; indeed, in this
+city, ships are more common than horses.
+~
+#EXIT
+Direction south~
+ToRoom    14147
+#ENDEXIT
+
+Reset M 0 14110 1 14148
+  Reset G 1 14132 0
+  Reset G 1 14133 0
+  Reset G 1 14134 0
+  Reset G 1 14135 0
+#ENDROOM
+
+#ROOM
+Vnum     14149
+Name     An Empty Shop~
+Sector   inside~
+Flags    indoors~
+Desc     This shop is currently vacant, awaiting a new tenant after its last was
+slain in a knife fight with some disgruntled customers.
+~
+#EXIT
+Direction west~
+ToRoom    14123
+#ENDEXIT
+
+Reset M 0 14107 1 14149
+#ENDROOM
+
+#ROOM
+Vnum     14150
+Name     The Market Square~
+Sector   city~
+Desc     This is the center of the bazaar, and the primary gathering point for the
+hordes of people who visit the bazaar every day and night. You see strangely-
+clad visitors from many foreign lands clamoring to buy and sell every
+conceivable item known to humanity. The air is thick with the stench of stale
+sweat, camel manure and exotic spices.
+
+At this point Buyer's Lane cuts through the square, running east-west.
+~
+#EXIT
+Direction north~
+ToRoom    14114
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14108
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14102
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14110
+#ENDEXIT
+
+Reset M 0 14134 8 14150
+  Reset E 1 14161 1 6
+  Reset E 1 14162 1 17
+#ENDROOM
+
+#ROOM
+Vnum     14151
+Name     An Animal Trainer's Store~
+Sector   inside~
+Flags    indoors~
+Desc     In this place you can purchase yourself an animal companion for your travels
+from the range of animals trained by the proprietor.
+~
+#EXIT
+Direction west~
+ToRoom    14131
+#ENDEXIT
+
+Reset M 0 14111 1 14151
+#ENDROOM
+
+#ROOM
+Vnum     14152
+Name     Animal Shed~
+Sector   inside~
+Flags    nomob~
+Desc     He keeps his animals here. Don't bother reading this, you shouldn't be here
+anyway.
+~
+Reset M 0 14128 1 14152
+Reset M 0 14129 1 14152
+Reset M 0 14130 1 14152
+#ENDROOM
+
+#ENDAREA

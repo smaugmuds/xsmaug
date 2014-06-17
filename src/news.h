@@ -42,50 +42,50 @@
 #define NEWS_VIEW               15
 #define NEWS_MAX_TYPES          10
 
-DECLARE_DO_FUN( do_editnews );
+DECLARE_DO_FUN (do_editnews);
 
 typedef struct news_data NEWS;
 struct news_data
 {
-   NEWS *next;
-   NEWS *prev;
-   const char *title;
-   const char *name;
-   const char *post;
-   const char *date;
-   int number;
-   int type;
+  NEWS *next;
+  NEWS *prev;
+  const char *title;
+  const char *name;
+  const char *post;
+  const char *date;
+  int number;
+  int type;
 };
 
 typedef struct news_type NEWS_TYPE;
 struct news_type
 {
-   NEWS *first_news;
-   NEWS *last_news;
-   NEWS_TYPE *next;
-   NEWS_TYPE *prev;
-   const char *header;
-   const char *cmd_name;
-   const char *name;
-   int vnum;
-   short level;
+  NEWS *first_news;
+  NEWS *last_news;
+  NEWS_TYPE *next;
+  NEWS_TYPE *prev;
+  const char *header;
+  const char *cmd_name;
+  const char *name;
+  int vnum;
+  short level;
 };
 
 extern NEWS_TYPE *first_news_type;
 extern NEWS_TYPE *last_news_type;
 
 /* news.c */
-NEWS *grab_news( NEWS_TYPE * type, const char *str );
-NEWS_TYPE *figure_type( const char *str );
-void display_news( CHAR_DATA * ch, NEWS * news, NEWS_TYPE * type );
-void renumber_news( void );
-void save_news( void );
-void load_news( void );
-void fread_news( NEWS * news, FILE * fp );
-char *stamp_time( void );
-void write_html_news( void );
-void snarf_news( FILE * fpWrite );
-void display_news_type( CHAR_DATA * ch, NEWS_TYPE * type, char *argument );
-void fread_news_type( NEWS_TYPE * type, FILE * fp );
-bool news_cmd_hook( CHAR_DATA * ch, char *cmd, char *argument );
-void link_news_to_type( NEWS * news );
+NEWS *grab_news (NEWS_TYPE * type, const char *str);
+NEWS_TYPE *figure_type (const char *str);
+void display_news (CHAR_DATA * ch, NEWS * news, NEWS_TYPE * type);
+void renumber_news (void);
+void save_news (void);
+void load_news (void);
+void fread_news (NEWS * news, FILE * fp);
+char *stamp_time (void);
+void write_html_news (void);
+void snarf_news (FILE * fpWrite);
+void display_news_type (CHAR_DATA * ch, NEWS_TYPE * type, char *argument);
+void fread_news_type (NEWS_TYPE * type, FILE * fp);
+bool news_cmd_hook (CHAR_DATA * ch, char *cmd, char *argument);
+void link_news_to_type (NEWS * news);

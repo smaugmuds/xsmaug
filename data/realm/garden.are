@@ -1,0 +1,8422 @@
+#XSMAUGAREA
+#AREADATA
+Version      1
+Name         Garden, The~
+Author       Tyrael~
+WeatherX     0
+WeatherY     0
+Ranges       80 100 1 115
+Economy      0 31276979
+ResetMsg     The winds of change swirl about you.~
+ResetFreq    15
+#ENDAREADATA
+
+#MOBILE
+Vnum       5500
+Keywords   dark knight mhzentul warrior~
+Short      Mhzentul~
+Long       A dark warrior kneels here, praying to his god.
+~
+Desc       Angered for being trapped in this accursed place, he devoted his time and
+energy to the dark arts. Immortality has caused him to stray towards insanity
+and he has become a ruthless killer.
+~
+Race       god~
+Class      mage~
+Position   resting~
+DefPos     standing~
+Specfun    spec_cast_undead~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   sanctuary protect sneak hide truesight iceshield~
+Stats1     -1000 101 0 -300 1560 0
+Stats2     50 10 30500
+Stats3     8 6 112
+Stats4     0 0 5 54 4
+Attribs    18 18 18 18 18 15 18
+Saves      -5 -5 -5 -5 -5
+Speaks     common elvish dwarven pixie ogre trollese dragon spiritual magical god ancient clan~
+Speaking   common~
+Bodyparts  head arms legs heart hands feet fingers ear eye~
+Resist     pierce drain nonmagic magic~
+Immune     cold energy blunt poison sleep charm paralysis~
+Attacks    feed drain poison causecritical curse harm weaken~
+Defenses   sanctuary stoneskin disarm~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpjunk sigil
+if rand(50)
+rem plate
+drop plate
+mpjunk all
+else
+if rand(40)
+rem gaunt
+drop gaunt
+mpjunk all
+else
+if rand(30)
+rem blade
+drop blade
+mpjunk all
+endif 
+endif 
+endif 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   gives you~
+Comlist   drop all
+thwap $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   DISARMS~
+Comlist   wear blade
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mpat 5799 c kindred
+mpat 5799 c slink
+mpat 5799 c troll
+mpat 5799 c sag
+mpat 5799 c elven
+mpat 5799 c 'dragon wit
+if deity($n) == Ibiredan
+mpechoat $n $I stares into your kind soul and grimaces with disgust!
+c 'feebleness' $n
+c necro
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho $I gets a strange look in his eyes...
+c necro $r
+mprestore self 150
+laugh
+say Ahh..the souls of the innocent...
+lick
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   10~
+Comlist   c heal
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+mpecho _whi $I draws his dark runeblade from it's sheath, and swings the mighty
+mpecho _whi blade at $N and cuts $M deeply! &RBlood splatters everywhere!
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5501
+Keywords   keeper garden~
+Short      the Keeper of the Garden~
+Long       The keeper of the garden looks fairly busy.
+~
+Desc       He beams a smile at you as you walk past, never straying from his busy
+work of maintaining peace and hope throughout the garden. He welcomes
+the travellers such as yourself who have been stranded here by the 
+terrible curse afflicting this place, and protection them from the spirits
+of the long dead souls that plague it constantly.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel noassist pacifist~
+Affected   protect truesight~
+Stats1     800 101 0 -112 0 0
+Stats2     50 10 30500
+Stats3     8 6 112
+Stats4     0 0 0 0 0
+Attribs    12 18 18 13 9 16 15
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     charm~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   stones~
+Comlist   say There are three stones somewhere in this garden:
+say The stone of creation.
+say The stone of Balance.
+say The stone of Chaos.
+say I've heard they are all guarded by ancient spirits...
+shrug
+em continues his work.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  give_prog~
+Arglist   silver bag dark~
+Comlist   ponder
+mpgoto 5799
+get all bag
+mpgoto 5504
+if iscarrying($i) == 5523
+if iscarrying($i) == 5524
+if iscarrying($i) == 5525
+if iscarrying($i) == 5526
+if iscarrying($i) == 5527
+if iscarrying($i) == 5528
+if iscarrying($i) == 5529
+if iscarrying($i) == 5544
+if iscarrying($i) == 5547
+if iscarrying($i) == 5558
+if iscarrying($i) == 5543
+if iscarrying($i) == 5545
+if iscarrying($i) == 5546
+mpsleep 10
+say Well done $n!
+mpecho _blu $I utters the words, '&Wugcandicuazsper&B'.
+mpecho _whi The seals glow brightly for a split second and come together, 
+mpecho _whi forming a a perfect sphere. It glows with a soft white light.
+mpjunk all
+mpsleep 5
+mpoload 5531 1
+give seal 0.$n
+say If that seal so much as touches Arokal, he will be banished from this world
+say forever. You must not be afraid, $n. Give him what he deserves!
+mpsleep 3
+say Ah..by the way, I found this while I was planting a tree...perhaps you
+say use it? I looks like some sort of key.
+mpoload 5530 1
+give rune 0.$n
+say Oh yes, I figured out the riddle as well.
+say IUDICIUM
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   no~
+Comlist   frown
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   Strange weather, eh?~
+Comlist   say Aye, we've been having awful weather lately, sometimes good in some parts
+say of the garden, and sometimes bad in other parts.
+tell 0.$n Listen, I'll give you this, if you promise to help rid this garden
+tell 0.$n of whatever it is that's been plaguing it.
+smile
+mpoload 5524 1
+give seal $n
+tell $n You know what to do with this, right?
+tell $n These seals are supposedly used to create something that can
+tell $n seal the evil for all eternity. I know not how they can be made
+tell $n to do this, but I do know something that was told to me
+tell $n as a child: Find the seals of all apects of life, and with
+tell $n the power of the 3 stones, the power to destroy all evil will be yours.
+tell $n Here, you'll need this as well.
+mpoload 5542 1
+give silver $n
+tell $n Put the seals in there, as well as any of the legendary stones
+tell $n you might find in there, and bring them back to me and I'll 
+tell $n see what I can do.
+mpforce 0.$n put seal silver
+smile
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   cough
+mpsleep 3
+nod
+say Long ago, this garden used to be a grand palace owned by a powerful
+say wizard named Arokal. He spent many centuries weaving his magic
+say into this palace, making it the envy of all who beheld it.
+mpsleep 3
+say Soon, after he had finished, he realized that time had taken it's
+say toll on his body, and he was dying. This was very troubling, so he
+say spent his last few days preparing a ritual to invoke an evil spirit,
+say which he could bond his life force with, thus, becoming immortal.
+ponder
+mpsleep 5
+say The ritual went awry at some point, and although he became immortal,
+say his soul became tainted by evil. Soon after, his corruption spread
+say throughout the land, causing much pain and suffering.
+stare
+say Several years later, three heros stepped forward, and attempted
+say to stop Arokal. The gathered many warriors from around the realm to
+say take up arms against this evil menace. The war waged on for
+say a year and a day, causing much of the great palace to be destroyed.
+sigh
+mpsleep 3
+say The heros were losing the battle very quickly, and decided to 
+say forfeit their lives to save the others. With the help of a local
+say mage, they trapped their sould within three stones representing
+say the main aspects of life : Creation, Chaos, and Balance.
+hmm
+mpsleep 3
+say The mage also created 10 seals, each imbued with a special power.
+say When combined with the seals, the stones can be used to create
+say a powerful rune, which was used to utterly destroy Arokal for all
+say eternity. Sadly, he was murdered by the evil mage's assassins before
+say he could give the warriors the last rune...they succeeded in
+say destroying Arokal...or so they thought, but he is back now. Without
+say the last seal, the ritual cannot be completed properly and the
+say evil will keep returning. All has been peaceful until now.
+say The magic imbued within these grounds caused this beautiful garden
+say to appear. It has been peaceful for a long time, but now the
+say great evil has returned. Please, search these lands and find the
+say seals, along with the stones, so we can destroy him forever!
+em look solemn for a moment.
+mpsleep 3
+say He is causing the weather to turn bad, and this garden is dying because
+say of it. Ask the people here about it. They are a friendly lot, just
+say ask them about the "strange weather", or the "stones". Please find them
+mpsleep 10
+mpforce 0.$n say Strange weather, eh?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   greet $n
+say Welcome to my garden.
+smile
+say Would you like to hear the story of this place?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if rand(10)
+mpecho _whi $I pauses briefly and sets his work aside to admire the fountain.
+say You know, I've always loved this fountain.
+smile
+say I've heard it's actually a key to something...
+em examines the fountain.
+say I could never figure out that inscription either.
+shrug
+mpecho _whi $I resumes his work, whistling a cheerful tune.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5502
+Keywords   priest figure robed~
+Short      a dark priest~
+Long       A black robed figure mutters to himself.
+~
+Desc       You see a dark priest who serves an even darker master.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Stats1     -825 96 0 -67 0 0
+Stats2     50 10 28000
+Stats3     8 6 102
+Stats4     0 0 0 0 0
+Attribs    12 17 18 15 10 8 10
+Saves      -5 0 0 -5 0
+Speaks     common elvish dwarven pixie ogre trollese dragon spiritual magical god ancient clan~
+Speaking   common~
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     sleep charm~
+Attacks    bite gouge feed~
+Defenses   parry dodge stoneskin~
+#MUDPROG
+Progtype  act_prog~
+Arglist   flees~
+Comlist   yell Coward!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5503
+Keywords   high priest mordian~
+Short      the high priest~
+Long       The high priest chants a silent mantra to himself.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Stats1     -1000 99 0 -70 500 0
+Stats2     50 10 29500
+Stats3     8 6 108
+Stats4     0 0 0 0 0
+Attribs    10 18 18 12 9 5 11
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Resist     cold energy blunt~
+Immune     poison drain sleep charm~
+Attacks    bite gouge drain curse harm weaken~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   speak~
+Comlist   nod
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   tell $n If you wish to speak with my lord, just say so.
+snicker self
+if name($n) == Xander
+thwap $n 
+tell $n What are YOU doing here? Your a nuisance, go away.
+mpecho _red $i points his finger, and Xander explodes in a burst of flames!
+mptrans 0.$n 5504
+mpat 0.$n thwap $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5504
+Keywords   archangel angel~
+Short      the Angel of Death~
+Long       &zThe angel of death hovers over you.
+~
+Desc       It is the angel of death, and he doesn't look all that scary...
+~
+Race       god~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc healer stayarea nowander secretive mobinvis noassist pacifist~
+Affected   sanctuary protect truesight~
+Stats1     1000 105 0 -300 0 0
+Stats2     50 10 31000
+Stats3     8 6 102
+Stats4     0 0 0 50 50
+Attribs    18 18 18 18 18 18 18
+Saves      -20 -20 -20 -20 -20
+Speaks     common~
+Speaking   common~
+Resist     fire cold electricity energy blunt pierce slash acid poison drain sleep charm hold nonmagic magic paralysis~
+Immune     fire cold electricity energy blunt pierce slash acid poison drain sleep charm hold nonmagic plus1 plus2 plus3 plus4 plus5 plus6 magic paralysis~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if isimmort($n) 
+sigh
+say Coward...
+mpmload 5504 105
+else
+say Foolish mortal...
+sigh
+mpslay $n
+mpmload 5504 105
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   IUDICIUM~
+Comlist   mpasound A large rumbling is heard.
+mpat 5507 mpopenpassage 5507 5525 0
+mpecho _whi The wall to the north opens as the word is spoken.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mpat 5507 mpclosepassage 5507 0
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   mprestore self 30000
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   mprestore self 30000
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5505
+Keywords   girl small frail~
+Short      a frail girl~
+Long       A small, frail girl has been imprisioned here.
+~
+Desc       She's small and afraid, cowering at your slightest movement.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   protect hide~
+Stats1     500 1 0 9 0 0
+Stats2     2 6 10
+Stats3     1 4 0
+Stats4     0 0 5 0 0
+Attribs    5 8 4 6 5 14 4
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum       5506
+Keywords   demon imp~
+Short      a demonic-looking imp~
+Long       A demonic-looking imp looks up at you, blood dripping from it's jaws.
+~
+Desc       He looks MEAN..,
+~
+Race       humanoid~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Specfun    spec_fido~
+Gender     neuter~
+Actflags   npc~
+Affected   detect_invis detect_hidden sanctuary infrared protect fireshield~
+Stats1     -1000 100 0 -71 100 0
+Stats2     50 10 30000
+Stats3     8 6 110
+Stats4     0 0 0 85 0
+Attribs    18 12 10 18 18 4 7
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  legs brains guts claws fangs~
+Attacks    bite claws gouge feed~
+Defenses   dodge stoneskin~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+mpecho _re $I savagely tears at $n's throat!
+mpdamage $n 1000
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if mobinroom(5505) == 1
+mpkill girl
+else
+mpmload 5505 95
+mpkill girl
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5507
+Keywords   demon summoned~
+Short      a greater demon~
+Long       A beastly creature has been summoned to do evils deeds.
+~
+Desc       It snarls at and roars trying to break free of it's magical restraints.
+~
+Race       r6~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc sentinel~
+Affected   sanctuary protect~
+Stats1     -1000 101 0 -220 1323 0
+Stats2     50 10 30500
+Stats3     8 6 110
+Stats4     0 0 0 0 0
+Attribs    18 15 14 13 18 10 5
+Saves      -1 -1 -1 -1 -2
+Speaks     common~
+Speaking   common~
+Bodyparts  head legs heart brains guts~
+Immune     cold pierce sleep charm~
+Attacks    bite claws trip gouge feed~
+Defenses   dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   90~
+Comlist   if mobinroom(5502) < 3
+mpecho With the circle broken, and the demon no longer under the acolyte's 
+mpecho control, it savagely attacks you!
+c 'gas breath'
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if mobinroom(5502) < 3
+mpkill $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5508
+Keywords   spirit evil darkness chaos~
+Short      the spirit of chaos~
+Long       The lord of darkness resides here, contemplating your existance.
+~
+Desc       This being is the cause of all disorder throughout the realm.
+~
+Race       god~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel pacifist~
+Affected   sanctuary protect truesight shockshield iceshield~
+Stats1     -1000 105 0 -300 0 0
+Stats2     1 1 31000
+Stats3     1 1 1000
+Stats4     0 0 0 0 0
+Attribs    18 18 18 18 18 18 18
+Saves      -20 -20 -20 -20 -20
+Speaks     common~
+Speaking   common~
+Immune     nonmagic magic~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   strange weather, eh?~
+Comlist   tell $n Ahh, so you've noticed it too..it is a result of Arokal,
+tell $n the evil one that you've been hearing about. His very
+tell $n presence in this realm disrupts the cosmos. He must be
+tell $n destroyed. You're quite perceptive, for a mortal..
+tell $n Take this to the keeper as well. He will know what to do.
+mpoload 5543 1
+give stone $n
+if iscarrying($n) == 5542
+mpforce 0.$n put stone silver
+else
+tell $n Keep the stone safe, $n.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   em gazes down upon your soul and grins malevolently.
+tell 0.$n Welcome mortal...although you would be destroyed for being in 
+tell 0.$n my presence, there is a matter at hand that must be attended to.
+em looks solemn.
+tell 0.$n Destroy this creature who's power rivals the gods. The balances
+tell 0.$n of all creation will be disturbed if another war were to break out.
+if iscarrying($n) == 5523
+mpechoat 0.$n _re A voice says, 'Bring the seal to the gatekeeper...'
+else
+mpoload 5523 100
+give seal $n
+tell 0.$n Take this to the Gatekeeper. He will show you the path....
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5509
+Keywords   acolyte dark lord~
+Short      an acolyte~
+Long       A small robed figure chants to himself.
+~
+Desc       This is an acolyte who serves under the spirit of chaos.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_invis detect_hidden protect~
+Stats1     -500 91 0 -61 340 0
+Stats2     50 10 25000
+Stats3     8 6 90
+Stats4     0 0 0 0 0
+Attribs    12 15 13 16 13 13 9
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Resist     cold~
+Immune     sleep charm~
+Attacks    gouge flamestrike~
+Defenses   dodge curecritical sanctuary fireshield~
+#ENDMOBILE
+
+#MOBILE
+Vnum       5510
+Keywords   gatekeeper woman  ~
+Short      the gatekeeper~
+Long       An dark-haired woman, radiant with timeless beauty stands here.
+~
+Desc       She is quite beutiful for her age.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel pacifist~
+Affected   detect_invis detect_hidden infrared~
+Stats1     0 105 0 -232 0 0
+Stats2     50 10 31000
+Stats3     8 6 120
+Stats4     0 0 0 0 0
+Attribs    10 18 18 13 8 7 7
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     nonmagic magic~
+#MUDPROG
+Progtype  give_prog~
+Arglist   entrance rune power glowing~
+Comlist   mpjunk all
+mpopenpassage 5525 5798 0
+mpecho $I begins to chant, causing powerful magic to activate the portal.
+mpecho _lbl The portal swirls and glows brightly, beckoning you to it.
+say Hurry, I cannot keep it open for long! Go north and destroy the evil!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   tell 0.$n Then give it here, and I will use my power to unlock the portal.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   em looks up as you walk in.
+tell 0.$n I have seen no living person in many centuries. What a delight!
+smile
+ponder
+tell 0.$n You wouldn't happen to have the key to this portal, would you?
+tell 0.$n If you do, give it to me, so that I may rest in peace.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5511
+Keywords   doorman ~
+Short      a doorman~
+Long       A doorman is here.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc sentinel secretive mobinvis pacifist~
+Stats1     0 105 0 -75 0 0
+Stats2     50 10 31000
+Stats3     8 6 120
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mpclosepassage 5525 0
+mpat 5507 mpclosepassage 5507 0
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5512
+Keywords   warlord general~
+Short      a warlord~
+Long       The leader of the great army is here, commanding the soldiers.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc sentinel secretive mobinvis pacifist~
+Affected   detect_invis detect_hidden infrared truesight~
+Stats1     0 105 0 -76 0 0
+Stats2     50 10 31000
+Stats3     8 6 120
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mpechoat 0.$n _red As you enter the encampment, hundreds of soldiers, angered
+mpechoat 0.$n _red your invasion, charge at you, fiercely slashing at you!
+if isimmort($n)
+mpechoat 0.$n You shrug off the glancing blows and laugh.
+else
+mpdamage 0.$n 350
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5513
+Keywords   man old~
+Short      an old man~
+Long       An old man sits here, awaiting the coming of a hero.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel secretive mobinvis pacifist~
+Affected   protect truesight~
+Stats1     0 105 0 -255 0 0
+Stats2     50 10 31000
+Stats3     8 6 120
+Stats4     0 0 0 0 0
+Attribs    10 15 18 15 9 17 8
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   10~
+Comlist   mpecho A voice echos in your mind...
+mpechoat $n _whi "It is said that a hero from ancient times appears here 
+mpechoat $n _whi during the darkest time of the night..."
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   0~
+Comlist   if mortcount(5795) >= 1
+else
+mpechoat hero shifttwo
+mppurge hero
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   24~
+Comlist   if mortcount(5795) >= 1
+else
+mpechoat hero shifttwo
+mppurge hero
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   23~
+Comlist   mpecho _blu A beam of moonlight shines down on the center of the clearing.
+mpecho _whi As the air stretches and crackles, a figure steps fourth, 
+mpecho _w constantly shifting forms, sometimes humanoid, sometimes far from it.
+mpecho _lbl This must be the great hero of legend, cursed with immortality.
+mpmload 5514
+mpechoat hero shiftone
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   22~
+Comlist   mpecho _blu The air becomes very still...
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5514
+Keywords   hero ancient unknown~
+Short      the ancient hero~
+Long       An ancient hero stands here, cursed with a constantly shifting form, completely oblivious to all.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel healer stayarea~
+Affected   detect_evil detect_invis detect_magic detect_hidden sanctuary infrared protect truesight detect_traps scrying fireshield shockshield iceshield~
+Stats1     0 102 0 -300 8700 0
+Stats2     1 1 30000
+Stats3     1 1 800
+Stats4     0 0 0 50 50
+Attribs    18 18 18 18 18 18 18
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart hands fingers eye~
+Immune     fire cold electricity energy blunt pierce slash acid poison drain sleep charm hold nonmagic plus1 plus2 plus3 plus4 plus5 plus6 magic paralysis~
+Attacks    punch kick bash gouge blindness causeserious causecritical curse flamestrike harm fireball~
+Defenses   parry dodge curecritical disarm grip~
+#MUDPROG
+Progtype  act_prog~
+Arglist   circle~
+Comlist   laugh
+say Your skills are worthless compared to mine!
+mpforce 0.$n bah
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   backstab~
+Comlist   mpecho _red $I turns around as your backstab hits, causing you to
+mpecho _red drop your weapon and fall to the ground! OUCH!
+disarm $n
+mprestore self 5000
+mpdamage 0.$n 100
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   if rand(25)
+rem all
+mpjunk all
+mpoload 5507
+mpecho _red $I sheds his former aspects, to assume a more demonic form.
+roar
+mpmset self class 9
+mpmset self align -1000
+wear reach
+else
+if rand(30)
+rem all
+mpjunk all
+mpoload 5504
+mpecho _whi $I glows with a radiant light, his features become smoother,
+mpecho _whi his eyes glow bright white, and he assumes an angelic form.
+mpmset self class 11
+mpmset self align 1000
+laugh
+wear divine
+else
+if rand(35)
+rem all
+mpjunk all
+mpoload 5506
+mpecho _gre $I grows much larger, becoming well over 10 feet tall,
+mpecho _gre his muscles bulge and he becomes a giant of a man!
+mpmset self class 6
+mpmset self align 0
+flex
+wear wrath
+else
+if rand(40)
+rem all
+mpjunk all
+mpoload 5509
+mpecho _lbl Swirling magicks engulf $I, and he becomes a powerful wizard,
+mpecho _lbl rivaling the great Hilorex himself!
+mpmset self class 0
+mpmset self align 0
+smirk
+wear nightfall
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   psychic~
+Comlist   mpecho _whi $I channels the negative energies into his mind.
+mprestore self 5000
+snicker
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   blast~
+Comlist   laugh
+say Thy magic is weak, you cannot harm me!
+mprestore self 5000
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   shifttwo~
+Comlist   mpecho $I writhes in pain as the fading reality surrounding him, wrenches
+mpecho him from existance. Poor soul.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   shiftone~
+Comlist   bow
+say Forgive me traveller...but I am not myself.
+em winces slightly as his form grows much larger, assuming that of a giant.
+say Please leave...I cannot control myself!
+em falls to his knees, wracked with pain.
+mpecho $I booms, 'Leave...NOW!'
+mpecho _re $I screams as his body contorts..sprouting wings, claws..teeth.
+em returns to his original form briefly, and you gaze into his eyes.
+mpecho You can tell he is pleading with you. Help him end this!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5515
+Keywords   immortal evil great arokal~
+Short      Arokal~
+Long       A being of immense power hovers before you, so evil, he repels the very air itself.
+~
+Desc       This is the great evil you have heard so much about.
+The malevolance and hatred eminating from him is overpowering.
+~
+Race       god~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea pacifist~
+Affected   sanctuary protect flying truesight fireshield shockshield iceshield~
+Stats1     -1000 105 0 -76 0 0
+Stats2     1 1 31500
+Stats3     1 1 112
+Stats4     0 0 4 0 0
+Attribs    18 18 18 13 18 18 18
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     sleep charm nonmagic magic~
+#MUDPROG
+Progtype  give_prog~
+Arglist   seal great~
+Comlist   if quests($n) == 262144
+mpquests $n 262144
+shout NO! THIS CANNOT BE!
+mpecho The once powerful immortal falls to his knees.
+if sex($n) == 1
+say I'll not forget this you bastard!
+mpecho $I writhes in agony and blinks from existance,
+mpecho his power sealed for all eternity.
+mpecho _lbl You are in such awe, you find yourself unable to move.
+mpgoto 5790
+mpjunk all
+mpechoat shifterone killone
+else
+say I'll not forget this witch!
+mpecho $I writhes in agony and blinks from existance,
+mpecho his power sealed for all eternity.
+mpecho _lbl You are in such awe, you find yourself unable to move.
+mpgoto 5790
+mpjunk all
+mpechoat shifterone killone
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   em stares at you coldly.
+l $n
+if iscarrying($n) == 5531
+gasp
+say GET THAT THING AWAY FROM ME!
+cring
+mpecho $I doesn't look so benevolant as he realizes your power.
+else
+muha
+say Pitiful mortal! You think you can destroy me?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5516
+Keywords   patron garden~
+Short      a garden patron~
+Long       A garden patron stands here, admiring his surroundings.
+~
+Desc       Another traveller like yourself, trapped here by some powerful curse.
+~
+Race       elf~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel stayarea pacifist~
+Affected   detect_invis detect_hidden protect truesight~
+Stats1     0 90 0 -60 0 0
+Stats2     50 10 24500
+Stats3     8 6 88
+Stats4     0 0 0 0 0
+Attribs    10 19 10 14 19 15 15
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     sleep charm nonmagic magic~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   no~
+Comlist   frown $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   smile
+tell $n Glad that someone's finally interested in what I have to say!
+cough
+tell $n Well, rumor has it, that a great evil has been biding it's
+tell $n power somewhere here in the garden. It disrupts the balance
+tell $n of the cosmos, which is why the weather has been so foul.
+tell $n That's all I know, but ask around, I'm sure you'll find out more.
+smile 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   Strange weather, eh?~
+Comlist   Tell $n Yes, I've noticed that the weather has been much different
+tell $n lately. Haven't the slightest clue why. I have been hearing
+tell $n a rumor going around lately...a myth of sorts.
+tell $n Would you like to hear it?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   em looks at the statue.
+say I really admire this statue..Order and balance are two
+say of the most important things in life.
+smile
+whisper 0.$n You know, I've heard that if you ask for it, you can
+whisper 0.$n be granted an audiance with the spirit of order...
+shrug
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5517
+Keywords   shopkeeper woman lyanis~
+Short      Lyanis~
+Long       A woman stands behind a stone counter.
+~
+Desc       You see a middle aged woman who smiles back at you. After being trapped
+here, she set up a small shop in this crumbling building, and is content
+with her life, despite the fact that she may never escape.
+~
+Race       elf~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel healer stayarea pacifist~
+Affected   detect_invis detect_hidden infrared protect truesight~
+Stats1     0 100 0 -71 160 0
+Stats2     50 10 30000
+Stats3     8 6 110
+Stats4     0 0 0 0 0
+Attribs    20 15 17 20 14 15 15
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     sleep charm nonmagic magic~
+ShopData   0 0 0 0 0 110 90 0 23
+#MUDPROG
+Progtype  give_prog~
+Arglist   dragonskin bag~
+Comlist   mpgoto 5799
+get all dragonskin
+mpgoto 5567
+if iscarrying($i) == 5501
+if iscarrying($i) == 5502
+if iscarrying($i) == 5503
+if iscarrying($i) == 5539
+if iscarrying($i) == 5540
+tell $n Thank you, $n! Finally I can finish my plans..
+em goes into the back room and hammers away on something.
+mpsleep 5
+em returns shortly with smile on her face.
+tell $n I've finally finished my work.
+smile
+tell $n Here, as a reward, let me give you this...
+em gets a shiny curiass from beneath the counter.
+mpoload 5541 100
+give myrmidon 0.$n
+tell $n Please, take care of it.
+mpjunk all
+mpoload 5535 85
+mpoload 5536 85
+mpoload 5548 90
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   no~
+Comlist   hrm
+tell $n Well, it guess it doesn't hurt to ask.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   smile
+tell $n Well, I haven't been able to get much work done around here, since
+tell $n my friend was killed. She was my apprentice and helped me
+tell $n with this shop. I am in need of a few things, would you mind
+tell $n retrieving them for me? I would be very grateful.
+em writes something down on a piece of paper.
+mpsleep 2
+mpoload 5537 1
+em gets a bag from beneath the counter.
+mpoload 5538 1
+put list dragonskin
+give dragonskin $n
+tell $n Find the items on that list, put them in that bag, and bring it
+tell $n back to me. Farewell, and good luck!
+smile
+mpjunk all
+mpoload 5535 85
+mpoload 5536 85
+mpoload 5548 90
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   Strange weather, eh?~
+Comlist   tell $n Oh, yes, it has been rather odd lately. I wonder what's causing it?
+ponder
+mpsleep 1
+tell $n You know, it's really quite a nuisance too. One of my friends
+tell $n was caught in a blizzard and froze to death! Such a shame.
+mpsleep 1
+tell $n Hmm, would you do me a small favor?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   smile $n
+sigh
+say You wouldn't want to buy anything, would you?
+say I used to be a travelling merchant, but when I came here I found that
+say I couldn't leave because this place is cursed.
+if iscarrying($n) == 5538
+tell $n Ahh, you've returned! Do you have all that I asked for?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5518
+Keywords   spirit balance~
+Short      the spirit of order~
+Long       A mighty being stands before you, maintaining the balance between good and evil.
+~
+Race       god~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc sentinel healer stayarea pacifist~
+Affected   sanctuary protect truesight fireshield shockshield iceshield~
+Stats1     0 105 0 -76 0 0
+Stats2     50 10 31000
+Stats3     8 6 120
+Stats4     0 0 0 0 0
+Attribs    20 20 20 20 20 20 20
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     sleep charm nonmagic magic~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   stones~
+Comlist   say You must think you are the hero that will end this curse...
+say I wish you luck
+mpoload 5546 1
+give stone $n
+say Go now...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   slaps ~
+Comlist   mpechoat $n _cya $I rears back and slaps you so hard, you sail into
+mpechoat $n _cya the next room! Mabye that was a mistake...
+mpforce 0.$n south
+mpat 0.$n mpdamage 0.$n 1
+mpat 0.$n mpechoat $n _red That really did HURT!
+mpat 0.$n mpechoar $n $n flies in from the north and lands at your feet.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   no~
+Comlist   if iscarrying($n) == 5542
+tell $n Our fate is sealed then.
+em looks very disturbed by your actions.
+else
+bonk $n
+say Are you feeling all right?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   if iscarrying($n) == 5542
+nod
+tell $n Indeed you are worthy, so I shall give you this...
+mpecho _whi Swirling energies collide to form a small glowing rune.
+mpoload 5547 1
+give seal $n
+tell $n Guard that well, $n. Give it to the keeper when you have them all.
+else
+mpechoat $n $I appears to be ignoring you.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   Take me there.~
+Comlist   mpecho _whi $I's eyes flare brightly!
+mpsleep 5
+mpechoat $n _cya The winds of change swirl about you, lifting you high
+mpechoat $n _cya into the sky, and set you down in the garden square.
+mptrans 0.$n 5501
+mpsleep 3
+mpat 0.$n mpforce 0.$n north
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mpecho _whi $I looks up as you walk in.
+if iscarrying($n) == 5542
+greet $n
+mpsleep 3
+tell $n I have been waiting for you, $n. 
+em concentrates for a moment.
+mpslee 5
+tell $n I have been observing you...and you are worthy to complete
+tell $n task of saving the garden and destroying that infernal creature.
+mpecho _whi $I stares at you...
+mpsleep 3
+tell $n Do you accept the challenge?
+else
+em looks at you.
+mpsleep 3
+tell $n Bah! Do not waste my time. Go see the keeper of the garden.
+tell $n He can explain the task at hand. He should be at the
+tell $n center of the garden square. If you wish for me to take you
+tell $n there, just say, 'Take me there.'
+mpsleep 5
+tap
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5519
+Keywords   feraasel dragon elder deep~
+Short      Feraasel, the Deep Dragon~
+Long       The elder dragon, Feraasel is in a deep slumber.
+~
+Race       dragon~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea autonomous~
+Affected   detect_evil sanctuary protect flying truesight shockshield iceshield~
+Stats1     -750 100 0 71 0 0
+Stats2     50 10 30000
+Stats3     8 6 150
+Stats4     0 0 2 50 0
+Attribs    20 18 17 20 20 4 13
+Saves      -7 -5 -10 -8 -1
+Speaks     common dwarven ogre orcish trollese reptile dragon spiritual magical goblin ancient halfling~
+Speaking   common~
+Bodyparts  head legs heart brains guts eye wings tail scales claws fangs horns forelegs~
+Resist     cold electricity blunt slash acid drain~
+Immune     sleep charm~
+Attacks    bite claws tail~
+Defenses   dodge cureserious dispelmagic disarm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   roar
+if rand(30)
+c 'frost breath' $n
+else
+if rand(25)
+c 'lightning breath' $n
+else
+if rand(20)
+c 'fire breath' $n
+else
+if rand(15)
+c 'acid breath' $n
+else
+if rand(10)
+c gas
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   You disarm~
+Comlist   mprestore self 250
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   DISARMS~
+Comlist   c 'energy drain' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   85~
+Comlist   if rand(65)
+mea $n _red $I picks you up and slams you against a nearby wall!
+mer $n _red $I picks up $n and slams $m into a nearby wall!
+mpdamage 0.$n 200
+else
+if rand(60)
+disarm
+get sword
+wear sword
+laugh $n
+say Dragonslayer...you're pathetic!
+else
+if rand(55)
+mpechoat $n $I gives you a mighty headbutt!
+mpechoar $n $I gives $n a mighty headbutt, leaving $m dazed!
+stun 
+else
+if rand(50) 
+mpecho _red $I spits several fireballs around the room!
+c fireball $r
+c fireball $r
+c fireball $r
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   disturbgreet~
+Comlist   mpecho _whi $I lazily opens one eye to see who has distubed his rest.
+blink
+mpecho _whi $I rises quickly to his full height, staring blankly at you.
+roar
+mpecho _lbl Appearing angry by your rude entrance, $I inhales deeply, and
+mpecho _lbl spews fourth a stream of molten lava, which narrowly misses you!
+mpecho _red $I booms, "&wYOU WILL DIE FOR YOUR INSOLENCE!&r"
+em poises over you, ready to attack at any moment...
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5520
+Keywords   assassin master ~
+Short      a master assassin~
+Long       A dark figure lurks in the shadows.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc stayarea~
+Affected   detect_invis detect_hidden sanctuary infrared protect flying iceshield~
+Stats1     -1000 100 0 -268 0 0
+Stats2     1 1 27000
+Stats3     1 1 235
+Stats4     0 0 0 0 0
+Attribs    20 18 15 25 17 16 16
+Saves      -4 -1 -5 -3 -7
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Resist     fire cold electricity energy blunt pierce slash~
+Immune     sleep charm~
+Attacks    punch backstab poison~
+Defenses   parry dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       5521
+Keywords   celene daughter star~
+Short      Celene~
+Long       &bA child born from the stars weeps here.
+~
+Race       magical~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   detect_invis detect_hidden sanctuary infrared protect~
+Stats1     0 94 0 -64 0 0
+Stats2     50 10 28000
+Stats3     8 6 102
+Stats4     0 0 0 0 0
+Attribs    12 20 20 14 11 13 14
+Saves      0 0 0 0 0
+Speaks     common elvish pixie dragon spiritual magical god ancient gith~
+Speaking   common~
+Resist     blunt slash magic~
+Immune     energy sleep charm~
+Attacks    punch kick firebreath weaken~
+Defenses   parry dodge heal sanctuary bless~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   weather~
+Comlist   nod
+say There is a great evil here...it corrupts everything around it with
+say it's cruelty...which is why I must give you this.
+mpoload 5525 1
+give seal $n
+say Go $n, end this curse.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   fooddrink~
+Comlist   mpat 5661 say Truly sorry father, I was in the tower.
+mpoload 5565 1
+mpat 5661 give wine ashura
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpecho _whi $I falls to her knees, staring blankly at you...
+say My father...never...see...again...
+if rand(40)
+mpecho _whi As $I dies, a single crystalline tear rolls down her cheek..
+mpoload 5564 90
+drop tear
+mpecho _blu A mystical vortex opens up before you and rips you through
+mpecho _blu time and space! You appear before a large throne...
+mpechoar $n $n dissapears into a rift!
+mptrans 0.$n 5660
+mpat 0.$n mpforce 0.$n north
+else
+mpecho _blu A mystical vortex opens up before you and rips you through
+mpecho _blu time and space! You appear before a large throne...
+mptrans 0.$n 5660
+mpat 0.$n mpforce 0.$n north
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  give_prog~
+Arglist   star celene pendant~
+Comlist   mpecho _whi $I's eye light up!
+mpsleep 1
+tell $n Thank you so much!
+bounce
+mpsleep 3
+tell $n Now I can finally return home.
+msleep 3
+mpecho _cya A myriad of colors surround Celene, as she slowly floats away.
+mpsleep 5
+mpecho _whi $I pauses for a moment, in mid-air.
+mpecho _blu $I reaches up and plucks a star from the heavens!
+tell $n Please, take this as a gift.
+mpoload 5556 1
+give falling 0.$n
+wave
+mpsleep 3
+mpecho _yel $I disappears in a bright flash of light!
+mpjunk all
+mpgoto 5790
+mpechoat shifterone killtwo
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   no~
+Comlist   cry
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   smile $n
+mpecho _whi $I stares up at the heavens.
+tell $n I come here every few centuries, to see how things fare for the patrons
+tell $n that live here, amongst the chaos. This visit has been different, as I 
+tell $n have come here in only to find everything destroyed. Being distraught
+tell $n over this, I went to the chapel to pray for the lives of the people.
+mpecho _whi $I looks as if she is about to burst into tears at any moment.
+mpsleep 10
+tell $n I was shocked to find the ancient church gone. The kind keeper told me 
+tell $n of a great earthquake that swallowed it beneath the ground.
+sniff
+mpsleep 5
+tell $n I ventured beneath the square to find the sacred church, but my
+tell $n place is among the stars, not in the earth. I was forced to leave, but 
+tell $n in my rush to egress, I lost my pendant. Without it, I cannot return
+tell $n to the heavens. I would greatly appriciate it's return.
+mpecho _whi $I looks at you with a glint of hope in her eyes.
+mpsleep 7
+tell $n Please find it, and return it to me....
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   curt $n
+if isgood($n)
+tell $n Pray thee kind soul, would thou help me?
+else
+if isevil($n)
+tell $n I shant expect help from a vile being such as thyself...
+em pauses for a moment and wipes a tear from the corner of her eye.
+tell $n But I shall ask thee anyhow. Will thou help me?
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5522
+Keywords   warrior ancient~
+Short      an ancient warrior~
+Long       An ancient warrior goes into battle for the last time.
+~
+Desc       He gives you a weak smile as he wipes the black-green blood of the shades
+from his armor.Cursed to fight forever until the great evil is destroyed.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc~
+Affected   detect_invis detect_hidden protect~
+Stats1     0 85 0 -55 100 0
+Stats2     50 10 22000
+Stats3     8 6 78
+Stats4     0 0 0 0 0
+Attribs    15 13 12 14 13 10 11
+Saves      0 0 0 0 0
+Speaks     elvish dwarven ogre halfling gith~
+Speaking   common~
+Bodyparts  head arms legs heart guts eye~
+Resist     cold blunt~
+Immune     sleep charm~
+Suscept    drain paralysis~
+Attacks    punch kick trip bash gouge~
+Defenses   parry dodge heal disarm~
+#ENDMOBILE
+
+#MOBILE
+Vnum       5523
+Keywords   minion shadow evil shade~
+Short      a shade~
+Long       A dark shadow hovers here, looking for it's next victim.
+~
+Desc       You see a fleeting shadow from the corner of your eye.
+This is one of Arokal's fiendish warriors, fighting to regain their 
+former home. 
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc aggressive~
+Stats1     -750 93 0 -67 110 0
+Stats2     50 10 28000
+Stats3     8 6 102
+Stats4     0 0 0 0 0
+Attribs    15 14 13 14 12 9 10
+Saves      0 0 0 0 0
+Speaks     common elvish dwarven trollese dragon spiritual magical ancient gith~
+Speaking   common~
+Resist     acid poison~
+Immune     sleep charm~
+Attacks    claws punch gouge feed drain~
+Defenses   dodge curecritical~
+#ENDMOBILE
+
+#MOBILE
+Vnum       5525
+Keywords   arcanus annoyed mage wizard~
+Short      Arcanus~
+Long       A robed figure is hard at work trying to figure a way to escape the curse and seems annoyed by your rude entrance.
+~
+Desc       He is researching and studying an endless amount of books and scrolls
+that were left here, trying desperately to find a way to escape the curse.
+~
+Race       elf~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_mage~
+Gender     male~
+Actflags   npc sentinel stayarea nowander~
+Affected   sanctuary protect pass_door truesight fireshield shockshield iceshield aqua_breath~
+Stats1     -450 100 0 -71 0 0
+Stats2     50 10 30000
+Stats3     8 6 110
+Stats4     0 0 0 0 0
+Attribs    13 25 20 15 12 10 8
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Resist     fire cold pierce drain nonmagic magic~
+Immune     energy sleep charm~
+Attacks    punch firebreath lightnbreath blindness~
+Defenses   dodge dispelmagic shockshield stoneskin~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   stones~
+Comlist   say Oh, yes I know all about those, but I won't tell YOU anything!
+cackle
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   1~
+Comlist   mpecho swirling magic envelops the mage's dead body and transforms it into
+mpecho a shimmering blade of immense power.
+mpjunk all
+mpoload 5509 100
+drop nightfall
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   psychic~
+Comlist   roar
+c 'life force' $r
+c 'control weather' windier
+c 'ice storm'
+c 'black lightning' $r
+c 'wind shear' $r
+c earthquake
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   40~
+Comlist   if rand(25)
+c winter $n
+c chill $n
+c 'freezing sphere' $n
+else
+if rand(35)
+c 'blazebane' $n
+c fireball $n
+c 'fire spike' $n
+c 'flamestrike' $n
+else
+if rand(50)
+c 'ethereal funnel' $n
+c quan $n
+c 'magnetic thrust' $n
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   circle~
+Comlist   c 'demonskin
+growl $n
+c 'fire spike' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   backstab~
+Comlist   say OUCH!
+c 'demonskin
+thwap $n
+mpsleep 3
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   weather~
+Comlist   em seems to be in an incredible rush to be somewhere...
+tell $n Oh, yes very odd..any clue what's causing it? Silly me, of couse you 
+tell $n don't...just an adventurer...
+mpsleep 3
+ponder
+mpoload 5544 1 
+give seal $n 
+tell $n That should help, now leave!
+mpecho _red $I disappers!
+mpgoto 5790
+mpechoat shifter killmage
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   yell ARRGGGHH! Doesn't anyone know how to knock!?
+mpsleep 3
+glare $n
+if rand(50)
+c cosmos
+mptrans $n 5658
+mpsleep 3
+mpat $n mpechoat $n The mage shoves you out the door!
+else
+say I am VERY busy, what do you want?
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5526
+Keywords   angel myria woman~
+Short      Myria~
+Long       A beautiful angel hovers above you.
+~
+Race       spirit~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     female~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary protect flying truesight iceshield~
+Stats1     1000 100 0 -71 0 0
+Stats2     1 1 31000
+Stats3     8 6 110
+Stats4     0 0 0 0 0
+Attribs    25 20 20 15 10 20 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Immune     energy sleep charm~
+Attacks    trip bash gouge~
+Defenses   parry dodge heal~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   sigh
+say Will this curse never end...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   stones ~
+Comlist   say Stones? I don't know anything about those.
+pray
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   say Good
+mpecho _whi The luminous form of the Seal of Life appears in $I's delicate hand
+mpoload 5527 1
+give seal $n
+say Guard this well, $n. It will help you end this curse.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   weather~
+Comlist   say You've noticed it too? I had thought it was from the dark knight,
+say but I've heard rumors that some great evil resides here and is causing
+say all this chaos. Are you here to stop it?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   50~
+Comlist   if class($n) == demon
+c spiral
+c gas
+mpecho Through the chaos, a pair of feathery black wings float slowly down
+mpecho from the heavens, and land at your feet.
+mpjunk all
+mpoload 5561 80
+drop wings
+else
+mpecho _cya A mystical aura hovers over the corpse of the fallen angel.
+mpecho _cya The protection of the weak is yours, $n
+mpjunk all
+mpoload 5533 2
+drop aegis
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if class($n) == demon
+gasp
+say I will slay thee, O vile creature!
+c 'holy word' $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   backstab~
+Comlist   scream
+mpecho _whi $I points her sword at $n, and a blinding light springs outward!
+c 'prismatic light' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   circle~
+Comlist   wince
+say You fight like a coward!
+c 'angelic fury' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   33~
+Comlist   if rand(10)
+c armageddon
+else
+if rand(25)
+c 'frost breath' $n
+else
+if rand(50)
+c 'lightbolt' $n
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5 ~
+Comlist   pray 
+c heal
+c heal
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   necromantic~
+Comlist   say How dare you use your foul magic on me!
+c 'frost breath' $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5527
+Keywords   Zukor druid forest man~
+Short      Zukor~
+Long       A muscular druid sits here, admiring his surroundings.
+~
+Desc       He is probably the only being here that does not feel trapped.
+Perfectly content with sitting in this circle and enjoying nature, he
+doesn't even seem to notice you.
+~
+Race       elf~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   sanctuary protect flying truesight fireshield~
+Stats1     0 103 0 -300 0 0
+Stats2     1 1 31350
+Stats3     1 1 86
+Stats4     0 0 0 0 0
+Attribs    25 15 14 13 19 17 15
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart guts hands~
+Immune     sleep charm~
+Attacks    punch kick trip bash weaken~
+Defenses   parry dodge curelight stoneskin disarm~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   stones~
+Comlist   say You say you're looking for stones? Here...
+em picks up a rock off the ground and hands it to you.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   weather~
+Comlist   say Yes, it has been fairly strange as of late. That's why I've been
+say staying here in this circle of trees for so long..the weather doesn't
+say seem to change much here.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if name($n) == Xander
+war Xander is a worthless toad!
+murder xander
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   1~
+Comlist   mea $n _red Zukor explodes into a fit of rage!
+say I can't believe i've been beaten!
+scream
+mea $n As his body crumbles away, you find a shimmering blade that is yours
+mea $n to do with as you wish. Take care of it, $n.
+mpoload 5506 100
+drop wrath
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   c 'cure light
+c 'cure serious
+c 'cure critical
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   if rand(25)
+c 'dispel magic' $n
+c fae $n
+c blindness $n
+c poison $n
+else
+if rand(35)
+c 'fire spike' $n
+c 'ice bolt' $n
+else
+if rand(50)
+kick
+swipe
+cuff
+elbow
+punt
+shoulder
+roundhouse
+punch
+roar
+else
+if rand(75)
+disarm
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5528
+Keywords   dragon mist fog~
+Short      a mist dragon~
+Long       A large misty shape engulfs you!
+~
+Race       dragon~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Specfun    spec_breath_frost~
+Gender     neuter~
+Actflags   npc healer aggressive stayarea mobinvis~
+Affected   detect_hidden sanctuary infrared protect flying~
+Stats1     0 95 0 -65 0 0
+Stats2     12 48 25000
+Stats3     10 6 35
+Stats4     0 0 0 0 0
+Attribs    18 12 13 16 15 7 10
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     sleep charm nonmagic~
+Attacks    claws tail~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   10~
+Comlist   if mobinvislevel($i) == 5
+mpecho _cya A fog swirls about you.
+mpinvis 101
+else
+if mobinvislevel($i) == 101
+mpecho _cya A mist appears from the cracks in the ground.
+mpinvis 5
+else
+mpinvis 5
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if rand(85)
+roar 
+c gas
+else
+mpecho _cya $I's lucent form dissapates, revealing a silvery piece of metal.
+mpoload 5563 85
+drop mist
+off
+mpgoto 5799
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if rand(45)
+mpat 5799 c 'dispel magic' self
+mpecho _cya $I spits a ball of crackling energy at $n
+c 'black lightning' $n
+c 'torrent' $n
+c 'black lightning' $n
+c 'torrent' $n
+c 'black lightning' $n
+c 'torrent' $n
+else
+if rand(10)
+c gas
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5529
+Keywords   god ashura father~
+Short      Ashura~
+Long       A benevolent man stands here, engulfed in cosmic energy.
+~
+Race       god~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   detect_invis detect_hidden sanctuary protect flying pass_door truesight shockshield iceshield aqua_breath~
+Stats1     750 105 0 -250 0 0
+Stats2     1 1 23600
+Stats3     34 8 40
+Stats4     0 0 0 0 0
+Attribs    20 18 17 15 12 18 20
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     fire cold slash acid~
+Attacks    trip gouge earthquake flamestrike weaken~
+Defenses   parry dodge heal disarm~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   stones~
+Comlist   nod
+say I wasn't you knew about them or not. You will need the power of the
+say three stones to create the great seal that will destroy the evil
+say that has cursed this place and free us all.
+mpoload 5545 1
+give stone $n
+say You must go now, Save us!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   weather~
+Comlist   say Ahh..yes, the weather.
+hrm
+say I've been stuck here so long it's hard to remember the last time
+say I was actually outside...anyhow, I can tell you are here to end
+say this terrible curse and free our souls, so I will give you this...
+em produces a shiny rune from thin air!
+mpoload 5558
+give seal $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   smile
+say Ahh..finally, you've come.
+say We must talk, come, sit and have a drink.
+say Daughter! Bring some wine, for my guest and I.
+mpsleep 10
+tap
+mpsleep 10
+say Pardon me...
+mpecho _whi $I dissapears in a bright flash of light!
+mpgoto 5623
+mpgoto 5661
+mpsleep 10
+if mobinarea(5521) == 1
+mpecho _whi $I appears suddenly, along with his daughter.
+mpsleep 3
+mpat 5623 mpechoat celene fooddrink
+mpsleep 5
+nod
+say Do not worry my dear, we will soon be freed. You may go now.
+mpecho _cya Celene disappears in a puff of smoke!
+em sets the wine on the table beside him.
+say Now, what did you wish to talk about?
+else
+yell AAHHHRRRRRRRGH!!
+mpecho _whi $I appears suddenly...&Renraged &Wbeyond rational thought.
+say Y..YOU K-K-KILLED HER D-DIDN'T YOU!
+say My beutiful daughter...
+say YOU WILL PAY FOR THIS!
+em pulls a small lever on the side of the throne.
+mpecho Several grates open in the lower portions of the walls and you notice
+mpecho your feet are starting to get wet...
+cackle
+mpecho _whi $I dissapears in the blink of an eye!
+mpopenpassage 5661 5666 0
+mpforce all north
+mpclosepassage 5661 0
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5530
+Keywords   spirit spectre asireth form man~
+Short      Asireth~
+Long       The lucent form of a long dead man hovers here.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Specfun    spec_cast_mage~
+Gender     neuter~
+Actflags   npc stayarea pacifist~
+Affected   flying pass_door truesight shockshield iceshield~
+Stats1     0 102 0 -73 0 0
+Stats2     23 10 20000
+Stats3     1 1 97
+Stats4     0 0 0 0 0
+Attribs    5 20 21 12 9 3 7
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     nonmagic~
+Attacks    drain gaze blindness causeserious earthquake causecritical curse harm~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   20~
+Comlist   if rand(20) 
+mpecho _cya $I's form shifts slightly, and fades out of existance.
+mpgoto 5518
+mpecho _cya $I's form fades into reality.
+else
+if rand(25)
+mpecho _cya $I's form shifts slightly, and fades out of existance.
+mpgoto 5528
+mpecho _cya $I's form fades into reality.
+else
+if rand(30)
+mpecho _cya $I's form shifts slightly, and fades out of existance.
+mpgoto 5530
+mpecho _cya $I's form fades into reality.
+else
+if rand(35)
+mpecho _cya $I's form shifts slightly, and fades out of existance.
+mpgoto 5568
+mpecho _cya $I's form fades into reality.
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       5531
+Keywords   imp helper familiar~
+Short      an imp~
+Long       A small creature hovers about your head mumbling under it's breath.
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc polyself~
+Affected   sneak flying~
+Stats1     0 102 0 -73 0 0
+Stats2     50 10 30000
+Stats3     8 6 110
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart brains guts eye claws fangs~
+Attacks    claws kick trip~
+Defenses   parry dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       5799
+Keywords   shifterone~
+Short      shifter~
+Long       The shifter is here...
+~
+Race       human~
+Class      mage~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea secretive~
+Stats1     0 105 0 -71 0 0
+Stats2     50 10 31000
+Stats3     8 6 120
+Stats4     0 0 0 0 0
+Attribs    18 18 18 18 18 18 18
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Immune     nonmagic magic~
+Attacks    drain harm weaken~
+Defenses   parry dodge~
+#MUDPROG
+Progtype  act_prog~
+Arglist   killmage~
+Comlist   mppurge mage
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   killtwo~
+Comlist   mppurge celene
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   killone~
+Comlist   mppurge arokal
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum     5500
+Keywords plate spiked full~
+Type     armor~
+Short    a set of spiked black full-plate~
+Long     A set of spiked black full-plate lie here.~
+Flags    dark evil magic bless antimage anticleric antidruid~
+WFlags   take body~
+Values   15 15 0 12 0 0
+Stats    17 1140 114 0 0
+Affect       -1 -1 110 13 0
+Affect       -1 -1 -25 17 0
+Affect       -1 -1 -2 23 0
+Affect       -1 -1 -3 22 0
+Affect       -1 -1 -2 2 0
+Affect       -1 -1 9 18 0
+Affect       -1 -1 7 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5501
+Keywords scale red~
+Type     treasure~
+Short    &ra &rr&re&rd &rs&rc&ra&rl&re~
+Long     &rA &rr&re&rd &rs&rc&ra&rl&re &Gl&Gi&Ge&Gs here.~
+Flags    hidden~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    1 75 7 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5502
+Keywords scale blue~
+Type     treasure~
+Short    &ba &bb&bl&bu&be &bs&bc&ba&bl&be~
+Long     &bA &bb&bl&bu&be &bs&bc&ba&bl&be &Glies here.~
+Flags    hidden~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    1 75 7 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5503
+Keywords scale white~
+Type     treasure~
+Short    &Wa &Ww&Wh&Wi&Wt&We &Ws&Wc&Wa&Wl&We~
+Long     &WA &Ww&Wh&Wi&Wt&We &Ws&Wc&Wa&Wl&We &Glies here.~
+Flags    hidden~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    1 75 7 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5504
+Keywords divine retribution runesword angelic~
+Type     weapon~
+Short    &W|&z///\\\ &WDivine Retribution &z///\\\&W|~
+Long     The wrath of god hovers here, ready to punish evil.~
+Flags    glow hum loyal magic bless antievil antineutral antimage antithief antiwarrior antivampire antidruid~
+WFlags   take wield~
+Values   12 15 6 6 0 0
+Stats    30 2393 239 0 0
+Affect       -1 -1 125 13 0
+Affect       -1 -1 200 12 0
+Affect       -1 -1 2 4 0
+Affect       -1 -1 1 3 0
+Affect       -1 -1 -30 17 0
+Affect       -1 -1 -8 24 0
+Affect       -1 -1 -8 23 0
+Affect       -1 -1 -8 20 0
+Affect       -1 -1 9 19 0
+Affect       -1 -1 10 18 0
+Affect       -1 -1 350 77 0
+#MUDPROG
+Progtype  damage_prog~
+Arglist   100~
+Comlist   &wmpecho The holy artifact glows with a silver light, and is whole once again.
+fix self
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  sac_prog~
+Arglist   100~
+Comlist   mpecho _whi A dark shadow is hurled from the heavens, as the angel of death
+mpecho _whi speeds towards you, it draws the angelic runeblade and 
+mpecho _whi strikes $n with all of it's might! They are Truly forsaken.
+mpdamage $n 1000
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mpechoat $n _whi Angels weep as you forsake your god
+mpechoar $n _whi The divine radiance that eminated from $n slowly fades away...
+if is immort($n)
+else
+c 'dispel magic' $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mpechoat $n _whi As you wield this great artifact, the heavens themselves
+mpechoat $n _whi part and a holy blessing is laid upon you from above.
+mpechoar $n _whi A brilliant beam of light from the heavens engulfs $n, 
+mpechoar $n _whi and heavenly music can be heard.
+c bless $n
+c resilience $n
+c armor $n
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5505
+Keywords fountain angel death~
+Type     fountain~
+Short    a white marble fountain~
+Long     A large fountain made of white marble sits in the center of the garden.~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5506
+Keywords wrath gaea runesword~
+Type     weapon~
+Short    @===={{&g/&b/&g\&b\&g\&b/&wGaea's Wrath&g\&b/&g/&b/&g\&b\&g>~
+Long     The timeless anger of the earth lies here.~
+Flags    glow hum dark loyal magic bless antimage antithief anticleric antivampire~
+WFlags   take wield~
+Values   12 10 10 3 0 0
+Stats    30 2530 253 0 0
+Affect       -1 -1 150 13 0
+Affect       -1 -1 150 12 0
+Affect       -1 -1 -30 17 0
+Affect       -1 -1 73728 26 0
+Affect       -1 -1 -3 23 0
+Affect       -1 -1 -3 24 0
+Affect       -1 -1 -3 20 0
+Affect       -1 -1 2 1 0
+Affect       -1 -1 2 5 0
+Affect       -1 -1 10 18 0
+Affect       -1 -1 10 19 0
+Affect       -1 -1 350 77 0
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mpechoat $n Your rage subsides, but with it, your strength as well.
+mpechoar $n $n seems to grow smaller in stature as $e calms down.
+c 'dispel magic' $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n *re The timeless fury of the earth empowers you.
+mpechoar $n *r howls with bestial rage!
+c kin $n
+c troll $n
+c fireshield $n
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5507
+Keywords dagger demonic spirit reach~
+Type     weapon~
+Short    &z<<- -^^\/^^((&rSpirit's Reach&z))^^\/^^- ->>~
+Long     A shimmering ebony dagger, forged from pure chaos hovers here~
+Flags    glow hum dark loyal evil magic antimage antiwarrior anticleric metal antidruid~
+WFlags   take wield~
+Values   12 24 4 11 0 0
+Stats    15 2050 205 0 0
+Affect       -1 -1 150 13 0
+Affect       -1 -1 100 12 0
+Affect       -1 -1 -25 17 0
+Affect       -1 -1 2 2 0
+Affect       -1 -1 -7 23 0
+Affect       -1 -1 -7 20 0
+Affect       -1 -1 -7 21 0
+Affect       -1 -1 10 18 0
+Affect       -1 -1 9 19 0
+Affect       -1 -1 250 77 0
+#MUDPROG
+Progtype  sac_prog~
+Arglist   100~
+Comlist   mpechoat $n _red As you sacrifice the dark runeblade, a gaping pit opens
+mpechoat $n _red up beneath you, and a firey deinzen from the deepest part
+mpechoat $n _red of hell emerges, blasting you with searing HELLFIRE!
+c 'fire breath' $n
+mpechoar $n _red A fiery deinzen from the deepset pit of hell emerges from the
+mpechoar $n _red the dark runeblade! Inhaling a massive breath, it belches
+mpechoar $n _red a stream of searing HELLFIRE at $n!
+mpecho A demonic voice sounds through the still air...
+mpecho _red "Do not forsake the dark privileges you have been given $n..."
+mpforce $n emote falls to the ground..charred and traumatized.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mpechoat $n You forsake your ungodly ways...but at a cost to your life.
+mpdamage $n 500
+mpforce $n wince
+mpechoar $n The darkness encompassing $n slowly dissapates...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mpechoat $n &wDark thoughts invade your mind as the fury of hell
+mpechoat $n emopowers you and bids you to perform unspeakable evils
+mpechoat $n &w The dark voice of your new master echos in your mind:
+mpechoat $n "&rYes, go forth and destroy life and order....&w"
+mpechoat $n &wThe dark privilege of the unholy is bestowed upon you...
+cast 'metallic skin' $n
+c 'stone skin' $n
+c kin $n
+mpechoar $n $n's &reyes &wlose all color and begin to glow with dark energy. 
+mpforce $n muha
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5508
+Keywords sigil mhzentul~
+Type     light~
+Short    the sigil of Mhzentul~
+Long     A powerful rune lies here, emanating evil.~
+Flags    glow hum magic bless~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    2 820 82 0 0
+Affect       -1 -1 1 31 0
+Affect       -1 -1 50 13 0
+Affect       -1 -1 -50 17 0
+Affect       -1 -1 50 14 0
+Affect       -1 -1 8 18 0
+Affect       -1 -1 7 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5509
+Keywords omega blade nightfall night~
+Type     weapon~
+Short    &zoxxxxxxx|&b/&z/&b\&z\&b/&z/&b\&z\&WNightFall&b\&z/&b/&z\&b\&z/&b/&z\&z&b\>~
+Long     The embodiment of the night lies here, radiating magic.~
+Flags    glow hum dark loyal magic bless antithief antiwarrior anticleric antivampire antidruid~
+WFlags   take wield~
+Values   12 17 5 11 0 0
+Stats    30 2518 251 0 0
+Affect       -1 -1 90 13 0
+Affect       -1 -1 335 12 0
+Affect       -1 -1 2 3 0
+Affect       -1 -1 1 4 0
+Affect       -1 -1 -30 17 0
+Affect       -1 -1 -8 24 0
+Affect       -1 -1 -8 23 0
+Affect       -1 -1 -8 21 0
+Affect       -1 -1 -8 20 0
+Affect       -1 -1 11 18 0
+Affect       -1 -1 9 19 0
+Affect       -1 -1 100 77 0
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mpechoat $n The power of the cosmos leaves you...as does your life.
+c necro $n
+c necro $n
+c 'dispel magic' $n
+mpechar $n $n's lifeforce seems to dwindle as $e casts the blade aside.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mpechoat $n _dbl A multitude of powerful magicks encompass you, and
+mpechoat $n _dbl the symbol of "&rOmega&b" appears upon your brow.
+c 'dragon wit' $n
+c sagacity $n
+c fireshield $n
+mpechoar $n $n seems to draw power from the very cosmos itself.
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5510
+Keywords altar black~
+Type     furniture~
+Short    a black altar~
+Long     An altar to an evil deinzen resides here.~
+Values   0 0 0 0 0 0
+Stats    1 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5511
+Keywords vial liquid sunset~
+Type     potion~
+Short    a vial of liquid sunset~
+Long     Brilliant colors radiate from a vial on the ground.~
+Flags    hidden~
+WFlags   take~
+Values   80 -1 -1 -1 0 0
+Stats    1 87 70 0 0
+Spells   'resilience' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum     5512
+Keywords gauntlets studded black leather~
+Type     armor~
+Short    a pair of studded black leather gauntlets~
+Long     A pair of studded black leather gauntlets radiate dark energy.~
+Flags    dark evil magic bless antigood antineutral anticleric~
+WFlags   take hands~
+Values   15 15 0 12 0 0
+Stats    4 893 89 0 2
+Affect       -1 -1 7 18 0
+Affect       -1 -1 7 19 0
+Affect       -1 -1 75 13 0
+Affect       -1 -1 20 53 0
+Affect       -1 -1 1 1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if iswearing($n) == 5513
+if class($n) == warrior
+if isevil($n) 
+mpechoat $n _lbl As the dark gauntlets touch the shimmering platinum encasing
+mpechoat $n _lbl your hands, crackling energy engulfs your hands and searing
+mpechoat $n _lbl &rPAIN &Cshoots up your arms, making you black out
+mpechoat $n _lbl momentarily. When you come to, you find a pair of hardened
+mpechoat $n _lbl metal gloves hovering before you. Consider yourself blessed.
+mpdamage 0.$n 100
+mpechoar 0.$n $n screams in agony as $s hands are burnt by raw energy!
+mpforce 0.$n remove gauntlet
+mpforce 0.$n remove fist
+mpoload 5515
+mpforce 0.$n drop studded
+mpforce 0.$n drop fist
+mpforce 0.$n sac fist
+mpforce 0.$n sac gauntlet
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5513
+Keywords fist platinum~
+Type     armor~
+Short    a platinum fist~
+Long     A ball of liquid platinum hovers here.~
+Flags    glow dark magic bless antineutral antimage antithief antidruid~
+WFlags   take hands~
+Values   16 16 0 12 0 0
+Stats    1 944 200 0 1
+Affect       -1 -1 7 18 0
+Affect       -1 -1 7 19 0
+Affect       -1 -1 75 13 0
+Affect       -1 -1 30 53 0
+Affect       -1 -1 2 1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5514
+Keywords short blade mhzentul sword~
+Type     weapon~
+Short    Mhzentul's Blade~
+Long     A short sword fashioned from obsidian crackles with black energy.~
+Flags    glow dark evil magic antigood anticleric metal~
+WFlags   take wield~
+Values   12 10 10 11 0 0
+Stats    3 975 26 0 0
+Affect       -1 -1 25 13 0
+Affect       -1 -1 15 12 0
+Affect       -1 -1 9 18 0
+Affect       -1 -1 8 19 0
+Affect       -1 -1 2 23 0
+Affect       -1 -1 301 30 0
+#MUDPROG
+Progtype  sac_prog~
+Arglist   1~
+Comlist   if isgood($n) 
+else
+if isevil($n)
+mea $n You are given a dark blessing for your sacrifice, which takes the 
+mea $n form of a wicked blade known only as the Spirit's Reach!
+mpforce $n cackle
+mpoload 5507 100
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5515
+Keywords glove ineffable damnation~
+Type     armor~
+Short    &rGloves of Ineffable Damnation~
+Long     Gloves inscribed with the unspeakable word hover here, absorbing all light.~
+Flags    hum magic bless antigood antimage anticleric antidruid~
+WFlags   take hands~
+Values   17 17 0 12 0 0
+Stats    5 1332 132 0 0
+Affect       -1 -1 9 18 0
+Affect       -1 -1 9 19 0
+Affect       -1 -1 90 13 0
+Affect       -1 -1 3 1 0
+Affect       -1 -1 1 5 0
+Affect       -1 -1 16 27 0
+Affect       -1 -1 20 53 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5516
+Keywords dagger spring load~
+Type     projectile~
+Short    a small, thin throwing dagger~
+Long     A throwing dagger that looks like it could be fired from something lies here.~
+WFlags   take~
+Values   12 0 25 2 2 0
+Stats    1 300 30 0 0
+Affect       -1 -1 7 18 0
+Affect       -1 -1 2 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5517
+Keywords spring load fire mechanism~
+Type     missileweapon~
+Short    a spring-loaded mechanism~
+Long     A spring-loaded mechanism was discarded here.~
+WFlags   take missile~
+Values   0 0 0 2 0 0
+Stats    1 5 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5518
+Keywords leather strap hold~
+Type     quiver~
+Short    a leather strap ~
+Long     A leather strap lies forgotten.~
+WFlags   take wrist~
+Values   6 0 5516 12 0 0
+Stats    1 6 0 0 1
+#ENDOBJECT
+
+#OBJECT
+Vnum     5519
+Keywords key jail cell~
+Type     key~
+Short    an onyx key~
+Long     An onyx key lies here.~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5520
+Keywords dagger sacrificial~
+Type     weapon~
+Short    a jewel-encrusted sacrificial dagger~
+Long     A dagger adorned with expensive looking gems lies here.~
+Flags    dark evil magic antiwarrior~
+WFlags   take wield~
+Values   0 12 8 2 0 0
+Stats    3 1187 120 0 0
+Affect       -1 -1 45 13 0
+Affect       -1 -1 60 12 0
+Affect       -1 -1 8 18 0
+Affect       -1 -1 9 19 0
+Affect       -1 -1 -24 17 0
+Affect       -1 -1 2 2 0
+Affect       -1 -1 3 22 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5521
+Keywords manacles iron~
+Type     trash~
+Short    a set of iron manacles~
+Long     A set of rusted iron manacles lie here.~
+Flags    dark evil magic noremove~
+WFlags   take wrist~
+Values   10 10 0 0 0 0
+Stats    14 0 1 0 0
+Affect       -1 -1 50 13 0
+Affect       -1 -1 -300 14 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5522
+Keywords flame black pillar~
+Type     trash~
+Short    a pillar of black flame~
+Long     &zA huge pillar of black flame roars here.~
+Flags    dark evil~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5523
+Keywords seal evil~
+Type     treasure~
+Short    &rthe seal of evil~
+Long     &rThe seal of evil hovers here.~
+Flags    hum dark evil inventory~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 80 8 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5524
+Keywords seal keeper~
+Type     treasure~
+Short    &wSeal of the Keeper~
+Long     The &wSeal of the Keeper floats here&x.~
+Flags    inventory~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 80 8 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5525
+Keywords seal kindness~
+Type     treasure~
+Short    the seal of kindness~
+Long     The seal of kindness lies here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 80 8 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5526
+Keywords seal death~
+Type     treasure~
+Short    the seal of death~
+Long     The seal of death lies here.~
+Flags    hidden~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 80 8 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5527
+Keywords seal life~
+Type     treasure~
+Short    &wthe seal of life&x~
+Long     &wThe seal of life&x lies here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 80 8 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5528
+Keywords seal war~
+Type     treasure~
+Short    &rthe seal of war&x~
+Long     &rThe seal of war&x lies here.~
+Flags    hidden~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 80 8 0 0
+#MUDPROG
+Progtype  get_prog~
+Arglist   100~
+Comlist   mpechoat $n Perhaps this is why Mhzentul became so bloodthirsty...
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5529
+Keywords seal nature~
+Type     treasure~
+Short    &gthe seal of nature&x~
+Long     &gThe seal of nature&x lies here.~
+Flags    hidden~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 80 8 0 0
+#MUDPROG
+Progtype  get_prog~
+Arglist   100~
+Comlist   mpechoat $n No wonder this place isn't affected by the curse very much..
+mpechoat $n the seal was protecting it.
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5530
+Keywords entrance rune power glowing~
+Type     treasure~
+Short    a glowing rune~
+Long     A glowing rune hovers here, radiating power.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    2 85 8 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5531
+Keywords seal great~
+Type     treasure~
+Short    &rthe &bgreat &wseal~
+Long     &rThe &bgreat &wseal hovers here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    10 90 9 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5532
+Keywords statue scale ~
+Type     furniture~
+Short    a white marble statue~
+Long     A statue stands as a tribute to order and balance.~
+Values   0 0 0 0 0 0
+Stats    1000 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5533
+Keywords protection aegis meek~
+Type     armor~
+Short    &WAegis of the Meek~
+Long     &WA magical aura of protection hovers here.~
+Flags    glow magic~
+WFlags   take about~
+Values   17 17 0 12 0 0
+Stats    25 682 100 0 0
+Affect       -1 -1 2 3 0
+Affect       -1 -1 2 1 0
+Affect       -1 -1 2 4 0
+Affect       -1 -1 2 5 0
+Affect       -1 -1 2 2 0
+Affect       -1 -1 2 25 0
+Affect       -1 -1 1 31 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5534
+Keywords voices angelic earring~
+Type     armor~
+Short    angelic voices~
+Long     The sound of heavenly music can be heard from these earrings.~
+Flags    magic bless antievil antineutral antithief antivampire~
+WFlags   take ears~
+Values   17 17 0 0 0 0
+Stats    1 1207 120 0 0
+Affect       -1 -1 65 13 0
+Affect       -1 -1 75 12 0
+Affect       -1 -1 7 18 0
+Affect       -1 -1 7 19 0
+Affect       -1 -1 -4 24 0
+Affect       -1 -1 -3 23 0
+Affect       -1 -1 3 56 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5535
+Keywords blood martyr vial~
+Type     drinkcon~
+Short    &rBlood of the Martyr~
+Long     A vial filled with the blood of an innocent man lies here.~
+Flags    inventory~
+WFlags   take~
+Values   1 1 2 0 0 0
+Stats    1 1 21 0 0
+#MUDPROG
+Progtype  use_prog~
+Arglist   100~
+Comlist   mpechoat 0.$n _red You spit out the blood and drop the vial!
+mpechoat $n &bThe second it touches the ground, a demon springs fourth!
+mpechoar $n $n drops the vial on the ground, causing a demon to appear!
+c gate
+mpforce vampire grin
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5536
+Keywords scroll hindrance~
+Type     scroll~
+Short    a scroll of hindrance~
+Long     A troublesome scroll lies on the ground... people seem to be avoiding it.~
+Flags    inventory~
+WFlags   take~
+Values   40 -1 -1 -1 0 0
+Stats    1 1 32 0 0
+Spells   'weaken' 'fatigue' 'lethargy'
+#ENDOBJECT
+
+#OBJECT
+Vnum     5537
+Keywords list paper~
+Type     treasure~
+Short    a shopping list~
+Long     Someone seems to have lost their shopping list.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#MUDPROG
+Progtype  exa_prog~
+Arglist   100~
+Comlist   mpechoat $n _cya It looks like a shopping list:
+mpechoat $n _red A red dragon scale
+mpechoat $n _blu A blue dragon scale
+mpechoat $n _whi A white dragon scale
+mpechoat $n _lbl A metal plate
+mpechoat $n _dbl The blessing of the deep dragon.
+mpechoat $n Find me these things, and I can finish my work.
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5538
+Keywords dragonskin bag~
+Type     container~
+Short    a dragonskin bag~
+Long     A thick leathery bag lies here.~
+WFlags   take hold~
+Values   100 0 0 12 0 0
+Stats    2 13 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5539
+Keywords plate metal~
+Type     treasure~
+Short    a metal plate~
+Long     A large piece of metal inscribed with many strange runes.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    25 50 5 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5540
+Keywords essence dragon blessing~
+Type     treasure~
+Short    a dragon's blessing~
+Long     The essence of dragonkind is contained within this stone.~
+Flags    hidden~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 75 7 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5541
+Keywords plate myrmidon ~
+Type     armor~
+Short    the plate of the myrmidon~
+Long     A shimmering, multi-colored curiass catches your eye.~
+Flags    glow magic antievil antimage antithief metal antivampire~
+WFlags   take body~
+Values   17 17 0 12 0 0
+Stats    35 1017 10 0 0
+Affect       -1 -1 75 13 0
+Affect       -1 -1 25 12 0
+Affect       -1 -1 8 18 0
+Affect       -1 -1 7 19 0
+Affect       -1 -1 -6 23 0
+Affect       -1 -1 1 1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mpechoat $n _yel The gems on the front of the plate flare brightly!
+mpechoat $n _red Mystical flames rise to enshroud you.
+mpechoat $n _lbl A glistening hail of ice encompasses you.
+mpechoat $n _blu Torrents of castcading energy form around you.
+c fireshield 0.$n
+c iceshield 0.$n
+c shockshield 0.$n
+mpechoar $n _yel The gems on the plate flare brightly for a moment.
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5542
+Keywords silver bag dark~
+Type     container~
+Short    a silver-lined bag~
+Long     A bag lined with pure silver glows here.~
+Flags    glow~
+WFlags   take~
+Values   900 0 0 0 0 0
+Stats    1 113 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5543
+Keywords stone chaos~
+Type     treasure~
+Short    the stone of chaos~
+Long     A chunk of rock writhing with chaos lies here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    5 65 6 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5544
+Keywords seal magic~
+Type     treasure~
+Short    &bthe seal of magic~
+Long     &bThe seal of magic hovers here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 65 6 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5545
+Keywords stone creation~
+Type     treasure~
+Short    &Wthe stone of creation~
+Long     &WA stone imbued with the power of creation lies here, glowing.~
+Flags    glow~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 65 6 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5546
+Keywords stone balance~
+Type     treasure~
+Short    the stone of balance~
+Long     A perfectly proportioned stone rests here.~
+Flags    glow~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 65 6 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5547
+Keywords seal equality~
+Type     treasure~
+Short    the seal of equality~
+Long     The seal of eqaulity hovers here.~
+Flags    glow~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 65 6 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5548
+Keywords scroll harrowing~
+Type     scroll~
+Short    a scroll of harrowing~
+Long     You get a bad feeling from a tattered scroll lying on the ground.~
+Flags    inventory~
+WFlags   take~
+Values   25 -1 -1 -1 0 0
+Stats    1 1 32 0 0
+Spells   'razorbait' 'swordbait' 'feebleness'
+#ENDOBJECT
+
+#OBJECT
+Vnum     5549
+Keywords podium~
+Type     furniture~
+Short    a podium~
+Long     A dusty podium stands here.~
+Values   0 0 0 0 0 0
+Stats    100 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5550
+Keywords drift snow~
+Type     container~
+Short    &Wa snow drift~
+Long     &WA large amount of snow has been piled here.~
+Values   500 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5551
+Keywords star celene pendant~
+Type     armor~
+Short    &Ythe star of Celene~
+Long     A golden medallion set on a silver necklace shines brightly.~
+Flags    magic antiwarrior antivampire~
+WFlags   take neck~
+Values   17 17 0 0 0 0
+Stats    2 254 11 0 0
+Affect       -1 -1 1 19 0
+Affect       -1 -1 6 18 0
+Affect       -1 -1 -22 17 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if race($n) == Halfling
+c bless 0.$n
+c 'inner warmth' 0.$n
+mpechoat $n You are imbued with a strange glow as you wear the pendant.
+mpechoar $n $n glows with a strange power as $e wears $O
+if rand(40)
+c 'obscurement' 0.$n
+mpechoat $n The amulet hums slightly as you fade from reality.
+mpechoar $n $n slowly fades from view.
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5552
+Keywords key wizard wizardkey~
+Type     key~
+Short    a wizard's key~
+Long     Some wizard seems to have lost a key.~
+Flags    hum magic~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    1 0 12 0 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mpechoat $n _cya As you hold the key in your hands, it begins to vibrate...
+c 'knock' north
+c 'knock' east
+c 'knock' south
+c 'knock' west
+c 'knock' northeast
+c 'knock' northwest
+c 'knock' southeast
+c 'knock' southwest
+c 'knock' up
+c 'knock' down
+mpsleep 10
+mpecho _whi All locked doors surrounding the key seem to unlock themselves.
+mpforce 0.$n remove wizardkey
+mpforce 0.$n drop wizardkey
+mpforce 0.$n sac wizardkey
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5553
+Keywords helm authority blazing~
+Type     armor~
+Short    the helm of authority~
+Long     A blazing helm that commands the respect of all beckons you.~
+Flags    glow hum magic antithief antiwarrior antivampire antidruid nolocate~
+WFlags   take head~
+Values   16 16 0 12 0 0
+Stats    10 1056 50 0 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 2 19 0
+Affect       -1 -1 3 3 0
+Affect       -1 -1 2 4 0
+Affect       -1 -1 250 77 0
+Affect       -1 -1 100 12 0
+Affect       -1 -1 -15 17 0
+Affect       -1 -1 -5 24 0
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mea $n _cya The power to command slowly leaves you upon removing the artifact.
+say A wise choice. The burden is too great.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n _whi As you wear the helm, a great responsibility is bestowed upon you.
+say It is the right divine of kings to govern wrong...do with me as you wish.
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5554
+Keywords pool crystal water~
+Type     fountain~
+Short    a pool of water~
+Long     A crystal clear pool of water.~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5555
+Keywords battlestar battle star enchanted~
+Type     weapon~
+Short    an enchanted battle star~
+Long     A powerful looking battle star glows brightly.~
+Flags    glow magic bless antivampire antidruid~
+WFlags   take wield~
+Values   12 14 6 6 0 0
+Stats    27 1100 110 0 0
+Affect       -1 -1 11 19 0
+Affect       -1 -1 11 18 0
+Affect       -1 -1 30 13 0
+Affect       -1 -1 1 1 0
+Affect       -1 -1 1 27 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5556
+Keywords star falling glowing~
+Type     treasure~
+Short    a glowing star~
+Long     A star has fallen from the heavens and landed before you.~
+Flags    glow magic bless~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    1 55 5 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5557
+Keywords shaft light glowing~
+Type     treasure~
+Short    a glowing shaft of light~
+Long     A glowing shaft of light lies on the ground.~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    7 60 6 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5558
+Keywords seal grey~
+Type     treasure~
+Short    a grey seal~
+Long     A grey colored rune floats above you.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 75 7 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5559
+Keywords aura murky white~
+Type     furniture~
+Short    a murky white aura~
+Long     &WA murky white aura hovers in the air.~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#MUDPROG
+Progtype  exa_prog~
+Arglist   100~
+Comlist   mpechoat $n _whi The cloud engulfs you!
+mpechoar $n _whi The cloud engulfs $n and $e disappers!
+mptrans 0.$n 5657
+mpsleep 5
+mpat 0.$n mpforce 0.$n north
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5560
+Keywords void heaven angelic blade~
+Type     weapon~
+Short    Void of the Heavens~
+Long     A blade fashioned from the gates of heaven itself beckons you.~
+Flags    glow hum magic bless antievil antineutral antithief antivampire~
+WFlags   take wield~
+Values   12 24 4 3 0 0
+Stats    27 1000 45 0 0
+Affect       -1 -1 40 13 0
+Affect       -1 -1 50 12 0
+Affect       -1 -1 9 18 0
+Affect       -1 -1 8 19 0
+Affect       -1 -1 -3 24 0
+#MUDPROG
+Progtype  sac_prog~
+Arglist   1~
+Comlist   if isevil($n)
+mea $n You blasphemous fiend! How dare you mock the path of the devout!
+mpdamage 0.$n 100
+else
+if isneutral($n)
+mea $n You care only for yourself, $n. You are not worthy of such an honor.
+else
+if isgood($n)
+mea $n _whi As you sacrifice this blade to your deity, a bright beam
+mea $n _whi of white light shines down from the heavens, transforming it
+mea $n _whi into an object of great power. Go fourth and destroy evil $n!
+mpoload 5504 100
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5561
+Keywords wings angel black~
+Type     armor~
+Short    a pair of feathery black angel wings~
+Long     Wings torn from the back of a fallen angel lie here.~
+Flags    glow dark evil magic antigood antineutral anticleric~
+WFlags   take about~
+Values   16 16 0 0 0 0
+Stats    3 944 50 0 32
+Affect       -1 -1 15 13 0
+Affect       -1 -1 10 12 0
+Affect       -1 -1 9 18 0
+Affect       -1 -1 9 19 0
+Affect       -1 -1 75 77 0
+Affect       -1 -1 56 56 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5562
+Keywords talons warped mage claws~
+Type     weapon~
+Short    &RTalons of the warped mage&g~
+Long     The flaming talons of an insane wizard beckon you to wield them.~
+Flags    glow hum magic bless antineutral antiwarrior anticleric metal~
+WFlags   take wield~
+Values   12 12 8 5 0 0
+Stats    12 1988 198 0 0
+Affect       -1 -1 80 13 0
+Affect       -1 -1 135 12 0
+Affect       -1 -1 8 18 0
+Affect       -1 -1 12 19 0
+Affect       -1 -1 1 1 0
+Affect       -1 -1 1 3 0
+Affect       -1 -1 -3 24 0
+Affect       -1 -1 -1 23 0
+Affect       -1 -1 16 26 0
+Affect       -1 -1 65 30 0
+Affect       -1 -1 2 27 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5563
+Keywords mist armor silver plate~
+Type     armor~
+Short    &cMist Armor&G~
+Long     A misty aura hovers above the ground.~
+Flags    glow dark magic antineutral antiwarrior~
+WFlags   take body~
+Values   16 16 0 0 0 0
+Stats    2 319 31 0 0
+Affect       -1 -1 -40 17 0
+Affect       -1 -1 5 13 0
+Affect       -1 -1 2 18 0
+Affect       -1 -1 1 19 0
+Affect       -1 -1 1048576 26 0
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mpechoat $n Your form becomes solid once again.
+mpechoar $n $n's misty form solidifies.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mpechoat $n You assume a lucent form...
+mpechoar $n $n's body disperses into a fine mist...
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     5564
+Keywords tears moon~
+Type     trash~
+Short    tears moon~
+Long     A pool of tears moon lie here.~
+WFlags   take~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5565
+Keywords bottle wine small~
+Type     drinkcon~
+Short    a small bottle of red wine~
+Long     A small bottle of red wine sits on the table.~
+WFlags   take~
+Values   5 4 2 0 0 0
+Stats    1 1 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     5566
+Keywords spring fountain youth~
+Type     fountain~
+Short    the fountain of youth~
+Long     &BA small spring bubbles up from somwhere deep in the earth.~
+Values   0 0 0 0 0 0
+Stats    500 0 0 0 0
+#MUDPROG
+Progtype  use_prog~
+Arglist   100~
+Comlist   mpechoat $n You take a long thirst quenching drink.
+mpechoar $n $n drinks from the fountain.
+mprestore $n 1
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#ROOM
+Vnum     5500
+Name     The Garden Square~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     Continuing on the path, you arrive in the southwest portion of the garden
+square. The small grove of trees surrounding it are extremely dense,
+and act as a barrier between the fields and hills. Several stones
+lay scattered about here, some quite large, and one in particular catches
+your eye.
+~
+#EXIT
+Direction north~
+ToRoom    5505
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5501
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5583
+Keywords  stone~
+Flags     isdoor closed pickproof nopassdoor hidden bashproof~
+#ENDEXIT
+
+Reset D 0 5500 5 1
+#EXDESC
+ExDescKey    stone~
+ExDesc       &WIt's quite large, but with some effort, it looks like it can be moved.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5501
+Name     The entrance to the garden square~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+Desc     You stand at the southern entrance to the garden square. Your eyes light
+up, looking around you see flowers, trees, and various plants, who's beauty
+is rivaled by no other. The dirt path that you have been following leads 
+in all directions, west and east taking you to the larger sections, 
+while north goes toward the center.
+~
+#EXIT
+Direction north~
+ToRoom    5504
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5502
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5510
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5500
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5502
+Name     The Garden Square~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     As you follow the dirt path eastward, you come much closer to the ring of
+large vallenwood trees surrounding the square. You smile as you watch
+a gardener planting smaller trees beside the large ones. This place is
+peaceful, and you consider staying for awhile longer. The dirt path leads
+north and south.
+~
+#EXIT
+Direction north~
+ToRoom    5503
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5501
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5503
+Name     The Garden Square~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+Desc     The dirt path switches to a cobbled stone walkway at this point. It leads
+off to the west towards a small hill, and as you scan the horizon, you notice
+a dark cloud hovering over the western portion of the garden. What could
+cause that on such a beautiful day?
+~
+#EXIT
+Direction north~
+ToRoom    5508
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5515
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5502
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5504
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5504
+Name     The garden center~
+Sector   city~
+Flags    nomob safe norecall nosummon noastral~
+Desc     You have reached the garden center. An illustrious fountain towers several 
+feet above you. Birds fly high above and the sun's radiance shines pleasantly.
+There are many ancient stone pillars and crumbled statues strewn about, this
+garden may have once been a large palace. Who would have lived in such splendor
+and wealth? You notice several paths that lead to various parts of the garden. 
+Scanning the horizon, you notice that the weather is much different in
+the other areas...
+~
+#EXIT
+Direction north~
+ToRoom    5507
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5503
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5501
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5505
+#ENDEXIT
+
+Reset M 0 5501 1 5504
+Reset M 0 5504 1 5504
+Reset O 0 5505 1 5504
+#EXDESC
+ExDescKey    fountain~
+ExDesc       This fountain is made of white marble, and seems to have been here
+for ages. It is cracked and weathered, but still holds great beauty.
+Atop the fountain, an ageless statue of an angel praying to the heavens
+resides, tears streaming down it's face..the artist was truely gifted.
+You notice an inscription on the base of the statue.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    inscription~
+ExDesc       ********************************************************
+     *Speaketh the word of retribution in the ancient tongue*
+     *          And thy path shall be revealed              *
+     ********************************************************
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5505
+Name     The Garden Square~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+Desc     You come to a small intersection of paths. A wide dirt trail leads off
+westward, while east takes you back to the garden center. To the north and
+south, you only see more of the garden square.
+~
+#EXIT
+Direction north~
+ToRoom    5506
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5504
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5500
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5519
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5506
+Name     A Large Sinkhole~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     As you walk towards the northwestern corner of the garden square,
+you stumble across a VERY large sinkhole. It's at least 20 feet across.
+You see parts of a crumbled foundation, but nothing stands on it. The
+ground is water-logged, and your boots get stuck several times as you walk
+around it. You decide it isn't very safe here, and you continue on, not
+wanting to fall in...although an unlucky person might do just that.
+~
+#EXIT
+Direction east~
+ToRoom    5507
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5505
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if lck($n) < 10
+mea $n _cya As you near the sinkhole, you trip on a rock and fall in!
+mer $n _cya $n clumsily trips on a rock and falls in the sinkhole!
+mptrans 0.$n 5585
+mpat 0.$n mer $n $n slides through the muddy ceiling.
+mpsleep 5
+mpat 0.$n mea $n _re YOU HIT THE GROUND!
+mpat 0.$n mpdamage $n 250
+mpsleep 5
+mpat 0.$n mpforce 0.$n look
+else
+mpechoat $n _cya You narrowly avoid falling into the sinkhole.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5507
+Name     The Garden Square~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+Desc     In northern garden square, you stand before a large platinum gate.
+Runes adorn the sides and an inscription inlaid with gold is written
+across the impervious metal. Ther are exits to the east and west, which
+lead to other portions of the garden, while far south, you can see the center.
+~
+#EXIT
+Direction east~
+ToRoom    5508
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5504
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5506
+#ENDEXIT
+
+#EXDESC
+ExDescKey    gate~
+ExDesc       It looks absolutely inpervious to any attempt to pass through it.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5508
+Name     The Garden Square~
+Sector   city~
+Flags    safe norecall nosummon noastral~
+Desc     As you enter the northeastern corner of the garden square, you notice
+a small, unkept man sitting on a stone bench. He looks up at you, with a 
+toothless grin, and asks for a few spare coins. To the west, you
+see a large door imbedded within a stone wall in the side of the 
+mountain, and to the south, you see a small path leading further east.
+~
+#EXIT
+Direction south~
+ToRoom    5503
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5507
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5509
+Name     A Small Garden~
+Sector   city~
+Flags    nomob indoors norecall nosummon noastral~
+#MUDPROG
+Progtype  act_prog~
+Arglist   95 p drinks from the fountain~
+Comlist   if is immort($n)
+else
+mpechoat $n Shadows eminate from the statue, enveloping you.
+mptransfer 0.$n 5510
+mpat 0.$n mpechoat $n You look around to find yourself somewhere else...
+mpat 0.$n mpforce 0.$n look
+mpat 0.$n mpechoar $n $n appears from nowhere!
+mpecho $n suddenly disappears!
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5510
+Name     The Grove~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     As you make your way further down the path, you come to a small
+grove of trees surrounding the garden square. Continuing 
+northward, you will find the main part of the garden, while east
+takes you to a small shop.
+~
+#EXIT
+Direction north~
+ToRoom    5501
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5567
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5511
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5511
+Name     The Balancing Force~
+Sector   city~
+Flags    safe norecall nosummon noastral~
+Desc     A large statue stands here, holding the scales of balance. A pool
+of water surrounds it, gently moving, but not flowing in any
+direction. You notice that this place seems to be the center
+of two large areas to the east and west.
+~
+#EXIT
+Direction north~
+ToRoom    5510
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5514
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5512
+#ENDEXIT
+
+Reset M 0 5516 1 5511
+Reset O 0 5532 1 5511
+#EXDESC
+ExDescKey    statue~
+ExDesc       It's a statue of a young woman, blindfolded, carrying scales in one hand,
+and raising her sword high into the air with the other.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   order~
+Comlist   if isimmort($n)
+mpechoat $n Man, you immortals are kind of lazy...(goto 5568)
+else
+if name($n) == Xander
+mpecho _whi The statue totters for a moment..
+mpforce Xander eep
+mpecho _red The statue's base gives way and falls over on Xander!
+mptrans xander 5568
+else
+mpechoat $n _whi The scales that the statue is holding tilt to one side, and
+mpechoat $n _whi you disappear in a bright flash of light!
+mpechoar $n _whi The scales that the statue is holding tilt to one side, and
+mpechoar $n _whi $n disappears in a bright flash of light!
+mptrans 0.$n 5568
+mpat 0.$n mpforce $n look
+mpat 0.$n mpechoar $n $n appears suddenly!
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5512
+Name     A Grassy Knoll~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+Desc     You come to a grassy knoll, which is for some reason, very windy.
+The winds swirl about you, and knock you back..you feel different.
+These are the winds of change, and they will take you anywhere..even
+through time itself.
+~
+#EXIT
+Direction east~
+ToRoom    5511
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpsleep 3
+mpechoat $n _cya The winds of change swirl about you, 
+mpechoat $n _cya and you find yourself in an ancient battlefield.
+mptrans 0.$n 5656
+mpsleep 5
+mpat 0.$n mpforce 0.$n west
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5513
+Name     Descending into the Valley~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     You are walking on a small trail leading down into the valley.
+The scenery is quite beautiful and everything would be peaceful,
+except for that faint sense of foreboding you feel coming from somewhere.
+~
+#EXIT
+Direction east~
+ToRoom    5531
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5528
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5514
+Name     Path to the Garden~
+Sector   city~
+Flags    norecall~
+Desc     Further down the steep path into the valley, you notice how quiet it is.
+The songbirds have settled down and the wind has become a calm breeze.
+Strange how things change so quickly here.
+~
+#EXIT
+Direction north~
+ToRoom    5511
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5528
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5515
+Name     A Cobbled Path~
+Sector   city~
+Flags    indoors norecall~
+Desc     The cobbled path bends here, heading northward. The sky is getting much
+cloudier as you approach a small hill, and you begin to quicken your pace.
+It would be a bad idea to get caught in a storm so far away from civilization.
+~
+#EXIT
+Direction north~
+ToRoom    5516
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5503
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5516
+Name     A Bend in the Path~
+Sector   city~
+Flags    norecall~
+Desc     The bends yet again, now heading east. The weather is becoming frightfully
+worse, and it begins to rain, soon after beginning to hail, then back to rain
+again. You find it very odd that there would be a storm over your head, and
+bright sunlight only a few hundred yards away.
+~
+#EXIT
+Direction east~
+ToRoom    5517
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5515
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5517
+Name     The Path Splits~
+Sector   city~
+Flags    nomob norecall~
+Desc     As you come to a fork in the path, you notice that the bad weather has suddenly
+disappeared. It boggles the mind, but you try not to think about it. Two
+small hills can be seen off in the distance, the one to the northeast seems
+to be shrouded in nightfall, the other having constant sunlight pour down upon 
+it.
+~
+#EXIT
+Direction west~
+ToRoom    5516
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5518
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5523
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5518
+Name     Atop a Hill~
+Sector   city~
+Flags    dark indoors norecall nosummon noastral~
+Desc     As you reach the top of the hill, the sun has almost set. Strange how the 
+weather in this garden changes so quickly. You notice several dark robed 
+figures kneeling in silent prayer by a large black alter. Maybe you 
+should join them? 
+~
+#EXIT
+Direction southwest~
+ToRoom    5517
+#ENDEXIT
+
+Reset M 0 5509 2 5518
+Reset O 0 5510 1 5518
+#EXDESC
+ExDescKey    alter~
+ExDesc       The alter is covered in many strange runes..one in particular catches your
+attention, the letter "C". The alter is radiating dark energy, which makes
+you wonder what it was used for...
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mea $n As you reach the top of the hill, you notice that everyone is kneeling.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   kneels~
+Comlist   if isimmort($n)
+mpechoat $n Please use the other door :) [room 5530]
+else
+mea $n As you kneel down, swirling shadows eminate from the alter,
+mea $n engulfing you, and suddenly, you are somewhere else...
+mer $n Swirling shadows eminate from the alter and engulf $n!
+mptrans 0.$n 5530
+mpat 0.$n mpforce 0.$n look
+mpat 0.$n mer $n $n appears amidst the shadows.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5519
+Name     Along a Dirt Path~
+Sector   city~
+Flags    nomob nosummon noastral~
+Desc     This western path leads turns north towards another small hill.
+This section seems peaceful, but the weather is constantly changing.
+~
+#EXIT
+Direction north~
+ToRoom    5520
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5505
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5520
+Name     The Path Turns~
+Sector   city~
+Flags    nomob nosummon noastral~
+Desc     The small dirt path curves sharply to the west. High overhead you notice the
+the weather making a turn for the worse. It might be a good idea to seek
+shelter soon.
+~
+#EXIT
+Direction south~
+ToRoom    5519
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5521
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5521
+Name     A Split in the Path~
+Sector   city~
+Flags    nomob nosummon noastral~
+Desc     The path splits here, heading northwest towards a sunny hilltop, and 
+northeast towards a deathly silent hilltop. Perhaps you should use some
+caution before you choose which path you will take. It could mean life or death
+~
+#EXIT
+Direction east~
+ToRoom    5520
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5526
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5522
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5522
+Name     Atop a Hill~
+Sector   city~
+Flags    nomob nosummon noastral~
+Desc     You come across yet another small hilltop, but this one, seemingly different
+from the others sends a sense of well-being throughout your entire body.
+By the time you realize you're not alone, a figure has already snuck up
+behind you. You feel no malice towards it, and examining closely, you see
+the figure to be a beutiful woman, with feathery angelic wings gently folded
+behind her. The only exit is to the southeast.
+~
+#EXIT
+Direction southeast~
+ToRoom    5521
+#ENDEXIT
+
+Reset M 0 5526 1 5522
+  Reset E 1 5560 1 16
+  Reset E 1 5534 1 19
+#ENDROOM
+
+#ROOM
+Vnum     5523
+Name     A Path through the Forest~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+Desc     A small path leads north towards a circle of trees. The wind carries
+the faint tune of a cheerful melody, familiar sounding, yet you can't
+quite place it.
+~
+#EXIT
+Direction north~
+ToRoom    5524
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5517
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5524
+Name     Atop a Hill~
+Sector   city~
+Flags    indoors nosummon noastral~
+Desc     A small circle of trees spreads out before you. A faint light peeks
+through several of the openings, and the faint music you heard earlier
+has become much louder. It is quite pleasant, and brings a smile to your lips.
+~
+#EXIT
+Direction north~
+ToRoom    5662
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5523
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5663
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5665
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5525
+Name     The Gatekeeper~
+Sector   city~
+Flags    safe nosummon noastral~
+Desc     You stand before yet another door, but this one is guarded carefully.
+A woman stands in the center of the room, watching you silently.
+From the corner of your eye, you think the door shimmers for a second,
+but it must be your imagination. Something fills you with dread as you stare
+at the locked door... some things should probably be left alone.
+~
+#EXIT
+Direction south~
+ToRoom    5507
+#ENDEXIT
+
+Reset M 0 5510 1 5525
+Reset M 0 5511 1 5525
+#EXDESC
+ExDescKey    door~
+ExDesc       &wA faintly shimmering portal of dark enery stands frozen in time.
+&bA faintly shimmering portal of dark enery stands frozen in time.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5526
+Name     Along an Unused Path~
+Sector   city~
+Flags    nomob indoors~
+Desc     This path has obviously not been used for quite a long time. Most everything
+is either dead or decaying. The eerie silence that hangs in the air
+is unsettling. The path continues north.
+~
+#EXIT
+Direction north~
+ToRoom    5527
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5521
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5527
+Name     A Crumbled Shrine~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+Desc     Before you is an ancient monument. A shrine long forgotten and
+crumbling. As you approach it, a chill runs up your spine.
+You find it odd that no plants grow here. Unlike the rest of the
+garden, this place is dead.
+~
+#EXIT
+Direction south~
+ToRoom    5526
+#ENDEXIT
+
+Reset O 0 5526 1 5527
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   mpecho Pain courses through you as your life slowly drains away!
+c necro $r
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5528
+Name     The Entrance~
+Sector   city~
+Flags    indoors norecall~
+Desc     The garden is by far the largest you've ever seen. The path leads on to the 
+north for quite a long way, passing through beautiful scenery and you stretch
+and relax in the sunlight and take in the fresh, sweet-smelling air.
+As you look over the edge of the small cliff, you get a glimpse
+of the valley below, and the view is breathtaking. This ancient garden 
+is truely a magical place. The path splits in two directions, north
+leading into the garden in the smaller part of the valley, and east
+heading all the way down to the bottom and through the valley.
+~
+#EXIT
+Direction north~
+ToRoom    5514
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5513
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5667
+#ENDEXIT
+
+Reset O 0 5511 1 5528
+#MUDPROG
+Progtype  rand_prog~
+Arglist   30~
+Comlist   mpechoat $n You are in awe of the beauty of this place.
+mpechoar $n $n gazes down into the valley and smiles.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5529
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5530
+Name     Entrance to the Dark Temple~
+Sector   city~
+Flags    indoors norecall~
+Desc     You find yourself at the entrance to a dark and foreboding temple.
+Evil seems to eminate from the very walls, making the idea to come here
+not such a good one anymore. Unearthly howls pierce the silence, causing
+you to be more alert.
+~
+#EXIT
+Direction north~
+ToRoom    5542
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5518
+Desc      You see a glowing portal that lead back to the hilltop
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5531
+Name     Almost to the Valley~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     You're nearly at the foot of the mountain, and it's a good thing
+that you are, because the trail is getting extremely steep at this point.
+~
+#EXIT
+Direction west~
+ToRoom    5513
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5532
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5532
+Name     The Valley Floor~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     Upon reaching the valley floor, you see lush greenery and massive trees
+that tower above you. They really didn't look so large from up there.
+Towards the northeast, you see Keslan plains, which stretch out for many miles
+with the one prominant feature in the center: The Black Forest.
+~
+#EXIT
+Direction up~
+ToRoom    5531
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5533
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5533
+Name     A Crooked Path~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     The path through this wooded area curves in a half circle towards the Keslan
+plains. The path is rough, but you're pretty sure you can make it.
+~
+#EXIT
+Direction southeast~
+ToRoom    5534
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5532
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5534
+Name     A Path through the Woods~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     The path turns southward now, and you're getting closer to open ground.
+~
+#EXIT
+Direction south~
+ToRoom    5535
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5533
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpecho _blu *SNAP*
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5535
+Name     A Path through the Woods~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     What was that noise? Something must have snapped a twig nearby.
+Mabye its a hungry animal that's stalking you?
+~
+#EXIT
+Direction north~
+ToRoom    5534
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5536
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5536
+Name     A Path through the Woods~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     It must have been your imagination. You haven't heard anything for
+several minutes now. If something was following you, it's probably
+gone now.
+~
+#EXIT
+Direction south~
+ToRoom    5537
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5535
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5537
+Name     Rocky Trail~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     Or mabye not...to the east, you see a small cave. It looks to be the den
+of wolves, but again you're not sure.
+~
+#EXIT
+Direction north~
+ToRoom    5536
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5538
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5538
+Name     Rocky Trail~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     You stand before the small cave, which you thought to be the a wolf den, but
+turned out to be empty, except for a small spring.
+~
+#EXIT
+Direction east~
+ToRoom    5540
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5539
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5537
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5539
+Name     A Small Cave~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     The cave is barren and empty, save for a small spring that spouts up 
+from somewhere deep in the earth. It seems like a good time to rest up and
+have a drink.
+~
+#EXIT
+Direction north~
+ToRoom    5538
+#ENDEXIT
+
+Reset O 0 5566 1 5539
+#ENDROOM
+
+#ROOM
+Vnum     5540
+Name     The End of the Forest~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     You reach the end of the forest, and it's a small open path
+from here to the plains.
+~
+#EXIT
+Direction west~
+ToRoom    5538
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5541
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5541
+Name     The Plains of Keslan~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     You stand at the beginning of the Plains of Keslan. It stretches out as
+far as you can see..probably farther. 
+ 
+   (Plains of Keslan/Black forest area coming soon)
+~
+#EXIT
+Direction northwest~
+ToRoom    5540
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5542
+Name     Empty Corridor~
+Sector   city~
+Flags    indoors norecall~
+Desc     At the start of the hallway, you see it stretches far northward, with exits
+leading east, west, and back south to the entrance. You hear low chanting 
+coming from seemingly everywhere. Ice crystals begin to form as you sweat.
+Why is it so cold here? The answer can only be found if you continue.
+~
+#EXIT
+Direction north~
+ToRoom    5545
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5544
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5530
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5543
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5543
+Name     A Large Chamber~
+Sector   city~
+Flags    indoors norecall~
+Desc     You have come across what is apparently the meditation chamber for whoever
+"lives" here. Mats are lined in rows across the walls, while incense burns 
+with a putrid stench. You wonder how anyone could concentrate in here.
+~
+#EXIT
+Direction east~
+ToRoom    5542
+Flags     isdoor pickproof~
+#ENDEXIT
+
+Reset M 0 5509 2 5543
+Reset D 0 5543 1 0
+#ENDROOM
+
+#ROOM
+Vnum     5544
+Name     A Storage Room~
+Sector   city~
+Flags    indoors norecall~
+Desc     Sacks of grain and barrels of water and mead are strewn about this room.
+You notice several corpses of large rats as well, although they seem to be
+moving slightly. Upon closer examination, you find large grotesque maggots 
+devouring the insides. 
+~
+#EXIT
+Direction west~
+ToRoom    5542
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5545
+Name     The Hallway~
+Sector   city~
+Flags    indoors norecall~
+Desc     The low chanting is becoming much louder now. Scanning northward you
+see an intersection, and a lighted room. East and west lead to some 
+sort of jail cells. Mabye it's best that you stick to your current path.
+~
+#EXIT
+Direction north~
+ToRoom    5548
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5547
+Key       5519
+Desc      A barred steel door blocks your view
+~
+Keywords  door~
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5542
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5546
+Key       5519
+Keywords  door~
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset D 0 5545 1 2
+Reset D 0 5545 3 2
+#ENDROOM
+
+#ROOM
+Vnum     5546
+Name     A Cell~
+Sector   city~
+Flags    indoors norecall~
+Desc     This must be some sort of feeding chamber for the imprisioned demons
+that are summoned by the priests. Blood soaked straw and claw marks are all
+around you.
+~
+#EXIT
+Direction east~
+ToRoom    5545
+Key       5519
+Keywords  door~
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset M 0 5506 1 5546
+Reset D 0 5546 1 2
+#ENDROOM
+
+#ROOM
+Vnum     5547
+Name     A Cell~
+Sector   city~
+Flags    dark indoors norecall~
+Desc     As you enter this cell, you are overwhelmed by how unbearably hot it is.
+There is no source of water, food, or light anywhere to be found.
+Apparently this is where sacrificial victims are kept until the proper
+ceremony can be prepared.
+~
+#EXIT
+Direction west~
+ToRoom    5545
+Key       5519
+Keywords  door~
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset M 0 5505 4 5547
+Reset M 0 5505 4 5547
+Reset M 0 5505 4 5547
+Reset M 0 5505 4 5547
+Reset O 0 5521 1 5547
+Reset D 0 5547 3 2
+#ENDROOM
+
+#ROOM
+Vnum     5548
+Name     An Intersection~
+Sector   city~
+Flags    nomob indoors norecall~
+Desc     At the end of the long corridor, an intersection branches out to other
+parts of the temple. The lighted room that you had seen further down the 
+hall is directly ahead of you, while the chanting echos from the northwest, 
+and the freezing cold from the northeast.
+~
+#EXIT
+Direction north~
+ToRoom    5551
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5545
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5549
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5550
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5549
+Name     An Icy Corridor~
+Sector   city~
+Flags    indoors norecall~
+Desc     It's becoming increasingly cold as you continue northward. You can
+almost feel the icy grip of death on your shoulder as the wind blows. 
+~
+#EXIT
+Direction north~
+ToRoom    5552
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5548
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5550
+Name     A Dark Circle~
+Sector   city~
+Flags    indoors norecall~
+Desc     You have come upon a chamber of summoning. Several priests stand here
+chanting and mumbling around a large pillar of flame that spurts up
+from a pool of blood. Gazing closer into the flame, you see a dark figure.
+The priests look as if they're concentrating hard to control the demon...
+Better not disturb them.
+~
+#EXIT
+Direction southeast~
+ToRoom    5548
+#ENDEXIT
+
+Reset M 0 5507 1 5550
+Reset M 0 5502 3 5550
+  Reset E 1 5517 1 22
+  Reset E 1 5518 1 14
+Reset M 0 5502 3 5550
+  Reset E 1 5517 1 22
+  Reset E 1 5518 1 14
+Reset M 0 5502 3 5550
+  Reset E 1 5518 1 14
+  Reset E 1 5517 1 22
+Reset O 0 5522 1 5550
+#ENDROOM
+
+#ROOM
+Vnum     5551
+Name     The Alter~
+Sector   city~
+Flags    indoors norecall~
+Desc     At the end of the long hallway, you come to a barren room with a large
+alter made of obsidian. It resembles the one on the hilltop in the garden,
+but this one is much larger and stained with blood. This is where the high
+priest practices the unholy ways of the dark lord. The only objects in this 
+room are a pair of demonic-looking figures carved into the north wall.
+~
+#EXIT
+Direction south~
+ToRoom    5548
+#ENDEXIT
+
+Reset M 0 5503 1 5551
+  Reset E 1 5519 1 17
+  Reset E 1 5520 1 16
+Reset O 0 5510 1 5551
+#EXDESC
+ExDescKey    figures~
+ExDesc       The north wall has a mural carved from the stone, depicting a large being 
+sitting atop a throne made of human skulls. Two demons are underneath every 
+corner of it, holding up the great weight.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    alter~
+ExDesc       This is a much large version of the alter atop the hill in the garden. There
+are as many rubies as there are bloodstains covering it as well. You wonder  
+if you could pry one of them off...
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   speak~
+Comlist   if isimmort($n)
+mpechoat $n You have the GOTO command...use it :p (room 5564)
+else
+mpechoat $n As you grovel to the powers that be, swirling shadows eminate
+mpechoat $n from the alter, englufing you, and suddenly you are somewhere else.
+mpechoar $n $n is engulfed in dark energy, then disappears!
+mptrans 0.$n 5564
+mpat 0.$n mpforce 0.$n look
+mpat 0.$n mpechoar 0.$n $n appears amdist the shadows...
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5552
+Name     An Icy Corridor~
+Sector   city~
+Flags    nomob indoors norecall~
+Desc     At the end of the corridor, you finally find the cause of the cold wind.
+Before you is a courtyard of sorts, frozen and enveloped in a blanket
+of ice and snow. A few trees are scattered about, but they are withered
+and lifeless. Strangely though, something compels you forward.
+~
+#EXIT
+Direction north~
+ToRoom    5553
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5549
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5553
+Name     Snowy Field~
+Sector   city~
+Flags    indoors norecall~
+Desc     &WThis southern portion of the courtyard has seemingly been covered in snow and
+ice for ages. For some reason, a blinding blizzard has caused life to wither
+and die.
+~
+#EXIT
+Direction north~
+ToRoom    5557
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5554
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5552
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5555
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5554
+Name     Snowy Field~
+Sector   city~
+Flags    indoors norecall~
+Desc     &WThe Blizzard died down a little as you moved toward the easter corner
+of the courtyard. The biting wind is gone as well, causing
+dead silence.
+~
+#EXIT
+Direction north~
+ToRoom    5558
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5553
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5555
+Name     Snowy Field~
+Sector   city~
+Flags    indoors norecall~
+Desc     &WThere is nothing of interest anywhere here...nothing but snow..snow as far as 
+the eye can see. Although there's a slight feeling of dread as you stare 
+northward. You can almost make out the sounds of a battle over the howl
+of the wind.
+~
+#EXIT
+Direction north~
+ToRoom    5556
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5553
+#ENDEXIT
+
+Reset O 0 5503 1 5555
+#ENDROOM
+
+#ROOM
+Vnum     5556
+Name     Snowy Field~
+Sector   city~
+Flags    indoors norecall~
+Desc     &WThe snow here is stained with blood. Frozen corpses lie half-buried by the 
+relentless blizzard. It reeks of death and destruction. What kind of being
+slaughters the innocent for pleasure? Your answer is the man standing
+several feet away. Looks like you'll soon join them.
+~
+#EXIT
+Direction north~
+ToRoom    5561
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5557
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5555
+#ENDEXIT
+
+Reset M 0 5500 1 5556
+  Reset E 1 5508 1 0
+  Reset E 1 5514 1 16
+  Reset E 1 5500 1 5
+  Reset E 1 5512 1 9
+Reset O 0 5528 1 5556
+#ENDROOM
+
+#ROOM
+Vnum     5557
+Name     Snowy Field~
+Sector   city~
+Flags    indoors norecall~
+Desc     &WThe biting wind stings your face as you enter the center of the
+courtyard. The chillling mists the envelope the area seem to be 
+following you.
+~
+#EXIT
+Direction north~
+ToRoom    5560
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5558
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5553
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5556
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5558
+Name     Snowy Field~
+Sector   city~
+Flags    indoors norecall~
+Desc     &WThe ground can be seen through the snow, large portions of the icy
+cover have been thrown about, as if a battle had taken place
+recently. The is a pool of blood beneath the eastern wall,
+and you notice that somone has written a message on it.
+~
+#EXIT
+Direction north~
+ToRoom    5559
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5554
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5557
+#ENDEXIT
+
+Reset O 0 5550 1 5558
+  Reset P 0 5539 0 5550
+#EXDESC
+ExDescKey    message~
+ExDesc       It seems to be written in blood...
+&RI hid it in the snow drift..he didn't find it..fights like a demon...nothing 
+&Rbut a ruthless m u  r
+                      d
+                       e
+                        r
+                          e
+                           r
+&GIt trails off..whoever wrote it probably used their last ounce 
+of strength to write it.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5559
+Name     Snowy Field~
+Sector   city~
+Flags    indoors norecall~
+Desc     &WA pool of &Rblood &Wlies in the snow, sill steaming. Footprints
+can be seen all over, and they lead west.
+~
+#EXIT
+Direction south~
+ToRoom    5558
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5560
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5560
+Name     Snowy Field~
+Sector   city~
+Flags    indoors norecall~
+Desc     &WThe snow begins to fall lightly on your shoulders. The wind
+blows gently and a chilling mist caresses your face. The only 
+thing that seems out of place here, is the trail of bloody footprints
+leading west.
+~
+#EXIT
+Direction east~
+ToRoom    5559
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5557
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5561
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5561
+Name     Snowy Field~
+Sector   city~
+Flags    indoors norecall~
+Desc     &WThe blizzard rages on once again, it seems to become fiercer
+as you near the center of the western wall. The blood trail leads
+southward, and you can hear a faint scream over the howl of 
+the wind.
+~
+#EXIT
+Direction east~
+ToRoom    5560
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5556
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5562
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5563
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5564
+Name     Before a Great Void~
+Sector   city~
+Flags    dark nomob indoors norecall~
+Desc     You are standing in total darkness.  Even though you're not sure where you  
+are, something compels you to go northward...
+~
+#EXIT
+Direction north~
+ToRoom    5565
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5528
+Desc      A glowing portal leads back to the entrance.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5565
+Name     &wEternal Darkness~
+Sector   city~
+Flags    dark indoors safe norecall~
+Desc     You suddenly find yourself before a great void, devoid of all light, save
+for your own. Knees quaking and utter fear in your heart, you realize
+that you are not alone.
+~
+#EXIT
+Direction south~
+ToRoom    5564
+#ENDEXIT
+
+Reset M 0 5508 1 5565
+#ENDROOM
+
+#ROOM
+Vnum     5566
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5567
+Name     A Small Shop~
+Sector   city~
+Flags    safe norecall nosummon noastral~
+Desc     You enter a small crumbling building. The walls are falling
+down, and a slight breeze wafts through the open roof.
+A stone counter stands in the center of the room, with a smiling
+woman standing behind it.
+~
+#EXIT
+Direction west~
+ToRoom    5510
+#ENDEXIT
+
+Reset M 0 5517 1 5567
+  Reset G 1 5535 1
+  Reset G 1 5548 1
+  Reset G 1 5536 1
+#ENDROOM
+
+#ROOM
+Vnum     5568
+Name     In the Temple of Balance~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     You find yourself in a large temple, seemingly made entirely of 
+a strange black stone..almost marble-like in appearance. Venturing
+down the hallway may be dangerous still, as you have no clue where 
+this place is, or what lurks in the shadows. You notice a staricase
+leading upwards, and another staircase further to the north. Strange 
+architecture...
+~
+#EXIT
+Direction north~
+ToRoom    5569
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5528
+Desc      A glowing portal takes you back to the garden.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5630
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5572
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5571
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5569
+Name     The Center of the Universe~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     This room has an eerie glow eminating from the walls. The flowing
+shadow and light plays tricks on your eyes, making things appear
+not as they truly are. In the center of the room, you meet the gaze
+of a powerful entity. At first you disbelieve your senses, but you
+oon realize that this being commands the respect of all who behold it.
+~
+#EXIT
+Direction north~
+ToRoom    5570
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5575
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5568
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5579
+#ENDEXIT
+
+Reset M 0 5518 1 5569
+#ENDROOM
+
+#ROOM
+Vnum     5570
+Name     Beneath the Northern Tower~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     You stand beneath the northern tower. It is strange how this place 
+has these towers in each direction, but they must serve some purpose.
+To the northeast is a storage room, and to the northwest, there is
+nothing but darkness.
+~
+#EXIT
+Direction south~
+ToRoom    5569
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5627
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5574
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5573
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5571
+Name     Destruction~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     This room has been utterly destroyed by the fallen tower.
+Large chunks of stone lie everywhere, crumbled statues are
+strewn about, and broken marble benches are shattered. This
+once may have been quite an impressive room, but it is gone forever.
+~
+#EXIT
+Direction northeast~
+ToRoom    5568
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5572
+Name     The Fallen Tower~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     The walls have been knocked down, and you can clearly see most of the
+southern part of the temple which has been destroyed. The fallen tower
+lies before you, massive and mysterious. Age has rendered it brittle
+and it crumbles to the touch. Such a shame that a marvelous work like
+this is no more.
+~
+#EXIT
+Direction northwest~
+ToRoom    5568
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5573
+Name     A Dark Room~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     This room is incredibly dark. The only source of light is a glowing
+shaft in the center of the room. Straining your eyes, you can barely
+make out what looks to be some sort of mural on the wall.
+~
+#EXIT
+Direction southeast~
+ToRoom    5570
+#ENDEXIT
+
+Reset O 0 5557 1 5573
+#EXDESC
+ExDescKey    mural~
+ExDesc       It is too dark to make it out clearly...
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5574
+Name     A Storage Room~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     There is nothing of interest here, except a few cobwebs, and a lot of dust.
+The only visible exit from this room is a small door to the southwest.
+~
+#EXIT
+Direction southwest~
+ToRoom    5570
+#ENDEXIT
+
+Reset O 0 5502 1 5574
+#ENDROOM
+
+#ROOM
+Vnum     5575
+Name     A Marble Hallway~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     Continuing eastward from the main chamber, you come arcross another
+tower. Staring blankly upward, you decide that it must be several 
+hundred feet high, touching the heavens themselves. I would be quite 
+an effort to make such a climb. Looking eastward, you see an intersection
+in the hallway.
+~
+#EXIT
+Direction east~
+ToRoom    5576
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5569
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5624
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5576
+Name     A Marble Hallway~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     The first thing you notice when you enter the room is a strange
+force pulling at you. Upon investigating further, you find it seems
+to come from the northeast and southeast, but you eyes cannot
+penetrate the darkness shrouding the rooms.
+~
+#EXIT
+Direction west~
+ToRoom    5575
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5577
+Desc      &bYou see nothing but darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5578
+Desc      &bYou see nothing but darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5577
+Name     A Dark Void~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     Reality is constantly shifting in this room. Portals to other 
+realms sometimes open to those who are lucky enough to enter
+at the right times.
+~
+#EXIT
+Direction southwest~
+ToRoom    5576
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   5~
+Comlist   if isimmort($n)
+GOTO 5522
+else
+mpechoat $n _whi You are blinded by a bright flash of light!
+mptrans 0.$n 5522
+mpat 0.$n mpechoar $n _whi $n appears out of nowhere.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5578
+Name     A Dark Void~
+Sector   city~
+Flags    nomob indoors norecall nosummon noastral~
+Desc     Reality is constantly shifting in this room. Portals to other 
+realms sometimes open to those who are lucky enough to enter
+at the right times.
+~
+#EXIT
+Direction northwest~
+ToRoom    5576
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   5~
+Comlist   if isimmort($n)
+GOTO 5504
+else
+mpechoat $n _whi You are blinded by a bright flash of light!
+mptrans 0.$n 5504
+mpat 0.$n mpechoar $n _whi $n appears out of nowhere.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5579
+Name     A Marble Hallway~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     Continuing west from the main chamber, you come arcross another
+tower. Staring blankly upward, you decide that it must be several
+hundred feet high, almost touching the heavens themselves. I would 
+be quite an effort to make such a climb. Looking further to the west,
+you see an intersection in the hallway.
+~
+#EXIT
+Direction east~
+ToRoom    5569
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5580
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5621
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5580
+Name     A Marble Hallway~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     The first thing you notice when you enter the room is a strange
+force pulling at you. Upon investigating further, you find it seems
+to come frmo the northwest and southwest, but your eyes cannot
+penetrate the darkness shrouding the rooms.
+~
+#EXIT
+Direction east~
+ToRoom    5579
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5581
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5582
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5581
+Name     A Dark Void~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     Reality is constantly shifting in this room. Portals to other 
+realms sometimes open to those who are lucky enough to enter
+at the right times.
+~
+#EXIT
+Direction southeast~
+ToRoom    5580
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   5~
+Comlist   if isimmort($n)
+mpechoat $n You want me to trans an immortal? I hate my job..(goto 5528)
+else
+mpechoat $n _whi You are blinded by a bright flash of light!
+mptrans 0.$n 5528
+mpat 0.$n mpechoar $n _whi $n appears out of nowhere.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5582
+Name     A Dark Void~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     Reality is constantly shifting in this room. Portals to other 
+realms sometimes open to those who are lucky enough to enter
+at the right times.
+~
+#EXIT
+Direction northeast~
+ToRoom    5580
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   5~
+Comlist   if isimmort($n)
+GOTO 5518
+else
+mpechoat $n _whi You are blinded by a bright flash of light!
+mptrans 0.$n 5518
+mpat 0.$n mpechoar $n _whi $n appears out of nowhere.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5583
+Name     A Stone Passageway~
+Sector   city~
+Flags    indoors nosummon noastral~
+Desc     You find yourself in a a small stone passageway. The air is musty and dank,
+and you find it hard to breathe. Examining your surroundings, you notice
+that the ceiling is falling down, and could cave in any moment, it might be
+a good idea to not make any noise, or you might be in trouble...
+~
+#EXIT
+Direction up~
+ToRoom    5500
+Keywords  stone~
+Flags     isdoor closed pickproof nopassdoor hidden bashproof~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5584
+#ENDEXIT
+
+Reset D 0 5583 4 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   50~
+Comlist   mpecho _red Your loud footsteps cause several large rocks to fall from above!
+mpdamage all 200
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5584
+Name     Sacred Ground~
+Sector   city~
+Flags    indoors silence nosummon noastral~
+Desc     This small cavern is dark and musty. It's devoid of any features, save
+for a spiral staircase in the center that descends into the darkness
+below, and some strange markings on the walls.
+~
+#EXIT
+Direction down~
+ToRoom    5585
+Desc      The staircase leads down.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5583
+#ENDEXIT
+
+#EXDESC
+ExDescKey    markings~
+ExDesc       You can't seem to decipher them...
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5585
+Name     The Sanctuary~
+Sector   city~
+Flags    nomob indoors norecall nosummon noastral~
+Desc     You stand before a the entrance to a large church, smashed into the stone of
+the cavern walls. This place is eerily silent, but you sense no malice
+in your surroundings.
+~
+#EXIT
+Direction north~
+ToRoom    5586
+Keywords  doors~
+Flags     isdoor closed nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5584
+Desc      The staircase leads up.
+~
+#ENDEXIT
+
+Reset D 0 5585 0 1
+#ENDROOM
+
+#ROOM
+Vnum     5586
+Name     Down the Aisle~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     Traversing down the aisle, you notice that this chuch hasn't been used
+for a very long time. The pews are falling apart, and dust covers 
+everything. The walls are crumbling, and it looks like this church has sunken
+beneath the ground from above somewhere. Further north you can see the alter.
+~
+#EXIT
+Direction north~
+ToRoom    5587
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5585
+Keywords  doors~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 5586 2 1
+#ENDROOM
+
+#ROOM
+Vnum     5587
+Name     The Alter~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     You stand at at the front of the church. This sacred place was once
+used as a place of worship, but has long since been forgotten.
+There is a podium here, which was most likely used for sermons, but there
+is something odd about it...
+~
+#EXIT
+Direction south~
+ToRoom    5586
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5588
+Keywords  trapdoor~
+Flags     isdoor closed pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset O 0 5549 1 5587
+Reset D 0 5587 5 1
+#EXDESC
+ExDescKey    podium~
+ExDesc       You notice that it has been recently moved..seemingly to cover something.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5588
+Name     The Caverns~
+Sector   city~
+Flags    indoors tunnel nosummon noastral~
+Stats    0 0 5
+Desc     You find yourself in a small cavern, far beneath the garden. Tunnels lead
+in all directions, and this place is filled with strange mist which makes
+you cough and gag. You notice several skeletons on the ground, covered
+in muck. This is not a safe place to be.
+~
+#EXIT
+Direction north~
+ToRoom    5589
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5590
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5591
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5592
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    5587
+Keywords  trapdoor~
+Flags     isdoor closed pickproof nopassdoor bashproof~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5593
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5594
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5596
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5595
+#ENDEXIT
+
+Reset D 0 5588 4 1
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a cloud of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5589
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     Tunnels lead in all directions, making it nearly impossible to navigate
+in here. The gas seeping from the ground makes it difficult to breath,
+and you're not sure that you'll make it out alive....
+~
+#EXIT
+Direction north~
+ToRoom    5601
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5595
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5588
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5599
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5596
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5600
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5597
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5598
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5590
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     The tunnel ends abruptly here. Not a single sound, save for the faint hiss
+of the escaping gas can be heard. It's becoming very difficult to breath, and
+you're not sure that you'll make it out alive....
+~
+#EXIT
+Direction west~
+ToRoom    5588
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5591
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     Tunnels lead in all directions, making it nearly impossible to navigate
+in here. The gas seeping from the ground makes it difficult to breath,
+and you're not sure that you'll make it out alive....
+~
+#EXIT
+Direction north~
+ToRoom    5588
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5608
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5606
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5607
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5609
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5610
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5612
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5611
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5592
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     The tunnel bends, leading north and east. You get the feeling that
+you've been here before. The gas seeping from the ground makes it difficult
+to breath, and you're not sure that you'll make it out alive....
+~
+#EXIT
+Direction north~
+ToRoom    5601
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5588
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5593
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     You come to one of many dead ends. Peering through the thick cloud of gas,
+the only visible exit is to the southwest. It may have been a mistake to
+venture down here....
+~
+#EXIT
+Direction southwest~
+ToRoom    5588
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5594
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     You come to one of many dead ends. Peering through the thick cloud of gas,
+the only visible exit is to the southeast. It may have been a mistake to
+venture down here....
+~
+#EXIT
+Direction southeast~
+ToRoom    5588
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5595
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     The tunnel bends here, heading north and northeast. The thick cloud of gas
+that hovers above the ground makes it difficult to breath, and you're not
+sure that you'll make it out alive.
+~
+#EXIT
+Direction north~
+ToRoom    5591
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5588
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5596
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     You come to one of many dead ends. Peering through the thick cloud of gas,
+the only visible exit is to the northwest. It may have been a mistake to
+venture down here....
+~
+#EXIT
+Direction northwest~
+ToRoom    5588
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5597
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     You come to one of many dead ends. Peering through the thick cloud of gas,
+the only visible exit is to the northwest. It may have been a mistake to
+venture down here....
+~
+#EXIT
+Direction northwest~
+ToRoom    5589
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5598
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     You come to one of many dead ends. Peering through the thick cloud of gas,
+the only visible exit is to the northeast. It may have been a mistake to
+venture down here....
+~
+#EXIT
+Direction northeast~
+ToRoom    5589
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5599
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     You come to one of many dead ends. Peering through the thick cloud of gas,
+the only visible exit is to the east. It may have been a mistake to
+venture down here....
+~
+#EXIT
+Direction east~
+ToRoom    5589
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5600
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     You come to yet another dead end. Through the thick cloud of gas, the
+only visible exit is to the southeast. There is a strange quality to 
+the fog in this part of the cavern..it seems almost..alive...
+~
+#EXIT
+Direction southeast~
+ToRoom    5589
+#ENDEXIT
+
+Reset M 0 5528 1 5600
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5601
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     Tunnels lead in many directions, making nearly impossible to navigate
+in here. The gas seeping from the ground makes it difficult to breath,
+and you're not sure that you'll make it out alive....
+~
+#EXIT
+Direction north~
+ToRoom    5590
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5589
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5589
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5592
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5602
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a clound of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5603
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+#ENDROOM
+
+#ROOM
+Vnum     5604
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+#ENDROOM
+
+#ROOM
+Vnum     5605
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+#ENDROOM
+
+#ROOM
+Vnum     5606
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     You come to yet another dead end. Through the thick cloud of gas, the
+only visible exit is back to the north. It may have been a mistake to
+venture down here....
+~
+#EXIT
+Direction north~
+ToRoom    5591
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a cloud of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5607
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     The tunnel bends here, heading north and east. The thick cloud of gas
+makes it difficult to breath, and you're not sure that you'll make it out
+alive....
+~
+#EXIT
+Direction north~
+ToRoom    5591
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5606
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a cloud of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5608
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     The tunnel bends here, heading north and west. The thick cloud of gas
+makes it difficult to breath, and you're not sure that you'll make it out
+alive....
+~
+#EXIT
+Direction north~
+ToRoom    5589
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5591
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a cloud of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5609
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     Tunnels lead  in all directions, making it nearly impossible to navigate
+in here. The gas seeping from the ground makes it difficult to breath, 
+and you're not sure you'll make it out alive....
+You come to yet another dead end. The thick cloud of gas makes it difficult
+to breath. It may have been a mistake to venture down here....
+~
+#EXIT
+Direction southwest~
+ToRoom    5591
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a cloud of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5610
+Name     The Caverns~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     You come to one of many dead ends. These caverns are difficult to navigate
+and the gas seeping from the ground makes it difficult to breath...you're not
+sure you'll make it out alive.
+~
+#EXIT
+Direction southeast~
+ToRoom    5591
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a cloud of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5611
+Name     The Caverns~
+Sector   city~
+Flags    indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     You come to yet another dead end. The thick cloud of gas makes it difficult
+to breath. It may have been a mistake to venture down here....
+~
+#EXIT
+Direction northeast~
+ToRoom    5591
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mea $n _cya A large sinkhole opens up and you are sucked beneath the ground!
+mer $n _cya A large sinkhole opens up and $n is sucked beneath the ground!
+mptrans 0.$n 5613
+mpat 0.$n mpforce 0.$n look
+mpat 0.$n mpechoar $n _cya $n falls from above, and land at your feet.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5612
+Name     The Caverns~
+Sector   city~
+Flags    indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     You come to yet another dead end. The thick cloud of gas makes it difficult
+to breath. The only visible exit is to the northwest. It may have been
+a mistake to venture down here.
+~
+#EXIT
+Direction northwest~
+ToRoom    5591
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   10~
+Comlist   mpecho _gre The ground emits a cloud of noxious gas!
+mpdamage 0.$n 50
+mpforce 0.$n cough
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5613
+Name     The Caverns~
+Sector   city~
+Flags    indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     Your lucky to be alive after falling through that sinkhole...and now you have
+muck in places unmentionable. Perhaps it would be a good idea to use some
+caution from now on.
+~
+#EXIT
+Direction north~
+ToRoom    5614
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5614
+Name     A Narrow Tunnel~
+Sector   city~
+Flags    nomob indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     The tunnel gets extremely narrow at this point, but opens up to an east-west 
+junction. It's a one way ticket however, unless you can move 10 tons of
+solid rock....
+~
+#EXIT
+Direction north~
+ToRoom    5615
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5613
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5615
+Name     East-West Junction~
+Sector   city~
+Flags    indoors tunnel nosummon noastral~
+Stats    0 0 3
+Desc     To the west, you see a large gaping hole in the center of a cavern
+which doesn't look too inviting, and looking eastward, you see that the tunnel
+loops back to this room. Guess the only way out is to go down the hole...
+~
+#EXIT
+Direction east~
+ToRoom    5615
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5616
+#ENDEXIT
+
+Reset O 0 5551 1 5615
+#ENDROOM
+
+#ROOM
+Vnum     5616
+Name     A Large, Gaping Hole in the Ground.~
+Sector   city~
+Flags    indoors nosummon noastral nofloor~
+Stats    0 0 3
+Desc     You slide down the passageway and fall right into a very large hole in
+ground. A strong wind is blowing up from the bowls of the earth, making
+the fly spell useless. You hope there's something soft below...
+~
+#EXIT
+Direction down~
+ToRoom    5617
+Desc      Nothing but darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5617
+Name     Falling~
+Sector   city~
+Flags    indoors nosummon noastral nofloor~
+Stats    0 0 3
+Desc     F
+ A
+  L
+   L
+    I
+     N
+      G
+~
+#EXIT
+Direction down~
+ToRoom    5618
+Desc      Nothing but darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5618
+Name     FALLING~
+Sector   city~
+Flags    indoors nosummon noastral nofloor~
+Stats    0 0 3
+Desc     You are still
+ 
+             F
+              A
+               L
+                L
+                 I
+                  N
+                   G
+~
+#EXIT
+Direction down~
+ToRoom    5619
+Desc      Nothing but darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5619
+Name     Floating in a Void~
+Sector   city~
+Flags    nomob indoors nosummon noastral nofloor~
+Stats    0 0 3
+Desc     After falling for several minutes, you give up all hope of surviving.
+Surely, no one could walk away after plummeting to certain death.
+~
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mea $n _dbl Suddenly you see the ground race towards you! Muttering 
+mea $n _dbl a silent prayer t your deity, you brace for impact, but the
+mea $n _dbl brittle stone floor shatters as you hit, causing hundreds
+mea $n _dbl stone splinters to tear at your skin. Quickly moving to your
+mea $n _dbl feet, you realize that you landed on something surprisingly soft...
+mpsleep 15
+mptrans 0.$n 5620
+mpat 5620 mpechoat Feraasel disturbgreet
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5620
+Name     The Lair~
+Sector   city~
+Flags    nomob indoors norecall nosummon noastral~
+Stats    0 0 3
+Desc     The fist thing you notice as you regain your senses, is the horrible smell of
+some large beast. It's absolutely foul, and you see the reason why
+bones..scattered everywhere. Some are cracked and they look as if they have
+been gnawed upon by powerful jaws. This cavern is quite dim, and it is
+difficult to see..all you can manage to make out is the large form of something
+inhuman. Gold as well as other various treasures are scattered about, but
+the thing that's most important to you right now is a single thought running
+through your mind: &WYou hope the soft thing you landed on, wasn't a dragon...
+~
+Reset M 0 5519 1 5620
+Reset O 0 5501 1 5620
+Reset O 0 5540 1 5620
+#ENDROOM
+
+#ROOM
+Vnum     5621
+Name     Climbing the Tower~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     A spiral staircase winds up far above you, and climbing it would be
+quite a task. You begin you wonder what purpose such a large tower
+would serve in a temple, but it must have some function. The room 
+practically featureless, save for the staircase, and a large waterfall
+pouring into a pool in the center of the room.
+ 
+ 
+&WA large waterfall tumbles down into a large pool here.
+~
+#EXIT
+Direction up~
+ToRoom    5622
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5579
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5622
+Name     Climbing the Tower~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     You have been climbing for several minutes now, and fatuige starts
+to set in. As you reach this point, you come to a dead end.
+As you search around, nothing seems to look like an exit, yet the waterfall
+that cascades down through the center of the tower has to come from
+somewhere up higher...
+&WA waterfall tumbles down through the center of the tower.
+~
+#EXIT
+Direction up~
+ToRoom    5623
+Keywords  trapdoor~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5621
+#ENDEXIT
+
+Reset D 0 5622 4 1
+#ENDROOM
+
+#ROOM
+Vnum     5623
+Name     The Sanctuary of the Stars~
+Sector   city~
+Flags    nomob indoors norecall noastral~
+Desc     Ater coming up through the trapdoor, you find yourself in the open night air.
+The top of the tower is seemingly incomplete, several large pillars stand 
+around the edges, but other than that, there are no visible walls. You begin to
+realize that mabye this was planned, as the tower has no roof as well. The 
+large pool of crystal water in the center seems to slowly drain down below, 
+creating the magnificent waterfall you saw below. The stars shine brightly on
+one particular spot, as you follow the beam downward, your eyes meet with those
+of a celestial being.
+~
+#EXIT
+Direction down~
+ToRoom    5622
+Keywords  trapdoor~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5521 1 5623
+Reset O 0 5554 1 5623
+Reset D 0 5623 5 1
+#ENDROOM
+
+#ROOM
+Vnum     5624
+Name     Climbing the Tower~
+Sector   city~
+Flags    norecall~
+Desc     This tower is just like the western tower. As you climb up the spiral staircase
+you hope there is something of value at the top, and you're not just climbing
+these stairs for nothing.
+~
+#EXIT
+Direction up~
+ToRoom    5625
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5575
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5625
+Name     Climbing the Tower~
+Sector   city~
+Flags    norecall~
+Desc     You are beginning to run out of breath and consider stopping several times
+on the way up. Why did they have to build these things so tall?
+The stairs continue upward still to the top of the tower.
+~
+#EXIT
+Direction up~
+ToRoom    5626
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5624
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5626
+Name     The Top of the Tower~
+Sector   city~
+Flags    norecall~
+Desc     You've finally reached the top of the tower and you're nearly exhausted.
+Looking around, you can see that the roof and most of the northwestern corner
+of the wall has crumbled away, exposing this room to the elements.
+~
+#EXIT
+Direction down~
+ToRoom    5625
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5627
+Name     Climbing the Tower~
+Sector   city~
+Flags    tunnel norecall~
+Stats    0 0 1
+Desc     The stairwell leading upward winds tightly in a spire, and it
+would be nearly impossible to fit more than one person at a time here.
+This tower is much higher than the others, but no where near as wide.
+You have a long climb ahead of you.
+~
+#EXIT
+Direction up~
+ToRoom    5628
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5570
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5628
+Name     Climbing the Tower~
+Sector   city~
+Flags    tunnel norecall~
+Stats    0 0 1
+Desc     This tower is not as wide as the others, and it's difficult to 
+get more than one person through at a time. Looking above you,
+a small amount of light filters into a cramped room.
+~
+#EXIT
+Direction up~
+ToRoom    5629
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    5627
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5629
+Name     A Small Room~
+Sector   city~
+Flags    tunnel norecall~
+Stats    0 0 1
+Desc     You enter a small room at the top of the stairs. It is practically
+featureless, save for a small window on the north wall.
+~
+#EXIT
+Direction down~
+ToRoom    5628
+#ENDEXIT
+
+#EXDESC
+ExDescKey    window~
+ExDesc       The window is small, and doesn't let much light into the room.
+There is just enough room to peek your head out and look around,
+and doing so, you see the entire valley that surrounds the garden.
+It is quite a beautiful sight. Scanning the scenery, you notice a large
+field in the southwestern portion...
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     5630
+Name     A Collapsed Tower~
+Sector   city~
+Flags    indoors norecall nosummon noastral~
+Desc     This tower has obviously been rendered usless and brittle over time, 
+and has fallen over, creating an incredible amount of destruction to 
+the southern portion of the temple.
+~
+#EXIT
+Direction down~
+ToRoom    5568
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5631
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction east~
+ToRoom    5656
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5640
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5632
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5632
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction east~
+ToRoom    5631
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5639
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5633
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5633
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction east~
+ToRoom    5632
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5638
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5634
+#ENDEXIT
+
+Reset M 0 5523 5 5633
+#ENDROOM
+
+#ROOM
+Vnum     5634
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction east~
+ToRoom    5633
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5637
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5635
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5635
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction east~
+ToRoom    5634
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5636
+#ENDEXIT
+
+Reset M 0 5522 5 5635
+#ENDROOM
+
+#ROOM
+Vnum     5636
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5635
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5637
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5645
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5637
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5634
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5638
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5644
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5636
+#ENDEXIT
+
+Reset M 0 5522 5 5637
+Reset M 0 5522 5 5637
+#ENDROOM
+
+#ROOM
+Vnum     5638
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5633
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5639
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5643
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5637
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5639
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5632
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5640
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5642
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5638
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5640
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5631
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5641
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5639
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5641
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5640
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5650
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5642
+#ENDEXIT
+
+Reset M 0 5523 5 5641
+#ENDROOM
+
+#ROOM
+Vnum     5642
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5639
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5641
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5649
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5643
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5643
+Name     A Small Hill~
+Sector   city~
+Flags    norecall nosummon noastral~
+Desc     This small hill seems to be the center of the battlefield.
+Several broken sword lay strewn about, the sticky black colored
+blood of the vile shadows is everywhere. There is a murky
+white aura hovering in the air...beckoning you to look at it.
+~
+#EXIT
+Direction north~
+ToRoom    5638
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5642
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5648
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5644
+#ENDEXIT
+
+Reset O 0 5559 1 5643
+#ENDROOM
+
+#ROOM
+Vnum     5644
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5637
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5643
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5647
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5645
+#ENDEXIT
+
+Reset M 0 5523 5 5644
+#ENDROOM
+
+#ROOM
+Vnum     5645
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5636
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5644
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5646
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5646
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5645
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5647
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5655
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5647
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5644
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5648
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5654
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5646
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5648
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5643
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5649
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5653
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5647
+#ENDEXIT
+
+Reset M 0 5522 5 5648
+#ENDROOM
+
+#ROOM
+Vnum     5649
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5642
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5650
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5652
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5648
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5650
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5641
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5651
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5649
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5651
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5650
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5652
+#ENDEXIT
+
+Reset M 0 5523 5 5651
+#ENDROOM
+
+#ROOM
+Vnum     5652
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5649
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5651
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5653
+#ENDEXIT
+
+Reset M 0 5523 5 5652
+#ENDROOM
+
+#ROOM
+Vnum     5653
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5648
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5652
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5654
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5654
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5647
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5653
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5655
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5655
+Name     The Fields of the Jihad~
+Sector   city~
+Flags    norecall silence nosummon noastral~
+Desc     You stand in the holy fields of the Jihad. Blood stains the ground,
+and the deathly silence that fills the air keeps you on edge.
+This is where many battles have been fought, and this is where many have died.
+~
+#EXIT
+Direction north~
+ToRoom    5646
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5654
+#ENDEXIT
+
+Reset M 0 5522 5 5655
+#ENDROOM
+
+#ROOM
+Vnum     5656
+Name     A Grassy Knoll~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+Desc     You come to a grassy knoll, which is for some reason, very windy.
+The winds swirl about you, and knock you back..you feel different.
+These are the winds of change, and they will take you anywhere..even
+through time itself.
+~
+#EXIT
+Direction west~
+ToRoom    5631
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mpechoat $n _cya The winds of change swirl about you, and
+mpechoat $n _cya take you safely back to the garden.
+mptrans 0.$n 5512
+mpsleep 5
+mpat 0.$n mpforce 0.$n east
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     5657
+Name     A Crumbling Hallway~
+Sector   city~
+Flags    nomob indoors norecall nosummon noastral~
+Desc     Having been magically transported here, you are somewhat disorented as
+you examine your surroundings, finding yourself against the far
+wall of an ancient crumbling hallway.
+The only obvious exit is to the north.
+~
+#EXIT
+Direction north~
+ToRoom    5658
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5528
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5658
+Name     A Carpeted Hallway~
+Sector   city~
+Flags    nomob indoors norecall nosummon noastral~
+Desc     You've passed through the broken, crumbling section of the hall, and 
+come to a thin red carpet the leads northward. Much to your surprise,
+this section is very well-kept and seems to have been recently used.
+You can see a light to the north, and it reflects of the wester wall, 
+causing it to shimmer slightly.
+~
+#EXIT
+Direction north~
+ToRoom    5660
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5657
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5659
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 0 5658 3 1
+#ENDROOM
+
+#ROOM
+Vnum     5659
+Name     A Study~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+Desc     As you enter the room, the first things you see are books. Bookshelves
+line every wall. Ancient tomes are stacked upon a desk in a disorderly
+manner, and behind the desk... a robed figure is studying every line of text.
+He seems annoyed that you barged in unannounced.
+~
+#EXIT
+Direction east~
+ToRoom    5658
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 0 5525 1 5659
+  Reset E 1 5553 1 6
+  Reset E 1 5562 1 16
+Reset D 0 5659 1 1
+#ENDROOM
+
+#ROOM
+Vnum     5660
+Name     A Carpeted Hallway~
+Sector   city~
+Flags    nomob indoors norecall nosummon noastral~
+Desc     You're right outside a small room at the end of the hallway. Light flickers
+through the doorway, so someone must be in there or have been in there
+recently, so you decide to check it out.
+~
+#EXIT
+Direction north~
+ToRoom    5661
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5658
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5661
+Name     A Throne Room~
+Sector   inside~
+Flags    nomob indoors norecall nosummon noastral~
+Desc     A massive throne stands before you. Nearly 15 feet high, it seems out of
+place in this small room. Whoever is large enough to sit there, must be
+powerful indeed. Perhaps it would be a good idea to be cautious.
+The hallway is back to the south.
+~
+#EXIT
+Direction south~
+ToRoom    5660
+#ENDEXIT
+
+Reset M 0 5529 1 5661
+  Reset E 1 5513 1 9
+  Reset G 1 5565 1
+#ENDROOM
+
+#ROOM
+Vnum     5662
+Name     A Small Circle of Trees~
+Sector   city~
+Flags    nomob norecall~
+Desc     As you enter the small circle of trees, your eyes meet with those
+of a friendly druid. He sits cross-legged on the groud speaking with
+nature, and strumming on a lute. It is quite peaceful here.
+~
+#EXIT
+Direction north~
+ToRoom    5664
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5663
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5524
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5665
+#ENDEXIT
+
+Reset M 0 5527 1 5662
+Reset O 0 5529 1 5662
+#ENDROOM
+
+#ROOM
+Vnum     5663
+Name     A Path around the Clearing~
+Sector   city~
+Flags    nomob norecall~
+Desc     You are walking on a small path that circles around the clearing to the west.
+In the distance you can hear the faint sound of a lute...
+~
+#EXIT
+Direction west~
+ToRoom    5662
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5664
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5524
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5664
+Name     A Path around the Clearing~
+Sector   city~
+Flags    nomob norecall~
+Desc     This must be the part of the garden with the good weather. You hear birds
+singing and the gentle breeze blows across your face, carrying a faint
+tune from a lute.
+~
+#EXIT
+Direction south~
+ToRoom    5662
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5663
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5665
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5665
+Name     A Path around the Clearing~
+Sector   city~
+Flags    nomob norecall~
+Desc     You are walking along a small path along side the clearing to the east.
+The tall circle of trees surrounding it don't look at all natural, and
+your surroundings give you an odd feeling...the type that you get when
+someone unseen is watching you...
+~
+#EXIT
+Direction east~
+ToRoom    5662
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5664
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5524
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5666
+Name     A Throne Room~
+Sector   underwater~
+Flags    death nomob indoors silence nosummon noastral~
+Desc     You've done it now! Upon finding his daughter missing, Ashura flooded the 
+throne room with water. The doors have sealed themselves shut and there is
+no obvious escape. Only death awaits you.
+~
+#ENDROOM
+
+#ROOM
+Vnum     5667
+Name     Before the Valley~
+Sector   city~
+Flags    nomob norecall~
+Desc     Walking down a long sloping hillside, you leave the Southern Plains
+of Tyrith and come upon a large valley that's hidden away in the mountains 
+surrounding the plains. 
+~
+#EXIT
+Direction north~
+ToRoom    5528
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5678
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5680
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5685
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5687
+Name     Floating in a void~
+Sector   city~
+Flags    nomob safe norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5698
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5699
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5700
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5701
+Name     Floating in a void~
+Sector   city~
+Flags    nomob prototype~
+#ENDROOM
+
+#ROOM
+Vnum     5702
+Name     Floating in a void~
+Sector   city~
+Flags    nomob prototype~
+#ENDROOM
+
+#ROOM
+Vnum     5706
+Name     Floating in a void~
+Sector   city~
+Flags    nomob prototype~
+#ENDROOM
+
+#ROOM
+Vnum     5777
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5778
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5779
+Name     Floating in a void~
+Sector   city~
+Flags    nomob norecall nosummon noastral~
+#ENDROOM
+
+#ROOM
+Vnum     5790
+Name     A formless void~
+Sector   city~
+Flags    nomob indoors nosummon noastral~
+Desc     YOU SHOULDN'T BE IN HERE!
+ 
+ 
+~
+Reset M 0 5799 1 5790
+#ENDROOM
+
+#ROOM
+Vnum     5795
+Name     A Moon-Lighted Clearing~
+Sector   city~
+Flags    indoors norecall~
+Desc     Upon entering the clearing, you pause and take in the veiw, which
+is quite breathtaking. This moonlit grassy gnoll is peaceful and quiet.
+You just want lie down and sleep. The only thing out of the ordinary, is
+the fact that the moonlight seems to shine brightly in one particular spot...
+~
+#EXIT
+Direction south~
+ToRoom    5796
+#ENDEXIT
+
+Reset M 0 5513 1 5795
+#ENDROOM
+
+#ROOM
+Vnum     5796
+Name     Further Down the Hill~
+Sector   city~
+Flags    norecall~
+Desc     Travelling further down the hill, you see a clearing in the distance.
+The sun has set by the time you reach the bottom, and the full moon
+shines brightly overhead. Crickets chirp in the distance, but suddenly
+the air becomes still, and an eerie silence falls over you.
+~
+#EXIT
+Direction north~
+ToRoom    5795
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5798
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     5797
+Name     A Destructive Force~
+Sector   city~
+Flags    nomob norecall~
+Desc     A further down the steep hill, you find a massive army preparing for war.
+They don't look happy to see you.
+~
+Reset M 0 5512 1 5797
+#ENDROOM
+
+#ROOM
+Vnum     5798
+Name     The Cause~
+Sector   city~
+Flags    indoors safe norecall~
+Desc     You finally find the cause of the bad weather and strife within the garden.
+A powerful being towers over you, staring deep into your soul. He is the one
+which the gods themselves fear. Destroy him and end this before war breaks out
+and the balance of all creation is disturbed.
+~
+#EXIT
+Direction north~
+ToRoom    5797
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    5797
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5797
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5797
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    5797
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    5796
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    5797
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    5797
+#ENDEXIT
+
+Reset M 0 5515 1 5798
+#ENDROOM
+
+#ROOM
+Vnum     5799
+Name     The Infinite Power~
+Sector   city~
+Flags    dark death nomob chaotic nosummon noastral nosupplicate nomissile~
+Desc     It is all and nothing. Neither living, nor dead. Good, evil and neutral
+have no meaning. The essence of thought. The color of sound. The touch
+of the unseen. It is timeless, with no beginning or end.
+ 
+               Thus is the Infinite
+~
+#ENDROOM
+
+#ENDAREA

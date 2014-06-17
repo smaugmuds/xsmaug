@@ -1,0 +1,3121 @@
+#XSMAUGAREA
+#AREADATA
+Version      1
+Name         Miden'nir~
+Author       Copper~
+WeatherX     0
+WeatherY     0
+Ranges       5 15 0 60
+Economy      0 35006290
+#ENDAREADATA
+
+#MOBILE
+Vnum       3500
+Keywords   gypsy~
+Short      a Black Forest gypsy~
+Long       A swift little creature scrounges for nifty items.
+~
+Desc       She looks like a sneaky little creature. Don't take your eyes off of her for
+toooooo long.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Specfun    spec_thief~
+Gender     female~
+Actflags   npc scavenger stayarea~
+Affected   detect_invis infrared sneak hide~
+Stats1     -570 8 10 1 600 3575
+Stats2     8 10 80
+Stats3     2 6 1
+Stats4     0 0 1 0 0
+Attribs    10 13 13 18 13 13 18
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head legs heart guts ear eye claws~
+Attacks    claws~
+Defenses   disarm~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3501
+Keywords   mountain goblin spy inhabitant~
+Short      a goblin spy~
+Long       An inhabitant of the forest prowls about, protecting his mountain.
+~
+Desc       Prowling the Black Forest, this predator represents the initial line of
+defense against those who might try to infiltrate the mighty mountain.
+~
+Race       goblin~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Stats1     -500 6 15 6 30 800
+Stats2     5 7 55
+Stats3     1 10 4
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart guts hands feet ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3502
+Keywords   jacob finn elf~
+Short      Jacob, the young Finn elf~
+Long       A young, shivering elf quietly drops tears onto the dirt below.
+~
+Desc       Jacob looks as though he narrowly missed the evildoings of the dark
+goblins of Miden'nir. It looks, sadly, as though his brethren did not
+share his good fortune.
+~
+Race       human~
+Class      warrior~
+Position   sitting~
+DefPos     sitting~
+Gender     male~
+Actflags   npc sentinel r2 wimpy~
+Affected   hide~
+Stats1     500 7 17 6 0 600
+Stats2     1 12 47
+Stats3     1 8 0
+Stats4     0 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs hands feet ear eye~
+Attacks    trip~
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3503
+Keywords   black jack bartender man~
+Short      Jack~
+Long       A tall, chubby man focuses on making the best drinks possible for his patrons.
+~
+Desc       "Black" Jack's been employed here for much longer than he can remember. He
+drinks as much profit as he makes. Standing 6'4" and weighing about 310
+lbs., though, who's going to tell him different?
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Stats1     400 10 8 1 1500 7000
+Stats2     1 12 200
+Stats3     2 8 1
+Stats4     0 0 1 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart guts hands feet ear eye~
+Attacks    trip~
+Defenses   parry dodge~
+ShopData   17 0 0 0 0 130 90 7 21
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   tell $n Have ye tasted my specialized green beverage, $n?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   nope no~
+Comlist   tell $n Really? Disgraceful...
+shake
+tell $n Ye must try it, 'tis the best green winter ale in these parts...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yup yes uh-huh yawp yesireebob~
+Comlist   tell $n Aye? Did ya find it to yer likin'?
+wink $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3504
+Keywords   dave bard soul man~
+Short      Dave the introspective bard~
+Long       A pensive soul sits at a table, randomly questioning his liquor bottle.
+~
+Desc       Dave doesn't get out too often. Actually, he has not left his seat other
+than to sleep or relieve himself. He seems pretty content, though, for a
+person with no social life.
+~
+Race       elf~
+Class      thief~
+Position   aggressive~
+DefPos     aggressive~
+Gender     male~
+Actflags   npc sentinel stayarea~
+Affected   detect_invis~
+Stats1     600 8 13 3 10 3750
+Stats2     2 6 92
+Stats3     2 6 3
+Stats4     0 0 1 0 0
+Attribs    12 18 18 10 10 10 10
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head arms legs heart guts hands feet ear eye~
+Resist     poison~
+Suscept    magic~
+Attacks    punch trip~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   57~
+Comlist   if isnpc($n)
+else
+  emote looks up from his sorry condition for a moment.
+  grumble
+  tell $n What do ye want with me, peasant?!
+  emote lowers his weary head down to the warmth of the table.
+  snore
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3505
+Keywords   doom elite goblin figure~
+Short      A Doom elite~
+Long       A massive goblin prowls the Circle of Doom, protecting his king.
+~
+Desc       Created from Brajtkomu's own magic, this predator's duty is to rid the
+nucleus of Mount Doom of unwanted visitors. He kills on sight.
+~
+Race       goblin~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   detect_invis detect_hidden sanctuary infrared sneak~
+Stats1     -1000 16 12 4 10 4000
+Stats2     5 7 190
+Stats3     5 7 4
+Stats4     0 0 1 0 0
+Attribs    18 10 10 16 16 8 10
+Saves      -5 0 0 -3 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head legs guts feet~
+Resist     nonmagic~
+Immune     poison~
+Suscept    fire magic~
+Attacks    kick trip~
+Defenses   parry dodge disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc ($n)
+tell $n You have not been invited to this place by my king, $n
+growl $n
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3506
+Keywords   goblin doom protector~
+Short      a Doom goblin~
+Long       A protector of the mountain is here, foaming at the mouth.
+~
+Desc       Sworn to protect Mount Doom from invaders, this fierce warrior would do
+whatever he could to destroy all who sought to infiltrate his home.
+~
+Race       goblin~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc aggressive stayarea~
+Affected   detect_invis infrared~
+Stats1     -1000 10 15 3 2000 2000
+Stats2     2 6 130
+Stats3     2 6 2
+Stats4     0 0 0 0 0
+Attribs    16 13 13 13 13 8 13
+Saves      0 0 0 0 0
+Speaks     goblin~
+Speaking   goblin~
+Bodyparts  head arms legs heart guts hands feet ear eye~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if ispc ($n)
+snarl
+yell Children of Doom, the enemy is upon us!! To your weapons!!
+else
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3507
+Keywords   goblin dark king figure brajtkomu~
+Short      Brajtkomu, the Goblin King~
+Long       A lone, dark figure growls at himself from his black, decaying throne.
+~
+Desc       The shadows somehow seem to converge upon themselves, creating this horrid,
+though wondrous, creature. Brajtkomu did not gain his position and status
+only by looking so mean...
+~
+Race       goblin~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel aggressive~
+Affected   detect_evil detect_invis detect_hidden sanctuary infrared~
+Stats1     -1000 15 10 1 3500 8000
+Stats2     6 4 170
+Stats3     4 7 4
+Stats4     0 0 1 0 0
+Attribs    18 10 16 16 13 10 16
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common goblin~
+Bodyparts  head legs heart~
+Attacks    kick~
+Defenses   dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   tell $n Welcome, $n...
+grin
+tell $n Have you come to meet your DOOM?!?!
+muhaha
+ 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum       3508
+Keywords   jed innkeeper proprietor man~
+Short      Innkeeper Jed~
+Long       The proprietor sits at his desk, slowly paging through his favorite book.
+~
+Desc       Jed makes you feel right at home in this strange place. His bushy, brown
+beard is, remarkably, groomed to near perfection. He peers up at you with
+warm blue eyes, and you feel a sudden urge to rent a room. What a suave
+businessman, eh?
+~
+Race       human~
+Class      thief~
+Position   standing~
+DefPos     standing~
+Gender     male~
+Actflags   npc sentinel scavenger prototype~
+Stats1     0 10 0 0 50 0
+Stats2     1 1 88
+Stats3     2 6 2
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+Bodyparts  head legs heart feet~
+Suscept    magic~
+Defenses   dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum       3550
+Keywords   final mob~
+Short      a newly created final mob~
+Long       Some god abandoned a newly created final mob here.
+~
+Race       human~
+Class      warrior~
+Position   standing~
+DefPos     standing~
+Gender     neuter~
+Actflags   npc prototype~
+Stats1     0 1 0 0 0 0
+Stats2     0 0 0
+Stats3     0 0 0
+Stats4     0 0 0 0 0
+Attribs    13 13 13 13 13 13 13
+Saves      0 0 0 0 0
+Speaks     common~
+Speaking   common~
+#ENDMOBILE
+
+#OBJECT
+Vnum     3500
+Keywords crescent white deerbone~
+Type     armor~
+Short    a white deerbone crescent~
+Long     An earring of the purest white rests in the dirt.~
+Flags    dark magic metal~
+WFlags   take ears~
+Values   4 6 0 0 0 0
+Stats    1 10 1 0 0
+Affect       -1 -1 1 2 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3501
+Keywords green beer winter ale~
+Type     drinkcon~
+Short    "Black" Jack's Green Winter Ale~
+Long     A big bottle of green ooze has been wisely discarded on the ground.~
+WFlags   take hold~
+Values   10 10 4 0 0 0
+Stats    1 10 1 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3502
+Keywords book~
+Type     furniture~
+Short    Jed's favorite book of tales~
+Long     An old, worn book rests quietly on the ground, pages intact.~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    3 35 3 0 0
+Affect       -1 -1 2 3 0
+Affect       -1 -1 10 12 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3503
+Keywords black key~
+Type     key~
+Short    a strange black key~
+Long     An old, black key draws your attention.~
+Flags    dark metal~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    2 0 0 0 0
+#EXDESC
+ExDescKey    key~
+ExDesc       The key is obviously quite old. Upon it have been inscribed some arcane
+scribblings.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    scribblings~
+ExDesc       You cannot seem to decipher the strange runes.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3504
+Keywords vat~
+Type     container~
+Short    Jack's brewing vat~
+Long     A big vat sits majestically in the middle of the room.~
+Flags    metal~
+Values   190 0 0 0 0 0
+Stats    90 0 0 0 0
+#EXDESC
+ExDescKey    vat~
+ExDesc       The vat gets put to good use whenever Jack actually has to make a fresh batch
+of his Green Winter Ale. In other words, not too often.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3505
+Keywords doom skeleton key~
+Type     key~
+Short    the key of Doom~
+Long     A shadowy skeleton key darkens the ground below.~
+Flags    hum dark metal~
+WFlags   take hold~
+Values   0 0 0 0 0 0
+Stats    2 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3506
+Keywords doom cape~
+Type     armor~
+Short    a long, black Doom insignia cape~
+Long     A long, dark cape casts strange shadows upon the ground.~
+Flags    hum dark magic~
+WFlags   take about~
+Values   10 4 0 0 0 0
+Stats    3 3000 300 0 0
+Affect       -1 -1 -2 3 0
+Affect       -1 -1 2 1 0
+Affect       -1 -1 3 18 0
+Affect       -1 -1 1 19 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mpforce $n muhaha
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum     3507
+Keywords doom visor~
+Type     armor~
+Short    a black Doom insignia visor~
+Long     A dark visor casts strange shadows on the ground.~
+Flags    hum dark metal~
+WFlags   take eyes~
+Values   10 3 0 0 0 0
+Stats    2 5700 570 0 0
+Affect       -1 -1 1 19 0
+Affect       -1 -1 1 18 0
+Affect       -1 -1 -2 1 0
+Affect       -1 -1 -2 31 0
+Affect       -1 -1 -2 25 0
+Affect       -1 -1 -2 3 0
+Affect       -1 -1 10 13 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3508
+Keywords doom sceptre~
+Type     armor~
+Short    Brajtkomu's sceptre of Doom~
+Long     A darkened sceptre envelopes the ground in an evil mist.~
+Flags    glow hum dark evil metal~
+WFlags   take hold~
+Values   8 10 0 0 0 0
+Stats    6 190000 19000 0 0
+Affect       -1 -1 30 12 0
+Affect       -1 -1 10 13 0
+Affect       -1 -1 2 19 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3509
+Keywords clogs~
+Type     armor~
+Short    a pair of clogs made of Black Forest bark~
+Long     Some black clogs have been discarded on the ground.~
+Flags    organic~
+WFlags   take feet~
+Values   8 6 0 0 0 0
+Stats    6 10 1 0 0
+Affect       -1 -1 2 2 0
+Affect       -1 -1 10 13 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3510
+Keywords doom arm armguards guards black~
+Type     armor~
+Short    a pair of black Doom insignia armguards~
+Long     A pair of dark metal armguards casts strange shadows onto the ground.~
+Flags    dark evil metal~
+WFlags   take arms~
+Values   8 8 0 0 0 0
+Stats    4 6000 600 0 0
+Affect       -1 -1 1 19 0
+Affect       -1 -1 1 18 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3511
+Keywords signobj~
+Type     furniture~
+Short    the sign~
+Long     An old sign made of wood tilts a bit to the left.~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#OBJECT
+Vnum     3550
+Keywords final object~
+Type     trash~
+Short    a newly created final object~
+Long     Some god dropped a newly created final object here.~
+Flags    prototype~
+Values   0 0 0 0 0 0
+Stats    1 0 0 0 0
+#ENDOBJECT
+
+#ROOM
+Vnum     3500
+Name     The Plains~
+Sector   city~
+Desc     You are standing on the plains. This is a vast desolate place where the
+wind can howl undisturbed since nothing but you bars its way. However you
+are not the first to wander here. Before you somebody has left a small path.
+The path looks rather bewildered and is not the kind of path to lead to
+anywhere significant or important but it seems to have made up its mind to
+enter the hills far away north.
+~
+#EXIT
+Direction south~
+ToRoom    3501
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3501
+Name     The Lane~
+Sector   city~
+Desc     You are strolling along a pleasant, shady lane. The road is lined on both
+sides by tall, stately trees which lend the scene with a sense of quiet
+serenity. You can follow the road north or south.
+~
+#EXIT
+Direction north~
+ToRoom    3500
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3502
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3502
+Name     The Cross Roads on the Hilltop~
+Sector   city~
+Desc     You stand atop a hill upon which several roads cross.  The great city of
+Darkhaven can be seen a short distance to the west, while to the east the
+stately oaks and poplars of the holy grove wave slowly in the wind.  A
+wide, flat path leads due south through the stark landscape of the dwarven
+forest, while the tree-line lane to the north is rumoured to rapidly give
+way to desolate, open plains.  An small path leads northeast to the base
+of the hill and the mouth of a small tunnel, which you can only assume to
+be the engineering of dwarves.
+~
+#EXIT
+Direction north~
+ToRoom    3501
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8904
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3503
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    6500
+Desc      A small path leads to the base of the hill and a dwarven village.
+~
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p I seek the ruins~
+Comlist   if ispc($n)
+ if ispkill($n)
+   mea 0.$n _red A shiver rushes through your body as you return to the ruins.
+   mer 0.$n _red A chill washes over you as $n fades into nothingness...
+   mptrans 0.$n 3053
+   mpat 0.$n mpforce 0.$n look
+ else
+   mea 0.$n _red The Umbrageous Ruins is a place for murderers and thieves!
+   mea 0.$n _red It is surely a realm in which you would perish...
+ endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3503
+Name     Outskirts of Darkhaven~
+Sector   city~
+Flags    nomob~
+Desc     You stand on the outskirts of the city of Darkhaven; the primary city of
+this land.  The road leads east into the peace and quiet of the forest;
+while to the west comes to the western gate of the city, surrounded by a
+confusion of shops, bars, and market places.  Another path meanders off
+through the forest to the southeast.
+~
+#EXIT
+Direction east~
+ToRoom    3502
+Desc      Several roads crest atop a hill...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    21112
+Desc      The great eastern gate of Darkhaven...
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3586
+Desc      A pathway meaders into the forest...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3504
+Name     On a Long, Rusted Bridge~
+Sector   city~
+Desc     Much reluctance plagues your thoughts as you stumble onto the old bridge 
+leading south into the Black Forest, in which there is rumored to be an 
+ancient mountain, within which lies a labyrinth of untold riches. None
+who have ever gone looking for the treasure, though, have returned
+to verify the rumors (or perhaps chose for some reason to be silent).
+~
+#EXIT
+Direction north~
+ToRoom    21075
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3505
+Desc      The dark forest beckons...
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3590
+Desc      A crag can be seen below, but getting there from here would be impossible.
+~
+Flags     window~
+#ENDEXIT
+
+Reset O 0 3511 1 3504
+#EXDESC
+ExDescKey    sign~
+ExDesc       The sign, covered with a strange green substance, reads:
+ 
+                        B E W A R E ! ! !
+ 
+       THERE BE MEAN, VICIOUS GOBLINS CLOSE BY IN THE SOUTH!
+ 
+                      PROCEED AT OWN RISK
+ 
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   mpecho The wind whistles through the unstable planks of the rickety bridge.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p I seek the ruins~
+Comlist   if ispc($n)
+ if ispkill($n)
+   mea 0.$n _red A shiver rushes through your body as you return to the ruins.
+   mer 0.$n _red A chill washes over you as $n fades into nothingness...
+   mptrans 0.$n 3030
+   mpat 0.$n mpforce 0.$n look
+ else
+   mea 0.$n _red The Umbrageous Ruins is a place for murderers and thieves!
+   mea 0.$n _red It is surely a realm in which you would perish...
+ endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum     3505
+Name     Before the Black Forest~
+Sector   forest~
+Desc     Looking back, the sanctuary of New Darkhaven seems to beckon you now more
+than ever before. The woods to the south project feelings of despair and
+misery. The bards used to tell you stories of horror about mighty
+adventurers who would traverse into the heart of the Black Forest, never
+to return. And who knows how long the old, rusted bridge to the north
+will hold out? Better to not take that chance, perhaps.
+~
+#EXIT
+Direction north~
+ToRoom    3504
+Desc      The sanctity of New Darkhaven beckons...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3507
+Desc      The darkness slowly creeps in...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3570
+Desc      A strange building lies to the west...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3506
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction east~
+ToRoom    3550
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3509
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+Reset M 0 3501 8 3506
+#ENDROOM
+
+#ROOM
+Vnum     3507
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction north~
+ToRoom    3505
+Desc      The edge of the forest might be a welcome sight...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3510
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3508
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3508
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction east~
+ToRoom    3507
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3511
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3509
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction north~
+ToRoom    3506
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3512
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3514
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+Reset M 0 3501 8 3509
+#ENDROOM
+
+#ROOM
+Vnum     3510
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction north~
+ToRoom    3507
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3514
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3516
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3511
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest appears to grow darker and darker.
+~
+#EXIT
+Direction north~
+ToRoom    3508
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3515
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3512
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction south~
+ToRoom    3513
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3509
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+Reset M 0 3501 8 3512
+Reset M 0 3501 8 3512
+#ENDROOM
+
+#ROOM
+Vnum     3513
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction north~
+ToRoom    3512
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3584
+Desc      A trail of some sort rips through the darkened trees...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3514
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+Reset M 0 3501 8 3513
+#ENDROOM
+
+#ROOM
+Vnum     3514
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction north~
+ToRoom    3509
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3513
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3517
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3510
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3515
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction north~
+ToRoom    3511
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3516
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3518
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3516
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction north~
+ToRoom    3510
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3517
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3519
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3515
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3517
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction north~
+ToRoom    3514
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3516
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3518
+Name     Heart of the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
+~
+#EXIT
+Direction north~
+ToRoom    3515
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3522
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3519
+Name     Heart of the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
+~
+#EXIT
+Direction north~
+ToRoom    3516
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3520
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3521
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3520
+Name     Heart of the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
+~
+#EXIT
+Direction south~
+ToRoom    3523
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3519
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3521
+Name     Heart of the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
+~
+#EXIT
+Direction north~
+ToRoom    3519
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3523
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3522
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+Reset M 0 3500 2 3521
+  Reset E 1 3509 2 8
+Reset M 0 3500 2 3521
+  Reset E 1 3509 2 8
+#ENDROOM
+
+#ROOM
+Vnum     3522
+Name     Heart of the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
+~
+#EXIT
+Direction north~
+ToRoom    3518
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3521
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+Reset M 0 3501 8 3522
+#ENDROOM
+
+#ROOM
+Vnum     3523
+Name     Heart of the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     You now realize that the darkness and mystery of the Black Forest were not
+exaggerated in tales of olde. The trees appear to reach out, as if trying
+to strangle the lifeforce out of all creatures that might be foolish enough
+to wander too deep into the forest. Though the blood on the ground has
+practically disappeared, the auras of gloom and terror have certainly not
+diminished.
+~
+#EXIT
+Direction north~
+ToRoom    3520
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3551
+Desc      The dark trees become less dense to the east...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3521
+Desc      Darkness consumes the forest in a terrifying void...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3524
+Name     Underbelly of Mount Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
+~
+#EXIT
+Direction north~
+ToRoom    3525
+Desc      Into the darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3533
+Desc      A shadowy passage...
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3531
+Key       3505
+Desc      A strange odor emanates from this direction...
+~
+Keywords  grate~
+Flags     isdoor closed locked secret~
+#ENDEXIT
+
+Reset D 0 3524 4 2
+#ENDROOM
+
+#ROOM
+Vnum     3525
+Name     Underbelly of Mount Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
+~
+#EXIT
+Direction north~
+ToRoom    3526
+Desc      Into the darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3524
+Desc      Into the darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3535
+Desc      A shadowy passage...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3526
+Name     Underbelly of Mount Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
+~
+#EXIT
+Direction north~
+ToRoom    3527
+Desc      Into the darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3537
+Desc      A shadowy passage...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3525
+Desc      Into the darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3527
+Name     Underbelly of Mount Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
+~
+#EXIT
+Direction north~
+ToRoom    3528
+Desc      Into the darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3526
+Desc      Into the darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3539
+Desc      A shadowy passage...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3528
+Name     Underbelly of Mount Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
+~
+#EXIT
+Direction north~
+ToRoom    3529
+Desc      Into the darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3541
+Desc      A shadowy passage...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3527
+Desc      Into the darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3529
+Name     Underbelly of Mount Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+ground level. Burnt-out torches line the walls of the tunnel, serving as
+little more than decoration. Scarlet stains the sides of the tunnel in
+several places. Something must live down here.
+~
+#EXIT
+Direction north~
+ToRoom    3532
+Desc      A tiny spec of light slips through the dense darkness...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3528
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3543
+Desc      A shadowy passage...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3530
+Name     A Long, Cavernous Tunnel~
+Sector   inside~
+Flags    dark indoors tunnel~
+Desc     By now, the water has been totally drained from the tunnel. The chants have
+become frighteningly close. Also of notice in this portion of the tunnel is
+a repugnant stench. That is not to say that the rest of the tunnel didn't
+stink, only that the smell is a bit different and the severity is much worse
+here than there.
+~
+#EXIT
+Direction north~
+ToRoom    3556
+Desc      The dark tunnel continues...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3531
+Desc      A strange odor emanates from this direction...
+~
+#ENDEXIT
+
+Reset M 0 3506 4 3530
+  Reset E 1 3510 4 10
+#ENDROOM
+
+#ROOM
+Vnum     3531
+Name     A Massive Pile of Slop~
+Sector   inside~
+Flags    dark indoors tunnel~
+Desc     Alas, the goblins of this mountain obviously have not heard of proper waste
+disposal. A gigantic pile of something has been left here for some unknown
+reason. Maybe goblins just really like slop, or maybe there might be some
+other reason for this hygienic atrocity. Difficult to tell.
+~
+#EXIT
+Direction north~
+ToRoom    3530
+Desc      Back into the dark tunnel...
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3524
+Key       3505
+Desc      Looks pretty scary down there...
+~
+Keywords  grate~
+Flags     isdoor closed locked secret searchable~
+#ENDEXIT
+
+Reset D 0 3531 5 2
+#ENDROOM
+
+#ROOM
+Vnum     3532
+Name     Underbelly of Mount Doom~
+Sector   inside~
+Flags    indoors~
+Desc     The tunnel, which looked to have continued north for some time, stops
+abruptly at this point. The torches on the walls are lit, highlighting the
+scarlet-stained spots on the sides of the tunnel. The chant-like noises that
+had disappeared momentarily have now resurfaced, louder than before. Also,
+an old, faded drawing on the north wall catches your attention.
+~
+#EXIT
+Direction north~
+ToRoom    3545
+Desc      An old, broken ladder can be seen faintly through the darkness...
+~
+Keywords  drawing~
+Flags     isdoor closed secret climb~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3529
+Desc      Back into the darkness...
+~
+#ENDEXIT
+
+Reset D 0 3532 0 1
+#EXDESC
+ExDescKey    drawing~
+ExDesc       The drawing depicts an old, broken ladder. At the bottom of the ladder, a
+pile of bones litters blood-soaked ground.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     3533
+Name     A Damp Passage~
+Sector   inside~
+Flags    dark indoors~
+Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+#EXIT
+Direction north~
+ToRoom    3534
+Desc      A tiny alcove...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3524
+Desc      Back into the main tunnel of the underbelly...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3534
+Name     A Dark Alcove~
+Sector   inside~
+Flags    dark indoors~
+Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+#EXIT
+Direction south~
+ToRoom    3533
+Desc      Back into the shadowy passage...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3535
+Name     A Damp Passage~
+Sector   inside~
+Flags    dark indoors~
+Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+#EXIT
+Direction north~
+ToRoom    3536
+Desc      A tiny alcove...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3525
+Desc      Back into the main tunnel of the underbelly...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3536
+Name     A Dark Alcove~
+Sector   inside~
+Flags    dark indoors~
+Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+#EXIT
+Direction south~
+ToRoom    3535
+Desc      Back into the shadowy passage...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3537
+Name     A Damp Passage~
+Sector   inside~
+Flags    dark indoors~
+Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+#EXIT
+Direction north~
+ToRoom    3538
+Desc      A tiny alcove...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3526
+Desc      Back into the main tunnel of the underbelly...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3538
+Name     A Dark Alcove~
+Sector   inside~
+Flags    dark indoors~
+Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+#EXIT
+Direction south~
+ToRoom    3537
+Desc      Back into the shadowy passage...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3539
+Name     A Damp Passage~
+Sector   inside~
+Flags    dark indoors~
+Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+#EXIT
+Direction north~
+ToRoom    3540
+Desc      A tiny alcove...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3527
+Desc      Back into the main tunnel of the underbelly...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3540
+Name     A Dark Alcove~
+Sector   inside~
+Flags    dark indoors~
+Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+#EXIT
+Direction south~
+ToRoom    3539
+Desc      Back into the shadowy passage...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3541
+Name     A Damp Passage~
+Sector   inside~
+Flags    dark indoors~
+Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+#EXIT
+Direction north~
+ToRoom    3542
+Desc      A tiny alcove...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3528
+Desc      Back into the main tunnel of the underbelly...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3542
+Name     A Dark Alcove~
+Sector   inside~
+Flags    dark indoors~
+Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+#EXIT
+Direction south~
+ToRoom    3541
+Desc      Back into the shadowy passage...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3543
+Name     A Damp Passage~
+Sector   inside~
+Flags    dark indoors~
+Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+the sides of the room is something that is not quite water, though not quite
+slime. Also, the temperature in this small passage is considerably higher
+than in the main corridor of the underbelly. Possibly, this might be because
+of the decreased size of this room.
+~
+#EXIT
+Direction north~
+ToRoom    3544
+Desc      A tiny alcove...
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3529
+Desc      Back into the main tunnel of the underbelly...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3544
+Name     A Dark Alcove~
+Sector   inside~
+Flags    dark indoors~
+Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+that peeks in from the main tunnel of the underground casts strange, twisted
+shapes upon the distorted walls of the umbrageous alcove.
+~
+#EXIT
+Direction south~
+ToRoom    3543
+Desc      Back into the shadowy passage...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3545
+Name     An Old, Broken Ladder~
+Sector   inside~
+Flags    dark indoors~
+Desc     The distance to the bottom of this hole is much more than anyone in their
+right mind would care to plunge. Fortunately, the ladder looks sturdy enough
+to carry even slightly-heavy souls down into the depths of the underbelly.
+Probably not the wisest thing to test its might, though. Also, a weathered
+drawing of some sort can be viewed on the wall on the south side of the room.
+~
+#EXIT
+Direction south~
+ToRoom    3532
+Desc      Back into the darkness...
+~
+Keywords  drawing~
+Flags     isdoor closed secret~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3546
+Desc      A descent into mystery...
+~
+Flags     climb~
+#ENDEXIT
+
+Reset D 0 3545 2 1
+#EXDESC
+ExDescKey    drawing~
+ExDesc       The drawing depicts a shadowy, massive figure apparently toying with a group
+of blood-soaked adventurers.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     3546
+Name     An Old, Broken Ladder~
+Sector   inside~
+Flags    dark indoors~
+Desc     The old ladder continues to bend, though refusing to break beneath the same
+weight it has weathered thousands of times before. The bottom of the hole
+appears close, though through the darkness it is difficult to tell.
+~
+#EXIT
+Direction up~
+ToRoom    3545
+Desc      Up the old, broken ladder...
+~
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3547
+Desc      A descent into mystery...
+~
+Flags     climb~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3547
+Name     An Old, Broken Ladder~
+Sector   inside~
+Flags    dark indoors~
+Desc     The bottom of the hole is definitely close now. The ridged ground below can
+be slightly uncovered through the shadows that race back and forth across
+the old ladder's rungs. A vile stench seems to emanate from below, causing
+slight nausea, though it is not nearly potent enough at this point to make
+you decide to turn back.
+~
+#EXIT
+Direction up~
+ToRoom    3546
+Desc      Up the old, broken ladder...
+~
+Flags     climb~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3548
+Desc      The bottom of the old, broken ladder...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3548
+Name     The Bottom of the Ladder~
+Sector   inside~
+Flags    dark nomob indoors~
+Desc     The stink has now become an unfortunate reality. No matter how much breath
+is held, the odor continues to unwantedly sneak into your nasal passages.
+The curiosity of what lies beyond this spot makes the unbearable odors
+temporarily subside, however.
+~
+#EXIT
+Direction north~
+ToRoom    3549
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3547
+Desc      Up the old, broken ladder...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3549
+Name     The Circle Of Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+#EXIT
+Direction south~
+ToRoom    3548
+Desc      Back towards the old, broken ladder...
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3557
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3558
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3550
+Name     Within the Black Forest~
+Sector   forest~
+Flags    dark~
+Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+noises come at you from each direction. The leaves on the ground might make
+rustling sounds if they were not soaked down with blood. In each direction,
+the forest seems to grow darker and darker.
+~
+#EXIT
+Direction west~
+ToRoom    3506
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3551
+Name     Gazing Upon Mount Doom~
+Sector   city~
+Flags    dark~
+Desc     The forest is abruptly left in the distance. Gazing up, the mountain peers
+down upon you like a vulture carefully monitoring its prey. Though this
+place looks quite serene from the outside, the stories and tales about Mount
+Doom have discredited that notion of serenity long before now.
+~
+#EXIT
+Direction south~
+ToRoom    3552
+Key       3503
+Desc      The mysteries of the mountain beckon...
+~
+Keywords  boulder~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3523
+#ENDEXIT
+
+Reset M 0 3501 8 3551
+Reset M 0 3501 8 3551
+Reset M 0 3506 4 3551
+  Reset E 1 3510 4 10
+  Reset G 1 3505 1
+Reset D 0 3551 2 2
+#ENDROOM
+
+#ROOM
+Vnum     3552
+Name     A Long, Cavernous Tunnel~
+Sector   inside~
+Flags    dark indoors tunnel~
+Desc     Though cold and dreary-looking from the outside, the temperature within the
+mountain is relatively comfortable. The tunnel appears to stretch for some
+distance southward, though traversing too far into this accursed place does
+not look to be a very wise decision.
+~
+#EXIT
+Direction north~
+ToRoom    3551
+Key       3503
+Desc      The dark forest awaits...
+~
+Keywords  boulder~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3553
+Desc      The dark tunnel continues...
+~
+#ENDEXIT
+
+Reset M 0 3506 4 3552
+  Reset E 1 3510 4 10
+Reset D 0 3552 0 2
+#ENDROOM
+
+#ROOM
+Vnum     3553
+Name     A Long, Cavernous Tunnel~
+Sector   inside~
+Flags    dark indoors tunnel~
+Desc     The tunnel continues to run southward, with no immediate end in sight. The
+cavern walls have begun to trickle water onto the dirt below, making it
+quite difficult to sneak about as there are puddles splishing and splashing
+with each step.
+~
+#EXIT
+Direction north~
+ToRoom    3552
+Desc      The dark tunnel continues...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3555
+Desc      The dark tunnel continues...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3554
+Name     Green Winter Ale Brewery~
+Sector   inside~
+Flags    dark indoors~
+Desc     Ahh, the good ol' Green Winter Ale Brewery. This is the place in which all
+of Jack's "magic" begins (and, fortunately, ends). The dust that covers most
+of the floor would suggest that Jack has not needed to brew any fresh Green
+Ale in quite some time. Maybe the shelf lives of the existing bottles is
+just very long. Probably not, though.
+~
+#EXIT
+Direction up~
+ToRoom    3576
+Keywords  trapdoor~
+Flags     isdoor closed secret~
+#ENDEXIT
+
+Reset O 0 3504 1 3554
+  Reset P 0 3503 1 3504
+Reset D 0 3554 4 1
+#ENDROOM
+
+#ROOM
+Vnum     3555
+Name     A Long, Cavernous Tunnel~
+Sector   inside~
+Flags    dark indoors tunnel~
+Desc     The puddles have now become a single, massive pool enveloping the floor
+of the tunnel. To the south, strange, chant-like noises beckon investigation
+in that direction. The journey now has become one of survival, not only
+a search for riches. The labyrinth depicted in tales of olde must be close,
+though in which direction is totally unclear.
+~
+#EXIT
+Direction north~
+ToRoom    3553
+Desc      The dark tunnel continues...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3556
+Desc      The dark tunnel continues...
+~
+#ENDEXIT
+
+Reset M 0 3506 4 3555
+  Reset E 1 3510 4 10
+#ENDROOM
+
+#ROOM
+Vnum     3556
+Name     A Long, Cavernous Tunnel~
+Sector   inside~
+Flags    dark indoors tunnel~
+Desc     At this point in the tunnel, tiny cracks have become evident in the lower
+parts of the walls. What might have caused them is anybody's guess. The
+strange thing is that all of the water from the floor of the tunnel seems to
+be gravitating towards the cracks. From the south, the chant-like noises
+have become louder.
+~
+#EXIT
+Direction north~
+ToRoom    3555
+Desc      The dark tunnel continues...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3530
+Desc      The dark tunnel continues...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3557
+Name     The Circle of Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+#EXIT
+Direction north~
+ToRoom    3559
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3549
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3558
+Name     The Circle of Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+#EXIT
+Direction north~
+ToRoom    3560
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3549
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3559
+Name     The Circle of Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+#EXIT
+Direction south~
+ToRoom    3557
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3561
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+Reset M 0 3505 2 3559
+  Reset E 1 3506 2 12
+  Reset E 1 3507 2 20
+#ENDROOM
+
+#ROOM
+Vnum     3560
+Name     The Circle of Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+#EXIT
+Direction south~
+ToRoom    3558
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3562
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+Reset M 0 3505 2 3560
+  Reset E 1 3506 2 12
+  Reset E 1 3507 2 20
+#ENDROOM
+
+#ROOM
+Vnum     3561
+Name     The Circle of Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+#EXIT
+Direction northwest~
+ToRoom    3563
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3559
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3562
+Name     The Circle of Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+#EXIT
+Direction northeast~
+ToRoom    3563
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3560
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3563
+Name     The Circle of Doom~
+Sector   inside~
+Flags    dark indoors~
+Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+fills the frigid air with an immense aura of despair. The blackened walls,
+ceiling and floor look infinite from this point-of-view. Torches made from
+bones of some sort line the sides of the room, though none are lit.
+~
+#EXIT
+Direction north~
+ToRoom    3564
+Desc      A soft green glow emanates from this direction...
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3561
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3562
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3564
+Name     A Skull-filled Tunnel~
+Sector   inside~
+Flags    dark nomob indoors tunnel~
+Desc     Each and every piece of this particular tunnel seems to have been built with
+the skulls of different creatures- those creatures that foolishly traversed
+into the Circle of Doom. Though no torches appear in sight, a soft, though
+eerie, glow pulsates out from beneath the skulls. Shadows created by the
+mysterious glow reach all about, as if cradling the tunnel in some sort of
+devious embrace.
+~
+#EXIT
+Direction north~
+ToRoom    3565
+Desc      The mysterious tunnel continues...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3563
+Desc      Impending Doom...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3565
+Name     A Skull-filled Tunnel~
+Sector   inside~
+Flags    dark indoors tunnel~
+Desc     Each and every piece of this particular tunnel seems to have been built with
+the skulls of different creatures- those creatures that foolishly traversed
+into the Circle Of Doom. Though no torches appear in sight, a soft, though
+eerie, glow pulsates out from beneath the skulls. Shadows created by the
+mysterious glow reach all about, as if cradling the tunnel in some sort of
+devious embrace.
+~
+#EXIT
+Direction north~
+ToRoom    3566
+Desc      The mysterious tunnel continues...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3564
+Desc      The mysterious tunnel continues...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3566
+Name     A Skull-filled Tunnel~
+Sector   inside~
+Flags    dark indoors tunnel~
+Desc     Each and every piece of this particular tunnel seems to have been built with
+the skulls of different creatures- those creatures that foolishly traversed
+into the Circle of Doom. Though no torches appear in sight, a soft, though
+eerie, glow pulsates out from beneath the skulls. Shadows created by the
+mysterious glow reach all about, as if cradling the tunnel in some sort of
+devious embrace.
+~
+#EXIT
+Direction north~
+ToRoom    3567
+Desc      Darkness, once again, prevails...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3565
+Desc      The mysterious tunnel continues...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3567
+Name     The Dark Landing~
+Sector   inside~
+Flags    dark indoors~
+Desc     The skulls trail off as the tunnel turns into a dark, gloomy landing. An
+even darker set of stairs leads down into possible doom. Thoughts and
+questions begin to take shape. Have any souls ever made it this deep into
+the evil mountain? If so, have they made it out alive? Only glory remains
+now.
+~
+#EXIT
+Direction south~
+ToRoom    3566
+Desc      A soft green glow emanates from the mysterious tunnel...
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3568
+Desc      This sort of darkness you have not before witnessed...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3568
+Name     Lair of the Goblin King~
+Sector   inside~
+Flags    dark indoors chaotic norecall nosummon noastral~
+Desc     Spiderwebs blanket the ceiling and cracks of the goblin king's throne room.
+A massive, crumbling granite throne sits darkly in the middle of the dirt-
+covered floor, casting visions of terror upon the four walls. The room's
+temperature must be close to freezing, and you think that whoever or whatever
+lives in this place must not be too warm itself.
+~
+#EXIT
+Direction up~
+ToRoom    3567
+Desc      Back towards the mysterious tunnel...
+~
+#ENDEXIT
+
+Reset M 0 3507 1 3568
+  Reset E 1 3508 1 17
+#ENDROOM
+
+#ROOM
+Vnum     3569
+Name     Diov a ni gnitaolf~
+Sector   city~
+Flags    nomob~
+#ENDROOM
+
+#ROOM
+Vnum     3570
+Name     Outside a Mysterious Inn~
+Sector   city~
+Flags    nomob~
+Desc     The darkness engulfing the forest lessens as the inn becomes near. Equipped
+with battered shutters and chipped paint, this place still seems to oddly
+possess a heightened sense of warmth and friendliness. There is, however,
+a not-so-fresh scent creeping out from the entrance of the inn.
+~
+#EXIT
+Direction east~
+ToRoom    3505
+Desc      The darkness creeps in...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3574
+Desc      The interior of the Green Gobble Inn lies to the west...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3571
+Name     The Clover Suite~
+Sector   inside~
+Flags    indoors~
+Desc     So named because of its odd shape, the room contains three tiny alcoves-
+one in the north wall, one in the east, and one in the west. A bed lies in
+the northern alcove, while a dresser lies in the east and a small desk in
+the west. A large oriental rug covers the spacious center of the room.
+~
+#EXIT
+Direction east~
+ToRoom    3579
+Desc      Back towards the scary stairs...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3572
+Name     The King's Suite~
+Sector   inside~
+Flags    indoors~
+Desc     Jed has reserved this room for the distant possibility that a king of some
+sort might actually stay here sometime. You are pretty certain that there
+won't be an occupant here anytime in the near future.
+~
+#EXIT
+Direction south~
+ToRoom    3579
+Desc      Back towards the scary stairs...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3573
+Name     The Recovery Room~
+Sector   inside~
+Flags    indoors~
+Desc     This shabby, threadbare room appears to serve the purpose of housing those
+individuals who have consumed a bit too much of Jack's green winter ale and
+are quite unable to make the journey home on the same night. A messy double
+bed- the only piece of furniture in the room- rests in the middle of the
+floor and looks as though it has not been made up nor laundered in quite
+some time.
+~
+#EXIT
+Direction north~
+ToRoom    3579
+Desc      Back towards the scary stairs...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3574
+Name     Jed's Desk~
+Sector   inside~
+Flags    nomob indoors~
+Desc     The Green Gobble actually is much bigger on the inside than it appears from
+the shadowy forest. An unspectacular reception desk beckons you from the
+southwest corner of the room. Directly to the east of the front desk, a
+flight of stairs trails up to the guest rooms.
+~
+#EXIT
+Direction north~
+ToRoom    3576
+Desc      A sign reads, simply, 'Saloon.'
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3570
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3577
+Desc      The warm light of the inn becomes more dim...
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3579
+Desc      A flight of scary stairs...
+~
+#ENDEXIT
+
+Reset M 0 3508 1 3574
+  Reset E 1 3502 1 17
+#ENDROOM
+
+#ROOM
+Vnum     3575
+Name     The Bloodsoaked Brambles~
+Sector   forest~
+Flags    dark~
+Desc     The darkened trail comes to an abrupt stop at this point. Floating all about
+is an overshadowing sense of loss. There seem to have been rose bushes on
+the sides of the path. They all have been trampled and now drip with blood.
+You can only hope that whatever horrors took place here do not soon return.
+~
+#EXIT
+Direction west~
+ToRoom    3581
+Desc      A trail thru the woods.
+~
+#ENDEXIT
+
+Reset M 0 3502 1 3575
+  Reset E 1 3500 1 19
+#ENDROOM
+
+#ROOM
+Vnum     3576
+Name     "Black" Jack's Dusty Saloon~
+Sector   inside~
+Flags    indoors~
+Desc     Mounds of dust cover the floor. The tables look as though they might have
+been strewn about in a skirmish and long forgotten. There is, however, a
+single, upright table in the southeast corner of the bar- possibly an
+indication of just how much business "Black" Jack does nowadays.
+~
+#EXIT
+Direction south~
+ToRoom    3574
+Desc      You can stumble back towards Jed.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3554
+Keywords  trapdoor~
+Flags     isdoor closed secret searchable~
+#ENDEXIT
+
+Reset M 0 3503 1 3576
+  Reset G 1 3501 3503
+Reset D 0 3576 5 1
+#ENDROOM
+
+#ROOM
+Vnum     3577
+Name     A Dark Corner Room~
+Sector   inside~
+Flags    indoors~
+Desc     The atmosphere in this part of the inn is one of solemnity. There are but
+three lonely tables taking up space in a room that could easily host ten or
+so. Though the mood here is nothing short of morose, it is quite a bit better
+than Jack's place.
+~
+#EXIT
+Direction east~
+ToRoom    3574
+Desc      Back towards Jed...
+~
+#ENDEXIT
+
+Reset M 0 3504 1 3577
+#ENDROOM
+
+#ROOM
+Vnum     3578
+Name     A Dark, Dusty Attic~
+Sector   inside~
+Flags    dark indoors~
+Desc     Despite a tiny layer of dust on the ground, the attic actually seems to be
+the cleanest part of the inn. Scattered boxes and miscellaneous items of
+mostly-insignificant worth litter the floor. There is, however, one box,
+in particular, that catches your attention. Also, there is a sign posted
+on the western wall of the attic.
+~
+#EXIT
+Direction down~
+ToRoom    3579
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       The sign, worn and torn throughout the years, reads:
+ 
+ 
+                  DO NOT feed the rodents!!
+ 
+          (Management assumes no responsibility for injuries
+           that result from negligent rodent relations)
+ 
+ 
+ 
+                                             - Jed
+ 
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    box~
+ExDesc       It appears to have caught your attention because of Jed's stinky old shoes
+and undergarments contained within. Better to leave this box alone.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum     3579
+Name     A Creepy Corridor~
+Sector   inside~
+Flags    indoors~
+Desc     The second floor to this place is no more spectacular than the first. The
+corridor is filled with dust, and the floorboards make loud, unsettling
+creaking noises as you arrive at the top of the stairs. The corridor
+hosts three guestrooms, though you highly doubt that they are occupied.
+~
+#EXIT
+Direction north~
+ToRoom    3572
+Desc      A "majestic" room lies to the north...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3573
+Desc      A dingy room lies to the south...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3571
+Desc      A strangely-shaped room lies to the west...
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3578
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3574
+Desc      A flight of scary stairs...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3580
+Name     Floating in a void~
+Sector   city~
+Flags    nomob~
+#ENDROOM
+
+#ROOM
+Vnum     3581
+Name     On a Darkened Trail~
+Sector   forest~
+Flags    dark~
+Desc     A tiny trail of blood runs to the east, becoming more and more dense as the
+footprints seem to blend together. Also, the once serene breeze has now
+become a dark, dreary whisper.
+~
+#EXIT
+Direction east~
+ToRoom    3575
+Desc      The darkened trail appears to stop...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3582
+Desc      The darkened trail continues...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3582
+Name     On a Darkened Trail~
+Sector   forest~
+Flags    dark~
+Desc     Here, you think you can almost make out tiny footprints in the visible parts
+of the dirt. Beside the tiny footprints lie bigger, uglier footprints. You
+can only wonder why two creatures of such differing size would choose to
+travel together.
+~
+#EXIT
+Direction east~
+ToRoom    3581
+Desc      The darkened trail continues...
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3583
+Desc      The darkened trail continues...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3583
+Name     On a Darkened Trail~
+Sector   forest~
+Flags    dark~
+Desc     The trail becomes darker to the north. The trampling of the trees and plant
+life appears to become more intense in that direction, also. A frightful,
+though serene, breeze blows through what remains of the treetops.
+~
+#EXIT
+Direction north~
+ToRoom    3582
+Desc      The darkened trail continues...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3584
+Desc      The darkened trail twists toward the forest...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3584
+Name     On a Darkened Trail~
+Sector   forest~
+Flags    dark~
+Desc     The forest narrows into what looks to have been a recently-constructed path
+of some sort. The forest looks as though it has been deliberately pushed
+aside to make room for some dark, mighty force.
+~
+#EXIT
+Direction east~
+ToRoom    3583
+Desc      The darkened trail continues...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3513
+Desc      The forest concedes to the vast darkness...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3585
+Name     Beside a murky river~
+Sector   forest~
+Flags    nomob~
+Desc     You've clambered down between several large rocks resting on the steep
+banks of a murky river.  The only exit appears to be back from where
+you came.
+~
+#ENDROOM
+
+#ROOM
+Vnum     3586
+Name     Inside the Forest's Edge~
+Sector   field~
+Desc     You stand just inside the forest's edge in a narrow trail.  To the
+northwest runs a large, busy road, while the trail itself heads into
+the relative quiet of the forest to the southwest.
+~
+#EXIT
+Direction northwest~
+ToRoom    3503
+Desc      The outskirts of Darkhaven...
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3587
+Desc      The trail continues into the forest...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3587
+Name     Along a Quiet Trail~
+Sector   field~
+Desc     You travel down a quiet, narrow trail through the forest.  The sounds of
+civilization can be heard roughly north of here, while the forest changes
+gradually to the south. 
+~
+#EXIT
+Direction south~
+ToRoom    3588
+Desc      The trail continues...
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3586
+Desc      The trail continues toward the forest's edge.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3588
+Name     A Quiet Trail~
+Sector   field~
+Desc     You travel down a quiet, narrow trail through the forest.  The sounds of
+civilization can be heard roughly north of here, while the forest changes
+gradually to the south. 
+~
+#EXIT
+Direction north~
+ToRoom    3587
+Desc      Along the quiet trail...
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1501
+Desc      A bend in the trail...
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum     3589
+Name     Floating in a void~
+Sector   city~
+Flags    nomob~
+#ENDROOM
+
+#ROOM
+Vnum     3590
+Name     Beneath a rusted bridge~
+Sector   hills~
+Desc     Here opens a small crag just outside an steep earth embankment, and just
+beneath what appears to be a large and somewhat decrepit bridge.  The
+stench of sewage wafts from the gaping hole in the embankment, and the
+nearby rush of what sounds like a large river can be heard, though you
+can't seem to see it from here.  You can climb up to the bridge from
+this spot, though from the looks of it the narrow passage upward would
+be too precarious to enable you to make it back down.
+~
+#EXIT
+Direction north~
+ToRoom    7031
+Desc      A gaping hole in the embankment.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3504
+Flags     hidden can_climb~
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

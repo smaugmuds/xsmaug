@@ -1,0 +1,7239 @@
+#AREA the Most Gallant Castle~
+
+
+#VERSION 1 
+#AUTHOR Erdos~
+#RANGES 
+50 50 2 65 
+$
+#RESETMSG The call to arms sounds throughout the halls of the castle!~
+#FLAGS 
+0 20
+#ECONOMY 29999999 633383738
+#CLIMATE 2 2 2
+#MOBILES 
+#2800 
+cougar cat mother~ 
+a mother cougar~ 
+A mother cougar relaxes in the shade afforded by the cave. 
+~ 
+The cougar's eyes sparkle with wisdom and intelligence. She chooses to 
+take the pacifist path, probably in hopes of sparing her nearby cubs the 
+hassle involved. Of course, if you choose otherwise, she will by all 
+means fight to the death to protect those cubs. 
+~ 
+67 4194848 150 C 
+10 0 -8 0d0+0 0d0+0 
+0 0 
+112 112 2 
+15 15 17 16 14 15 15 
+-3 -3 -3 -3 -3 
+29 3 0 0 1 1 0 
+0 0 134284304 0 0 0 0 0 
+> rand_prog 1~ 
+yawn 
+~ 
+> death_prog 100~ 
+mpe _gre The mother falls over her cubs, her body burying them in a final 
+mpe _gre sacrificial effort to keep them safe. 
+~ 
+| 
+#2801 
+cougar cub~ 
+a newly born cub~ 
+A newly born cub stares at you with wide eyes, like you're the most fascinating thing on earth. 
+~ 
+Without a doubt, this is one of the cutest little creatures under the 
+light of the sun. Freshly born, he is still very curious about everything 
+he sees, including you. At first cautious, he gradually musters up some 
+courage and tentatively smells your boots. Liking the smell of them, he 
+proceeds to lick them. 
+~ 
+131201 0 500 C 
+5 0 -3 0d0+0 0d0+0 
+0 0 
+112 112 1 
+10 12 13 15 13 19 18 
+4 4 4 4 4 
+29 3 0 0 1 1 0 
+3 0 134284308 2099200 0 256 1 0 
+> rand_prog 1~ 
+bounce 
+~ 
+> death_prog 100~ 
+mpe _lbl The cub's eyes look very sad and hurt, because he was so quickly 
+mpe _lbl forced back out of a world he where he still had so much to explore. 
+~ 
+| 
+#2802 
+knight errant~ 
+a Knight Errant~ 
+A knight seeking adventures stands in the middle of the path, blocking your way. 
+~ 
+Young, this knight is rash and haughty. But, if his arrogance doesn't 
+get him an early grave, he may grow to be a fine knight of great worship. 
+But not if you kill him, of course. 
+~ 
+67 4194856 450 C 
+45 0 -45 1d1+3499 0d0+0 
+500 0 
+112 112 1 
+20 11 11 14 18 15 13 
+-15 -15 -15 -15 -15 
+0 11 0 0 1 1 5 
+85 0 1 224 2116864 4 176 2097155 
+> greet_prog 100~ 
+if isaffected($i) == detect_traps 
+mpmset self affected detect_traps 
+mpmset self flags pacifist 
+endif 
+if wasinroom($n) > 2812 
+break 
+endif 
+mpe _cya Greetings $n. To prove myself in battle I must joust with all manner 
+mpe _cya of folk who pass this way. If you do not wish to joust with me, then 
+mpe _cya please turn back, for as long as my limbs draw breath, I shall 
+mpe _cya not let you pass. 
+if ispassage($i) == east 
+mpclose 2812 1 
+endif 
+mprestore $i 32000 
+~ 
+> act_prog backstab~ 
+'Loathe am I to do battle with such a traitorous, wretched creature. 
+'You are a sorely unfair knight, to stab me in the back like that! 
+,lunges at you repeatedly with his sword, snarling menacingly. 
+lunge 
+lunge 
+lunge 
+lunge 
+lunge 
+lunge 
+~ 
+> act_prog circle~ 
+,spins around suddenly to face you, catching you off guard. 
+'So you see, your wretched tactics are not always lucrative! 
+punt $n 
+knee $n 
+elbow $n 
+shoulder $n 
+headbutt $n 
+~ 
+> act_prog p grasp suspira~ 
+'Perish, bloodsucking demon! 
+roundhouse 
+leap 
+cuff 
+~ 
+> fight_prog 100~ 
+if isaffected($i) == detect_traps 
+break 
+endif 
+if isaffected($i) == detect_magic 
+,charges at you, his sword slashing about wildly! 
+mpdamage $n 100 
+else 
+,draws his weapon, jumping into a fighting stance. 
+'Touch'e! En guard! 
+,swipes his sword through the air a few times, showing he means business. 
+'Say you yield, and I will not kill you! 
+mpmset self affected detect_magic 
+wield sword 
+endif 
+~ 
+> speech_prog yield yield. yield!~ 
+if isfight($i) 
+mppeace $i 
+,nods, sheathing his sword. 
+'Let it be known that this day, I bested you in fair combat! 
+'Now turn back, for you are too weak to adventure in Castle Gallant. 
+if isaffected($i) == detect_magic 
+mpmset self affected detect_magic 
+endif 
+else 
+'You yield? But we aren't even fighting! 
+'If you're THAT much of a chicken, why are you here at Castle Gallant? 
+mad $n 
+endif 
+~ 
+> act_prog flees~ 
+yell Let it be known that this day, $n was beaten by myself! 
+mpat 0.$n mpforce $n yell 'Tis true! I was forced to flee like a dog! 
+mpmset self affected detect_magic 
+~ 
+> hitprcnt_prog 15~ 
+mppeace $i 
+'Argh! I yield! I yield!! 
+grovel $n 
+yell $n is the most worshipful knight I have ever seen! 
+yell I yield myself to $m! 
+,rolls on the floor pathetically grovelling to you. 
+'Please don't kill me! You may pass, you may pass! 
+mpmset $i flags pacifist 
+mpmset $i affected detect_traps 
+if isopen($i) == east 
+else 
+mpopen 2812 2814 1 
+endif 
+if isaffected($i) == detect_magic 
+mpmset $i affected detect_magic 
+endif 
+~ 
+> rand_prog 1~ 
+if isaffected($i) == detect_traps 
+grovel $r 
+'I beg of you! I am too young to die... 
+'Please... pass in peace, I yield fully. 
+else 
+loom $r 
+'What's wrong, afraid to draw your weapon? 
+'I'll even let you take the first blow. 
+endif 
+~ 
+> death_prog 100~ 
+'I yield! I yield!!!! 
+,drops to his knees frantically, begging for mercy. 
+mpe _gre Grinning, you slice his head off cruelly. 
+mpe _cya You step on the bloodied corpse. Obviously the knight cannot 
+mpe _cya stand in your way any longer! 
+if isopen($i) == east 
+else 
+mpopen 2812 2814 1 
+endif 
+~ 
+| 
+#2803 
+strong warhorse war horse~ 
+a strong warhorse~ 
+A strong warhorse, all set up for a long ride, is tethered to a tree. 
+~ 
+This horse's muscles ripple as it moves. It's eyes sparkle with intelligence. 
+It is white, with a few brown splotches. It has been all set up for 
+riding, which is quite convenient for any horse thieves who happen to be 
+passing by... 
+~ 
+17039363 4194816 0 C 
+30 0 -5 0d0+0 0d0+0 
+0 0 
+112 112 1 
+25 13 13 15 15 20 13 
+0 0 0 0 0 
+86 3 0 0 1 1 0 
+65 0 67175431 2 2097152 1 417 6 
+> act_prog p mounts you.~ 
+mpe _cya The strong warhorse throws back it's head proudly and neighs. 
+~ 
+> act_prog p dismounts you.~ 
+mpe _cya The strong warhorse relaxes and starts idly eating grass. 
+~ 
+| 
+#2804 
+patrolman archer patrol man~ 
+a Gallant patrolman~ 
+An archer patrolman of Castle Gallant casts a judgemental glance at you. 
+~ 
+This fellow is honored to be given the critical task of patrolling the 
+fields surrounding Castle Gallant. If any enemy is trying to surprise 
+attack the castle, this archer will really throw a gear in their plans. 
+He returns your look with a sneer. 
+~ 
+65601 4719144 400 C 
+45 0 -50 1d1500+2655 0d0+0 
+100 0 
+112 112 1 
+17 14 12 15 15 13 13 
+0 0 0 0 0 
+0 11 0 0 1 1 4 
+85 0 7 8192 2100480 1048576 192 2621507 
+> rand_prog 4~ 
+put all.bolt quiver 
+~ 
+> fight_prog 25~ 
+get magnetized quiver 
+if ovnuminv(2809) == 0 
+'Curses!! I'm out of arrows! 
+flee 
+else 
+mppeace $i 
+mpe _gre $I jumps a few feet back, levels his crossbow, and fires! 
+wield crossbow 
+fire $n 
+if isfight($i) 
+else 
+mpkill $n 
+endif 
+endif 
+~ 
+> fight_prog 50~ 
+,mutters some words of healing. 
+c heal 
+c heal 
+c heal 
+~ 
+> entry_prog 100~ 
+,walks in, his crossbow levelled at you. 
+'Don't try anything funny while you're in the Gallant jurisdiction... 
+~ 
+> greet_prog 100~ 
+yell $n is approaching the castle! 
+~ 
+| 
+#2805 
+tough warrior guard~ 
+a tough warrior guard~ 
+A tough warrior guard sternly blocks your path. Your journey ends here. 
+~ 
+This fellow is a giant of a man. You doubt you can defeat him and still 
+have enough fight left in you to take on his friends who will surely come 
+to avenge him... 
+~ 
+33554499 373293736 500 C 
+2 0 -300 1d1+20000 0d0+0 
+1 0 
+112 112 1 
+25 15 15 25 25 15 20 
+-30 -30 -30 -30 -30 
+19 11 0 0 1 1 6 
+85 0 1551 1056768 2116864 0 896 524291 
+> fight_prog 30~ 
+yell $n is trying to invade the castle! 
+stun 
+stun 
+~ 
+> fight_prog 25~ 
+'I won't let you through!! 
+blitz 
+pumm 
+swipe 
+spurn 
+~ 
+> fight_prog 15~ 
+mea $n _red $I slams his fist into your face hard, and you are dazed... 
+mer $n _red $I slams his fist into $n's face hard, and $n is dazed... 
+if level($n) < 51 
+mpdelay $n 2 
+endif 
+~ 
+> death_prog 100~ 
+gasp 
+,coughs blood, and promises: "My brothers will avenge me..." 
+mpe _yel And he is correct: the instant he slumps over, another guard just 
+mpe _yel like him comes running over in to attack you! 
+mpmload 2805 
+mpforce 2.tough mpkill $n 
+~ 
+> greet_prog 100~ 
+shake $n 
+'You're too weak and scrawny to enter! 
+egrin 
+smirk 
+taunt $n 
+~ 
+| 
+#2806 
+starved piranha~ 
+a starved piranha~ 
+A starved piranha chomps on your flesh! 
+~ 
+This little thing is all over you, eating you alive! 
+~ 
+65569 0 -1000 C 
+1 0 -50 0d0+0 0d0+0 
+0 0 
+112 112 0 
+13 13 13 13 13 13 13 
+0 0 0 0 0 
+81 3 0 0 1 1 4 
+15 0 212992 0 2099456 0 6657 2 
+> fight_prog 100~ 
+feed 
+feed 
+feed 
+~ 
+> death_prog 100~ 
+if rand(25) 
+mpe _red As the piranha dies, a new one swims into the room to take it's 
+mpe _red place... 
+mpmload 2806 
+endif 
+~ 
+| 
+#2807 
+crazy prisoner man old~ 
+a crazy old prisoner~ 
+A crazy old prisoner, dressed in rags, wakes up and stares at you. 
+~ 
+An old man who has apparently been living in these horrible conditions 
+for quite some years now. His clothes are rags, they stink badly. On 
+his ankle, a chain attached to a ball prevents him any hope of a future 
+escape. 
+~ 
+99 4194856 -100 C 
+20 0 5 0d0+0 0d0+0 
+0 0 
+112 112 0 
+9 13 13 10 10 13 13 
+5 5 5 5 5 
+0 3 0 0 1 1 0 
+10 0 1039 0 0 0 0 0 
+> greet_prog 100~ 
+'Eh? Is that you? 
+'Did our escape plan work? 
+peer $n 
+'You aren't my partner! Why, I oughta tear you to shreds... 
+~ 
+| 
+#2808 
+dread ghost~ 
+a dread ghost~ 
+A shimmering apparition exists here. 
+~ 
+It looks like it's been dead for a long time ... 
+~ 
+33554467 74974760 0 C 
+50 0 -300 1d1+10000 0d0+0 
+0 0 
+112 112 2 
+25 20 20 25 3 13 10 
+-30 -30 -30 -30 -30 
+67 3 0 0 1 1 3 
+85 0 0 0 3157760 1056777 1107296256 11 
+> fight_prog 100~ 
+if race($i) == monster 
+if rand(40) 
+break 
+endif 
+mpe _pur With a sigh of exhaustion, the rotting body collapses. 
+mpmset self race undead 
+mpmset self short the dread ghost 
+mpmset self immune magic nonmagic 
+mpmset self name dread ghost 
+else 
+if rand(48) 
+mpe _whi The ghost channels it's hatred and anger into a ferocious attack... 
+mpdamage all 125 
+break 
+endif 
+mpe _pin The spiritual energy descends into a half-rotted body which lies on 
+mpe _pin the floor. With a groan, the maimed body arises ... 
+mpmset self race monster 
+mpmset self short the half-decayed body 
+mpmset self immune magic nonmagic 
+mpmset self name half decayed half-decayed body 
+endif 
+~ 
+> death_prog 100~ 
+mpe _dch The ghost finally makes it's pilgrimage to the world of the dead. 
+if race($i) == undead 
+mpe _whi A swirling, benevolent whisp of ghostly energy remains... 
+mpmset self flags secretive 
+mpoload 2815 
+drop all.whisp 
+endif 
+mpgoto 2832 
+~ 
+| 
+#2809 
+violent lunatic~ 
+a violent lunatic~ 
+A violent lunatic rages here, chained but untamed. 
+~ 
+Having horrible body habits, this lunatic is a total mess. But that 
+doesn't mean she can't fight. Though she is chained securely, she still 
+manages to fight pretty well, and every lunge she takes at you threatens 
+to break her chains. 
+~ 
+99 37749288 -300 C 
+50 0 -200 1d1000+6000 0d0+0 
+1000000 0 
+112 112 2 
+25 10 10 20 20 15 15 
+-30 -8 -30 -8 -8 
+2 3 0 0 1 1 5 
+85 0 1040 2105370 3328 4 1008 524291 
+> greet_prog 100~ 
+if isaffected($i) == detect_traps 
+mpe _ora Oh no! Somehow, $I has been freed of her chains! She runs at you 
+mpe _ora screaming, flailing her chains like deadly whips! 
+else 
+mpe _yel Though chained, $I kicks and lunges at you! 
+endif 
+~ 
+> fight_prog 10~ 
+if isaffected($i) == detect_traps 
+mea $n _gre $I flails at you mercilessly with her chains! 
+mer $n _gre $I flails at $n mercilessly with her chains! 
+mppeace $i 
+lunge $n 
+else 
+mpe _dch There is a great cracking sound... 
+mpe _gre $I rips her chains out of the wall! Grinning menacingly, she is 
+mpe _gre now free! Oh no! 
+mpmset self affected detect_traps 
+mpmset self affected sanctuary 
+mpoload 2818 
+wield chains 
+endif 
+~ 
+> fight_prog 45~ 
+if isaffected($i) == detect_magic 
+mpe _whi $I flails her arms about madly, attacking everyone in sight! 
+mpdamage all 200 
+else 
+,struggles against the chains which bind her. 
+endif 
+~ 
+> fight_prog 30~ 
+mpe _red $I screams furiously as adrenaline pumps through her veins! 
+mprestore self 300 
+~ 
+> hitprcnt_prog 25~ 
+if isaffected($i) == detect_magic 
+,pants hard, trying to catch her breath... 
+if rand(10) 
+mpe _gre $I suddenly ups the pace of the attack! 
+mpmset self affected detect_magic 
+endif 
+else 
+mpe _bro $I goes berzerk as adrenaline pumps madly through her veins! 
+blitz 
+pumm 
+headbutt 
+stun 
+mppeace $i 
+mpkill $r 
+if rand(33) 
+mpmset self affected detect_magic 
+,is suddenly out of breath... 
+endif 
+endif 
+~ 
+> act_prog p chaotic smash~ 
+,shakes her head fiercely trying to recover from the Chaotic Smash. 
+if rand(33) 
+,growls loudly and returns the attack with equal skill and strength! 
+chaotic 
+endif 
+~ 
+> death_prog 100~ 
+,thrashes about violently in the last moments of her life... 
+~ 
+| 
+#2810 
+starving thief halfling~ 
+a starving thief~ 
+A starving thief huddles in the corner, shielding his eyes from your lightsource. 
+~ 
+This halfling glances around with shifty eyes. It would seem he hasn't 
+had a square meal in a long time, nor any drink. His ribs are clearly 
+visible, like he is nothing more than a bag of dry skin and bones. 
+~ 
+16777283 4194856 1000 C 
+1 0 5 0d0+0 0d0+0 
+0 0 
+112 112 0 
+3 13 13 3 3 13 13 
+15 15 15 15 15 
+3 3 0 0 1 1 20 
+1 0 1110 0 2100480 1056768 0 0 
+> greet_prog 100~ 
+if isaffected($i) == detect_traps 
+if isaffected($i) == detect_magic 
+'Hello... 
+else 
+gasp 
+'Please... need food.... 
+endif 
+else 
+,tries hard to say something, but he is much too thirsty to talk. 
+endif 
+~ 
+> act_prog p gives you~ 
+if objtype($o) == 19 
+if isaffected($i) == detect_traps 
+if objval3($o) == 0 
+eat $o 
+grovel $n 
+thank $n 
+'Thank you... you might just have saved my life! 
+else 
+eat $o 
+cough 
+'P... Poison!! 
+,starts writhing about in agony... 
+mpmset self name starving thief dyingthief 
+endif 
+else 
+drop $o 
+shake 
+moan 
+,is too thirsty to eat... 
+endif 
+else 
+if objtype($o) == 17 
+if objval5($o) == 0 
+drink $o 
+mpjunk all 
+'Thank you kindly... Now if only I had some food... 
+mpmset self affected detect_traps 
+else 
+drink $o 
+gasp 
+'P... Poison!! 
+,starts writhing about in agony... 
+mpmset self name starving thief dyingthief 
+endif 
+else 
+drop $o 
+cough 
+,doesn't care about $O right now, he just wants food and water... 
+endif 
+endif 
+~ 
+| 
+#2811 
+gallant swordsman~ 
+a Gallant swordsman~ 
+A Gallant swordsman stands gallantly by the stairway, guarding. 
+~ 
+Being quite strong, this is a guard you'd rather not mess with. He 
+wields a nasty looking bastard sword and you have to cringe imagining 
+him in physical combat with one of the starving, bone-thin prisoners 
+west of here. 
+~ 
+99 520 1000 C 
+49 0 -266 0d0+0 0d0+0 
+10000 0 
+112 112 1 
+23 14 13 14 15 15 15 
+-5 -5 -5 -5 -5 
+0 3 0 0 1 1 4 
+85 0 15 80 3328 4 704 524291 
+#2812 
+gallant bowman~ 
+a Gallant bowman~ 
+A Gallant bowman stands at the base of the stairs, guarding them gallantly. 
+~ 
+A tall elf with pointy ears and chiselled features, this elite bowman 
+is quite dedicated to keeping the prisoners of Castle Gallant in the 
+dungeons where they belong. 
+~ 
+99 520 1000 C 
+50 0 -50 0d0+0 0d0+0 
+10000 0 
+112 112 1 
+18 17 14 16 15 13 13 
+-8 -8 -8 -8 -8 
+1 3 0 0 1 1 0 
+85 0 262 2097152 3328 100 0 2 
+#2813 
+gallant battlemage battle mage~ 
+a Gallant battlemage~ 
+A Gallant battlemage is surrounded by a glimmering shield of lightning. 
+~ 
+This wizard has devoted many years into the study of arcane magicks. 
+Now his studies have paid off, for he is incredibly powerful at battle- 
+oriented magics. 
+~ 
+33554531 67109384 1000 C 
+50 0 -29 0d0+0 0d0+0 
+20000 0 
+112 112 1 
+11 24 19 12 13 13 15 
+-20 -20 -20 -20 -20 
+0 3 0 0 1 1 4 
+40 0 16 1049231 3328 24576 2057826304 198 
+> greet_prog 100~ 
+c 'faerie fire' $n 
+~ 
+> fight_prog 30~ 
+z $n 
+~ 
+> fight_prog 15~ 
+c quant 
+~ 
+> act_prog someone~ 
+'Halt! Who goes there? 
+c 'faerie fog 
+mpforce all vis 
+~ 
+| 
+#2814 
+shadows~ 
+the flickering shadows~ 
+Shadows flicker on the walls forebodingly... 
+~ 
+Too dark to tell. 
+~ 
+99 4194984 -1000 C 
+2 0 -300 1d1+999 0d0+0 
+0 0 
+112 112 0 
+3 13 13 13 13 13 13 
+-30 -30 -30 -30 -30 
+85 3 0 0 1 1 0 
+0 0 0 1056768 2100480 0 131072 3 
+> fight_prog 100~ 
+mprestore self 500 
+~ 
+> hitprcnt_prog 50~ 
+mppeace $i 
+mpkill $r 
+~ 
+| 
+#2815 
+gallant executioner~ 
+the Gallant Executioner~ 
+The executioner of Castle Gallant holds his executioner's axe proudly. 
+~ 
+The Executioner of Castle Gallant is quite a deranged fellow. He can't 
+be blamed really, in his life he has seen quite a few weird cases. And 
+more often then not, he's been the one responsible for putting them out 
+of their misery. Now he will put you out of yours. 
+~ 
+1107296323 6816424 -1000 C 
+55 0 -300 1d100+12825 1d1+200 
+3000000 0 
+112 112 1 
+25 16 16 20 25 13 15 
+-30 -30 -30 -30 -30 
+90 3 0 0 1 1 3 
+85 0 1 59 2116992 1049088 48 524291 
+> rand_prog 20~ 
+,swings his axe in a wide arc! 
+lunge $r 
+~ 
+> fight_prog 25~ 
+mprestore self 300 
+~ 
+> fight_prog 30~ 
+wield bloodsoaked 
+chaotic 
+,reverses the momentum of his axe... 
+mppeace $i 
+mpkill $r 
+ready crocodile 
+blitz 
+~ 
+> act_prog circle~ 
+if rand(15) 
+mer $n $I spins around and smashes the flat side of his axeblade into $n's face 
+mea $n $I spins around and smashes the flat side of his axeblade into your face 
+mea $n _cya You suddenly feel very dizzy... 
+mer $n _cya $n stumbles back, dazed... 
+headbutt $n 
+endif 
+~ 
+> fight_prog 10~ 
+t $n Die! Die! Die!! 
+swipe 
+t $n Die!!!!! 
+~ 
+> act_prog p chaotic smash~ 
+if rand(20) 
+mea $n _gre $I trips you and you go down! 
+mer $n _gre $I trips $n and $e goes down! 
+mpdelay $n 1 
+endif 
+~ 
+> act_prog p quantum spike~ 
+if rand(10) 
+mer $n _cya $I's axeblade reflects part of the spell back at $n! 
+mea $n _cya $I's axeblade reflects part of the spell back at you! 
+mpdamage $n 300 
+endif 
+~ 
+> death_prog 100~ 
+mpat 2832 rem all 
+mpat 2832 drop all.head 
+mpjunk all 
+mpat 2832 get all.head 
+mpoload 2831 
+mpoload 2832 
+if isaffected($i) == detect_traps 
+mpe _red $I screams in agony as his soul descends into Hell! 
+mpe _red Upon his hands is the spilt blood of innocent people. 
+if rand(10) 
+mpe _ora The blood upon the Executioner's hands glistens malevolently! 
+mposet innocent affect grip 5 
+endif 
+else 
+whisper $n Fool: You still do not know the secret; of innocent blood. 
+mpe _whi $I struggles to whisper a final prayer in his dying breath. 
+mpe _lbl As he finds forgiveness from Heaven, the blood upon his hands is 
+mpe _lbl washed clean. 
+endif 
+if rand(10) 
+mpoload 2819 
+endif 
+mpechozone _red The horrible deathcry of $I echos through the castle! 
+~ 
+> act_prog p With a smile of satisfaction, the Executioner~ 
+if isaffected($i) == detect_traps 
+else 
+mpmset self affected detect_traps 
+endif 
+~ 
+> rand_prog 100~ 
+if ovnuminv(2834) > 0 
+if ovnuminv(2834) > 1 
+if ovnuminv(2834) > 2 
+mpecho _red The Gallant Executioner begins to go completely INSANE! He 
+mpecho _red swings his axe violently about, cutting everyone in reach! 
+mpdamage all 1000 
+endif 
+mpecho _ora The Gallant Executioner gets a strange gleam in his eye. He begins 
+mpecho _ora making well placed blows against everyone. 
+mpdamage all 800 
+endif 
+mpecho _cya The Executioner becomes more intense now that he has slayed an 
+mpecho _cya enemy. He begins moving more swiftly than ever before, blurring 
+mpecho _cya your vision as he moves amongst you. 
+mpdamage all 600 
+mprestore $n 200 
+endif 
+~ 
+| 
+#2816 
+pet crocodile~ 
+the pet crocodile~ 
+The executioner's pet crocodile follows him everywhere. 
+~ 
+This crocodile romps through the room untamed, a malevolent gleam in it's 
+eyes... 
+~ 
+33554531 272630312 -1000 C 
+30 0 -150 1d1+32000 0d0+0 
+2 0 
+112 112 2 
+25 13 13 25 13 13 13 
+-30 -30 -30 -30 -30 
+87 3 0 0 1 1 0 
+85 0 196608 96 3328 0 0 0 
+> act_prog p The Gallant Executioner nods, signaling you that your foe must now die miserably.~ 
+spurn $r 
+feed 
+feed 
+feed 
+feed 
+feed 
+~ 
+> fight_prog 100~ 
+mprestore self 25 
+if isnpc($n) 
+mppeace $i 
+break 
+endif 
+~ 
+> hitprcnt_prog 99~ 
+feed 
+feed 
+feed 
+feed 
+~ 
+| 
+#2817 
+gallant torturer~ 
+the Gallant Torturer~ 
+The Gallant torturer reclines in the shadows, defiantly. 
+~ 
+A rather scrawny figure in dark clothing, his eyes red and weary, his 
+fingers and his hands long and bony. He loosely resembles a sick fish. 
+~ 
+33554531 37749416 -1000 C 
+55 0 -290 1d1+11999 0d0+0 
+1000000 0 
+112 112 1 
+17 17 12 15 16 15 15 
+-30 -30 -30 -30 -30 
+0 4 0 0 1 1 4 
+85 0 8 0 2100480 0 560 524291 
+> greet_prog 100~ 
+grin $n 
+'Allow me to test my torturous skills on you! 
+mea $n _gre $I leaps upon you, knocking you to the floor! 
+mer $n _gre $I leaps upon $n, knocking $m to the floor! 
+mpforce $n rest 
+~ 
+> fight_prog 20~ 
+mpe _blu $I utters the words, 'Magnetic Thrust!' 
+mea $n _ora A surge of magnetic power thrusts you to the north! 
+mer $n _ora A surge of magnetic power thrusts $n to the north! 
+mpat 2842 mpe _ora $n comes flying in from the south! 
+mptrans $n 2842 
+mpat 2842 mpforce $n rest 
+mpat 2842 c 'magnetic thrust' $n 
+,claps his hands several times, summoning a powerful Guardian Vampire! 
+c gate 
+~ 
+> fight_prog 10~ 
+'Let me show you true pain! 
+grin 
+swipe 
+swipe 
+mpforce $n wince 
+c quantum $n 
+if rand(33) 
+c 'caustic fount' $n 
+endif 
+if rand(33) 
+c 'magnetic thrust' $n 
+endif 
+if rand(20) 
+mea $n _bro $I grabs a beaker of strange glowing fluid and throws it at you... 
+mer $n _bro $I grabs a beaker of strange glowing fluid and throws it at $n... 
+c 'acid breath' $n 
+endif 
+~ 
+> fight_prog 5~ 
+,summons forth a strange double-pointed Quantum Spike... 
+c quant $r 
+c quant $r 
+~ 
+> fight_prog 98~ 
+if rand(8) 
+'You shall never defeat me! 
+endif 
+if mortinroom(0) == 4 
+mprestore self 100 
+break 
+endif 
+if mortinroom(0) == 3 
+mprestore self 250 
+break 
+endif 
+if mortinroom(0) == 2 
+mprestore self 350 
+break 
+endif 
+if mortinroom(0) == 1 
+mprestore self 425 
+break 
+endif 
+~ 
+> act_prog rescues~ 
+roll 
+'I'm still busy interrogating $t... 
+mppeace $i 
+mpkill $t 
+~ 
+> act_prog quaffs~ 
+mpdelay $n 1 
+~ 
+> act_prog eats~ 
+mpdelay $n 1 
+~ 
+> death_prog 100~ 
+mpoload 2881 45 
+mpe _lbl The Vicehold says 'Ahh, a stronger master to wear me...' 
+mpe _cya The Vicehold throws back it's head and cackles with insane glee! 
+mpoload 2835 50 
+mpechozone _red The horrible deathcry of $I echos through the castle! 
+if rand(10) 
+mpoload 2819 
+endif 
+if isnpc($n) 
+mpjunk all 
+endif 
+~ 
+> act_prog circle~ 
+if mobinroom(80) == 0 
+mppeace $n 
+endif 
+~ 
+| 
+#2818 
+lazsigma gallant mage mirror magi wizard magicuser spellcaster~ 
+Lazsigma~ 
+Lazsigma, the Mage within the Mirror, studies your reflection. 
+~ 
+It is difficult to get a good glimpse at the shimmering spectral figure who 
+exists before you. Clearly he has attained some sort of symbiosis with the 
+mirrors which surround you. A being of light, perhaps that explains why 
+this maze is so bright. Upon his wrist, Lazsigma wears a circlet of the 
+finest silver mist. In his hand, he clutches a powerful weapon forged of 
+pure condensed light particals. 
+~ 
+33555523 375915048 1000 C 
+55 0 -200 1d1+6889 0d0+0 
+2145777 0 
+112 112 1 
+25 25 25 20 25 25 25 
+-30 -30 -30 -30 -30 
+85 0 0 0 1 1 5 
+85 0 16 16527 2108672 0 1342177792 2621447 
+> rand_prog 5~ 
+if rand(50) 
+mpe _whi $I shimmers luminously... 
+else 
+mpe _whi $I shimmers radiantly... 
+endif 
+~ 
+> fight_prog 20~ 
+mpe _blu $I utters the words 'Hasten'. 
+mpe _dgr $I's eyes flash menacingly as his mind begins to rush... 
+if rand(33) 
+c quant 
+c acetum 
+c unravel 
+else 
+if rand(50) 
+c quant 
+c quant 
+c quant 
+else 
+c acetum 
+c acetum 
+c acetum 
+endif 
+endif 
+~ 
+> fight_prog 15~ 
+mprestore self 222 
+mpe _whi Brilliant light seeps into the room as $I uses the Recaptured Sunrise! 
+wield sunrise 
+mppeace $i 
+mpkill $r 
+mppeace $i 
+mpkill $r 
+lunge $r 
+if rand(10) 
+mer $n _pin The relentless bombardment of Light has left $r dazed and stunned.. 
+mpdelay $r 1 
+endif 
+~ 
+> act_prog quaffs~ 
+if rand(5) 
+c 'cure light 
+endif 
+~ 
+> time_prog 6~ 
+if isfight($i) 
+mpe _yel The Recaptured Sunrise fills the room with blinding light! 
+mpdamage all 3000 
+endif 
+mpdamage all 1600 
+~ 
+> hitprcnt_prog 33~ 
+swipe 
+cuff 
+spurn 
+~ 
+> fight_prog 20~ 
+if isnpc($n) 
+mpslay $n 
+break 
+endif 
+mppeace $i 
+mpe _whi $I dives into a nearby mirror! 
+mpscatter self 2849 2854 
+lunge $n 
+lunge $n 
+if isfight($i) 
+mppeace $i 
+mpscatter self 2849 2854 
+lunge $n 
+lunge $n 
+if isfight($i) 
+mppeace $i 
+mpscatter self 2849 2854 
+endif 
+endif 
+mpat 0.$n mer $n _pin $I drags $n in with him! 
+mpat 0.$n mea $n _pin $I drags you in with him! 
+mpat 0.$n mpforce $n scream 
+mpe _whi $I suddenly emerges from a mirror, followed by $n! 
+mptrans 0.$n 
+mpforce $n look 
+if multi($n) > 1 
+whisper $n Let's see your alts get you out of this one... 
+murder $n 
+c 'gas breath 
+c 'frost breath 
+c 'fire breath 
+c 'lightning breath 
+c 'acid breath 
+else 
+'Now, a one on one battle, just you and I! 
+if rand(20) 
+mpe _cya You shall never defeat me! You are weak! 
+endif 
+c mag $n 
+c 'black lightning' $n 
+endif 
+~ 
+> death_prog 100~ 
+mpe _whi Beams of light shoot out from $I in all directions! 
+mpdamage all 2000 
+scream 
+'I won't let you take the Mystile! 
+rem mystile 
+if rand(25) 
+mpe _blu $I utters the words 'Curse Relic'. 
+mpe _dch the Mystile wavers and trembles as it is ruined by a horrible curse. 
+mposet mystile flags deathrot 
+,hurls the Mystile to the ground! 
+drop mystile 
+'May you perish a slow and painful death... 
+else 
+mpe _blu $I utters the words 'Curse Re... Curse Reli... Curs...'. 
+mpe _cya $I doubles over in agony, unable to complete the curse. 
+whimper 
+endif 
+mpechozone _whi The final deathcries of the gallant wizard $I echo through the 
+mpechozone _whi land! 
+if isnpc($n) 
+mpjunk all 
+sac mystile 
+endif 
+~ 
+| 
+#2819 
+gallant wardancer~ 
+a Gallant Wardancer~ 
+A Gallant Wardancer guards the steps vigilantly. 
+~ 
+A stern man with solemn features and strong muscles. He wears the standard 
+clothes of a proud member of Castle Gallant, and seems somewhat bored with 
+his job. 
+~ 
+99 520 1000 C 
+50 0 -300 1d1+7249 0d0+0 
+100000 0 
+112 112 1 
+25 13 13 25 25 13 13 
+0 0 0 0 0 
+0 3 0 0 1 1 6 
+85 0 6 112 2100608 4 384 2621443 
+> act_prog wields~ 
+if isnpc($n) 
+break 
+endif 
+'Put down your weapon and surrender! 
+mppeace $i 
+mpkill $n 
+disarm 
+disarm 
+disarm 
+disarm 
+disarm 
+disarm 
+cuff 
+~ 
+| 
+#2820 
+gallant magician~ 
+a Gallant Magician~ 
+A Gallant Magician idly studies a spellbook while guarding. 
+~ 
+A very wise and powerful looking sorcerer. Not everyone is lucky enough 
+to be a sorcerer in Castle Gallant! 
+~ 
+99 520 1000 C 
+50 0 -25 1d1+5000 0d0+0 
+200000 0 
+112 112 2 
+11 25 25 13 13 13 25 
+0 0 0 0 0 
+1 3 0 0 1 1 0 
+25 0 22 1048712 2116864 8192 0 0 
+> fight_prog 50~ 
+c fireball $r 
+c blind $r 
+c weaken $r 
+c 'lightning bolt' $r 
+c 'blazebane 
+c 'winter mist 
+c 'charged beacon 
+c razorbait 
+c swordbait 
+c lethargy 
+c unravel 
+c quant $r 
+c acetum $n 
+c 'caustic fount 
+c 'spectral furor' $r 
+~ 
+| 
+#2821 
+gallant healer~ 
+a Gallant healer~ 
+A Gallant Healer is serving guard duty here. 
+~ 
+~ 
+99 520 1000 C 
+50 0 -30 1d1+4849 0d0+0 
+150000 0 
+112 112 1 
+13 25 25 13 13 13 25 
+-20 -20 -20 -20 -20 
+0 3 0 0 1 1 0 
+30 0 22 0 2100480 0 301989888 199 
+> fight_prog 100~ 
+c necro 
+,summons a powerful healing spell to aid himself and his allies. 
+c heal 'gallant rogue' 
+c heal 'gallant rogue' 
+c heal 'gallant wardancer' 
+c heal 'gallant wardancer' 
+c heal 'gallant magician' 
+c heal 'gallant magician' 
+c heal 
+c heal 
+~ 
+| 
+#2822 
+gallant rogue~ 
+A Gallant Rogue~ 
+A Gallant Rogue hides in the shadows, watching for prisoners. 
+~ 
+A sneaky halfling dives in and out of shadows, staying well out of sight... 
+~ 
+99 66056 1000 C 
+50 0 -300 5d5+8000 0d0+0 
+100000 0 
+112 112 1 
+13 13 13 25 13 13 25 
+-10 -10 -10 -10 -10 
+3 2 0 0 1 1 0 
+85 0 326 96 3328 0 512 2621443 
+> greet_prog 100~ 
+backstab $n 
+~ 
+> fight_prog 100~ 
+mppeace $i 
+wield dagger 
+backstab $r 
+if isfight($i) 
+else 
+mpkill $r 
+circle $r 
+endif 
+~ 
+| 
+#2823 
+young apprentice~ 
+a young apprentice~ 
+A young apprentice is practicing the "detect hidden" spell. 
+~ 
+He seems to be practicing the "detect hidden" spell. You wonder if he 
+has it mastered yet. 
+~ 
+67 4194856 1000 C 
+25 0 0 0d0+0 0d0+0 
+0 0 
+112 112 0 
+13 13 13 13 13 13 13 
+0 0 0 0 0 
+0 3 0 0 1 1 0 
+0 0 1 0 2100480 0 0 3 
+> act_prog p magic missile misses you.~ 
+if isfight($i) 
+break 
+endif 
+yell What in the nine hells was that?! 
+yell I'm going to go investigate! 
+d 
+~ 
+> rand_prog 1~ 
+if inroom($i) < 2858 
+u 
+endif 
+~ 
+| 
+#2824 
+elite knight~ 
+a very elite knight~ 
+A very elite knight challenges you to a duel to the death! 
+~ 
+Rarely have you seen such a worthy opponent. This worshipful knight has 
+slain many men greater than you! 
+~ 
+67 272630440 1000 C 
+55 0 -300 1d1+1500 0d0+0 
+10000 0 
+112 112 1 
+25 25 13 25 25 13 20 
+0 0 0 0 0 
+0 3 0 0 1 1 4 
+85 0 1 0 2100480 0 624 3 
+> greet_prog 100~ 
+'Touche! 
+mpforce $n kill $i 
+lunge $n 
+'En guard! 
+swipe $n 
+'Have at thee! 
+charge 
+headbutt $n 
+~ 
+> fight_prog 10~ 
+roar 
+blitz 
+~ 
+> fight_prog 20~ 
+snarl 
+headbutt 
+knee 
+~ 
+> fight_prog 10~ 
+,leaps into the air and jumpkicks you! 
+leap $r 
+~ 
+> hitprcnt_prog 20~ 
+'Ack! I yield! 
+mpgoto 2860 
+mptrans $n 2860 
+mprestore self 4000 
+yell Let it be known that this day I have been bested by $n! 
+grovel $n 
+~ 
+> death_prog 100~ 
+'Ack! I yield! 
+mea $n _ora Ignoring the knight's pleas, you chop off his head. 
+mer $n _ora Ignoring the knight's pleas, $n chops off his head. 
+~ 
+| 
+#2825 
+wise old knight~ 
+a wise old knight~ 
+A wise old knight leans on a well-kept polearm. 
+~ 
+Wizened by many years of hard battle, this is a true force of nature among 
+the Gallant knights. Rarely does he find a match for his muscles which have 
+been tempered by practice and tested by time. 
+~ 
+33554531 4194856 1000 C 
+55 0 -250 1d1+1999 0d0+0 
+352345 0 
+112 112 1 
+23 13 13 23 13 13 13 
+0 0 0 0 0 
+0 3 0 0 1 1 5 
+85 0 1 1048576 2100480 0 268435505 524295 
+> hitprcnt_prog 50~ 
+if inroom($i) > 2861 
+break 
+endif 
+'Let's go get help from the Captain! 
+mppeace $i 
+ne 
+mpat 2861 mpe _yel $I flees head over heels! 
+mpe _yel $I glances around for signs of pursuit. 
+~ 
+> speech_prog p Let's go get help from the Captain!~ 
+if isnpc($n) 
+mppeace $i 
+ne 
+mpat 2861 mpe _yel $I flees head over heels! 
+mpe _yel $I glances around for signs of pursuit. 
+endif 
+~ 
+| 
+#2826 
+middle aged knight~ 
+a middle aged knight~ 
+A middle aged knight swipes his longsword about for practice. 
+~ 
+Though past his prime, this knight still has quite a ways to go before 
+he's worn out. He's eyes sparkle with intelligence and you realize he 
+is still more than prepared to handle any invaders in Castle Gallant. 
+~ 
+33554531 4194856 1000 C 
+55 0 -200 1d1+1999 0d0+0 
+34521 0 
+112 112 0 
+25 13 13 13 13 13 13 
+0 0 0 0 0 
+0 3 0 0 1 1 3 
+85 0 1 0 2100480 0 1073741936 3 
+> hitprcnt_prog 50~ 
+if inroom($i) > 2861 
+break 
+endif 
+'Let's go get help from the Captain! 
+mppeace $i 
+ne 
+mpat 2861 mpe _yel $I flees head over heels! 
+mpe _yel $I glances around for signs of pursuit. 
+~ 
+> speech_prog p Let's go get help from the Captain!~ 
+if isnpc($n) 
+mppeace $i 
+ne 
+mpat 2861 mpe _yel $I flees head over heels! 
+mpe _yel $I glances around for signs of pursuit. 
+endif 
+~ 
+| 
+#2827 
+young knight~ 
+a young knight~ 
+A young knight flexes as he wields a large stone club. 
+~ 
+Barely out of pimples, this knight is nevertheless quite skilled. Something 
+of a child prodigy in his youth, he has acquired an amazing skill at 
+pugilism. He looks forward to a foe to test it on. 
+~ 
+33554531 71303720 1000 C 
+55 0 -250 1d1+999 0d0+0 
+4353 0 
+112 112 1 
+25 13 13 13 13 13 25 
+0 0 0 0 0 
+0 3 0 0 1 1 5 
+85 0 1 0 2100480 0 48 524291 
+> hitprcnt_prog 50~ 
+if inroom($i) > 2861 
+break 
+endif 
+'Let's go get help from the Captain! 
+mppeace $i 
+ne 
+mpat 2861 mpe _yel $I flees head over heels! 
+mpe _yel $I glances around for signs of pursuit. 
+~ 
+> speech_prog p Let's go get help from the Captain!~ 
+if isnpc($n) 
+mppeace $i 
+ne 
+mpat 2861 mpe _yel $I flees head over heels! 
+mpe _yel $I glances around for signs of pursuit. 
+endif 
+~ 
+| 
+#2828 
+captain gallant knights~ 
+the Captain of the Gallant Knights~ 
+The Captain of the Gallant Knights sees right through your pathetic attempts to hide. 
+~ 
+~ 
+99 306184744 1000 C 
+55 0 -300 1d1+8999 0d0+0 
+1000000 0 
+112 112 1 
+25 25 25 25 25 25 25 
+0 0 0 0 0 
+0 3 0 0 1 1 1 
+85 0 1 1048576 2100480 0 256 524288 
+> fight_prog 30~ 
+,heals his men... 
+c heal young 
+c heal middle 
+c heal old 
+~ 
+> fight_prog 50~ 
+,spins around in a flurry, scoring blows right and left! 
+lunge $r 
+swipe $r 
+leap $r 
+knee $r 
+bash 
+headbutt $r 
+mpdamage all 70 
+~ 
+| 
+#2829 
+king gallant~ 
+King Gallant~ 
+King Gallant leaps up from his throne to address you! 
+~ 
+A tall and very charismatic man, King Gallant is worthy of his status. 
+His long hair is shoulder length, and his piercing eyes are a deep brown. 
+His features are calm but not innocent; it seems like he is unbothered 
+by your presence. Well, maybe annoyed; but by no means threatened. With 
+a chuckle, he places a hand on the hilt of his sword and draws it. The 
+sword, known throughout legends as the Valinspiraller. 
+~ 
+67110979 373293736 1000 C 
+46 0 -300 1d1+17999 0d0+0 
+3000000 0 
+108 108 1 
+25 25 25 25 25 25 25 
+0 0 0 0 0 
+0 3 0 0 1 1 0 
+85 0 9 8736 2100610 16 512 0 
+> rand_prog 100~ 
+if isaffected($i) == detect_traps 
+else 
+'So, you have invaded Castle Gallant? 
+chuckle 
+mpmset self affected detect_traps 
+break 
+endif 
+if isaffected($i) == detect_magic 
+else 
+'I will dispose with you myself. Life as a king has been boring lately. 
+,draws his sword... the Valinspiraller. 
+wield valinspiraller 
+mpmset self affected detect_magic 
+break 
+endif 
+'Well then, have at thee! 
+mpmset self flags pacifist 
+mpmset self flags aggressive 
+~ 
+> greet_prog 100~ 
+stand 
+~ 
+> hitprcnt_prog 98~ 
+mpat 2865 mpforce 3.utilitymob shriek 
+if hps($i) < 5000 
+if rand(25) 
+if rand(33) 
+roar 
+else 
+if rand(50) 
+snarl 
+else 
+growl 
+endif 
+endif 
+if rand(10) 
+tell $n May you never again see the light of day!! 
+endif 
+,slashes to and fro, right and left, with the Valinspiraller... 
+mpdamage all 200 
+else 
+if rand(25) 
+,summons a mighty volley of acaustic acids! 
+c 'caustic fount 
+c 'acetum primus 
+else 
+if rand(35) 
+mea $n _yel $I tries to smite you with lightning and holy powers! 
+mer $n _yel $I tries to smite $n with lightning and holy powers! 
+c 'lightning bolt 
+c necro 
+endif 
+endif 
+endif 
+endif 
+if hps($i) < 2500 
+if race($i) == dragon 
+mpe _red $I bellows forth a burning inferno, accosting the entire room! 
+mpdamage $n 110 
+mpdamage all 220 
+c 'scorching surge 
+else 
+mpe _dgr From the King's shoulders, wings suddenly appear... 
+mpe _dgr His eyes glow red... his hair transforms into horns... 
+mpe _dgr His teeth become the horrible fangs of wyrms... 
+mpe *whi With a roar, the king becomes a DRAGON! 
+mpmset self race dragon 
+mpmset self short Neo King Gallant, the Red Dragon 
+roar 
+endif 
+endif 
+~ 
+> speech_prog 1~ 
+if race($i) == human 
+,takes a heal potion from an extradimensional portal. 
+,quaffs a heal potion. 
+mprestore self 100 
+'How foolish of you to dare invade Castle Gallant! 
+cackle 
+else 
+mpe _pur The Dragon opens his mouth and draws in energy from the Astral Plane! 
+mprestore self 200 
+endif 
+mpat 2865 rem all 
+mpat 2865 repair all 
+mpat 2865 wear all.'infinite royal majesty' 
+mpat 2865 wear valinspiraller 
+mpat 2865 wear orbit 
+mpat 2865 wear crown 
+~ 
+> speech_prog 2~ 
+if race($i) == human 
+,takes a restore mana potion from an extradimensional portal. 
+,quaffs a restore mana potion. 
+c quant 
+c 'colour spray 
+c 'energy drain 
+c fireball 
+c 'sulfurous spray 
+c 'black fist 
+c 'hand of chaos 
+else 
+mpe _ora The Dragon breathes a solid blast of fire! 
+c 'fire breath 
+endif 
+~ 
+> speech_prog 3~ 
+if isfight($i) 
+,takes a refresh potion from an extradimensional portal. 
+,quaffs a refresh potion. 
+stun 
+else 
+sit 
+mpat 2865 mppeace all 
+endif 
+~ 
+> speech_prog 4~ 
+if race($i) == human 
+'Prepare to feel the wrath of my entire kingdom! 
+,takes a fly potion from an extradimensional portal. 
+,quaffs a fly potion. 
+c earthquake 
+mpechozone _pur The entire land trembles as $I summons an earthquake! 
+else 
+mpe _pin Sulfurous fumes emerge from $I's mouth, choking you! 
+c gas 
+endif 
+~ 
+> fight_prog 100~ 
+mprestore self 300 
+if rand(15) 
+if race($i) == human 
+,runs back and forth across the throneroom, Valinspiral slashing everyone! 
+c spiral 
+else 
+,sucks up all the heat out of the room! Brrrrrr, that's cold! 
+c frost $n 
+c frost $r 
+endif 
+endif 
+if rand(15) 
+mpe _dgr Solemnly, $I utters some magic incantations... 
+mpe _whi The Valinspiraller glows intensely bright! 
+mpe _dgr From the sharp blade's edge, 3 black lightning bolts emerge... 
+c 'black lightning' $r 
+c 'black lightning' $r 
+c 'black lightning' $r 
+endif 
+if rand(15) 
+,launches a fiersome barrage of physical attacks! 
+spurn 
+swipe 
+blitz 
+leap 
+knee 
+elbow 
+shoulder 
+pummel 
+else 
+if rand(20) 
+mpe _red $I's body glows red for a moment and his movements accellerate... 
+mppeace $i 
+mpkill $n 
+mppeace $i 
+mpkill $n 
+mppeace $i 
+mpkill $n 
+mppeace $i 
+mpkill $n 
+endif 
+endif 
+if rand(5) 
+c 'acid blast' $r 
+shriek 
+endif 
+~ 
+> act_prog p DISARMS you!~ 
+wield valinspiraller 
+wield 'infinite majesty' 
+if ovnumwear(2846) == 0 
+rem all 
+mpjunk all 
+mpoload 2845 
+mpoload 2846 
+wear valinspiraller 
+wear 'infinite majesty 
+endif 
+~ 
+> death_prog 100~ 
+rem all.majesty 
+mpjunk all.majesty 
+if rand(20) 
+mpe _gre (The Valinspiraller gets damaged.) 
+mpe _gre The Valinspiraller falls to the ground in scraps! 
+mpat 2865 rem all.valinspiraller 
+mpat 2865 mpjunk all.valinspiraller 
+mpoload 2853 
+endif 
+if race($i) == human 
+mpe _yel The king struggles to keep on his feet to attack again.. but fails. 
+yell My knights.. avenge my death. 
+break 
+endif 
+mpe _dgr The dragon swoops up and down in pain as more damage is inflicted! 
+mpe _dgr The fires in the dragon's eyes seem to dim and pale, and the room 
+mpe _dgr begins to fill with the dragon's spilt blood. 
+'The Valinsp... the Valinspi... the spiraller ... 
+mpe _lbl $I rasps, 'hidden forever... safe!' 
+if isgood($n) 
+mea $n _red As the evil deed is done, your soul fills with shame... 
+mer $n _red As the evil deed is done, $n looks down in shame... 
+mpmset $n align -1000 
+else 
+if isneutral($n) 
+if rand(50) 
+mpmset $n align 1000 
+else 
+mpmset $n align -1000 
+endif 
+else 
+mea $n _dbl As you slay the evil king, your soul is redeemed... 
+mer $n _dbl As $n slays the evil king, $s soul is redeemed... 
+mpmset $n align 1000 
+endif 
+endif 
+if isnpc($n) 
+mpjunk all 
+endif 
+~ 
+> act_prog grasp~ 
+if isnpc($t) 
+bite $n 
+vbite $n 
+endif 
+~ 
+> act_prog p quantum spike~ 
+if rand(15) 
+c quant $r 
+mprestore self 100 
+endif 
+~ 
+> time_prog 5~ 
+c 'spectral furor 
+c 'spectral furor 
+c 'spectral furor 
+c 'spectral furor 
+~ 
+> time_prog 16~ 
+c harm 
+c harm 
+c 'shocking grasp 
+c 'burning hand 
+c 'chill touch 
+~ 
+> time_prog 20~ 
+c disruption 
+c disruption 
+~ 
+> act_prog p chaotic smash~ 
+c 'ethereal fist 
+c 'ethereal fist 
+~ 
+| 
+#2830 
+utilitymob~ 
+mob2830~ 
+Some god abandoned a newly created utilitymob here. 
+~ 
+~ 
+67108865 0 0 S 
+55 0 0 1d1+32000 0d0+0 
+0 0 
+112 112 0 
+> act_prog bites~ 
+if rand(80) 
+break 
+endif 
+if rand(25) 
+mpat 2864 tell king 1 
+else 
+if rand(33) 
+mpat 2864 tell king 2 
+else 
+if rand(50) 
+mpat 2864 tell king 3 
+else 
+mpat 2864 tell king 4 
+endif 
+endif 
+endif 
+~ 
+> speech_prog p stop fighting~ 
+mppeace utilitymob 
+mppeace 2.utilitymob 
+mppeace 3.utilitymob 
+mppeace 4.utilitymob 
+mppeace 5.utilitymob 
+~ 
+| 
+#2831 
+utilitymob1 utilitymob~ 
+mob2831~ 
+Some god abandoned a newly created utilitymob here. 
+~ 
+~ 
+1 0 0 S 
+55 0 0 1d1+32000 0d0+0 
+0 0 
+112 112 0 
+> hitprcnt_prog 90~ 
+mprestore self 32000 
+~ 
+> speech_prog p stop fighting!~ 
+mppeace $i 
+~ 
+| 
+#2832 
+utilitymob2 utilitymob~ 
+mob2832~ 
+Some god abandoned a newly created utilitymob here. 
+~ 
+~ 
+1 0 0 S 
+55 0 0 1d1+32000 0d0+0 
+0 0 
+112 112 0 
+> hitprcnt_prog 90~ 
+mprestore self 32000 
+~ 
+> speech_prog p stop fighting!~ 
+mppeace $i 
+~ 
+| 
+#2833 
+utilitymob3 utilitymob~ 
+mob2833~ 
+Some god abandoned a newly created utilitymob here. 
+~ 
+~ 
+1 0 0 S 
+55 0 0 1d1+32000 0d0+0 
+0 0 
+112 112 0 
+> hitprcnt_prog 90~ 
+mprestore self 32000 
+~ 
+> speech_prog p stop fighting!~ 
+mppeace $i 
+~ 
+| 
+#2834 
+utilitymob4 utilitymob~ 
+mob2834~ 
+Some god abandoned a newly created utilitymob here. 
+~ 
+~ 
+1 0 0 S 
+55 0 0 1d1+32000 0d0+0 
+0 0 
+112 112 0 
+> hitprcnt_prog 90~ 
+mprestore self 32000 
+~ 
+> speech_prog p stop fighting!~ 
+mppeace $i 
+~ 
+| 
+#2835 
+utilitymob5 utilitymob~ 
+mob2835~ 
+Some god abandoned a newly created utilitymob here. 
+~ 
+~ 
+1 0 0 S 
+55 0 0 1d1+32000 0d0+0 
+0 0 
+112 112 0 
+> hitprcnt_prog 90~ 
+mprestore self 32000 
+~ 
+> speech_prog p stop fighting!~ 
+mppeace $i 
+~ 
+| 
+#2836 
+ice sorceress queen~ 
+the ice sorceress~ 
+The Queen of Castle Gallant stands comfortably within her shield of ice. 
+~ 
+A slender and beautiful woman, the Queen is dressed in little but ice. 
+Though beautiful, she is very strong too. Her eyes are piercing light 
+blue, like the sky or like a cold lake. 
+~ 
+2097219 271057024 1000 C 
+55 0 -300 1d1+7999 1d1+299 
+1000000 0 
+112 112 0 
+13 13 13 13 13 13 13 
+0 0 0 0 0 
+0 3 0 0 1 1 3 
+85 0 8 0 3149663 0 16384 3 
+> fight_prog 100~ 
+mprestore self 50 
+if mortinroom(0) > 3 
+mpslay $n 
+break 
+endif 
+if rand(50) 
+if rand(33) 
+mea $n _whi A tumult of freezing ice and snow assaults you! 
+mer $n _whi A tumult of freezing ice and snow assaults $n! 
+else 
+if rand(50) 
+mea $n _lbl A chilling tornado swirls around you, slashing through your armor 
+mer $n _lbl A chilling tornado swirls around $n, slashing through armor! 
+else 
+mea $n _pur A horrible blast of ice freezes you to the bone... 
+mer $n _pur A horrible blast of ice freezes $n to the bone... 
+endif 
+endif 
+mpdamage $n 400 
+if rand(10) 
+mpe _blu $I utters the words 'Cone of Cold'! 
+mpe _whi A visciously cold aura fills the room... 
+mpforce all shiver 
+mpdamage all 800 
+endif 
+else 
+mea $n _lbl $I conjures a solid barrier of ice around you... 
+mer $n _lbl $I conjures a solid barrier of ice around $n... 
+mpforce $n wimpy 0 
+mpforce $n follow self 
+mppeace $n 
+mpdelay $n 2 
+mea $n _blu You can't move! 
+mea $r _dgr Gusts of winds materialize into a solid blast of ice... 
+mer $r _dgr Gusts of winds around $r solidify into a blast of ice... 
+mpmset self flags secretive 
+c 'frost breath' $r 
+mpmset self flags secretive 
+endif 
+~ 
+> greet_prog 100~ 
+mpe _dgr Little gusts of wind begin to swirl through the bedchambers... 
+mpe _dgr At length, they solidify into a mighty blast of ice! 
+mea $n _lbl The mighty blast of ice slams into you with all the force of 
+mea $n _lbl a freight train, momentarily stunning you. 
+mer $n _lbl The mighty blast of ice slams into $n with all the force of 
+mer $n _lbl a freight train, momentarily stunning $m. 
+c 'frost breath' $n 
+stun 
+stun 
+stun 
+~ 
+> death_prog 100~ 
+if isnpc($n) 
+mpjunk all 
+endif 
+~ 
+| 
+#2837 
+advisor~ 
+the King's advisor~ 
+The King's advisor is busily repairing stuff for the King. 
+~ 
+This short fellow is the king's advisor. Since the king is very wise and 
+intelligent, this fellow has little purpose. To make himself more useful, 
+he has taken to helping the king by repairing things for him. 
+~ 
+67 4196136 1000 C 
+55 0 300 1d1+499 0d0+0 
+100000 0 
+112 112 1 
+25 13 13 3 3 13 13 
+30 30 30 30 30 
+0 3 0 0 1 1 20 
+85 0 1024 0 3072 3171327 512 64 
+> greet_prog 100~ 
+if race($i) == human 
+peer 
+'You come seeking advice?? 
+'My advice to you is not to invade places like Castle Gallant! 
+roar 
+mpkill $n 
+else 
+cower 
+'Alright, alright! I will repair your things, just.. don't hurt me! 
+endif 
+~ 
+> fight_prog 100~ 
+if race($i) == human 
+shriek 
+c spiral 
+c gas 
+c earthquake 
+endif 
+~ 
+> hitprcnt_prog 15~ 
+if race($i) == human 
+mppeace $i 
+'Oi! Please, enough! I yield! 
+mea $n _ora Narrowing your eyes, you prepare to finish the fool off... 
+'No, wait! If you keep me alive... I'll repair your armors! 
+'Please dont kill me... 
+mpmset self race dwarf 
+else 
+'Augh! So this is how I die eh! 
+endif 
+~ 
+> rand_prog 15~ 
+if race($i) == human 
+c spiral 
+c gas 
+shriek 
+endif 
+~ 
+| 
+#2838 
+gallant bard~ 
+the Gallant Bard~ 
+The Gallant Bard strums his harp and sings the glories of Gallant. 
+~ 
+The bard feels your eyes come to a rest upon him and he looks up from his 
+harping briefly to offer you a Gallant smile. He does not know that you 
+busted in here through the dungeons and that the whole castle is trying to 
+kill you. As you listen, he plays a sad, mellow tune, reminding you of things 
+which once were... 
+~ 
+67108931 4719144 1000 C 
+55 0 -150 1d1+2999 0d0+0 
+1000 0 
+112 112 1 
+15 18 25 15 15 19 20 
+-5 -5 -5 -5 -5 
+0 3 0 0 1 1 6 
+85 0 256 1048576 2100481 0 560 67 
+> fight_prog 85~ 
+yell Hey! Um, can a knight help me? 
+yell I'm DYING here!!! 
+mpmload 2839 
+mpforce worthy yell I will help you! 
+mpe _dgr A knight runs through the courtyard and into the room. 
+mpe _gre A worthy knight rescues $I! 
+mppeace self 
+mpforce worthy roar 
+mpmset self flags pacifist 
+~ 
+> speech_prog idtag~ 
+if ispc($n) 
+break 
+endif 
+mptrans worthy 2865 
+mpat 2865 mpmset worthy flags pacifist 
+mpat 2865 mpforce worthy sleep 
+mpmset self flags pacifist 
+mpkill $r 
+~ 
+> death_prog 100~ 
+,touches the strings of his harp once more... 
+mpe _lbl In his last moments of life, the bard's music rings more clear, 
+mpe _lbl more beautiful, than ever before, as though the angels of Heaven 
+mpe _lbl themselves were singing through his fingers, through his harp... 
+mpe _lbl Through his Harp, divine... 
+mpoload 2854 
+~ 
+| 
+#2839 
+worthy knight~ 
+a worthy knight~ 
+A worthy knight stands by the fountain, blood-covered sword drawn! 
+~ 
+A rather large, noble knight eyes you with something less than friendship. 
+~ 
+99 4194856 1000 C 
+55 0 -300 1d1+6999 0d0+0 
+342 0 
+112 112 1 
+25 25 25 25 25 25 25 
+-8 -8 -8 -8 -8 
+0 3 0 0 1 1 3 
+85 0 6 0 2108672 0 384 524291 
+> fight_prog 100~ 
+if race($i) == dwarf 
+break 
+endif 
+lunge 
+mprestore self 50 
+if rand(15) 
+'In the name of King Gallant, throw down your weapon! 
+disarm 
+endif 
+if rand(20) 
+,launches a fierce set of attacks against $n! 
+mppeace $i 
+mpkill $n 
+mppeace $i 
+mpkill $n 
+endif 
+if rand(70) 
+mpe _lbl The Gallant Bard sings a soft song, healing $I's wounds... 
+thank bard 
+mprestore self 66 
+endif 
+if rand(15) 
+,jumps in the air and executes a perfect double-kick before his feet even touch the ground! 
+leap 
+leap 
+endif 
+~ 
+> hitprcnt_prog 10~ 
+'I am sorry my friend... I am too weak to continue! 
+apologize bard 
+,limps weakly into the courtyard, leaving the bard to fend for himself. 
+mppeace $i 
+tell bard idtag 
+~ 
+> death_prog 100~ 
+'My friend... Live forever, may your music never die. 
+cry bard 
+mpmset bard flags pacifist 
+mpforce bard 'Your death will not go unavenged... 
+mpforce bard c indig 
+mpforce bard mpkill $r 
+~ 
+| 
+#2840 
+high priest castle~ 
+the High Priest of the Castle~ 
+The High Priest of the Castle meditates in front of the altar... 
+~ 
+This powerful man looks quite devout and holy. It is really doubtful 
+that he would be as simple a battle as he might appear at first glance, 
+because it goes without saying that he has the full favor and protection 
+of a whole number of powerful deities. 
+~ 
+99 4194856 1000 C 
+55 0 -300 1d1+31999 1d1+100 
+1 0 
+112 112 1 
+13 13 25 13 25 13 13 
+-30 -30 -30 -30 -30 
+0 3 0 0 1 1 3 
+85 0 8 0 3157775 0 1375731712 3 
+> fight_prog 30~ 
+c necro 
+c necro 
+c acetum 
+~ 
+> fight_prog 55~ 
+if isdevoted($n) 
+else 
+laugh 
+'You fool. You do not even have a deity to aid your battles. 
+,brushes you aside with a silent gesture, ignoring you. 
+mea $n _yel A thunderbolt from the Heavens themselves strikes you dead... 
+mer $n _yel A thunderbolt from the Heavens themselves strikes $n dead... 
+mpdamage $n 32000 
+break 
+endif 
+if favor($n) < 2499 
+,screams "You are a FOOL to challenge a high priest without even the full favor of your own deity!" 
+laugh 
+if favor($n) < 0 
+'Your deity has failed to protect you $n. Now I may destroy you... 
+c acetum 
+c 'lightning breath 
+c necro 
+c 'black lightning 
+c quant 
+c 'hand of chaos 
+c necro 
+else 
+mea $n _lbl You feel your tentative favor with your deity waning... 
+mpfavor $n -50 
+endif 
+endif 
+~ 
+> death_prog 100~ 
+if isnpc($n) 
+mpjunk all 
+break 
+endif 
+,utters a final prayer to $n's deity... 
+mpe _dbl The heavens have frowned upon $n and $n is suddenly forsaken! 
+mpforce $n weep 
+mpforce $n grovel 
+mpforce $n devote none 
+mpe _whi A tear falls to the floor from the dying priest's eyes. 
+mpe _lbl The tear shimmers and solidifies ... 
+mpoload 2855 
+~ 
+| 
+#2841 
+valinspirallermob valinspiraller spiral blast~ 
+the Valinspiraller~ 
+Hidden away safely within this ancient cavern, the spirit of the sword Valinspiraller wanders restlessly. 
+~ 
+A blur! 
+~ 
+1073741923 4194856 0 C 
+55 0 -50 1d1+13999 1d50+15 
+0 0 
+112 112 0 
+25 20 25 25 20 13 20 
+-30 -30 -30 -30 -30 
+85 3 0 0 1 1 10 
+85 0 15990784 0 2100488 0 0 64 
+> fight_prog 100~ 
+mprestore self 1320 
+if race($i) == magical 
+mpe _whi Five... 
+mpmset self race god 
+break 
+endif 
+if race($i) == god 
+mpe _whi Four... 
+mpmset self race animal 
+break 
+endif 
+if race($i) == animal 
+mpe _whi Three... 
+mpmset self race shapeshifter 
+break 
+endif 
+if race($i) == shapeshifter 
+mpe _whi Two... 
+mpmset self race dwarf 
+break 
+endif 
+if race($i) == dwarf 
+mpe _whi One... 
+mpmset self race elf 
+break 
+endif 
+c spiral 
+mpe _pin A swirling blur of death fills the cavern, and accellerates, 
+mpe _pin until it is impossible to comprehend, and then further. 
+mpdamage all 8100 
+mprestore self 32000 
+mpmset self race magical 
+~ 
+> death_prog 100~ 
+mpe _whi As the Spiral Blast calms down, an ancient secret becomes clear. 
+mpe _lbl This spiritual energy is the source of a powerful spell woven 
+mpe _lbl by the denizens of Castle Gallant, one which granted them eternal 
+mpe _lbl life. With the spirit vanquished, the spell can exist no more... 
+mpechozone _pur The ground begins to tremble as a powerful spell is 
+mpechozone _pur shattered. Though at first it seems like a harmless 
+mpechozone _pur earthquake, the afteraffects of this spell become quite 
+mpechozone _pur violent. 
+mpechozone _ora Your body begins to feel very hot. As you gaze at 
+mpechozone _ora yourself, you see your body wrinkling, withering, as 
+mpechozone _ora the spell of Eternal Youth which once blessed this land 
+mpechozone _ora fades... 
+if mobinworld(2829) == 1 
+mpechozone _lbl King Gallant yells 'This is the end!' 
+endif 
+if mobinworld(2818) == 1 
+mpechozone _lbl Lazsigma yells 'The spell is shattered, alas!' 
+endif 
+mpjunk all 
+mpmset self flags secretive 
+mpat 3832 get ball id123454321 
+if ovnuminv(21) == 0 
+mpe _whi The spirit shimmers and disintegrates before your very eyes! 
+mpgoto 2879 
+else 
+mpe _blu As your body ages exponentially, a sudden tingling feeling overwhelms 
+mpe _blu you. In your last moments, you attain a temporary enlightenment, 
+mpe _blu a heightened wisdom and knowledge. As the spiral blast which 
+mpe _blu surrounds you calms down, you become aware of a rare remnant 
+mpe _blu of the spell which has been shattered... 
+mpoload 2861 
+mpoload 2862 
+mpat 3832 put ball id123454321 
+endif 
+mpmset self flags secretive 
+mpechozone _gre You feel as though your body is on fire. The intense heat 
+mpechozone _gre eventually leaves you unconscious, never to reawaken... 
+mpdamage all 32000 
+mpat 2877 mpdamage all 32000 
+mpat 2877 say destroy 
+mpat 2829 say The spell has ended! 
+mpat 2843 mpdamage all 32000 
+mpat 2864 mpdamage all 32000 
+mpat 2812 mpdamage all 32000 
+~ 
+| 
+#2842 
+utilityx~ 
+a newly created utilityx~ 
+Some god abandoned a newly created utilityx here. 
+~ 
+~ 
+8388609 0 0 S 
+55 0 0 0d0+0 0d0+0 
+0 0 
+112 112 0 
+> rand_prog 100~ 
+mpat 2878 mpmload 2841 
+sleep 
+~ 
+| 
+#2899 
+topmob~ 
+a newly created topmob~ 
+Some god abandoned a newly created topmob here. 
+~ 
+~ 
+1 0 0 S 
+1 0 0 0d0+0 0d0+0 
+0 0 
+112 112 0 
+#0
+
+#OBJECTS 
+#2800 
+thorns~ 
+the thorns~ 
+Scattered thorns scrape your flesh and tear at your armour.~ 
+~ 
+12 262144 0 
+0 0 0 0 
+1 0 0 
+E 
+thorn thorns~ 
+Each individual thorn is capable of taking someone's eye out! It is 
+clear that Castle Gallant does not go out of it's way to ensure safe 
+travel to it's doorstep... 
+~ 
+#2801 
+small spring~ 
+a small spring~ 
+A small spring gurgles down the side of the canyon, serenading the wildlife.~ 
+~ 
+25 2 0 
+0 0 0 0 
+1 0 0 
+E 
+small spring~ 
+The spring seems to be minding it's own business; surely a gallant 
+explorer like yourself has more important things to worry about- although 
+the spring CAN provide a rather refreshing sip of water. 
+~ 
+> use_prog 100~ 
+mea $n _lbl As you take a drink from $O, a little wave wets your face. 
+mer $n _lbl As $n takes a drink from $O, a little wave wets $s face. 
+~ 
+| 
+#2802 
+broad sword~ 
+a broad sword~ 
+A huge two-handed broad sword takes up a large part of the floor.~ 
+~ 
+5 688128 8193 
+13 5 4 3 
+20 100 10 
+E 
+broad sword~ 
+This is a very hefty sword. Only a true knight could wield it. 
+~ 
+#2803 
+errant armour~ 
+errant armour~ 
+An adventurous knight has left a complete suit of armour here!~ 
+~ 
+9 688128 9 
+20 20 0 0 
+50 1200 120 
+E 
+errant armour armor~ 
+Medium quality armour for an adventurer. Perfect for jousts and sword- 
+fights, making it a necessity for errant knights. 
+~ 
+A 
+17 -25 
+A 
+2 -2 
+A 
+22 5 
+#2804 
+riding saddle~ 
+a riding saddle~ 
+A riding saddle, still sweaty from a horse's back, is lying here.~ 
+~ 
+9 262144 9 
+1 1 0 0 
+1 56 5 
+E 
+riding saddle~ 
+This is a very useful tool for anyone who uses horses routinely. 
+~ 
+> wear_prog 100~ 
+if race($n) == horse 
+break 
+endif 
+mea $n _bro You aren't a horse! 
+mer $n _bro $n isn't a horse! 
+mpforce $n rem saddle 
+~ 
+| 
+#2805 
+day's rations~ 
+a day's rations~ 
+A days rations of meager, cheap food is bundled up here.~ 
+~ 
+19 262144 1 
+9 0 0 0 
+1 9 0 
+E 
+day's rations~ 
+A rather bland meal. The kind of food which preserves well. Good for an 
+errant knight on a tight budget, but not exactly good tasting. 
+~ 
+#2806 
+horseshoes~ 
+four horseshoes~ 
+Two pairs of horseshoes lie here, one atop the other.~ 
+~ 
+9 524288 65 
+10 10 0 0 
+10 47 4 
+E 
+horseshoes~ 
+These horseshoes will help a horse walk further. They are crucial for 
+errant knights who plan on travelling long distances. 
+~ 
+A 
+14 250 
+> wear_prog 100~ 
+if race($i) == horse 
+else 
+mea $n _bro You aren't a horse! 
+mer $n _bro $n isn't a horse! 
+mpforce $n rem horseshoes 
+endif 
+~ 
+| 
+#2807 
+well-polished well polished cross bow crossbow~ 
+a well-polished crossbow~ 
+A very nicely made, high quality crossbow glistens in the muted sunlight.~ 
+~ 
+56 524288 262145 
+12 0 35 13 1 0 
+20 1600 160 
+E 
+well polished well-polished cross bow crossbow~ 
+This cross bow is very high quality, it must have been purchased originally 
+by someone quite wealthy. Someone who took pride in his work as an 
+archer. 
+~ 
+#2808 
+arrow quiver~ 
+an arrow quiver~ 
+A quiver for storing arrows is here; alas, it looks empty.~ 
+~ 
+58 0 5 
+20 0 0 20 
+5 64 6 
+E 
+quiver~ 
+A rather nice quiver, apparently tailor made for it's original owner. 
+~ 
+#2809 
+magnetized crossbow bolt~ 
+a magnetized crossbow bolt~ 
+A small metal crossbow bolt lies here, attracting metal.~ 
+~ 
+57 524288 1 
+0 0 0 13 
+2 3 0 
+E 
+magnetized crossbow bolt~ 
+This crossbow bolt is different than most because it seems to be magnetized. 
+You have a little bit of trouble getting it not to stick to your metal 
+gauntlets. 
+~ 
+#2810 
+first moat~ 
+the first moat~ 
+The Outer Moat rushes past. Good thing there's a bridge!~ 
+~ 
+25 0 0 
+0 0 0 0 
+1 0 0 
+E 
+first moat outer~ 
+This moat is full of piranhae and other mean things, you aren't certain that 
+you want to go in there... 
+~ 
+> use_prog 100~ 
+mea $n You take a long, thirst quenching drink. 
+mer $n $n takes a long, thirst quenching drink. 
+mea $n _ora You recoil frantically as piranhae bite into your lips!! 
+mer $n _ora $n recoils frantically as piranhae bite into $s lips!! 
+mpdamage $n 100 
+~ 
+| 
+#2811 
+giant doublehanded sword~ 
+a giant doublehanded sword~ 
+An enormous sword lies here; you'll have to use both hands to pick it up.~ 
+~ 
+5 704512 8193 
+3 1 23 1 
+35 100 10 
+E 
+giant doublehanded sword~ 
+It is extremely large and unwieldy... 
+~ 
+#2812 
+suit very heavy platemail~ 
+a suit of very heavy platemail~ 
+A very heavy suit of platemail is being stored here.~ 
+~ 
+9 17481728 9 
+15 15 0 0 
+70 100 10 
+E 
+heavy suit platemail~ 
+You can barely pick it up, it's so heavy and cumbersome... 
+~ 
+A 
+2 -4 
+#2813 
+utilitydigitem~ 
+some sort of strange hole leading into darkness~ 
+(This item can't be seen by players)~ 
+~ 
+12 536870976 1 
+0 0 0 0 
+1 0 0 
+#2814 
+smelly decaying rags~ 
+smelly, decaying rags~ 
+Some smelly, half-decayed rags lie here, too shabby even for a beggar.~ 
+~ 
+9 262144 1025 
+1 1 0 0 
+1 0 0 
+E 
+smelly decaying rags~ 
+Old... grimy... smelly... not what you'd want to wear to church. 
+~ 
+A 
+25 -3 
+#2815 
+whisp ghostly energy~ 
+a whisp of ghostly energy~ 
+A beautiful whisp of ghostly energy flickers rhythmically.~ 
+~ 
+4 32 16385 
+69 1 10 -1 
+1 1000 100 
+'shockshield' 
+E 
+whisp ghostly energy~ 
+Crackling energy cascades and swirls within your hands, a small remnant of 
+the ghost of a martyr. The incredible power almost causes your hair to 
+stand on end, and as your hand glances across the metal hilt of your trusty 
+weapon, you feel a spark of static electricity which you have gathered by 
+merely touching this wondrous relic. 
+~ 
+> use_prog 100~ 
+mea $n _yel You hold the swirl aloft, and a glimmering shield of electricity 
+mer $n _yel $n holds the swirl aloft, and a glimmering shield of electricity 
+mpe _yel slowly encompasses the room, surrounding you and becoming one with you 
+~ 
+> wear_prog 80~ 
+mea $n _whi The whisp of energy crackles with incredible energy! 
+mer $n _whi You hear a crackle of ominous energy, and notice $n's hair begin to stand up on end... 
+~ 
+| 
+#2816 
+decaying corpse~ 
+the decaying corpse~ 
+A decaying corpse is little more than bones.~ 
+~ 
+13 134479872 1 
+0 0 0 0 
+200 0 0 
+E 
+decaying corpse~ 
+this body has been dead for quite a long time, wasting away deep in these 
+dungeons. 
+~ 
+> get_prog 100~ 
+mea $n _cya The corpse slips out of your hands... 
+mer $n _cya The corpse slips out of $n's hands... 
+mpforce $n drop $o 
+~ 
+| 
+#2817 
+thin band silver~ 
+a thin band of silver~ 
+A thin band of silver sparkles in the dirt, reflecting the sun's rays.~ 
+~ 
+9 525312 3 
+5 5 0 0 
+1 250 25 
+E 
+thin band silver~ 
+At first it appears to be real silver, but upon closer inspection it 
+becomes clear that it is just copper with silver painting. Nevertheless, 
+this ring looks pretty. 
+~ 
+A 
+25 1 
+#2818 
+chains torn wall~ 
+chains torn from a wall~ 
+A partially broken chain is coiled up in a corner.~ 
+~ 
+5 524288 8193 
+10 5 7 4 
+3 100 10 
+E 
+chain torn~ 
+It would seem that at some time this chain was attached to a wall. some 
+very strong force ripped it unceremoniously out of that wall... 
+~ 
+#2819 
+gallant dungeon key~ 
+a Gallant dungeon key~ 
+A small key of great worship and renown sparkles on the floor.~ 
+~ 
+57 524288 1 
+12 18 55 13 
+10 1 0 
+E 
+gallant dungeon key~ 
+A shiny little key with the crest of Castle Gallant boldly emblazoned on 
+the side. 
+~ 
+#2820 
+nasty bastard sword~ 
+a nasty looking bastard sword~ 
+A bastard sword has been discarded here; it looks rather nasty.~ 
+~ 
+5 655360 8193 
+10 3 6 0 
+17 1000 100 
+E 
+nasty bastard sword~ 
+You shudder at the thought of fighting someone equipped with this awesome 
+weapon. 
+~ 
+A 
+19 1 
+A 
+13 5 
+#2821 
+cold steel visor~ 
+a cold steel visor~ 
+A cold steel visor, the likes of which a knight might wear.~ 
+~ 
+9 524288 1179649 
+9 9 0 0 
+3 250 25 
+E 
+cold steel visor~ 
+Although unenchanted, this visor seems malevolent and somehow evil. 
+~ 
+A 
+17 -5 
+#2822 
+dungeon platemail plate mail~ 
+dungeon platemail~ 
+A suit of platemail for use by a dungeon guard lies here.~ 
+~ 
+9 704512 9 
+10 10 0 0 
+20 0 0 
+E 
+dungeon platemail plate mail~ 
+Not the best platemail you've seen, this was never intended to be used in 
+battle against serious challenges, but just against escaped prisoners. 
+~ 
+A 
+17 -5 
+#2823 
+oak-hewn oak hewn longbow long bow~ 
+an oak-hewn longbow~ 
+A longbow hewn from the branches of an oak tree.~ 
+~ 
+56 262144 262145 
+11 0 30 14 3 0 
+5 2000 200 
+E 
+oak-hewn oak longbow long bow~ 
+Hewn from the branch of a strong oak tree, this bow is worth quite a 
+large sum of money. It is clearly no toy. 
+~ 
+#2824 
+tough brown leather jerkin~ 
+a tough brown leather jerkin~ 
+A tough brown leather jerkin lies here, ready to be worn.~ 
+~ 
+9 262144 525321 
+13 13 0 0 
+2 100 10 
+E 
+tough brown leather jerkin~ 
+The leather has been soaked in a special oil to make it tougher. Only 
+the Gallant armourors know how to apply that technique, making this jerkin 
+somewhat unique and rare. 
+~ 
+A 
+2 2 
+A 
+17 -10 
+A 
+13 5 
+#2825 
+pale yellow robes~ 
+pale yellow robes~ 
+Some pale yellow robes are strewn about here, in need of a good ironing.~ 
+~ 
+9 64 1025 
+6 6 0 0 
+1 5000 500 
+E 
+pale yellow robes~ 
+These pale robes are of a yellow color, making them especially helpful 
+in the casting of yellow magicks. 
+~ 
+A 
+12 65 
+A 
+24 -5 
+#2826 
+silver lined dagger~ 
+a silver lined dagger~ 
+A small magical dagger, whose blade is lined with silver.~ 
+~ 
+5 589888 8193 
+12 1 28 11 
+2 4000 400 
+E 
+silver lined dagger~ 
+Lined with silver, this dagger is heavily enchanted. It is a good weapon 
+for a battlemage. 
+~ 
+A 
+18 2 
+A 
+19 1 
+A 
+12 35 
+#2827 
+wand caustic fount~ 
+a wand of caustic fount~ 
+A powerful magic wand drips caustic acid onto the ground.~ 
+~ 
+3 64 16385 
+35 4 4 -1 
+3 8000 800 
+'caustic fount' 
+E 
+wand caustic fount~ 
+This elongated glass wand is heavily enchanted, and just touching it makes 
+your fingers tingle. The far end is coated in some sort of strong acid, 
+and it is not a good idea to tough it. 
+~ 
+#2828 
+pile decapitated heads~ 
+the pile of decapitated heads~ 
+A pile of rotting, decapitated heads has collected in the corner.~ 
+~ 
+12 262144 0 
+0 0 0 0 
+1 0 0 
+E 
+pile decapitated heads~ 
+There are male heads, female heads, heads of all manner of people. the 
+justice system of Castle Gallant is unprejudiced, alright. It kills 
+everyone. 
+~ 
+#2829 
+recently slain body~ 
+a recently slain body~ 
+A recently slain body, it's head chopped off cleanly, still leaks hot blood.~ 
+~ 
+23 262144 0 
+0 0 0 0 
+1 0 0 
+E 
+recently slain body corpse~ 
+A horrible sight. Killed by decapitation. The head is presumably just 
+another addition to the pile in the corner. 
+~ 
+#2830 
+huge puddle blood~ 
+a huge puddle of blood~ 
+A huge puddle of blood pours from the recently slain body.~ 
+~ 
+27 32 0 
+5 32000 0 1 
+1 0 0 
+E 
+huge puddle blood~ 
+The mortal wound of the poor prisoner who was recently decapitated is 
+really more than your stomach can take. 
+~ 
+#2831 
+heavy bloodsoaked axe~ 
+a heavy bloodsoaked axe~ 
+An ancient, malevolent weapon of death soaks in a pool of blood.~ 
+~ 
+5 705044 8193 
+12 5 8 6 
+1 10000 1000 
+E 
+heavy bloodsoaked axe~ 
+A giant weapon which has sliced many heads clean off of their shoulders. 
+The wooden handle is wrapped in thin, filthy strands of rope, and the 
+blade is chipped in many places, and stained many times over with crimson. 
+~ 
+A 
+17 -20 
+A 
+19 10 
+A 
+18 10 
+A 
+25 -2 
+A 
+2 -1 
+A 
+1 1 
+#2832 
+mask shadows~ 
+a mask of shadows~ 
+The shadow of an executioner's mask.~ 
+~ 
+9 2612 1179649 
+10 10 0 0 
+15 1000 100 
+E 
+mask shadows~ 
+This strange mask seems to become invisible as you shed your lightsource 
+upon it's darkened, umbrageous surface, yet it is very real and clear. 
+~ 
+A 
+26 99328 
+> use_prog 100~ 
+mea $n _dch Dark, cold shadows are suddenly cast over your face... 
+mer $n _dch Dark, cold shadows are suddenly cast over $n's face... 
+~ 
+| 
+#2834 
+nonamehead~ 
+someone's decapitated head~ 
+Someone's decapitated head lies here...~ 
+~ 
+8 262144 1 
+0 0 0 0 
+1 0 0 
+> get_prog 100~ 
+if ispc($n) 
+break 
+endif 
+if inroom($n) == 2843 
+if isaffected($n) == detect_traps 
+else 
+mpmset $n affected detect_traps 
+endif 
+endif 
+~ 
+| 
+#2835 
+vicehold~ 
+the Vicehold~ 
+A gauntlet hewn of ice cold adamantium freezes the ground beneath it.~ 
+~ 
+9 25871024 129 
+15 15 0 0 
+8 5 0 
+E 
+vicehold~ 
+A powerful gauntlet hewn of cold adamantium. It is as cold as ice, 
+and the fingers on it are as sharp as needles. 
+~ 
+A 
+29 1 
+A 
+1 1 
+A 
+53 5 
+A 
+46 6 
+A 
+26 512 
+A 
+19 7 
+A 
+18 4 
+A 
+21 -1 
+> use_prog 100~ 
+mea $n _dbl The Vicehold freezes itself onto your wrist... 
+mer $n _dbl The Vicehold freezes itself onto $n's wrist... 
+mea $n _cya You drop to your knees and grovel to the Vicehold. 
+mer $n _cya $n drops to $s knees and grovels to the Vicehold. 
+~ 
+> wear_prog 100~ 
+if class($n) == wardancer 
+or class($n) == knight 
+or class($n) == warrior 
+or class($n) == paladin 
+break 
+endif 
+mea $n _dch Only Wardancers and Knights can use the Vicehold ... 
+mpforce $n rem $o 
+~ 
+| 
+#2836 
+key~ 
+a newly created key~ 
+Some god dropped a newly created key here.~ 
+~ 
+13 0 1 
+0 0 0 0 
+1 0 0 
+#2837 
+recaptured sunrise dagger~ 
+the Recaptured Sunrise~ 
+A beam of light shines intensely upon the ground, forming a shimmering dagger.~ 
+~ 
+5 8424513 8193 
+12 12 3 11 
+3 2453452 245345 
+E 
+recaptured sunrise dagger~ 
+Constructed of silver, Recaptured Sunrise is especially effective against 
+the undead. It is a shimmering weapon, with an oak-carved hilt. The rays 
+of the sun are reflected off of it, piercing painfully into your unfortunate 
+foe as you do battle. 
+~ 
+A 
+19 5 
+A 
+18 14 
+A 
+24 -10 
+A 
+12 35 
+> use_prog 10~ 
+mea $n _whi You wield $O. 
+mer $n _whi As $n wields $O, the reflection of the sunrise appears in $s eyes. 
+~ 
+| 
+#2838 
+blinding dazzling aura~ 
+a blinding, dazzling aura~ 
+A blinding, dazzling aura exists within the darkness.~ 
+~ 
+9 1082166337 1033 
+1 1 0 0 
+1 10000 1000 
+A 
+12 25 
+#2839 
+mystile mystical mist~ 
+the Mystile~ 
+A mystical relic of legends long forgotten- the Mystile.~ 
+~ 
+9 524384 4097 
+15 15 0 0 
+1 1 0 
+E 
+mystile~ 
+A whisp of mist twists and writhes like a serpent, encircling your wrist. 
+The outter mist is constantly disippating into the air, and it would seem 
+that in just a few minutes the Mystile will have completely evaporated, 
+yet inside new mist spawns from seemingly nothing. Occasionally the 
+Mystile shifts colors, but only for an instant, before returning to it's 
+normal, brilliant white state. 
+~ 
+A 
+1 1 
+A 
+4 2 
+A 
+3 1 
+A 
+31 1 
+A 
+19 2 
+A 
+40 9 
+> use_prog 10~ 
+mea $n _blu As you wear $O, it shimmers a beautiful shade of blue for a brief instant. 
+mer $n _blu As $n wears $O, it shimmers a beautiful shade of blue for a brief instant. 
+~ 
+> use_prog 13~ 
+mea $n _pur Crackling with energy, the mists become purple for an instant. 
+mer $n _pur $n wears $O on $s wrist. Crackling with energy, the mists become purple for an instant. 
+~ 
+> use_prog 16~ 
+mea $n _whi $O shimmers intensely white as you wear it on your wrist. 
+mer $n _whi $O shines intensly white as $n wears it on $s wrist. 
+~ 
+> damage_prog 10~ 
+mea $n _lbl The mists writhe and slither up and down your arm, as if alive. 
+~ 
+> remove_prog 10~ 
+mpe _dch $O pulsates a soft dark gray for a fleeting instant. 
+~ 
+> remove_prog 5~ 
+mpe _gre The mists churn green for a moment before resuming their normal state of calmness. 
+~ 
+> exa_prog 20~ 
+mea $n _whi The mists part slightly, as if struggling not to be seen. 
+~ 
+| 
+#2840 
+large blunt heavy club~ 
+a large blunt heavy club~ 
+A large, blunt, heavy club makes it's mark on the carpet below.~ 
+~ 
+5 524352 8193 
+8 3 6 8 
+20 352 35 
+E 
+large heavy blunt club~ 
+A rather large weapon capable of crushing a full grown man with a good blow. 
+~ 
+#2841 
+thin silver rogues dagger~ 
+a thin silver rogue's dagger~ 
+A thin silver dagger, used by a rogue, reflects sunrays off it's blade.~ 
+~ 
+5 524352 8193 
+13 5 6 2 
+1 1000 100 
+E 
+thin silver dagger rogues~ 
+A rather nice dagger, hewn from the rarest silver. 
+~ 
+A 
+19 6 
+#2842 
+well kept spear well-kept~ 
+a well-kept spear~ 
+A well-kept spear, it's wooden handle recently rebuffed, reclines against a wall.~ 
+~ 
+5 557056 8193 
+10 5 5 2 
+20 10000 1000 
+E 
+well-kept well kept spear polearm~ 
+Though very old, this weapon is still in excellent condition. It must be 
+maintained very well. Clearly, it's user is very wise. 
+~ 
+A 
+4 3 
+A 
+18 3 
+#2843 
+long longsword sword~ 
+a long longsword~ 
+A rather long longsword rests here on a rock.~ 
+~ 
+5 557056 8193 
+10 5 5 3 
+15 12455 1245 
+E 
+long longsword sword~ 
+Even for a longsword, this weapon is remarkably long. You imagine that it 
+would be quite useful in battle against foes with smaller weapons, since 
+it could easily inflict blows from a longer range, giving the unfortunate 
+victim no chance to retort. 
+~ 
+A 
+18 1 
+A 
+17 -10 
+A 
+10 1 
+#2844 
+unwieldy stone bludgeon~ 
+an unwieldy bludgeon~ 
+A rather enormous bludgeon looks like it could prove quite heavy.~ 
+~ 
+5 32768 8193 
+13 5 5 8 
+35 342 34 
+E 
+bludgeon~ 
+This large stone looks like it would kill you instantly if someone bashed 
+your head with it. It would crush your brain to mush. 
+~ 
+A 
+1 1 
+A 
+19 2 
+#2845 
+valinspiraller~ 
+the Valinspiraller~ 
+Imbedded within an embankment of stone, the Valinspiraller reflects the sun's rays.~ 
+~ 
+5 559168 8193 
+13 6 8 3 
+2 15 1 
+E 
+valinspiraller~ 
+A long, thin sword, the Valinspiraller is a mix between a longsword and 
+a katana. Runes have been ensorcelled into the surface of the blade, which 
+seems to be constructed of perfect diamond. The tip is perfectly sharp, 
+enough so to rival the extremity of the finest needle. The edge is no 
+worse, making even the finest razor seem bludgeonous. The name 
+"Valinspiraller" is inscribed into the handle, which is bound of tough 
+but very soft leather. 
+~ 
+A 
+17 -20 
+A 
+2 1 
+A 
+24 -5 
+A 
+23 -2 
+A 
+20 -9 
+A 
+14 61 
+A 
+10 12 
+A 
+13 60 
+A 
+12 30 
+A 
+18 14 
+A 
+19 14 
+> use_prog 50~ 
+if isgood($n) 
+if rand(33) 
+mea $n _whi $O's blade divides the spectrum into a spiral of gorgeous colors, illuminating the room. 
+mer $n _whi As $n wields $O, the blade divides the spectrum into a spiral of gorgeous colors, illuminating the room. 
+else 
+if rand(50) 
+mea $n _pin $O's blade divides the spectrum into a spiral of gorgeous colors, illuminating the room. 
+mer $n _pin $O's blade divides the spectrum into a spiral of gorgeous colors as $n brings the weapon to bear. 
+else 
+mea $n _lbl $O's blade divides the spectrum into a spiral of gorgeous colors, illuminating the room. 
+mer $n _lbl As $n wields $O, the blade divides the spectrum into a spiral of gorgeous colors, illuminating the room. 
+endif 
+endif 
+break 
+endif 
+if rand(33) 
+mea $n _cya $O's sharp blade writhes like a serpent as you wield it! 
+mer $n _cya $O's sharp blade writhes like a serpent as $e wields it! 
+else 
+if rand(50) 
+mea $n _dbl $O's sharp blade writhes like a serpent as you wield it! 
+mer $n _dbl $O's sharp blade writhes like a serpent as $e wields it! 
+else 
+mea $n _dgr $O's sharp blade writhes like a snake as you wield it! 
+mer $n _dgr $O's sharp blade writhes like a serpent as $e wields it! 
+endif 
+endif 
+~ 
+| 
+#2846 
+infinite royal majesty~ 
+the infinite royal majesty~ 
+The infinite royal majesty.~ 
+~ 
+5 524288 8193 
+15 8 8 12 
+1 0 0 
+A 
+18 100 
+A 
+17 -100 
+A 
+19 30 
+A 
+30 72 
+A 
+30 209 
+A 
+30 216 
+A 
+30 218 
+A 
+30 109 
+A 
+30 68 
+A 
+30 105 
+A 
+30 17 
+A 
+30 211 
+A 
+30 110 
+A 
+30 103 
+#2847 
+mandate land~ 
+the Mandate of the Land~ 
+A golden key with the Gallant Crest shimmers in the light.~ 
+~ 
+4 524608 16385 
+100 1 1 -1 
+1 1000000 100000 
+'charm person' 
+E 
+mandate land key~ 
+The Mandate of the Land is a shimmering, magical key owned by only the 
+highest monarchs in the land. It sparkles and glimmers, and you realize 
+that it just might offer passage to many wondrous lands. 
+~ 
+A 
+33 15 
+A 
+26 3670016 
+#2848 
+crown blue diamond~ 
+a crown of blue diamond~ 
+A thousand blue diamonds have been joined in the making of this royal crown.~ 
+~ 
+9 25871617 17 
+20 20 0 0 
+10 0 0 
+E 
+crown blue diamond~ 
+The most beautiful of crowns ever imagined, pure diamond is used in the 
+creation of this crown. And no ordinary diamond, either, but rare blue 
+diamond. The entire crown is made of blue diamond! 
+~ 
+A 
+17 -40 
+A 
+27 530 
+A 
+22 -10 
+A 
+20 -10 
+A 
+25 4 
+> use_prog 100~ 
+mea $n _lbl As you don the gorgeous crown, it begins to glimmer with light. 
+mer $n _lbl As $n dons $O, it begins to glimmer with light. 
+~ 
+| 
+#2849 
+limited orbit~ 
+the Limited Orbit~ 
+A convoluted model of the solar solar system displays the orbits of the planets.~ 
+~ 
+9 623872 2101253 
+10 10 0 0 
+10 2566420 256642 
+E 
+limited orbit~ 
+A strange cantrip, made permanent by powerful spells, the Limited Orbit 
+is a model of the solar system, but the sun is missing, allowing the 
+planets themselves to be worn. They are suspended in their orbits, and 
+they revolve perfectly, with an accuracy which would belittle the efforts 
+of the most advanced astrologists in this world. Clearly this relic is 
+very powerful. 
+~ 
+A 
+26 16777216 
+A 
+56 67 
+A 
+13 15 
+A 
+12 15 
+A 
+14 15 
+#2850 
+north wind winds~ 
+the North Winds~ 
+A freezing gust of powerful wind blows in from the north.~ 
+~ 
+5 625984 8193 
+15 1 70 4 
+5 0 0 
+E 
+north winds dagger~ 
+This long dagger seems inconsistend with the average shortblade, as it 
+swirls and writhes, like the winds themselves. Only the handle, which 
+seems almost like a solidified cloud, remains semi stable, the blade 
+whips and rushes all over the place. It would take alot of skill to 
+wield such an unpredictable weapon, but the simplest commoner can see it 
+is clearly very powerfully enchanted. A magical relic the likes of which 
+would make a gnomish inventor quit his job. 
+~ 
+A 
+18 9 
+A 
+19 9 
+A 
+27 3 
+A 
+30 214 
+> use_prog 100~ 
+if rand(33) 
+mea $n _lbl Tentatively, you lift the Winds themselves and conform them to your will. 
+mer $n _lbl Tentatively, $n lifts the Winds themselves and conforms them to $s will. 
+else 
+if rand(50) 
+mea $n _dbl Your hands freeze over as you wield the North Winds... 
+mer $n _dbl $n's hands freeze over as $e wields the North Winds... 
+else 
+mea $n _whi A swirling blizzard accompanies you as you wield $O! 
+mer $n _whi A swirling blizzard accompanies $n as $e wields $O! 
+endif 
+endif 
+if ispassage($i) == south 
+mea $n _pur The powerful blast of wind pushes you south! 
+mer $n _pur The powerful blast of wind pushes $n south... 
+mpforce $n s 
+else 
+mea $n _pur The powerful blast of wind throws you against the southern wall! 
+mer $n _pur The powerful blast of wind throws $n against the southern wall... 
+endif 
+~ 
+| 
+#2851 
+orb ice~ 
+the Orb of Ice~ 
+A compact icestorm swirls within a freezing orb.~ 
+~ 
+8 64 16385 
+0 0 0 0 
+15 0 0 
+E 
+orb ice~ 
+The elements of cold dance within this powerful key, swirling and 
+whirling chaotically... 
+~ 
+> sac_prog 100~ 
+if inroom($i) == 2875 
+else 
+break 
+endif 
+/* Commented out because it leads to an area which requires special */ 
+/* factors in order to work right */ 
+break 
+mpe _lbl The alcove shivers as the floor yawns wide open... 
+if ispassage($i) == down 
+break 
+endif 
+mpopen 2875 2876 5 
+~ 
+| 
+#2852 
+gallant fountain~ 
+the Gallant Fountain~ 
+The Gallant Fountain spills a tumultuous flow of delicious water.~ 
+~ 
+25 0 0 
+0 0 0 0 
+1 0 0 
+E 
+gallant fountain~ 
+The fountain is hewn of marble and filled with soft, cold, delicious 
+waters from deep within the earth. 
+~ 
+#2853 
+remnants valinspiraller~ 
+the remnants of the Valinspiraller~ 
+The remnants of the Valinspiraller are strewn about.~ 
+~ 
+60 1 1 
+50 1 1 1 -1 -1 
+1 100 10 
+'indignation' 'true sight' 
+#2854 
+harp divine~ 
+the Harp, divine~ 
+An instrument worthy of the ears of the gods attracts the sun's gorgeous rays.~ 
+~ 
+4 66 16385 
+64 5 5 -1 
+5 1000000 100000 
+'bless' 
+E 
+harp divine~ 
+A beautiful instrument construed of jade seems somehow only semi 
+corporeal, as though it is only partially real, a remnant of some 
+prematurely awakened dream. With even the lightest touch of it's 
+strings, from the hand of the worst novice, the Harp Divine gushes 
+forth an infinitude of gorgeous music. 
+~ 
+> use_prog 100~ 
+mea $n _blu You brandish $O. 
+mer $n _blu $n brandishes $O. 
+mpe _lbl Beautiful strains of music flow through the air... 
+~ 
+| 
+#2855 
+blind faith tear~ 
+blind faith~ 
+The dying tears of a martyr, red as blood, stain the virgin earth.~ 
+~ 
+9 4352 131073 
+25 25 0 0 
+10 0 0 
+E 
+blind faith~ 
+~ 
+A 
+26 1 
+A 
+27 2097152 
+A 
+19 7 
+A 
+18 7 
+A 
+12 50 
+#2856 
+steps~ 
+the steps~ 
+A set of dusty, neglected steps lead downward into the unknown.~ 
+~ 
+12 0 0 
+0 0 0 0 
+1 0 0 
+E 
+steps~ 
+Fashioned of cheap wood, it is difficult to ascertain who put these 
+steps here. Now they creak horribly, at least they would if this room 
+weren't so heavy with silence. What unknowns might be below?! These 
+steps are your key to find out. 
+~ 
+#2857 
+torches~ 
+the torches~ 
+Some humble torches adorn the sides of the tunnel, shedding dim light.~ 
+~ 
+34 1 0 
+0 0 0 0 
+1 0 0 
+E 
+torches~ 
+Though theyve been here for what seems like forever, these torches 
+dont seem to burn down. Clearly some powerful enchantment has been 
+cast upon them. It must be a permanent enchantment because nobody has 
+been down here in a long while. 
+~ 
+#2858 
+dark rune~ 
+the dark rune~ 
+A dark rune has been inscribed in the wall of the tunnel.~ 
+~ 
+12 52 0 
+0 0 0 0 
+1 0 0 
+E 
+dark rune~ 
+A strange and very dark rune flickers and glimmers in the shadows. Could 
+this rune be the source of the magic which places a globe of silence over 
+this strange place? It is impossible to discern for sure. As you gaze 
+upon it, the rune flickers faster, as though it is aware of your 
+judgemental appraisal. 
+~ 
+> exa_prog 100~ 
+mpe _lbl "What wizard dares to invoke my power?" 
+~ 
+| 
+#2859 
+altar ice~ 
+the Altar of Ice~ 
+The Altar of Ice, a half-frozen, twisted silver altar.~ 
+~ 
+15 16 0 
+10000 13 0 0 
+1 0 0 
+E 
+altar ice~ 
+This strange altar is almost completely frozen. Hewn of ice cold silver, 
+it hums softly, casting an eerie chill through the whole alcove, causing 
+you to freeze horribly. Frozen puddles surround it... some are water, 
+some are blood. All are ice cold. 
+~ 
+#2860 
+skeleton child~ 
+the skeleton~ 
+The skeleton of a child, dead since ancient times, is strewn across the altar's icy surface.~ 
+~ 
+23 262144 0 
+0 0 0 0 
+1 0 0 
+E 
+skeleton~ 
+A young girl, doubtless a virgin, her life stolen from her, sacrificed 
+to the cold and to the ice. 
+~ 
+#2861 
+spiral blast~ 
+the Spiral Blast~ 
+A blur of violent energies fills the room, blasting it!~ 
+~ 
+5 262144 8193 
+1 0 1 1 6 0 
+20 1000000 100000 
+E 
+spiral blast~ 
+A perpetually spinning nexus of purely violent energies, the Spiral 
+Blast is somewhat like a river stuck behind a dam, building up pressure 
+and waiting to BLAST everything in sight. 
+~ 
+A 
+13 -1200 
+A 
+30 295 
+#2862 
+aura life eternal~ 
+an aura Life Eternal~ 
+A tingling sensation overwhelms you as you witness a fantastic aura in which visions of springtime and life can be seen.~ 
+~ 
+9 8424448 1025 
+1 1 0 0 
+100 0 0 
+E 
+aura life eternal~ 
+This is the last remnant of a powerful spell woven over a kingdom to 
+give it's denizens eternal life. Susceptible only to murder, no other 
+cause of death could prevail against the citizens thereof, nor could 
+they ever age, but rather stay young forever. The spell broken, now 
+that land is in ruins. Even this remnant is a temporary thing, and there 
+is no way to preserve it indefinitely. 
+~ 
+A 
+19 7 
+A 
+18 7 
+A 
+27 2097928 
+A 
+20 -10 
+A 
+22 -10 
+A 
+9 100 
+A 
+4 3 
+A 
+5 3 
+A 
+12 150 
+A 
+1 1 
+A 
+26 -2147475456 
+A 
+24 -5 
+A 
+13 100 
+> get_prog 100~ 
+mpat 3832 get ball id123454321 
+mpjunk all.ball 
+~ 
+> damage_prog 100~ 
+mpe _whi $O vanishes for a brief moment, but reappears in $n's hands. 
+mpoload 2863 
+drop aura 
+mpforce $n get aura 
+give aura $n 
+~ 
+| 
+#2863 
+aura life eternal~ 
+an aura Life Eternal~ 
+A tingling sensation overwhelms you as you witness a fantastic aura in which visions of springtime and life can be seen.~ 
+~ 
+9 8424448 1025 
+1 1 0 0 
+100 0 0 
+E 
+aura life eternal~ 
+This is the last remnant of a powerful spell woven over a kingdom to 
+give it's denizens eternal life. Susceptible only to murder, no other 
+cause of death could prevail against the citizens thereof, nor could 
+they ever age, but rather stay young forever. The spell broken, now 
+that land is in ruins. Even this remnant is a temporary thing, and there 
+is no way to preserve it indefinitely. 
+~ 
+A 
+19 7 
+A 
+18 7 
+A 
+27 2097928 
+A 
+20 -10 
+A 
+22 -10 
+A 
+9 100 
+A 
+4 3 
+A 
+5 3 
+A 
+12 150 
+A 
+1 1 
+A 
+26 -2147475456 
+A 
+24 -5 
+A 
+13 100 
+> damage_prog 100~ 
+mpe _whi $O vanishes for a brief moment, but reappears in $n's hands. 
+mpoload 2864 
+drop aura 
+mpforce $n get aura 
+give aura $n 
+~ 
+| 
+#2864 
+aura life eternal~ 
+an aura Life Eternal~ 
+A tingling sensation overwhelms you as you witness a fantastic aura in which visions of springtime and life can be seen.~ 
+~ 
+9 8424448 1025 
+1 1 0 0 
+100 0 0 
+E 
+aura life eternal~ 
+This is the last remnant of a powerful spell woven over a kingdom to 
+give it's denizens eternal life. Susceptible only to murder, no other 
+cause of death could prevail against the citizens thereof, nor could 
+they ever age, but rather stay young forever. The spell broken, now 
+that land is in ruins. Even this remnant is a temporary thing, and there 
+is no way to preserve it indefinitely. 
+~ 
+A 
+19 7 
+A 
+18 7 
+A 
+27 2097928 
+A 
+20 -10 
+A 
+22 -10 
+A 
+9 100 
+A 
+4 3 
+A 
+5 3 
+A 
+12 150 
+A 
+1 1 
+A 
+26 -2147475456 
+A 
+24 -5 
+A 
+13 100 
+> damage_prog 100~ 
+mpe _whi $O vanishes for a brief moment, but reappears in $n's hands. 
+mpoload 2865 
+drop aura 
+mpforce $n get aura 
+give aura $n 
+~ 
+| 
+#2865 
+aura life eternal~ 
+an aura Life Eternal~ 
+A tingling sensation overwhelms you as you witness a fantastic aura in which visions of springtime and life can be seen.~ 
+~ 
+9 8424448 1025 
+1 1 0 0 
+100 0 0 
+E 
+aura life eternal~ 
+This is the last remnant of a powerful spell woven over a kingdom to 
+give it's denizens eternal life. Susceptible only to murder, no other 
+cause of death could prevail against the citizens thereof, nor could 
+they ever age, but rather stay young forever. The spell broken, now 
+that land is in ruins. Even this remnant is a temporary thing, and there 
+is no way to preserve it indefinitely. 
+~ 
+A 
+19 7 
+A 
+18 7 
+A 
+27 2097928 
+A 
+20 -10 
+A 
+22 -10 
+A 
+9 100 
+A 
+4 3 
+A 
+5 3 
+A 
+12 150 
+A 
+1 1 
+A 
+26 -2147475456 
+A 
+24 -5 
+A 
+13 100 
+> damage_prog 100~ 
+mer $n _pin As the aura Life Eternal crumbles, $n's features wither and wrinkle 
+mea $n _pin As the aura Life Eternal crumbles, your features wither and wrinkle 
+mpe _lbl The life energies seep into the ground, to return from whence they 
+mpe _lbl came. 
+mpe _cya The ground begins to tremble slightly as the remnants of $O 
+mpe _cya bring to life an omnipotent spell which has been shattered for 
+mpe _cya ages... 
+mpat 2800 mpechozone _gre Life blossoms in these lands anew, as the spell 
+mpat 2800 mpechozone _gre of Eternal Life is restored! 
+if mobinworld(2818) == 1 
+mpat 2800 mpechozone _lbl Lazsigma yells 'The spell is rewoven!' 
+endif 
+mpoload 21 
+mpat 3832 put ball id123454321 
+~ 
+| 
+#2866 
+id123454321~ 
+the sign~ 
+There is a sign on the wall.~ 
+~ 
+15 0 0 
+10000 0 0 0 
+1 0 0 
+#2878 
+crack of thunder~ 
+Crack of Thunder~ 
+A loud clap of thunder echoes through the land, silencing the din of battles.~ 
+~ 
+5 272 8193 
+13 17 3 4 
+5 0 0 
+A 
+13 100 
+A 
+23 -5 
+A 
+26 -2147483648 
+A 
+26 1048576 
+A 
+18 17 
+A 
+19 16 
+A 
+12 45 
+> sac_prog 100~ 
+mea $n _whi Tyrael held his hand aloft, swiping at the air before him. 
+mea $n _whi A magical mist began to swirl and move, creating a strong 
+mea $n _whi breeze to do his bidding. And so began...the Winds of Change. 
+mpoload 2884 50 
+drop 'winds change' 
+mpforce $n get 'winds change' 
+~ 
+> wear_prog 100~ 
+if rand(10) 
+c sanc 0.$n 
+endif 
+~ 
+| 
+#2879 
+eye of the storm~ 
+Eye of the Storm~ 
+The turbulence around you reaches a lull as you enter the eye of the storm.~ 
+~ 
+5 272 8193 
+13 17 3 6 
+5 0 0 
+A 
+13 100 
+A 
+23 -5 
+A 
+26 -2147483648 
+A 
+26 1048576 
+A 
+18 17 
+A 
+19 16 
+A 
+12 45 
+> wear_prog 100~ 
+if rand(10) 
+c sanc 0.$n 
+endif 
+~ 
+> sac_prog 100~ 
+mea $n _cha As the storm continued its rage, the ship began to rip apart 
+mea $n _cha and sink to the depths below. Seeing this, Tyrael became pleased, 
+mea $n _cha and laughed as a clap roared through the skies...a Crack of Thunder 
+mpoload 2878 50 
+drop 'crack of thunder' 
+mpforce $n get 'crack of thunder' 
+~ 
+| 
+#2880 
+innocent blood~ 
+innocent Blood~ 
+The ground is forever stained with the blood of innocents...~ 
+~ 
+9 17025536 129 
+15 15 0 0 
+1 0 0 
+A 
+21 4 
+A 
+19 7 
+A 
+18 5 
+A 
+13 25 
+A 
+2 1 
+A 
+3 1 
+> wear_prog 100~ 
+if class($n) == vastigen 
+or isnpc($n) 
+or class($n) == vampire 
+else 
+mpe _ora Only the Vastigen have any use for this hellish taint... 
+mpforce $n rem 'innocent blood 
+endif 
+~ 
+| 
+#2881 
+belt human sinew~ 
+a belt of human sinew~ 
+A disgusting belt of flesh rots and reeks, stinking up the room...~ 
+~ 
+9 263680 2049 
+23 23 0 0 
+1 0 0 
+E 
+belt human sinews~ 
+It is disgusting just to touch this grotesque item. It is, as it's name 
+suggests, a belt sewn together of the sinews of unfortunate humans! 
+~ 
+A 
+19 4 
+A 
+18 4 
+A 
+17 -30 
+A 
+5 3 
+A 
+2 1 
+A 
+1 1 
+A 
+53 5 
+A 
+13 15 
+#2882 
+crown mole queen~ 
+the Crown of the Mole Queen~ 
+A gorgeous, but rather small crown reflects the light from your lightsource.~ 
+~ 
+9 1 17 
+10 10 0 0 
+20 100000 10000 
+E 
+crown~ 
+The crown is formed of priceless gems mined in the Mole's Haven. 
+~ 
+A 
+25 3 
+A 
+3 2 
+A 
+5 1 
+A 
+13 5 
+A 
+12 10 
+A 
+19 1 
+> use_prog 100~ 
+mea $n _lbl As you place $O on your head, you feel more powerful and beautiful. 
+mer $n _lbl $n smiles as $e dons $O upon $s head. 
+~ 
+| 
+#2883 
+damnation~ 
+&RD&ra&Rm&rn&Ra&rt&Ri&ro&Rn&w~ 
+A red steel blade glows with a hellish light.~ 
+~ 
+5 2587 8193 
+0 12 4 11 
+5 0 0 
+A 
+25 -5 
+A 
+27 1049120 
+A 
+26 524296 
+A 
+24 -5 
+A 
+20 -5 
+A 
+22 -3 
+A 
+23 -3 
+A 
+19 13 
+A 
+18 15 
+A 
+13 100 
+> wear_prog 100~ 
+if isevil($n) 
+mea $n The blade crackles and pulses with unholy energy as you grip it! 
+c fireshield $n 
+c kin $n 
+c troll $n 
+else 
+endif 
+~ 
+> sac_prog 66~ 
+mpe Waves of dark energy shift and dance about the ruined blade. 
+mpe Eventually they coalesce into a dark, formless void, humming evilly. 
+mpoload 12601 
+drop visions 
+~ 
+| 
+#2884 
+winds change~ 
+Winds of Change~ 
+A chaotic wind drifts through the area, causing all things to shift...~ 
+~ 
+5 272 8193 
+13 17 3 5 
+5 0 0 
+A 
+13 100 
+A 
+23 -5 
+A 
+26 -2147483648 
+A 
+26 1048576 
+A 
+18 17 
+A 
+19 16 
+A 
+12 45 
+> sac_prog 100~ 
+mea $n _blu As the winds of change swirled about them, a hurricane of 
+mea $n _blu epic proportions arose and surrounded them, trapping them 
+mea $n _blu within...the Eye of the storm. 
+mpoload 2879 50 
+drop 'eye of the storm' 
+mpforce $n get 'eye of the storm' 
+~ 
+> wear_prog 100~ 
+if rand(10) 
+c sanc 0.$n 
+endif 
+~ 
+| 
+#2885 
+spite~ 
+everyone's spite~ 
+The spiteful bile of a thousand misfits...~ 
+~ 
+5 262152 8193 
+10000 12 4 11 
+2 100000000 10000000 
+A 
+19 14 
+A 
+13 120 
+A 
+12 125 
+A 
+12 50 
+> sac_prog 100~ 
+mea $n _whi You invoke Everyone's Grudge... 
+mer $n _whi $n invokes Everyone's Grudge... 
+mpoload 2890 
+dro grudge 
+~ 
+| 
+#2887 
+fragment gates paradise gift meteor~ 
+a fragment of the gates of Paradise~ 
+Here lies a tiny meteor from the Heavens, shining with divine power...~ 
+~ 
+9 8424704 513 
+25 25 0 0 
+10 1000000 100000 
+A 
+17 -100 
+A 
+27 16772 
+A 
+24 -8 
+A 
+23 -9 
+A 
+22 -5 
+A 
+48 10 
+A 
+56 66 
+A 
+13 25 
+A 
+12 30 
+> damage_prog 100~ 
+c 'cure blind' $n 
+c 'cure poison' $n 
+c 'remove curse' $n 
+c 'cure light' $n 
+c refresh $n 
+c 'restore mana' $n 
+~ 
+| 
+#2888 
+symphony blood gift echos~ 
+symphony of blood~ 
+Echos from the depths of your bloodiest nightmare continue to haunt you...~ 
+~ 
+9 528896 65537 
+13 13 0 0 
+1 0 0 
+A 
+66 5 
+A 
+19 4 
+A 
+3 3 
+#2889 
+sphere holylight gift~ 
+a sphere of holylight~ 
+A tiny fragment of the sun itself blazes here...~ 
+~ 
+1 8487936 1 
+0 0 0 0 
+1 0 0 
+A 
+26 8389180 
+A 
+41 100 
+A 
+4 2 
+A 
+5 2 
+A 
+27 512 
+#2890 
+grudge~ 
+Everyone's Grudge~ 
+The blood and tears of every martyr gather here, for a final chance at vengeance.~ 
+~ 
+5 524552 8193 
+10000 12 4 11 
+1 0 0 
+E 
+grudge~ 
+&CA martyr says 'Let them experience what we have experienced...' 
+&gAs you look more closely, you notice that it is INDESTRUCTABLE!&x 
+~ 
+A 
+26 524300 
+A 
+30 68 
+A 
+13 50 
+A 
+12 50 
+A 
+19 3 
+A 
+18 5 
+A 
+27 1049120 
+A 
+56 95 
+> sac_prog 100~ 
+mea $n _dch You invoke everyone's spite... 
+mer $n _dch $n invokes everyone's spite... 
+mpoload 2885 
+dro all.spite 
+~ 
+| 
+#2891 
+pact runes~ 
+Devilish Pact~ 
+A set of savage Runes exude a demonic aura, scorching the earth beneath.~ 
+~ 
+9 117264 5 
+9 9 0 0 
+1 60606 6060 
+A 
+18 3 
+A 
+56 25 
+A 
+57 22 
+A 
+1 1 
+A 
+2 1 
+A 
+25 3 
+A 
+19 5 
+A 
+27 1 
+A 
+13 20 
+A 
+12 20 
+#2892 
+oppressive weight Power~ 
+the oppressive weight of Power~ 
+A curse of the most horrible nature awaits some soul to drag down into Hell.~ 
+~ 
+9 659456 2097153 
+9 9 0 0 
+200 0 0 
+A 
+18 4 
+A 
+14 -200 
+A 
+52 -30 
+A 
+11 100 
+A 
+20 3 
+A 
+2 -1 
+A 
+1 3 
+A 
+19 4 
+> use_prog 33~ 
+mea $n _dgr The grudge of the Innocent materializes upon your ankles as an unbreakable chain. 
+mer $n _dgr The grudge of the Innocent materializes upon $n's ankles as an unbreakable chain! 
+~ 
+> use_prog 50~ 
+mea $n _cya The grudge of the Innocent materializes upon your ankles as an unbreakable chain. 
+mer $n _cya The grudge of the Innocent materizalizes upon $n's ankles as an unbreakable chain! 
+~ 
+> use_prog 99~ 
+mea $n _red The grudge of the Innocent materializes upon your ankles as an unbreakable chain. 
+mer $n _red The grudge of the Innocent materializes upon $n's ankles as an unbreakable chain! 
+~ 
+| 
+#2893 
+lifeblood marrow fog mists~ 
+scarlet, bloody Mists~ 
+Above a horrible battlefield, cold Mist and Fog hover, red with blood.~ 
+~ 
+9 528660 9 
+0 0 0 0 
+175 0 0 
+A 
+2 2 
+A 
+18 5 
+A 
+19 8 
+A 
+13 60 
+A 
+12 50 
+A 
+23 -3 
+A 
+29 4 
+#2894 
+failure curse suicide~ 
+a blood-drenched suicidal katana~ 
+Within a darkened trench, a humble katana lays in a pool of spilt blood.~ 
+~ 
+5 526420 8193 
+12 1 62 2 
+15 0 0 
+A 
+18 1 
+A 
+12 -15 
+A 
+22 -9 
+A 
+31 -1 
+A 
+1 1 
+A 
+5 -3 
+A 
+29 514 
+A 
+19 12 
+A 
+13 70 
+> wear_prog 80~ 
+mpdamage $n 75 
+mpforce $n style evasive 
+~ 
+| 
+#2895 
+sorcery's mark stain wound~ 
+sorcery's darkened Mark~ 
+A horrible stain, a wound in the Earth itself, which can never be healed...~ 
+~ 
+9 25266708 257 
+9 9 0 0 
+75 666 66 
+A 
+19 6 
+A 
+18 6 
+A 
+13 25 
+A 
+24 -9 
+A 
+27 1048576 
+A 
+31 -1 
+A 
+3 1 
+A 
+26 2097152 
+A 
+2 -1 
+A 
+54 10 
+A 
+55 10 
+A 
+12 20 
+#2897 
+illusions grandeur veil mist smoke~ 
+illusions of Grandeur~ 
+A veil of the most elusive, yet most deceptive smoke shimmers here like a mirage in a desert.~ 
+~ 
+9 393233 131073 
+9 9 0 0 
+75 1 0 
+A 
+19 4 
+A 
+13 10 
+A 
+26 552 
+A 
+24 9 
+A 
+17 -20 
+A 
+4 -3 
+A 
+3 -1 
+A 
+12 15 
+#2898 
+augmentation dominion breastplate~ 
+Augmentation of Dominion~ 
+Poisonous smoke issues forth from a charred, blackened breastplate.~ 
+~ 
+9 672276 1033 
+50 50 0 0 
+30 5000 500 
+A 
+17 -70 
+A 
+27 132 
+A 
+24 -5 
+A 
+31 -1 
+A 
+18 8 
+A 
+19 9 
+A 
+13 130 
+A 
+12 90 
+A 
+56 225 
+> wear_prog 80~ 
+if rand(50) 
+mea $n _dch Horrible black smoke surrounds you as you wear the Breastplate. 
+mer $n _dch A cloud of blackest smoke and soot surrounds $n briefly. 
+else 
+mea $n _whi Mist and smoke swirl around you, almost suffocating you. 
+mer $n _whi Mist and smoke issue forth from $n, almost suffocating you. 
+if rand(1) 
+c trollish $n 
+endif 
+endif 
+~ 
+| 
+#2899 
+topitem~ 
+a newly created topitem~ 
+Some god dropped a newly created topitem here.~ 
+~ 
+13 0 0 
+0 0 0 0 
+1 0 0 
+#0
+
+#ROOMS 
+#2800 
+Castle Gallant Becomes Visible~ 
+As though the earth were opening its mouth to yawn, a small canyon exists 
+here, full of untamed wildlife and vegetation. The valley provides a 
+strategic placement for a great castle, which can be seen to the southeast, 
+in the distance. That is Castle Gallant, a castle of elite knights and 
+heros of the land. Famed for its exclusive membership of only the top 
+notch knights and wardancers, you feel almost certain that the guards at 
+the front gates would shake their heads and turn you down. 
+~ 
+0 12 1 
+d5 
+Traversing into the canyon. 
+~ 
+~ 
+~ 
+~ 
+~ 
+128 -1 2801 
+S 
+#2801 
+A Slope Too Steep~ 
+The side of the canyon, overgrown with all manner of vegetation, is far 
+too steeply sloped to climb straight down, so that it is necessary to 
+take a zigzagging path down into the canyon's bottom. There is no real 
+path, so the walk is treacherous and dangerous. In times of battle, it 
+is virtually impossible for large forces to navigate through this canyon, 
+and while they doddle, they can be attacked grievously by all manner of 
+projectiles from Castle Gallant. The air here is alive with the songs of 
+birds, idly complaining about the weather and trying to woo mates. 
+~ 
+0 8 1 
+d4 
+A reasonably difficult climb. 
+~ 
+~ 
+~ 
+~ 
+~ 
+65664 -1 2800 
+d7 
+Treading along carefully. 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2802 
+S 
+#2802 
+The Mouth of a Cave~ 
+A natural cave exists here, worn into the wall of the canyon by various 
+conflicting elements and by time. Darkness and shadows are all that can 
+be seen within the cave from this point of view, making it's contents an 
+unknown mystery. The wind buffets the area consistenly, and can be very 
+chilly. The climb along the canyon continues. 
+~ 
+0 12 1 
+d0 
+The darkness of the cave... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2803 
+d5 
+Tread with care, there are thorns. 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2804 
+d8 
+The slope continues... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2801 
+S 
+#2803 
+A Rather Small Cave~ 
+Stones and bones are strewn about the interior of the rather small cave. 
+It takes surprisingly little time for one's eyes to adjust to the darkness 
+in the cave, and it is clear that it is a dead end. The bones along the 
+floor indicate that something lives here. But they are all the remains of 
+small rodents and occasionally birds, nothing indicates a genuine danger 
+to humanoid beings. Could the creatures who apparently inhabit this cave 
+still be around? 
+~ 
+0 264 1 0 0 7 
+d2 
+The bright light of the sky... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2802 
+S 
+#2804 
+Scattered Thorns~ 
+Suddenly the indifferent vegetation is replaced by wicked thorns which seem 
+to reach out and grab at all passerbies. One has to wonder if these weeds 
+sprung up naturally or if they were planted here to increase Castle Gallant's 
+defenses. In any case, it is all but impossible to traverse the rest 
+of the climb without adding another scar, this time from the thorns. 
+~ 
+0 8 1 
+d2 
+The slope continues, always downward... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2805 
+d4 
+A short climb leads to the mouth of a small cave. 
+~ 
+~ 
+~ 
+~ 
+~ 
+128 -1 2802 
+d5 
+~ 
+~ 
+~ 
+~ 
+thorns~ 
+8392239 2847 2871 
+> act_prog p unlocks the thorns with~ 
+mpe _blu The Mandate of the Land shimmers and vanishes... 
+~ 
+| 
+S 
+#2805 
+A Small Spring~ 
+A small spring gurgles down the side of the canyon, and there is no bridge 
+across it so one will have to get their feet wet. It's okay though, the 
+spring is less than an inch deep and even a halfling would have trouble 
+drowning in it. Here, the atmosphere is so tranquil, one almost expects 
+to find a peaceful hamlet around the corner- rather than a massive military 
+castle. 
+~ 
+0 8 1 
+d0 
+Scattered thorns could be painful to walk through... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2804 
+d8 
+A steep climb awaits, a true test of your skills. 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2806 
+> leave_prog 100~ 
+mea $n _lbl Treading over the small spring, your boots get all wet. 
+~ 
+> rest_prog 100~ 
+mea $n _lbl You take off your boots and let the cool spring water rush over 
+mea $n _lbl your feet as you lie back and relaxe. 
+~ 
+| 
+S 
+#2806 
+Gazing Upwards~ 
+This place initially seems very much like a dead end. The massive stone 
+wall of the canyon rises up, an impassable obstacle which has thwarted many 
+would-be invasions against Castle Gallant. Upon further inspection, the 
+clifface is not perfectly smooth, but has jags and niches all along it's 
+surface, so it would be possible to climb it. However, a task of that 
+magnitude is one to be left to a master climber, not some novice. 
+~ 
+0 8 1 
+d4 
+It is a very treacherous climb, you'd better know what you're doing... 
+~ 
+~ 
+~ 
+~ 
+~ 
+128 -1 2807 
+d7 
+A small spring sings songs to the surrounding wildlife. 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2805 
+S 
+#2807 
+A Difficult Climb~ 
+This is a truly difficult climb. The wall is not vertical, but actually 
+slanted outward just slightly. Indeed it takes a true master of climbing 
+to make progress. And from this point of view it is impossible to tell 
+just how much further up the top of the clifface is. It could be miles... 
+Of course, if you ARE a master climber, you understand the importance of 
+concentrating on one perilous inch at a time, rather than think about the 
+entire clifface at once. 
+~ 
+0 2097416 1 0 0 1 
+d4 
+>From this angle, it is impossible to tell how much further you must climb. It could be miles... 
+~ 
+~ 
+~ 
+~ 
+~ 
+128 -1 2808 
+d5 
+Solid footing looks appealing... 
+~ 
+~ 
+~ 
+~ 
+~ 
+128 -1 2806 
+> entry_prog 90~ 
+mea $n _cya It is a very long climb, and you have to take it VERY slowly, 
+mea $n _cya one inch at a time. Progress seems to take forever... 
+if level($n) < 51 
+mpdelay $n 2 
+endif 
+~ 
+| 
+S 
+#2808 
+Hugging the Clifface~ 
+The climb continues, and gets none the easier. Without proper climbing 
+gear, this ascent is mighty taxing on one's fingers and arms. Each inch 
+of vertical movement is a battle, and this is quite literally a very 
+uphill battle. In times of war, it would be even worse because knights 
+from Castle Gallant would be pouring down such nice things as boiling 
+water, large boulders, and of course arrows. 
+The wind here is quite fierce, making the climb even more treacherous, 
+and worse, making flight out of the question. If one were to try to 
+fly up here, the wind would toss them about like a twig, and it cannot be 
+doubted that they would plummet to their certain death below. 
+A little to the east, a small shelf of rock juts out, probably disaligned 
+from the rest of the clifface in an earthquake or similar natural disaster. 
+It would be possible to go there to catch your breath. 
+~ 
+0 2097160 1 
+d1 
+A small ledge where you can stop and rest for a few moments. 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2809 
+d4 
+The long climb continues... 
+~ 
+~ 
+~ 
+~ 
+~ 
+128 -1 2810 
+d5 
+Rule 1 of climbing: don't look down!! 
+~ 
+~ 
+~ 
+~ 
+~ 
+128 -1 2807 
+d10 
+~ 
+~ 
+~ 
+~ 
+fall~ 
+526336 -1 2806 
+> entry_prog 100~ 
+if race($n) == pixie 
+break 
+endif 
+if isaffected($n) == flying 
+mea $n _lbl You try to fly, but the strong winds catch you and toss you 
+mea $n _lbl about like a twig... 
+mea $n *whi You are falling... 
+mpforce $n fall 
+mpat 2807 mpe _yel $n falls from above, screaming frantically... 
+mpat 2807 mpe _yel $e falls far below, you dare not look... 
+mpat 2806 mer $n _yel $n falls from above, flailing $s arms and screaming. 
+endif 
+~ 
+| 
+S 
+#2809 
+A Windswept Ledge~ 
+The ledge is small and tentative, but it is a welcome relief from the 
+seemingly endless climb. Here you can rest if you so choose, and catch 
+your breath. The nearest foothold, should you ever decide to leave this 
+ledge and go on with your life, is just to the west. 
+~ 
+0 2097160 1 
+d3 
+The nearest foothold. 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2808 
+S 
+#2810 
+Clinging to the Clifftop~ 
+Just a few inches above, the clifface ends, being replaced by a grassy 
+field which surrounds Castle Gallant. The climb below is perilous and 
+difficult, so it would be in one's best interests to quickly take the final 
+few inches of this climb and be on level ground again. In the distance 
+below, the ground is a blur; in cardinal directions, though, the view 
+is quite awesome. 
+~ 
+0 2097160 1 
+d4 
+At last, solid ground. 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2811 
+d5 
+You should never look down while climbing... 
+~ 
+~ 
+~ 
+~ 
+~ 
+128 -1 2808 
+> entry_prog 100~ 
+mea $n _lbl You climb the cliff slowly, each inch is a battle... 
+if level($n) < 51 
+mpdelay $n 1 
+endif 
+~ 
+| 
+S 
+#2811 
+Gazing at Castle Gallant~ 
+The climb finally completed, Castle Gallant is just a few yards away. 
+The castle is wondrous and large, with great towers and parapets, and a 
+moat the size of a medium sized river. The castle is a steadfast sentinel, 
+a fortress which cannot be penetrated by most any army in these lands. It 
+looks as though it comes right out of a faerie tale. Only the most powerful 
+of knights and wizards and wardancers dwell within that castle, so proceed 
+with caution. 
+~ 
+0 2097160 1 
+d5 
+The ground is a blur in the far distance... do not attempt to climb unless you are a very good climber. 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2810 
+d8 
+Following a small trail toward Castle Gallant... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2812 
+S 
+#2812 
+A Knight Errant~ 
+Along the side of the path, a small pavilion has been set up. It would seem 
+that some knight has come adventuring, questing for a seat at the table of 
+Castle Gallant. Turned down, he seeks to prove his metal by jousting with 
+passerbies. A nearby tree serves well as a stake to which his steed can 
+be tethered, for it would appear that this knight is better at footcombat 
+than on horseback. 
+~ 
+0 2097548 1 0 0 2 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+4096 -1 2814 
+d3 
+The knight's worshipful pavilion... 
+~ 
+~ 
+~ 
+~ 
+~ 
+1048576 -1 2813 
+d7 
+Approaching the edge of a clifface... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2811 
+> leave_prog 100~ 
+if mobinroom(2802) == 0 
+break 
+endif 
+if isopen($i) == east 
+mpclose 2812 1 
+endif 
+~ 
+> death_prog 100~ 
+if ispc($n) 
+if mobinroom(2802) == 1 
+mpforce errant yell Let it be known that this day $n has perished by my blade! 
+mpdream $n You say 'I yield! I yield!' 
+mpdream $n The Knight Errant shrugs, and says, 'Good, then this'll be easy.' 
+mpdream $n As the knight slices your head off, death comes painlessly... 
+endif 
+endif 
+~ 
+| 
+S 
+#2813 
+Outside A Pavilion~ 
+A colourful pavilion of a knight errant has been set up here, in the shadow 
+of one of Castle Gallant's high towers. The half-open flap of the tent 
+flutters idly in the breeze, and nearby, a small dead tree provides a 
+perfect opportunity to tether up a horse. To the east, a small path leads 
+toward Castle Gallant, but the knight who dwells in this pavilion is waiting 
+there to challenge you. 
+~ 
+0 2097160 1 
+d1 
+The knight waits to challenge you... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2812 
+d3 
+It is possible to walk through the flap and into the knight's pavilion. 
+~ 
+~ 
+~ 
+~ 
+flap~ 
+3 -1 2815 
+S 
+#2814 
+Walking Towards the Castle~ 
+The path is not very well kept; it is falling apart in many places, and 
+somewhat difficult to traverse. Of course, that is not necessarily a bad 
+thing, for in times of war it only adds to the incredible defenses of the 
+Castle Gallant. The castle is not far away now, the journey is almost at 
+it's end ... or is it just beginning? 
+~ 
+0 2097160 1 
+d3 
+The test of the Errant Knight... 
+~ 
+~ 
+~ 
+~ 
+~ 
+16777216 -1 2812 
+d8 
+Nearing the castle... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2816 
+S 
+#2815 
+Inside A Pavilion~ 
+There is not much to see in this pavilion. The life of an errant knight 
+is not one of glamour or luxury. A sleeping bag, some meager provisions, 
+and some horse food; this knight is wise and has left none of his 
+valuables in his tent, probably to prevent people like you from stealing 
+them. 
+~ 
+0 2097160 1 
+d1 
+Outside the pavilion. 
+~ 
+~ 
+~ 
+~ 
+flap~ 
+3 -1 2813 
+S 
+#2816 
+Approaching the Outer Moat~ 
+The sounds of the outer of the two moats of Castle Gallant can be heard 
+from here. Actually, only the outer moat is filled with water. While the 
+outer moat is the size of a medium sized river, the inner moat is considerably 
+less wide; however, in times of war, the inner moat is filled not with water, 
+but with lower echelon soldiers! And it takes a really good swimmer to swim 
+through THAT kind of moat. From here, you can see that the castle's gate is 
+closed. 
+~ 
+0 2097160 1 
+d7 
+Retracing your steps... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2814 
+d8 
+A drawbridge spans the moat... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2817 
+S 
+#2817 
+Before the First Bridge~ 
+The wide Outer Moat rushes past. Filled with viscious piranhae, it would 
+most likely not be a good idea to leap into the moat. Fortunately, a 
+thin drawbridge spans the moat. It is a very thin bridge, so that only 
+one person can cross it at a time; it is engineered so that the guards 
+on the other side of the bridge can raise it at a moment's notice. 
+~ 
+0 2097160 1 
+d7 
+Walking away from Castle Gallant... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2816 
+d8 
+Treading across the bridge... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2818 
+S 
+#2818 
+The First Bridge~ 
+Watch your balance! The long, wide Outer Moat rushes by below. If you 
+aren't careful, you might end up 'fall'ing. And with all the piranhae and 
+other nasty things below, you do not really want to 'fall'. That is how 
+very many would-be invaders have perished... this moat is an excellent 
+shield around the castle, and although it costs alot to maintain, it is 
+well worth it. Beyond the bridge, several guards wait. 
+~ 
+0 2097420 1 0 0 1 
+d7 
+Back beyond the moat... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2817 
+d8 
+A small island... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2819 
+d10 
+The water looks intimidating... 
+~ 
+~ 
+~ 
+~ 
+fall~ 
+526336 -1 2820 
+S 
+#2819 
+An Island Between the Moats~ 
+A small island exists betwixt the two moats. Actually, the second moat is 
+not filled with water at all; in times of war, actual soldiers fill the 
+second moat! Though costly in manpower, it is an unbelievably effective 
+defensive measure. Rarely has an invasive force even reached the castle 
+gates. Speaking of the castle gates, it is clear to see that those gates 
+are closed tight right now. Perhaps the castle does not wish to let you 
+in; indeed, Castle Gallant is known for discrimination against all but the 
+very most elite. Perhaps you should turn back. 
+~ 
+0 2097160 1 
+d7 
+The drawbridge can be raised at a moment's notice... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2818 
+S 
+#2820 
+Plunging Into the Moat~ 
+The first thing you notice about the murky waters is that they are very 
+cold. The second thing you notice is that they are full of piranhae. The 
+little fish are capable of tearing apart a whole cow or a whole horse within 
+instants. This is a truly perilous situation; there is very little 
+chance of escape indeed. 
+~ 
+0 2097160 1 
+d4 
+It is possible to try and climb back up... 
+~ 
+~ 
+~ 
+~ 
+~ 
+1114240 -1 2818 
+d6 
+The moat continues... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2821 
+d9 
+The moat continues... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2823 
+> rand_prog 100~ 
+mpe _yel A piranha swims in from nowhere! 
+mpmload 2806 
+~ 
+| 
+S 
+#2821 
+The Bottom of the Moat~ 
+The floor of the moat is littered with half-buried bones and old armour, 
+too rusty to be used any more. These poor fellows must have tried to invade 
+Castle Gallant. Unfortunately, it is very likely that you will join them. 
+Somehow, a sixth sense warns you that going northeast would mean certain 
+death. 
+You can't help but wonder if there isn't something special hidden here... 
+~ 
+0 2097160 1 
+d6 
+Certain DEATH !!! 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2822 
+d9 
+The moat continues... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2820 
+S 
+#2822 
+Poison!!~ 
+Here, the water of the moat is poisoned. Piles of half-eaten corpses 
+are strewn all about, still rotting from attempts to invade Castle Gallant. 
+Some of the corpses are very fresh. One in particular looks like it can't 
+have died more than a minute ago. In fact, it can't have died more than a 
+second ago. Looking closer, you realize it's you! 
+~ 
+0 2097160 1 
+d6 
+~ 
+~ 
+~ 
+~ 
+~ 
+2048 -1 2823 
+d9 
+~ 
+~ 
+~ 
+~ 
+~ 
+2048 -1 2821 
+> entry_prog 100~ 
+if isnpc($n) 
+break 
+endif 
+mea $n _whi As you gaze into the eyes of your own corpse, it strikes you 
+mea $n _whi like profound philosophy: you're dead. 
+mpslay $n 
+~ 
+| 
+S 
+#2823 
+The Bottom of the Moat~ 
+The floor of the moat is littered with half-buried bones and old armour, 
+too rusty to be used any more. These poor fellows must have tried to invade 
+Castle Gallant. Unfortunately, it is very likely that you will join them. 
+Somehow, a sixth sense warns you that going southwest would mean certain 
+death. 
+You can't help but wonder if there isn't something special hidden here... 
+~ 
+0 2097160 12 
+d5 
+~ 
+~ 
+~ 
+~ 
+~ 
+4096 -1 2824 
+d6 
+The moat continues... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2820 
+d9 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2822 
+> act_prog p strange hole leading into~ 
+get utilitydigitem 
+mpjunk all 
+if ispassage($i) == down 
+break 
+endif 
+mpopen 2823 2824 5 
+~ 
+> rand_prog 40~ 
+mea $n _bro The ground beneath your feet feels somewhat unsolid... 
+~ 
+| 
+S 
+#2824 
+Descending into Darkness~ 
+Some sort of strange shaft full of dark water leads down into the unknown. 
+There is no floor below. Nor is there any light. Where might this strange 
+hidden passage lead? And what caused it? It's irregular shape indicates 
+that it is not manmade. 
+~ 
+0 18874636 1 0 0 1 
+d4 
+Escape from this strange place... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2823 
+d5 
+Only darkness can be seen. 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2825 
+S 
+#2825 
+Swimming Deep in the Moat~ 
+Dark, cold waters are all around. There are no piranhae here, and that's 
+a good thing. What was a tightly cramped tunnel has become a wide dark 
+chasm, but it is too dark to see anything for certain. There is still no 
+floor below; the water currents seem somewhat odd, especially to the north. 
+~ 
+0 18874376 1 
+d0 
+Nothing special there. 
+~ 
+~ 
+~ 
+~ 
+~ 
+2048 -1 2827 
+d4 
+A strange vertical tunnel full of dark shadowy water. 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2824 
+d5 
+Still only darkness... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2826 
+S 
+#2826 
+A Dead End~ 
+The hidden tunnel finally ends here. The ground is muddy and slippery, 
+again indicating that this tunnel was not made by men. Maybe the knights 
+of Castle Gallant don't even realize that it exists! 
+There is an old corpse lying here, nothing more than skeletal remains by now. 
+~ 
+0 2097160 1 
+d4 
+Swimming back upwards... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2825 
+E 
+corpse~ 
+The corpse is mostly buried, and in the darkness it is difficult to see 
+any details about it. Attached to the anklebone there seems to be a chain... 
+on the end of the chain, a great heavy ball. Was this man a prisoner? 
+~ 
+S 
+#2827 
+Chest Deep in Water~ 
+The water level seems to drop a little as the ground level rises. The 
+roof is getting closer, so that it is more difficult to progress. 
+Surprisingly, there seems to be a very faint light coming from the north, 
+but there is no way to discover what it's source might be, without further 
+exploration. 
+~ 
+0 2097416 1 0 0 5 
+d0 
+The water gets less deep... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2828 
+d2 
+Lots of water... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2825 
+S 
+#2828 
+Waist Deep in Water~ 
+The water is now only up to your knees; however, the roof of this 
+chamber is now even lower, and you can't go much further without having 
+to stoop. The light to the north is brighter though, and it is definitely 
+no trick of the imagination... 
+~ 
+0 2097416 1 0 0 3 
+d0 
+The water gets less deep... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2829 
+d2 
+The water gets deeper... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2827 
+S 
+#2829 
+Knee Deep in Water~ 
+At last, the tunnel is almost totally dry. Eventually, it seems to become 
+a dead-end; however, light still streams in through a small opening in 
+the floor. It would be a very difficult climb, but it is nevertheless 
+possible to crawl onto the other side of this ...wall? 
+~ 
+0 2097160 1 
+d2 
+The water gets deeper... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2828 
+d10 
+crawl It is possible to crawl through, but one can only wonder where it leads... 
+~ 
+~ 
+~ 
+~ 
+crawl~ 
+524288 -1 2830 
+> speech_prog p The spell has ended!~ 
+mpat 2828 mpdamage all 32000 
+mpat 2827 mpdamage all 32000 
+mpat 2826 mpdamage all 32000 
+mpat 2825 mpdamage all 32000 
+mpat 2824 mpdamage all 32000 
+mpat 2823 mpdamage all 32000 
+mpat 2822 mpdamage all 32000 
+mpat 2821 mpdamage all 32000 
+mpat 2820 mpdamage all 32000 
+mpat 2819 mpdamage all 32000 
+mpat 2818 mpdamage all 32000 
+mpat 2817 mpdamage all 32000 
+mpat 2816 mpdamage all 32000 
+mpat 2815 mpdamage all 32000 
+mpat 2814 mpdamage all 32000 
+mpat 2813 mpdamage all 32000 
+mpat 2811 mpdamage all 32000 
+mpat 2810 mpdamage all 32000 
+mpat 2809 mpdamage all 32000 
+mpat 2808 mpdamage all 32000 
+mpat 2807 mpdamage all 32000 
+mpat 2806 mpdamage all 32000 
+mpat 2805 mpdamage all 32000 
+mpat 2804 mpdamage all 32000 
+mpat 2803 mpdamage all 32000 
+mpat 2802 mpdamage all 32000 
+mpat 2801 mpdamage all 32000 
+mpat 2800 mpdamage all 32000 
+~ 
+| 
+S 
+#2830 
+A Dank Prison Cell~ 
+A very small cell of cold stone, with hay on the floor, stinks horribly. 
+All along the base of the southern wall, there are signs of attempted 
+digging, and in one spot there is even a small crack large enough for you 
+to crawl through. The straw on the floor is dampened by an occasional 
+drip dropping of water from the roof above. The living conditions here are 
+utterly intolerable, yet life goes on. 
+The cell is enclosed by vertical bars. A single steel door is to the north, 
+but the lock is on the other side and the door is magically enchanted to 
+resist the passdoor spell. 
+~ 
+0 2097544 1 0 0 2 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+8389671 -1 2839 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+15 -1 2837 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+15 -1 2831 
+d10 
+It is possible to crawl back into the water... 
+~ 
+~ 
+~ 
+~ 
+crawl~ 
+524288 -1 2829 
+> act_prog bashes~ 
+mpe _whi The door cannot be bashed, but perhaps you can walk through the walls. 
+~ 
+| 
+S 
+#2831 
+A Haunted Cell~ 
+Like the other prison cells, this one is enclosed by bars, and is adjacent 
+to it's own neighboring cells. This cell appears to have been uninhabited 
+for some time, but then again, looks can be decieving. There is a bulge 
+under the bedding of hay on the floor... upon further inspection, a half- 
+rotted body is discovered, filling the cell with a putrid horrible smell, 
+in fact filling the whole dungeon with it. This was a grisly fate if ever 
+there were such a thing. There is a door to the northeast, but the lock is 
+on the other side, and it has been enchanted to resist the pass door spell. 
+~ 
+0 2097416 1 0 0 3 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+15 -1 2833 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+15 -1 2830 
+d6 
+A hall in the dungeon... 
+~ 
+~ 
+~ 
+~ 
+~ 
+8389671 -1 2839 
+S 
+#2832 
+Floating in a void~ 
+~ 
+0 2097164 1 
+S 
+#2833 
+Little More than Bones~ 
+The room is filled with the unmistakable smell of death. Though every 
+cell in these dungeons bears this odor, it is particularly pungent here, 
+where a prisoner has apparently starved to death. The corpse is still 
+rotting, but it won't be for long, because already it is little more than 
+bones. You feel that it could decay into nothing at any time. 
+~ 
+0 2163080 1 0 0 2 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+15 -1 2834 
+d1 
+A hallway leads out of the gloom... 
+~ 
+~ 
+~ 
+~ 
+~ 
+8389671 -1 2839 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+15 -1 2831 
+S 
+#2834 
+The Chains that bind Madness~ 
+Here in this room, there are a large number of chains attached to the wall, 
+for the purpose of restraining a total lunatic whose fate has led her to 
+this dungeon. Being uncontrollably violent, it is very difficult for her 
+to remain restrained, and she attacks anything which draws close. It 
+is a pity that such a strone warrior should meet such a grisly end to 
+life. But hey, everyone has their faults. 
+~ 
+0 2162952 1 0 0 4 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+15 -1 2835 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+15 -1 2833 
+d8 
+A means of escape, at last! 
+~ 
+~ 
+~ 
+~ 
+~ 
+8389671 -1 2839 
+> speech_prog test~ 
+c heal $n 
+~ 
+| 
+S 
+#2835 
+A Desolate Cell~ 
+This cell is in a state of neglect and disrepair. Probably because it's 
+empty. A quick search of the premis for any corpse or other remains 
+yields nothing. Faint shafts of light filter in through the bars on 
+all sides, yet you have no way of getting out. 
+~ 
+0 2162824 1 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+15 -1 2836 
+d2 
+Salvation from this accursed dungeon! 
+~ 
+~ 
+~ 
+~ 
+~ 
+8389671 -1 2839 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+11 -1 2834 
+S 
+#2836 
+Cruel Hunger~ 
+The whitewashed walls of this cell reflect the small amounts of light which 
+manage to filter through the steel bars. A nearby bed shows strange marks 
+as if to indicate that the prisoner who dwells here has been trying to 
+actually eat his bed. A window very high up on the wall, out of reach and 
+barred anyway, lets in a faint sunbeam, and a tiny glimpse at the sky 
+outside, as if to offer hope to the hopeless. 
+~ 
+0 2097288 1 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+8389671 -1 2838 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+15 -1 2835 
+> rand_prog 100~ 
+c quant dyingthief 
+~ 
+> speech_prog p Thank you... you might just have saved my life!~ 
+mpe _yel A sunbeam filters in through the window above. A sign of good omen? 
+mpoload 2819 
+mpat 2838 unl s 
+mpjunk all 
+~ 
+| 
+S 
+#2837 
+An Uninhabited Cell~ 
+This cell is rather boring. It is in about as good condition as any of 
+the cells in Castle Gallant, which isn't very good. There is a door to 
+the north, but it is to solid to bash open, and the lock is on the other 
+side, and it has been enchanted to resist pass door. Glimmering light 
+filters in from outside, but it would not seem there is any way for you 
+to escape. 
+~ 
+0 2162696 1 
+d0 
+A mundane hall with a cold stone floor... 
+~ 
+~ 
+~ 
+~ 
+~ 
+8389671 -1 2838 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+15 -1 2830 
+S 
+#2838 
+A Hallway in the Dungeon~ 
+A cold stone hallway passes through the various cells of the Gallant 
+Dungeon. Cobwebs are everywhere, and the ground is at least a half a 
+centimeter thick in dust. These living conditions do not really make the 
+castle's justice system look very "gallant" at all. It is difficult to 
+gauge just how deep underground these dungeons really are. In any case, 
+the only option available is to move on, for there is nothing here worth 
+exploring. 
+~ 
+0 2097416 1 0 0 3 
+d0 
+A cell from which moans of hunger flow... 
+~ 
+~ 
+~ 
+~ 
+cell~ 
+8389639 2819 2836 
+d1 
+A cold stone stairway... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2840 
+d2 
+An empty-looking cell... 
+~ 
+~ 
+~ 
+~ 
+cell~ 
+8389639 2819 2837 
+d3 
+The hallway ends briefly hereafter... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2839 
+S 
+#2839 
+Surrounded by Prison Cells~ 
+To the north, south, west, and everywhere in between, there are dark and 
+tightly cramped prison cells. None look appealing. It's a very good thing 
+that you aren't trapped in one of them like the unfortunate prisoners here. 
+If you had the dungeon key, it would be possible to unlock the cells, but 
+without it there really isn't much to do in this portion of the castle 
+except try and comfort the prisoners. 
+~ 
+0 2097416 1 0 0 4 
+d0 
+A cell which appears to be empty... 
+~ 
+~ 
+~ 
+~ 
+cell~ 
+8389639 2819 2835 
+d1 
+The hallway leads out of this accursed dungeon... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2838 
+d2 
+A rather wet prison cell... 
+~ 
+~ 
+~ 
+~ 
+cell~ 
+8389639 2819 2830 
+d3 
+A corpse can be seen in the cell ahead... 
+~ 
+~ 
+~ 
+~ 
+cell~ 
+8389639 2819 2833 
+d7 
+A cell with an inhabitant you'd rather not meet... 
+~ 
+~ 
+~ 
+~ 
+cell~ 
+8389639 2819 2834 
+d9 
+An eerie cell... 
+~ 
+~ 
+~ 
+~ 
+cell~ 
+8389639 2819 2831 
+S 
+#2840 
+A Guarded Stairway~ 
+The stairway, hewn of cold stone, leads up into darkness, and down into 
+even more darkness. This section of the castle is not as dusty as the 
+prisons, probably because it is regularly inhabited by a host of gallant 
+soldiers posted to make sure no prisoners escape. Rare is the prisoner 
+adept enough to sneak past these alert guards. 
+~ 
+0 2097416 1 0 0 8 
+d3 
+A dark hallway leads into the dungeon... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2838 
+d4 
+Shafts of light struggle to filter in from above, a battle of light against darkness... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2845 
+d5 
+The steps lead down, into darkness... 
+~ 
+~ 
+~ 
+~ 
+~ 
+1048576 -1 2841 
+S 
+#2841 
+Descending into Darkness~ 
+The stairs are cold and the air is full of darkness. It seems as if fate 
+itself is below, beckoning and calling. You feel as though you are following 
+a path which many righteous people have followed but never retraced, as though 
+this is most certainly a one-way journey. What could be hidden below, cloaked 
+in all this darkness? In the flickering light which manages to filter it's 
+way in from far above, the shadows seem to dance about forebodingly. 
+~ 
+0 2162952 1 0 0 7 
+d4 
+The stairs continue... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2840 
+d5 
+Foreboding darkness... 
+~ 
+~ 
+~ 
+~ 
+~ 
+1048576 -1 2842 
+S 
+#2842 
+Below the Dungeons~ 
+This dark room is scarcely lit at all. Whatever people dwell herein, 
+have been adjusting to the darkness for a very long time, and to you, 
+used to the light above, it is quite difficult to see at all. Indeed, 
+it is all but impossible to even discern an exit from this room, except 
+back up the stairs. But there must be some exit, else what would be 
+this room's purpose? 
+~ 
+0 2097288 1 0 0 3 
+d0 
+Too dark to tell... 
+~ 
+~ 
+~ 
+~ 
+~ 
+16779264 -1 2843 
+d2 
+Too dark to tell... 
+~ 
+~ 
+~ 
+~ 
+~ 
+2048 -1 2844 
+d4 
+A shadowy flight of stairs... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2841 
+> entry_prog 100~ 
+if wasinroom($n) < 2844 
+break 
+endif 
+if mobinworld(2817) == 1 
+mpat 2844 mpforce torturer mpat 2842 lunge $n 
+mppeace $n 
+mpforce $n scream 
+mpforce $n rest 
+mea $n _gre You collapse as the Torturer slashes your legs! 
+mer $n _gre $n collapses as the Torturer slashes $s legs! 
+endif 
+~ 
+| 
+S 
+#2843 
+The Blade of Justice~ 
+Implements of death and destruction are strewn all about this room. All 
+have seen quite alot of use, as is evidenced by all the decapitated heads 
+piled up in one corner. The stench here is almost unbearable, a stench 
+familiar from the dungeons above. The stench of dead, decaying flesh. 
+One headless body is sprawled along the floor, still quite fresh and warm. 
+>From it's hewn neck, blood still gushes, indicating that this kill was made 
+only minutes ago. 
+~ 
+0 2097416 1 0 0 6 
+d2 
+Too dark to tell... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2842 
+> act_prog headbutt~ 
+if isnpc($n) 
+mpmset $t mentalstate -33 
+endif 
+~ 
+> act_prog p has entered the game.~ 
+mptrans $n 2842 
+~ 
+> act_prog p has returned from the void.~ 
+mptrans $n 2842 
+~ 
+> death_prog 100~ 
+if isnpc($n) 
+if race($n) == animal 
+if mobinroom(2815) > 0 
+mpforce executioner say My pet!! 
+mpforce executioner chaotic $r 
+mpforce executioner chaotic $r 
+mpforce executioner chaotic $r 
+endif 
+endif 
+break 
+endif 
+if mobinroom(2815) == 0 
+break 
+endif 
+mpdream $n With a smile of satisfaction, the Executioner chops your head off. 
+mer $n _red With a smile of satisfaction, the Executioner chops $n's head off. 
+mpoload 2834 
+mposet nonamehead name $n decapitated head 
+mposet $n short $n's decapitated head 
+mposet $n long $n's decapitated head rolls around on the floor. 
+drop $n 
+mpjunk all 
+mpforce executioner get '$n decapitated head 
+mpmset gallant-executioner affected detect_traps 
+~ 
+> leave_prog 100~ 
+if mobinroom(2815) == 1 
+mea $n _red $I clips your legs with his axe as you flee! 
+mer $n _red $I clips $n's legs with his axe as $e flees! 
+mea $n _lbl No real damage is taken but you are pretty slowed down. 
+mpdelay $n 3 
+endif 
+~ 
+| 
+S 
+#2844 
+The Interrogation Room~ 
+This room, surprisingly, contains no diabolic instruments of death. 
+Instead, it is filled with instruments which are known to make people 
+wish for the relief of death. This is the Gallant torture chamber, where 
+many a soul has betrayed secrets sworn to be protected. Few can survive 
+the rigours of the Gallant Torturer. He uses strange unorthodox methods 
+of "interrogation" and has a great success rate at making people speak. 
+~ 
+0 2097416 1 0 0 5 
+d0 
+Too dark to tell... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2842 
+> leave_prog 100~ 
+if mobinroom(2817) == 1 
+mea $n _pin As you flee, the Torturer slashes at your legs! 
+mer $n _pin As $n flees, the Torturer slashes at $s legs! 
+endif 
+~ 
+> act_prog p has entered the game.~ 
+mptrans $n 2842 
+~ 
+> act_prog p has returned from the void.~ 
+mptrans $n 2842 
+~ 
+| 
+S 
+#2845 
+Climbing Up from the Depths~ 
+The stairs continue upward into the higher levels of the castle for what 
+seems like forever. It is clear that the dungeons are very deep down 
+under the castle, as though the inhabitants of Castle Gallant want to totally 
+disassociate themselves from the criminals of their populace. The stairs 
+continue still, but now they are not nearly as dark. A small side 
+passage to the west leads into some unknown place. 
+~ 
+0 2097160 1 
+d3 
+A strange side passage... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2846 
+d4 
+More guards! 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2858 
+d5 
+An infinite number of infinitely dark steps leads down into a dismal fate... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2840 
+S 
+#2846 
+A Side Passage~ 
+A very narrow side passage leads through part of the castle, into unknown 
+peril. A dim glimmer of light seeps from under a doorway to the west. 
+A darkened flight of stairs can be seen to the east. A single unlit torch 
+adorns the wall, indicating that this side passage is rarely traversed. 
+The floor, uncarpeted, is cold and dusty, with only an occasional light 
+footprint to indicate that anyone else ever traverses this place. 
+~ 
+0 2097416 1 0 0 1 
+d1 
+Darkened stairs... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2845 
+d3 
+A simple, empty laboratory... 
+~ 
+~ 
+~ 
+~ 
+~ 
+3 -1 2847 
+S 
+#2847 
+A Wizard's Laboratory~ 
+A simple study which belittles it's sorcerous inhabitant. There is a 
+solid oak desk with some simple papers on it. Glancing at it, hoping to 
+see some arcane spells or enchantments, you are disappointed to see only 
+some mathematical equations. The room is lit by several torches, and there 
+is a simple unassuming chair in front of the desk. All in all, this room 
+is quite a let down as far as wizards' laboratories go. 
+Also, there is a simple, somewhat dirty mirror set in the west wall. 
+~ 
+0 2097416 1 0 0 2 
+d1 
+A dark hallway... 
+~ 
+~ 
+~ 
+~ 
+~ 
+3 -1 2846 
+d3 
+~ 
+~ 
+~ 
+~ 
+mirror~ 
+3111 2836 2832 
+> act_prog p bashes open the mirror!~ 
+mea $n _lbl You plunge into the mirror and vanish! 
+mer $n _lbl $n plunges into the mirror and vanishes! 
+mpat 2848 mpe _lbl $n plunges in from nowhere! 
+mptrans $n 2848 
+close w 
+mpoload 2836 
+lock w 
+mpjunk all 
+~ 
+| 
+S 
+#2848 
+The Wizard's Mirror~ 
+The light in here is dazzling and blinding both at once, being reflected 
+an infinite number of times by an infinite number of phantom mirrors. 
+Clearly the dirty mirror on the wall of the wizard's laboratory was no 
+mere decoration, but the component of a powerful spell, a massive illusionary 
+battlefield, which obviously serves the wizard quite well for defense. 
+An unexplainable force of bouyance prevents one from falling into the 
+bottomless emptiness below... at least it seems bottomless, for if there 
+is any floor below, it is well out of sight. It is quite hard to figure out 
+exactly which way to go in this place... the light which is reflected so 
+brilliantly makes every exit just a blur. 
+~ 
+0 2097164 1 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+S 
+#2849 
+The Wizard's Mirror~ 
+Dazzling, shimmering colors are created by the prismatic mirrors which 
+fill this maze. Vague shadows flit and dance across the smooth surfaces 
+of the mirrors, assuming terrifying form and shape. Your own reflection 
+seems twisted and distorted by the crystalline mirrors. Every direction is 
+an indistinguishable blur, and defeaning noises originate from nowhere, 
+threatening to drive you mad! 
+~ 
+0 2097160 1 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2856 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2849 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2857 
+S 
+#2850 
+The Wizard's Mirror~ 
+Dazzling, shimmering colors are created by the prismatic mirrors which 
+fill this maze. Vague shadows flit and dance across the smooth surfaces 
+of the mirrors, assuming terrifying form and shape. Your own reflection 
+seems twisted and distorted by the crystalline mirrors. Every direction is 
+an indistinguishable blur, and defeaning noises originate from nowhere, 
+threatening to drive you mad! 
+~ 
+0 2097160 1 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2856 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2850 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2857 
+S 
+#2851 
+The Wizard's Mirror~ 
+Dazzling, shimmering colors are created by the prismatic mirrors which 
+fill this maze. Vague shadows flit and dance across the smooth surfaces 
+of the mirrors, assuming terrifying form and shape. Your own reflection 
+seems twisted and distorted by the crystalline mirrors. Every direction is 
+an indistinguishable blur, and defeaning noises originate from nowhere, 
+threatening to drive you mad! 
+~ 
+0 2097160 1 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2856 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2851 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2857 
+S 
+#2852 
+The Wizard's Mirror~ 
+Dazzling, shimmering colors are created by the prismatic mirrors which 
+fill this maze. Vague shadows flit and dance across the smooth surfaces 
+of the mirrors, assuming terrifying form and shape. Your own reflection 
+seems twisted and distorted by the crystalline mirrors. Every direction is 
+an indistinguishable blur, and defeaning noises originate from nowhere, 
+threatening to drive you mad! 
+~ 
+0 2097160 1 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2856 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2852 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2857 
+S 
+#2853 
+The Wizard's Mirror~ 
+Dazzling, shimmering colors are created by the prismatic mirrors which 
+fill this maze. Vague shadows flit and dance across the smooth surfaces 
+of the mirrors, assuming terrifying form and shape. Your own reflection 
+seems twisted and distorted by the crystalline mirrors. Every direction is 
+an indistinguishable blur, and defeaning noises originate from nowhere, 
+threatening to drive you mad! 
+~ 
+0 2097160 1 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2856 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2853 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2857 
+S 
+#2854 
+The Wizard's Mirror~ 
+Dazzling, shimmering colors are created by the prismatic mirrors which 
+fill this maze. Vague shadows flit and dance across the smooth surfaces 
+of the mirrors, assuming terrifying form and shape. Your own reflection 
+seems twisted and distorted by the crystalline mirrors. Every direction is 
+an indistinguishable blur, and defeaning noises originate from nowhere, 
+threatening to drive you mad! 
+~ 
+0 2097160 1 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2856 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2854 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2857 
+S 
+#2855 
+The Wizard's Mirror~ 
+Dazzling, shimmering colors are created by the prismatic mirrors which 
+fill this maze. Vague shadows flit and dance across the smooth surfaces 
+of the mirrors, assuming terrifying form and shape. Your own reflection 
+seems twisted and distorted by the crystalline mirrors. Every direction is 
+an indistinguishable blur, and defeaning noises originate from nowhere, 
+threatening to drive you mad! 
+~ 
+0 136314888 1 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2855 
+> entry_prog 100~ 
+if wasinroom($n) == 2848 
+mptrans $n 2849 
+break 
+endif 
+if wasinroom($n) == 2849 
+mptrans $n 2850 
+endif 
+if wasinroom($n) == 2850 
+mptrans $n 2854 
+break 
+endif 
+if wasinroom($n) == 2851 
+mptrans $n 2853 
+break 
+endif 
+if wasinroom($n) == 2852 
+mptrans $n 2849 
+break 
+endif 
+if wasinroom($n) == 2853 
+mptrans $n 2854 
+break 
+endif 
+mptrans $n 2849 
+~ 
+| 
+S 
+#2856 
+The Wizard's Mirror~ 
+Dazzling, shimmering colors are created by the prismatic mirrors which 
+fill this maze. Vague shadows flit and dance across the smooth surfaces 
+of the mirrors, assuming terrifying form and shape. Your own reflection 
+seems twisted and distorted by the crystalline mirrors. Every direction is 
+an indistinguishable blur, and defeaning noises originate from nowhere, 
+threatening to drive you mad! 
+~ 
+0 136314888 1 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2856 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2856 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2856 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2856 
+> entry_prog 100~ 
+if wasinroom($n) == 2849 
+mptrans $n 2851 
+break 
+endif 
+if wasinroom($n) == 2850 
+mptrans $n 2853 
+break 
+endif 
+if wasinroom($n) == 2851 
+mptrans $n 2852 
+break 
+endif 
+if wasinroom($n) == 2852 
+mptrans $n 2853 
+break 
+endif 
+if wasinroom($n) == 2853 
+mptrans $n 2850 
+break 
+endif 
+mptrans $n 2851 
+~ 
+| 
+S 
+#2857 
+The Wizard's Mirror~ 
+Dazzling, shimmering colors are created by the prismatic mirrors which 
+fill this maze. Vague shadows flit and dance across the smooth surfaces 
+of the mirrors, assuming terrifying form and shape. Your own reflection 
+seems twisted and distorted by the crystalline mirrors. Every direction is 
+an indistinguishable blur, and defeaning noises originate from nowhere, 
+threatening to drive you mad! 
+~ 
+0 136314888 1 
+d0 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2857 
+d1 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2857 
+d2 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2857 
+d3 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2857 
+> entry_prog 100~ 
+if wasinroom($n) == 2849 
+mptrans $n 2852 
+break 
+endif 
+if wasinroom($n) == 2850 
+mptrans $n 2851 
+break 
+endif 
+if wasinroom($n) == 2851 
+mptrans $n 2854 
+break 
+endif 
+if wasinroom($n) == 2852 
+mptrans $n 2851 
+break 
+endif 
+if wasinroom($n) == 2853 
+mptrans $n 2852 
+break 
+endif 
+mptrans $n 2854 
+~ 
+> speech_prog 3~ 
+mpgoto 0.rebecca 
+mea rebecca _lbl Suddenly Erdos runs up from nowhere and tackles you to the ground! 
+mea rebecca _ora * OOF! * 
+mea rebecca _cya Erdos slurrrrrrrrrrps you affectionately over and over. 
+mea rebecca _pin mmMMmmMMmm! 
+~ 
+| 
+S 
+#2858 
+Shadows Among the Light~ 
+Natural light flows in from above, yet shadows still prevail here. A sort 
+of guard post has been set up, a final defense against escaping prisoners. 
+Clearly Castle Gallant places a high amount of emphasis upon the security 
+of it's prison. There is no need for torches here, because of the light 
+streaming in from the open courtyard. The courtyard which is so close, 
+yet still so difficult to reach, thanks to the elite guards who exist here. 
+One has to wonder, is this a necessary battle? 
+~ 
+0 2097160 1 
+d4 
+Faint light manages to stream in through a grate... 
+~ 
+~ 
+~ 
+~ 
+grate~ 
+1048579 -1 2859 
+d5 
+The stairs lead down toward the dungeons... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2845 
+S 
+#2859 
+The Castle Courtyard~ 
+A beautiful courtyard, decorated wondrously with many exotic plants. 
+Ferns of every color of the rainbow can be seen, growing from between 
+cracks in the marble floor. There is a small grate on the floor, and 
+walls all around, preventing travel in any direction except forward, 
+into the courtyard proper. 
+~ 
+0 2097160 1 
+d0 
+Into the courtyard proper... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2860 
+d5 
+A dark grate leads into the castle dungeons... 
+~ 
+~ 
+~ 
+~ 
+grate~ 
+1 -1 2858 
+S 
+#2860 
+The Castle Courtyard~ 
+A castle courtyard is well maintained by the denizens of Castle Gallant. 
+Weaponry can be seen leaning against the walls of various houses and shops 
+built within the safety of the castle walls. Knights of Castle Gallant 
+can be seen wandering the grounds, discussing battles together and going 
+over field plans. To the northeast, a great open door can be seen leading 
+to the throneroom, but that is still a ways away. 
+~ 
+0 2097160 1 0 0 3 
+d2 
+Into an uncrowded corner of the courtyard... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2859 
+d6 
+Traversing the courtyard... 
+~ 
+~ 
+~ 
+~ 
+~ 
+1048576 -1 2861 
+d7 
+A small chapel in the castle... 
+~ 
+~ 
+~ 
+~ 
+~ 
+1048576 -1 2870 
+S 
+#2861 
+The Center of the Courtyard~ 
+A crumbling fountain exists in the center of the throne, providing water 
+for the knights who wander the area. Inscribed on the walkway of the 
+courtyard are recountings of the honor and glory of these knights. Lush 
+greenery is abundant here, giving the castle a very pleasant aire to it. 
+Healthy trees can be seen all about, growing tall and strong. 
+~ 
+0 2097160 1 
+d6 
+The doors before the throneroom... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2862 
+d7 
+A long-needed drink... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2869 
+d9 
+Fleeing from the Throne... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2860 
+S 
+#2862 
+Nearing the Royal Throne~ 
+The large doors ahead prelude the awesome throneroom of King Gallant. 
+On either side of the doors, statues of the king give a preview of the 
+king's awesome splendor and majesty. A looming, powerful figure, it 
+is little wonder that he has done so successfully in the politics of these 
+lands; he is clearly quite charismatic. But it is uncertain whether he 
+would be very hospitable to a bunch of intruders. 
+~ 
+0 2097160 1 
+d6 
+Entering the throneroom... 
+~ 
+~ 
+~ 
+~ 
+~ 
+1048576 -1 2863 
+d9 
+The Center of the Courtyard... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2861 
+S 
+#2863 
+The King's Shadow~ 
+Just ahead, the massive throne of King Gallant can be seen, filling the 
+whole huge room with a great sense of prestige and honor and judgement. 
+Many a man has had his fate decided for him before this almighty throne. 
+Men have been made, and lives have been shattered here. With the majestic 
+history of this realm, the lives of a few ragtag adventurers does not seem 
+that significant. If it is in the king's will that you perish, then you 
+will surely perish; that is the power of this monarchy. When the king 
+makes a decision, it is carved in stone and solid. There is no escape, 
+nor will there ever be. 
+~ 
+0 2097160 1 0 0 6 
+d6 
+Your fate awaits! 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2864 
+S 
+#2864 
+The Gallant Throne~ 
+Awe and majesty are the defining characteristics of this incredibly large 
+room. An aura of surpreme power seems to emanate from the throne, and 
+it is difficult to determine whether that is by enchantment or simply 
+by intimidation; most likely it is both. Every tile in the floor has 
+been individually created, and each portrays a great battle which King 
+Gallant has fought. Powerful runes cover the walls, offering this 
+incredible monarch protection from almost all concievable attacks. 
+The throne itself is created of pure diamond, and must have taken a 
+century to carve into the perfect shape which it is in. Golden figurines 
+of bears and great cats and other beasts of battle adorn the room, 
+and each wall is an incredible breathtaking mural of war. The roof is 
+opened strategically so as to allow light to stream in in just such a 
+way as to land upon the commanding features of King Gallant. The shine 
+which thus reflects from his incredible crown is almost blinding. 
+~ 
+0 2097160 1 
+d1 
+A somewhat cold bedroom... 
+~ 
+~ 
+~ 
+~ 
+~ 
+1 -1 2867 
+d7 
+The advisor of His Majesty... 
+~ 
+~ 
+~ 
+~ 
+~ 
+1 -1 2868 
+d9 
+To flee or not to flee... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2863 
+d10 
+You fall for a long, long time... 
+~ 
+~ 
+~ 
+~ 
+gehtyoijllki543~ 
+33554432 -1 2866 
+> rand_prog 30~ 
+if isfight($n) 
+else 
+break 
+endif 
+if rand(33) 
+mea $n _gre Colours dance through the room as the king hacks you with Valinspiraller! 
+mer $n _gre Colours dance through the room as the king hacks $n with Valinspiraller! 
+else 
+if rand(50) 
+mea $n _whi Colours dance through the room as the king hacks you with Valinspiraller! 
+mer $n _whi Colours dance through the room as the king hacks $n with Valinspiraller! 
+else 
+mea $n _lbl Colours dance through the room as the king hacks you with Valinspiraller! 
+mer $n _lbl Colours dance through the room as the king hacks $n with Valinspiraller! 
+endif 
+endif 
+if rand(10) 
+mpforce $n wince 
+endif 
+if rand(15) 
+mpforce king whisper $n Die! Die! Diiiieeeeeeeee!!! 
+endif 
+mpdamage $n 600 
+if rand(12) 
+mpforce king c magnetic $n 
+mpforce king c sonic $n 
+endif 
+~ 
+> act_prog p King Gallant's earthquake~ 
+if ispc($t) 
+mpe _lbl In the chaos of the earthquake, the floor cracks open! 
+mea $t _pin With a scream, you fall into the darkness below!! 
+mer $t _pin With a scream, $t falls into the darkness below!! 
+mpforce $t look gehtyoijllki543 
+mpat 2866 mpe _pin $t falls in from above with a horrible scream! 
+mptrans $t 2866 
+endif 
+~ 
+> death_prog 100~ 
+if isnpc($n) 
+break 
+endif 
+if mobinworld(2829) == 0 
+break 
+endif 
+mpdream $n One final thrust from the Valinspiraller chops your head clean off. 
+mer $n _pin With one final thrust with the Valinspiraller, the king easily chops off $n's head. 
+mpforce king yell Let $n be an example of what happens to those who invade us! 
+mptrans $n 2866 
+mpforce king mpforce all yell Alas! The king is invincible! 
+mpe _lbl $n's corpse and head fall through a crack in the floor, far below... 
+mpat 2866 mpe _lbl The corpse and decapitated head of $n fall into the room. 
+~ 
+> speech_prog heal~ 
+c heal $n 
+~ 
+| 
+S 
+#2865 
+utility room!~ 
+~ 
+0 2097164 1 
+> act_prog p sits down.~ 
+mpforce $n stand 
+~ 
+> time_prog 5~ 
+if mobinroom(2839) > 0 
+mpdamage worthy-knight 32000 
+endif 
+~ 
+> time_prog 18~ 
+if mobinroom(2839) > 0 
+mpdamage worthy-knight 32000 
+endif 
+~ 
+| 
+S 
+#2866 
+Forsaken Below the Throne~ 
+A cold, damp cell has been created beneath the Gallant Throne. There is 
+no exit from this forsaken place, for it is only intended for those unfortunate 
+enough to fall prey to the earthquakes summoned by the king. Runes inscribed 
+in the walls are engineered to prevent any possibility of escape by magical 
+means, so that you are now horribly resigned to the fate of starvation, 
+unless perchance your deity can rescue you. 
+~ 
+0 2097164 1 
+> rand_prog 100~ 
+if level($r)<50 
+break 
+endif 
+if ispc($r) 
+mea $r _bro You are DYING of hunger! 
+mea $r _blu You are DYING of thirst! 
+mer $r _bro $r is DYING of hunger! 
+mer $r _blu $r is DYING of thirst! 
+mpdamage $r 100 
+endif 
+~ 
+| 
+S 
+#2867 
+The Queen's Bedchambers~ 
+The Queen of the kingdom of Gallant, it stands to reason, is as fine a 
+sorceress as any woman in the realms. Her bedchambers are small and not 
+very remarkable, with a simple closet, a simple bookcase, and a simple 
+but nice blue carpet. The only item which really stands out here is the 
+massive bed, surrounded by velvetty red curtains. It is here that the 
+queen entertains the king... it stands to reason that it is not good to 
+enter this room unless you yourself are the king! 
+~ 
+0 2097416 1 0 0 5 
+d3 
+A magnificent throneroom! 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2864 
+> speech_prog heal~ 
+c heal $n 
+~ 
+| 
+S 
+#2868 
+Workplace of the King's Advisor~ 
+A small office exists here, filled with plaques and papers stating how 
+the person who dwells here has graduated from so many institutions of 
+learning. It is clear that such a learn'ed man can be none other than 
+King Gallant's personal advisor. It is an honor to be in the presence 
+of such a wise individual, and perhaps he can even advise the likes of 
+you. It would seem that the King himself has little need for advice, 
+already being quite intelligent and wise... so to make himself more 
+useful, the advisor runs a small repair business here, exclusively for 
+the royal family. 
+~ 
+0 2097160 1 
+d8 
+The largest throneroom you've ever seen! 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2864 
+S 
+#2869 
+The Fount Most Gallant~ 
+You stand by the side of the crumbling fountain. Soft tendrils of music 
+stream through the air from the strings of a masterful harper who reclines 
+by the fountain's side, singing of the infinite glory of Castle Gallant's 
+many worshipful knights. A rather timid looking man, he probably would not 
+survive long in battle against the likes of you. It's a good thing for him 
+that he's surrounded by strong knights who love him and cherish his music, 
+or he would surely be done for, and his golden harp stolen. 
+~ 
+0 2097160 1 
+d8 
+The center of the courtyard... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2861 
+S 
+#2870 
+A Humble Castle Chapel~ 
+A humble chapel has been constructed within the Castle. It would seem 
+that the roudy knights make little allowance in their busy fighting 
+schedules for the mundane discipline of worship and supplication. 
+There are stain glass windows, the beautiful glass portraying battles 
+important in the theologies of the major gods and goddesses in these 
+lands. The floor is dark black, but not an evil sort of black, but 
+rather a comfortable and holy type. There is a very simple altar, but 
+it is not really too impressive. 
+~ 
+0 2097160 1 
+d8 
+The courtyard of the castle... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2860 
+S 
+#2871 
+A Dusty Stairway into Silence~ 
+As fast as they arose to please your ears, the sounds of the canyon and 
+of the softly running spring all die down into a strange hush which 
+hangs in the air like a reaper. A very small manmade tunnel leads down 
+into a dim cavern below, illuminated only faintly by a few humble 
+torches. It is difficult not to cough here, for the air is filled with 
+dust which has been collecting for ages and which is just now disturbed 
+by the presence of explorers. But upon coughing, very little sound is 
+made... it is clear that some powerful magic is present here, making 
+the entire tunnel silent. There is nothing but unforgiving earth above, 
+as though this were to be your tomb. Mayhaps it shall be, that can 
+only be guessed at. 
+~ 
+0 2097160 1 
+d4 
+~ 
+~ 
+~ 
+~ 
+earth~ 
+8391215 -1 2804 
+d5 
+Gloom and silence... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2872 
+> leave_prog 100~ 
+mea $n _lbl As you withdraw, the steps' creaking is muted by a powerful spell. 
+~ 
+| 
+S 
+#2872 
+Descent Unbounded~ 
+The steps which you have been traversing continue here, with little sign 
+of coming to an end. It is difficult to gauge just how far down they 
+go, the gloom creating an illusion which makes it seem as though the bottom 
+of the steps is always just a few strides below. The steps quiver and 
+quake with every move, and one can only wonder how much weight they can 
+withstand... 
+~ 
+0 2097160 1 
+d4 
+Ascending the steps... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2871 
+> entry_prog 100~ 
+mea $n _gre -Crack!- The steps below your feet give way! 
+mea $n *whi You are falling... 
+mea $n _whi An Infinite Fall 
+mea $n _yel You open your mouth to scream, but no noise comes out. You 
+mea $n _yel flail your arms about madly, but there is nothing to catch 
+mea $n _yel hold of. You fall for what seems like forever, then after 
+mea $n _yel a very long time, you manage to catch hold of a ledge in the 
+mea $n _yel side of the tunnel wall. You are hanging there precariously, 
+mea $n _yel with nothing below your feet but empty space and an infinite 
+mea $n _yel fall... 
+mea $n _whi Exits: uncertain. 
+mer $n _dgr $n falls far below. 
+mpat 2873 mpe _dgr $n falls from far above, and barely manages to grab 
+mpat 2873 mpe _dgr hold of this ledge. 
+mptrans $n 2873 
+~ 
+| 
+S 
+#2873 
+A Precarious Ledge~ 
+It is ironic, really, how sometimes the grandest feats of architecture 
+are belittled by the simplest natural common objects. This ledge is one 
+of those things, seeming insignificant from afar, up close it is your 
+lifestring and your lifeblood. Below, there is naught but a transfinite 
+fall, an endless agonizing death. This ledge is your only hope at life. 
+~ 
+0 2097160 1 
+d5 
+Your heart almost leaps out of your mouth as you gaze into the infinite emptiness below your feet... 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2874 
+> speech_prog lazsigma~ 
+if ispassage($i) == north 
+break 
+endif 
+mpe _lbl The rune shimmers slightly brighter, and a secret passage opens... 
+mpopen 2873 2875 0 
+~ 
+| 
+S 
+#2874 
+A Truly Horrible Death~ 
+Alas, this is a truly horrible way to die. As you fall and fall and fall 
+and fall, you eventually grow accustomed to the sensation of falling, and 
+after a few days it even seems normal. But there is no way to stop falling. 
+Alas, you are doomed to starve and thirst to death before you ever hit 
+the ground, a ground which does not exist for this is a bottomless drop. 
+~ 
+0 2105486 1 
+> rand_prog 100~ 
+mea $n _ora You continue to fall... 
+mpdamage $n 400 
+~ 
+| 
+S 
+#2875 
+An Alcove Afrozen~ 
+This is a small alcove in the stone, lit only by your own lightsource 
+and by nothing else. If one were to look back, it would become clear 
+that the tunnel wall was an illusion here, made to protect whatever 
+secrets lie within. There is a simple silver altar here, and laid across 
+it is the skeleton of a human child. 
+~ 
+0 18874636 1 0 0 1 
+d2 
+Peril! Monsters! Demons! Horrors! 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2874 
+d5 
+~ 
+~ 
+~ 
+~ 
+~ 
+4096 -1 2876 
+S 
+#2876 
+A Spiral Blast~ 
+A blast of chaotic energy swirls around madly! 
+A defeaning whine fills the air! 
+The ground trembles and shivers! 
+~ 
+0 2097160 1 
+d0 
+A blur! 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2877 
+> entry_prog 100~ 
+if mobinworld(2841) == 0 
+break 
+endif 
+mpat valinspirallermob mpforce valinspirallermob mpat 2876 c spiral 
+~ 
+| 
+S 
+#2877 
+A Spiral Blast~ 
+A blast of chaotic energy swirls around madly! 
+A defeaning whine fills the air! 
+The ground trembles and shivers! 
+~ 
+0 2097160 1 
+d0 
+A blur! 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2878 
+d2 
+A blur! 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2876 
+> entry_prog 100~ 
+if mobinworld(2841) == 0 
+break 
+endif 
+mpat valinspiraller mpforce valinspiraller mpat 2877 c spiral 
+~ 
+> speech_prog destroy~ 
+if ispc($n) 
+break 
+endif 
+mpat 2876 mpdamage all 32000 
+mpat 2875 mpdamage all 32000 
+mpat 2874 mpdamage all 32000 
+mpat 2873 mpdamage all 32000 
+mpat 2872 mpdamage all 32000 
+mpat 2871 mpdamage all 32000 
+mpat 2870 mpdamage all 32000 
+mpat 2869 mpdamage all 32000 
+mpat 2868 mpdamage all 32000 
+mpat 2867 mpdamage all 32000 
+mpat 2866 mpdamage all 32000 
+mpat 2863 mpdamage all 32000 
+mpat 2862 mpdamage all 32000 
+mpat 2861 mpdamage all 32000 
+mpat 2860 mpdamage all 32000 
+mpat 2859 mpdamage all 32000 
+mpat 2858 mpdamage all 32000 
+mpat 2857 mpdamage all 32000 
+mpat 2856 mpdamage all 32000 
+mpat 2855 mpdamage all 32000 
+mpat 2854 mpdamage all 32000 
+mpat 2853 mpdamage all 32000 
+mpat 2852 mpdamage all 32000 
+mpat 2851 mpdamage all 32000 
+mpat 2850 mpdamage all 32000 
+mpat 2849 mpdamage all 32000 
+mpat 2848 mpdamage all 32000 
+mpat 2847 mpdamage all 32000 
+mpat 2846 mpdamage all 32000 
+mpat 2845 mpdamage all 32000 
+mpat 2844 mpdamage all 32000 
+mpat 2842 mpdamage all 32000 
+mpat 2841 mpdamage all 32000 
+mpat 2840 mpdamage all 32000 
+mpat 2839 mpdamage all 32000 
+mpat 2838 mpdamage all 32000 
+mpat 2837 mpdamage all 32000 
+mpat 2836 mpdamage all 32000 
+mpat 2835 mpdamage all 32000 
+mpat 2834 mpdamage all 32000 
+mpat 2833 mpdamage all 32000 
+mpat 2832 mpdamage all 32000 
+mpat 2831 mpdamage all 32000 
+mpat 2830 mpdamage all 32000 
+mpat 2829 mpdamage all 32000 
+~ 
+| 
+S 
+#2878 
+A Spiral Blast~ 
+A blast of chaotic energy swirls around madly! 
+A defeaning whine fills the air! 
+The ground trembles and shivers! 
+~ 
+0 2097416 1 0 0 9 
+d2 
+A blur! 
+~ 
+~ 
+~ 
+~ 
+~ 
+0 -1 2877 
+> act_prog p has entered the game.~ 
+mpforce valinspiraller c spiral 
+mptrans 0.$n 2877 
+~ 
+| 
+S 
+#2879 
+Floating in a void~ 
+~ 
+0 2097164 1 
+S 
+#2880 
+Floating in a void~ 
+~ 
+0 1073741828 1 
+S 
+#2881 
+Floating in a void~ 
+~ 
+0 1073741828 1 
+S 
+#2899 
+Floating in a void~ 
+~ 
+0 2097164 1 
+S 
+#0
+
+#RESETS 
+O 0 2816 1 2833 
+P 0 2817 0 2816 
+D 0 2833 0 2 
+D 0 2834 2 2 
+M 0 2809 1 2834 
+D 0 2835 3 1 
+D 0 2834 1 2 
+M 0 2800 1 2803 
+M 0 2801 5 2803 
+O 0 2800 1 2804 
+O 0 2801 1 2805 
+M 0 2802 1 2812 
+E 1 2802 1 16 
+E 1 2803 1 5 
+M 0 2803 1 2813 
+E 1 2804 1 22 
+E 1 2806 1 8 
+D 0 2813 3 1 
+D 0 2815 1 1 
+O 0 2805 1 2815 
+M 0 2804 1 2816 
+G 1 2809 1 
+G 1 2809 1 
+G 1 2809 1 
+G 1 2809 1 
+G 1 2809 1 
+E 1 2807 1 21 
+E 1 2808 1 3 
+O 0 2810 1 2817 
+M 0 2805 1 2819 
+E 1 2812 1 5 
+E 1 2811 1 16 
+O 0 2813 1 2823 
+M 0 2807 1 2830 
+E 1 2814 1 12 
+M 0 2808 1 2831 
+D 0 2835 1 2 
+D 0 2836 3 2 
+M 0 2810 1 2836 
+E 1 2814 1 12 
+D 0 2830 1 2 
+D 0 2837 3 2 
+D 0 2837 0 2 
+D 0 2838 2 2 
+D 0 2836 2 2 
+D 0 2838 0 2 
+D 0 2831 0 2 
+D 0 2833 2 2 
+D 0 2830 3 2 
+D 0 2831 1 2 
+D 0 2839 2 2 
+D 0 2830 0 2 
+D 0 2839 9 2 
+D 0 2839 3 2 
+D 0 2833 1 2 
+D 0 2839 7 2 
+D 0 2834 8 2 
+D 0 2839 0 2 
+D 0 2835 2 2 
+M 0 2811 1 2840 
+E 1 2820 1 16 
+E 1 2821 1 20 
+E 1 2822 1 5 
+M 0 2812 1 2840 
+E 1 2823 1 21 
+E 1 2824 1 5 
+M 0 2813 1 2840 
+E 1 2825 1 12 
+E 1 2826 1 16 
+E 1 2827 1 17 
+M 0 2814 1 2841 
+M 0 2817 1 2844 
+D 0 2846 3 1 
+D 0 2847 1 1 
+D 0 2847 3 2 
+M 0 2818 1 2854 
+E 1 2837 1 16 
+E 1 2838 1 5 
+E 1 2838 1 12 
+E 1 2839 1 14 
+M 0 2819 1 2858 
+E 1 2840 1 16 
+M 0 2820 1 2858 
+M 0 2821 1 2858 
+M 0 2822 1 2858 
+E 1 2841 1 16 
+M 0 2823 1 2858 
+D 0 2858 4 1 
+M 0 2824 1 2860 
+E 1 2820 1 16 
+M 0 2825 1 2861 
+E 1 2842 1 16 
+E 1 2842 1 18 
+E 1 2842 1 21 
+M 0 2826 1 2861 
+E 1 2843 1 16 
+M 0 2827 1 2861 
+E 1 2844 1 16 
+M 0 2828 1 2862 
+E 1 2842 1 16 
+E 1 2843 1 18 
+E 1 2844 1 21 
+M 0 2830 1 2865 
+M 0 2831 1 2865 
+M 0 2832 1 2865 
+M 0 2833 1 2865 
+M 0 2834 1 2865 
+M 0 2835 1 2865 
+M 0 2829 1 2864 
+G 1 2845 1 
+E 1 2846 1 16 
+G 1 2847 1 
+E 1 2848 1 6 
+E 1 2849 1 14 
+M 0 2836 1 2867 
+E 1 2850 1 16 
+M 0 2837 1 2868 
+O 0 2852 1 2869 
+M 0 2838 1 2869 
+M 0 2840 1 2870 
+M 0 2806 5 2820 
+D 0 2804 5 2 
+D 0 2871 4 2 
+O 0 2856 1 2871 
+O 0 2857 1 2871 
+O 0 2858 1 2873 
+O 0 2859 1 2875 
+O 0 2860 1 2875 
+M 0 2842 1 2879 
+M 1 2815 1 2843 
+E 1 2831 1 16 
+E 1 2832 1 20 
+E 1 2880 1 9 
+M 1 2816 1 2843 
+O 1 2828 1 2843 
+O 1 2829 1 2843 
+D 0 2831 6 2 
+S
+
+#SHOPS 
+0
+
+#REPAIRS 
+2830 5 9 0 100 1 0 23 ; mob2830 
+2837 9 0 0 100 1 0 23 ; the King's advisor 
+0
+
+#SPECIALS 
+M 2800 spec_fido 
+M 2801 spec_thief 
+M 2802 spec_guard 
+M 2803 spec_fido 
+M 2804 spec_guard 
+M 2806 spec_poison 
+M 2807 spec_poison 
+M 2809 spec_breath_lightning 
+M 2810 spec_thief 
+M 2811 spec_guard 
+M 2812 spec_guard 
+M 2813 spec_cast_mage 
+M 2818 spec_cast_mage 
+M 2822 spec_thief 
+M 2830 spec_poison 
+M 2831 spec_poison 
+M 2832 spec_poison 
+M 2833 spec_poison 
+M 2834 spec_poison 
+M 2835 spec_poison 
+S
+
+#$

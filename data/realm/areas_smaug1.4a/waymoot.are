@@ -1,0 +1,7439 @@
+#AREA   Caverns of Waymoot~
+
+#AUTHOR Anniara & Drahkan~
+
+#RANGES
+40 65 40 65
+$
+
+#RESETMSG An eerie wind whistles out of the caverns...~
+
+#FLAGS
+0 15
+
+#ECONOMY 0 498100145
+
+#HELPS
+0 $~
+
+#MOBILES
+#18601
+girl~
+Angelic Girl~
+An angelic girl awaits worshippers of the Goddess.
+~
+A beautiful blond haired, blue eyed child stands waiting for worshippers
+to arrive. Dressed in a floor length gown, made of the finest silk that
+can be found in the Waymoot Hills. Upon her head she wears a crown of
+wild flowers.
+~
+3 8236 1000 C
+40 0 -210 1600d1+450 10d11+2
+3400 0
+8 8 2
+25 15 15 19 19 13 13
+0 0 0 0 0
+0 1 0 0 4097 1 1
+0 0 1871 1048642 3328 0 1073741856 2
+> greet_prog 100~
+if name($n) == anniara
+  grovel anniara
+  sa Oh Goddess! You have returned!
+endif
+~
+|
+#18602
+Sandor~
+Sandor~
+Sandor the Ranger, stands here thumbing through a book.
+~
+A strong, handsome gith warrior stands before you. With a knowing eye and
+a rugged body he is ready for any battle presented him.  He wears the
+jerkin and trouser of a ranger. Sandor smiles a crooked smile at you.
+~
+3 424 -1 C
+48 0 -300 17000d1+500 20d3+2
+68900 0
+8 8 1
+19 13 13 18 18 13 13
+0 0 0 0 0
+6 3 0 0 262144 1 1
+25 25 7 0 3136 64 176 8193
+#18603
+Caldr~
+caldr~
+Caldr wanders around looking to get into trouble.
+~
+A young orcan man dressed in warriors garb quickly shuffles around.
+He has dark brown eyes that always seem to be shifting. His hands
+are strong and calloused.  His shoes are worn and muddy.  
+~
+3 4194344 200 C
+50 0 -230 1d1+10023 20d2+10
+39789 0
+8 8 1
+19 13 13 17 19 13 13
+0 0 0 0 0
+7 4 0 0 1 1 2
+20 20 15 2105600 3136 2 96 524290
+> all_greet_prog 100~
+emote stands to his full height, with his hands on his hips.
+emote looks at you with interest.
+sa Will you be my next challenge fearless one?
+~
+|
+#18604
+Sahara~
+Sahara the cook~
+Sahara the cook, quickly shuffles around the kitchen.
+~
+Sahara, Waymoots personal cook stands before you with her hands upon
+her ample hips.  She is clothed in a non traditional dress.  She wears
+upon her head a pert little cap that does nothing for her.  She wears 
+stout well worn boots upon her feet.  She is a someone who does not 
+need to be bothered.
+~
+3 168 0 C
+40 0 -300 1d1+9004 10d4+4
+45900 0
+8 8 2
+15 13 13 17 17 13 13
+0 0 0 0 0
+2 3 0 0 2 1 1
+0 0 263 0 3329 1048576 544 1
+> all_greet_prog 100~
+sa The feast is almost ready...will you help me peel apples for a pie $n?
+~
+> all_greet_prog 90 ~
+sa $n, get a broom and make yourself useful.
+~
+> fight_prog 6~
+emote grabs a sack of potatoes.
+emote swings the sack at $n knocking $n off $s feet.
+mpdamage $n 30
+~
+> fight_prog 4~
+emote tries to shove you into the oven.
+sa You are the next dinner!
+c fireball $n
+~
+> fight_prog 2~
+emote holds onto your head and knees $n in $s face.
+stun $n
+~
+|
+#18605
+Algeron~
+algeron ~
+Algeron the warrior drow, wanders the cavern.
+~
+Algeron the drow warrior, humms to himself as he looks intently back
+at you.  He is dressed head to toe in a dark fabric that hasn't been
+seen in these parts before.  His eyes burn with a curiousity that is
+due to his young age.  His light brown hair tumbles carelessly across
+his forhead into his eyes.
+~
+16842755 4194344 -1000 C
+49 0 -230 11500d1+300 15d4+8
+57698 0
+8 8 0
+25 13 13 20 19 13 13
+0 0 0 0 0
+11 3 0 0 1 1 2
+0 0 14 576 3328 0 304 2051
+#18606
+Malkar~
+Malkar ~
+Malkar keeps his eye out for the tricks the children play.
+~
+Malkar, the Manors groundsman, keeps a close eye out for the foolish
+children who like to play tricks on him. With dusty knee'd pants, he
+is constantly down, looking under things. His well worn boots track
+dirt into the just swept hallway. Upon his head sits a cap, just 
+tilted to the left slightly. His reddish hair curls slightly out from
+under his old ratty cap.
+~
+3 4194474 -890 C
+50 0 -200 1d1+12010 30d2+5
+75600 0
+8 8 1
+17 13 13 16 17 13 13
+0 0 0 0 0
+2 3 0 0 4096 1 3
+0 5 39 32 3328 0 33554480 3
+> greet_prog 100~
+if sex($n) == 1
+    sa Good Day kind sir.  Would you mind waiting in the Great Hall
+else
+if sex($n) == 2
+   Sa Good Day Madam, please wait here $n, the mistress will be with 
+   sa you shortly.
+endif
+endif
+~
+> fight_prog 35~
+warcry
+mpdamage $r 450
+~
+|
+#18607
+Mistress Toreador~
+Mistress Toreador~
+Mistress Toreador sits quietly while brushing her hair.
+~
+The first thing about Mistress Toreador that draws your eye, is her bright
+green almond-shaped eyes.  Breaking your gaze from her lovely face, you notice 
+a mass of lush, auburn hair that tumbles down her back to her waist. Her pale
+skin contrasts sharply with her rose red full lips, quirked into a smile 
+which reveals newly growing fangs.  Looking down at the rest of her body,
+a curvaceous young body leads you down to her long legs, a tattoo of a vine
+twining its way up one leg, disappearing under a teddy that makes you 
+gulp.  She laughs a rich laugh at your appraising look and cocks her head 
+at you, examining you herself.
+~
+67 4718760 -750 C
+52 0 -230 1d1+15500 25d5+10
+114567 0
+8 8 2
+18 16 15 20 23 18 13
+0 0 0 0 0
+5 4 0 0 1 1 3
+0 0 2047 1048592 3392 0 2081 515
+> greet_prog 50~
+emote turns towards you, and smiles.
+sa $n, what a wonderful surprise.
+sa I wonder why Annette didn't announce you?
+~
+> fight_prog 4~
+emote gouges your eyes with her long nails.
+gouge $n
+~
+> fight_prog 3~
+emote grabs a tight hold of your leggings.
+emote gives you a painful wedgie.
+mpdamage $n 50
+~
+> fight_prog 6 ~
+Mistress Toreador leans in and quickly sinks her fangs in your white fleshy
+neck, sucking some of your life blood out.
+emote leans in and quickle sinks her fangs into your neck.
+emote sucks some of your life's blood.
+feed $n
+c 'energy drain' $n
+~
+|
+#18608
+black bat~
+black bat~
+A black bat swoops about in the air above you.
+~
+A midnight black bat with its wings glistening, and stretched out 
+to it's full wing span. The red, beady eyes hone in on your exposed
+flesh.
+~
+101 4194344 -800 C
+35 0 -300 30d29+500 3d8+15
+23090 0
+8 8 0
+14 13 13 18 19 13 13
+0 0 0 0 0
+5 5 0 0 128 128 1
+0 0 552 32 3074 8 6145 2
+#18609
+vampire bat~
+vampire bat~
+A vicious looking bat swoops down over your head.
+~
+A large hairy vampire bat flaps up above your head.  The bats fangs
+protrude from the open mouth of the evil looking creature, ready to sink
+them into it's next victim.
+~
+16777253 4194344 -700 C
+38 0 -210 1d1+8979 15d3+5
+24690 0
+8 8 1
+15 13 15 19 19 13 13
+0 0 0 0 0
+23 3 0 0 1 1 2
+0 0 33280 32 3328 0 264193 2
+#18610
+Rat~
+Beastly rat~
+A beastly rat scrounges the ground for food.
+~
+Brown and hairy, with bright black eyes, this feisty little rat sits on
+his haunches and cleans his scruffy face with his front paws.
+~
+65541 4194344 -500 C
+48 0 -230 9000d1+500 20d2+5
+3908 0
+8 8 0
+15 13 13 20 17 13 13
+0 0 0 0 0
+54 3 0 0 1 1 3
+0 0 32809 2 3328 0 513 2049
+#18611
+spider~
+Hairy spider~
+A large hairy spider sits upon his web, waiting for his next victim.
+~
+A large, hairy spider weaves a web of silk for his next victim. With
+eight hairy legs and a hairy sectioned body he sits and waits patiently 
+to wrap the victim up in spun silk.
+~
+16777285 4194344 -230 C
+48 0 -220 1d1+8540 55d1+0
+32089 0
+8 8 1
+16 13 13 23 22 13 13
+0 0 0 0 0
+64 3 0 0 1 1 2
+0 0 37 0 3072 32 262209 3
+#18612
+mondo~
+Mondo~
+Mondo stalks you quietly in the dark.
+~
+The vampire Mondo silently stalks his next victim. Clad in 
+a cloak of darkness with his handsome face hidden, he will not betray
+himself to the light of day.  Only the paleness of his skin betrays his
+true nature.
+~
+65539 4194472 -1000 C
+51 0 -230 1d1+9800 20d2+10
+79368 0
+8 8 1
+19 13 13 19 20 13 13
+0 0 0 0 0
+5 4 0 0 1 1 3
+0 0 14 513 3328 64 560 2
+> act_prog p DISARMS you!~
+wear dagger
+~
+|
+#18613
+old mountain gnome~
+old mountain gnome~
+An old mountain gnome wanders in the shadows.
+~
+An old mountain gnome shuffles his worn out feet along the dirt floor.
+He is hunched over due to taking on a lifes work of Emu raising.  His
+wind worn skin is tanned and leathery brown.  His knowing eyes have a 
+warmth and compassion that has taken years to create.
+~
+65 4260008 -890 C
+50 0 -205 12900d1+0 15d3+5
+65801 0
+8 8 1
+23 13 13 25 21 13 13
+0 0 0 0 0
+2 9 0 0 1 1 3
+0 0 38 2 3328 0 10485792 8193
+> rand_prog 4~
+emote grumbles as he goes about his work.
+~
+> fight_prog 25~
+if ispc($r)
+mpecho The mountain gnomes bounces off the walls.
+mpdamage $r 400
+endif
+~
+|
+#18614
+young gnome woman~
+young gnome woman~
+A young gnome woman darts between the shadows.
+~
+A beautiful gnome woman, with a sparkle to her eye and a warmth in
+her smile tilts her head slightly as you look at her.  She has long
+flowing black hair that is held togther with a single lace of leather.
+Her legs are covered in riding pants and she is wearing a loose, white
+cotten blouse.  On her feet are ankle boots with leather laces.
+~
+65 4194344 400 C
+47 0 -230 1d1+8000 18d2+5
+45987 0
+8 8 0
+18 13 13 19 17 13 13
+0 0 0 0 0
+38 3 0 0 1 1 2
+0 0 15 1048642 2100480 0 32 2
+#18615
+child mountain gnome~
+Small child~
+A clever gnome child runs giggling away.
+~
+A ruddy faced child squeals with delight at you seeing him. The childs 
+eyes are bright and mischievious and he sports flushed cheeks. Pants, torn
+at the knees and a muddy shirt is all this child is wearing.
+~
+3 4194336 -800 C
+40 0 -200 1d1+7900 8d4+8
+23890 0
+8 8 2
+14 13 13 13 21 13 13
+0 0 0 0 0
+39 3 0 0 1 1 1
+0 0 11 18 3328 32 16416 524290
+#18616
+Majhar Dragon~
+The Majhar Dragon~
+The mighty Majhar Dragon rears up to full height at your entrance
+~
+With his mighty tail curled around him as he sits there glaring at you 
+with bright knowing eyes.  The Majhar Dragon is the last of his breed.
+He is Lir to the once all powerful Majhar Donal.  His dragon scales
+are of a magical quality.  Rearing up to his full height, Majhar peers 
+at you with a hunger for new blood.
+~
+458755 306750120 -1000 C
+50 0 -210 1d1+19000 25d4+50
+798054 0
+8 8 1
+25 13 13 23 23 13 14
+0 0 0 0 -15
+3 0 0 0 327681 1 4
+70 60 953405 338 3148808 8192 73735 14371
+> all_greet_prog ~
+if isevil($n)
+  sa Your dastardly deeds will not help you here $n
+endif
+~
+> all_greet_prog ~
+if clan($n) == Vodun
+  sa The name of the Vodun has sent tremors through the earth, but the
+  sa name of $n Vodun means naught to such as I,
+  glare $n
+endif
+~
+> act_prog 'tickles you'~
+sa Just a little higher $n I have an itch that I haven't been able
+sa to reach in over a century.
+evil $n
+~
+> greet_prog 75~
+if name($n) == Anniara
+  grovel $n
+  sa Greetings great lady
+  emote cuddles $n in a protective embrace.
+endif
+~
+> death_prog 100~
+if rand(2)
+mpechoat $n The Great Majhar Dragon draws his last breath.
+mpechoat $n Where once a great body lay, a powerful weapon awaits your hand.
+mpjunk all
+mpoload 18616
+drop Anarchy
+mpecho Anarchy, the battle of all evil to come.
+else
+if rand(10)
+mea 0.$n The great dragons eyes roll back in his head as he crashes
+mea 0.$n to the ground.
+mer 0.$n Majhar lets out a howl as $n gouges out his eyes.
+mpoload 18672
+else
+if rand(35)
+mpoload 18671
+mea $n The Great Majhar looks at you with awe and wonder.
+bow $n
+  sa You have been a fine opponent $n.
+endif
+ endif
+  endif
+~
+> fight_prog 15~
+mpecho Majhar unleashes his claws!
+gouge 0.$n
+mpdamage 0.$n 600
+~
+> fight_prog 30~
+if isnpc($n)
+mpslay $n
+else
+snicker $n
+mpecho The Mighty Majhar's fury explodes.
+c 'magnetic thrust' 0.$n
+mpdamage 0.$n 500
+endif
+~
+> fight_prog 50~
+mpgoto 3
+c heal
+mpgoto 18747
+~
+> act_prog 'flees head over heels!'~
+if isnpc($n)
+at $n mpslay $n
+else
+mpat 0.$n growl 0.$n
+mpat 0.$n mpdamage 0.$n 500
+endif
+~
+|
+#18617
+glow worm~
+glow worm~
+A slimy glow worm wiggles his way along the wall.
+~
+The hungrey glow worm wiggles his way around through the slime.
+~
+3 40 -300 C
+47 0 -180 1d1+8000 25d2+1
+5400 0
+8 8 0
+16 13 13 13 20 13 13
+0 0 0 0 0
+71 2 0 0 257 1 1
+0 0 57 0 2100224 0 68 8192
+#18618
+Shar tahl~
+shar tahl~
+The old Shar Tahl, keeper of the prophecy, wanders deep in thought.
+~
+The Shar Tahl, keeper of the Prophecy, is gowned in traditional
+clerics robes.  Layers of fabric hide his clerics cross and certain
+beakers.  His tawny skin and elven ears give way to a warm welcomed
+smile.
+~
+16842755 4194344 900 C
+50 0 -200 12450d1+10 21d2+15
+100000 0
+8 8 1
+19 13 15 19 19 13 13
+0 0 0 0 0
+1 1 0 0 1 1 4
+0 0 47 576 3338 0 288 9219
+#18619
+Shu'maii~
+shu'maii~
+Shu'maii quickly goes bout his business.
+~
+This thief known at Shu'maii has his reputation to protect.  He blends 
+in well with his surroundings.  With lightning quick hands he pulls 
+back his cloak and smiles as he shows you his prize.  He has a crooked
+smile with a few teeth missing in front.  
+~
+65 4203176 -230 C
+51 0 -210 16000d1+500 25d2+5
+34798 0
+8 8 1
+18 13 13 20 19 13 15
+0 0 0 0 0
+0 2 0 0 1 1 2
+0 0 47 18 3072 0 672 11
+#18621
+bu'sala~
+Bu'sala~
+Bu'sala crouches waiting to strike.
+~
+An ancient elven cleric bows his head in prayer as he prays for forgivness 
+in your annihilation.  He is garbed in brown sack like cloaks, and wears
+leather sandals upon his dusty feet.
+~
+97 4194472 1000 C
+50 0 190 1d1+11002 18d3+13
+79400 0
+8 8 0
+17 19 13 19 19 13 13
+0 0 0 0 0
+1 1 0 0 1 1 3
+7 7 47 784 2100226 0 8454240 8199
+> fight_prog 25~
+mpecho Bu'sala snarls and bears his teeth.
+c harm $n
+mpdamage $n 400
+~
+> fight_prog 15~
+stun $n
+stun $n
+~
+|
+#18622
+tahlmorra~
+tahlmorra~
+The old Tahlmorra, keeper of Fate, wanders deep in thought.
+~
+A young cleric who is the apprentice to the Gods, chants quietly in
+soft monotone tones.  Your fate is decided through his actions.  He 
+smiles a knowing smile as you glance his way. His eyes have a 
+wisdom and warmth of his youth.
+~
+196705 4194472 800 C
+50 0 -205 1d1+12500 21d3+40
+50890 0
+8 8 1
+19 13 19 19 18 13 13
+0 0 0 0 0
+91 1 0 0 1 1 3
+30 30 47 784 3148801 0 262688 534531
+> rand_prog 3~
+emote sighs slowly as he contemplates the universe.
+~
+> fight_prog 30~
+grin $n
+disarm
+disarm
+get all
+~
+> fight_prog 20~
+cackle
+c earthquake
+mpdamage $r 400
+~
+> fight_prog 15~
+c heal
+~
+> act_prog p DISARMS you!~
+wear tahlmorra
+~
+|
+#18623
+druid~
+ancient druid~
+An ancient druid waves his arms about wildly.
+~
+A wildly flamboyant druid dressed in untraditionally brightly colored
+robes. Bright blues and yellows fly through the air as he wildly flaps
+his arms around.  His eyes sparkle with mischief as he smiles at you.
+~
+97 4726952 1000 C
+44 0 -200 1d1+1900 3d6+4
+35723 0
+8 8 1
+13 13 16 17 15 13 13
+0 0 0 0 0
+0 1 0 0 8193 1 0
+7 5 63 64 3076 0 96 0
+#18624
+tobar~
+tobar~
+Tobar quickly moves about.
+~
+Tobar fidgets in front of you, nervously eyeing you.  He is one of 
+the few cheysuli who can sport a beard and moustache.  His sandy colored
+hair is is unkept and dirty.  He hasn't bathed in months it seems.
+~
+65603 4194472 1000 C
+51 0 -190 1d1+12000 25d2+15
+64589 0
+8 8 0
+19 13 13 17 19 13 13
+0 0 0 0 0
+0 3 0 0 4 1 2
+15 15 15 8471 2100544 128 2097312 532483
+> fight_prog 15~
+disarm
+get all
+~
+> fight_prog 30~
+gouge $r
+mpdamage $r 400
+~
+|
+#18625
+Kamodo Dragon~
+kamodo dragon~
+The Kamodo Dragon hisses at you.
+~
+The flesh eating Kamodo dragon opens wide its dangerous mouth.  
+Looking deep inside, you see razor sharp teeth ready for a tasty
+meal.
+~
+65571 4194472 -700 C
+45 0 -230 1d1+2000 20d3+5
+123980 0
+8 8 1
+19 13 13 19 17 13 13
+0 0 0 0 0
+32 3 0 0 2049 1 1
+0 0 198689 66 3329 0 515 8192
+#18626
+Cheysuli Druid~
+Cheysuli Druid~
+An ancient druid Cheysuli wanders deep in thought.
+~
+This fearless Cheysuli ranger seems to be deep in thought.  A far away
+glazed look is in his eye.  His head is slightly cocked and has a 
+silly quirky smile.  He is dressed in nothing special but of usual
+ranger wear.
+~
+196673 37749416 1000 C
+50 0 -205 13000d1+0 21d2+21
+67345 0
+8 8 2
+23 13 13 25 23 13 13
+0 0 0 0 0
+3 5 0 0 262145 1 4
+0 0 15 545 2100240 0 2359392 11
+> fight_prog 35~
+mea $n The old druid calls down the power of lightning to smite you!
+c 'lightning breath'
+~
+> hitprcnt_prog 25~
+gouge
+disarm 
+get all
+bash
+~
+> fight_prog 45~
+if ispc($r)
+  c 'faerie fire' 0.$r
+  c 'unravel defense' 0.$r
+  c 'ethereal funnel' 0.$r
+  c feebleness 0.$r
+endif
+~
+|
+#18627
+Annette~
+annette~
+Annette the serving wench, bustles about clearing dishes.
+~
+This maid servant is one of the most unattractive vampires you have ever
+come across. With skin like a pitted prune and the posture of a scared
+animal you would like nothing more than to turn and flee.  She hisses 
+a greeting at you before you turn to leave.
+~
+3 6291496 -1000 C
+52 0 0 13313d1+13 23d2+25
+21908 0
+8 8 2
+18 13 13 16 14 15 13
+0 0 0 0 0
+4 4 0 0 8 1 2
+0 0 111 1048594 2100224 0 2145 2051
+> greet_prog 90~
+emote smiles at you.
+sa The cook is almost finished.
+sa I will be setting the table as soon as the dishes are cleared.
+~
+|
+#18628
+tom cat~
+tom cat~
+An orange colored tom cat sits curled up upon the rocking chair.
+~
+A scruffy tom cat lies curled up with his tail curled about him.
+His wiskers twitch slightly as you near.  The tip of the tail silently
+flicks. A gentle purring can be heard coming from deep within the old
+tom cat.
+~
+65 40 730 C
+35 0 0 1d1+1000 2d4+7
+10 0
+8 8 0
+19 13 13 19 19 19 13
+0 0 0 0 0
+75 8 0 0 128 128 0
+0 0 302055945 2 3072 0 2 0
+#18629
+white mouse~
+white mouse~
+A white mouse scampers along the baseboards.
+~
+A small and seemingly white mouse scurries past your big feet.  The 
+reddish eyes, glowing in the darkness, give you a silly sense of fear.
+~
+65 65544 800 C
+35 0 0 1d1+856 12d2+2
+200 0
+8 8 0
+18 13 13 19 19 13 13
+0 0 0 0 0
+0 3 0 0 128 128 0
+0 0 301991424 3080 0 0 1 0
+#18630
+house boy~
+house boy~
+A tattered clothed house boy smiles at you.
+~
+A small dirty looking child who is one of the children who help 
+around the manor. With his dirty face and innocent eyes he is quite
+a sight to see.  His tattered clothing has been through alot. His shoes
+are well worn and scruffy.
+~
+67 8232 -1000 C
+40 0 -200 1d1+989 2d4+7
+24890 0
+8 8 1
+18 13 13 19 23 13 13
+0 0 0 0 0
+4 5 0 0 8 1 0
+0 0 809 272 2100224 0 32 16
+#18631
+caterpillar~
+caterpillar~
+A small green caterpillar crawls along the path.
+~
+~
+65 40 -500 C
+50 0 -200 1d1+1002 5d9+2
+900 0
+8 8 0
+20 13 13 19 21 13 13
+0 0 0 0 0
+4 3 0 0 257 1 0
+0 0 56 2 3073 0 1 0
+#18632
+butterfly~
+butterfly ~
+A golden butterfly flutters past your nose.
+~
+~
+16777281 65576 720 C
+45 0 -210 1d1+1005 18d3+0
+230 0
+8 8 0
+21 13 13 19 15 19 13
+0 0 0 0 0
+5 3 0 0 262145 1 0
+0 0 36904 33 3072 0 512 256
+#18633
+raccoon~
+raccoon~
+A masked raccoon wanders between the plants looking for scraps.
+~
+A silvery masked raccoon with black beady eyes and a wet nose peak 
+out at you between the plants. Small paws with claws that seem awfully
+sharp are raised toward you.
+~
+16777217 8 0 C
+30 0 0 1d1+1001 7d2+3
+30890 0
+8 8 0
+23 13 13 23 13 13 13
+0 0 0 0 0
+76 3 0 0 16385 257 0
+0 0 0 0 2100224 0 0 0
+#18634
+bluejay~
+bluejay ~
+A bluejay flys over your head
+~
+~
+16777285 524428 -650 C
+45 0 -190 1d1+1560 12d3+5
+26000 0
+8 8 0
+19 13 13 19 23 13 13
+0 0 0 0 0
+0 3 0 0 262145 1 0
+0 0 98361 8258 3072 0 1 4096
+#18635
+Medusa~
+Medusa~
+An old medusa carefully tends the roses.
+~
+This hooded figure is none other but the legendary Medusa. As 
+she turns to you, her hood slids down and reveals to you her wild 
+snakey hair.  She is a sight to behold, her hair is wild and moving.
+Her face is as pretty as a young maiden and her smile as sweet.
+~
+67 184 -1000 C
+49 0 -230 1d1+6000 8d4+3
+100000 0
+8 8 2
+25 13 13 23 23 13 13
+0 0 0 0 0
+0 3 0 0 1 1 1
+0 0 1917 25 3328 0 8389120 0
+> fight_prog 5~
+mea $n Your weapon gets tangled up in the Medusa's hair, rendering you
+mea $n helpless.
+disarm
+c unravel $n
+~
+> fight_prog 4~
+mea $n Meeting the Medusa's gaze you begin to feel your self turn to stone!
+c haze $n
+stun
+mpdamage $n 50
+~
+> fight_prog 2~
+mea $n The old medusa tosses you head first into the roses.
+mpdamage $n 50
+mea $n You feel the thornes tear at your flesh!
+mpdamage $n 700
+~
+|
+#18636
+boy~
+The Angelic Boy~
+An angelic boy awaits worshippers of the Goddess.
+~
+A golden haired young boy smiles at you sweetly.  Wearing a chapel
+robe of spun silk it seems to float around him.  His tiny hands are 
+folded infront of him as in prayer.
+~
+67 156 1000 C
+35 0 -200 1d1+1025 5d4+5
+50890 0
+8 8 1
+17 13 13 19 19 13 13
+0 0 0 0 0
+7 3 0 0 4097 1 0
+0 0 1914 16 3328 0 96 0
+> all_greet_prog 100~
+if name($n) == anniara
+  grovel anniara
+  sa Please accept the worship of this unworthy mortal Goddess!
+else
+  sa Greetings $n, come worship the Goddess with us!
+endif
+~
+|
+#18637
+Susnache~
+susnache~
+The beautiful Susnache pines away for her beau.
+~
+A young and beautiful young vampire stands before you looking 
+dreamily past you.  She has flowing red hair and warm green eyes.
+She is wearing a white gown of spun cotten with green embroidery
+that matches her eyes. Upon her feet she wears slippers in the softest
+died silk.
+~
+67 168 1000 C
+49 0 -210 1d1+8700 1d1+200
+36890 0
+8 8 2
+17 14 13 18 19 17 13
+0 0 0 0 0
+4 4 0 0 9 1 0
+13 13 1663 8263 2100224 144 48 524291
+> rand_prog 15~
+emote sighs softly over her missing beau.
+~
+> fight_prog 15~
+gouge $n
+bite
+~
+> fight_prog 20~
+disarm
+disarm
+get all
+~
+|
+#18638
+child~
+child~
+A young child sits quietly on the rocks.
+~
+A small child sits before you with wet trouser bottoms, from splashing
+in the water.  He giggles and laughs like only an innocent child could.
+~
+3 40 -370 C
+39 0 -180 3500d2+500 0d0+0
+2 0
+8 8 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 262145 1 0
+0 0 63 72 2048 0 32 0
+> rand_prog 15~
+emote dips his toes into the water.
+~
+|
+#18639
+old wizard~
+old wizard~
+An old wizard is hunched over a fire.
+~
+The old wizard is crouched before you with his back to you.  His long
+wavey silver hair flows down his back.  His clothing seems to be in
+better repair then others found in this area.  As you listen closer 
+you hear a quiet chanting coming from this man.
+~
+65 73912 900 C
+50 0 -200 100d10+14000 10d10+75
+59100 0
+8 8 1
+25 13 25 21 17 13 13
+0 0 -7 -12 -15
+58 1 0 0 1 1 4
+50 65 1663 0 2100480 0 672 531459
+> fight_prog 15~
+mea $r The wizard calls forth the power of the ancients!
+mer $r The wizard calls forth the powers of the ancients to strike down $r!
+mpdamage $r 500
+~
+> act_prog 'flees head over heels!'~
+c heal
+c heal
+c heal
+c heal
+c heal
+~
+> speech_prog peace~
+if ispc($n)
+smile $n
+say Peace is the way, my child.
+c bless $n
+endif
+~
+|
+#18640
+old Bu'sala~
+old Bu'sala ~
+The old Bu'sala is in search of a treasure in the boxes.
+~
+A thieving warrior crouches in front of the boxes, trying to search
+out the treasure.  He is clad in old handed down clothing that is 
+a size or two too big.  
+~
+67 37748908 400 C
+48 0 -210 10d70+5000 1d1+50
+57890 0
+8 8 0
+19 13 13 19 21 13 13
+0 0 0 0 0
+0 3 0 0 266241 1 2
+25 25 1599 2097170 3104 128 2097248 64
+#18641
+Beautiful maiden~
+A beautiful maiden~
+A beautiful maiden bathes in the steamy water.
+~
+The beautiful maiden is scantily clad while bathing in the warm 
+water.  The water is bubbling about her, providing her with some 
+protection from your eyes.
+~
+67 4202664 -45 C
+45 0 -200 1d1+9879 14d3+4
+56933 0
+8 8 2
+19 13 13 19 19 13 13
+0 0 0 0 0
+4 4 0 0 3 1 1
+0 0 1919 8288 3328 0 1073741825 8192
+> rand_prog 15~
+emote splashes a fountain of steamy water into the air.
+giggle
+~
+> rand_prog 10~
+emote turns and sees you staring at her nakedness
+blush
+~
+|
+#18642
+Golden statue~
+Golden statue~
+A golden statue waits to be worshipped.
+~
+The brilliant statue is made out of solid gold it seems.  The statue 
+seems to be of an elven vampire of a long ago people. The clothing is
+nothing of this time period.  
+~
+67 37748792 1000 C
+45 0 -240 7000d1+1000 4d7+5
+809400 0
+8 8 0
+18 13 15 13 19 13 13
+0 0 0 0 0
+1 4 0 0 1 8192 1
+0 0 71 1048609 3328 0 33 4098
+#18643
+Bronze statue~
+Bronze statue~
+A Bronze statue waits to be worshiped.
+~
+The bronze statue is not of a delicate carving as the rest are.  It seem
+that this creator seemed to have been in a hurry.  
+~
+67 71311412 -1000 C
+45 0 -230 7000d1+1000 4d7+5
+98560 0
+8 8 0
+20 13 13 23 23 13 13
+0 0 0 -1 -1
+0 3 0 0 1 1 1
+0 0 1599 1048642 3328 0 33554464 2
+#18644
+Ancient vampire~
+ancient vampire~
+An ancient vampire bares his fangs at you.
+~
+~
+97 4194474 -700 C
+40 0 -200 1d1+1570 0d0+0
+2189 0
+8 8 0
+13 13 13 15 23 13 13
+0 0 0 0 0
+0 4 0 0 65537 1 1
+7 5 15 18 3328 33 269224481 524289
+#18645
+leather book~
+leather book~
+A magical leather book waits to be read.
+~
+An old leather bound book with its worn pages looks like it hasn't 
+been opened in ages.  The dust is layered upon the leather leaving 
+it grey with grime.
+~
+67 4194472 50 C
+52 0 -200 10000d1+234 12d3+8
+45900 0
+8 8 0
+19 13 13 19 18 13 13
+0 0 0 0 0
+4 3 0 0 1 1 3
+0 0 0 8320 3328 0 268435489 67
+#18646
+female Ihlani~
+female Ihlani~
+A beautiful female Ihlani wanders around thinking of her love.
+~
+A young and beautiful woman stands before you. With flowing blond
+hair and a wonderful smile. 
+~
+195 4194856 -50 C
+45 0 -190 2800d1+200 2d4+8
+130970 0
+8 8 2
+25 13 19 19 14 13 13
+0 0 0 0 0
+0 3 0 0 262145 1 1
+0 0 15 2097153 3072 0 32 2
+#18647
+silver statue~
+silver statue~
+A silver statue waits to be worshiped.
+~
+This statue is made of pure, shiny silver. It appears to be of
+a strong warrior with bulging muscles.  He is young and handsome 
+as any you have seen before.
+~
+67 272638124 1000 C
+45 0 -230 7000d1+1500 4d7+2
+98600 0
+8 8 0
+20 13 13 21 19 13 13
+0 0 0 0 0
+0 3 0 0 69633 1 1
+0 0 1799 8224 3328 0 160 130
+#18648
+young druid~
+young druid~
+A young druid shuffles along the tunnels.
+~
+~
+193 8320 -790 C
+40 0 -230 10d50+1800 0d0+0
+45234 0
+8 8 0
+15 13 13 23 19 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 319 129 3328 16 32 2
+#18652
+young drow~
+young drow~
+A beautiful young drow wanders dreamily.
+~
+A beautiful young drow stares into a far off place oblivious to 
+the surrounding around her.  She has a healthy glow upon her cheeks
+and a small pout upon her lips.
+~
+16777409 2097292 600 C
+46 0 -200 4500d2+1000 2d2+6
+45234 0
+8 8 2
+13 16 13 19 18 13 13
+0 0 0 0 0
+1 1 0 0 1048579 1 0
+10 4 47 2097668 3072 0 32 0
+#18653
+old Ihlani~
+old Ihlani~
+An old Ihlani shuffles past you.
+~
+A dark hooded figuer shuffles past you not even bothering to look 
+up.  He is covered from head to toe in a brown burlap type material
+that looks to be some sort of cloak.
+~
+65 172 -1000 C
+46 0 -210 4500d2+1000 2d2+7
+78290 0
+8 8 2
+15 13 13 19 18 13 13
+0 0 0 0 0
+0 8 0 0 262145 1 1
+0 0 1583 272 3074 0 32 2049
+#18654
+Cheysuli Healer~
+Cheysuli Healer~
+The ancient Cheysuli Healer sits meditating.
+~
+The wise, old healer sitst before you with his knowing eyes closed. He seems
+to have experienced the world, by the way he sits before you. His legs
+are folded beneath him and his worn sandals are removed and placed beside
+him.  His palms are facing up and folded in his lap. 
+~
+3 4194476 250 C
+50 0 -230 15879d1+0 25d4+2
+98340 0
+8 8 0
+25 13 20 23 21 13 13
+-15 0 0 0 0
+0 3 0 0 1 1 3
+50 50 39 544 3148800 0 8388656 801
+> fight_prog 30~
+if ispc($n)
+sigh
+say Why must you make me hurt you?
+mpdamage $n 500
+endif
+~
+> act_prog 'flees head over heels!'~
+if ispc($n)
+mpat $n snicker
+mpat $n c fireball $n
+mpat $n mpdamage $n 500
+endif
+~
+|
+#18655
+Cheysuli Warrior~
+Cheysuli Warrior~
+A proud Cheysuli Warrior sharpens his fine sword.
+~
+A proud, experienced warrior stands before you. Dressed in traditional 
+cheysuli garb, and sporting the mark of the lir. His eyes are the color 
+of coal and a beard to match. His stature is that of all muscle.
+He smiles as he calls to his Lir.
+~
+67 273154216 -1000 C
+51 0 -230 18000d1+460 10d10+100
+97003 0
+8 8 1
+25 13 13 22 18 13 13
+-2 -2 -7 -2 -2
+0 3 0 0 262145 1 4
+40 40 1663 552 2100480 0 33816864 8195
+> death_prog 100~
+sa You may have defeated me, but now you will feel the bite of my lir guardian.
+mpmload 18674
+mpforce lion attack $n
+~
+> hitprcnt_prog 40~
+say I will not go gently into that good night!
+warcry
+bash $n
+mpdamage $n 600
+~
+> rand_prog 3~
+whistle self
+~
+|
+#18656
+stone statue~
+stone statue~
+An ancient stone statue awaits to be worshiped.
+~
+A beautifully crafted stone statue seems to have a life of its own.  The 
+finest detail of the clothing has been carved into the stone.  The face 
+has a human quality to it and most likely was once a great augurer.
+~
+67 272629800 -950 C
+45 0 -200 7000d1+1000 0d0+0
+67923 0
+8 8 0
+16 13 13 20 20 13 13
+0 0 0 0 0
+0 7 0 0 65537 1 1
+0 0 1606 68 3328 0 32 2
+#18657
+fire bat~
+fire bat~
+A dark winged fire bat swoops down at your head.
+~
+~
+35 40 -1000 C
+20 0 -230 1d1+1000 10d2+7
+100 0
+8 8 0
+19 13 13 19 19 13 13
+0 0 0 0 0
+24 3 0 0 128 1 1
+0 0 32825 2 3328 0 2049 8194
+#18658
+white rat~
+white rat~
+A small white rat scurries by your feet.
+~
+A small, white rat scurries quickly past your feet. It's fat white
+body is offset by a long, leathery tail. The tiny pink feet leave
+tracks on the dirt floor.
+~
+69 98344 -210 C
+42 0 -210 2000d1+10 15d3+5
+2 0
+8 8 0
+19 13 13 18 19 13 13
+0 0 0 0 0
+7 3 0 0 1751318629 1751318628 1
+0 0 302056961 2 2048 0 1 2
+#18659
+old cheysuli shopkeep~
+old cheysuli shopkeep~
+The old Cheysuli shopkeeper awaits your order.
+~
+A chubby sort of man stands behind his wares, displaying them with
+pride.  He is old and grey with a moustache that curls at the sides 
+into a tight curl.  He wears a white apron over top of his clothing.
+~
+131139 4194344 -890 C
+50 0 0 21098d1+0 20d3+5
+1 0
+8 8 0
+25 13 13 25 25 13 13
+0 0 0 0 0
+0 3 0 0 1 1 4
+0 0 1919 49 1051904 0 4208 524291
+> greet_prog 100~
+Good day $n, take a look at my wares. We have a nice assortment of
+chocolate covered strawberries.
+~
+> fight_prog 100~
+mutter
+say I've had just about enough of you!
+mpslay $n
+mpat $n say Let that be a lesson to you!
+~
+|
+#18660
+Homona Fortune Teller~
+The Homonan~
+The ancient Homona Fortune Teller dreamily stares into the crystal ball.
+~
+This rotund jolly old person is outlandishly dressed as the color
+or his tent is.  The wise old man smiles warmly and winks in your
+direction. His out stretched hands invite you to sit down infront 
+of him.  His kind and gentle eyes make you feel welcome and safe.
+~
+3 272629928 -45 C
+51 0 -250 1d1+12000 25d3+30
+2090 0
+8 8 1
+23 15 16 25 23 16 16
+-5 -2 0 0 -1
+58 8 0 0 65536 1 2
+50 50 311 1049104 2100224 0 35651632 10307
+> speech_prog p} 'I wish my fortune read'~
+sa Alone in the midst of many, even those whom you love..apart and separate,
+sa consumed by grief. She lives within you when she is dead, and you live 
+Sa through her, seeing her face when you sleep and wake, longing for the things
+Sa she cannot offer. You live in the pasts of kings and queens and those who 
+Sa have gone before you, but  you thrive upon your own.  Your past is your 
+Sa present and will be your future, until you summon the strength to give her 
+Sa life again.  Offered and spurned, it is offered again, spurned once more and
+sa offered a third  time until accepting, you free yourself from the misery of
+sa what is lost to you and then live with the misery of what you have done.  
+Sa You will die knowing what you have done, and why, and the price of your 
+Sa reward.  You will use and be used in turn, discarded at last when your use
+sa is done.
+ 
+emote sighs with a sadness that is known only to him
+emote weakly smiles before continuing with his tale.
+sa I promised no happiness.
+sa He is the sword.
+Sa The sword and the bow and the knife. He is the weapon of every man who 
+Sa uses Him for ill, and the strength of every man who uses him for good.  
+Sa Child of darkness, child of light, of like breeding with like, until the 
+Sa blood is one again.  He is Cyrnic, he is Cyrnic, the sword, the bow
+Sa and the knife, and all men shall name him evil until Man is made whole 
+sa again.
+Sa The lion shall lay down with the witch, out of darkness shall come light,
+Sa out of death, life, out of the old, the new.  The lion shall lie down with 
+Sa the witch, and the witch-child born to rule what the lion must swallow.  
+Sa The lion shall swallow the House of Homona and all of her children, so
+sa the newborn child shall sit upon  the throne and know himself lord of all.
+emote comforts you and says "You have a long journey my little one"
+~
+> death_prog 100~
+sa My Lir Panther will now deal with your wicked soul.
+mpmload 18675
+~
+|
+#18661
+Aniara's Elven Avatar~
+Aniara's Elven Avatar~
+Aniara's Elven Avatar awaits your command.
+~
+~
+33554433 4194348 0 C
+50 0 0 1700d1+0 15d2+0
+300 0
+8 8 2
+18 16 16 15 13 20 19
+0 0 0 0 0
+1 4 0 0 2 1 3
+0 0 55 0 0 0 1048609 8195
+#18662
+Fiendish Ghoul~
+Fiendish Ghoul~
+A Fiendish Ghoul wanders in the shadows.
+~
+~
+97 270532652 -1000 C
+45 0 -210 1d1+6000 2d4+10
+23807 0
+8 8 0
+19 13 13 19 18 13 13
+0 0 0 0 0
+0 3 0 0 1 1 1
+0 0 126 18 3072 0 33554433 2
+#18663
+Dragon's Spirit~
+dragon's spirit~
+The Dragon's Spirit foats through the the air.
+~
+A translucent shape shimmers in the light of the torches.  A barely visible
+shape floats above the ground.  The dragon's eyes still glow red with anger
+and passion of a lost life.
+~
+65 44 -700 C
+50 0 -230 6980d1+0 2d4+4
+58911 0
+8 8 0
+19 19 18 17 15 13 13
+0 0 0 0 0
+31 7 0 0 65536 67584 1
+0 0 15 297 3072 0 100663296 2
+#18664
+embodied soul~
+embodied soul~
+The lost embodied soul of a dragon killer.
+~
+The man who killed the great Mahjar floats here. A cowardly and weak man
+he was.  With limbs half torn from his weakened body he smiles at you.
+~
+97 2170924 -900 C
+42 0 -250 1d1+1570 0d0+0
+100000 0
+8 8 0
+13 13 13 19 17 13 13
+0 0 0 0 0
+0 3 0 0 4096 4096 1
+0 0 127 17 3328 131106 269222403 524289
+#18665
+Lost wraith~
+Lost Wraith~
+The lost wraith wanders in search of revenge.
+~
+An angry victim of some cruel fate, with eyes blazing, floats before
+you.  Her gown of torn white silk barely touches the cold stone floor.
+Tangled red hair cascades down her back.  
+~
+5 71827516 -1000 C
+45 0 0 40d40+800 8d3+10
+3500 0
+8 8 0
+13 13 13 20 19 13 13
+0 0 0 0 0
+4 4 0 0 8 1 0
+0 0 638 512 2100232 0 513 1
+#18666
+Lost Mind~
+Lost Mind~
+Your lost mind ducks behind the shadows.
+~
+A fleeting image passes through your mind, darting between reality and
+your imagination.  The eeriness scares you as another image enters your 
+mind, making you wonder if you are sane,
+~
+97 42 1000 C
+40 0 -200 1d1+5000 0d0+0
+45800 0
+8 8 0
+19 13 13 21 23 13 13
+0 0 0 0 0
+57 3 0 0 1 1 1
+0 0 39 2 3080 0 1 2
+#18667
+Al-Azid~
+Al-Azid~
+Al-Asid wanders the halls in a state of confusion.
+~
+With a wild look in his eyes, this strong warrior is terrified of your 
+presence.  Standing tall and certainly expecting the worst, he flinches at 
+the noises coming from around the corner.
+~
+97 39846056 -800 C
+50 0 -250 14000d1+0 25d4+5
+59030 0
+8 8 0
+18 13 13 19 18 13 13
+0 0 0 0 0
+0 2 0 0 65536 1 3
+40 40 15 2097408 3104 0 131746 2113
+> fight_prog 15~
+scream
+if ispc($r)
+  gouge 0.$r
+  mpdamage 0.$r 450
+endif
+~
+|
+#18668
+Phelthong~
+Phelthong~
+Phelthong lunges at you through the shadows.
+~
+The powerful gnoll warior limps before you.  He wears tattered clothing
+of someone who hasn't changed them in a long while.  His keen black eyes 
+have known anger, death and love.
+~
+16777281 73465898 -900 C
+50 0 -200 7700d1+0 15d2+8
+98600 0
+8 8 0
+20 13 18 13 16 13 13
+0 0 0 0 0
+37 3 0 0 2 1 2
+0 0 39 1048576 2100224 0 1073742337 2
+#18669
+soft breeze~
+soft breeze ~
+A soft breeze blows through your hair. 
+~
+A breeze brushes past your cheek carressing itself against your skin.  The
+only visible features you see are the sudden shift in form from time to 
+time .
+~
+97 2097196 1000 C
+50 0 -200 10987d1+0 22d2+3
+24090 0
+8 8 0
+19 13 13 19 19 13 13
+0 0 0 0 0
+0 2 0 0 1 8192 4
+0 0 47 0 1051904 0 276824352 524577
+#18670
+Sacrificed Virgin~
+Sacrificed Virgin~
+The Sacrificed Virgin wanders about aimlessly.
+~
+A young woman wearing a flowing white gown that gives the illusion that
+she is floating before you.  With her golden hair that frames her heart
+shaped face, she smiles sweetly at you. Her blue eyes hide the sorrow 
+of being sacrificed.
+~
+16777313 2097196 1000 C
+50 0 -230 1d1+4500 10d3+3
+79600 0
+8 8 2
+20 13 19 13 18 13 13
+0 0 0 0 0
+0 3 0 0 8 1 1
+0 0 47 1 3328 0 2080 1
+#18671
+Fiendish Soul~
+Fiendish Soul~
+A Fiendish Soul lurks in the dark shadows waiting to strike at you!
+~
+A evil sort of fellow crouches before you.  Half hidden in the shadows,
+his eyes show he cannot be trusted. His knuckles are covered in hair and
+his hands are rough and soiled.
+~
+97 2097192 -700 C
+45 0 -200 1d1+7500 19d3+20
+68900 0
+8 8 0
+19 13 13 19 17 13 13
+0 0 0 0 0
+8 3 0 0 64 1 1
+0 0 47 8192 3584 0 32768 1
+#18672
+Homona Spiritual Advisor~
+Homona Spiritual Advisor~
+An old Homona Spiritual Advisor motions you to sit.
+~
+An old and revered Advisor is resting upon a lounge. His robes spread
+out about him.  Upon his feet are golden slippers spun in the best gold 
+thread.  His white hair is loose upon his shoulder.  Eyes of golden brown
+shine through with youth as his face show signs of age.
+~
+67 8364 1000 C
+55 0 -250 30000d1+0 100d1+0
+1 0
+8 8 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 4096 1 5
+0 0 0 0 3157248 0 67174432 11265
+#18673
+Aiden~
+Aiden ~
+Aiden eyes you suspiciously as you make your purchases.
+~
+Aiden smiles a sickly smile as he gestures you to come forward.  Through
+his cracked lips you see teeth that are rotten from too much candy.
+~
+67 4194336 -760 C
+55 0 -250 30000d1+0 100d1+0
+0 0
+8 8 0
+25 13 13 25 25 13 13
+0 0 0 0 0
+0 3 0 0 1 1 4
+0 0 41 0 3157248 0 80 8195
+#18674
+Lir Lion~
+Lir Lion~
+The Lir Lion roars with pain at the death of his lir.
+~
+~
+99 4235436 1000 C
+50 0 -250 18000d1+0 23d4+8
+79089 0
+8 8 0
+25 13 19 23 23 13 13
+0 0 0 0 0
+75 3 0 0 8192 1 4
+0 0 302055465 578 2100480 0 134218243 10243
+#18675
+Lir Panther~
+Lir Panther~
+The Lir Panther cries at the loss of his Lir.
+~
+~
+99 4194484 1000 C
+52 0 -230 1d1+12340 22d4+9
+79002 0
+8 8 0
+19 13 13 19 17 13 13
+0 0 0 0 0
+30 3 0 0 4096 1 4
+40 40 301991561 74 2100480 0 16391 9218
+#18676
+Young Shar Tahl~
+Young Shar Tahl~
+THe Young Shar Tahl studies the Prophocies.
+~
+A youngster in training wanders deep in thought.  His eyes lowered in 
+concentration.  His young hands folded before him in prayer. His robe 
+covers his sandaled feet.
+~
+65539 4194344 900 C
+50 0 -200 17800d1+0 20d2+15
+590800 0
+8 8 1
+19 13 15 19 19 13 13
+0 0 0 0 0
+8 8 0 0 65 64 4
+0 0 47 322 1051649 0 134218032 9227
+#18677
+Caledon~
+Caledon~
+Caledon the Tanner, silently tans a hide.
+~
+Caledon wears an old dirty apron over his well worn clothing. His hands
+are protected by what looks to be the softest type of leather.  He stands
+there hunched over a table working on a fine hide of a dragon.  His kind
+and gentle eyes tell you he has seen his share of fighting the almighty
+dragons
+~
+131139 4726912 1000 C
+51 0 -250 21800d1+10 50d2+23
+2 0
+8 8 0
+25 13 13 23 23 13 13
+0 0 0 0 0
+8 8 0 0 64 65 4
+0 0 0 0 1051747 0 268468480 0
+> all_greet_prog 100~
+mpecho Good day $n, have you something that needs my services?
+~
+> act_prog 'gives you Majhar Hide.'~
+if goldamt($n) >= 2000000
+  sa A fine specimen of hide $n. It will make a fantastic breastplate.
+  mpforce $n give 2000000 coins Caledon
+mpoload 18657 48
+  give breastplate $n
+  sa May your adventuring go well $n.
+  bow $n
+else
+  sa You can not afford my services $n
+  sa Begone!
+  laugh $n
+endif
+mpjunk hide
+~
+|
+#18678
+Cheysuli Warrior~
+Cheysuli Warrior~
+A proud Cheysuli Warrior sharpens his fine sword.
+~
+A proud, experienced warrior stands before you. Dressed in traditional
+cheysuli garb, and sporting the mark of the lir. His eyes are the color 
+of coal and a beard to match. His stature is that of all muscle.
+He smiles as he calls to his Lir.
+~
+67 273154088 -1000 C
+50 0 -230 1d1+15046 20d4+15
+97003 0
+8 8 1
+25 13 13 22 18 13 13
+0 0 0 0 0
+0 3 0 0 1 1 3
+0 0 1663 2097696 3328 0 33554720 8194
+#18679
+Strong Warrior~
+Strong Warrior~
+A Strong Warrior proudly walks this dark cavern.
+~
+~
+67 4194472 1000 C
+50 0 -20 1d1+10002 10d3+50
+100000 0
+8 8 0
+25 13 13 23 23 13 13
+0 0 0 0 0
+0 3 0 0 262656 262144 2
+40 40 0 594 1052032 0 1073742096 10371
+> fight_prog 20~
+if ispc($n)
+mea $n The Warrior headbutts you!
+mer $n The Warrior headbutts $n!
+mpdamage $n 550
+endif
+~
+> fight_prog 15~
+disarm
+disarm
+get all
+~
+> act_prog 'DISARMS you!'~
+wear sword
+~
+|
+#18685
+shu'maii~
+shu'maii~
+Shu'maii quickly goes bout his business.
+~
+This thief known at Shu'maii has his reputation to protect.  He blends 
+in well with his surroundings.  With lightning quick hands he pulls 
+back his cloak and smiles as he shows you his prize.  He has a crooked
+smile with a few teeth missing in front.  
+~
+65 4203176 -230 C
+51 0 -210 16000d1+500 25d2+5
+34798 0
+8 8 1
+18 13 13 20 19 13 15
+0 0 0 0 0
+0 2 0 0 1 1 2
+0 0 47 18 3072 0 672 11
+#0
+
+
+#OBJECTS
+#18600
+wildflowers~
+wildflowers~
+A beautiful patch of wildflowers are waiting to be picked.~
+~
+9 0 16385
+0 0 0 0
+1 300 30
+E
+Wildflowers~
+A wonderful bunch of flowers await to be put into a vase of water.
+~
+A
+25 3
+A
+31 2
+#18601
+raspberries bush~
+red ripe raspberries~
+A small bush of red raspberries are waiting to be picked.~
+~
+19 0 1
+70 0 0 0
+20 150 15
+E
+Raspberries~
+A bunch of red ripe Raspberries are plump for the picking.
+~
+#18602
+letters stack~
+letters~
+A stack of letters has been carelesly tossed on the table.~
+~
+47 0 16385
+0 0 0 0
+20 50 5
+#18603
+cedar chest~
+old cedar chest~
+An old cedar chest sits at the end of the bed.~
+~
+15 0 0
+1000 1 18623 0
+2000 40000 4000
+#18605
+leather book~
+leather book~
+The worn leather book lies open.~
+~
+3 0 16385
+40 5 3 207
+10 10783 1078
+E
+Leather book~
+A worn leather bound book with its pages lovingly worn from years of 
+wonderful reading.
+~
+#18606
+keys~
+a newly created keys~
+Some god dropped a newly created keys here.~
+~
+13 0 1
+0 0 0 0
+1 0 0
+#18607
+armoire cedar~
+Cedar armoire~
+A large cedar armoire sits in the corner.~
+~
+15 0 0
+1000 1 0 0
+2000 0 0
+#18608
+silk lacy teddy~
+lacy teddy~
+A silk and lacy teddy lies in a puddle on the floor.~
+~
+9 16974337 0 49
+0 0 0 0
+8 30687 3068
+E
+Lacy Teddy~
+A silk and lace teddy made of the sheerest silk in the land has been
+crafted for a mistress to wear.
+~
+A
+25 1
+A
+5 2
+A
+17 -10
+A
+1 2
+#18609
+silk stockings~
+silk stockings~
+A pair of silk stockings lie discarded on the floor.~
+~
+9 513 33
+0 0 0 0
+10 1536 153
+E
+Silk Stockings~
+A pair of silky stockings that have been made of the purest silk spun
+just for the legs of a Mistress.
+~
+A
+24 3
+A
+17 -3
+A
+31 1
+A
+19 3
+A
+18 3
+A
+12 30
+#18610
+silk robe~
+Mistress' silk robe~
+A luxurious silk robe has slipped from a womans soft shoulders.~
+~
+9 16976384 0 49
+0 0 0 0
+40 19390 1939
+E
+Silk Robe~
+A robe made of pure silk with the design made of spring flowers.  The 
+robe has a sash of silk to wrap the robe about the body of a Mistress.
+~
+A
+25 1
+A
+14 -10
+A
+13 100
+A
+12 70
+A
+19 5
+A
+18 5
+#18611
+Cheysuli blade~
+Cheysuli blade~
+A forgotton Cheysuli blade quivers from an unknown source.~
+~
+5 17434690 0 33
+0 21 2 1
+15 98900 7945
+E
+Cheysuli Blade~
+An ancient warriors blade with a finely honed blade and a hilt of rubbed 
+silver.  This blade has seen many battles.
+~
+A
+1 2
+A
+4 1
+A
+12 69
+A
+25 2
+A
+31 2
+A
+14 -20
+A
+13 75
+A
+18 10
+A
+19 11
+#18612
+leather vest~
+leather vest~
+Some strong warrior dropped a well worn leather vest.~
+~
+9 16908544 0 33
+0 0 0 0
+12 98090 9809
+E
+Leather Vest~
+An old and worn leather vest made of deer hide is well looked after.
+The vest is covered in stains of previous battles.
+~
+A
+18 4
+A
+19 5
+A
+2 2
+A
+13 70
+A
+26 2
+A
+22 -6
+#18613
+Lir armband~
+Lir armbands~
+Golden Lir armbands shine with a light of their own~
+~
+9 8390657 257
+5 0 0 0
+5 25000 2500
+E
+Lir Armbands~
+An ancient Lir Armband is shaped in the style of this warriors Lir.  His 
+animal is made out in this shape that will be wrapped around this warriors
+strong arm.
+~
+A
+23 -5
+A
+19 5
+A
+18 4
+A
+13 45
+A
+12 40
+A
+1 1
+A
+5 1
+#18615
+Hall table~
+hall table~
+A delicately carved oak hall table rests against the wall.~
+~
+12 0 0
+0 0 0 0
+20000 30897 3089
+#18616
+Anarchy Demon Sword~
+Anarchy~
+Anarchy, a pitch black sword covered in red runes.~
+~
+5 17433107 0 33
+10 20 2 11
+1 1900399 190039
+E
+Anarchy~
+A black hilted sword with a stout bloody blade, humms with a life 
+of its own.  Small red runes cover the sword giving it a magical 
+quality.  This sword seems to take evil into its own.
+~
+E
+Anarchy Demon Sword~
+An ancient sword of Anarchy from the Great Majhar dragon is covered in
+in precious stones along the hilt of the sword.  The blade is made of the
+strongest steal and honed to perfection.
+~
+E
+Homona's Cloak~
+A cloak of the Homona is made of brown simple cloth.  The fabric hangs 
+down to your feet enveloping you into its folds.
+~
+A
+17 -25
+A
+1 2
+A
+13 100
+A
+12 75
+A
+22 -5
+A
+21 -5
+A
+23 -5
+A
+24 -5
+A
+19 10
+A
+18 11
+A
+27 2097152
+#18617
+shield ancients~
+Shield of Akharsis~
+A stout metal shield bearing the crest of the ancients lies here~
+~
+9 527105 513
+20 20 0 0
+10 76200 7620
+E
+Shield of Akharsis~
+A shield that has seen many of battle and has protected its owner from
+harm.  Th ancient crest is mounted on the face of the shield displaying
+the wealth of its family.
+~
+A
+17 -20
+A
+13 50
+A
+12 110
+A
+18 3
+A
+19 5
+> wear_prog 100~
+mea $n A swirling maelstrom surrounds $n in an enveloping aura of
+mea $n protection against the elements of the north.
+c iceshield $n
+~
+|
+#18618
+akharsis robe ancients~
+Akharsis, the robe of the ancients~
+Akharsis, the robe of the ancients lies here pulsing.~
+~
+9 412436 0 65
+15 15 0 0
+8 96700 9670
+E
+Akharsis Robe Ancients~
+The Robe of Akharsis has been handed down from father to son over the
+generations of the Lir.  Each in turn has worn this into battle and 
+returned safely.
+~
+A
+17 -20
+A
+26 32768
+A
+19 5
+A
+18 6
+A
+13 50
+A
+12 45
+A
+1 1
+#18619
+Talak~
+talak~
+Talak, a darkened chain lies here twisted.~
+~
+9 8945666 5
+10 0 0 0
+15 45900 4590
+E
+Talak~
+A darkened chain that has a symbol hanging from it.  The entwined 
+branches of the Talak give of a mystical shine.
+~
+A
+21 -5
+A
+2 2
+A
+19 4
+A
+18 3
+A
+12 60
+A
+13 40
+A
+5 1
+#18620
+Daisies~
+daisies~
+A freshly picked bunch of daisies awaits a vase.~
+~
+13 0 16385
+0 0 0 0
+1000 2040 204
+#18621
+tahlmorra~
+Tahlmorra~
+A cleric's Tahlmorra has fallen here.~
+~
+5 -2146859744 0 17
+0 25 2 7
+5 30000 3000
+E
+Tahlmorra~
+A symbol of faith that a cleric holds.  This circle of faith shines 
+with many different medals combined into one to form this beautiful 
+piece of work.
+~
+A
+1 1
+A
+4 2
+A
+12 80
+A
+13 100
+A
+31 1
+A
+19 8
+A
+18 6
+#18622
+Golden Lir Earring~
+Golden Lir Earring~
+A warriors Golden Lir earring lies here forgotten.~
+~
+9 8913155 65537
+0 0 0 0
+4 96784 9678
+E
+Golden Lir Earring~
+A warriors Lir earring is created to symbolize the Lir he is joined with.
+This lir earing is in the shape of a Panther.
+~
+A
+18 2
+A
+19 2
+A
+13 25
+A
+12 30
+A
+1 1
+A
+25 1
+#18623
+key~
+a newly created key~
+Some god dropped a newly created key here.~
+~
+13 0 0
+0 0 0 0
+1 0 0
+#18624
+Widowmaker~
+Widowmaker~
+The Widowmaker sword lies here with an energy all its own.~
+~
+5 17451271 0 97
+19 16 2 3
+19 70354 7035
+E
+Widowmaker~
+A sword of a mighty warrior is honed to perfection till the blade is 
+sharp and clean.  The hilt is built for a large hand made of carved 
+ivory.
+~
+A
+5 1
+A
+1 2
+A
+13 100
+A
+12 50
+A
+19 9
+A
+18 7
+#18625
+necklace ~
+necklace of strangulation~
+A blackened Necklace of Strangulation waits to be picked up.~
+~
+9 266240 5
+0 0 0 0
+30 15098 1509
+E
+Necklace~
+A twisted small chain of an evil darkened metal is fine and delicate 
+looking. Small links of entwined links form to make this a beautiful 
+necklace.
+~
+A
+26 1024
+A
+2 -2
+A
+3 -2
+A
+4 -2
+A
+31 -2
+A
+1 -2
+A
+12 70
+A
+19 3
+> wear_prog 100~
+if isimmort($n)
+or isnpc($n)
+else 
+mpecho The necklace tightens suddenly, cutting off all breath!
+mpdamage $n 500
+endif
+~
+|
+#18626
+panther earring~
+panther earring~
+A golden panther earing belongs to a great warrior.~
+~
+9 527617 65537
+5 5 0 0
+10 90386 9038
+A
+5 2
+A
+1 1
+A
+19 3
+A
+18 4
+A
+25 2
+> wear_prog 15~
+if rand(50)
+c sanc $n
+else
+c bless $n
+endif
+~
+|
+#18628
+Dagger of Vampires~
+Dagger of Vampires~
+A dagger's blade protrudes out of the mud.~
+~
+5 641602 0 81
+0 18 2 2
+12 10000 60090
+E
+Dagger of Vampires~
+A small dagger dripping of warm blood from a kill not long ago. This 
+dagger belongs to a old vampire.
+~
+A
+13 30
+A
+12 20
+A
+17 -5
+A
+2 2
+A
+25 -2
+A
+19 6
+A
+18 4
+#18629
+shield of chesyli~
+An old Shield of the Ancients~
+An old Shield of the Cheysuli lies here forgotten.~
+~
+9 591104 0 17
+0 0 0 0
+40 78694 7869
+A
+24 -5
+A
+19 5
+A
+18 5
+A
+1 1
+A
+5 2
+A
+13 70
+A
+12 90
+#18630
+Blood Fang~
+Dripping Blood Fang.~
+A golden hilted Blood Fang drips blood from the blade.~
+~
+5 17547777 0 113
+0 8 5 11
+12 230890 23089
+A
+1 2
+A
+2 1
+A
+18 6
+A
+13 100
+A
+12 50
+A
+19 7
+#18631
+Necklace of Purity~
+Necklace of Purity~
+A fine golden chain glows waiting to be worn by one of Aniara's followers.~
+~
+9 527681 5
+0 0 0 0
+3 1200000 120000
+E
+Necklace of Purity~
+The golden necklace glows with a purity of devotion.  The necklace is
+only worn by the followers of the Deitie of Aniara.
+~
+A
+12 24
+A
+13 55
+A
+17 -20
+A
+19 3
+A
+18 2
+A
+26 4
+#18632
+Ring of Destiny~
+Ring of Destiny~
+The Ring of Destiny glows with an unknown power.~
+~
+9 -2130032384 0 97
+12 12 0 0
+2 87900 8790
+A
+26 32
+A
+14 -5
+A
+19 2
+A
+13 30
+#18636
+Homona's Cloak~
+Homona's Cloak~
+A young Drow has dropped thier Homona's Cloak~
+~
+9 16877824 0 49
+0 0 0 0
+5 45890 4589
+A
+12 45
+A
+1 1
+A
+14 -20
+A
+18 3
+A
+13 45
+A
+19 4
+#18637
+Black Mushrooms~
+Black Mushrooms~
+Black Mushrooms grow in the crevises of the walls.~
+~
+10 2 1
+2 33 -1 -1
+1 958 95
+#18639
+Green Fungi~
+Green Fungi~
+Green Fungi clings upon the damp walls.~
+~
+13 0 0
+0 0 0 0
+1999 0 0
+#18640
+daisies~
+Bunches of Daisies.~
+Bunches of Daisies grow around the huge oak tree.~
+~
+13 0 1
+0 0 0 0
+1000 0 0
+#18641
+hairbrush~
+Golden Hairbrush~
+A rich ladies golden hairbrush lies here forgotten.~
+~
+5 623171 0 17
+0 15 3 0
+10 289090 28909
+E
+Hairbrush~
+The Mistresses favorite Golden hairbrush is made of the softest bristles
+and of a Golden handle.  There are even a few of Mistresses long red 
+hair strands entwined in the bristles.
+~
+A
+1 2
+A
+2 1
+A
+24 -6
+A
+13 85
+A
+12 100
+A
+19 10
+A
+18 8
+#18642
+rune bracelet ~
+Rune Bracelet.~
+A dainty Rune Bracelet lies here forgotten~
+~
+9 98369 0 17
+0 0 0 0
+10 79034 7903
+E
+Rune Bracelet~
+A dainty bracelet covered in the magical runes of the Homona people.  The
+runes dance upon the Golden links that hold it together, giving of a glow of
+red and a sparkle of gold.
+~
+A
+17 -5
+A
+3 1
+A
+2 2
+A
+19 3
+A
+18 2
+#18643
+A glowing purple potion~
+A Glowing Purple potion.~
+A Glowing Purple potion has been carelessly toppled over.~
+~
+10 65 1
+25 15 -1 -1
+2 6500 650
+#18644
+glowing blue potion~
+Glowing Blue potion~
+A Glowing Blue potion lies here bubbling.~
+~
+10 65 1
+22 84 84 -1
+2 15000 1500
+#18645
+Death Candy~
+Death Candy.~
+A piece of Death Candy catches your eye.~
+~
+26 0 1
+10 36 66 67
+1 15000 1500
+#18646
+Gummi Bears~
+Multi-colored Gummi Bears.~
+A handful of Multi-colored Gummi Bears has been scattered on the ground.~
+~
+26 0 1
+28 43 -1 -1
+2 1980 198
+#18647
+chocolate covered strawberries~
+chocolate dipped strawberries.~
+Fresh chocolate covered strawberries have been carelessly dropped. ~
+~
+26 1 1
+29 66 -1 226
+2 43900 4390
+#18648
+Purple Smarties~
+Purple Smarties~
+Purple Smarties have been scattered on the ground.~
+~
+26 1 1
+38 34 -1 -1
+3 567000 56700
+#18649
+skittles~
+Skittles.~
+Stray Skittles have rolled away.~
+~
+26 1 1
+40 35 -1 -1
+2 23090 2309
+#18650
+Blackened Pot~
+Blackened Pot~
+An old Blackened Pot lies on its side forgotten.~
+~
+5 8454144 0 17
+0 19 2 8
+15 50890 5089
+A
+1 2
+A
+12 100
+A
+19 4
+A
+18 5
+#18651
+Flat stone~
+rounded flat stone ~
+A rounded flat stone ready for skipping.~
+~
+3 65 16385
+15 1 1 66
+5 300 30
+#18652
+Ring of Fate~
+Ring of Fate ~
+The Ring of Fate leads you to your destiny.~
+~
+9 590881 0 17
+0 0 0 0
+3 609800 60980
+E
+Ring of Fate~
+A dazzling ring of your fate has the markings of an Ancient people.  A
+small stone is off set with a mark of Fate.
+~
+A
+13 50
+A
+12 50
+A
+17 -15
+A
+19 3
+A
+18 3
+#18653
+Bracer of Sha'maii~
+Bracer of Sha'maii ~
+The darkened Bracer of Sha'maii quiver with an unknown energy.~
+~
+9 17433155 0 33
+0 0 0 0
+6 68790 6879
+E
+Bracer of Sha'maii~
+This bracer is made of the finest metal and forged with the thought of 
+many great battle that they will see.  
+~
+A
+1 2
+A
+2 2
+A
+20 -5
+A
+14 -20
+A
+18 4
+A
+19 3
+#18654
+Ruby bracelet~
+A Ruby Bracelet~
+A beautifully crafted Ruby Bracelet lies here.~
+~
+9 16926785 0 97
+0 0 0 0
+10 79034 7903
+E
+Ruby Bracelet~
+A maidens bracelet made with the finest rubies that dangle from the 
+chain of gold.
+~
+A
+17 -5
+A
+3 1
+A
+26 8192
+A
+12 20
+A
+13 25
+A
+19 2
+A
+18 2
+#18655
+soulbane~
+Soulbane~
+A dripping Soulbane quvers after a long fight.~
+~
+5 17467395 0 33
+0 20 2 11
+15 1204569 120456
+E
+Soulbane~
+This weapon of massive torture is quivering with an aura all its own.
+~
+A
+2 2
+A
+12 60
+A
+23 -5
+A
+25 1
+A
+31 1
+A
+13 85
+A
+19 6
+A
+18 5
+#18656
+Golden dagger~
+Golden Dagger~
+A warriors bloody Golden Dagger lies forgotten.~
+~
+5 705794 0 65
+0 13 3 4
+8 759040 75904
+E
+Golden Dagger~
+An old dagger stained of many bloody battles has lost its shine from the
+once great golden handle.
+~
+A
+1 2
+A
+2 2
+A
+4 2
+A
+17 -20
+A
+19 5
+A
+18 6
+A
+13 60
+#18657
+Majhar breastplate~
+Majhar breastplate~
+The Majhar Dragons Breastplate has fallen to the ground.~
+~
+9 524352 9
+0 0 0 0
+15 103900 10390
+E
+Majhar Breastplate~
+An ancient dragons hide has been formed into a wonderous breastplate
+that will serve you well. 
+~
+A
+13 100
+A
+5 2
+A
+24 -4
+A
+23 -4
+A
+12 60
+A
+1 1
+A
+17 -50
+A
+19 7
+A
+18 5
+#18658
+Serrengetti Spectacles~
+Gold rimmed Serrengetti Specticals~
+Gold rimmed Serrengetti Specticals glow with an aura all their own.~
+~
+9 9012225 0 17
+0 0 0 0
+3 98450 9845
+E
+Serringetti Spectials ~
+These gold rimmed glasses have the most wonderful lenses that shade 
+weary eyes from the horrid sun.
+~
+A
+17 -28
+A
+19 3
+A
+18 3
+A
+13 30
+A
+12 20
+A
+26 8
+A
+26 32
+#18659
+Emerald studded bracer~
+Emerald Studded Bracer~
+The battered Emerald Studded Bracer lies here forgotten.~
+~
+9 8454209 0 17
+0 0 0 0
+5 45900 4590
+A
+1 1
+A
+5 1
+A
+31 1
+A
+12 45
+A
+17 -10
+A
+13 30
+A
+18 2
+A
+19 2
+#18660
+Wand of Rune~
+Wand of Ruin~
+The Wand of Rune lies humming~
+~
+3 263425 24577
+38 7 5 26
+9 45890 4589
+A
+12 75
+A
+13 110
+A
+17 -25
+A
+1 2
+A
+4 2
+A
+19 6
+A
+18 6
+#18661
+Homona Earing~
+Homona Earring~
+A single Homona Earring lies here forgotten.~
+~
+9 624896 0 17
+11 0 0 0
+2 78900 7890
+A
+5 2
+A
+2 1
+A
+17 -10
+A
+19 3
+A
+13 20
+A
+12 50
+#18662
+Rune Wand~
+Rune Wand~
+The Rune Wand glows with and unknown force.~
+~
+3 263425 16385
+38 7 5 26
+1 45300 4530
+A
+17 -15
+A
+1 2
+A
+2 1
+#18663
+Shield of Prophecy~
+Shield of Prophecy~
+The Shield of Prophecy glows with an unknown force.~
+~
+9 99907 0 17
+0 0 0 0
+15 98300 9830
+A
+17 -25
+A
+4 2
+A
+3 1
+A
+24 -4
+A
+19 5
+A
+18 4
+A
+12 75
+A
+13 70
+A
+56 3
+#18664
+Bracer of Fate~
+Bracer of Fate~
+A battered Bracer of Fate lies here forgotten.~
+~
+9 8981569 0 17
+0 0 0 0
+5 45900 4590
+A
+18 4
+A
+19 3
+A
+13 30
+A
+17 -10
+A
+12 15
+A
+31 1
+#18665
+Belt of Wizardry~
+Belt of Wizardry~
+An old wizards Belt of Wizardry lies here glowing.~
+~
+9 9011267 0 17
+0 0 0 0
+7 57000 5700
+A
+17 -5
+A
+5 2
+A
+4 3
+A
+13 50
+A
+12 50
+A
+19 4
+A
+18 3
+#18666
+Rune Ring~
+Rune Ring~
+The glowing Rune Ring pulses with a life its own.~
+~
+9 16976384 0 49
+0 0 0 0
+1 62900 6290
+A
+25 1
+A
+1 1
+A
+17 -15
+A
+20 -5
+A
+19 2
+A
+18 2
+#18667
+Helm of Imajica~
+Helm of Imajica~
+The glowing Helm of Imajica lies here pulsating.~
+~
+9 8487936 0 17
+0 0 0 0
+6 87200 8720
+A
+31 2
+A
+12 80
+A
+13 50
+A
+4 2
+A
+25 2
+A
+18 4
+A
+19 5
+#18668
+Chains of Fate~
+Chains of Fate~
+The Chains of Fate lie tangled in the dirt.~
+~
+9 17449729 0 97
+0 0 0 0
+5 45300 4530
+A
+17 -10
+A
+31 2
+A
+19 3
+A
+18 2
+A
+5 1
+A
+13 50
+#18669
+Sword of Legacy~
+Sword of Legacy.~
+The gilted Sword of Legacy Lies here bloody.~
+~
+5 17433155 0 33
+0 21 3 3
+9 0 0
+A
+17 -20
+A
+13 100
+A
+12 60
+A
+19 10
+A
+18 7
+#18670
+Claw of Lion~
+Claw of Lion.~
+The bloody Claw of Lion has fallen here.~
+~
+5 8964099 0 64
+0 17 3 5
+7 82300 8230
+A
+13 110
+A
+12 80
+A
+17 -30
+A
+14 -35
+A
+18 6
+A
+19 8
+> wear_prog 100~
+if class($n) == Ranger
+else
+if class($n) == Druid
+else
+mpforce $n rem claw
+endif
+endif
+~
+|
+#18671
+Majhar Hide~
+Majhar Hide~
+The old Majhar Hide was torn from a great Dragon.~
+~
+9 2048 9
+0 0 0 0
+10 890699 89069
+E
+Majhar Hide~
+A tattered hide of a great and powerful dragon has been torn from his 
+body.  This hide is a fine piece of work.
+~
+A
+1 1
+A
+5 1
+A
+17 -20
+#18672
+Eyes of Majhar~
+Eyes of Majhar~
+The Eyes of Majhar lie here staying back at you.~
+~
+9 543488 0 64
+0 0 0 0
+2 46800 4680
+A
+19 3
+A
+18 3
+A
+17 -15
+A
+25 -2
+A
+26 40
+A
+12 50
+A
+13 15
+#18673
+~
+Stone chip~
+A worthless Stone chip shines with an unknown force. ~
+~
+13 0 0
+0 0 0 0
+1 0 0
+#18674
+Marbled Dagger~
+Marble Dagger~
+A Marbled handled dagger lies here.~
+~
+5 656160 0 1
+0 0 0 0
+3 80700 8070
+#18675
+Bronze Sword~
+Bronze Sword~
+A gleaming Sword with a Bronze handle lies tarnished.~
+~
+5 -2146776272 0 65
+25 21 2 3
+15 89345 8934
+A
+1 2
+A
+31 2
+A
+19 3
+A
+18 2
+A
+25 -1
+#18676
+Malkar's Inigma~
+Malkar's Enigma~
+Malkar's Enigma lies pulsing with an unknown power.~
+~
+5 17466128 0 33
+0 0 0 3
+6 67800 6780
+A
+1 2
+A
+2 1
+A
+12 90
+A
+18 7
+A
+19 6
+A
+13 50
+#18677
+Orthopedic shoes~
+Orthopedic shoes~
+Brown dirty Orthepedic shoes have been kicked off carelessly.~
+~
+9 0 65
+0 0 0 0
+3 36980 3698
+E
+Orthopedic Shoes~
+An old stinky pair of shoes that haven't been cleaned or aired out.
+The smell of these shoes could almost knock you over.
+~
+A
+25 -1
+A
+2 2
+A
+4 1
+A
+18 3
+A
+31 1
+A
+13 35
+A
+12 25
+A
+19 4
+#18678
+Brown Dress~
+Brown Dress~
+A badly worn Brown Dress lies here in a heap.~
+~
+9 -2147481600 9
+0 0 0 0
+6 52900 5290
+E
+Brown Dress~
+A ratty brown dress with a few worn places is something a serving girl
+would wear.  The hem of the dress has fallen and the fabric has seen 
+many better days.
+~
+A
+4 1
+A
+12 25
+A
+1 1
+A
+18 2
+A
+19 1
+A
+31 -1
+A
+25 -2
+#18679
+Worn shoes~
+Worn shoes~
+A muddy pair of shoes have been kicked off.~
+~
+9 8422688 65
+0 0 0 0
+4 35700 3570
+E
+Worn shoes~
+A muddy pair of old worn shoes with uneven laces and souls that could
+use a good wipe.
+~
+A
+2 1
+A
+4 1
+A
+25 -1
+A
+18 3
+A
+19 3
+A
+13 40
+A
+12 15
+#18680
+Golden Halo~
+Golden Halo~
+Some god dropped a newly created Golden Halo here.~
+~
+9 0 17
+0 0 0 0
+1 0 0
+#18681
+Thorne of a Rose~
+Thorne of a Rose.~
+A Thorne of a Rose has snapped off its stem.~
+~
+5 16910868 0 33
+0 21 2 2
+5 79800 7980
+E
+Thorne of a Rose~
+A single thorne from a rose bush has fallen lose.  There seems to be 
+a drop let of blood that has come from being cought of someones finger.
+~
+A
+1 2
+A
+5 1
+A
+12 50
+A
+31 1
+A
+18 6
+A
+19 6
+A
+13 70
+A
+17 15
+#18682
+Dagger of Emu~
+Dagger of Emu~
+An old discarded Dagger of Emu lies here covered in mud.~
+~
+5 215064 0 81
+0 20 2 2
+5 98700 9870
+A
+12 50
+A
+13 100
+A
+5 1
+A
+19 8
+A
+18 6
+A
+31 1
+A
+1 2
+#18683
+Charm of Emu~
+Charm of Emu~
+An old emu charm waits patiently to be of use to someone.~
+~
+9 213808 0 81
+0 0 0 0
+2 69700 6970
+A
+3 1
+A
+5 1
+A
+12 40
+A
+13 60
+A
+22 -3
+A
+18 3
+A
+19 3
+#18684
+Bracer of Emu~
+Bracer of Emu~
+Tarnished bracers lie forgotten in the dirt.~
+~
+9 738064 0 81
+0 0 0 0
+3 67899 5790
+A
+18 3
+A
+12 40
+A
+13 25
+A
+19 3
+#18685
+Girth of Elders~
+Girth of Elders~
+A strange coil of metal lies here forgotten.~
+~
+9 672048 0 65
+7 7 0 0
+2 98300 9830
+E
+Girth of Elders~
+An Elders Girth made of the finest leather this land has found. A large 
+buckle with a crest holds the girth together.
+~
+A
+1 1
+A
+19 4
+A
+18 3
+A
+17 -10
+A
+13 50
+A
+2 -2
+A
+3 2
+#18686
+Ancients Walking Stick~
+Ancients Walking Stick~
+A old man's Ancient Walking Stick lies here forgotten.~
+~
+5 755712 0 17
+0 6 7 7
+7 18960 1896
+E
+Ancients Walking Stick~
+Bend and gnarled this stick has been crafted from the ancient tree of 
+this area.  
+~
+A
+1 2
+A
+5 1
+A
+2 1
+A
+4 1
+A
+12 75
+A
+3 2
+A
+18 4
+A
+19 5
+#18687
+Hot Pants~
+Hot Pants~
+Some hot young babe has dropped her Hot Pants!~
+~
+9 131856 0 1
+8 9 0 0
+5 132900 13290
+E
+Hot pants~
+A very short pair of Hot Pants from a young woman with frayed edges and
+button up fly.  These shorts leave nothing to the imagination.
+~
+A
+2 2
+A
+19 3
+A
+18 3
+A
+12 40
+A
+13 45
+#18688
+Crop Top~
+Crop Top~
+A silky Crop Top lies in a puddle of fabric.~
+~
+9 133632 0 1
+0 0 0 0
+1 108200 10820
+E
+Crop top~
+A young womans top is worn off the shoulder and tied beneathe her breasts.
+This fabric is sheer and silky with a beautiful pattern of daisies.
+~
+A
+1 1
+A
+5 1
+A
+12 30
+A
+14 50
+A
+25 1
+#18689
+Dagger of The Reborn~
+Dagger of The Reborn~
+An ancient Dagger of The Reborn's blade lies in the dirt.~
+~
+5 672720 0 65
+0 20 2 2
+7 1758900 175890
+A
+1 2
+A
+2 1
+A
+13 75
+A
+12 50
+A
+31 2
+A
+18 8
+A
+19 9
+#18690
+Ring of ReBirth~
+Ring of ReBirth~
+The Ring of ReBirth lies here dented.~
+~
+9 -2130165472 0 96
+12 12 0 0
+2 87900 8790
+A
+26 32
+A
+14 -5
+A
+12 25
+A
+1 1
+#18691
+Vest of Runes~
+Vest of Runes~
+Some old druid droped his vest.~
+~
+9 114944 0 81
+0 0 0 0
+12 98090 9809
+A
+26 8192
+A
+18 4
+A
+19 5
+A
+2 2
+A
+13 70
+#18692
+Shield of Bu'sula~
+Shield of Bu'sula~
+A stout Shield of Bu'sula lies here dented and dirty.~
+~
+9 625921 0 17
+12 15 0 0
+10 76200 7620
+A
+4 2
+A
+17 -20
+A
+5 1
+A
+31 2
+A
+12 125
+#18693
+Golden Chip~
+Golden Chip~
+A Golden Chip lies here sparkling in the dirt.~
+~
+41 524289 1
+0 0 0 0
+1 0 0
+#18694
+Aura of Magic Dust~
+Aura of Magic Dust~
+A pile of Magic dust lies here.~
+~
+9 624961 0 17
+15 25 0 0
+1 0 0
+E
+Aura of Magic Dust~
+An aura of Sparkling dust is evelopes you as it surrounds you with its 
+magic.
+~
+A
+1 1
+A
+3 1
+A
+4 2
+A
+19 4
+A
+18 5
+A
+13 100
+A
+12 75
+A
+31 1
+#18695
+Akharsis Bracers~
+Akharsis Bracer~
+Dented Akharsis Bracers lie here forgotten.~
+~
+9 -2147335376 0 65
+10 18 0 0
+6 45700 4570
+A
+1 2
+A
+17 -20
+A
+12 35
+A
+19 4
+A
+13 35
+#18696
+Sword of the Lir~
+Sword of the Lir.~
+The Sword of the Lir lies here with an energy all its own.~
+~
+5 16959490 0 97
+19 16 2 3
+19 70354 7035
+A
+5 1
+A
+1 2
+A
+13 100
+A
+12 50
+A
+19 8
+A
+18 9
+A
+30 3
+#18697
+Sword of the Majhar~
+Sword of the Majhar~
+The pulsating Sword of the Majhar lies her stuck into the mud.~
+~
+5 16958018 0 97
+19 16 2 3
+19 70354 7035
+A
+5 1
+A
+1 2
+A
+13 100
+A
+19 5
+A
+18 5
+A
+12 50
+A
+17 -15
+#18698
+yellow rose bud~
+a yellow rose bud~
+A yellow rose bud peeks out from the rose bush here.~
+~
+26 0 1
+40 16 -1 -1
+1 500 50
+#18748
+purity  necklace~
+Necklace of Purity~
+A fine golden chain glows waiting to be worn by one of Aniara's followers.~
+~
+9 527681 5
+0 0 0 0
+3 1200000 120000
+E
+Necklace of Purity~
+The golden necklace glows with a purity of devotion.  The necklace is
+only worn by the followers of the Deitie of Aniara.
+~
+A
+26 4
+A
+19 2
+A
+18 2
+A
+17 -10
+A
+12 30
+A
+13 25
+#18749
+legacy sword~
+Sword of Legacy.~
+The gilted Sword &yof Legacy Lies here bloody.~
+~
+5 17433155 0 33
+0 15 2 3
+9 0 0
+A
+17 -20
+A
+12 60
+A
+18 7
+A
+19 8
+A
+13 75
+#18750
+blade cheysuli~
+Cheysuli blade~
+A forgotton Cheysuli blade quivers from an unknown source.~
+~
+5 17434690 0 33
+0 21 2 1
+15 98900 9890
+E
+Cheysuli Blade~
+An ancient warriors blade with a finely honed blade and a hilt of rubbed 
+silver.  This blade has seen many battles.
+~
+A
+1 2
+A
+4 1
+A
+12 69
+A
+25 2
+A
+31 2
+A
+14 -20
+A
+13 75
+A
+19 8
+A
+18 9
+#0
+
+
+#ROOMS
+#18600
+Forest Path~
+A winding path that leads north into an older part of the woods.  Along the
+wide dirt path, wonderfully colored wildflowers and wild raspberries are
+waiting to be picked.  To the southeast the trail leads back into the darker
+part of the forest.  Through the break in the massive pines to the north,
+there is a manor in amongst the trees.
+~
+0 0 3
+D0
+Path continues up to the manor.
+~
+~
+0 -1 18601
+D8
+~
+~
+16777216 -1 6135
+S
+#18601
+Waymoot Manor~
+The winding path comes to a halt in front of the towering stone structure
+known as Waymoot Manor.  A warm glow shows through the heavily 
+draped, leaded glass windows.  Double, weathered oak doors with lion head
+knockers beckon to be opened.  The southern trail leads back into
+the pine and oak forest.
+~
+0 4 3
+D0
+~
+door~
+3 -1 18602
+D2
+A path continues away from the manor.
+~
+~
+0 -1 18600
+> rand_prog 10 ~
+mpecho The small crickets chirp in the distance.
+~
+> rand_prog 7~
+mpecho The crickets chirp from the woods.
+~
+|
+S
+#18602
+Entry Hall~
+The ceiling is vaulted and the floor is recently swept by some housekeeper.
+On the oak table along the wall some fresh cut flowers have been left 
+to be put into a vase.  Unopened mail is dropped on the table waiting for the 
+mistress to open it.  A grand staircase leads to the upper floor.  The Great 
+Hall is to the east and the Dinning room is to the west. South will take you
+back to the forest.
+~
+0 8 0
+D1
+~
+~
+0 -1 18604
+D2
+~
+door~
+35 -1 18601
+D3
+~
+~
+0 -1 18603
+D4
+~
+~
+0 -1 18616
+S
+#18603
+Great Hall~
+Silk brocade chairs and a couch are placed in front of a roaring fire.  A book
+lays open on a nearby table.  Tapestries telling of stories adorn the walls
+Against the wall, silver candlesticks and a case of flowers are carefully
+arranged on the side board.  The large windows are draped in heavy green
+velvet.  Throughout the room, candlelight flickers on the walls.  The entry
+hall is located to the east.
+~
+0 8 0
+D1
+~
+~
+0 -1 18602
+S
+#18604
+Dining Hall~
+A warm fire is blazing in the fireplace, above the mantle hangs a stag
+head with a prized set of antlers.  In the center of the room is an oak table
+set with the dishes for the evening feast.  Large, heavily draped windows
+adorn each side of the fireplace.  On the sideboard there is a set of steins
+ready for the thirsty rangers.  Heavenly smells are coming from the 
+kitchen to the north and to the west is the entry hall.
+~
+0 8 0
+D0
+~
+~
+0 -1 18605
+D3
+~
+~
+0 -1 18602
+> rand_prog 10 ~
+mpecho The dancing flame of the fire dances in the fireplace. 
+~
+|
+S
+#18605
+Country Kitchen~
+Along the northern wall, an enormous open hearth with two ovens takes 
+up most of the wall.  A suckling pig is being roasted and loaves of bread are
+being cooled on the harvest table.  Beside the servants entrance, a burlap sack
+of potatoes as been left.  A dish of milk as been put down for the manor cat
+who is curled up in the rocking chair by the fire.  On the back of the pantry 
+door hangs the cooks apron.  The dining hall is to the south and the pantry is
+to the east.
+~
+0 8 0
+D0
+~
+~
+3 -1 18607
+D1
+~
+~
+3 -1 18606
+D2
+~
+~
+0 -1 18604
+S
+#18606
+Pantry~
+Several bags of root vegetables are left on the cool stone floor. Bags of 
+flour and dry goods are stored on the shelves that line the walls.  Pitchers
+of milk, draped with cheese cloth, sit upon a small table next to the door.
+The kitchen is reached by going west.
+~
+0 8 0
+D3
+~
+~
+3 -1 18605
+S
+#18607
+Aniara's Garden~
+A small, lovingly cared for herb garden is directly underneath the
+the kitchen window.  A flagstone pathway winds its way through the various
+flower gardens.  Morning glories have taken hold on the stone walls of 
+the manor, climbing almost to the roof.  The flagstone path continues
+to the east and the south is the servants entrance to the manor.
+~
+0 4 2
+D1
+~
+~
+0 -1 18608
+D2
+~
+~
+3 -1 18605
+S
+#18608
+A Quaint Path~
+The flagstone path continues through the woods.  Ferns and Trillium grow
+in the shade of the towering pines.  Further along the path to the east is 
+a fork and going west will take you to the gardens.
+~
+0 0 2
+D0
+~
+~
+0 -1 18714
+D1
+~
+~
+0 -1 18609
+D3
+~
+~
+0 -1 18607
+S
+#18609
+A Fork in the Path~
+The trees surround you on all sides.  Going north through the trees will take
+you to the chapel.  From the northeast the river can be heard.
+~
+0 0 2
+D0
+~
+~
+0 -1 18610
+D3
+~
+~
+0 -1 18608
+D6
+~
+~
+0 -1 18613
+S
+#18610
+Entrance to the Chapel~
+Wild rose bushes grow along the foundation of the chapel walls.  An old
+hooded woman attends to the flowers, that surround the chapel.  The
+towering trees surround the chapel.  Somehow there is sunlight that beams
+down onto the tiny chapel.  Leaded glass windows adorn either side of
+the chapel door, which is always unlocked for the people to come and
+worship.  The path to the south leads you to the fork in the path and
+going north will take you to the altar.
+~
+0 0 2
+D0
+~
+~
+3 -1 18611
+D2
+~
+~
+0 -1 18609
+D3
+~
+~
+0 -1 18612
+S
+#18611
+Alter of the Goddess~
+Many candles stand upon the white linen draped Altar.  An altar boy stands
+at the ready to light any candles that tend to go out with the breeze from 
+opening the door.  Wooden pews await the worshiping people.  Large 
+stained glass windows line each wall, allowing the light to play with the 
+colours of the glass.  The door to the south takes you back to the path.
+~
+0 12 0
+D2
+~
+~
+3 -1 18610
+> speech_prog {P} 'To the tower!'~
+if name($n) == anniara
+  mptransfer anniara 18619
+  mptransfer Drahkan 18619
+else
+  mpechoat $n You can not enter the retreat!
+endif
+~
+|
+S
+#18612
+Peaceful Garden~
+Coming off the path to the east you have come into a quiet area of the
+grounds.  There are benches here within this sanctuary, where you may 
+sit and meditate.  Surrounding you are heavenly scents and sounds of
+the wildlife of the woods.  Sometimes an ancient woman can be seen
+wandering the gardens.  
+~
+0 0 2
+D1
+~
+~
+0 -1 18610
+S
+#18613
+Footbridge~
+Cattails sway in the breeze, along the bank of the babbling brook.  A 
+fieldstone footbridge spans the brook to allow access to the other bank.
+The river continues to the east and southwest will take you back to the
+chapel.
+~
+0 0 2
+D1
+~
+~
+0 -1 18614
+D9
+~
+~
+0 -1 18609
+S
+#18614
+Rushing River~
+The churning waters flow from the northeast, tumbling over the boulders
+and eroding the river bank.  Yet in the chaos of the water there is a 
+peacefulness in the air.  The majestic waterfall is to the northeast and
+the brook is to the west.
+~
+0 0 1
+D3
+~
+~
+0 -1 18613
+D6
+~
+~
+0 -1 18615
+> rand_prog 5~
+mpecho The rushing waters lap up against the bank of the river.
+~
+|
+S
+#18615
+The Dazzling Waterfall~
+Crossing the stepping stones from the river below you, a blast of mist washes
+over you from the enormous waterfall to the north.  Crashing down from
+a tremendous height, you are amazed at the swiftness with which the river
+dissipates into a mere quiet brook, but the power of the Goddess should
+not be questioned.  A large rock slab sits off the side of the waterfalls
+pool of water, gently sloping down into the refreshing cool depths. The
+rushing river continues to the southwest.
+~
+0 0 2
+D0
+~
+~
+0 -1 18620
+D9
+~
+~
+0 -1 18614
+> rand_prog 5~
+mpecho The mist of the waterfall washes over you.
+~
+|
+S
+#18616
+Darkened Hall~
+A single candle at the end of the hallway is all the lighting that is provided.
+A table is pushed up against the right side of the hall where the candle sits
+and a set of keys lay.  The mistress' bedroom is to the east and the Hunter 
+room is to the west.
+~
+0 8 0
+D1
+~
+~
+3 -1 18618
+D3
+~
+~
+3 -1 18617
+D5
+~
+~
+0 -1 18602
+S
+#18617
+Hunter's Room~
+A brown bear skin rug lays in front of the glowing fire.  A large comfortable
+bed with many animal skins on top await the guest who will stay here.
+Candles light up the room with a warm soothing glow.  Several books 
+lay on the bedside table.  The hallway is to the west.
+~
+0 12 0
+D1
+~
+~
+3 -1 18616
+S
+#18618
+Mistress' Chamber~
+Candlelight glows softly throughout the room.  The light dancing upon
+the walls and the large four poster bed.  A warm goose down duvet rests
+upon the bed waiting to be snuggled up under with someone special.  An
+intricate carving of a vine heart shaped wreath decorates the dark oak
+headboard, underneath the wreath a few words are carved.  An armoire
+used to hold the mistress' gowns and trinkets is pushed up against the wall.
+A very old chest is located at the end of the bed.  A velvet chaise lounge
+is underneath the one draped window.  On a straight back chair there
+are a few lacy garments that have been carelessly left.  The hallway is 
+to the west.
+~
+0 12 0
+D3
+~
+~
+35 -1 18616
+E
+'cedar chest'~
+An old cedar chest worn with age, polished with care, sits upon the cold 
+pine floor.  The lid of the chest has a delicate engraving that matches the
+bed and the armour.  Solid iron latches and a lock adorn the old piece of
+furniture.
+~
+E
+'armoure'~
+A massive piece of furniture sits upright against the wall, opposite the 
+inviting bed.  With the same docoration as the chest and bed, the engraving
+is etched upon the center of the door panels.  The mistress keeps all her 
+gowns in the the armoure
+~
+> rand_prog 5 ~
+mpecho The soft candle light washes over the room.
+~
+|
+S
+#18619
+Aniara's Retreat~
+In this tower room, round and rich with paintings and tapestries hung 
+against the sloping walls.  While the rest of the manor seems comfortable 
+if somewhat bare, this room is luxuriously crowded, crammed with
+furniture , bristling with ornaments, and warmly lit by a fire and candle.
+Long casement windows covered by sheers allow the light to pass through.
+enough The mistress' room is down from here.
+~
+0 524 0
+S
+#18620
+Beneath the Waterfall~
+The crashing roar of the water surrounds you, as you stand beneath 
+the majestic waterfall.  A small grass covered area, with clover and
+wild daisies, would welcome any young lovers on a picnic.  A crack 
+in the north wall looks like someone could just squeeze thourgh.  Going
+south will take you back to the waterfall.
+~
+0 8 8
+D0
+~
+~
+0 -1 18621
+D2
+~
+~
+0 -1 18615
+S
+#18621
+Cavern Entrance~
+Small animal footprints, have been left behind in the ancient dust.  Damp
+rough walls are on either side of you and the roof of the tunnel is quite high,
+some kind of tall creature must of been here once.  South will take you out, to
+beneath the waterfall, the other exits are northeast and northwest.
+~
+0 12 13
+D2
+~
+~
+0 -1 18620
+D6
+~
+~
+0 -1 18622
+D7
+~
+~
+0 -1 18675
+S
+#18622
+Dark Tunnel~
+A dark tunnel with cool damp walls, continues to wind through the mountain. 
+A glimmer of light can be seen from the southwest and the other exits are
+north and east.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18630
+D1
+~
+~
+0 -1 18623
+D9
+~
+~
+0 -1 18621
+S
+#18623
+Dark Maze~
+Sconces on the stone walls hold a lighted torch, which provides the only
+source of light available.  The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18629
+D1
+~
+~
+0 -1 18626
+D2
+~
+~
+0 -1 18624
+D3
+~
+~
+0 -1 18622
+S
+#18624
+Lost in Shadows~
+Shadows dance upon the walls of the cavern's tunnels. A glimmer of 
+light flickers from the north.  The exits are north and east.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18623
+D1
+~
+~
+0 -1 18625
+S
+#18625
+Dark Corridor~
+A well worn path, through the rubble strewn corridor, winds its way through
+the cavern.  The exits are north and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18626
+D3
+~
+~
+0 -1 18624
+S
+#18626
+Dripping Corridor~
+From the ceiling above you, water continuously drips upon the floor of
+the cavern, making the path slick and hard to navigate.  The exits are east, 
+west and south.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18627
+D2
+~
+~
+0 -1 18625
+D3
+~
+~
+0 -1 18623
+S
+#18627
+Dark Grotto~
+Stalagmite towers reaching from the ceiling to the floor of the cave.  The 
+towers glisten with moisture and sparkle with luminous colors.  The exits are 
+west and northwest.
+~
+0 2097160 13
+D3
+~
+~
+0 -1 18626
+D7
+~
+~
+0 -1 18628
+S
+#18628
+Forked Path~
+The dark tunnel comes to a fork in the path.  Different exits are here, making
+you wonder which way you should go.  The exits are north west and southeast
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18632
+D3
+~
+~
+0 -1 18629
+D8
+~
+~
+0 -1 18627
+S
+#18629
+Narrow Mazzanine~
+The passage narrows, making it difficult to get around the jagged
+edges of the cavern walls.  In the crevices of the walls the mushrooms
+grow quite well in the damp cool air.  The exits are east and south.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18628
+D2
+~
+~
+0 -1 18623
+S
+#18630
+Dark Chamber~
+Dark winged creatures hang from the ceiling above your head.  High
+pitched squeals can be heard, along with the occasional flap.  The exits
+are south and northeast.
+~
+0 2097164 13
+D2
+~
+~
+0 -1 18622
+D6
+~
+~
+0 -1 18631
+S
+#18631
+Narrow Mazzanine~
+The passage narrows, making it difficult to get by the jagged edges 
+of the stone walls.  In the crevices of the walls the mushrooms and 
+other fungi grow quite well.  The exits are north, east and southwest.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18634
+D1
+~
+~
+0 -1 18632
+D9
+~
+~
+0 -1 18630
+S
+#18632
+Dark Gallery~
+Dark winged creatures hang from the ceiling above your head.  High
+pitched squeals and the occasional flap of leathered wings can
+be heard.  The exits are north. west and southeast.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18635
+D2
+~
+~
+0 -1 18628
+D3
+~
+~
+0 -1 18631
+S
+#18633
+Dark Gallery~
+Dark winged creatures hang from the ceiling above your head. Fluttering
+of their wings and the high pitched squeal can be heard all around you.
+The exits are north and east.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18634
+D2
+~
+~
+0 -1 18726
+S
+#18634
+Hollow Cavern~
+A large, open area with sloping rough walls and a high ceiling.  A
+round opening in the center of the ceiling allows for a bit of light 
+to filter in.  The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18639
+D1
+~
+~
+0 -1 18635
+D2
+~
+~
+0 -1 18631
+D3
+~
+~
+0 -1 18633
+S
+#18635
+Dripping Corridor~
+From the ceiling above you, the water continuously drips, making
+the path slick and slippery.  The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18638
+D1
+~
+~
+0 -1 18636
+D2
+~
+~
+0 -1 18632
+D3
+~
+~
+0 -1 18634
+S
+#18636
+Dark Corridor~
+A well worn path, through the rubble strewn corridor, continues to
+wind its way through the cavern.  The exits are north and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18637
+D3
+~
+~
+0 -1 18635
+S
+#18637
+Open Chamber~
+A large chamber, with smooth walls and pillars of stone that reach
+from floor to ceiling.  The feel of this room is that it is not a natural
+cave, but one that has been created by some mystical forces.  The exits
+are north, south and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18645
+D2
+~
+~
+0 -1 18636
+D3
+~
+~
+0 -1 18638
+S
+#18638
+Dripping Corridor~
+From the ceiling above you the water continuously drips from the stream
+coming from the west.  The floor of the cavern is slippery.  The exits
+are north east, south and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18644
+D1
+~
+~
+0 -1 18637
+D2
+~
+~
+0 -1 18635
+D3
+~
+~
+0 -1 18639
+S
+#18639
+Dim Tunnel~
+The passage narrows, making the path difficult to navigate past
+the jagged edges of walls.  In the crevices of the walls the mushrooms
+and other fungi grow quite well in the cool damp air.  The exits are north,
+south, east and west.
+~
+0 2097164 13
+D0
+~
+~
+0 -1 18643
+D1
+~
+~
+0 -1 18638
+D2
+~
+~
+0 -1 18634
+D3
+~
+~
+0 -1 18640
+S
+#18640
+Dark Gallery~
+Dark winged creatures hang from the ceiling above your head.  The high pitched
+squeals can be heard along with the occasional flap.  The exits are north, east
+south and northwest.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18642
+D1
+~
+~
+0 -1 18639
+D2
+~
+~
+0 -1 18633
+D7
+~
+~
+0 -1 18641
+S
+#18641
+Lost~
+Shadows play tricks on your mind, causing you to become lost.  A glimmer 
+of light can be seen to the east.  The exits are east, southeast and southwest.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18642
+D8
+~
+~
+0 -1 18640
+D9
+~
+~
+0 -1 18696
+S
+#18642
+Hollow Cavern~
+A large open area, with sloping walls and high ceilings. A round opening
+in the center of the high sloped ceiling allows for a bit of light to filter
+in. The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18650
+D1
+~
+~
+0 -1 18643
+D2
+~
+~
+0 -1 18640
+D3
+~
+~
+0 -1 18641
+S
+#18643
+Eerie Quiet~
+Not a sound can be heard, a stillness surrounds you.  A draft of cool 
+air blows against your face.  The exits are east, south and west.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18644
+D2
+~
+~
+0 -1 18639
+D3
+~
+~
+0 -1 18642
+S
+#18644
+Narrow Mezzanine~
+The passage narrows, making it difficult to get by the jagged edges
+of the caverns walls.  In the crevices of the walls the mushrooms and
+other fungi grow quite well.  The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18648
+D1
+~
+~
+0 -1 18645
+D2
+~
+~
+0 -1 18638
+D3
+~
+~
+0 -1 18643
+S
+#18645
+Underground Chamber~
+A large spacious room, with baskets and boxes pushed put against 
+the walls, allowing the path to continue between the storage containers.
+The exits are north, south, west and northeast.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18647
+D2
+~
+~
+0 -1 18637
+D3
+~
+~
+0 -1 18644
+D6
+~
+~
+0 -1 18646
+S
+#18646
+Dark Passage~
+Slick, fungi covered walls surround you as you make your way through
+this damp area of the cavern.  The exits are north, south, northeast
+and southwest.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18655
+D3
+~
+~
+0 -1 18647
+D6
+~
+~
+0 -1 18655
+D9
+~
+~
+0 -1 18645
+S
+#18647
+Dim Tunnel~
+A sconce attached to the far wall provides the only bit of dim 
+light available.  Barely able to make out, are exits to the north
+south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18653
+D1
+~
+~
+0 -1 18646
+D2
+~
+~
+0 -1 18645
+D3
+~
+~
+0 -1 18648
+S
+#18648
+Underground Chamber~
+A stream of water cascades from a crack in the wall that is near
+the ceiling of the cavern, down the wall and into a pool of clear
+water.  Small fish can be seen swimming under the surface of the
+clear water.  The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18652
+D1
+~
+~
+0 -1 18647
+D2
+~
+~
+0 -1 18644
+D3
+~
+~
+0 -1 18649
+S
+#18649
+Dark Grotto~
+Stalagmite towers reaching from ceiling to floor of this dark grotto.  The 
+path winds itself around the enormous towers.  The exits are north
+east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18651
+D1
+~
+~
+0 -1 18648
+D3
+~
+~
+0 -1 18650
+S
+#18650
+Small Alcove~
+A small dark alcove, cut into the stone wall, contains a long forgotten
+statue of a God.  The Golden statue is covered in dust and cob webs.  The
+exits are south that will take you to the Hollow Cavern.  Taking the east 
+direction will bring you to the Dark Grotto.
+~
+0 8 13
+D1
+~
+~
+0 -1 18649
+D2
+~
+~
+0 -1 18642
+S
+#18651
+Abandoned Passage~
+Rubble and dust is everywhere here, with little animal prints in the ancient 
+dust.  Not a soul has seen this passage in a century.  The exits are 
+east and south.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18652
+D2
+~
+~
+0 -1 18649
+S
+#18652
+Dark Passage~
+The dark passage, slick with moisture and slime makes the path 
+hard to navigate.  The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18659
+D1
+~
+~
+0 -1 18653
+D2
+~
+~
+0 -1 18648
+D3
+~
+~
+0 -1 18651
+S
+#18653
+Stalagmite Towers~
+A few lighted torches are attached to the walls, casting eerie shadows
+from the stalagmite towers that are spread out through this entire 
+area.  The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18658
+D1
+~
+~
+0 -1 18655
+D2
+~
+~
+0 -1 18647
+D3
+~
+~
+0 -1 18652
+S
+#18654
+Small Stream~
+A small slow moving river blocks your path.  The water is quite shallow
+and seems to disappear into a crack in the wall.  The exits are north.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18657
+S
+#18655
+Lost in Shadows~
+Shadows play tricks on your mind, a flicker of light can be seen from the
+north.  The exits are north, south, west, and southwest.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18656
+D2
+~
+~
+0 -1 18646
+D3
+~
+~
+0 -1 18653
+D9
+~
+~
+0 -1 18646
+S
+#18656
+Dim Tunnel~
+A sconce on the stone wall, holding a lighted torch provides the
+only bit of light in this dark tunnel.  The exits are south and west.
+~
+0 2097160 13
+D2
+~
+~
+0 -1 18655
+D3
+~
+~
+0 -1 18657
+S
+#18657
+Marked Corridor~
+Small markings on the caves smooth walls tell of a long ago story
+of an ancient tribe of people.  The exits are east, south, west and
+northwest.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18656
+D2
+~
+~
+0 -1 18654
+D3
+~
+~
+0 -1 18658
+D7
+~
+~
+0 -1 18665
+S
+#18658
+Dripping Corridor~
+From the ceiling above you the water drips contiuously, making the
+stone floor slick and slimy.  The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18665
+D1
+~
+~
+0 -1 18657
+D2
+~
+~
+0 -1 18653
+D3
+~
+~
+0 -1 18659
+S
+#18659
+Narrow Mezzanine~
+The passage narrows, making it difficult to get by the jagged edges of
+the walls.  In the crevices of the stone walls the mushrooms and other
+fungi grow quite well.  The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18664
+D1
+~
+~
+0 -1 18658
+D2
+~
+~
+0 -1 18652
+D3
+~
+~
+0 -1 18660
+S
+#18660
+Hollow Cavern~
+A large, open area with sloping rough walls and a high ceiling.  A
+round opening in the center of the ceiling allows for a bit of light 
+to filter in.  The exits are north, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18663
+D1
+~
+~
+0 -1 18659
+D3
+~
+~
+0 -1 18661
+S
+#18661
+Narrow Mezzanine~
+The passage narrows, making it difficult to get by the jagged edges 
+of the stone walls.  In the crevices of the walls the mushrooms and 
+other fungi grow quite well.  The exits are north and east.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18662
+D1
+~
+~
+0 -1 18660
+S
+#18662
+Dark Maze~
+~
+0 2097161 13
+D0
+~
+~
+0 -1 18672
+D1
+~
+~
+0 -1 18663
+D2
+~
+~
+0 -1 18661
+D3
+~
+~
+0 -1 18674
+S
+#18663
+Narrow Passage~
+The walls seem to close in on you as the passages here become
+quite narrow. The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18668
+D1
+~
+~
+0 -1 18664
+D2
+~
+~
+0 -1 18660
+D3
+~
+~
+0 -1 18662
+S
+#18664
+Pillered Passages~
+Stalagmite hangs from the roof of the cave casting eerie shadows on
+the walls of the cavern.  The exits are north, south and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18667
+D2
+~
+~
+0 -1 18659
+D3
+~
+~
+0 -1 18663
+S
+#18665
+Dim Tunnel~
+Small ancient markings, drawn upon the caves smooth walls, line
+this part of the cave.  Flickering light can be seen to the south.  The
+exits are south and southeast.
+~
+0 2097160 13
+D2
+~
+~
+0 -1 18658
+D8
+~
+~
+0 -1 18657
+S
+#18666
+Dim Tunnel~
+A dark damp passage continues through the cavern, small animal
+prints can be seen in the ancient dust that is settled upon the floor.
+The exits are north and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18671
+D3
+~
+~
+0 -1 18667
+S
+#18667
+Dark Corridor~
+A well worn path, strewn with rubble, winds its way through the cavern.
+The exits are east, south and west.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18666
+D2
+~
+~
+0 -1 18664
+D3
+~
+~
+0 -1 18668
+S
+#18668
+Humid Spa~
+Contrasting to the cool damp air of the rest of the cavern, you have
+stumbled across a steaming pool of clear blue-green water.  The 
+air is heavy with humidity and steam.  A stack of fluffy towels are
+neatly piled on a stone bench beside the pool.  The exits are north
+east and south.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18669
+D1
+~
+~
+0 -1 18667
+D2
+~
+~
+0 -1 18663
+S
+#18669
+Dark Alcove~
+Dark in the shadows, a small statue sits on a small shelf.  Covered in
+dust and cobwebs, this statue seems to glow with an aura.  The exits
+are south and east.
+~
+0 2097164 13
+D1
+~
+~
+0 -1 18670
+D2
+~
+~
+0 -1 18668
+S
+#18670
+Abandoned Passage~
+Rubble and dust covers the stone floor.  Not a soul has seen these
+passages in a life time.  The exits are east and west.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18671
+D3
+~
+~
+0 -1 18669
+S
+#18671
+Small Alcove~
+A small dark alcove, containing a small stand which holds a
+old leather bound book. The exits are south and west.
+~
+0 2097160 13
+D2
+~
+~
+0 -1 18666
+D3
+~
+~
+0 -1 18670
+S
+#18672
+Dark Gallery~
+Dark winged creatures hang from the ceiling above your head. Fluttering
+of their wings and the high pitched squeal can be heard all around you.
+The exits are south and west.
+~
+0 2097164 13
+D2
+~
+~
+0 -1 18662
+D3
+~
+~
+0 -1 18673
+S
+#18673
+Dark Grotto~
+Stalagmite towers reaching from ceiling to floor of this dark grotto.  The 
+path winds itself around the enormous towers.  The exits are east
+northwest and south.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18672
+D2
+~
+~
+0 -1 18674
+D7
+~
+~
+0 -1 18685
+S
+#18674
+Small Stream~
+A small, slow moving river blocks your path.  The water is quite shallow
+and seems to disappear into a crack in the wall.  The exits are north and east.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18673
+D1
+~
+~
+0 -1 18662
+S
+#18675
+Dark Gallery~
+Dark winged creatures hang from the ceiling above your head.  The high pitched
+squeals can be heard along with the occasional flap.  The exits are north, east
+west and southeast.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18679
+D1
+~
+~
+0 -1 18677
+D3
+~
+~
+0 -1 18676
+D8
+~
+~
+0 -1 18621
+S
+#18676
+Narrow Passage~
+The walls seem to close in on you, as the passage here becomes quite narrow.
+The exits are north and east.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18680
+D1
+~
+~
+0 -1 18675
+S
+#18677
+Dim Tunnel~
+A small dim tunnel winds it's way through the cavern.  The rough
+walls hold a sconce which casts very little light for the area.  The exits
+are to the north and the west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18678
+D3
+~
+~
+0 -1 18675
+S
+#18678
+Dripping Corridor~
+From the ceiling above you the water continuously drips, making the
+path slick with moisture.  The exits are north, south and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18682
+D2
+~
+~
+0 -1 18677
+D3
+~
+~
+0 -1 18679
+S
+#18679
+Passages~
+A dark damp passage continues, small animal foot prints can be seen
+in the ancient dust that covers the rough stone floor.  The exits are north, 
+south, east and west.  
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18683
+D1
+~
+~
+0 -1 18678
+D2
+~
+~
+0 -1 18675
+D3
+~
+~
+0 -1 18680
+S
+#18680
+Underground Chamber~
+A stream of water cascades from a crack near the ceiling, down the wall
+and into a pool.  Small fish can be seen swimming under the surface of 
+the clear water.  The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18684
+D1
+~
+~
+0 -1 18679
+D2
+~
+~
+0 -1 18676
+D3
+~
+~
+0 -1 18681
+S
+#18681
+Breezy Way~
+Through a fissure in the wall, a strange breeze seems to whistle through
+it.  The exits are north and east.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18686
+D1
+~
+~
+0 -1 18680
+S
+#18682
+Small Alcove~
+A small dark alcove, etched out in the north wall, contains a golden
+statue of some ancient god.  The exits are south and west.
+~
+0 2097160 13
+D2
+~
+~
+0 -1 18678
+D3
+~
+~
+0 -1 18683
+S
+#18683
+Narrow Passage~
+The walls seem to close in on you, as the passage here becomes quite 
+narrow.  The exits branch of in many directions.  The exits are east, west 
+and south.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18682
+D2
+~
+~
+0 -1 18679
+D3
+~
+~
+0 -1 18684
+S
+#18684
+Dark Grotto~
+Stalagmite towers reaching from ceiling to the floor of the grotto.
+The narrow path winds around the pillars towards the three exits.  The exits
+are north, south and east.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18692
+D1
+~
+~
+0 -1 18683
+D2
+~
+~
+0 -1 18680
+D3
+~
+~
+0 -1 18686
+S
+#18685
+Dark Gallery~
+Dark winged creatures hang from the ceiling above your head.  High
+pitched squeals can be heard, along with the occasional flap.  The exit
+leads southeast.
+~
+0 2097152 13
+D8
+~
+~
+0 -1 18673
+S
+#18686
+Bleak Corridor~
+A well worn path, through the rubble strewn corridor, winds through the
+cavern.  The exits are north, south and east.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18691
+D1
+~
+~
+0 -1 18684
+D2
+~
+~
+0 -1 18681
+D3
+~
+~
+0 -1 18687
+S
+#18687
+Ancient Passage~
+A dark damp passage continues through the cave, small footprints can
+be seen in the ancient dust on the floor.  The exits are north, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18690
+D1
+~
+~
+0 -1 18686
+D3
+~
+~
+0 -1 18688
+S
+#18688
+Dim Tunnel~
+A sconce attached to the stone wall, provides the only dim light in this
+area of the cavern.  The light flickers and dances upon the rough surface of 
+the wall.  The exits are north and east.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18689
+D1
+~
+~
+0 -1 18687
+S
+#18689
+Stalagmite Gallery~
+Stalagmite hangs from the ceiling, casting eerie shadows on the walls of the 
+passage way.  The exits are north, south  and northeast.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18690
+D2
+~
+~
+0 -1 18688
+D6
+~
+~
+0 -1 18693
+S
+#18690
+Narrow Mezzanine~
+The passage narrows, making it difficult to get by the jagged edges of
+the walls.  In the crevices of the wall, mushrooms and other fungi grow
+quite well.  The exits are east, south and west.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18691
+D2
+~
+~
+0 -1 18687
+D3
+~
+~
+0 -1 18689
+S
+#18691
+Dark Gallery~
+Dark winged creatures hang from the ceiling above your head.  High
+pitched squeals can be heard, along with the occasional flap.  The exits
+are north, west, east and south.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18694
+D1
+~
+~
+0 -1 18692
+D2
+~
+~
+0 -1 18686
+D3
+~
+~
+0 -1 18690
+S
+#18692
+Dim Tunnel~
+Small ancient markings, drawn upon the caves smooth walls, line
+this part of the cave.  Flickering of light can be seen to the south.  The
+exits are south, west and northeast.
+~
+0 2097160 13
+D2
+~
+~
+0 -1 18684
+D3
+~
+~
+0 -1 18691
+D6
+~
+~
+0 -1 18696
+S
+#18693
+Dark Grotto~
+Stalagmite towers reaching from the ceiling to the floor of the cave, glisten
+with moisture.  The path tends to wind in between the pillars.  The exits are
+north, east and southwest.
+~
+0 2097164 13
+D0
+~
+~
+0 -1 18699
+D1
+~
+~
+0 -1 18694
+D9
+~
+~
+0 -1 18689
+S
+#18694
+Humid Spa~
+Contrasting to the cool damp air of the cavern, you have stumbled across
+a steaming pool of a clear blue-green water.  The air is heavy with 
+humidity and thick with steam.  A bar of soap and a towel have neatly been
+left on a near by rock slab, beside the pool.  The exits are east, west 
+and south.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18695
+D2
+~
+~
+0 -1 18691
+D3
+~
+~
+0 -1 18693
+S
+#18695
+Dripping Corridor~
+From the ceiling above you, the water continuously drips from the stream
+coming from the west.  The floor of the cavern is slippery.  The exits 
+are north, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18697
+D1
+~
+~
+0 -1 18696
+D3
+~
+~
+0 -1 18694
+S
+#18696
+Forked Paths~
+The tunnel has come to a fork in the path that branches in all directions.
+The exits are west, northeast, northwest and southwest.
+~
+0 2097160 13
+D3
+~
+~
+0 -1 18695
+D6
+~
+~
+0 -1 18641
+D7
+~
+~
+0 -1 18697
+D9
+~
+~
+0 -1 18692
+S
+#18697
+Open Chamber~
+A large open chamber with smooth stone walls and pillars of stone
+that reach the ceiling.  The feel of the area is that the chamber is not a
+natural occurrence, it was somehow created.  The exits are north 
+south, west and southeast.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18701
+D2
+~
+~
+0 -1 18695
+D3
+~
+~
+0 -1 18698
+D8
+~
+~
+0 -1 18696
+S
+#18698
+Dark Gallery~
+Dark winged creatures hang from the ceiling above your head. Fluttering
+of their wings and the high pitched squeal can be heard all around you.
+The exits are east and west.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18697
+D3
+~
+~
+0 -1 18699
+S
+#18699
+Narrow Passage~
+The passage narrows, making the path difficult to navigate past
+the jagged edges of walls.  In the crevices of the walls the mushrooms
+and other fungi grow quite well in the cool damp air.  The exits are northeast 
+east and south.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18698
+D2
+~
+~
+0 -1 18693
+D6
+~
+~
+0 -1 18700
+S
+#18700
+Breezy Way~
+Through a fissure in the west wall, a strange breeze seems to whistle
+through it.  The exits are north, east and southwest.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18704
+D1
+~
+~
+0 -1 18701
+D9
+~
+~
+0 -1 18699
+S
+#18701
+Crawl Way~
+A small crawl space, with a ceiling that is quite low, leads you to
+the other exits.  The exits are north, south, west and northeast.
+~
+0 8 13
+D0
+~
+~
+0 -1 18703
+D2
+~
+~
+0 -1 18697
+D3
+~
+~
+0 -1 18700
+D6
+~
+~
+0 -1 18702
+S
+#18702
+Eerie Quiet~
+Not a sound can be heard, a stillness surrounds you.  A draft of 
+cool air blows against your face.  The exits are north, west and southwest.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18706
+D3
+~
+~
+0 -1 18703
+D9
+~
+~
+0 -1 18701
+S
+#18703
+Dripping Corridor~
+From the ceiling above you water continuously drips, making the path
+slick and hard to navigate.  The exits are north, south, east and west.
+~
+0 2097160 13
+D0
+~
+~
+0 -1 18705
+D1
+~
+~
+0 -1 18702
+D2
+~
+~
+0 -1 18701
+D3
+~
+~
+0 -1 18704
+S
+#18704
+Narrow Mezzanine~
+The passage narrows, making it quite difficult to get by the jagged 
+edges of the caverns walls.  In the crevices of the stone walls the mushrooms
+and other fungi grow quite well in the cool damp air.  The exits are east,
+south, west and northeast.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18703
+D2
+~
+~
+0 -1 18700
+D3
+~
+~
+0 -1 18707
+D6
+~
+~
+0 -1 18705
+S
+#18705
+Dim Tunnel~
+Rubble and dust is everywhere making the dark passage very hard 
+to navigate.  Not a soul has been in this area in what seems to be a 
+lifetime.  The exits are east, south and southwest.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18706
+D2
+~
+~
+0 -1 18703
+D9
+~
+~
+0 -1 18704
+S
+#18706
+Small Alcove~
+A small dark alcove, etched out of the north wall, contains a golden
+statue of a god.  The exits are south and west.
+~
+0 2097160 13
+D2
+~
+~
+0 -1 18702
+D3
+~
+~
+0 -1 18705
+S
+#18707
+Chasm~
+A large, wide crack which descends deep into the caverns floor.  A
+small narrow path follows the edge of the chasm.  The exits are east
+which takes you back into the main cavern or northwest and southwest.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18704
+D7
+~
+~
+0 -1 18708
+D9
+~
+~
+0 -1 18712
+S
+#18708
+Dark Pit~
+The wide crack opens up to a large dark pit in the floor of the cavern.
+You are unable to see the bottom of the pit.  A narrow awkward path
+leads around the edge of the pit.  The exits are west and southeast.
+~
+0 2097160 13
+D3
+~
+~
+0 -1 18709
+D8
+~
+~
+0 -1 18707
+S
+#18709
+Dark Pit~
+The narrow path winds around the edge of the pit.  Placed up against
+the edge of the pit is a rickety wooden ladder, reaching down into the
+depths of the dark pit.  The exits are east, down and southwest.
+~
+0 2097164 13
+D1
+~
+~
+0 -1 18708
+D5
+~
+~
+0 -1 18713
+D9
+~
+~
+0 -1 18710
+S
+#18710
+Dark Pit~
+A barely visible path leads around the jagged edge of the pit below.
+The exits are northeast and southeast.
+~
+0 2097160 13
+D6
+~
+~
+0 -1 18709
+D8
+~
+~
+0 -1 18711
+S
+#18711
+Dark Pit~
+The wide crack opens up to a large dark pit, the bottom of which
+is not visible due to the darkness.  The walls of the cavern reach far above
+you.  The exits are northwest and east.
+~
+0 2097160 13
+D1
+~
+~
+0 -1 18712
+D7
+~
+~
+0 -1 18710
+S
+#18712
+Dark Pit~
+A narrow path winds its way around the edge of the dark pit, which is full
+of rubble and wet with moisture.  The exits are west and northeast.
+~
+0 2097160 13
+D3
+~
+~
+0 -1 18711
+D6
+~
+~
+0 -1 18707
+S
+#18713
+Bottom of the Pit~
+A rickety ladder leans against the cool damp walls of the dark pit.
+Above you a faint light glimmers from the torches, giving you just
+your very soul.  There are several tunnels when you take a look
+around you.  A chanting seems to echo through the room.
+~
+0 2359308 13
+D1
+~
+~
+0 -1 18719
+D4
+~
+~
+0 -1 18709
+S
+#18714
+Darkened Path~
+The smooth flagstone path continues deeper into the woods.  The 
+woods are dark and ferns grow along side the little used path.  
+The scent of the pines surrounds you, along with the sound of the
+birds.  To the south leads back through the woods and east there
+is a small cabin in the distance. 
+~
+0 0 3
+D1
+~
+~
+0 -1 18715
+D2
+~
+~
+0 -1 18608
+S
+#18715
+The Pine Path~
+The path continues through the tall towering pines.  Old pine needles
+lay think on the forest floor, making your footfalls almost silent.
+The ferns and berry bushes brush against your legs as you pass by
+them.  The path continues to the west and further east you see a 
+small clap board cabin in the distance.  Going north will bring you 
+upon a clearing.
+~
+0 0 3
+D0
+~
+~
+0 -1 18716
+D1
+~
+~
+0 -1 18717
+D2
+~
+~
+0 -1 18756
+D3
+~
+~
+0 -1 18714
+S
+#18716
+A peaceful clearing.~
+As you look around a sense of peace and tranquility comes over
+you.  This clearing is surrounded with pine trees that tower far
+over your head.  They seem to be one hundred years old.  Above you 
+the sky peeks through the tops of the trees, showing the beautiful
+heaven above you.  In the furthest corner of the clearing is an
+old oak tree.  As you take a closer look you notice there are 
+initials carved into the bark of the old tree.  D loves A is what the 
+carving says.  The path leads back south. 
+~
+0 0 3
+D2
+~
+~
+0 -1 18715
+S
+#18717
+Before the Humble Hut~
+You have come upon a small clap board hut, nestled in between the
+towering pines.  The path leads up to the front door of the cabin.
+Dozens of varied kinds of wildflowers grow around the foundation of the
+cabin.  The smell is heavenly and the birds here are certainly more
+cheerful.  The path west will take you back through the forest and
+continuing east will take you through the front door of the cabin.
+~
+0 0 3
+D0
+~
+~
+0 -1 18771
+D1
+~
+~
+0 -1 18718
+D3
+~
+~
+0 -1 18715
+S
+#18718
+Humble Hut~
+You have come upon your most pleasant of dreams.  Surrounding you
+on all sides is the most wonderful assortment of sweets you have
+ever seen.  The tables and shelves hold glass jars filled to the brim
+with wonderfully sticky concoctions.  Behind the counter an old Chesyli 
+shopkeeper works hard at dipping strawberries into chocolate.
+~
+0 12 0
+D3
+~
+~
+0 -1 18717
+S
+#18719
+Stone Tunnel~
+A slippery wet, cobbled stone floor leads you down through and unknown
+destiny.  Muted candle light flickers through the room. Some distant 
+sound lulls you into a sense of security.  Something is terribly different 
+here.  Should you proceed further?
+~
+0 1056776 13
+D1
+~
+~
+0 -1 18720
+D3
+~
+~
+0 -1 18713
+S
+#18720
+The Lost Tomb~
+The cobbled stone pathway echoes your every footstep.  Somehow there is
+a way out of here.  The whole surrounding area is starting to look the
+same.  Through the torch light, the moss and rough walls make interesting
+patterns and plays tricks upon your eyes.
+~
+0 1318924 13
+D0
+~
+~
+0 -1 18729
+D1
+~
+~
+0 -1 18721
+D3
+~
+~
+0 -1 18719
+S
+#18721
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.  
+~
+0 3416064 13
+D0
+~
+~
+0 -1 18728
+D1
+~
+~
+0 -1 18722
+D3
+~
+~
+0 -1 18720
+S
+#18722
+The Lost Tomb~
+The cobbled stone pathway echoes your every footstep.  Somehow there is
+a way out of here.  The whole surrounding area is starting to look the
+same.  Through the torch light, the moss and rough walls make interesting
+patterns and plays tricks upon your eyes.
+~
+0 3416064 13
+D0
+~
+~
+0 -1 18727
+D1
+~
+~
+0 -1 18723
+D3
+~
+~
+0 -1 18721
+S
+#18723
+The Lost Tomb~
+The cobbled stone pathway echoes your every footstep.  Somehow there is
+a way out of here.  The whole surrounding area is starting to look the
+same.  Through the torch light, the moss and rough walls make interesting
+patterns and plays tricks upon your eyes.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18726
+D3
+~
+~
+0 -1 18722
+S
+#18724
+Lost Tomb~
+The cobbled stone pathway echoes your every footstep.  Somehow there is
+a way out of here.  The whole surrounding area is starting to look the
+same.  Through the torch light, the moss and rough walls make interesting
+patterns and plays tricks upon your eyes.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18725
+D3
+~
+~
+0 -1 18725
+S
+#18725
+The Lost Tomb~
+The cobbled stone pathway echoes your every footstep.  Somehow there is
+a way out of here.  The whole surrounding area is starting to look the
+same.  Through the torch light, the moss and rough walls make interesting
+patterns and plays tricks upon your eyes.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18734
+D2
+~
+~
+0 -1 18724
+D3
+~
+~
+0 -1 18726
+S
+#18726
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark cool air. The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18733
+D1
+~
+~
+0 -1 18725
+D2
+~
+~
+0 -1 18723
+D3
+~
+~
+0 -1 18727
+S
+#18727
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark cool air. The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18732
+D1
+~
+~
+0 -1 18726
+D2
+~
+~
+0 -1 18722
+D3
+~
+~
+0 -1 18728
+S
+#18728
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark cool air. The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18731
+D1
+~
+~
+0 -1 18727
+D2
+~
+~
+0 -1 18721
+D3
+~
+~
+0 -1 18729
+S
+#18729
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark cool air. The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18730
+D1
+~
+~
+0 -1 18728
+D2
+~
+~
+0 -1 18720
+S
+#18730
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark cool air. The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18739
+D1
+~
+~
+0 -1 18731
+D2
+~
+~
+0 -1 18729
+S
+#18731
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18738
+D1
+~
+~
+0 -1 18732
+D2
+~
+~
+0 -1 18728
+D3
+~
+~
+0 -1 18730
+S
+#18732
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18737
+D1
+~
+~
+0 -1 18733
+D2
+~
+~
+0 -1 18727
+D3
+~
+~
+0 -1 18731
+S
+#18733
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18736
+D1
+~
+~
+0 -1 18734
+D2
+~
+~
+0 -1 18633
+D3
+~
+~
+0 -1 18732
+S
+#18734
+The Lost Tomb~
+The cobbled stone pathway echoes your every footstep.  Somehow there is
+a way out of here.  The whole surrounding area is starting to look the
+same.  Through the torch light, the moss and rough walls make interesting
+patterns and plays tricks upon your eyes.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18735
+D2
+~
+~
+0 -1 18725
+D3
+~
+~
+0 -1 18733
+S
+#18735
+The Lost Tomb~
+The cobbled stone pathway echoes your every footstep.  Somehow there is
+a way out of here.  The whole surrounding area is starting to look the
+same.  Through the torch light, the moss and rough walls make interesting
+patterns and plays tricks upon your eyes.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18744
+D2
+~
+~
+0 -1 18734
+D3
+~
+~
+0 -1 18736
+S
+#18736
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18743
+D1
+~
+~
+0 -1 18735
+D2
+~
+~
+0 -1 18733
+D3
+~
+~
+0 -1 18737
+S
+#18737
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18742
+D1
+~
+~
+0 -1 18736
+D2
+~
+~
+0 -1 18732
+D3
+~
+~
+0 -1 18738
+S
+#18738
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18741
+D1
+~
+~
+0 -1 18737
+D2
+~
+~
+0 -1 18731
+D3
+~
+~
+0 -1 18739
+S
+#18739
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18740
+D1
+~
+~
+0 -1 18738
+D2
+~
+~
+0 -1 18730
+S
+#18740
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D1
+~
+~
+0 -1 18741
+D2
+~
+~
+0 -1 18739
+S
+#18741
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D1
+~
+~
+0 -1 18742
+D2
+~
+~
+0 -1 18738
+D3
+~
+~
+0 -1 18740
+S
+#18742
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D1
+~
+~
+0 -1 18743
+D2
+~
+~
+0 -1 18738
+D3
+~
+~
+0 -1 18741
+S
+#18743
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D0
+~
+~
+0 -1 18745
+D1
+~
+~
+0 -1 18744
+D2
+~
+~
+0 -1 18736
+D3
+~
+~
+0 -1 18742
+S
+#18744
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416072 13
+D2
+~
+~
+0 -1 18735
+D3
+~
+~
+0 -1 18743
+S
+#18745
+The Lost Tomb~
+Cobbled stone, wet with the dampness of the dark, cool air.  The light
+flickers and plays upon the jagged outcropping of the walls.  The whole
+surrounding area is starting to look the same.
+~
+0 3416076 13
+D0
+~
+~
+0 -1 18746
+D2
+~
+~
+0 -1 18743
+S
+#18746
+Waymoot's Tomb~
+Deep beneath Waymoot Mountain lies a long forgotten tomb.  The eerie
+silence is broken by a rumbling ahead of you.  The walls here have been
+rubbed smooth by some unknown force. The cold damp floor shows signs of
+something being dragged along..unwillingly maybe?  
+~
+0 3153928 13
+D0
+~
+~
+0 -1 18770
+D1
+~
+~
+0 -1 18754
+D2
+~
+~
+0 -1 18745
+D3
+~
+~
+0 -1 18749
+S
+#18747
+The Old Majhar's Lair~
+An ancient Mahjar dragon makes his residence here.  Some sort of bed
+is made up in the furthest corner of the room.  The walls here are also
+smooth buy some mystical force.  The damp cool air surrounds you like 
+a blanket of fog.  The eerie quiet is broken only by the loud
+breaths from the old Mahjar himself.
+~
+0 3145996 13 0 0 7
+D1
+~
+~
+0 -1 18748
+D2
+~
+~
+0 -1 18769
+> act_prog p has entered the game.~
+if ispc($n)
+mptrans 0.$n 12033
+mpat 0.$n mpforce 0.$n look
+else
+endif
+~
+|
+S
+#18748
+The Keep~
+Beneath your feet, crunching sounds can be heard.  Looking down, you
+notice that you're standing on piles of old bones.  Seems to be where the
+old Majhar Dragon had kept all the poor souls that he had defeated.
+Piles of bones and skulls lie around the cavern waiting for some poor 
+soul to take heed of this warning.
+~
+0 8 13
+D3
+~
+~
+0 -1 18747
+> act_prog p has entered the game.~
+if ispc($n)
+mptrans 0.$n 12033
+mpat 0.$n mpforce 0.$n look
+else
+endif
+~
+|
+S
+#18749
+Waymoot's Tomb~
+Upon entering this hollow chamber your footsteps echo upon the smooth
+walls.  A chanting can be heard, coming at you from all sides.  The dirt
+floor is swept clean. The walls and roof of this chamber have been honed
+smooth.  To the east there is Waymoot's Tomb.  
+~
+0 3153928 13
+D0
+~
+~
+0 -1 18750
+D1
+~
+~
+0 -1 18746
+D2
+~
+~
+0 -1 18765
+D7
+~
+~
+0 -1 18757
+D8
+~
+~
+0 -1 18755
+S
+#18750
+Forgotten Tomb~
+The deep, guttural chanting is slowly becoming louder and closer.  This
+part of the chamber seems to be a bit more inhabitated.  Footprints and
+lighted torches line the walls.  South will take you back to the 
+chamber and west will bring you closer to the chanting.
+~
+0 3153928 13
+D2
+~
+~
+0 -1 18749
+D3
+~
+~
+0 -1 18751
+S
+#18751
+Echoing Chamber~
+The guttural chanting now surrounds your very being, infiltrating your
+every nerve.  The soft candlelight flickers throughout the cavern.
+To the east the chamber continues and further ahead will take you towards
+the chanting.
+~
+0 3153928 13
+D1
+~
+~
+0 -1 18750
+D2
+~
+~
+0 -1 18752
+S
+#18752
+The Worship Hall~
+The chanting is now in tune with your heart, you feel at peace with yourself
+and the world around you.  The hall is a grand room with tapestries and a 
+large throne at the end of the hall.  An ancient group of people are sitting
+upon large pillows.  This is where the chanting is coming from.  Nothing 
+seems to disturb their worshipping.  Taking the northern exit will bring
+you to one of the chambers.  There is a room west of here.
+~
+0 3153928 13 0 0 5
+D0
+~
+~
+0 -1 18751
+D3
+~
+~
+0 -1 18753
+S
+#18753
+The Anti Chamber~
+A small wooden desk, with little adornment, sits pushed up against the
+far wall.  A few papers and personal items are scattered throughout the
+room.  Upon the far wall, above the desk, is a detailed carving of a 
+monstrous dragon.  The worship hall is through the east exit.
+~
+0 3153928 13
+D1
+~
+~
+0 -1 18752
+E
+"monsterous dragon"~
+Looking more closely, the intricate carving must have taken years to finish.
+Noticing this must be the dragon that the ancient people have been worshiping
+for a life time.  This dragon seems to be an all knowing and strong dragon.
+~
+S
+#18754
+Tomb's Corridor~
+A chanting can dimly be heard over the rumbling of something that is
+coming from the west.  The large cut stone blocks line this passage
+causing the light to create interesting patterns upon the wall.  The
+west exit will take you through to the Waymoot's Tomb and going further 
+north will take you further down the passage.
+~
+0 3153928 13
+D2
+~
+~
+0 -1 18755
+D3
+~
+~
+0 -1 18746
+S
+#18755
+Cold Storage~
+Upon the stone floor, baskets and wooden crates fill this room.  Small
+baskets of apples sit in one corner of this room.  Other baskets 
+containing yellow blossoms and still others that hold some sort of
+meat.  Wonder what else they have stored in here... 
+~
+0 3153928 13
+D7
+~
+~
+0 -1 18749
+S
+#18756
+Fortunes Found~
+Upon entering the multi-colored tent, you sense that there
+is more to this tent then meets the eye.  The lamps are draped in sheer
+bright colored fabric. A rotund Homana fortune teller sits opposite 
+the entrance to the tent, behind a old oaken table.  The table is draped 
+with many layers of the same sheer fabric that covers the lamps.  Upon
+the table is one single adronment, the crystal ball.  A small sign hangs
+discreetly on the back tent wall.
+~
+0 3153932 0
+D0
+~
+~
+0 -1 18715
+E
+sign~
+Hello, welcome to my small humble tent.  If you wish to have your fortunes
+read, please just say 'I wish my fortune read.'
+ 
+                              Thank you,
+                               Management
+~
+S
+#18757
+Quiet Corner~
+The sound of a water can be heard in the distance.  The stone walls
+echo the sound of chanting, as it seems to be coming all around you.
+A few runes have been sketched into the walls, depicting a scene with
+an ancient dragon.  The southeast exit takes you to a Forgotten
+Tomb.  The exit to the east will take you to the The Fountain.
+~
+0 3153928 13
+D1
+~
+~
+0 -1 18758
+D8
+~
+~
+0 -1 18749
+S
+#18758
+The Fountain~
+A large ornate fountain sits in the center of this room.  Water sprouts
+forth from this fountain in bursts and streams.  A few stone benches 
+circle the fountain.  Up above the fountain is a crack in the ceiling that
+allows sunlight to filter through.  Growing beside the fountain are 
+some sort of roses.
+~
+0 3153928 13
+D0
+~
+~
+0 -1 18759
+D3
+~
+~
+0 -1 18757
+S
+#18759
+A Common Room~
+Upon entering, the breeze from opening the door causes papers to flutter
+to the ground.  A small, narrow bed is pushed up against one of the far
+walls.  This room is cluttered with papers and books. The bed is not 
+at all comfortable looking.  To the south you will find the fountain again.
+~
+0 3153928 13
+D2
+~
+~
+0 -1 18758
+S
+#18760
+Narrow Hall~
+The walls seemed to have closed in upon themselves.  The narrow hall is 
+only wide enough for one to pass through.  This way seems to be used 
+quite a bit.  The stone floor has been swept clean of debris.  The
+way to the east will take you back to the Forgotten Tomb.
+~
+0 3153928 13
+D1
+~
+~
+0 -1 18750
+S
+#18761
+Carvern Crossroads~
+Looking around you, you notice there are four directions to take.  Both
+to the east and the west there are what seems to be doors in the distance.
+Looking towards the south there is a hallway that leads into the darkness.
+To the north another hollow corridor leads further into the darkness and
+a faint rumbling seems to be eminating from that direction.
+~
+0 3153928 13
+D0
+~
+~
+0 -1 18764
+D1
+~
+~
+0 -1 18763
+D2
+~
+~
+0 -1 18770
+D3
+~
+~
+0 -1 18762
+> act_prog p has entered the game.~
+if ispc($n)
+mptrans 0.$n 12033
+mpat 0.$n mpforce 0.$n look
+else
+endif
+~
+|
+S
+#18762
+Caved in Hall~
+The hallway seems to have caved in.  Blocks and boulders have blocked
+the hall.  There is not a chance that there is a way to get around this 
+obstacle.  Going back east will bring you back to the hallway. 
+~
+0 3153928 13
+D1
+~
+~
+0 -1 18761
+> act_prog p has entered the game.~
+if ispc($n)
+mptrans 0.$n 12033
+mpat 0.$n mpforce 0.$n look
+else
+endif
+~
+|
+S
+#18763
+A Warm Fire~
+A warm fire greets you upon entering this humble den.  A small cot
+pushed up against the far wall, with a small table next to it.  A dirty
+oil lamp is glowing in the oppisite corner of the room.  A cluttered
+workbench is situated next to the door. There are small bottles and 
+beakers on narrow shelves above the workbench.  The door will bring you
+back out to the hall.
+~
+0 3153928 13
+D3
+~
+~
+0 -1 18761
+> act_prog p has entered the game.~
+if ispc($n)
+mptrans 0.$n 12033
+mpat 0.$n mpforce 0.$n look
+else
+endif
+~
+|
+S
+#18764
+Rumbling Corridor~
+Through the cold stone walls, a vibration seems to be coming with every
+rumble.  The walls are roughly cut stone with a floor that is uneven
+and slippery.  Both north and south of here there are intersections.
+~
+0 3153928 13
+D0
+~
+~
+0 -1 18765
+D1
+~
+~
+0 -1 18762
+D2
+~
+~
+0 -1 18761
+> act_prog p has entered the game.~
+if ispc($n)
+mptrans 0.$n 12033
+mpat 0.$n mpforce 0.$n look
+else
+endif
+~
+|
+S
+#18765
+Waymoot Corridor~
+You are in a long stone hallway with heavy oaken doors on either side of
+you.  The cold stone walls, dripping with blood, surround you.  Seems 
+that something has just recently been dragged through here.  Further 
+north the the rumblings have increased and the walls echo thier calling.
+The southern exit is another long hallway.
+~
+0 3153928 13
+D0
+~
+~
+0 -1 18768
+D2
+~
+~
+0 -1 18764
+D3
+~
+~
+0 -1 18767
+> act_prog p has entered the game.~
+if ispc($n)
+mptrans 0.$n 12033
+mpat 0.$n mpforce 0.$n look
+else
+endif
+~
+|
+S
+#18766
+Worship Chapel~
+At the far end of the room, a small but formal altar sits pushed up
+against the wall.  An old set of candlesticks sit upon the once white
+linen.  Dust and grime now cover everything that is in this once loved
+place.  A few oak benches placed around the alter gives the impression 
+that this room was vacated in a hurry.  The west exit will bring you
+back to the hallway.
+~
+0 3153928 13
+D3
+~
+~
+0 -1 18765
+S
+#18767
+A Lonely Shop~
+This small heavily furnished room is cluttered with tables and chairs 
+and odd nick nacks.  The dust and cobwebs abound everywhere.  The earthen
+floor is the only clean swept area in the whole room.  Behind the table 
+that is center of the room is a Old Chesyli.  
+~
+0 3153928 0
+D1
+~
+~
+0 -1 18765
+> act_prog p has entered the game.~
+if ispc($n)
+mptrans 0.$n 12033
+mpat 0.$n mpforce 0.$n look
+else
+endif
+~
+|
+S
+#18768
+Rumbling Corridor~
+Through the cold stone walls, a vibration seems to be coming with every
+rumble.  The walls are roughly cut stone with a floor that is uneven
+and slippery.  South will bring you to the intersection and further north
+will bring you closer to the rumbling.
+~
+0 3153928 13
+D0
+~
+~
+0 -1 18769
+D2
+~
+~
+0 -1 18765
+> act_prog p has entered the game.~
+if ispc($n)
+mptrans 0.$n 12033
+mpat 0.$n mpforce 0.$n look
+else
+endif
+~
+|
+S
+#18769
+Before the Lair~
+What seems to surround you is the rumbling that has turned into a 
+roar.  To the north, a great door that been knocked off its hinges,
+lies forgotten.  The walls and floor are vibrating from the roar that is
+coming from the north.  The south will take you back through the hallway
+and lead you away from the roar.
+~
+0 3145736 13
+D0
+~
+~
+0 -1 18747
+D2
+~
+~
+0 -1 18768
+> act_prog p has entered the game.~
+if ispc($n)
+mptrans 0.$n 12033
+mpat 0.$n mpforce 0.$n look
+else
+endif
+~
+|
+S
+#18770
+Waymoot Halls~
+Surrounding you in the darkness are cold stone walls that have been
+embedded with dirt from a century ago.  The stone floor seems to have
+deep scratches from a long forgotten monster, that seems to have lived
+down here at one time.  North of here there is an intersection but 
+through the darkness you cannot see farther.  The south will take you to
+Waymoot Tomb.
+~
+0 3153932 13
+D0
+~
+~
+0 -1 18761
+D2
+~
+~
+0 -1 18765
+> act_prog p has entered the game.~
+if ispc($n)
+mptrans 0.$n 12033
+mpat 0.$n mpforce 0.$n look
+else
+endif
+~
+|
+S
+#18771
+A Hidden Alley~
+A small poorly lit path leads past the Humble Hut.  The sweet smell
+of candy seems to waft this way.  The poor lighting allows you to see
+little.  The path seems to cut through some sort of trees and bushes.
+Up ahead there is a light that can barely be seen and to the south
+will bring you back to where the Shops are.
+~
+0 0 2
+D2
+~
+~
+0 -1 18717
+D7
+~
+~
+0 -1 18772
+S
+#18772
+A Bend in the Path~
+A sharp turn in the path cuts more deeply into the forest.  The trees 
+loom above you, seemingly closing in.  Still up ahead you can see a
+flickering through the trees and a the sound of thump thump.  To the 
+southeast the path continues.
+~
+0 0 3
+D6
+~
+~
+0 -1 18773
+D8
+~
+~
+0 -1 18771
+S
+#18773
+A Tanners Hut~
+The path leads right to the Old tanner.  A few hides are stretched out
+on poles and there is one on a table that he seems to be working on.
+Tools and hides lie everywhere in this disorganized leanto.
+~
+0 3145740 0
+D9
+~
+~
+0 -1 18772
+S
+#18774
+Floating in a void~
+~
+0 4 1
+S
+#18783
+Floating in a void~
+~
+0 1073741828 1
+S
+#18784
+Floating in a void~
+~
+0 1073741828 1
+S
+#18785
+Floating in a void~
+~
+0 1073741828 1
+S
+#18786
+Floating in a void~
+~
+0 1073741828 1
+S
+#18787
+Floating in a void~
+~
+0 4 1
+S
+#0
+
+
+#RESETS
+O 1 18600 1 18600
+O 1 18601 1 18600
+D 0 18601 0 1
+M 1 18606 1 18602
+E 1 18612 1 5
+E 1 18750 1 16
+D 0 18602 2 1
+M 1 18602 1 18603
+E 1 18605 1 17
+E 1 18679 1 8
+M 1 18627 1 18604
+E 1 18677 1 8
+E 1 18678 1 5
+M 1 18604 1 18605
+E 1 18650 1 16
+M 1 18628 1 18605
+D 0 18605 0 1
+D 0 18605 1 1
+M 1 18630 1 18606
+M 1 18629 1 18606
+D 0 18606 3 1
+M 1 18631 1 18607
+D 0 18607 2 1
+M 1 18632 1 18608
+M 1 18633 1 18609
+M 1 18632 2 18610
+D 0 18610 0 1
+M 1 18601 1 18611
+M 1 18636 1 18611
+D 0 18611 2 1
+M 1 18635 1 18612
+E 1 18625 1 3
+E 1 18681 1 16
+O 1 18698 1 18612
+M 1 18634 2 18613
+M 1 18637 1 18614
+E 1 18748 1 3
+M 1 18638 1 18615
+E 1 18651 1 17
+D 0 18616 1 1
+D 0 18616 3 1
+M 1 18603 1 18617
+E 1 18749 1 16
+D 0 18617 1 1
+M 1 18607 1 18618
+E 1 18608 1 5
+E 1 18610 1 12
+E 1 18609 1 7
+E 1 18641 1 16
+O 1 18603 1 18618
+O 1 18607 1 18618
+D 0 18618 3 1
+M 1 18610 1 18621
+M 1 18617 1 18622
+M 1 18615 1 18623
+M 1 18623 1 18624
+E 1 18690 1 1
+E 1 18694 1 12
+M 1 18625 1 18625
+M 1 18653 1 18626
+E 1 18686 1 16
+E 1 18618 1 12
+M 1 18611 2 18627
+M 1 18611 2 18627
+M 1 18652 1 18628
+E 1 18636 1 12
+E 1 18659 1 14
+M 1 18624 1 18629
+E 1 18664 1 14
+E 1 18612 1 5
+M 1 18657 2 18630
+M 1 18644 1 18630
+E 1 18628 1 16
+M 1 18639 1 18631
+M 1 18644 2 18632
+E 1 18628 1 16
+M 1 18644 2 18633
+E 1 18628 1 16
+M 1 18618 1 18634
+E 1 18663 1 11
+M 1 18617 2 18634
+M 1 18655 1 18635
+E 1 18624 1 16
+E 1 18622 1 19
+M 1 18617 1 18638
+M 1 18640 1 18638
+E 1 18655 1 16
+M 1 18648 1 18639
+M 1 18657 5 18640
+M 1 18619 1 18642
+E 1 18684 1 10
+M 1 18625 1 18643
+M 1 18612 1 18644
+E 1 18689 1 16
+M 1 18605 1 18646
+E 1 18668 1 3
+E 1 18632 1 1
+M 1 18611 2 18647
+M 1 18641 1 18648
+E 1 18654 1 14
+M 1 18647 1 18650
+M 1 18610 2 18652
+M 1 18621 1 18652
+E 1 18692 1 11
+M 1 18608 2 18653
+M 1 18617 2 18653
+M 1 18655 1 18654
+E 1 18624 1 16
+E 1 18622 1 19
+E 1 18613 1 10
+M 1 18658 3 18654
+M 1 18666 1 18655
+M 1 18622 1 18656
+E 1 18621 1 16
+E 1 18667 1 6
+M 1 18626 1 18659
+E 1 18660 1 16
+E 1 18661 1 19
+M 1 18652 1 18660
+E 1 18636 1 12
+M 1 18679 1 18661
+E 1 18696 1 16
+E 1 18613 1 10
+M 1 18640 1 18663
+E 1 18692 1 11
+M 1 18656 1 18664
+M 1 18624 1 18665
+E 1 18664 1 14
+M 1 18621 1 18665
+E 1 18692 1 11
+M 1 18646 2 18667
+E 1 18688 1 5
+E 1 18687 1 7
+M 1 18641 1 18668
+E 1 18654 1 14
+M 1 18645 1 18671
+M 1 18644 2 18672
+E 1 18628 1 16
+M 1 18608 2 18675
+M 1 18609 1 18675
+M 1 18648 2 18676
+M 1 18646 1 18676
+E 1 18687 1 7
+E 1 18688 1 5
+M 1 18613 1 18677
+E 1 18682 1 16
+M 1 18614 1 18677
+E 1 18636 1 12
+M 1 18658 2 18679
+M 1 18612 1 18679
+E 1 18689 1 16
+M 1 18614 2 18684
+M 1 18615 3 18684
+M 1 18609 2 18687
+M 1 18657 1 18687
+M 1 18640 1 18688
+E 1 18632 1 1
+M 1 18621 1 18688
+E 1 18629 1 11
+M 1 18617 2 18689
+M 1 18610 2 18690
+M 1 18608 2 18691
+M 1 18609 3 18691
+M 1 18685 1 18692
+E 1 18683 1 3
+E 1 18653 1 14
+M 1 18622 1 18693
+E 1 18652 1 1
+M 1 18608 3 18694
+M 1 18658 3 18695
+M 1 18623 2 18696
+M 1 18643 1 18697
+M 1 18644 1 18698
+E 1 18628 1 16
+M 1 18648 2 18700
+M 1 18655 1 18703
+E 1 18624 1 16
+E 1 18613 1 10
+M 1 18621 1 18704
+E 1 18658 1 20
+M 1 18626 1 18705
+E 1 18629 1 11
+M 1 18642 1 18706
+E 1 18656 1 16
+M 1 18658 2 18707
+M 1 18658 3 18709
+M 1 18631 2 18714
+M 1 18632 3 18714
+O 1 12410 1 18715
+M 1 18659 1 18718
+G 1 18648 1
+G 1 18649 1
+G 1 18647 1
+G 1 18646 1
+G 1 18645 1
+G 1 18643 1
+G 1 18644 1
+M 1 18662 1 18720
+M 1 18663 1 18721
+M 1 18664 1 18722
+M 1 18665 1 18723
+M 1 18666 2 18724
+M 1 18669 1 18727
+M 1 18670 1 18728
+M 1 18671 1 18729
+M 1 18664 1 18730
+M 1 18666 1 18731
+M 1 18664 1 18733
+M 1 18671 1 18735
+M 1 18670 1 18736
+M 1 18664 1 18737
+M 1 18668 1 18738
+M 1 18667 1 18739
+E 1 18613 1 10
+E 1 18659 1 14
+M 1 18666 1 18740
+M 1 18665 1 18741
+M 1 18616 1 18747
+E 1 18617 1 11
+E 1 18618 1 12
+E 1 18695 1 10
+M 1 18654 1 18752
+E 1 18689 1 16
+E 1 18642 1 14
+E 1 18619 1 3
+M 1 18660 1 18756
+E 1 18663 1 11
+M 1 18646 2 18758
+M 1 18673 1 18767
+G 1 18643 1
+G 1 18644 1
+G 1 18645 1
+G 1 18648 1
+M 1 18633 2 18772
+M 1 18677 1 18773
+S
+
+
+#SHOPS
+ 18659    0 10 26  2  0   120  90         8 22    ; old cheysuli shopkeep
+ 18673   26 10  0  3  2   120  90         8 19    ; Aiden 
+0
+
+
+#REPAIRS
+0
+
+
+#SPECIALS
+M  18616 spec_cast_mage
+M  18618 spec_breath_acid
+M  18622 spec_breath_frost
+M  18623 spec_cast_cleric
+M  18626 spec_cast_cleric
+M  18637 spec_breath_frost
+M  18639 spec_cast_cleric
+M  18642 spec_cast_mage
+M  18643 spec_cast_cleric
+M  18646 spec_cast_mage
+M  18647 spec_cast_mage
+M  18648 spec_thief
+M  18654 spec_cast_adept
+M  18655 spec_cast_cleric
+M  18656 spec_cast_cleric
+M  18658 spec_thief
+M  18660 spec_breath_frost
+M  18665 spec_breath_lightning
+M  18678 spec_breath_any
+S
+
+
+#$

@@ -1,0 +1,1941 @@
+#AREA   Chapel of the Gods~
+
+
+
+#AUTHOR Paladia~
+
+#RANGES
+5 50 5 65
+$
+
+#FLAGS
+0
+
+#ECONOMY 0 1398692
+
+#HELPS
+0 $~
+
+#MOBILES
+#12000
+Palace Guard~
+a Chapel guard~
+A menacing guard stands here protecting the innocent.
+~
+~
+67 4194432 0 C
+35 0 0 10d30+2000 5d5+5
+350000 0
+8 8 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+2 3 0 0 1 4 2
+20 0 0 0 3072 0 96 2
+#12001
+Loyal Follower~
+a loyal follower~
+A loyal follower of Paladia smiles happily.
+~
+~
+67 4194304 0 C
+43 0 0 1000d1+3000 3d2+0
+150000 0
+8 8 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 3
+0 0 0 0 2100224 0 64 2
+#12002
+Devout Follower~
+a Devout Follower~
+A devout worshiper of Paladia screams in ecstacy.
+~
+~
+1 4194304 0 C
+50 0 -100 30d20+1000 3d3+5
+150000 0
+8 8 0
+13 13 13 18 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 2
+20 0 0 0 2100225 0 544 2
+#12003
+Quiet Priest~
+a Quiet Priest~
+A quiet priest goes about his daily duties.
+~
+~
+65 4194472 1000 C
+50 0 -100 100d10+2500 5d10+0
+250000 0
+8 8 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 3
+40 0 0 0 1051648 0 32 2
+#12004
+Head Priest~
+the Head priest~
+A quiet priest goes about his daily duties.
+~
+~
+67 306184360 1000 C
+50 0 -100 10d10+4900 5d10+0
+250000 0
+8 8 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 3
+0 0 0 0 1051648 0 1242038304 4102
+#12005
+Angry Guard~
+a angry guard~
+A angry guard wants to know why you are here.
+~
+~
+131175 4194432 0 C
+53 0 -130 6000d1+0 10d3+5
+350000 0
+8 8 1
+13 13 13 16 13 13 13
+0 0 0 0 0
+2 3 0 0 5 4 3
+40 0 0 0 2100224 0 96 524294
+#12006
+Sleeping Priest~
+a sleeping priest~
+A Priest lies here and sleeps heavily.
+~
+~
+67 306184360 1000 C
+50 0 -100 5555d1+4444 5d10+10
+250000 0
+8 8 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 3
+20 0 0 0 1051648 0 1242038304 4102
+> fight_prog 100~
+c gas
+~
+|
+#12007
+Avatar Paladia~
+the Avatar of Paladia~
+An avatar to a god sits on his throne pondering your exsistence.
+~
+~
+67 373301376 1000 C
+50 0 0 20000d1+10000 15d4+15
+1500000 0
+8 8 1
+18 13 13 13 13 13 13
+-30 -30 -30 -30 -30
+0 3 0 0 1 1 4
+75 20 0 8192 3148800 0 192 524422
+> fight_prog 100~
+c earth
+c earth
+if rand(30)
+laugh
+'You fool, do you think you can handle the avatar to Paladia?
+cack
+mpdamage $r 400
+shake
+'Big mistake, it will be your last!
+else
+if rand(20)
+,cackles insanely
+'You think you can handle a God, are you that stupid?
+mpechoat $r The Avatar attempts to cleave your skull in two
+mpechoaround $r The Avatar attempts to cleave $r in two
+mpdamage $r 600
+endif
+endif
+at blacksmith rem all
+at blacksmith repa amulet
+at blacksmith repa div
+at 1 wear all
+~
+> act_prog p DISARMS you!~
+laugh
+shake
+'Nice try little man.
+mpdamage $n 200
+wie div
+~
+|
+#12008
+Importanat Guard~
+A Important Guard~
+A Important man guards the Avatar to the north.
+~
+~
+131175 4194432 0 C
+53 0 -130 6000d1+0 10d3+5
+350000 0
+8 8 1
+13 13 13 16 13 13 13
+0 0 0 0 0
+2 3 0 0 5 4 3
+30 0 0 0 2100224 0 134217920 12294
+#12009
+High Priest~
+A high priest of the Avatar~
+A high priest of the avatar sits here doing his duty.
+~
+~
+67 373293224 1000 C
+50 0 -100 3000d1+8000 5d10+0
+250000 0
+8 8 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 1 0 0 1 1 3
+30 0 0 8192 1051648 0 1242038272 4102
+> fight_prog 100~
+c earth
+c earth
+c earth
+if rand(30)
+Smile
+'Sorry I have to do this to you, but you have opposed my beliefs.
+at 1 c heal
+at 1 c heal
+at 1 c heal
+mpecho The priest brings down the Rod of the Gods upon $r.
+mpdamage $r 300
+else
+if rand(25)
+, prays to the heavens for help.
+mpecho A large ball of lightining strikes $r several times!
+mpdamage 200
+mpdamage 140 
+mpdamage 60
+mpechoat $r The lighting finally disappears.
+endif
+endif
+~
+|
+#12010
+Gift Shop Priest~
+A gift shop priest~
+A Priest runs a shop here
+~
+~
+3 4194344 0 C
+50 0 0 1d1+30000 4d5+100
+1000000 0
+8 8 2
+18 18 18 18 13 13 18
+0 0 0 0 0
+1 0 0 0 3 2 6
+0 0 2047 0 3156992 0 48 3
+> act_prog p gives you Lowbie token.~
+if level($n) <= 25
+and goldamt($n) >= 1000000
+mpforce give 1000000 coins gift
+nod
+'You are clearly gifted beyond your years, let me redeem this token for you.
+mpoload 12013 2
+mpoload 12014 2
+mpoload 12015 2
+mpoload 12017 2
+give hat $n
+give deadly $n
+give death $n
+give skull $n
+drop token
+sac token
+'Have a nice day.
+else
+Shake
+'I dislike you, moron, get out of my face.
+drop token
+sac token
+endif
+~
+> speech_prog p take me back~
+nod $n
+mptransfer $n doorman
+~
+> fight_prog 100~
+mpslay $n
+~
+|
+#12011
+Doorman~
+A doorman~
+A doorman stands here watching the people walk by.
+~
+~
+195 4202496 1000 C
+55 7 0 30000d1+0 20d20+200
+50 15000
+8 8 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 10
+0 0 0 0 3157293 0 0 0
+> greet_prog 100~
+if level($n) <= 25
+'Hey, this area is really not for you, but maybe out Sunday school is more your
+'Speed, if you think youd like to go, please just say 'Sunday School'
+'And if you would like to visit out gift shop say 'Gift shop'
+smile $n
+else
+Bow $n
+'Good day.
+endif
+~
+> speech_prog p Sunday School~
+if level($n) <= 25
+mpechoat $n You quickly run off to suday school.
+mptrans 0.$n 12030
+else
+shake
+'Its only for youngins, go to regular church.
+endif
+~
+> speech_prog p gift shop~
+if level($n) > 25
+shake
+say You can find your own way into the chapel.
+else
+say As you wish.
+mpechoat $n The doorman opens the front gate and takes you to the gift shop.
+tell $n If you would like to come back here, just say 'take me back'.
+mptrans $n 12029
+endif
+~
+> fight_prog 100~
+mpecho $I hurries off to attend to a new customer.
+mpgoto 1
+c heal 
+c heal 
+c heal 
+c heal 
+c heal 
+c heal 
+c heal 
+c heal 
+c heal 
+mpgoto 12001
+say Leave, i abhor violence.
+~
+|
+#12012
+Small Toddler~
+a young toddler~
+A young toddler plays quietly.
+~
+~
+65 0 900 C
+13 4 0 12d12+120 1d7+7
+3500 6000
+8 8 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#12013
+Child~
+A little child~
+A child smiles at you.
+~
+~
+2051 0 0 C
+16 0 -8 10d4+250 2d8+3
+20000 52000
+8 8 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+0 0 0 0 0 0 0 0
+#12014
+Baby~
+a Baby~
+A baby stares at you interested.
+~
+~
+2051 0 500 S
+3 16 6 5d3+33 2d4+3
+75 400
+8 8 1
+#12015
+Teenager~
+Teenager~
+A teenager watches the teacher intently.
+~
+~
+2051 0 0 C
+20 0 -8 10d10+1000 3d10+4
+45000 52000
+8 8 1
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+7 5 0 0 0 0 0 0
+#12016
+Young Adult~
+Young Adult~
+A young adult is here pondering the meaning of life.
+~
+*sniffle* How depressing.  The essence before you conveys such a feeling of 
+unspeakable loss and depression that you can't help but cry.  You can feel 
+your knees grow weak from the emotion, and it becomes an effort to stand.
+~
+1 524288 0 C
+25 0 -100 10d20+2000 5d12+6
+0 0
+8 8 0
+13 13 13 13 13 13 0
+0 0 0 0 0
+3 0 0 0 131073 131072 0
+20 0 0 0 0 0 0 0
+#12017
+Teacher~
+The Teacher~
+The teacher is showing the class how to study.
+~
+Nothing in all the realms is this evil, not Anakin, not Darrek, not Arcane, not
+Semaj, nothing. Your heart freezes with dread, you throat tightens, and your
+flesh chills.  You try to scream, but nothing comes out.  This  is  pure  evil.
+Lets think about it, what did you ever hate more than the thought of a person
+who's sole job in life was to give you tests and make you do homework?
+~
+67 524456 0 C
+30 0 0 5000d1+1000 9d9+5
+666 0
+8 8 0
+13 13 13 13 13 13 13
+0 0 0 0 0
+0 3 0 0 1 1 0
+15 5 0 0 0 0 0 524292
+> death_prog 50~
+mpecho As the teacher dies, she looks at you and says here, take this.
+mpoload 12016
+give token $r
+~
+|
+#0
+
+
+#OBJECTS
+#12000
+Chapel Sword~
+Chapel Sword~
+A holy sword lies here glowing with power.~
+Divine power~
+5 525667 8193
+0 11 3 1
+3 0 0
+A
+1 1
+A
+2 1
+A
+18 6
+A
+19 4
+A
+13 35
+#12001
+Amulet Gods Paladia~
+Amulet of the Gods~
+An Amulet glows with power.~
+~
+9 35875 5
+15 15 0 0
+2 500000 50000
+A
+13 20
+A
+18 4
+A
+19 3
+A
+17 -20
+#12002
+Robe of the Gods~
+Robe of the Gods~
+A Robe glowing of power hurts you vision.~
+~
+9 3395 1025
+0 0 0 0
+1 10000 1000
+A
+19 3
+A
+18 5
+A
+17 -10
+A
+25 4
+A
+3 1
+A
+13 25
+#12003
+Angelic light~
+Angelic Light~
+A Sihmmering staff glows brightly.~
+~
+9 3139 16385
+20 0 0 0
+1 10 1
+A
+12 75
+A
+3 2
+A
+4 2
+A
+13 35
+A
+18 5
+A
+19 5
+> wear_prog 100~
+mpechoat $n As you hold the Rod, you feel it cast several spells upon you.
+c arm $n
+c sag $n
+c 'dragon wit' $n
+~
+|
+#12004
+Chapel key~
+a Chapel key~
+A Chapel key is here on the ground.~
+~
+18 0 1
+3 0 0 0
+5 1 0
+#12005
+Steel key~
+A Steel key~
+A Steel key glimmers in the light.~
+~
+18 0 1
+1 0 0 0
+5 1 0
+#12006
+Holy Mace~
+Holy Mace~
+A mace of amazing power hums majesticly.~
+~
+5 9014594 8193
+20 14 3 7
+5 1000000 100000
+A
+19 10
+A
+18 10
+A
+24 -2
+A
+22 -2
+A
+27 4
+A
+12 100
+A
+13 50
+#12007
+Divine Power~
+Divine Power~
+A sword of unimaginable power glows brightly.~
+~
+5 1074416962 8193
+20 22 2 2
+5 1000000 100000
+A
+24 -2
+A
+22 -2
+A
+27 4
+A
+26 8192
+A
+18 12
+A
+19 10
+A
+13 100
+A
+12 50
+> wear_prog 100~
+mpechoat $n The power eminating from the sword starts to enter your body.
+mpechoat $n Untold strength and power flows into you.
+mpechoat $n As you wield it a light from the heavens surrounds you.
+mpechoaround $n A light from the heavens surrounds $n.
+mpechoaround $n You can see the power flow from the sword to $n.
+c sanc $n
+c bless $n
+~
+> remove_prog 100~
+mpechoat $n Removing the sword you feel as if all the power has left you.
+mpechoat $n You feel as if you havent slept, ate or drank for a entire week.
+mpechoaround $n The light from above dissipates from around $n.
+~
+> sac_prog 10~
+mpechoat $n As you sacrifice the Sword, you realise you have done a good thing.
+mpecho The Divine Power starts to glow, brighter and brighter, till soon you 
+mpecho cannot even see it anymore.  You hear a voice call down from the heavens
+mpecho and Pronnounce 'For such a beautiful sacrifice we will reward you.'
+mpecho The Sword dissapears and in its place you see a amazing blade.
+mpoload 12008 90
+mpat $n give might $n
+~
+|
+#12008
+Heaven Might~
+Heavens Might~
+Something that has fallen from heaven emenates power.~
+~
+5 527626 8193
+20 12 4 2
+5 1000000 100000
+A
+1 1
+A
+2 1
+A
+31 1
+A
+23 -5
+A
+24 -5
+A
+22 -5
+A
+18 11
+A
+19 14
+A
+13 125
+A
+12 110
+> wear_prog 100 ~
+mpechoat $n As you wield the Heavenly weapon power encompasses you!
+mpechoat $n You know that you are damn near invincible now.
+mechoaround $n As $n wields his weapon he grows substantially stonger.
+mpechoaround $n $n is huge, you wish you had a sword like his.
+~
+> remove_prog 100~
+mpechoat $n As you release this weapon you feel as weak as a kitten.
+mpechoat $n the power has left you, leaving you with the desire to use it again
+mpechoaround $n As $n removes the sword, $n looks almost human again.
+~
+|
+#12009
+Chapel Blessing~
+a Chapel's Blessing~
+A Chapel's blessing is on the ground.~
+~
+10 321 1
+25 28 28 -1
+1 25000 2500
+E
+violet~
+Textures of both deep red and pale purple swirl together inside the vial.
+~
+#12010
+Chapel Candy~
+Chapel Candy~
+A Cute little pice of candy with a cross lays on the ground.~
+~
+26 0 1
+20 89 88 221
+1 50000 5000
+#12011
+Chapel Vision~
+a Chapel's Vision~
+A piece of candy with a translucent cross is on the ground.~
+~
+26 0 1
+20 44 -1 -1
+1 50000 5000
+#12012
+Holy Strength~
+Holy Strength~
+A Dark black pill with a silver cross gets contaimnated by the ground.~
+~
+26 0 1
+39 206 228 227
+1 25000 2500
+#12013
+Skull ring~
+Skull Ring~
+A Ring with a skull and crossbones is on the ground.~
+~
+9 65 3
+5 5 0 0
+1 2000 200
+A
+13 5
+A
+2 1
+A
+18 2
+A
+1 1
+#12014
+Death and Decadance~
+Death and Decadance~
+You see your future death.~
+~
+9 0 5
+10 10 0 0
+3 50000 5000
+A
+4 1
+A
+5 2
+A
+2 1
+A
+13 5
+A
+18 3
+#12015
+Deadly Visions~
+Deadly Visions~
+A long rod with some notches is here.~
+~
+9 524288 16385
+5 5 0 0
+1 1234 123
+E
+sets~
+Regular equipment setup:              Equipment setup during dual wield:
+-----------------------------------------------------------------------------
+<used as light>                       <used as light>
+<worn on finger>                      <worn on finger>
+<worn on finger>                      <worn on finger>
+<worn around neck>                    <worn around neck>
+<worn around neck>                    <worn around neck>
+<worn on body>                        <worn on body>
+<worn on head>                        <worn on head>
+<worn on legs>                        <worn on legs>
+<worn on feet>                        <worn on feet>
+<worn on hands>                       <worn on hands>
+<worn on arms>                        <worn on arms>
+<worn as shield>                      <worn about body>
+<worn about body>                     <worn about waist>
+<worn about waist>                    <worn around wrist>
+<worn around wrist>                   <worn around wrist>
+<worn around wrist>                   <wielded>
+<wielded>                             <dual wielded>
+<held>                                <worn on ears>
+<worn on ears>                        <worn on eyes>
+<worn on eyes>
+~
+E
+guide book~
+Some helpful files for those new to mudding:
+ 
+SPAM -        Will explain what spam is, and why you should not do it.
+CONFIG -      Will teach you about our configuration menu.
+SCORE -       Will tell you about your characters personal score sheet.
+MOVEMENT -    Will teach you various commands for moving about the game.
+OBJECTS -     Will teach you various commands to use your equipment.
+CONTAINER -   Will teach you about using containers to holdblongings.
+CHANNELS -    Will teach you about communication with other players.
+GROUP -       Will help you with grouping with other adventurers.
+COMBAT -      Will teach you how to choose, start and stop a fight.
+DEATH -       Will tell you about the death experience in the game.
+PRACTICE -    Will teach you about training spells, skills, and weapons.
+INFORMATION - Will cover ways to find certain types of information.
+ 
+To use these help files, type HELP <topic> from the topics listed in
+capital letters above.
+~
+A
+3 1
+A
+5 1
+A
+4 1
+A
+13 10
+A
+12 10
+A
+18 2
+A
+19 2
+#12016
+Lowbie Token~
+Lowbie token~
+A token for lowbies is here~
+~
+13 0 1
+0 0 0 0
+10 0 0
+#12017
+Graduation Hat~
+A Graduation Hat~
+Someone's graduation hat is lying here in a heap.~
+~
+9 524294 131073
+10 3 0 0
+2 5700 570
+A
+19 1
+A
+18 1
+A
+13 10
+A
+3 2
+A
+4 2
+#12018
+Band Aid~
+Band Aid~
+A Band Aid lies here waiting to be used.~
+~
+9 2621504 3
+10 10 0 0
+3 100 10
+A
+13 25
+A
+12 75
+#12019
+Mental Strength~
+Mental Strength~
+A Robe of shimmering light lies here.~
+~
+9 0 1025
+15 15 0 1
+1 300000 30000
+A
+3 1
+A
+12 100
+A
+4 1
+#12020
+Friendship Bracelet~
+Friendship Bracelet~
+A Small band is just asking to be picked up.~
+~
+9 82 4097
+20 0 0 0
+1 1000000 100000
+A
+19 1
+A
+1 1
+A
+12 30
+A
+13 10
+#0
+
+
+#ROOMS
+#12000
+Entrance to the Holy Chapel~
+Walking along the Forest you notice a beautiful chapel to the north, it 
+is incredibly tall and looks as if it might actually be touching the 'Gods'
+The pathway widens to a beautifully paved rad to the north meaning it must be
+well traversed.  The Outer beauty can mean only one thing, the inside must be
+twice as good, for everyone knows the best part of a chapel is inside.  They
+must be doing incedibly well, as you see several wealthy nobles leave the 
+chapel, leading you to believe that this may be the place for you.
+~
+0 0 1
+D0
+Enteranceway
+~
+~
+0 -1 12001
+D2
+~
+~
+0 -1 21201
+S
+#12001
+Entranceway~
+Upon entering the first portion of the chapel, it dawns upon you it is heavily
+guarded, for there are two very large guards at the enterance.  They wear 
+beautiful steel outfits, quite polished and in incredibly good condition.
+Amazingly enough, you think the Doors may be made of Steel, making you wonder
+why on earth any chapel would need such protection, the guard should be able to
+handle most things that come by meaning harm, perhaps theres more to this 
+chapel than meets the eye.
+~
+0 256 1 0 0 4
+D0
+~
+gate~
+1063 1 12002
+D2
+Enterance to the Holy Chapel
+~
+~
+0 -1 12000
+S
+#12002
+Inside the Chapel~
+Looking at all the beautiful pictuesque items, you feel as if you may be in a
+museum as opposed to a chapel.  There are stained-glass-windows in the ceiling
+an amazing sculpture of what appears to be a incredibly hansome and muscular 
+god, and incredible artworks lining the walls.  The carpet looks to be a hand
+crafted oriental one from one of the best artisans you have ever seen.  There
+are gold torches embedded in the walls allowing you to see in even the darkest
+nights.  There are 3 signs posted here :
+One pointing to the east says : Confessions
+One pointing to the west says : Donation Box
+One pointing to the north says : Altar
+~
+0 8200 0
+D0
+Souther end of the chapel
+~
+~
+0 -1 12009
+D1
+Next to confessionals
+~
+~
+0 -1 12003
+D2
+~
+gate~
+1063 1 12001
+D3
+Next to the Donation Box
+~
+~
+0 -1 12007
+S
+#12003
+Next to confessionals~
+The small hallway has the same lush carpet and beautiful paintings that the
+other places you have visted in this chapel, however as you look at it, it
+seems to make you feel more guilty, as if you have sinned and they know it.
+To the east you see you a confession box where you can hopefully get this 
+guilty feeling away.
+A sign pointing east says 'Confessions'
+A sign pointing west says 'Donation box, Altar'
+~
+0 8200 0
+D1
+Inside the Confessional Box
+~
+~
+0 -1 12004
+D3
+Inside the Chapel
+~
+~
+0 -1 12002
+S
+#12004
+Inside the Confessional Box~
+On the inside of the confession box, you feel very cramped, for it is quite 
+small.  It is covered with red velvet and have plush satin seats, which look
+very vell used.  There is a small screen against the south wall where you can
+vaguely make out the appearance of a priest who will willing hear your 
+confessions if you so choose.
+~
+0 8200 0
+D2
+~
+~
+2099211 -1 12005
+D3
+Next to confessionals
+~
+~
+0 -1 12003
+S
+#12005
+Other Side of Confessional box~
+On the other side of the confessional box, you almost feel guilt.  You could
+pertend to be the priest and hear everyone elses sins, and then use it as dirt
+later.  Imagine the horror you could cause.  You now understand the horrible
+pressure most priests have to bear when they do this.  The priests have a very
+comfortable chair to sit on, the perfect level to hear perfectly, and next to
+the chair is a table, with a glass of milk and cookies on it along with a Book?
+~
+0 8200 0
+D0
+~
+~
+2099211 -1 12004
+D3
+Priest chamber
+~
+~
+0 -1 12006
+S
+#12006
+Priest chamber~
+This is one of the many rest chambers for the priests.  This one is quite
+un-lavish in comparison to the rest of the chapel.  Making you realise that
+clearly not all people are into this for the money. There are 3 beds and you 
+think thank maybe they work in 3 shifts of 8 hours each.  It looks as if they
+have confessionals down to a science.
+~
+0 8200 0
+D1
+Other Side of the confessional Box
+~
+~
+0 -1 12005
+S
+#12007
+Next to the Donation Box~
+The small hallway with its relatively lush carpets and beautifuly painted
+ceiling pales in comparison to the rest of the amazing chapel.  As much as
+You'd like to stay and view it all, but you feel as it you may be missing more 
+of it if you don't move on.  A sign saying 'Donation Box' points to the west.
+A sigh saying 'Confessions' points to the east.
+~
+0 8200 0
+D1
+Inside the chapel
+~
+~
+0 -1 12002
+D3
+Donation Box
+~
+~
+0 -1 12008
+S
+#12008
+Donation Box~
+The donation box coveres the entire west side of the room, its not as much a
+box as its a 'vault'.  Forget trying to take it all, your not ever sure how to
+get to it.  The wall is made of solid steel and theres a hole where you can 
+drop the gold bags.  Its a very well run operation, if you do say so yourself.
+To the south you see a small shop.
+~
+0 8200 0
+D1
+Next to Donation Box
+~
+~
+0 -1 12007
+D2
+Vatican Gift Shop
+~
+~
+0 -1 12029
+S
+#12009
+Southern end of the Chapel~
+Rows and rows of pews dominate this huge room of worship.  The room has a
+warmth and a feel all it's own.  At the front is a large altar where a High
+Priest runs a service for all those present.  The ceiling has an amazing
+painting covering it leading you to believe it is the most beutiful thing you
+have ever seen.
+~
+0 8200 0
+D0
+~
+~
+0 -1 12010
+D1
+southeastern section
+~
+~
+0 -1 12015
+D2
+Inside the Chapel
+~
+~
+0 -1 12002
+D3
+Southwestern section
+~
+~
+0 -1 12016
+S
+#12010
+Middle of the Chapel~
+Rows and rows of pews dominate this huge room of worship.  The room has a
+warmth and a feel all it's own.  At the front is a large altar where a High
+Priest runs a service for all those present.  The ceiling has an amazing
+painting covering it leading you to believe it is the most beutiful thing you
+have ever seen.
+~
+0 8200 0
+D0
+The front of the chapel
+~
+~
+0 -1 12011
+D1
+Middle of chapel
+~
+~
+0 -1 12018
+D2
+Shouthern end of the chapel
+~
+~
+0 -1 12009
+D3
+Middle of the chappel
+~
+~
+0 -1 12017
+S
+#12011
+The Front of the Chapel~
+The front of the chapel is no different than anywhere else, extravagant and
+beautiful. There is a walkway to the east that looks very unused.  To the 
+north is the temple altar where a High Priest runs service.  The ceiling has 
+the most beautiful painting you have ever seen.  There is this amazing red
+oriental rug underneath you feet.
+~
+0 8200 0
+D0
+Before the altar
+~
+~
+0 -1 12013
+D1
+Enterance to the back
+~
+~
+0 -1 12012
+D2
+Middle of the chapel
+~
+~
+0 -1 12010
+S
+#12012
+Enterance to the back~
+To the north you notice a door with the sign 'Unless you work here please 
+stay out, or we will be forced to take measures to force you out.'  Even 
+though it doesnt make you feel as wanted as you would have liked it sure makes
+you want to know what is behind that door.  The door is clearly locked, now
+who could possibly have the key?
+~
+0 8200 0
+D0
+corridor
+~
+~
+1063 3 12019
+D3
+The front of the chapel
+~
+~
+0 -1 12011
+S
+#12013
+Before the Altar~
+You have reached the area right before the altar, a priest is here setting up
+candles for people to blow out.  He is also cleaning up everything in sight.
+The amazing oriental rug contunes to the north and the south, otherwise this
+areas is quite barren.
+~
+0 8200 0
+D0
+The altar
+~
+~
+0 -1 12014
+D2
+The front of the chapel
+~
+~
+0 -1 12011
+S
+#12014
+The Altar~
+The altar is a huge golden slab that must weigh a ton.  It has amazing jewels
+engraved in the sides, mainly diamonds and large opals the size of small
+animals. On top of the altar there is an enscription that reads : To my 
+wonderful followers.  Leading you to believe that they didnt make this 
+themselves.
+~
+0 8200 0
+D2
+~
+~
+0 -1 12013
+S
+#12015
+South Eastern End of the Chapel~
+Rows and rows of pews dominate this huge room of worship.  The room has a
+warmth and a feel all it's own.  At the front is a large altar where a High
+Priest runs a service for all those present.  The ceiling has an amazing
+painting covering it leading you to believe it is the most beutiful thing you
+have ever seen.
+~
+0 8200 0
+D0
+Middle of the Chapel
+~
+~
+0 -1 12018
+D3
+Southern end of chapel
+~
+~
+0 -1 12009
+S
+#12016
+South Western Section of the Chapel~
+Rows and rows of pews dominate this huge room of worship.  The room has a
+warmth and a feel all it's own.  At the front is a large altar where a High
+Priest runs a service for all those present.  The ceiling has an amazing
+painting covering it leading you to believe it is the most beutiful thing you
+have ever seen.
+~
+0 8200 0
+D0
+Middle of the chapel
+~
+~
+0 -1 12017
+D1
+Southern end of chapel
+~
+~
+0 -1 12009
+S
+#12017
+Middle of the Chapel~
+Rows and rows of pews dominate this huge room of worship.  The room has a
+warmth and a feel all it's own.  At the front is a large altar where a High
+Priest runs a service for all those present.  The ceiling has an amazing
+painting covering it leading you to believe it is the most beutiful thing you
+have ever seen.
+~
+0 8200 0
+D1
+Middles of chappel
+~
+~
+0 -1 12010
+D2
+Southwest section
+~
+~
+0 -1 12016
+S
+#12018
+Middle of the Chapel~
+Rows and rows of pews dominate this huge room of worship.  The room has a
+warmth and a feel all it's own.  At the front is a large altar where a High
+Priest runs a service for all those present.  The ceiling has an amazing
+painting covering it leading you to believe it is the most beutiful thing you
+have ever seen.
+~
+0 8200 0
+D2
+southeastern end
+~
+~
+0 -1 12015
+D3
+Middle of chapel
+~
+~
+0 -1 12010
+S
+#12019
+Corridor~
+The elegant corridor has a nice blue satin carpet, and a beautiful black marble
+wall. Glowing lights hang from the ceiling lighting your way, there is however
+sounds coming from up the corrdor, warning you about what may be coming next.
+~
+0 8200 0
+D0
+corridor
+~
+~
+0 -1 12020
+D2
+Enterance to the back
+~
+~
+1063 3 12012
+S
+#12020
+Corridor~
+The elegant corridor has a nice blue satin carpet, and a beautiful black marble
+wall. Glowing lights hang from the ceiling lighting your way, there is however
+sounds coming from up the corrdor, warning you about what may be coming next.
+~
+0 8200 0
+D0
+Turn in corridor
+~
+~
+0 -1 12021
+D2
+corridor
+~
+~
+0 -1 12019
+S
+#12021
+Turn in Corridor~
+The elegant corridor has a nice blue satin carpet, and a beautiful black marble
+wall. Glowing lights hang from the ceiling lighting your way, there is however
+sounds coming from up the corrdor, warning you about what may be coming next.
+~
+0 8200 0
+D2
+Corridor
+~
+~
+0 -1 12020
+D3
+Corridor
+~
+~
+0 -1 12022
+S
+#12022
+Corridor~
+The elegant corridor has a nice blue satin carpet, and a beautiful black marble
+wall. Glowing lights hang from the ceiling lighting your way, there is however
+sounds coming from up the corrdor, warning you about what may be coming next.
+~
+0 8200 0
+D1
+Turn in corridor
+~
+~
+0 -1 12021
+D3
+End of the Corridor
+~
+~
+0 -1 12023
+S
+#12023
+End of the Corridor~
+The elegant corridor has a nice blue satin carpet, and a beautiful black marble
+wall. Glowing lights hang from the ceiling lighting your way, there is however
+sounds coming from up the corrdor, warning you about what may be coming next.
+To the north is a door, which has the name Priests on it.
+~
+0 8200 0
+D0
+Priests Chamber
+~
+~
+3 -1 12024
+D1
+Corridor
+~
+~
+0 -1 12022
+S
+#12024
+Priests Chamber~
+Entering the priest chambers you know something about this one is way different
+than any of the other ones you have seen.  Far to the north looks to be be a 
+throne, which you have never seen in any form in a chapel before.  The 
+chambers look more like a palace than they do a high priests chambers.  The 
+ceiling is at least 25 feet high and the place is adoned with lavash items most
+can only dream of having.  The floor is now a mixture of black and red and 
+looks think and very sturdy, as if it must hold great weights.
+~
+0 8200 0
+D0
+before a throne
+~
+~
+0 -1 12026
+D1
+Priests Washroom
+~
+~
+0 -1 12028
+D2
+~
+~
+3 -1 12023
+D3
+Priests sleeping quaters
+~
+~
+0 -1 12025
+S
+#12025
+Priests sleeping quarters~
+This is where the high priests must sleep.  There are 3 beds here leading you
+to think that maybe, just maybe there might be 3 of them.  However, one of the
+beds is considerably larger than the others, it must belong to the Highest 
+ranking priest here.  There is currently one sleeping soundly in his bed.  he
+doesn't even wake up when you clan ever so loudly into his room.  There is a
+huge fireplace at the north end, which warms up the room considerably.
+~
+0 8200 0
+D1
+~
+~
+0 -1 12024
+S
+#12026
+Before a Throne~
+There is a small amount of stairs here, making you look up to find the throne
+however, before you can get a good look, you see 2 large guards who think you
+dont belong here. They have amazing looking armor with an etheral look to it as
+if its made of magic, which also serves as a benefit of partially blinding you.
+~
+0 8200 0
+D0
+A throne
+~
+~
+0 -1 12027
+D2
+priests chamber
+~
+~
+0 -1 12024
+S
+#12027
+A Throne~
+Entering the throne room you are in total awe.  For an avatar of a god sits
+upon the throne, this is the closest you have been to imortality that you have
+been since you pulled that trick on the teacher back in school so long ago.
+The throne itself must be 20 feet tall, meaning the avatar is at least 30.
+he is an imposing man, who dominates your attention.  No matter how hard you 
+try you cant take your eyes off him and he knows it.
+~
+0 8200 0
+D2
+Before a throne
+~
+~
+0 -1 12026
+S
+#12028
+Priests Washroom~
+The room is where the priests must go to relieve themselves.  Not only is it
+spotless, but there is a beautiful contraption that sprays down water onto
+the lucky priests.  From the water running out of it now it looks steaming hot.
+There is currently a Priest sitting on a stool that looks like it is used for
+waste disposal.  He is very angry at you for barging in on him.
+~
+0 8200 0
+D3
+~
+~
+0 -1 12024
+S
+#12029
+Vatican Gift Shop~
+You have walked into a small gift shop where people can buy momento's of
+thier trip here. The priest is a cute little fellow who looks like he has 
+benn running this shop for years and has it down to a science.  The back 
+wall has a amazing array of potions and pills, and the the east wall are the
+cutest toys you have ever seen.
+~
+0 1056776 0
+D0
+Donation Box
+~
+~
+0 -1 12008
+S
+#12030
+Start of Sunday School~
+You have reched the start of the sunday school.  From here there two classrooms
+one to the east and one to the west.  Both are surprisingly quiet and it makes
+you think that they must run a pretty tight ship.  There is a wooden sign with
+two arrows in it.
+One pointing to the east has 5-14, and the one to the west has 15-25
+~
+0 1056780 0
+D1
+Large Classroom
+~
+~
+0 -1 12031
+D3
+Older Classroom
+~
+~
+0 -1 12037
+> speech_prog Home~
+mpechoat $n You make a quick be-line to the front of the chapel again.
+mpechoaround $n $n leaves Sunday School.
+mptrans $n 12001
+~
+|
+S
+#12031
+Large Room~
+You are a very large room, where children are allowed to roam free and do as
+they so choose and instead of the utter chaos one would expect from such a
+situation it is quite the opposite children are playing peacefully with one
+another and there is a feeling of true love eminating from them all.
+To the west is the enterance, and everywhere else is inside the room.
+~
+0 1056780 0
+D0
+Large Room
+~
+~
+0 -1 12032
+D1
+Large Room
+~
+~
+0 -1 12035
+D2
+Large Room
+~
+~
+0 -1 12033
+D3
+Start of Sunday School
+~
+~
+0 -1 12030
+S
+#12032
+Large Room~
+You are a very large room, where children are allowed to roam free and do as
+they so choose and instead of the utter chaos one would expect from such a
+situation it is quite the opposite children are playing peacefully with one
+another and there is a feeling of true love eminating from them all.
+~
+0 1056780 0
+D1
+Large Room
+~
+~
+0 -1 12036
+D2
+Large Room
+~
+~
+0 -1 12031
+S
+#12033
+Large Room~
+You are a very large room, where children are allowed to roam free and do as
+they so choose and instead of the utter chaos one would expect from such a
+situation it is quite the opposite children are playing peacefully with one
+another and there is a feeling of true love eminating from them all.
+~
+0 1056780 0
+D0
+Large Room
+~
+~
+0 -1 12031
+D1
+Large Room
+~
+~
+0 -1 12034
+S
+#12034
+Large Room~
+You are a very large room, where children are allowed to roam free and do as
+they so choose and instead of the utter chaos one would expect from such a
+situation it is quite the opposite children are playing peacefully with one
+another and there is a feeling of true love eminating from them all.
+~
+0 1056780 0
+D0
+Large Room
+~
+~
+0 -1 12035
+D3
+Large Room
+~
+~
+0 -1 12033
+S
+#12035
+Large Room~
+You are a very large room, where children are allowed to roam free and do as
+they so choose and instead of the utter chaos one would expect from such a
+situation it is quite the opposite children are playing peacefully with one
+another and there is a feeling of true love eminating from them all.
+~
+0 1056780 0
+D0
+Large Room
+~
+~
+0 -1 12036
+D2
+Large Room
+~
+~
+0 -1 12034
+D3
+Large Room
+~
+~
+0 -1 12031
+S
+#12036
+Large Room~
+You are a very large room, where children are allowed to roam free and do as
+they so choose and instead of the utter chaos one would expect from such a
+situation it is quite the opposite children are playing peacefully with one
+another and there is a feeling of true love eminating from them all.
+~
+0 1056780 0
+D2
+Large Room
+~
+~
+0 -1 12035
+D3
+Large Room
+~
+~
+0 -1 12032
+S
+#12037
+Older Classroom~
+The children in this classroom are not children but rather a small gathering
+of young adults.  They are actually quieter than the young children eastward.
+A teacher in the front smiles politely at you and asks you if you would like to
+join but you politely decline.  Undaunted she continues her lesson.
+~
+0 1056780 0
+D0
+Older Classroom
+~
+~
+0 -1 12042
+D1
+Start of Sunday School
+~
+~
+0 -1 12030
+D3
+Older Classroom
+~
+~
+0 -1 12038
+S
+#12038
+Older Classroom~
+The children in this classroom are not children but rather a small gathering
+of young adults.  They are actually quieter than the young children eastward.
+A teacher in the front smiles politely at you and asks you if you would like to
+join but you politely decline.  Undaunted she continues her lesson.
+~
+0 1056780 0
+D0
+Older Classroom
+~
+~
+0 -1 12041
+D1
+Older Classroom
+~
+~
+0 -1 12037
+D3
+Older Classroom
+~
+~
+0 -1 12039
+S
+#12039
+Older Classroom~
+The children in this classroom are not children but rather a small gathering
+of young adults.  They are actually quieter than the young children eastward.
+A teacher in the front smiles politely at you and asks you if you would like to
+join but you politely decline.  Undaunted she continues her lesson.
+~
+0 1056780 0
+D0
+Older Classroom
+~
+~
+0 -1 12040
+D1
+Older Classroom
+~
+~
+0 -1 12038
+S
+#12040
+Older Classroom~
+The children in this classroom are not children but rather a small gathering
+of young adults.  They are actually quieter than the young children eastward.
+A teacher in the front smiles politely at you and asks you if you would like to
+join but you politely decline.  Undaunted she continues her lesson.
+~
+0 1056780 0
+D0
+Older Classroom
+~
+~
+0 -1 12045
+D1
+Older Classroom
+~
+~
+0 -1 12041
+D2
+Older Classroom
+~
+~
+0 -1 12039
+S
+#12041
+Older Classroom~
+The children in this classroom are not children but rather a small gathering
+of young adults.  They are actually quieter than the young children eastward.
+A teacher in the front smiles politely at you and asks you if you would like to
+join but you politely decline.  Undaunted she continues her lesson.
+~
+0 1056776 0
+D0
+Older Classroom
+~
+~
+0 -1 12044
+D1
+~
+~
+0 -1 12042
+D2
+Older Classroom
+~
+~
+0 -1 12038
+D3
+Older Classroom
+~
+~
+0 -1 12040
+S
+#12042
+Older Classroom~
+The children in this classroom are not children but rather a small gathering
+of young adults.  They are actually quieter than the young children eastward.
+A teacher in the front smiles politely at you and asks you if you would like to
+join but you politely decline.  Undaunted she continues her lesson.
+~
+0 1056776 0
+D0
+~
+~
+0 -1 12043
+D2
+Older Classroom
+~
+~
+0 -1 12037
+D3
+Older Classroom
+~
+~
+0 -1 12041
+S
+#12043
+Older Classroom~
+The children in this classroom are not children but rather a small gathering
+of young adults.  They are actually quieter than the young children eastward.
+A teacher in the front smiles politely at you and asks you if you would like to
+join but you politely decline.  Undaunted she continues her lesson.
+~
+0 1056776 0
+D2
+Older Classroom
+~
+~
+0 -1 12042
+D3
+~
+~
+0 -1 12044
+S
+#12044
+Older Classroom~
+The children in this classroom are not children but rather a small gathering
+of young adults.  They are actually quieter than the young children eastward.
+A teacher in the front smiles politely at you and asks you if you would like to
+join but you politely decline.  Undaunted she continues her lesson.
+~
+0 1056776 0
+D1
+Older Classroom
+~
+~
+0 -1 12043
+D2
+Older Classroom
+~
+~
+0 -1 12041
+D3
+Older Classroom
+~
+~
+0 -1 12045
+S
+#12045
+Older Classroom~
+The children in this classroom are not children but rather a small gathering
+of young adults.  They are actually quieter than the young children eastward.
+A teacher in the front smiles politely at you and asks you if you would like to
+join but you politely decline.  Undaunted she continues her lesson.
+~
+0 1056776 0
+D1
+Older Classroom
+~
+~
+0 -1 12044
+D2
+Older Classroom
+~
+~
+0 -1 12040
+S
+#12046
+Floating in a void~
+~
+0 4 1
+S
+#12047
+Floating in a void~
+~
+0 4 1
+S
+#12048
+Floating in a void~
+~
+0 4 1
+S
+#12049
+Floating in a void~
+~
+0 4 1
+S
+#12050
+Floating in a void~
+~
+0 4 1
+S
+#0
+
+
+#RESETS
+M 1 12011 1 12000
+M 1 12000 2 12001
+G 1 12005 1
+E 1 12000 1 16
+M 1 12000 2 12001
+D 0 12001 0 2
+M 1 12001 7 12002
+M 1 12001 7 12002
+D 0 12002 2 2
+M 1 12002 5 12003
+D 0 12004 2 1
+M 1 12003 4 12005
+D 0 12005 0 1
+M 1 12003 4 12006
+M 1 12003 4 12006
+M 1 12002 5 12009
+M 1 12002 5 12012
+D 0 12012 0 2
+M 1 12004 1 12014
+G 1 12004 1
+M 1 12001 7 12015
+M 1 12001 7 12015
+M 1 12001 7 12015
+M 1 12002 5 12015
+M 1 12001 7 12016
+M 1 12002 5 12016
+M 1 12001 7 12017
+M 1 12003 4 12018
+M 1 12005 6 12019
+M 1 12005 6 12019
+O 1 22 1 12019
+D 0 12019 2 2
+M 1 12005 6 12021
+E 1 12000 1 16
+M 1 12005 6 12021
+M 1 12005 6 12023
+M 1 12005 6 12023
+D 0 12023 0 1
+D 0 12024 2 1
+M 1 12006 1 12025
+E 1 12002 1 12
+M 1 12008 2 12026
+M 1 12008 2 12026
+M 1 12007 1 12027
+E 1 12007 1 16
+E 1 12001 1 3
+O 1 22 1 12027
+M 1 12009 1 12028
+E 1 12006 1 16
+E 1 12003 1 17
+M 1 12010 1 12029
+G 1 12012 1
+G 1 12011 1
+G 1 12009 1
+G 1 12010 1
+M 1 12013 3 12031
+M 1 12012 4 12031
+M 1 12012 4 12032
+M 1 12012 4 12033
+M 1 12012 4 12033
+M 1 12014 3 12034
+M 1 12014 3 12034
+M 1 12013 3 12035
+M 1 12013 3 12035
+M 1 12014 3 12036
+M 1 12015 5 12037
+M 1 12015 5 12039
+M 1 12015 5 12039
+M 1 12016 5 12041
+E 1 12020 1 14
+M 1 12016 5 12041
+E 1 12020 1 14
+M 1 12015 5 12042
+M 1 12015 5 12042
+M 1 12016 5 12042
+E 1 12020 1 14
+M 1 12017 1 12044
+E 1 12019 1 12
+E 1 12018 1 1
+M 1 12016 5 12044
+M 1 12016 5 12044
+S
+
+
+#SHOPS
+ 12010    0  0  0  0  0   120 100         0 23    ; A gift shop priest
+0
+
+
+#REPAIRS
+0
+
+
+#SPECIALS
+M  12003 spec_cast_cleric
+M  12004 spec_cast_cleric
+M  12006 spec_cast_cleric
+M  12007 spec_cast_mage
+M  12009 spec_cast_cleric
+S
+
+
+#$

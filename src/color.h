@@ -27,18 +27,19 @@
  *                      Enhanced ANSI parser by Samson                      *
  ****************************************************************************/
 
-void reset_colors( CHAR_DATA * );
-void set_char_color( short AType, CHAR_DATA * ch );
-void set_pager_color( short AType, CHAR_DATA * ch );
-const char *color_str( short AType, CHAR_DATA * ch );
-char *color_align( const char *argument, int size, int align );
-int color_strlen( const char *src );
-char *colorize( const char *txt, DESCRIPTOR_DATA * d );
-int colorcode( const char *src, char *dst, DESCRIPTOR_DATA * d, int dstlen, int *vislen );
+void reset_colors (CHAR_DATA *);
+void set_char_color (short AType, CHAR_DATA * ch);
+void set_pager_color (short AType, CHAR_DATA * ch);
+const char *color_str (short AType, CHAR_DATA * ch);
+char *color_align (const char *argument, int size, int align);
+int color_strlen (const char *src);
+char *colorize (const char *txt, DESCRIPTOR_DATA * d);
+int colorcode (const char *src, char *dst, DESCRIPTOR_DATA * d, int dstlen,
+	       int *vislen);
 
 
 #define COLOR_DIR "../color/"
-DECLARE_DO_FUN( do_color );
+DECLARE_DO_FUN (do_color);
 
 /*
  * Color Alignment Parameters
@@ -102,13 +103,13 @@ DECLARE_DO_FUN( do_color );
 #define BACK_WHITE    	"\033[57m"
 
 /* Other miscelaneous ANSI tags that can be used */
-#define ANSI_RESET	"\033[0m"   /* Reset to terminal default */
-#define ANSI_BOLD		"\033[1m"   /* For bright color stuff */
-#define ANSI_ITALIC	"\033[3m"   /* Italic text */
-#define ANSI_UNDERLINE  "\033[4m"   /* Underline text */
-#define ANSI_BLINK	"\033[5m"   /* Blinking text */
-#define ANSI_REVERSE    "\033[7m"   /* Reverse colors */
-#define ANSI_STRIKEOUT  "\033[9m"   /* Overstrike line */
+#define ANSI_RESET	"\033[0m"	/* Reset to terminal default */
+#define ANSI_BOLD		"\033[1m"	/* For bright color stuff */
+#define ANSI_ITALIC	"\033[3m"	/* Italic text */
+#define ANSI_UNDERLINE  "\033[4m"	/* Underline text */
+#define ANSI_BLINK	"\033[5m"	/* Blinking text */
+#define ANSI_REVERSE    "\033[7m"	/* Reverse colors */
+#define ANSI_STRIKEOUT  "\033[9m"	/* Overstrike line */
 
 #define AT_BLACK         0
 #define AT_BLOOD         1
@@ -192,39 +193,39 @@ DECLARE_DO_FUN( do_color );
 #define AT_ARENA        75
 #define AT_MUSE         76
 #define AT_THINK        77
-#define AT_AFLAGS          78 /* Added by Samson 9-29-98 for area flag display line */
-#define AT_WHO            79  /* Added by Samson 9-29-98 for wholist */
-#define AT_RACETALK       80  /* Added by Samson 9-29-98 for version 1.4 code */
-#define AT_IGNORE         81  /* Added by Samson 9-29-98 for version 1.4 code */
-#define AT_WHISPER        82  /* Added by Samson 9-29-98 for version 1.4 code */
-#define AT_DIVIDER        83  /* Added by Samson 9-29-98 for version 1.4 code */
-#define AT_MORPH          84  /* Added by Samson 9-29-98 for version 1.4 code */
-#define AT_SHOUT        85 /* Added by Samson 9-29-98 for shout channel */
-#define AT_RFLAGS       86 /* Added by Samson 12-20-98 for room flag display line */
-#define AT_STYPE        87 /* Added by Samson 12-20-98 for sector display line */
-#define AT_ANAME        88 /* Added by Samson 12-20-98 for filename display line */
-#define AT_AUCTION      89 /* Added by Samson 12-25-98 for auction channel */
-#define AT_SCORE2       90 /* Added by Samson 2-3-99 for DOTD code */
-#define AT_SCORE3       91 /* Added by Samson 2-3-99 for DOTD code */
-#define AT_SCORE4       92 /* Added by Samson 2-3-99 for DOTD code */
-#define AT_WHO2         93 /* Added by Samson 2-3-99 for DOTD code */
-#define AT_WHO3         94 /* Added by Samson 2-3-99 for DOTD code */
-#define AT_WHO4         95 /* Added by Samson 2-3-99 for DOTD code */
-#define AT_INTERMUD     96 /* Added by Samson 1-15-01 for Intermud3 Channels */
-#define AT_HELP         97 /* Added by Samson 1-15-01 for helpfiles */
-#define AT_WHO5         98 /* Added by Samson 2-7-01 for guild names on who */
-#define AT_SCORE5       99 /* Added by Samson 1-14-02 */
-#define AT_WHO6        100 /* Added by Samson 1-14-02 */
-#define AT_WHO7        101 /* Added by Samson 1-14-02 */
-#define AT_PRAC        102 /* Added by Samson 1-21-02 */
-#define AT_PRAC2       103 /* Added by Samson 1-21-02 */
-#define AT_PRAC3       104 /* Added by Samson 1-21-02 */
-#define AT_PRAC4       105 /* Added by Samson 1-21-02 */
-#define AT_MXPPROMPT   106 /* Added by Samson 2-27-02 */
-#define AT_GUILDTALK   107 /* Added by Tarl 28 Nov 02 */
-#define AT_BOARD       108 /* Samson 10-14-03 */
-#define AT_BOARD2      109 /* Samson 10-14-03 */
-#define AT_BOARD3      110 /* Samson 10-14-03 */
+#define AT_AFLAGS          78	/* Added by Samson 9-29-98 for area flag display line */
+#define AT_WHO            79	/* Added by Samson 9-29-98 for wholist */
+#define AT_RACETALK       80	/* Added by Samson 9-29-98 for version 1.4 code */
+#define AT_IGNORE         81	/* Added by Samson 9-29-98 for version 1.4 code */
+#define AT_WHISPER        82	/* Added by Samson 9-29-98 for version 1.4 code */
+#define AT_DIVIDER        83	/* Added by Samson 9-29-98 for version 1.4 code */
+#define AT_MORPH          84	/* Added by Samson 9-29-98 for version 1.4 code */
+#define AT_SHOUT        85	/* Added by Samson 9-29-98 for shout channel */
+#define AT_RFLAGS       86	/* Added by Samson 12-20-98 for room flag display line */
+#define AT_STYPE        87	/* Added by Samson 12-20-98 for sector display line */
+#define AT_ANAME        88	/* Added by Samson 12-20-98 for filename display line */
+#define AT_AUCTION      89	/* Added by Samson 12-25-98 for auction channel */
+#define AT_SCORE2       90	/* Added by Samson 2-3-99 for DOTD code */
+#define AT_SCORE3       91	/* Added by Samson 2-3-99 for DOTD code */
+#define AT_SCORE4       92	/* Added by Samson 2-3-99 for DOTD code */
+#define AT_WHO2         93	/* Added by Samson 2-3-99 for DOTD code */
+#define AT_WHO3         94	/* Added by Samson 2-3-99 for DOTD code */
+#define AT_WHO4         95	/* Added by Samson 2-3-99 for DOTD code */
+#define AT_INTERMUD     96	/* Added by Samson 1-15-01 for Intermud3 Channels */
+#define AT_HELP         97	/* Added by Samson 1-15-01 for helpfiles */
+#define AT_WHO5         98	/* Added by Samson 2-7-01 for guild names on who */
+#define AT_SCORE5       99	/* Added by Samson 1-14-02 */
+#define AT_WHO6        100	/* Added by Samson 1-14-02 */
+#define AT_WHO7        101	/* Added by Samson 1-14-02 */
+#define AT_PRAC        102	/* Added by Samson 1-21-02 */
+#define AT_PRAC2       103	/* Added by Samson 1-21-02 */
+#define AT_PRAC3       104	/* Added by Samson 1-21-02 */
+#define AT_PRAC4       105	/* Added by Samson 1-21-02 */
+#define AT_MXPPROMPT   106	/* Added by Samson 2-27-02 */
+#define AT_GUILDTALK   107	/* Added by Tarl 28 Nov 02 */
+#define AT_BOARD       108	/* Samson 10-14-03 */
+#define AT_BOARD2      109	/* Samson 10-14-03 */
+#define AT_BOARD3      110	/* Samson 10-14-03 */
 
 /* Should ALWAYS be one more than the last numerical value in the list */
 #define MAX_COLORS    111

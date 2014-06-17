@@ -29,16 +29,16 @@ extern DNS_DATA *last_cache;
 
 struct dns_data
 {
-   DNS_DATA *next;
-   DNS_DATA *prev;
-   const char *ip;
-   const char *name;
-   time_t time;
+  DNS_DATA *next;
+  DNS_DATA *prev;
+  const char *ip;
+  const char *name;
+  time_t time;
 };
 
-DECLARE_DO_FUN( do_cache );
-void resolve_dns( DESCRIPTOR_DATA * d, long ip );
-void process_dns( DESCRIPTOR_DATA * d );
-char *in_dns_cache( char *ip );
-void load_dns( void );
-void check_dns( void );
+DECLARE_DO_FUN (do_cache);
+void resolve_dns (DESCRIPTOR_DATA * d, long ip);
+void process_dns (DESCRIPTOR_DATA * d);
+char *in_dns_cache (char *ip);
+void load_dns (void);
+void check_dns (void);

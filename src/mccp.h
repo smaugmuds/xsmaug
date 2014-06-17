@@ -23,13 +23,13 @@
 extern const unsigned char will_compress2_str[];
 extern const unsigned char start_compress2_str[];
 
-bool compressStart( DESCRIPTOR_DATA * d );
-bool compressEnd( DESCRIPTOR_DATA * d );
+bool compressStart (DESCRIPTOR_DATA * d);
+bool compressEnd (DESCRIPTOR_DATA * d);
 
 typedef struct mccp_data MCCP;
 
 struct mccp_data
 {
-   z_stream *out_compress;
-   unsigned char *out_compress_buf;
+  z_stream *out_compress;
+  unsigned char *out_compress_buf;
 };

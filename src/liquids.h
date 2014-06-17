@@ -63,34 +63,34 @@ extern int top_liquid;
  */
 typedef enum
 {
-   COND_DRUNK, COND_FULL, COND_THIRST, COND_BLOODTHIRST, MAX_CONDS
+  COND_DRUNK, COND_FULL, COND_THIRST, COND_BLOODTHIRST, MAX_CONDS
 } conditions;
 
 typedef enum
 {
-   LIQTYPE_NORMAL, LIQTYPE_ALCOHOL, LIQTYPE_POISON, LIQTYPE_BLOOD, LIQTYPE_TOP
+  LIQTYPE_NORMAL, LIQTYPE_ALCOHOL, LIQTYPE_POISON, LIQTYPE_BLOOD, LIQTYPE_TOP
 } liquid_struct_types;
 
 struct liquid_table
 {
-   const char *name;
-   const char *shortdesc;
-   const char *color;
-   int vnum;
-   int type;
-   int mod[MAX_CONDS];
+  const char *name;
+  const char *shortdesc;
+  const char *color;
+  int vnum;
+  int type;
+  int mod[MAX_CONDS];
 };
 
 struct mixture_list
 {
-   MIX_TABLE *next;
-   MIX_TABLE *prev;
-   const char *name;
-   int data[3];
-   bool object;
+  MIX_TABLE *next;
+  MIX_TABLE *prev;
+  const char *name;
+  int data[3];
+  bool object;
 };
 
-LIQ_TABLE *get_liq_vnum( int vnum );
-void load_liquids( void );
-void load_mixtures( void );
-void free_liquiddata( void );
+LIQ_TABLE *get_liq_vnum (int vnum);
+void load_liquids (void);
+void load_mixtures (void);
+void free_liquiddata (void);

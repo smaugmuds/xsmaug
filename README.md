@@ -4,7 +4,7 @@
 
 **Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame**
 
-**XSMAUG** is an enhancenment of **SMAUGFuss 1.9**, an fixed **SMAUG 1.8b** which is a heavily modified derivative of the **Merc 2.1** distribution.
+**XSMAUG** is an enhancenment of **SMAUGFuss 1.9**, an fixed **SMAUG 1.4a** which is a heavily modified derivative of the **Merc 2.1** distribution.
 
 **SMAUG 1.4a** is close to six times the size of **Merc 2.1**, and has major changes to the inner workings of the code, hence making porting of code from other Diku-derivatives non-trivial to the non-coder.
 
@@ -22,31 +22,31 @@ Due to the ability to edit most everything online, you will most likely find the
 
 #### Contents of the Release
 
-	- realm:         Realm Area files.
-	- doc:           Documentation.
-	- log:           Log files    (initially empty).
-	- player:        Player files (initially empty).
-	- imc:           IMC files.
 	- src:           Source files.
+	- doc:           Documentation.
 	- xsmaug.conf:   XSMAUG Server Config File.
 	- xsmaug-server: XSMAUG Server Boot Script.
-	- vault:	 Guilds Vaults
-	- races:	 Races files.
-	- houses:	 House files.
-	- gods:          God players.
-	- deity:	 Deities.
-	- councils:	 Councils files.
-	- classes:       Classes files.
-	- clans:         Clans files.
-	- boards:        Boards files.
-	- corpses:       Death players corpses (initially empty).
-	- mudprogs:      MUD Program files.
-	- system:        MUD Game System files.
-	- building:      Building System files.
-	- classes:       Player Class files.
-	- color:	 MUD Color files.
-	- hotboot:       Fast boot config files.
 	- tools:         Developer tools.
+	- data:
+		- realm:         Realm Area files.
+		- player:        Player files (initially empty).
+		- imc:           IMC files.
+		- vault:	 Guilds Vaults
+		- races:	 Races files.
+		- houses:	 House files.
+		- gods:          God players.
+		- deity:	 Deities.
+		- councils:	 Councils files.
+		- classes:       Classes files.
+		- clans:         Clans files.
+		- boards:        Boards files.
+		- corpses:       Death players corpses (initially empty).
+		- mudprogs:      MUD Program files.
+		- system:        MUD Game System files.
+		- building:      Building System files.
+		- classes:       Player Class files.
+		- color:	 MUD Color files.
+		- hotboot:       Fast boot config files.
 
 #### Features
 
@@ -130,6 +130,12 @@ New Imported Areas:
 
 #### ChangeLog
 
+	* XSMAUG 2.1 -> XSMAUG 2.2
+
+		- Conversion to GNU Package: configure, make, make install
+		- indented code with GNU style.
+		- New structure.
+
 	* XSMAUG 2.0 -> XSMAUG 2.1
 
 		- Added: Command 'petfind' (do_petfind)
@@ -171,7 +177,7 @@ Having trouble with **XSMAUG**?
 
 First, check out the documentation at **[XSMAUG Wiki] (https://github.com/smaugmuds/xmerc/wiki)** or send an Issue and we’ll help you sort it out.
 
-We rewrote all of the documentation files from scratch for the **XSMAUG 2.0 Phoenix Release**, and have been keeping them up-to-date since.
+We rewrote all of the documentation files for the **XSMAUG 2.0 Phoenix Release**, and have been keeping them up-to-date since.
 
 Also check the **'wizhelp'** command and read the **'help'** descriptions for the individual immortal commands.
 
