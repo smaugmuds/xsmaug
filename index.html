@@ -4,30 +4,40 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>XSMAUG by smaugmuds</title>
-
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/smaugmuds/xsmaug">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/smaugmuds/xsmaug/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/smaugmuds/xsmaug/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
     <div class="wrapper">
-      <header>
-        <h1>XSMAUG</h1>
-        <p>Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame</p>
 
-        <p class="view"><a href="https://github.com/smaugmuds/xsmaug">View the Project on GitHub <small>smaugmuds/xsmaug</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/smaugmuds/xsmaug/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/smaugmuds/xsmaug/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/smaugmuds/xsmaug">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
       <section>
+        <div id="title">
+          <h1>XSMAUG</h1>
+          <p>Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/smaugmuds">smaugmuds</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
         <h2>
 <a name="xsmaug" class="anchor" href="#xsmaug"><span class="octicon octicon-link"></span></a><a href="http://smaugmuds.github.io/xsmaug">XSMAUG</a>
 </h2>
@@ -37,7 +47,9 @@
 
 <p><strong>Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame</strong></p>
 
-<p><strong>XSMAUG</strong> is an enhancenment of <strong>SMAUGFuss 1.9</strong>, an fixed <strong>SMAUG 1.4a</strong> which is a heavily modified derivative of the <strong>Merc 2.1</strong> distribution.</p>
+<p><strong>XSMAUG</strong> is an enhancenment of <strong>SMAUGFuss 1.9</strong>, the goal is to develop a new structure to build and run in modern distributed system environments.</p>
+
+<p><strong>SMAUGFuss 1.9</strong>, an fixed <strong>SMAUG 1.4a</strong> which is a heavily modified derivative of the <strong>Merc 2.1</strong> distribution.</p>
 
 <p><strong>SMAUG 1.4a</strong> is close to six times the size of <strong>Merc 2.1</strong>, and has major changes to the inner workings of the code, hence making porting of code from other Diku-derivatives non-trivial to the non-coder.</p>
 
@@ -179,7 +191,8 @@
 <pre><code>* XSMAUG 2.1 -&gt; XSMAUG 2.2
 
     - Conversion to GNU Package: configure, make, make install
-    - indented code with GNU style.
+    - Configure checks for cc, gcc, g++, (g)awk, -ldl, -lz, -lcrypt, basic c libraries, headers and functions
+    - Indented code with GNU style.
     - New structure.
 
 * XSMAUG 2.0 -&gt; XSMAUG 2.1
@@ -256,12 +269,9 @@ Wed Jun 11 14:49:27 CEST 2014</p>
 
 <p><em><strong>XSMAUG</strong> (c) 2014</em></p>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/smaugmuds">smaugmuds</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
 </html>
