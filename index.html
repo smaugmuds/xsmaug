@@ -1,266 +1,190 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+<!--
+Copyright (c) 2011 Sam Phippen <samphippen@googlemail.com>
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+ 
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+ 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+--> 
+<html> 
+<head> 
+<title>XSMAUG</title> 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+<style type="text/css"> 
+	body {
+		background-color: #000
+	}
+	#console {
+		font-family: courier, monospace;
+		color: #fff;
+		width:750px;
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:100px;
+		font-size:14px;
+	}
+	a {
+		color: #0bc;
+		text-decoration: none;
+	}
+	#a {
+		color: #0f0;
+	}
+	#c {
+		color: #0bc;
+	}
+	#b {
+		color: #ff0096;
+	}
+</style> 
+</head> 
+<body> 
+<script type="text/javascript"> 
+	var Typer={
+	text: null,
+	accessCountimer:null,
+	index:0, // current cursor position
+	speed:2, // speed of the Typer
+	file:"", //file, must be setted
+	accessCount:0, //times alt is pressed for Access Granted
+	deniedCount:0, //times caps is pressed for Access Denied
+	init: function(){// inizialize Hacker Typer
+		accessCountimer=setInterval(function(){Typer.updLstChr();},500); // inizialize timer for blinking cursor
+		$.get(Typer.file,function(data){// get the text file
+			Typer.text=data;// save the textfile in Typer.text
+			Typer.text = Typer.text.slice(0, Typer.text.length-1);
+		});
+	},
+ 
+	content:function(){
+		return $("#console").html();// get console content
+	},
+ 
+	write:function(str){// append to console content
+		$("#console").append(str);
+		return false;
+	},
+ 
+	makeAccess:function(){//create Access Granted popUp      FIXME: popup is on top of the page and doesn't show is the page is scrolled
+		Typer.hidepop(); // hide all popups
+		Typer.accessCount=0; //reset count
+		var ddiv=$("<div id='gran'>").html(""); // create new blank div and id "gran"
+		ddiv.addClass("accessGranted"); // add class to the div
+		ddiv.html("<h1>ACCESS GRANTED</h1>"); // set content of div
+		$(document.body).prepend(ddiv); // prepend div to body
+		return false;
+	},
+	makeDenied:function(){//create Access Denied popUp      FIXME: popup is on top of the page and doesn't show is the page is scrolled
+		Typer.hidepop(); // hide all popups
+		Typer.deniedCount=0; //reset count
+		var ddiv=$("<div id='deni'>").html(""); // create new blank div and id "deni"
+		ddiv.addClass("accessDenied");// add class to the div
+		ddiv.html("<h1>ACCESS DENIED</h1>");// set content of div
+		$(document.body).prepend(ddiv);// prepend div to body
+		return false;
+	},
+ 
+	hidepop:function(){// remove all existing popups
+		$("#deni").remove();
+		$("#gran").remove();
+	},
+ 
+	addText:function(key){//Main function to add the code
+		if(key.keyCode==18){// key 18 = alt key
+			Typer.accessCount++; //increase counter 
+			if(Typer.accessCount>=3){// if it's presed 3 times
+				Typer.makeAccess(); // make access popup
+			}
+		}else if(key.keyCode==20){// key 20 = caps lock
+			Typer.deniedCount++; // increase counter
+			if(Typer.deniedCount>=3){ // if it's pressed 3 times
+				Typer.makeDenied(); // make denied popup
+			}
+		}else if(key.keyCode==27){ // key 27 = esc key
+			Typer.hidepop(); // hide all popups
+		}else if(Typer.text){ // otherway if text is loaded
+			var cont=Typer.content(); // get the console content
+			if(cont.substring(cont.length-1,cont.length)=="|") // if the last char is the blinking cursor
+				$("#console").html($("#console").html().substring(0,cont.length-1)); // remove it before adding the text
+			if(key.keyCode!=8){ // if key is not backspace
+				Typer.index+=Typer.speed;	// add to the index the speed
+			}else{
+				if(Typer.index>0) // else if index is not less than 0 
+					Typer.index-=Typer.speed;//	remove speed for deleting text
+			}
+			var text=Typer.text.substring(0,Typer.index)// parse the text for stripping html enities
+			var rtn= new RegExp("\n", "g"); // newline regex
+	
+			$("#console").html(text.replace(rtn,"<br/>"));// replace newline chars with br, tabs with 4 space and blanks with an html blank
+			window.scrollBy(0,50); // scroll to make sure bottom is always visible
+		}
+		if ( key.preventDefault && key.keyCode != 122 ) { // prevent F11(fullscreen) from being blocked
+			key.preventDefault()
+		};  
+		if(key.keyCode != 122){ // otherway prevent keys default behavior
+			key.returnValue = false;
+		}
+	},
+ 
+	updLstChr:function(){ // blinking cursor
+		var cont=this.content(); // get console 
+		if(cont.substring(cont.length-1,cont.length)=="|") // if last char is the cursor
+			$("#console").html($("#console").html().substring(0,cont.length-1)); // remove it
+		else
+			this.write("|"); // else write it
+	}
+}
+ 
+function replaceUrls(text) {
+	var http = text.indexOf("http://");
+	var space = text.indexOf(".me ", http);
+	if (space != -1) { 
+		var url = text.slice(http, space-1);
+		return text.replace(url, "<a href=\""  + url + "\">" + url + "</a>");
+	} else {
+	return text
+}
+}
+Typer.speed=3;
+Typer.file="xsmaug.html";
+Typer.init();
+ 
+var timer = setInterval("t();", 30);
+function t() {
+	Typer.addText({"keyCode": 123748});
+	if (Typer.index > Typer.text.length) {
+		clearInterval(timer);
+	}
+}
+ 
+</script> 
+<div id="console"></div> 
+<script type="text/javascript">
 
-    <title>XSMAUG by smaugmuds</title>
-  </head>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-610661-7']);
+  _gaq.push(['_trackPageview']);
 
-  <body>
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
-    <header>
-      <div class="container">
-        <h1>XSMAUG</h1>
-        <h2>Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/smaugmuds/xsmaug/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/smaugmuds/xsmaug/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/smaugmuds/xsmaug" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h2>
-<a name="xsmaug" class="anchor" href="#xsmaug"><span class="octicon octicon-link"></span></a><a href="http://smaugmuds.github.io/xsmaug">XSMAUG</a>
-</h2>
-
-<h3>
-<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h3>
-
-<p><strong>Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame</strong></p>
-
-<p><strong>XSMAUG</strong> is an enhancenment of <strong>SMAUGFuss 1.9</strong>, the goal is to develop a new structure to build and run in modern distributed system environments.</p>
-
-<p><strong>SMAUGFuss 1.9</strong>, an fixed <strong>SMAUG 1.4a</strong> which is a heavily modified derivative of the <strong>Merc 2.1</strong> distribution.</p>
-
-<p><strong>SMAUG 1.4a</strong> is close to six times the size of <strong>Merc 2.1</strong>, and has major changes to the inner workings of the code, hence making porting of code from other Diku-derivatives non-trivial to the non-coder.</p>
-
-<p>Due to the ability to edit most everything online, you will most likely find the online help pages more informative.</p>
-
-<p><strong>SMAUG</strong> is the base code that runs the popular <strong>Realms of Despair</strong> MUD. Through the years it has been tweaked, modified, and enhanced to become one of the most feature packed branches of the <strong>MERC</strong> family of codebases.</p>
-
-<p><strong>SMAUG</strong> is a derivative of <strong>Merc Diku Mud</strong> is a <strong>Diku Mud</strong> with many enhancements and contributions.</p>
-
-<h3>
-<a name="xsmaug-releases" class="anchor" href="#xsmaug-releases"><span class="octicon octicon-link"></span></a>XSMAUG Releases</h3>
-
-<ul>
-<li>
-<strong><a href="https://github.com/smaugmuds/xsmaug/releases/tag/2.0">XSMAUG Phoenix Release 2.0</a></strong> <strong>¡¡¡NEW!!!</strong>
-</li>
-<li>
-<strong><a href="https://github.com/smaugmuds/xsmaug/releases/tag/2.1">XSMAUG Phoenix Release 2.1</a></strong> <strong>¡Update!</strong>
-</li>
-<li>
-<strong><a href="https://github.com/smaugmuds/xsmaug/releases/tag/2.2">XSMAUG Phoenix Release 2.2</a></strong> <strong>¡Update!</strong>
-</li>
-</ul><h4>
-<a name="contents-of-the-release" class="anchor" href="#contents-of-the-release"><span class="octicon octicon-link"></span></a>Contents of the Release</h4>
-
-<pre><code>- src:           Source files.
-- doc:           Documentation.
-- xsmaug.conf:   XSMAUG Server Config File.
-- xsmaug-server: XSMAUG Server Boot Script.
-- tools:         Developer tools.
-- data:
-    - realm:         Realm Area files.
-    - player:        Player files (initially empty).
-    - imc:           IMC files.
-    - vault:     Guilds Vaults
-    - races:     Races files.
-    - houses:    House files.
-    - gods:          God players.
-    - deity:     Deities.
-    - councils:  Councils files.
-    - classes:       Classes files.
-    - clans:         Clans files.
-    - boards:        Boards files.
-    - corpses:       Death players corpses (initially empty).
-    - mudprogs:      MUD Program files.
-    - system:        MUD Game System files.
-    - building:      Building System files.
-    - classes:       Player Class files.
-    - color:     MUD Color files.
-    - hotboot:       Fast boot config files.
-</code></pre>
-
-<h4>
-<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h4>
-
-<p>Here are just some of the extra features XSMAUG has:</p>
-
-<pre><code>- Full featured, bug-free command-line online building
-- (including shops, resets, repairshops, etc)
-- Optional easy to use menu-based online building
-- Damageable and repairable equipment
-- MUDPrograms/scripts (mob, obj and room programs)
-- Monsters that will remember you, hunt you down, and summon you
-- Levers, switches, pullchains, buttons and traps
-- Searchable hidden objects and doors
-- More flexibility to command syntax
-- Delayed teleport rooms, tunnels
-- Clans, pkilling, guilds, orders and councils
-- Revamped experience and skill/spell learning system
-- Unlimited bulletin boards that can be added online
-- Private mail and comments on players
-- Automatic daily scheduled rebooting
-- Advanced immortal heirarchy
-- Complicated monsters with stats, attacks, defenses and bodyparts
-- Resistances, Immunities and Susceptibilities
-- More spells, more skills, more classes, more races
-- Weapon proficiencies
-- Pipes and herb smoking
-- Full featured container commands... fill, empty, etc
-- Extra exits - ne, nw, se, sw and more -
-- Special exit flags, floorless rooms (falling)
-- More room, mob and object flags, class restricted items
-- Languages, improved string hashing code
-- All kinds of 'spelled equipment' support
-- A new flexible spell system that allows online creation and editing
-- Object grouping, items hidden under other items, layered clothing
-- The ability to dig up and bury items
-- Player corpses are saved in case of crash or reboot
-- Stable code with hundreds of bug fixes
-- A fully configurable deity system
-- Many new admin commands such as an extensive ban, immhost ipcompare and more
-- Polymorph code that can be added, edited and deleted online
-- Different prompts when you are fighting and when you are not
-- Pets saving with their owners
-- Pet Finding.
-- New Healer.
-- Configurable color codes online
-- Projectiles are fully supported
-- Extended bit vectors for when 32 are just not enough
-- SHA256 player passwords encryption
-- MUD Mapper and Planes
-- MCCP and MSSP
-- New Weather System and Calendar
-- HotBoot!
-- Mounts and much much more
-</code></pre>
-
-<p>Changes made to areas:</p>
-
-<pre><code>- Major changes to the reset system to fix the problems with the nested put resets.
-- All of the stock areas in this package have been updated to support the new format.
-- Will not be backward compatible with any Smaug mud that does not employ the reset fix.
-- Areas written for Smaug 1.02a, 1.4, and 1.4a should load without a problem and remain compatible.
-</code></pre>
-
-<p>New Imported Areas:</p>
-
-<pre><code>- sesamest.are
-- chess.are
-- warner.are
-- troy.are
-- buds.are
-- thalos.are
-- prehist.are
-- gauntlet.are
-- chapelgods.are
-- catacomb.are
-- bazaar.are
-- pground.are
-- abyss.are
-- kheltower.are
-- isledead.are
-- hood.are
-</code></pre>
-
-<h4>
-<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>ChangeLog</h4>
-
-<pre><code>* XSMAUG 2.1 -&gt; XSMAUG 2.2
-
-    - Conversion to GNU Package: configure, make, make install
-    - Configure checks for cc, gcc, g++, (g)awk, -ldl, -lz, -lcrypt, basic c libraries, headers and functions
-    - Indented code with GNU style.
-    - New structure.
-
-* XSMAUG 2.0 -&gt; XSMAUG 2.1
-
-    - Added: Command 'petfind' (do_petfind)
-    - Added: New Healer: 'heal' (do_heal)
-    - Updated: Makefile
-    - Updated: Areas
-    - Updated: Documentation
-    - Updated: Tools
-
-* SMAUGFuss 1.9  -&gt; XSMAUG 2.0
-
-    - Added: xsmaug.conf &amp; xsmaug-server
-    - Added: New Makefile
-    - Added: Name Change
-    - Added: New Clases &amp; Skills
-    - Added: New Imported Areas
-</code></pre>
-
-<h4>
-<a name="supported-operating-systems" class="anchor" href="#supported-operating-systems"><span class="octicon octicon-link"></span></a>Supported Operating Systems</h4>
-
-<pre><code>- Linux
-- BSD
-- Solaris
-- Windows
-- MAC
-</code></pre>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p><strong>XSMAUG Phoenix Release</strong> by <strong>Antonio Cao</strong> (<a href="https://github.com/burzumishi">@burzumishi</a>)
-Wed Jun 11 14:49:27 CEST 2014</p>
-
-<p>Feel free to contribute with <strong>XSMAUG in GitHub</strong>.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with <strong>XSMAUG</strong>?</p>
-
-<p>First, check out the documentation at <strong><a href="https://github.com/smaugmuds/xmerc/wiki">XSMAUG Wiki</a></strong> or send an Issue and we’ll help you sort it out.</p>
-
-<p>We rewrote all of the documentation files for the <strong>XSMAUG 2.0 Phoenix Release</strong>, and have been keeping them up-to-date since.</p>
-
-<p>Also check the <strong>'wizhelp'</strong> command and read the <strong>'help'</strong> descriptions for the individual immortal commands.</p>
-
-<p>When you write us, we need to know what kind of machine you're running on.  If you can give us specific information about the problem, that helps too.</p>
-
-<p>Specific information means: an adb or gdb stack trace (if you're reporting a crash), or a syslog with the relevant commands logged.  The player files are ascii files -- dump them into your mail message too.</p>
-
-<p>You can also read the Documentation in the <strong>'doc'</strong> directory.</p>
-
-<h3>
-<a name="copyright-and-license" class="anchor" href="#copyright-and-license"><span class="octicon octicon-link"></span></a>Copyright and License</h3>
-
-<p><strong>Diku Mud</strong> is copyright (C) 1990, 1991 by Sebastian Hammer, Michael Seifert, Hans Henrik Strfeldt, Tom Madsen, and Katja Nyboe.  Their license agreement is in the file <strong>'license.doc'</strong>.</p>
-
-<p><strong>Merc Diku Mud</strong> is a derivative of the original <strong>Diku Mud</strong> and is subject to their copyright and license agreement.  <strong>Merc Diku Mud</strong> contains substantial enhancements to <strong>Diku Mud</strong>.  These enhancements are copyright 1992, 1993 by Michael Chastain, Michael Quan, and Mitchell Tse.  Our license agreement is in <strong>'license.txt'</strong>.</p>
-
-<p>The license terms boil down to this: the people who wrote this mud want due credit for their work.</p>
-
-<p><strong>MERC Industries</strong> had officially disolved October 13, 1993.  <strong>MERC 2.2</strong> is a compilation of various bug and typo fixes along with a few new worlds.  <strong>MERC 2.2</strong> also has a variable line pager, MOBPrograms, and player settable prompt.</p>
-
-<p><strong>SMAUG</strong> is a derivative of the version <strong>2.1</strong> distribution of <strong>Merc Diku Mud</strong>. <strong>SMAUG</strong> contains substantial enhancements to <strong>Merc Diku Mud</strong>, including some features of the original <strong>Diku Mud</strong> that were removed by the Merc team.</p>
-
-<p><strong>XSMAUG</strong> is a derivative of the original <strong>SMAUG</strong> and is subject to their copyright and license agreement.  <strong>XSMAUG</strong> contains substantial enhancements to <strong>SMAUG</strong>.  These enhancements are copyright 2014 by <strong>Antonio Cao</strong> (<a href="https://github.com/burzumishi">@burzumishi</a>) under the <strong>'GNU GPL v2 LICENSE'</strong>.</p>
-
-<p><strong>Thanks to the SMAUG Code Team!</strong></p>
-
-<h1></h1>
-
-<p><em><strong>XSMAUG</strong> (c) 2014</em></p>
-      </section>
-    </div>
-
-    
-  </body>
-</html>
+</script>
+</body> 
+</html> 
