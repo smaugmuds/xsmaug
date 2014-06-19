@@ -4,7 +4,7 @@
 
 **Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame**
 
-**XSMAUG** is an enhancenment of **SMAUGFuss 1.9**, the goal is to develop a new structure to build and run in modern distributed system environments.
+**XSMAUG** is an enhancenment of **SMAUGFuss 1.9**, the goal is to develop a new structure to build and run **SMAUG** in modern distributed system environments.
 
 **SMAUGFuss 1.9**, an fixed **SMAUG 1.4a** which is a heavily modified derivative of the **Merc 2.1** distribution.
 
@@ -139,6 +139,8 @@ New Imported Areas:
 		- Configure checks for cc, gcc, g++, (g)awk, -ldl, -lz, -lcrypt, basic c libraries, headers and functions
 		- Indented code with GNU style.
 		- New structure.
+		- Server logs now goes to system directory "$(localstatedir)/log/xsmaug/"
+		- "LOG_DIR" variable in "mud.h" is now obsolete and has been changed to "LOGDIR" in "config.h"
 
 	* XSMAUG 2.0 -> XSMAUG 2.1
 

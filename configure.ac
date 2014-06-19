@@ -1,5 +1,25 @@
-#                                               -*- Autoconf -*-
+############################################################################
+# [S]imulated [M]edieval [A]dventure multi[U]ser [G]ame      |   \\._.//   #
+# -----------------------------------------------------------|   (0...0)   #
+# SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider      |    ).:.(    #
+# -----------------------------------------------------------|    {o o}    #
+# SMAUG code team: Thoric, Altrag, Blodkai, Narn, Haus,      |   / ' ' \   #
+# Scryn, Rennard, Swordbearer, Gorog, Grishnakh, Nivek,      |~'~.VxvxV.~'~#
+# Tricops and Fireblade                                      |             #
+# ------------------------------------------------------------------------ #
+# Merc 2.1 Diku Mud improvments copyright (C) 1992, 1993 by Michael        #
+# Chastain, Michael Quan, and Mitchell Tse.                                #
+# Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,          #
+# Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     #
+# Win32 port by Nick Gammon                                                #
+# ------------------------------------------------------------------------ #
+#                                  XSMAUG                                  #
+#                                 Makefile                                 #
+############################################################################
+
+#                             -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
+#
 
 AC_PREREQ(2.69)
 
@@ -17,6 +37,10 @@ AC_INIT([XSMAUG MUD Server], [2.2],
 AM_INIT_AUTOMAKE([-Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings])
 AM_PROG_LIBTOOL
 AM_SANITY_CHECK
+
+AC_DEFINE_UNQUOTED([PREFIX], ["/opt/xsmaug/"], [Define to the root directory.])
+AC_DEFINE_UNQUOTED([RUNDIR], ["${prefix}/com/xsmaug/"], [Define to the read-only architecture-independant data directory.])
+AC_DEFINE_UNQUOTED([LOGDIR], ["${prefix}/var/log/xsmaug/"], [Define to log directory.])
 
 AC_CONFIG_HEADERS([config.h])
 AC_PROG_CC([cc])

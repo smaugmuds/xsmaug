@@ -16,6 +16,10 @@
  *                           Main mud header file                           *
  ****************************************************************************/
 
+/* Include configure options */
+
+#include "../config.h"
+
 #include <stdlib.h>
 #include <limits.h>
 #if defined(__CYGWIN__) || defined(__FreeBSD__)
@@ -4251,7 +4255,9 @@ DECLARE_SPELL_FUN (spell_sacral_divinity);
 #define CLASS_DIR	"../classes/"	/* Classes        */
 #define RACE_DIR 	"../races/"	/* Races */
 #define WATCH_DIR	"../watch/"	/* Imm watch files --Gorog      */
-#define LOG_DIR		"/opt/xsmaug/var/log/xsmaug/"	/* Store logs */
+
+/* OBSOLETE!!! LOG_DIR redefined as LOGDIR = $(logdir) in "config.h" */
+/* #define LOG_DIR		"../log/" */	/* Store logs */
 
 /*
  * The watch directory contains a maximum of one file for each immortal
@@ -4272,19 +4278,19 @@ DECLARE_SPELL_FUN (spell_sacral_divinity);
 #define RACE_LIST	"race.lst"	/* List of races     */
 #define MORPH_FILE      "morph.dat"	/* For morph data */
 #define BOARD_FILE	"boards.dat"	/* For bulletin boards   */
-#define SHUTDOWN_FILE	LOG_DIR    "shutdown.log"	/* For 'shutdown'  */
+#define SHUTDOWN_FILE	LOGDIR    "shutdown.log"	/* For 'shutdown'  */
 #define IMM_HOST_FILE   SYSTEM_DIR "immortal.host"	/* For stoping hackers */
 #define RIPSCREEN_FILE	SYSTEM_DIR "mudrip.rip"
 #define RIPTITLE_FILE	SYSTEM_DIR "mudtitle.rip"
 #define ANSITITLE_FILE	SYSTEM_DIR "mudtitle.ans"
 #define ASCTITLE_FILE	SYSTEM_DIR "mudtitle.asc"
-#define BOOTLOG_FILE	LOG_DIR "boot.log"	/* Boot up error file  */
-#define PBUG_FILE	LOG_DIR "pbugs.log"	/* For 'bug' command   */
-#define IDEA_FILE	LOG_DIR "ideas.log"	/* For 'idea'       */
-#define TYPO_FILE	LOG_DIR "typos.log"	/* For 'typo'       */
-#define FIXED_FILE	LOG_DIR "fixed.log"	/* For 'fixed' command */
-#define LOG_FILE	LOG_DIR "talk.log"	/* For talking in logged rooms */
-#define MOBLOG_FILE	LOG_DIR "mob.log"	/* For mplog messages  */
+#define BOOTLOG_FILE	LOGDIR "boot.log"	/* Boot up error file  */
+#define PBUG_FILE	LOGDIR "pbugs.log"	/* For 'bug' command   */
+#define IDEA_FILE	LOGDIR "ideas.log"	/* For 'idea'       */
+#define TYPO_FILE	LOGDIR "typos.log"	/* For 'typo'       */
+#define FIXED_FILE	LOGDIR "fixed.log"	/* For 'fixed' command */
+#define LOG_FILE	LOGDIR "talk.log"	/* For talking in logged rooms */
+#define MOBLOG_FILE	LOGDIR "mob.log"	/* For mplog messages  */
 #define WIZLIST_FILE	SYSTEM_DIR "wiz.lst"	/* Wizlist       */
 #define WHO_FILE	SYSTEM_DIR "who.lst"	/* Who output file  */
 #define WEBWHO_FILE	SYSTEM_DIR "webwho.lst"	/* WWW Who output file */

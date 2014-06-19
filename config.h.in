@@ -170,6 +170,9 @@
 /* Define to 1 if the system has the type `_Bool'. */
 #undef HAVE__BOOL
 
+/* Define to log directory. */
+#undef LOGDIR
+
 /* Define to 1 if `lstat' dereferences a symlink specified with a trailing
    slash. */
 #undef LSTAT_FOLLOWS_SLASHED_SYMLINK
@@ -198,6 +201,12 @@
 
 /* Define to the version of this package. */
 #undef PACKAGE_VERSION
+
+/* Define to the root directory. */
+#undef PREFIX
+
+/* Define to the read-only architecture-independant data directory. */
+#undef RUNDIR
 
 /* Define to 1 if you have the ANSI C header files. */
 #undef STDC_HEADERS

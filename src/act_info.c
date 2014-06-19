@@ -5469,8 +5469,7 @@ do_version (CHAR_DATA * ch, const char *argument)
     return;
 
   set_char_color (AT_YELLOW, ch);
-  ch_printf (ch, "XSMAUG %s.%s\r\n", SMAUG_VERSION_MAJOR,
-	     SMAUG_VERSION_MINOR);
+  ch_printf (ch, "%s %s by %s\r\n", PACKAGE_NAME, PACKAGE_VERSION, PACKAGE_BUGREPORT);
 
   if (IS_IMMORTAL (ch))
     ch_printf (ch, "Compiled on %s at %s.\r\n", __DATE__, __TIME__);
