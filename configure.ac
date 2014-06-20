@@ -47,6 +47,7 @@ AC_DEFINE_UNQUOTED([RUNDIR], ["${prefix}/com/xsmaug/"], [Define to the read-only
 AC_DEFINE_UNQUOTED([LOGDIR], ["${prefix}/var/log/xsmaug/"], [Define to log directory.])
 
 AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_MACRO_DIR([m4])
 AC_PROG_CC([cc])
 AC_PROG_CXX([g++])
 AC_PROG_LIBTOOL
