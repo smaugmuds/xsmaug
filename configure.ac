@@ -22,6 +22,7 @@
 #
 
 AC_PREREQ(2.69)
+LT_PREREQ([2.4.2])
 
 PACKAGE=xsmaug
 
@@ -33,6 +34,9 @@ VERSION=$XSMAUG_MAJOR_VERSION.$XSMAUG_MINOR_VERSION
 AC_INIT([XSMAUG MUD Server], [2.2],
 	[<antoniocao000@gmail.com>],
 	[xsmaug])
+
+LT_INIT
+LT_LANG([C++])
 
 AM_INIT_AUTOMAKE([-Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings])
 AM_PROG_LIBTOOL
@@ -80,4 +84,5 @@ AC_CHECK_FUNCS([alarm bzero dup2 gethostbyaddr gethostbyname gettimeofday inet_n
 
 AC_CONFIG_FILES([Makefile src/Makefile])
 
+LT_OUTPUT
 AC_OUTPUT
