@@ -22,7 +22,7 @@
 #
 
 AC_PREREQ(2.69)
-LT_PREREQ([2.4.2])
+LT_PREREQ(2.4)
 
 PACKAGE=xsmaug
 
