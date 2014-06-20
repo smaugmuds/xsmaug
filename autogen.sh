@@ -19,12 +19,13 @@
  #                                  Autogen                                 #
  ############################################################################
 
+libtoolize
 aclocal
 autoconf
 autoheader
 touch README.md AUTHORS NEWS ChangeLog
 ln -sfv README.md README
-automake -a
+automake -a --add-missing
 
 if [ -f "configure" ]; then
 	./configure --prefix=/opt/xsmaug --with-gnu-ld --enable-shared
