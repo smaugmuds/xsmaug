@@ -23,7 +23,7 @@ THE SOFTWARE.
 <html> 
 <head> 
 <title>XSMAUG</title> 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+<script type="text/javascript" src="js/jquery.min.js"></script> 
 <link rel="stylesheet" href="css/style.css"/>
 <script src="js/modernizr.js"></script>
 <script src="js/foundation.js"></script>
@@ -32,10 +32,10 @@ THE SOFTWARE.
 
   <div class="row">    
 
-<h1><a href="http://smaugmuds.github.io/xsmaug">XSMAUG</a></h1>
-<h2>Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame</h2>
+	<h1><a href="http://smaugmuds.github.io/xsmaug">XSMAUG</a></h1>
+	<h2>Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame</h2>
 
-<div class="large-9 push-3 columns">
+    <div class="large-9 push-3 columns">
     
     
 <script type="text/javascript"> 
@@ -114,7 +114,8 @@ THE SOFTWARE.
 			var text=Typer.text.substring(0,Typer.index)// parse the text for stripping html enities
 			var rtn= new RegExp("\n", "g"); // newline regex
 	
-			$("#console").html(text.replace(rtn,"<br/>"));// replace newline chars with br, tabs with 4 space and blanks with an html blank
+			// $("#console").html(text.replace(rtn,"<br/>"));// replace newline chars with br, tabs with 4 space and blanks with an html blank
+			$("#console").html(text.replace(rtn,""));// replace newline chars with br, tabs with 4 space and blanks with an html blank
 			window.scrollBy(0,50); // scroll to make sure bottom is always visible
 		}
 		if ( key.preventDefault && key.keyCode != 122 ) { // prevent F11(fullscreen) from being blocked
@@ -161,20 +162,6 @@ function t() {
 
 <div id="console"></div> 
 
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-610661-7']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
  </div>
     
     <div class="large-3 pull-9 columns">
@@ -182,6 +169,7 @@ function t() {
       <ul class="side-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="muds.html">MUDs</a></li>
         <li><a href="support.html">Support</a></li>
         <li><a href="authors.html">Authors</a></li>
         <li><a href="licenses.html">Licenses</a></li>
