@@ -21,10 +21,15 @@ CC = g++
 CPP = g++
 CXX = g++
 
-ARCH = `getconf LONG_BIT`
+ARCH = `uname -m`
 
-CPP_FLAGS_32 = -D32_BIT -m32 -march=`uname -m` -mtune=`uname -m`
-CPP_FLAGS_64 = -D64_BIT -m64 -march=x86-64 -mtune=generic
+XSMAUG_ARCH_FLAGS =
+
+ifeq "$(ARCH)" "x86_64"
+XSMAUG_ARCH_FLAGS := -D64_BIT -m64 -march=x86-64 -mtune=generic
+else
+XSMAUG_ARCH_FLAGS := -D32_BIT -m32 -march=`uname -m` -mtune=`uname -m`
+endif
 
 bin_PROGRAMS = xsmaug dnsresolv
 
@@ -34,5 +39,5 @@ dnsresolv_SOURCES = dnsresolv.c
 
 include_HEADERS = mud.h
 
-xsmaug_CXXFLAGS = -O3 -pipe $(CPP_FLAGS_$(ARCH)) -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
-xsmaug_CFLAGS = -O3 -pipe $(CPP_FLAGS_$(ARCH)) -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
+xsmaug_CXXFLAGS = -O3 -pipe $(XSMAUG_ARCH_FLAGS) -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
+xsmaug_CFLAGS = -O3 -pipe $(XSMAUG_ARCH_FLAGS) -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
