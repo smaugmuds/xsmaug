@@ -59,7 +59,16 @@ img{-ms-interpolation-mode:bicubic;}
 img{display:inline-block;vertical-align:middle;}
 textarea{height:auto;min-height:50px;}
 select{width:100%;}
-.row{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5rem;*zoom:1;}
+.row{
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0;
+	margin-bottom:0;
+	max-width:62.5rem;
+	*zoom:1;
+	background-color: rgba(0, 0, 0, 0.5)
+}
 .row:before,.row:after{content:" ";display:table;}
 .row:after{clear:both;}
 .row.collapse>.column,.row.collapse>.columns{padding-left:0;padding-right:0;}
