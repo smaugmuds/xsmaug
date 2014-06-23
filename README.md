@@ -4,17 +4,15 @@
 
 **Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame**
 
-**XSMAUG** is an enhancenment of **SMAUGFuss 1.9**, the goal is to develop a new structure to build and run **SMAUG** in modern distributed system environments.
+**XSMAUG** is a multiplayer text-based role-playing game, which is a type of MUD.
 
-**SMAUGFuss 1.9**, an fixed **SMAUG 1.4a** which is a heavily modified derivative of the **Merc 2.1** distribution.
+**XSMAUG** is an enhancenment of **SMAUGFuss 1.9**, the goal is to develop a new structure to build and run in modern distributed system environments. **SMAUGFuss 1.9**, an fixed **SMAUG 1.4a** which is a heavily modified derivative of the **Merc 2.1** distribution.
 
-**SMAUG 1.4a** is close to six times the size of **Merc 2.1**, and has major changes to the inner workings of the code, hence making porting of code from other Diku-derivatives non-trivial to the non-coder.
+SMAUG 1.4a is close to six times the size of Merc 2.1, and has major changes to the inner workings of the code, hence making porting of code from other Diku-derivatives non-trivial to the non-coder.Due to the ability to edit most everything online, you will most likely find the online help pages more informative. SMAUG is the base code that runs the popular Realms of Despair MUD. Through the years it has been tweaked, modified, and enhanced to become one of the most feature packed branches of the MERC family of codebases. 
 
-Due to the ability to edit most everything online, you will most likely find the online help pages more informative.
+SMAUG is a derivative of Merc Diku Mud is a Diku Mud with many enhancements and contributions. It was written in 1990 and 1991 by Sebastian Hammer, Tom Madsen, Katja Nyboe, Michael Seifert, and Hans Henrik Stærfeldt at DIKU (Datalogisk Institut Københavns Universitet)—the department of computer science at the University of Copenhagen in Copenhagen, Denmark.Commonly referred to as simply "Diku", the game was greatly inspired by AberMUD, though Diku became one of the first multi-usergames to become popular as a freely-available program for its gameplay and similarity to Dungeons & Dragons.
 
-**SMAUG** is the base code that runs the popular **Realms of Despair** MUD. Through the years it has been tweaked, modified, and enhanced to become one of the most feature packed branches of the **MERC** family of codebases.
-
-**SMAUG** is a derivative of **Merc Diku Mud** is a **Diku Mud** with many enhancements and contributions.
+AberMUD was the first popular open source MUD. It was named after the town Aberystwyth, in which it was written.The first version was written in B by Alan Cox, Richard Acott, Jim Finnis,and Leon Thrane based at University of Wales, Aberystwyth for an old Honeywellmainframe and opened in 1987.
 
 
 ### XSMAUG Releases
