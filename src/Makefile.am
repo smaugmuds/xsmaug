@@ -23,14 +23,6 @@ CXX = g++
 
 ARCH = `uname -m`
 
-XSMAUG_ARCH_FLAGS =
-
-ifeq "$(ARCH)" "x86_64"
-XSMAUG_ARCH_FLAGS := -D64_BIT -m64 -march=x86-64 -mtune=generic
-else
-XSMAUG_ARCH_FLAGS := -D32_BIT -m32 -march=`uname -m` -mtune=`uname -m`
-endif
-
 bin_PROGRAMS = xsmaug dnsresolv
 
 xsmaug_SOURCES = act_comm.c act_info.c act_move.c act_obj.c act_wiz.c ban.c boards.c build.c calendar.c chess.c clans.c color.c comm.c comments.c const.c db.c deity.c dns.c dump.c fight.c handler.c hashstr.c healer.c hint.c hotboot.c imm_host.c interp.c liquids.c magic.c makeobjs.c mapout.c mapper.c mccp.c misc.c mpxset.c mssp.c mud_comm.c mud_prog.c news.c petfind.c planes.c player.c polymorph.c renumber.c reset.c save.c services.c sha256.c shops.c skills.c special.c tables.c track.c update.c variables.c weather.c qbits.c
@@ -39,5 +31,5 @@ dnsresolv_SOURCES = dnsresolv.c
 
 include_HEADERS = mud.h
 
-xsmaug_CXXFLAGS = -O3 -pipe $(XSMAUG_ARCH_FLAGS) -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
-xsmaug_CFLAGS = -O3 -pipe $(XSMAUG_ARCH_FLAGS) -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
+xsmaug_CXXFLAGS = -O3 -pipe -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
+xsmaug_CFLAGS = -O3 -pipe -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
