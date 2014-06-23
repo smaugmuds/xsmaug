@@ -21,10 +21,10 @@ CC = g++
 CPP = g++
 CXX = g++
 
-ARCH := `getconf LONG_BIT`
+ARCH = `getconf LONG_BIT`
 
-CPP_FLAGS_32 := -D32_BIT -m32 -march=`uname -m` -mtune=`uname -m`
-CPP_FLAGS_64 := -D64_BIT -m64 -march=x86-64 -mtune=generic
+CPP_FLAGS_32 = -D32_BIT -m32 -march=`uname -m` -mtune=`uname -m`
+CPP_FLAGS_64 = -D64_BIT -m64 -march=x86-64 -mtune=generic
 
 bin_PROGRAMS = xsmaug dnsresolv
 
