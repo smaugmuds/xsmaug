@@ -21,7 +21,7 @@ CC = g++
 CPP = g++
 CXX = g++
 
-ARCH = `uname -m`
+ARCH := $(shell getconf LONG_BIT)
 
 ACLOCAL_AMFLAGS = -I m4
 
