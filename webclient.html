@@ -1,0 +1,85 @@
+
+<!--
+Copyright (c) 2011 Sam Phippen <samphippen@googlemail.com>
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+ 
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+ 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+--> 
+<html> 
+<head> 
+<title>XSMAUG</title> 
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<link rel="stylesheet" href="css/style.css"/>
+<script src="js/modernizr.js"></script>
+<script src="js/foundation.js"></script>
+<script src="js/respond.js"></script>
+</head> 
+<body> 
+
+  <div class="row">    
+
+	<h1><a href="http://smaugmuds.github.io/xsmaug">XSMAUG</a></h1>
+	<h3>Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame</h3>
+
+    <div class="large-9 push-3 columns">
+    
+    	<applet CODEBASE="."
+            ARCHIVE="jta26.jar"
+            CODE="de.mud.jta.Applet"
+            WIDTH=600px HEIGHT=480px>
+            <param name="config" value="xsmaug.conf">
+	</applet>
+
+ </div>
+    
+    <div class="large-3 pull-9 columns">
+        
+      <ul class="side-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="webclient.html">Play Online</a></li>
+        <li><a href="muds.html">MUDs</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="authors.html">Authors</a></li>
+        <li><a href="licenses.html">Licenses</a></li>
+      </ul>
+      
+    </div>
+    
+  </div>
+    
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr/>
+      <div class="row">
+        <div class="large-6 columns">
+	<p><em><strong>XSMAUG</strong> © 2014</em></p>
+        </div>
+      </div>
+    </div> 
+  </footer>
+  
+    <script>
+      $(document).foundation();
+
+      var doc = document.documentElement;
+      doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+    
+</body> 
+</html> 
