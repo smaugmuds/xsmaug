@@ -17,8 +17,9 @@
  ****************************************************************************/
 
 /* Include configure options */
-
+#ifdef HAVE_CONFIG_H
 #include "../config.h"
+#endif
 
 #include <stdlib.h>
 #include <limits.h>
@@ -293,12 +294,6 @@ extern bool DONT_UPPER;
 #define PULSE_AREA       (60 * sysdata.pulsepersec)
 #define PULSE_AUCTION    (9 * sysdata.pulsepersec)
 
-/*
- * SMAUG Version -- Scryn
- */
-#define SMAUG_VERSION_MAJOR "2"
-#define SMAUG_VERSION_MINOR "2"
-
 /* 
  * Stuff for area versions --Shaddai
  */
@@ -392,9 +387,7 @@ struct extended_bitvector
 #include "calendar.h"		/* AFKMud Calendar Replacement - Samson */
 #include "weather.h"		/* Weather System Replacement - Kayle */
 #include "liquids.h"		/* SMAUG Liquidtable Replacement - Nopey */
-#ifdef IMC
-#include "imc.h"
-#endif
+#include "qbits.h"		/* Include Quest Bits */
 
 /*
  * Structure for a morph -- Shaddai
@@ -733,7 +726,6 @@ typedef enum
   CON_GET_NEW_RACE, CON_GET_EMULATION,
   CON_GET_WANT_RIPANSI, CON_TITLE, CON_PRESS_ENTER,
   CON_WAIT_1, CON_WAIT_2, CON_WAIT_3,
-  CON_ACCEPTED, CON_GET_PKILL, CON_READ_IMOTD,
 
 /* Uncomment this if using Samson's Reroll code */
 /* CON_ROLL_STATS, */
@@ -744,7 +736,8 @@ typedef enum
 /* CON_DELETE, */
 
 /* Uncomment this if using Mudworld's Oasis OLC port */
-/* CON_OEDIT,		 CON_MEDIT,			CON_REDIT, */
+  // CON_ACCEPTED,         CON_GET_PKILL,         CON_READ_IMOTD,
+  CON_OEDIT,		 CON_MEDIT,			CON_REDIT,
 
 /* Uncomment this section if using Samson's Shell Code */
 /* CON_FORKED, CON_IAFORKED, */
@@ -2225,6 +2218,8 @@ struct char_data
   ROOM_INDEX_DATA *in_room;
   ROOM_INDEX_DATA *was_in_room;
   PC_DATA *pcdata;
+  BIT_DATA *first_abit;  /* abit/qbit code */
+  BIT_DATA *last_abit;
   DO_FUN *last_cmd;
   DO_FUN *prev_cmd;		/* mapping */
   void *dest_buf;		/* This one is to assign to differen things */
@@ -2350,6 +2345,8 @@ struct pc_data
   COUNCIL_DATA *council;
   AREA_DATA *area;
   DEITY_DATA *deity;
+  BIT_DATA *first_qbit;  /* abit/qbit code */
+  BIT_DATA *last_qbit;
   GAME_BOARD_DATA *game_board;
   NUISANCE_DATA *nuisance;	/* New Nuisance structure */
   KILLED_DATA killed[MAX_KILLTRACK];
@@ -2401,9 +2398,6 @@ struct pc_data
   IGNORE_DATA *last_ignored;
   const char **tell_history;	/* for immortal only command lasttell */
   short lt_index;		/* last_tell index */
-#ifdef IMC
-  IMC_CHARDATA *imcchardata;
-#endif
   bool hotboot;			/* hotboot tracker */
   short age_bonus;
   short age;
@@ -3742,6 +3736,7 @@ DECLARE_DO_FUN (do_down);
 DECLARE_DO_FUN (do_drag);
 DECLARE_DO_FUN (do_drink);
 DECLARE_DO_FUN (do_drop);
+DECLARE_DO_FUN (do_dump);
 DECLARE_DO_FUN (do_east);
 DECLARE_DO_FUN (do_eat);
 DECLARE_DO_FUN (do_ech);
@@ -3879,9 +3874,13 @@ DECLARE_DO_FUN (do_ofind);
 DECLARE_DO_FUN (do_oinvoke);
 DECLARE_DO_FUN (do_oldscore);
 DECLARE_DO_FUN (do_olist);
+DECLARE_DO_FUN (do_omedit);
 DECLARE_DO_FUN (do_opcopy);
+DECLARE_DO_FUN (do_ooedit);
+DECLARE_DO_FUN (do_ocopy);
 DECLARE_DO_FUN (do_open);
 DECLARE_DO_FUN (do_order);
+DECLARE_DO_FUN (do_oredit);
 DECLARE_DO_FUN (do_orders);
 DECLARE_DO_FUN (do_ordertalk);
 DECLARE_DO_FUN (do_oset);
@@ -3982,6 +3981,14 @@ DECLARE_DO_FUN (do_shopset);
 DECLARE_DO_FUN (do_shopstat);
 DECLARE_DO_FUN (do_shout);
 DECLARE_DO_FUN (do_shove);
+DECLARE_DO_FUN (do_showabit);
+DECLARE_DO_FUN (do_showqbit);
+DECLARE_DO_FUN (do_setabit);
+DECLARE_DO_FUN (do_setqbit);
+DECLARE_DO_FUN (do_abit);
+DECLARE_DO_FUN (do_qbit);
+DECLARE_DO_FUN (do_mpaset);
+DECLARE_DO_FUN (do_mpqset);
 DECLARE_DO_FUN (do_showclass);
 DECLARE_DO_FUN (do_showclan);
 DECLARE_DO_FUN (do_showcouncil);
@@ -3989,6 +3996,7 @@ DECLARE_DO_FUN (do_showdeity);
 DECLARE_DO_FUN (do_showliquid);
 DECLARE_DO_FUN (do_showmixture);
 DECLARE_DO_FUN (do_showrace);
+DECLARE_DO_FUN (do_showskills);
 DECLARE_DO_FUN (do_showweather);	/* FB */
 DECLARE_DO_FUN (do_shutdow);
 DECLARE_DO_FUN (do_shutdown);
@@ -4135,6 +4143,14 @@ DECLARE_DO_FUN (do_mpmusicaround);
 DECLARE_DO_FUN (do_mpmusicat);
 
 /*
+ * OasisOLC Declarations
+ */
+DECLARE_DO_FUN( do_omedit	);
+DECLARE_DO_FUN( do_oredit	);
+DECLARE_DO_FUN( do_ooedit	);
+DECLARE_DO_FUN( do_ocopy	);
+
+/*
  * Spell functions.
  * Defined in magic.c.
  */
@@ -4210,7 +4226,6 @@ DECLARE_SPELL_FUN (spell_scorching_surge);
 DECLARE_SPELL_FUN (spell_helical_flow);
 DECLARE_SPELL_FUN (spell_transport);
 DECLARE_SPELL_FUN (spell_portal);
-
 DECLARE_SPELL_FUN (spell_ethereal_fist);
 DECLARE_SPELL_FUN (spell_spectral_furor);
 DECLARE_SPELL_FUN (spell_hand_of_chaos);
@@ -4291,6 +4306,8 @@ DECLARE_SPELL_FUN (spell_sacral_divinity);
 #define FIXED_FILE	LOGDIR "fixed.log"	/* For 'fixed' command */
 #define LOG_FILE	LOGDIR "talk.log"	/* For talking in logged rooms */
 #define MOBLOG_FILE	LOGDIR "mob.log"	/* For mplog messages  */
+#define MOBDUMP_FILE	LOGDIR "mobdata.dump"	/* DUMP MOB Data  */
+#define OBJDUMP_FILE	LOGDIR "objdata.dump"	/* DUMP OBJ Data  */
 #define WIZLIST_FILE	SYSTEM_DIR "wiz.lst"	/* Wizlist       */
 #define WHO_FILE	SYSTEM_DIR "who.lst"	/* Who output file  */
 #define WEBWHO_FILE	SYSTEM_DIR "webwho.lst"	/* WWW Who output file */
@@ -4342,6 +4359,8 @@ bool can_learn_lang (CHAR_DATA * ch, int language);
 int countlangs (int languages);
 char *translate (int percent, const char *in, const char *name);
 const char *obj_short (OBJ_DATA * obj);
+void shutdown_mud( const char *reason );
+
 
 /* act_info.c */
 int get_door (const char *arg);

@@ -23,11 +23,17 @@ libtoolize
 aclocal
 autoconf
 autoheader
-touch README.md AUTHORS NEWS ChangeLog
-ln -sfv README.md README
-automake -a --add-missing
+
+ln -sf doc/1.-How-To-Install.md INSTALL
+ln -sf LICENSE COPYING
+ln -sf README.md README
+ln -sf README.md AUTHORS
+ln -sf README.md NEWS
+ln -sf README.md ChangeLog
+
+automake -a
 
 if [ -f "configure" ]; then
-	./configure --prefix=/opt/xsmaug --with-gnu-ld --enable-shared
+	./configure --prefix=/opt/xsmaug
 fi;
 

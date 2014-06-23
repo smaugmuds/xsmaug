@@ -496,9 +496,6 @@ interpret (CHAR_DATA * ch, char *argument)
 	  && !oprog_command_trigger (ch, origarg)
 	  && !check_social (ch, command, argument)
 	  && !news_cmd_hook (ch, command, argument)
-#ifdef IMC
-	  && !imc_command_hook (ch, command, argument)
-#endif
 	)
 	{
 	  EXIT_DATA *pexit;

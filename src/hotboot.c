@@ -706,10 +706,6 @@ do_hotboot (CHAR_DATA * ch, const char *argument)
   fclose (fp);
   fp = NULL;
 
-#ifdef IMC
-  imc_hotboot ();
-#endif
-
   /*
    * added this in case there's a need to debug the contents of the various files 
    */
@@ -726,23 +722,17 @@ do_hotboot (CHAR_DATA * ch, const char *argument)
    */
   snprintf (buf, 100, "%d", port);
   snprintf (buf2, 100, "%d", control);
-#ifdef IMC
-  if (this_imcmud)
-    snprintf (buf3, 100, "%d", this_imcmud->desc);
-  else
-    strncpy (buf3, "-1", 100);
-#else
   strncpy (buf3, "-1", 100);
-#endif
 
   set_alarm (0);
   dlclose (sysdata.dlHandle);
-  execl (EXE_FILE, "xsmaug", buf, "hotboot", buf2, buf3, (char *) NULL);
+  // HOTBOOT_EXEC is defined in configure.ac -> config.in.h -> config.h
+  execl (EXE_FILE, HOTBOOT_EXEC, buf, "hotboot", buf2, buf3, (char *) NULL);
 
   /*
    * Failed - sucessful exec will not return 
    */
-  perror ("do_hotboot: execl cannot open xsmaug");
+  perror ("do_hotboot: execl cannot open executable!");
 
   sysdata.dlHandle = dlopen (NULL, RTLD_LAZY);
   if (!sysdata.dlHandle)

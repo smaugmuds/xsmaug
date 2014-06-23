@@ -6570,3 +6570,47 @@ do_cook (CHAR_DATA * ch, const char *argument)
     }
   learn_from_success (ch, gsn_cook);
 }
+
+void do_showskills( CHAR_DATA * ch, const char *argument )
+{
+   char buf[MAX_STRING_LENGTH];
+   CHAR_DATA *victim;
+   int sn, col, top_sn;
+
+   if( !argument || argument[0] == '\0' )
+   {
+      send_to_char( "&zSyntax: showskills <player>.\r\n", ch );
+      return;
+   }
+
+   if( !( victim = get_char_world( ch, argument ) ) )
+   {
+      send_to_char( "No such person in the game.\r\n", ch );
+      return;
+   }
+
+   col = 0;
+
+   if( !IS_NPC( victim ) )
+   {
+      set_char_color( AT_MAGIC, ch );
+      for( sn = 0; sn < top_sn && skill_table[sn] && skill_table[sn]->name; sn++ )
+      // for( sn = 0; sn < top_sn; sn++ )
+      {
+         if( skill_table[sn]->name == NULL )
+            break;
+         if( victim->pcdata->learned[sn] == 0 )
+            continue;
+
+
+         snprintf( buf, MAX_STRING_LENGTH, "%20s %3d%% ", skill_table[sn]->name, victim->pcdata->learned[sn] );
+         send_to_char( buf, ch );
+
+         if( ++col % 3 == 0 )
+            send_to_char( "\r\n", ch );
+      }
+   }
+   return;
+}
+
+

@@ -604,10 +604,12 @@ fwrite_char (CHAR_DATA * ch, FILE * fp)
       fprintf (fp, "%d ", ch->colors[x]);
     fprintf (fp, "\n");
   }
-
-#ifdef IMC
-  imc_savechar (ch, fp);
-#endif
+   if( ch->pcdata->first_qbit )
+   {
+      BIT_DATA *bit;
+      for( bit = ch->pcdata->first_qbit; bit; bit = bit->next )
+         fprintf( fp, "Qbit        %d %s~\n", bit->number, bit->desc );
+   }
 
   fprintf (fp, "End\n\n");
   return;
@@ -866,10 +868,6 @@ load_char_obj (DESCRIPTOR_DATA * d, char *name, bool preload, bool copyover)
   ch->pcdata->lt_index = 0;	/* last tell index */
   ch->morph = NULL;
   ch->pcdata->hotboot = FALSE;	/* Never changed except when PC is saved during hotboot save */
-
-#ifdef IMC
-  imc_initchar (ch);
-#endif
 
   found = FALSE;
   snprintf (strsave, MAX_INPUT_LENGTH, "%s%c/%s", PLAYER_DIR,
@@ -1481,10 +1479,6 @@ fread_char (CHAR_DATA * ch, FILE * fp, bool preload, bool copyover)
 	    }
 	  KEY ("IllegalPK", ch->pcdata->illegal_pk, fread_number (fp));
 	  KEY ("Immune", ch->immune, fread_number (fp));
-#ifdef IMC
-	  if ((fMatch = imc_loadchar (ch, fp, word)))
-	    break;
-#endif
 	  break;
 
 	case 'K':
@@ -1649,6 +1643,27 @@ fread_char (CHAR_DATA * ch, FILE * fp, bool preload, bool copyover)
 	      break;
 	    }
 	  break;
+
+         case 'Q':
+            if( !str_cmp( word, "Qbit" ) )
+            {
+               BIT_DATA *bit;
+               BIT_DATA *desc;
+
+               CREATE( bit, BIT_DATA, 1 );
+               bit->number = fread_number( fp );
+               if( !( desc = find_qbit( bit->number ) ) )
+                  mudstrlcpy( bit->desc, fread_flagstring( fp ), MAX_STRING_LENGTH );
+               else
+               {
+                  mudstrlcpy( bit->desc, desc->desc, MAX_STRING_LENGTH );
+                  fread_flagstring( fp );
+               }
+               LINK( bit, ch->pcdata->first_qbit, ch->pcdata->last_qbit, next, prev );
+               fMatch = TRUE;
+               break;
+            }
+            break;
 
 	case 'R':
 	  KEY ("Race", ch->race, fread_number (fp));

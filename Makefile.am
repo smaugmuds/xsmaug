@@ -21,13 +21,23 @@ CC = g++
 CPP = g++
 CXX = g++
 
+ARCH = `uname -m`
+
 ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS = src
 
-EXTRA_DIST = autogen.sh data tools doc xsmaug.conf.in xsmaug-server.in src/*.h LICENSE
+EXTRA_DIST = autogen.sh \
+	data \
+	tools \
+	doc \
+	xsmaug.conf.in \
+	xsmaugd.in \
+	src/*.h \
+	LICENSE \
+	README.md
 
-bin_SCRIPTS = xsmaug-server
+bin_SCRIPTS = xsmaugd
 CLEANFILES = $(bin_SCRIPTS) xsmaug.conf
 
 etcdir = $(sysconfdir)/@PACKAGE@
@@ -44,15 +54,47 @@ do_subst = sed -e 's,[@]sharedstatedir[@],$(sharedstatedir),g' \
 		-e 's,[@]PACKAGE[@],$(PACKAGE),g' \
 		-e 's,[@]VERSION[@],$(VERSION),g'
 
-xsmaug-server: xsmaug-server.in Makefile
-	$(do_subst) < $(srcdir)/xsmaug-server.in > xsmaug-server
-	chmod +x xsmaug-server
+xsmaugd: xsmaugd.in Makefile
+	$(do_subst) < $(srcdir)/xsmaugd.in > xsmaugd
+	chmod +x xsmaugd
 
 xsmaug.conf: xsmaug.conf.in Makefile
 	$(do_subst) < $(srcdir)/xsmaug.conf.in > xsmaug.conf
 
 docdir = $(datarootdir)/doc/@PACKAGE@
-doc_DATA = README AUTHORS INSTALL NEWS LICENSE ChangeLog doc/healer.txt doc/act.txt doc/area.txt doc/class.txt doc/cmd_petfind.txt doc/command.txt doc/contrib.txt doc/FAQ.txt doc/hacker.txt doc/IdeasDrool.txt doc/license.diku.txt doc/license.merc.txt doc/license.txt doc/Mob.txt doc/Object.txt doc/olc.txt doc/pfile.txt doc/player.txt doc/Prog.txt doc/readme.txt doc/Resets.txt doc/Room.txt doc/security.txt doc/skill.txt doc/smaugdoc.txt doc/smaugspells.txt doc/smaug.txt doc/vnum.txt doc/WeatherHowTo.txt
+doc_DATA = README AUTHORS INSTALL NEWS LICENSE ChangeLog \
+	doc/Prog.txt \
+	doc/license.smaug.txt \
+	doc/license.merc.txt \
+	doc/license.diku.txt \
+	doc/IdeasDrool.txt \
+	doc/healer.txt \
+	doc/contrib.txt \
+	doc/command.txt \
+	doc/cmd_petfind.txt \
+	doc/class.txt \
+	doc/area.txt \
+	doc/act.txt \
+	doc/vnum.txt \
+	doc/smaugdoc.txt \
+	doc/skill.txt \
+	doc/2.-XSMAUG-FAQ.md \
+	doc/1.-How-to-Install.md \
+	doc/3.-XSMAUG-HOWTO.md \
+	doc/4.-New-Developers.md \
+	doc/6.2.1.-Reset-Lists.md \
+	doc/6.1.-Player-Files.md \
+	doc/5.-About-Security.md \
+	doc/6.3.-Building-Mobs.md \
+	doc/6.2.-Building-Rooms.md \
+	doc/6.5.1.-MOBprograms-(mudprograms).md \
+	doc/6.4.-Building-Objects.md \
+	doc/8.-Useful-Functions.md \
+	doc/7.-Spell-Manual.md \
+	doc/6.-OLC-(InGame-Online-Edition).md \
+	doc/6.5.-Building-MUD-Programs.md \
+	doc/6.6.-Building-Quest-Bits.md \
+	doc/9.-Weather.md
 
 rundir = $(datarootdir)/@PACKAGE@
 logdir = $(localstatedir)/log/@PACKAGE@

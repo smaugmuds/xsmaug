@@ -30,26 +30,24 @@ Due to the ability to edit most everything online, you will most likely find the
 	- xsmaug.conf:   XSMAUG Server Config File.
 	- xsmaug-server: XSMAUG Server Boot Script.
 	- tools:         Developer tools.
-	- data:
-		- realm:         Realm Area files.
-		- player:        Player files (initially empty).
-		- imc:           IMC files.
-		- vault:	 Guilds Vaults
-		- races:	 Races files.
-		- houses:	 House files.
-		- gods:          God players.
-		- deity:	 Deities.
-		- councils:	 Councils files.
-		- classes:       Classes files.
-		- clans:         Clans files.
-		- boards:        Boards files.
-		- corpses:       Death players corpses (initially empty).
-		- mudprogs:      MUD Program files.
-		- system:        MUD Game System files.
-		- building:      Building System files.
-		- classes:       Player Class files.
-		- color:	 MUD Color files.
-		- hotboot:       Fast boot config files.
+	- data/realm:    Realm Area files.
+	- data/player:   Player files (initially empty).
+	- data/vault:	 Guilds Vaults
+	- data/races:	 Races files.
+	- data/houses:	 House files.
+	- data/gods:     God players.
+	- data/deity:	 Deities.
+	- data/councils: Councils files.
+	- data/classes:  Classes files.
+	- data/clans:    Clans files.
+	- data/boards:   Boards files.
+	- data/corpses:  Death players corpses (initially empty).
+	- data/mudprogs: MUD Program files.
+	- data/system:   MUD Game System files.
+	- data/building: Building System files.
+	- data/classes:  Player Class files.
+	- data/color:	 MUD Color files.
+	- data/hotboot:  Fast boot config files.
 
 #### Features
 
@@ -102,6 +100,8 @@ Here are just some of the extra features XSMAUG has:
 	- MCCP and MSSP
 	- New Weather System and Calendar
 	- HotBoot!
+	- Dump Objects and Mobs to files
+	- Quest bits added.
 	- Mounts and much much more
 
 Changes made to areas:
@@ -141,6 +141,9 @@ New Imported Areas:
 		- New structure.
 		- Server logs now goes to system directory "$(localstatedir)/log/xsmaug/"
 		- "LOG_DIR" variable in "mud.h" is now obsolete and has been changed to "LOGDIR" in "config.h"
+		- Added: Command "dump" (do_dump)
+		- Added: Quest Bits (do_abit, do_qbit)
+		- Added: Capture SIGTERM & SIGKILL signals.
 
 	* XSMAUG 2.0 -> XSMAUG 2.1
 
@@ -185,7 +188,7 @@ First, check out the documentation at **[XSMAUG Wiki] (https://github.com/smaugm
 
 We rewrote all of the documentation files for the **XSMAUG 2.0 Phoenix Release**, and have been keeping them up-to-date since.
 
-Also check the **'wizhelp'** command and read the **'help'** descriptions for the individual immortal commands.
+Also check the **'wizhelp'**, **'help'**, **'hlist'** commands and read the **'help'** descriptions for the individual immortal commands.
 
 When you write us, we need to know what kind of machine you're running on.  If you can give us specific information about the problem, that helps too.
 

@@ -14,15 +14,15 @@
 # Win32 port by Nick Gammon                                                #
 # ------------------------------------------------------------------------ #
 #                                  XSMAUG                                  #
-#                                 Makefile                                 #
+#                               configure.ac                               #
 ############################################################################
 
 #                             -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 #
 
-AC_PREREQ(2.69)
-LT_PREREQ(2.4)
+AC_PREREQ(2.69) # require aclocal
+LT_PREREQ(2.4)  # require libtool
 
 PACKAGE=xsmaug
 
@@ -45,9 +45,14 @@ AM_SANITY_CHECK
 AC_DEFINE_UNQUOTED([PREFIX], ["/opt/xsmaug/"], [Define to the root directory.])
 AC_DEFINE_UNQUOTED([RUNDIR], ["${prefix}/com/xsmaug/"], [Define to the read-only architecture-independant data directory.])
 AC_DEFINE_UNQUOTED([LOGDIR], ["${prefix}/var/log/xsmaug/"], [Define to log directory.])
+AC_DEFINE_UNQUOTED([HOTBOOT_EXEC], ["${prefix}/bin/xsmaug"], [Define HotBoot Executable file.])
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
+
+AC_CANONICAL_HOST
+AC_CANONICAL_BUILD
+
 AC_PROG_CC([cc])
 AC_PROG_CXX([g++])
 AC_PROG_LIBTOOL
@@ -81,6 +86,17 @@ AC_FUNC_MALLOC
 AC_FUNC_MKTIME
 AC_FUNC_REALLOC
 AC_CHECK_FUNCS([alarm bzero dup2 gethostbyaddr gethostbyname gettimeofday inet_ntoa isascii memmove memset select socket strcasecmp strchr strdup strerror strncasecmp strpbrk strrchr strstr])
+
+AC_ARG_ENABLE(profiling,
+              AC_HELP_STRING([--enable-profiling],
+                             [enable profiling support @<:@default=no@:>@]),
+              [], [enable_profiling=no])
+if test "$enable_profiling" = "yes"; then
+    CFLAGS="$CFLAGS -pg -g3"
+else
+    DFB_CFLAGS_OMIT_FRAME_POINTER="-fomit-frame-pointer"
+fi
+
 
 AC_CONFIG_FILES([Makefile src/Makefile])
 

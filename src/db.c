@@ -315,7 +315,9 @@ boot_db (bool fCopyOver)
   unlink (BOOTLOG_FILE);
   boot_log ("---------------------[ Boot Log ]--------------------");
 
-  log_string ("Initializing libdl support...");
+  boot_log ("Booting %s", PACKAGE_STRING);
+
+  boot_log ("Initializing libdl support...");
   /*
    * Open up a handle to the executable's symbol table for later use
    * when working with commands
@@ -323,21 +325,20 @@ boot_db (bool fCopyOver)
   sysdata.dlHandle = dlopen (NULL, RTLD_LAZY);
   if (!sysdata.dlHandle)
     {
-      log_string
-	("dl: Error opening local system executable as handle, please check compile flags.");
+      boot_log ("dl: Error opening local system executable as handle, please check compile flags.");
       shutdown_mud ("libdl failure");
       exit (1);
     }
 
-  log_string ("Loading commands...");
+  boot_log ("Loading commands...");
   load_commands ();
 
   mud_start_time = current_time;
 
-  log_string ("Loading spec_funs...");
+  boot_log ("Loading spec_funs...");
   load_specfuns ();
 
-  log_string ("Loading sysdata configuration...");
+  boot_log ("Loading sysdata configuration...");
 
   /*
    * default values 
@@ -385,7 +386,7 @@ boot_db (bool fCopyOver)
     | SV_ZAPDROP | SV_IDLE;
   if (!load_systemdata (&sysdata))
     {
-      log_string ("Not found.  Creating new configuration.");
+      boot_log ("Not found.  Creating new configuration.");
       sysdata.alltimemax = 0;
       sysdata.mud_name = str_dup ("(Name not set)");
       update_timers ();
@@ -393,47 +394,53 @@ boot_db (bool fCopyOver)
       save_sysdata (sysdata);
     }
 
-  log_string ("Loading socials");
+  boot_log ("Loading socials");
   load_socials ();
 
-  log_string ("Loading skill table");
+  boot_log ("Loading skill table");
   load_skill_table ();
   sort_skill_table ();
   remap_slot_numbers ();	/* must be after the sort */
 
   num_sorted_skills = num_skills;
 
-  log_string ("Loading classes");
+  boot_log ("Loading classes");
   load_classes ();
 
-  log_string ("Loading races");
+  boot_log ("Loading races");
   load_races ();
 
-  log_string ("Loading news data");
+  boot_log ("Loading news data");
   load_news ();
 
   /*
    * load liquids into the system from the liquidtable.dat file -Nopey 
    */
-  log_string ("Loading liquids");
+  boot_log ("Loading liquids");
   load_liquids ();
 
   /*
    * load mixtures into the system from the mixturetable.dat file -Nopey 
    */
-  log_string ("Loading mixtures");
+  boot_log ("Loading mixtures");
   load_mixtures ();
 
-  log_string ("Loading herb table");
+  boot_log ("Loading herb table");
   load_herb_table ();
 
-  log_string ("Loading tongues");
+  boot_log ("Loading tongues");
   load_tongues ();
 
-  log_string ("Making wizlist");
+  /*
+   * abit/qbit code
+   */
+  boot_log ("Loading quest bit tables");
+  load_bits ();
+
+  boot_log ("Making wizlist");
   make_wizlist ();
 
-  log_string ("Loading MSSP Data...");
+  boot_log ("Loading MSSP Data...");
   load_mssp_data ();
 
   fBootDb = TRUE;
@@ -499,7 +506,7 @@ boot_db (bool fCopyOver)
   /*
    * Init random number generator.
    */
-  log_string ("Initializing random number generator");
+  boot_log ("Initializing random number generator");
   init_mm ();
 
   /*
@@ -508,7 +515,7 @@ boot_db (bool fCopyOver)
   {
     long lhour, lday, lmonth;
 
-    log_string ("Setting time and weather.");
+    boot_log ("Setting time and weather.");
 
     if (!load_timedata ())	/* Loads time from stored file if TRUE - Samson 1-21-99 */
       {
@@ -541,17 +548,17 @@ boot_db (bool fCopyOver)
       InitializeWeatherMap ();
     }
 
-  log_string ("Loading holiday chart...");	/* Samson 5-13-99 */
+  boot_log ("Loading holiday chart...");	/* Samson 5-13-99 */
   load_holidays ();
 
-  log_string ("Loading DNS cache...");	/* Samson 1-30-02 */
+  boot_log ("Loading DNS cache...");	/* Samson 1-30-02 */
   load_dns ();
 
   /*
    * Assign gsn's for skills which need them.
    */
   {
-    log_string ("Assigning gsn's");
+    boot_log ("Assigning gsn's");
     ASSIGN_GSN (gsn_style_evasive, "evasive style");
     ASSIGN_GSN (gsn_style_defensive, "defensive style");
     ASSIGN_GSN (gsn_style_standard, "standard style");
@@ -636,10 +643,8 @@ boot_db (bool fCopyOver)
     ASSIGN_GSN (gsn_halfling, "halfling");
   }
 
-#ifdef PLANES
-  log_string ("Reading in plane file...");
+  boot_log ("Reading in plane file...");
   load_planes ();
-#endif
 
   /*
    * Read in all the area files.
@@ -647,7 +652,7 @@ boot_db (bool fCopyOver)
   {
     FILE *fpList;
 
-    log_string ("Reading in area files...");
+    boot_log ("Reading in area files...");
     if (!(fpList = fopen (AREA_LIST, "r")))
       {
 	perror (AREA_LIST);
@@ -674,10 +679,8 @@ boot_db (bool fCopyOver)
     fpList = NULL;
   }
 
-#ifdef PLANES
-  log_string ("Making sure rooms are planed...");
+  boot_log ("Making sure rooms are planed...");
   check_planes (NULL);
-#endif
 
   /*
    *   initialize supermob.
@@ -693,56 +696,56 @@ boot_db (bool fCopyOver)
    * Load up the notes file.
    */
 
-  log_string ("Fixing exits");
+  boot_log ("Fixing exits");
   fix_exits ();
   fBootDb = FALSE;
-  log_string ("Initializing economy");
+  boot_log ("Initializing economy");
   initialize_economy ();
   if (fCopyOver)
     {
-      log_string ("Loading world state...");
+      boot_log ("Loading world state...");
       load_world ();
     }
-  log_string ("Resetting areas");
+  boot_log ("Resetting areas");
   area_update ();
 
-  log_string ("Loading buildlist");
+  boot_log ("Loading buildlist");
   load_buildlist ();
 
-  log_string ("Loading boards");
+  boot_log ("Loading boards");
   load_boards ();
 
-  log_string ("Loading clans");
+  boot_log ("Loading clans");
   load_clans ();
 
-  log_string ("Loading councils");
+  boot_log ("Loading councils");
   load_councils ();
 
-  log_string ("Loading deities");
+  boot_log ("Loading deities");
   load_deity ();
 
-  log_string ("Loading watches");
+  boot_log ("Loading watches");
   load_watchlist ();
 
-  log_string ("Loading bans");
+  boot_log ("Loading bans");
   load_banlist ();
 
-  log_string ("Loading reserved names");
+  boot_log ("Loading reserved names");
   load_reserved ();
 
-  log_string ("Loading corpses");
+  boot_log ("Loading corpses");
   load_corpses ();
 
-  log_string ("Loading Immortal Hosts");
+  boot_log ("Loading Immortal Hosts");
   load_imm_host ();
 
-  log_string ("Loading Projects");
+  boot_log ("Loading Projects");
   load_projects ();
 
   /*
    * Morphs MUST be loaded after class and race tables are set up --Shaddai 
    */
-  log_string ("Loading Morphs");
+  boot_log ("Loading Morphs");
   load_morphs ();
   MOBtrigger = TRUE;
 
@@ -3103,6 +3106,7 @@ free_char (CHAR_DATA * ch)
   AFFECT_DATA *paf;
   TIMER *timer;
   MPROG_ACT_LIST *mpact, *mpact_next;
+  BIT_DATA *abit, *abit_next;
   NOTE_DATA *comments, *comments_next;
   VARIABLE_DATA *vd, *vd_next;
 
@@ -3140,6 +3144,12 @@ free_char (CHAR_DATA * ch)
   stop_hating (ch);
   stop_fearing (ch);
   free_fight (ch);
+  for( abit = ch->first_abit; abit; abit = abit_next )
+  {
+    abit_next = abit->next;
+    UNLINK( abit, ch->first_abit, ch->last_abit, next, prev );
+    DISPOSE( abit );
+  }
 
   if (ch->pnote)
     free_note (ch->pnote);
@@ -3153,6 +3163,7 @@ free_char (CHAR_DATA * ch)
   if (ch->pcdata)
     {
       IGNORE_DATA *temp, *next;
+      BIT_DATA *qbit, *qbit_next;
 
       if (ch->pcdata->pet)
 	{
@@ -3201,9 +3212,14 @@ free_char (CHAR_DATA * ch)
 	    }
 	  DISPOSE (ch->pcdata->tell_history);
 	}
-#ifdef IMC
-      imc_freechardata (ch);
-#endif
+
+      for( qbit = ch->pcdata->first_qbit; qbit; qbit = qbit_next )
+      {
+         qbit_next = qbit->next;
+         UNLINK( qbit, ch->pcdata->first_qbit, ch->pcdata->last_qbit, next, prev );
+         DISPOSE( qbit );
+      }
+
       DISPOSE (ch->pcdata);
     }
 
@@ -4499,7 +4515,7 @@ boot_log (const char *str, ...)
   FILE *fp;
   va_list param;
 
-  mudstrlcpy (buf, "[*****] BOOT: ", MAX_STRING_LENGTH);
+  mudstrlcpy (buf, "[***] BOOTLOG: ", MAX_STRING_LENGTH);
   va_start (param, str);
   vsnprintf (buf + strlen (buf), (MAX_STRING_LENGTH - strlen (buf)), str,
 	     param);
@@ -4665,9 +4681,7 @@ add_to_wizlist (char *name, int level)
 {
   WIZENT *wiz, *tmp;
 
-#ifdef DEBUG
-  log_string ("Adding to wizlist...");
-#endif
+  boot_log ("Adding to wizlist...");
 
   CREATE (wiz, WIZENT, 1);
   wiz->name = str_dup (name);

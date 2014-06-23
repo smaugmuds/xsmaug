@@ -1,0 +1,338 @@
+diff -burpN smaugfuss/src//act_comm.c smaugfussdev/src//act_comm.c
+--- smaugfuss/src//act_comm.c	2009-07-21 11:53:56.000000000 -0400
++++ smaugfussdev/src//act_comm.c	2009-07-21 11:35:24.000000000 -0400
+@@ -27,6 +27,7 @@
+ void talk_channel( CHAR_DATA * ch, const char *argument, int channel, const char *verb );
+ char *scramble( const char *argument, int modifier );
+ const char *drunk_speech( const char *argument, CHAR_DATA * ch );
++void account_save( ACCOUNT_DATA *account );
+ 
+ /* Text scrambler -- Altrag */
+ char *scramble( const char *argument, int modifier )
+@@ -1775,6 +1776,7 @@ void do_quit( CHAR_DATA* ch, const char*
+ {
+    char log_buf[MAX_STRING_LENGTH];
+    int x, y;
++   struct tm *tms;
+    int level;
+ 
+    if( IS_NPC( ch ) )
+@@ -1828,6 +1830,14 @@ void do_quit( CHAR_DATA* ch, const char*
+    act( AT_BYE, "$n has left the game.", ch, NULL, NULL, TO_CANSEE );
+    set_char_color( AT_GREY, ch );
+ 
++   if( ch->desc && ch->desc->account && !IS_IMMORTAL( ch ) )
++   {
++      tms = localtime( &current_time );
++      tms->tm_min += ACCOUNT_TIMER;
++      ch->desc->account->timer = mktime( tms );
++      account_save( ch->desc->account );
++   }
++
+    snprintf( log_buf, MAX_STRING_LENGTH, "%s has quit (Room %d).", ch->name, ( ch->in_room ? ch->in_room->vnum : -1 ) );
+    quitting_char = ch;
+    save_char_obj( ch );
+@@ -1847,6 +1857,8 @@ void do_quit( CHAR_DATA* ch, const char*
+    saving_char = NULL;
+ 
+    level = get_trust( ch );
++   if( ch->desc )
++        ch->desc->connected = CON_ACCOUNT_PENDING;
+    /*
+     * After extract_char the ch is no longer valid!
+     */
+diff -burpN smaugfuss/src//comm.c smaugfussdev/src//comm.c
+--- smaugfuss/src//comm.c	2009-05-18 01:56:00.000000000 -0400
++++ smaugfussdev/src//comm.c	2009-07-21 11:36:42.000000000 -0400
+@@ -148,6 +148,10 @@ void display_prompt( DESCRIPTOR_DATA * d
+ void set_pager_input( DESCRIPTOR_DATA * d, char *argument );
+ bool pager_output( DESCRIPTOR_DATA * d );
+ void mail_count( CHAR_DATA * ch );
++void account_dispose args( ( ACCOUNT_DATA *account ) );
++void account_nanny args( ( DESCRIPTOR_DATA *d, char *argument ) );
++void account_save args( ( ACCOUNT_DATA *account ) );
++bool account_add_character args ( ( ACCOUNT_DATA *account, const char *name, bool pending, bool newcharacter ) );
+ 
+ int port;
+ 
+@@ -799,8 +803,9 @@ void game_loop( void )
+             close_socket( d, TRUE );
+             continue;
+          }
+-         else if( ( !d->character && d->idle > 360 )  /* 2 mins */
+-                  || ( d->connected != CON_PLAYING && d->idle > 1200 )  /* 5 mins */
++         else if( ( !d->character && d->connected != CON_ACCOUNT_PENDING && d->idle > 360 )  /* 2 mins */
++                  || ( d->connected != CON_PLAYING && d->connected != CON_ACCOUNT_PENDING && d->idle > 1200 )  /* 5 mins */
++	          || ( d->connected == CON_ACCOUNT_PENDING && d->idle > 12000)
+                   || d->idle > 28800 ) /* 2 hrs  */
+          {
+             write_to_descriptor( d, "Idle timeout... disconnecting.\r\n", 0 );
+@@ -866,6 +871,15 @@ void game_loop( void )
+                      case CON_EDITING:
+                         edit_buffer( d->character, cmdline );
+                         break;
++		     case CON_GET_OLD_ACCOUNT_PASSWORD:
++		     case CON_COMFIRM_NEW_ACCOUNT:
++                     case CON_ACCOUNT_ADD_CHARACTER_PASSWORD:
++                     case CON_GET_NEW_ACCOUNT_PASSWORD:
++                     case CON_COMFIRM_ACCOUNT_PASSWORD:
++                     case CON_GET_ACCOUNT:
++                     case CON_ACCOUNT_PENDING:
++			account_nanny( d, cmdline );
++			break;
+                   }
+             }
+          }
+@@ -1026,7 +1040,7 @@ void new_descriptor( int new_desc )
+    CREATE( dnew, DESCRIPTOR_DATA, 1 );
+    dnew->next = NULL;
+    dnew->descriptor = desc;
+-   dnew->connected = CON_GET_NAME;
++   dnew->connected = CON_GET_ACCOUNT;
+    dnew->outsize = 2000;
+    dnew->idle = 0;
+    dnew->lines = 0;
+@@ -1117,6 +1131,11 @@ void new_descriptor( int new_desc )
+ void free_desc( DESCRIPTOR_DATA * d )
+ {
+    close( d->descriptor );
++   if( d->account )
++   {
++	account_save( d->account );
++	account_dispose( d->account );
++   }
+    STRFREE( d->host );
+    DISPOSE( d->outbuf );
+    if( d->pagebuf )
+@@ -1824,6 +1843,13 @@ void nanny_get_name( DESCRIPTOR_DATA * d
+       return;
+    }
+ 
++   if( !str_cmp( argument, "account" ) )
++   {
++      write_to_buffer( d, "Enter account name: ", 0 );
++      d->connected = CON_GET_ACCOUNT;
++      return;
++   }
++
+    argument[0] = UPPER( argument[0] );
+ 
+    if( !str_cmp( argument, "MSSP-REQUEST" ) )
+@@ -2367,6 +2393,10 @@ void nanny_get_want_ripansi( DESCRIPTOR_
+    }
+    snprintf( log_buf, MAX_STRING_LENGTH, "%s@%s new %s %s.", ch->name, d->host,
+              race_table[ch->race]->race_name, class_table[ch->Class]->who_name );
++
++   account_add_character(d->account, ch->name, FALSE, TRUE);
++   account_save( d->account );
++
+    log_string_plus( log_buf, LOG_COMM, sysdata.log_level );
+    to_channel( log_buf, CHANNEL_MONITOR, "Monitor", LEVEL_IMMORTAL );
+    write_to_buffer( d, "Press [ENTER] ", 0 );
+diff -burpN smaugfuss/src//handler.c smaugfussdev/src//handler.c
+--- smaugfuss/src//handler.c	2008-09-02 02:32:58.000000000 -0400
++++ smaugfussdev/src//handler.c	2009-07-21 11:37:10.000000000 -0400
+@@ -41,6 +41,7 @@ OBJ_DATA *group_object( OBJ_DATA * obj1,
+ void update_room_reset( CHAR_DATA *ch, bool setting );
+ bool in_magic_container( OBJ_DATA * obj );
+ void delete_reset( RESET_DATA * pReset );
++void account_menu( DESCRIPTOR_DATA * d );
+ 
+ /* 50 nested loops should be enough till the end of time,
+    unless someone forgot to deallocate :P - Luc 06/2007 */
+@@ -2595,6 +2596,14 @@ void extract_char( CHAR_DATA * ch, bool
+ 
+    if( ch->desc )
+    {
++      if( ch->desc->account )
++      {
++         account_menu( ch->desc );
++         send_to_desc_color( "\n&WAccount&z:&W", ch->desc );
++         ch->desc->character = NULL;
++         ch->desc = NULL;
++         return;
++      }
+       if( ch->desc->character != ch )
+          bug( "%s: char's descriptor points to another char", __FUNCTION__ );
+       else
+diff -burpN smaugfuss/src//hotboot.c smaugfussdev/src//hotboot.c
+--- smaugfuss/src//hotboot.c	2008-09-02 02:32:58.000000000 -0400
++++ smaugfussdev/src//hotboot.c	2009-07-21 11:38:07.000000000 -0400
+@@ -45,6 +45,8 @@ bool write_to_descriptor_old( int desc,
+ void update_room_reset( CHAR_DATA *ch, bool setting );
+ 
+ extern ROOM_INDEX_DATA *room_index_hash[MAX_KEY_HASH];
++void  account_save args( ( ACCOUNT_DATA *account ) );
++ACCOUNT_DATA *account_fread( const char *name );
+ 
+ /*
+  * Save the world's objects and mobs in their current positions -- Scion
+@@ -122,6 +124,7 @@ void save_mobile( FILE * fp, CHAR_DATA *
+ 
+ void save_world( void )
+ {
++   ACCOUNT_DATA *account;
+    FILE *mobfp;
+    FILE *objfp;
+    int mobfile = 0;
+@@ -132,6 +135,9 @@ void save_world( void )
+ 
+    log_string( "Preserving world state...." );
+ 
++   for( account = first_account; account; account = account->next )
++        account_save( account );
++
+    snprintf( filename, 256, "%s%s", SYSTEM_DIR, MOB_FILE );
+    if( !( mobfp = fopen( filename, "w" ) ) )
+    {
+@@ -660,8 +666,8 @@ void do_hotboot( CHAR_DATA* ch, const ch
+       }
+       else
+       {
+-         fprintf( fp, "%d %d %d %d %d %s %s\n", d->descriptor,
+-                  d->can_compress, och->in_room->vnum, d->port, d->idle, och->name, d->host );
++         fprintf( fp, "%d %d %d %d %d %s %s %s\n", d->descriptor,
++                  d->can_compress, och->in_room->vnum, d->port, d->idle, och->name, d->account ? d->account->name : "None", d->host );
+          /*
+           * One of two places this gets changed 
+           */
+@@ -733,6 +739,7 @@ void hotboot_recover( void )
+    FILE *fp;
+    char name[100];
+    char host[MAX_STRING_LENGTH];
++   char account[MAX_STRING_LENGTH];
+    int desc, dcompress, room, dport, idle, maxp = 0;
+    bool fOld;
+ 
+@@ -750,7 +757,7 @@ void hotboot_recover( void )
+    {
+       d = NULL;
+ 
+-      fscanf( fp, "%d %d %d %d %d %s %s\n", &desc, &dcompress, &room, &dport, &idle, name, host );
++      fscanf( fp, "%d %d %d %d %d %s %s %s\n", &desc, &dcompress, &room, &dport, &idle, name, account, host );
+ 
+       if( desc == -1 || feof( fp ) )
+          break;
+@@ -774,7 +781,7 @@ void hotboot_recover( void )
+ 
+       d->next = NULL;
+       d->descriptor = desc;
+-      d->connected = CON_GET_NAME;
++      d->connected = CON_GET_ACCOUNT;
+       d->outsize = 2000;
+       d->idle = 0;
+       d->lines = 0;
+@@ -787,6 +794,7 @@ void hotboot_recover( void )
+       CREATE( d->outbuf, char, d->outsize );
+ 
+       d->host = STRALLOC( host );
++      d->account = account_fread( account );
+       d->port = dport;
+       d->idle = idle;
+       CREATE( d->mccp, MCCP, 1 );
+diff -burpN smaugfuss/src//Makefile smaugfussdev/src//Makefile
+--- smaugfuss/src//Makefile	2009-05-14 05:59:26.000000000 -0400
++++ smaugfussdev/src//Makefile	2009-07-21 11:07:23.000000000 -0400
+@@ -25,7 +25,7 @@ L_FLAGS = $(PROF) $(SOLARIS_LINK) -lz $(
+ #D_FLAGS : For the DNS Slave process. No need in linking all the extra libs for this.
+ D_FLAGS = -g2 -O $(PROF) $(SOLARIS_LINK)
+ 
+-C_FILES = act_comm.c act_info.c act_move.c act_obj.c act_wiz.c ban.c boards.c \
++C_FILES = account.c act_comm.c act_info.c act_move.c act_obj.c act_wiz.c ban.c boards.c \
+           build.c calendar.c chess.c clans.c color.c comm.c comments.c const.c db.c deity.c \
+           dns.c fight.c handler.c hashstr.c hint.c hotboot.c imm_host.c interp.c \
+           liquids.c magic.c makeobjs.c mapout.c mapper.c mccp.c \
+diff -burpN smaugfuss/src//mud.h smaugfussdev/src//mud.h
+--- smaugfuss/src//mud.h	2009-05-14 05:59:26.000000000 -0400
++++ smaugfussdev/src//mud.h	2009-07-21 11:34:43.000000000 -0400
+@@ -160,6 +160,8 @@ typedef struct variable_data VARIABLE_DA
+ typedef struct game_board_data GAME_BOARD_DATA;
+ typedef struct mpsleep_data MPSLEEP_DATA;
+ typedef struct lmsg_data LMSG_DATA;
++typedef struct account_character_data ACCOUNT_CHARACTER_DATA;
++typedef struct account_data ACCOUNT_DATA;
+ 
+ /*
+  * Function types.
+@@ -385,6 +387,7 @@ struct extended_bitvector
+ #include "color.h"
+ #include "dns.h"
+ #include "hotboot.h"
++#include "account.h"
+ #include "calendar.h" /* AFKMud Calendar Replacement - Samson */
+ #include "weather.h"  /* Weather System Replacement - Kayle */
+ #include "liquids.h" /* SMAUG Liquidtable Replacement - Nopey */
+@@ -745,7 +748,14 @@ typedef enum
+ /* Uncomment this section if using Samson's Shell Code */
+ /* CON_FORKED, CON_IAFORKED, */
+ 
+-   CON_EDITING
++   CON_EDITING,
++
++/* Account System code */
++   CON_COMFIRM_NEW_ACCOUNT, CON_GET_OLD_ACCOUNT_PASSWORD,
++   CON_ACCOUNT_PENDING, CON_ACCOUNT_ADD_CHARACTER_PASSWORD,
++   CON_GET_NEW_ACCOUNT_PASSWORD, CON_COMFIRM_ACCOUNT_PASSWORD,
++   CON_GET_ACCOUNT
++
+ } connection_types;
+ 
+ /*
+@@ -775,6 +785,7 @@ struct descriptor_data
+    DESCRIPTOR_DATA *snoop_by;
+    CHAR_DATA *character;
+    CHAR_DATA *original;
++   ACCOUNT_DATA *account;
+    struct mccp_data *mccp; /* Mud Client Compression Protocol */
+    bool can_compress;
+    const char *host;
+@@ -3620,6 +3631,8 @@ extern IMMORTAL_HOST *immortal_host_end;
+ 
+ extern AUCTION_DATA *auction;
+ extern struct act_prog_data *mob_act_list;
++extern ACCOUNT_DATA *first_account;
++extern ACCOUNT_DATA *last_account;
+ 
+ /*
+  * Command functions.
+@@ -4217,6 +4230,7 @@ DECLARE_SPELL_FUN( spell_sacral_divinity
+  */
+ #define PLAYER_DIR	"../player/"   /* Player files         */
+ #define BACKUP_DIR	"../backup/"   /* Backup Player files   */
++#define ACCOUNT_DIR 	"../accounts/" /* Directory for accounts */
+ #define GOD_DIR		"../gods/"  /* God Info Dir         */
+ #define BOARD_DIR	      "../boards/"   /* Board data dir    */
+ #define CLAN_DIR	      "../clans/" /* Clan data dir     */
+@@ -4829,7 +4843,7 @@ ch_ret chain_spells( int sn, int level,
+ #define OS_CARRY	0
+ #define OS_CORPSE	1
+ void save_char_obj args( ( CHAR_DATA * ch ) );
+-bool load_char_obj args( ( DESCRIPTOR_DATA * d, char *name, bool preload, bool copyover ) );
++bool load_char_obj args( ( DESCRIPTOR_DATA * d, const char *name, bool preload, bool copyover ) );
+ void set_alarm args( ( long seconds ) );
+ void requip_char args( ( CHAR_DATA * ch ) );
+ void fwrite_obj args( ( CHAR_DATA * ch, OBJ_DATA * obj, FILE * fp, int iNest, short os_type, bool hotboot ) );
+diff -burpN smaugfuss/src//save.c smaugfussdev/src//save.c
+--- smaugfuss/src//save.c	2009-07-09 04:49:08.000000000 -0400
++++ smaugfussdev/src//save.c	2009-07-21 11:34:19.000000000 -0400
+@@ -746,7 +746,7 @@ void fwrite_obj( CHAR_DATA * ch, OBJ_DAT
+ /*
+  * Load a char and inventory into a new ch structure.
+  */
+-bool load_char_obj( DESCRIPTOR_DATA * d, char *name, bool preload, bool copyover )
++bool load_char_obj( DESCRIPTOR_DATA * d, const char *name, bool preload, bool copyover )
+ {
+    char strsave[MAX_INPUT_LENGTH];
+    CHAR_DATA *ch;
+diff -burpN smaugfuss/src//startup smaugfussdev/src//startup
+--- smaugfuss/src//startup	2008-09-21 02:30:00.000000000 -0400
++++ smaugfussdev/src//startup	2009-07-21 11:46:30.000000000 -0400
+@@ -1,7 +1,7 @@
+ #! /bin/csh -f
+ 
+ # Set the port number.
+-set port = 1073
++set port = 1072
+ if ( "$1" != "" ) set port="$1"
+ 
+ # Change to area directory.
