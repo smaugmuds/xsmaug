@@ -21,7 +21,7 @@ CC = g++
 CPP = g++
 CXX = g++
 
-ARCH := `getconf LONG_BIT`
+ARCH = `getconf LONG_BIT`
 
 ACLOCAL_AMFLAGS = -I m4
 
