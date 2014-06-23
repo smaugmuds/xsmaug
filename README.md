@@ -17,9 +17,11 @@
 
 ### XSMAUG Releases
 
- * **[XSMAUG Phoenix Release 2.0] (https://github.com/smaugmuds/xsmaug/releases/tag/2.0)** **¡¡¡NEW!!!**
+The release of version **2.2** is HERE! With many bugfixes as well as important and useful new code features.
+
+ * **[XSMAUG Phoenix Release 2.0] (https://github.com/smaugmuds/xsmaug/releases/tag/2.0)** **¡Launch!**
  * **[XSMAUG Phoenix Release 2.1] (https://github.com/smaugmuds/xsmaug/releases/tag/2.1)** **¡Update!**
- * **[XSMAUG Phoenix Release 2.2] (https://github.com/smaugmuds/xsmaug/releases/tag/2.2)** **¡Update!**
+ * **[XSMAUG Phoenix Release 2.2] (https://github.com/smaugmuds/xsmaug/releases/tag/2.2)**    **¡NEW!**
 
 #### Contents of the Release
 
