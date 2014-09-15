@@ -76,6 +76,7 @@ The release of version **2.4** is HERE! With many bugfixes as well as important 
 	- data/crash:       Crash files.
 	- data/motd:        Message files.
 	- data/web:         Web Site & MUD dumped HTML Files.
+	- db/darkhaven.db:  Database Test File
 
 #### Features
 
