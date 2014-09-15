@@ -1,0 +1,1040 @@
+Replacing BFD with Dlsym Support
+--------------------------------
+
+This document assumes you've added BFD according to the BFD.txt snippet file
+I once distributed. If you didn't, well, I feel for you. This will probably hurt.
+
+1. Open the Makefile.
+
+Find and remove:
+
+#BFD
+BFD = -lbfd -liberty 
+
+At the end of your L_FLAGS, find:
+
+$(BFD)
+
+Replace it with:
+
+-ldl
+
+Then find your C_FLAGS and add to the end:
+
+-export-dynamic
+
+Then find this line:
+
+$(CC) -o smaug $(O_FILES) $(L_FLAGS)
+
+And change it as follows:
+
+$(CC) -export-dynamic -o smaug $(O_FILES) $(L_FLAGS)
+
+2. Open mud.h
+
+Find and remove:
+
+#include <bfd.h> /* Eizneckam's BFD Code */
+#include <libiberty.h>
+
+Find and remove:
+
+#define EXPORTIT __attribute__ ((section("__exported_functions")))
+#define EXPORT_DOFUN __attribute__ ((section("__exported_do_funs")))
+#define EXPORT_SPFUN __attribute__ ((section("__exported_spell_funs")))
+#define EXPORT_SCFUN __attribute__ ((section("__exported_spec_funs")))
+
+Find:
+
+#define DECLARE_DO_FUN( fun )           DO_FUN    fun EXPORT_DOFUN
+#define DECLARE_SPEC_FUN( fun )         SPEC_FUN  fun EXPORT_SCFUN
+#define DECLARE_SPELL_FUN( fun )        SPELL_FUN fun EXPORT_SPFUN
+
+Replace with:
+
+#define DECLARE_DO_FUN( fun )		DO_FUN    fun
+#define DECLARE_SPEC_FUN( fun )		SPEC_FUN  fun
+#define DECLARE_SPELL_FUN( fun )	SPELL_FUN fun
+
+Find:
+
+typedef	struct	lcnv_data		LCNV_DATA;
+typedef	struct	lang_data		LANG_DATA;
+
+Below that, add:
+
+typedef struct specfun_list SPEC_LIST;
+
+Find and remove:
+
+DECLARE_DO_FUN( do_listdfs );
+
+Find:
+
+/* Eizneckam's BFD Code */
+extern 		int 			total_syms;
+extern 		bfd 			*abfd;
+extern 		asymbol 		**fun_syms;
+
+Replace with:
+
+extern SPEC_LIST *first_specfun;
+extern SPEC_LIST *last_specfun;
+
+Locate the system_data struct, and add the following to the end:
+
+   void *dlHandle;
+
+Locate the cmd_type struct, and find:
+
+   DO_FUN *do_fun;
+
+Below that, add:
+
+   char *fun_name;
+
+Locate the mob_index_data struct
+
+Find:
+
+   char *description;
+
+Below that, add:
+
+   char *spec_funname;
+
+Locate the char_data struct
+
+Find:
+
+    SPEC_FUN *		spec_fun;
+
+Below that, add:
+
+   char *spec_funname;
+
+Find:
+
+struct lang_data
+{
+    LANG_DATA *		next;
+    LANG_DATA *		prev;
+    char *		name;
+    LCNV_DATA *		first_precnv;
+    LCNV_DATA *		last_precnv;
+    char *		alphabet;
+    LCNV_DATA *		first_cnv;
+    LCNV_DATA *		last_cnv;
+};
+
+Below that, add:
+
+struct specfun_list
+{
+   SPEC_LIST *next;
+   SPEC_LIST *prev;
+   char *name;
+};
+
+Locate the skill_type struct
+
+Find:
+
+    SPELL_FUN *	spell_fun;		/* Spell pointer (for spells)	*/
+    DO_FUN *	skill_fun;		/* Skill pointer (for skills)	*/
+
+Change to:
+
+     SPELL_FUN *	spell_fun;		/* Spell pointer (for spells)	*/
+   char *spell_fun_name;		/* Spell function name - Trax */
+     DO_FUN *	skill_fun;		/* Skill pointer (for skills)	*/
+   char *skill_fun_name;		/* Skill function name - Trax */
+
+Find:
+
+SF *	spec_lookup	args( ( const char *name ) );
+char *	lookup_spec	args( ( SPEC_FUN *special ) );
+
+Replace with:
+
+SF *	spec_lookup	args( ( char *name ) );
+
+3. Open tables.c
+
+In the includes section, add:
+
+#include <dlfcn.h>
+
+Find the functions skill_function, spell_function, skill_name, spell_name
+
+Remove skill_name and spell_name entirely.
+
+Replace skill_function and spell_function with the following:
+
+SPELL_FUN *spell_function( char *name )
+{
+   void *funHandle;
+   const char *error;
+
+   funHandle = dlsym( sysdata.dlHandle, name );
+   if( ( error = dlerror() ) != NULL )
+   {
+	bug( "Error locating %s in symbol table. %s", name, error );
+      return spell_notfound;
+   }
+   return (SPELL_FUN*)funHandle;
+}
+
+DO_FUN *skill_function( char *name )
+{
+   void *funHandle;
+   const char *error;
+
+   funHandle = dlsym( sysdata.dlHandle, name );
+   if( ( error = dlerror() ) != NULL )
+   {
+	bug( "Error locating %s in symbol table. %s", name, error );
+	return skill_notfound;
+   }
+   return (DO_FUN*)funHandle;
+}
+
+Locate function fread_skill and find the following:
+
+	    if ( !str_cmp( word, "Code" ) )
+	    {
+		SPELL_FUN *spellfun;
+		DO_FUN	  *dofun;
+		char	  *w = fread_word(fp);
+		
+		fMatch = TRUE;
+		if ( (spellfun=spell_function(w)) != spell_notfound )
+		{
+		   skill->spell_fun = spellfun;
+		   skill->skill_fun = NULL;
+		}
+		else
+		if ( (dofun=skill_function(w)) != skill_notfound )
+		{
+		   skill->skill_fun = dofun;
+		   skill->spell_fun = NULL;
+		}
+		else
+		{
+		   bug( "fread_skill: unknown skill/spell %s", w );
+		   skill->spell_fun = spell_null;
+		}
+		break;
+	    }
+	    KEY( "Code",	skill->spell_fun, spell_function(fread_word(fp)) );
+
+Replace with:
+
+	    if ( !str_cmp( word, "Code" ) )
+	    {
+		SPELL_FUN *spellfun;
+		DO_FUN *dofun;
+		char *w = fread_word( fp );
+		
+		fMatch = TRUE;
+		if( !str_prefix( "do_", w ) && ( dofun = skill_function(w) ) != skill_notfound )
+		{
+		   skill->skill_fun = dofun;
+		   skill->spell_fun = NULL;
+		   skill->skill_fun_name = str_dup(w);
+		}
+		else if( str_prefix( "do_", w ) && ( spellfun = spell_function(w) ) != spell_notfound )
+		{
+		   skill->spell_fun = spellfun;
+		   skill->skill_fun = NULL;
+		   skill->spell_fun_name = str_dup(w);
+		}
+		else
+		{
+		   bug( "fread_skill: unknown skill/spell %s", w );
+		   skill->spell_fun = spell_null;
+		}
+		break;
+	    }
+
+Locate function fread_command and find:
+
+	case 'C':
+	    KEY( "Code",	command->do_fun,	skill_function(fread_word(fp)) );
+	    break;
+
+	case 'E':
+	    if ( !str_cmp( word, "End" ) )
+	    {
+		if ( !command->name )
+		{
+		    bug( "Fread_command: Name not found", 0 );
+		    free_command( command );
+		    return;
+		}
+		if ( !command->do_fun )
+		{
+		    bug( "Fread_command: Function not found", 0 );
+		    free_command( command );
+		    return;
+		}
+		add_command( command );
+		return;
+	    }
+	    break;
+
+Replace with:
+
+	case 'C':
+	    KEY( "Code",	command->fun_name, str_dup( fread_word( fp ) ) );
+	    break;
+
+	case 'E':
+	    if ( !str_cmp( word, "End" ) )
+	    {
+		if( !command->name )
+		{
+		   bug( "%s", "Fread_command: Name not found" );
+		   free_command( command );
+		   return;
+		}
+		if( !command->fun_name )
+		{
+		   bug( "fread_command: No function name supplied for %s", command->name );
+		   free_command( command );
+		   return;
+		}
+		/*
+	 	 * Mods by Trax
+		 * Fread in code into char* and try linkage here then
+		 * deal in the "usual" way I suppose..
+		 */
+	      command->do_fun = skill_function( command->fun_name );
+		if( command->do_fun == skill_notfound )
+		{
+		   bug( "Fread_command: Function %s not found for %s", command->fun_name, command->name );
+		   free_command( command );
+		   return;
+		}
+		add_command( command );
+		return;
+	    }
+	    break;
+
+Locate function fwrite_skill
+
+Find:
+
+    if ( skill->skill_fun )
+	fprintf( fpout, "Code         %s\n",	skill_name(skill->skill_fun) );
+    else
+    if ( skill->spell_fun )
+	fprintf( fpout, "Code         %s\n",	spell_name(skill->spell_fun) );
+
+Change to:
+
+    if ( skill->skill_fun )
+	fprintf( fpout, "Code         %s\n",	skill->skill_fun_name );
+    else
+    if ( skill->spell_fun )
+	fprintf( fpout, "Code         %s\n",	skill->spell_fun_name );
+
+Locate function save_commands
+
+Find:
+
+	    fprintf( fpout, "Code        %s\n",	 skill_name(command->do_fun) );
+
+Change to:
+
+	    fprintf( fpout, "Code        %s\n",	 command->fun_name?command->fun_name:"" ); // Modded to use new field - Trax
+
+4. Open special.c
+
+In the includes section, add:
+
+#include <dlfcn.h>
+
+Add the following toward the top of the file, before the first actual function:
+
+SPEC_LIST *first_specfun;
+SPEC_LIST *last_specfun;
+
+/* Simple load function - no OLC support for now.
+ * This is probably something you DONT want builders playing with.
+ */
+void load_specfuns( void )
+{
+   SPEC_LIST *specfun;
+   FILE *fp;
+   char filename[256];
+   char *word;
+
+   first_specfun = NULL;
+   last_specfun = NULL;
+
+   snprintf( filename, 256, "%sspecfuns.dat", SYSTEM_DIR );
+   if( !( fp = fopen( filename, "r" ) ) )
+   {
+      bug( "%s", "load_specfuns: FATAL - cannot load specfuns.dat, exiting." );
+      perror( filename );
+      exit( 1 );
+   }
+   else
+   {
+      for( ; ; )
+      {
+         if( feof( fp ) )
+	 {
+	    bug( "%s", "load_specfuns: Premature end of file!" );
+	    fclose( fp );
+            fp = NULL;
+	    return;
+	 }
+         word = fread_word( fp );
+         if( !str_cmp( word, "$" ) )
+            break;
+
+         CREATE( specfun, SPEC_LIST, 1 );
+         specfun->name = str_dup( word );
+         LINK( specfun, first_specfun, last_specfun, next, prev );
+      }
+      fclose( fp );
+      fp = NULL;
+   }
+   return;
+}
+
+/* Simple validation function to be sure a function can be used on mobs */
+bool validate_spec_fun( char *name )
+{
+   SPEC_LIST *specfun;
+
+   for( specfun = first_specfun; specfun; specfun = specfun->next )
+   {
+	if( !str_cmp( specfun->name, name ) )
+	   return TRUE;
+   }
+   return FALSE;
+}
+
+Find and remove the function lookup_spec
+
+Find spec_lookup and replace it with the following:
+
+/*
+ * Given a name, return the appropriate spec_fun.
+ */
+SPEC_FUN *spec_lookup( char *name )
+{
+   void *funHandle;
+   const char *error;
+
+   funHandle = dlsym( sysdata.dlHandle, name );
+   if( ( error = dlerror() ) != NULL )
+   {
+	bug( "Error locating function %s in symbol table.", name );
+	return NULL;
+   }
+   return (SPEC_FUN*)funHandle;
+}
+
+5. Open comm.c
+
+Find and remove:
+
+/* Eizneckam's BFD Code */
+int 			total_syms;
+bfd 			*abfd;
+asymbol 		**fun_syms;
+
+Find and remove:
+
+/* Eizneckam's BFD Code */
+void show_symb( char * sname )
+{
+   long storage_n;
+   asymbol **symtable = NULL;
+   asection *sect;
+   char **matching;
+
+   sprintf( log_buf, "Mapping %s's functions.", sname );
+   log_string( log_buf );
+	
+   if( !abfd )
+   {   // Couldnt open the file?
+	log_string( "BFD file coudln't be opened?!?" );
+	return;
+   }
+   if( bfd_check_format_matches( abfd, bfd_object, &matching ) ) 
+   {	// Check the format
+
+	storage_n = bfd_get_symtab_upper_bound( abfd );	// See how much storage we need for the table
+	if( storage_n <= 0 )
+	   return;
+		
+	symtable = (asymbol **) malloc( storage_n );	// malloc it!
+	total_syms = bfd_canonicalize_symtab( abfd, symtable );	// How many symbols?
+	sect = bfd_get_section_by_name( abfd, sname );	// Get the section we want
+//	bfd_map_over_sections(abfd,our_print_sect,NULL);
+   }
+   if( !fun_syms )
+	fun_syms = symtable;
+   else
+      free( symtable );
+}
+
+Find and remove:
+
+    /* Eizneckam's BFD Code */
+    abfd = bfd_openr( "../src/smaug", NULL );        // Blah @ the type, we'll deal with you later
+    show_symb( "__exported_do_funs" );
+    show_symb( "__exported_spell_funs" );
+    show_symb( "__exported_spec_funs" );
+
+6. Open act_wiz.c
+
+Find and remove:
+
+/* Eizneckam's BFD Code */
+void do_listdos( CHAR_DATA *ch, char *argument )
+{
+   int i;
+   asection *s;
+
+   s = bfd_get_section_by_name( abfd, "__exported_do_funs" );
+   for (i = 0; i < total_syms; i++) 
+   {
+	if( s == fun_syms[i]->section && IS_SET( fun_syms[i]->flags, BSF_FUNCTION ) )
+      {
+	   pager_printf( ch, "Code: %-32s %8.8lx\n", fun_syms[i]->name,
+				    fun_syms[i]->value + fun_syms[i]->section->vma );
+	}
+   }
+}
+
+/* Eizneckam's BFD Code */
+void do_listspecs( CHAR_DATA *ch, char *argument )
+{
+   int i;
+   asection *s;
+
+   s = bfd_get_section_by_name( abfd, "__exported_spec_funs" );
+   for (i = 0; i < total_syms; i++) 
+   {
+	if( s == fun_syms[i]->section && IS_SET( fun_syms[i]->flags, BSF_FUNCTION ) )
+      {
+	   pager_printf( ch, "Code: %-32s %8.8lx\n", fun_syms[i]->name,
+				    fun_syms[i]->value + fun_syms[i]->section->vma );
+	}
+   }
+}
+
+/* Eizneckam's BFD Code */
+void do_listspells( CHAR_DATA *ch, char *argument )
+{
+   int i;
+   asection *s;
+
+   s = bfd_get_section_by_name( abfd, "__exported_spell_funs" );
+   for (i = 0; i < total_syms; i++) 
+   {
+	if( s == fun_syms[i]->section && IS_SET( fun_syms[i]->flags, BSF_FUNCTION ) )
+      {
+	   pager_printf( ch, "Code: %-32s %8.8lx\n", fun_syms[i]->name,
+				    fun_syms[i]->value + fun_syms[i]->section->vma );
+	}
+   }
+}
+
+Locate do_mstat
+
+Find:
+
+    if ( IS_NPC(victim) && victim->spec_fun )
+	pager_printf_color( ch, "&cMobile has spec fun: &w%s\r\n",
+		lookup_spec( victim->spec_fun ) );
+
+Replace with:
+
+    if ( IS_NPC(victim) && victim->spec_fun )
+	pager_printf_color( ch, "&cMobile has spec fun: &w%s\r\n", victim->spec_funname );
+
+Locate do_cedit
+
+Find:
+
+	if ( *argument )
+	    one_argument(argument, arg2);
+	else
+	    sprintf( arg2, "do_%s", arg1 );
+	command->do_fun = skill_function( arg2 );
+
+Below that, add:
+
+	command->fun_name = str_dup( arg2 );
+
+Find:
+
+	ch_printf( ch, "Command:  %s\r\nLevel:    %d\r\nPosition: %d\r\nLog:      %d\r\nCode:     %s\r\nFlags:  %s\r\n",
+	    command->name, command->level, command->position, command->log,
+	    skill_name(command->do_fun),flag_string(command->flags, cmd_flags));
+
+Replace with:
+
+	ch_printf( ch, "Command:  %s\r\nLevel:    %d\r\nPosition: %d\r\nLog:      %d\r\nCode:     %s\r\nFlags:  %s\r\n",
+	    command->name, command->level, command->position, command->log,
+	    command->fun_name, flag_string( command->flags, cmd_flags ) );
+
+Locate:
+
+   if( !str_cmp( arg2, "code" ) )
+   {
+      DO_FUN *fun = skill_function( argument );
+
+      if( fun == skill_notfound )
+      {
+         send_to_char( "Code not found.\r\n", ch );
+         return;
+      }
+      command->do_fun = fun;
+      send_to_char( "Done.\r\n", ch );
+      return;
+   }
+
+Replace with:
+
+   if( !str_cmp( arg2, "code" ) )
+   {
+      DO_FUN *fun = skill_function( argument );
+
+      if( fun == skill_notfound )
+      {
+         send_to_char( "Code not found.\r\n", ch );
+         return;
+      }
+      command->do_fun = fun;
+      DISPOSE( command->fun_name );
+      command->fun_name = str_dup( argument );
+      send_to_char( "Done.\r\n", ch );
+      return;
+   }
+
+Locate:
+
+void free_command( CMDTYPE * command )
+{
+   if( command->name )
+      DISPOSE( command->name );
+   DISPOSE( command );
+}
+
+Replace with:
+
+void free_command( CMDTYPE * command )
+{
+   if( command->name )
+      DISPOSE( command->name );
+   if( command->fun_name )
+      DISPOSE( command->fun_name );
+   DISPOSE( command );
+}
+
+7. Open db.c
+
+In the includes section, add:
+
+#include <dlfcn.h>
+
+Find:
+
+PROJECT_DATA *read_project args( ( char *filename, FILE *fp ) );
+NOTE_DATA *read_log  args( ( FILE *fp ) );
+
+Below that, add:
+
+void load_specfuns( void );
+
+Locate function boot_db and find:
+
+    log_string( "Loading commands" );
+    load_commands();
+
+Replace with:
+
+   log_string( "Initializing libdl support..." );
+   /*
+    * Open up a handle to the executable's symbol table for later use
+    * when working with commands
+    */
+   sysdata.dlHandle = dlopen( NULL, RTLD_LAZY );
+   if( !sysdata.dlHandle )
+   {
+      log_string( "dl: Error opening local system executable as handle, please check compile flags." );
+	shutdown_mud( "libdl failure" );
+      exit( 1 );   
+   }
+
+   log_string( "Loading commands..." );
+   load_commands();
+
+   log_string( "Loading spec_funs..." );
+   load_specfuns();
+
+Locate function load_specials
+
+Find:
+
+	case 'M':
+	    pMobIndex		= get_mob_index	( fread_number ( fp ) );
+	    pMobIndex->spec_fun	= spec_lookup	( fread_word   ( fp ) );
+	    if ( pMobIndex->spec_fun == 0 )
+	    {
+		bug( "Load_specials: 'M': vnum %d.", pMobIndex->vnum );
+		exit( 1 );
+	    }
+	    break;
+
+Replace with:
+
+         case 'M':
+	   {
+		char *temp;
+            pMobIndex = get_mob_index( fread_number ( fp ) );
+		temp = fread_word( fp );
+		if( !pMobIndex )
+		{
+		   bug( "%s", "Load_specials: 'M': Invalid mob vnum!" );
+		   break;
+		}
+            pMobIndex->spec_fun = spec_lookup( temp );
+            if( pMobIndex->spec_fun == NULL )
+		{
+               bug( "Load_specials: 'M': vnum %d.", pMobIndex->vnum );
+		   pMobIndex->spec_funname = NULL;
+		}
+		else
+		   pMobIndex->spec_funname = STRALLOC( temp );
+	   }
+         break;
+
+Locate function create_mobile and find:
+
+    mob->spec_fun		= pMobIndex->spec_fun;
+
+Below that, add:
+
+   if( pMobIndex->spec_funname )
+      mob->spec_funname = QUICKLINK( pMobIndex->spec_funname );
+
+Locate function free_char and find:
+
+   STRFREE( ch->name );
+   STRFREE( ch->short_descr );
+   STRFREE( ch->long_descr );
+   STRFREE( ch->description );
+
+Below that, add:
+
+   STRFREE( ch->spec_funname );
+
+Locate function delete_mob and find:
+
+   STRFREE( mob->player_name );
+   STRFREE( mob->short_descr );
+   STRFREE( mob->long_descr );
+   STRFREE( mob->description );
+
+Below that, add:
+
+   STRFREE( mob->spec_funname );
+
+8. Open build.c
+
+Find:
+
+bool is_room_reset  args( ( RESET_DATA *pReset, ROOM_INDEX_DATA *aRoom, AREA_DATA *pArea ) );
+void delete_reset   args( ( AREA_DATA *pArea, RESET_DATA *pReset ) );
+
+Below that, add:
+
+bool validate_spec_fun( char *name );
+
+Locate function do_mset
+
+Find:
+
+    if ( !str_cmp( arg2, "spec" ) )
+    {
+	if ( !can_mmodify( ch, victim ) )
+	  return;
+	if ( !IS_NPC(victim) )
+	{
+	    send_to_char( "Not on PC's.\r\n", ch );
+	    return;
+	}
+
+        if ( !str_cmp( arg3, "none" ) )
+        {
+          victim->spec_fun = NULL;
+	  send_to_char( "Special function removed.\r\n", ch );
+	  if ( IS_NPC(victim) && xIS_SET(victim->act, ACT_PROTOTYPE) )
+	    victim->pIndexData->spec_fun = victim->spec_fun;
+	  return;
+        }
+
+	if ( ( victim->spec_fun = spec_lookup( arg3 ) ) == 0 )
+	{
+	    send_to_char( "No such spec fun.\r\n", ch );
+	    return;
+	}
+	if ( IS_NPC(victim) && xIS_SET(victim->act, ACT_PROTOTYPE) )
+	  victim->pIndexData->spec_fun = victim->spec_fun;
+	return;
+    }
+
+Replace with:
+
+   if ( !str_cmp( arg2, "spec" ) || !str_cmp( arg2, "spec_fun" ) )
+   {
+	SPEC_FUN *specfun;
+
+	if( !can_mmodify( ch, victim ) )
+	   return;
+
+	if( !IS_NPC(victim) )
+	{
+	   send_to_char( "Not on PC's.\r\n", ch );
+	   return;
+	}
+
+      if( !str_cmp( arg3, "none" ) )
+      {
+         victim->spec_fun = NULL;
+	   STRFREE( victim->spec_funname );
+	   send_to_char( "Special function removed.\r\n", ch );
+	   if( IS_NPC( victim ) && xIS_SET( victim->act, ACT_PROTOTYPE ) )
+	   {
+	      victim->pIndexData->spec_fun = NULL;
+		STRFREE( victim->pIndexData->spec_funname );
+	   }
+	   return;
+      }
+
+	if( ( specfun = spec_lookup( arg3 ) ) == NULL )
+	{
+	   send_to_char( "No such function.\r\n", ch );
+	   return;
+	}
+
+	if( !validate_spec_fun( arg3 ) )
+	{
+	   ch_printf( ch, "%s is not a valid spec_fun for mobiles.\r\n", arg3 );
+	   return;
+	}
+
+	victim->spec_fun = specfun;
+	STRFREE( victim->spec_funname );
+	victim->spec_funname = STRALLOC( arg3 );
+      if( IS_NPC( victim ) && xIS_SET( victim->act, ACT_PROTOTYPE ) )
+	{
+         victim->pIndexData->spec_fun = victim->spec_fun;
+	   STRFREE( victim->pIndexData->spec_funname );
+	   victim->pIndexData->spec_funname = STRALLOC( arg3 );
+	}
+	send_to_char( "Victim special function set.\r\n", ch );
+	return;
+   }
+
+Locate fold_area
+
+Find:
+
+    /* save specials */
+    fprintf( fpout, "#SPECIALS\n" );
+    for ( vnum = tarea->low_m_vnum; vnum <= tarea->hi_m_vnum; vnum++ )
+    {
+	if ( (pMobIndex = get_mob_index( vnum )) == NULL )
+	  continue;
+	if ( !pMobIndex->spec_fun )
+	  continue;
+	fprintf( fpout, "M  %d %s\n",	pMobIndex->vnum,
+					lookup_spec( pMobIndex->spec_fun ) );
+    }
+
+Replace with:
+
+   /* save specials */
+   fprintf( fpout, "%s", "#SPECIALS\n" );
+   for ( vnum = tarea->low_m_vnum; vnum <= tarea->hi_m_vnum; vnum++ )
+   {
+      if( ( pMobIndex = get_mob_index( vnum ) ) != NULL )
+         if ( pMobIndex->spec_fun )
+	      fprintf( fpout, "M  %d %s\n", pMobIndex->vnum, pMobIndex->spec_funname );
+   }
+
+9. Open skills.c
+
+Near the top with the other declarations, add:
+
+bool validate_spec_fun( char *name );
+
+Locate do_slookup
+
+Find:
+
+	ch_printf( ch, "Flags: %d  Guild: %d  Value: %d  Info: %d  Code: %s\r\n",
+		skill->flags,
+		skill->guild,
+		skill->value,
+		skill->info,
+		skill->skill_fun ? skill_name(skill->skill_fun)
+					   : spell_name(skill->spell_fun));
+
+Change to:
+
+	ch_printf( ch, "Flags: %d  Guild: %d  Value: %d  Info: %d  Code: %s\r\n",
+		skill->flags,
+		skill->guild,
+		skill->value,
+		skill->info,
+		skill->skill_fun ? skill->skill_fun_name : skill->spell_fun_name );
+
+Locate do_sset
+
+Find:
+
+	if ( !str_cmp( arg2, "code" ) )
+	{
+	    SPELL_FUN *spellfun;
+	    DO_FUN    *dofun;
+		
+	    if ( (spellfun=spell_function(argument)) != spell_notfound )
+	    {
+		skill->spell_fun = spellfun;
+		skill->skill_fun = NULL;
+	    }
+	    else
+	    if ( (dofun=skill_function(argument)) != skill_notfound )
+	    {
+		skill->skill_fun = dofun;
+		skill->spell_fun = NULL;
+	    }
+	    else
+	    {
+		send_to_char( "Not a spell or skill.\r\n", ch );
+		return;
+	    }
+	    send_to_char( "Ok.\r\n", ch );
+	    return;
+	}
+
+Change to:
+
+	if ( !str_cmp( arg2, "code" ) )
+	{
+	   SPELL_FUN *spellfun;
+	   DO_FUN *dofun;
+
+	   if( !str_prefix( "do_", argument ) && ( dofun = skill_function( argument ) ) != skill_notfound )
+	   {
+		skill->skill_fun = dofun;
+		skill->spell_fun = NULL;
+		DISPOSE( skill->skill_fun_name );
+		skill->skill_fun_name = str_dup( argument );
+	   }		
+	   else if( ( spellfun = spell_function( argument ) ) != spell_notfound )
+	   {
+		skill->spell_fun = spellfun;
+		skill->skill_fun = NULL;
+		DISPOSE( skill->skill_fun_name );
+		skill->spell_fun_name = str_dup( argument );
+	   }
+	   else if( validate_spec_fun( argument ) )
+	   {
+		send_to_char( "Cannot use a spec_fun for skills or spells.\r\n", ch );
+		return;
+	   }
+	   else
+	   {
+		send_to_char( "Not a spell or skill.\r\n", ch );
+		return;
+	   }
+	   send_to_char( "Ok.\r\n", ch );
+	   return;
+	}
+
+10. *** If you have copyover/hotboot installed ***
+
+At the top of the file with the other includes, add:
+#include <dlfcn.h>
+
+Find:
+
+bfd_close( abfd );
+
+Replace with:
+
+dlclose( sysdata.dlHandle );
+
+Find:
+
+   /* Failed - sucessful exec will not return */
+   perror( "do_copyover: execl" );
+
+Below that, add:
+
+   sysdata.dlHandle = dlopen( NULL, RTLD_LAZY );
+   if( !sysdata.dlHandle )
+   {
+	bug( "%s", "FATAL ERROR: Unable to reopen system executable handle!" );
+	exit( 1 );
+   }
+
+11. Place the specfuns.dat file in your dist/system directory and be sure it has all
+    the needed special functions for your mud.
+
+12. Make clean, recompile.
+
+After rebooting, you may see some log spam about some of your commands. This is normal and
+is part of the cleanup the code does during command verification. These commands will not have any
+actual function assigned to them anymore. Performing a "cedit save cmdtable" will resolve this
+issue.
+
+A sample from testing on The SmaugFUSS Project:
+
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for atmob
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for clear
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for cmenu
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for diagnose
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for grub
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for mmenu
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for moblog
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for omenu
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for owhere
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for opentourney
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for ogrub
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for pagelength
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for qui
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for redraw
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for refresh
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for rgrub
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Error locating reserved in symbol table. ../src/smaug: undefined symbol: reserved
+Sun Jan  2 09:21:37 2005 :: [*****] BUG: Fread_command: Function reserved not found for showlayers

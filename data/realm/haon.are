@@ -1,41 +1,41 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Haon Dor~
-Author       Diku~
-WeatherX     0
-WeatherY     0
-Ranges       5 10 0 60
-Economy      0 3643376
+Version         1
+Name            Haon Dor~
+Author          Diku~
+Vnums           6000 6156
+Continent       one~
+Coordinates     0 0
+Dates           1403834970 1403834970
+Ranges          5 10 0 60
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       6000
-Keywords   john lumberjack~
-Short      John the Lumberjack~
-Long       John the Lumberjack is here, looking for some trees to chop down.
+Vnum      6000
+Keywords  john lumberjack~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     John the Lumberjack~
+Long      John the Lumberjack is here, looking for some trees to chop down.
 ~
-Desc       He is six feet tall and looks quite strong, muscles bulging under his heavy,
+Desc      He is six feet tall and looks quite strong, muscles bulging under his heavy,
 chequered shirt.  His features are worn with hard work and his expression is
 one of a peaceful man leading a simple life.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc stayarea~
-Affected   detect_hidden infrared~
-Stats1     350 7 15 7 50 600
-Stats2     5 5 50
-Stats3     1 8 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Immune     sleep charm~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    350 -1 0 0 0 0
+Stats2    7 21 7 50 1 8 2
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_hidden infrared~
+Immune    drain sleep~
+Defenses  dodge~
 #MUDPROG
 Progtype  entry_prog~
 Arglist   100~
@@ -67,189 +67,167 @@ mpasound The sound of an axe blade plunging into soft wood can be heard.
 #ENDMOBILE
 
 #MOBILE
-Vnum       6002
-Keywords   bear~
-Short      the brown bear~
-Long       A big, brown, angry-looking bear is here.
+Vnum      6002
+Keywords  bear~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  sleeping~
+DefPos    standing~
+Short     the brown bear~
+Long      A big, brown, angry-looking bear is here.
 ~
-Desc       The bear is a big, brown, furry animal with very large claws and very sharp
+Desc      The bear is a big, brown, furry animal with very large claws and very sharp
 teeth.  It doesn't resemble those cute little thingies from toy shops at all.
 ~
-Race       mammal~
-Class      warrior~
-Position   sleeping~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc aggressive stayarea~
-Stats1     -50 8 13 3 0 2000
-Stats2     8 8 80
-Stats3     2 6 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common mammal~
-Speaking   mammal~
-Bodyparts  head legs heart guts feet ear eye claws~
-Attacks    claws~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    -50 0 0 0 0 0
+Stats2    8 21 3 80 2 6 2
+Speaks    common mammal~
+Speaking  mammal~
+Actflags  npc aggressive stayarea~
+Bodyparts head legs heart guts feet ear eye claws~
+Attacks   claws~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6003
-Keywords   rabbit~
-Short      the ferocious rabbit~
-Long       A ferocious rabbit is here, glaring hungrily at you.
+Vnum      6003
+Keywords  rabbit~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sleeping~
+DefPos    standing~
+Short     the ferocious rabbit~
+Long      A ferocious rabbit is here, glaring hungrily at you.
 ~
-Desc       This small, furry creature with long ears and big feet has been attacked by
+Desc      This small, furry creature with long ears and big feet has been attacked by
 the dreaded rabbit rabies, a horrible disease that turns helpless and innocent
 rabbits into ferocious and bloodthirsty monsters.
 ~
-Race       human~
-Class      warrior~
-Position   sleeping~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc aggressive stayarea~
-Stats1     -150 3 17 6 0 350
-Stats2     1 4 26
-Stats3     1 8 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -150 0 0 0 0 0
+Stats2    3 21 6 26 1 8 0
+Speaking  common~
+Actflags  npc aggressive stayarea~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6004
-Keywords   deer~
-Short      the fallow deer~
-Long       A fallow deer is grazing peacefully here.
+Vnum      6004
+Keywords  deer~
+Race      mammal~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     the fallow deer~
+Long      A fallow deer is grazing peacefully here.
 ~
-Desc       She is a graceful creature on long, slender legs, and with large, brown eyes
+Desc      She is a graceful creature on long, slender legs, and with large, brown eyes
 looking back at you with an air of watchful interest.
 ~
-Race       mammal~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel r2 stayarea prototype~
-Affected   detect_invis~
-Stats1     350 2 19 2 0 200
-Stats2     2 8 2
-Stats3     1 6 0
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head legs heart guts ear eye~
-Attacks    kick~
+Nattacks  1.000000
+Stats1    350 0 0 0 0 0
+Stats2    2 21 2 2 1 6 0
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc sentinel stayarea proto~
+Affected  detect_invis~
+Bodyparts head legs heart guts ear eye~
+Attacks   kick~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6005
-Keywords   fox~
-Short      the brown fox~
-Long       A brown fox is here, looking for some rabbits to chew up.
+Vnum      6005
+Keywords  fox~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the brown fox~
+Long      A brown fox is here, looking for some rabbits to chew up.
 ~
-Desc       It is a large fox with beautiful, red-brown fur and a long, thick brush.
+Desc      It is a large fox with beautiful, red-brown fur and a long, thick brush.
 ~
-Race       mammal~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc stayarea~
-Stats1     -50 2 18 6 0 200
-Stats2     1 4 18
-Stats3     1 6 0
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head legs heart guts ear eye tail~
-Attacks    bite~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    -50 0 0 0 0 0
+Stats2    2 21 6 18 1 6 0
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc stayarea~
+Bodyparts head legs heart guts ear eye tail~
+Attacks   bite~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6100
-Keywords   warg vicious~
-Short      the vicious warg~
-Long       A vicious warg is here, snarling angrily at you.
+Vnum      6100
+Keywords  warg vicious~
+Race      wolf~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the vicious warg~
+Long      A vicious warg is here, snarling angrily at you.
 ~
-Desc       It is an exceptionally large wolf with thick, black fur.  Saliva is dripping
+Desc      It is an exceptionally large wolf with thick, black fur.  Saliva is dripping
 quickly from its long, white fangs.  It looks quite dangerous and very angry.
 ~
-Race       wolf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc aggressive stayarea~
-Stats1     -350 5 16 5 0 800
-Stats2     1 1 60
-Stats3     1 6 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head legs heart guts ear eye tail claws~
+Nattacks  0.000000
+Stats1    -350 0 0 0 0 0
+Stats2    5 21 5 60 1 6 1
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc aggressive stayarea~
+Bodyparts head legs heart guts ear eye tail claws~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6101
-Keywords   warg ferocious~
-Short      the ferocious warg~
-Long       A ferocious warg is here, snarling angrily at you.
+Vnum      6101
+Keywords  warg ferocious~
+Race      wolf~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the ferocious warg~
+Long      A ferocious warg is here, snarling angrily at you.
 ~
-Desc       It is an exceptionally large wolf with thick, black fur.  Saliva is dripping
+Desc      It is an exceptionally large wolf with thick, black fur.  Saliva is dripping
 quickly from its long, white fangs.  It looks quite dangerous and very angry.
 ~
-Race       wolf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc aggressive stayarea~
-Stats1     -350 5 16 5 0 800
-Stats2     1 1 60
-Stats3     2 4 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head legs hands ear eye~
+Nattacks  0.000000
+Stats1    -350 0 0 0 0 0
+Stats2    5 21 5 60 2 4 0
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc aggressive stayarea~
+Bodyparts head legs hands ear eye~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6102
-Keywords   wolf grey~
-Short      the large, grey wolf~
-Long       A large, grey wolf is here, glaring hungrily at you.
+Vnum      6102
+Keywords  wolf grey~
+Race      wolf~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the large, grey wolf~
+Long      A large, grey wolf is here, glaring hungrily at you.
 ~
-Desc       The large, grey wolf eyes you with interest while licking its lips.
+Desc      The large, grey wolf eyes you with interest while licking its lips.
 ~
-Race       wolf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc aggressive stayarea~
-Stats1     -150 4 18 7 0 450
-Stats2     1 12 35
-Stats3     1 7 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common mammal~
-Speaking   mammal~
-Bodyparts  heart guts feet ear eye~
+Nattacks  0.000000
+Stats1    -150 0 0 0 0 0
+Stats2    4 21 7 35 1 7 0
+Speaks    common mammal~
+Speaking  mammal~
+Actflags  npc aggressive stayarea~
+Bodyparts heart guts feet ear eye~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   8~
@@ -260,28 +238,25 @@ Comlist   mpasound The forlorn howling of a nearby wolf can be heard...
 #ENDMOBILE
 
 #MOBILE
-Vnum       6103
-Keywords   wolf black~
-Short      the large, black wolf~
-Long       A large, black wolf is here, glaring hungrily at you.
+Vnum      6103
+Keywords  wolf black~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the large, black wolf~
+Long      A large, black wolf is here, glaring hungrily at you.
 ~
-Desc       The large, black wolf eyes you with interest while licking its lips.
+Desc      The large, black wolf eyes you with interest while licking its lips.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc aggressive stayarea~
-Stats1     -150 4 18 7 0 450
-Stats2     1 12 35
-Stats3     1 1 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head legs heart guts ear eye~
+Nattacks  0.000000
+Stats1    -150 -1 0 0 0 0
+Stats2    4 21 7 35 1 1 3
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc aggressive stayarea~
+Bodyparts head legs heart guts ear eye~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   8~
@@ -292,63 +267,57 @@ Comlist   mpasound The forlorn howling of a nearby wolf can be heard...
 #ENDMOBILE
 
 #MOBILE
-Vnum       6112
-Keywords   dragon green~
-Short      the huge, green dragon~
-Long       A huge green dragon is here, its narrow yellow eyes glowing with rage.
+Vnum      6112
+Keywords  dragon green~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_gas~
+Short     the huge, green dragon~
+Long      A huge green dragon is here, its narrow yellow eyes glowing with rage.
 ~
-Desc       This enormous winged serpent has dark green scales covering most of its
+Desc      This enormous winged serpent has dark green scales covering most of its
 colossal body.  Numerous holes in its heavy wings tell of many fights as does
 the nicks in the horns on its head.  It smells as disgusting as only dragons
 do.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_breath_gas~
-Gender     neuter~
-Actflags   npc sentinel aggressive stayarea~
-Affected   detect_invis~
-Stats1     -1000 25 -5 -7 5000 200000
-Stats2     25 25 250
-Stats3     2 6 18
-Stats4     0 0 3 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     dragon~
-Speaking   dragon~
-Bodyparts  head legs heart feet ear eye tail claws horns~
-Attacks    bite claws tail~
-Defenses   parry dodge disarm~
+Nattacks  3.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    25 21 -7 250 2 6 18
+Speaks    dragon~
+Speaking  dragon~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis~
+Bodyparts head legs heart feet ear eye tail claws horns~
+Attacks   bite claws tail~
+Defenses  parry dodge disarm~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6115
-Keywords   shargugh brownie~
-Short      Shargugh~
-Long       Shargugh the Forest Brownie is here, grinning broadly at you.
+Vnum      6115
+Keywords  shargugh brownie~
+Race      pixie~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Shargugh~
+Long      Shargugh the Forest Brownie is here, grinning broadly at you.
 ~
-Desc       This little fellow is only three foot tall with wild matted brown hair and long
+Desc      This little fellow is only three foot tall with wild matted brown hair and long
 tangled brown beard.  He wears ragged brown and green clothing and looks as if
 he is having great fun.
 ~
-Race       pixie~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc scavenger r2 wimpy~
-Affected   invisible detect_invis sneak~
-Stats1     1000 11 1 -10 500 3000
-Stats2     10 10 100
-Stats3     1 8 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 16 13 13 13
-Saves      0 0 0 0 0
-Speaks     pixie~
-Speaking   common pixie~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    11 21 -10 100 1 8 2
+Speaks    pixie~
+Speaking  pixie~
+Actflags  npc scavenger wimpy~
+Affected  invisible detect_invis sneak~
+Defenses  dodge~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   16~
@@ -366,41 +335,43 @@ Comlist   poke $r
 #ENDMOBILE
 
 #MOBILE
-Vnum       6116
-Keywords   elder druid~
-Short      the elder druid~
-Long       The elder druid is here ... he looks very upset at your presence in his home.
+Vnum      6116
+Keywords  elder druid~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the elder druid~
+Long      The elder druid is here ... he looks very upset at your presence in his home.
 ~
-Desc       The druid looks quite old.  You would think him venerable, but you know
+Desc      The druid looks quite old.  You would think him venerable, but you know
 he would be a tough foe.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_cleric~
-Gender     male~
-Actflags   npc sentinel scavenger~
-Affected   detect_invis~
-Stats1     0 13 4 -7 0 20000
-Stats2     1 1 130
-Stats3     2 8 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Defenses   dodge disarm~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    13 21 -7 130 2 8 2
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel scavenger~
+Affected  detect_invis~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Defenses  dodge disarm~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6117
-Keywords   froghemoth~
-Short      the froghemoth~
-Long       A gargantuan, toad-like creature blinks slowly at nothing in particular.
+Vnum      6117
+Keywords  froghemoth~
+Race      amphibian~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the froghemoth~
+Long      A gargantuan, toad-like creature blinks slowly at nothing in particular.
 ~
-Desc       Its head rising a good eight feet off the ground, this is without a doubt
+Desc      Its head rising a good eight feet off the ground, this is without a doubt
 the most incredible amphibian you have ever laid eyes upon ... it doesn't
 seem to think too much of you, though.  Thick strands of mucous, thick as
 rope, drip from its nostrils while large eyes gleam impassively down upon
@@ -411,25 +382,17 @@ are rumoured to enjoy gobbling lots of things down - fish, birds, wargs,
 trees, boulders, people, anything it finds to be particularly interesting.
 Thank god you're boring as hell.
 ~
-Race       amphibian~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc~
-Affected   detect_invis detect_hidden infrared truesight~
-Stats1     0 25 0 -300 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    18 15 15 13 13 5 13
-Saves      0 0 0 0 0
-Speaks     common dwarven orcish trollese rodent mammal reptile dragon magical goblin ancient clan~
-Speaking   common dwarven orcish trollese rodent mammal reptile dragon magical goblin ancient clan~
-Bodyparts  head legs heart brains guts feet eye long_tongue claws~
-Immune     charm~
-Attacks    claws poison~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    25 21 -300 0 0 0 0
+Speaks    common dwarven orcish trollese rodent mammal reptile dragon magical goblin ancient clan~
+Speaking  clan~
+Actflags  npc~
+Affected  detect_invis detect_hidden infrared truesight~
+Bodyparts head legs heart brains guts feet eye long_tongue claws~
+Immune    sleep~
+Attacks   claws poison~
+Defenses  dodge~
 #MUDPROG
 Progtype  all_greet_prog~
 Arglist   100~
@@ -497,17 +460,17 @@ Comlist   mpe With a grotesque gurgle, $I burps forth a glob of white goo.
 #ENDMOBILE
 
 #OBJECT
-Vnum     6000
-Keywords axe lumber~
-Type     weapon~
-Short    a lumber axe~
-Long     A heavy lumber axe lies here.~
-WFlags   take wield~
-Values   0 2 6 1 0 0
-Stats    10 50 5 0 0
-Affect       -1 -1 10 13 0
-Affect       -1 -1 1 18 0
-Affect       -1 -1 2 19 0
+Vnum      6000
+Keywords  axe lumber~
+Type      weapon~
+Short     a lumber axe~
+Long      A heavy lumber axe lies here.~
+WFlags    take wield~
+Values    0 2 6 1 0 0 0 0 0 0 0
+Stats     10 50 -2 9999 0 None None None
+AffData hit 10 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData damroll 2 -1 -1 0
 #EXDESC
 ExDescKey    axe lumber~
 ExDesc       It is a heavy axe of the kind lumberjacks use to chop down trees.
@@ -524,16 +487,16 @@ Comlist   mpecho $n's eyes shine brightly as $e searches for the nearest hapless
 #ENDOBJECT
 
 #OBJECT
-Vnum     6001
-Keywords chequered shirt~
-Type     armor~
-Short    a chequered shirt~
-Long     A chequered shirt lies here.~
-WFlags   take body~
-Values   3 0 0 0 0 0
-Stats    2 20 2 0 0
-Affect       -1 -1 -5 17 0
-Affect       -1 -1 5 13 0
+Vnum      6001
+Keywords  chequered shirt~
+Type      armor~
+Short     a chequered shirt~
+Long      A chequered shirt lies here.~
+WFlags    take body~
+Values    3 0 0 0 0 0 0 0 0 0 0
+Stats     2 20 -2 9999 0 None None None
+AffData armor -5 -1 -1 0
+AffData hit 5 -1 -1 0
 #EXDESC
 ExDescKey    shirt~
 ExDesc       It is an extra large, chequered shirt made from heavy cloth.
@@ -543,15 +506,15 @@ ExDesc       It is an extra large, chequered shirt made from heavy cloth.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6002
-Keywords boots~
-Type     armor~
-Short    a pair of leather boots~
-Long     A pair of leather boots lies here.~
-WFlags   take feet~
-Values   3 0 0 0 0 0
-Stats    4 60 6 0 0
-Affect       -1 -1 25 14 0
+Vnum      6002
+Keywords  boots~
+Type      armor~
+Short     a pair of leather boots~
+Long      A pair of leather boots lies here.~
+WFlags    take feet~
+Values    3 0 0 0 0 0 0 0 0 0 0
+Stats     4 60 -2 9999 0 None None None
+AffData move 25 -1 -1 0
 #EXDESC
 ExDescKey    boots~
 ExDesc       They are fashioned from rough leather that has been oiled frequently to make
@@ -562,13 +525,13 @@ it stay waterproof.  They look worn but quite functional.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6003
-Keywords fireplace~
-Type     container~
-Short    a fireplace~
-Long     A fireplace made from stone is set against the east wall.~
-Values   200 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      6003
+Keywords  fireplace~
+Type      container~
+Short     a fireplace~
+Long      A fireplace made from stone is set against the east wall.~
+Values    200 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    fireplace~
 ExDesc       It is fashioned from stones of various sizes that have been stacked on top of
@@ -580,14 +543,14 @@ leads the smoke out through the low cabin ceiling.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6005
-Keywords chest~
-Type     container~
-Short    a wooden chest~
-Long     A wooden chest stands in the corner.~
-WFlags   take~
-Values   100 13 6006 0 0 0
-Stats    40 100 10 0 0
+Vnum      6005
+Keywords  chest~
+Type      container~
+Short     a wooden chest~
+Long      A wooden chest stands in the corner.~
+WFlags    take~
+Values    100 13 6006 0 0 0 0 0 0 0 0
+Stats     40 100 -2 9999 0 None None None
 #EXDESC
 ExDescKey    chest~
 ExDesc       It is a robust chest made from short, heavy planks that have been fastened
@@ -598,14 +561,14 @@ together with tenons.  It is equipped with a simple brass lock.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6006
-Keywords key~
-Type     key~
-Short    a small brass key~
-Long     A small brass key lies here.~
-WFlags   take~
-Values   6005 0 0 0 0 0
-Stats    1 10 1 0 0
+Vnum      6006
+Keywords  key~
+Type      key~
+Short     a small brass key~
+Long      A small brass key lies here.~
+WFlags    take~
+Values    6005 0 0 0 0 0 0 0 0 0 0
+Stats     1 10 -2 9999 0 None None None
 #EXDESC
 ExDescKey    key~
 ExDesc       It is a small, simple brass key with no inscriptions or marks of any kind.
@@ -615,14 +578,14 @@ ExDesc       It is a small, simple brass key with no inscriptions or marks of an
 #ENDOBJECT
 
 #OBJECT
-Vnum     6007
-Keywords coins gold~
-Type     money~
-Short    a heap of gold coins~
-Long     Some gold coins lie piled up in a heap on the floor.~
-WFlags   take~
-Values   5000 0 0 0 0 0
-Stats    1 5000 500 0 0
+Vnum      6007
+Keywords  coins gold~
+Type      money~
+Short     a heap of gold coins~
+Long      Some gold coins lie piled up in a heap on the floor.~
+WFlags    take~
+Values    5000 0 0 0 0 0 0 0 0 0 0
+Stats     1 5000 -2 1 0 None None None
 #EXDESC
 ExDescKey    coins~
 ExDesc       The coins seem to be gold.  They are obviously valuable.
@@ -632,14 +595,14 @@ ExDesc       The coins seem to be gold.  They are obviously valuable.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6010
-Keywords blackberries~
-Type     food~
-Short    some blackberries~
-Long     Some blackberries grow on a bush nearby.~
-WFlags   take~
-Values   3 0 0 0 0 0
-Stats    1 10 1 0 0
+Vnum      6010
+Keywords  blackberries~
+Type      food~
+Short     some blackberries~
+Long      Some blackberries grow on a bush nearby.~
+WFlags    take~
+Values    3 0 0 0 0 0 0 0 0 0 0
+Stats     1 10 -2 9999 0 None None None
 #EXDESC
 ExDescKey    blackberries~
 ExDesc       They look very tasty indeed.
@@ -649,14 +612,14 @@ ExDesc       They look very tasty indeed.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6011
-Keywords mushroom~
-Type     food~
-Short    a mushroom~
-Long     A small mushroom grows nearby.~
-WFlags   take~
-Values   6 0 0 0 0 0
-Stats    1 10 1 0 0
+Vnum      6011
+Keywords  mushroom~
+Type      food~
+Short     a mushroom~
+Long      A small mushroom grows nearby.~
+WFlags    take~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     1 10 -2 9999 0 None None None
 #EXDESC
 ExDescKey    mushroom~
 ExDesc       It is a tasty little thing.
@@ -666,25 +629,25 @@ ExDesc       It is a tasty little thing.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6013
-Keywords water barrel~
-Type     drinkcon~
-Short    the barrel~
-Long     A water barrel has been left here.~
-WFlags   take~
-Values   50 50 0 0 0 0
-Stats    65 60 6 0 0
+Vnum      6013
+Keywords  water barrel~
+Type      drinkcon~
+Short     the barrel~
+Long      A water barrel has been left here.~
+WFlags    take~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     65 60 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     6102
-Keywords ancient colossal tree opening~
-Type     container~
-Short    the colossal tree~
-Long     An ancient, colossal tree serves to block the westward path.~
-Flags    dark organic~
-Values   1000 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      6102
+Keywords  ancient colossal tree opening~
+Type      container~
+Short     the colossal tree~
+Long      An ancient, colossal tree serves to block the westward path.~
+Flags     organic~
+Values    1000 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    opening~
 ExDesc       The opening is far too narrow for you to squeeze through but it looks as if the
@@ -703,49 +666,49 @@ west side is a small opening just above ground level.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6103
-Keywords branch~
-Type     light~
-Short    a long, grey branch~
-Long     A long, grey branch rests heavily on the ground.~
-WFlags   take hold~
-Values   0 0 25 0 0 0
-Stats    20 1 0 0 0
+Vnum      6103
+Keywords  branch~
+Type      light~
+Short     a long, grey branch~
+Long      A long, grey branch rests heavily on the ground.~
+WFlags    take hold~
+Values    0 0 25 0 0 0 0 0 0 0 0
+Stats     20 1 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     6104
-Keywords branch~
-Type     weapon~
-Short    a long, grey branch~
-Long     A long, grey branch rests heavily on the ground.~
-Action   pound~
-WFlags   take wield~
-Values   0 2 5 7 0 0
-Stats    30 60 6 0 0
-Affect       -1 -1 -2 18 0
+Vnum      6104
+Keywords  branch~
+Type      weapon~
+Short     a long, grey branch~
+Long      A long, grey branch rests heavily on the ground.~
+Action    pound~
+WFlags    take wield~
+Values    0 2 5 7 0 0 0 0 0 0 0
+Stats     30 60 -2 9999 0 None None None
+AffData hitroll -2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     6105
-Keywords branch~
-Type     trash~
-Short    a long, grey branch~
-Long     A long, grey branch rests heavily on the ground.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    40 0 0 0 0
+Vnum      6105
+Keywords  branch~
+Type      trash~
+Short     a long, grey branch~
+Long      A long, grey branch rests heavily on the ground.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     40 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     6106
-Keywords toadstool~
-Type     food~
-Short    a toadstool~
-Long     A large toadstool grows nearby.~
-WFlags   take~
-Values   12 0 0 0 0 0
-Stats    5 20 2 0 0
+Vnum      6106
+Keywords  toadstool~
+Type      food~
+Short     a toadstool~
+Long      A large toadstool grows nearby.~
+WFlags    take~
+Values    12 0 0 0 0 0 0 0 0 0 0
+Stats     5 20 -2 9999 0 None None None
 #EXDESC
 ExDescKey    toadstool~
 ExDesc       It is a large, brown boletus that must weigh nearly five pounds.  The top
@@ -757,14 +720,14 @@ musty smell.  Not the most delicious thing you have seen.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6107
-Keywords toadstool~
-Type     food~
-Short    a toadstool~
-Long     A large toadstool grows nearby.~
-WFlags   take~
-Values   12 0 0 1 0 0
-Stats    5 20 2 0 0
+Vnum      6107
+Keywords  toadstool~
+Type      food~
+Short     a toadstool~
+Long      A large toadstool grows nearby.~
+WFlags    take~
+Values    12 0 0 1 0 0 0 0 0 0 0
+Stats     5 20 -2 9999 0 None None None
 #EXDESC
 ExDescKey    toadstool~
 ExDesc       It is a large, brown boletus that must weigh nearly five pounds.  It has small
@@ -776,16 +739,16 @@ that emits a weak, musty smell.  Not the most delicious thing you have seen.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6110
-Keywords humming yellow potion~
-Type     potion~
-Short    a humming yellow potion~
-Long     A humming yellow potion lies here.~
-Flags    hum magic~
-WFlags   take~
-Values   30 -1 -1 -1 0 0
-Stats    2 1000 100 0 0
-Spells   'kindred strength' 'stone skin' 'armor'
+Vnum      6110
+Keywords  humming yellow potion~
+Type      potion~
+Short     a humming yellow potion~
+Long      A humming yellow potion lies here.~
+Flags     hum magic~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     2 1000 -2 1 0 None None None
+Spells       'NONE' 'stone skin' 'armor'
 #EXDESC
 ExDescKey    potion yellow~
 ExDesc       It has a deep yellow colour and and a strong spicy smell.
@@ -795,17 +758,17 @@ ExDesc       It has a deep yellow colour and and a strong spicy smell.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6111
-Keywords shield large wooden round~
-Type     armor~
-Short    a large, round wooden shield~
-Long     A large, round wooden shield has been dropped here.~
-WFlags   take shield~
-Values   5 0 0 0 0 0
-Stats    15 300 30 0 0
-Affect       -1 -1 -4 17 0
-Affect       -1 -1 -3 23 0
-Affect       -1 -1 1 5 0
+Vnum      6111
+Keywords  shield large wooden round~
+Type      armor~
+Short     a large, round wooden shield~
+Long      A large, round wooden shield has been dropped here.~
+WFlags    take shield~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     15 300 -2 1 0 None None None
+AffData armor -4 -1 -1 0
+AffData save_breath -3 -1 -1 0
+AffData constitution 1 -1 -1 0
 #EXDESC
 ExDescKey    shield large~
 ExDesc       It is made from hard wood that has been reinforced with heavy iron bands.
@@ -815,18 +778,18 @@ ExDesc       It is made from hard wood that has been reinforced with heavy iron 
 #ENDOBJECT
 
 #OBJECT
-Vnum     6112
-Keywords crown iron~
-Type     armor~
-Short    an iron crown~
-Long     An iron crown rests on the ground.~
-Flags    magic~
-WFlags   take head~
-Values   4 0 0 0 0 0
-Stats    10 5000 500 0 0
-Affect       -1 -1 -2 17 0
-Affect       -1 -1 -2 23 0
-Affect       -1 -1 10 12 0
+Vnum      6112
+Keywords  crown iron~
+Type      armor~
+Short     an iron crown~
+Long      An iron crown rests on the ground.~
+Flags     magic~
+WFlags    take head~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     10 5000 -2 1 0 None None None
+AffData armor -2 -1 -1 0
+AffData save_breath -2 -1 -1 0
+AffData mana 10 -1 -1 0
 #EXDESC
 ExDescKey    crown iron~
 ExDesc       It is a heavy human-sized crown made from solid iron.
@@ -836,17 +799,17 @@ ExDesc       It is a heavy human-sized crown made from solid iron.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6114
-Keywords ring iron~
-Type     armor~
-Short    a heavy ring of iron~
-Long     A heavy ring of iron has been lost here.~
-Flags    magic~
-WFlags   take finger~
-Values   1 0 0 0 0 0
-Stats    4 5000 500 0 0
-Affect       -1 -1 -5 17 0
-Affect       -1 -1 1 5 0
+Vnum      6114
+Keywords  ring iron~
+Type      armor~
+Short     a heavy ring of iron~
+Long      A heavy ring of iron has been lost here.~
+Flags     magic~
+WFlags    take finger~
+Values    1 0 0 0 0 0 0 0 0 0 0
+Stats     4 5000 -2 1 0 None None None
+AffData armor -5 -1 -1 0
+AffData constitution 1 -1 -1 0
 #EXDESC
 ExDescKey    ring iron~
 ExDesc       It is a quite heavy human-sized ring made from solid iron.  It lacks
@@ -857,15 +820,15 @@ decorations of any kind.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6120
-Keywords book guide~
-Type     trash~
-Short    A guide to "safe" programming~
-Long     An old tome made of patchwork parchment lies in the dust here.~
-Flags    bless metal prototype~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      6120
+Keywords  book guide~
+Type      trash~
+Short     A guide to "safe" programming~
+Long      An old tome made of patchwork parchment lies in the dust here.~
+Flags     metal bless proto~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    book~
 ExDesc       Dusty and patchworked, this ancient tome has seen much use over the years.
@@ -1218,23 +1181,24 @@ trigger will fit all situations.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6155
-Keywords morning-star star morning~
-Type     weapon~
-Short    the morning star~
-Long     The morning star is here collecting dust while it lies on the ground.~
-Flags    magic~
-WFlags   take wield~
-Values   0 2 8 8 0 0
-Stats    10 15000 1500 0 0
+Vnum      6155
+Keywords  morning-star star morning~
+Type      weapon~
+Short     the morning star~
+Long      The morning star is here collecting dust while it lies on the ground.~
+Flags     magic~
+WFlags    take wield~
+Values    0 2 8 8 0 0 0 0 0 0 0
+Stats     10 15000 -2 1 0 None None None
 #ENDOBJECT
 
 #ROOM
-Vnum     6000
-Name     Edge of the forest~
-Sector   field~
-Flags    nomob~
-Desc     Here at the eastern edge of the forest of Haon Dor, the thick tangle of
+Vnum      6000
+Name      Edge of the forest~
+Sector    field~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Here at the eastern edge of the forest of Haon Dor, the thick tangle of
 trees stretching to the west forms an eerie darkness, seeming to quell
 whatever light dares to make its presence known.  The mighty western gate
 of Darkhaven, beckons to you just a few minute's walk to the east, and a 
@@ -1289,10 +1253,12 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     6001
-Name     A trail through the light forest~
-Sector   forest~
-Desc     You are on a trail leading through the forest.  To the east is the forest's
+Vnum      6001
+Name      A trail through the light forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a trail leading through the forest.  To the east is the forest's
 edge, and to the west the trail leads further into the forest.  Through the
 trees to the north you spot a narrow trail leading toward a lighter section
 of the forest.
@@ -1333,10 +1299,12 @@ ExDesc       Very cute little creatures, they seem to enjoy life.
 #ENDROOM
 
 #ROOM
-Vnum     6002
-Name     A trail through the light forest~
-Sector   forest~
-Desc     You are on a narrow trail leading east and west through the forest.  To
+Vnum      6002
+Name      A trail through the light forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a narrow trail leading east and west through the forest.  To
 the west, the forest gradually becomes more dense.  A small forest path
 leads south.
 ~
@@ -1383,10 +1351,12 @@ lightly in the wind.
 #ENDROOM
 
 #ROOM
-Vnum     6003
-Name     A trail through the dense forest~
-Sector   forest~
-Desc     You are on a trail leading east and west through the dense forest.  To the
+Vnum      6003
+Name      A trail through the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a trail leading east and west through the dense forest.  To the
 east, the forest gradually seems to become lighter.
 ~
 #EXIT
@@ -1426,10 +1396,12 @@ Comlist   mpecho You think you hear a twig snap somewhere nearby.
 #ENDROOM
 
 #ROOM
-Vnum     6004
-Name     A trail through the dense forest~
-Sector   forest~
-Desc     You are on a trail leading east and west through the dense forest.  To the
+Vnum      6004
+Name      A trail through the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a trail leading east and west through the dense forest.  To the
 west, the trees are so huge and their crowns so dense that forest remains in
 total darkness.  A small path leads south through the trees.
 ~
@@ -1482,10 +1454,12 @@ Comlist   mpecho You think you hear a twig snap somewhere nearby.
 #ENDROOM
 
 #ROOM
-Vnum     6005
-Name     A small path in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The crowns of the
+Vnum      6005
+Name      A small path in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The crowns of the
 old trees leave the forest in an unreal twilight illumination.  The path
 continues north and south.
 ~
@@ -1518,10 +1492,12 @@ ExDesc       The trees are mostly old beeches and oaks.
 #ENDROOM
 
 #ROOM
-Vnum     6006
-Name     A small path in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The crowns of the
+Vnum      6006
+Name      A small path in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The crowns of the
 old trees leave the forest in an unreal twilight illumination.  The path
 continues north and east.
 ~
@@ -1539,7 +1515,7 @@ Desc      The small path leads east through the trees.
 ~
 #ENDEXIT
 
-Reset O 0 6011 3 6006
+Reset O 6011 3 6006 -1 -1 -1 100
 #EXDESC
 ExDescKey    path paths~
 ExDesc       The narrow path is probably used by the animals living in the forest.
@@ -1555,10 +1531,12 @@ ExDesc       The trees are mostly old beeches and oaks.
 #ENDROOM
 
 #ROOM
-Vnum     6007
-Name     An intersection in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The crowns of the
+Vnum      6007
+Name      An intersection in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The crowns of the
 old trees leave the forest in an unreal twilight illumination.  The forest
 gradually lightens to the east.  Paths lead east, west and south.
 ~
@@ -1598,10 +1576,12 @@ ExDesc       The trees are mostly old beeches and oaks.
 #ENDROOM
 
 #ROOM
-Vnum     6008
-Name     The forest clearing~
-Sector   forest~
-Desc     You are in a clearing in the forest.  Lots of fresh stumps of varying sizes
+Vnum      6008
+Name      The forest clearing~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in a clearing in the forest.  Lots of fresh stumps of varying sizes
 protrude from the ground and heavy logs are stacked neatly in a big pile
 supported by stakes set into the ground.  Paths lead north, east and west.
 ~
@@ -1661,10 +1641,12 @@ ExDesc       The trees are mostly old beeches and oaks.
 #ENDROOM
 
 #ROOM
-Vnum     6009
-Name     Outside a small cabin in the forest~
-Sector   forest~
-Desc     You are outside a small cabin built entirely from heavy logs.  There is a
+Vnum      6009
+Name      Outside a small cabin in the forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are outside a small cabin built entirely from heavy logs.  There is a
 wooden door to the north and small paths lead west and south through the trees.
 ~
 #EXIT
@@ -1690,11 +1672,11 @@ Desc      The small path leads west through the light forest.
 ~
 #ENDEXIT
 
-Reset M 0 6000 1 6009
-  Reset E 1 6000 10 16
-  Reset E 1 6001 10 5
-  Reset E 1 6002 10 8
-Reset D 0 6009 0 1
+Reset M 6000 1 6009 -1 -1 -1 100
+  Reset E 6000 10 16 100
+  Reset E 6001 10 5 100
+  Reset E 6002 10 8 100
+Reset D 6009 0 1 100 -2
 #EXDESC
 ExDescKey    cabin logs~
 ExDesc       It looks simple but comfortable and the slender trees make the whole place seem
@@ -1717,11 +1699,12 @@ ExDesc       The trees are fairly young, not much more than a hundred years or s
 #ENDROOM
 
 #ROOM
-Vnum     6010
-Name     Inside the cabin~
-Sector   inside~
-Flags    indoors~
-Desc     You are inside a small one-room cabin made entirely from heavy logs.  It is
+Vnum      6010
+Name      Inside the cabin~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are inside a small one-room cabin made entirely from heavy logs.  It is
 very sparsely furnished, containing only most basic housekeeping equipment,
 such as a bed, a chair and a table.
 ~
@@ -1734,11 +1717,11 @@ Keywords  door wooden~
 Flags     isdoor~
 #ENDEXIT
 
-Reset O 0 6003 1 6010
-  Reset P 0 6006 1 6003
-Reset O 0 6005 1 6010
-  Reset P 0 6007 1 6005
-Reset O 0 6013 3 6010
+Reset O 6003 1 6010 -1 -1 -1 100
+Reset O 6005 1 6010 -1 -1 -1 100
+  Reset P 1 6007 1 6005 100
+  Reset P 1 6006 1 6003 100
+Reset O 6013 3 6010 -1 -1 -1 100
 #EXDESC
 ExDescKey    bed~
 ExDesc       It is definitely not the most comfortable bed you have seen in your life.
@@ -1760,10 +1743,12 @@ ExDesc       A heavy table that doesn't even appear to rock.
 #ENDROOM
 
 #ROOM
-Vnum     6011
-Name     A small path through the light forest~
-Sector   forest~
-Desc     You are on a small path leading through the forest.  The trees are tall and
+Vnum      6011
+Name      A small path through the light forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the forest.  The trees are tall and
 slender.  Paths lead north and south.
 ~
 #EXIT
@@ -1795,10 +1780,12 @@ ExDesc       The trees are fairly young, not much more than a hundred years or s
 #ENDROOM
 
 #ROOM
-Vnum     6012
-Name     An intersection in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The crowns of the
+Vnum      6012
+Name      An intersection in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The crowns of the
 old trees leave the forest floor in an unreal twilight illumination.  Paths
 lead north, east and south.
 ~
@@ -1838,10 +1825,12 @@ ExDesc       The trees are mostly old beeches and oaks.
 #ENDROOM
 
 #ROOM
-Vnum     6013
-Name     A small path in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The crowns of the
+Vnum      6013
+Name      A small path in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The crowns of the
 old trees leave the forest in an unreal twilight illumination.  The path
 continues east and west.
 ~
@@ -1859,7 +1848,7 @@ Desc      The small path leads west through the trees.
 ~
 #ENDEXIT
 
-Reset O 0 6011 3 6013
+Reset O 6011 3 6013 -1 -1 -1 100
 #EXDESC
 ExDescKey    path paths~
 ExDesc       The narrow path is probably used by the animals living in the forest.
@@ -1875,10 +1864,12 @@ ExDesc       The trees are mostly old beeches and oaks.
 #ENDROOM
 
 #ROOM
-Vnum     6014
-Name     An intersection in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The forest gradually
+Vnum      6014
+Name      An intersection in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The forest gradually
 lightens to the north.  Paths lead north, east and west.
 ~
 #EXIT
@@ -1902,7 +1893,7 @@ Desc      The small path leads west through the trees.
 ~
 #ENDEXIT
 
-Reset M 0 6005 2 6014
+Reset M 6005 2 6014 -1 -1 -1 100
 #EXDESC
 ExDescKey    path paths~
 ExDesc       The narrow path is probably used by the animals living in the forest.
@@ -1919,10 +1910,12 @@ illumination.
 #ENDROOM
 
 #ROOM
-Vnum     6015
-Name     A small path in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The crowns of the
+Vnum      6015
+Name      A small path in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The crowns of the
 old trees leave the forest in an unreal twilight illumination.  The path
 continues south and west.
 ~
@@ -1955,10 +1948,12 @@ ExDesc       The trees are mostly old beeches and oaks.
 #ENDROOM
 
 #ROOM
-Vnum     6016
-Name     A small path in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The crowns of the
+Vnum      6016
+Name      A small path in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The crowns of the
 old trees leave the forest in an unreal twilight illumination.  The path
 continues north and south.
 ~
@@ -1976,7 +1971,7 @@ Desc      The small path leads south through the trees.
 ~
 #ENDEXIT
 
-Reset O 0 6011 3 6016
+Reset O 6011 3 6016 -1 -1 -1 100
 #EXDESC
 ExDescKey    path paths~
 ExDesc       The narrow path is probably used by the animals living in the forest.
@@ -1992,10 +1987,12 @@ ExDesc       The trees are mostly old beeches and oaks.
 #ENDROOM
 
 #ROOM
-Vnum     6017
-Name     A small path in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The forest seems to
+Vnum      6017
+Name      A small path in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The forest seems to
 become lighter to the west.  The path continues north and west.
 ~
 #EXIT
@@ -2028,10 +2025,12 @@ illumination.
 #ENDROOM
 
 #ROOM
-Vnum     6018
-Name     An intersection in the light forest~
-Sector   forest~
-Desc     You are on a small path leading through the forest.  A path leads north to a
+Vnum      6018
+Name      An intersection in the light forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the forest.  A path leads north to a
 small field and other paths lead east and west into the dense forest.
 ~
 #EXIT
@@ -2070,10 +2069,12 @@ ExDesc       The tall trees are young and slender, not much more than a hundred 
 #ENDROOM
 
 #ROOM
-Vnum     6019
-Name     A small path in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The forest seems to
+Vnum      6019
+Name      A small path in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The forest seems to
 become lighter to the east.  The path continues north and east.
 ~
 #EXIT
@@ -2106,10 +2107,12 @@ illumination.
 #ENDROOM
 
 #ROOM
-Vnum     6020
-Name     A small path in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The crowns of the
+Vnum      6020
+Name      A small path in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The crowns of the
 old trees leave the forest in an unreal twilight illumination.  The path
 continues south and west.
 ~
@@ -2142,10 +2145,12 @@ ExDesc       The trees are mostly old beeches and oaks.
 #ENDROOM
 
 #ROOM
-Vnum     6021
-Name     A small path in the dense forest~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  To the west there is
+Vnum      6021
+Name      A small path in the dense forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  To the west there is
 a cave entrance.  The path continues north and east.
 ~
 #EXIT
@@ -2192,11 +2197,12 @@ emanates from within.
 #ENDROOM
 
 #ROOM
-Vnum     6022
-Name     Inside the cave~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are in a natural cave.  Various sorts of debris cover the stone floor,
+Vnum      6022
+Name      Inside the cave~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a natural cave.  Various sorts of debris cover the stone floor,
 emitting a rather unpleasant smell that makes the air thick and hard to
 breathe.  The only obvious exit is east.
 ~
@@ -2207,7 +2213,7 @@ Desc      The cave opening is to the east.
 ~
 #ENDEXIT
 
-Reset M 0 6002 1 6022
+Reset M 6002 1 6022 -1 -1 -1 100
 #EXDESC
 ExDescKey    debris~
 ExDesc       It consists mostly of gnawed bones mixed with small pieces of torn fur.
@@ -2229,10 +2235,12 @@ ExDesc       Kind of transparent, but quite noticeable nevertheless.
 #ENDROOM
 
 #ROOM
-Vnum     6023
-Name     On a small, grassy field~
-Sector   field~
-Desc     You are in a small, grassy field somewhere in the forest.  The tall grass
+Vnum      6023
+Name      On a small, grassy field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in a small, grassy field somewhere in the forest.  The tall grass
 nearly reaches your waist, and the surrounding oaks and beeches form an almost
 wall-like thicket on all sides of the field.  A small path leads south through
 the trees.
@@ -2244,8 +2252,8 @@ Desc      The small path leads south in between the trees.
 ~
 #ENDEXIT
 
-Reset M 0 6004 1 6023
-Reset O 0 6010 2 6023
+Reset M 6004 1 6023 -1 -1 -1 100
+Reset O 6010 2 6023 -1 -1 -1 100
 #EXDESC
 ExDescKey    grass~
 ExDesc       The tall grass makes a nice hiding place for animals.
@@ -2267,25 +2275,28 @@ ExDesc       The trees form a close thicket.
 #ENDROOM
 
 #ROOM
-Vnum     6030
-Name     DELETE THIS ROOM~
-Sector   city~
-Flags    nomob~
+Vnum      6030
+Name      DELETE THIS ROOM~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6040
-Name     The Healing Place~
-Sector   inside~
-Flags    nomob indoors solitary nosummon noastral~
+Vnum      6040
+Name      The Healing Place~
+Sector    indoors~
+Flags     nomob indoors nosummon noastral solitary~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6100
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow trail winding its way between the enormous, grey trunks.
+Vnum      6100
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow trail winding its way between the enormous, grey trunks.
 The crowns of the trees must be very dense, as they leave the forest floor in
 utter darkness.  The trail leads east and west.
 ~
@@ -2303,8 +2314,8 @@ Desc      The narrow, dusty trail leads west through the forest.
 ~
 #ENDEXIT
 
-Reset M 0 6115 1 6100
-  Reset E 1 6114 3 1
+Reset M 6115 1 6100 -1 -1 -1 100
+  Reset E 6114 3 1 100
 #EXDESC
 ExDescKey    trail~
 ExDesc       The dark and dusty trail seems fragile compared to the massive trunks, and in
@@ -2329,11 +2340,12 @@ Comlist   mpecho You think you hear a twig snap somewhere nearby.
 #ENDROOM
 
 #ROOM
-Vnum     6101
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way east-west between huge, ancient
+Vnum      6101
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way east-west between huge, ancient
 trees whose grey trunks remind you of ancient pillars in a enormous,
 deserted hall.  To the south, a frail path leads away from the trail.
 ~
@@ -2389,11 +2401,12 @@ Comlist   mpecho You think you hear a twig snap somewhere nearby.
 #ENDROOM
 
 #ROOM
-Vnum     6102
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way east-west between huge, ancient
+Vnum      6102
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way east-west between huge, ancient
 trees which stand close on all sides.  Not a sound is to be heard --
 everything is ominously quiet.
 ~
@@ -2442,11 +2455,12 @@ Comlist   mpecho You think you hear a twig snap somewhere nearby.
 #ENDROOM
 
 #ROOM
-Vnum     6103
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are where the dusty trail bends, as to avoid conflict with a colossal
+Vnum      6103
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are where the dusty trail bends, as to avoid conflict with a colossal
 trunk to the west.  Not a sound is to be heard -- everything is ominously
 quiet.  A perfectly enormous tree conspires here with its brethren to
 block the westward path, leaving you with travel options in the remaining
@@ -2473,7 +2487,7 @@ Desc      The narrow, dusty trail leads south through the forest.
 ~
 #ENDEXIT
 
-Reset O 0 6102 1 6103
+Reset O 6102 1 6103 -1 -1 -1 100
 #EXDESC
 ExDescKey    trail~
 ExDesc       The dark and dusty trail seems fragile compared to the massive trunks, and in
@@ -2491,11 +2505,12 @@ to catch even a glimpse of anything above the lowest branches.
 #ENDROOM
 
 #ROOM
-Vnum     6104
-Name     A small path in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  You feel as if
+Vnum      6104
+Name      A small path in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  You feel as if
 the ancient trees observe you in watchful silence.  The path continues north
 and south.
 ~
@@ -2513,9 +2528,9 @@ Desc      The narrow path winds its way through the trees to the south.
 ~
 #ENDEXIT
 
-Reset M 0 6102 4 6104
-Reset M 0 6102 4 6104
-Reset O 0 6106 4 6104
+Reset M 6102 4 6104 -1 -1 -1 100
+Reset M 6102 4 6104 -1 -1 -1 100
+Reset O 6106 4 6104 -1 -1 -1 100
 #EXDESC
 ExDescKey    tree trees trunk trunks~
 ExDesc       The ancient grey giants seem to observe you silently.
@@ -2532,11 +2547,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6105
-Name     A small path in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  Ancient grey
+Vnum      6105
+Name      A small path in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  Ancient grey
 trees loom all around you.  The path continues north and west.
 ~
 #EXIT
@@ -2553,7 +2569,7 @@ Desc      The narrow path winds its way through the trees to the west.
 ~
 #ENDEXIT
 
-Reset O 0 6105 1 6105
+Reset O 6105 1 6105 -1 -1 -1 100
 #EXDESC
 ExDescKey    tree trees trunk trunks~
 ExDesc       The ancient grey giants seem to observe you silently.
@@ -2570,11 +2586,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6106
-Name     A junction in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are by a junction where three paths meet.  Ancient grey trees tower above
+Vnum      6106
+Name      A junction in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are by a junction where three paths meet.  Ancient grey trees tower above
 you on all sides.  Paths lead east, south and west.
 ~
 #EXIT
@@ -2614,11 +2631,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6107
-Name     A small path in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  Ancient grey
+Vnum      6107
+Name      A small path in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  Ancient grey
 trees loom all around you.  The path continues north and east.
 ~
 #EXIT
@@ -2651,11 +2669,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6108
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way between huge, ancient trees
+Vnum      6108
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way between huge, ancient trees
 standing close on all sides.  The trail leads north and west and to the south,
 a frail path leads away from the trail.
 ~
@@ -2680,8 +2699,8 @@ Desc      The narrow, dusty trail leads west through the forest.
 ~
 #ENDEXIT
 
-Reset M 0 6102 4 6108
-Reset M 0 6102 4 6108
+Reset M 6102 4 6108 -1 -1 -1 100
+Reset M 6102 4 6108 -1 -1 -1 100
 #EXDESC
 ExDescKey    trail~
 ExDesc       The dark and dusty trail seems fragile compared to the massive trunks, and in
@@ -2706,11 +2725,12 @@ to catch even a glimpse of anything above the lowest branches.
 #ENDROOM
 
 #ROOM
-Vnum     6109
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way east-west between huge, ancient trees
+Vnum      6109
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way east-west between huge, ancient trees
 that stand close on all sides.  Not a sound is to be heard - everything is
 ominously quiet.
 ~
@@ -2745,11 +2765,12 @@ to catch even a glimpse of anything above the lowest branches.
 #ENDROOM
 
 #ROOM
-Vnum     6110
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way between huge, ancient trees that stand
+Vnum      6110
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way between huge, ancient trees that stand
 close on all sides.  The trail leads east and south.  To the north, a narrow
 path leads away from the trail.
 ~
@@ -2798,11 +2819,12 @@ substance.  It looks like small threads woven carefully together.
 #ENDROOM
 
 #ROOM
-Vnum     6111
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way north-south between huge, ancient
+Vnum      6111
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way north-south between huge, ancient
 trees that loom ominously above you.
 ~
 #EXIT
@@ -2819,7 +2841,7 @@ Desc      The narrow, dusty trail leads south through the forest.
 ~
 #ENDEXIT
 
-Reset O 0 6106 4 6111
+Reset O 6106 4 6111 -1 -1 -1 100
 #EXDESC
 ExDescKey    trail~
 ExDesc       The dark and dusty trail seems fragile compared to the massive trunks, and in
@@ -2837,11 +2859,12 @@ to catch even a glimpse of anything above the lowest branches.
 #ENDROOM
 
 #ROOM
-Vnum     6112
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way between huge, ancient trees
+Vnum      6112
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way between huge, ancient trees
 standing close on all sides.  The trail leads north and west and to the east,
 a frail path leads away from the trail.
 ~
@@ -2866,8 +2889,8 @@ Desc      The narrow, dusty trail leads west through the forest.
 ~
 #ENDEXIT
 
-Reset M 0 6103 4 6112
-Reset M 0 6103 4 6112
+Reset M 6103 4 6112 -1 -1 -1 100
+Reset M 6103 4 6112 -1 -1 -1 100
 #EXDESC
 ExDescKey    trail~
 ExDesc       The dark and dusty trail seems fragile compared to the massive trunks, and in
@@ -2892,11 +2915,12 @@ to catch even a glimpse of anything above the lowest branches.
 #ENDROOM
 
 #ROOM
-Vnum     6113
-Name     A small path in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  Ancient grey
+Vnum      6113
+Name      A small path in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  Ancient grey
 trees loom in all directions.  The path continues south and west.
 ~
 #EXIT
@@ -2913,7 +2937,7 @@ Desc      The narrow path winds its way through the trees to the west.
 ~
 #ENDEXIT
 
-Reset O 0 6103 1 6113
+Reset O 6103 1 6113 -1 -1 -1 100
 #EXDESC
 ExDescKey    tree trees trunk trunks~
 ExDesc       The ancient grey giants seem to observe you silently.
@@ -2930,11 +2954,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6114
-Name     A junction in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are by a junction where three paths meet.  Ancient grey trees tower above
+Vnum      6114
+Name      A junction in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are by a junction where three paths meet.  Ancient grey trees tower above
 you on all sides.  Paths lead north, east and west.
 ~
 #EXIT
@@ -2974,11 +2999,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6115
-Name     A small path in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  You feel as
+Vnum      6115
+Name      A small path in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  You feel as
 if the ancient trees observe you in watchful silence.  The path continues north
 and west.
 ~
@@ -3012,11 +3038,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6116
-Name     A small path in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  Giant, grey
+Vnum      6116
+Name      A small path in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  Giant, grey
 trees loom ominously on all sides.  The path continues east and south.
 ~
 #EXIT
@@ -3033,8 +3060,8 @@ Desc      The narrow path winds its way through the trees to the south.
 ~
 #ENDEXIT
 
-Reset M 0 6100 2 6116
-Reset M 0 6100 2 6116
+Reset M 6100 2 6116 -1 -1 -1 100
+Reset M 6100 2 6116 -1 -1 -1 100
 #EXDESC
 ExDescKey    tree trees trunk trunks~
 ExDesc       The ancient grey giants seem to observe you silently.
@@ -3051,11 +3078,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6117
-Name     A junction in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are by a junction where three paths meet.  Ancient, grey trees seem to
+Vnum      6117
+Name      A junction in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are by a junction where three paths meet.  Ancient, grey trees seem to
 observe you silently you from all sides.  Paths lead north, east and west.
 ~
 #EXIT
@@ -3095,11 +3123,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6118
-Name     A small path in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  Ancient,
+Vnum      6118
+Name      A small path in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  Ancient,
 grey trees loom everywhere.  The path continues south and west.
 ~
 #EXIT
@@ -3116,8 +3145,8 @@ Desc      The narrow path winds its way through the trees to the west.
 ~
 #ENDEXIT
 
-Reset M 0 6103 4 6118
-Reset M 0 6103 4 6118
+Reset M 6103 4 6118 -1 -1 -1 100
+Reset M 6103 4 6118 -1 -1 -1 100
 #EXDESC
 ExDescKey    tree trees trunk trunks~
 ExDesc       The ancient grey giants seem to observe you silently.
@@ -3134,11 +3163,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6119
-Name     A small path in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  Huge, ancient
+Vnum      6119
+Name      A small path in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  Huge, ancient
 trees are on all sides.  The path continues north and south.
 ~
 #EXIT
@@ -3155,7 +3185,7 @@ Desc      The narrow path winds its way through the trees to the south.
 ~
 #ENDEXIT
 
-Reset O 0 6107 4 6119
+Reset O 6107 4 6119 -1 -1 -1 100
 #EXDESC
 ExDescKey    tree trees trunk trunks~
 ExDesc       You feel as if they are watching you.
@@ -3172,11 +3202,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6120
-Name     On the river bank in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  To the south a
+Vnum      6120
+Name      On the river bank in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  To the south a
 fast river is flowing westwards through the forest.  Ancient grey trees loom on
 both banks.  The path continues north and west.
 ~
@@ -3217,11 +3248,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6121
-Name     A dead end path on the river bank in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  The ancient
+Vnum      6121
+Name      A dead end path on the river bank in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  The ancient
 trees stand so close that the path disappears between the dusty roots.  To the
 south a dark river flows from east to west.  The only exit appears to be east.
 ~
@@ -3232,7 +3264,7 @@ Desc      The narrow path winds its way through the trees to the east.
 ~
 #ENDEXIT
 
-Reset M 0 6117 1 6121
+Reset M 6117 1 6121 -1 -1 -1 100
 #EXDESC
 ExDescKey    river~
 ExDesc       The river flows fast and strong.  It is black or looks so in the gloom.
@@ -3256,11 +3288,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6122
-Name     A small path in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  Giant, grey
+Vnum      6122
+Name      A small path in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  Giant, grey
 trees loom ominously all around.  The path continues east and south.
 ~
 #EXIT
@@ -3277,7 +3310,7 @@ Desc      The narrow path winds its way through the trees to the south.
 ~
 #ENDEXIT
 
-Reset O 0 6106 4 6122
+Reset O 6106 4 6122 -1 -1 -1 100
 #EXDESC
 ExDescKey    tree trees trunk trunks~
 ExDesc       The ancient grey giants seem to observe you silently.
@@ -3294,11 +3327,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6123
-Name     A junction on the river bank in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are by a junction where three paths meet.  Ancient, grey trees seem to
+Vnum      6123
+Name      A junction on the river bank in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are by a junction where three paths meet.  Ancient, grey trees seem to
 observe you silently you from all around.  To the south a dark river flows from
 east to west through the forest.  Paths lead north, east and west.
 ~
@@ -3346,11 +3380,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6124
-Name     A dead end path in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  The ancient
+Vnum      6124
+Name      A dead end path in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  The ancient
 trees stand so close that the path disappears between the dusty roots.  To
 the south a dark river flows from east to west.  The only exit appears to be
 west, or you could take your chances crossing the river.
@@ -3385,11 +3420,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6125
-Name     A small path on the river bank in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  Ancient grey
+Vnum      6125
+Name      A small path on the river bank in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  Ancient grey
 trees loom everywhere.  To the south you smell marsh gas.  The path continues
 north and east.
 ~
@@ -3407,7 +3443,7 @@ Desc      The narrow path winds its way through the trees to the east.
 ~
 #ENDEXIT
 
-Reset O 0 6104 1 6125
+Reset O 6104 1 6125 -1 -1 -1 100
 #EXDESC
 ExDescKey    river~
 ExDesc       The river flows fast and strong.  It is black or looks so in the gloom.
@@ -3431,11 +3467,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6126
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way between huge, ancient trees standing
+Vnum      6126
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way between huge, ancient trees standing
 close on all sides.  The trail leads north and west, and to the south a frail
 path leads away from the trail.
 ~
@@ -3484,11 +3521,12 @@ to catch even a glimpse of anything above the lowest branches.
 #ENDROOM
 
 #ROOM
-Vnum     6127
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way between huge, ancient trees
+Vnum      6127
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way between huge, ancient trees
 standing close on all sides.  The trail leads east and south.
 ~
 #EXIT
@@ -3505,8 +3543,8 @@ Desc      The narrow, dusty trail leads south through the forest.
 ~
 #ENDEXIT
 
-Reset M 0 6101 2 6127
-Reset M 0 6101 2 6127
+Reset M 6101 2 6127 -1 -1 -1 100
+Reset M 6101 2 6127 -1 -1 -1 100
 #EXDESC
 ExDescKey    trail~
 ExDesc       The dark and dusty trail seems fragile compared to the massive trunks, and in
@@ -3524,11 +3562,12 @@ to catch even a glimpse of anything above the lowest branches.
 #ENDROOM
 
 #ROOM
-Vnum     6128
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way east-west between huge, ancient trees
+Vnum      6128
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way east-west between huge, ancient trees
 shrouded in mist that stand close on all sides.  Not a sound is to be heard -
 everything is ominously quiet.
 ~
@@ -3563,11 +3602,12 @@ to catch even a glimpse of anything above the lowest branches.
 #ENDROOM
 
 #ROOM
-Vnum     6129
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way east-west between huge, ancient trees
+Vnum      6129
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way east-west between huge, ancient trees
 shrouded in mist that stand close on all sides.  Not a sound is to be heard -
 everything is ominously quiet.
 ~
@@ -3602,11 +3642,12 @@ to catch even a glimpse of anything above the lowest branches.
 #ENDROOM
 
 #ROOM
-Vnum     6130
-Name     A narrow trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail winding its way westwards just below huge sticky
+Vnum      6130
+Name      A narrow trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail winding its way westwards just below huge sticky
 wires suspended like ropes between the trees.  To the west the path seems to
 be completely covered in a giant web made from huge threads covered with glue.
 This place gives you the creeps.
@@ -3649,11 +3690,12 @@ trunks.
 #ENDROOM
 
 #ROOM
-Vnum     6131
-Name     The spider web~
-Sector   forest~
-Flags    nomob indoors~
-Desc     You are walking along the narrow path, ducking under the sticky ropes as
+Vnum      6131
+Name      The spider web~
+Sector    forest~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are walking along the narrow path, ducking under the sticky ropes as
 you advance...
 ~
 #MUDPROG
@@ -3674,11 +3716,12 @@ mpechoat $n You've fallen, and you can't get up!!!!!
 #ENDROOM
 
 #ROOM
-Vnum     6132
-Name     Up in the tree~
-Sector   forest~
-Flags    dark nomob indoors~
-Desc     You are hanging on the outside of a huge tree trunk covered in a sticky
+Vnum      6132
+Name      Up in the tree~
+Sector    forest~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are hanging on the outside of a huge tree trunk covered in a sticky
 substance.  Directly to the west is an immense spider web suspended between
 numerous of the giant trees including the one you are hanging on.
 ~
@@ -3706,11 +3749,12 @@ walk on it.
 #ENDROOM
 
 #ROOM
-Vnum     6133
-Name     On the spider web~
-Sector   city~
-Flags    dark indoors~
-Desc     You are balancing carefully on the giant sticky threads that holds the giant
+Vnum      6133
+Name      On the spider web~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are balancing carefully on the giant sticky threads that holds the giant
 web in place.  To the east is a giant tree trunk and to the west is an entrance
 to a cave-like structure made from many layers of spider web.
 ~
@@ -3744,11 +3788,12 @@ about 20 feet and is nearly 10 feet tall.  It looks very old.
 #ENDROOM
 
 #ROOM
-Vnum     6134
-Name     The Den of the Queen Spider~
-Sector   city~
-Flags    dark indoors~
-Desc     You are inside a cave-like structure that seems to be made entirely from
+Vnum      6134
+Name      The Den of the Queen Spider~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are inside a cave-like structure that seems to be made entirely from
 countless layers of spider web.  Temperature and humidity is very high making
 it hard to breathe the foul air that lingers here.  The walls are covered with
 open cocoons.
@@ -3776,11 +3821,12 @@ They are at the size of a human head.
 #ENDROOM
 
 #ROOM
-Vnum     6135
-Name     A dusty trail in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail leading through the deep, dark forest.  Ancient grey
+Vnum      6135
+Name      A dusty trail in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail leading through the deep, dark forest.  Ancient grey
 trees loom all around you.  The trail continues north and east.
 ~
 #EXIT
@@ -3806,11 +3852,12 @@ ExDesc       The ancient grey giants seem to observe you silently.
 #ENDROOM
 
 #ROOM
-Vnum     6136
-Name     A dusty trail in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail leading through the deep, dark forest.  Ancient,
+Vnum      6136
+Name      A dusty trail in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail leading through the deep, dark forest.  Ancient,
 grey trees loom everywhere.  The trail continues south and west.  A broad
 irregular path leads eastwards away from the trail.
 ~
@@ -3858,11 +3905,12 @@ some places, giant grey roots have broken up through its surface.
 #ENDROOM
 
 #ROOM
-Vnum     6137
-Name     At the end of the trail through the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a dusty trail leading through the deep, dark forest.  Ancient grey
+Vnum      6137
+Name      At the end of the trail through the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a dusty trail leading through the deep, dark forest.  Ancient grey
 trees loom all around you.  You see a dark grove north of you.
 The only other exit is east.
 ~
@@ -3882,11 +3930,12 @@ ExDesc       The ancient grey giants seem to observe you silently.
 #ENDROOM
 
 #ROOM
-Vnum     6142
-Name     Outside a cave in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are at the end of a broad, irregular path.  To the north is a very large
+Vnum      6142
+Name      Outside a cave in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are at the end of a broad, irregular path.  To the north is a very large
 ominous-looking cave opening.  The trees here have many marks as if something
 with huge claws has been tearing at them in rage.
 ~
@@ -3920,11 +3969,12 @@ ExDesc       The disgusting smell of a large reptile emanates from the cave open
 #ENDROOM
 
 #ROOM
-Vnum     6143
-Name     The cave of the Green Dragon~
-Sector   forest~
-Flags    dark nomob indoors~
-Desc     You are in a big natural cave.  The floor is littered with bones of all sorts
+Vnum      6143
+Name      The cave of the Green Dragon~
+Sector    forest~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in a big natural cave.  The floor is littered with bones of all sorts
 and the stench is so massive that you could cut it with a knife.  The only exit
 is to the south.
 ~
@@ -3935,10 +3985,10 @@ Desc      The exit leads out into the forest.
 ~
 #ENDEXIT
 
-Reset M 0 6112 1 6143
-  Reset G 1 6110 10
-  Reset G 1 6112 10
-  Reset G 1 6111 10
+Reset M 6112 1 6143 -1 -1 -1 100
+  Reset G 6110 10 100
+  Reset G 6112 10 100
+  Reset G 6111 10 100
 #EXDESC
 ExDescKey    bone bones floor~
 ExDesc       Most of the bones on the floor appear to be of human origin.
@@ -3948,11 +3998,12 @@ ExDesc       Most of the bones on the floor appear to be of human origin.
 #ENDROOM
 
 #ROOM
-Vnum     6144
-Name     A small path in the deep, dark forest~
-Sector   forest~
-Flags    dark indoors~
-Desc     You are on a narrow path leading through the deep, dark forest.  Ancient,
+Vnum      6144
+Name      A small path in the deep, dark forest~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a narrow path leading through the deep, dark forest.  Ancient,
 grey trees loom everywhere.  The tree trunks here seem to be covered in some
 sticky substance.  The path continues south and west.
 ~
@@ -3993,11 +4044,12 @@ in a single blow.
 #ENDROOM
 
 #ROOM
-Vnum     6150
-Name     A dark, narrow trail~
-Sector   forest~
-Flags    dark indoors~
-Desc     This trail looks much more foreboding than similar trails in these woods.
+Vnum      6150
+Name      A dark, narrow trail~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This trail looks much more foreboding than similar trails in these woods.
 The usual animal claw marks and bites on the trees have grown few and far
 between.  The trail continues both north and south.
 ~
@@ -4018,11 +4070,12 @@ Desc      the trail intersects the main forest path.
 #ENDROOM
 
 #ROOM
-Vnum     6151
-Name     A dark, narrow trail~
-Sector   forest~
-Flags    dark nomob indoors~
-Desc     This area of the trail is also very peculiar.  You can see no signs of animal
+Vnum      6151
+Name      A dark, narrow trail~
+Sector    forest~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This area of the trail is also very peculiar.  You can see no signs of animal
 life what so ever, and the structure of the surrounding trees forces the path
 to make a sharp turn to the east.
 ~
@@ -4043,11 +4096,12 @@ Desc      The narrow trail continues.
 #ENDROOM
 
 #ROOM
-Vnum     6152
-Name     A circle of trees~
-Sector   forest~
-Flags    dark indoors~
-Desc     The smaller trees here seem to form a circle around a gargantuan tree which
+Vnum      6152
+Name      A circle of trees~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The smaller trees here seem to form a circle around a gargantuan tree which
 rises from the center, and you notice a wooden door has been set into the
 trunk of this enormity.  It is at the foot of this door that the trail you
 followed to enter this circle comes to an end.
@@ -4068,15 +4122,16 @@ Desc      The bend on the trail...
 ~
 #ENDEXIT
 
-Reset D 1 6152 1 1
+Reset D 6152 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     6153
-Name     Inside the great tree.~
-Sector   forest~
-Flags    dark indoors~
-Desc     You have stepped inside of this hollowed tree.  From here steps lead down into
+Vnum      6153
+Name      Inside the great tree.~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You have stepped inside of this hollowed tree.  From here steps lead down into
 darkness or you can exit the tree by going west.
 ~
 #EXIT
@@ -4095,15 +4150,16 @@ Desc      The steps look appear like they will hold your weight.
 ~
 #ENDEXIT
 
-Reset D 1 6153 3 1
+Reset D 6153 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     6154
-Name     The underground hallway.~
-Sector   forest~
-Flags    dark indoors~
-Desc     This hallway is apparently one of the roots of the tree hollowed out.  The hall
+Vnum      6154
+Name      The underground hallway.~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This hallway is apparently one of the roots of the tree hollowed out.  The hall
 leads south to a room where you hear strange noises or you can go up the steps.
 ~
 #EXIT
@@ -4125,11 +4181,12 @@ Flags     isdoor~
 #ENDROOM
 
 #ROOM
-Vnum     6155
-Name     The cultist temple.~
-Sector   forest~
-Flags    dark indoors~
-Desc     This temple is built to some god that you don't worship.  It is a nice place
+Vnum      6155
+Name      The cultist temple.~
+Sector    forest~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This temple is built to some god that you don't worship.  It is a nice place
 to visit but you feel very uncomfortable about spending much time here.
 The wooden altar seems almost to glow as you enter the room.  The only exit is
 the way you came in.
@@ -4142,15 +4199,17 @@ Desc      the hallway looks quite grand.
 Flags     isdoor~
 #ENDEXIT
 
-Reset M 0 6116 1 6155
-  Reset E 1 6155 1 16
+Reset M 6116 1 6155 -1 -1 -1 100
+  Reset E 6155 1 16 100
 #ENDROOM
 
 #ROOM
-Vnum     6156
-Name     A smaller path~
-Sector   forest~
-Desc     You make your way down a lighter but more narrow path.  To the southeast,
+Vnum      6156
+Name      A smaller path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You make your way down a lighter but more narrow path.  To the southeast,
 the path ends in a darker section of forest.  To the northwest, the path
 ends suddenly at a large outcropping of rock.
 ~

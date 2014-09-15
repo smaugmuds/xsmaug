@@ -1,0 +1,2371 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Kingdom of Juargan~
+Author          Anon~
+Vnums           4700 4785
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          10 25 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      4700
+Keywords  dwarf~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the small dwarf~
+Long      A small dwarf is here mining at the tunnel walls.
+~
+Desc      The small dwarf is dirty and dressed only in a small tunic and leggings.  His
+beard is encrusted with cracked rock and dust from the tunnel walls.
+~
+Nattacks  0.000000
+Stats1    500 50 0 0 0 0
+Stats2    7 21 3 150 1 8 0
+Speaking  common~
+Actflags  npc scavenger~
+#ENDMOBILE
+
+#MOBILE
+Vnum      4701
+Keywords  dwarf~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the small dwarf~
+Long      A small dwarf is here, on the watch for Duergar.
+~
+Desc      The small dwarf is dressed in colorful clothing and has a full and long beard.
+His eyes are keen and sharp, well suited for sight in the dark tunnels of the
+mines.
+~
+Nattacks  0.000000
+Stats1    500 100 0 0 0 0
+Stats2    5 21 5 60 1 8 0
+Speaking  common~
+Actflags  npc scavenger~
+#ENDMOBILE
+
+#MOBILE
+Vnum      4702
+Keywords  dwarf guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the dwarf guard~
+Long      A small dwarf is here, dressed in a makeshift suit of armor.
+~
+Desc      This small dwarf is the militia of the Dwarven Kingdom it watches over.  The
+small body is strong which makes him a match for any foe.  The armor of the
+dwarf is of no use to anyone but him, but provides adequate defense.
+~
+Nattacks  0.000000
+Stats1    700 150 0 0 0 0
+Stats2    10 21 0 170 1 8 6
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      4703
+Keywords  dwarf yentle~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     Yentle the dwarf~
+Long      A small dwarf sits here trying to grow a new rock.
+~
+Desc      The insane little dwarf who thinks he can grow a rock.  He is dressed in many
+yellows and oranges, and seems to have a happy look about him despite his years
+of failure at growing rocks.
+~
+Nattacks  0.000000
+Stats1    1000 300 0 0 0 0
+Stats2    10 21 2 100 2 6 1
+Speaking  common~
+Actflags  npc scavenger~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      4704
+Keywords  juargan dwarf king~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     Juargan the Dwarven King~
+Long      Juargan the Dwarven King sits here upon his throne, looking out over his gardens.
+~
+Desc      The small king is bulging at the seems with muscle.  He is dressed in nothing
+but a noble robe made of a grey silk.  His face has a visage of stone like his
+surroundings, as if his burden has become to much for him.
+~
+Nattacks  0.000000
+Stats1    1000 1000 0 0 0 0
+Stats2    27 21 -10 270 3 6 9
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      4705
+Keywords  duergar dwarf~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the duergar dwarf~
+Long      A repulsive Duergar is here, biting at its own arm.
+~
+Desc      The Duergar are the outcast dark dwarves.  They have grown insane through
+their isolation from the rest of the dwarven population and have become bitter
+enemies with them.
+~
+Nattacks  0.000000
+Stats1    -1000 100 0 0 0 0
+Stats2    8 21 3 150 2 4 0
+Speaking  common~
+Actflags  npc scavenger aggressive~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      4706
+Keywords  grimdale king dwarf~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Grimdale the ancient king~
+Long      A ancient and partially decayed dwarf lies here ever so silent.
+~
+Desc      The ancient king of the dwarves lies here.  Forgotten over the past decades
+his once cherished body has fallen into utter decay.  His once cheery face has
+turned into a crude scowl as you can feel that his soul is not at ease.
+~
+Nattacks  0.000000
+Stats1    -999 0 0 0 0 0
+Stats2    27 21 -10 270 2 10 9
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      4707
+Keywords  rock worm dreaded~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     The dreaded rock worm~
+Long      The dreaded rock worm has blasted through the rock wall, its jaws open wide!
+~
+Desc      The jaws of this strange beast are large enough to fit at lease two dwarves
+into.  Judging by the size you can see that is has been eating quite a few too
+many dwarves as it's body is at least five feet in diameter.
+~
+Nattacks  0.000000
+Stats1    0 4000 0 0 0 0
+Stats2    20 21 5 250 3 4 6
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      4708
+Keywords  spirit dwarf~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a dwarven spirit~
+Long      A small dwarven spirit is at unrest here.
+~
+Desc      The small spirit screams in agony as it is bound to this wretched existence.
+The soul of some unfortunate dwarf now has to fly aimlessly through this chamber
+of eternal pain.
+~
+Nattacks  0.000000
+Stats1    -999 0 0 0 0 0
+Stats2    15 21 1 150 2 6 3
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis detect_hidden sanctuary~
+#ENDMOBILE
+
+#OBJECT
+Vnum      4700
+Keywords  key small~
+Type      key~
+Short     a small key~
+Long      A small key of red rock lies here on the ground.~
+WFlags    take~
+Values    2 0 0 0 0 0 0 0 0 0 0
+Stats     1 10 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      4701
+Keywords  pick mining~
+Type      weapon~
+Short     a mining pick~
+Long      A small pick lies here on the ground.~
+WFlags    take wield~
+Values    0 1 6 11 0 0 0 0 0 0 0
+Stats     10 100 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      4702
+Keywords  helm dwarven~
+Type      armor~
+Short     a dwarven helm~
+Long      A large dwarven helm lies here on the ground.~
+WFlags    take head~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     10 1000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      4703
+Keywords  plate dwarven breast~
+Type      armor~
+Short     a dwarven breast plate~
+Long      A dwarven breast plate lies here on the ground.~
+WFlags    take body~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     15 1500 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      4704
+Keywords  shield large dwarven~
+Type      armor~
+Short     a large dwarven shield~
+Long      A large dwarven shield lies here on the ground.~
+Flags     glow~
+WFlags    take shield~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     7 2000 -2 1 0 None None None
+AffData armor -2 -1 -1 0
+AffData save_spell 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      4705
+Keywords  coins large pile~
+Type      money~
+Short     a large pile of coins~
+Long      A large pile of coins are piled here.~
+WFlags    take~
+Values    30000 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      4706
+Keywords  dwarven battle axe~
+Type      weapon~
+Short     a large dwarven battle axe~
+Long      A large battle axe lies here on the ground.~
+Flags     magic bless~
+WFlags    take wield~
+Values    0 2 12 1 0 0 0 0 0 0 0
+Stats     5 10000 -2 1 0 None None None
+AffData hitroll 1 -1 -1 0
+AffData damroll 1 -1 -1 0
+#EXDESC
+ExDescKey    dwarven battle axe~
+ExDesc       It is engraved with beautiful dwarven runes.~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      4707
+Keywords  large stone sarcophagus~
+Type      container~
+Short     a large stone sarcophagus~
+Long      A large stone sarcophagus lies here, the lid fallen on the floor.~
+Values    1000 1 -1 0 0 0 0 0 0 0 0
+Stats     1000 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      4708
+Keywords  staff ruling large~
+Type      staff~
+Short     the staff of ruling~
+Long      A large and intricate staff rests here.~
+Flags     hum~
+WFlags    take hold~
+Values    25 5 5 -1 0 0 0 0 0 0 0
+Stats     10 10000 -2 1 0 None None None
+Spells       'charm person'
+#ENDOBJECT
+
+#ROOM
+Vnum      4700
+Name      The Spiral Stair~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A spiral stone stair leads up higher in the mountain, spiraling into the
+spine of the Dra-Korrin.  A small glint of light can be seen far up the
+stair shaft.
+~
+#EXIT
+Direction west~
+ToRoom    4701
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4772
+Keywords  stone~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 4700 4 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      4701
+Name      Mines~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A small glint of the burning torches is all that lights the way here.  Spots
+along the jagged wall show that these mines are rich as gold and silver glitters
+all around you.
+~
+#EXIT
+Direction east~
+ToRoom    4700
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4702
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4702
+Name      Mines~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small dark tunnel continues to the north where to light no longer allows
+normal sight.  To the east the small mine leads a a better lit area and you can
+smell a brisk fresh air.
+~
+#EXIT
+Direction north~
+ToRoom    4703
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4701
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4703
+Name      Mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This small tunnel is only five to six feet high and possibly the same
+dimensions wide.  It travels on a slight downslope to the west and to the south
+some light can be seen.
+~
+#EXIT
+Direction south~
+ToRoom    4702
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4704
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4704
+Name      Mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The small mine continues east and west here, small rocks and precious jewels
+scattered about.  There is a small tunnel that leads to the south here.
+~
+#EXIT
+Direction east~
+ToRoom    4703
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4705
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4706
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4705
+Name      Unfinished Mine~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is a small area that has been left unfinished at the moment.  It would
+have continued south from the main shaft that is to the north of here.
+~
+#EXIT
+Direction north~
+ToRoom    4704
+#ENDEXIT
+
+Reset M 4700 10 4705 -1 -1 -1 100
+  Reset E 4701 100 16 100
+#ENDROOM
+
+#ROOM
+Vnum      4706
+Name      Mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This small shaft of the mines continues its tunneling east and west.  Small
+glints of metal can be seen within the walls.
+~
+#EXIT
+Direction east~
+ToRoom    4704
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4707
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4707
+Name      Turn in the Mine~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The small shaft travels east and south here, the masterful mining skills that
+made this turn possible are evidently by the smooth cuts in the walls.  Almost
+as if a hot knife made its way through some warm butter.
+~
+#EXIT
+Direction east~
+ToRoom    4706
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4708
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4708
+Name      Mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is a three-way intersection in these mazes of mines with directions
+going north, west, and south which travels further down into the heart of the
+mountain itself.
+~
+#EXIT
+Direction north~
+ToRoom    4707
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4709
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4736
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4709
+Name      Dwarven mine~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The walls of this mine are chipped and cut to perfection.  Workmanship of
+this type could only have been done by the masterful Dwarven race.  Tunnels
+continue to the south and east, and the tunnel travels upward to the north.
+~
+#EXIT
+Direction north~
+ToRoom    4708
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4724
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4710
+#ENDEXIT
+
+Reset M 4700 10 4709 -1 -1 -1 100
+  Reset E 4701 100 16 100
+#ENDROOM
+
+#ROOM
+Vnum      4710
+Name      Dwarven mine~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Tunnels spread off in all directions except to the west where the wall is made
+of a dark and bleak stone.  A small glow emanates from the walls of the mines,
+but not enough to see by.
+~
+#EXIT
+Direction north~
+ToRoom    4709
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4712
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4711
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4711
+Name      Dwarven mine~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The small shaft ends abruptly at a jewel encrusted wall.  To the north the
+small shaft continues some past some small rocks.
+~
+#EXIT
+Direction north~
+ToRoom    4710
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4712
+Name      Dwarven mine~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This section of small shaft is a turning point and continues to the west and to
+the south.  Small glints of gold and silver can be seen in the walls.
+~
+#EXIT
+Direction south~
+ToRoom    4713
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4710
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4713
+Name      Dwarven mine~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The small shaft continues north and south deep inside this large mountain.  A
+light glow can be seen in the walls, but not enough to see by.
+~
+#EXIT
+Direction north~
+ToRoom    4712
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4714
+#ENDEXIT
+
+Reset M 4700 10 4713 -1 -1 -1 100
+  Reset E 4701 100 16 100
+#ENDROOM
+
+#ROOM
+Vnum      4714
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This section of the small shafts is a intersection of three separate tunnels.
+They lead north, east, and west.  A faint glow is within the walls of this
+small intersection.
+~
+#EXIT
+Direction north~
+ToRoom    4713
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4719
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4715
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4715
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The small shaft of glittering gold and silver travels east and south here.
+The faint glow from within the walls give you a sense of safety.
+~
+#EXIT
+Direction east~
+ToRoom    4714
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4716
+#ENDEXIT
+
+Reset M 4705 10 4715 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4716
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The small Dwarven carved shaft continues to the north and to the east here.
+Small clumps of precious metals can be seen within the rocky walls.
+~
+#EXIT
+Direction north~
+ToRoom    4715
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4717
+#ENDEXIT
+
+Reset M 4700 10 4716 -1 -1 -1 100
+  Reset E 4701 100 16 100
+#ENDROOM
+
+#ROOM
+Vnum      4717
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The small shaft of the mine continues to the west and to the south here.  A
+small amount of light can be seen to the south.
+~
+#EXIT
+Direction south~
+ToRoom    4718
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4716
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4718
+Name      End of the mine~
+Sector    city~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      The south section of the small tunnel is covered in a blue light, and also
+radiating a aura of heat.  The eastern and western walls also glow but not as
+fierce as the southern section.
+~
+#EXIT
+Direction north~
+ToRoom    4717
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4719
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Small shafts lead off in all directions except northerly, where the wall seems
+to have a tinted blue color to it.  The southern tunnel seems to end a small
+ways down.
+~
+#EXIT
+Direction east~
+ToRoom    4721
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4720
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4714
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4720
+Name      Unfinished shaft~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The walls here are jagged and unfinished in there cuts, leaving sharp and
+jagged edges at every turn.  The only exit appears to be to the north.
+~
+#EXIT
+Direction north~
+ToRoom    4719
+#ENDEXIT
+
+Reset M 4700 10 4720 -1 -1 -1 100
+  Reset E 4701 100 16 100
+Reset M 4707 1 4720 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4721
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This small shaft travels to the west and to the south, sporting small clumps
+of precious metals as they go.
+~
+#EXIT
+Direction south~
+ToRoom    4722
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4719
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4722
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      A slight downslope is present as this tunnel continues to the south and to the
+north.  To the south is where the small slope is present, traveling slightly
+further down into the depths of the mountain.
+~
+#EXIT
+Direction north~
+ToRoom    4721
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4723
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4723
+Name      Unfinished mine~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The southern wall of this mine has been left uncarved and unfinished as you
+can see that the amount of metals in the walls have decreased slightly here.
+The tunnel leads to the north out of this dead end.
+~
+#EXIT
+Direction north~
+ToRoom    4722
+#ENDEXIT
+
+Reset M 4700 10 4723 -1 -1 -1 100
+  Reset E 4701 100 16 100
+#ENDROOM
+
+#ROOM
+Vnum      4724
+Name      Dwarven mine~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This small shaft travels to the east and west while along the way several
+spots of precious metal and rock jut forth from the red rock.
+~
+#EXIT
+Direction east~
+ToRoom    4725
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4709
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4725
+Name      Dwarven mine~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The small tunnel continues to the west and to the south from this turning
+point.  Small spots of gold and silver can be seen in the walls.
+~
+#EXIT
+Direction south~
+ToRoom    4726
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4724
+#ENDEXIT
+
+Reset M 4700 10 4725 -1 -1 -1 100
+  Reset E 4701 100 16 100
+#ENDROOM
+
+#ROOM
+Vnum      4726
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is a north and south shaft that has been carved to perfection.  The walls
+are almost square here, giving it a hall like appearance.
+~
+#EXIT
+Direction north~
+ToRoom    4725
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4727
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4727
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The small shaft here continues to the north and to the east. As it slopes
+slightly downward to the east, the walls have a more unfinished look to them.
+~
+#EXIT
+Direction north~
+ToRoom    4726
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4728
+#ENDEXIT
+
+Reset M 4700 10 4727 -1 -1 -1 100
+  Reset E 4701 100 16 100
+#ENDROOM
+
+#ROOM
+Vnum      4728
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This small east-west shaft, which travels slightly downward to the east, has
+a distinct smell to it.  The smell is revolting, coming close to that of rotting
+flesh.
+~
+#EXIT
+Direction east~
+ToRoom    4729
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4727
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4729
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This intersection combines three tunnels, the western tunnel leading up.  To
+the south is darkness, but there is a disgusting stench emanating from a very
+large cavern.
+~
+#EXIT
+Direction north~
+ToRoom    4732
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4730
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4728
+#ENDEXIT
+
+Reset M 4700 10 4729 -1 -1 -1 100
+  Reset E 4701 100 16 100
+Reset M 4705 10 4729 -1 -1 -1 100
+Reset M 4705 10 4729 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4730
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is a small north and south passage that is bleak and void of any gold or
+silver in the walls.  It continues into darkness to the south.
+~
+#EXIT
+Direction north~
+ToRoom    4729
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4731
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4731
+Name      Dwarven mines~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This small shaft ends abruptly at the southern wall.  There is a faint blue
+glow to the southern wall but no metals of jewels are present.
+~
+#EXIT
+Direction north~
+ToRoom    4730
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4732
+Name      Duergar Outcamp~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is a large cavern that stinks of decay and death.  To the north there is
+a rather large hut, while to the west there is a small fire and several big
+boulders.
+~
+#EXIT
+Direction north~
+ToRoom    4733
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4729
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4735
+#ENDEXIT
+
+Reset M 4705 10 4732 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4733
+Name      Duergar Barracks~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Several small cots line the walls here  inside this large thatched hut.  Small
+scraps of food and several small disfigured bodies lie about, no doubt the
+remains of some unfortunate dwarf.
+~
+#EXIT
+Direction south~
+ToRoom    4732
+#ENDEXIT
+
+Reset M 4705 10 4733 -1 -1 -1 100
+Reset M 4705 10 4733 -1 -1 -1 100
+Reset M 4705 10 4733 -1 -1 -1 100
+Reset M 4705 10 4733 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4734
+Name      Small cave~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Many small and disfigured bodies have been piled up here stinking up the whole
+cavern.  Blood stains line the walls and entrails are strewn about the floor.
+~
+#EXIT
+Direction south~
+ToRoom    4735
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4735
+Name      By a small fire~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Several large rocks surround a petty little fire that has formed a cloud in
+the ceiling of this large cavern.  A window of the hut looks out over this small
+meeting area.  To the north a small dark cave can be seen.
+~
+#EXIT
+Direction north~
+ToRoom    4734
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4732
+#ENDEXIT
+
+Reset M 4705 10 4735 -1 -1 -1 100
+Reset M 4705 10 4735 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4736
+Name      Carved Tunnel~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This small tunnel has been carved to perfection, the walls are smooth and the
+floor has been worn soft through years of passage.  The red coloring of the
+rock gives this small tunnel a soft glow.
+~
+#EXIT
+Direction north~
+ToRoom    4737
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4708
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4737
+Name      Carved Tunnel~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The walls of the small tunnel have been carved to perfection as well as the
+floor that has been worn smooth.  It travels south and west leading off into
+darkness.
+~
+#EXIT
+Direction south~
+ToRoom    4736
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4738
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4738
+Name      Carved Tunnel~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The walls here are red and smooth as they have been carved into perfection.
+The floor has been worm smooth with use and clear of any rubble.
+~
+#EXIT
+Direction east~
+ToRoom    4737
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4739
+#ENDEXIT
+
+Reset M 4700 10 4738 -1 -1 -1 100
+  Reset E 4701 100 16 100
+#ENDROOM
+
+#ROOM
+Vnum      4739
+Name      Stone Gates~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Two monstrous pillars of stone support a great stone gate that leads south
+into a gigantic cavern with a small city inside.  The redden rock of the of
+mountain gives this small gate and cavern within a slight reddish glow.
+~
+#EXIT
+Direction north~
+ToRoom    4738
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4740
+#ENDEXIT
+
+Reset M 4702 11 4739 -1 -1 -1 100
+Reset M 4702 11 4739 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4740
+Name      Walkway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small stone walkway leads its way through the immense cavern and all of its
+scattered boulders and misplaced stalagmites.  To the south you can see a large
+area of many multicolored rock, rising up in the center of which is a small
+building.
+~
+#EXIT
+Direction north~
+ToRoom    4739
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4741
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4750
+#ENDEXIT
+
+Reset M 4701 6 4740 -1 -1 -1 100
+Reset M 4701 6 4740 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4741
+Name      Rock Garden~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small path works its way through all types of multicolored boulders of all
+sizes and shapes.  Despite it's hardness and great size it has a certain
+beauty to it.
+~
+#EXIT
+Direction north~
+ToRoom    4740
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4742
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4748
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4742
+Name      Rock Garden~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small path works its way south and west from this section of a enormously
+large, yet beautiful conglomeration of rocks and boulders.
+~
+#EXIT
+Direction south~
+ToRoom    4743
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4741
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4743
+Name      Rock Garden~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small path works its way north and south through this large display of many
+different colored boulders and rocks.  A large building can be seen rising above
+the boulders directly to the west.
+~
+#EXIT
+Direction north~
+ToRoom    4742
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4744
+#ENDEXIT
+
+Reset M 4703 1 4743 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4744
+Name      Rock Garden~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small path works its way to the north and to the west as the many different
+colored boulders and rocks perform a array of beauty before you.
+~
+#EXIT
+Direction north~
+ToRoom    4743
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4745
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4745
+Name      Rock Garden~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small path works its way west and east through this array of multicolored
+boulders and rocks.  To the north a smooth path leads to a large and immaculate
+stone building.
+~
+#EXIT
+Direction north~
+ToRoom    4749
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4744
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4746
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4746
+Name      Rock Garden~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small path works its way east and north through this small section of the
+large array of boulders and rocks of all different colors.
+~
+#EXIT
+Direction north~
+ToRoom    4747
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4745
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4747
+Name      Rock Garden~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small path works its way north and south through this small section of the
+large garden of multicolored boulders.  Directly to the east a large building
+can be seen rising above the piles of boulders.
+~
+#EXIT
+Direction north~
+ToRoom    4748
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4746
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4748
+Name      Rock Garden~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small path works its way east and south through this section of the great
+multicolored array of boulders and rock formations.
+~
+#EXIT
+Direction east~
+ToRoom    4741
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4747
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4749
+Name      Temple of Juargan~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This large building is circular in shape and open on all sides, as the ceiling
+is supported by pillars made of the deep red stone from the heart of the
+Dra-Korrin.
+  In the center there is rests a large throne, formed of red rock.
+~
+#EXIT
+Direction south~
+ToRoom    4745
+#ENDEXIT
+
+Reset M 4702 11 4749 -1 -1 -1 100
+  Reset E 4702 100 6 100
+  Reset E 4703 100 5 100
+Reset M 4702 11 4749 -1 -1 -1 100
+  Reset E 4702 100 6 100
+  Reset E 4703 100 5 100
+Reset M 4704 1 4749 -1 -1 -1 100
+  Reset G 4700 1 100
+#EXDESC
+ExDescKey    throne~
+ExDesc       The throne is made of deep red rock from the core of the Dra-Korrin.~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      4750
+Name      Walkway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small stone walkway travels east and west through the many stalagmites and
+stray boulders that scatter the floor of the great cavern.
+~
+#EXIT
+Direction east~
+ToRoom    4740
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4751
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4751
+Name      Walkway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small stone walkway travels east and south through the debris of many
+boulders and stalagmites.  Another small walkway leads west to a small building
+pushing a black smoke from its roof.
+~
+#EXIT
+Direction east~
+ToRoom    4750
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4753
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4752
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4752
+Name      Blacksmith's Home~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A large black forge lies in the center of this small house pushing waves of
+heat into your face, barley allowing you to stand within the entranceway.  A
+large trough of water and several anvils are resting here as well.
+~
+#EXIT
+Direction east~
+ToRoom    4751
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4753
+Name      Walkway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small walkway travels north and south through the many scattered boulders
+and stalagmites.  A separate, less used path leads to the west.
+~
+#EXIT
+Direction north~
+ToRoom    4751
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4759
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4754
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4754
+Name      Path in the Rock~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small path leads west further into the less carved rock while to the east
+the larger walkway can be seen.
+~
+#EXIT
+Direction east~
+ToRoom    4753
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4755
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4755
+Name      Path in the Rock~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This small uncarved path travels south and east as the edge of the cavern
+blocks any travel further west.  The wall of the cavern has a deep red color to
+it and with the many stalactites parts resemble dripping blood.
+~
+#EXIT
+Direction east~
+ToRoom    4754
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4756
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4756
+Name      Path in the Rock~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This small, uncarved path leads north and south along the cavern wall, over
+many boulders at points.  To the east you can see a path leading up to a small
+hole in a large boulder.
+~
+#EXIT
+Direction north~
+ToRoom    4755
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4771
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4757
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4757
+Name      Path in the Rock~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small path travels over boulders and crevices to the north and east.  The
+edge of the cavern lies to the west while mounds of boulders are heaped to the
+south.
+~
+#EXIT
+Direction north~
+ToRoom    4756
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4758
+#ENDEXIT
+
+Reset M 4702 11 4757 -1 -1 -1 100
+Reset M 4702 11 4757 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4758
+Name      Path in the Rock~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small and unused path travels over boulders and by many large hole as it
+makes its way to the west.  To the east the small path ends in the larger walk-
+way of the city.  To the south a path leads to a small hut perched on top of a
+large boulder.
+~
+#EXIT
+Direction east~
+ToRoom    4760
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4761
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4757
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4759
+Name      Walkway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A stone walkway travels north and south through this section of this rocky
+city.  To the west you can see a uncarved and hug mound of rock and boulder.
+~
+#EXIT
+Direction north~
+ToRoom    4753
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4760
+#ENDEXIT
+
+Reset M 4701 6 4759 -1 -1 -1 100
+Reset M 4701 6 4759 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4760
+Name      Walkway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A stone walkway travels north and south through this section of the city.  A
+small and unused path can be seen traveling west into the uncut and jagged rock.
+~
+#EXIT
+Direction north~
+ToRoom    4759
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4762
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4758
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4761
+Name      Pasty's Dwelling~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is a small stone dwelling with a large oven on the south wall.  There are
+many tables and chairs placed about the place and by the oven there is a table
+piled with grains and a small bowl of dough.
+~
+#EXIT
+Direction north~
+ToRoom    4758
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4762
+Name      Walkway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A stone walkway travels north and east through this section of the stone city.
+A small path leads south to a small rock dwelling.
+~
+#EXIT
+Direction north~
+ToRoom    4760
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4763
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4764
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4763
+Name      Walkway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A stone walkway leads west from here.  To the east the small walkway ends in a
+large building, and to the south a small path leads to a small stone dwelling.
+~
+#EXIT
+Direction east~
+ToRoom    4766
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4765
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4762
+#ENDEXIT
+
+Reset M 4701 6 4763 -1 -1 -1 100
+Reset M 4701 6 4763 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4764
+Name      Leatherbies Home~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is a small stone dwelling with many sizes of leather strewn about the
+place.  A small table with a few chairs sits in the center of the house.
+~
+#EXIT
+Direction north~
+ToRoom    4762
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4765
+Name      The Stone Jewel~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Many different colors and sizes of jewels hang from the walls of this well
+kept dwelling.  A small counter sits on the far wall with other small tables
+lining the walls.
+~
+#EXIT
+Direction north~
+ToRoom    4763
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4766
+Name      Guard Barrack~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Many small cots line the walls of this large building as it serves for the
+homes of many brave Dwarven men who pledge their lives to the suppression of
+their Duergar enemies.  A small archway leads south to a lower level.
+~
+#EXIT
+Direction south~
+ToRoom    4767
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4763
+#ENDEXIT
+
+Reset M 4702 11 4766 -1 -1 -1 100
+Reset M 4702 11 4766 -1 -1 -1 100
+Reset M 4702 11 4766 -1 -1 -1 100
+Reset M 4702 11 4766 -1 -1 -1 100
+Reset M 4702 11 4766 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      4767
+Name      Alcove~
+Sector    city~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      A small alcove serves as a turning point for this small, dark tunnel that goes
+north and west from here.
+~
+#EXIT
+Direction north~
+ToRoom    4766
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4768
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4768
+Name      Entrance to Tomb~
+Sector    city~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      A large archway leads north to a dark vault.  An old stench emanates from it,
+as dust seems to continually flow from the old arch.  There is a small tunnel
+that travels east into a darkness.
+~
+#EXIT
+Direction north~
+ToRoom    4769
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4767
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4769
+Name      Ancients Tomb~
+Sector    city~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      Two large stone sarcophagus's lie stagnant in the center of this small tomb.
+The walls are lined with holes that contain many coffers containing, no doubt,
+the remains of some ancient dwarf.
+  A great stone door leads to the west, it has many inscriptions upon it.
+~
+#EXIT
+Direction south~
+ToRoom    4768
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4770
+Key       4700
+Keywords  tomb vault door~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset M 4706 1 4769 -1 -1 -1 100
+  Reset E 4706 1 16 100
+Reset M 4708 3 4769 -1 -1 -1 100
+Reset M 4708 3 4769 -1 -1 -1 100
+Reset M 4708 3 4769 -1 -1 -1 100
+Reset O 4707 1 4769 -1 -1 -1 100
+  Reset P 1 4708 1 4707 100
+Reset D 4769 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      4770
+Name      Ancients Vault~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is more of a small alcove than anything else.  The ceiling is covered
+with many descriptive carvings, as are the walls and floor.  Where it not for
+the years of decay and no upkeep, this would be a glamorous chamber.
+~
+#EXIT
+Direction east~
+ToRoom    4769
+Key       4700
+Keywords  tomb vault door~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset O 4704 1 4770 -1 -1 -1 100
+Reset O 4705 1 4770 -1 -1 -1 100
+Reset D 4770 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      4771
+Name      Siven's Stone~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A small and dark little room entombed within a large boulder, a very strange
+place to want to live.  There is a small table in the center, but the room is
+void of any other objects.
+~
+#EXIT
+Direction west~
+ToRoom    4756
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4772
+Name      The small cave~
+Sector    hills~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You barely squeeze through into this cave, and you don't see much to it
+either.  All you see are piles of stones.  At least none of the stones has
+fallen over your exit north.
+~
+#EXIT
+Direction north~
+ToRoom    4773
+Desc      You see a sparkling light north.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4700
+Desc      You see rocks and stones.
+~
+Keywords  stone stones rock rocks~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 4772 5 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      4773
+Name      Beneath the waterfall~
+Sector    hills~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      As you wring your clothes, you see sunlight reflect beautifully off the
+waterfall, forming at rainbow.  With the sparkling illumination, you think you
+see a cave to the south.
+~
+#EXIT
+Direction south~
+ToRoom    4772
+Desc      You think you hear a small noise coming from there too.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4774
+Desc      You see fish falling down the waterfall.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4774
+Name      By the beautiful waterfall~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You see a VERY beautiful waterfall here.  It looks almost as if diamonds are
+falling down the mountain.  (You reach out and grab and no, it IS only water.)
+It looks so nice here, you feel like taking a nap.
+The trail leads north and south.
+~
+#EXIT
+Direction north~
+ToRoom    5279
+Desc      You see the trail leading north.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    4773
+Desc      You see fish falling down the waterfall.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4775
+Desc      You see the trail leading back to the valley.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4775
+Name      A valley~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You see a fresh green valley.  Flowers blossom everywhere around you, and you
+have a big urge to giggle.  To the north, you can see the source of this
+greenness, a waterfall.  To the west, you see the trail along the valley.
+~
+#EXIT
+Direction north~
+ToRoom    4774
+Desc      You hear the rush of a waterfall.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4776
+Desc      You see the valley.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4776
+Name      A valley~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You see a fresh green valley.  Flowers blossom everywhere around you, and you
+have a big urge to giggle.  The valley continues to the east, or you can take
+a steep trail up.
+~
+#EXIT
+Direction east~
+ToRoom    4775
+Desc      You see the valley.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4777
+Desc      You see the trail up to the uncomfortable hills.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4777
+Name      At the end of the hills~
+Sector    field~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      What a view!  From here, you can see a waterfall toward the east, and lush
+green forests south-east.  To the north, you see the Mountains of Moria.  To
+the west, you see the dirty trail again.  A trail leads down to the valley
+below.
+~
+#EXIT
+Direction west~
+ToRoom    4778
+Desc      You see the trail continue west.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4776
+Desc      You see the valley.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4778
+Name      A trail along the hills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The dirt road you are treading on is as gentle as you can believe.  Rocks
+catch on you as you try to keep your balance.  The trail continues east and
+back west to relative safety.
+~
+#EXIT
+Direction east~
+ToRoom    4777
+Desc      You see the trail.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4779
+Desc      You see the trail.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4779
+Name      A trail along the hills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The trail flattens out a bit, giving you time to breathe.  You don't see much
+water and don't think the sun is going to help your thirst.  The closest shade
+appears to be the dwarf forest, which is VERY far away.
+~
+#EXIT
+Direction east~
+ToRoom    4778
+Desc      You see the trail.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4780
+Desc      You see the scary cliff down, but at least you know you can climb it.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4780
+Name      Up the hill~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue to climb this hill as sweat breaks out upon your forehead.  It
+looks like you are close to the plateau.  Down is the relative comfort of
+ground again, but you are SO close to the top!
+~
+#EXIT
+Direction up~
+ToRoom    4779
+Desc      You see rocks.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4781
+Desc      You see rocks.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4781
+Name      Up the hill~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue to climb this hill as sweat breaks out upon your forehead.  It
+looks like you are close to the plateau.  Down is the relative comfort of
+ground again, but you are SO close to the top!
+~
+#EXIT
+Direction up~
+ToRoom    4780
+Desc      You see rocks.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4782
+Desc      You see rocks.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4782
+Name      Up the hill~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue to climb this hill as sweat breaks out upon your forehead.  It
+looks like you are close to the plateau.  Down is the relative comfort of
+ground again, but you are SO close to the top!
+~
+#EXIT
+Direction up~
+ToRoom    4781
+Desc      You see rocks.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4783
+Desc      You see rocks.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4783
+Name      Up the hill~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue to climb this hill as sweat breaks out upon your forehead.  It
+looks like you are close to the plateau.  Down is the relative comfort of
+ground again, but you are SO close to the top!
+~
+#EXIT
+Direction up~
+ToRoom    4782
+Desc      You see rocks.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    4784
+Desc      You see the floor again!
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4784
+Name      The hills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You sigh as the trail continues straight up into the mountain.  West leads
+back to the more stable ground, but you wonder what's on the other side of this
+little hill.....
+~
+#EXIT
+Direction west~
+ToRoom    4785
+Desc      You see the trail back.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    4783
+Desc      You see rocks.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      4785
+Name      The hills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You see all around you ... hills.  You're lucky you get to get so much
+exercise today!  You wonder if you should save your breath and go back west or
+continue east toward the hills.  There is a trail leading south towards
+a black glassy mountain range.  A small plaque is on the rock.
+~
+#EXIT
+Direction east~
+ToRoom    4784
+Desc      You see the trail along the hills.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2900
+Desc      You see a black glassy mountain range.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    4000
+Desc      You see the dirty hills still.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    plaque~
+ExDesc       This extension (hills and dwarf forest) is made my Hatchet for any Merc Mud.
+copyright 1992
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ENDAREA

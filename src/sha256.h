@@ -1,3 +1,42 @@
+/****************************************************************************
+ *                                                                          *
+ *   X      X  ******* **    **  ******  **    **  ******                   *
+ *    X    X  ******** ***  *** ******** **    ** ********       \\._.//    *
+ *     X  X   **       ******** **    ** **    ** **             (0...0)    *
+ *      XX    *******  ******** ******** **    ** **  ****        ).:.(     *
+ *      XX     ******* ** ** ** ******** **    ** **  ****        {o o}     *
+ *     X  X         ** **    ** **    ** **    ** **    **       / ' ' \    *
+ *    X    X  ******** **    ** **    ** ******** ********    -^^.VxvxV.^^- *
+ *   X      X *******  **    ** **    **  ******   ******                   *
+ *                                                                          *
+ * ------------------------------------------------------------------------ *
+ * Ne[X]t Generation [S]imulated [M]edieval [A]dventure Multi[U]ser [G]ame  *
+ * ------------------------------------------------------------------------ *
+ * XSMAUG 2.4 (C) 2014  by Antonio Cao @burzumishi          |    \\._.//    *
+ * ---------------------------------------------------------|    (0...0)    *
+ * SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider    |     ).:.(     *
+ * SMAUG Code Team: Thoric, Altrag, Blodkai, Narn, Haus,    |     {o o}     *
+ * Scryn, Rennard, Swordbearer, Gorog, Grishnakh, Nivek,    |    / ' ' \    *
+ * Tricops and Fireblade                                    | -^^.VxvxV.^^- *
+ * ------------------------------------------------------------------------ *
+ * Merc 2.1 Diku Mud improvments copyright (C) 1992, 1993 by Michael        *
+ * Chastain, Michael Quan, and Mitchell Tse.                                *
+ * Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,          *
+ * Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     *
+ * Win32 port by Nick Gammon                                                *
+ * ------------------------------------------------------------------------ *
+ * AFKMud Copyright 1997-2012 by Roger Libiez (Samson),                     *
+ * Levi Beckerson (Whir), Michael Ward (Tarl), Erik Wolfe (Dwip),           *
+ * Cameron Carroll (Cam), Cyberfox, Karangi, Rathian, Raine,                *
+ * Xorith, and Adjani.                                                      *
+ * All Rights Reserved.                                                     *
+ *                                                                          *
+ * External contributions from Remcon, Quixadhal, Zarius, and many others.  *
+ *                                                                          *
+ ****************************************************************************
+ *                        SHA-256 Encryption Module                         *
+ ****************************************************************************/
+
 /*-
  * Copyright 2005 Colin Percival
  * All rights reserved.
@@ -33,18 +72,18 @@
 
 typedef struct SHA256Context
 {
-  int state[8];
-  int count[2];
-  unsigned char buf[64];
+   int state[8];
+   int count[2];
+   unsigned char buf[64];
 } SHA256_CTX;
 
-void SHA256_Init (SHA256_CTX *);
-void SHA256_Update (SHA256_CTX *, const unsigned char *, size_t);
-void SHA256_Final (unsigned char[32], SHA256_CTX *);
-char *SHA256_End (SHA256_CTX *, char *);
-char *SHA256_File (const char *, char *);
-char *SHA256_FileChunk (const char *, char *, off_t, off_t);
-char *SHA256_Data (const unsigned char *, unsigned int, char *);
-char *sha256_crypt (const char *pwd);
+void SHA256_Init( SHA256_CTX * );
+void SHA256_Update( SHA256_CTX *, const unsigned char *, size_t );
+void SHA256_Final( unsigned char[32], SHA256_CTX * );
+char *SHA256_End( SHA256_CTX *, char * );
+char *SHA256_File( const char *, char * );
+char *SHA256_FileChunk( const char *, char *, off_t, off_t );
+char *SHA256_Data( const unsigned char *, unsigned int, char * );
+const char *sha256_crypt( const char * );
 
 #endif /* !_SHA256_H_ */

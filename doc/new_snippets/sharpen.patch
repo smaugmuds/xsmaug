@@ -1,0 +1,71 @@
+diff -U 2 ./stock/act_info.c ./act_info.c
+--- ./stock/act_info.c	Wed Jan  9 05:16:26 1980
++++ ./act_info.c	Sat Jan  5 07:22:32 1980
+@@ -69,4 +69,10 @@
+ 
+     buf[0] = '\0';
++
++    /* Sharpen skill --Cronel */
++    if( obj->item_type == ITEM_WEAPON 
++    && obj->value[5] == 1 )
++	strcat( buf, "(Sharp) " );
++
+     if ( IS_OBJ_STAT(obj, ITEM_INVIS)     )   strcat( buf, "(Invis) "     );
+     if (  (IS_AFFECTED(ch, AFF_DETECT_EVIL) || ch->class==CLASS_PALADIN)
+diff -U 2 ./stock/db.c ./db.c
+--- ./stock/db.c	Wed Jan  9 05:16:26 1980
++++ ./db.c	Sat Jan  5 07:21:02 1980
+@@ -210,4 +210,7 @@
+ sh_int			gsn_style_berserk;
+ 
++/* sharpen skill --Cronel */
++sh_int			gsn_sharpen;
++
+ /*
+  * Locals.
+@@ -630,4 +633,6 @@
+ 	ASSIGN_GSN( gsn_goblin,		"goblin" );
+ 	ASSIGN_GSN( gsn_halfling,	"halfling" );
++
++	ASSIGN_GSN( gsn_sharpen,	"sharpen" ); /* sharpen skill --Cronel */
+     }
+     
+diff -U 2 ./stock/mud.h ./mud.h
+--- ./stock/mud.h	Wed Jan  9 05:16:26 1980
++++ ./mud.h	Sat Jan  5 07:19:31 1980
+@@ -1563,4 +1563,7 @@
+ #define OBJ_VNUM_SCHOOL_BANNER    10311
+ 
++/* Sharpening stone */
++#define OBJ_VNUM_SHARPEN	39
++
+ /*
+  * Item types.
+@@ -2888,4 +2891,6 @@
+ extern  sh_int  gsn_halfling;
+ 
++extern	sh_int	gsn_sharpen; /* Sharpen skill --Cronel */
++
+ /*
+  * Cmd flag names --Shaddai
+@@ -3856,4 +3861,5 @@
+ DECLARE_DO_FUN(	do_rset		);
+ DECLARE_DO_FUN(	do_rstat	);
++DECLARE_DO_FUN( do_sharpen	); /* sharpen skill --Cronel */
+ DECLARE_DO_FUN(	do_sacrifice	);
+ DECLARE_DO_FUN(	do_save		);
+diff -U 2 ./stock/tables.c ./tables.c
+--- ./stock/tables.c	Wed Jan  9 05:16:26 1980
++++ ./tables.c	Sat Jan  5 07:20:11 1980
+@@ -583,4 +583,5 @@
+ 	break;
+     case 's':
++	if ( !str_cmp( name, "do_sharpen" ))		return do_sharpen; /* sharpen skill --Cronel */
+ 	if ( !str_cmp( name, "do_sacrifice" ))		return do_sacrifice;
+ 	if ( !str_cmp( name, "do_save" ))		return do_save;
+@@ -1185,4 +1186,5 @@
+     if ( skill == do_rwho )		return "do_rwho";
+     if ( skill == do_rwhois )		return "do_rwhois";
++    if ( skill == do_sharpen )		return "do_sharpen"; /* sharpen skill --Cronel */
+     if ( skill == do_sacrifice )	return "do_sacrifice";
+     if ( skill == do_save )		return "do_save";

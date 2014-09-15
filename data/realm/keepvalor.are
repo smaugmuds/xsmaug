@@ -1,0 +1,4203 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Keep of Valor~
+Author          Uriel~
+Vnums           22000 22090
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          2 25 2 65
+ResetMsg        A bell sounds across the land.~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      22000
+Keywords  master lugard blacksmith~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     Master Lugard~
+Long      A soot coverd man with arms like trees stands here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary truesight~
+RepairData 5 9 0 15 1 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum      22001
+Keywords  Ariad the Baker~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     Ariad the Baker~
+Long      A dark skinned baker stands here, smiling.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+ShopData   0 0 0 0 0 120 90 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum      22002
+Keywords  guard guard1 gate man~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     the Gate Guard~
+Long      A jovial guard stands here, greeting you.
+~
+Nattacks  0.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    15 21 0 0 10 4 20
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms legs guts hands feet~
+Defenses  parry~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   smile
+say Welcome to Keep Valor, my friends!
+chuckle
+say Enjoy your visit here.
+say And remember, respect others at all times.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      22003
+Keywords  man merchant jewler~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     the Jewler~
+Long      An opulant buisnessman wearing fine silks stands here.
+~
+Nattacks  0.000000
+Stats1    0 50000 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+ShopData   8 0 0 0 0 120 90 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum      22004
+Keywords  guard guard2 man~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     the Gate Guard~
+Long      A stoic guard stands at the palace gates, greeting visitors.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    15 21 0 0 10 4 20
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms hands feet~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if level($n) > 25
+say Fool, you are too experienced for this place!
+mpslay $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   smile
+say Welcome to Palace Valor.
+say I'm sure that King Roland would love to meet you...
+frown
+say But seems some ill fortune has befallen him.
+say But, if you'd like to try the Arena of Valor, just say ARENA.
+smile
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   arena~
+Comlist   say Oh, brave one, eh?
+wink $n
+say Well, of it is, then.
+mptrans $n 22017
+tell $n If you wish to leave the arena, just say HOME and I'll pull you out.
+tell $n I'll see you no matter where you are in the arena.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      22005
+Keywords  champion arena gladiator~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     the Champion of the Arena~
+Long      The Champion of the Arena stands here proudly.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    15 21 -50 0 10 5 30
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary truesight~
+Bodyparts head arms hands feet ear eye~
+Defenses  parry dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22006
+Keywords  gladiator weak~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a young gladiator~
+Long      A young gladiator wanders here.
+~
+Nattacks  0.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    3 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head arms legs~
+Immune    sleep~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22007
+Keywords  gladiator medium learned~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an experienced gladiator~
+Long      An experienced gladiator looks for glory.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    6 21 0 0 5 4 10
+Speaking  common~
+Actflags  npc stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22008
+Keywords  gladiator veteran~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a veteran gladiator~
+Long      A veteran gladiator wanders the arena, looking for battle.
+~
+Nattacks  0.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    10 21 0 0 10 4 20
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms heart hands~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22009
+Keywords  king roland~
+Race      human~
+Class     king~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Specfun   spec_cast_cleric~
+Short     King Roland~
+Long      A kindly man sits upon the Throne of Valor.
+~
+Nattacks  3.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    25 21 0 0 10 6 45
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  sanctuary truesight~
+Bodyparts head arms legs heart hands feet ear~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if level($n) < 26
+say Oh, woe is me, my crown has been stolen.
+weep
+say Oh, visitors...
+mpe _cya King Roland smiles weakley
+say Greetings, newcomers, I fear I am not in a visiting mood.
+sigh
+say My crown has been stolen from me.
+say Would you help me recover it?
+say Say YES if you would help me.
+else
+say You are too experienced for this job.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   10~
+Comlist   weep
+say My precious crown...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   if level($n) < 26
+if mobinworld(22011) == 0
+mpat 22075 mpmload 22011
+say Well met, my friends.
+smile
+say You have offered your services, and made me very happy.
+say The Grand Knight is leading the investigation.
+hmm
+say He is quite suspicious, here give him these.
+mpoload 22014
+give orders $n
+say Good luck, my friends
+endif
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if level($n) > 30
+say This fight is not fair!
+mpslay $n
+mprestore self 1000
+else
+if rand(20)
+say Fools, attacking the King?
+kick
+elbow
+disarm
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if level($n) > 30
+say You shall not have my sword!
+remove all
+mpjunk all
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you The Crown of Valor.~
+Comlist   gasp
+say You found it!
+blink
+if level($n) < 26
+if rand(50)
+mpoload 22035 20
+say Brave warrior, take this as your reward.
+give armor $n
+smile $n
+else
+mpoload 22036 20
+say Brave warrior, take this as your reward.
+give helm $n
+smile $n
+endif
+endif
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+mpat 22075 mppurge switch
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      22010
+Keywords  knight grand~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     the Grand Knight~
+Long      The Grand Knight stands here, peering about.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc~
+Affected  detect_invis detect_hidden sanctuary~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you Orders from King Roland.~
+Comlist   if level($n) < 26
+if mobinworld(22012) == 0
+mpe _cya The Grand Knight harrumphs loudly.
+say Well, if King Roland wishes to hire riff raff, so be it.
+mpjunk orders
+say Well, here's how it is. I have some suspects to the theft.
+say I want you to investigate them, and bring me proof that they are innocent.
+say Or guilty, if the case may be.
+mpat 22075 mpmload 22012
+say Well, go talk to the jester.
+say I'll be waiting here.
+endif
+else
+say Bah, get out of my sight, ye ain't no newbie.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you a Note from the Mistress of the Harem.~
+Comlist   if mobinworld(22031) == 0
+if mobinworld(22025) == 1
+mpe _cya The Grand Knight peruses the note.
+say Well, it would appear that this is not our culprit.
+mpjunk note
+hmm
+say Very well, the next suspect would be the court mage.
+mpat 22075 mpmload 22031
+say Go talk with him.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if level($n) > 30
+say Pick on someone your own size.
+mpslay $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if level($n) > 30
+say You'll not have my EQ, bully.
+remove all
+mpjunk all
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you The Mage's Potion.~
+Comlist   if mobinworld(22032) == 1
+if level($n) < 26
+if mobinworld(22033) == 0
+mpat 22075 mpmload 22033
+say Well, it would look as if the Mage is innocent.
+mpe _cya As the Knight shake the potion, the potion grows unstable...
+say Uh oh...
+mpe _ora The potion explodes in a purple flash!
+cough
+say Damn Mage!
+cough
+mpjunk potion
+say Go talk to the Queen... she has to be the one
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you The Crown of Valor.~
+Comlist   blink
+say Give this to the King!
+give crown $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      22011
+Keywords  switch1 king~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a newly created switch1 king~
+Long      Some god abandoned a newly created switch1 king here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22012
+Keywords  switch2 grandknight~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a newly created switch2 grandknight~
+Long      Some god abandoned a newly created switch2 grandknight here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22013
+Keywords  maid washroom maid1~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  sitting~
+DefPos    sitting~
+Short     a washmaid~
+Long      A young maid stands here, toiling over dishes.
+~
+Nattacks  0.000000
+Stats1    500 -1 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs guts feet~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   say Harrumph
+say We'll never get done.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   say I saw the Jester in here the other day...
+sigh
+say He's so dreamy.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   grimace
+say That Jester, always in the Harem's rooms...
+mpe _cya The washmaid drops a dish and it shatters...
+say Bloody...
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      22014
+Keywords  maid washroom maid2~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  sitting~
+DefPos    sitting~
+Short     an elderly washmaid~
+Long      An elderly maid washes dishes, muttering occasionaly.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms legs guts hands~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   say Will these dishes ever get clean?
+mutter
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      22015
+Keywords  cook kitchen~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     the cook~
+Long      A grimy cook stands here, manning the ovens.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms legs guts feet~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22016
+Keywords  harem girl woman~
+Race      human~
+Class     Rogue~
+Gender    female~
+Position  sitting~
+DefPos    sitting~
+Short     a harem girl~
+Long      A young harem girl sits here, primming herself.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22018
+Keywords  jester~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     the Jester~
+Long      A man in a silly hat with bells juggles wooden balls boredly.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    20 21 0 0 4 6 20
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary truesight~
+Bodyparts head arms legs feet~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if level($n) < 26
+if mobinworld(22012) == 1
+if mobinworld(22025) == 0
+mpat 22075 mpmload 22025
+say Well, well, if it isn't the private investigators of the Knight.
+sigh
+say Well, I fear I must dissapoint you, I did not take the fool King's crown.
+eye $n
+say Would you like proof?
+frown
+say Very well, proof you shall have. I was in the Harem's chambers that night.
+mpoload 22030
+give note $n
+say This note will explain everything.
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if level($n) > 30
+say And I thought I was a fool...
+chuckle
+mpslay $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if level($n) > 30
+say Nope, can't have it.
+rem all
+mpjunk all
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      22019
+Keywords  man merchant weapons~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a merchant~
+Long      A burly merchant stands here, examining the quality of a sword.
+~
+Nattacks  0.000000
+Stats1    0 50000 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+ShopData   5 9 0 0 0 120 90 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum      22020
+Keywords  maid laundry~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  sitting~
+DefPos    sitting~
+Short     a laundry maid~
+Long      A maid stands here, washing clothes.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms legs guts feet~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22021
+Keywords  mage court~
+Race      human~
+Class     Mage~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Specfun   spec_cast_mage~
+Short     The Court Mage~
+Long      A bumbling wizard paces in a dazed state.
+~
+Nattacks  0.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    20 21 0 0 10 3 25
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary truesight~
+Bodyparts head arms legs feet~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mumble
+say Now where did I put that wand...
+boggle
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you Wand of Wonder.~
+Comlist   if mobinworld(22032) == 0
+if mobinworld(22031) == 1
+if level($n) < 26
+blink
+say That is the wand I was looking for...
+mpjunk wand
+say Well, I guess you want something to prove my innocence, eh?
+mpoload 22028
+give potion $n
+say Take that to the Knight.
+smile
+say It was what I was working on at the time.
+mpat 22075 mpmload 22032
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   hmm
+say E is equal to M C..... doh
+boggle
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   squared~
+Comlist   say Thats it!
+smile $n
+if level($n) < 26
+c sanc $n
+say Thank you
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if level($n) > 30
+say Go pick on something your own size...
+mpslay $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if level($n) > 30
+say Heh, try again, sucker.
+rem all
+mpjunk all
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      22025
+Keywords  switch3 jester~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a newly created switch3 jester~
+Long      Some god abandoned a newly created switch3 jester here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22026
+Keywords  queen victoria~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     Queen Victoria~
+Long      A beautiful woman in fine silks sits here.
+~
+Nattacks  3.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 0 10 4 25
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  sanctuary truesight~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if mobinworld(22033) == 1
+if level($n) < 26
+say Well, did the grand knight send you?
+eye $n
+say Yes or no?
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if level($n) > 30
+say Pick on someone your own size.
+mpslay $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if level($n) > 30
+snicker
+rem all
+mpjunk all
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   if mobinworld(22033) == 1
+sigh
+say Well, what have you come for then?
+mpat 22075 mpmload 22034
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   no~
+Comlist   if mobinworld(22033) == 1
+if level($n) < 26
+grin
+say Well now, you are a LIAR!
+c magic $n
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   crown~
+Comlist   if mobinworld(22035) == 0
+if mobinworld(22034) == 1
+sigh
+say Very well... I did steal the crown.
+mpoload 22034
+mpat 22075 mpmload 22035
+say Take it, I do not want it any longer.
+weep
+give crown $n
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      22030
+Keywords  note jester~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a newly created note jester~
+Long      Some god abandoned a newly created note jester here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22031
+Keywords  switch4 grandknight~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a newly created switch4 grandknight~
+Long      Some god abandoned a newly created switch4 grandknight here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22032
+Keywords  switch5 mage~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a newly created switch5 mage~
+Long      Some god abandoned a newly created switch5 mage here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22033
+Keywords  switch6 knight~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a newly created switch6 knight~
+Long      Some god abandoned a newly created switch6 knight here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#MOBILE
+Vnum      22034
+Keywords  switch7 queen~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a newly created switch7 queen~
+Long      Some god abandoned a newly created switch7 queen here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#OBJECT
+Vnum      22000
+Keywords  new sign~
+Type      furniture~
+Short     A New Sign~
+Long      A well tended sign stands here~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    sign~
+ExDesc       KEEP VALOR: 2 MILES
+ 
+ 
+                          ENJOY YOUR VISIT!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      22001
+Keywords  fountain market~
+Type      fountain~
+Short     a newly created fountain market~
+Long      A beautiful marble fountain stands here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      22002
+Keywords  mutton~
+Type      food~
+Short     A mutton leg~
+Long      A leg of lamb has fallen here.~
+Flags     inventory~
+WFlags    take~
+Values    20 0 0 0 0 0 0 0 0 0 0
+Stats     1 100 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      22003
+Keywords  carrot vegetable~
+Type      pill~
+Short     a bright orange carrot~
+Long      A bright orange carrot lies here.~
+Flags     inventory~
+WFlags    take~
+Values    15 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1000 -2 1 0 None None None
+Spells       'detect invis' 'infravision' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      22004
+Keywords  lettuce head vegetable~
+Type      pill~
+Short     a head of lettuce~
+Long      A head of lettuce lies here.~
+Flags     inventory~
+WFlags    take~
+Values    15 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1000 -2 1 0 None None None
+Spells       'cure light' 'cure poison' 'remove curse'
+#ENDOBJECT
+
+#OBJECT
+Vnum      22005
+Keywords  loaf bread~
+Type      food~
+Short     a loaf of bread~
+Long      A loaf of bread lies here.~
+Flags     inventory~
+WFlags    take~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     1 100 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      22006
+Keywords  sword valor guard~
+Type      weapon~
+Short     a Sword of Valor~
+Long      A blade of shining metal lies here.~
+WFlags    take wield~
+Values    0 10 5 1 0 0 0 0 0 0 0
+Stats     7 50000 -2 1 0 None None None
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22007
+Keywords  chainmail breastplate~
+Type      armor~
+Short     a chainmail breastplate~
+Long      A chainmail brestplate has fallen here.~
+WFlags    take body~
+Values    0 7 0 0 0 0 0 0 0 0 0
+Stats     5 6000 -2 1 0 None None None
+AffData armor -10 -1 -1 0
+AffData hitroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22008
+Keywords  helm steel~
+Type      armor~
+Short     a steel helm~
+Long      A steel helm has fallen here~
+WFlags    take head~
+Values    0 7 0 0 0 0 0 0 0 0 0
+Stats     1 5000 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData dexterity 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22009
+Keywords  chainmail leggings~
+Type      armor~
+Short     chainmail leggings~
+Long      A set of chainmail leggings has fallen here.~
+WFlags    take legs~
+Values    0 7 0 0 0 0 0 0 0 0 0
+Stats     1 10000 -2 1 0 None None None
+AffData armor -10 -1 -1 0
+AffData intelligence 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22010
+Keywords  leather boots~
+Type      armor~
+Short     soft leather boots~
+Long      A pair of soft leather boots lies here.~
+WFlags    take feet~
+Values    0 7 0 0 0 0 0 0 0 0 0
+Stats     1 1000 -2 1 0 None None None
+AffData armor -5 -1 -1 0
+AffData kick 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22011
+Keywords  gladius champion~
+Type      weapon~
+Short     the Champion's Gladius~
+Long      A beautiful short sword lies here.~
+Flags     glow magic bless anticleric antimage antidruid~
+WFlags    take wield~
+Values    0 15 3 2 0 0 0 0 0 0 0
+Stats     1 10000 -2 1 0 None None None
+AffData hit 10 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22012
+Keywords  ring mail gladiator~
+Type      armor~
+Short     Gladiator's Ring Mail~
+Long      A fine set of ring mail has fallen here.~
+WFlags    take body~
+Values    0 7 0 0 0 0 0 0 0 0 0
+Stats     1 30000 -2 1 0 None None None
+AffData armor -20 -1 -1 0
+AffData intelligence 2 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData hit 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22013
+Keywords  throne valor~
+Type      furniture~
+Short     The Throne of Valor~
+Long      A Throne of aged oak and worked gold sits here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      22014
+Keywords  parchment orders~
+Type      trash~
+Short     Orders from King Roland~
+Long      A rolled sheet of parchment with the King's seal lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      22015
+Keywords  sword roland~
+Type      weapon~
+Short     Roland's Sword~
+Long      A king's sword has fallen here.~
+Flags     bless antievil loyal~
+WFlags    take wield~
+Values    0 20 6 3 0 0 0 0 0 0 0
+Stats     6 30000 -2 1 0 None None None
+AffData hit 15 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData mana 25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22016
+Keywords  crest valor~
+Type      armor~
+Short     The Crest of Valor~
+Long      A breastplate of white steel lies here.~
+WFlags    take body~
+Values    0 10 0 0 0 0 0 0 0 0 0
+Stats     1 30000 -2 1 0 None None None
+AffData armor -15 -1 -1 0
+AffData hit 30 -1 -1 0
+AffData mana 30 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData class 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22017
+Keywords  velvet robe robes~
+Type      armor~
+Short     velvet robes~
+Long      A wonderful velvet robe has fallen here.~
+WFlags    take about~
+Values    0 5 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22018
+Keywords  ring signet king~
+Type      armor~
+Short     Signet of Valor~
+Long      A king's signet has fallen here.~
+WFlags    take finger~
+Values    0 7 0 0 0 0 0 0 0 0 0
+Stats     1 20000 -2 1 0 None None None
+AffData hit 20 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData mana 50 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22019
+Keywords  maid apron wash~
+Type      armor~
+Short     a wash apron~
+Long      A heavy linen apron has fallen here.~
+WFlags    take body~
+Values    0 6 0 0 0 0 0 0 0 0 0
+Stats     1 50 -2 9999 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22020
+Keywords  apron cook cook's~
+Type      armor~
+Short     a cook's apron~
+Long      A heavy leather apron has fallen here.~
+WFlags    take body~
+Values    0 10 0 0 0 0 0 0 0 0 0
+Stats     1 50 -2 9999 0 None None None
+AffData hit 5 -1 -1 0
+AffData strength 1 -1 -1 0
+AffData constitution 1 -1 -1 0
+AffData manaregen 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22021
+Keywords  silk stockings~
+Type      armor~
+Short     silk stockings~
+Long      A pair of violet silk stockings has fallen here.~
+WFlags    take legs~
+Values    0 3 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+AffData sex 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22022
+Keywords  halter top shirt~
+Type      armor~
+Short     a see-through halter top~
+Long      A violet see-through halter top has been discarded here.~
+WFlags    take body~
+Values    0 3 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+AffData sex 1 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData wearspell 'elven beauty' -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22023
+Keywords  veil thin~
+Type      armor~
+Short     a thin veil~
+Long      A paper thin veil lies here.~
+WFlags    take eyes~
+Values    0 1 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+AffData sex 1 -1 -1 0
+AffData wearspell 'scry' -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22024
+Keywords  hat jester~
+Type      armor~
+Short     The Jester's Hat~
+Long      A silly hat with bells attached lies here.~
+WFlags    take head~
+Values    0 10 0 0 0 0 0 0 0 0 0
+Stats     1 4000 -2 1 0 None None None
+AffData dexterity -1 -1 -1 0
+AffData wisdom -1 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData class 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22025
+Keywords  bed large canopy~
+Type      furniture~
+Short     a large canopy bed~
+Long      A large canopy bed stands here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      22026
+Keywords  robes magus~
+Type      armor~
+Short     Robes of the Magus~
+Long      A sparkling robe has fallen here.~
+Flags     glow magic antirogue antiwarrior~
+WFlags    take body~
+Values    0 10 0 0 0 0 0 0 0 0 0
+Stats     1 10000 -2 1 0 None None None
+AffData mana 100 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData wearspell 'detect magic' -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22027
+Keywords  wand wonder~
+Type      wand~
+Short     Wand of Wonder~
+Long      A very interesting wand lies here.~
+WFlags    take hold~
+Values    20 10 10 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'teleport'
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n _blu As you hold the wand, reality shifts!
+mpforce $n zap self
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      22028
+Keywords  potion mage~
+Type      treasure~
+Short     The Mage's Potion~
+Long      A glowing potion sits here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      22029
+Keywords  queen dress queen's~
+Type      armor~
+Short     The Queen's Dress~
+Long      A dress of fine silks lies here.~
+WFlags    take body~
+Values    0 4 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 30 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22030
+Keywords  note jester~
+Type      trash~
+Short     a Note from the Mistress of the Harem~
+Long      A note has ben discarded here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      22034
+Keywords  crown roland valor~
+Type      treasure~
+Short     The Crown of Valor~
+Long      A beautiful golden crown has been discarded here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      22035
+Keywords  armor valor~
+Type      armor~
+Short     The Armor of Valor~
+Long      A beautiful set of polished steel plate has fallen here.~
+WFlags    take body~
+Values    0 15 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 20 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData class 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
+AffData strength 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      22036
+Keywords  helm valor~
+Type      armor~
+Short     The Helm of Valor~
+Long      A beautiful steel helmet has fallen here.~
+WFlags    take head~
+Values    0 10 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 15 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData wisdom 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
+#ENDOBJECT
+
+#ROOM
+Vnum      22000
+Name      The Path to Keep Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Hilly ground dominates this reigon, with numerous copses of trees and
+clusters of wildflowers to be seen everywhere. A road cuts through the
+hills, and seems to be well tended and the bearer of heavy traffic. A
+songbird chimes in the distance, and the wind brings the scent of well
+cooked meals. The road curves to the Northeast, leading into the hills,
+and a sign stands here, informing all of the destination of the road.
+~
+#EXIT
+Direction northeast~
+ToRoom    22001
+#ENDEXIT
+
+Reset O 22000 1 22000 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      22001
+Name      Approaching Keep Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The road cuts through the hilly ground, pleasantly passing a copse of
+trees and verdant wildflower growth. Cottages can be seen here and there
+and the people wave and smile to each other. This land seems to command
+a presence of peace and relaxation. The road curves to the North and
+to the Southwest.
+~
+#EXIT
+Direction north~
+ToRoom    22002
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    22000
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22002
+Name      Nearing the Keep~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The road continues cutting through the hilly terrain, passing beautiful
+gardens and houses. The cottages now growing in size, some approaching
+the size of Lord's manors. The people, though more opulent, are no less
+friendly to visitors. To the Northeast, a great white wall can be seen,
+reflecting the sunlight in all its glory.
+~
+#EXIT
+Direction south~
+ToRoom    22001
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    22003
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22003
+Name      Before the Gates of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The walls of the massive keep shine to the North, and the mighty and
+impressive gatehouse stands welcoming all visitors. The keep bustles
+with activity, trade and the march of the guard both. The people here
+hold friendly attitudes and jovial natures. The road to the Southwest
+leads away from the keep, while the gates stand open to the North.
+~
+#EXIT
+Direction north~
+ToRoom    22004
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    22002
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22004
+Name      Within the Gatehouse~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Entering the gatehouse reveals how mighty the keep truly is. The walls
+must be over ten feet thick, with arrow slits to defend against seiges.
+The gates themselves are thick oak, reinforced with steel beams and studs.
+Guards muster about here, waving to merchants and nobles, even helping
+to lead a horse now and then. Small doors lead to chambers within the
+gatehouse to the East and Weat, while to the North, the Keep grounds can
+be seen.
+~
+#EXIT
+Direction north~
+ToRoom    22007
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22006
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22003
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22005
+#ENDEXIT
+
+Reset M 22002 1 22004 -1 -1 -1 100
+  Reset E 22010 1 8 100
+  Reset E 22006 1 16 100
+  Reset E 22009 1 7 100
+  Reset E 22007 1 5 100
+  Reset E 22008 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      22005
+Name      A Guard Room~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This chamber holds all manner of weapons and defensive devices in the
+event of an attack. The South wall is lined with arrow slits to allow
+archers to rain death upon attacking forces without exposing themselves.
+This also seems to be a chamber to allow the guards of Keep Valor to
+kick back and relax. A small door on the East wall leads to the main
+floor of the Gatehouse.
+~
+#EXIT
+Direction east~
+ToRoom    22004
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22006
+Name      A Guard Room~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This chamber holds all manner of weapons and defensive devices in the
+event of an attack. The South wall is lined with arrow slits to allow
+archers to rain death upon attacking forces without exposing themselves.
+This also seems to be a chamber to allow the guards of Keep Valor to
+kick back and relax. A small door on the West wall leads to the main
+floor of the Gatehouse.
+~
+#EXIT
+Direction west~
+ToRoom    22004
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22007
+Name      The Market Place~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The impressive gatehouse and castle walls quickly give way to a busy
+and bustling marketplace. The cobblestone road is filled with all manner
+of people, each one seems friendly and laughing. Shops lie to the East
+and West, and all manner of goods can be found. The road runs North and
+South, towards the Palace and the Gatehouse respectivley.
+~
+#EXIT
+Direction north~
+ToRoom    22010
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22009
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22004
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22008
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22008
+Name      Player Shop~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Reserved for player shops if available
+~
+#EXIT
+Direction east~
+ToRoom    22007
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22009
+Name      Player Shop~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Reserved for player shops if available
+~
+#EXIT
+Direction west~
+ToRoom    22007
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22010
+Name      The Market Place~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The cobblestobe road continues, passing merchant's tents and the many
+patrons seeking goods. The smell of baked goods and the smoke from a
+forge drift together, creating a strange scent, though not offensive
+to the people who smell it. To the North, the palace can be seen, and
+a mighty gatehouse stands to the South.
+~
+#EXIT
+Direction north~
+ToRoom    22013
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22011
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22007
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22012
+#ENDEXIT
+
+Reset O 22001 1 22010 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      22011
+Name      The Anvil's Pound~
+Sector    city~
+Flags     safe~
+Stats     0 0 0 0 0
+Desc      Entering this tent is like entering an oven, the heat is unbearable.
+A heavy forge stands in the center of this tent, the coals which heat
+it glow bright red. The constant ring of a hammer marks this as the
+blacksmith's tent, as do the soot covered patrons. The tent opens to
+the West, leading back to the market place.
+~
+#EXIT
+Direction west~
+ToRoom    22010
+#ENDEXIT
+
+Reset M 22000 1 22011 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      22012
+Name      Meats and Treats~
+Sector    city~
+Flags     safe~
+Stats     0 0 0 0 0
+Desc      The scent of wonderful bakery hangs in the air, as this tent is filled
+with all manner of baked goods. Patrons bustle in and out, stopping here
+to escape the heat of midday and to relax with a snack or two. The tent
+exits to the East, leading back to the market place.
+~
+#EXIT
+Direction east~
+ToRoom    22010
+#ENDEXIT
+
+Reset M 22001 1 22012 -1 -1 -1 100
+  Reset G 22002 1 100
+  Reset G 22003 1 100
+  Reset G 22004 1 100
+  Reset G 22005 1 100
+#ENDROOM
+
+#ROOM
+Vnum      22013
+Name      The Market Place~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Market Place stretches on, passing more tents and patrons in the
+process. The tent to the West seems to hold the interest of the merchant's
+guards, while the tent to the East seems to attract a more opulent crowd.
+To the North, the beautiful Palace Valor stands in all its glory, its
+golden banners waving proudly for all to see.
+~
+#EXIT
+Direction north~
+ToRoom    22016
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22014
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22010
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22015
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22014
+Name      The Glittering Diamond~
+Sector    city~
+Flags     safe~
+Stats     0 0 0 0 0
+Desc      This tent is almost deserted, save for a few rich merchants who seem
+to be perusing the goods. Glass cases have been assembled to display
+many fine gems and pieces of jewlery. The scent of fine perfume hangs
+in the air, as many nobles and ladies visit this shop often. The tent
+exits to the West, leading back to the marketplace.
+~
+#EXIT
+Direction west~
+ToRoom    22013
+#ENDEXIT
+
+Reset M 22003 1 22014 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      22015
+Name      The Arms Merchant~
+Sector    city~
+Flags     safe~
+Stats     0 0 0 0 0
+Desc      The smell of sweat and unwashed men hangs in the air in this tent, as
+many merchant's guards and mercenaries frequent this buisness. Weapons
+and armor are on display here, most of poor quality, but some pieces do
+seem worth a glance. The tent exits to the East, leading back to the
+Market Place.
+~
+#EXIT
+Direction east~
+ToRoom    22013
+#ENDEXIT
+
+Reset M 22019 1 22015 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      22016
+Name      The Palace Gates~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The great gates of Valor stand to the North, which allows passage in
+the mighty palace which looms ahead. Visitors are welcomed here, and
+many peasants and nobles can be seen entering, to give their blessings
+to the kindly King Roland. The palace, while well defended and is quite
+the military fortress, holds a pleasant air, which is welcoming to all.
+A marketplace spans to the South, where many items of necessity can be
+found.
+~
+#EXIT
+Direction north~
+ToRoom    22042
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22013
+#ENDEXIT
+
+Reset M 22004 1 22016 -1 -1 -1 100
+  Reset E 22010 1 8 100
+  Reset E 22009 1 7 100
+  Reset E 22007 1 5 100
+  Reset E 22006 1 16 100
+  Reset E 22008 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      22017
+Name      Northwest corner of the Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction east~
+ToRoom    22022
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22018
+#ENDEXIT
+
+Reset M 22006 1 22017 -1 -1 -1 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22018
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22017
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22023
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22019
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22019
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22018
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22024
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22020
+#ENDEXIT
+
+Reset M 22006 2 22019 -1 -1 -1 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22020
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22019
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22025
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22021
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22021
+Name      Southwest corner of the Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22020
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22026
+#ENDEXIT
+
+Reset M 22006 5 22021 -1 -1 -1 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22022
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction east~
+ToRoom    22027
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22023
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22017
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22023
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22022
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22028
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22024
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22018
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22024
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22023
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22029
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22025
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22019
+#ENDEXIT
+
+Reset M 22007 3 22024 -1 -1 -1 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22025
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22024
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22030
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22026
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22020
+#ENDEXIT
+
+Reset M 22007 1 22025 -1 -1 -1 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22026
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22025
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22031
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22021
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22027
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction east~
+ToRoom    22032
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22028
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22022
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22028
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22027
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22033
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22029
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22023
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22029
+Name      Center of the Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22028
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22034
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22030
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22024
+#ENDEXIT
+
+Reset M 22005 1 22029 -1 -1 -1 100
+  Reset E 22011 1 16 100
+  Reset E 22012 1 5 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22030
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22029
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22035
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22031
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22025
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22031
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22030
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22036
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22026
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22032
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction east~
+ToRoom    22037
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22033
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22027
+#ENDEXIT
+
+Reset M 22006 4 22032 -1 -1 -1 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22033
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22032
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22038
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22034
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22028
+#ENDEXIT
+
+Reset M 22008 1 22033 -1 -1 -1 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22034
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22033
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22039
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22035
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22029
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22035
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22034
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22040
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22036
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22030
+#ENDEXIT
+
+Reset M 22007 2 22035 -1 -1 -1 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22036
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22035
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22041
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22031
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22037
+Name      Northeast corner of the Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction south~
+ToRoom    22038
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22032
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22038
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22037
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22039
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22033
+#ENDEXIT
+
+Reset M 22006 3 22038 -1 -1 -1 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22039
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22038
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22040
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22034
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22040
+Name      The Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22039
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22041
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22035
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22041
+Name      Southeast corner of the Arena of Valor~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of battle ring all around, and the patter of feet upon the
+sandy floor draw nearer and nearer. Gladiators and mercenaries battle
+here for favor and glory. Cheers from the audience deafen all sound
+when a warrior is knocked unconscious. The combat is fast and furious
+and takes demanding skill of all the warriors.
+~
+#EXIT
+Direction north~
+ToRoom    22040
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22036
+#ENDEXIT
+
+Reset M 22008 2 22041 -1 -1 -1 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   mer $n _whi $n has been whisked from the Arena!
+mptrans $n 22016
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      22042
+Name      Within the Palace of Valor~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This is the main hall of the Palace of Valor, and its beauty is quite
+impressive to say the least. Marble columns line the wall, and the floor
+is polished marble tile. Between the columns, fantastic portraits can
+be seen, adding to the beauty of this palace. The hallway continues to
+the North, leading deeper into the palace, and to the South, to where
+the palace gates stand.
+~
+#EXIT
+Direction north~
+ToRoom    22043
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22016
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22043
+Name      An Intersection of Hallways~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The main hall of the Palace intersects another, smaller hallway here,
+in this massive and busy foyer. A stairway leads up to a glorious and
+intricate landing, which overlooks this room and with the use of large
+windows, overlooks the marketplace as well. The hallway running East and
+West seems to lead to servants quarters and other mundane functions of
+the Palace. To the North lies the glorious Throne of Valor.
+~
+#EXIT
+Direction north~
+ToRoom    22046
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22044
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22042
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22045
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    22048
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22044
+Name      Entering the East Wing~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The East wing of the Palace is where many of the mundane activities of
+the palace are accomplished. The halls here are no less impressive, if
+somewhat smaller. Polished marble tiles line the floor and small granite
+columns run along the walls. Servants can be seen bustling about, setting
+to chores and tasks of necessity. To the West, the main hall of the Palace
+can be seen. To the East lies the servant's quarters and other such things.
+~
+#EXIT
+Direction east~
+ToRoom    22049
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22043
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22045
+Name      Entering the West Wing~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The West wing of the Palace is where many of the mundane activities of
+the palace are accomplished. The halls here are no less impressive, if
+somewhat smaller. Polished marble tiles line the floor and small granite
+columns run along the walls. Servants can be seen bustling about, setting
+to chores and tasks of necessity. To the East, the main hall of the Palace
+can be seen. To the West lies the servant's quarters and other such things.
+~
+#EXIT
+Direction east~
+ToRoom    22043
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22058
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22046
+Name      Before the Throne of Valor~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The main hallway ends here, in this large sitting room where people of
+all kinds wait to meet King Roland. The advisors of the King bustle in
+and out, politley greeting the peasants and the noblemen alike. A plush
+velvet carpet adorns the floor, and beautiful tapestries line the wall.
+To the North, King Roland himself oversees the daily events of his loyal
+servants.
+~
+#EXIT
+Direction north~
+ToRoom    22047
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22043
+#ENDEXIT
+
+Reset M 22010 1 22046 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      22047
+Name      The Throne of Valor~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Throneroom of Valor is quite breathtaking in its beauty. The Throne
+itself sits upon a small dias, carved of pure marble and polished to a
+smoothness which makes it seem slick. The tapestries which hang to the
+South are like dirty rags compared to those which hang in the Throneroom.
+King Roland rules his kingdom justly and fairly from this place.
+~
+#EXIT
+Direction south~
+ToRoom    22046
+#ENDEXIT
+
+Reset M 22009 1 22047 -1 -1 -1 100
+  Reset E 22015 1 16 100
+  Reset E 22016 1 5 100
+  Reset E 22017 1 12 100
+  Reset E 22018 1 1 100
+Reset O 22013 1 22047 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      22048
+Name      The Balcony~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A double stairway slopes up to this balcony, enhancing its grandiose
+appearance. Marble railing and polished marble tiles add to the utter
+brilliance of this Palace. A large sun window lies to the South, which
+allows nobles and royalty to observe the market place from here. A strip
+of plush carpet leads North, to an immense banquet hall.
+~
+#EXIT
+Direction north~
+ToRoom    22066
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    22043
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22049
+Name      A Bend in the Corridor~
+Sector    indoors~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The shining halls of the servants turns to the North here, and scents
+of cooking are thick. Servants bustle about, setting to tasks, bowing
+or dropping a curtsey to newcomers or nobles. Most of the servants are
+focusing their attention to the North, and a few run off to the West,
+to where the Grand Hall of the Palace lies.
+~
+#EXIT
+Direction north~
+ToRoom    22050
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22044
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22050
+Name      The East Wing~
+Sector    indoors~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The halls of the East Wing shimmer with a determined shine, displaying
+the servants pride in their work and their King. Marble columns line
+the walls at even spaces, displaying the grandeur of the Palace as a
+whole. The East Wing runs North and South, with occasional doors that
+lead East or West.
+~
+#EXIT
+Direction north~
+ToRoom    22051
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22052
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22049
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22051
+Name      The East Wing~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The halls of the East Wing shimmer with a determined shine, displaying
+the servants pride in their work and their King. Marble columns line
+the walls at even spaces, displaying the grandeur of the Palace as a
+whole. The East Wing runs North and South, with occasional doors that
+lead East or West.
+~
+#EXIT
+Direction north~
+ToRoom    22054
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22053
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22050
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22052
+Name      The Washroom~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Sinks and large copper tubs fill this room, each filled with filthy
+dishes and cooking utensils. Piles of clean dishes lay in stacks to
+be arranged by other servants. A few maids toil away at the dishes,
+gossiping among themselves. A door to the North leads to the kitchens,
+while a door to the West leads back to the East Wing.
+~
+#EXIT
+Direction north~
+ToRoom    22053
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22050
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 22013 1 22052 -1 -1 -1 100
+  Reset E 22019 1 5 100
+Reset M 22014 1 22052 -1 -1 -1 100
+  Reset E 22019 1 5 100
+Reset D 22052 0 0 100 -2
+Reset D 22052 3 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22053
+Name      The Kitchens~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A wave of heat lingers in this brightly lit room, coupled with smells
+of freshly cooked food. Three large ovens stand against the East wall,
+each one in service. Pantrys and sinks stand against the North wall, a
+testament to the activity of this chamber. A door on the South wall
+leads to the washroom, and a door to the West leads back to the East
+wing.
+~
+#EXIT
+Direction south~
+ToRoom    22052
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22051
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 22015 1 22053 -1 -1 -1 100
+  Reset E 22020 1 5 100
+Reset D 22053 2 0 100 -2
+Reset D 22053 3 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22054
+Name      The East Wing~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The halls of the East Wing shimmer with a determined shine, displaying
+the servants pride in their work and their King. Marble columns line
+the walls at even spaces, displaying the grandeur of the Palace as a
+whole. The East Wing runs North and South, with occasional doors that
+lead East or West.
+~
+#EXIT
+Direction north~
+ToRoom    22055
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22051
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22055
+Name      The East Wing~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The halls of the East Wing shimmer with a determined shine, displaying
+the servants pride in their work and their King. Marble columns line
+the walls at even spaces, displaying the grandeur of the Palace as a
+whole. The East Wing runs North and South, with occasional doors that
+lead East or West. A large door lies to the North.
+~
+#EXIT
+Direction north~
+ToRoom    22071
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22054
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22056
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 22055 0 1 100 -2
+Reset D 22055 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22056
+Name      The Harem's Lounge~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Plush carpet adorns the floor, in a deep shade of violet, to match the
+other liveries of this chamber. Intricate furniture sits around the room,
+tall stools and high backed chairs stand out. A tall mirror and a desk
+stand agains the South wall, holding various make-ups and other feminine
+necessities. A thin veil to the West leads into another chamber, while
+a solid door stands to the East. A sign above the viel reads NO MEN.
+~
+#EXIT
+Direction east~
+ToRoom    22055
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22057
+#ENDEXIT
+
+Reset M 22016 1 22056 -1 -1 -1 100
+  Reset E 22021 1 7 100
+  Reset E 22022 1 5 100
+  Reset E 22023 1 20 100
+Reset D 22056 1 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22057
+Name      The Harem's Studio~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Thin silk tapestries and hangings decorate this room in a very petite
+fashion. The whole atosphere is sultry, and to hammer that point home,
+many circular beds lay about the chamber. A large copper tub sits at
+the center of the room, capable of holding many people at once. A thin
+veil leads to the East.
+~
+#EXIT
+Direction east~
+ToRoom    22056
+#ENDEXIT
+
+Reset M 22018 1 22057 -1 -1 -1 100
+  Reset E 22024 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      22058
+Name      The West Wing~
+Sector    indoors~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The West Wing, while smaller than the main hall of the Palace, is no
+less glorious. Polished marble tiles line the floor in intriate and
+dazzeling patterns. The walls are flanked with marble columns and a
+few expensive tapestries. The air here smells very clean, and smells
+of soap and polish hang in the air. Doors occasionaly can be seen to
+the East or West.
+~
+#EXIT
+Direction north~
+ToRoom    22059
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22045
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22059
+Name      The West Wing~
+Sector    indoors~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The West Wing, while smaller than the main hall of the Palace, is no
+less glorious. Polished marble tiles line the floor in intriate and
+dazzeling patterns. The walls are flanked with marble columns and a
+few expensive tapestries. The air here smells very clean, and smells
+of soap and polish hang in the air. Doors occasionaly can be seen to
+the East or West.
+~
+#EXIT
+Direction north~
+ToRoom    22060
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22058
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22065
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22060
+Name      The West Wing~
+Sector    indoors~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The West Wing, while smaller than the main hall of the Palace, is no
+less glorious. Polished marble tiles line the floor in intriate and
+dazzeling patterns. The walls are flanked with marble columns and a
+few expensive tapestries. The air here smells very clean, and smells
+of soap and polish hang in the air. Doors occasionaly can be seen to
+the East or West.
+~
+#EXIT
+Direction north~
+ToRoom    22061
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22059
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22064
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22061
+Name      The West Wing~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The West Wing, while smaller than the main hall of the Palace, is no
+less glorious. Polished marble tiles line the floor in intriate and
+dazzeling patterns. The walls are flanked with marble columns and a
+few expensive tapestries. The air here smells very clean, and smells
+of soap and polish hang in the air. Doors occasionaly can be seen to
+the East or West.
+~
+#EXIT
+Direction north~
+ToRoom    22062
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22060
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22062
+Name      The West Wing~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The West Wing, while smaller than the main hall of the Palace, is no
+less glorious. Polished marble tiles line the floor in intriate and
+dazzeling patterns. The walls are flanked with marble columns and a
+few expensive tapestries. The air here smells very clean, and smells
+of soap and polish hang in the air. Doors occasionaly can be seen to
+the East or West. A large door lies to the North.
+~
+#EXIT
+Direction north~
+ToRoom    22082
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22063
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22061
+#ENDEXIT
+
+Reset D 22062 0 1 100 -2
+Reset D 22062 1 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22063
+Name      A Storeroom~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Shelves line the walls in this dark chamber, storing all manner of goods
+for the running of the Keep. Even here, the floors are polished tiles and
+are kept very clean. Most of the things in this chamber are cleaning and
+washing supplies, though other trinkets can be found here and there. A
+door stands to the West, leading back to the West Wing.
+~
+#EXIT
+Direction west~
+ToRoom    22062
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 22027 1 22063 -1 -1 -1 100
+Reset D 22063 3 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22064
+Name      A Storeroom~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Shelves line the walls in this dark chamber, storing all manner of goods
+for the running of the Keep. Even here, the floors are polished tiles and
+are kept very clean. Most of the things in this chamber are cleaning and
+washing supplies, though other trinkets can be found here and there. A
+door stands to the East, leading back to the West Wing.
+~
+#EXIT
+Direction east~
+ToRoom    22060
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22065
+Name      The Laundry Room~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      An overpowering smell of soap lingers in the air, making the rest of
+the Keep seem dirty by comparison. Several wash basins line the walls,
+and piles of dirty laundry are strewn about. The clean linen is hustled
+out by maids and new loads of dirty laundry is dropped off. The activity
+here never seems to end. A door stands to the East, leading back to the
+West Wing.
+~
+#EXIT
+Direction east~
+ToRoom    22059
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 22020 1 22065 -1 -1 -1 100
+  Reset E 22019 1 5 100
+Reset D 22065 1 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22066
+Name      The Banquet Hall~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As beautiful as the rest of the Palace is, it is no comparison to this
+large chamber. A large cherrywood banquet table stands in the center,
+polished and aged. Twenty chairs surround it, with a large high backed
+chair for the King. Plush velvet carpet covers the floor, and tapestries
+of untold worth adorn the walls. Trophies of battle can also be seen upon
+the walls, marking great victories of the Keep of Valor. A large double
+door stands to the North.
+~
+#EXIT
+Direction north~
+ToRoom    22067
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22048
+#ENDEXIT
+
+Reset D 22066 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22067
+Name      Entering the Royal Apartments~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Velvet carpet covers the floor here, leading to the hallway to the North.
+The walls are polish oak, aged beyond the span of a human's life. This
+small waiting room is the entrance to the Royal Apartments, where the King
+himself resides. A set of double doors lies to the South.
+~
+#EXIT
+Direction north~
+ToRoom    22068
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22066
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 22067 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22068
+Name      A Magnificient Hallway~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This hallway embodies the essence of royalty. A plush velvet carpet runs
+the length alongside polished oak walls. Portraits of past kings and other
+members of the royal family can be seen at spaced intervals. Chandeliers
+provide light, and crystal vases stand in small alcoves holding rare and
+beautiful plants. Doors can be seen to the East and West.
+~
+#EXIT
+Direction north~
+ToRoom    22069
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22073
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22067
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22072
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 22068 1 1 100 -2
+Reset D 22068 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22069
+Name      A Magnificient Hallway~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This hallway embodies the essence of royalty. A plush velvet carpet runs
+the length alongside polished oak walls. Portraits of past kings and other
+members of the royal family can be seen at spaced intervals. Chandeliers
+provide light, and crystal vases stand in small alcoves holding rare and
+beautiful plants. Doors can be seen to the East and West.
+~
+#EXIT
+Direction north~
+ToRoom    22070
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22074
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22068
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22076
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 22069 1 1 100 -2
+Reset D 22069 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22070
+Name      A Magnificient Hallway~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This hallway embodies the essence of royalty. A plush velvet carpet runs
+the length alongside polished oak walls. Portraits of past kings and other
+members of the royal family can be seen at spaced intervals. Chandeliers
+provide light, and crystal vases stand in small alcoves holding rare and
+beautiful plants. Doors can be seen to the East and West.
+~
+#EXIT
+Direction east~
+ToRoom    22078
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22069
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22077
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 22070 1 1 100 -2
+Reset D 22070 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22071
+Name      The Back Courtyard~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes. A small door stands to the South
+~
+#EXIT
+Direction north~
+ToRoom    22087
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22055
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22079
+#ENDEXIT
+
+Reset D 22071 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22072
+Name      Guest Apartments~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the East, leading back towards
+the Royal Apartments.
+~
+#EXIT
+Direction east~
+ToRoom    22068
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 22025 1 22072 -1 -1 -1 100
+Reset D 22072 1 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22073
+Name      Guest Apartments~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the West, leading back towards
+the Royal Apartments.
+~
+#EXIT
+Direction west~
+ToRoom    22068
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 22025 1 22073 -1 -1 -1 100
+Reset D 22073 3 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22074
+Name      Guest Apartments~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the West, leading back towards
+the Royal Apartments.
+~
+#EXIT
+Direction west~
+ToRoom    22069
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 22026 1 22074 -1 -1 -1 100
+  Reset E 22029 1 5 100
+Reset O 22025 1 22074 -1 -1 -1 100
+Reset D 22074 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22075
+Name      Control room~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Do not toy with any of the mobs that invoke here, they are used as
+switches and triggers.
+~
+#ENDROOM
+
+#ROOM
+Vnum      22076
+Name      Guest Apartments~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the East, leading back towards
+the Royal Apartments.
+~
+#EXIT
+Direction east~
+ToRoom    22069
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 22025 1 22076 -1 -1 -1 100
+Reset D 22076 1 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22077
+Name      The King's Chambers~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the East, leading back towards
+the Royal Apartments.
+~
+#EXIT
+Direction east~
+ToRoom    22070
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 22025 1 22077 -1 -1 -1 100
+Reset D 22077 1 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22078
+Name      The Queen's Chambers~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This room is perhaps the size of a small house. Hardwood floors and a
+seamless polished oak wall give a great aesthetic sense to this chamber.
+A wash basin and a full mirror stand in one corner, and a large canopy
+bed stands in the center of the room. Windows overlook the countryside
+for miles. A large oaken door stands to the West, leading back towards
+the Royal Apartments.
+~
+#EXIT
+Direction west~
+ToRoom    22070
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 22026 2 22078 -1 -1 -1 100
+  Reset E 22029 1 5 100
+Reset O 22025 1 22078 -1 -1 -1 100
+Reset D 22078 3 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22079
+Name      The Back Courtyard~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+#EXIT
+Direction north~
+ToRoom    22086
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22071
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22080
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22080
+Name      The Back Courtyard~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+#EXIT
+Direction north~
+ToRoom    22085
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22079
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22081
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22081
+Name      The Back Courtyard~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+#EXIT
+Direction north~
+ToRoom    22084
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22080
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22082
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22082
+Name      The Back Courtyard~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes. A small door stands to the South.
+~
+#EXIT
+Direction north~
+ToRoom    22083
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22081
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22062
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22083
+Name      The Back Courtyard~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+#EXIT
+Direction east~
+ToRoom    22084
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22082
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22084
+Name      The Back Courtyard~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+#EXIT
+Direction east~
+ToRoom    22085
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22081
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22083
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22085
+Name      The Back Courtyard~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes. A mages tower stands
+to the North.
+~
+#EXIT
+Direction north~
+ToRoom    22088
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    22086
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22080
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22084
+#ENDEXIT
+
+Reset D 22085 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      22086
+Name      The Back Courtyard~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+#EXIT
+Direction east~
+ToRoom    22087
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    22079
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22085
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22087
+Name      The Back Courtyard~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Well tended grass and intricate hedge statues mark this courtyard as
+well kept. The walls of the Keep can be seen in the distance, brilliant
+and awestriking. This small courtyard is much like a park, a place for
+servants and nobles alike to rest and relax. The distance of the walls
+allows for nice sunbeams and cool breezes.
+~
+#EXIT
+Direction south~
+ToRoom    22071
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    22086
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22088
+Name      The Mage's Tower~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The bottom room of this squat, circular tower is quite large, but very
+cluttered. Tables and desks are covered in notes and books, shelves are
+filled to bursting. Balls of light hover about, with seeming minds of
+their own, lighting the room and its arcane clutter. An obsure door lies
+to the South, and a spiral stariway leads up to the top of the tower.
+~
+#EXIT
+Direction south~
+ToRoom    22085
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    22089
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      22089
+Name      The Mage's Study~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This large circular chamber is almost thirty paces across. Laboratory
+tables stand to one side, with glowing liquids coursing through glass
+tubing. Strewn notes and books litter the floor and failed attempts at
+making magical items lay in one pile, some of the myriad items sparking
+occassionaly. A spiral stairway leads down to the base of the tower.
+~
+#EXIT
+Direction down~
+ToRoom    22088
+#ENDEXIT
+
+Reset M 22021 1 22089 -1 -1 -1 100
+  Reset E 22026 1 5 100
+#ENDROOM
+
+#ROOM
+Vnum      22090
+Name      Floating in a void~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+#ENDROOM
+
+#ENDAREA

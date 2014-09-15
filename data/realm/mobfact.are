@@ -1,0 +1,904 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Mob Factory~
+Author          PinkF~
+Vnums           9401 9424
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          5 35 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      9401
+Keywords  mutant fido dog~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     The mutant beastly fido~
+Long      The mutant beastly fido is here, his eyes glowing green!
+~
+Desc      You see a mutant beastly fido, glaring at you with green eyes!  You wonder if
+this factory meets ASPCA guidlines....
+~
+Nattacks  0.000000
+Stats1    -700 5 0 0 0 0
+Stats2    6 21 -3 20 2 4 1
+Speaking  common~
+Actflags  npc aggressive stayarea wimpy pet~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9402
+Keywords  foreman floyd~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    standing~
+Short     Foreman Floyd~
+Long      Foreman Floyd is here, making plans for the factory's future.
+~
+Desc      You see Foreman Floyd of the Mob factory -- a sterling example of what comes
+of dedicated Mudding!  Rewarded for his years of dedication as a monster
+slayer, Floyd now creates the beasts for other adventurers to fight.
+~
+Nattacks  0.000000
+Stats1    2 1000 0 0 0 0
+Stats2    12 21 -4 100 2 7 2
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9403
+Keywords  cityguard guard head~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     The Cityguard head~
+Long      The Cityguard head floats around aimlessly.
+~
+Desc      You see a Cityguard head floating around without a care in the world.
+Obviously, this one got past quality control!  Careful, those teeth look
+sharp...
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    9 21 0 30 2 6 2
+Speaking  common~
+Actflags  npc stayarea~
+Affected  flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9404
+Keywords  revolving drunk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     The revolving drunk~
+Long      The Revolving drunk is here, spinning in place.
+~
+Desc      You see and smell a drunk who looks much like other drunks...but he is spinning
+in place!  Someone should tell him that he is a REVOLTING drunk.
+~
+Nattacks  0.000000
+Stats1    1 50 0 0 0 0
+Stats2    2 21 4 10 1 6 1
+Speaking  common~
+Actflags  npc scavenger stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9405
+Keywords  toxic slime~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     The toxic slime~
+Long      A pool of toxic slime lies on  the floor.
+~
+Desc      Yick.  Looks like someone had digestion problems!  Either that, or the 
+hydraulic fluid is leaking again.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    4 21 8 30 2 4 0
+Speaking  common~
+Actflags  npc sentinel scavenger~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9406
+Keywords  worker~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     The factory worker~
+Long      A Mob Factory worker is standing here, looking bored.
+~
+Desc      The worker wears a bright orange pair of overalls, with the words "Mob
+Factory" written in a bright purple starburst.  Fashion plate, he's not.
+~
+Nattacks  0.000000
+Stats1    100 50 0 0 0 0
+Stats2    3 21 6 5 1 4 1
+Speaking  common~
+Actflags  npc stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9407
+Keywords  worker~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  sleeping~
+DefPos    sleeping~
+Short     The factory worker~
+Long      A Mob Factory worker is here, asleep in a chair.
+~
+Desc      If Floyd walks in, you can bet there'll be trouble.  Guess she shouldn't have
+worked the late shift!
+~
+Nattacks  0.000000
+Stats1    150 75 0 0 0 0
+Stats2    3 21 6 5 1 4 1
+Speaking  common~
+Actflags  npc sentinel wimpy~
+#ENDMOBILE
+
+#ROOM
+Vnum      9400
+Name      Entrance to the Mob Factory~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You find that you have entered a strange factory. This factory doesn't
+make cars or computers or something - it makes mobs! The sound of
+machinery can be heard in the background; the grinding gears drive you
+crazy! To the north you see the storage area, to the south the
+foreman's office, to the east the entrance hallway, and to the west the
+eastern end of alley.
+~
+#EXIT
+Direction north~
+ToRoom    9401
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9407
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9403
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3046
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9401
+Name      Mob Factory Storage Area~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is where the raw materials from which mobs are manufactured are
+stored. You see sacks of sawdust, cans of pink paint, a large box
+containing wigs and a bottle mysteriously labelled "solution x". Exits
+are more of storage to the east and north, and entrance to the mob
+factory to the south.
+~
+#EXIT
+Direction north~
+ToRoom    9402
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9406
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9400
+#ENDEXIT
+
+Reset M 9405 7 9401 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9402
+Name      Mob Factory Storage Area~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is where the raw materials from which mobs are manufactured are
+stored. You see sacks of sawdust, cans of pink paint, a large box
+containing wigs and a bottle mysteriously labelled "solution X". Exits
+are more of storage to the east and south.
+~
+#EXIT
+Direction east~
+ToRoom    9405
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9401
+#ENDEXIT
+
+Reset M 9401 5 9402 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9403
+Name      Foreman's Office~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the ofice of the mob factory foreman. The room is sparsely
+furnished with a metal desk, a couple of chairs, a shelf with helmets
+of various sizes and a Sports Illustrated Swimsuit calendar on the west
+wall. Exits lead north to the mob factory entrance and south to the
+foreman's bathroom.
+~
+#EXIT
+Direction north~
+ToRoom    9400
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9404
+#ENDEXIT
+
+Reset M 9402 1 9403 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9404
+Name      Foreman's Bathroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the place where the foreman makes frequent visits. The smell
+here is very strong and reminds you of bovine excrement! There is a
+shower to the back, and a urinal to the left. On the floor you can
+see stains of a very suspicious nature. The only exit leads north to
+the foreman's office.
+~
+#EXIT
+Direction north~
+ToRoom    9403
+#ENDEXIT
+
+Reset M 9405 7 9404 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9405
+Name      Mob Factory Storage Area~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is where the raw materials from which mobs are manufactured are
+stored. You see sacks of sawdust, cans of pink paint, a large box
+containing wigs and a bottle mysteriously labelled "solution X". Exits
+are more of storage to the west and south, and an inspection room to
+the east.
+~
+#EXIT
+Direction east~
+ToRoom    9410
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9406
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9402
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9406
+Name      Mob Factory Storage Area~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is where the raw materials from which mobs are manufactured are
+stored. You see sacks of sawdust, cans of pink paint, a large box
+containing wigs and a bottle mysteriously labelled "solution X". Exits
+are more of storage to the west and north, an inspection room to the
+east and the entrance hallway to the south.
+~
+#EXIT
+Direction north~
+ToRoom    9405
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9411
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9407
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9401
+#ENDEXIT
+
+Reset M 9403 9 9406 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9407
+Name      Entrance Hallway to Mob Factoy~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in the entrance hallway of the mob factory. The sound
+of machinery gets louder now, and you can hear people shouting in the
+distance. Every once in a while you get creepy feeling that a pair of
+eyes is observing you...... Exits are north to the storage area, east
+to the entrance hallway, south to the cafeteria and west to the mob
+factory entrance.
+~
+#EXIT
+Direction north~
+ToRoom    9406
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9412
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9408
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9400
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9408
+Name      Mob Factory Cafeteria~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You find that you have entered the cafeteria of the mob factory. There
+are many workers eating at the numerous tables placed around the room.
+The food doesn't look too appetising, but the factory workers don't
+seem to care. There are many places where food and drink have been
+spilled on the ground. Exits are north to the entrance hallway and
+south to the mob factory cafeteria.
+~
+#EXIT
+Direction north~
+ToRoom    9407
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9409
+#ENDEXIT
+
+Reset M 9405 7 9408 -1 -1 -1 100
+Reset M 9401 5 9408 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9409
+Name      Mob Factory Cafeteria~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You find that you have entered the cafeteria of the mob factory. There
+are many workers eating at the numerous tables placed around the room.
+The food doesn't look too appetising, but the factory workers don't
+seem to care. There are many places where food and drink have been
+spilled on the ground. The only exit is north to the mob factory
+cafeteria.
+~
+#EXIT
+Direction north~
+ToRoom    9408
+#ENDEXIT
+
+Reset M 9405 7 9409 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9410
+Name      Mob Factory Inspection Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered the mob factory inspections room. This is where the
+mobs manufactured on the assembly lines are inspected for defects. A
+whole team of inspectors from the Midgaard Inspections Bureau is
+standing around, trying to look busy. Exits are south to the mob
+factory inspection room, east to the primary assembly line and west to
+the storage area.
+~
+#EXIT
+Direction east~
+ToRoom    9415
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9411
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9405
+#ENDEXIT
+
+Reset M 9407 4 9410 -1 -1 -1 100
+Reset M 9404 6 9410 -1 -1 -1 100
+Reset M 9403 9 9410 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9411
+Name      Mob Factory Inspection Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered the mob factory inspections room. This is where the
+mobs manufactured on the assembly lines are inspected for defects. A
+whole team of inspectors from the Midgaard Inspections Bureau is
+standing around, trying to look busy. Exits are south to the mob
+factory inspection room, east to the primary assembly line and west to
+the storage area.
+~
+#EXIT
+Direction north~
+ToRoom    9410
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9416
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9412
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9406
+#ENDEXIT
+
+Reset M 9407 4 9411 -1 -1 -1 100
+Reset M 9401 5 9411 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9412
+Name      Entrance Hallway to Mob Factoy~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in the entrance hallway of the mob factory. The sound
+of machinery gets louder now, and you can hear people shouting in the
+distance. Every once in a while you get creepy feeling that a pair of
+eyes is observing you...... Exits are north to the inspection room,
+east to the primary assembly line, south to the reject room and west
+to the entrance hallway.
+~
+#EXIT
+Direction north~
+ToRoom    9411
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9417
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9413
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9407
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9413
+Name      Mob Factory Reject Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the factory reject room. All the mobs that are manufactured
+incorrectly or have some defect are placed here before subsequent
+destruction. You shudder at the many deformed and grotesque shapes
+present before you. Exits are south to the reject room and north to
+the entrance hallway.
+~
+#EXIT
+Direction north~
+ToRoom    9412
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9414
+#ENDEXIT
+
+Reset M 9404 6 9413 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9414
+Name      Mob Factory Reject Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the factory reject room. All the mobs that are manufactured
+incorrectly or have some defect are placed here before subsequent
+destruction. You shudder at the many deformed and grotesque shapes
+present before you. The only exit is north to the reject room.
+~
+#EXIT
+Direction north~
+ToRoom    9413
+#ENDEXIT
+
+Reset M 9403 9 9414 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9415
+Name      Primary Assembly Line~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the primary assembly line of the mob factory. Here, all the
+mobs seen roaming around the city of Midgaard are manufactured from
+raw materials. There is a big conveyor belt present which makes a lot
+of noise! It seems that the workers are making drunks today. Exits are
+east to the secondary assembly line, south to the primary assembly
+line and west to the inspection room.
+~
+#EXIT
+Direction east~
+ToRoom    9420
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9416
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9410
+#ENDEXIT
+
+Reset M 9405 7 9415 -1 -1 -1 100
+Reset M 9406 9 9415 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9416
+Name      Primary Assembly Line~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the primary assembly line of the mob factory. Here, all the
+mobs seen roaming around the city of Midgaard are manufactured from
+raw materials. There is a big conveyor belt present which makes a lot
+of noise! It seems that the workers are making drunks today. Exits are
+east to the secondary assembly line, north and south to the primary
+assembly line and west to the inspection room.
+~
+#EXIT
+Direction north~
+ToRoom    9415
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9421
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9417
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9411
+#ENDEXIT
+
+Reset M 9406 9 9416 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9417
+Name      Primary Assembly Line~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the primary assembly line of the mob factory. Here, all the
+mobs seen roaming around the city of Midgaard are manufactured from
+raw materials. There is a big conveyor belt present which makes a lot
+of noise! It seems that the workers are making drunks today. Exits are
+east to the secondary assembly line, north and south to the primary
+assembly line and west to the entrance hallway.
+~
+#EXIT
+Direction north~
+ToRoom    9416
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9422
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9418
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9412
+#ENDEXIT
+
+Reset M 9406 9 9417 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9418
+Name      Primary Assembly Line~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the primary assembly line of the mob factory. Here, all the
+mobs seen roaming around the city of Midgaard are manufactured from
+raw materials. There is a big conveyor belt present which makes a lot
+of noise! It seems that the workers are making drunks today. Exits are
+east to the secondary assembly line, north and south to the primary
+assembly line.
+~
+#EXIT
+Direction north~
+ToRoom    9417
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9423
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9419
+#ENDEXIT
+
+Reset M 9406 9 9418 -1 -1 -1 100
+Reset M 9401 5 9418 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9419
+Name      Primary Assembly Line~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the primary assembly line of the mob factory. Here, all the
+mobs seen roaming around the city of Midgaard are manufactured from
+raw materials. There is a big conveyor belt present which makes a lot
+of noise! It seems that the workers are making drunks today. Exits are
+east to the secondary assembly line and north to the primary
+assembly line.
+~
+#EXIT
+Direction north~
+ToRoom    9418
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9424
+#ENDEXIT
+
+Reset M 9406 9 9419 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9420
+Name      Secondary Assembly Line~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the secondary asembly line of the mob factory. You are
+surprised to see cityguard heads come floating on the conveyor belt!
+The very sight is sickening, but the workers seem to be quite
+cheerful about their work. Exits are south to the secondary assembly
+line and west to the primary assembly line.
+~
+#EXIT
+Direction south~
+ToRoom    9421
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9415
+#ENDEXIT
+
+Reset M 9406 9 9420 -1 -1 -1 100
+Reset M 9407 4 9420 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9421
+Name      Secondary Assembly Line~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the secondary asembly line of the mob factory. You are
+surprised to see cityguard heads come floating on the conveyor belt!
+The very sight is sickening, but the workers seem to be quite
+cheerful about their work. Exits are north and south to the secondary
+assembly line and west to the primary assembly line.
+~
+#EXIT
+Direction north~
+ToRoom    9420
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9422
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9416
+#ENDEXIT
+
+Reset M 9405 7 9421 -1 -1 -1 100
+Reset M 9403 9 9421 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9422
+Name      Secondary Assembly Line~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the secondary asembly line of the mob factory. You are
+surprised to see cityguard heads come floating on the conveyor belt!
+The very sight is sickening, but the workers seem to be quite
+cheerful about their work. Exits are north and south to the secondary
+assembly line and west to the primary assembly line.
+~
+#EXIT
+Direction north~
+ToRoom    9421
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9423
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9417
+#ENDEXIT
+
+Reset M 9403 9 9422 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9423
+Name      Secondary Assembly Line~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the secondary asembly line of the mob factory. You are
+surprised to see cityguard heads come floating on the conveyor belt!
+The very sight is sickening, but the workers seem to be quite
+cheerful about their work. Exits are north and south to the secondary
+assembly line and west to the primary assembly line.
+~
+#EXIT
+Direction north~
+ToRoom    9422
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9424
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9418
+#ENDEXIT
+
+Reset M 9406 9 9423 -1 -1 -1 100
+Reset M 9403 9 9423 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9424
+Name      Secondary Assembly Line~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the secondary asembly line of the mob factory. You are
+surprised to see cityguard heads come floating on the conveyor belt!
+The very sight is sickening, but the workers seem to be quite
+cheerful about their work. Exits are north to the secondary
+assembly line and west to the primary assembly line.
+~
+#EXIT
+Direction north~
+ToRoom    9423
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9419
+#ENDEXIT
+
+Reset M 9403 9 9424 -1 -1 -1 100
+Reset M 9406 9 9424 -1 -1 -1 100
+Reset M 9405 7 9424 -1 -1 -1 100
+#ENDROOM
+
+#ENDAREA

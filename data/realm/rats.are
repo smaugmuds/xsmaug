@@ -1,0 +1,1913 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Rats Lair~
+Author          Hatchet~
+Vnums           3801 3899
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          2 10 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      3801
+Keywords  rat small~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a small rat~
+Long      A small rat is scurrying from room to room.
+~
+Desc      This rat looks like ... a rat.
+~
+Nattacks  0.000000
+Stats1    -100 0 0 0 0 0
+Stats2    1 21 10 11 1 1 2
+Speaking  common~
+Actflags  npc wimpy~
+Affected  sneak~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3802
+Keywords  Snigger snake~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     Snigger the Cute Man-Eating Snake~
+Long      Snigger, Icaza's cute man-eating snake, slithers around the room.
+~
+Desc      Snigger is a pretty big snake, at 7 feet and growing.  Although Icaza swears
+that Snigger has no fangs, any casual observer would quickly argue that point.
+Poisonous?  Why don't you find out?
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    40 21 -10 999 2 40 40
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3803
+Keywords  Sammy Sam kitten~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Sammy, Hatchet's Cute Flesh-Clawing Kitten~
+Long      Sammy, Hatchet's cute flesh-clawing kitten, meows in a corner.
+~
+Desc      Sammy is a cute little kitten, probably weighs less than 3 pounds, but she has
+claws long enough and leap high enough to jump up and claw your eyes out!  She
+is currently purring and washing herself, oblivious to your presense.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    40 21 -10 999 2 40 40
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3804
+Keywords  rat~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a rat~
+Long      A rat scurries around.
+~
+Desc      This rat is about average size, with average size teeth and average size claws.
+~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    2 21 8 20 1 2 2
+Speaking  common~
+Actflags  npc aggressive stayarea wimpy~
+Affected  sneak~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3805
+Keywords  rat large~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a large rat~
+Long      A large rat stares at you hungrily, then attacks you!
+~
+Desc      This rat is about the length of your arm, with sharp claws and teeth, which it
+uses now to bite at you!
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    3 21 7 33 1 3 3
+Speaking  common~
+Actflags  npc aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3806
+Keywords  rat were wererat~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a wererat~
+Long      A humanoid rat notices you, then attacks!
+~
+Desc      This beast looks like a combination rat and human, as it has properties of
+both, namely standing erect, wielding a weapon, but with fur, ears, and tail
+of a rat.
+~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    4 21 6 44 1 4 4
+Speaking  common~
+Actflags  npc sentinel aggressive~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3807
+Keywords  rat were wererat guard~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a wererat guard~
+Long      A humanoid rat stands guard here, but decides to attack you!
+~
+Desc      This beast looks like a combination rat and human, as it has properties of
+both, namely standing erect, wielding a weapon, but with fur, ears, and tail
+of a rat.  He seems to be guarding something.
+~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    5 21 5 55 1 5 5
+Speaking  common~
+Actflags  npc sentinel aggressive~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3808
+Keywords  rat were wererat~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a wererat~
+Long      A humanoid rat sits here, discussing some business.
+~
+Desc      This beast looks like a combination rat and human, as it has properties of
+both, namely standing erect, wielding a weapon, but with fur, ears, and tail
+of a rat.  They don't notice you in their duscussion.
+~
+Nattacks  0.000000
+Stats1    -5 0 0 0 0 0
+Stats2    4 21 6 44 1 4 4
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3809
+Keywords  drake firedrake~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_fire~
+Short     a firedrake~
+Long      A red dragon-beast sits here, staring at you and blowing fire at you!
+~
+Desc      This beast looks a lot like a red dragon, except that it's a bit smaller.  It
+has red scales over it's four-legged reptilian body, with sharp claws and 
+piercing tail.  It is disturbed by your intrusion.
+~
+Nattacks  0.000000
+Stats1    -700 0 0 0 0 0
+Stats2    7 21 3 77 1 7 7
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3810
+Keywords  rat were wererat leader~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     the wererat leader~
+Long      A bulky rat-beast is here, enraged that you have intruded upon its room!
+~
+Desc      This beast looks like a combination rat and human, as it has properties of
+both, namely standing erect, wielding a weapon, but with fur, ears, and tail
+of a rat.  This one is different from the others, since it is better attired
+and also much bigger.
+~
+Nattacks  0.000000
+Stats1    -700 0 0 0 0 0
+Stats2    7 21 3 77 1 7 7
+Speaking  common~
+Actflags  npc sentinel aggressive~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3811
+Keywords  rat large~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a large rat~
+Long      A large rat stares at you menacingly, then attacks you!
+~
+Desc      This rat is about the length of your arm, with sharp claws and teeth, which it
+uses now to bite at you!
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    3 21 7 33 1 3 3
+Speaking  common~
+Actflags  npc sentinel aggressive~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3812
+Keywords  rat were wererat slavemaster~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a wererat slavemaster~
+Long      A large wererat cracks his whip at you!
+~
+Desc      This beast looks like a combination rat and human, as it has properties of
+both, namely standing erect, wielding a weapon, but with fur, ears, and tail
+of a rat.  This one looks quite big, and the barbed whip he flicks toward you 
+looks quite deadly.
+~
+Nattacks  0.000000
+Stats1    -600 0 0 0 0 0
+Stats2    6 21 4 66 1 6 6
+Speaking  common~
+Actflags  npc aggressive~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3813
+Keywords  slave human~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a human slave~
+Long      A human slave crouches in a corner, shivering.
+~
+Desc      This human looks familiar, and upon further examination, you see that this 
+slave used to be a citizen of Midgaard!  She asks pitifully for you to help
+her escape.
+~
+Nattacks  0.000000
+Stats1    100 0 0 0 0 0
+Stats2    2 21 8 22 1 2 2
+Speaking  common~
+Actflags  npc wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3814
+Keywords  slave human~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a human slave~
+Long      A human slave is here, digging in the tunnels.
+~
+Desc      This human looks familiar, and upon further examination, you see that this
+slave used to be a citizen of Midgaard!  He asks pitifully for you to help
+him escape.
+~
+Nattacks  0.000000
+Stats1    100 0 0 0 0 0
+Stats2    2 21 8 22 1 2 2
+Speaking  common~
+Actflags  npc wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3815
+Keywords  god mortal manifestation~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     the mortal manifestation of Overlord Hatchet~
+Long      The mortal manifestation of Overlord Hatchet sits here, whispering to
+Goddess Icaza.
+~
+Desc      Even in his mortal, statuesque form, Hatchet smirks a bit.  He smiles at your
+entrance, and welcomes you to join in conversation.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    40 21 -30 444 1 40 40
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3816
+Keywords  goddess mortal manifestation~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the mortal manifestation of Goddess Icaza~
+Long      The mortal manifestation of Goddess Icaza sits here, whispering to
+Overlord Hatchet.
+~
+Desc      Even in her mortal, statuesque form, Icaza smiles and blushes a bit.  She
+smiles at you, and with an accent not too different from a Southern one, says,
+'Please join us in conversation!'
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    40 21 -30 444 1 40 40
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3817
+Keywords  ooze green~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the green Ooze~
+Long      Some green ooze clings onto the ceiling and the walls.
+~
+Desc      This ooze looks like bad stuff, almost as if it's alive.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 5 55 1 5 5
+Speaking  common~
+Actflags  npc sentinel aggressive~
+#ENDMOBILE
+
+#OBJECT
+Vnum      3801
+Keywords  silver key~
+Type      key~
+Short     a silver key~
+Long      A silver key rest here, making a clean perimeter wherever it touches.~
+WFlags    take~
+Values    3838 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    silver key~
+ExDesc       Inscribed on this key are unintelliglble runes.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    runes~
+ExDesc       You don't understand what the runes say at all.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3802
+Keywords  key necklace~
+Type      key~
+Short     a key on a necklace~
+Long      A necklace with a key on it is on the floor.~
+WFlags    take~
+Values    3827 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3803
+Keywords  key iron~
+Type      key~
+Short     an iron key~
+Long      An iron key is on the floor.~
+WFlags    take~
+Values    3831 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3804
+Keywords  wall walls~
+Type      container~
+Short     the walls~
+Long      The old wooden walls look like they are about to fall down on you.~
+Values    300 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    wall walls~
+ExDesc       The walls here are made of rock holding back the rock and soil.  They look like
+they are ready to fall apart.  Most of these walls hold a torch.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3805
+Keywords  wall walls cave caves cavern~
+Type      container~
+Short     the walls of the cave~
+Long      The walls gleam with hidden treasures!~
+Values    300 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    wall walls cave caves cavern~
+ExDesc       The walls of this cave shine with sparkling gems, although most of them are
+too small to be dug out.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3806
+Keywords  box~
+Type      container~
+Short     the box~
+Values    300 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3807
+Keywords  crate~
+Type      container~
+Short     the crate~
+Values    300 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3808
+Keywords  table~
+Type      container~
+Short     the table~
+Values    300 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3809
+Keywords  stool~
+Type      weapon~
+Short     the stool~
+Long      A lone stool sits on the floor.~
+WFlags    take~
+Values    0 2 2 8 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll -1 -1 -1 0
+AffData damroll 2 -1 -1 0
+#EXDESC
+ExDescKey    stool~
+ExDesc       This sturdy stool looks like it can be used as a weapon!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3810
+Keywords  food~
+Type      food~
+Short     food fit for rats~
+Long      Some food fit for rats gathers dust on the floor and assimilates.~
+WFlags    take~
+Values    15 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    food~
+ExDesc       Well, you can barely eat it, but you can eat it.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3811
+Keywords  stake wooden~
+Type      weapon~
+Short     a wooden stake~
+Long      A wooden stake is against the wall.~
+WFlags    take~
+Values    0 2 2 11 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    stake wooden~
+ExDesc       This wooden stake is quite sharp, and looks designed as a weapon.  The blood-
+stains at the tip confirm this idea.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3812
+Keywords  shrine~
+Type      container~
+Short     the shrine~
+Values    200 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    shrine~
+ExDesc       This shrine is built for worshiping the Goddess Icaza.  Red carnation petals
+cover the shrine, exuding a light, fresh scent to this place.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3813
+Keywords  long rusted knife~
+Type      weapon~
+Short     a long rusted knife~
+Long      A long bladed knife is rusting on the floor.~
+WFlags    take~
+Values    0 2 3 3 0 0 0 0 0 0 0
+Stats     7 0 -2 9999 0 None None None
+AffData damroll 1 -1 -1 0
+#EXDESC
+ExDescKey    long rusted knife~
+ExDesc       This knife is rusted, but the rust only adds to the wickedness of this blade.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3814
+Keywords  tin bracer~
+Type      armor~
+Short     a tin bracer~
+Long      A tin bracer is rusting on the floor.~
+WFlags    take~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3815
+Keywords  tin leggings~
+Type      armor~
+Short     tin leggings~
+Long      A pair of tin leggings rusts on the floor.~
+WFlags    take~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3816
+Keywords  tin armguards~
+Type      armor~
+Short     tin armguards~
+Long      A pair of tin armguards rusts on the floor.~
+WFlags    take~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3817
+Keywords  flail spiked~
+Type      weapon~
+Short     a spiked flail~
+Long      A spiked flail rests on the floor.~
+WFlags    take~
+Values    0 3 3 7 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3818
+Keywords  whip barbed~
+Type      weapon~
+Short     a barbed whip~
+Long      A barbed whip is curled up on the floor.~
+WFlags    take~
+Values    0 3 4 4 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll 1 -1 -1 0
+AffData damroll 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3819
+Keywords  rod holy icaza~
+Type      staff~
+Short     Holy Rod of Icaza~
+Long      A rod of gold rests millimeters from the floor.~
+Flags     glow~
+Values    10 3 3 -1 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData armor -5 -1 -1 0
+AffData save_spell -2 -1 -1 0
+AffData wisdom 1 -1 -1 0
+Spells       'protection from evil'
+#EXDESC
+ExDescKey    rod holy icaza~
+ExDesc       This rod was blessed by the touch and laugh of Goddess Icaza.  Holding on to it
+will bring you luck and protection.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3820
+Keywords  torch~
+Type      light~
+Short     a torch~
+Long      A torch is here.~
+WFlags    take~
+Values    0 0 99 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3821
+Keywords  treasure gold coins~
+Type      money~
+Short     the treasure of gold coins~
+Long      A big pile of gold coins is in the middle of the room!~
+Flags     glow~
+WFlags    take~
+Values    2000 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3822
+Keywords  sapphire gem~
+Type      treasure~
+Short     a sapphire gem~
+Long      A big sapphire gem glitters on the floor.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3823
+Keywords  ruby gem~
+Type      treasure~
+Short     a ruby gem~
+Long      A big ruby gem glitters on the floor.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      3801
+Name      Below a Dark Stairway~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are beneath a dark stairway.  Little light filters through from above, 
+allowing you to see only a dim passage leading to the south.  You see around 
+you decaying wood, and a musty smell assails your nostrils.  You look down and
+realize you are stepping on some type of feces.
+~
+#EXIT
+Direction south~
+ToRoom    3802
+Desc      You see the dim passage leading south.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3026
+Desc      You see your way out of this dark hole.
+~
+Keywords  grate~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 3801 4 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3802
+Name      A Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dim hallway.  Unlit torches hang from the walls, but the
+little light coming from the north is enough for you to see around.  This
+hallway continues south and north, with doors to the west and east.
+~
+#EXIT
+Direction north~
+ToRoom    3801
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3806
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3803
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3805
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 3801 2 3802 -1 -1 -1 100
+Reset O 3804 9 3802 -1 -1 -1 100
+  Reset P 0 3820 9 3804 100
+Reset D 3802 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3803
+Name      A Dim Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dim hallway, deeper into this decrepit place.  You realize that
+this place used to be a basement of some sort.  This hallway leads north and
+south, with doors to the west and east.  There is less and less light coming
+from the north, and you can barely see what's south of you.  Hanging on the
+walls are some torches.
+~
+#EXIT
+Direction north~
+ToRoom    3802
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3808
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3804
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3807
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 3804 9 3803 -1 -1 -1 100
+  Reset P 0 3820 9 3804 100
+#ENDROOM
+
+#ROOM
+Vnum      3804
+Name      A Dim Hallway Above the Stairway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are at the end of the dim hallway.  Below you are some old wooden stairs.
+You can see that what's available of the light from the north can not penetrate
+the lower floor.  A room is to the west and to the east.  Hanging on the walls
+are some torches that look serviceable.
+~
+#EXIT
+Direction north~
+ToRoom    3803
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3810
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3809
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3811
+Desc      You see nothing in the gloom below.
+~
+#ENDEXIT
+
+Reset O 3804 9 3804 -1 -1 -1 100
+  Reset P 0 3820 9 3804 100
+Reset D 3804 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3805
+Name      A Small Storage Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small storage room.  Ripped up flour sacks litter this floor,
+along with some animal droppings.  The exit is to the east.
+~
+#EXIT
+Direction east~
+ToRoom    3802
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3806
+Name      A Small Storage Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small storage room.  A pile of rags is against the far wall.  You
+think you saw something move in the pile of rags!  The exit is to the west.
+~
+#EXIT
+Direction west~
+ToRoom    3802
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 3806 1 3806 -1 -1 -1 100
+  Reset E 3811 99 16 100
+Reset D 3806 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3807
+Name      A Small Storage Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small storage room.  A horrid stench fills this room, smelling 
+like some dead animal is rotting away here.  The exit is to the east.
+~
+#EXIT
+Direction east~
+ToRoom    3803
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3808
+Name      A Small Storage Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small storage room.  A pile of filthy rags is against the far
+wall.  The exit is to the west.
+~
+#EXIT
+Direction west~
+ToRoom    3803
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 3804 2 3808 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3809
+Name      A Small Storage Room~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small storage room.  A pile of filthy rags is against the far
+wall.  The exit is to the east.
+~
+#EXIT
+Direction east~
+ToRoom    3804
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 3809 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3810
+Name      A Small Storage Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small storage room.  Nothing of interest is here.  The exit is to
+the west.
+~
+#EXIT
+Direction west~
+ToRoom    3804
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 3801 2 3810 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3811
+Name      Beneath the Old Stairway~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are beneath the old stairway.  It reeks of dead meat and fecal matter here,
+and the combined darkness makes this place quite forbidding.  Small rooms can
+be seen in the west and east, and a hallway leads north.  Unlit torches adorn
+the walls.
+~
+#EXIT
+Direction north~
+ToRoom    3812
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3816
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3815
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3804
+Desc      You see the relative safety of the upper floor.
+~
+#ENDEXIT
+
+Reset O 3804 9 3811 -1 -1 -1 100
+  Reset P 0 3820 9 3804 100
+Reset D 3811 1 1 100 -2
+Reset D 3811 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3812
+Name      A Dark Hallway~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark hallway.  It appears that this part of the basement area is
+not fully complete in construction, and that the inhabitants here have made
+some make-shift arrangements.  The hallway leads north and south, with rooms
+to the west and east.  Unlit torches adorn the walls.
+~
+#EXIT
+Direction north~
+ToRoom    3813
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3818
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3811
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3817
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 3804 9 3812 -1 -1 -1 100
+  Reset P 0 3820 9 3804 100
+Reset D 3812 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3813
+Name      A Dark Hallway~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark hallway that leads north to south.  West and east of you are
+some roughly made rooms.  You can see that the wooden walls are incomplete, and
+parts of the walls are just dug from rock and packed soil.  Unlit torches
+are on the walls.
+~
+#EXIT
+Direction north~
+ToRoom    3814
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3820
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3812
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3819
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 3804 9 3813 -1 -1 -1 100
+  Reset P 0 3820 9 3804 100
+Reset D 3813 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3814
+Name      A Dark Hallway~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark hallway.  You see more exposed rock than wood now, as this
+unfinished place reveals it's state of incompleteness.  Someone must have 
+abandoned this place for a reason.  To the west and east are some makeshift 
+bedrooms, and this hallway leads north and south.
+~
+#EXIT
+Direction north~
+ToRoom    3823
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3822
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3813
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3821
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 3804 9 3814 -1 -1 -1 100
+  Reset P 0 3820 9 3804 100
+Reset D 3814 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3815
+Name      A Storage Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a storage room.  Weapons and some armor are on the floor.  Most are
+broken, however, so they are useless to you.  The exit is to the east.
+~
+#EXIT
+Direction east~
+ToRoom    3811
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 3807 1 3815 -1 -1 -1 100
+  Reset E 3813 99 16 100
+  Reset E 3815 99 7 100
+Reset M 3807 3 3815 -1 -1 -1 100
+  Reset E 3813 99 16 100
+  Reset E 3815 99 7 100
+Reset D 3815 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3816
+Name      A Storage Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a storage room.  "Food" and some useless tools are scattered all 
+over the floor, but they sure don't look like anything you'd dare get near!
+The exit is to the west.
+~
+#EXIT
+Direction west~
+ToRoom    3811
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 3807 2 3816 -1 -1 -1 100
+  Reset E 3813 99 16 100
+  Reset E 3816 99 10 100
+Reset M 3807 4 3816 -1 -1 -1 100
+  Reset E 3813 99 16 100
+  Reset E 3816 99 10 100
+Reset D 3816 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3817
+Name      A Bedroom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a makeshift bedroom.  A pile of rags against a wall makes a bed, and
+some boards nailed together make a table.  The exit is to the east.
+~
+#EXIT
+Direction east~
+ToRoom    3812
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 3804 2 3817 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3818
+Name      A Bedroom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a makeshift bedroom.  A pile of rags against a wall makes a bed, and
+a crate on it's side makes a rough cabinet.  The exit is to the west.
+~
+#EXIT
+Direction west~
+ToRoom    3812
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 3818 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3819
+Name      A Bedroom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a makeshift bedroom.  The only thing in this room is a bed made of
+a pile of rags.  The exit is to the east.
+~
+#EXIT
+Direction east~
+ToRoom    3813
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 3817 1 3819 -1 -1 -1 100
+Reset D 3819 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3820
+Name      A Bedroom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a makeshift bedroom.  The only thing in this room is a bed made of
+a pile of rags.  The exit is to the west.
+~
+#EXIT
+Direction west~
+ToRoom    3813
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3821
+Name      A Bedroom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a makeshift bedroom.  All you see in this room is a bed made of rags
+and a wooden box.  The exit is to the east.
+~
+#EXIT
+Direction east~
+ToRoom    3814
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 3821 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3822
+Name      A Bedroom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a makeshift bedroom.  All you can see in this room is a bed made of
+rags and a shabbily built stool in the corner.  The exit is to the west.
+~
+#EXIT
+Direction west~
+ToRoom    3814
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3823
+Name      A Stairway~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a landing of an old stairway.  The stairs creak as you put any 
+pressure on it, and the combined gloom of this place gives you the creeps. 
+The stairs lead both up and down, and a hallway is to the south.
+~
+#EXIT
+Direction south~
+ToRoom    3814
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3824
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3825
+#ENDEXIT
+
+Reset O 3804 9 3823 -1 -1 -1 100
+  Reset P 0 3820 9 3804 100
+Reset M 3805 1 3823 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3824
+Name      A Meeting Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a roughly dug room, about 20 paces by 20 paces, and 8 paces high.
+A table is in the center, with about a dozen chairs surrounding it.  A lit
+torch is on a wall, and you can tell that someone must do some upkeep here, 
+because the obnoxious smell is less in this room.  The exit is down the
+stairway.
+~
+#EXIT
+Direction down~
+ToRoom    3823
+#ENDEXIT
+
+Reset O 3804 9 3824 -1 -1 -1 100
+  Reset P 0 3820 9 3804 100
+Reset M 3808 3 3824 -1 -1 -1 100
+  Reset E 3811 99 16 100
+Reset M 3808 3 3824 -1 -1 -1 100
+  Reset E 3811 99 16 100
+Reset M 3808 3 3824 -1 -1 -1 100
+  Reset E 3811 99 16 100
+#ENDROOM
+
+#ROOM
+Vnum      3825
+Name      At the Bottom of the Stairs~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are at the bottom of the stairs, in a roughly dug room.  This area smells
+like swamp, with a warm and humid odor assailing your nostrils.  An ominously
+red light comes from the south, the other exit to this room being the stairs
+back up.
+~
+#EXIT
+Direction south~
+ToRoom    3826
+Desc      You think you smell smoke coming from the south.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3823
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3826
+Name      The Firedrake's Lair~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a large, roughly dug room, about 15 paces by 15 paces and 10 paces
+high.  A light smoke fills the air, and you see burn marks all around you.  A
+steel door is to the east, another is to the west, and tunnels lead north and
+south.
+~
+#EXIT
+Direction north~
+ToRoom    3825
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3827
+Key       3802
+Keywords  door steel~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3829
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3828
+Key       3802
+Keywords  door steel~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 3809 1 3826 -1 -1 -1 100
+  Reset E 3802 9 3 100
+Reset D 3826 1 2 100 -2
+Reset D 3826 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3827
+Name      The Treasure Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small, unlit room.  There is nothing of interest here other than
+the obvious treasure piled in the center of this room!  The steel door leads
+west out of here.
+~
+#EXIT
+Direction west~
+ToRoom    3826
+Key       3802
+Keywords  door steel~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset O 3801 9 3827 -1 -1 -1 100
+Reset O 3821 9 3827 -1 -1 -1 100
+Reset D 3827 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3828
+Name      The Leader's Quarters~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small room.  A large desk and large chair make up the furnishings
+in this room, other than a painting on the north wall.  The steel door leads
+east out of here.
+~
+#EXIT
+Direction east~
+ToRoom    3826
+Key       3802
+Keywords  door steel~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 3810 1 3828 -1 -1 -1 100
+  Reset E 3817 99 16 100
+  Reset E 3814 99 14 100
+  Reset E 3814 99 15 100
+  Reset E 3815 99 7 100
+  Reset E 3816 99 10 100
+Reset M 3811 2 3828 -1 -1 -1 100
+Reset M 3811 2 3828 -1 -1 -1 100
+Reset D 3828 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3829
+Name      A Rough Tunnel~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a roughly dug tunnel.  The inhabitants of this lair must have begun
+to expand by excavating this area.  A lit lantern casts wavy shadows across
+this tunnel, which leads north and south.
+~
+#EXIT
+Direction north~
+ToRoom    3826
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3830
+#ENDEXIT
+
+Reset O 3805 9 3829 -1 -1 -1 100
+  Reset P 0 3822 9 3805 100
+#ENDROOM
+
+#ROOM
+Vnum      3830
+Name      A T-Intersection in the Tunnels~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in an intersection in the tunnels.  A lit lantern casts a orange light
+in this tunnel, showing cages to the west, and side branches leading north and
+east.
+~
+#EXIT
+Direction north~
+ToRoom    3829
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3832
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3831
+Key       3803
+Desc      You hear the pathetic whimpers of slaves.
+~
+Keywords  cage~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 3812 1 3830 -1 -1 -1 100
+  Reset E 3818 99 16 100
+  Reset E 3814 99 14 100
+  Reset E 3814 99 15 100
+  Reset G 3803 99 100
+Reset O 3805 9 3830 -1 -1 -1 100
+  Reset P 0 3823 9 3805 100
+Reset D 3830 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3831
+Name      A Large Cage~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a large, unlit cage.  It smells bad here, and you here squishing
+sounds as you tread around in this room.  The exit is to the east.
+~
+#EXIT
+Direction east~
+ToRoom    3830
+Key       3803
+Keywords  cage~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 3813 3 3831 -1 -1 -1 100
+Reset M 3813 3 3831 -1 -1 -1 100
+Reset M 3813 3 3831 -1 -1 -1 100
+Reset D 3831 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3832
+Name      A Bend in the Tunnels~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a bend in the tunnels.  A lantern blazes on a low ceiling.  The 
+exits are to the west and south.
+~
+#EXIT
+Direction south~
+ToRoom    3833
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3830
+#ENDEXIT
+
+Reset O 3805 9 3832 -1 -1 -1 100
+  Reset P 0 3822 9 3805 100
+#ENDROOM
+
+#ROOM
+Vnum      3833
+Name      A T-Intersection in the Tunnels~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a T-intersection in the tunnels.  A lantern shows exits in the
+cardinal directions.
+~
+#EXIT
+Direction north~
+ToRoom    3832
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3835
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3836
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3834
+#ENDEXIT
+
+Reset O 3805 9 3833 -1 -1 -1 100
+  Reset P 0 3822 9 3805 100
+#ENDROOM
+
+#ROOM
+Vnum      3834
+Name      An End of the Tunnel~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are at an end of the tunnel, and you can see signs of digging here.  The
+walls glitter from a lantern hung on a wall.  The exit is to the east.
+~
+#EXIT
+Direction east~
+ToRoom    3833
+#ENDEXIT
+
+Reset O 3805 9 3834 -1 -1 -1 100
+  Reset P 0 3823 9 3805 100
+#ENDROOM
+
+#ROOM
+Vnum      3835
+Name      An End of the Tunnel~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are at an end of the tunnel, and you can see signs of digging here.  The
+walls glitter from a lantern hung on a wall.  The exit is to the west.
+~
+#EXIT
+Direction west~
+ToRoom    3833
+#ENDEXIT
+
+Reset O 3805 9 3835 -1 -1 -1 100
+  Reset P 0 3822 9 3805 100
+Reset M 3814 2 3835 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3836
+Name      The Tunnel~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in the tunnels.  A high lantern shows exits to the north and south.
+The walls glitter slightly.
+~
+#EXIT
+Direction north~
+ToRoom    3833
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3837
+#ENDEXIT
+
+Reset O 3805 9 3836 -1 -1 -1 100
+  Reset P 0 3822 9 3805 100
+#ENDROOM
+
+#ROOM
+Vnum      3837
+Name      An End of the Tunnel~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are at an end of the tunnels.  A high lantern shows a large silver door to
+the south.  The door seems to glow.  The tunnel leads back north.  There is a
+large sign here, scribbled on it, 'Do NOT Enter!'
+~
+#EXIT
+Direction north~
+ToRoom    3836
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3838
+Key       3801
+Desc      The sign says, 'Do NOT Enter!'
+~
+Keywords  door silver~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset O 3805 9 3837 -1 -1 -1 100
+  Reset P 0 3823 9 3805 100
+Reset M 3814 2 3837 -1 -1 -1 100
+Reset D 3837 2 2 100 -2
+#EXDESC
+ExDescKey    sign~
+ExDesc       The sign says, 'Do NOT Enter!'
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      3838
+Name      A Small Shrine~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small room.  For some reason, this room is much cleaner
+than the others in this decrepit area.  A candle burns smokelessly on a table
+in the middle of the room, and a small shrine is against the far wall.  The
+occupants of this area must avoid this room for some reason.  Some words are
+inscribed next to the shrine.  The exit is to the north.  A strange portal is
+to the west.
+~
+#EXIT
+Direction north~
+ToRoom    3837
+Key       3801
+Keywords  door~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3839
+Desc      The portal has no keyhole, and you see no way to get through it.  You have the
+feeling that this portal takes you to a different plane of existence!
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset O 3805 9 3838 -1 -1 -1 100
+  Reset P 0 3823 9 3805 100
+Reset O 3812 9 3838 -1 -1 -1 100
+  Reset P 0 3819 9 3812 100
+Reset D 3838 0 2 100 -2
+Reset D 3838 3 2 100 -2
+#EXDESC
+ExDescKey    words inscription inscribed walls wall~
+ExDesc       The inscribed words say,
+
+My Goddess Icaza,
+     My love for you shall never end, for you are the love of my life.  I
+dedicate this room to you, and I bless it so that no evil may ever enter this
+room. 
+					Your Mortal Paladin,
+					Hatchet
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      3839
+Name      On the Other Side of the Dimensional Portal~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are on the other side of this dimensional portal!  You look around, and
+see walls made of a golden substance harder than titanium and atlantium.  A
+divine light illuminates this room.  To the west, you see the rest of this
+estate, and to the east, you see a small room with a shrine through a hazy
+portal.
+~
+#EXIT
+Direction east~
+ToRoom    3838
+Desc      You see the small room with the shrine.~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3840
+#ENDEXIT
+
+Reset D 3839 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3840
+Name      The Living Room of Icaza and Hatchet~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a large room.  Walls made of a golden substance harder than titanium
+and atlantium rise high to the ceilings.  Paintings, tapestries, and other
+beautiful objects of art merge into the walls, as if they are part of the
+walls themselves.  Two large thrones are in the center of this room.  A large
+door wrought from a platinum-like metal is to the north, and an equally large
+door wrought from a gold-like metal is to the south.  The other exit from this
+room is the hallway to the east, and a mysterious portal to the west.
+~
+#EXIT
+Direction north~
+ToRoom    3841
+Desc      The door looks impenetrable by mundane means.  A small sign says, 'Hatchet'.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3839
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3842
+Desc      The door looks impenetrable by mundane means.  A small sign says, 'Icaza'.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset M 3815 1 3840 -1 -1 -1 100
+Reset M 3816 1 3840 -1 -1 -1 100
+Reset D 3840 0 2 100 -2
+Reset D 3840 2 2 100 -2
+#EXDESC
+ExDescKey    portal west~
+ExDesc       This portal seems impenetrable by mortal means.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      3841
+Name      Hatchet's Study~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in a small, cluttered room.  You are amazed by the amount of trash in
+this room, especially compared to the large, opulent room this is connected to.
+A picture of the fair lady Icaza is on a wall, next to a Cindy Crawford
+calendar.  You can hear the song 'Somewhere Out There' in the background.  The
+exit is to the south.
+~
+#EXIT
+Direction south~
+ToRoom    3840
+#ENDEXIT
+
+Reset M 3803 1 3841 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3842
+Name      Icaza's Study~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in a small room.  A large bed is in the corner, and a wooden rocker
+creaks of it's own will on the hardwood floors.  You can see a stuffed ducky
+and a stuffed piggie on the bed.  This bed looks like it's for display use
+only, as the owner of this room must sleep somewhere else.  You can hear the 
+ringing of a small bell in the background.  The exit is to the north.
+~
+#EXIT
+Direction north~
+ToRoom    3840
+#ENDEXIT
+
+Reset M 3802 1 3842 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3899
+Name      Icaza's and Hatchet's Bedroom~
+Sector    indoors~
+Flags     private~
+Stats     0 0 0 0 0
+Desc      You are in a large room.  Strangely, you see THREE beds in this room, a large
+brass bed, an equally large waterbed, and a smaller low futon.  All three look
+used, as if the owners of this room use all three beds depending on their 
+moods.  The smell of roses and perfumes permeates this room, and you can hear 
+some soft jazzy music (Kenny G?) in the background.  There is no mortal exit 
+from this room.
+~
+#ENDROOM
+
+#ENDAREA

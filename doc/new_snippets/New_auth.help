@@ -1,0 +1,24 @@
+AUTHORIZE
+Syntax: authorize <name>
+Syntax: authorize <name> no
+Syntax: authorize <name> name
+Syntax: authorize fixlist
+
+This code runs the authorization system. It should be set to a reasonably
+low level, so that your lower immortals can handle authorizing names.
+A player who is authorized by the code offline will be permitted to
+gain levels up to level 5 before being required to obtain authorization.
+ 
+To approve a name, simply type 'authorize <name>' and the name will be
+approved.
+ 
+To deny a name, and remove the associated player file type:
+'authorize <name> no'. This option should only be used for a name that 
+is considered extremely offensive, this option will delete the pfile.
+ 
+To have the player change names, type: 'authorize <name> name'.
+
+If the authorize list is somehow broken, IE: a name can't be approved
+or denied, type: 'authorize fixlist'.
+ 
+See also: NAME

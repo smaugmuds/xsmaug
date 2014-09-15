@@ -1,0 +1,5160 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Mount Doom~
+Author          Yaegar/Kurgan~
+Vnums           14700 14806
+Continent       one~
+Coordinates     0 0
+Dates           1403837156 1403837156
+Ranges          55 115 0 115
+ResetFreq       15
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      14700
+Keywords  lord krothgar~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the Lord Krothgar~
+Long      The Lord Krothgar glares balefully at you.
+~
+Desc      Krothgar, standing at over eight feet tall and clad in full spiked black
+plate mail, is an imposing... man. It is said his fists have the power to
+rend the very earth asunder if he is angered. It is small wonder the dark
+powers have chosen him as their fell agent on Anon.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    65 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis detect_magic sanctuary infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14701
+Keywords  death knight~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a death knight~
+Long      A death knight gazes evilly at you.
+~
+Desc      This fellow and his comrades are servants of the demon lord Marmandes, and
+will take only his orders, despite the fact that Krothgar could probably
+crush him (and definitely them) with little effort. Krothgar tolerates their
+presence in honor of the alliance he has forged with the dark powers to
+facilitate the conquest of Anon.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    56 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14702
+Keywords  iron golem~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     an iron golem~
+Long      An iron golem stands ready to rend his master's enemies apart.
+~
+Desc      This soulless automaton was created by Krothgar's fell scientist-mages to
+serve him as a bodyguard (for appearance's sake only- he scarcely has need
+of one) and an executioner. It will kill on a command.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14703
+Keywords  marmandes demon prince~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     the demon prince Marmandes~
+Long      The demon prince Marmandes watches you curiously.
+~
+Desc      Marmandes has been sent here by his evil masters to observe and aid their
+servant Krothgar, and as such he will prefer to avoid direct combat, being
+greatly weaker on this plane than on his native, and being eager to see how
+Krothgar performs. This does not mean that he will fail to defend himself
+to the best of his considerable abilities if the need arises.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    60 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14704
+Keywords  axtraxes arch mage~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     axtraxes~
+Long      A vile arch mage screams at your intrusion and attacks!
+~
+Desc      This foul-tempered, evil man is Krothgar's magical assistant and adviser,
+and in charge of the dark lord's impressive force of mages. He is infuriated
+at your untimely interruption and reacts aggressively.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    54 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  detect_invis detect_magic sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14705
+Keywords  high priest~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     an evil high priest~
+Long      An evil high priest is angered by your sacrilege!
+~
+Desc      You have interrupted this foul priest of unspeakable gods during a very
+critical ceremony! He is extremely angry, and so will his worshippers be...
+He is a total fanatic and will battle to the death.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    54 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14706
+Keywords  elite guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     an elite guard~
+Long      An elite guard attempts to prevent you proceeding further.
+~
+Desc      This fellow is clad in full body spiked black plate mail just like his lord,
+and carries a HUGE spiked morning star, which he swings casually like it was
+but a wooden stick. He cries out upon spotting you, and prepares for combat.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14707
+Keywords  destrier~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a destrier~
+Long      A destrier, mount of some evil knight, snorts angrily at you.
+~
+Desc      This mammoth horse must weigh double any other equine steed you have ever
+seen. Its jet black coat seems to glow with an inner evil, and you gasp in
+astonishment at the satanic gleam in its dark red eyes.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14708
+Keywords  evil priest~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     an evil priest~
+Long      An evil priest screams in fanatical fury!
+~
+Desc      This foul creature is one of the evil priests of the dark lord, and he is
+keen to send your soul to him!
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14709
+Keywords  scientist mage~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     an evil scientist mage~
+Long      An evil scientist mage roars in fury as you spoil his experiment!
+~
+Desc      You have burst in at a very inappropriate time, and spoiled years of work.
+Good ;)
+
+However, the vile mage who is now drooling insanely seems a little upset...
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  detect_magic infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14710
+Keywords  blackguard guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     a member of the blackguard~
+Long      A member of the blackguard charges toward you.
+~
+Desc      This guard is a meber of the blackguard, the fanatical warriors who make up
+the bulk of Lord Krothgar's evil army.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    48 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14711
+Keywords  red dragon~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_fire~
+Short     a red dragon~
+Long      A red dragon prepares to incinerate you.
+~
+Desc      This dragon is one of Krothgar's five favorites, and is loyal to its master.
+Huge teeth protrude from a mouth capable of spewing forth destructive matter
+and baleful eyes gleam dangerously from above this maw directly at you. You
+regret your intrusion.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    57 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14712
+Keywords  black dragon~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_acid~
+Short     a black dragon~
+Long      A black dragon prepares to incinerate you.
+~
+Desc      This dragon is one of Krothgar's five favorites, and is loyal to its master.
+Huge teeth protrude from a mouth capable of spewing forth destructive matter
+and baleful eyes gleam dangerously from above this maw directly at you. You
+regret your intrusion.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    48 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14713
+Keywords  white dragon~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_frost~
+Short     a white dragon~
+Long      A white dragon prepares to incinerate you.
+~
+Desc      This dragon is one of Krothgar's five favorites, and is loyal to its master.
+Huge teeth protrude from a mouth capable of spewing forth destructive matter
+and baleful eyes gleam dangerously from above this maw directly at you. You
+regret your intrusion.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14714
+Keywords  blue dragon~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_lightning~
+Short     a blue dragon~
+Long      A blue dragon prepares to incinerate you.
+~
+Desc      This dragon is one of Krothgar's five favorites, and is loyal to its master.
+Huge teeth protrude from a mouth capable of spewing forth destructive matter
+and baleful eyes gleam dangerously from above this maw directly at you. You
+regret your intrusion.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    54 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14715
+Keywords  green dragon~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_gas~
+Short     a green dragon~
+Long      A green dragon prepares to incinerate you.
+~
+Desc      This dragon is one of Krothgar's five favorites, and is loyal to its master.
+Huge teeth protrude from a mouth capable of spewing forth destructive matter
+and baleful eyes gleam dangerously from above this maw directly at you. You
+regret your intrusion.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    51 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14716
+Keywords  fire elemental~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_fire~
+Short     a fire elemental~
+Long      A fire elemental burns everything in sight.
+~
+Desc      This magically-summoned being serves the mages of the tower- sometimes.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    53 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14717
+Keywords  efreeti~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     an efreeti~
+Long      An efreeti hovers above an iron flask here.
+~
+Desc      This being, summoned from the Elemental Plane of Fire by the flask on the
+floor, is not happy, for the power of the flask has been exhausted and he
+has no way of returning home. He reacted by slaying first the summoner, and
+now he will try to slay you!
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    49 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_evil infrared protect flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14718
+Keywords  shedu~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a shedu~
+Long      A shedu sits in a corner of this room.
+~
+Desc      This unfortunate creature was captured by agents of Krothgar, who brought it
+here to amuse him. He occasionally spends time torturing it, but has grown
+bored and will slay it soon.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    52 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14719
+Keywords  illithid~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     an evil illithid~
+Long      An evil illithid eyes your cranium off.
+~
+Desc      This foul mind flayer wants brains, and since Krothgar's followers aren't the
+brightest of creatures it is near starvation. You are a nice surprise...
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  detect_invis detect_hidden protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14720
+Keywords  slave~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a wretched slave~
+Long      A wretched slave awaits sacrifice.
+~
+Desc      This pathetic wretch has lost all hope. Squatting naked and shivering in the
+corner of the cell he gibbers insanely and begs for mercy.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14721
+Keywords  slave~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a wretched slave~
+Long      A female slave will soon "service" Krothgar's legions.
+~
+Desc      This pathetic wretch has lost all hope. Squatting naked and shivering in the
+corner of the cell she gibbers insanely and begs for mercy.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14722
+Keywords  mutant~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a mutant~
+Long      A hideous mutant drools and screams insanely.
+~
+Desc      These unnatural beings are foul products of the insane experiments of the
+scientist mages upon captured slaves in an attempt to create the perfect
+fighting race, an experiment finally realised in Korgthar's elite guard.
+These failures have been condemned to a dismal life in the pits.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_hidden infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14723
+Keywords  hydra~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_any~
+Short     a twelve-headed hydra~
+Long      A 12 headed hydra roars at you.
+~
+Desc      This mighty creature has allied with Krothgar in exchange for a steady diet
+of humans and elves. It will fight ferociously to defend the home of its
+meal ticket.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    52 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14724
+Keywords  quasit~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a quasit~
+Long      A quasit squeaks aggressively at you.
+~
+Desc      This angry creature is the familiar of some mage or another. It is angered
+at being seen.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  invisible detect_invis detect_hidden sneak hide flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14725
+Keywords  succubus~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a succubus~
+Long      A succubus smiles seductively at you.
+~
+Desc      This lustful demoness is the current concubine of Korgthar, though her
+appetite is insatiable and she is always on the lookout for new prey... err
+... lovers.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    49 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  detect_invis sanctuary infrared flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14726
+Keywords  earth elemental~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     an earth elemental~
+Long      An earth elemental smashes everything in sight.
+~
+Desc      This magically-summoned being serves the mages of the tower- sometimes.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    53 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14727
+Keywords  water elemental~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a water elemental~
+Long      A water elemental inundates everything in sight.
+~
+Desc      This magically-summoned being serves the mages of the tower- sometimes.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    53 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14728
+Keywords  air elemental~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_gas~
+Short     an air elemental~
+Long      An air elemental blows over everything in sight.
+~
+Desc      This magically-summoned being serves the mages of the tower- sometimes.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    53 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14729
+Keywords  hell hound hellhound~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_fire~
+Short     a hellhound~
+Long      A hellhound lopes toward you.
+~
+Desc      Breathing fire and reeking of brimstone, this unholy red-hued hound is indeed
+a terrible sight to behold.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea mobinvis~
+Affected  detect_invis infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14730
+Keywords  fire giant~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a fire giant~
+Long      A fire giant waves his sword menacingly at you.
+~
+Desc      These fellows are guardians of the massive volcano known as Mount Doom, upon
+which rests the inpregnable fortress of their master, Lord Krothgar. They
+fight fearlessly to defend it.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    51 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea mobinvis~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14731
+Keywords  frost giant~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a frost giant~
+Long      A frost giant glares icily at you.
+~
+Desc      These emissaries are here to form an alliance with the forces of Mount Doom.
+They do not take kindly to intrusions.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    48 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14732
+Keywords  hill giant~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a hill giant~
+Long      A hill giant grunts at you.
+~
+Desc      These fellows are guardians of the lands surrounding the massive volcano
+known as Mount Doom, upon which rests the inpregnable fortress of their
+master, Lord Krothgar. They fight fearlessly to defend it.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea mobinvis~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14733
+Keywords  cloud giant~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a cloud giant~
+Long      A cloud giant laughs mercilessly at you. Hmph.
+~
+Desc      These emissaries are here to form an alliance with the forces of Mount Doom.
+They do not take kindly to intrusions.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    54 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14734
+Keywords  ogre~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_janitor~
+Short     an ogre servant~
+Long      An ogre servant serves the giant soldiers.
+~
+Desc      This fellow may seem huge to you, but by giant standards he's a veritable
+runt, as they never cease to point out to him as he makes his way about,
+serving food and drinks in between kicks to the head.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    30 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14735
+Keywords  ogre mage~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     an ogre mage~
+Long      An ogre mage glares suspicously at you.
+~
+Desc      These eastern cousins of the ogres and giants of the west have been invited
+here to form an alliance with the troops of Krothgar. They are deeply
+suspicious of the arrangement, however, and view all comers with the same
+degree of caution, but not aggression.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    49 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_magic sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14736
+Keywords  troll~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a troll~
+Long      A troll foot soldier yawns loudly.
+~
+Desc      These grotesques were bred for combat, not sentry duty, and the boredom is
+almost killing them. They don't even notice your presence.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    48 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14737
+Keywords  ettin~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     an ettin~
+Long      An ettin turns both its heads to stare at you.
+~
+Desc      This two-headed giant is a guard of the more important inhabitants of the
+fortress. He takes his duties very seriously.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    52 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14738
+Keywords  chief assassin~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the chief assassin~
+Long      The chief assassin smiles as she draws her swords.
+~
+Desc      This beauty is actually the lethal head of Krothgar's elite assassins, who
+have achieved more for his cause than a dozen armies. She asks for no quarter,
+and nor does she give any herself.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    53 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14739
+Keywords  assassin~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     an assassin~
+Long      An assassin prepares for combat.
+~
+Desc      This woman is a member of Krothgar's assassin company, and has slain more
+men and women than any one hundred of his regular soldiers.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    47 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14740
+Keywords  drow ambassador~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a drow ambassador~
+Long      A drow ambassador snarls at you.
+~
+Desc      This priestess is here to secure an alliance between her people and Krothgar's
+forces. She is not happy about your intrusion into this matter.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  detect_invis detect_magic sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14741
+Keywords  warg~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a warg~
+Long      A hairy warg patrols for trespassers here.
+~
+Desc      This beast is a servant of the hill giants who patrol the plains of Doom.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    42 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea mobinvis~
+Affected  detect_hidden infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14742
+Keywords  ghoul~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a bloodthirsty ghoul~
+Long      A bloodthirsty ghoul slavers uncontrollably.
+~
+Desc      This hideous undead wants to feast on your flesh!
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    46 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea mobinvis~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14743
+Keywords  vampire~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a vampire~
+Long      A vampire smiles at you...
+~
+Desc      This vamp is treacherous and deadly. You can see why Krothgar likes having
+her around...
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    52 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  detect_invis sanctuary infrared flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14744
+Keywords  lich~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     an ancient lich~
+Long      An ancient lich awakens from his slumber and looks around.
+~
+Desc      Even the mages of Krothgar know not of the existence of this secret tomb.
+Buried within is the old lord of the Fortress, who was imprisoned in here
+by the forces of Good ages ago. And now you have woken him up. Way to go
+slick.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    60 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary infrared protect flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14745
+Keywords  stone golem~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a stone golem~
+Long      A stone golem stands ready to rend his master's enemies apart.
+~
+Desc      This soulless automaton was created by Krothgar's fell evil priests to
+serve him as a bodyguard (for appearance's sake only- he scarcely has need
+of one) and an executioner. It will kill on a command.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14746
+Keywords  keeper~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     The keeper of the mutant pit~
+Long      The Keeper of the Mutant Pit snarls angrily at you.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    46 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14747
+Keywords  naga princess~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a naga princess~
+Long      A princess of the Naga glares haughtily at you.
+~
+Desc      This snake with a woman's head seems unimpressed by your intrusion, but
+she refrains from attacking, hoping that the guards of the castle will see
+to you so she doesn't have to expend energy fighting.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    51 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis sanctuary infrared~
+#ENDMOBILE
+
+#OBJECT
+Vnum      14700
+Keywords  krothgar armor~
+Type      armor~
+Short     the armor of Lord Krothgar~
+Long      The armor of Lord Krothgar lies here.~
+Flags     hum magic nodrop antigood antineutral evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     25 0 -2 9999 0 None None None
+AffData strength 2 -1 -1 0
+AffData constitution 2 -1 -1 0
+AffData armor -15 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData save_breath -1 -1 -1 0
+AffData save_spell -1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14701
+Keywords  krothgar sword~
+Type      weapon~
+Short     the sword of Lord Krothgar~
+Long      The sword of Lord Krothgar is here.~
+Flags     hum magic nodrop antigood antineutral evil~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
+AffData hit 50 -1 -1 0
+AffData hitroll 10 -1 -1 0
+AffData damroll 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14702
+Keywords  krothgar shield~
+Type      armor~
+Short     the shield of Lord Krothgar~
+Long      The shield of Lord Krothgar is here.~
+Flags     hum magic nodrop antigood antineutral evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
+AffData armor -30 -1 -1 0
+AffData save_breath -3 -1 -1 0
+AffData save_spell -3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14703
+Keywords  krothgar helm~
+Type      armor~
+Short     the cursed helm of Lord Krothgar~
+Long      The cursed helm of Lord Krothgar is here.~
+Flags     hum magic nodrop antigood antineutral noremove evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData wisdom -5 -1 -1 0
+AffData dexterity -5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14704
+Keywords  two handed sword~
+Type      weapon~
+Short     a two-handed sword~
+Long      A two-handed sword lies here.~
+Flags     hum magic antigood evil~
+WFlags    take~
+Values    0 0 0 8 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData strength 3 -1 -1 0
+AffData armor 10 -1 -1 0
+AffData hitroll 6 -1 -1 0
+AffData damroll 6 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14705
+Keywords  burnt helm~
+Type      armor~
+Short     a burnt helm~
+Long      A burnt helm painted with a hideous visage lies here.~
+Flags     hum magic antigood noremove evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData mana 20 -1 -1 0
+AffData hit 20 -1 -1 0
+AffData move 20 -1 -1 0
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14706
+Keywords  iron fist~
+Type      weapon~
+Short     the iron fist~
+Long      The legendary iron fist lies here.~
+Flags     hum magic antigood noremove evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 40000 -2 9999 0 None None None
+AffData intelligence -2 -1 -1 0
+AffData armor 10 -1 -1 0
+AffData damroll 8 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14707
+Keywords  barbed flail~
+Type      weapon~
+Short     a demon's barbed flail~
+Long      A demon's barbed flail lies here.~
+Flags     hum magic antigood evil~
+WFlags    take~
+Values    0 0 0 4 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll 6 -1 -1 0
+AffData damroll 6 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14708
+Keywords  flaming spear~
+Type      pipe~
+Short     a flaming spear~
+Long      A flaming spear burns into the ground here.~
+Flags     glow hum magic antigood antiwarrior evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData hitroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14709
+Keywords  staff power~
+Type      staff~
+Short     a staff of power~
+Long      A staff of power has been left here.~
+Flags     glow magic~
+WFlags    take~
+Values    54 11 11 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData armor -20 -1 -1 0
+Spells       'energy drain'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14710
+Keywords  robes archmage~
+Type      bloodstain~
+Short     robes of the archmage~
+Long      The robes of the archmage are crumpled up in a corner here.~
+Flags     glow magic~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData mana 50 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14711
+Keywords  vial dust~
+Type      potion~
+Short     a vial of magic dust~
+Long      A vial of magic dust is here.~
+Flags     glow magic~
+WFlags    take~
+Values    54 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'heal' 'heal' 'heal'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14712
+Keywords  dagger~
+Type      weapon~
+Short     a sacrifical dagger~
+Long      A sacrificial dagger is stuck in the ground here.~
+Flags     antigood evil~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14713
+Keywords  robes~
+Type      armor~
+Short     the high priest's robes~
+Long      The high priest's robes lie here.~
+Flags     antigood evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData dexterity 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14714
+Keywords  mask~
+Type      armor~
+Short     the high priest's death mask~
+Long      The high priest's ceremonial mask is here.~
+Flags     antigood evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData constitution 3 -1 -1 0
+AffData hit 20 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14715
+Keywords  spiked plate mail~
+Type      armor~
+Short     a suit of spiked plate mail~
+Long      A suit of spiked plate mail has been foolishly discarded here.~
+Flags     hum antigood evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+AffData armor -15 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14716
+Keywords  morning star~
+Type      weapon~
+Short     a huge morning star~
+Long      A huge morning star is buried in the ground here.~
+Flags     hum magic antigood evil~
+WFlags    take~
+Values    0 0 0 8 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
+AffData hitroll -5 -1 -1 0
+AffData damroll 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14717
+Keywords  helm~
+Type      armor~
+Short     a dark helm~
+Long      A dark helm lies here.~
+Flags     hum antigood evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14718
+Keywords  dagger~
+Type      weapon~
+Short     a sacrifical dagger~
+Long      A sacrificial dagger is stuck in the ground here.~
+Flags     antigood evil~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14719
+Keywords  robes~
+Type      armor~
+Short     the priest's robes~
+Long      The priest's robes lie here.~
+Flags     antigood evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14720
+Keywords  mask~
+Type      armor~
+Short     the priest's death mask~
+Long      The priest's ceremonial mask is here.~
+Flags     antigood evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14721
+Keywords  mage robes~
+Type      armor~
+Short     the mage's robes~
+Long      Some dirty robes covered in chemical stains lie here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14722
+Keywords  wand~
+Type      wand~
+Short     a magic wand~
+Long      A magic wand is here.~
+Flags     glow magic~
+WFlags    take~
+Values    45 9 9 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'cause critical'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14723
+Keywords  elixir chemicals~
+Type      potion~
+Short     an elixir of noxious chemicals~
+Long      An elixir of noxious chemicals bubbles away here.~
+Flags     hum~
+WFlags    take~
+Values    45 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'poison' 'weaken' 'acid blast'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14724
+Keywords  dragon scale~
+Type      armor~
+Short     a dragon scale~
+Long      A huge dragon scale has been dropped here.~
+Flags     hum antigood evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData armor -18 -1 -1 0
+AffData save_breath -5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14725
+Keywords  tooth~
+Type      weapon~
+Short     a dragon tooth~
+Long      A dragon's tooth lies here.~
+Flags     hum antigood evil~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll 5 -1 -1 0
+AffData damroll 5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14726
+Keywords  claw~
+Type      armor~
+Short     dragon claws~
+Long      A pair of dragon claws is here.~
+Flags     hum antigood evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData intelligence -2 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData damroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14727
+Keywords  hide~
+Type      armor~
+Short     a dragon hide~
+Long      A dragon hide is piled up here.~
+Flags     hum antigood evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hit 15 -1 -1 0
+AffData armor -20 -1 -1 0
+AffData save_breath -2 -1 -1 0
+AffData save_spell -2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14728
+Keywords  brazier~
+Type      staff~
+Short     a bronze brazier~
+Long      A bronze brazier is here.~
+Flags     magic~
+WFlags    take~
+Values    53 1 1 -1 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+Spells       'summon'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14729
+Keywords  flask~
+Type      container~
+Short     an empty flask~
+Long      This flask has been drained of all magical properties.~
+WFlags    take~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14730
+Keywords  manacles~
+Type      armor~
+Short     a pair of manacles~
+Long      A pair of manacles lies here.~
+Flags     magic noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData intelligence -3 -1 -1 0
+AffData armor 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14731
+Keywords  robes~
+Type      armor~
+Short     an illithid's robes~
+Long      An illithid's robes lie here, discarded.~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData mana 25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14732
+Keywords  gem~
+Type      light~
+Short     a gem~
+Long      This gem pulses evilly.~
+Flags     glow antigood evil~
+WFlags    take~
+Values    0 0 -1 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
+AffData mana 20 -1 -1 0
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14733
+Keywords  chest~
+Type      container~
+Short     a chest~
+Long      A heavy chest rests here.~
+Values    10000 1 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14734
+Keywords  treasure~
+Type      treasure~
+Short     a great treasure~
+Long      A great treasure lies here.~
+Flags     glow~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     100 50000 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14735
+Keywords  bed~
+Type      furniture~
+Short     a luxurious bed~
+Long      A luxurious bed sits here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14736
+Keywords  silk~
+Type      treasure~
+Short     some expensive silk~
+Long      Some expensive silk has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 25000 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14737
+Keywords  stone~
+Type      staff~
+Short     a stone~
+Long      A stone is here.~
+Flags     magic~
+WFlags    take~
+Values    53 1 1 -1 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+Spells       'summon'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14738
+Keywords  bowl~
+Type      staff~
+Short     a bowl~
+Long      A bowl is here.~
+Flags     magic~
+WFlags    take~
+Values    53 1 1 -1 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+Spells       'summon'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14739
+Keywords  censer~
+Type      staff~
+Short     a censer~
+Long      A censer is here.~
+Flags     magic~
+WFlags    take~
+Values    53 1 1 -1 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+Spells       'summon'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14740
+Keywords  spiked collar~
+Type      armor~
+Short     a spiked collar~
+Long      A spiked collar rests here.~
+Flags     noremove evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData damroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14741
+Keywords  sword~
+Type      weapon~
+Short     a giant sword~
+Long      A giant sword rests here.~
+WFlags    take~
+Values    0 0 0 8 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
+AffData damroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14742
+Keywords  rock~
+Type      pipe~
+Short     a throwing rock~
+Long      A throwing rock lies on the ground here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
+AffData hitroll -4 -1 -1 0
+AffData damroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14743
+Keywords  club~
+Type      weapon~
+Short     a wooden club~
+Long      A normal wooden club lies here.~
+WFlags    take~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14744
+Keywords  collar~
+Type      armor~
+Short     a slave collar~
+Long      A slave collar lies here.~
+Flags     noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence -1 -1 -1 0
+AffData constitution -1 -1 -1 0
+AffData hit -10 -1 -1 0
+AffData armor 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14745
+Keywords  glaive~
+Type      weapon~
+Short     a glaive~
+Long      A glaive has been left propped up here.~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14746
+Keywords  potion~
+Type      potion~
+Short     a magical potion~
+Long      A magical potion rolls around on the floor here.~
+Flags     magic~
+WFlags    take~
+Values    49 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'armor' 'bless' 'shield'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14747
+Keywords  pole arm~
+Type      weapon~
+Short     a pole arm~
+Long      A pole arm lies here.~
+WFlags    take~
+Values    0 0 0 8 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll -2 -1 -1 0
+AffData damroll 6 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14748
+Keywords  chainmail~
+Type      armor~
+Short     a suit of black chainmail~
+Long      A tight-fitting suit of black chainmail lies here.~
+Flags     noremove evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData intelligence -2 -1 -1 0
+AffData armor -20 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14749
+Keywords  black sword~
+Type      weapon~
+Short     the black sword~
+Long      The black sword glows here.~
+Flags     glow magic antigood evil~
+WFlags    take~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData hitroll 8 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14750
+Keywords  blue sword~
+Type      weapon~
+Short     the blue sword~
+Long      The blue sword hums here.~
+Flags     hum magic antigood evil~
+WFlags    take~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData damroll 8 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14751
+Keywords  black robes~
+Type      armor~
+Short     black robes~
+Long      Some black robes with no special properties lie here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    robes~
+ExDesc       They look extraordinarily unencumbering.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      14752
+Keywords  vial poison~
+Type      potion~
+Short     a vial of poison~
+Long      A vial of poison is here.~
+WFlags    take~
+Values    47 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'blindness' 'cause critical' 'poison'
+#EXDESC
+ExDescKey    vial poison~
+ExDesc       It looks very deadly.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      14753
+Keywords  drow cloak~
+Type      armor~
+Short     a drow cloak~
+Long      A black Drow cloak is crumpled on the floor here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData save_breath -1 -1 -1 0
+AffData save_spell -1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14754
+Keywords  drow boots~
+Type      armor~
+Short     a pair of drow boots~
+Long      A pair of black drow boots is here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData move 50 -1 -1 0
+AffData armor -5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14755
+Keywords  drow chain chainmail~
+Type      armor~
+Short     a suit of drow chainmail~
+Long      A suit of finely crafted adamantite chainmail is here.~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14756
+Keywords  tentacle whip~
+Type      weapon~
+Short     a greater tentacle whip~
+Long      A rod with several writhing tentacles attached is here.
+~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 4 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll 4 -1 -1 0
+AffData damroll 6 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14757
+Keywords  tiara~
+Type      armor~
+Short     a tiara~
+Long      A tiara lies here.~
+Flags     magic antigood~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData mana 25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14758
+Keywords  key~
+Type      key~
+Short     a door key~
+Long      This key allows access to the upper levels.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      14700
+Name      Approaching the Plains of Mount Doom~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are heading directly toward Mount Doom, on a narrow path that leads to
+the desolate, monster-infested plains that surround it. This is the fell
+domain of Lord Krothgar, whose forbidding black fortress can be seen atop the
+peak of the extinct volcano called by humans Mount Doom. Armies of giants
+patrol the lower slopes, while evil mutants, mages and demons guard the
+fortress itself. Steeling yourself, you push on.
+~
+#EXIT
+Direction north~
+ToRoom    14704
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15423
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14701
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14708
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14702
+#ENDEXIT
+
+Reset M 14741 8 14701 -1 -1 -1 100
+  Reset E 14740 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14702
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14709
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14703
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14701
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14703
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14710
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14704
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14702
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14704
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14711
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14705
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14700
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14703
+#ENDEXIT
+
+Reset M 14742 8 14704 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14705
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14712
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14706
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14704
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14706
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14713
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14707
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14705
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14707
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14714
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14706
+#ENDEXIT
+
+Reset M 14741 8 14707 -1 -1 -1 100
+  Reset E 14740 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14708
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14715
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14709
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14701
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14709
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14716
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14710
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14702
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14708
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14710
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14717
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14711
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14703
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14709
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14711
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14718
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14712
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14704
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14710
+#ENDEXIT
+
+Reset M 14732 8 14711 -1 -1 -1 100
+  Reset E 14743 1 16 100
+  Reset G 14742 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14712
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14719
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14713
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14705
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14711
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14713
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14720
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14714
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14706
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14712
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14714
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14721
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14707
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14713
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14715
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14722
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14716
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14708
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14716
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14723
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14717
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14709
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14715
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14717
+Name      The Upper Slopes of Mount Doom~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are steadily drawing near the summit. The ground has become quite smooth
+here, to the point of sliperiness, and you stop more than once to regain your
+footing on the glassy obsidian that coats the upper slopes. The fortress
+of Lord Krogthar looms closer than ever now, and you mentally prepare
+yourself for the the upcoming battles. The foes you have fought so far have
+been minor compared to those to come.
+~
+#EXIT
+Direction north~
+ToRoom    14724
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14718
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14710
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14716
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14718
+Name      The Upper Slopes of Mount Doom~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are steadily drawing near the summit. The ground has become quite smooth
+here, to the point of sliperiness, and you stop more than once to regain your
+footing on the glassy obsidian that coats the upper slopes. The fortress
+of Lord Krogthar looms closer than ever now, and you mentally prepare
+yourself for the the upcoming battles. The foes you have fought so far have
+been minor compared to those to come.
+
+The fortress lies directly north of here.
+~
+#EXIT
+Direction north~
+ToRoom    14725
+Desc      THE FORTRESS~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14719
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14711
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14717
+#ENDEXIT
+
+Reset M 14729 4 14718 -1 -1 -1 100
+  Reset E 14740 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14719
+Name      The Upper Slopes of Mount Doom~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are steadily drawing near the summit. The ground has become quite smooth
+here, to the point of sliperiness, and you stop more than once to regain your
+footing on the glassy obsidian that coats the upper slopes. The fortress
+of Lord Krogthar looms closer than ever now, and you mentally prepare
+yourself for the the upcoming battles. The foes you have fought so far have
+been minor compared to those to come.
+~
+#EXIT
+Direction north~
+ToRoom    14726
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14720
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14712
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14718
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14720
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14727
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14721
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14713
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14719
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14721
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14728
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14714
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14720
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14722
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14729
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14723
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14715
+#ENDEXIT
+
+Reset M 14742 8 14722 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14723
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14730
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14724
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14716
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14722
+#ENDEXIT
+
+Reset M 14732 8 14723 -1 -1 -1 100
+  Reset E 14743 1 16 100
+  Reset G 14742 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14724
+Name      The Upper Slopes of Mount Doom~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are steadily drawing near the summit. The ground has become quite smooth
+here, to the point of sliperiness, and you stop more than once to regain your
+footing on the glassy obsidian that coats the upper slopes. The fortress
+of Lord Krogthar looms closer than ever now, and you mentally prepare
+yourself for the the upcoming battles. The foes you have fought so far have
+been minor compared to those to come.
+
+The Fortress lies directly east of here.
+~
+#EXIT
+Direction north~
+ToRoom    14731
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14725
+Desc      THE FORTRESSS~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14717
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14723
+#ENDEXIT
+
+Reset M 14729 4 14724 -1 -1 -1 100
+  Reset E 14740 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14725
+Name      Outside the Fortress of Lord Korgthar~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have finally reached the summit, and are standing beneath the gates of
+the Fortress, which you may climb up to by means of an iron staircase. You
+can sense many pairs of eyes upon you, and you wonder how far you will be
+permitted to go before Korgthar's forces combine and crush you.
+~
+#EXIT
+Direction north~
+ToRoom    14732
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14726
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14718
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14724
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    14750
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14726
+Name      The Upper Slopes of Mount Doom~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are steadily drawing near the summit. The ground has become quite smooth
+here, to the point of sliperiness, and you stop more than once to regain your
+footing on the glassy obsidian that coats the upper slopes. The fortress
+of Lord Krogthar looms closer than ever now, and you mentally prepare
+yourself for the the upcoming battles. The foes you have fought so far have
+been minor compared to those to come.
+
+The Fortress lies due west of here.
+~
+#EXIT
+Direction north~
+ToRoom    14733
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14727
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14719
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14725
+#ENDEXIT
+
+Reset M 14729 4 14726 -1 -1 -1 100
+  Reset E 14740 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14727
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14734
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14728
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14720
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14726
+#ENDEXIT
+
+Reset M 14732 8 14727 -1 -1 -1 100
+  Reset E 14743 1 16 100
+  Reset G 14742 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14728
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14735
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14721
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14727
+#ENDEXIT
+
+Reset M 14742 8 14728 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14729
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14736
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14730
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14722
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14730
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14737
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14731
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14723
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14729
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14731
+Name      The Upper Slopes of Mount Doom~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are steadily drawing near the summit. The ground has become quite smooth
+here, to the point of sliperiness, and you stop more than once to regain your
+footing on the glassy obsidian that coats the upper slopes. The fortress
+of Lord Krogthar looms closer than ever now, and you mentally prepare
+yourself for the the upcoming battles. The foes you have fought so far have
+been minor compared to those to come.
+~
+#EXIT
+Direction north~
+ToRoom    14738
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14732
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14724
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14730
+#ENDEXIT
+
+Reset M 14730 2 14731 -1 -1 -1 100
+  Reset E 14741 1 16 100
+  Reset G 14742 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14732
+Name      The Upper Slopes of Mount Doom~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are steadily drawing near the summit. The ground has become quite smooth
+here, to the point of sliperiness, and you stop more than once to regain your
+footing on the glassy obsidian that coats the upper slopes. The fortress
+of Lord Krogthar looms closer than ever now, and you mentally prepare
+yourself for the the upcoming battles. The foes you have fought so far have
+been minor compared to those to come.
+
+The Fortress lies due south of here.
+~
+#EXIT
+Direction north~
+ToRoom    14739
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14733
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14725
+Desc      THE FORTRESS~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14731
+#ENDEXIT
+
+Reset M 14729 4 14732 -1 -1 -1 100
+  Reset E 14740 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14733
+Name      The Upper Slopes of Mount Doom~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are steadily drawing near the summit. The ground has become quite smooth
+here, to the point of sliperiness, and you stop more than once to regain your
+footing on the glassy obsidian that coats the upper slopes. The fortress
+of Lord Krogthar looms closer than ever now, and you mentally prepare
+yourself for the the upcoming battles. The foes you have fought so far have
+been minor compared to those to come.
+~
+#EXIT
+Direction north~
+ToRoom    14740
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14734
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14726
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14732
+#ENDEXIT
+
+Reset M 14730 2 14733 -1 -1 -1 100
+  Reset E 14741 1 16 100
+  Reset G 14742 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14734
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14741
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14735
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14727
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14733
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14735
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14742
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14728
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14734
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14736
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14743
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14737
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14729
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14737
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14744
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14738
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14730
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14736
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14738
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14745
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14739
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14731
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14737
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14739
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14746
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14740
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14732
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14738
+#ENDEXIT
+
+Reset M 14732 8 14739 -1 -1 -1 100
+  Reset E 14743 1 16 100
+  Reset G 14742 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14740
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14747
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14741
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14733
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14739
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14741
+Name      The Foothills of Mount Doom~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to the base of the mountain. From here you may continue to
+slowly make your way up the mountain, or head back to the eerie plains below.
+The ground here is rocky and treacherous, dotted by small crevices in the
+volcanic rock and jagged shards of granite protrustions. The wind is even
+stronger here than on the plains, and you fancy you can hear voices and
+screams.
+~
+#EXIT
+Direction north~
+ToRoom    14748
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14742
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14734
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14740
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14742
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction north~
+ToRoom    14749
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14735
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14741
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14743
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction east~
+ToRoom    14744
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14736
+#ENDEXIT
+
+Reset M 14741 8 14743 -1 -1 -1 100
+  Reset E 14740 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14744
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction east~
+ToRoom    14745
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14737
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14743
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14745
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction east~
+ToRoom    14746
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14738
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14744
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14746
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction east~
+ToRoom    14747
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14739
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14745
+#ENDEXIT
+
+Reset M 14742 8 14746 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14747
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction east~
+ToRoom    14748
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14740
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14746
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14748
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction east~
+ToRoom    14749
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14741
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14747
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14749
+Name      The Plains of Mount Doom~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A chill wind blows across the desolate wastes, and you shiver uncomfortably
+as you proceed. The bones of past adventurers lay scattered across the
+hard ground, among rusted weapons and shards of jagged rock that resemble
+teeth. It almost looks as if the very earth had devoured them. But the
+sudden howl of a warg (or a ghoul) alerts you to the very real dangers
+lurking nearby and you press on.
+~
+#EXIT
+Direction south~
+ToRoom    14742
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14748
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    -1
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14749 4 1 100 -2
+Reset M 14741 8 14749 -1 -1 -1 100
+  Reset E 14740 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14750
+Name      Inside the Fell Fortress~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing inside the gates of the fortress, at a crossroads. The
+passages are remarkably plain for a den of evil- simply dressed grey flag
+stones on floor and walls, the monotony broken only by the occasional torch
+sconce or tattered tapestry. It is evident that this castle has known many
+inhabitants prior to its current ones.
+~
+#EXIT
+Direction north~
+ToRoom    14758
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14751
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14771
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14763
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14725
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14750 5 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14751
+Name      The Cell Block~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the prisoner of Krogthar are kept. There are not many cells, as the
+Lord Korgthar is not fond of taking prisoners (hassles, hassles...). If
+you think security is a little lax, think of what lurks outside to deter
+potentianl escapees...
+~
+#EXIT
+Direction north~
+ToRoom    14752
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14754
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14753
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14750
+#ENDEXIT
+
+Reset D 14751 0 1 100 -2
+Reset D 14751 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14752
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      A dank, dismal affair with little in the way of bedding or toilet facilities.
+The stench is actually quite horrendous and you find yourself eager to leave.
+~
+#EXIT
+Direction south~
+ToRoom    14751
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14752 2 1 100 -2
+Reset M 14720 8 14752 -1 -1 -1 100
+  Reset E 14730 1 10 100
+  Reset E 14744 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14753
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      A dank, dismal affair with little in the way of bedding or toilet facilities.
+The stench is actually quite horrendous and you find yourself eager to leave.
+~
+#EXIT
+Direction north~
+ToRoom    14751
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14753 0 1 100 -2
+Reset M 14721 8 14753 -1 -1 -1 100
+  Reset E 14730 1 10 100
+  Reset E 14744 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14754
+Name      The Cell Block~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the prisoner of Krogthar are kept. There are not many cells, as the
+Lord Korgthar is not fond of taking prisoners (hassles, hassles...). If
+you think security is a little lax, think of what lurks outside to deter
+potentianl escapees...
+~
+#EXIT
+Direction north~
+ToRoom    14755
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14757
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14756
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14751
+#ENDEXIT
+
+Reset D 14754 0 1 100 -2
+Reset D 14754 1 1 100 -2
+Reset D 14754 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14755
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      A dank, dismal affair with little in the way of bedding or toilet facilities.
+The stench is actually quite horrendous and you find yourself eager to leave.
+~
+#EXIT
+Direction south~
+ToRoom    14754
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14755 2 1 100 -2
+Reset M 14720 8 14755 -1 -1 -1 100
+  Reset E 14730 1 10 100
+  Reset E 14744 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14756
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      A dank, dismal affair with little in the way of bedding or toilet facilities.
+The stench is actually quite horrendous and you find yourself eager to leave.
+~
+#EXIT
+Direction north~
+ToRoom    14754
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14756 0 1 100 -2
+Reset M 14721 8 14756 -1 -1 -1 100
+  Reset E 14730 1 10 100
+  Reset E 14744 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14757
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      A dank, dismal affair with little in the way of bedding or toilet facilities.
+The stench is actually quite horrendous and you find yourself eager to leave.
+~
+#EXIT
+Direction west~
+ToRoom    14754
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14757 3 1 100 -2
+Reset M 14718 1 14757 -1 -1 -1 100
+  Reset E 14730 1 10 100
+  Reset E 14744 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      14758
+Name      Some Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing before a solid wooden door that leads to the quarters of
+some of the many types of troops that serve Krothgar.
+~
+#EXIT
+Direction north~
+ToRoom    14759
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14750
+#ENDEXIT
+
+Reset D 14758 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14759
+Name      An Ante-Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a well-furnished anteroom with doors leading in all four
+directions. No noise comes from behind any- they are quite solid and are
+effectively soundproof.
+~
+#EXIT
+Direction north~
+ToRoom    14761
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14762
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14758
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14760
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14759 0 1 100 -2
+Reset D 14759 1 1 100 -2
+Reset D 14759 2 1 100 -2
+Reset D 14759 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14760
+Name      Assassins' Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      In this room reside some of the assassins that serve Korthgar. He may not
+be the brightest of tyrants, but Krothgar was smart enough to work out it was
+easier to send a single assassin to slay a king and collapse an empire than
+it was to conquer it by brute force. His assassins live in comfort, as he
+values them highly.
+~
+#EXIT
+Direction east~
+ToRoom    14759
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14760 1 1 100 -2
+Reset M 14739 4 14760 -1 -1 -1 100
+  Reset E 14751 1 12 100
+  Reset E 14752 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14761
+Name      The Chief Assassin's Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered the quarters of the Chief of Krothgar's ruthlessly
+efficient assassins, and caught her in flagrante delicto with two naked men
+strapped to racks. She swears and draws her swords, making no attempt to
+cover herself, slaying her slaves before moving to confront you.
+~
+#EXIT
+Direction south~
+ToRoom    14759
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14761 2 1 100 -2
+Reset M 14738 1 14761 -1 -1 -1 100
+  Reset E 14749 1 16 100
+  Reset E 14750 1 18 100
+#ENDROOM
+
+#ROOM
+Vnum      14762
+Name      Assassins' Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      In this room reside some of the assassins that serve Korthgar. He may not
+be the brightest of tyrants, but Krothgar was smart enough to work out it was
+easier to send a single assassin to slay a king and collapse an empire than
+it was to conquer it by brute force. His assassins live in comfort, as he
+values them highly.
+~
+#EXIT
+Direction west~
+ToRoom    14759
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14762 3 1 100 -2
+Reset M 14739 4 14762 -1 -1 -1 100
+  Reset E 14751 1 12 100
+  Reset E 14752 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14763
+Name      Some Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing before a solid wooden door that leads to the quarters of
+some of the many types of troops that serve Krothgar.
+~
+#EXIT
+Direction east~
+ToRoom    14750
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14764
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14763 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14764
+Name      A Corridor~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are advancing along a dark corridor that leads to the quarters of Lord
+Krothgar's blackguard.
+~
+#EXIT
+Direction north~
+ToRoom    14767
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14763
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14765
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14764 1 1 100 -2
+Reset D 14764 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14765
+Name      The Keeper's Chamber~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Here resides the keeper of the Mutant Pit, where the failed experiments of
+the scientist mages are kept to do away with prisoners or insolent guards.
+He likes his job, and isn't about to let you hurt his mutants.
+~
+#EXIT
+Direction north~
+ToRoom    14764
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14766
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14765 0 1 100 -2
+Reset D 14765 5 1 100 -2
+Reset M 14746 1 14765 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14766
+Name      The Mutant Pit~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Ack! You're in the mutant pit! Surrounded by gore, excrement, mucous, vomit
+and the remains of dying mutants, you gag and choke and struggle to get out,
+only to find your way blocked by several mutants...
+~
+#EXIT
+Direction up~
+ToRoom    14765
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14766 4 1 100 -2
+Reset M 14722 6 14766 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14767
+Name      A Corridor~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are advancing along a dark corridor that leads to the quarters of Lord
+Krothgar's blackguard.
+~
+#EXIT
+Direction south~
+ToRoom    14764
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14768
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14767 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14768
+Name      The Guard Common Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Doors lead in all directions from this messy rec room. Blood, beer and food
+stain the straw-covered floor while decomposing human, orc and ogre corpse
+hang from hooks in the ceiling, evidently used as practice dummies.
+~
+#EXIT
+Direction north~
+ToRoom    14770
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14767
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14769
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14779
+Key       14758
+Desc      This door reads- "Upper level access. Authorised personnel only!~
+Keywords  door~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14806
+#ENDEXIT
+
+Reset D 14768 0 1 100 -2
+Reset D 14768 1 1 100 -2
+Reset D 14768 2 1 100 -2
+Reset D 14768 3 2 100 -2
+Reset M 14710 8 14768 -1 -1 -1 100
+  Reset E 14715 1 5 100
+  Reset E 14716 1 16 100
+  Reset E 14717 1 6 100
+  Reset G 14758 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14769
+Name      Guard Quarters~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This rooms is full of messy bunks and snoring guards. Dice and cards are
+scattered across the filthy stone floor, and rats gnaw at the boots of the
+guards.
+~
+#EXIT
+Direction north~
+ToRoom    14768
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14769 0 1 100 -2
+Reset M 14710 8 14769 -1 -1 -1 100
+  Reset E 14715 1 5 100
+  Reset E 14716 1 16 100
+  Reset E 14717 1 6 100
+  Reset G 14758 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14770
+Name      Guard Quarters~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This rooms is full of messy bunks and snoring guards. Dice and cards are
+scattered across the filthy stone floor, and rats gnaw at the boots of the
+guards.
+~
+#EXIT
+Direction south~
+ToRoom    14768
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14770 2 1 100 -2
+Reset M 14710 8 14770 -1 -1 -1 100
+  Reset E 14715 1 5 100
+  Reset E 14716 1 16 100
+  Reset E 14717 1 6 100
+  Reset G 14758 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14771
+Name      Guest Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Down this southern corridor lie the guest rooms, where the many emissaries
+from the powerful races Krothgar is attempting to gain as allies currently
+reside. They frown upon intruders...
+~
+#EXIT
+Direction north~
+ToRoom    14750
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14772
+#ENDEXIT
+
+Reset M 14736 2 14771 -1 -1 -1 100
+  Reset E 14747 1 16 100
+  Reset E 14748 1 5 100
+#ENDROOM
+
+#ROOM
+Vnum      14772
+Name      Guest Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Down this southern corridor lie the guest rooms, where the many emissaries
+from the powerful races Krothgar is attempting to gain as allies currently
+reside. They frown upon intruders...
+~
+#EXIT
+Direction north~
+ToRoom    14771
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14774
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14775
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14773
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14772 1 1 100 -2
+Reset D 14772 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14773
+Name      Guest Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      These quarters are well-decorated, with well-preserved tapestries and rugs,
+and carved wooden furniture. Alliances with other powers are crucial to
+Krothgar's plans, and he is doing his best to impress his diabolical guests.
+~
+#EXIT
+Direction east~
+ToRoom    14772
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14773 1 1 100 -2
+Reset M 14731 3 14773 -1 -1 -1 100
+  Reset E 14741 1 16 100
+  Reset G 14742 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14774
+Name      Guest Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      These quarters are well-decorated, with well-preserved tapestries and rugs,
+and carved wooden furniture. Alliances with other powers are crucial to
+Krothgar's plans, and he is doing his best to impress his diabolical guests.
+~
+#EXIT
+Direction west~
+ToRoom    14772
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14774 3 1 100 -2
+Reset M 14733 1 14774 -1 -1 -1 100
+  Reset E 14741 1 16 100
+  Reset G 14742 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14775
+Name      Guest Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Down this southern corridor lie the guest rooms, where the many emissaries
+from the powerful races Krothgar is attempting to gain as allies currently
+reside. They frown upon intruders...
+~
+#EXIT
+Direction north~
+ToRoom    14772
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14777
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14778
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14776
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14775 1 1 100 -2
+Reset D 14775 2 1 100 -2
+Reset D 14775 3 1 100 -2
+Reset M 14737 1 14775 -1 -1 -1 100
+  Reset E 14741 1 16 100
+  Reset G 14742 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14776
+Name      Guest Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      These quarters are well-decorated, with well-preserved tapestries and rugs,
+and carved wooden furniture. Alliances with other powers are crucial to
+Krothgar's plans, and he is doing his best to impress his diabolical guests.
+~
+#EXIT
+Direction east~
+ToRoom    14775
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14776 1 1 100 -2
+Reset M 14735 2 14776 -1 -1 -1 100
+  Reset E 14745 1 16 100
+  Reset G 14746 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14777
+Name      Guest Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      These quarters are well-decorated, with well-preserved tapestries and rugs,
+and carved wooden furniture. Alliances with other powers are crucial to
+Krothgar's plans, and he is doing his best to impress his diabolical guests.
+~
+#EXIT
+Direction west~
+ToRoom    14775
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14777 3 1 100 -2
+Reset M 14740 1 14777 -1 -1 -1 100
+  Reset E 14753 1 12 100
+  Reset E 14754 1 8 100
+  Reset E 14755 1 5 100
+  Reset E 14756 1 16 100
+  Reset E 14757 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      14778
+Name      Guest Quarters~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      These quarters are well-decorated, with well-preserved tapestries and rugs,
+and carved wooden furniture. Alliances with other powers are crucial to
+Krothgar's plans, and he is doing his best to impress his diabolical guests.
+~
+#EXIT
+Direction north~
+ToRoom    14775
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14778 0 1 100 -2
+Reset M 14747 1 14778 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14779
+Name      The Fortress~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered the restricted area. Staircases run up and down from here,
+and a narrow passage stretches away to the west.
+~
+#EXIT
+Direction east~
+ToRoom    14768
+Key       14758
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14780
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    14793
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14787
+#ENDEXIT
+
+Reset D 14779 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14780
+Name      A Narrow Corridor~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This corridor runs through the center of the Fortress to the mage towers,
+on the western wall of the fortress. A junction lies to the west.
+~
+#EXIT
+Direction east~
+ToRoom    14779
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14781
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14781
+Name      A Junction~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You may head through doors to the north or south from here, or back east
+to the outer fortress. There is a sign on the south door, and a plaque on
+the northern.
+~
+#EXIT
+Direction north~
+ToRoom    14783
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14780
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14782
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14781 0 1 100 -2
+Reset D 14781 2 1 100 -2
+#EXDESC
+ExDescKey    sign~
+ExDesc       The sign reads-
+
+        The Quarters of the Archmage. Please do not enter. Important
+        experiment in progress. Leave messages with the guards.
+
+        - Axtraxes.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    plaque~
+ExDesc       The plaque reads-
+
+       "T H E   E L E M E N T A L   L A B O R A T O R I E S "
+
+       Keep out!
+
+       - Axtraxes.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      14782
+Name      The Quarters of the Archmage~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have barged into the quarters of Axtraxes, arch mage of Krothgar, and
+ruined his experiment. He's BOUND to be upset.
+~
+#EXIT
+Direction north~
+ToRoom    14781
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14782 0 1 100 -2
+Reset M 14704 1 14782 -1 -1 -1 100
+  Reset E 14709 1 17 100
+  Reset E 14710 1 12 100
+  Reset G 14711 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14783
+Name      The Elemental Laboratories~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This vast room extends in all directions. You see vats, urns, beakers, jars,
+alembics and a hundred other items scattered about on desks, benches, chairs
+and floors. Everything appears rather damaged, as if someone (or something)
+has recently gone berserk in here...
+~
+#EXIT
+Direction north~
+ToRoom    14785
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14786
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14781
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14784
+#ENDEXIT
+
+Reset D 14783 2 1 100 -2
+Reset M 14716 1 14783 -1 -1 -1 100
+  Reset G 14728 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14784
+Name      Western End of the Lab~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This vast room extends in all directions. You see vats, urns, beakers, jars,
+alembics and a hundred other items scattered about on desks, benches, chairs
+and floors. Everything appears rather damaged, as if someone (or something)
+has recently gone berserk in here...
+~
+#EXIT
+Direction east~
+ToRoom    14783
+#ENDEXIT
+
+Reset M 14726 1 14784 -1 -1 -1 100
+  Reset G 14737 0 100
+Reset M 14709 3 14784 -1 -1 -1 100
+  Reset E 14721 1 12 100
+  Reset E 14722 1 17 100
+  Reset G 14723 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14785
+Name      Northern End of the Lab~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This vast room extends in all directions. You see vats, urns, beakers, jars,
+alembics and a hundred other items scattered about on desks, benches, chairs
+and floors. Everything appears rather damaged, as if someone (or something)
+has recently gone berserk in here...
+~
+#EXIT
+Direction south~
+ToRoom    14783
+#ENDEXIT
+
+Reset M 14727 1 14785 -1 -1 -1 100
+  Reset G 14738 0 100
+Reset M 14709 3 14785 -1 -1 -1 100
+  Reset E 14721 1 12 100
+  Reset E 14722 1 17 100
+  Reset G 14723 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14786
+Name      Eastern End of the Lab~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This vast room extends in all directions. You see vats, urns, beakers, jars,
+alembics and a hundred other items scattered about on desks, benches, chairs
+and floors. Everything appears rather damaged, as if someone (or something)
+has recently gone berserk in here...
+~
+#EXIT
+Direction west~
+ToRoom    14783
+#ENDEXIT
+
+Reset M 14728 1 14786 -1 -1 -1 100
+  Reset G 14739 0 100
+Reset M 14709 3 14786 -1 -1 -1 100
+  Reset E 14721 1 12 100
+  Reset E 14722 1 17 100
+  Reset G 14723 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14787
+Name      The Lower Chambers~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered the lower levels of the Fortress, where hideous creatures
+lurk and evil priests engage in foul ceremonies to their demonic deities.
+~
+#EXIT
+Direction east~
+ToRoom    14788
+Desc      You see an ancient crypt~
+Keywords  crypt door~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14789
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    14779
+#ENDEXIT
+
+Reset D 14787 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14788
+Name      An Ancient Crypt~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This crypt has remained untouched for centuries. It houses the remains of
+the foul lich king who once ruled this Fortress and much of the surrounding
+land under an iron fist (literally, Krothgar's golem now wears it). You
+better hope he stayed dead...
+~
+#EXIT
+Direction west~
+ToRoom    14787
+Keywords  crypt door~
+#ENDEXIT
+
+Reset M 14744 1 14788 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14789
+Name      The Unholy Temple~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered the grounds of the unholy temple of the Fortress. Screaming
+virgins are torn asunder in foul rituals upon altars soaked with the blood
+of thousands of innocents while evil priests look on and pray for a visitation
+from their gods.
+~
+#EXIT
+Direction north~
+ToRoom    14787
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14792
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14791
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14790
+#ENDEXIT
+
+Reset M 14708 4 14789 -1 -1 -1 100
+  Reset E 14718 1 16 100
+  Reset E 14719 1 12 100
+  Reset E 14720 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      14790
+Name      The Unholy Temple~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered the grounds of the unholy temple of the Fortress. Screaming
+virgins are torn asunder in foul rituals upon altars soaked with the blood
+of thousands of innocents while evil priests look on and pray for a visitation
+from their gods.
+
+The altar is directly before you, and you see the high priest standing
+behind it, about to sacrifice another virgin.
+~
+#EXIT
+Direction east~
+ToRoom    14789
+#ENDEXIT
+
+Reset M 14705 1 14790 -1 -1 -1 100
+  Reset E 14712 1 16 100
+  Reset E 14713 1 12 100
+  Reset E 14714 1 6 100
+Reset M 14708 4 14790 -1 -1 -1 100
+  Reset E 14718 1 16 100
+  Reset E 14719 1 12 100
+  Reset E 14720 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      14791
+Name      The Unholy Temple~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered the grounds of the unholy temple of the Fortress. Screaming
+virgins are torn asunder in foul rituals upon altars soaked with the blood
+of thousands of innocents while evil priests look on and pray for a visitation
+from their gods. Down from here lairs Jher, ally of Krogthar.
+~
+#EXIT
+Direction north~
+ToRoom    14789
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    32700
+#ENDEXIT
+
+Reset M 14708 4 14791 -1 -1 -1 100
+  Reset E 14718 1 16 100
+  Reset E 14719 1 12 100
+  Reset E 14720 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      14792
+Name      The Hydra Lair~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here Krothgar keeps his hydra, which guards the treasure of the evil temple.
+It is a wild and ferocious beast, which will tear apart anything that enters
+its lair save Krothgar or the high priest.
+~
+#EXIT
+Direction west~
+ToRoom    14789
+#ENDEXIT
+
+Reset M 14723 1 14792 -1 -1 -1 100
+Reset O 14733 1 14792 -1 -1 -1 100
+  Reset P 1 14734 1 14733 100
+#ENDROOM
+
+#ROOM
+Vnum      14793
+Name      A Spiral Staircase~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are ascending a spiral staircase that winds up into the heights of the
+multitude of towers that adorn the heights of the Fortress.
+~
+#EXIT
+Direction up~
+ToRoom    14794
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14779
+#ENDEXIT
+
+Reset M 14745 1 14793 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14794
+Name      A Landing~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have come to a landing, upon which are 4 doors leading in the cardinal
+directions. The staircase continues its climb in the center.
+~
+#EXIT
+Direction north~
+ToRoom    14797
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14798
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14795
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14796
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    14799
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14793
+#ENDEXIT
+
+Reset D 14794 0 1 100 -2
+Reset D 14794 1 1 100 -2
+Reset D 14794 2 1 100 -2
+Reset D 14794 3 1 100 -2
+Reset M 14702 1 14794 -1 -1 -1 100
+  Reset E 14706 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      14795
+Name      A Bedchamber~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a luxurious boudoir full of expensive furniture and a wide
+variety of perfumes, unguents and other cosmetics. Piles of clothing are
+piled on the floor, as if someone had but recently gone through them in
+search of an outfit.
+~
+#EXIT
+Direction north~
+ToRoom    14794
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14795 0 1 100 -2
+Reset M 14719 1 14795 -1 -1 -1 100
+  Reset E 14731 1 12 100
+  Reset E 14732 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14796
+Name      A Bedchamber~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a luxurious boudoir full of expensive furniture and a wide
+variety of perfumes, unguents and other cosmetics. Piles of clothing are
+piled on the floor, as if someone had but recently gone through them in
+search of an outfit.
+~
+#EXIT
+Direction east~
+ToRoom    14794
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14796 1 1 100 -2
+Reset M 14725 1 14796 -1 -1 -1 100
+  Reset E 14736 1 12 100
+Reset O 14735 1 14796 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14797
+Name      A Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a long dining hall filled with a huge table lined with
+high-backed chairs. Seated in these chairs are skeletons (the normal sort)
+clad in royal regalia- these are the many opponents that Krothgar has
+vanquished. He keeps their mortal remains here as trophies.
+~
+#EXIT
+Direction south~
+ToRoom    14794
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14797 2 1 100 -2
+Reset M 14703 1 14797 -1 -1 -1 100
+  Reset E 14707 1 16 100
+  Reset G 14708 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14798
+Name      A Bedchamber~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a luxurious boudoir full of expensive furniture and a wide
+variety of perfumes, unguents and other cosmetics. Piles of clothing are
+piled on the floor, as if someone had but recently gone through them in
+search of an outfit.
+~
+#EXIT
+Direction west~
+ToRoom    14794
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14798 3 1 100 -2
+Reset M 14743 1 14798 -1 -1 -1 100
+  Reset E 14736 1 12 100
+#ENDROOM
+
+#ROOM
+Vnum      14799
+Name      A Spiral Staircase~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are ascending a spiral staircase that winds up into the heights of the
+multitude of towers that adorn the heights of the Fortress.
+~
+#EXIT
+Direction up~
+ToRoom    14800
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14794
+#ENDEXIT
+
+Reset M 14701 2 14799 -1 -1 -1 100
+  Reset E 14704 1 16 100
+  Reset E 14705 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      14800
+Name      The Throne Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered the Throne Room of Lord Krothgar. He sits here, upon his
+throne, located in the center of the 5 towers which emerge in all directions
+from this room. In each tower resides a powerful dragon, loyal allies of the
+Lord. Long wall hangings depict the many victories won by Krothgar, and
+in between them stand members of his elite guard, ready to defend their lord.
+~
+#EXIT
+Direction north~
+ToRoom    14801
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14804
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14803
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14802
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    14805
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14799
+#ENDEXIT
+
+Reset M 14700 1 14800 -1 -1 -1 100
+  Reset E 14700 1 5 100
+  Reset E 14701 1 16 100
+  Reset E 14702 1 11 100
+  Reset E 14703 1 6 100
+Reset M 14706 4 14800 -1 -1 -1 100
+  Reset E 14715 1 5 100
+  Reset E 14716 1 16 100
+  Reset E 14717 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      14801
+Name      Dragon Tower~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      In this tower rests a huge dragon, the largest of its kind. It will not
+appreciate being disturbed by a mortal such as yourself...
+~
+#EXIT
+Direction south~
+ToRoom    14800
+#ENDEXIT
+
+Reset M 14712 1 14801 -1 -1 -1 100
+  Reset E 14724 1 11 100
+  Reset E 14725 1 16 100
+  Reset E 14726 1 9 100
+  Reset E 14727 1 12 100
+#ENDROOM
+
+#ROOM
+Vnum      14802
+Name      Dragon Tower~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      In this tower rests a huge dragon, the largest of its kind. It will not
+appreciate being disturbed by a mortal such as yourself...
+~
+#EXIT
+Direction east~
+ToRoom    14800
+#ENDEXIT
+
+Reset M 14713 1 14802 -1 -1 -1 100
+  Reset E 14724 1 11 100
+  Reset E 14725 1 16 100
+  Reset E 14726 1 9 100
+  Reset E 14727 1 12 100
+#ENDROOM
+
+#ROOM
+Vnum      14803
+Name      Dragon Tower~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      In this tower rests a huge dragon, the largest of its kind. It will not
+appreciate being disturbed by a mortal such as yourself...
+~
+#EXIT
+Direction north~
+ToRoom    14800
+#ENDEXIT
+
+Reset M 14714 1 14803 -1 -1 -1 100
+  Reset E 14724 1 11 100
+  Reset E 14725 1 16 100
+  Reset E 14726 1 9 100
+  Reset E 14727 1 12 100
+#ENDROOM
+
+#ROOM
+Vnum      14804
+Name      Dragon Tower~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      In this tower rests a huge dragon, the largest of its kind. It will not
+appreciate being disturbed by a mortal such as yourself...
+~
+#EXIT
+Direction west~
+ToRoom    14800
+#ENDEXIT
+
+Reset M 14715 1 14804 -1 -1 -1 100
+  Reset E 14724 1 11 100
+  Reset E 14725 1 16 100
+  Reset E 14726 1 9 100
+  Reset E 14727 1 12 100
+#ENDROOM
+
+#ROOM
+Vnum      14805
+Name      Dragon Tower~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      In this tower rests a huge dragon, the largest of its kind. It will not
+appreciate being disturbed by a mortal such as yourself...
+~
+#EXIT
+Direction down~
+ToRoom    14800
+#ENDEXIT
+
+Reset M 14711 1 14805 -1 -1 -1 100
+  Reset E 14724 1 11 100
+  Reset E 14725 1 16 100
+  Reset E 14726 1 9 100
+  Reset E 14727 1 12 100
+#ENDROOM
+
+#ROOM
+Vnum      14806
+Name      Stables~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here, the blackguard keep their steeds, evil destriers bred on the plains
+of Hel itself.
+~
+#EXIT
+Direction up~
+ToRoom    14768
+#ENDEXIT
+
+Reset M 14707 4 14806 -1 -1 -1 100
+#ENDROOM
+
+#ENDAREA

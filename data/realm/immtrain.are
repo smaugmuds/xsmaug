@@ -1,0 +1,4610 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Immortal Training Grounds~
+Author          Tarl~
+Vnums           31100 31299
+Continent       immortal~
+Coordinates     0 0
+Dates           982900000 982900000
+Ranges          101 115 101 115
+ResetMsg        The area resets around you with a crunch.~
+ResetFreq       5
+Flags           nocamp noteleport~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      31100
+Keywords  first mob~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a newly created first mob~
+Long      Some god abandoned a newly created first mob here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 150 100
+Stats2    1 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      31101
+Keywords  rapper~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A hand~
+Long      A hand floats here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 150 100
+Stats2    1 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      31102
+Keywords  takeover~
+Race      drow~
+Class     Ranger~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     takeover~
+Long      Takeover, the switch test mobile stands here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 150 100
+Stats2    50 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel immortal~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      31103
+Keywords  rich money~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A rich man~
+Long      A rich man with lots of money stands here.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 150 100
+Stats2    1 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      31299
+Keywords  Last mob~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a newly created last mob~
+Long      Some god abandoned a newly created last mob here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 150 100
+Stats2    1 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#OBJECT
+Vnum      31100
+Keywords  first obj~
+Type      trash~
+Short     a newly created first obj~
+Long      Some god dropped a newly created first obj here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 0 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      31101
+Keywords  keg whiskey~
+Type      drinkcon~
+Short     A keg of whiskey~
+Long      A key of whiskey sits here, waiting to get you drunk.~
+Values    100 100 5 0 0 0 0 0 0 0 0
+Stats     1 0 0 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      31299
+Keywords  Last obj~
+Type      trash~
+Short     a newly created last obj~
+Long      Some god dropped a newly created last obj here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 0 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      31100
+Name      Entrance Court~
+Sector    indoors~
+Flags     nomob indoors safe nocamp nodrop~
+Stats     0 0 0 0
+Desc      Greetings Immortal, Welcome to this training area.
+Please take the time here to learn the commands, so
+a higher level Imm doesn't feel the need to 'educate'
+you. Wizhelp is still your best friend, in particular,
+because it will display what level a command is at,
+so you can go to the right section. To rush ahead to
+a section, merely say aloud the Level of command you
+are after.
+~
+#EXIT
+Direction south~
+ToRoom    31101
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   101~
+Comlist   mptrlook $n 31101
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   102~
+Comlist   mptrlook $n 31102
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   103~
+Comlist   mptrlook $n 31103
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   104~
+Comlist   mptrlook $n 31104
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   105~
+Comlist   mptrlook $n 31105
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   106~
+Comlist   mptrlook $n 31106
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   107~
+Comlist   mptrlook $n 31107
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   108~
+Comlist   mptrlook $n 31108
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   109~
+Comlist   mptrlook $n 31109
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31101
+Name      Level 101 Section.~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 101 Immortal. Alternatively, saying
+a Level 101 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31100
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    31116
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    31102
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   bamfin~
+Comlist   mptrlook $n 31116
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   bamfout~
+Comlist   mptrlook $n 31116
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   coords~
+Comlist   mptrlook $n 31117
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   fixed~
+Comlist   mptrlook $n 31118
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   goto~
+Comlist   mptrlook $n 31119
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   hedit~
+Comlist   mptrlook $n 31120
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   holylight~
+Comlist   mptrlook $n 31121
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   hset~
+Comlist   mptrlook $n 31122
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   imotd~
+Comlist   mptrlook $n 31123
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   landmarks~
+Comlist   mptrlook $n 31124
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   morph~
+Comlist   mptrlook $n 31125
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   unmorph~
+Comlist   mptrlook $n 31125
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   peace~
+Comlist   mptrlook $n 31126
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   project~
+Comlist   mptrlook $n 31127
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   rap~
+Comlist   mptrlook $n 31128
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   sedit~
+Comlist   mptrlook $n 31129
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   showclass~
+Comlist   mptrlook $n 31130
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   showrace~
+Comlist   mptrlook $n 31131
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   slookup~
+Comlist   mptrlook $n 31132
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   think~
+Comlist   mptrlook $n 31133
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   wizinfo~
+Comlist   mptrlook $n 31134
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   wizhelp~
+Comlist   mptrlook $n 31135
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31102
+Name      Level 102 Section~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 102 Immortal. Alternatively, saying
+a Level 102 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31101
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    31136
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    31103
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   invis~
+Comlist   mptrlook $n 31136
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   switch~
+Comlist   mptrlook $n 31137
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   return~
+Comlist   mptrlook $n 31137
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   showclan~
+Comlist   mptrlook $n 31138
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   showcouncil~
+Comlist   mptrlook $n 31139
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   sober~
+Comlist   mptrlook $n 31140
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   showdeity~
+Comlist   mptrlook $n 31141
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   showorder~
+Comlist   mptrlook $n 31142
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   showguild~
+Comlist   mptrlook $n 31143
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   users~
+Comlist   mptrlook $n 31144
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31103
+Name      Level 103 Section.~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 103 Immortal. Alternatively, saying
+a Level 103 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31102
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    31145
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    31104
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   authorize~
+Comlist   mptrlook $n 31145
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   at~
+Comlist   mptrlook $n 31146
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   aassign~
+Comlist   mptrlook $n 31147
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   aexit~
+Comlist   mptrlook $n 31148
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   loadarea~
+Comlist   mptrlook $n 31149
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   savearea~
+Comlist   mptrlook $n 31149
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   newzones~
+Comlist   mptrlook $n 31150
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   noemote~
+Comlist   mptrlook $n 31151
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   notell~
+Comlist   mptrlook $n 31152
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   notitle~
+Comlist   mptrlook $n 31153
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   rat~
+Comlist   mptrlook $n 31154
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   rdelete~
+Comlist   mptrlook $n 31155
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   stat~
+Comlist   mptrlook $n 31157
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   redit~
+Comlist   mptrlook $n 31156
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   show~
+Comlist   mptrlook $n 31158
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   silence~
+Comlist   mptrlook $n 31159
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   unsilence~
+Comlist   mptrlook $n 31159
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   wizlock~
+Comlist   mptrlook $n 31160
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   zones~
+Comlist   mptrlook $n 31161
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31104
+Name      Level 104 Section.~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 104 Immortal. Alternatively, saying
+a Level 104 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31103
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    31162
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    31105
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   find~
+Comlist   mptrlook $n 31162
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   Hell~
+Comlist   mptrlook $n 31163
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   unhell~
+Comlist   mptrlook $n 31163
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   load~
+Comlist   mptrlook $n 31164
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   ocreate~
+Comlist   mptrlook $n 31165
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   odelete~
+Comlist   mptrlook $n 31166
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   oset~
+Comlist   mptrlook $n 31167
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   purge~
+Comlist   mptrlook $n 31168
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   restore~
+Comlist   mptrlook $n 31169
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   restoretime~
+Comlist   mptrlook $n 31170
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   strip~
+Comlist   mptrlook $n 31171
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   transfer~
+Comlist   mptrlook $n 31172
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   vsearch~
+Comlist   mptrlook $n 31173
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31105
+Name      Level 105 Section~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 105 Immortal. Alternatively, saying
+a Level 105 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31104
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    31174
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    31106
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   coinduct~
+Comlist   mptrlook $n 31174
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   cooutcast~
+Comlist   mptrlook $n 31174
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   force~
+Comlist   mptrlook $n 31175
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   gfighting~
+Comlist   mptrlook $n 31176
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   instazone~
+Comlist   mptrlook $n 31177
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   instaroom~
+Comlist   mptrlook $n 31178
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   mcreate~
+Comlist   mptrlook $n 31179
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   mdelete~
+Comlist   mptrlook $n 31180
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   mset~
+Comlist   mptrlook $n 31181
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   reset~
+Comlist   mptrlook $n 31182
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   rreset~
+Comlist   mptrlook $n 31183
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31106
+Name      Level 106 Section.~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 106 Immortal. Alternatively, saying
+a Level 106 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31105
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    31184
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    31107
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   climate~
+Comlist   mptrlook $n 31184
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   makerepair~
+Comlist   mptrlook $n 31185
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   makeshop~
+Comlist   mptrlook $n 31186
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   mpedit~
+Comlist   mptrlook $n 31187
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   mpstat~
+Comlist   mptrlook $n 31188
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   mpcopy~
+Comlist   mptrlook $n 31189
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   opedit~
+Comlist   mptrlook $n 31190
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   opstat~
+Comlist   mptrlook $n 31191
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   opcopy~
+Comlist   mptrlook $n 31192
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   repairset~
+Comlist   mptrlook $n 31193
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   repairshops~
+Comlist   mptrlook $n 31194
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   repairstat~
+Comlist   mptrlook $n 31195
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   rpedit~
+Comlist   mptrlook $n 31196
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   rpstat~
+Comlist   mptrlook $n 31197
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   shops~
+Comlist   mptrlook $n 31198
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   shopset~
+Comlist   mptrlook $n 31199
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   shopstat~
+Comlist   mptrlook $n 31200
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   showweather~
+Comlist   mptrlook $n 31201
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   setweather~
+Comlist   mptrlook $n 31202
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31107
+Name      Level 107 Section.~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 107 Immortal. Alternatively, saying
+a Level 107 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31106
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    31203
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    31108
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   aset~
+Comlist   mptrlook $n 31203
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   astat~
+Comlist   mptrlook $n 31204
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   disconnect~
+Comlist   mptrlook $n 31205
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   echo~
+Comlist   mptrlook $n 31206
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   foldarea~
+Comlist   mptrlook $n 31207
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   Log~
+Comlist   mptrlook $n 31208
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   makewizlist~
+Comlist   mptrlook $n 31209
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   makeslay~
+Comlist   mptrlook $n 31210
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   morphset~
+Comlist   mptrlook $n 21311
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   morphstat~
+Comlist   mptrlook $n 31212
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   morphcreate~
+Comlist   mptrlook $n 31213
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   morphdestroy~
+Comlist   mptrlook $n 31214
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   morphlist~
+Comlist   mptrlook $n 31215
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   skills~
+Comlist   mptrlook $n 31216
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   system~
+Comlist   mptrlook $n 31217
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   slay~
+Comlist   mptrlook $n 31218
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   setdeity~
+Comlist   mptrlook $n 31219
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   scatter~
+Comlist   mptrlook $n 31220
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   strew~
+Comlist   mptrlook $n 31221
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   setslay~
+Comlist   mptrlook $n 31222
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   showslay~
+Comlist   mptrlook $n 31223
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   voice~
+Comlist   mptrlook $n 31224
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31108
+Name      Level 108 Section.~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 108 Immortal. Alternatively, saying
+a Level 108 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31107
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    31225
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    31109
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   allow~
+Comlist   mptrlook $n 31225
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   ban~
+Comlist   mptrlook $n 31226
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   boards~
+Comlist   mptrlook $n 31227
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   bset~
+Comlist   mptrlook $n 31228
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   bstat~
+Comlist   mptrlook $n 31229
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   comment~
+Comlist   mptrlook $n 31230
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   deny~
+Comlist   mptrlook $n 31231
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   dmesg~
+Comlist   mptrlook $n 31232
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   delay~
+Comlist   mptrlook $n 31233
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   forceclose~
+Comlist   mptrlook $n 31234
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   freeze~
+Comlist   mptrlook $n 31235
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   khistory~
+Comlist   mptrlook $n 31236
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   litterbug~
+Comlist   mptrlook $n 31237
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   makeboard~
+Comlist   mptrlook $n 31238
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   moblog~
+Comlist   mptrlook $n 31239
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   reboot~
+Comlist   mptrlook $n 31240
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   snoop~
+Comlist   mptrlook $n 31241
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   warn~
+Comlist   mptrlook $n 31242
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   watch~
+Comlist   mptrlook $n 31243
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31109
+Name      Level 109 Section.~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 109 Immortal. Alternatively, saying
+a Level 109 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31108
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    31244
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    31101
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   fixchar~
+Comlist   mptrlook $n 31244
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   newpass~
+Comlist   mptrlook $n 31245
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31110
+Name      Level 110 Section.~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 110 Immortal. Alternatively, saying
+a Level 110 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction south~
+ToRoom    31111
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31111
+Name      Level 111 Section.~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 111 Immortal. Alternatively, saying
+a Level 111 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31110
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    31112
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31112
+Name      Level 112 Section.~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 112 Immortal. Alternatively, saying
+a Level 112 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31111
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    31113
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31113
+Name      Level 113 Section.~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The passage down to the east will discuss the commands
+available to a level 113 Immortal. Alternatively, saying
+a Level 113 command out loud will transfer you to the 
+appropriate room.
+~
+#EXIT
+Direction north~
+ToRoom    31112
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31116
+Name      Bamfin/Bamfout~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will change the message that is displayed when
+you use the goto command. It allows the usage of the $n operator
+in place of your name. 
+For example: bamfin Your world rocks as $n appears in a cloud of smoke.
+Then, when you use the goto command, any one in the room you appear in
+will see: Your world rocks as <your name> appears in a cloud of smoke.
+Similarly, the bamfout command will change the message displayed in the room
+you are leaving from.
+~
+#EXIT
+Direction east~
+ToRoom    31117
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31101
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31117
+Name      coords~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The coords command will relocate you on the overland map
+to the co-ordinates you specify.
+For example: coord 472 392 will put you just outside of
+Bywater on the overland map.
+Try it, and then type: goto 31117 to return here.
+~
+#EXIT
+Direction east~
+ToRoom    31118
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31116
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31118
+Name      fixed~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command is used to record information when you have
+fixed or otherwise made changes to an area. 
+Usage is: fixed <message up to 250 characters>
+Alternatively, you can list all the recorded fixes using
+fixed list
+
+NOTE: This file supports color tokens, be careful with them.
+~
+#EXIT
+Direction east~
+ToRoom    31119
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31117
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31119
+Name      goto~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command is used to transport you to a different area of the MUD.
+It works by either goto <vnum> or goto <keyword> Be warned though,
+keywords are often used by several different mobs and objects, so you
+might not end up where you meant to be.
+ie: goto 13950  This will transfer you to the Entrance Court of the 
+Arcanium Guildhall. Test it out, and then use goto 31119
+to get back here.
+~
+#EXIT
+Direction east~
+ToRoom    31120
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31118
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31120
+Name      hedit~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows you to create a new help file entry.
+NOTE: ALWAYS check if an entry for the keyword you are planning to use
+exists BEFORE using this command.
+ 
+Usage: hedit <keyword>
+Colors are supported, but use discretion.
+See help hedit for more information.
+~
+#EXIT
+Direction east~
+ToRoom    31121
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31119
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31121
+Name      holylight~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows you to see (almost) every character in the MUD.
+You can see in darkness, hidden, invisible, etc.
+In addition, you can see a MUCH larger area of the overland then normal.
+ 
+NOTE: This command does not reveal invisible imms of a higher level then you.
+~
+#EXIT
+Direction east~
+ToRoom    31122
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31120
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31122
+Name      hset~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command sets various aspects of help files.
+hset save will save the current list of help files to help.are
+hset level <level> <help topic> will restrict a helpfile to a
+certain level or above.
+hset keyword <keyword> <help topic> will assign a keyword to a
+help topic. For multiple keywords, put them in quotes.
+hset remove <level.><help topic> will remove a help topic. If
+more then one help topic matches, and no level is specified, it
+will remove the lowest level first.
+~
+#EXIT
+Direction east~
+ToRoom    31123
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31121
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31123
+Name      imotd~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This will display the Immortal MOTD to you.
+~
+#EXIT
+Direction east~
+ToRoom    31124
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31122
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31124
+Name      landmarks~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will list all of the landmarks displayed on the overland
+map. It will also list where they occur, as well as the distances they
+are visible from.
+ 
+Test it out.
+~
+#EXIT
+Direction east~
+ToRoom    31125
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31123
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31125
+Name      Morph/Unmorph~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      Morph will, strangely enough, turn you into something.
+ie: morph 1010 will turn you into an Iron Golem.
+Similarly, unmorph will return you to your normal shape.
+
+Practice now by morphing yourself into an Iron Golem, and returning to
+normal.
+~
+#EXIT
+Direction east~
+ToRoom    31126
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31124
+#ENDEXIT
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p A screeching of metal on metal can be heard as~
+Comlist   echoat $n Congratulations. You have done well.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p A screeching of metal on metal can be heard as~
+Comlist   mpechoat $n Congratulations. You have done well.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p solidifies into cold iron as~
+Comlist   mpechoat $n Well Done. Half way there. :)
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31126
+Name      peace~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will make all characters in a room stop fighting.
+They will then sit down, to ensure no aggressive flags trigger the start of
+another fight.
+~
+#EXIT
+Direction east~
+ToRoom    31127
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31125
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31127
+Name      project~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will list all the current projects. See help project
+for more details.
+~
+#EXIT
+Direction east~
+ToRoom    31128
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31126
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31128
+Name      rap~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows you to 'rap' or 'knock' on a door, or in a 
+direction, and anyone on the other side will be able to hear you.
+ 
+Test it out by typing rap north
+~
+#EXIT
+Direction north~
+ToRoom    31246
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    31129
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31127
+#ENDEXIT
+
+Reset D 31128 0 2 100 -2
+#MUDPROG
+Progtype  act_prog~
+Arglist   p raps loudly on the door.~
+Comlist   mptransfer rapper
+mpforce rapper emote taps $n on the shoulder. Well done.
+mptransfer rapper 31246
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31129
+Name      sedit~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command is used for editing socials. See help sedit for more
+details.
+~
+#EXIT
+Direction east~
+ToRoom    31130
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31128
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31130
+Name      showclass~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will show you information about a particular class type.
+ie: showclass ranger will display information on rangers.
+~
+#EXIT
+Direction east~
+ToRoom    31131
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31129
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31131
+Name      showrace~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will show you information about a particular race type.
+ie: showclass wild-elf will display information on wild-elves.
+~
+#EXIT
+Direction east~
+ToRoom    31132
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31130
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31132
+Name      slookup~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows you to look up what a specific skill/spell does.
+For instance, slookup fly will show you information on the spell fly.
+~
+#EXIT
+Direction east~
+ToRoom    31133
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31131
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31133
+Name      Think/"~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This is the equivalent of chat, but only between imms. Similarly,
+a " is the shortcut for think.
+~
+#EXIT
+Direction east~
+ToRoom    31134
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31132
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31134
+Name      wizinfo~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will display information on the immortals.
+~
+#EXIT
+Direction east~
+ToRoom    31135
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31133
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31135
+Name      wizhelp~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command lists all the immortal commands available to you.
+~
+#EXIT
+Direction east~
+ToRoom    31101
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31134
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31136
+Name      invis~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows you to turn invisible to people below a certain level.
+That level is set using invis <level>
+ 
+Similarly, using the invis command a second time will cancel the invisibility.
+Try turning yourself invisible, and then back to visible now.
+~
+#EXIT
+Direction east~
+ToRoom    31137
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31102
+#ENDEXIT
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p slowly fades into existence.~
+Comlist   mpechoat $n Congrats! You did it :)
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31137
+Name      Switch/Return~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows you to 'take over' the body of another Non-PC character.
+The return command will bring you out of that body and take you back to your
+own.
+~
+#EXIT
+Direction east~
+ToRoom    31138
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31136
+#ENDEXIT
+
+Reset M 31102 1 31137 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      31138
+Name      showclan~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The Showclan command will reveal information on a specific clan.
+For example, showclan MistWraith
+~
+#EXIT
+Direction east~
+ToRoom    31139
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31137
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31139
+Name      showcouncil~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command displays information on a council.
+Usage is: showcouncil <council name>
+~
+#EXIT
+Direction east~
+ToRoom    31140
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31138
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31140
+Name      sober~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will instantly sober up a player from a drunken state.
+Usage is: sober <player>
+ 
+Note: Immortals don't appear to be affected by alcohol.
+~
+#EXIT
+Direction east~
+ToRoom    31141
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31139
+#ENDEXIT
+
+Reset O 31101 1 31140 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      31141
+Name      showdeity~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The showdeity command will reveal information on a specific deity
+for you.
+ie: showdeity Ortheus
+For more information on deities, say setdeity out loud here.
+~
+#EXIT
+Direction east~
+ToRoom    31144
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31140
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   setdeity~
+Comlist   mptrlook $n 31219
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31142
+Name      showorder~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The showorder command will reveal details about a specific order to you.
+ie: showorder <ordername>
+~
+#EXIT
+Direction east~
+ToRoom    31143
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31141
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31143
+Name      showguild~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will show information on a particular guild.
+ie: showguild Arcanium
+~
+#EXIT
+Direction east~
+ToRoom    31144
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31141
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31144
+Name      users~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will list all of the visible users connected to the server,
+including users in the process of logging in.
+If used with an argument you can view all users from that host, or all users
+with that playername.
+Shortened forms (ie, 203.113 or fre) will also work, and display all the users
+from 203.113.* or users Frerick and Fred respectively.
+~
+#EXIT
+Direction east~
+ToRoom    31102
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31141
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31145
+Name      authorize~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will allow you to authorize a player's name.
+Usage: authorize by itself will list any names currently pending authorization.
+authorize <name> will authorize that player's name, and allow the player
+to continue using it.
+authorize <name> no will wipe the player's pfile, and deny the name.
+authorize <name> name will require the player to change names, and deny
+them from using their current name.
+authorize fixlist will attempt to fix a broken authorize list.
+authorize show approved will list all the approved names.
+~
+#EXIT
+Direction east~
+ToRoom    31146
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31103
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31146
+Name      at~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command executes the given command at the location specified.
+The location can be given as a vnum, the name of a mob or player, or
+the name of an object.
+Usage: at <location> <command>
+To test, try: at rapper look
+~
+#EXIT
+Direction east~
+ToRoom    31147
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31145
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31147
+Name      aassign~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      What can I put here, apart from, This command sucks major ass.
+This command will assign a given area to you, so you can work on it.
+~
+#EXIT
+Direction east~
+ToRoom    31148
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31146
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31148
+Name      aexit~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      Tell me what this does :)
+This command will list all the 'external' exits from an area. 
+ 
+Test it out now.
+~
+#EXIT
+Direction east~
+ToRoom    31149
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31147
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31149
+Name      Loadarea/Savearea~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will load your assigned area up for you to edit.
+Similarly, the savearea command will save your assigned area.
+~
+#EXIT
+Direction east~
+ToRoom    31150
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31148
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31150
+Name      newzones~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will list the vnum range for prototype (assigned) areas that
+have been loaded.
+~
+#EXIT
+Direction east~
+ToRoom    31151
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31149
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31151
+Name      noemote~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will prevent a character from using emote's.
+To remove, simply use the command again.
+~
+#EXIT
+Direction east~
+ToRoom    31152
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31150
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31152
+Name      notell~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will prevent a character from using tell's.
+To remove, simply use the command again.
+~
+#EXIT
+Direction east~
+ToRoom    31153
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31151
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31153
+Name      notitle~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will prevent a character from using title's.
+To remove, simply use the command again.
+~
+#EXIT
+Direction east~
+ToRoom    31154
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31152
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31154
+Name      rat~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The rat command works similarly to the at command, except it is
+executed within the range of rooms you specify, instead of merely
+one location.
+Usage: rat vnum1 vnum2 command
+~
+#EXIT
+Direction east~
+ToRoom    31155
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31153
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31155
+Name      rdelete~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will in essence delete a room, by marking it not to be
+saved.
+ 
+Usage: rdelete <vnum>
+~
+#EXIT
+Direction east~
+ToRoom    31156
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31154
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31156
+Name      redit~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The redit command is used to set various things about the room.
+For example
+redit name <name> This sets the rooms name.
+Also, you can 'lock' redit on, by using the command
+redit on
+To remove it, simply type done.
+For more information on redit, please see help redit.
+~
+#EXIT
+Direction east~
+ToRoom    31157
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31155
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31157
+Name      stat~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command is a replacement for ostat, rstat and mstat, all rolled
+into one. It will display statistics on the target.
+Usage: stat obj <vnum or keyword>
+stat mob <vnum or keyword>
+stat room <vnum>
+stat player <name>
+NOTE: This can be shortened to stat o <vnum or keyword>, etc.
+ 
+As an example, try stat player <your name>
+stat m rapper
+stat o keg
+~
+#EXIT
+Direction east~
+ToRoom    31158
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31156
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31158
+Name      show~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The show command will display a list of all the rooms, objects or
+mobiles depending on the parameters you pass it.
+ 
+Usage: show room <lowvnum> <hivnum>
+show room <area filename>
+show obj <lowvnum> <hivnum>
+show obj <area filename>
+show mob <lowvnum> <hivnum>
+show mob <area filename>
+ 
+This command combines and replaces mlist, olist and rlist.
+~
+#EXIT
+Direction east~
+ToRoom    31159
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31157
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31159
+Name      Silence/Unsilence~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will allow you to silence a character, ie, stop them
+from using any and all channels.
+ 
+Simply use unsilence to remove a player's silence and return the power of
+speech to them.
+~
+#EXIT
+Direction east~
+ToRoom    31160
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31158
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31160
+Name      wizlock~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command toggles wizlocking on and off. When the server is wizlocked
+only level 101 or above can log in to the MUD. If a previously connected
+mortal player gets disconnected, they won't be able to log back in until
+the wizlock is removed.
+ 
+See help wizlock for more information on WHEN this command should be used.
+~
+#EXIT
+Direction east~
+ToRoom    31161
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31159
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31161
+Name      zones~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will list the File name, Area name, and vnum range for every
+non-prototype area in the MUD.
+~
+#EXIT
+Direction east~
+ToRoom    31103
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31160
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31162
+Name      find~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will locate all the objs or mobs with a particular keyword.
+The resulting display will show you the vnum, and a short description
+of the mob or obj.
+ 
+Usage: find m keyword
+or find o keyword
+ 
+This command combines and replaces ofind and mfind.
+Try find m rapper
+and find o keg
+~
+#EXIT
+Direction east~
+ToRoom    31163
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31104
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31163
+Name      Hell/Unhell~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The hell command shows your displeasure. It will send a character to hell
+for a given period of time. It will automatically release them when their time
+is up. 
+ 
+Usage: hell <character> <number> <hours or days> If hours or days isn't
+specified, it will default to hours.
+ 
+Unhell <character> will release a character from hell.
+ 
+NOTE: This is a punishment command, do not use it as a joke.
+~
+#EXIT
+Direction east~
+ToRoom    31164
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31162
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31164
+Name      load~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The load command allows you to load an instance of either an object,
+or a mobile. 
+ 
+Usage: load obj <vnum or keyword>
+load mob <vnum or keyword>
+ 
+This command combines and replaces minvoke and oinvoke.
+Try load o keg
+~
+#EXIT
+Direction east~
+ToRoom    31165
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31163
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31165
+Name      ocreate~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      Ocreate will create a new prototype object for you to edit. The object
+will appear in your inventory.
+ 
+Usage: ocreate <vnum> <keywords>
+~
+#EXIT
+Direction east~
+ToRoom    31166
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31164
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31166
+Name      odelete~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The odelete command will in essence delete an object, by marking it not
+to be saved.
+ 
+Usage: odelete <vnum>
+~
+#EXIT
+Direction east~
+ToRoom    31167
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31165
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31167
+Name      oset~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The oset command is used to set everything about an object.
+As such, it would take too long to list all of its properties here,
+so please refer to help oset.
+~
+#EXIT
+Direction east~
+ToRoom    31168
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31166
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31168
+Name      purge~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The purge command will remove all the mobs and objects in the current room.
+If used with an argument, it will purge one mob or object with that/those
+keywords from anywhere in the world.
+ 
+The purge command will not get rid of PC's.
+~
+#EXIT
+Direction east~
+ToRoom    31169
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31167
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31169
+Name      restore~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The restore command will restore full hp's, mana points and movement points
+to the target character. Similarly, restore all does this for all mortals
+except deadly ones, and those who happen to be in the arena.
+ 
+Usage: restore <character>
+or restore all
+Try restoring yourself.
+~
+#EXIT
+Direction east~
+ToRoom    31170
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31168
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31170
+Name      restoretime~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will display how much time has passed since you last did
+a restore all.
+~
+#EXIT
+Direction east~
+ToRoom    31171
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31169
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31171
+Name      strip~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The strip command will remove all items and clothing from a character
+and transfer them into your inventory.
+~
+#EXIT
+Direction east~
+ToRoom    31172
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31170
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31172
+Name      transfer~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The transfer command allows you to transfer a mob or PC to anywhere you wish.
+ 
+Usage: transfer <character or mob keyword/vnum> <destination>
+If no destination is specified, your current location is used.
+Try transfer rapper, then remember to put him back. He lives in 31246
+~
+#EXIT
+Direction east~
+ToRoom    31173
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31171
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31173
+Name      vsearch~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will list all occurances of an object with the specified
+vnum that are currently in the game.
+ 
+Usage: vsearch <vnum>
+Try: vsearch 31101
+~
+#EXIT
+Direction east~
+ToRoom    31104
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31172
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31174
+Name      Coinduct/Cooutcast~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      These commands induct and outcast a player into a council. 
+They should only be used if it is either your council, or you have
+authorisation to induct/remove people from it.
+~
+#EXIT
+Direction east~
+ToRoom    31175
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31105
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31175
+Name      force~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The force command is used to make a character or mob execute a command.
+It only works on characters of a lower level then you.
+ 
+Similarly, force all will make all characters lower then you execute a command
+ie. force all save
+Try transfering rapper here, and forcing him to sit, and then stand again.
+Remember to return rapper to his room, at 31246.
+~
+#EXIT
+Direction east~
+ToRoom    31176
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31174
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31176
+Name      gfighting~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      At a rough guess, this lists all the current PK fights occuring.
+ 
+(If you know that this is not the case, please correct us.)
+~
+#EXIT
+Direction east~
+ToRoom    31177
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31175
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31177
+Name      instazone~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will do the resets for your entire zone. Simply place
+everything EXACTLY as you want it, and then use instazone. *boom*
+Resets done. :)
+ 
+NOTE: This command should NEVER EVER be used on an installed area, only on a
+proto area, and even then, only use it ONCE.
+~
+#EXIT
+Direction east~
+ToRoom    31178
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31176
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31178
+Name      instaroom~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will do the resets for the room you are standing in.
+Simply place everything where you want it, and instaroom.
+~
+#EXIT
+Direction east~
+ToRoom    31179
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31177
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31179
+Name      mcreate~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will create a new prototype mob for you to edit.
+ 
+Usage: mcreate <vnum> <keywords>
+~
+#EXIT
+Direction east~
+ToRoom    31180
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31178
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31180
+Name      mdelete~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will in essence delete a mobile by marking it not to be
+saved.
+ 
+Usage: mdelete <vnum>
+~
+#EXIT
+Direction east~
+ToRoom    31181
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31179
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31181
+Name      mset~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows you to set all aspects of a mobile. As such, it is
+much better explained under help mset
+~
+#EXIT
+Direction east~
+ToRoom    31182
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31180
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31182
+Name      reset~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command edits the resets of an area. However, it is strongly recommended
+that you edit resets yourself by hand, as this is much much easier and safer.
+ 
+For more information on this command, see help reset
+~
+#EXIT
+Direction east~
+ToRoom    31183
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31181
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31183
+Name      rreset~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will allow you to do reset editing. However, it appears
+buggy and dangerous to use. My advice is to edit all your resets
+by hand.
+~
+#EXIT
+Direction east~
+ToRoom    31105
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31182
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31184
+Name      climate~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows you to view, or edit the climate settings for an
+area. There are settings for temperature, precipitation and wind.
+You may also specify neighboring areas to be affected by the changes
+in the current areas climate.
+ 
+See help climate for more details.
+~
+#EXIT
+Direction east~
+ToRoom    31185
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31106
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31185
+Name      makerepair~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The makerepair command will give a mobile the ability to repair damaged
+equipment. 
+ 
+Say either repairset or repairstat out loud to be taken to those commands.
+~
+#EXIT
+Direction east~
+ToRoom    31186
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31184
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   repairset~
+Comlist   mptrlook $n 31193
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   repairstat~
+Comlist   mptrlook $n 31195
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31186
+Name      makeshop~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The makeshop command will turn a mobile into a shop.
+ 
+Say shopset or shopstat to be transferred to those rooms.
+~
+#EXIT
+Direction east~
+ToRoom    31187
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31185
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   shopset~
+Comlist   mptrlook $n 31199
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   shopstat~
+Comlist   mptrlook $n 31200
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31187
+Name      mpedit~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows online editing of a Mobile Prog.
+For more detailed information, please view help mpedit.
+~
+#EXIT
+Direction east~
+ToRoom    31188
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31186
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31188
+Name      mpstat~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The Mpstat command will display all of the mobile programs on a particular
+mob.
+ 
+Usage: mpstat <mob/vnum>
+~
+#EXIT
+Direction east~
+ToRoom    31189
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31187
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31189
+Name      mpcopy~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will copy an mprog from one mobile to another.
+For exact syntax, type mpcopy.
+~
+#EXIT
+Direction east~
+ToRoom    31190
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31188
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31190
+Name      opedit~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This is the command to edit or create a program on an object.
+For lots more help, see help opedit
+~
+#EXIT
+Direction east~
+ToRoom    31191
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31189
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31191
+Name      opstat~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will display all the object programs on a particular object.
+ 
+Usage: opstat <obj keyword/vnum>
+~
+#EXIT
+Direction east~
+ToRoom    31192
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31190
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31192
+Name      opcopy~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      Opcopy will copy the mud prog of an object to another object.
+For exact syntax, please type opcopy
+~
+#EXIT
+Direction east~
+ToRoom    31193
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31191
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31193
+Name      repairset~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The repairset command allows you to set various aspects of a repair shop.
+For lots more information, see help repairset
+~
+#EXIT
+Direction east~
+ToRoom    31194
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31192
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31194
+Name      repairshops~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will display information on all the repair shops in the MUD.
+Try typing it now.
+~
+#EXIT
+Direction east~
+ToRoom    31195
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31193
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31195
+Name      repairstat~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The repairstat command will display detailed statistics on a certain
+mobiles repair shop.
+
+Test it out with repairstat 7032
+~
+#EXIT
+Direction east~
+ToRoom    31196
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31194
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31196
+Name      rpedit~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows the creation and editing of a room program.
+For more information, see help rpedit
+~
+#EXIT
+Direction east~
+ToRoom    31197
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31195
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31197
+Name      rpstat~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command displays all the programs on a room.
+ 
+Test it out now.
+~
+#EXIT
+Direction east~
+ToRoom    31198
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31196
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   test~
+Comlist   mpechoat $n If you can read this, you obviously found the prog in this room.
+mpechoat $n Well done :)
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      31198
+Name      shops~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The shops command displays information on all the shops in the MUD.
+Test it out now.
+~
+#EXIT
+Direction east~
+ToRoom    31199
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31197
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31199
+Name      shopset~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      Shopset allows you to change details about a specific shop.
+See help shopset for information.
+~
+#EXIT
+Direction east~
+ToRoom    31200
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31198
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31200
+Name      shopstat~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will display statistics on a particular shop.
+Test it using shopstat 7031
+~
+#EXIT
+Direction east~
+ToRoom    31201
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31199
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31201
+Name      showweather~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command displays a whole heap of information on the weather.
+~
+#EXIT
+Direction east~
+ToRoom    31202
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31200
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31202
+Name      setweather~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows you to set the weather for an area.
+~
+#EXIT
+Direction east~
+ToRoom    31106
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31201
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31203
+Name      aset~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The Aset command is used to set area information, such as author, filename,
+vnums used, levels, etc.
+ 
+For more information on this command, see help aset
+~
+#EXIT
+Direction east~
+ToRoom    31204
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31107
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31204
+Name      astat~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will display information on an area.
+ 
+Usage: astat <filename>
+ 
+Test it out using astat arcanium.are
+~
+#EXIT
+Direction east~
+ToRoom    31205
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31203
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31205
+Name      disconnect~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will forcibly boot a character from the MUD.
+~
+#EXIT
+Direction east~
+ToRoom    31206
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31204
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31206
+Name      echo~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will display the specified text to everyone in the current room.
+~
+#EXIT
+Direction east~
+ToRoom    31207
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31205
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31207
+Name      foldarea~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The foldarea command is used to save an area file, generally after you
+have edited it.
+~
+#EXIT
+Direction east~
+ToRoom    31208
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31206
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31208
+Name      Log~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The log command will cause all of a characters commands to be logged into
+the log file.
+ 
+Similarly, log all will log every characters commands into the log file.
+~
+#EXIT
+Direction east~
+ToRoom    31209
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31207
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31209
+Name      makewizlist~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will re-make the wizlist using the levels from all of the MUD's
+pfiles.
+~
+#EXIT
+Direction east~
+ToRoom    31210
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31208
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31210
+Name      makeslay~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command creates a new slay type, with the default options.
+Once it is created, you then use setslay to edit it.
+~
+#EXIT
+Direction east~
+ToRoom    21311
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31209
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      21311
+Name      morphset~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The morphset command is used to set various aspects of a new morph.
+Type morphset for more information.
+~
+#EXIT
+Direction east~
+ToRoom    31212
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31210
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31212
+Name      morphstat~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      Morphstat displays information on a particular morph.
+ 
+For example: morphstat 1010
+~
+#EXIT
+Direction east~
+ToRoom    31213
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    21311
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31213
+Name      morphcreate~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command is used for the creation of a new morph type.
+ 
+Alternatively, this command can be used to copy an existing morphtype.
+ 
+Usage: To create a new morphtype: morphcreate <name>
+To copy an existing: morphcreate <name/vnum> copy
+~
+#EXIT
+Direction east~
+ToRoom    31214
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31212
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31214
+Name      morphdestroy~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command deletes a morph type.
+~
+#EXIT
+Direction east~
+ToRoom    31215
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31213
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31215
+Name      morphlist~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will list all the morphs available.
+ 
+Try it out.
+~
+#EXIT
+Direction east~
+ToRoom    31216
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31214
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31216
+Name      skills~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command allows you to view exactly what skills, and what level they
+have practiced to, a player has.
+ 
+Usage: skills <player>
+~
+#EXIT
+Direction east~
+ToRoom    31217
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31215
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31217
+Name      system~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      System will send whatever text you tell it to, to everyone on the MUD.
+ 
+ie: system Testing 1 2 3
+Testing 1 2 3 will be echoed to everyone on the MUD.
+~
+#EXIT
+Direction east~
+ToRoom    31218
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31216
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31218
+Name      slay~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will instantly kill a character. An optional type can also be
+provided.
+Use just the word slay to see the current list of slay types available.
+ 
+Usage: slay <victim> [option]
+~
+#EXIT
+Direction east~
+ToRoom    31219
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31217
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31219
+Name      setdeity~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will set all aspects of a deity. 
+Type setdeity for information.
+~
+#EXIT
+Direction east~
+ToRoom    31220
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31218
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31220
+Name      scatter~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will throw a character to a random location in the MUD.
+Note that the character doesn't have to be currently connected for this
+to work.
+~
+#EXIT
+Direction east~
+ToRoom    31221
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31219
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31221
+Name      strew~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The strew command allows you to toss all of a character or mobiles
+inventory or coins wildly over the MUD.
+ 
+Usage: strew <character/mobile> <inv or coins>
+ 
+Test it out now, using strew rich coins
+~
+#EXIT
+Direction east~
+ToRoom    31222
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31220
+#ENDEXIT
+
+Reset M 31103 1 31221 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      31222
+Name      setslay~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The setslay command is used to customize a particular type of slay.
+see help setslay for more details.
+~
+#EXIT
+Direction east~
+ToRoom    31223
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31221
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31223
+Name      showslay~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will display information on a particular slay.
+ 
+For example, showslay mech
+~
+#EXIT
+Direction east~
+ToRoom    31224
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31222
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31224
+Name      voice~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command displays to the entire MUD whatever text you passed it,
+preceded by The Voice of God says:
+ 
+ie: voice Be kind to Bunnies.
+will display The Voice of God says: Be kind to Bunnies.
+~
+#EXIT
+Direction east~
+ToRoom    31107
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31223
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31225
+Name      allow~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will remove a site from the ban list.
+ 
+Usage: allow <address>
+~
+#EXIT
+Direction east~
+ToRoom    31226
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31108
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31226
+Name      ban~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will ban an address from connecting to the MUD.
+ 
+Usage: ban <address>
+ 
+OR, simply typing ban will list all the current bans on the MUD.
+~
+#EXIT
+Direction east~
+ToRoom    31227
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31225
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31227
+Name      boards~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will display statistics on all the boards in the game.
+ 
+Try it now.
+~
+#EXIT
+Direction east~
+ToRoom    31228
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31226
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31228
+Name      bset~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command is used to set various aspects of a board.
+See help bset for more information.
+~
+#EXIT
+Direction east~
+ToRoom    31229
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31227
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31229
+Name      bstat~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will display information on a specific board.
+ 
+Usage: bstat <board filename>
+ 
+For example: bstat arena.brd
+~
+#EXIT
+Direction east~
+ToRoom    31230
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31228
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31230
+Name      comment~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The comment command essentially treats players like a bulletin board.
+This is so notes can be made of any disciplinary action that has been
+taken, etc.
+ 
+See help comment for more information.
+~
+#EXIT
+Direction east~
+ToRoom    31231
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31229
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31231
+Name      deny~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      Deny will stop a player being able to log in, and will throw them
+immediately out of the game. A Deny will persist past a reboot or crash, and
+can only be removed by either loading up the character and doing an 
+mset <character> flags deny, or by editing the pfile.
+~
+#EXIT
+Direction east~
+ToRoom    31232
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31230
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31232
+Name      dmesg~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will display the contents of the bootlog.
+~
+#EXIT
+Direction east~
+ToRoom    31233
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31231
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31233
+Name      delay~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will delay a victim for a specified number of rounds.
+ 
+Usage: delay <character> <number of rounds>
+~
+#EXIT
+Direction east~
+ToRoom    31234
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31232
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31234
+Name      forceclose~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command forcibly closes a descriptor. If you don't know EXACTLY
+what you are doing here, DON'T TOUCH IT.
+~
+#EXIT
+Direction east~
+ToRoom    31235
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31233
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31235
+Name      freeze~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      Freeze will prevent a character from issuing any commands. 
+To unfreeze a character, simply freeze them again.
+~
+#EXIT
+Direction east~
+ToRoom    31236
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31234
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31236
+Name      khistory~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      Khistory will list the last few mobs killed by a player.
+~
+#EXIT
+Direction east~
+ToRoom    31237
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31235
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31237
+Name      litterbug~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The litterbug command allows/prevents players from dropping objects.
+~
+#EXIT
+Direction east~
+ToRoom    31238
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31236
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31238
+Name      makeboard~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will create a board. You should then use bset to set up
+all the attributes of the board.
+~
+#EXIT
+Direction east~
+ToRoom    31239
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31237
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31239
+Name      moblog~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      Please tell me. :)
+~
+#EXIT
+Direction east~
+ToRoom    31240
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31238
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31240
+Name      reboot~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This command will cause the mud to start a 5 minute countdown, and then
+reboot.
+ 
+If the command is given as reboot mud now, the MUD will immediately reboot
+saving all connected players to disk.
+~
+#EXIT
+Direction east~
+ToRoom    31241
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31239
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31241
+Name      snoop~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The snoop command will allow you to see exactly what text is going to,
+and coming from, a character.
+ 
+See help snoop for more information on the specific policies about snooping.
+~
+#EXIT
+Direction east~
+ToRoom    31242
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31240
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31242
+Name      warn~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      This will send a warning to a certain group of people. Either all those
+of one particular class, race, or host site.
+~
+#EXIT
+Direction east~
+ToRoom    31243
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31241
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31243
+Name      watch~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The watch command is very similar to the log command, except it logs
+it to your own personal watch file.
+ 
+Please see help watch for important information on the command.
+~
+#EXIT
+Direction east~
+ToRoom    31108
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31242
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31244
+Name      fixchar~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      Fixchar will unequip a character, check all their stats, affects and the like
+are correct, and then re-equip them. Use if something really weird happens
+and a character is permenantly affected by something, or something similar.
+~
+#EXIT
+Direction east~
+ToRoom    31245
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31109
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31245
+Name      newpass~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      The newpass command allows you to change a characters password.
+If the target is offline, you will need to load their pfile by using the 
+loadup command before you try to change their password.
+~
+#EXIT
+Direction east~
+ToRoom    31109
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31244
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      31246
+Name      Should you be here ?~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+Desc      You aren't supposed to be in here. This is merely to demonstrate the rap
+command. Use goto 31128 to leave.
+~
+#EXIT
+Direction south~
+ToRoom    31128
+Flags     isdoor closed locked nopassdoor~
+#ENDEXIT
+
+Reset M 31101 1 31246 -1 -1 -1 100
+Reset D 31246 2 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      31247
+Name      Engulfed in a Swirling Mass of Void Space~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+#ENDROOM
+
+#ROOM
+Vnum      31248
+Name      Engulfed in a Swirling Mass of Void Space~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+#ENDROOM
+
+#ROOM
+Vnum      31249
+Name      Engulfed in a Swirling Mass of Void Space~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+#ENDROOM
+
+#ROOM
+Vnum      31299
+Name      Engulfed in a Swirling Mass of Void Space~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0
+#ENDROOM
+
+#ENDAREA

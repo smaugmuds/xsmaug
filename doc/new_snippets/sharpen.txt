@@ -1,0 +1,92 @@
+  AUTHOR: Rantic (supfly@geocities.com)
+          of FrozenMUD (empire.digiunix.net 4000)
+
+
+  FILES
+	sharpen.c	The code
+	sharpen.patch	Patch for the rest of the code
+	sharpen.txt	This file
+	sharpen.help	Suggested help topic(s) for this code
+
+
+  LICENSE
+  Permission to use and distribute this code is granted provided
+  the header in the source file is retained and unaltered, and the 
+  distribution package contains all the original files unmodified.
+  If you modify this code and use/distribute modified versions
+  you must give credit to the original author(s).
+
+
+ 
+  DESCRIPTION
+
+  This is a simple skill that lets players "sharpen" a weapon; a 
+  sharpened weapon will inflict more damage.
+  This is achieved simply by adding a dam roll affect to the weapon.
+  The damroll bonus depends on the level of the player using the skill.
+  To successfuly sharpen, a player must be in posession of a sharpening
+  stone, and must have a dexterity of at least 17. Failing to sharpen
+  due to lack of dexterity will damage the weapon; failing because of
+  lack of experience with the skill will damage the sharpening stone.
+  Only "slashing-like" type of weapons can be sharpened (the allowed
+  types are: hit, slice, stab, slash, claw, bite, pierce).
+  The sharpening stone is by default set to vnum 39. You can change this
+  (see bellow). The sharpening stone can be any type (trash or furniture),
+  but keep in mind that the "state" of the stone is kept in its value0.
+  When value0 reaches 0, the stone is broken and lost.
+  In order to disallow players from sharpening the same weapon twice, the
+  skill takes the value5 of weapons as a flag. If value5 is zero, the 
+  weapon has never been sharpened; if it's non-zero, it's been sharpened
+  and it can't be sharpened again.
+ 
+
+  INSTALLATION INSTRUCTIONS 
+
+  The easiest way to install this skill is to in some way include the
+  code in "sharpen.c" into the compilation (either by directly including
+  this file into the Makefile or by pasting its contents into some other
+  C, preferrably skills.c), and then patching in the patchfile with a
+  command like "patch <sharpen.patch". Then compile, reboot, create the
+  "sharpen" skill and the sharpening stone object to vnum 39, set the 
+  skill as shown bellow in step 10, and reboot again. 
+  And you're all set.
+
+  As usual, here are some manual instructions just in case:
+    1) Add a DECLARE_DO_FUN for "do_sharpen" in mud.h, near the other
+       DECLARE_DO_FUN declarations.
+    2) Add an OBJ_VNUM_SHARPEN #define in mud.h, and set it to the vnum
+       of your sharpening stone. It's recommended to put this object in 
+       limbo.are.
+    3) Add an entry for "do_sharpen" in the "skill_function" function
+       in tables.c
+    4) Add an entry for "do_sharpen" in the "skill_name" function in
+       tables.c.
+    5) Add an "extern sh_int gsn_sharpen;" declaration in mud.h, 
+       near the other gsn declarations.
+    6) Add an "sn_int gsn_sharpen;" declaration in db.c
+    7) Add an "ASSIGN_GSN(gsn_sharpen, "bottle");" line in the boot_db
+       function, near the other ASSIGN_GSNs (these three steps commonly
+       known as "adding the gsn").
+    8) Add the code, preferably to skills.c. 
+    9) Compile, reboot, and get into the mud. 
+    10) Using the "sset" command, create the "sharpen" skill, set things to 
+       your own taste, and set its code to "do_sharpen" (the name must be 
+       exactly "sharpen"). 
+    11) Create the "sharpening stone" object, preferably inside limbo.are 
+       (using the vnum OBJ_VNUM_SHARPEN). You're pretty much free to create 
+       it any way you want (type, flags, etc) except that you must set its
+       value0 to something other than 0.
+    12) You'll need another reboot before it works, because of the
+       gsn. 
+    And you're done.
+    To set the sharpening stone to a different vnum simply change the
+    "#define OBJ_VNUM_SHARPEN" line in mud.h, as shown in step 2.
+
+
+  If you have any comments, or bug reports please feel free to mail the
+  author, or the mud administration of FrozenMUD at mudadmins@xnet.org.
+  Even dropping a "Good work guys!" line can go a long way in future 
+  releases.
+ 
+
+  --Cronel, December 98

@@ -1,0 +1,2276 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Gilligan's Island~
+Author          Lenny~
+Vnums           32101 32156
+Continent       one~
+Coordinates     0 0
+Dates           1403837156 1403837156
+Ranges          20 80 0 115
+ResetFreq       15
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      32101
+Keywords  Gilligan~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Gilligan~
+Long      Gilligan stands here
+~
+Desc      Gilligan looks exactly like you remember from the TV show. He is wearing
+a red shirt and a white hat.
+~
+Nattacks  0.000000
+Stats1    800 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger wimpy~
+Affected  detect_invis sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32102
+Keywords  Skipper~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     The Skipper~
+Long      The Skipper stands here holding his hat.
+~
+Desc      The Skipper is a portly fellow wearing the same costume as from the show.
+You can see the stress in his brow whenever you mention Gilligans name.
+~
+Nattacks  0.000000
+Stats1    200 0 0 0 0 0
+Stats2    16 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger stayarea~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32103
+Keywords  Professor~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     The Professor~
+Long      The Professor stands here working away.
+~
+Desc      The professor is working away hard at a new way to get off the Island,
+if they could have just got a ride from the camera crew!
+~
+Nattacks  0.000000
+Stats1    300 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger stayarea~
+Affected  detect_invis sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32104
+Keywords  Howell~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Mr.Howell~
+Long      Mr.Howell lies here waiting to tee off.
+~
+Desc      As you get near him, you can smell money. Perhaps he shredded some just
+for cologne? Never can tell with these eccentrics.
+~
+Nattacks  0.000000
+Stats1    -300 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger stayarea~
+Affected  detect_invis sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32105
+Keywords  Howell~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Mrs.Howell~
+Long      Mrs.Howell walks around aimlessly.
+~
+Desc      Mrs.Howell wouldnt know a hard days work if she were hit by it. She is 
+clad in an evening gown, even though she is trapped on this island.
+~
+Nattacks  0.000000
+Stats1    -100 0 0 0 0 0
+Stats2    16 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger stayarea~
+Affected  detect_evil~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32106
+Keywords  Mary Anne~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Mary Anne~
+Long      Mary Anne stands here doing laundry.
+~
+Desc      Mary Anne definitely knew how to live on the farm to keep this body. If
+Ginger wasn't so easy, she would have the professor all to herself.
+~
+Nattacks  0.000000
+Stats1    500 0 0 0 0 0
+Stats2    16 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger stayarea~
+Affected  detect_evil~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32107
+Keywords  Ginger~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Ginger~
+Long      Ginger stands here in her sequined evening gown.
+~
+Desc      This movie star has it where it belongs. It is unfortunate for this boat
+wreck, for Ginger's porn movies were just starting to reach the top of the
+charts.
+~
+Nattacks  0.000000
+Stats1    -100 0 0 0 0 0
+Stats2    16 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger stayarea~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32108
+Keywords  Camera man~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A camera man~
+Long      A camera man stands here checking the light.
+~
+Desc      This camera man looks like a fat old man with a beard. Must not take much
+personal grooming to be a camera man. You wonder why he never takes the 
+castaways home with him?
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger stayarea~
+Affected  detect_evil~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32109
+Keywords  Director~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A Director~
+Long      A director stands here yelling 'Cut!'
+~
+Desc      The director is an angry older man, who has a glass eye monacle and a
+bullhorn. He is mean enough to leave the castaways here, when he leaves after
+shooting each episode, says it builds character.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger stayarea~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32110
+Keywords  Lion~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A lion~
+Long      A lion sleeps here.
+~
+Desc      A HUGE lion sleeps here in the jungle. Makes you start thinking about that
+song.  You sing 'In the jungle, the mighty jungle, the lion sleeps tonight.'
+Well, you get the point.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  sleep~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32111
+Keywords  Headhunter~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A headhunter~
+Long      A headhunter stands here looking for heads.
+~
+Desc      The headhunter is an island native with a tooth necklace, and a grass
+skirt. He is a larger man, so he must eat well.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    13 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32112
+Keywords  Headhunter king~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     The Headhunter King~
+Long      The Headhunter King awaits here for his meal.
+~
+Desc      The king is very stocky and well built. He is a humungous man that weighs
+about 300 pounds and has jagged teeth. He wears a large head dress upon his
+head.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32113
+Keywords  Referee~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A Referee~
+Long      A Referee stands here making bad calls.
+~
+Desc      This referee has a white cane and glasses, because he obviously can't see.
+Many people think its a front so that he can be bought off easier.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  blind sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32114
+Keywords  Russian Astronaut~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A Russian Astronaut~
+Long      A Russian Astronaut stands here mumbling something in russian.
+~
+Desc      He is 6'4, and very well built. You hope he stays on your good side.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32115
+Keywords  Totem pole~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Totem Pole~
+Long      A Totem Pole stands here.
+~
+Desc      A totem pole towers above you. It is at leaset ten feet high, with
+engravings and carvings of some of the past kings of the tribe.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32116
+Keywords  Surfer~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a Surfer~
+Long      A Surfer stands here.
+~
+Desc      This blonde hair blue eyed surfer has a great tan and stands here
+holding his surf
+board.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32117
+Keywords  Robot~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a Robot~
+Long      A Robot stands here ready to play basketball.
+~
+Desc      This robot is a really boxey robot. You wonder how it move, nonetheless
+play basketball?
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger~
+Affected  detect_evil~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32118
+Keywords  Robinson Crusoe~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Robinson Crusoe~
+Long      Robinson Crusoe stands here.
+~
+Desc      Robinson is very old and scraggly from the many years on this island,
+without his girl Friday, he would probably look a bit younger.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32119
+Keywords  Friday~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Friday~
+Long      Friday stands here awaiting to help his master.
+~
+Desc      Friday, although believed by Lenny to be a beautiful native girl 
+with an excellent figure, Friday, in Defoe's 'Robinson Crusoe', was 
+actually a man rescued from cannibals by Crusoe. -RM :)
+
+---------------------------------------------------------
+Excerpted from Compton’s Interactive Encyclopedia
+Copyright © 1994, 1995 Compton’s NewMedia, Inc.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32120
+Keywords  Land Shark~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A Land Shark~
+Long      A Land Shark stands here waiting for his next meal.
+~
+Desc      The Landshark is about 10 feet long and likes to go door to door posing
+as an avon representative.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger aggressive~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32121
+Keywords  Chicken Person~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A Chicken Person~
+Long      A Chicken Person stands here.
+~
+Desc      This creature looks like a person, but is covered in blue, red, and 
+yellow flowers.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32122
+Keywords  Monkey~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A Monkey~
+Long      A monkey sits here playing with coconuts.
+~
+Desc      A really mean looking monkey, holding some coconuts.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32123
+Keywords  Hurricane Andrew~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Hurricane Andrew~
+Long      Hurricane Andrew blows away violently here.
+~
+Desc      Hurricane Andrew looks like a very handsome hurricane. Rapid winds
+and violent storms make him very respected by all.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    18 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive deadly~
+Affected  invisible detect_evil sanctuary protect flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32124
+Keywords  Sumo~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A Sumo~
+Long      A Sumo waits here for his next opponent.
+~
+Desc      The Sumo is a HUGE man, wearing only a diaper. I am not gonna be the one
+to laugh.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_evil detect_invis detect_magic protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32125
+Keywords  Butterfly Catcher~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A Butterfly Catcher~
+Long      A Butterfly Catcher stands here looking for butterfliers.
+~
+Desc      An older frail gentleman. He has a mustache, and speaks with an
+accent.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32126
+Keywords  Meadowlark Lemon~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Meadowlark Lemon~
+Long      Meadowlark Lemon stands here ready to play ball.
+~
+Desc      Meadowlark is a really tall Globetrotter. He really has a great presence
+on the courts.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  protect~
+#ENDMOBILE
+
+#OBJECT
+Vnum      32100
+Keywords  First mates cap~
+Type      armor~
+Short     a first mate's cap~
+Long      A white cap that is weathered and beaten.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32101
+Keywords  Red Shirt~
+Type      armor~
+Short     a red shirt~
+Long      A red shirt rests here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32102
+Keywords  Skipper's hat~
+Type      weapon~
+Short     a skipper's hat~
+Long      A skippers hat lies here.~
+WFlags    take~
+Values    0 0 0 6 0 0 0 0 0 0 0
+Stats     7 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32103
+Keywords  Glasses~
+Type      armor~
+Short     a pair of glasses~
+Long      A pair of glasses sit here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData sex -1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32104
+Keywords  Short shorts~
+Type      armor~
+Short     short shorts~
+Long      A pair of really short shorts.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32105
+Keywords  Sequinned dress~
+Type      armor~
+Short     a sequinned dress~
+Long      A sequinned dress sparkles here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData sex 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32106
+Keywords  nine iron 9~
+Type      weapon~
+Short     a nine iron~
+Long      A nine iron sits here waiting to be used.~
+Flags     bless~
+WFlags    take~
+Values    0 0 0 1 0 0 0 0 0 0 0
+Stats     12 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32107
+Keywords  Mai tai cocktail~
+Type      drinkcon~
+Short     a Mai Tai cocktail~
+Long      A mai tai waits to be drunk here.~
+WFlags    take~
+Values    1 1 1 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32108
+Keywords  Pearl necklace~
+Type      armor~
+Short     a pearl necklace~
+Long      A pearl necklace sits here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32109
+Keywords  White cane~
+Type      staff~
+Short     a white cane~
+Long      A white cane rests here.~
+WFlags    take~
+Values    12 20 20 -1 0 0 0 0 0 0 0
+Stats     6 0 -2 9999 0 None None None
+Spells       'blindness'
+#ENDOBJECT
+
+#OBJECT
+Vnum      32110
+Keywords  Whistle~
+Type      armor~
+Short     a whistle~
+Long      A whistle sits here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData intelligence -1 -1 -1 0
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32111
+Keywords  lions mane~
+Type      armor~
+Short     a lion's mane~
+Long      A lions mane sits here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32112
+Keywords  Coconut~
+Type      potion~
+Short     a coconut~
+Long      A coconut lies here.~
+Flags     glow~
+WFlags    take~
+Values    0 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'cure light' 'cure light' 'cure light'
+#ENDOBJECT
+
+#OBJECT
+Vnum      32113
+Keywords  Chicken Feather~
+Type      staff~
+Short     a chicken feather~
+Long      A feather seems to hover here.~
+WFlags    take~
+Values    0 20 20 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData move 20 -1 -1 0
+Spells       'fly'
+#ENDOBJECT
+
+#OBJECT
+Vnum      32114
+Keywords  Grass skirt~
+Type      armor~
+Short     a grass skirt~
+Long      A grass skirt lies here.~
+WFlags    take~
+Values    3 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32115
+Keywords  headhunter spear~
+Type      weapon~
+Short     a headhunter's spear~
+Long      A spear lies here waiting to be used.~
+Flags     glow inventory~
+WFlags    take~
+Values    0 5 20 1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hitroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32116
+Keywords  King headdress~
+Type      armor~
+Short     the headdress of the king~
+Long      The headdress of the king lies here.~
+Flags     bless~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData armor -15 -1 -1 0
+AffData constitution 1 -1 -1 0
+AffData sex 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32117
+Keywords  Raunchy teeth~
+Type      weapon~
+Short     raunchy teeth~
+Long      A set of raunchy teeth lie here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     6 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32118
+Keywords  Teeth Necklace~
+Type      armor~
+Short     a necklace made of teeth~
+Long      A necklace made of teeth rests here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+AffData armor -5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32119
+Keywords  bracelet palm~
+Type      armor~
+Short     a bracelet made of palm~
+Long      A bracelet made of palm is beautifully woven.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32120
+Keywords  Palm belt~
+Type      armor~
+Short     a belt made from palm~
+Long      A belt made from palm lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32121
+Keywords  Groucho glasses~
+Type      armor~
+Short     groucho glasses~
+Long      A pair of glasses with a fake nose and mustache attached rests here.~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 1 -1 -1 0
+AffData sex -2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32122
+Keywords  moon boots~
+Type      armor~
+Short     moon boots~
+Long      A pair of moon boots rest here.~
+Flags     glow~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData move 15 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32123
+Keywords  Surfboard~
+Type      trash~
+Short     a surfboard~
+Long      A surfboard lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32124
+Keywords  Calculator~
+Type      armor~
+Short     a calculator~
+Long      A calculator computes here.~
+Flags     hum~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData dexterity 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32125
+Keywords  Globetrotter jersey~
+Type      armor~
+Short     a Globetrotter jersey~
+Long      A jersey rests here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+AffData strength 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32126
+Keywords  Voodoo mask~
+Type      armor~
+Short     a voodoo mask~
+Long      A mask made from palm bark rests here.~
+Flags     nodrop~
+WFlags    take~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData sex -2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32127
+Keywords  Sumo pants~
+Type      armor~
+Short     sumo pants~
+Long      A pair of pants that look like a huge diaper rest here.~
+Flags     bless~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+AffData strength 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32128
+Keywords  Butterfly Net~
+Type      weapon~
+Short     a butterfly net~
+Long      A butterfly net lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData armor -10 -1 -1 0
+AffData hitroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32129
+Keywords  Safari hat~
+Type      armor~
+Short     a safari hat~
+Long      A safari hat has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32130
+Keywords  bullhorn~
+Type      wand~
+Short     a bullhorn~
+Long      A bullhorn lies here to be used to get attention.~
+WFlags    take~
+Values    10 10 10 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence -1 -1 -1 0
+Spells       'charm person'
+#ENDOBJECT
+
+#OBJECT
+Vnum      32131
+Keywords  Directors scarf~
+Type      armor~
+Short     a director's scarf~
+Long      A long white scarf lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32132
+Keywords  Hurricane staff~
+Type      staff~
+Short     the hurricane staff~
+Long      The hurricane staff sizzles here.~
+Flags     glow hum~
+WFlags    take~
+Values    20 10 10 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'earthquake'
+#ENDOBJECT
+
+#OBJECT
+Vnum      32133
+Keywords  camera~
+Type      armor~
+Short     a 35 millimeter camera~
+Long      A camera sits here waiting to be used.~
+Flags     glow~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32134
+Keywords  key~
+Type      key~
+Short     a key shaped like an "L"~
+Long      A funny shaped key lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      32100
+Name      The Beach~
+Sector    desert~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You have landed upon the beach, on an island which looks semi-familiar.
+There are palm trees all over and to the north the beach continues.
+~
+#EXIT
+Direction north~
+ToRoom    32101
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30088
+Desc      All you can see west is ocean, maybe you're lost.......
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32101
+Name      The Beach~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As you proceed up the beach, you see a marooned boat to your west. There
+is a big hole in the side, and the sign on it says 'Minnow'. You knew this
+beach looked familiar! This is Gilligans Island. Wow, you thought this was
+only a television show. You can board the Minnow, or proceed north.
+~
+#EXIT
+Direction north~
+ToRoom    32103
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32100
+Keywords  You see the landing to the South.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32102
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32102
+Name      Aboard the Minnow~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This boat is exactly like it looked in television. Destroyed beyond 
+repair, it has sitten here for years. Almost all of the parts have been taken
+out to be used by the professor to make useful things around the island.
+~
+#EXIT
+Direction east~
+ToRoom    32101
+#ENDEXIT
+
+Reset M 32102 1 32102 -1 -1 -1 100
+  Reset E 32102 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      32103
+Name      End of the Beach~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached the end of the beach, you can see a trail leading off
+into the jungle to the east, or you can return to the south.
+~
+#EXIT
+Direction east~
+ToRoom    32104
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32101
+#ENDEXIT
+
+Reset M 32108 1 32103 -1 -1 -1 100
+  Reset E 32133 1 3 100
+Reset M 32109 1 32103 -1 -1 -1 100
+  Reset E 32130 1 16 100
+  Reset E 32131 1 4 100
+#ENDROOM
+
+#ROOM
+Vnum      32104
+Name      The Jungle~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have entered into the jungle. The sounds of wild animals and lack of
+light, provide for a rather spooky effect. You can continue to the east, or
+return to the beach to the west.
+~
+#EXIT
+Direction east~
+ToRoom    32105
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32103
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32105
+Name      The Jungle~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached a branch in the path. From here you can head northward
+toward a light, or southward towards the sound of drums.
+~
+#EXIT
+Direction north~
+ToRoom    32155
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32106
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32104
+#ENDEXIT
+
+Reset M 32111 3 32105 -1 -1 -1 100
+  Reset E 32114 1 7 100
+  Reset E 32115 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      32106
+Name      Deep in the Jungle~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are getting deeper in the jungle and your senses are really peaked.
+All around you are sounds of the jungle. In the distance you can hear some
+drums play a monotonous beat. You can proceed to the south, or head back to
+safety in the north.
+~
+#EXIT
+Direction north~
+ToRoom    32105
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32107
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32107
+Name      Deeper in the Jungle~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      As you proceed down this trail, the drums are getting louder. You start
+to wonder if there are cannibal tribes on this island. There are some totem
+poles here, with masks carved into them. You see some sort of shrine to the
+south, and to the west you see a clearing, of course, you can always head back
+to the north.
+~
+#EXIT
+Direction north~
+ToRoom    32106
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32109
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32108
+#ENDEXIT
+
+Reset M 32115 4 32107 -1 -1 -1 100
+  Reset E 32126 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      32108
+Name      The Shrine~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have walked into the sacrificial room for some tribe. There are 
+bones scattered everywhere. There is a large block here used for the 
+ceremonies. The only exit appears to be back to the north.
+~
+#EXIT
+Direction north~
+ToRoom    32107
+#ENDEXIT
+
+Reset M 32112 1 32108 -1 -1 -1 100
+  Reset E 32116 1 6 100
+  Reset E 32117 1 16 100
+  Reset E 32118 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      32109
+Name      Deeper Yet in the Jungle~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      As you look further down the path you see a large clearing. You also 
+notice that it appears to lighten up ahead. You can return to the east, or
+continue to the west.
+~
+#EXIT
+Direction east~
+ToRoom    32110
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32107
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32110
+Name      A Clearing in the Jungle~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have entered a large clearing in the jungle. You feel much safer
+as you notice you can see the sky and that the path here looks much more
+used. You can here a strange noise to the south, but can continue in any
+direction.
+~
+#EXIT
+Direction north~
+ToRoom    32115
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32114
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32111
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32109
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32111
+Name      A Wide Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a wide path in the jungle. You can hear a whistling noise
+further down the path, and you think you hear some taunting. You can continue
+to the south, or return to the north.
+~
+#EXIT
+Direction north~
+ToRoom    32110
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32112
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32112
+Name      The Basketball Court~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have walked on to a basketball court. There is a bench here for 
+one team, but the other team doesnt have one. You can return to the north
+or go check out the southern end of the court.
+~
+#EXIT
+Direction north~
+ToRoom    32111
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32113
+#ENDEXIT
+
+Reset M 32113 1 32112 -1 -1 -1 100
+  Reset E 32109 1 17 100
+  Reset E 32110 1 4 100
+#ENDROOM
+
+#ROOM
+Vnum      32113
+Name      Southern End of the Courts~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are at the southern end of the basketball court. The scoreboard here
+reads Islanders 100, Robots 99. Hard to believe it was such a close game. 
+The only exit appears to be to the north.
+~
+#EXIT
+Direction north~
+ToRoom    32112
+#ENDEXIT
+
+Reset M 32117 1 32113 -1 -1 -1 100
+  Reset E 32124 1 17 100
+Reset M 32126 1 32113 -1 -1 -1 100
+  Reset E 32125 1 5 100
+#ENDROOM
+
+#ROOM
+Vnum      32114
+Name      Dead-end in the Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached a dead end in the path. Looks like the were saving this
+in case they needed to expand through. The only exit here is to the west.
+~
+#EXIT
+Direction west~
+ToRoom    32110
+#ENDEXIT
+
+Reset M 32116 1 32114 -1 -1 -1 100
+  Reset E 32123 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      32115
+Name      Broader Path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path continues to widen here as you head north. Way up in the
+distance you see a small table. You can continue to the north, or return
+to the south.
+~
+#EXIT
+Direction north~
+ToRoom    32116
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32110
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32116
+Name      Opening by the Beach~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on a wide path that looks well traveled. The sounds of the 
+jungle are fading away, yet are still very prevalent. To your east you hear
+some cackling, and to the north you see a table.
+~
+#EXIT
+Direction north~
+ToRoom    32125
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32117
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32115
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32117
+Name      To the Lagoon~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a path to the lagoon. It is frequently used and rather large.
+There is a hut to the north, and the water is to the east. You can hear a
+strange cackling noise even louder now.
+~
+#EXIT
+Direction north~
+ToRoom    32124
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32119
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32116
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32118
+Name      The Landmine~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This is the end of the clearing by the lagoon. You see nothing unusual
+about the end of the clearing except a rather large mine. You here a faint
+ticking sound. Hmmm....
+~
+#EXIT
+Direction north~
+ToRoom    32119
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32119
+Name      The Clearing~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on the edge of the lagoon. The clearing goes on to the north
+and south, but you can also see something out in the water. The cackling
+noise is really loud now.
+~
+#EXIT
+Direction north~
+ToRoom    32123
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32120
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32118
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32117
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32120
+Name      On the Lagoon~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on the lagoon. The water beneath you is extremely clear, and you 
+see some humungous fish on the bottom. No wonder Gilligan always used to
+fish here. The lagoon continues to the east, or you can return to the 
+clearing to the west.
+~
+#EXIT
+Direction east~
+ToRoom    32121
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32119
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32121
+Name      Further on the Lagoon~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are way out above the water now, you can finally see the object that
+floats here good enough to recognize that it is a satellite. There is a hatch
+that is closed. You can enter the satellite, or return to the clearing.
+~
+#EXIT
+Direction east~
+ToRoom    32122
+Keywords  hatch
+~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32120
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32122
+Name      The Satellite~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered a satellite. There are controls and dials everywhere in
+here. All the writing is in russian, and you can here some russian coming
+through the radio. The only exit is to the west.
+~
+#EXIT
+Direction west~
+ToRoom    32121
+Key       1
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 32114 2 32122 -1 -1 -1 100
+  Reset E 32122 1 8 100
+#ENDROOM
+
+#ROOM
+Vnum      32123
+Name      Northern Clearing~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand at the northern edge of the clearing by the lagoon. You can see
+the entrance to the hut here. There is also glue everywhere. You can see an
+exploded pot of glue lying on the roof of the hut.
+~
+#EXIT
+Direction south~
+ToRoom    32119
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32124
+#ENDEXIT
+
+Reset M 32121 4 32123 -1 -1 -1 100
+  Reset E 32113 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      32124
+Name      A Hut~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand in a small hut that was used mostly for storage of miscellaneous
+objects. There is a door to the east and to the south. There are feathers 
+lying everywhere.
+~
+#EXIT
+Direction east~
+ToRoom    32123
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32117
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32125
+Name      Beginning of a Trail~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand at a large entryway here. To the north is a picnic table made
+of bamboo and some huts, to the south the trail gets narrower.
+~
+#EXIT
+Direction north~
+ToRoom    32126
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32116
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32126
+Name      Picnic Table~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand at a picnic table made of bamboo, in the center of a small
+village. There are some huts to the east and some to the west. You can
+also head down the trail to the south.
+~
+#EXIT
+Direction east~
+ToRoom    32128
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32125
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32139
+#ENDEXIT
+
+Reset M 32107 1 32126 -1 -1 -1 100
+  Reset E 32105 1 5 100
+Reset M 32123 1 32126 -1 -1 -1 100
+  Reset E 32132 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      32127
+Name      Professors Lab~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered a hut with many beakers and vials made from bamboo.
+There is a bunsen burner brewing something on the table. There is a small
+cot in the corner, and not too much else for decorations. The professor is
+too busy to spend time decorating.
+~
+#EXIT
+Direction north~
+ToRoom    32128
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 32103 1 32127 -1 -1 -1 100
+  Reset E 32103 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      32128
+Name      Open Area~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand in the large clearing by the huts. To your south you see a
+very plain hut, and to your east you see a nicely decorated hut. The table
+is to the west and there is also a path leading to the north.
+~
+#EXIT
+Direction north~
+ToRoom    32130
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32129
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32127
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32126
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32129
+Name      Gingers Hut~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand in Mary Anne and Gingers hut. They did a great job of decorating
+this hut. There are pink curtains, and freshly picked flowers everywhere. This
+hut is located close to the professors lab so that he can slip over late at 
+night. You wondered why the professor never got them off the island?
+~
+#EXIT
+Direction west~
+ToRoom    32128
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 32106 1 32129 -1 -1 -1 100
+  Reset E 32104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      32130
+Name      Another Path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking along a path leading through the tropical jungle. There
+are palm and bamboo trees everywhere. The sounds of the wild jungle surround
+you and you wonder if this is a good idea.
+~
+#EXIT
+Direction north~
+ToRoom    32131
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32128
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32131
+Name      A Branch in the Path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of the jungle get louder as you proceed down this path. There
+is a lion sleeping here, and all you can do is think about that song 'In the
+jungle, the mighty jungle, the lion sleeps tonight.' There are exits to
+the north and west.
+~
+#EXIT
+Direction north~
+ToRoom    32132
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32130
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32135
+#ENDEXIT
+
+Reset M 32110 1 32131 -1 -1 -1 100
+  Reset E 32111 1 4 100
+#ENDROOM
+
+#ROOM
+Vnum      32132
+Name      More Jungle~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are descending towards a small alcove on the island. This trail does 
+not look as widely used as the rest of the trails on the island. In fact,
+this trail looks like it is not used. Well, you can always turn back.
+~
+#EXIT
+Direction north~
+ToRoom    32133
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32131
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32133
+Name      The End of the Path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand at the end of the path. There is nothing special here at all.
+The path is blocked by an enormous tree.To your north, you think you can see a
+break in the tree, but you are not sure.
+~
+#EXIT
+Direction north~
+ToRoom    32134
+Keywords  Tree
+~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32132
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32134
+Name      Crusoe's Hut~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered a humungous tree hut. The walls are intricately carved
+depicting a voyage of a ship. There is no other exit but the one you came in.
+Robinson Crusoe and his man Friday spend much of their time here.
+~
+#EXIT
+Direction south~
+ToRoom    32133
+Keywords  tree
+~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 32118 1 32134 -1 -1 -1 100
+  Reset E 32120 1 13 100
+Reset M 32119 1 32134 -1 -1 -1 100
+  Reset E 32119 1 14 100
+#ENDROOM
+
+#ROOM
+Vnum      32135
+Name      Continuing Up~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path starts to thin again here as you head toward the bluffs. You see
+a tremendous tree up ahead, and you can see a clearing at the top of the bluffs.
+~
+#EXIT
+Direction east~
+ToRoom    32131
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32136
+#ENDEXIT
+
+Reset M 32124 1 32135 -1 -1 -1 100
+  Reset E 32127 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      32136
+Name      BIG Tree~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have walked up to a big tree. As you look up, you can see some 
+coconuts growing up there, should you climb up and get them? You can either
+climb the tree, or continue down the path.
+~
+#EXIT
+Direction east~
+ToRoom    32135
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32137
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    32153
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32137
+Name      Large Clearing~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand atop the bluffs. You can see for miles in every direction.
+All around you is water, nothing else. You can see almost the entire island
+from here, including a cave to your west.
+~
+#EXIT
+Direction east~
+ToRoom    32136
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32138
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32138
+Name      The Cave~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This cave is fairly large, but it can only hold probably six people.
+It is too dark to see anything really even with your light.
+~
+#EXIT
+Direction east~
+ToRoom    32137
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    713
+Key       32134
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset M 32101 1 32138 -1 -1 -1 100
+  Reset E 32100 1 6 100
+  Reset E 32101 1 5 100
+  Reset G 32134 0 100
+Reset D 32138 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32139
+Name      Castaway Village~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand approximately at the center of Castaway Village, or at least
+that is what they call it. It is actually four huts around a picnic table.
+Well, to each there own. You can see a ships wheel on the hut to the north,
+or you can continue on east or west.
+~
+#EXIT
+Direction north~
+ToRoom    32140
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32126
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32156
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32140
+Name      Gilligans Hut~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This hut is about the size of a dorm room. There are no modern accesories,
+and there are two hammocks hanging in the middle. There is also a window
+looking out to the picnic table.
+~
+#EXIT
+Direction south~
+ToRoom    32139
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32141
+Name      Howells Hut~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hut is extremely nice. It is loaded to the hilt hut-wise. There
+are two single beds in here, and two big closets. This is where the Howells
+spend there evenings. They paid Gilligan almost nothing to make their hut so
+nice. No wonder they are rich.
+~
+#EXIT
+Direction south~
+ToRoom    32156
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32142
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 32105 1 32141 -1 -1 -1 100
+  Reset E 32108 1 3 100
+  Reset E 32107 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      32142
+Name      19th Hole~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have entered the 19th hole. This lies at the end of Mr.Howells 3 hole
+golf course. Mr.Howell comes here to drink mai tai's after he finishes his
+game. There is a lawn chair made of bamboo resting here. You can go to the
+Howells hut, or hit the course.
+~
+#EXIT
+Direction east~
+ToRoom    32141
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32143
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32152
+#ENDEXIT
+
+Reset M 32104 1 32142 -1 -1 -1 100
+  Reset E 32106 1 6 100
+  Reset E 32107 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      32143
+Name      First Tee~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand at the tee off point for the first hole of Mr. Howells golf
+course. The island is too small for a real course, but he has a 3 hole pitch
+and putt course to pass his time.
+~
+#EXIT
+Direction north~
+ToRoom    32142
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32155
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32144
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32144
+Name      Second Tee~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on the green (so called) of the first hole. The tee for the second 
+hole is right here too. The second hole looks like it is about 90 yards long.
+Good thing you only have a nine iron.
+~
+#EXIT
+Direction east~
+ToRoom    32143
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32145
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32145
+Name      Third Tee~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached the third tee, and you are shooting well above par. This
+course is tougher than it looks. To the north is the tee for the third and
+final hole.
+~
+#EXIT
+Direction north~
+ToRoom    32152
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32144
+#ENDEXIT
+
+Reset M 32120 1 32145 -1 -1 -1 100
+  Reset E 32121 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      32152
+Name      Last Hole~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      THis hole is a good 100 yards, and ends up at the 19th hole. After this
+long day, I bet you could use a drink. To your west is a STEEP decline, about
+200 feet down, to the ocean. You can go back to the second hole and take a
+mulligan, or head east to the 19th hole.
+~
+#EXIT
+Direction east~
+ToRoom    32142
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32145
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32153
+Name      Up the Tree~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are approximately half way up this large palm tree. Those better be
+good coconuts. As you look around, you can see almost the whole island from 
+here.
+~
+#EXIT
+Direction up~
+ToRoom    32154
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    32136
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32154
+Name      The Top of the Tree~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached the top of the tree. From here you can see for miles!
+The whole island is pretty small, probably only 1 mile square. You can see
+the huts to your south and the top of the bluffs to the west.
+~
+#EXIT
+Direction down~
+ToRoom    32153
+#ENDEXIT
+
+Reset M 32122 1 32154 -1 -1 -1 100
+  Reset E 32112 2 17 100
+#ENDROOM
+
+#ROOM
+Vnum      32155
+Name      Path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a seldom used path through the jungle. To the north you see
+a large golf ball? You are surrounded by palm and bamboo trees and hope that
+you don't run into any more natives.
+~
+#EXIT
+Direction north~
+ToRoom    32143
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32105
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32156
+Name      West Side~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the west side of the clearing for the huts. You can smell
+money, and notice the Howells hut to the north. The rest of the so called
+town lies to the east. The west and south is blocked by heavy vegetation.
+~
+#EXIT
+Direction north~
+ToRoom    32141
+Keywords  Door
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32139
+#ENDEXIT
+
+Reset M 32125 1 32156 -1 -1 -1 100
+  Reset E 32128 1 16 100
+  Reset E 32129 1 6 100
+#ENDROOM
+
+#ENDAREA

@@ -1,35 +1,48 @@
 /****************************************************************************
- * [S]imulated [M]edieval [A]dventure multi[U]ser [G]ame      |   \\._.//   *
- * -----------------------------------------------------------|   (0...0)   *
- * SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider      |    ).:.(    *
- * -----------------------------------------------------------|    {o o}    *
- * SMAUG code team: Thoric, Altrag, Blodkai, Narn, Haus,      |   / ' ' \   *
- * Scryn, Rennard, Swordbearer, Gorog, Grishnakh, Nivek,      |~'~.VxvxV.~'~*
- * Tricops and Fireblade                                      |             *
+ *                                                                          *
+ *   X      X  ******* **    **  ******  **    **  ******                   *
+ *    X    X  ******** ***  *** ******** **    ** ********       \\._.//    *
+ *     X  X   **       ******** **    ** **    ** **             (0...0)    *
+ *      XX    *******  ******** ******** **    ** **  ****        ).:.(     *
+ *      XX     ******* ** ** ** ******** **    ** **  ****        {o o}     *
+ *     X  X         ** **    ** **    ** **    ** **    **       / ' ' \    *
+ *    X    X  ******** **    ** **    ** ******** ********    -^^.VxvxV.^^- *
+ *   X      X *******  **    ** **    **  ******   ******                   *
+ *                                                                          *
+ * ------------------------------------------------------------------------ *
+ * Ne[X]t Generation [S]imulated [M]edieval [A]dventure Multi[U]ser [G]ame  *
+ * ------------------------------------------------------------------------ *
+ * XSMAUG 2.4 (C) 2014  by Antonio Cao @burzumishi          |    \\._.//    *
+ * ---------------------------------------------------------|    (0...0)    *
+ * SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider    |     ).:.(     *
+ * SMAUG Code Team: Thoric, Altrag, Blodkai, Narn, Haus,    |     {o o}     *
+ * Scryn, Rennard, Swordbearer, Gorog, Grishnakh, Nivek,    |    / ' ' \    *
+ * Tricops and Fireblade                                    | -^^.VxvxV.^^- *
  * ------------------------------------------------------------------------ *
  * Merc 2.1 Diku Mud improvments copyright (C) 1992, 1993 by Michael        *
  * Chastain, Michael Quan, and Mitchell Tse.                                *
  * Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,          *
  * Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     *
+ * Win32 port by Nick Gammon                                                *
  * ------------------------------------------------------------------------ *
- *                         Client Compression Module                        *
+ * AFKMud Copyright 1997-2012 by Roger Libiez (Samson),                     *
+ * Levi Beckerson (Whir), Michael Ward (Tarl), Erik Wolfe (Dwip),           *
+ * Cameron Carroll (Cam), Cyberfox, Karangi, Rathian, Raine,                *
+ * Xorith, and Adjani.                                                      *
+ * All Rights Reserved.                                                     *
+ *                                                                          *
+ * External contributions from Remcon, Quixadhal, Zarius, and many others.  *
+ *                                                                          *
+ ****************************************************************************
+ *             Extended Mud Features Module: MCCP V2, MSP                   *
  ****************************************************************************/
 
-#include <zlib.h>
+#if defined(__OpenBSD__) || defined(__FreeBSD__)
+const int ENOSR = 63;
+#endif
 
-#define TELOPT_COMPRESS2 86
-#define COMPRESS_BUF_SIZE MAX_STRING_LENGTH
+const unsigned char will_compress2_str[] = { IAC, WILL, TELOPT_COMPRESS2, '\0' };
+const unsigned char start_compress2_str[] = { IAC, SB, TELOPT_COMPRESS2, IAC, SE, '\0' };
+const unsigned char will_msp_str[] = { IAC, WILL, TELOPT_MSP, '\0' };
+const unsigned char start_msp_str[] = { IAC, SB, TELOPT_MSP, IAC, SE, '\0' };
 
-extern const unsigned char will_compress2_str[];
-extern const unsigned char start_compress2_str[];
-
-bool compressStart (DESCRIPTOR_DATA * d);
-bool compressEnd (DESCRIPTOR_DATA * d);
-
-typedef struct mccp_data MCCP;
-
-struct mccp_data
-{
-  z_stream *out_compress;
-  unsigned char *out_compress_buf;
-};

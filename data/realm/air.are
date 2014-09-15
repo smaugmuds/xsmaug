@@ -1,0 +1,1723 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            In the Air~
+Author          Copper~
+Vnums           500 539
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          5 10 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      500
+Keywords  fairy dragon~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     A fairy dragon~
+Long      A fairy dragon is fluttering around here looking for something to do...
+~
+Desc      It's a cute little multi-colored dragon...about 2 foot long.
+It gracefully dances around your head.
+~
+Nattacks  0.000000
+Stats1    500 20 0 0 0 0
+Stats2    5 21 5 50 2 4 1
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_invis detect_magic~
+#ENDMOBILE
+
+#MOBILE
+Vnum      501
+Keywords  griffin~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A griffin~
+Long      A large black winged griffin swoops into an attack.
+~
+Desc      Golden maned and black all over.  It's quite a beautiful creature if not
+for the fact it is hungry and is attacking you!
+~
+Nattacks  0.000000
+Stats1    300 500 0 0 0 0
+Stats2    8 21 4 104 2 5 2
+Speaking  common~
+Actflags  npc aggressive stayarea~
+#ENDMOBILE
+
+#OBJECT
+Vnum      500
+Keywords  rose~
+Type      armor~
+Short     a red rose~
+Long      A red rose is lying on the ground.~
+WFlags    take~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     8 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    rose~
+ExDesc       This is no ordinary rose, as it is a gift from Dionysus to his
+dearest, Wendella.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#ROOM
+Vnum      500
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above the ground north of the city.
+It seems like you can see forever!
+~
+#EXIT
+Direction east~
+ToRoom    505
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    501
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    520
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      501
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 20 meters above the inside wall of West Midgaard.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    500
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    506
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    502
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    521
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      502
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 20 meters above the west gate of Midgaard.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    501
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    507
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    503
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    522
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      503
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above Wall Road.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    502
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    508
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    504
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    523
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      504
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above Wall Road.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    503
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    509
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    524
+Desc      More of the same.
+~
+#ENDEXIT
+
+Reset M 500 10 504 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      505
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above the ground north of Midgaard.
+It seems like you can see forever!
+~
+#EXIT
+Direction east~
+ToRoom    510
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    506
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    500
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    525
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      506
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 20 meters above the magic shop.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    505
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    511
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    507
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    501
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    526
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      507
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above Main Street.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    506
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    512
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    508
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    502
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    527
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      508
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 20 meters above the Mage Guild Hall.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    507
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    513
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    509
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    503
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    528
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      509
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above Poor Alley.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    508
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    514
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    504
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    529
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      510
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above the ground north of Midgaard.
+It seems like you can see forever!
+~
+#EXIT
+Direction east~
+ToRoom    515
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    511
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    505
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    530
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      511
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 20 meters above the bakery.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    510
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    516
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    512
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    506
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    531
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      512
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above Main Street.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    511
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    517
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    513
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    507
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    532
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      513
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 20 meters above Armoury.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    512
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    518
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    514
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    508
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    533
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      514
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above Poor Alley.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    513
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    519
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    509
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    534
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      515
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 10 meters above the temple spire of Midgaard
+It seems like you can see forever!
+~
+#EXIT
+Direction south~
+ToRoom    516
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    510
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    535
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      516
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above the Temple Square.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    515
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    517
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    511
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    536
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3057
+Desc      More of the same
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      517
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above Market Square.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    516
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    518
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    512
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    537
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      518
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above Market and Commons.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    517
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    519
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    513
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    538
+Desc      More of the same.
+~
+#ENDEXIT
+
+Reset M 500 10 518 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      519
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above ground, overlooking the Common Square.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    518
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    514
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    539
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      520
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above the ground just north of Midgaard.
+It seems like you can see forever!
+~
+#EXIT
+Direction east~
+ToRoom    525
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    521
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    500
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      521
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above the west gate of Midgaard.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    520
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    526
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    522
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    501
+Desc      More of the same.
+~
+#ENDEXIT
+
+Reset M 500 10 521 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      522
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above west gate of Midgaard.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    521
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    527
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    523
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    502
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      523
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above wall road.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    522
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    528
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    524
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    503
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      524
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above wall road.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    523
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    529
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    504
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      525
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above the ground north of Midgaard.
+It seems like you can see forever!
+~
+#EXIT
+Direction east~
+ToRoom    530
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    526
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    520
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    505
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      526
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above the magic shop.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    525
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    531
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    527
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    521
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    506
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      527
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above main street.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    526
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    532
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    528
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    522
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    507
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      528
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above the mage guild.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    527
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    533
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    529
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    523
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    508
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      529
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above poor alley.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    528
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    534
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    524
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    509
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      530
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above the ground north of Midgaard.
+It seems like you can see forever!
+~
+#EXIT
+Direction east~
+ToRoom    535
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    531
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    525
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    510
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      531
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above bakery and cleric guild.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    530
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    536
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    532
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    526
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    511
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      532
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above main street.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    531
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    537
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    533
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    527
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    512
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      533
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 40 meters above the armoury.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    532
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    538
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    534
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    528
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    513
+Desc      More of the same.
+~
+#ENDEXIT
+
+Reset M 501 3 533 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      534
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above poor alley.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    533
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    539
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    529
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    514
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      535
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 30 meters above the temple spire.
+It seems like you can see forever!
+~
+#EXIT
+Direction south~
+ToRoom    536
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    530
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1900
+Desc      You see a fabulous rainbow!
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    515
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      536
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above the temple square.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    535
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    537
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    531
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    516
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      537
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above market square.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    536
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    538
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    532
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    517
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      538
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above market square and commons square.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    537
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    539
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    533
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    518
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      539
+Name      In the air ...~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are flying!
+Currently you are about 60 meters above commoners square and the dump.
+It seems like you can see forever!
+~
+#EXIT
+Direction north~
+ToRoom    538
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    534
+Desc      More of the same.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    519
+Desc      More of the same.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

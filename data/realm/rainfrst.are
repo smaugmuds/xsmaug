@@ -1,0 +1,5654 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Rain-Forest~
+Author          Cianhydle~
+Vnums           25700 25784
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          20 40 0 100
+ResetMsg        Strange sounds echo from within the rain-forest...~
+ResetFreq       15
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      25700
+Keywords  knuumfactu native shaman~
+Race      human~
+Class     Cleric~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Knuumfactu~
+Long      Knuumfactu the native shaman, is in her cave here.
+~
+Desc      Knuumfactu  is  a  middle-aged woman dressed in animal skins
+and fern leaves.  She wears jewlery made of gold and silver,
+adorned with precious gems, in addition  to simple, symbolic
+jewlery made of bones and feathers.   Her  features are well
+defined,  with a sharp nose,  high cheek bones,  and tightly
+drawn lips.   As you look upon her,  her eyes sparkle with a
+bit of magic.  You cannot exactly put your finger on it...
+~
+Nattacks  0.000000
+Stats1    300 -1 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary~
+Attacks   blindness~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   temple~
+Comlist   mpechoat $n Knuumfactu closes her eyes and mumbles a few words.
+say Ahh... $n .  You want to know more of our temple, yes?
+say Outsiders always come here asking about the temple, many
+say never return.  In order to enter our most sacred place,
+say and visit our dead ancestors, you must first prove to me
+say you are strong.  Bring to me a token of your strength and
+say then we will discuss this matter more.
+mpechoat $n Knuumfactu chuckles politely.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mpechoat $n Knuumfactu smiles as you enter the cave.
+say Welcome to my home, outsider.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   outsider~
+Comlist   say Yes, so few people come to the rain-forest.  Those who are
+say are not born in the rain-forest are considered outsiders.
+say We are no better than you, nor are you any better than us,
+say we are just different.  Many outsiders should be careful
+say while wandering the rain-forest, for with-in are several
+say hidden dangers!
+mpechoat $n Knuumfactu grins evil after the word, 'dangers'.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   home~
+Comlist   say It might not be much by your standards, but its my home.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   cave~
+Comlist   mpechoat $n Knuumfactu growls as you say the word, 'cave'.
+say Its my home, please don't call it a cave.
+mpechoat $n Knuumfactu sighs loudly.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   shaman~
+Comlist   say Yes, I am a shaman for my people.  While we are not many
+say in number, my people need me.  Once an outsider told me
+say of klarecs from beyond the rain-forest, I guess I am like
+say one of them from what he said.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   dangers~
+Comlist   mpechoat $n Knuumfactu ponders at what you said, then speaks softly.
+say Good, you are not deaf to the warnings of an old woman.
+say Many dangers lurk in the rain-forest, snakes able to
+say crush a man, insects with deadly poisons, and the feared
+say crocodiles.  In addition there are many natural dangers
+say as well.  From the river to the skys above, one should
+say always becareful and look before they leap.
+mpechoat $n Knuumfactu smiles after she is done speaking.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   blessing~
+Comlist   say Hmmmm... you want my blessing to enter our sacred temple?
+say Very well, I will warn you outsiders who enter our temple
+say often never return.  However, those who do prove themself
+say worthy, are granted tokens of our Gods approval.  If you
+say seek to attain their approval, find me an item to show me
+say you are stong.  Then we will talk more about the temple.
+mpechoat $n Knuumfactu eyes twinkle with a spark of magic.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  give_prog~
+Arglist   king crocodile tooth~
+Comlist   say Well done!  This tooth is a worthy token of your strength.
+say Now you need to prove to me you are also perceptive.  Seek
+say me out some strange herbs from the rainforest.  The herbs
+say should not me too hard to find, bring them back and you
+say will be ready for the last test.
+mpechoat $n Knuumfactu smiles after she is done speaking.
+mppurge tooth
+mpmload 25752
+mpgoto 25701
+mpmload 25740
+mpgoto 25768
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      25701
+Keywords  giant centipede insect bug~
+Race      insect~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a giant centipede~
+Long      A giant centipede is crawling about here.
+~
+Desc      The centipede is about a foot long, and it has.. 97... 98...
+99... hmm... only 99 legs?  Oh well, close enough.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts guts~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25702
+Keywords  parasol ant~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a parasol ant~
+Long      A large parasol ant moves around searching for food.
+~
+Desc      There  are  alot of different kinds of insects native to the
+rain-forest.  The parasol is about 2 inches long.   Fighting
+one ant should not be too much of a problem, now if it was a
+whole ant colony... you might have a problem.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    21 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head legs~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25703
+Keywords  giant centipede~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a giant centipede~
+Long      A giant centipede crawls atop the cliff here.
+~
+Desc      The centipede is about a foot long.  Is it poisonous?
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    21 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head guts~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25704
+Keywords  common iguana~
+Race      reptile~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a common iguana~
+Long      A common iguana crawls around the base of a mangrove.
+~
+Desc      This is  a  rather plain, green colored lizard that is about
+4 feet long.   Its front legs are longer than its back legs,
+giving it a somewhat upright stance.   The lizard looks back
+at you with cold eyes and flicks its tounge into the air.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head legs~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25705
+Keywords  boa constrictor~
+Race      reptile~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a boa constrictor~
+Long      A boa constrictor is coiled on a branch here.
+~
+Desc      The boa constictor  is over 8 feet long and nearly a foot in
+diameter. Brown and green patters run along the snakes body.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head tail~
+Attacks   tail~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25706
+Keywords  blue morpho butterfly~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a blue morpho butterfly~
+Long      A blue morpho butterfly flies around beneath the canopy.
+~
+Desc      The butterfly is small, but quite agile.  For  some  strange
+reason you think it will be harder to kill than your average
+butterfly.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    23 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts wings~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25707
+Keywords  grey fan-eyed opossum~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a grey fan-eyed opossum~
+Long      A small grey opossum searches the ground for insects.
+~
+Desc      This little mammal runs  about  the rain-forest floor hiding
+from preditors such as margays, boas, and snakes.   The eyes
+of the creature are amazingly large,  and  are  accented  by
+grey fir around the face of the opossum.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head legs tail~
+Attacks   bite sting~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25708
+Keywords  bird eating spider~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a bird-eating spider~
+Long      A strange spider is hanging about eye-level here.
+~
+Desc      This spider  is  about the size of your head.  Powerful jaw-
+like  mandibles  allow  the   spider  to  eat  larger  prey,
+including parrots and other birds of the rain-forest.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts legs~
+Immune    acid~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25709
+Keywords  mouse opossum~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a mouse opossum~
+Long      A small mouse opossum runs along the rain-forest floor.
+~
+Desc      This little vermin lives  on  the rain-forest floor at tries
+to avoid larger creatures like crocodiles, snakes,  and  the
+occassional outsiders that seem to visit the area.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head legs tail~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25710
+Keywords  white tuffed marmoset~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a white tuffed marmoset~
+Long      A white tuffed marmoset swings along the low haning branches.
+~
+Desc      This small monkey lives in the lower branches of the canopy.
+It occassionalky swings down to the ground to dig around for
+some grubs or something...
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head arms legs guts~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25711
+Keywords  crocodile~
+Race      reptile~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a crocodile~
+Long      A crocodile is resting along the river bank here.
+~
+Desc      One of the most fearsome creatures in the rain-forest,  this
+crocodile is about 7 feet long.   You have heard rumors that
+these beasts can grow in excess of 10 feet long...
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Bodyparts head tail~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25712
+Keywords  margay~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a margay~
+Long      A margay prowls the rain-forest near the river.
+~
+Desc      This medium sized cat prowls  the  rain-forest  floor and is
+know to also live partly in the canopy above.   Like all the
+animals, the margay must come to the river to find water.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head legs guts~
+Attacks   bite claws~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25713
+Keywords  giant centipede~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a giant centipede~
+Long      A giant centipede crawls along the rain-forest floor.
+~
+Desc      This little critter is a foot long.   For  some  odd  reason
+this centipede  has  101 legs!  Maybe the fantasy setting is
+mutating these mobiles, or maybe you miscounted?
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    26 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head guts~
+Attacks   sting~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25714
+Keywords  tree frog~
+Race      amphibian~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a tree frog~
+Long      A tree frog hops about here.
+~
+Desc      The   rain-forest  is  home  to  alot  of  brightly  colored
+animals,  including  amphibians.   Various  species  of tree
+frogs are in the trees, as well as on the ground.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    26 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head legs~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25715
+Keywords  scarlet macaw bird parrot~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a scarlet macaw~
+Long      A scarlet macaw sits on a low hanging branch here.
+~
+Desc      The  scarlet  macaw   is  your  typical,  brightly  colored,
+tropical  bird.  It  is  about  2 feet  tall with a wingspan
+3 to 4 feet.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    26 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts legs beak~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25716
+Keywords  giant scorpian~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a giant scorpian~
+Long      A giant scorpian crawls about the rain-forest floor.
+~
+Desc      Spiderlike little bug, well, this one isn't little, its like
+3 feet long, its tail being a good third of its total length.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    27 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head guts~
+Attacks   sting~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25717
+Keywords  silver angel fish~
+Race      fish~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a silver angel fish~
+Long      A silver colored fish swims in the river here.
+~
+Desc      This fish is alot prettier than that  catfish.  I  still  do
+not know why people have fish as pets, but to each their own!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    27 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head fins~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25718
+Keywords  golden sunfish fish~
+Race      fish~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a golden sunfish~
+Long      A small golden fish is swimming along here.
+~
+Desc      This golden  colored  fish swims  spending every  day of its
+life in this river.  If  you  know  why people  keep fish as
+pets, please let me know.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    27 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head fins~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25719
+Keywords  green parrotfish fish~
+Race      fish~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a green parrotfish~
+Long      A large green fish swims in the river here.
+~
+Desc      This  large  green  fish  swims back and forth in the river.
+Maybe it will find a little fish and eat it today?   Maybe a
+big fish will find this fish and eat it?  Kind of like being
+an adventurer, eh?
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    28 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head fins~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25720
+Keywords  two toe sloth mammal~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a two-toed sloth~
+Long      A two-toed mammal hangs from a branch to drink here.
+~
+Desc      This mammal looks like and cross between a bear and a mouse.
+It hangs from  the  branches above the river by its two toes
+on its rear legs to get drinks of water. It moves about at a
+slugs pace, and have a very stupid expression on its face.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    28 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head arms legs~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25721
+Keywords  king crocodile reptile~
+Race      reptile~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a king crocodile~
+Long      A large reptile is submerged in the river here.
+~
+Desc      This  has  to be king of all crocodiles!  This beast is damn
+near 16 feet long. You are not exactly sure on what this guy
+eats, but you can make an educated guess. Anything it wants.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    30 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  invisible~
+Bodyparts head tail~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25722
+Keywords  lettered aracari bird~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a lettered aracari~
+Long      A large bird is washing itself in the river.
+~
+Desc      This is another typical,  brightly colored bird found in the
+rain-forest.  Aracaris are similar to toucans.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    31 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts legs wings beak~
+Attacks   claws~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25723
+Keywords  long tailed guppy fish~
+Race      fish~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a long-tailed guppy~
+Long      A long-tailed fish swims around in the river.
+~
+Desc      This fish swims happily through the river.   You ever wonder
+why people have fish as pet?
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    32 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head fins~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25724
+Keywords  stripped zebra angel fish~
+Race      fish~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a zebra angel fish~
+Long      A stripped fish swims around here.
+~
+Desc      In particular, tropical fish.  Now  this  angel fish is very
+pretty and all, but why have a fish for a pet?
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    32 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head fins~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25725
+Keywords  red headed parrot parrotfish fish~
+Race      fish~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a red-headed parrotfish~
+Long      A large red-headed fish swims in the river here.
+~
+Desc      This fish  is  really  interesting,  its different colors!!!
+It swims around all day in  the  river.  Maybe  people  keep
+fish as pets because they are easy to maintain?
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    33 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head fins~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25726
+Keywords  gold fish simple~
+Race      fish~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a simple gold fish~
+Long      A simple gold fish swims along the twisting river.
+~
+Desc      Maybe  its  not  the gold fish you are use to seeing, but it
+is gold and it is a fish... thus a gold fish. Gold fish seem
+to be popular 'pet' fish.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    33 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head fins~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25727
+Keywords  school silver carp fish~
+Race      fish~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a school of carp~
+Long      A school of silver fish are trying to move upriver here.
+~
+Desc      This school  of  fish is trying to swim river.  They are not
+having  alot of success.  Fish  are  not  exactly  known for
+being super intelligent, ever go fishing?
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    33 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head fins~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25728
+Keywords  flat headed cat catfish fish~
+Race      fish~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a flat-headed catfish~
+Long      A flat-headed fish swims along the river bottom.
+~
+Desc      Well, maybe some fish are nice  to  look at, but this one is
+kinda ugly.  It rests at the bottom of the  river  below the
+current in the mud.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    34 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head fins~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25729
+Keywords  red howler monkey~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a red howler monkey~
+Long      A red monkey climbs in the trees here.
+~
+Desc      There is  nothing special about these monkeys except the red
+coloration   of  their   hair  and   the  loud   howls  they
+occassionally cry.  The  howl  of this creature can be heard
+through out the rain-forest.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    34 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts arms legs~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25730
+Keywords  sulfur breasted toucan bird~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a sulfur-breasted toucan~
+Long      A large bird has made its nest in the palmetto tree.
+~
+Desc      This  is  a strangely colored bird.  It is various shades of
+red, green,  yellow,  and grey.  You easily reconganize this
+bird as a toucan due to it's long, protruding beak.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    35 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts wings beak~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25731
+Keywords  vine snake~
+Race      reptile~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a vine snake~
+Long      A vine runs along a teak branch.
+~
+Desc      At  a second glance you realize that this is no vine at all!
+But in fact a well camoflauged snake.  It  is  about  3 feet
+long,  and  about  the  same  diameter as a small vine.  The
+snake's head is shaped like an oval.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    35 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head tail~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25732
+Keywords  blue yellow macaw bird~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a blue and yellow macaw~
+Long      A blue and yellow bird is perched on a branch.
+~
+Desc      Macaws  are  similar  to  parrots.   This  particular  birds
+body  is  nearly  2 feet long.  Its head is blue and yellow,
+while  its  body  is  a deep red, changing to a brighter red
+then blue at its tail feathers.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    32 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts wings beak~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25733
+Keywords  tree frog~
+Race      amphibian~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a tree frog~
+Long      A tree frog climbs on the slanted royal palm.
+~
+Desc      The rain-forest  is home  to  several species of tree frogs.
+Some are green with spots of yellow,  others are yellow with
+spots of green.  Most,  like  many of the other creatures in
+the rain-forest, are colorful.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    32 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25734
+Keywords  toco toucan bird blue yellow green~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a toco toucan~
+Long      A large colorful bird is perched on an outer branch.
+~
+Desc      This  rain-forest  bird  has a very long bill.  Its feathers
+various shades of white,  yellow,  brown, and grey.  Toucans
+are commonly found through out the rain-forest.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    32 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts wings beak~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25735
+Keywords  tree viper snake~
+Race      reptile~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a tree vipre~
+Long      A wicked looking snake moves along the branches.
+~
+Desc      This  snake  is  about  4 feet long.  Green, grey, and brown
+patterns run along its body. The head of the snake is shaped
+like a triangle.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    33 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Bodyparts head tail~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25736
+Keywords  spider monkey brown black~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a spider monkey~
+Long      A brown and black monkey swings about the tree.
+~
+Desc      A  variety  of  primates  are  found in the rain-forest. The
+spider  monkey  is  perhaps one of the most agile of monkeys
+found here.  It  easily  swings  from one branch to another,
+with  the  an  agility you have not seen before.  You do not
+think it would be that hard  to  kill,  just  as long as you
+got ahold of the spider monkey.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    34 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts arms legs~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25737
+Keywords  blue necked tanager bird~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a blue-necked tanager~
+Long      A blue necked bird nests on an outer branch.
+~
+Desc      This bird looks sort of like a parrot.  Its  head is a light
+blue, while  its  neck  has  a ring of yellow and dark blue.
+The rest of its body is  blue with  its feathers ending in a
+light brighter blue and then yellow.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    34 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts wings beak~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25738
+Keywords  vampire bat ~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a vampire bat~
+Long      A bat is sleeping on one &fof the branches here.
+~
+Desc      The  rain-forest  is  home to a large number of bat species,
+but  most  hide  better  than this fellow.  Hanging from the
+tree this bat is about  3  feet long.  Better leave this bat
+alone.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    31 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head wings~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25739
+Keywords  Jamocha native hunter~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Jamocha~
+Long      Jamocha the native hunter, guards the enterance here.
+~
+Desc      Jamocha  is  a  strong  man, native to the rain-forest.  His
+face  is  painted  with bright colors, and about his body he
+wear little other than a fern leaf and symbols of his hunter
+status.  A  necklace of teeth as proof of his strength.  The
+hide  of  a  python to prove he has endurance.  The feathers
+of  a  brightly  colored  bird as proof of his agility.  And
+finally  he  wears  some  mystical bracers of gold and ivory
+about his wrists as proof of something...
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mpechoat $n Jamocha smiles as you come walking down the path.
+say Only those who have recieved the blessings of
+say the shaman may enter our sacred temple.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   temple~
+Comlist   mpechoat $n Jamocha shakes his head.
+say Go talk with the shaman about that.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   blessing~
+Comlist   mpechoat $n Jamocha shakes his head.
+say You need to visit Knuumfactu and ask her about that.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   shaman~
+Comlist   mpechoat $n Jamocha points to the north-east.
+say Knuumfactu lives off that direction, look for a cave in
+say the cliff near the river.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   knuumfactu~
+Comlist   say She is our shaman.  She lives in the cave above the river.
+mpechoat $n Jamocha rolles his eyes.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   slingshot~
+Comlist   say Yeah, I made a slingshit for Geazbal.  Have you seen it?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   geazbal~
+Comlist   mpechoat $n Jamocha chuckles softly.
+say He is a good kid.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      25740
+Keywords  geazbal native boy~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     Geazbal~
+Long      Geazbal the native boy, walks through the ferns.
+~
+Desc      This  young  native  boy  is dressed in fern leaves.  He has
+a happy expression on his face.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_invis detect_hidden~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   cry
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   slingshot~
+Comlist   mpechoat $n Geazbal sniffs sadly as he tells you his story.
+say I lost my best slingshot while looking for flowers on top
+say of the cliff.  Jamocha made that slingshot just for me!
+mpechoat $n Geazbal sighs loudly.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   jamocha~
+Comlist   mpechoat $n Geazbal points to the west.
+say He guards the temple from intruders.  He also made my
+say favorite slingshot.  Wish I had it back.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   flowers~
+Comlist   say Knuumfactu says that flowers are used for magical spells.
+say I go and gather them sometimes for her.
+mpechoat $n Geazbal points at himself proudly.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   purple~
+Comlist   mpechoat $n Geazbal frowns.
+say Maybe I could help you if you got my slingshot back?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   orchid~
+Comlist   say I can help you with that, but I want my slingshot back
+say first, okay?
+mpechoat $n Geazbal looks a bit happier.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   knuumfactu~
+Comlist   say She is our shaman.  You can find here in the cave in the
+say cliff over by the river.
+mpechoat $n Geazbal points off to the northwest.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   flower~
+Comlist   say Yeah, I know alot about flowers.  What kind do you want to
+say know about?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   temple~
+Comlist   say Well, Jamocha guards the temple.  Maybe you should ask
+say Knuumfactu about that $n.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   cliff~
+Comlist   say Well, I was looking for a flower on top of the cliff
+say when some kind of flying snake came out of nowhere!
+say I got scared and dropped my slingshot.  Please do not
+say tell Jamocha I ran away.  He is going to be angry that
+say I lost my slingshot anyways.
+mpechoat $n Geazbal sniffs sadly.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   sniff
+say I lost my slingshot.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   serpent~
+Comlist   say It was horrible!  Scales and feathers!
+shiver
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   river~
+Comlist   say Be careful around the waterfall $n.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  give_prog~
+Arglist   slingshot~
+Comlist   say Wow!  Thanks $n.  You are the best!
+mpmload 25751
+mpgoto 25768
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      25741
+Keywords  giant mosquito~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a huge mosquito~
+Long      A huge mosquito darts above the river here.
+~
+Desc      Mosquitos can get real big in the rain-forest.  This guy has
+a wingspan of nearly a foot!  Damn,  who  knows what kind of
+things this bug is carring around!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    35 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts wings~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25742
+Keywords  scarlet macaw bird~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a scarlet macaw~
+Long      A scarlet macaw soars above the rain-forest here.
+~
+Desc      The scarlet macaw is your typical, brightly colored, tropical
+bird.  It is about 2 feet tall with a wingspan 3 to 4 feet.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    34 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts legs beak~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25743
+Keywords  harpy eagle bird~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a harpy eagle~
+Long      An ugly colored eagle flys above the canopy here.
+~
+Desc      This  is  one  of  the larger birds in the rain-forest.  The
+reason it  is  called  a harpy eagle is because of its great
+size and its ugly coloration of dull browns and greys.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    36 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts legs wings beak~
+Attacks   bite claws~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25744
+Keywords  heliconid butterfly~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a heliconid butterfly~
+Long      A butterfly flys just above the tree tops here.
+~
+Desc      The wingspan  of  the heliconid butterfly ranges from half a
+foot to a foot.  The butterfly is easily reconganized by the
+bright yellow and orange designs on its black body and wings.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    36 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts legs wings beak~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25745
+Keywords  white crested guan bird~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a white-crested guan~
+Long      A white-crested bird flys above trees here.
+~
+Desc      This large bird looks akward and bulky.   Its body is mainly
+black, and its head is blue.   On the top of  the guans head
+are several white feathers that form a crest or plume.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    37 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts legs wings beak~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25746
+Keywords  common swift bird~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a common swift~
+Long      A rather plain bird flys above the trees.
+~
+Desc      Swifts are small grey birds.   Why ever would they be called
+'swifts'?
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    37 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts wings beak~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25747
+Keywords  hyacinthine macaw blue bird~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a hyacinthine macaw~
+Long      A blue macaw soars over the canopy here.
+~
+Desc      Another kind of the macaw, the hyacinthine macaw is different
+shades of blue.  The wing span of the bird is nearly  3 feet.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    38 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts legs beak~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25748
+Keywords  blue bird beryl spangled tanager~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a beryl-spangled tanager~
+Long      A blue-colored bird soars above the rain-forest here.
+~
+Desc      The body of this bird  is  a  bright  blue  with small spots
+of grey, black, white, and dark  blue.  The  tanager  has  a
+wingspan of nearly 2 feet and it rather plump looking.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    39 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts legs beak~
+Attacks   bite~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25749
+Keywords  winged serpent bird snake~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a winged serpent~
+Long      A combination of a bird and a snake is here.
+~
+Desc      This creature can best be described as a winged serpent.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    39 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  invisible detect_invis detect_hidden flying~
+Bodyparts head wings tail~
+Attacks   bite sting~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25750
+Keywords  quetzalcoatl snake bird serpent winged feathered beast~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     the Quetzalcoatl~
+Long      A huge feathered serpent is here.
+~
+Desc      The serpent is at least  4  feet long, and has a wingspan of
+nearly  5  feet.  Its  scales  are  a  deep green, while its
+feathers are a shimmering blue, red, and yellow color.  This
+creature is mezzmerizing as well as deadly.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary flying~
+Bodyparts head wings tail~
+Resist    plus6~
+Attacks   bite sting~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25751
+Keywords  geazbal native boy~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     Geazbal~
+Long      Geazbal the native boy, walks through the ferns.
+~
+Desc      This  young  native  boy  is dressed in fern leaves.  He has
+a happy expression on his face.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_invis detect_hidden~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   say Hey!  Look I got my slingshot back.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   purple~
+Comlist   mpechoat $n Geazbal smiles happily.
+say No problem, those are easy to get.  First go to the square
+say stone overlooking the waterfall, by the temple.  Look for
+say a teak tree.  Near the teak tree there should be some nice
+say purple orchids growing.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   orchid~
+Comlist   mpechoat $n Geazbal smiles happily.
+say Ok.  Yeah I have seen those growing over around the temple.
+say Near the waterfall search for some teak trees.  Near the
+say teak I saw some purple orchid growing just last week.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   slingshot~
+Comlist   say Yeah, I got it back.
+mpechoat $n Geazbal smiles happily.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   flower~
+Comlist   say Yeah, I know alot about flowers.  What kind of flower do
+say you want to know about $n?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      25752
+Keywords  knuumfactu shaman native~
+Race      human~
+Class     Cleric~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Knuumfactu~
+Long      Knuumfactu the native shaman, is in her cave here.
+~
+Desc      Knuumfactu  is  a  middle-aged woman dressed in animal skins
+and fern leaves.  She wears jewlery made of gold and silver,
+adorned with precious gems, in addition  to simple, symbolic
+jewlery made of bones and feathers.   Her  features are well
+defined,  with a sharp nose,  high cheek bones,  and tightly
+drawn lips.   As you look upon her,  her eyes sparkle with a
+bit of magic.  You cannot exactly put your finger on it...
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden~
+Attacks   blindness~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mpechoat $n Knuumfactu smiles as you enter the cave.
+say Welcome to my home.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   perception~
+Comlist   say Yes, a test of perception.  Find me some strange herbs as
+say a token of your perception.
+mpechoat $n Knuumfactu grins.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   herb~
+Comlist   say Yes, some strange herbs.  They are found in the rain-forest,
+say somewhere.  A perceptive eye should be able to find them
+say with ease.  Explore far and wide $n.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   geazbal~
+Comlist   say Someday that boy will be the shaman.
+mpechoat $n Knuumfactu smiles.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   herbs~
+Comlist   say Yes, some strange herbs.  They are found in the rain-forest,
+say somewhere.  A perceptive eye should be able to find them
+say with ease.  Explore far and wide $n.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   strange~
+Comlist   say Yes, some strange herbs.  They are found in the rain-forest,
+say somewhere.  A perceptive eye should be able to find them
+say with ease.  Explore far and wide $n.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   tooth~
+Comlist   say That was a worthy token of your strength.  Now find me some
+say strange herbs as a token of your perception.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   temple~
+Comlist   mpechoat $n Knuumfactu frowns.
+say Sorry $n, ask me about that some other time.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   blessing~
+Comlist   say Sorry $n, ask me about that some other time.
+mpechoat $n Knuumfactu frowns.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   blessings~
+Comlist   mpechoat $n Knuumfactu frowns.
+say Sorry $n, ask me about that some other time.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  give_prog~
+Arglist   strange herbs~
+Comlist   mpechoat $n Knuumfactu claps at your performance.
+say Very good.  You will need to be perceptive if you wish to
+say survive the dangers inside the temple.  Now for the last
+say test.  The purple orchid is a symbol of compassion to our
+say people.  Find me a purple orchid as a token of compassion
+say and you may enter the temple $n.
+mppurge herbs
+mpmload 25753
+mpgoto 25766
+tell jamocha bcc123beta
+mpgoto 25768
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      25753
+Keywords  knuumfactu shaman native~
+Race      human~
+Class     Cleric~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Knuumfactu~
+Long      Knuumfactu the native shaman, is in her cave here.
+~
+Desc      Knuumfactu  is  a  middle-aged woman dressed in animal skins
+and fern leaves.  She wears jewlery made of gold and silver,
+adorned with precious gems, in addition  to simple, symbolic
+jewlery made of bones and feathers.   Her  features are well
+defined,  with a sharp nose,  high cheek bones,  and tightly
+drawn lips.   As you look upon her,  her eyes sparkle with a
+bit of magic.  You cannot exactly put your finger on it...
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden~
+Attacks   blindness~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   compassion~
+Comlist   mpechoat $n Knuumfactu nods her head.
+say Yes, a test of compassion.  Bring me a purple orchid.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   test~
+Comlist   say A test of compassion $n.
+mpechoat $n Knuumfactu smiles.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   purple~
+Comlist   say Find a purple orchid and bring it back to me as a symbol
+say of your compassion.  Return with it and you may enter the
+say the temple $n.
+mpechoat $n Knuumfactu smiles.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   orchid~
+Comlist   say Find a purple orchid and bring it back to me as a symbol
+say of your compassion.  Return with it and you may enter the
+say the temple $n.
+mpechoat $n Knuumfactu smiles.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   temple~
+Comlist   mpechoat $n Knuumfactu shakes her head.
+say No.  Ask me that again some other time $n.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   blessing~
+Comlist   say Sorry $n.  Ask me that again some other time.
+mpechoat $n Knuumfactu shakes her head.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   blessings~
+Comlist   mpechoat $n Knuumfactu shakes her head.
+say We can talk about that some other time $n.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   jamocha~
+Comlist   say I hope he is doing well.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   geazbal~
+Comlist   say Someday that boy will become shaman.
+mpechoat $n Knuumfactu smiles happily.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   smile
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  give_prog~
+Arglist   purple orchid flower~
+Comlist   mpechoat $n Knuumfactu smiles as you hand her the flower.
+say Well done $n.  Here is the key to the temple.
+say You have proven yourself strong, perceptive, and kind.  Go
+say now to the temple, defeat the elemental guardians, and you
+mpmload 25754
+mpoload 25734
+give key $n
+mpgoto 25768
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      25754
+Keywords  knuumfactu native shaman~
+Race      human~
+Class     Cleric~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Knuumfactu~
+Long      Knuumfactu the native shaman, is in her cave here.
+~
+Desc      Knuumfactu  is  a  middle-aged woman dressed in animal skins
+and fern leaves.  She wears jewlery made of gold and silver,
+adorned with precious gems, in addition  to simple, symbolic
+jewlery made of bones and feathers.   Her  features are well
+defined,  with a sharp nose,  high cheek bones,  and tightly
+drawn lips.   As you look upon her,  her eyes sparkle with a
+bit of magic.  You cannot exactly put your finger on it...
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden~
+Attacks   blindness~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   say If you have come looking for my blessings to enter the
+say temple, you will just have to come back some other time.
+say I am a very busy woman.  Now, go away!
+mpechoat $n UHMMPHHH!!!!
+mpechoat $n Knuumfactu shoves you out of the cave!
+mpforce $n south
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      25755
+Keywords  earth elemental~
+Race      spirit~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an earth elemental~
+Long      An elemental of earth guards the temple.
+~
+Desc      This elemental guardian is made of EARTH!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  sanctuary~
+Bodyparts head arms legs~
+Resist    energy blunt pierce~
+Attacks   punch~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25756
+Keywords  water elemental~
+Race      spirit~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a water elemental~
+Long      An elemental of water guards the temple.
+~
+Desc      This elemental guardian is made of WATER!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  sanctuary~
+Bodyparts head arms legs~
+Resist    energy blunt pierce~
+Attacks   punch~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25757
+Keywords  air elemental~
+Race      spirit~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an air elemental~
+Long      An elemental of air guards the temple.
+~
+Desc      This elemental guardian is made of AIR!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  sanctuary~
+Bodyparts head arms legs~
+Resist    energy blunt pierce~
+Attacks   punch~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25758
+Keywords  fire elemental~
+Race      spirit~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a fire elemental~
+Long      An elemental of fire guards the temple.
+~
+Desc      This elemental guardian is made of FIRE!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  sanctuary~
+Bodyparts head arms legs~
+Resist    energy blunt pierce~
+Attacks   punch~
+#ENDMOBILE
+
+#MOBILE
+Vnum      25759
+Keywords  native ancestor spirit ghost~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a native spirit~
+Long      A native ancestor is here to reward you.
+~
+Desc      This spirit appears almost human, except it is translucent.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   say Well done $n.
+say You have completed the Rain-Forest quest.
+say Here is your reward!
+mpoload 25739
+give bracer $n
+mpgoto 25768
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum      25700
+Keywords  pool water~
+Type      fountain~
+Short     a pool~
+Long      A pool of water is here.~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     500 3000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25701
+Keywords  river water~
+Type      fountain~
+Short     river water~
+Long      A river runs through the rain-forest here.~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     1000 3000 -2 1 0 None None None
+#EXDESC
+ExDescKey    river water~
+ExDesc       The river water is  cool and refreshing to touch.   It  also
+appears to be safe enough to drink.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25702
+Keywords  scarlet macaw wing~
+Type      armor~
+Short     a scarlet macaw wing~
+Long      The wing of some tropical bird has been dropped here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData mana 33 -1 -1 0
+#EXDESC
+ExDescKey    scarlet macaw wing~
+ExDesc       The wing  of  the  scarlet  macaw is about a foot and a half
+long. It has yellow, blue, green, and red feathers, and does
+not seem to be otherwise special.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25703
+Keywords  king crocodile tooth~
+Type      armor~
+Short     a crocodile tooth~
+Long      A large tooth has been left here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData strength 3 -1 -1 0
+#EXDESC
+ExDescKey    king crocodile tooth~
+ExDesc       Upon closer insepction of the half-inch long tooth, you come
+to realize it is from some large reptile. Maybe it is from a
+small dragon, or perhaps a large lizard? Either way, whoever
+killed this beast must have been STRONG.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25704
+Keywords  cat paws gloves~
+Type      armor~
+Short     a pair of cat paws~
+Long      A severed pair of cat paws have been discarded here.~
+Flags     nodrop noremove~
+WFlags    take hands~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+AffData hitroll -10 -1 -1 0
+AffData damroll 5 -1 -1 0
+#EXDESC
+ExDescKey    cat cats paw paws~
+ExDesc       The front pair of a felines paws have been severed, and look
+like you might  be  able  to wear them on your own hands for
+some unknown reason.  The more you think about wearing them,
+the more you want to get rid of them.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25705
+Keywords  fern~
+Type      container~
+Short     a fern plant~
+Long      A large fern grows in the rain-forest here.~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     50 3000 -2 1 0 None None None
+#EXDESC
+ExDescKey    fern~
+ExDesc       The fern is quite large. Wonder if anything is hidden inside
+it...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25706
+Keywords  fern leaf~
+Type      armor~
+Short     a fern leaf~
+Long      A fern leaf has been dropped here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData armor -40 -1 -1 0
+#EXDESC
+ExDescKey    leaf~
+ExDesc       This leaf leaf looks to serve no purpose what so ever.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25707
+Keywords  bowl~
+Type      container~
+Short     a bowl~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
+#EXDESC
+ExDescKey    bowl~
+ExDesc       The crude bowl is made of clay.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25708
+Keywords  strange herbs~
+Type      trash~
+Short     some strange herbs~
+Long      Some strange herbs are growing here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    strange herbs~
+ExDesc       Hmm... now what are you going to do with this?
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25709
+Keywords  native raft~
+Type      boat~
+Short     a native raft~
+Long      A raft has been hidden away here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    raft native~
+ExDesc       It appears to be solid enough  to use without worrying about
+sinking.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25710
+Keywords  slingshot~
+Type      trash~
+Short     a slingshot~
+Long      A slingshot has been dropped here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    slingshot~
+ExDesc       This slingshot is rather small,  as  if  it  was  made for a
+child.  It is made from teak and a strip of animal hide.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25711
+Keywords  teak tree~
+Type      container~
+Short     behind a teak tree~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
+#EXDESC
+ExDescKey    teak tree~
+ExDesc       A  teak  tree  grows  near  the  waterfall.  There  could be
+something on the back side of the tree.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25712
+Keywords  purple orchid flower~
+Type      trash~
+Short     a purple orchid~
+Long      A purple orchid grows here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    purple flower orchid~
+ExDesc       This purple orchid only grows  in  the remote reaches of the
+rain-forest.  It sure smells nice.~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25713
+Keywords  iguana tail lizard~
+Type      food~
+Short     an iguana tail~
+Long      The tail of a lizard has been dropped here.~
+WFlags    take hold~
+Values    5 1 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    tail lizard iguana~
+ExDesc       This  tail  is  nearly  two  feet  long.  This is not a very
+impressive trophy.   You know you're a Fallout junkie if you
+want to find a stick about now...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25714
+Keywords  frog leg~
+Type      food~
+Short     a frog leg~
+Long      A frog leg has been left here.~
+WFlags    take~
+Values    3 3 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    frog leg~
+ExDesc       The leg  of  a  tropical tree frog has been cut off from its
+body.  Does it really taste like chicken?
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25715
+Keywords  base mangrove tree trunk~
+Type      furniture~
+Short     the base of a mangrove~
+Long      The base of the tree is here.~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     5 3000 -2 1 0 None None None
+#EXDESC
+ExDescKey    base tree trunk mangrove~
+ExDesc       The base of the mangrove tree is very large.  The  trunk  is
+covered with vines and could be climbed up easily.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25716
+Keywords  trunk mangrove tree~
+Type      furniture~
+Short     the trunk of a mangrove~
+Long      The trunk of the tree is here.~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25717
+Keywords  spiderweb~
+Type      furniture~
+Short     some spider webs~
+Long      Thick spider webs cover the mangrove tree.~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25718
+Keywords  bird nest~
+Type      container~
+Short     a nest~
+Long      A nest is at the top of the palmetto tree.~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
+#EXDESC
+ExDescKey    nest~
+ExDesc       The nest is at the very top of the palmetto tree.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25719
+Keywords  bird egg brown~
+Type      food~
+Short     a bird egg~
+Long      A brown egg has been gently placed here.~
+WFlags    take~
+Values    5 5 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    bird egg brown~
+ExDesc       This egg is about an inch in diameter.  The egg is brown.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25720
+Keywords  monkey paws paws monkeys~
+Type      armor~
+Short     a pair of monkey paws~
+Long      A severed pair of monkey paws have been dropped here.~
+WFlags    take hands~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData armor -40 -1 -1 0
+#EXDESC
+ExDescKey    monkey paws paw monkeys~
+ExDesc       There is something sinister about the monkey paws!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25721
+Keywords  royal palm tree~
+Type      furniture~
+Short     a royal palm tree~
+Long      A royal palm tree grows atop the cliff here.~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25722
+Keywords  huge nest~
+Type      container~
+Short     a nest~
+Long      A huge nest is here.~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25723
+Keywords  quetzalcoatl feather~
+Type      armor~
+Short     a Quetzalcoatl feather~
+Long      A feather has been dropped here.~
+Flags     invis magic~
+WFlags    take neck~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData damroll 5 -1 -1 0
+#EXDESC
+ExDescKey    quetzalcoatl feather~
+ExDesc       This feather tingles with magical energy!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25724
+Keywords  bat guano shit~
+Type      trash~
+Short     some bat guano~
+Long      A bat has dropped some guano here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    bat guana shit~
+ExDesc       It is fresh.  It smells.  Why would you ever pick this up?
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25725
+Keywords  snakeskin bracer~
+Type      armor~
+Short     a snakeskin bracer~
+Long      A bracer made from a snake has been left here.~
+Flags     hum invis magic~
+WFlags    take wrist~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData hit 10 -1 -1 0
+AffData mana 10 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData armor -10 -1 -1 0
+#EXDESC
+ExDescKey    snakeskin bracer snake skin~
+ExDesc       This bracer has been made from the mythical Quetzalcoatl.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25726
+Keywords  stone rock pebble~
+Type      trash~
+Short     a small stone~
+Long      A small stone is here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    stone rock pebble~
+ExDesc       This small pebble is a half an inch in diameter.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25727
+Keywords  yellow lilly flower~
+Type      trash~
+Short     a yellow lilly~
+Long      A yellow flower is growing here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    yellow lilly flower~
+ExDesc       This  flower  smells  nice!  Maybe  you  should  give  it to
+somebody special?
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25728
+Keywords  stone block~
+Type      furniture~
+Short     an ancient stone block~
+Long      An ancient stone block is here.~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25729
+Keywords  fern plant bank~
+Type      furniture~
+Short     a fern plant~
+Long      A fern plant grows along the northern bank here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25730
+Keywords  blue lilly flower~
+Type      trash~
+Short     a blue lilly~
+Long      A blue flower is growing here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    blue lilly flower~
+ExDesc       This  flower  smells  nice!  Maybe  you  should  give  it to
+somebody special?
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25731
+Keywords  stone oblesk~
+Type      furniture~
+Short     an ancient stone oblesk~
+Long      An ancient stone oblesk is almost hidden here.~
+Values    50 50 0 0 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25732
+Keywords  river bank~
+Type      furniture~
+Short     a river bank~
+Long      The river bank is just out of reach here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    bank edge~
+ExDesc       It is just out of reach!!!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25733
+Keywords  fern plant~
+Type      furniture~
+Short     a fern plant~
+Long      A fern plant grows along the southern bank here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25734
+Keywords  temple key~
+Type      key~
+Short     a temple key~
+Long      The key to the temple has been dropped here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    temple key~
+ExDesc       This is the key to the temple.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25735
+Keywords  earth glyph symbol~
+Type      key~
+Short     an earth glyph~
+Long      A symbol of earth is dropped here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25736
+Keywords  water glyph symbol~
+Type      key~
+Short     a water glyph~
+Long      A symbol of water is dropped here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25737
+Keywords  air glyph symbol~
+Type      key~
+Short     an air glyph~
+Long      A symbol of air is dropped here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25738
+Keywords  fire glyph symbol~
+Type      key~
+Short     a fire glyph~
+Long      A symbol of fire is dropped here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      25739
+Keywords  rainforest rain forest bracer~
+Type      armor~
+Short     a rain-forest bracer~
+Long      A bracer from the rain-forest has been dropped here.~
+Flags     magic~
+WFlags    take wrist~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData hit 33 -1 -1 0
+AffData mana 33 -1 -1 0
+AffData armor -25 -1 -1 0
+AffData hitroll 5 -1 -1 0
+AffData damroll 5 -1 -1 0
+AffData save_para -1 -1 -1 0
+AffData save_rod -1 -1 -1 0
+AffData save_poison -1 -1 -1 0
+AffData save_breath -1 -1 -1 0
+AffData save_spell -1 -1 -1 0
+#EXDESC
+ExDescKey    rainforest rain forest bracer~
+ExDesc       This bracer is from the temple deep inside the rainforest.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25740
+Keywords  clay pot~
+Type      container~
+Short     a clay pot~
+Long      A clay pot is in the corner.~
+Values    15 15 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    clay pot~
+ExDesc       The clay pot has various color illustrations drawn upon it.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25741
+Keywords  underground spring~
+Type      fountain~
+Short     a underground spring~
+Long      An underground spring is in this chamber.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    spring underground~
+ExDesc       The spring look very refreshing.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25742
+Keywords  metal brazier~
+Type      furniture~
+Short     a metal brazier~
+Long      A metal brazier radiates heat here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    metal brazier~
+ExDesc       A metal brazier is made of a strange metal.  Inside  a  fire
+continually burns.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25743
+Keywords  green fungus~
+Type      pill~
+Short     some green fungus~
+Long      Some green fungus is growing here.~
+WFlags    take~
+Values    35 -1 -1 -1 5 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'NONE' 'NONE' 'NONE'
+#EXDESC
+ExDescKey    green fungus~
+ExDesc       This fungus is disgusting!   Wonder  if  it tastes as bad as
+it smells?  Should you even try?
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      25744
+Keywords  rainforest rain forest mushroom~
+Type      pill~
+Short     a rain-forest mushroom~
+Long      A delicious rain-forest mushroom is here.~
+WFlags    take~
+Values    35 -1 -1 -1 5 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'NONE' 'NONE' 'NONE'
+#EXDESC
+ExDescKey    mushroom rainforest rain forest~
+ExDesc       It looks safe enough to eat... you think.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#ROOM
+Vnum      25700
+Name      Rain-Forest Trail~
+Sector    field~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      An  animal  trail leads  west through ferns and broad-leaved
+plants.  The ground is moist and wet.  The  air  is  hot and
+humid.  Far  off  in  the distance you hear the strange howl
+of an unseen creature.  To  the  north  the vegetation ends,
+as the mountains begin.
+~
+#EXIT
+Direction west~
+ToRoom    25701
+#ENDEXIT
+
+Reset O 25705 1 25700 -1 -1 -1 100
+  Reset P 0 25706 1 25705 100
+#EXDESC
+ExDescKey    fern ferns~
+ExDesc       There sure are alot of ferns in the rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    trail animal path~
+ExDesc       The trail  is not very difficult to follow.  You notice many
+different kinds of animal tracks, and even the footprints of
+some humanoids along the trail in the rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    broad leaved plants~
+ExDesc       While ferns appear to  be the most common, there are several
+different kinds of broad-leaved plants that  flourish in the
+rain-forest.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25701
+Name      Rain-Forest Trail~
+Sector    field~
+Flags     safe~
+Stats     0 0 0 0 0
+Desc      The animal trail bends to  the south through even more ferns
+and broad-leaved plants.   An  ancient oblesk is practically
+hidden by the thick vegetation.  A  few palm trees grow here
+and there, rising out of and above the ferns.
+~
+#EXIT
+Direction east~
+ToRoom    25700
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25702
+#ENDEXIT
+
+Reset O 25731 1 25701 -1 -1 -1 100
+#EXDESC
+ExDescKey    fern ferns~
+ExDesc       There sure are alot of ferns in the rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    trail animal path~
+ExDesc       The trail  is not very difficult to follow.  You notice many
+different kinds of animal tracks, and even the footprints of
+some humanoids along the trail in the rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    broad leaved plants~
+ExDesc       While ferns appear to  be the most common, there are several
+different kinds of broad-leaved plants that  flourish in the
+rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    ancient stone oblesk~
+ExDesc       Brushing aside the  ferns,  you  uncover  an  ancient  stone
+oblesk.  The  oblesk  stands  about three feet high, but you
+think that  it  might  have  sunken into the ground over the
+passing of time.   Each  of the four sides of the oblesk are
+covered  with  arcane runes and strange writting.  Along the
+bottom of the east side  of  the  oblesk  are two phrases in
+common.  They read:
+
+This area was made by Cianhydle (1998).
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25702
+Name      Rain-Forest Trail~
+Sector    field~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The  trail  is  almost  lost  while  passing through a dense
+growth of ferns.  Some of the larger ferns are taller than a
+human, and wide enough  to  conceal any number of creatures.
+The trail bends to the west at a large palm tree.
+~
+#EXIT
+Direction north~
+ToRoom    25701
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25703
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    25754
+#ENDEXIT
+
+Reset O 25705 1 25702 -1 -1 -1 100
+  Reset P 0 25706 1 11000 100
+#EXDESC
+ExDescKey    fern ferns~
+ExDesc       There sure are alot of ferns in the rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    trail animal path~
+ExDesc       The trail  is not very difficult to follow.  You notice many
+different kinds of animal tracks, and even the footprints of
+some humanoids along the trail in the rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    palm tree~
+ExDesc       A large palm tree grows among the thick foilage of ferns and
+and other plants. Glancing up at the top of the palm you see
+many birds flying high above in the sky.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25703
+Name      Rain-Forest Trail~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The animal trail runs next to a clear pool of water.  Around
+the pool  is  an assortment of plants and ferns.  Palm trees
+are  more  commonly   seen  rising  up  through  the  ground
+vegetation. The trail runs north and east.
+~
+#EXIT
+Direction north~
+ToRoom    25704
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25702
+#ENDEXIT
+
+Reset O 25700 1 25703 -1 -1 -1 100
+#EXDESC
+ExDescKey    fern ferns~
+ExDesc       There sure are alot of ferns in the rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    trail animal path~
+ExDesc       The trail  is not very difficult to follow.  You notice many
+different kinds of animal tracks, and even the footprints of
+some humanoids along the trail in the rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    broad leaved plants~
+ExDesc       While ferns appear to  be the most common, there are several
+different kinds of broad-leaved plants that  flourish in the
+rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    palm tree~
+ExDesc       A few palm trees grow here and there.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    clear pool water~
+ExDesc       A  small  pool  has  formed  at low point in the trail.  The
+ground here  is  made  primarily  of clay.  Keeping the pool
+clear and cool.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25704
+Name      Rain-Forest Trail~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Ferns and  broad-leaved  plants are giving way to short and
+tall trees.  Ground vegetation is still considerably thick.
+The air is still,  making it very, very humid down near the
+ground.  The trail leads west towards the  rain-forest  and
+south towards a small pool.
+~
+#EXIT
+Direction south~
+ToRoom    25703
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25705
+#ENDEXIT
+
+Reset O 25705 1 25704 -1 -1 -1 100
+  Reset P 0 25706 1 11000 100
+#EXDESC
+ExDescKey    ferns vegetation plants~
+ExDesc       Sure are alot of plants around here.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    fern ferns~
+ExDesc       There sure are alot of ferns in the rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    trail animal path~
+ExDesc       The trail  is not very difficult to follow.  You notice many
+different kinds of animal tracks, and even the footprints of
+some humanoids along the trail in the rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    broad leaved plants~
+ExDesc       While ferns appear to  be the most common, there are several
+different kinds of broad-leaved plants that  flourish in the
+rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    short tall tree trees~
+ExDesc       Short and tall palms grow in greater numbers here.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25705
+Name      Before the Rain-Forest~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Palm  and  mangroves  are  starting  to  grow  together much
+thicker.  Vines  are  ever-present among the trees, runnings
+along the trunks,  branches,  and  even  between some of the
+trees that are close together.   Ferns and  other plants are
+much less common.  Among the canopies of the trees,  various
+exotic birds flutter  and  let out  strange sounds that echo
+through the rain-forest.   To the west the trees become much
+denser.
+~
+#EXIT
+Direction east~
+ToRoom    25704
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25706
+#ENDEXIT
+
+#EXDESC
+ExDescKey    palm tree mangrove trees palms~
+ExDesc       To the  west trees  grow closer and closer together.  Deeper
+inside the  rain-forest  you  can  see  mangroves  are  more
+common,  with  thier  twisted  limbs  entangling, creating a
+full, think canopy.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25706
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Palm  trees  and  mangroves  shoot their great canopies high
+above,  blocking out  most of  the sunlight.  The  floor  of
+the rain-forest is moist,  and relatively  free of ferns and
+other plants. Vines hang down from the branches above, while
+rotting trees decay under the shadow  of  the  living trees.
+The air is humid,  but beneath  the shade of the trees it is
+noticably cooler.
+~
+#EXIT
+Direction east~
+ToRoom    25705
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25707
+#ENDEXIT
+
+Reset M 25701 1 25706 -1 -1 -1 100
+#EXDESC
+ExDescKey    tree mangrove palm trees mangroves palms~
+ExDesc       Most of the trees around here are mangroves and palms. There
+are other kinds  of  trees  such  as cyrillas and teaks, but
+they are much less common.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25707
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      While  the  ground  beneath  the rain-forest canopy recieves
+little sunlight, it still is active with life. Insects crawl
+about, snakes glide along, even birds find their way down to
+the floor of the  rain-forest.  In fact,  all creatures find
+thier way to the ground in search of water.   From somewhere
+nearby the sound of running water can be heard.
+~
+#EXIT
+Direction north~
+ToRoom    25706
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25708
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25720
+#ENDEXIT
+
+Reset M 25715 1 25707 -1 -1 -1 100
+  Reset G 25702 1 100
+#EXDESC
+ExDescKey    tree mangrove palm trees mangroves palms~
+ExDesc       Most of the trees around here are mangroves and palms. There
+are other kinds  of  trees  such  as cyrillas and teaks, but
+they are much less common.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25708
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Deep  inside  the  rain-forest,  vines  and  moss  clings to
+ancient trees.  Water  drips  from some of the lower hanging
+branches,  as  the  smell  of wet earth and living plants is
+strong and heavy here.  In  the  shadows of the forest floor
+small creatures move about.
+~
+#EXIT
+Direction north~
+ToRoom    25707
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25709
+#ENDEXIT
+
+Reset M 25714 1 25708 -1 -1 -1 100
+  Reset G 25714 1 100
+Reset O 25726 1 25708 -1 -1 -1 100
+#EXDESC
+ExDescKey    tree mangrove palm trees mangroves palms~
+ExDesc       Most of the trees around here are mangroves and palms. There
+are other kinds  of  trees  such  as cyrillas and teaks, but
+they are much less common.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    earth floor~
+ExDesc       The ground is crawling with various insects.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25709
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      While the ground  beneath  the  rain-forest  canopy recieves
+little sunlight, it still is active with life. Insects crawl
+about, snakes glide along, even birds find their way down to
+the floor of the rain-forest.  In fact,  all  creatures find
+thier way to the ground in search of water.   From somewhere
+nearby the sound of running water can be heard.
+~
+#EXIT
+Direction east~
+ToRoom    25708
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25710
+#ENDEXIT
+
+Reset M 25702 1 25709 -1 -1 -1 100
+#EXDESC
+ExDescKey    tree mangrove palm trees mangroves palms~
+ExDesc       Most of the trees around here are mangroves and palms. There
+are other kinds  of  trees  such  as cyrillas and teaks, but
+they are much less common.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25710
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Deep inside the rain-forest,  vines  and  moss clings to the
+ancient trees.  Water drips from some  of  the lower hanging
+branches,  as  the smell  of  wet earth and living plants is
+strong and heavy here.  In the shadows  of  the forest floor
+small creatures move about.
+~
+#EXIT
+Direction north~
+ToRoom    25711
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25709
+#ENDEXIT
+
+Reset M 25713 1 25710 -1 -1 -1 100
+#EXDESC
+ExDescKey    tree mangrove palm trees mangroves palms~
+ExDesc       Most of the trees around here are mangroves and palms. There
+are other kinds  of  trees  such  as cyrillas and teaks, but
+they are much less common.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25711
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A massive mangrove tree sends up a half-dozen thick branches
+into the canopy.  Overhead  branches  shake  as animals move
+about the canopy.  The trunk  of  the mangrove is covered in
+vines, dried fungus, and knots making  it  possible to climb
+the tree.  To your east, you see a gaping wide entrance to a
+strange castle.
+~
+#EXIT
+Direction south~
+ToRoom    25710
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25712
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    25739
+#ENDEXIT
+
+Reset M 25704 1 25711 -1 -1 -1 100
+  Reset G 25713 1 100
+Reset O 25715 1 25711 -1 -1 -1 100
+#EXDESC
+ExDescKey    mangrove tree~
+ExDesc       The is one BIG tree!!!
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    moss fungus~
+ExDesc       Nothing really special about the moss or fungus.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    vine vines~
+ExDesc       Vines run up and along the main trunk of the mangrove.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25712
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Deep inside the rain-forest,  vines  and  moss clings to the
+ancient trees.  Water drips from some  of  the lower hanging
+branches,  as  the smell  of  wet earth and living plants is
+strong and heavy here.  In the shadows  of  the forest floor
+small creatures move about.
+~
+#EXIT
+Direction east~
+ToRoom    25711
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25713
+#ENDEXIT
+
+Reset M 25705 1 25712 -1 -1 -1 100
+#EXDESC
+ExDescKey    tree trees~
+ExDesc       Most of the trees are covered with vines.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    vine vines~
+ExDesc       Vines run along tree trunks  or  hang down  from branches in
+many places.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    plant plants fern ferns~
+ExDesc       Not alot  of  ferns  grow  underneath  the canopy, but a few
+smaller plants are found here and there.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    earth~
+ExDesc       The earth is wet and moist. Insect crawl around in the dirt.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    floor ground~
+ExDesc       The ground  is  wet  and  moist.  Insect crawl around in the
+soil.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25713
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      While the ground  beneath  the  rain-forest  canopy recieves
+little sunlight, it still is active with life. Insects crawl
+about, snakes glide along, even birds find their way down to
+the floor of the rain-forest.  In fact,  all  creatures find
+thier way to the ground in search of water.   From somewhere
+nearby the sound of running water can be heard.
+~
+#EXIT
+Direction north~
+ToRoom    25712
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25714
+#ENDEXIT
+
+Reset M 25706 1 25713 -1 -1 -1 100
+Reset O 25744 1 25713 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25714
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Deep inside the rain-forest,  vines  and  moss clings to the
+ancient trees.  Water drips from some  of  the lower hanging
+branches,  as  the smell  of  wet earth and living plants is
+strong and heavy here.  In the shadows  of  the forest floor
+small creatures move about.
+~
+#EXIT
+Direction north~
+ToRoom    25715
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25713
+#ENDEXIT
+
+Reset M 25707 1 25714 -1 -1 -1 100
+Reset O 25726 1 25714 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25715
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Amid the tall palms and vine covered mangroves  are  several
+moss covered stones in this general area.  A  royal palm has
+grown up through the canopy at an angle.  You could probably
+climb  up  this tree  and get  a better look at  the  canopy
+above.  Between some of the trees are very large spiderwebs.
+~
+#EXIT
+Direction north~
+ToRoom    25716
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25714
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    25743
+#ENDEXIT
+
+Reset M 25708 2 25715 -1 -1 -1 100
+#EXDESC
+ExDescKey    spiderweb spiderwebs~
+ExDesc       A thick mess of spiderwebs hang down from a nearby tree.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    stone stones~
+ExDesc       Ancient stones stand upright  here,  covered  with  a  green
+moss.  Two  stones  nearly four  foot high are closeby, with
+another pair some distance to the west. Perhaps they are the
+remains of  a  forgotten outpost, or maybe just markers used
+by an ancient civilization.  You will probably never know.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25716
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Deep inside the rain-forest,  vines  and  moss clings to the
+ancient trees.  Water drips from some  of  the lower hanging
+branches,  as  the smell  of  wet earth and living plants is
+strong and heavy here.  In the shadows  of  the forest floor
+small creatures move about.  From somewhere  close  by,  the
+sound of running water is heard.
+~
+#EXIT
+Direction east~
+ToRoom    25717
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25715
+#ENDEXIT
+
+Reset M 25709 1 25716 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25717
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      To the north, a wide river cuts through the rain-forest. The
+mangroves  grow  almost  to  the edge of the bank, leaving a
+little room for a few ferns and bushes. On the other side of
+the river is  a  steep cliff,  with more  palms and mangrove
+trees growing atop the bluff.  Along the edge  of  the river
+there are many different kinds of animal tracks.
+~
+#EXIT
+Direction north~
+ToRoom    25726
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25718
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25716
+#ENDEXIT
+
+Reset M 25710 1 25717 -1 -1 -1 100
+Reset O 25705 1 25717 -1 -1 -1 100
+  Reset P 0 25709 1 11000 100
+#EXDESC
+ExDescKey    add river~
+ExDesc       How dangerous could it be???
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    tracks bank~
+ExDesc       Various animals  have  been  here recently, including birds,
+mammals, and maybe even some humans.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25718
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      To the north, a wide river cuts through the rain-forest. The
+mangroves  grow  almost  to  the edge of the bank, leaving a
+little room for a few ferns and bushes. On the other side of
+the river is  a  steep cliff,  with more  palms and mangrove
+trees growing atop the bluff.  Along the edge  of  the river
+there are many different kinds of animal tracks.
+~
+#EXIT
+Direction north~
+ToRoom    25725
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25719
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25717
+#ENDEXIT
+
+Reset M 25711 1 25718 -1 -1 -1 100
+#EXDESC
+ExDescKey    add river~
+ExDesc       How dangerous could it be???
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    tracks bank~
+ExDesc       Recently a large lizard has been here.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25719
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      To the north, a wide river cuts through the rain-forest. The
+mangroves  grow  almost  to  the edge of the bank, leaving a
+little room for a few ferns and bushes. On the other side of
+the river is  a  steep cliff,  with more  palms and mangrove
+trees growing atop the bluff.  Along the edge  of  the river
+there are many different kinds of animal tracks.
+~
+#EXIT
+Direction north~
+ToRoom    25724
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25720
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25718
+#ENDEXIT
+
+Reset M 25712 1 25719 -1 -1 -1 100
+  Reset G 25704 1 100
+Reset O 25726 1 25719 -1 -1 -1 100
+#EXDESC
+ExDescKey    add river~
+ExDesc       How dangerous could it be???
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    tracks bank~
+ExDesc       A medium sized feline has recently been here.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25720
+Name      The Rain-Forest Floor~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Deep inside the rain-forest,  vines  and  moss clings to the
+ancient trees.  Water drips from some  of  the lower hanging
+branches,  as  the smell  of  wet earth and living plants is
+strong and heavy here.  In the shadows  of  the forest floor
+small creatures move about.
+~
+#EXIT
+Direction north~
+ToRoom    25719
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25707
+#ENDEXIT
+
+Reset M 25716 1 25720 -1 -1 -1 100
+Reset O 25743 1 25720 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25721
+Name      A Remote Rain-Forest River~
+Sector    water_swim~
+Flags     norecall~
+Stats     0 0 0 0 0
+Desc      The river runs through a remote part of the rain-forest. The
+current is still too strong  to make your way back upstream,
+but you are in little danger of drowning.
+~
+#EXIT
+Direction north~
+ToRoom    25767
+Desc      fern
+~
+Keywords  fern~
+Flags     isdoor closed secret hidden~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25722
+#ENDEXIT
+
+Reset M 25717 1 25721 -1 -1 -1 100
+Reset O 25729 1 25721 -1 -1 -1 100
+Reset O 25701 1 25721 -1 -1 -1 100
+Reset D 25721 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      25722
+Name      A Remote Rain-Forest River~
+Sector    water_swim~
+Flags     norecall~
+Stats     0 0 0 0 0
+Desc      The river runs through a remote part of the rain-forest. The
+current is still too strong  to make your way back upstream,
+but you are in little danger of drowning.
+~
+#EXIT
+Direction west~
+ToRoom    25723
+#ENDEXIT
+
+Reset M 25718 1 25722 -1 -1 -1 100
+Reset O 25701 1 25722 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25723
+Name      A Remote Rain-Forest River~
+Sector    water_swim~
+Flags     norecall~
+Stats     0 0 0 0 0
+Desc      The river runs through a remote part of the rain-forest. The
+current is still too strong  to make your way back upstream,
+but you are  in  little danger of  drowning.  West the river
+becomes more shallow as the  river runs  along the base of a
+cliff.
+~
+#EXIT
+Direction west~
+ToRoom    25724
+#ENDEXIT
+
+Reset M 25719 1 25723 -1 -1 -1 100
+Reset O 25701 1 25723 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25724
+Name      Shallow Part of the River~
+Sector    water_swim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A wide river runs east to west through the rain-forest here.
+In addition to being wide, the river is also shallow and the
+current is not very swift.   To the north is a steep earthen
+cliff.  South the rain-forest stretches on and on...
+~
+#EXIT
+Direction east~
+ToRoom    25723
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25719
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25725
+#ENDEXIT
+
+Reset M 25720 1 25724 -1 -1 -1 100
+Reset O 25701 1 25724 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25725
+Name      Shallow Part of the River~
+Sector    water_swim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A wide river runs east to west through the rain-forest here.
+In addition to being wide, the river is also shallow and the
+current is not very swift.   To the north is a steep earthen
+cliff.  South the rain-forest stretches on and on...
+~
+#EXIT
+Direction east~
+ToRoom    25724
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25718
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25726
+#ENDEXIT
+
+Reset M 25721 1 25725 -1 -1 -1 100
+  Reset G 25703 1 100
+Reset O 25701 1 25725 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25726
+Name      Shallow Part of the River~
+Sector    water_swim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A wide river runs east to west through the rain-forest here.
+In addition to being wide, the river is also shallow and the
+current is not very swift.   To the north is a steep earthen
+cliff.  South the rain-forest stretches on and on...
+~
+#EXIT
+Direction east~
+ToRoom    25725
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25717
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25727
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    25749
+#ENDEXIT
+
+Reset M 25722 1 25726 -1 -1 -1 100
+Reset O 25701 1 25726 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25727
+Name      Before the Twisting River~
+Sector    water_swim~
+Flags     norecall~
+Stats     0 0 0 0 0
+Desc      The river current suddenly begins to get much stronger here.
+The current  is  so  strong,  in fact,  you drift downstream
+uncontrollably. Ahead to the west, the river begins to twist
+and turn.  If you are not careful,  the river  current could
+pull you UNDER!!!
+~
+#EXIT
+Direction west~
+ToRoom    25728
+#ENDEXIT
+
+Reset M 25723 1 25727 -1 -1 -1 100
+Reset O 25701 1 25727 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25728
+Name      The Twisting River~
+Sector    water_swim~
+Flags     norecall~
+Stats     0 0 0 0 0
+Desc      The river twists back and forth through the rain-forest here.
+The  current  is  too  swift  and  strong  to  make  your way
+upstream, thus leaving you  at  the  mercy  of  the  twisting
+river.
+~
+#EXIT
+Direction south~
+ToRoom    25729
+#ENDEXIT
+
+Reset M 25724 1 25728 -1 -1 -1 100
+Reset O 25701 1 25728 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25729
+Name      The Twisting River~
+Sector    water_swim~
+Flags     norecall~
+Stats     0 0 0 0 0
+Desc      The river twists back and forth through the rain-forest here.
+The  current  is  too  swift  and  strong  to  make  your way
+upstream, thus leaving you  at  the  mercy  of  the  twisting
+river.
+~
+#EXIT
+Direction west~
+ToRoom    25730
+#ENDEXIT
+
+Reset M 25725 1 25729 -1 -1 -1 100
+Reset O 25701 1 25729 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25730
+Name      The Twisting River~
+Sector    water_swim~
+Flags     norecall~
+Stats     0 0 0 0 0
+Desc      The river twists back and forth through the rain-forest here.
+The  current  is  too  swift  and  strong  to  make  your way
+upstream, thus leaving you  at  the  mercy  of  the  twisting
+river.
+~
+#EXIT
+Direction north~
+ToRoom    25731
+#ENDEXIT
+
+Reset M 25726 1 25730 -1 -1 -1 100
+Reset O 25701 1 25730 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25731
+Name      The Twisting River~
+Sector    water_swim~
+Flags     norecall~
+Stats     0 0 0 0 0
+Desc      The river twists back and forth through the rain-forest here.
+The  current  is  too  swift  and  strong  to  make  your way
+upstream, thus leaving you  at  the  mercy  of  the  twisting
+river.
+~
+#EXIT
+Direction west~
+ToRoom    25732
+#ENDEXIT
+
+Reset M 25727 1 25731 -1 -1 -1 100
+Reset O 25701 1 25731 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25732
+Name      Fork in the River~
+Sector    water_swim~
+Flags     norecall~
+Stats     0 0 0 0 0
+Desc      The river forks north and south.  To  the  north  the  river
+bends backs to the west, and appears much calmer. South, the
+river is much swifter and looks dangerous.
+~
+#EXIT
+Direction north~
+ToRoom    25721
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25733
+#ENDEXIT
+
+Reset M 25728 1 25732 -1 -1 -1 100
+Reset O 25701 1 25732 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25733
+Name      Caught in the Current~
+Sector    water_swim~
+Flags     nomob norecall~
+Stats     0 0 0 0 0
+Desc      Suddenly the river current becomes extremely swift,  pulling
+you west.  It is impossible to try and navigate upstream, or
+to try and swim towards the banks.  Ahead to the west, comes
+a loud crashing sound, maybe something like a waterfall.
+~
+#EXIT
+Direction west~
+ToRoom    25734
+#ENDEXIT
+
+Reset O 25732 1 25733 -1 -1 -1 100
+Reset O 25701 1 25733 -1 -1 -1 100
+#EXDESC
+ExDescKey    bank banks~
+ExDesc       They are too far away to reach!
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    waterfall~
+ExDesc       The idea of going over the waterfall does not sound fun.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25734
+Name      Going over the Waterfall~
+Sector    water_swim~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Yep, it definately is a waterfall.   Water crashes down some
+unseen distance.   While you cannot see exactly how far down
+the the water goes,  you are SURE it will be PAINFUL, if not
+deadly.  You better figure out something QUICK.
+~
+#EXIT
+Direction south~
+ToRoom    25765
+Desc      ferns
+~
+Keywords  fern~
+Flags     isdoor closed secret hidden~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25735
+#ENDEXIT
+
+Reset O 25733 1 25734 -1 -1 -1 100
+Reset O 25701 1 25734 -1 -1 -1 100
+Reset D 25734 2 1 100 -2
+#EXDESC
+ExDescKey    waterfall~
+ExDesc       The idea of going over the waterfall does not sound fun.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25735
+Name      A Watery Death~
+Sector    oceanfloor~
+Flags     death nomob~
+Stats     0 0 0 0 0
+Desc      After going  over the  waterfall you  are sucked  under in a
+strong undertow.  The current pulls  you along the bottom of
+the river  and  your head strikes a large stone.  All begins
+to fade as your body is dragged along...
+
+...soon WATER enters your LUNGS!!!
+~
+#ENDROOM
+
+#ROOM
+Vnum      25736
+Name      A Small Mangrove Tree~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A small mangrove grows along the bank here.  West is a small
+clearing above a shallow part in the river.  South is a very
+large mangrove, nearly six times as large as this one.   Not
+too far to the north is a large cliff.
+~
+#EXIT
+Direction south~
+ToRoom    25737
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25749
+#ENDEXIT
+
+Reset M 25729 2 25736 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25737
+Name      The Outer Branches of a Large Mangrove~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The outer branches  of  the  large mangrove  are home to all
+kinds of birds. To the north is a smaller mangrove, while to
+the west leads closer to the trunk of the huge tree.
+~
+#EXIT
+Direction north~
+ToRoom    25736
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25738
+#ENDEXIT
+
+Reset M 25737 1 25737 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25738
+Name      The Inner Branches of a Large Mangrove~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The inner branches are much larger than  the outer branches,
+making it much easier to walk among them.  All around in the
+canopy of the mangrove are various kinds of animals.  To the
+east the branches get much smaller and  to  the south is the
+trunk of the mangrove.
+~
+#EXIT
+Direction east~
+ToRoom    25737
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25739
+#ENDEXIT
+
+Reset M 25738 2 25738 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25739
+Name      The Main Trunk of a Large Mangrove~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      An average human could not wrap  their  arms around the main
+trunk  of  this mammoth tree.  Smaller  limbs  branch out in
+all directions.  The  outer branches shake as creatures move
+about the canopy.  There are  as  many animals living in the
+canopy  as  on  the rain-forest floor.  Vines climb  up  the
+main trunk of the tree from the rain-forest floor.
+~
+#EXIT
+Direction north~
+ToRoom    25738
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25770
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25740
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25769
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    25711
+#ENDEXIT
+
+Reset M 25736 2 25739 -1 -1 -1 100
+  Reset G 25720 1 100
+Reset O 25716 1 25739 -1 -1 -1 100
+#EXDESC
+ExDescKey    mangrove trunk~
+ExDesc       This could  be  the  biggest tree you have ever seen in your
+whole life!
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    vines~
+ExDesc       Vines cover the trunk of the mangrove,  making  it very easy
+to climb up and down the tree.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25740
+Name      A Large Limb of a Large Mangrove~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      There  is  plenty  of space to walk along this large limb in
+the huge mangrove tree.  North  is  the  main  trunk  of the
+mangrove.   West  the  branches spread out  and  become much
+smaller.  Glancing up, the sky above can be seen clearly.
+~
+#EXIT
+Direction north~
+ToRoom    25739
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25741
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    25752
+#ENDEXIT
+
+Reset M 25736 2 25740 -1 -1 -1 100
+#EXDESC
+ExDescKey    sky~
+ExDesc       A couple of birds can be seen flying in the sky above.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25741
+Name      The Inner Branches of a Large Mangrove~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The inner branches are much  larger than the outer branches,
+making it much easier to walk among them.  All around in the
+canopy of the mangrove are various kinds of animals.  To the
+west the branches  get much smaller,  while somewhere to the
+east is the trunk of the mangrove.
+~
+#EXIT
+Direction east~
+ToRoom    25740
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25742
+#ENDEXIT
+
+Reset M 25735 2 25741 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25742
+Name      The Outer Branches of a Large Mangrove~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The outer branches  of the  large  mangrove are  home to all
+kinds of birds. To the north is a royal palm tree growing at
+an angle.  East leads towards the trunk of the huge tree.
+~
+#EXIT
+Direction north~
+ToRoom    25743
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25741
+#ENDEXIT
+
+Reset M 25734 1 25742 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25743
+Name      Atop a Royal Palm~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      About three-quarters the way up a large royal palm tree, you
+are nearly twenty  feet off the  rain-forest  floor.  To the
+west the branches of  a  mangrove  are  covered in vines and
+thick spider webs.  South vines lead  towards the limbs of a
+very large tree.
+~
+#EXIT
+Direction south~
+ToRoom    25742
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25744
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    25715
+#ENDEXIT
+
+Reset M 25733 1 25743 -1 -1 -1 100
+  Reset G 25714 1 100
+#EXDESC
+ExDescKey    royal palm tree~
+ExDesc       The royal palm  tree grows at a slant,  allow easy access up
+to and down from the canopy.~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25744
+Name      A Tree Covered with Spider Webs~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A large part of the  mangrove tree is covered by  a  massive
+spider web.  To the north is a smaller mangrove tree that is
+not covered with spider webs. East is a large, slanted royal
+palm which descends to the rain-forest floor.
+~
+#EXIT
+Direction north~
+ToRoom    25745
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25743
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    25763
+#ENDEXIT
+
+Reset M 25708 2 25744 -1 -1 -1 100
+Reset O 25717 1 25744 -1 -1 -1 100
+#EXDESC
+ExDescKey    spiderweb web~
+ExDesc       There is nothing extra ordinary about the webs.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25745
+Name      A Small Mangrove Tree~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Various animals make the canopy their home. Birds, reptiles,
+and mammals  can all be found living in the mangroves.  East
+is an old teak tree.  South is  a  spider infested mangrove,
+while through the canopy above the sky can be seen.
+~
+#EXIT
+Direction east~
+ToRoom    25746
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25744
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    25760
+#ENDEXIT
+
+Reset M 25732 1 25745 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25746
+Name      The Canopy of a Teak Tree~
+Sector    air~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      An old teak tree grows between a smaller mangrove and a tall
+palmetto tree.  The teak is smaller than the mangrove to the
+west, but larger  than the tall palmetto  to the east.  Moss
+and vines cover much of the teaks trunk.
+~
+#EXIT
+Direction east~
+ToRoom    25747
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25745
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    25756
+#ENDEXIT
+
+Reset M 25731 1 25746 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25747
+Name      The Canopy of a Palmetto Tree~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The palmetto tree is tall,  but  its canopy  is much smaller
+than the  teak tree to  the west or the shorter cyrilla tree
+to the north.  A  palmetto  is  a  kind  of  palm tree, with
+serated leaves that form  a  bushy  canopy about thirty feet
+above the ground.
+~
+#EXIT
+Direction north~
+ToRoom    25748
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25746
+#ENDEXIT
+
+Reset M 25730 1 25747 -1 -1 -1 100
+Reset O 25718 1 25747 -1 -1 -1 100
+  Reset P 0 25719 1 25718 100
+#ENDROOM
+
+#ROOM
+Vnum      25748
+Name      The Canopy of a Large Cyrilla~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The canopy of this tree is rather barren.   Unlike the wide,
+flat leaves of the palms or the full,  bushy canopies of the
+mangroves,  the  cyrilla  trees leaves are small and sparce.
+The branches are thick and sturdy,  allowing  easy access to
+almost every part of the tree.
+~
+#EXIT
+Direction east~
+ToRoom    25749
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25747
+#ENDEXIT
+
+Reset M 25729 2 25748 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25749
+Name      Above the Rain-Forest River~
+Sector    air~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Flying above the river is  the only way to reach the cave in
+the cliff to the north.  East  a  small mangrove grows close
+to the river.   Beyond the mangrove are more trees.   West a
+frail looking tree is home to some loud monkeys.  The top of
+the cliff is just a feet move feet above the cave enterance.
+~
+#EXIT
+Direction north~
+ToRoom    25762
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25736
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25748
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    25751
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    25726
+#ENDEXIT
+
+Reset M 25741 1 25749 -1 -1 -1 100
+#EXDESC
+ExDescKey    cave cliff~
+ExDesc       A  cave  is  in  the side of the cliff.  There appears to be
+someone or something living within the cave...
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    river~
+ExDesc       The river runs through the rain-forest from east to west.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25750
+Name      Atop the Cliff in the Rain-Forest~
+Sector    field~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Atop the cliff the vegetation is as thick as it was down on
+the rain-forest floor.  Many  ferns  and palms grow densely
+together.  Unlike the floor or the canopy,  it is strangely
+silent atop this cliff.
+~
+#EXIT
+Direction south~
+ToRoom    25751
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25757
+#ENDEXIT
+
+Reset M 25703 1 25750 -1 -1 -1 100
+Reset O 25705 1 25750 -1 -1 -1 100
+Reset O 25727 1 25750 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25751
+Name      Far Above the Rain-Forest River~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Looking down,  the  river appears and disappears beneath the
+thick canopy of trees.   To  the north,  atop the cliff, the
+vegetation continues.  Looking out  in the other directions,
+only the sky above the rain-forest can be seen.
+~
+#EXIT
+Direction north~
+ToRoom    25750
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25760
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25752
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25756
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    25749
+#ENDEXIT
+
+Reset M 25744 1 25751 -1 -1 -1 100
+#EXDESC
+ExDescKey    river~
+ExDesc       Far below a river runs through the rain-forest.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    cliff top~
+ExDesc       To  the  north  is  the  top  of  a  cliff  high  above  the
+rain-forest  floor.  There  is  something  strange about the
+cliff...
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25752
+Name      Above the Large Mangrove~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Glancing out  above the canopy,  thick,  green  canopies  of
+trees stretch  out endlessly  in  every direction.  Directly
+below,  an  exceptionally  large   mangrove   grows  in  the
+rain-forest.  All  kinds  of  animals  move about its limbs.
+Some distance  to  the south the trees give way to  a  large
+growth of ferns.
+~
+#EXIT
+Direction north~
+ToRoom    25751
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25761
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25753
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25755
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    25740
+#ENDEXIT
+
+Reset M 25745 1 25752 -1 -1 -1 100
+#EXDESC
+ExDescKey    mangrove tree~
+ExDesc       This is one of the largest trees you have ever seen!
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25753
+Name      Far Above a Patch of Ferns~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Directly below  a  patch  of  ferns grows on the edge of the
+rain-forest.  From this distance  it is  hard to follow, but
+somewhere below  is  the  animal  trail which leads into the
+rain-forest.  The  sky  stretches  out  above  the canopy in
+every direction off into the horizion.
+~
+#EXIT
+Direction north~
+ToRoom    25752
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25759
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25759
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25754
+#ENDEXIT
+
+Reset M 25746 2 25753 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25754
+Name      Far Above the Rain-Forest Trail~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Soaring  above  the rain-forest trail the true scope of this
+area is realized.  Almost everywhere below are either palms,
+mangroves, or ferns.  Unlike  the  rain-forest  floor or the
+canopy of the trees, the sky above  is  the  sole  realm  of
+avians.
+~
+#EXIT
+Direction north~
+ToRoom    25755
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25753
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25751
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25761
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    25702
+#ENDEXIT
+
+Reset M 25743 2 25754 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25755
+Name      Above the Rain-Forest Canopy~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Flying high above the rain-forest,  the  number  of trees in
+this area cannot begin  to be  counted.   Tree  after  tree,
+after  tree,  the  tops of the mangroves and palms begins to
+become boring after a short while.
+~
+#EXIT
+Direction north~
+ToRoom    25756
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25752
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25754
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25760
+#ENDEXIT
+
+Reset M 25747 1 25755 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25756
+Name      Above the Teak Canopy~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      In each direction the  rain-forest  stretches out endlessly.
+While most  of  the trees are  either mangroves or palms,  a
+variety of other trees can be found here.  Teaks,  elms, and
+cyrillas are not uncommon.  Directly below  is  a teak tree.
+~
+#EXIT
+Direction north~
+ToRoom    25761
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25751
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25755
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25759
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    25746
+#ENDEXIT
+
+Reset M 25743 2 25756 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25757
+Name      Trees Atop the Cliff~
+Sector    forest~
+Flags     private~
+Stats     0 0 0 0 0
+Desc      There are several trees atop the cliff.   A large royal palm
+stands out, having  its entire canopy made into a huge nest.
+The nest looks big enough to hold a couple of humans.
+~
+#EXIT
+Direction east~
+ToRoom    25750
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    25758
+#ENDEXIT
+
+Reset M 25749 1 25757 -1 -1 -1 100
+  Reset G 25725 1 100
+Reset O 25721 1 25757 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25758
+Name      The Quetzalcoatl Nest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is the lair of the mythical quetzalcoatl.  Like a bird,
+the serpent  has made  its nest in a palm tree.  The nest is
+large enough to hold several humans.  The  beast has hoarded
+a small treasure inside the nest.
+~
+#EXIT
+Direction down~
+ToRoom    25757
+#ENDEXIT
+
+Reset M 25750 1 25758 -1 -1 -1 100
+  Reset G 25723 1 100
+Reset O 25722 1 25758 -1 -1 -1 100
+  Reset P 1 25723 1 25722 100
+  Reset P 0 25710 1 25722 100
+#ENDROOM
+
+#ROOM
+Vnum      25759
+Name      High Above a Waterfall~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Flying high above the rain-forest, a waterfall can been seen
+far below.   At the bottom  of  the waterfall are many large
+stones  and anyone  going  over  the  waterfall would almost
+definately be killed!
+~
+#EXIT
+Direction north~
+ToRoom    25753
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25756
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25760
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25753
+#ENDEXIT
+
+Reset M 25742 1 25759 -1 -1 -1 100
+  Reset G 25702 1 100
+#EXDESC
+ExDescKey    waterfall~
+ExDesc       The idea of going over the waterfall does not sound fun.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25760
+Name      Above the Rain-Forest Canopy~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Scanning around,  the canopy of the rain-forest stretches in
+every direction into the horizon.   Mangroves, palms, teaks,
+cyrillas,  and ferns cover the ground with various shades of
+green.  Directly  below,  a  mangrove tree rises up from the
+rain-forest floor.
+~
+#EXIT
+Direction north~
+ToRoom    25759
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25755
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25761
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25751
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    25745
+#ENDEXIT
+
+Reset M 25746 2 25760 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25761
+Name      High Above the Rain-Forest~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Flying high above the  rain-forest,  the  number of trees in
+this area cannot begin  to  be  counted.   Tree  after tree,
+after tree,  the  tops of  the mangroves and palms begins to
+become boring after a short while.
+~
+#EXIT
+Direction north~
+ToRoom    25760
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25754
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25756
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25752
+#ENDEXIT
+
+Reset M 25748 1 25761 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25762
+Name      Cave in the Cliff~
+Sector    indoors~
+Flags     dark indoors safe private~
+Stats     0 0 0 0 0
+Desc      The cave measures about  twenty by twenty-five feet in size,
+and ranging from five to seven foot tall.  The earthen walls
+are fortified by the roots of the mangroves growing above on
+the cliff.   Interesting items in the cavern include a straw
+bedding, a stone table, and a garbage pile. The only exit is
+back south.
+~
+#EXIT
+Direction south~
+ToRoom    25749
+#ENDEXIT
+
+Reset M 25700 1 25762 -1 -1 -1 100
+Reset O 25707 1 25762 -1 -1 -1 100
+#EXDESC
+ExDescKey    straw bedding~
+ExDesc       A small pile of straw  and fern leaves have been piled up to
+form a small area to sleep.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    garbage pile~
+ExDesc       A pile of woodscraps,  reed,  dried leaves are set along the
+side of the cave.   This pile of  garbage does not have much
+of anything useful in it.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    roots walls~
+ExDesc       Roots from the  cliff  above have  cleared away to form this
+cave. The mangrove roots along the walls were kept, in order
+to support this chamber.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    stone table~
+ExDesc       A three foot by  four foot slab  of stone has been hauled up
+to this cave and set in the middle of the chamber. On top of
+the table are several interesting items including, a bowl, a
+crude clay plate, and a small box.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    box~
+ExDesc       The box is empty.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    crude clay plate~
+ExDesc       The plate has a few scraps of some cooked plant and some
+fish bones.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25763
+Name      Stone Path in the Rain-Forest~
+Sector    forest~
+Flags     nomob private~
+Stats     0 0 0 0 0
+Desc      A small  stone path  is almost  completely hidden  by trees,
+ferns, and moss.  The stone blocks that form the path are in
+some areas cracked,  half-sunken  into  the  ground, or just
+missing.   Maybe at one time  this path was frequently used,
+but not anymore.
+~
+#EXIT
+Direction west~
+ToRoom    25764
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    25744
+#ENDEXIT
+
+Reset O 25705 1 25763 -1 -1 -1 100
+  Reset P 0 25706 1 11000 100
+#EXDESC
+ExDescKey    stone path pathway~
+ExDesc       The stone path is in extremely poor condition.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25764
+Name      Stone Path Intersection~
+Sector    forest~
+Flags     private~
+Stats     0 0 0 0 0
+Desc      The stone path leads off north, east, and west. To the north
+the sound of crashing water can be heard. West a large stone
+structure can barely  be made out through the dense foilage.
+The stone path  is  overgrown  with  ferns and mosses to the
+east, as it leads deeper into the rain-forest.
+~
+#EXIT
+Direction north~
+ToRoom    25765
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25763
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25766
+#ENDEXIT
+
+Reset O 25705 1 25764 -1 -1 -1 100
+  Reset P 0 25706 1 11000 100
+#EXDESC
+ExDescKey    stone path pathway~
+ExDesc       The stone path is in extremely poor condition.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25765
+Name      Stone Path near a Waterfall~
+Sector    forest~
+Flags     nomob private~
+Stats     0 0 0 0 0
+Desc      To the north is  a majestic  waterfall in  the middle of the
+rain-forest.   Water crashes down some fourty feet onto some
+large boulders.   On  this  small  rise near  the top of the
+waterfall is a small clearing at the end of a stone path. In
+the  middle  of  the  clearing  is a large stone block, half
+covered with moss.  South the stone path leads away from the
+waterfall.
+~
+#EXIT
+Direction north~
+ToRoom    25734
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25764
+#ENDEXIT
+
+Reset O 25728 1 25765 -1 -1 -1 100
+Reset O 25711 1 25765 -1 -1 -1 100
+  Reset P 0 25712 1 25711 100
+#EXDESC
+ExDescKey    stone path pathway~
+ExDesc       The stone path is in extremely poor condition.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    clearing block~
+ExDesc       Perhaps  once  people  gathered here to perform rituals near
+the waterfall  in  this clearing.  Maybe the stone block was
+once an altar.  Maybe  it  was  simply a bench to sit on and
+watch the waterfall.  Either way,  you  will  probably never
+find out what this place was used for.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    waterfall~
+ExDesc       The idea of going over the waterfall does not sound fun.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25766
+Name      Rain-Forest Temple~
+Sector    forest~
+Flags     nomob safe private~
+Stats     0 0 0 0 0
+Desc      An ancient pyramid  of  stone has been almost forgotten deep
+inside the rain-forest.  Mangroves and palm trees shade  the
+vine covered temple.   The only enterance is to the west, in
+the form of a thick stone door.   Around the door is a frame
+decorated with various runes and symbols.   To the northeast
+a stone path leads back towards the rain-forest.
+~
+#EXIT
+Direction east~
+ToRoom    25764
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25771
+Key       25734
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 25739 1 25766 -1 -1 -1 100
+Reset D 25766 3 2 100 -2
+#EXDESC
+ExDescKey    stone path pathway~
+ExDesc       The stone path is in extremely poor condition.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25767
+Name      Remote Rain-Forest Riverbank~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This  is  a  remote part of the rain-forest that can only be
+found by exploring the river.   Along the bank several ferns
+grow.   South the river runs through the remote parts of the
+rain-forest, while to the north the ferns turn into trees.
+~
+#EXIT
+Direction north~
+ToRoom    25710
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25721
+Flags     isdoor pickproof~
+#ENDEXIT
+
+Reset O 25730 1 25767 -1 -1 -1 100
+Reset O 25708 1 25767 -1 -1 -1 100
+Reset D 25767 2 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      25768
+Name      Rain-Forest Village~
+Sector    city~
+Flags     dark death nomob safe nosummon nosupplicate norecall noastral~
+Stats     0 0 0 0 0
+Desc      This room is used by  the rain-forest  mobs  to hide, making
+the quest effectively once per boot. If you are a player you
+need to leave this room immediately or contact an immortal.
+~
+#ENDROOM
+
+#ROOM
+Vnum      25769
+Name      Inner Branches of a Large Mangrove~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The inner branches are  much larger than the outer branches,
+making it much easier to walk among them.  All around in the
+canopy of the mangrove are various kinds of animals.  To the
+west is the main trunk of the mangrove.
+~
+#EXIT
+Direction north~
+ToRoom    25737
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25739
+#ENDEXIT
+
+Reset M 25735 2 25769 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25770
+Name      Inner Branches of a Large Mangrove~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The inner branches are  much larger than the outer branches,
+making it much easier to walk among them.  All around in the
+canopy of the mangrove are various kinds of animals.  To the
+west is the main trunk of the mangrove.
+~
+#EXIT
+Direction south~
+ToRoom    25742
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25739
+#ENDEXIT
+
+Reset M 25738 2 25770 -1 -1 -1 100
+Reset O 25724 1 25770 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25771
+Name      Temple Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The enterance door slams shut behind you!  A  hallway  leads
+to the west.  At the end of the hallway a simple door is set
+into the middle of the west wall. The door does not have any
+visible locks, but a low rumbling noise comes from the other
+side of the door.
+~
+#EXIT
+Direction west~
+ToRoom    25772
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 25771 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      25772
+Name      Chamber of Earth~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The door mysteriously vanishes behind you! The chamber walls
+are made of rough cut stones while the floor is covered with
+fine dust.  Another stone door  is  set in the center of the
+west wall.  Water droplets have condensed on door.
+~
+#EXIT
+Direction west~
+ToRoom    25773
+Key       25735
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset O 25740 1 25772 -1 -1 -1 100
+Reset M 25755 1 25772 -1 -1 -1 100
+  Reset G 25735 0 100
+Reset D 25772 3 2 100 -2
+#EXDESC
+ExDescKey    stone door~
+ExDesc       The door appears to be missing a glyph.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25773
+Name      Chamber of Water~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The door mysteriously vanishes behind you! The chamber walls
+are made of rough cut stones while the floor is covered with
+fine dust.  Another stone door  is  set in the center of the
+west wall.  A breeze blows through the gap beneath the door.
+~
+#EXIT
+Direction west~
+ToRoom    25774
+Key       25736
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset O 25741 1 25773 -1 -1 -1 100
+Reset M 25756 1 25773 -1 -1 -1 100
+  Reset G 25736 0 100
+Reset D 25773 3 2 100 -2
+#EXDESC
+ExDescKey    stone door~
+ExDesc       The door appears to be missing a glyph.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25774
+Name      Chamber of Air~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The door mysteriously vanishes behind you! The chamber walls
+are made of rough cut stones while the floor is covered with
+fine dust.  Another stone door  is  set in the center of the
+west wall.  Heat radiates from the door.
+~
+#EXIT
+Direction west~
+ToRoom    25775
+Key       25737
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset M 25757 1 25774 -1 -1 -1 100
+  Reset G 25737 0 100
+Reset D 25774 3 2 100 -2
+#EXDESC
+ExDescKey    stone door~
+ExDesc       The door appears to be missing a glyph.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25775
+Name      Chamber of Fire~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The door  mysteriously  vanishes  behind  you!   The chamber
+walls  are  made  of   rough  cut  stones while the floor is
+covered with ash cinders.   Another  stone  door  is  set in
+the center the west wall.
+~
+#EXIT
+Direction west~
+ToRoom    25776
+Key       25738
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset O 25742 1 25775 -1 -1 -1 100
+Reset M 25758 1 25775 -1 -1 -1 100
+  Reset G 25738 0 100
+Reset D 25775 3 2 100 -2
+#EXDESC
+ExDescKey    stone door~
+ExDesc       Its made of solid stone, yup.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25776
+Name      Burial Chamber of the Ancients~
+Sector    indoors~
+Flags     dark death nomob indoors safe nosummon private noastral~
+Stats     0 0 0 0 0
+Desc      This is where the native people have buried their ancestors.
+In various niches bodies have been lain out and adorned with
+jewelery and ceremonial icons.   A powerful aura of magic is
+felt in this chamber.
+~
+Reset M 25759 1 25776 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      25777
+Name      Secret Passage~
+Sector    city~
+Flags     dark nomob indoors safe nosummon private noastral~
+Stats     0 0 0 0 0
+Desc      The  walls  of  this  passageway  are  covered with detailed
+inscriptions and small pictures. Small niches along the wall
+house the long dead rain-forest natives.
+~
+#EXIT
+Direction south~
+ToRoom    25776
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    25778
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      25778
+Name      Secret Passage~
+Sector    city~
+Flags     dark nomob indoors safe nosummon private noastral~
+Stats     0 0 0 0 0
+Desc      The  walls  of  this  passageway  are  covered with detailed
+inscriptions and small pictures.
+~
+#EXIT
+Direction north~
+ToRoom    25779
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    25777
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      25779
+Name      Secret Passage~
+Sector    city~
+Flags     dark nomob indoors safe nosummon private noastral~
+Stats     0 0 0 0 0
+Desc      The  walls  of  this passageway  are  covered  with detailed
+inscriptions and small pictures.   A crude  staircase  leads
+down  into  a  large,  open  cavern.   An  aura of peace and
+tranquility is coming from the cavern below.
+~
+#EXIT
+Direction south~
+ToRoom    25778
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    25780
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      25780
+Name      Large Cavern~
+Sector    city~
+Flags     dark nomob indoors safe nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A natural cavern is deep below the rain-forest.  Water drips
+down from the cieling above.  The  air  is  stale,  and  the
+temperature cool, but uncomfortable.   A few stalagmites and
+stalagtites are about the cave. A crude staircase leads back
+up toward the temple.
+~
+#EXIT
+Direction north~
+ToRoom    25784
+Flags     hidden~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    25781
+Flags     hidden~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    25779
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      25781
+Name      Cianhydle's Cave~
+Sector    city~
+Flags     dark nomob indoors safe nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A small cavern is set to the side of the larger cavern.  The
+walls of the cave have been worked slightly to give the cave
+a symetrical appearance.   A set of shelves have been carved
+into the east wall, while a large stone table and chairs are
+placed on the west side of the chamber. A niche in the south
+wall has been lain with straw and a comfortable blanket.  In
+the center of the chamber  is  a  circular stone table, upon
+which rests a magical orb made from crystal.  Upon the domed
+ceiling are  set  hooks, from which glowing spheres hang and
+give light  to  a  large plant collection.   Vines cover the
+entire ceiling, and run back down the walls.
+~
+#EXIT
+Direction north~
+ToRoom    25780
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    25782
+#ENDEXIT
+
+#EXDESC
+ExDescKey    straw~
+ExDesc       Hmm... you wonder what sleeps here.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    orb crystal~
+ExDesc       From here someone sits and watches things from away...
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    stone table chair~
+ExDesc       These items are not only made from stone, but the very stone
+of the cavern!
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    glowing sphere spheres~
+ExDesc       They are quite bright to look at...
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    plant plants vines collection~
+ExDesc       Someone must like plants  alot to have brought them this far
+underground.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    bookshelf bookselves~
+ExDesc       The bookshelf is full of BOOKS!!!
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    book books~
+ExDesc       There are all kinds of books on all sorts of topics.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      25782
+Name      Small Cave~
+Sector    city~
+Flags     dark nomob indoors safe nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Here Cianhydle has made exits to the temples across the lands.
+~
+#EXIT
+Direction up~
+ToRoom    25781
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      25783
+Name      Problem Solving Process~
+Sector    city~
+Flags     dark death nomob indoors safe~
+Stats     0 0 0 0 0
+Desc      YES   =============================   NO
+             +-----------|| Does the Damn Thing work? ||-----------+
+             |            =============================            |
+             V                                                     V
+        +----------+     +---------+                          +---------+
+        | Don't    |  NO |  Does   |       +-------+     YES  | Did you |
+        | mess     | +---|  anyone |<------|  YOU  |<---------| mess    |
+        | with it! | |   |  know?  |       | MORON |          | with it?|
+        +----------+ |   +---------+       +-------+          +---------+
+             |       V        | YES                                |  NO
+             |    +------+    +-----------+                        |
+             |    | HIDE |                V                        V
+             |    |  IT  |            +--------+             +-----------+
+             |    +------+            |  YOU   |        YES  | Will they |
+             |       |       +------->|  POOR  |<------------| Catch you?|
+             |       |       |        |BASTARD!|             +-----------+
+             |       |       |        |________|                   |  NO
+             |       |       |             |                       |
+             |       |       |             V                       V
+             |       |       |      +---------------+        +-----------+
+             |       |       |  NO  | Can you blame |        |DESTROY THE|
+             |       |       +------| Someone else? |        | EVIDENCE! |
+             |       |              +---------------+        +-----------+
+             |       |                     |  YES                  |
+             |       |                     v                       |
+             |       |      ============================           |
+             |       +---->||           N O            ||<---------+
+             +------------>||      P R O B L E M       ||
+                            ============================
+~
+#ENDROOM
+
+#ROOM
+Vnum      25784
+Name      Small Cave~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small cave is home to Cianhydle's various experiments.
+~
+#EXIT
+Direction south~
+ToRoom    25780
+Flags     hidden~
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

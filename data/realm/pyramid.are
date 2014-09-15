@@ -1,0 +1,3187 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Great Pyramid~
+Author          Andi~
+Vnums           2600 2659
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          5 35 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      2600
+Keywords  asp snake~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     A horrible asp~
+Long      A small, poisonous asp slithers over your feet.
+~
+Desc      The asp is a small, smooth-scaled snake the color of worn pottery.
+The poison bite of this snake has felled many a mighty pharoah.
+~
+Nattacks  0.000000
+Stats1    0 10 0 0 0 0
+Stats2    5 21 8 50 1 6 1
+Speaking  common~
+Actflags  npc aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2601
+Keywords  cobra snake~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     A hooded cobra snake~
+Long      A cobra snake rears up and opens its fearsome hood.
+~
+Desc      The cobra snake waves back and forth before you, its hood displaying brilliant
+colors designed to serve notice to its prey that it is about to strike.
+~
+Nattacks  0.000000
+Stats1    0 25 0 0 0 0
+Stats2    7 21 7 70 2 4 2
+Speaking  common~
+Actflags  npc aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2602
+Keywords  mongoose~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     A wily little mongoose~
+Long      A small mongoose slinks along the ground, hunting snakes.
+~
+Desc      The mongoose is a wily rodent, a quick hunter of nasty poisonous snakes.
+She sniffs you and appears to be looking for food in your hand.
+~
+Nattacks  0.000000
+Stats1    10 100 0 0 0 0
+Stats2    11 21 6 110 3 5 3
+Speaking  common~
+Actflags  npc stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2603
+Keywords  pyramid watcher~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A pyramid watcher~
+Long      The pyramid watcher protects the tombs from intruders.
+~
+Desc      The pyramid watcher has made a pledge to destroy any would-be looters of
+the tombs of the pharoahs.  He is clad from head to foot in utilitarian
+sand-colored clothing.
+~
+Nattacks  0.000000
+Stats1    250 200 0 0 0 0
+Stats2    8 21 5 80 2 6 2
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2604
+Keywords  thief tomb~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     A tomb thief~
+Long      A sneaky tomb thief moves about in search of treasure.
+~
+Desc      The thief brushes against you briefly, then slinks back into the shadows.
+~
+Nattacks  0.000000
+Stats1    -250 500 0 0 0 0
+Stats2    10 21 5 100 2 6 3
+Speaking  common~
+Actflags  npc stayarea wimpy~
+Affected  sneak~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2605
+Keywords  ali baba thief~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     Ali Baba~
+Long      Ali Baba is here, hunting for the pharoah's tomb.
+~
+Desc      You see a tall, full-bearded man with a mischevious glint in his eye.  Ali Baba
+has made his life from stealing things from others, including many items stolen
+recently from under the nose of the hapless guardians of this pyramid.  Someday
+he might get caught, but not today...
+~
+Nattacks  0.000000
+Stats1    -300 1000 0 0 0 0
+Stats2    18 21 0 180 3 8 2
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  sneak~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2606
+Keywords  magic carpet~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     The magic carpet~
+Long      A small woven carpet lies under your feet.
+~
+Desc      The carpet is simply beautiful, made from intricately woven silken material.  
+It seems to rise up at the touch of your feet.  Wait, it is rising, a few feet
+above the ground!  In fact, it seems to be ALIVE!
+~
+Nattacks  0.000000
+Stats1    500 250 0 0 0 0
+Stats2    9 21 7 90 2 5 2
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2607
+Keywords  mummy corpse~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A mummy~
+Long      A mummy reaches for you, disturbed by your presence.
+~
+Desc      You only see the disfigured, rotting features of decaying human flesh,
+animated by the distempered spirit of a long-deceased person.
+~
+Nattacks  0.000000
+Stats1    -600 750 0 0 0 0
+Stats2    12 21 4 120 1 6 6
+Speaking  common~
+Actflags  npc stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2608
+Keywords  sand man sandman~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A sandman~
+Long      A sandman rises up from the desert floor.
+~
+Desc      The sandman is exactly that -- some sort of strange being formed from the sands
+of the desert floor.  It seems quite large and strong and at home in the heat
+and sandy winds.
+~
+Nattacks  0.000000
+Stats1    0 1500 0 0 0 0
+Stats2    14 21 2 140 2 7 4
+Speaking  common~
+Actflags  npc stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2609
+Keywords  efreeti efreet~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_fire~
+Short     The efreeti~
+Long      The efreeti stands here, sheathed in a column of fire.
+~
+Desc      The efreeti is a mighty being formed from living fire.  He gazes down at you 
+with disdain and scorn, arms folded across his mighty chest.
+~
+Nattacks  0.000000
+Stats1    -600 11000 0 0 0 0
+Stats2    20 21 -1 200 4 6 4
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2610
+Keywords  caryatid column~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     A caryatid~
+Long      A sandstone column stands here, carved into a feminine figure.
+~
+Desc      The column has been carved into a set of four shapely women, each facing
+outward into the room.  The sandstone of the caryatid is smooth with age,
+but you can still make out a deadly stone sword in the hands of each figure.
+~
+Nattacks  0.000000
+Stats1    0 35000 0 0 0 0
+Stats2    24 21 -3 240 4 6 8
+Speaking  common~
+Actflags  npc sentinel~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2611
+Keywords  djinn genie~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     The djinn~
+Long      The djinn issues forth from the confines of a small lamp.
+~
+Desc      The djinn is a mighty being formed from the air itself and frequently
+imprisoned in a small lamp, used to do the bidding of those who find him.
+He smiles down at you congenially, arms folded across his blue-tinged 
+skin, and strokes his goatee.
+~
+Nattacks  0.000000
+Stats1    600 60000 0 0 0 0
+Stats2    28 21 -6 280 6 6 12
+Speaking  common~
+Actflags  npc sentinel~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2612
+Keywords  hieracosphinx sphinx~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A hieracosphinx~
+Long      A hieracosphinx looks at you cunningly.
+~
+Desc      The hieracosphinx are cunning, small, but nasty creatures, having the heads
+of birds, mighty wingspans, and a full set of four paws to rend their victims
+to pieces.  They tend to be quite jealous of the sharper wits of their older
+cousins.
+~
+Nattacks  0.000000
+Stats1    -200 7500 0 0 0 0
+Stats2    15 21 3 150 1 10 5
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2613
+Keywords  gynosphinx sphinx~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     A gynosphinx~
+Long      A gynosphinx sits here, befuddled by a riddle.
+~
+Desc      The gynosphinx is a crafty but gentle creature, having the body of a
+beautiful dark-skinned woman from the waist up, a feathery set of wings
+and the hind legs of a mighty cat.  Right now she is confused, having 
+just heard a puzzling riddle from a cousin criosphinx.
+~
+Nattacks  0.000000
+Stats1    100 10000 0 0 0 0
+Stats2    19 21 0 190 2 10 10
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2614
+Keywords  criosphinx sphinx~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     A criosphinx~
+Long      A criosphinx calmly watches you.
+~
+Desc      The criosphinx is a calm and friendly creature, having the head of a ram atop
+the body of a well-furred feline with eagle-like wings.  He delights in riddles
+and in poking occasional fun at his easily confused lesser cousins.
+~
+Nattacks  0.000000
+Stats1    300 25000 0 0 0 0
+Stats2    23 21 -2 230 3 10 15
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2615
+Keywords  androsphinx sphinx~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     An androsphinx~
+Long      A mighty androsphinx tosses its lion-like mane.
+~
+Desc      The mighty androsphinx is a huge creature, with the body of a lion whose
+face  is quite man-like, perhaps even handsome, and a massive pair of feathered
+wings.  Tales are told of pharoahs that were rendered permanently deaf by the 
+mighty roar of this sphinx.
+~
+Nattacks  0.000000
+Stats1    400 50000 0 0 0 0
+Stats2    27 21 -6 270 4 10 20
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2616
+Keywords  great sphinx~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_any~
+Short     The great sphinx~
+Long      A mighty sphinx rests here in the sand, dormant now for centuries.
+The great sphinx appears to be indestructible!
+~
+Desc      The great sphinx towers tens of feet above you, resting here in a state of 
+dormancy.  It has become almost indistinguishable from the sand that surrounds
+it, although you can still make out the features of the handsome face that once
+advised many rulers.
+~
+Nattacks  0.000000
+Stats1    500 125000 0 0 0 0
+Stats2    41 21 -20 410 5 10 25
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_magic sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2617
+Keywords  ramses mummy~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     Ramses the Damned~
+Long      You have awakened the mighty servant to the pharoahs, Ramses.
+~
+Desc      As your light spills over his face and body, you can see his features begin
+to fill out, swell, and harden, until an apparently healthy man stands before
+you, clad only in the raiments he was left in when he last slept.  His hair is
+a soft black, his skin a deep chocolate, and his tall frame is totally still, 
+his chest not even moving to breathe.
+~
+Nattacks  0.000000
+Stats1    150 88000 0 0 0 0
+Stats2    38 21 -18 380 8 5 40
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_magic sanctuary infrared protect~
+#ENDMOBILE
+
+#OBJECT
+Vnum      2600
+Keywords  egyptian mace~
+Type      weapon~
+Short     an egyptian mace~
+Long      A hierogylph-engraved mace has been left here.~
+WFlags    take~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     10 800 -2 1 0 None None None
+#EXDESC
+ExDescKey    egyptian mace~
+ExDesc       The mace is formed from solid brass, and engraved in strange hieroglyphs.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2601
+Keywords  sand robes~
+Type      armor~
+Short     sand-colored robes~
+Long      Sand-colored robes lie here.~
+WFlags    take~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     5 500 -2 1 0 None None None
+#EXDESC
+ExDescKey    sand robes~
+ExDesc       The robes are colored a sandy off-white, and are in fact caked and covered
+with sand as well.  You don't seem to be able to remove all of the sand, no
+matter how much you try.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2602
+Keywords  obsidian dirk~
+Type      weapon~
+Short     an obsidian dirk~
+Long      A flat dirk made of chipped obsidian lies here.~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     8 1000 -2 1 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData damroll 1 -1 -1 0
+#EXDESC
+ExDescKey    obsidian dirk~
+ExDesc       The blade of the dirk is black, glassy obsidian, chipped razor sharp.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2603
+Keywords  cloth turban~
+Type      armor~
+Short     a dirty cloth turban~
+Long      A dirty cloth turban has been forgotten here.~
+Flags     magic~
+WFlags    take~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     10 1500 -2 1 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData hit 5 -1 -1 0
+#EXDESC
+ExDescKey    cloth turban~
+ExDesc       The turban used to be white cloth, now it is covered with oil and dirt from
+the head and hair of its previous owner, who must not have bathed much.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2604
+Keywords  cloth wrappings~
+Type      armor~
+Short     some cloth wrappings~
+Long      Long cloth wrappings lie on the ground in a pile.~
+WFlags    take~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     15 1250 -2 1 0 None None None
+#EXDESC
+ExDescKey    cloth wrappings~
+ExDesc       The cloth wrappings are old, wrinkled, and stink of embalming fluid.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2605
+Keywords  bottle fluid~
+Type      potion~
+Short     a bottle of embalming fluid~
+Long      A dusty bottle lies here on the ground.~
+WFlags    take~
+Values    5 -1 -1 -1 0 0 0 0 0 0 0
+Stats     5 250 -2 1 0 None None None
+Spells       'poison' 'NONE' 'NONE'
+#EXDESC
+ExDescKey    bottle fluid~
+ExDesc       The bottle is dusty and the fluid has a strange sickly-sweet smell to it.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2606
+Keywords  jar formaldehyde~
+Type      potion~
+Short     a jar of formaldehyde~
+Long      A small jar lies here on the ground.~
+WFlags    take~
+Values    10 -1 -1 -1 0 0 0 0 0 0 0
+Stats     6 300 -2 1 0 None None None
+Spells       'cure light' 'NONE' 'NONE'
+#EXDESC
+ExDescKey    jar formaldehyde~
+ExDesc       The jar is sticky and smells really bad.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2607
+Keywords  ball fire~
+Type      light~
+Short     a small hot ball of fire~
+Long      A little ball of fire hovers in the air before your eyes.~
+Flags     glow~
+Values    0 0 -1 0 0 0 0 0 0 0 0
+Stats     10 3500 -2 1 0 None None None
+AffData hit 10 -1 -1 0
+AffData move 50 -1 -1 0
+#EXDESC
+ExDescKey    ball fire~
+ExDesc       The ball of fire is hot to the touch and very very bright.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2608
+Keywords  stone scimitar~
+Type      weapon~
+Short     a stone scimitar~
+Long      A curved scimitar made of stone rests on the ground.~
+Flags     hum~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     18 10000 -2 1 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 3 -1 -1 0
+#EXDESC
+ExDescKey    stone scimitar~
+ExDesc       The scimitar is formed from solid stone, chipped and carved to perfection,
+with a sharp, cold blade that is marred only by a few nicks here and there.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2609
+Keywords  stone key~
+Type      key~
+Short     a stone key~
+Long      A stone key has been dropped here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     15 10 -2 9999 0 None None None
+#EXDESC
+ExDescKey    stone key~
+ExDesc       The key is made from stone, but is otherwise unremarkable.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2610
+Keywords  stone sarcophagus~
+Type      container~
+Short     a mighty stone sarcophagus~
+Long      A mighty stone sarcophagus lies in the center of the tomb.~
+Values    500 15 2609 0 0 0 0 0 0 0 0
+Stats     5000 5000 -2 1 0 None None None
+#EXDESC
+ExDescKey    stone sarcophagus~
+ExDesc       The sarcophagus is engraved on the sides with the images of pharoahs,
+great wars fought long ago, mighty pyramids being constructed...
+
+A raised image atop the sarcophagus is formed in the visage of one of
+the mighty pharoahs, painted in gold and studded with precious gems.
+
+You see a small keyhole in the side of the sarcophagus.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2611
+Keywords  dust~
+Type      trash~
+Short     some ancient dust~
+Long      A small pile of dust is being scattered by the breeze.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    dust~
+ExDesc       The dust is old.  As you sift it through your hands you find tiny chips
+of aged bone inside -- it must be the ancient remains of something.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2612
+Keywords  scarab~
+Type      key~
+Short     a small emerald scarab~
+Long      A small emerald scarab lies here on the ground.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 4500 -2 1 0 None None None
+#EXDESC
+ExDescKey    scarab~
+ExDesc       The scarab is intricately detailed, down to the tiny hairs on its
+insectile legs and the faceting of the emeralds in its eyes.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2613
+Keywords  lamp~
+Type      staff~
+Short     the lamp~
+Long      A small, tarnished, battered lamp has been dropped here.~
+Flags     glow~
+Values    25 5 5 -1 0 0 0 0 0 0 0
+Stats     10 25000 -2 1 0 None None None
+AffData armor -5 -1 -1 0
+AffData hitroll 1 -1 -1 0
+Spells       'fly'
+#EXDESC
+ExDescKey    lamp~
+ExDesc       The lamp is quite old and tarnished.  You rub at it to get some of the
+grime off, but it doesn't seem like anybody is home.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2614
+Keywords  ankh~
+Type      armor~
+Short     an ankh~
+Long      A small brass ankh has been left here.~
+Flags     bless~
+Values    7 0 0 0 0 0 0 0 0 0 0
+Stats     9 10000 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData dexterity 2 -1 -1 0
+#EXDESC
+ExDescKey    ankh~
+ExDesc       The ankh is a small brass symbol of an ancient religion.
+It glows with a soft bright light that is soothing to you.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2615
+Keywords  book riddles~
+Type      scroll~
+Short     a book of riddles~
+Long      A medium-sized parchment book with well-worn pages lies here.~
+WFlags    take~
+Values    21 -1 -1 -1 0 0 0 0 0 0 0
+Stats     15 7500 -2 1 0 None None None
+Spells       'identify' 'know alignment' 'faerie fog'
+#EXDESC
+ExDescKey    book riddles~
+ExDesc       The book has well-worn pages, containing many befuddling riddles
+to surprise, confuse, and amuse you.  You find yourself bewildered
+by its contents and put it down to sort your head out.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2616
+Keywords  lion paw~
+Type      weapon~
+Short     a lion's paw~
+Long      The mighty paw of a lion-like creature has been dropped here.~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 5 0 0 0 0 0 0 0
+Stats     20 18000 -2 1 0 None None None
+AffData constitution 1 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData damroll 3 -1 -1 0
+#EXDESC
+ExDescKey    lion paw~
+ExDesc       The massive paw has straps on it formed of bronze, so that it will
+fit snugly over your hand.  As you put it on, it melds with your hand,
+becoming an extension of your arm.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2617
+Keywords  answer~
+Type      key~
+Short     the answer~
+Long      A small piece of parchment covered in hieroglyphics lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    answer hieroglyphics~
+ExDesc       You cannot decipher the strange hieroglyphics that cover the
+sheet of parchment.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2618
+Keywords  treasure~
+Type      money~
+Short     the treasure of the sphinx~
+Long      The massive treasure of the sphinx lies here in a big pile.~
+WFlags    take~
+Values    23850 0 0 0 0 0 0 0 0 0 0
+Stats     50 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    treasure~
+ExDesc       The treasure is incredibly large, filled with gold coins and valuables, more 
+wealth than you could ever possibly imagine accumulated in one place.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2619
+Keywords  pile sand~
+Type      money~
+Short     a pile of sand~
+Long      You see a small pile of sand.~
+WFlags    take~
+Values    12986 0 0 0 0 0 0 0 0 0 0
+Stats     40 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    pile sand~
+ExDesc       You think you see some coins and valuables glinting amongst the grains of sand.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2620
+Keywords  curse mummy~
+Type      trash~
+Short     the curse of the mummy~
+Long      Some fortunate soul has escaped the mummy's curse, for now.~
+Flags     evil~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+AffData strength -3 -1 -1 0
+AffData intelligence -3 -1 -1 0
+AffData constitution -3 -1 -1 0
+AffData hit -50 -1 -1 0
+AffData move -100 -1 -1 0
+#EXDESC
+ExDescKey    curse mummy~
+ExDesc       Rumor has it that whomever disturbs the grave of the mummy shall be 
+cursed for all eternity, and that the descendents of that person shall
+likewise be cursed for ten generations to follow.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2621
+Keywords  small elixir~
+Type      potion~
+Short     a small elixir~
+Long      A small glass elixir lies under your feet.~
+Flags     magic~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     2 10000 -2 1 0 None None None
+Spells       'kindred strength' 'stone skin' 'sanctuary'
+#EXDESC
+ExDescKey    small elixir~
+ExDesc       The elixir is deceptively small.  Something tells you that its
+contents are truly quite potent.  Perhaps too potent for ordinary
+mortals to attempt to consume.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2622
+Keywords  golden mask~
+Type      armor~
+Short     a golden mask~
+Long      A beautiful, intricately detailed mask has been forgotten here.~
+Flags     magic~
+WFlags    take~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     10 15000 -2 1 0 None None None
+AffData mana 25 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData move 100 -1 -1 0
+AffData save_spell -1 -1 -1 0
+#EXDESC
+ExDescKey    golden mask~
+ExDesc       This beautiful mask was shaped from solid gold and magically enchanted
+to perfectly fit the face of any who choose to wear it, its golden features
+and turquoise highlights even moving to match the expressions of the face
+of the wearer.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2623
+Keywords  diamond~
+Type      trash~
+Short     the diamond~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    diamond~
+ExDesc       Aha!
+
+You see a multifaceted gemstone, which strangely reflects no
+light, making it very hard to see when it lies on the ground.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2624
+Keywords  sun wand~
+Type      wand~
+Short     a blazing sun wand~
+Long      A small length of brass shines here with its own light.~
+Flags     glow~
+Values    35 25 25 -1 0 0 0 0 0 0 0
+Stats     10 25000 -2 1 0 None None None
+AffData save_rod -5 -1 -1 0
+AffData save_spell -5 -1 -1 0
+Spells       'harm'
+#EXDESC
+ExDescKey    sun wand~
+ExDesc       This small brass shaft is a holy weapon used by the ancient people of 
+this land to defend against the deadliest of foes.  It shines with the 
+brilliant blazing light of the sun.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2625
+Keywords  sandy ring~
+Type      armor~
+Short     a sandy-colored ring~
+Long      A small sandy-colored ring has been carelessly dropped here.~
+Flags     hum~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     5 20000 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData mana 50 -1 -1 0
+#EXDESC
+ExDescKey    sandy ring~
+ExDesc       The ring is small, smooth, sandy-colored and unremarkable, save that
+it gives off a continuous low humming noise that tickles your fingertips.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2626
+Keywords  golden sphinx~
+Type      treasure~
+Short     a small golden sphinx~
+Long      A small golden sphinx glints in the light.~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 50000 -2 1 0 None None None
+AffData dexterity 2 -1 -1 0
+#EXDESC
+ExDescKey    golden sphinx~
+ExDesc       The golden sphinx is incredibly detailed and very small, fitting easily
+into the palm of your hand.  You can even make out the expression
+of wisdom and peace on its face.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      2627
+Keywords  spinhxian leggings~
+Type      armor~
+Short     a pair of sphinxian leggings~
+Long      Massive leggings formed from the body of a sphinx stand here.~
+Flags     magic~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     20 20000 -2 1 0 None None None
+AffData strength 3 -1 -1 0
+AffData move 200 -1 -1 0
+#EXDESC
+ExDescKey    sphinxian leggings~
+ExDesc       These magically fashioned leggings impart the strength and stamina
+of the mightiest of the ancient sphinxes.  You feel ancient power 
+emanating from them; they seem to be almost alive.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#ROOM
+Vnum      2600
+Name      The Great Eastern Desert~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A vast desert stretches for miles, the sands constantly shifting around you.
+Rising out of the sand to the east you see a mighty pyramid.
+~
+#EXIT
+Direction north~
+ToRoom    2600
+Desc      Nothing but sand as far as the eye can see.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2601
+Desc      The sands of the desert continue onward towards the pyramid.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2600
+Desc      Nothing but sand as far as the eye can see.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5056
+Desc      Across the hot burning sands you see a small oasis and some tents.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    pyramid~
+ExDesc       The massive pyramid rises out of the sand, a monument to long-dead pharoahs.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2601
+Name      At the Base of the Pyramid~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The mighty pyramid towers above you out of the hot desert sands, made from
+huge blocks of stone that have been coated over with a rough sandy plaster-like
+substance.  The face of the pyramid is steep, but you think you might be able
+to climb it.
+~
+#EXIT
+Direction west~
+ToRoom    2600
+Desc      To the east you see the hot sands of the Great Eastern Desert.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2602
+Desc      The steep slope of the pyramid rises up before you.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    pyramid~
+ExDesc       You wonder how anyone could have built such a massive thing out in this heat.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2602
+Name      Climbing the Great Pyramid~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Hot air rises off the sides of the pyramid, and the wind chokes you with a
+flurry of sand and dust.  So far you have made it halfway up the side.  The
+walls of the pyramid are quite steep.
+~
+#EXIT
+Direction north~
+ToRoom    2603
+Desc      If you are daring you could try to skirt around to the northern side.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2604
+Desc      If you are daring you could try to skirt around to the southern side.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2607
+Desc      It looks too dangerous to try to climb any higher.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2601
+Desc      Far below you are the burning sands of the desert.
+~
+#ENDEXIT
+
+Reset M 2600 6 2602 -1 -1 -1 100
+#EXDESC
+ExDescKey    pyramid~
+ExDesc       You wonder how anyone could have built such a massive thing out in this heat.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2603
+Name      Climbing the Great Pyramid~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Hot air rises off the sides of the pyramid, and the wind chokes you with a
+flurry of sand and dust.  The walls of the pyramid are quite steep, and you
+are having trouble keeping from sliding down into the sands below.
+~
+#EXIT
+Direction east~
+ToRoom    2605
+Desc      If you are daring you could try to skirt around to the eastern side.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2602
+Desc      If you are daring you could try to skirt around to the western side.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2607
+Desc      It looks too dangerous to try to climb any higher.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2607
+Desc      This side of the pyramid has a dangerous drop before the sandy floor.
+~
+#ENDEXIT
+
+Reset M 2601 4 2603 -1 -1 -1 100
+#EXDESC
+ExDescKey    pyramid~
+ExDesc       You wonder how anyone could have built such a massive thing out in this heat.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2604
+Name      Climbing the Great Pyramid~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Hot air rises off the sides of the pyramid, and the wind chokes you with a
+flurry of sand and dust.  The walls of the pyramid are quite steep, and you
+are having trouble keeping from sliding down into the sands below.
+~
+#EXIT
+Direction east~
+ToRoom    2605
+Desc      If you are daring you could try to skirt around to the eastern side.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2602
+Desc      If you are daring you could try to skirt around to the western side.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2607
+Desc      It looks too dangerous to try to climb any higher.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2607
+Desc      This side of the pyramid has a dangerous drop before the sandy floor.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    pyramid~
+ExDesc       You wonder how anyone could have built such a massive thing out in this heat.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2605
+Name      Climbing the Great Pyramid~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here on the eastern side of the pyramid there is a little more shelter
+from the heat and wind.  The stone side is not nearly so slippery smooth
+from the ravages of time, and you think you may be able to even reach the
+top from here.
+~
+#EXIT
+Direction north~
+ToRoom    2603
+Desc      If you are daring you could try to skirt around to the northern side.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2604
+Desc      If you are daring you could try to skirt around to the southern side.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2606
+Desc      You see the apex of the pyramid many yards above you.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2607
+Desc      This side of the pyramid has a dangerous drop before the sandy floor.
+~
+#ENDEXIT
+
+Reset M 2600 6 2605 -1 -1 -1 100
+#EXDESC
+ExDescKey    pyramid~
+ExDesc       You wonder how anyone could have built such a massive thing out in this heat.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2606
+Name      The Apex of the Great Pyramid~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Bathed in sweat, you have managed to reach the summit of the great pyramid.
+The four sides of the pyramid slope sharply down into the hot sands in all four
+cardinal directions.
+   A plaque has been set into the sandy stones beneath your feet.
+~
+#EXIT
+Direction north~
+ToRoom    2607
+Desc      The north side of the pyramid slopes down into the sands.
+It looks really dangerous.  I wouldn't go that way.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2605
+Desc      The east side of the pyramid slopes down into the sands.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2607
+Desc      The south side of the pyramid slopes down into the sands.
+It looks really dangerous.  I wouldn't go that way.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2607
+Desc      The west side of the pyramid slopes down into the sands.
+It looks really dangerous.  I wouldn't go that way.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2608
+Desc      You see some sandy stones pressed closely together to form a hard surface.
+~
+Keywords  stones~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 2602 3 2606 -1 -1 -1 100
+Reset D 2606 5 1 100 -2
+#EXDESC
+ExDescKey    stones~
+ExDesc       As you look closer you can make out a crack in the center of the stones
+beneath your feet.  With some effort you might be able to lift that 
+section up and get inside!
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    plaque~
+ExDesc       The plaque reads:
+This area (Great Pyramid) written for any Merc 2.0 standard mud by Andersen.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2607
+Name      Climbing the Great Pyramid~
+Sector    desert~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Here the elements have carved away at the sides of the pyramid quite a 
+bit.  You aren't so sure of your footing anymore...
+
+Suddenly the wind picks up, and you lose your balance!
+You tumble down the side of the pyramid, and fall to your death!
+
+SPLAT.
+~
+#ENDROOM
+
+#ROOM
+Vnum      2608
+Name      A Ladder~
+Sector    indoors~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You are climbing an ancient ladder that leads down into the depths of
+the pyramid.  The air around is thick with layers of dust and a strange
+musty smell.  Above you you see tiny beams of light coming through the
+stones of the ceiling.
+~
+#EXIT
+Direction up~
+ToRoom    2606
+Desc      You see the sandy stones of the ceiling.
+~
+Keywords  stones~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2609
+Desc      You see a small dusty chamber.
+~
+#ENDEXIT
+
+Reset D 2608 4 1 100 -2
+#EXDESC
+ExDescKey    stones~
+ExDesc       As you look closer you can make out a crack in the center of the stones
+above your head.  With some effort you might be able to lift that 
+section up and get outside!
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2609
+Name      A Musty Chamber~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a dank, musty chamber just inside the pyramid. 
+Footprints and other strange marks are set into the dusty floor here.
+It would seem that some of the tenants of this monument are still alive.
+   Exits lead in all directions.   The door to the west is covered with
+inscriptions.
+~
+#EXIT
+Direction north~
+ToRoom    2612
+Desc      You see a tiny crawlway raised about three feet off the ground.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2639
+Desc      A dust-covered hallway leads off to the east.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2624
+Desc      You see a small crack in the wall through which you might be able to slide.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2610
+Desc      You see a large stone door, covered in sigils and hieroglyphs.
+~
+Keywords  door stone~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2608
+Desc      A small rickety ladder leads up.
+~
+#ENDEXIT
+
+Reset M 2603 6 2609 -1 -1 -1 100
+  Reset E 2600 0 16 100
+Reset M 2603 6 2609 -1 -1 -1 100
+  Reset E 2601 0 12 100
+Reset D 2609 3 1 100 -2
+#EXDESC
+ExDescKey    door stone~
+ExDesc       The stone door is covered in strange inscriptions and hieroglyphs that warn
+you not to proceed any further.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    sigils hieroglyphs inscriptions writing~
+ExDesc       You cannot understand the strange glyphs that cover the door, but most of
+them seem to depict scenes of fire and massive creatures of apparently
+tremendous strength.  You have a feeling that the glyphs are serving as a
+warning.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2610
+Name      The Fire Pool~
+Sector    indoors~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This room is dominated by a massive raised pool that is filled with
+not water but flames of intense heat.  The multicoloured flames lick out
+at you, searching for things to burn.
+   The pool proceeds to the east into a small chamber.
+~
+#EXIT
+Direction east~
+ToRoom    2609
+Desc      You see a large stone door.
+~
+Keywords  door stone~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2611
+Desc      You see a small chamber filled with fire.
+~
+#ENDEXIT
+
+Reset D 2610 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      2611
+Name      The Chamber of the Efreet~
+Sector    water_noswim~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You make your way across the fire pool, and into a small stone chamber.
+Here the flames are nearly as high as your head, singeing your face and 
+evaporating your sweat instantaneously.
+~
+#EXIT
+Direction east~
+ToRoom    2610
+Desc      The pool of fire ends to the east.
+~
+#ENDEXIT
+
+Reset M 2609 1 2611 -1 -1 -1 100
+  Reset E 2607 0 0 100
+#ENDROOM
+
+#ROOM
+Vnum      2612
+Name      A Tiny Crawlway~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have to go down onto your hands and knees to fit inside this tiny
+space.  The crawlway is thick with sand and dust, and markings of the
+passage of other creatures.
+~
+#EXIT
+Direction north~
+ToRoom    2613
+Desc      The crawlway continues to the north.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2609
+Desc      The crawlway ends to the south in a musty chamber.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2637
+Desc      A small hole above your head leads into a dank chamber.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2613
+Name      A Tiny Crawlway~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are on your hands and knees, inside a small crawlway that winds
+through the inside of the pyramid.  The crawlway is thick with sand, dust, 
+and markings of the passage of other creatures.
+~
+#EXIT
+Direction south~
+ToRoom    2612
+Desc      The crawlway continues to the south.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2614
+Desc      The crawlway continues to the west.
+~
+#ENDEXIT
+
+Reset M 2600 6 2613 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2614
+Name      A Tiny Crawlway~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are on your hands and knees, inside a small crawlway that winds
+through the inside of the pyramid.  The crawlway is thick with sand, dust, 
+and markings of the passage of other creatures.
+~
+#EXIT
+Direction east~
+ToRoom    2613
+Desc      The crawlway continues to the east.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2615
+Desc      The crawlway gets a little tighter to the west.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2615
+Name      A Tightening in the Crawlway~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here you are forced to slide on your belly through a particularly tight
+section of the crawlway, as the stones of the pyramid close together
+about you.  Below you is a small, slippery-looking hole that plummets into
+blackness.
+~
+#EXIT
+Direction east~
+ToRoom    2614
+Desc      The crawlway gets a little larger to the east.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2616
+Desc      The crawlway continues to diminish in size to the south.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2617
+Desc      The hole looks very slippery and very dark.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2616
+Name      The Crawlway's End~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The crawlway shrinks away to nothing as the sandy stones of the pyramid
+close together into a space through which only a snake could fit.   There is
+barely enough space to turn around and make your way back through the tiny
+crawlway to the north.
+~
+#EXIT
+Direction north~
+ToRoom    2615
+Desc      The crawlway gets a little larger to the north.
+~
+#ENDEXIT
+
+Reset M 2602 3 2616 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2617
+Name      A Slippery Hole~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The sides of this hole are slippery-smooth.  You lower yourself in, and 
+proceed to move downward... when suddenly you lose your purchase!
+
+You fall for what seems like an eternity, and smash into the stones below...
+
+Under the Hole
+   You are in a small chamber underneath the slippery hole, far below
+the pyramid now.   The floor is strewn with bones.  To the south is a
+small rocky crevasse.
+~
+#EXIT
+Direction south~
+ToRoom    2619
+Desc      You see a rocky crevasse that proceeds deep under the pyramid.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    u up~
+ExDesc       The hole looks far too slippery to climb back up.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    bones~
+ExDesc       The bones have whitened and cracked in the dry air, apparently the remains 
+of adventurers, thieves, and creatures that did not survive the fall.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2618
+Name      Under the Hole~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a small chamber underneath the slippery hole, far below
+the pyramid now.   The floor is strewn with bones.  To the south is a
+small rocky crevasse.
+~
+#EXIT
+Direction south~
+ToRoom    2619
+Desc      You see a rocky crevasse that proceeds deep under the pyramid.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    u up~
+ExDesc       The hole looks far too slippery to climb back up.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    bones~
+ExDesc       The bones have whitened and cracked in the dry air, apparently the remains 
+of adventurers, thieves, and creatures that did not survive the fall.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2619
+Name      A Rough Crevasse~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are now exploring deep within a strange rocky crevasse that plunges
+down into the rock on which the pyramid was constructed.  To the south you
+see the flickering light of a fire, and the crevasse proceeds downward.
+~
+#EXIT
+Direction north~
+ToRoom    2618
+Desc      You see a small stone chamber littered with bones.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2620
+Desc      You see the flickering light of a small fire.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2621
+Desc      The crevasse continues downward into total darkness.
+~
+#ENDEXIT
+
+Reset O 2623 0 2619 -1 -1 -1 100
+#EXDESC
+ExDescKey    rough~
+ExDesc       As you look through the rough terrain, your eyes catch a small glint of light!
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2620
+Name      A Small Fire~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Here a small fire burns in a nook in the rocks, providing some warmth and
+comforting light in the cold, dark, dry air.
+
+Standing here is a strange-looking old man, who stares at you balefully.
+~
+#EXIT
+Direction north~
+ToRoom    2619
+Desc      You see a massive crevasse that plunges into darkness.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    man old~
+ExDesc       The old man looks like he has been trapped down here far too long, and
+has begun to lose his mind.  He moves about slowly, cackling to himself.
+
+He turns to you and shouts, 'nope measse!  nope measse!', then turns 
+back and stares into the fire.
+
+'What a strange person,' you think to yourself.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2621
+Name      Down the Crevasse~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The crevasse proceeds downward into the dark depths of the earth.
+The air about you is now cold and quite dry, and your light source
+gutters in a cool breeze that wafts up from below.
+~
+#EXIT
+Direction up~
+ToRoom    2619
+Desc      It is too dark for you to see any further along the crevasse.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2622
+Desc      It is too dark for you to see any further along the crevasse.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2622
+Name      At the Crevasse's End~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the crevasse comes to an abrupt end.  A chilling wind howls
+at your face from a black shape to the south, but the light from your
+source is too dim to see exactly what it is.
+~
+#EXIT
+Direction south~
+ToRoom    2623
+Key       2623
+Desc      You see a strange-looking black shape.
+~
+Keywords  sesame~
+Flags     secret~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2621
+Desc      It is too dark for you to see anything along the crevasse.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    black shape~
+ExDesc       Wind howls about your ears like the roar of a tiger.  As your eyes
+adjust to the light the shape to the south almost seems to take the
+form of a massive animal head.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    tiger head animal sesame~
+ExDesc       You are now certain that the wind is the cold breath of some unearthly
+giant animal, whose voice rumbles lowly on the breeze, and whose
+massive jaws could easily swallow you whole.
+
+You move closer for a better look, when suddenly a pair of eyes flashes.
+A cold voice echoes: 'SEEK YE THE DIAMOND... IN THE ROUGH...'
+
+... Then all is silent.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2623
+Name      The Vault of the Lamp~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The jaws of the massive stone tiger part wide to reveal a great vault.
+An arched ceiling lies far above your head... and all about you is a low
+guttural rumbling noise and a chill wind.
+
+Giant heaps of ancient treasure, gold coins, and valuables surround you
+on all sides.
+~
+#EXIT
+Direction north~
+ToRoom    2622
+Key       2623
+Desc      Through the jaws of the tiger you see the blackness of the crevasse.
+~
+Flags     secret~
+#ENDEXIT
+
+Reset M 2606 1 2623 -1 -1 -1 100
+Reset M 2611 1 2623 -1 -1 -1 100
+  Reset E 2613 0 17 100
+#EXDESC
+ExDescKey    treasure gold coins valuables~
+ExDesc       You reach for some of the tasty goodies, when you hear a loud rumbling
+sound and see a bright flash of light...
+
+Then the words: 'TAKE ONLY THE LAMP... TOUCH NOTHING ELSE.'
+
+... All is silent once again.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2624
+Name      A Crack in the Wall~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You exhale, and squeeze yourself into the narrow crack in the wall.
+Dust fills your eyes as you disturb it, and chunks of mortar and stone
+mixed with a touch of sand fall on you as you scrape your way through.
+~
+#EXIT
+Direction north~
+ToRoom    2609
+Desc      You see a musty chamber.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2625
+Desc      You see a tomb.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2625
+Name      A Looted Tomb~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The floor of this small tomb is littered with the lids of 
+smashed sarcophagi, bits of treasure dropped by thieves and
+looters, and corpses pulled from their resting places.
+~
+#EXIT
+Direction north~
+ToRoom    2624
+Desc      You see a small crack in the wall through which you might be able to slide.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2633
+Desc      To the east is another tomb.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2626
+Desc      To the west is another tomb.
+~
+#ENDEXIT
+
+Reset M 2604 6 2625 -1 -1 -1 100
+  Reset E 2602 0 16 100
+Reset M 2607 4 2625 -1 -1 -1 100
+  Reset G 2606 0 100
+  Reset E 2604 0 5 100
+Reset M 2607 4 2625 -1 -1 -1 100
+  Reset G 2605 0 100
+  Reset E 2604 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      2626
+Name      A Demolished Tomb~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tomb has been utterly destroyed by thieves and looters in search of
+the treasures of the pharoahs.  Nothing of interest remains in this room,
+except a large stone coffin that leans against the western wall.
+~
+#EXIT
+Direction east~
+ToRoom    2625
+Desc      To the east is another tomb.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2627
+Key       2612
+Desc      You see a large stone coffin.
+~
+Keywords  coffin lid~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset M 2602 3 2626 -1 -1 -1 100
+Reset M 2604 6 2626 -1 -1 -1 100
+  Reset E 2602 0 16 100
+Reset D 2626 3 2 100 -2
+#EXDESC
+ExDescKey    coffin lid~
+ExDesc       The coffin is sculpted into the form of a man, standing several heads above
+you, and clad in the garments of pharoahs.  It has apparently been untouched
+by the ravages of time and the activities of looters.  Several markings on the 
+side indicate spots where unsuccessful attempts were made to open the coffin.
+
+You can't see any way to open it.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    man garments pharoah~
+ExDesc       As you look closer at the figure sculpted into the stone coffin you notice a
+small marking carved into its chest.  It looks like a scarab or small beetle
+would fit into the small space, if properly sized.
+
+Hmm.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2627
+Name      A Stairway~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand now at the head of a stairway that goes down into darkness.
+The steps and walls are smooth sandy stone, covered with a thick layer
+of dust.  Some inscriptions are carved into the wall here.
+~
+#EXIT
+Direction east~
+ToRoom    2626
+Desc      You see the backside of the coffin lid, featureless stone.
+~
+Keywords  coffin lid~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2628
+Desc      It is too dark to see down the stairway.
+~
+#ENDEXIT
+
+Reset D 2627 1 2 100 -2
+#EXDESC
+ExDescKey    inscriptions~
+ExDesc       You blow dust away from the inscriptions to read:
+'Beware the curse of the mummy.'
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    coffin lid~
+ExDesc       On this side the coffin lid is smooth featureless stone.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2628
+Name      A Stairway~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are on a stairway that disappears into darkness in both directions.
+The smooth, uneven steps of the stairway have not been travelled in what
+appears to be centuries.
+~
+#EXIT
+Direction up~
+ToRoom    2627
+Desc      It is too dark to see up the stairway.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2629
+Desc      It is too dark to see down the stairway.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2629
+Name      A Stairway~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand now at the base of the uneven stairway.  The walls, floor,
+and ceiling of this small landing are covered with strange hieroglyphics.
+~
+#EXIT
+Direction south~
+ToRoom    2630
+Desc      You see a seam in the stone wall.
+~
+Keywords  stone~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2628
+Desc      It is too dark to see up the stairway.
+~
+#ENDEXIT
+
+Reset D 2629 2 1 100 -2
+#EXDESC
+ExDescKey    walls floor ceiling hieroglyphics~
+ExDesc       The hieroglyphics are covered with a thick layer of dust.  You clear the
+dust away with your hand, and find that you cannot comprehend them.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2630
+Name      The Ancient Hall~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the air is deathly still, motes of dust thickly obscuring your
+vision.  Several stone statues line the walls of the hall, depicting the 
+gods of an ancient society.  Strange glyphs and sigils cover the walls, a 
+peculiar pictorial form of written language that you don't understand.
+   Some steps lead to a raised dais to the south.
+~
+#EXIT
+Direction north~
+ToRoom    2629
+Desc      You see a seam in the stone wall.
+~
+Keywords  stone~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2631
+Desc      You see a small raised dais.
+~
+#ENDEXIT
+
+Reset D 2630 0 1 100 -2
+#EXDESC
+ExDescKey    writings glyphs sigils hieroglyphics symbols~
+ExDesc       You don't understand the meaning of these symbols.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2631
+Name      A Raised Dais~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are at the southern end of the ancient hall, the dust and darkness
+absorbing your light so that you cannot see past the steps of the dais.
+A low pedestal rests here.  You see something written into the face of it.
+~
+#EXIT
+Direction north~
+ToRoom    2630
+Desc      You cannot see past the steps of the dais.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2632
+Desc      You see a seam in the stone floor.
+~
+Keywords  tomb~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 2631 5 1 100 -2
+#EXDESC
+ExDescKey    pedestal writings~
+ExDesc       The writings are covered in sand and worn nearly away by the passage
+of time: 'I am Ramses the Damned, once counselor and aide to the mightiest
+of pharoahs and queens of this land.  Much time has passed since I last
+walked the earth.  Disturb my rest at your peril.'
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2632
+Name      The Tomb of Ramses~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand in an empty tomb, a cubicle no more then ten feet to a side.
+~
+#EXIT
+Direction up~
+ToRoom    2631
+Desc      That leads back the way you came.
+~
+Keywords  tomb~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 2617 1 2632 -1 -1 -1 100
+  Reset G 2621 0 100
+  Reset G 2621 0 100
+  Reset G 2620 0 100
+  Reset G 2619 0 100
+  Reset E 2622 0 6 100
+Reset D 2632 4 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      2633
+Name      A Ransacked Tomb~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tomb has been completely ransacked and destroyed by the actions
+of pyramid thieves and looters.  The floor is littered with junk.
+~
+#EXIT
+Direction east~
+ToRoom    2634
+Desc      To the east is a low-ceilinged tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2625
+Desc      To the west is another tomb.
+~
+#ENDEXIT
+
+Reset M 2604 6 2633 -1 -1 -1 100
+  Reset E 2602 0 16 100
+#ENDROOM
+
+#ROOM
+Vnum      2634
+Name      A Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The low-ceilinged tunnel runs east-west.
+~
+#EXIT
+Direction east~
+ToRoom    2635
+Desc      You cannot see into the darkness of the low tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2633
+Desc      You see a tomb.
+~
+#ENDEXIT
+
+Reset M 2604 6 2634 -1 -1 -1 100
+  Reset E 2602 0 16 100
+#ENDROOM
+
+#ROOM
+Vnum      2635
+Name      A Fork in the Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the tunnel forks off through a gaping hole down in the
+southern wall, continuing onward to the east and west as well.
+~
+#EXIT
+Direction east~
+ToRoom    2636
+Desc      You cannot see into the darkness of the low tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2634
+Desc      You cannot see into the darkness of the low tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2646
+Desc      Through the hole you see rubble and sand.
+~
+#ENDEXIT
+
+Reset M 2604 6 2635 -1 -1 -1 100
+  Reset E 2602 0 16 100
+#EXDESC
+ExDescKey    s south hole~
+ExDesc       The hole is low, at the floor of the southern wall.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2636
+Name      A Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The low-ceilinged tunnel makes a turn to the west and ends
+to the north as it spills out into a dusty hallway.
+~
+#EXIT
+Direction north~
+ToRoom    2642
+Desc      The mouth of the tunnel is stone that has been torn away by looters.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2635
+Desc      You cannot see into the darkness of the low tunnel.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2637
+Name      A Dank Chamber~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This chamber has a dank, dusty, musty smell to it.  Small footprints
+in the dust betray the recent passage of some sort of creatures.  A hole 
+in the floor lies to the west and a stairway is to the east.
+~
+#EXIT
+Direction east~
+ToRoom    2638
+Desc      You see a spiral stone stairway.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2612
+Desc      You see only blackness through the hole in the floor.
+~
+#ENDEXIT
+
+Reset M 2603 6 2637 -1 -1 -1 100
+  Reset E 2600 0 16 100
+Reset M 2603 6 2637 -1 -1 -1 100
+  Reset E 2601 0 12 100
+Reset M 2607 4 2637 -1 -1 -1 100
+  Reset E 2604 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      2638
+Name      A Spiral Stairway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Some dusty, broken stone stairs here spiral slowly in a constricted
+space down towards a dusty hallway.
+~
+#EXIT
+Direction up~
+ToRoom    2637
+Desc      The stairs spiral up into a dank chamber.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2641
+Desc      The stairs spiral down into a dusty hallway.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2639
+Name      A Dust-Covered Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This hallway is covered with dust that has accumulated over the
+centuries that the pyramid has stood.  Small markings and footprints
+in the dust betray the recent passage of others -- perhaps thieves?
+~
+#EXIT
+Direction east~
+ToRoom    2640
+Desc      The hallway proceeds to the east towards a strange smell.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2609
+Desc      The hallway proceeds towards the west towards a musty smell.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2640
+Name      A Smelly Chamber~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This small chamber has a sickly putrescent smell to it, the
+smell of formaldehyde and other ointments used to preserve the
+corpses of those who died ages ago.
+~
+#EXIT
+Direction east~
+ToRoom    2641
+Desc      You see a dusty hallway.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2639
+Desc      You a dusty hallway.
+~
+#ENDEXIT
+
+Reset M 2600 6 2640 -1 -1 -1 100
+Reset M 2603 6 2640 -1 -1 -1 100
+  Reset E 2600 0 16 100
+Reset M 2603 6 2640 -1 -1 -1 100
+  Reset E 2601 0 12 100
+#ENDROOM
+
+#ROOM
+Vnum      2641
+Name      A Dust-Covered Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This hallway is covered with a thick, choking dust that rises
+up to obscure your light source and sting your eyes.  Small marks
+and footprints in the dust betray the recent passage of others.
+~
+#EXIT
+Direction east~
+ToRoom    2642
+Desc      The hallway turns to the north.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2640
+Desc      You smell something peculiar over there.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2638
+Desc      A tightly spiralling stone stairway leads up.
+~
+#ENDEXIT
+
+Reset M 2601 4 2641 -1 -1 -1 100
+Reset M 2607 4 2641 -1 -1 -1 100
+  Reset E 2604 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      2642
+Name      A Turn in the Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in an elbow turn in a dust-covered stone hallway,
+that dead ends to the north and continues on to the west.  To the south
+the stones of the pyramid have been torn asunder by thieves, making
+a low-ceilinged tunnel.
+~
+#EXIT
+Direction north~
+ToRoom    2643
+Desc      The hallway ends to the north.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2636
+Desc      The tunnel is dark.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2641
+Desc      The dust-covered hallway continues to the west.
+~
+#ENDEXIT
+
+Reset M 2604 6 2642 -1 -1 -1 100
+  Reset E 2602 0 16 100
+#ENDROOM
+
+#ROOM
+Vnum      2643
+Name      A Dead End~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The dust-covered hallway has come to an abrupt end at a stony,
+featureless wall.  Here and there are signs of the recent passage
+of others in the dust.
+~
+#EXIT
+Direction south~
+ToRoom    2642
+Desc      The dusty hall continues to the south.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2644
+Desc      The floor is quite dusty, and made of stone.  You see some cracks.
+~
+Keywords  floor~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 2605 1 2643 -1 -1 -1 100
+  Reset E 2602 0 16 100
+  Reset E 2603 0 6 100
+Reset D 2643 5 1 100 -2
+#EXDESC
+ExDescKey    cracks~
+ExDesc       The cracks look like you might be able to pull away some pieces of
+the floor, perhaps even fit your body through the space you make.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2644
+Name      The Tomb Entrance~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a small, dark chamber that has stood undisturbed for
+many years.  To the north stands a massive stone tomb, which is
+covered in hieroglyphics and gold-lined carvings that mark it as the
+final resting place of the mighty pharoahs of this land.
+~
+#EXIT
+Direction north~
+ToRoom    2645
+Desc      You see the tomb of the pharoahs.
+~
+Keywords  tomb~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2643
+Desc      The stone ceiling has some cracks in it, through which a dim light streams.
+~
+Keywords  ceiling~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 2644 4 1 100 -2
+Reset D 2644 0 1 100 -2
+#EXDESC
+ExDescKey    tomb~
+ExDesc       The tomb looks like it has stood for many years, much like the pyramid
+which encloses it.  It is covered in small hieroglyphics.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    hieroglyphics carvings~
+ExDesc       The markings indicate that this tomb is indeed the tomb of the greatest
+pharoahs of the ancient civilization that built this massive pyramid.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2645
+Name      The Tomb of the Pharoahs~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Great golden sarcophogai line the walls of this massive tomb.  It has
+withstood the passage of time intact, untouched by the hands of thieves
+and looters.  The treasures taken by the pharoahs to their graves still
+lie before your feet.
+~
+#EXIT
+Direction south~
+ToRoom    2644
+Desc      That way leads back out of the tomb.
+~
+Keywords  tomb~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 2610 2 2645 -1 -1 -1 100
+  Reset E 2608 0 16 100
+Reset M 2610 2 2645 -1 -1 -1 100
+  Reset G 2609 0 100
+  Reset E 2608 0 16 100
+Reset O 2610 0 2645 -1 -1 -1 100
+  Reset P 1 2612 0 2610 100
+  Reset P 1 2611 0 2610 100
+Reset D 2645 2 1 100 -2
+#EXDESC
+ExDescKey    treasures~
+ExDesc       The treasures are dusty and fragile, but still seem quite valuable.
+You decide not to take them out of respect for the ancient dead.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2646
+Name      A Rubble-Strewn Hallway~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hallway formerly had a beautiful arch to the ceiling, now
+collapsed under the weight of the slowly settling stones of the
+pyramid.  Now, a massive pile of rubble leads up into a hole high 
+in the northern portion of the hallway.  To the south, through the 
+rubble and fallen stones you see a sandstone crypt.
+~
+#EXIT
+Direction south~
+ToRoom    2647
+Desc      You see a sandstone crypt.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2635
+Desc      From here you see only darkness.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2647
+Name      A Sandstone Crypt~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This small crypt is lit by a hole in the wall to the south, through
+which sand pours from the desert outside.  A hot wind blows in from the
+desert, drying your skin instantly.  To the east and north the arched
+hallway continues.
+~
+#EXIT
+Direction north~
+ToRoom    2646
+Desc      The arched hallway collapses into rubble shortly to the north.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2648
+Desc      You see a beautifully arched hallway.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2653
+Desc      You see a lot of sand.
+~
+#ENDEXIT
+
+Reset M 2615 1 2647 -1 -1 -1 100
+  Reset G 2616 0 100
+#ENDROOM
+
+#ROOM
+Vnum      2648
+Name      An Arched Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This hallway has a beautiful arch to it, formed painstakingly and
+exquisitely out of the sandy stones of the pyramid.  The dust that
+covers most of the rest of the pyramid interior is not present here,
+scoured away by the blowing of the desert winds that howl about
+your ears.
+~
+#EXIT
+Direction east~
+ToRoom    2649
+Desc      The arched hall proceeds to the east, making a sharp southward turn.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2647
+Desc      The arched hall proceeds into a sandstone crypt.
+~
+#ENDEXIT
+
+Reset M 2612 3 2648 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2649
+Name      An Arched Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This hallway has a beautiful arch to it, formed painstakingly and
+exquisitely out of the sandy stones of the pyramid.  To the east is
+a small, golden-coloured crypt, and the hall proceeds to the south
+and north.
+~
+#EXIT
+Direction north~
+ToRoom    2648
+Desc      The arched hall proceeds to the north, making a sharp westward turn.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2650
+Desc      A small golden crypt lies to the east.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2651
+Desc      The arched hall proceeds to the south.
+~
+#ENDEXIT
+
+Reset M 2612 3 2649 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2650
+Name      A Golden Crypt~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand inside a small crypt with walls and ceiling made of
+golden bricks that obscure the large sandy stones of the pyramid.
+Small rugs and tapestries are scattered about the floor here, and
+they appear to have been used recently.
+~
+#EXIT
+Direction west~
+ToRoom    2649
+Desc      You see an arched hall.
+~
+#ENDEXIT
+
+Reset M 2613 2 2650 -1 -1 -1 100
+Reset M 2613 2 2650 -1 -1 -1 100
+  Reset G 2614 0 100
+#EXDESC
+ExDescKey    rug rugs tapestry tapestries~
+ExDesc       The rugs and tapestries are very fine and worn with age, their colors
+now faded.  They depict scenes of life in an ancient desert city.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    bricks~
+ExDesc       The small golden bricks are very smooth and also quite soft.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2651
+Name      An Arched Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This hallway has a beautiful arch to it, formed painstakingly and
+exquisitely out of the sandy stones of the pyramid.  The arched
+hall proceeds to the north and ends to the south in a small vault.
+~
+#EXIT
+Direction north~
+ToRoom    2649
+Desc      The arched hall continues to the north.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2652
+Desc      You see a small vault from which a shining light issues.
+~
+#ENDEXIT
+
+Reset M 2612 3 2651 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2652
+Name      A Shining Vault~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The stones of the pyramid here take on a strange, twinkling quality,
+almost seeming to shine with an internal light.  As you look closer you
+see tiny glass-like glittery particles within the stones, that reflect
+the light from your light source so perfectly that they seem to shine.
+~
+#EXIT
+Direction north~
+ToRoom    2651
+Desc      You see a hall with a beautifully arched ceiling.
+~
+#ENDEXIT
+
+Reset M 2614 2 2652 -1 -1 -1 100
+Reset M 2614 2 2652 -1 -1 -1 100
+  Reset G 2615 0 100
+#EXDESC
+ExDescKey    particles glass~
+ExDesc       The glassy particles reflect and refract your light source in a myriad
+of dazzling colours that dance across your eyes and make you giggle.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2653
+Name      A Massive Sand Dune~
+Sector    desert~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You stand now on a massive sand dune on the southern side of
+the pyramid.  At the foot of the sand dune to the north you see a
+small hole where the stones of the pyramid have collapsed.  Not
+far to the south is a massive roiling sandstorm; the wind from the
+storm howls and bites at your face even here.
+~
+#EXIT
+Direction north~
+ToRoom    2647
+Desc      You see a small hole leading back into the pyramid.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2654
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sand dune sandstorm~
+ExDesc       The sand is very white, and very sandy.  There sure is a lot of it.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2654
+Name      A Swirling Sandstorm~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are caught in the midst of a massive sandstorm.  Howling winds
+buffet you from all sides, and the sand tears at your skin, blinding
+you and choking you.  You have lost all sense of direction.
+~
+#EXIT
+Direction north~
+ToRoom    2653
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2654
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2655
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2654
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+Reset R 2654 4 100
+Reset M 2608 4 2654 -1 -1 -1 100
+#EXDESC
+ExDescKey    sand~
+ExDesc       Sand is about all you CAN see right now.  Unfortunately, it isn't very
+interesting sand, only white, dry, and blowing all over the place.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2655
+Name      A Swirling Sandstorm~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are caught in the midst of a massive sandstorm.  Howling winds
+buffet you from all sides, and the sand tears at your skin, blinding
+you and choking you.  You have lost all sense of direction.
+~
+#EXIT
+Direction north~
+ToRoom    2654
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2655
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2656
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2655
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+Reset R 2655 4 100
+Reset M 2608 4 2655 -1 -1 -1 100
+#EXDESC
+ExDescKey    sand~
+ExDesc       Sand is about all you CAN see right now.  Unfortunately, it isn't very
+interesting sand, only white, dry, and blowing all over the place.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2656
+Name      A Swirling Sandstorm~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are caught in the midst of a massive sandstorm.  Howling winds
+buffet you from all sides, and the sand tears at your skin, blinding
+you and choking you.  You have lost all sense of direction.
+~
+#EXIT
+Direction south~
+ToRoom    2655
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    2656
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2657
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2656
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+Reset R 2656 4 100
+Reset M 2608 4 2656 -1 -1 -1 100
+#EXDESC
+ExDescKey    sand~
+ExDesc       Sand is about all you CAN see right now.  Unfortunately, it isn't very
+interesting sand, only white, dry, and blowing all over the place.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2657
+Name      A Swirling Sandstorm~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are caught in the midst of a massive sandstorm.  Howling winds
+buffet you from all sides, and the sand tears at your skin, blinding
+you and choking you.  You have lost all sense of direction.
+~
+#EXIT
+Direction south~
+ToRoom    2656
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2657
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2658
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    2657
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+Reset R 2657 4 100
+Reset M 2608 4 2657 -1 -1 -1 100
+#EXDESC
+ExDescKey    sand~
+ExDesc       Sand is about all you CAN see right now.  Unfortunately, it isn't very
+interesting sand, only white, dry, and blowing all over the place.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2658
+Name      A Massive Sand Dune~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Somehow you managed to make your way through the howling winds
+of the sandstorm, and clamber up on this sand dune.  You can see the
+storm to the north of you, and presumably the pyramid is somewhere
+beyond it.  Nothing but flat, featureless, open dunes of sand lie in
+every other direction.
+~
+#EXIT
+Direction north~
+ToRoom    2657
+Desc      You see only a wall of whirling, blowing, dry sand.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2659
+Key       2617
+Desc      On the southern side of the sand dune is a small hole in the sand.
+For some reason you seem unable to get to it.
+~
+Keywords  riddle~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset M 2616 1 2658 -1 -1 -1 100
+  Reset E 2617 0 17 100
+Reset D 2658 2 2 100 -2
+#EXDESC
+ExDescKey    sand dune~
+ExDesc       The sand is very white, and very sandy.  There sure is a lot of it.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    riddle~
+ExDesc       A vision forms before your eyes, in glowing hieroglyphic symbols.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    hieroglyphics symbols~
+ExDesc       Like most of the ancient hieroglyphics of this land, the symbols are
+totally incomprehensible to you.  Perhaps the Sphinx has the answer
+to this ancient riddle.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2659
+Name      Through the Hole in the Sand~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You squeeze through the small hole in the sand and land in a small
+white chamber.  Above you is a small hole, reachable by climbing up
+the small sandy slope down which you slid.
+~
+#EXIT
+Direction up~
+ToRoom    2653
+Desc      You see a sand dune.
+~
+#ENDEXIT
+
+Reset O 2618 0 2659 -1 -1 -1 100
+Reset O 2624 0 2659 -1 -1 -1 100
+Reset O 2625 0 2659 -1 -1 -1 100
+Reset O 2626 0 2659 -1 -1 -1 100
+Reset O 2627 0 2659 -1 -1 -1 100
+#ENDROOM
+
+#ENDAREA

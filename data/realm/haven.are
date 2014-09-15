@@ -1,0 +1,1237 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Little Haven/Glass Fortress~
+Author          Mahatma~
+Vnums           1801 1833
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          10 30 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      1801
+Keywords  gnome busy~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     the busy gnome~
+Long      The busy gome shuffles past you.
+~
+Desc      The weather does not phase him in the least.  She is ready
+to defend himself to the death.  There is a glazed look
+about her eyes.
+~
+Nattacks  0.000000
+Stats1    100 3000 0 0 0 0
+Stats2    16 21 8 260 3 6 1
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  sneak~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1802
+Keywords  gnome guard~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     the gnome guard~
+Long      The gnome guard stands at attention.
+~
+Desc      There is a glazed look about her eyes.
+~
+Nattacks  0.000000
+Stats1    100 5000 0 0 0 0
+Stats2    20 21 0 440 4 4 2
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sneak~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1803
+Keywords  bear giant polar~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     the giant polar bear~
+Long      The giant polar bear doesn't like you disturbing her sleep.
+~
+Desc      She blends with the snow.
+~
+Nattacks  0.000000
+Stats1    0 10000 0 0 0 0
+Stats2    24 21 3 400 20 2 1
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis hide~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1804
+Keywords  dragon white~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the white dragon~
+Long      The white dragon glares at you.
+~
+Desc      He is an enormous, mature dragon, ready to freeze you.
+~
+Nattacks  0.000000
+Stats1    -1000 50000 0 0 0 0
+Stats2    25 21 -100 550 5 4 5
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1805
+Keywords  dragon blue~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the blue dragon~
+Long      The blue dragon dislikes being here.
+~
+Desc      She is an enormous, mature dragon, with an attitude
+to match her electric blue scales.
+~
+Nattacks  0.000000
+Stats1    -1000 75000 0 0 0 0
+Stats2    26 21 -100 600 4 10 10
+Speaking  common~
+Actflags  npc aggressive~
+Affected  detect_invis sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1806
+Keywords  queen snow~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the Snow Queen~
+Long      The Queen of Snows did not invite you to be here.
+~
+Desc      Dressed in all white, she almost charms you with her placidness.
+~
+Nattacks  0.000000
+Stats1    0 50000 0 0 0 0
+Stats2    32 21 -100 2000 15 3 15
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1807
+Keywords  giant frost guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the cold frost giant~
+Long      The frost giant guard is ready for intruders.
+~
+Desc      He's blue, and he doesn't really like gnomes
+but they keep him fed.
+~
+Nattacks  0.000000
+Stats1    0 3000 0 0 0 0
+Stats2    20 21 -65 370 3 8 1
+Speaking  common~
+Actflags  npc scavenger~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1808
+Keywords  mistress white~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     the white mistress~
+Long      The white mistress leaps and shouts "Intruder!"
+~
+Desc      She is a fanatical servant to the Snow Queen.
+~
+Nattacks  0.000000
+Stats1    -500 14000 0 0 0 0
+Stats2    20 21 -66 50 5 4 10
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1809
+Keywords  master herbal~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     the master herbal~
+Long      The master herbal is playing with her mints.
+~
+Desc      She is too busy to consider you.
+~
+Nattacks  0.000000
+Stats1    0 10000 0 0 0 0
+Stats2    20 21 -66 75 3 6 3
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1810
+Keywords  thief~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the thief~
+Long      A thief is here, sneaking between the shadows.
+~
+Desc      He REALLY likes your money!
+~
+Nattacks  0.000000
+Stats1    -500 10 0 0 0 0
+Stats2    7 21 3 77 2 3 3
+Speaking  common~
+Actflags  npc wimpy~
+Affected  sneak~
+#ENDMOBILE
+
+#OBJECT
+Vnum      1801
+Keywords  staff ice~
+Type      staff~
+Short     an ice staff~
+Long      A frozen branch lies on the ground.~
+Flags     glow~
+WFlags    take hold~
+Values    21 3 3 -1 0 0 0 0 0 0 0
+Stats     7 1900 -2 1 0 None None None
+Spells       'frost breath'
+#ENDOBJECT
+
+#OBJECT
+Vnum      1802
+Keywords  wand fire~
+Type      wand~
+Short     a wand of fire~
+Long      A glowing ember of wood melts the snow beneath it.~
+Flags     glow~
+WFlags    take hold~
+Values    15 3 3 -1 0 0 0 0 0 0 0
+Stats     7 1900 -2 1 0 None None None
+Spells       'fireball'
+#ENDOBJECT
+
+#OBJECT
+Vnum      1803
+Keywords  flaming axe~
+Type      weapon~
+Short     a flaming axe~
+Long      An axe of blue flame boils the water beneath it.~
+Flags     glow~
+WFlags    take wield~
+Values    0 2 15 3 0 0 0 0 0 0 0
+Stats     14 5000 -2 1 0 None None None
+AffData hit 2 -1 -1 0
+AffData hitroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1804
+Keywords  shield southwind~
+Type      armor~
+Short     the Shield of the South Wind~
+Long      A beautiful shield lies at your feet.~
+Flags     glow~
+WFlags    take shield~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     8 1000000 -2 1 0 None None None
+AffData strength 1 -1 -1 0
+AffData constitution 1 -1 -1 0
+AffData intelligence 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1805
+Keywords  mint sprig~
+Type      light~
+Short     a sprig of mints~
+Long      A sprig of mint sprouts at your feet.~
+Flags     glow magic~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 20 -2 9999 0 None None None
+AffData move 100 -1 -1 0
+AffData hit 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1806
+Keywords  fuchsia potion~
+Type      potion~
+Short     a fuchsia potion~
+Long      A pinkish purple potion is on the floor.~
+WFlags    take~
+Values    15 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 100 -2 1 0 None None None
+Spells       'shield' 'remove curse' 'NONE'
+#ENDOBJECT
+
+#ROOM
+Vnum      1801
+Name      The Big, Blue Ocean~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      WHOOSH!  A whirlpool sucks you down and spits you out!
+You see the city to the east, with Redferne's castle above,
+teeming with all sorts of life.  The ocean is alive!
+You wonder about the creatures below.
+~
+#EXIT
+Direction east~
+ToRoom    3200
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1802
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1802
+Name      The Big, Blue Ocean~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The currents are strong here, guiding you south.  They whisk
+you off in a most magical nature.
+~
+#EXIT
+Direction south~
+ToRoom    1803
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1803
+Name      The Big, Blue Ocean~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The currents are even stronger, as if your boat
+has a mind of its own.  The fish bob there heads
+up at you, mouthing words half-intelligible.  It seems
+you cannot go back but must follow the current.
+~
+#EXIT
+Direction south~
+ToRoom    1804
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1804
+Name      The Icy Waters~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Brrr!  It's cold.  You see floes of white ice
+masses moving slowly across the see.  The one
+up ahead looks like you could get a footing
+on it and not slip off.
+~
+#EXIT
+Direction south~
+ToRoom    1805
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1805
+Name      The Hardpack~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You don't see any footprints in the snow.  The wind
+bites through your magical armor like teeth on bare skin.
+Off in the distance you see a high mountain
+and the seemings of a castle turret.
+~
+#EXIT
+Direction north~
+ToRoom    1804
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1806
+#ENDEXIT
+
+Reset M 1803 4 1805 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1806
+Name      The Snow-filled Land~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You could get lost in the snow, you know.
+The snow is cold, white, and deep.
+It seems you have miles to go...
+~
+#EXIT
+Direction north~
+ToRoom    1805
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1831
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1832
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1831
+#ENDEXIT
+
+Reset R 1806 4 100
+#ENDROOM
+
+#ROOM
+Vnum      1807
+Name      The Gnome Outpost~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You see a well-built outpost made of snow
+that actually seems cozy with a small fire
+in the middle keeping the place warm.  The walls while 
+undecorated are clean and well-kempt, though you think 
+to yourself "Who'd want to live out here?"
+The only exist you see is to the north.
+~
+#EXIT
+Direction north~
+ToRoom    1833
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1808
+Desc      You see a poorly-camouflaged door.~
+Keywords  secret-door~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+Reset M 1802 4 1807 -1 -1 -1 100
+Reset M 1802 4 1807 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1808
+Name      The Tight Passage~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is place is very cozy for someone under four feet,
+but not for you.  You find that the passage goes
+down further, with bits of droppings forming
+snug places for you to hang on too.  Yuck!
+~
+#EXIT
+Direction up~
+ToRoom    1807
+Desc      You see a poorly-camouflaged door.~
+Keywords  secret-door~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1809
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1809
+Name      The Even Tighter Passage~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      It's a bit of a squeeze here and you think that
+last pot pie you ate a while back is getting
+revenge on you now.  The walls are smooth,
+with finger holes for you to hang on to.
+Down there seems to be flooring to stand on to,
+with the passage to return to the surface.
+~
+#EXIT
+Direction up~
+ToRoom    1808
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1810
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1810
+Name      The Center Chamber~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Before you is the gnome city called Little Haven.
+It's bustling, with cheery little folk who seem
+dwarven in ancestry and yet look upon you with
+a little suspicion.  The tunnels are vast, and from this
+vantage point you can see the huge fortress way
+in the distance.  You have a long way to go.
+~
+#EXIT
+Direction east~
+ToRoom    1811
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1813
+#ENDEXIT
+
+Reset M 1801 10 1810 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1811
+Name      A Passageway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Gnomes left, gnomes right, all busy and unminding
+of you.  Their faces seem too happy, their manners
+predictable.  The passage is human-sized, not gnome,
+with unidentifiable inscriptions on the walls.
+~
+#EXIT
+Direction east~
+ToRoom    1812
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1810
+#ENDEXIT
+
+Reset M 1801 10 1811 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1812
+Name      The Cold Passageway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are reminded of the biting winds outside,
+as the tunnel suddenly drops in temperature.
+You feel chilling breezes from the north.
+~
+#EXIT
+Direction north~
+ToRoom    1821
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1811
+#ENDEXIT
+
+Reset M 1801 10 1812 -1 -1 -1 100
+Reset M 1810 10 1812 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1813
+Name      The Warm Passageway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      It's even warmer in here than you could imagine.
+The walls are glowing, not from magic, but
+from the heat of some furnace on the other
+side of the wall.  To the west you hear chanting.
+~
+#EXIT
+Direction east~
+ToRoom    1810
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1816
+#ENDEXIT
+
+Reset M 1801 10 1813 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1814
+Name      The Little Temple~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You wonder how these gnomes could pray in this
+temple with all the screaming outside,
+but they do.  It is very immaculate with
+bits of fruit and food offered here,
+precious commodities in a barren place.
+~
+#EXIT
+Direction north~
+ToRoom    1817
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1815
+#ENDEXIT
+
+Reset M 1801 10 1814 -1 -1 -1 100
+Reset M 1807 5 1814 -1 -1 -1 100
+  Reset G 1806 10 100
+#ENDROOM
+
+#ROOM
+Vnum      1815
+Name      The Vestibule~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The door above you shuts and vanishes.
+Lots of herbs and spices are here, though with
+the climate outside you wonder how they could
+exisit in such abundance.  There's a hint of mint
+here.  There are exits to the south and north.
+~
+#EXIT
+Direction north~
+ToRoom    1814
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1818
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1816
+Name      The Chanting Room~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Icons of a blue deity abound in this room,
+with seats outlining a large circle in the
+middle.  The herbal scent is stronger here
+than anywhere else, with torches at each
+column giving the room an air of dancing.
+You hear the hideous songs of "la LA la ..."
+~
+#EXIT
+Direction north~
+ToRoom    1818
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1813
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1817
+Name      The Furnace~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The air is dusty, with the stench of burnt
+carcasses of various animals and meager bits
+of wood.  The heat here is almost unbearable.
+~
+#EXIT
+Direction north~
+ToRoom    1827
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1814
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1818
+Name      The Arboretum~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is where the gnomes seem to grow their plants.
+There is a room to the east, while the well paved
+path you walk on goes north.  To the south, there
+is a small room where you can hear chanting.
+There is a sign here.
+~
+#EXIT
+Direction north~
+ToRoom    1815
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1820
+Desc      The door reads "KEEP OUT!"
+~
+Keywords  door east~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1816
+Desc      You see the Chanting Room south of here.
+~
+#ENDEXIT
+
+Reset M 1807 5 1818 -1 -1 -1 100
+  Reset G 1806 10 100
+#EXDESC
+ExDescKey    sign~
+ExDesc       The sign reads "Woe to the unwelcomed of
+this place!"~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      1819
+Name      The Snow Queen's Chamber~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Tall, white, with columns that blend with the walls
+like water in water.  There is a quiet, almost solemn,
+almost saddening calm that envelops you, as if
+some great loss had taken place here.
+There is no physical escape from here.
+~
+Reset M 1806 1 1819 -1 -1 -1 100
+  Reset E 1804 1 11 100
+  Reset E 1804 4 17 100
+#ENDROOM
+
+#ROOM
+Vnum      1820
+Name      The Master Herbal's Room~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Maps of Midgaard and Asgard abound in this room
+with each forest marked for its herbal plant
+growing seasons.  The scent of parsley, sage,
+rosemary and thyme permeate the air.
+~
+#EXIT
+Direction west~
+ToRoom    1818
+Keywords  door west~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1815
+Keywords  secret-door down~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+Reset M 1809 1 1820 -1 -1 -1 100
+  Reset G 1805 10 100
+#ENDROOM
+
+#ROOM
+Vnum      1821
+Name      The Guard's Dining Hall~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Statues of Odin and Thor decorate this
+lavish hall complete with benches and dining
+tables for a thousand warriors. You hear
+sounds of song and cheer and begin to understand
+how the alliance of Frost Giants and gnomes came
+about.  There are exits to the south and north and a
+room to the east.
+~
+#EXIT
+Direction north~
+ToRoom    1823
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1822
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1812
+#ENDEXIT
+
+Reset M 1807 5 1821 -1 -1 -1 100
+  Reset G 1806 10 100
+#ENDROOM
+
+#ROOM
+Vnum      1822
+Name      The Vat Room~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      MMMmmmmmmmmmm.  Smells real good in here.
+You see a big vat in the middle of the room.
+~
+#EXIT
+Direction west~
+ToRoom    1821
+#ENDEXIT
+
+#EXDESC
+ExDescKey    vat~
+ExDesc       You see a black vat, melted into the ground.~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      1823
+Name      The Frost Giant Guard Quarters~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The beds are unmade, unkempt, with typical
+male noises of drunkeness coming from behind
+the door to the east.  You smell brewed hops
+and remnants of mead soaking through your 
+belongings.  Bits of chewed bones lie about.
+The only visible exit is to the south.
+~
+#EXIT
+Direction north~
+ToRoom    1826
+Desc      The wall surface looks uneven here.~
+Keywords  sliding-door north~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1821
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1824
+Name      The White Dragon's Lair~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Dark and cold, and very dreary, with stalactites
+hanging from the ceiling like teeth.  The Snow Queen
+has furnished her pet with corpses of lost
+adventurers.  Perhaps yours is next!
+You see a door to the south.
+~
+#EXIT
+Direction north~
+ToRoom    1825
+Desc      The nothern wall seems to give way.~
+Keywords  secret-door north~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1826
+Desc      They must keep it locked for a reason.~
+Keywords  door south~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+Reset M 1804 1 1824 -1 -1 -1 100
+  Reset E 1802 2 17 100
+#ENDROOM
+
+#ROOM
+Vnum      1825
+Name      The Blue Dragon's Lair~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      What's this?  Another dragon's lair?  Just how powerful
+is this Snow Queen you wonder?  The air in here
+is cold, dry, desert evening-like with a few
+eggs cracked open, as if a hatching just occured.
+The only exit is the crawlway down.
+~
+#EXIT
+Direction down~
+ToRoom    1822
+#ENDEXIT
+
+Reset M 1805 1 1825 -1 -1 -1 100
+  Reset E 1803 2 16 100
+#ENDROOM
+
+#ROOM
+Vnum      1826
+Name      The connecting tunnel~
+Sector    field~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is very wide, as if any huge beast
+could trample through it in a second.  Great
+howling abounds from behind the great door
+to the north.
+~
+#EXIT
+Direction north~
+ToRoom    1824
+Desc      They must keep it locked for a reason.
+~
+Keywords  door north~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1823
+Desc      The wall surface looks uneven here.
+~
+Keywords  sliding-door south~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1827
+Name      The Great Door~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You see before you a huge oaken door with adamantite 
+trim that reads "LITTLE HAVEN."  The rest of this place
+seems to be made of glass, giving it an almost mirror-like
+quality.  The gnomish runes are inscribed as well
+as a few you understand: that of the Snow Queen.
+There is a giant key hole here, but it looks well 
+worn by the snow and wind.  You feel the heat
+of the furnace room to the south.
+~
+#EXIT
+Direction north~
+ToRoom    1828
+Desc      It must be locked to keep you out.
+~
+Keywords  door north~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1817
+#ENDEXIT
+
+Reset M 1807 5 1827 -1 -1 -1 100
+  Reset G 1806 10 100
+Reset M 1807 5 1827 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1828
+Name      The Snow Queen's Entry Hall~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      A veritable hall of mirrors, all twisty
+and confusing.  You're not sure what is real
+and what isn't.  The ceiling and the floor
+seem far away and you get dizzy from the
+reflections.
+
+The white mistress leaps and shouts "Intruder!"
+~
+#EXIT
+Direction south~
+ToRoom    1829
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    1829
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1827
+Keywords  door south~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1829
+#ENDEXIT
+
+Reset M 1808 4 1828 -1 -1 -1 100
+Reset M 1808 4 1828 -1 -1 -1 100
+  Reset E 1803 2 16 100
+Reset R 1828 4 100
+#ENDROOM
+
+#ROOM
+Vnum      1829
+Name      Another Mirrored Room~
+Sector    city~
+Flags     indoors safe~
+Stats     0 0 0 0 0
+Desc      Walls of mirrors adorn this room.  You see many
+rooms leading into many directions, making
+you completely dizzy!  There is
+a big plaque on the wall.
+
+The white mistress leaps and shouts "Intruder!"
+~
+#EXIT
+Direction west~
+ToRoom    1830
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    1828
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1828
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1828
+#ENDEXIT
+
+Reset R 1829 4 100
+#EXDESC
+ExDescKey    plaque~
+ExDesc       The plaque reads, "Created by Mahatma 5/24/90
+with thanks to Alander, Hatchet, & Little.
+Thanks to Savaki & Drustan for starting me on
+this junk.  & the sprig of mints are for Andersen."
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      1830
+Name      Another Mirrored Room~
+Sector    city~
+Flags     indoors safe~
+Stats     0 0 0 0 0
+Desc      Yet another mirrored room, same as before.
+
+The white mistress leaps and shouts "Intruder!"
+~
+#EXIT
+Direction north~
+ToRoom    1819
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1830
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1829
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1830
+#ENDEXIT
+
+Reset M 1808 4 1830 -1 -1 -1 100
+  Reset E 1802 2 17 100
+Reset R 1830 4 100
+#ENDROOM
+
+#ROOM
+Vnum      1831
+Name      The Snow-filled Land~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You could get lost in the snow, you know.
+The snow is cold, white, and deep.
+It seems you have miles to go before you sleep.
+~
+#EXIT
+Direction east~
+ToRoom    1832
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1806
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1833
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    1806
+#ENDEXIT
+
+Reset M 1803 4 1831 -1 -1 -1 100
+Reset R 1831 4 100
+#ENDROOM
+
+#ROOM
+Vnum      1832
+Name      The Snow-filled Land~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You could get lost in the snow, you know.
+The snow is cold, white, and deep.
+It seems you have miles to go before you sleep.
+~
+#EXIT
+Direction north~
+ToRoom    1806
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1833
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1831
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1833
+#ENDEXIT
+
+Reset M 1803 4 1832 -1 -1 -1 100
+Reset R 1832 4 100
+#ENDROOM
+
+#ROOM
+Vnum      1833
+Name      The Snow-filled Land~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You could get lost in the snow, you know.
+The snow is cold, white, and deep.
+It seems you have miles to go before you sleep,
+...miles to go before you sleep.
+You see an outpost to the south.
+~
+#EXIT
+Direction north~
+ToRoom    1831
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1832
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1807
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1832
+#ENDEXIT
+
+Reset M 1803 4 1833 -1 -1 -1 100
+Reset R 1833 4 100
+#ENDROOM
+
+#ENDAREA

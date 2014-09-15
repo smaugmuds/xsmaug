@@ -1,0 +1,6481 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Highcliff Ruins~
+Author          Cianhydle~
+Vnums           30000 30099
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          15 35 0 65
+ResetMsg        A mournful wailing is heard in the distance...~
+ResetFreq       15
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      30000
+Keywords  rotting corpse zombie~
+Race      zombie~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a zombie~
+Long      A rotting corpse is collecting flies here.
+~
+Desc      The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    2 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared sneak hide~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   25~
+Comlist   if ispc($n) 
+say Brains...
+endif 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   brains~
+Comlist   say Are you mocking me? Huh?
+mpechoat $n A zombie bitchslaps you!
+mpechoarround $n A zombie smacks $n.
+mpdamage $n ~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30001
+Keywords  walking corpse zombie~
+Race      zombie~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a zombie~
+Long      A walking corpse is wanding about here.
+~
+Desc      The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    2 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  infrared sneak hide~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   25~
+Comlist   if ispc($n) 
+say More brains...
+endif 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   brains~
+Comlist   say Are you mocking me? Huh?
+mpechoat $n A zombie bitchslaps you!
+mpechoarround $n A zombie smacks $n.
+mpdamage $n ~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30002
+Keywords  headless corpse zombie~
+Race      zombie~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a headless zombie~
+Long      A headless corpse is standing here.
+~
+Desc      This ghoul is missing its head, and is appears to be searching for
+its, or someone elses, head to wear.  Around its body the thing is
+wearing whatever tattered clothing it had on when it died.  A dark
+liquid substance is spurting up from the corpses neck as it moves.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    3 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  sneak hide~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n) 
+mpechoat $n The headless corpse seems to want your head!!!
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30003
+Keywords  floating head~
+Race      spirit~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a floating head~
+Long      A decapitated head is floating about here.
+~
+Desc      The head is dripping a rather large ammount of blood on to the floor,
+and upon its face is an expression of pain.  The floating head moves
+about with great speed and agility, lashing out and biting.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    3 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared sneak hide~
+Bodyparts guts~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   15~
+Comlist   if ispc($n) 
+say I'm gonna bite your nose off!!!
+mpecho The floating head starts to quickly dart around the room.
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30004
+Keywords  corpse ghast~
+Race      zombie~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a ghast~
+Long      A corpse is wearing a blood soaked apron here.
+~
+Desc      The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing an apron soaking in
+blood.  The ghasts face is twisted into a diabolic expression of joy.
+Perhaps this monster has something planned for you?
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    6 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_hidden infrared sneak hide~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   50~
+Comlist   if ispc($n) 
+say Me cut you up! Me eat you!
+endif 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   5~
+Comlist   cackle
+say Come on baby eat the rich...
+say Bite down of the son of a...
+mpechoar $n A ghast takes a swip at you.
+mpechoarround $n A ghast takes a swipe at $n.
+mpdamage $n ~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30005
+Keywords  translucent spirit appirition~
+Race      spirit~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     an appirition~
+Long      A translucent spirit floats off the ground here.
+~
+Desc      This spirit is of a translucent woman wearing a flowing white gown.
+She does not appear to be a malicious spirit.  Perhaps she can aid
+you on your travels?
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    65 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden infrared sneak truesight~
+Bodyparts guts~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+tell $n Stand back! I mean you no harm! Beware!
+tell $n Turn back $n, this is no place for the living.
+tell $n Least you suffer a fate worse than mine...
+endif 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   tell $n Journey in the ruins and your death will be ~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   say Journey in the ruins and your death will be ~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   ruins~
+Comlist   nod
+tell $n The ruins are the lair of a master necromancer. She
+tell $n holds a powerful artifact, a circlet of pure darkness.
+tell $n From the keep she creates more undead by luring groups
+tell $n of adventurers to their death, or rather, undeath.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   necromancer~
+Comlist   nod
+tell $n Yes, she controls the ruins and has created all the undead.
+tell $n Her lair is deep within the catacombs, protect by all manner
+tell $n of ghouls and spirits. A magical mist hides her sanctuary
+tell $n from all but the most observant eyes. In addition she has
+tell $n recently began training would-be necromancer in her dark
+tell $n arts.
+sigh
+tell $n I emplore you to put an end to her evil!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   undead~
+Comlist   nod
+tell $n Yes, she controls them with a powerful circlet.
+sigh
+tell $n I knew many of them. We lived here in peace
+tell $n a century ago. Then came the necromancer.
+tell $n Most of the older ones are natives, while the
+tell $n ones with flesh are adventurers who came here
+tell $n looking for treasure.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   circlet~
+Comlist   tell $n I know little of it except it is her source of power.
+tell $n She first came to us over a century ago, so the
+tell $n circlet most likely gives extends her life. Unless
+tell $n she has transformed herself into an undead.
+sigh
+tell $n If there was only someone who could stop her.
+tell $n Then I could sleep once again.
+sigh
+tell $n We could all sleep again...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   keep~
+Comlist   tell $n Yes. Her lair is in the catacombs beneath the keep.
+tell $n Inside the keep you will encounter many kinds of un-
+tell $n dead whos willpower is not strong enough to resist,
+tell $n or were evil in life and willingly do her bidding.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   catacombs~
+Comlist   tell $n They are beneath the keep. I suspect you will need
+tell $n to fight many obstacles on your way there.
+sigh
+tell $n So many have died within searching for treasure or
+tell $n trying to put an end to her terror.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30006
+Keywords  burnt corpse zombie~
+Race      zombie~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a zombie~
+Long      A burnt corpse is siting on a couch here.
+~
+Desc      The is the corpse of a young child who was burnt in the building.  The
+poor thing is shrivelled up and burnt to a crisp.  You are not afraid
+of the thing, instead feeling a bit sorry for it.  Right now the thing
+does not appear to be aggressive.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    4 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared sneak hide~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   50~
+Comlist   if ispc($n) 
+say Fire! Fire! Fire!
+endif 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   fuck~
+Comlist   say Shut up ~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   beavis~
+Comlist   say I am cornholio!
+say I have no ~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   assmunch~
+Comlist   say Fire! Fire! ~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   fire~
+Comlist   say Breaking the law! Breaking the ~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   law~
+Comlist   say Yeah! Yeah! Yeah!
+say Breaking the ~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   butthead~
+Comlist   say That asswipe is around here ~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   cornholio~
+Comlist   say NO! I AM ~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30007
+Keywords  collapsing building~
+Race      spirit~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a collapsing building~
+Long      A little girl is weeping in this building here.
+~
+Desc      The stones and timbers of this building seem to be alive and filled
+with hate.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden infrared sneak hide truesight~
+Bodyparts guts~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mpasound You can hear a child crying somewhere ~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n) 
+mpechoat $n The girl disappears as the building collapses!
+mpechoat $n A falling timber strikes you over the head and you take damage.
+mpdamage $n 50
+endif 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   5~
+Comlist   if ispc($n) 
+mpechoat $n A large stone strikes you in the chest and you take damage!
+mpdamage $n 50
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30008
+Keywords  animated corpse gatekeeper~
+Race      ghoul~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a gatekeeper~
+Long      An animated corpse stands ready for battle here.
+~
+Desc      The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden infrared sneak~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n) 
+tell $n None shall enter the keep... alive! Yet I am a
+tell $n reasonable man, well, I was a man. Answer my
+tell $n question, before it is asked, I shall grant to you
+tell $n access to the keep. Can you do it? Killing me
+tell $n shall get you nowhere, the key is hidden away
+tell $n where you shall never find it.
+snicker
+endif 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   say Answer my question and you shall pass.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   question~
+Comlist   tell $n First you must give me the answer.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   answer~
+Comlist   tell $n No, no, sorry, that is incorrect. You may try again.
+snicker
+tell $n But you're not even on the right track. Perhaps you
+tell $n should search for the answer. Perhaps you should
+tell $n go back somewhere and look into your soul for it?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  give_prog~
+Arglist   answer~
+Comlist   tell $n Ah, well done. You shall be allowed to enter the keep.
+tell $n Take this key and be gone from my sight flesh-face,
+tell $n before I change my mind.
+mpoload 30013
+give key ~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30009
+Keywords  animated corpse skeleton~
+Race      skeleton~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a skeleton~
+Long      An animated corpse wanders up and down the path here.
+~
+Desc      The animated corpse is missing all of its skin.  Beneath the rags it
+was wearing when it died, bleached bones move about with an unsettling
+tell-tale rattle.  The empty eye sockets burn with a dim red light.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  sneak~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   25~
+Comlist   if ispc($n) 
+tell $n Pretty soft flesh...
+tell $n Now give it to me!!!
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30010
+Keywords  rotting corpse ghoul~
+Race      ghoul~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a ghoul~
+Long      A rotting corpse is huddled up here.
+~
+Desc      The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  The ghouls teeth have elongated and become sharp, while
+its nails have extended and have become claw-like.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    6 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared sneak~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30011
+Keywords  mound flesh abomination~
+Race      ooze~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     an abomination~
+Long      A mound of flesh is stuck to the wall here.
+~
+Desc      This abomination is a lump of writhing flesh that is clinging to the
+wall.  Sores continually ooze out a thick yellow mucus that is exuding
+a noxious odor.  The mass of skin is studded with twenty or more odd
+sized eyes.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    8 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared sneak hide~
+Bodyparts guts~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n) 
+mpechoat $n The mound of living flesh becomes aggitated...
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30012
+Keywords  animated corpse zombie~
+Race      zombie~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a zombie~
+Long      An animated corpse is defending the keep here.
+~
+Desc      The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    3 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared sneak~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30013
+Keywords  animated corpse zombie~
+Race      zombie~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a zombie~
+Long      An animated corpse is defending the keep here.
+~
+Desc      The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    4 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden infrared sneak truesight~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30014
+Keywords  animated corpse skeleton~
+Race      skeleton~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a skeleton~
+Long      An animated corpse is searching through the bookcase here.
+~
+Desc      The animated corpse is missing all of its skin.  Beneath the rags it
+was wearing when it died, bleached bones move about with an unsettling
+tell-tale rattle.  There is something very, very pathetic about this
+undead skeleton.  Most of its teeth are missing, and some of its bones
+are held together is glue or rope.  In addition, it only has about a
+third of its ribs, half its fingers, and most of a left leg.  In one
+of its hands it is grasping a key.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    3 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared sneak truesight~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n) 
+tell $n I wish I still had my flesh...
+tell $n Let me borrow yours...
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30015
+Keywords  dark shape wraith~
+Race      undead~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a wraith~
+Long      A dark shape drift about the chamber here.
+~
+Desc      The spectre is nothing more than a dark shadow with a vaguely human
+form.  It moves quickly and easily shifts in and out of the shadows
+here within the keep.  A pair of dull red points of light shine where
+eyes should be.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  detect_invis detect_hidden infrared sneak hide~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   5~
+Comlist   if ispc($n) 
+tell $n Diiieeee....
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30016
+Keywords  decomposing cadaver wight~
+Race      wight~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a wight~
+Long      A decomposing cadaver is looking out the window here.
+~
+Desc      The animated corpse is missing several large patches of its skin.  The
+remaining skin is a black-gray flesh that is almost burnt.  Around its
+body the thing is wearing whatever tattered clothing it had on when it
+departed the realm of the living.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden infrared sneak hide~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n) 
+tell $n Wrrrong place, wrrrong time.
+lick $n
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30017
+Keywords  deformed statue gargoyle~
+Race      gargoyle~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a gargoyle~
+Long      A deformed statue of a winged-dog stands motionless here.
+~
+Desc      This creature appears to be a statue, and nothing more, at first.  But
+once it has detected you it activates and immediately attacks.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis infrared sneak~
+Bodyparts guts~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n) 
+mpecho The eyes of the statue begin to glow red...
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30018
+Keywords  translucent spirit spectre~
+Race      undead~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a spectre~
+Long      A translucent spirit of a man is here.
+~
+Desc      The spectre is nothing more than a dark shadow with a vaguely human
+form.  It moves quickly and easily shifts in and out of the shadows
+here within the keep.  A pair of dull red points of light shine where
+eyes should be.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    16 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30019
+Keywords  translucent spirit spectre~
+Race      undead~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a spectre~
+Long      A translucent spirit of a woman is here.
+~
+Desc      The spectre is nothing more than a dark shadow with a vaguely human
+form.  It moves quickly and easily shifts in and out of the shadows
+here within the keep.  A pair of dull red points of light shine where
+eyes should be.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    16 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30020
+Keywords  horned statue gargoyle man~
+Race      gargoyle~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a gargoyle~
+Long      A horned statue of a winged-man stands motionless here.
+~
+Desc      This creature appears to be a statue, and nothing more, at first.  But
+once it has detected you it activates and immediately attacks.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis infrared~
+Bodyparts guts~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n) 
+mpecho The eyes of the statue begin to glow red...
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30021
+Keywords  decomposing corpse horde maggots~
+Race      worm~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a horde of maggots~
+Long      A decomposing corpse is being eaten by maggots here.
+~
+Desc      There must be thousands of these disgusting little white maggots here
+crawling over this corpse.  The things do not appear to be sentient,
+but rather are driven by hunger.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared~
+Bodyparts guts~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n) 
+mpecho The churning horde of maggots begins to move your way...
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30022
+Keywords  malformed ghoul vampire~
+Race      Vampire~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a vampire~
+Long      A malformed ghoul is feasting on maggots here.
+~
+Desc      This undead fiend is deformed, having a twisted, evil look.  On its
+body it is wearing a dusty wardrobe that has been out of style for
+ages.  Its hair is matted, and its fingernails long and black.  From
+its grin mouth two elongated, pointed canine teeth are visible.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  invisible detect_invis detect_hidden infrared~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   50~
+Comlist   if ispc($n) 
+tell $n You killed Marco!!!
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30023
+Keywords  twisted woman vampire~
+Race      Vampire~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a vampire~
+Long      A twisted woman is hanging from the ceiling here.
+~
+Desc      This undead fiend is deformed, having a twisted, evil look.  On its
+body it is wearing a dusty wardrobe that has been out of style for
+ages.  Its hair is matted, and its fingernails long and black.  From
+its grin mouth two elongated, pointed canine teeth are visible.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  invisible detect_invis detect_hidden infrared~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   25~
+Comlist   if ispc($n) 
+mpecho A ghoul drops from the ceiling...
+say Let's dance.
+smile
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30024
+Keywords  bloated ghoul vampire~
+Race      Vampire~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a vampire~
+Long      A bloated ghoul is curled up in the corner here.
+~
+Desc      This undead fiend is deformed, having a twisted, evil look.  On its
+body it is wearing a dusty wardrobe that has been out of style for
+ages.  Its hair is matted, and its fingernails long and black.  From
+its grin mouth two elongated, pointed canine teeth are visible.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    21 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  invisible detect_invis detect_hidden infrared~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30025
+Keywords  pale man vampire~
+Race      Vampire~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a vampire~
+Long      A pale man is closing the lid to a coffin here.
+~
+Desc      This undead fiend is deformed, having a twisted, evil look.  On its
+body it is wearing a dusty wardrobe that has been out of style for
+ages.  Its hair is matted, and its fingernails long and black.  From
+its grin mouth two elongated, pointed canine teeth are visible.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    23 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  invisible detect_invis detect_hidden infrared~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30026
+Keywords  deformed ghoul elder vampire~
+Race      Vampire~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a vampire~
+Long      A deformed ghoul has waken from his slumber here.
+~
+Desc      This mans have has been warped and twisted into a vertical oval.  His
+ears are somewhat pointed, and his hair is thin and sparce.  His teeth
+are more like fangs.  He is wearing a long, faded black trenchcoat and
+he smells very bad.  His hands are more like claws, and he stares back
+at you with large, bulbous eyes.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  invisible detect_invis detect_hidden infrared~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30027
+Keywords  pale woman ancient vampire~
+Race      Vampire~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     an ancient vampire~
+Long      A pale woman is closing the lid to her coffin here.
+~
+Desc      This woman has a very pale, unhealthy look to her skin.  Her nails and
+teeth are long, sharp, and stained with blood.  Her clothing has been
+out of style for a very long time.  Aside from these things, she has a
+very shapely figure and would be an excellent...
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  invisible detect_invis detect_hidden infrared truesight~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  death_prog~
+Arglist   10~
+Comlist   mpoload 30038
+drop bracer
+mpecho A single bracer falls from the fiends wrist!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30028
+Keywords  shrouded woman banshee~
+Race      undead~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a banshee~
+Long      A shrouded woman is wailing for her sins here.
+~
+Desc      From behind this womans shround a mournful wailing echoes throughout
+the circular tower.  About her form she is wearing a soft, flowing
+white robe that covers most of her body.  It is only her exposed boney
+fingers, skeletal face, and wailing reveal her true, evil nature.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared truesight~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  death_prog~
+Arglist   10~
+Comlist   mpoload 30039
+drop shroud
+mpecho The garmets of the banshee drift gently to the ground!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound From above the you hear a mournful ~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30029
+Keywords  animated corpse skeleton~
+Race      skeleton~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a skeleton~
+Long      An animated corpse is standing here.
+~
+Desc      The animated corpse is missing all of its skin.  Beneath the rags it
+was wearing when it died, bleached bones move about with an unsettling
+tell-tale rattle.  The empty eye sockets burn with a dim red light.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    3 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30030
+Keywords  dark shape wraith~
+Race      wight~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a wraith~
+Long      A dark shape drift about the chamber here.
+~
+Desc      The spectre is nothing more than a dark shadow with a vaguely human
+form.  It moves quickly and easily shifts in and out of the shadows
+here within the keep.  A pair of dull red points of light shine where
+eyes should be.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  detect_invis detect_hidden infrared sneak hide~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  death_prog~
+Arglist   25~
+Comlist   mpoload 30038
+drop bracer
+mpecho A bracer slips from the spirit before it disappears!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n) 
+tell $n You will diess...
+cackle $n
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30031
+Keywords  hideous corpse ghoul~
+Race      ghoul~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a ghoul~
+Long      A hideous corpse is gnawling on some bones here.
+~
+Desc      The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  Around its body the thing is wearing whatever tattered
+clothing it had on when it died.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden infrared sneak~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30032
+Keywords  skeletal abomination~
+Race      skeleton~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     an abomination~
+Long      An abomination made of various human bones is lurking here.
+~
+Desc      This abomination is made of several bones place together in a miss-
+match fashion.  Each abonimation varies from the next one, some move
+about on four or six legs, while other have multiple skulls.  Like
+their normal skeleton counterparts, these abonimation move about with
+an ominous rattle.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  detect_invis detect_hidden infrared sneak~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  death_prog~
+Arglist   5~
+Comlist   mpoload 30040
+drop flute
+mpecho The abomination shatters into hundreds of pieces!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30033
+Keywords  giant corpse ghoul lord~
+Race      ghoul~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a ghoul lord~
+Long      A giant corpse is gnawling on some bones here.
+~
+Desc      The animated corpse is missing several large patches of its skin.  The
+remaining skin is a green-gray, puss-oozing, flesh that is doubling as
+maggot food.  The ghouls teeth have elongated and become sharp, while
+its nails have extended and have become claw-like.  This thing might
+have been an ogre when it was still alive because it is about eight or
+so feet tall.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden infrared sneak truesight~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  death_prog~
+Arglist   15~
+Comlist   mpoload 30041
+drop claws
+mpecho The final blow rends the fiends claws from its body!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   50~
+Comlist   if ispc($n) 
+tell $n My clawsss will sssink deep into your flesssh!
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30034
+Keywords  black robed necromancer woman~
+Race      human~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a necromancer~
+Long      A silent, black-robed woman is preparing a spell here.
+~
+Desc      This woman is shrouded in black robes.  From what little you can see
+of her she is thin, pale, and resembles, to a degree, the undead that
+you encountered in the upper parts of the ruins.
+~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sneak~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   80~
+Comlist   if ispc($n)
+shake
+point $n
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30035
+Keywords  black robed necromancer man~
+Race      human~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a necromancer~
+Long      A large black-robed man is resting here.
+~
+Desc      This man is dressed in a black robe that hides almost all of his
+features except his hands and a bit of his face.  From what you can
+see of his face, he is pale and gaunt looking.  You can only image
+what the dark arts of necromancy have done to this fellow.
+~
+Nattacks  0.000000
+Stats1    250 -1 0 0 0 0
+Stats2    21 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sneak~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+tell $n You should not have came here. We will have to
+tell $n kill you. You understand this, yes?
+tell $n I don't really enjoy this part of being a necromancer.
+endif 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   necromancer~
+Comlist   nod
+tell $n Yes. I practice the dark arts. I have been training
+tell $n for twelve years now and still have much to learn.
+tell $n Our master is very old and very powerful. Yet, she
+tell $n has been acting strange as of late. I think it she is
+tell $n being controlled by someone, or something, ~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   yawn
+tell $n Hey, like why don't you go bother one of the
+tell $n other mobiles, I don't want to fight you. Ok?
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30036
+Keywords  black robed necromancer woman~
+Race      human~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a necromancer~
+Long      A black-robed woman is guarding the door here.
+~
+Desc      This woman is shrouded in black robes.  From what little you can see
+of her she is thin, pale, and resembles, to a degree, the undead that
+you encountered in the upper parts of the ruins.  She is guarding the
+door here, allowing nobody through.
+~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sneak~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+glare $n
+tell $n None shall pass!
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30037
+Keywords  black robed necromancer man~
+Race      human~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a necromancer~
+Long      A black-robed man is summoning the undead here.
+~
+Desc      This man is dressed in a black robe that hides almost all of his
+features except his hands and a bit of his face.  From what you can
+see of his face, he is pale and gaunt looking.  You can only image
+what the dark arts of necromancy have done to this fellow.
+~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    23 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sneak truesight~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+tell $n Fooolish moortal. Noow yoou die.
+endif 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  hitprcnt_prog~
+Arglist   80~
+Comlist   mpecho The necromancers eyes are glowing ~
+#ENDPROG
+
+#MUDPROG
+Progtype  hitprcnt_prog~
+Arglist   60~
+Comlist   mpecho Bat-like wings have started to grow from the necromancers ~
+#ENDPROG
+
+#MUDPROG
+Progtype  hitprcnt_prog~
+Arglist   40~
+Comlist   mpecho The necromancer hands have turned in sharp ~
+#ENDPROG
+
+#MUDPROG
+Progtype  hitprcnt_prog~
+Arglist   20~
+Comlist   mpecho Curved horns sprout from the necromancers ~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpecho From the corpse of the necromancer a strange dark shadow
+mpecho starts to flow out into the room. In the matter of seconds you
+mpecho are face to face with a demon!
+mpmload 30039~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30038
+Keywords  powerful necromancer woman~
+Race      human~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a necromancer~
+Long      A powerful woman is here, wearing a circlet of gold.
+~
+Desc      This woman is shrouded in black robes.  From what little you can see
+of her she is thin, pale, and resembles, to a degree, the undead that
+you encountered in the upper parts of the ruins.  Upon her head she is
+wearing a circlet made of gold.
+~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    35 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary protect sneak truesight~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+smirk $n
+tell $n You have got to be kidding me! You made it all
+tell $n this way? You? Ha!
+chuckle $n
+tell $n You will be an excellent addition to my undead.
+tell $n Perhaps in twenty years I will transform you into
+tell $n a wraith? Hmm... I don't suppose you are just
+tell $n joing to give yourself up, are you?
+smile $n
+tell $n Shall we begin?
+c 'dispel magic' $n
+endif 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      30039
+Keywords  winged lesser demon~
+Race      spirit~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a lesser demon~
+Long      A winged demon is laughing at you here.
+~
+Desc      This demon is slightly scratched, and looks really pissed off.  He has
+bat-like wings, sharp taloned fingers, and curved horns sticking out
+from his forehead.  He is stand about eight feet tall and is having to
+duck in order to keep his head from hitting the ceiling.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    30 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared truesight~
+Bodyparts arms legs heart brains guts claws horns~
+Resist    plus6~
+#ENDMOBILE
+
+#OBJECT
+Vnum      30000
+Keywords  rotting corpse~
+Type      furniture~
+Short     a rotting corpse~
+Long      A rotting corpse is collecting flies here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    rotting corpse~
+ExDesc       This corpse has been left here to rot.  The corpse is attracting many
+carrion insects like beetles, maggots, and flies.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30001
+Keywords  bloated corpse~
+Type      container~
+Short     a bloated corpse~
+Long      A bloated corpse is here in the ravine.~
+Values    100 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    bloated corpse~
+ExDesc       This corpse has been left here to rot.  The corpse is attracting many
+carrion insects like beetles, maggots, and flies.  The skin has become
+bloated and is oozing puss.  There might however be something here...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30002
+Keywords  pile rubble~
+Type      furniture~
+Short     a pile of rubble~
+Long      A pile of rubble is here on the ground.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    pile rubble~
+ExDesc       This is just an assortment of stones, bricks, wooden timbers, and some
+bones.  There does not appear to be anything hidden away here.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30003
+Keywords  pile bricks~
+Type      furniture~
+Short     a pile of bricks~
+Long      A pile of bricks is scattered here on the ground.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    pile bricks~
+ExDesc       This pile of rubble is mostly bricks, but there are other things here,
+like stones and timbers, but nothing else of value.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30004
+Keywords  pile stones~
+Type      furniture~
+Short     a pile of stones~
+Long      A bunch of stones of various sizes and shapes are piled here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    pile stones~
+ExDesc       This pile of rubble is mostly stones, but there are other things here,
+like bricks and timbers, but nothing else of value.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30005
+Keywords  intersection debris~
+Type      container~
+Short     a pile of debris~
+Long      Various debris is scattered about here.~
+Values    100 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    intersection debris~
+ExDesc       This pile of crap consists of stone rubble, a few cracked bricks, and
+some rotting wood.  Also there are a large number of bones scattered
+about, and perhaps something else...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30006
+Keywords  few bones~
+Type      furniture~
+Short     a few bones~
+Long      A few bones are scattered about here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    few bones~
+ExDesc       There are a few bones here.  Thankfully they are not moving to attack.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30007
+Keywords  lot bones~
+Type      furniture~
+Short     a lot of bones~
+Long      A lot of bones are here on the ground.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    lot bones~
+ExDesc       There are a few bones here.  Thankfully they are not moving to attack.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30008
+Keywords  old table~
+Type      furniture~
+Short     an old table~
+Long      An old table is here in this building.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    old table~
+ExDesc       This old table does not contain anything of value, except a few pieces
+of shattered pottery and some rusted forks and spoons.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30009
+Keywords  wooden crate~
+Type      furniture~
+Short     a wooden crate~
+Long      A wooden crate is rotting away here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    wooden crate~
+ExDesc       Naw, this crate does not contain anything.  The whole bottom half has
+rotted away.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30010
+Keywords  wooden crate~
+Type      container~
+Short     a wooden crate~
+Long      A wooden crate sits on its end here.~
+Values    100 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    wooden crate~
+ExDesc       Naw, this crate does not contain anything.  The whole bottom half has
+rotted away.  Hmm, then again, there might be something here.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30011
+Keywords  pile rubble~
+Type      container~
+Short     a pile of rubble~
+Long      A pile of rubble is here on the ground.~
+Values    100 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    pile rubble~
+ExDesc       Just your basic assorted fluff item that might contain something...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30012
+Keywords  lot bones~
+Type      container~
+Short     a lot of bones~
+Long      A lot of bones are here piled up outside the gatehouse.~
+Values    100 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    lot bones~
+ExDesc       Lots of bones, luckily they are not animated into some diabolic giant
+skeleton.  Best search them quickly before they start to attack...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30013
+Keywords  gate key~
+Type      key~
+Short     a gate key~
+Long      A gate key has been tossed away here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    gate key~
+ExDesc       There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.  You sit for hours and
+hours trying to figure out what the hell it unlocks.  Maybe it should
+have been called the GATEHOUSE key.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30014
+Keywords  scrap paper~
+Type      trash~
+Short     a scrap of paper~
+Long      A scrap of paper has been cast away here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    scrap paper~
+ExDesc       This scrap of paper is in relatively good condition, compared to the
+corpse it was found on.  Aside from a small bloodstain, most of it is
+still legible.  It appears to be a page from a book of artifacts.  It
+reads:
+ 
+Baalzebul's Skull:
+ 
+     In fact there were several skulls made by cult of Baalzebul.  The
+process in which the skulls were made is unknown, but the powers have
+been well documented.  Each skull has a number of healing spells cast
+upon them, much like a staff or orb.  However to activate the magical
+powers one must hold the item, causing the user to be teleported to a
+random location.  The charges are limited and when completely used, it
+explodes sending shards of crystal everywhere.  Caution should be used
+when handling one of these skulls.
+ 
+Note: Users have complained of a physical and mental burden while they
+are carring this object.  Most users either are never heard from again
+or are maimed in the skulls explosion.
+ 
+History of the Skulls:
+(The rest of the document if covered in blood and unreadable.)
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30015
+Keywords  rubble broken timber~
+Type      furniture~
+Short     a broken timber~
+Long      A large pile of broken timbers is here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    rubble broken timber~
+ExDesc       There is little of interest here in this pile of rubble and timbers.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30016
+Keywords  old bookcase~
+Type      container~
+Short     an old bookcase~
+Long      An old bookcase sits here in the corner of the chamber.~
+Values    100 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    old bookcase~
+ExDesc       This shelving unit has seen its better day, and that was probably a
+very, very long time ago.  Perhaps there is still something of value
+here.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30017
+Keywords  ordinary key~
+Type      key~
+Short     an ordinary key~
+Long      An ordinary key has been thrown aside here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    ordinary key~
+ExDesc       There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30018
+Keywords  average key~
+Type      key~
+Short     an average key~
+Long      An average key has been thrown aside here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    average key~
+ExDesc       There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30019
+Keywords  trapdoor key~
+Type      key~
+Short     a trapdoor key~
+Long      A trapdoor key has been cast away here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     35 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    trapdoor key~
+ExDesc       There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.  During your days of
+adventuring you have seen alot of keys, and this one is probably the
+heaviest one you have been forced to carry in a long time.  Damn the
+author.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30020
+Keywords  catacomb key maggots~
+Type      key~
+Short     a catacomb key~
+Long      A couple maggots are here stuck on something.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    catacomb key maggots~
+ExDesc       There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.  There is slime all
+over it from these maggots.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30021
+Keywords  cracked human skull~
+Type      trash~
+Short     a cracked skull~
+Long      A cracked human skull is here.~
+Flags     nodrop~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    cracked human skull~
+ExDesc       This person might have died from a blunt object smashing into its
+head, or it could have been damaged afterward.  You do not really
+give a damn, you would just like to drop it.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30022
+Keywords  small bronze key~
+Type      key~
+Short     a small bronze key~
+Long      A small bronze key is here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    small bronze key~
+ExDesc       There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30023
+Keywords  tower key~
+Type      key~
+Short     a tower key~
+Long      A key used to access the tower is here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    tower key~
+ExDesc       There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30024
+Keywords  crypt key~
+Type      key~
+Short     a crypt key~
+Long      A key used to access the crypt is here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    crypt key~
+ExDesc       There is nothing really important about this key, other than it will
+probably be used to unlock some door or chest.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30025
+Keywords  door propt~
+Type      furniture~
+Short     a coffin~
+Long      An ancient coffin is here, placed upon catacomb floor.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      30026
+Keywords  simple coffin~
+Type      container~
+Short     a simple coffin~
+Long      A simple coffin is here set against the wall on its end.~
+Values    100 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    simple coffin~
+ExDesc       Its a simple wooden coffin used by some bloodsucker.  Hopefully there
+is not anymore inside the coffin.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30027
+Keywords  wide coffin~
+Type      container~
+Short     a wide coffin~
+Long      A wide coffin sits here in the center of this chamber.~
+Values    100 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    wide coffin~
+ExDesc       This is a wide coffin probably used for a big-boned vampire.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30028
+Keywords  handful earth black soil~
+Type      trash~
+Short     a handful of earth~
+Long      A handful of black soil has been thrown down here.~
+Flags     nodrop evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    handful earth black soil~
+ExDesc       This tainted soil was taken from the grave of a vampire.  Perhaps it
+has some kind of magical power?  No matter where you put this dirt, it
+always feels like a heavy burden, physically and spiritually.  If you
+could only ditch it or find some way to harness the power.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30029
+Keywords  handful earth black soil~
+Type      pill~
+Short     a handful of earth~
+Long      A handful of black soil has been thrown down here.~
+Flags     magic nodrop evil~
+WFlags    take~
+Values    20 -1 -1 -1 0 0 0 0 0 0 0
+Stats     20 1 -2 9999 0 None None None
+Spells       'antimagic shell' 'dream' 'flamestrike'
+#EXDESC
+ExDescKey    handful earth black soil~
+ExDesc       This tainted soil was taken from the grave of a vampire.  Perhaps it
+has some kind of magical power?  No matter where you put this dirt, it
+always feels like a heavy burden, physically and spiritually.  If you
+could only ditch it or find some way to harness the power.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30030
+Keywords  bronze candleabra ~
+Type      light~
+Short     a bronze candleabra ~
+Long      A standing candleabra made of bronze is placed here in a niche.~
+Values    0 0 -1 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    bronze candleabra ~
+ExDesc       This candle holder stands about four feet high and is securely bolted
+to the ground, sorry, no chance in stealing it.  Hell, if it was not
+already bolted down then some other adventurer would have come, taken
+it, and then pawned it off at the nearest town.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30031
+Keywords  human femur~
+Type      trash~
+Short     a human femur~
+Long      A human femur is half buried in the ground here.~
+Flags     nodrop~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    human femur~
+ExDesc       This looks almost exactly the size of a human femur bone.  It could be
+an orcs or half-elves femur.  Actually its hard for you to tell, might
+you have a degree in forensic science?  No?  Then I guess you will not
+get a very damned precise description.  Now if only you could get rid
+of the thing!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30032
+Keywords  human rib~
+Type      trash~
+Short     a human rib~
+Long      A human rib is stuck into the ground here.~
+Flags     nodrop~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    human rib~
+ExDesc       This was part of somebody at one time.  The thought of it makes you
+want to throw it away, but you can not seem to do it.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30033
+Keywords  writhing maggot~
+Type      food~
+Short     a writhing maggot~
+Long      A small writhing maggot is on the floor here.~
+Action    %s chomp$q on $p savoring the taste.~
+WFlags    take~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    writhing maggot~
+ExDesc       Its small, its white, its high in protien, but pretty damn disgusting.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30034
+Keywords  writhing maggot~
+Type      pill~
+Short     a writhing maggot~
+Long      A small writhing maggot is on the floor here.~
+Action    %s chomp$q on $p savoring the taste.~
+WFlags    take~
+Values    20 -1 -1 -1 1 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+Spells       'NONE' 'NONE' 'NONE'
+#EXDESC
+ExDescKey    writhing maggot~
+ExDesc       Its small, its white, its high in protien, but pretty damn disgusting.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30035
+Keywords  brown dung beetle~
+Type      food~
+Short     a dung beetle~
+Long      A little brown beetle is crawling about here.~
+Action    %s eat$q $p and spits out the hard shell.~
+WFlags    take~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     10 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    brown dung beetle~
+ExDesc       This little bug likes to crawl around in...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30036
+Keywords  brown dung beetle~
+Type      pill~
+Short     a dung beetle~
+Long      A little brown beetle is crawling about here.~
+Action    %s eat$q $p and spits out the hard shell.~
+WFlags    take~
+Values    20 -1 -1 -1 1 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+Spells       'NONE' 'NONE' 'NONE'
+#EXDESC
+ExDescKey    brown dung beetle~
+ExDesc       This little bug likes to crawl around in...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30037
+Keywords  wraith black cloak~
+Type      armor~
+Short     a wraith cloak~
+Long      A black cloak is resting on the ground here.~
+Flags     magic nodrop antigood noremove evil~
+WFlags    take about~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     5 2000 -2 9999 0 None None None
+AffData hide 3 -1 -1 0
+AffData sneak 3 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData constitution -2 -1 -1 0
+AffData strength -2 -1 -1 0
+#EXDESC
+ExDescKey    wraith black cloak~
+ExDesc       This cloak have an evil look to it.  It is faded, and weathered around
+the edges.  The material is very thin, almost sheer.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30038
+Keywords  obsidian black bracer~
+Type      armor~
+Short     an obsidian bracer~
+Long      A black bracer was placed on the ground here.~
+Flags     magic nodrop antigood noremove evil~
+WFlags    take wrist~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     3 2000 -2 9999 0 None None None
+AffData damroll -1 -1 -1 0
+AffData hit 30 -1 -1 0
+#EXDESC
+ExDescKey    obsidian black bracer~
+ExDesc       This bracer is made of obsidian and accented with bone.  On its face
+there is a single rune made also of bone.  The rune symbolizes death
+in the form of a skull.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30039
+Keywords  banshee black death shroud~
+Type      armor~
+Short     a banshee shroud~
+Long      A black death-shroud is resting on the ground here.~
+Flags     magic nodrop antigood noremove evil~
+WFlags    take eyes~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     5 2000 -2 9999 0 None None None
+AffData hit -10 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#EXDESC
+ExDescKey    banshee black death shroud~
+ExDesc       This shroud is made of a dull-grey-brown mottled color.  It smells of
+the dead and is spun from wool.  This item radiates an aura of evil,
+even without magical detection.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30040
+Keywords  instrument bone flute~
+Type      treasure~
+Short     a bone flute~
+Long      A diabolic musical instrument has been discarded here.~
+Flags     magic nodrop antigood noremove evil~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 2000 -2 9999 0 None None None
+AffData hit 50 -1 -1 0
+AffData mana -25 -1 -1 0
+#EXDESC
+ExDescKey    instrument bone flute~
+ExDesc       This musical instrument has been made out of a human femur.  Somehow
+you think there is something sinister about this thing, you sure has
+hell do not want to keep it.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30041
+Keywords  ghoul claws hands~
+Type      armor~
+Short     a pair of ghoul claws~
+Long      A pair of clawed hands have been dropped here.~
+Flags     magic nodrop antigood noremove evil~
+WFlags    take hands~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     5 2000 -2 9999 0 None None None
+AffData damroll 3 -1 -1 0
+AffData hit -30 -1 -1 0
+#EXDESC
+ExDescKey    ghoul claws hands~
+ExDesc       These hands are somehow enchanted with an evil magical.  You could
+fit them on to your hands something like gloves, but do you really
+want to do that?  Only if you could discard these wretched things!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30042
+Keywords  black necromancer robe~
+Type      armor~
+Short     a necromancer robe~
+Long      A black robe has been dropped on the ground here.~
+Flags     magic antigood~
+WFlags    take body~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     5 500 -2 9999 0 None None None
+AffData mana 10 -1 -1 0
+#EXDESC
+ExDescKey    black necromancer robe~
+ExDesc       This robe is made of a black material and covers almost all of the
+body.  It smells like a death shroud.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30043
+Keywords  black necromancer robe~
+Type      armor~
+Short     a necromancer robe~
+Long      A black robe has been dropped on the ground here.~
+Flags     magic antigood~
+WFlags    take body~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     5 2000 -2 9999 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData mana 25 -1 -1 0
+#EXDESC
+ExDescKey    black necromancer robe~
+ExDesc       This robe is made of a black material and covers almost all of the
+body.  It smells like a death shroud.  A silver colored thread has
+been woven into the edges of the garment for ornamentation.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30044
+Keywords  black necromancer robe~
+Type      armor~
+Short     a necromancer robe~
+Long      A black robe has been dropped on the ground here.~
+Flags     magic antigood~
+WFlags    take body~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     5 2000 -2 9999 0 None None None
+AffData mana 35 -1 -1 0
+#EXDESC
+ExDescKey    black necromancer robe~
+ExDesc       This robe is made of a black material and covers almost all of the
+body.  It smells like a death shroud.  A silver colored thread has
+been woven into the edges of the garment for ornamentation.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30045
+Keywords  tcod circlet darkness powerful~
+Type      armor~
+Short     Circlet of Darkness~
+Long      A mysterious circlet of dark metal has been discarded here.~
+Flags     magic antigood antineutral evil~
+WFlags    take head~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     1 25000 -2 9999 0 None None None
+AffData mana 100 -1 -1 0
+AffData hit 100 -1 -1 0
+AffData move 100 -1 -1 0
+#EXDESC
+ExDescKey    tcod circlet darkness powerful~
+ExDesc       Pray to whatever Gods you wish, for you behold a vile artifact of
+tremendous power!  Legends holds that this circlet was once worn by
+the Dark One, Venificis.  An aura of powerful magic, and great evil
+comes from the jet black circlet.  The more you gaze at this item,
+the more you either want to put it on your head or forget you ever
+saw it.  There are many stories of this item, so say it hold infinate
+power, while other stories tell of the circlet destroying its master.
+ 
+A small inscription is on the back of the circlet:
+ 
+HANDLE THIS ITEM WITH EXTREME CAUTION: IT CAN KILL YOU.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  drop_prog~
+Arglist   95~
+Comlist   if ispc($n)
+if level ($n) < 51
+mpechoat $n Something tells you, "No. You don't want to drop me $n."
+mpechoat $n Something tells you, "Just remember who is in control."
+mpechoat $n Something inside your head begins to hurt, ALOT!
+mpdamage $n 100
+mpforce $n get tcod
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  get_prog~
+Arglist   95~
+Comlist   if ispc($n) 
+if level ($n) < 51
+mpechoat $n Something tells you, "Put me on! Put me on!"
+mpechoat $n <<<(The Circlet of Darkness)>>> GLOWS!
+mpforce $n emote shakes uncontrollably.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  remove_prog~
+Arglist   95~
+Comlist   if ispc($n)
+if level ($n) <51
+mpechoat $n Something tells you, "I don't think we should part yet $n"
+mpforce $n wear tcod
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   95~
+Comlist   if ispc($n)
+if level ($n) < 51
+mpechoat $n You place the Circlet atop your head.
+mpechoarround $n $n places the Circlet atop their head.
+mpforce $n scream
+mpforce $n yell Arghhhhhhh!!! My head! Someone help me!!!
+mpforce $n say MY BRAINS!!!!!
+mpechoat $n Arghhh! Something inside your head is burning...
+mpechoarround $n $n's head begins to smoke...
+mpforce $n emote collapses, either dead or near death.
+if rand (10)
+mpslay $n
+else
+if rand (25)
+mpdamage $n 250
+else
+if rand (33)
+mpdamage $n 500
+else
+if rand (50)
+mpdamage $n 1000
+else
+mpdamage $n 2000
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30046
+Keywords  magical skull~
+Type      trash~
+Short     a magical skull~
+Long      A magical skull has been left here.~
+Flags     nodrop~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     75 25000 -2 9999 0 None None None
+AffData wearspell 'teleport' -1 -1 0
+#EXDESC
+ExDescKey    magical skull~
+ExDesc       This skull appears to be a magical item.  Perhaps this is not the best
+item to have in your inventory.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if level ($n) < 51
+mpechoat $n You hold the skull in your hands...
+mpechoarround $n $n holds a skull in their hands...
+if rand (75)
+mprestore $n 100
+mpechoat $n The skull heals your wounds.
+else
+mpechoat $n The skull begins to vibrate viciously...
+mpforce $n remove skull
+mpforce $n drop skull
+mpjunk skull
+mpechoat $n The skull shatters into tiny shards of bone!
+mpechoarround $n The skull shatters into tiny shards of bone!
+mpdamage $n 100
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30047
+Keywords  wooden barrel~
+Type      furniture~
+Short     a wooden barrel~
+Long      A wooden barrel is against the wall here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      30048
+Keywords  wooden crate~
+Type      furniture~
+Short     a wooden crate~
+Long      A wooden crate is against the wall here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      30049
+Keywords  soul~
+Type      container~
+Short     your soul~
+Long      A obelisk has been set here as some kind of marker.~
+Values    100 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    soul~
+ExDesc       Yes... yes indeed!  There might just be something inside your soul to
+be found.  Perhaps it seems like nothing, but then again, maybe not.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30050
+Keywords  answer~
+Type      trash~
+Short     the answer to the question~
+Long      The answer to a question not yet asked is here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    answer~
+ExDesc       You know just what the answer to any question you could ever be asked!
+The answer does not make much sense, but then again, you have not yet
+heard the question.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      30051
+Keywords  fried corpse~
+Type      furniture~
+Short     a fried corpse~
+Long      A fried corpse is here on the floor, dead.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+#EXDESC
+ExDescKey    fried corpse~
+ExDesc       This guy was fried, nothing left but a few ashes and charred bones.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#ROOM
+Vnum      30000
+Name      Bottom of a Rugged Path~
+Sector    mountain~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Standing here at the bottom of some jagged cliffs, a trail is visible
+leading east and up into the rugged terrain.  High above, on the top
+of the cliff, the crumbling towers of some long forgotten keep can be
+seen.  A thick, annoying mist hugs the uneven, rocky ground along the
+path.
+~
+#EXIT
+Direction east~
+ToRoom    30001
+#ENDEXIT
+
+#EXDESC
+ExDescKey    cliffs terrain~
+ExDesc       The cliffs rise at least a hundred feet, maybe more.  The terrain is a
+bit difficult to make your way through, but not impossible.  For some
+reason there is an unusually large number of bones scattered about.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    crumbling towers keep~
+ExDesc       The keep and its towers are nothing more than crumbling ruins.  You
+doubt that anyone is living there.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist is strange, surreal, and down right annoying.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30001
+Name      Climbing up the Path~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path leads up higher into the cliffs, and back down to the bottom
+of the path to the west.  Some decrepit defensive fortifications are
+visible high above atop the cliffs.  Clearly the walls and watchtower
+are no longer used.  The mist swirls about, almost playing off your
+fears of the unknown and unexplained.
+~
+#EXIT
+Direction west~
+ToRoom    30000
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30002
+#ENDEXIT
+
+Reset O 30000 0 30001 -1 -1 -1 100
+#EXDESC
+ExDescKey    cliffs terrain~
+ExDesc       The cliffs rise at least a hundred feet, maybe more.  The terrain is a
+bit difficult to make your way through, but not impossible.  For some
+reason there is an unusually large number of bones scattered about.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    wall watchtower fortifications~
+ExDesc       The walls, watchtower, and other fortifications are all in ruin.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist is strange, surreal, and down right annoying.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30002
+Name      Bend near an Obelisk~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The pathway winds its way up towards the ruins to the south, or back
+down towards the bottom of the cliffs.  The ruins are not visible from
+here due to mist which is appears thicker than ever.  The path is hard
+to travel because of the mist and uneven rocky ground.  Off the side
+of the path is an black obelisk.
+~
+#EXIT
+Direction south~
+ToRoom    30003
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30001
+#ENDEXIT
+
+Reset O 30049 0 30002 -1 -1 -1 100
+  Reset P 0 30050 0 30049 100
+#EXDESC
+ExDescKey    cliff cliffs~
+ExDesc       The cliffs rise at least a hundred feet, maybe more.  The terrain is a
+bit difficult to make your way through, but not impossible.  For some
+reason there is an unusually large number of bones scattered about.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist is strange, surreal, and down right annoying.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    black obelisk~
+ExDesc       The obelisk is only three feet tall, made of a black colored stone,
+and has cryptic runes scrawled about.  A few words written in common
+can be read along its eastern side.  They read:
+ 
+If one EXAMINEs their SOUL.  They might, might just have a chance.
+ 
+This area made by Cianhydle (1999).~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30003
+Name      Narrowing in the Path~
+Sector    mountain~
+Flags     private~
+Stats     0 0 0 0 0
+Desc      The path leads north and south along a rock surface to the west and a
+sheer drop of some twenty feet to to the east.  The trail was wider at
+one time, but erosion has eaten away over half path.  There is a mist
+hanging in the air, making this section of the path dangerous.
+~
+#EXIT
+Direction north~
+ToRoom    30002
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30004
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30027
+Flags     secret fly hidden~
+#ENDEXIT
+
+Reset O 30006 0 30003 -1 -1 -1 100
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.  The path was once larger, but since
+erosion has withered the path down to half of its original size.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    rock surface~
+ExDesc       Ahead, the rocks above the cliff look as if they could tumble down on
+to the pathway at any time.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist is strange, surreal, and down right annoying.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30004
+Name      Tavelling along the Path~
+Sector    mountain~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The path leads up higher into the cliffs, and decending to the north.
+The top of the cliffs is at least another sixty feet above.  It is odd
+that there are no plants growing along this path, not even the sturdy,
+mountain type plants.  The air is filled with a particulary thick and
+annoying mist.
+~
+#EXIT
+Direction north~
+ToRoom    30003
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30005
+#ENDEXIT
+
+Reset M 30009 2 30004 -1 -1 -1 100
+  Reset G 30032 0 100
+Reset O 30004 0 30004 -1 -1 -1 100
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist is strange, surreal, and down right annoying.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p arrives from the north.~
+Comlist   if ispc($n)
+mpechoat $n A large rock falls from above...
+if isgood($n)
+mpdamage $n 150
+else
+if isneutral($n)
+mpdamage $n 100
+else
+if isevil($n)
+mpdamage $n 50
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      30005
+Name      Bend in the Path~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path makes its way up towards the clifftops to the west, or back
+down towards the bottom of the cliff.  The ruins emerge again out from
+behind the rocks.  From here, crumbling keep can be seen rising up
+above a small ruined settlement.
+~
+#EXIT
+Direction west~
+ToRoom    30006
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30004
+#ENDEXIT
+
+Reset O 30032 0 30005 -1 -1 -1 100
+#EXDESC
+ExDescKey    ruined settlement~
+ExDesc       The ruins appear to have been long deserted by anything living.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30006
+Name      Walking down through a Ravine~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The pathway runs down along a washed out ravine cut into the side of
+the cliffs, hiding the ruins from view.  Various debris has collected
+in this gully.  The ravine decends to the east where the path bends.
+The path itself is along the northern side of the ravine and about a
+wagons width wide.
+~
+#EXIT
+Direction east~
+ToRoom    30005
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30007
+#ENDEXIT
+
+Reset O 30001 0 30006 -1 -1 -1 100
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.  The ravine is three or four feet
+deep.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    ravive~
+ExDesc       There is alot of small stones falled down from above, as well as a
+corpse.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30007
+Name      Climbing up the Path~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      To the east a ravine cuts down through the cliffs and the path follows
+it along the northern side.  Above the path begins to ascend closer to
+the ruins above which are again blocked by the terrain and thick mist.
+~
+#EXIT
+Direction east~
+ToRoom    30006
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30008
+#ENDEXIT
+
+Reset O 30031 0 30007 -1 -1 -1 100
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist is strange, surreal, and down right annoying.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    terrain~
+ExDesc       Rocks, bluffs, crags, that kind of stuff.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30008
+Name      Bend along the Path~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here the path decends down the cliffs, while leading north higher and
+higher through the rough terrain.  To the west a gorge decends fourty
+or more feet and is filled with all sizes and shapes of boulders.  A
+small ammount of debris is along the edges of the path here as well as
+the strange mist.
+~
+#EXIT
+Direction north~
+ToRoom    30009
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30007
+#ENDEXIT
+
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist is strange, surreal, and down right annoying.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    gorge~
+ExDesc       Better be careful or you will fall down and not be able to get up.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30009
+Name      Ascending a Steep Grade~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path climbs a steep grade here, while also bending to the south,
+leading down towards the base of the cliffs.  Here the ground is dry
+and cracked, barren of any signs of life.  The air is thick with the
+strange mist.
+~
+#EXIT
+Direction south~
+ToRoom    30008
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30010
+#ENDEXIT
+
+Reset M 30009 2 30009 -1 -1 -1 100
+  Reset G 30021 0 100
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist is strange, surreal, and down right annoying.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.  The grade along the path is quiet
+steep.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    steep grade~
+ExDesc       The grade is slightly hard to travelled, especially if you are used to
+just sitting in front of a computer all day.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30010
+Name      Nearing the Ruins~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path is drawing closer to the cliff top ruins.  Ascending from the
+steep grade the tops of the few remaining structures are seen peeking
+out from behind the rocks to the north.  To the west the pathway bends
+to the north, appearing to head into the ruins.
+~
+#EXIT
+Direction west~
+ToRoom    30011
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30009
+#ENDEXIT
+
+Reset O 30006 0 30010 -1 -1 -1 100
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.  The path becomes a bit wider the
+closer you come to the ruins.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    tops structures~
+ExDesc       The tops of the structures are badly damaged.  Clearly nobody can be
+living in the keep.  Just remember the definition of living.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30011
+Name      Overlooking the Ruins~
+Sector    mountain~
+Flags     nomob safe~
+Stats     0 0 0 0 0
+Desc      Here the path overlooks the ruins, and shows a ruined town surrounding
+a lone keep.  A handful of buildings and parts of the keep, can be
+seen through the mist.  Most of the structures have collapsed, or have
+caught on fire, and in any case uninhabitable.
+~
+#EXIT
+Direction north~
+ToRoom    30012
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30010
+#ENDEXIT
+
+Reset M 30005 1 30011 -1 -1 -1 100
+#EXDESC
+ExDescKey    path pathway~
+ExDesc       The path is not travelled often, and there are an unusual number of
+human-like bones scattered about.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    buildings keep~
+ExDesc       The tops of the structures are badly damaged.  Clearly nobody can be
+living in the keep.  Just remember the definition of living.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30012
+Name      Admist the Ruins~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Abmist the ruins of this place you are instantly surround with an
+overwhelming feeling of dread and dispair.  From behind the ruined
+walls of old buildings things move about remaining just out of sight.
+Ahead two buildings flank both sides of a debris filled road.  Neither
+building looks safe enough to explore.  The mist is beginning to drift
+away as you enter the ruins.
+~
+#EXIT
+Direction north~
+ToRoom    30013
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30011
+#ENDEXIT
+
+Reset M 30000 3 30012 -1 -1 -1 100
+#EXDESC
+ExDescKey    buildings~
+ExDesc       The two buildings that are flanking the road are two stories tall and
+are leaning just a bit out over the street.  Looking more closely, you
+think that they could come crashing down at any minute.  Maybe going
+north is not just a groovy idea Fred.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist is thicker inside the ruins.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30013
+Name      Trapped within the Ruins~
+Sector    city~
+Flags     nomob nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Throwing caution to the wind, you travel deeper into the ruins.  South
+the remains of two buildings block any hopes of leaving though the way
+you entered this place.  No matter how much rubble you remove, another
+heavier stone appears behind it to take its place.  Something foul and
+evil is afoot here.
+~
+#EXIT
+Direction north~
+ToRoom    30014
+#ENDEXIT
+
+Reset O 30002 0 30013 -1 -1 -1 100
+#EXDESC
+ExDescKey    rubble~
+ExDesc       Damnit, you knew something like this was going to happen.  You will
+just have to find some other way out of this forsaken place.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p arrives from the south.~
+Comlist   if ispc($n)
+mpechoat $n The two buildings to the south collapse!
+mpechoat $n You have a bad feeling about this...
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      30014
+Name      Debris-Strewn Intersection~
+Sector    city~
+Flags     nomob nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This was probably the main intersection of the town, now its littered
+with debris and a corpse or two.  In each direction paths lead of into
+the ruins, roughly following the old roads.  To the northeast the keep
+rises above all the other remaining structures.
+~
+#EXIT
+Direction north~
+ToRoom    30028
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30023
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30013
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30015
+#ENDEXIT
+
+Reset O 30005 0 30014 -1 -1 -1 100
+Reset O 30000 0 30014 -1 -1 -1 100
+#EXDESC
+ExDescKey    roads~
+ExDesc       Well, they are not actually roads anymore.  They are paths admist the
+rubble.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    keep~
+ExDesc       The keep looks particularly dark and spooky.  If there is any treasure
+to be found, sure as flies on corpses, that's where it will be.  All
+advenurers know these sorts of things.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30015
+Name      Shifting through the Rubble~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      A path runs east and west down the middle of a road.  Along the edges
+of the road, rubble in the form of stones, bricks, timbers, and the
+occassional corpse, is piled.  To the east is the main intersection,
+while the west are a few remaining buildings.  Whatever structures
+that might have been to the north and south have long since collapsed.
+~
+#EXIT
+Direction east~
+ToRoom    30014
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30016
+#ENDEXIT
+
+Reset M 30001 4 30015 -1 -1 -1 100
+#EXDESC
+ExDescKey    roads~
+ExDesc       Well, they are not actually roads anymore.  They are paths admist the
+rubble.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    buildings~
+ExDesc       Many have been destroyed, but there are a few to the west that are in
+good shape.  The ones to the north and south have collapsed.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30016
+Name      Pathway between the Rubble~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      A path runs east and west down the middle of a road.  To the north is
+a burnt out shell of a building, while to the south is a sturdy, but
+still ruined, looking building.  To the east the path leads through a
+bit of rubble, while to the west are a few more buildings.
+~
+#EXIT
+Direction north~
+ToRoom    30020
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30015
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30022
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30017
+#ENDEXIT
+
+Reset M 30001 4 30016 -1 -1 -1 100
+Reset O 30002 0 30016 -1 -1 -1 100
+Reset D 30016 2 1 100 -2
+#EXDESC
+ExDescKey    road~
+ExDesc       Well, they are not actually roads anymore.  They are paths admist the
+rubble.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30017
+Name      Navigating past the Rubble~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      A path heads east towards the intersection.  To the north is a half-
+demolished building, missing its entire rooftop and a wall, and a
+partially collapsed building is to the south.  An arched doorway
+leads into a darkened building to the west.  None of these buildings
+look very safe.
+~
+#EXIT
+Direction north~
+ToRoom    30019
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30016
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30021
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30018
+#ENDEXIT
+
+Reset M 30001 4 30017 -1 -1 -1 100
+#EXDESC
+ExDescKey    demolished building~
+ExDesc       That place does not even look safe to explore.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    arched doorway~
+ExDesc       It leads into a dark building where things are moving.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30018
+Name      Abandoned Stone House~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This house has been abandoned for some time.  Some battered furniture
+are placed about the items as if someone, or something, is living, if
+you want to call it that, here.  Bones, which looking alot like those
+of a human, are scattered across the floor.  An arched doorway is to
+the east leading out into the street.
+~
+#EXIT
+Direction east~
+ToRoom    30017
+#ENDEXIT
+
+Reset M 30000 3 30018 -1 -1 -1 100
+Reset O 30006 0 30018 -1 -1 -1 100
+Reset O 30008 0 30018 -1 -1 -1 100
+#EXDESC
+ExDescKey    battered furniture~
+ExDesc       Junk! Junk! Junk! Junk! Junk! Junk! Junk! Junk! Junk! Junk! Junk!
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    street~
+ExDesc       Yeah, sorta, more like a another through the rubble.  All kinds of
+crap is in the streets.  Aluminum cans, dirty diapers, shepard crooks,
+sticky pacifiers, etc.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30019
+Name      Half-Demolished Brick Building~
+Sector    indoors~
+Flags     nomob nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This building is missing its entire roof and its southern wall.  Stone
+and other debris are scattered about along with a rather large ammount
+of human bones.
+~
+#EXIT
+Direction south~
+ToRoom    30017
+#ENDEXIT
+
+Reset M 30001 4 30019 -1 -1 -1 100
+Reset O 30003 0 30019 -1 -1 -1 100
+Reset O 30007 0 30019 -1 -1 -1 100
+#EXDESC
+ExDescKey    roof~
+ExDesc       Yeah, its missing.  What else do you want?  You sure are looking at
+alot of crap if you are reading this.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30020
+Name      Burnt Dwelling~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This building is charred from a fire that burnt here long ago.  There
+is nothing left here that is not burnt to a crisp, including the two
+occupants and a sofa.  A doorframe is to the south, leading back out
+into the ruins.
+~
+#EXIT
+Direction south~
+ToRoom    30016
+#ENDEXIT
+
+Reset M 30006 1 30020 -1 -1 -1 100
+Reset O 30051 0 30020 -1 -1 -1 100
+#EXDESC
+ExDescKey    building doorframe~
+ExDesc       Everything in here is burnt to a crisp.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    occupants~
+ExDesc       Yes, both of them are burnt to a crisp.  One is still alive, well,
+sorta alive.  The other is on the floor.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    sofa~
+ExDesc       The is missing all of its cushions and fabric.  The charred wooden
+frame is basically all that remains.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30021
+Name      Partially-Collapsed Building~
+Sector    indoors~
+Flags     nomob nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      There is something dark and sinister about this building.  There is no
+sign of any little girl, or that anyone has lived here for a very long
+time.  All that remains of the building are a couple of walls and some
+broken timbers.  A sagging doorframe is to the north, leading back on
+to a road.
+~
+#EXIT
+Direction north~
+ToRoom    30017
+Flags     noflee~
+#ENDEXIT
+
+Reset M 30007 1 30021 -1 -1 -1 100
+#EXDESC
+ExDescKey    little girl~
+ExDesc       There WAS a little girl here, where did she go?
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    building~
+ExDesc       There was something definately evil about this place, you will try and
+avoid this place if possible.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30022
+Name      Ruined Stone Building~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This stone building is missing its windows, along with its entire
+second floor.  Anything that might have once been of value has either
+been already stolen or destroyed.  A door is to the north and appears
+to be the only exit.
+~
+#EXIT
+Direction north~
+ToRoom    30016
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 30000 3 30022 -1 -1 -1 100
+Reset D 30022 0 1 100 -2
+#EXDESC
+ExDescKey    windows~
+ExDesc       They are gone, busted out a long time ago.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30023
+Name      Abandoned Plaza~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Once the brown, grey, and white ceramic tiles of this plaza were set
+straight and replaced if broken.  Now most of the tiles are broken or
+covered with the rubble of nearby buildings that have collapsed.  The
+plaza continues to the north and east, while an intersection is to the
+west.
+~
+#EXIT
+Direction north~
+ToRoom    30024
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30026
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30014
+#ENDEXIT
+
+Reset O 30002 0 30023 -1 -1 -1 100
+#EXDESC
+ExDescKey    ceramic tiles~
+ExDesc       Maybe the tiles had some ornate design when the living dwelled here,
+now they are broken.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30024
+Name      Abandoned Plaza~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Rubble covers most of this section of the plaza.  To the west there is
+a large pile of stones and bricks.  North and east are relative sturdy
+walls which are still partially covered in a white plaster.  Beneath
+the plaster stone bricks and wooden beams are visibile.  To the south
+is the rest of the plaza.
+~
+#EXIT
+Direction south~
+ToRoom    30023
+#ENDEXIT
+
+Reset M 30002 1 30024 -1 -1 -1 100
+Reset O 30003 0 30024 -1 -1 -1 100
+#EXDESC
+ExDescKey    plaza~
+ExDesc       Mostly ceramic tiles of brown, grey, and white formed the plaza, but
+like the rest of this settlement it has been trashed by the monsters
+that are dwelling here.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    plaster~
+ExDesc       The plaster is cracked and falling from the walls.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30025
+Name      Butcher Market~
+Sector    indoors~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This building was probably once a butcher market in the conventional
+sense of the term.  Now it servers a more ghastly purpose.  A variety
+of corpses hang from the ceiling on large hooks, some still moving.
+Blood covers almost everything, including a door to the south that
+leads back into the plaza.
+~
+#EXIT
+Direction south~
+ToRoom    30026
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 30004 1 30025 -1 -1 -1 100
+Reset D 30025 2 1 100 -2
+#EXDESC
+ExDescKey    corpse hooks blood~
+ExDesc       Quite a ghastly scene, but you are an adventurer not just some mere
+commoner, so you can handle this kind of horrific sight without just
+turning tail and running back to the nearest village.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30026
+Name      Abandoned Plaza~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Once the brown, grey, and white ceramic tiles of this plaza were set
+straight and replaced if broken.  Now most of the tiles are broken or
+covered with the rubble of nearby buildings that have collapsed.  To
+the north is a relatively sturdy looking building, which still has an
+operational door.  To the west and south the plaza continues.  To the
+east is a massive pile of rubble near the edge of the settlement.
+~
+#EXIT
+Direction north~
+ToRoom    30025
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30027
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30023
+#ENDEXIT
+
+Reset D 30026 0 1 100 -2
+#EXDESC
+ExDescKey    ceramic tiles~
+ExDesc       Maybe the tiles had some ornate design when the living dwelled here,
+now they are broken.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30027
+Name      Abandoned Plaza~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Rubble covers most of this section of the plaza.  Sticking out of the
+rubble is part of an old fountain.  The plaza continues to the north,
+while collapsed buildings block the other directions.  To the east the
+rest of the plaza has collapsed.  Although you doubt you could climb
+back up, you might be able to escape this wretched place.
+~
+#EXIT
+Direction north~
+ToRoom    30026
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30003
+#ENDEXIT
+
+Reset M 30003 1 30027 -1 -1 -1 100
+Reset O 30004 0 30027 -1 -1 -1 100
+#EXDESC
+ExDescKey    east cliff~
+ExDesc       Yes, yes, you could escape this way.  Perhaps with the right spells,
+even return this way.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30028
+Name      Stumbling over the Rubble~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      A path runs north and south down the middle of a road.  On each side
+of the road, whatever structures that might have been to the north and
+south have long since collapsed in on themselves creating huge piles
+of rubble.  To the south is the main intersection of the ruins.
+~
+#EXIT
+Direction north~
+ToRoom    30029
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30014
+#ENDEXIT
+
+Reset O 30002 0 30028 -1 -1 -1 100
+#EXDESC
+ExDescKey    road~
+ExDesc       Path through rubble is more like it.  You've stumbled quite a number
+of times trying to make your way over stones and bricks, timbers and
+corpse, and who knows what else.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p arrives from the south.~
+Comlist   if ispc($n)
+mpechoat $n You stumble over a loose stone and sprain your ankle.
+mpdamage $n 25
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      30029
+Name      Climbing across the Rubble~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      A path runs north and south down the middle of a road.  Another path
+leads through the rubble to the east towards a fairly solid looking
+building made of stone with a functional door.  To the northeast the
+towers of the ruined keep rise above all the remaining buildings.
+~
+#EXIT
+Direction north~
+ToRoom    30032
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30030
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30028
+#ENDEXIT
+
+Reset O 30004 0 30029 -1 -1 -1 100
+Reset D 30029 1 1 100 -2
+#EXDESC
+ExDescKey    keep~
+ExDesc       The keep looks like it is in a little better shape than the rest of
+the settlement.  That is probably where all the treasure is located.
+Now if you could only find a way inside.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    building~
+ExDesc       The building looks solid enough to explore, but you should probably
+use caution while exploring anything here.  There seem to be alot of
+these undead things running about causing problems.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30030
+Name      Ruined Stone Building~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This stone building is missing its windows, along with its entire
+second floor.  Anything that might have once been of value has either
+been already stolen or destroyed.  There is a door to the west that
+leads back into the streets.
+~
+#EXIT
+Direction west~
+ToRoom    30029
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 30010 9 30030 -1 -1 -1 100
+Reset M 30010 9 30030 -1 -1 -1 100
+Reset M 30010 9 30030 -1 -1 -1 100
+Reset D 30030 3 1 100 -2
+#EXDESC
+ExDescKey    windows~
+ExDesc       Guru meditation error!
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    door~
+ExDesc       The wood is battered, but still operation.  There is no lock.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30031
+Name      Crumbling Stone Home~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This house has been abandoned for some time.  Some battered furniture
+are placed about the items as if someone, or something, is living, if
+you want to call it that, here.  Bones, which looking alot like those
+of a human, are scattered across the floor.  A door to the east leads
+back into the ruins.
+~
+#EXIT
+Direction east~
+ToRoom    30032
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 30006 0 30031 -1 -1 -1 100
+Reset M 30011 1 30031 -1 -1 -1 100
+Reset D 30031 1 1 100 -2
+#EXDESC
+ExDescKey    door~
+ExDesc       The wood is battered, but still operation.  There is no lock.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    battered furniture~
+ExDesc       Broken down, useless junk.  You could not even give these chairs and
+tables away.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30032
+Name      Shifting through the Rubble~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The path bends to the east and south along this stretch of the ruins.
+Almost all of the buildings in this area are nothing more than piles
+of stone rubble.  The except is a stone building to the west, where
+there is still a working door in that building.  East the path leads
+closer to the keep.
+~
+#EXIT
+Direction east~
+ToRoom    30033
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30029
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30031
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 30011 0 30032 -1 -1 -1 100
+  Reset P 0 30006 0 30011 100
+Reset D 30032 3 1 100 -2
+#EXDESC
+ExDescKey    path~
+ExDesc       The path looks safe to travel on.  There are plenty of places for
+amushes however.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    keep~
+ExDesc       The keep rises up above the toppled building.  The keep is to the
+north, a dozen or so buildings away.  You might have to climb over
+some rubble to get there though.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30033
+Name      Pathway through the Rubble~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      A path runs east and west down the middle of a road.  Along the edges
+of the road, rubble in the form of stones, bricks, timbers, and the
+occassional corpse, is piled.  Whatever structures that might have
+lined this road have since collapsed in on themselves.
+~
+#EXIT
+Direction east~
+ToRoom    30034
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30032
+#ENDEXIT
+
+Reset O 30002 0 30033 -1 -1 -1 100
+#EXDESC
+ExDescKey    road~
+ExDesc       More like a path through the rubble.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    structures~
+ExDesc       Collapsed, destroyed, no longer exist, get the picture?
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30034
+Name      Moving across the Rubble~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      A path runs east and west down the middle of a road.  Along the edges
+of the road, rubble in the form of stones, bricks, timbers, and the
+occassional corpse, is piled.  To the south is a wooden shack that
+looks like it could fall over at any moment.  The keep grows closer
+to the east.
+~
+#EXIT
+Direction east~
+ToRoom    30036
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30035
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30033
+#ENDEXIT
+
+Reset O 30003 0 30034 -1 -1 -1 100
+Reset O 30000 0 30034 -1 -1 -1 100
+Reset D 30034 2 1 100 -2
+#EXDESC
+ExDescKey    wooden shack~
+ExDesc       The shack is in really bad shape.  I'd be careful if I were you.  You
+don't wanna have it fall in on you, do you?
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    keep~
+ExDesc       The keep has three major parts, a tall watchtower that rises around
+four levels, a two story guardtower, and a one story central building.
+Parts of all three areas are crubbling.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30035
+Name      Delapidated Wooden Shack~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This shack is made of old rotting timbers.  The whole building slants
+at an steep angle, exploring could be dangerous.  There is nothing of
+any value here.  A door is in the northern wall back into the ruins.
+~
+#EXIT
+Direction north~
+ToRoom    30034
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 30015 0 30035 -1 -1 -1 100
+Reset D 30035 0 1 100 -2
+#EXDESC
+ExDescKey    rotting timbers walls~
+ExDesc       The walls are made of rotting wood.  The building creaks as if it was
+alive or something.  You feel like you are being watched.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    door~
+ExDesc       Yeah, that looks like a good way to go...
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30036
+Name      Nearing the Gatehouse~
+Sector    city~
+Flags     nomob nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      A path runs east and west down the middle of a road.  Along the edges
+of the road, rubble in the form of stones, bricks, timbers, and the
+occassional corpse, is piled.  Whatever structures that might have
+lined this road have since collapsed in on themselves.  Just a bit to
+the east is the gatehouse of the keep.
+~
+#EXIT
+Direction east~
+ToRoom    30037
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30034
+#ENDEXIT
+
+Reset O 30006 0 30036 -1 -1 -1 100
+#EXDESC
+ExDescKey    gatehouse~
+ExDesc       The gatehouse looks like it is good enough condition.  What catches
+your is the door leading into a smaller wooden building just outside
+of the gatehouse.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30037
+Name      Standing before the Gatehouse~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      A path runs east and west down the middle of a road.  North a large
+gatehouse allow access to the crumbling keep.  The keep itself is in
+as bad of shape as most of the other buildings.  Only a small portion
+of its original form remains.  Part of the keep and a tower remain to
+be explored.  Similiar to when you first enter the ruins, you begin to
+feel a bit uneasy looking upon the keep.  East there is a small wooden
+building with an operational door.
+~
+#EXIT
+Direction north~
+ToRoom    30039
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30038
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30036
+#ENDEXIT
+
+Reset O 30012 0 30037 -1 -1 -1 100
+Reset D 30037 1 1 100 -2
+#EXDESC
+ExDescKey    gatehouse~
+ExDesc       The gatehouse is to the north and is probably guarded.  A rusty gate
+is open, rusted in place.  Beyond are two doors, which look rather
+solid, leading into the keep itself.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    keep~
+ExDesc       Parts of it have collapsed, other parts are in ruin, and still other
+parts are in relatively good condition.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    small wooden building~
+ExDesc       The building is built right alongside the gatehouse.  It has a working
+door.  It is small and made of wooden logs.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30038
+Name      Gatekeepers Abode~
+Sector    indoors~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This building is made mostly of wood and is only a single, rectangular
+room.  The logs used to form the walls are rotting away, while pieces
+of the ceiling have caved-in.  The air inside this building is stale,
+dusty, and smells like decaying flesh.  There is a door to the west.
+~
+#EXIT
+Direction west~
+ToRoom    30037
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 30010 0 30038 -1 -1 -1 100
+Reset M 30008 1 30038 -1 -1 -1 100
+Reset D 30038 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30039
+Name      Inside the Gatehouse~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The interior of the keep is accessed through a large gate, which is
+open to the south, and small set of iron doors, which are closed to
+the north.  The ceiling is vaulted, and while a few stones have fell
+from their place, overall the gatehouse is in fairly good condition,
+although not completely functional.  Along the sides of the walls are
+brackets holding torches.
+~
+#EXIT
+Direction north~
+ToRoom    30040
+Key       30013
+Flags     isdoor closed locked pickproof bashproof~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30037
+#ENDEXIT
+
+Reset M 30012 2 30039 -1 -1 -1 100
+Reset M 30012 2 30039 -1 -1 -1 100
+Reset D 30039 0 2 100 -2
+#EXDESC
+ExDescKey    iron doors~
+ExDesc       The iron doors leading into the keep are very thick and appear could
+be locked.  The lock mechanisms themself look relatively complicated.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30040
+Name      Entering the Crumbling Keep~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The inside of the keep looks better than the outside.  But that is not
+saying alot.  In the walls, wide cracks run where mortar once held the
+stones together, allowing the odd-sized stones to fall into piles near
+the edges of the chamber.  A pair of iron doors are in the south wall,
+leading into the gatehouse.
+~
+#EXIT
+Direction north~
+ToRoom    30045
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30041
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30039
+Key       30013
+Flags     isdoor closed locked pickproof bashproof~
+#ENDEXIT
+
+Reset M 30013 2 30040 -1 -1 -1 100
+Reset M 30013 2 30040 -1 -1 -1 100
+Reset D 30040 2 2 100 -2
+#EXDESC
+ExDescKey    iron doors~
+ExDesc       The iron doors leading into the keep are very thick and appear could
+be locked.  The lock mechanisms themself look relatively complicated.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30041
+Name      Large Chamber within the Keep~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The inside of the keep looks better than the outside.  But that is not
+saying alot.  For the most part, there is nothing to be found in this
+chamber, and what little is here is of little or no value.  A shredded
+painting hangs here off-center on the southern wall.
+~
+#EXIT
+Direction north~
+ToRoom    30044
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30042
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30040
+#ENDEXIT
+
+Reset M 30029 12 30041 -1 -1 -1 100
+  Reset G 30021 0 100
+#EXDESC
+ExDescKey    shredded painting~
+ExDesc       The painting, or more aptly the picture frame and some shreds of the
+canvas, hangs at an angle.  You have no idea what it might have been.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30042
+Name      Large Chamber within the Keep~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The inside of the keep looks better than the outside.  But that is not
+saying alot.  In the walls, wide cracks run where mortar once held the
+stones together, allowing the odd-sized stones to fall into piles near
+the corners of the chamber.
+~
+#EXIT
+Direction north~
+ToRoom    30043
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30041
+#ENDEXIT
+
+Reset O 30004 0 30042 -1 -1 -1 100
+Reset M 30029 12 30042 -1 -1 -1 100
+  Reset G 30032 0 100
+#ENDROOM
+
+#ROOM
+Vnum      30043
+Name      Large Chamber within the Keep~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The inside of the keep looks better than the outside.  But that is not
+saying alot.  For the most part, there is nothing to be found in this
+chamber, and what little is here is of little or no value.
+~
+#EXIT
+Direction south~
+ToRoom    30042
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30044
+#ENDEXIT
+
+Reset M 30014 1 30043 -1 -1 -1 100
+  Reset G 30017 0 100
+Reset O 30016 0 30043 -1 -1 -1 100
+  Reset P 0 30014 0 30016 100
+#ENDROOM
+
+#ROOM
+Vnum      30044
+Name      Large Chamber within the Keep~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The inside of the keep looks better than the outside.  But that is not
+saying alot.  In the walls, wide cracks run where mortar once held the
+stones together, allowing the odd-sized stones to fall into piles near
+the edges of the chamber.
+~
+#EXIT
+Direction east~
+ToRoom    30043
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30041
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30045
+#ENDEXIT
+
+Reset O 30011 0 30044 -1 -1 -1 100
+Reset M 30029 12 30044 -1 -1 -1 100
+  Reset G 30031 0 100
+#ENDROOM
+
+#ROOM
+Vnum      30045
+Name      Large Chamber within the Keep~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The inside of the keep looks better than the outside.  But that is not
+saying alot.  In the walls, wide cracks run where mortar once held the
+stones together, allowing the odd-sized stones to fall into piles near
+the edges of the chamber.  A heavy wooden door is in the western wall.
+~
+#EXIT
+Direction east~
+ToRoom    30044
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30040
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30046
+Key       30017
+Flags     isdoor closed pickproof bashproof~
+#ENDEXIT
+
+Reset D 30045 3 1 100 -2
+#EXDESC
+ExDescKey    heavy wooden door~
+ExDesc       This door is made of wood and very solid.  It might be locked.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30046
+Name      Interior of the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  In
+the middle of the eastern wall is a heavy wooden door.
+~
+#EXIT
+Direction north~
+ToRoom    30049
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30045
+Key       30017
+Flags     isdoor closed locked pickproof bashproof~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30051
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30053
+#ENDEXIT
+
+Reset M 30015 8 30046 -1 -1 -1 100
+Reset M 30015 8 30046 -1 -1 -1 100
+Reset D 30046 1 2 100 -2
+#EXDESC
+ExDescKey    heavy wooden door~
+ExDesc       This door is made of wood and very solid.  It might be locked.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30047
+Name      Middle of the Hall~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      In the middle of this hallway there is an archway to the north leading
+out on to a small porch that overlooks the cliffs.  The hall continues
+to the east and west.  In an alcove on the southern wall there is room
+for a standing candelabra.
+~
+#EXIT
+Direction north~
+ToRoom    30059
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30050
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30048
+#ENDEXIT
+
+Reset O 30030 0 30047 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30048
+Name      Beginning of the Hall~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This hall could have once contained artwork or relics, now it is empty
+and bare.  The hall continues to the east, past an archway, to a heavy
+wooden door and broken window at the far end.  A sinister room filled
+with un-natural shadows is to the west.
+~
+#EXIT
+Direction east~
+ToRoom    30047
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30049
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      30049
+Name      Interior of the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  To
+the east is a narrow hallway that is connected to a couple of smaller
+chambers.
+~
+#EXIT
+Direction east~
+ToRoom    30048
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30046
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30054
+#ENDEXIT
+
+Reset M 30015 8 30049 -1 -1 -1 100
+Reset M 30015 8 30049 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30050
+Name      End of the Hall~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The hall comes to an end here.  In the eastern wall there was once a
+grand window, now all the remains are portions of the frame and a few
+broken pieces of glass.  Tattered curtains sway from a breeze blowing
+in from outside.  A large wooden door is to the north, while the hall
+heads back west.
+~
+#EXIT
+Direction north~
+ToRoom    30060
+Key       30023
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30047
+#ENDEXIT
+
+Reset M 30016 1 30050 -1 -1 -1 100
+  Reset G 30018 0 100
+Reset D 30050 0 2 100 -2
+#EXDESC
+ExDescKey    large wooden door~
+ExDesc       The door looks very solid and could be locked.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30051
+Name      Interior of the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  In
+the shadows lurks something sinister and evil.
+~
+#EXIT
+Direction north~
+ToRoom    30046
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30052
+#ENDEXIT
+
+Reset M 30015 8 30051 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30052
+Name      Interior of the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  In
+the shadows lurks something sinister and evil.  To the west there is a
+door leading, as you can tell from the missing roof-section, into a
+large, square tower.
+~
+#EXIT
+Direction north~
+ToRoom    30053
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30051
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30056
+Key       30018
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset M 30015 8 30052 -1 -1 -1 100
+Reset M 30030 1 30052 -1 -1 -1 100
+Reset D 30052 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30053
+Name      Interior of the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  In
+the shadows lurks something sinister and evil.
+~
+#EXIT
+Direction north~
+ToRoom    30054
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30046
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30052
+#ENDEXIT
+
+Reset M 30015 8 30053 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30054
+Name      Interior of the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This rectangular chamber is un-naturally dark.  Vaguely human shadows
+writhe in the far corners here, as you realize you are not alone.  In
+the shadows lurks something sinister and evil.
+~
+#EXIT
+Direction east~
+ToRoom    30049
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30053
+#ENDEXIT
+
+Reset M 30015 8 30054 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30055
+Name      Base Level of the Sqare Tower~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The square tower is not going to fall in anytime soon but, like the
+rest of this place, anything of any value has been smash or destroyed.
+To the west there is a stair-case leading up.  South there is a door
+that leads out of the tower.
+~
+#EXIT
+Direction south~
+ToRoom    30056
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30058
+#ENDEXIT
+
+Reset M 30018 1 30055 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30056
+Name      Entering a Sqare Tower~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The square tower is not going to fall in anytime soon but, like the
+rest of this place, anything of any value has been smash or destroyed.
+There is a door to the east leading into a sinister room filled with
+the un-natural shadows.  The tower continues to the north and west.
+~
+#EXIT
+Direction north~
+ToRoom    30055
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30052
+Key       30018
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30057
+#ENDEXIT
+
+Reset D 30056 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30057
+Name      Base Level of the Sqare Tower~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The square tower is not going to fall in anytime soon but, like the
+rest of this place, anything of any value has been smash or destroyed.
+To the north is a stair-case leading up in the tower, while east there
+is a door heading back into the rest of the keep.  Here there is a
+trapdoor set flush into the floor of the tower here.
+~
+#EXIT
+Direction north~
+ToRoom    30058
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30056
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30071
+Key       30020
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset M 30019 1 30057 -1 -1 -1 100
+Reset D 30057 5 2 100 -2
+#EXDESC
+ExDescKey    trapdoor ~
+ExDesc       This trapdoor could very easily be locked.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30058
+Name      Bottom of a Stair-Case~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The square tower is not going to fall in anytime soon but, like the
+rest of this place, anything of any value has been smash or destroyed.
+The tower continues to the south and east.  There is a stone stair-
+case leading up to a trapdoor in the ceiling.
+~
+#EXIT
+Direction east~
+ToRoom    30055
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30057
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30063
+Key       30019
+Flags     isdoor closed locked pickproof nopassdoor~
+#ENDEXIT
+
+Reset O 30033 0 30058 -1 -1 -1 100
+Reset D 30058 4 2 100 -2
+#EXDESC
+ExDescKey    stone staircase stairs~
+ExDesc       The stairs lead up to the upper level of the tower.  There you can see
+that there are huge holes in the upper floors ceiling.  The stair look
+safe enough to walk on, although they are in slight disrepair.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    trapdoor~
+ExDesc       The trapdoor does appear to have a lock of some sort.  The trapdoor is
+made out wood.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30059
+Name      Looking down from the Porch~
+Sector    city~
+Flags     nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Standing here upon this small porch overlooking the the trail leading
+up the the cliffs, a sentry could easily spot any visitors if not for
+the thick mist below.  You wished you had turned back somewhere along
+that trail, for now you have no choice but to continue.  An archway to
+the south leads back into the hall.
+~
+#EXIT
+Direction south~
+ToRoom    30047
+#ENDEXIT
+
+Reset M 30017 1 30059 -1 -1 -1 100
+  Reset G 30019 0 100
+#EXDESC
+ExDescKey    archway~
+ExDesc       The archway is cracked but safe enough to pass under.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30060
+Name      Base of the Circular Tower~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Here inside the base of the circular tower, a flight of small steps
+up to a platform where a door can be seen.  To the south is a large
+wooden door, leading back into the narrow hall.  The tower is bare of
+any ornamentation.
+~
+#EXIT
+Direction south~
+ToRoom    30050
+Key       30023
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30061
+#ENDEXIT
+
+Reset D 30060 2 2 100 -2
+#EXDESC
+ExDescKey    large wooden door~
+ExDesc       The door looks very solid and could be locked.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30061
+Name      Base of the Circular Tower~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Upon this platform a small flight of stairs lead down to a lower level
+where a door is visible leading into the hall.  Another door is to the
+east.  To the north is a window looking out over the area.  Everything
+of value in the tower has been looted or destroyed.
+~
+#EXIT
+Direction east~
+ToRoom    30062
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30060
+#ENDEXIT
+
+Reset D 30061 1 1 100 -2
+#EXDESC
+ExDescKey    spiral staircase~
+ExDesc       The staircase rises up to the top level of this tower, some four or
+five stories above.  Something is moving about high above.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    window~
+ExDesc       The window looks out upon the bleak and dreary path leading up the
+cliffs.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30062
+Name      Base of the Circular Tower~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Here a set of circular stairs lead up to the next level of the tower.
+There is a wooden door to the west.  This area appears to have been
+picked over long ago by some other adventuring group, however, you can
+sense the presense of something evil waiting for you at the top of the
+spiral staircase.
+~
+#EXIT
+Direction west~
+ToRoom    30061
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30076
+#ENDEXIT
+
+Reset D 30062 3 1 100 -2
+#EXDESC
+ExDescKey    spiral staircase~
+ExDesc       The spiral staircase runs the entire height of the circular tower.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30063
+Name      Top of a Stair-Case~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The second level of this tower remained largely intact except for many
+holes in the ceiling above.  Only the southeast corner is shrouded in
+complete darkness, somewhat refreshing to be out in the open once more.
+A staircase leads back down to the ground floor through a trapdoor.
+~
+#EXIT
+Direction east~
+ToRoom    30064
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30065
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30058
+Key       30019
+Flags     isdoor closed locked pickproof nopassdoor~
+#ENDEXIT
+
+Reset M 30020 1 30063 -1 -1 -1 100
+Reset D 30063 5 2 100 -2
+#EXDESC
+ExDescKey    darkness corner~
+ExDesc       The southeastern corner of the tower still has most of its roof, and
+from here you cannot tell what is there.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    staircase~
+ExDesc       The stairs lead down into a very dark part of the keep.  Within the
+darkness shapes are moving about.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    trapdoor~
+ExDesc       The trapdoor does appear to have a lock of some sort.  The trapdoor is
+made out wood.  On this side of the trapdoor there is a brass ring to
+lift with.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30064
+Name      Beneath a Large Hole~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The second level of this tower remained largely intact except for many
+holes in the ceiling above.  Only the southeast corner is shrouded in
+complete darkness, somewhat refreshing to be out in the open once more.
+To the south there is something in the darkness, while above is a large
+hole in the ceiling.
+~
+#EXIT
+Direction south~
+ToRoom    30066
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30063
+#ENDEXIT
+
+Reset O 30004 0 30064 -1 -1 -1 100
+#EXDESC
+ExDescKey    hole ceiling~
+ExDesc       There are some large holes in the ceiling, allowing a little light to
+shed this tower.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    darkness corner~
+ExDesc       The southeastern corner of the tower still has most of its roof, and
+from here you cannot tell what is there.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30065
+Name      Corner of the Square Tower~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The second level of this tower remained largely intact except for many
+holes in the ceiling above.  Only the southeast corner is shrouded in
+darkness, somewhat refreshing to be out in the open once more.  To the
+east there is something in the darkness.
+~
+#EXIT
+Direction north~
+ToRoom    30063
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30066
+#ENDEXIT
+
+Reset O 30015 0 30065 -1 -1 -1 100
+Reset O 30033 0 30065 -1 -1 -1 100
+#EXDESC
+ExDescKey    darkness corner~
+ExDesc       The southeastern corner of the tower still has most of its roof, and
+from here you cannot tell what is there.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    ceiling~
+ExDesc       There are some large holes in the ceiling, allowing a little light to
+shed this tower.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30066
+Name      Flow of Maggots~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Here, in the darkest recess of the tower, a horde of writhing maggots
+are feeding upon whatever unlucky being wanders into the area.  While
+individually harmless, when encountered in numbers they can prove to
+be quite deadly.  They do not seem to have a preferance for living or
+undead flesh.  Various bones and trinkets are scattered about here.
+~
+#EXIT
+Direction north~
+ToRoom    30064
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30065
+#ENDEXIT
+
+Reset M 30021 1 30066 -1 -1 -1 100
+  Reset G 30020 0 100
+Reset O 30012 0 30066 -1 -1 -1 100
+  Reset P 0 30021 0 30012 100
+  Reset P 0 30033 0 30012 100
+Reset O 30033 0 30066 -1 -1 -1 100
+Reset O 30033 0 30066 -1 -1 -1 100
+#EXDESC
+ExDescKey    bones trinkets~
+ExDesc       Ah, just baubles, nothing of real value.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30067
+Name      Well Keep Niche~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This niche of the catacombs was probably a holding cell at one time,
+now it has been renovated by the current occupant.  Unlike almost all
+the other places you have come across here, this chamber borders on
+being called habitable.  The rest of the catacombs are to the east.
+~
+#EXIT
+Direction east~
+ToRoom    30068
+#ENDEXIT
+
+Reset M 30026 1 30067 -1 -1 -1 100
+  Reset G 30022 0 100
+Reset O 30026 0 30067 -1 -1 -1 100
+  Reset P 0 30029 0 30026 100
+#ENDROOM
+
+#ROOM
+Vnum      30068
+Name      Dungeon Catacombs~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The catacombs lead off in many directions, with each alcove being dark
+and moist.  A whispy mist hangs just a few inches above the floor all
+through-out these chambers.
+~
+#EXIT
+Direction north~
+ToRoom    30075
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30069
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30074
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30067
+#ENDEXIT
+
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30069
+Name      Dungeon Catacombs~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The catacombs lead off in many directions, with each alcove being dark
+and moist.  A whispy mist hangs just a few inches above the floor all
+through-out these chambers.
+~
+#EXIT
+Direction east~
+ToRoom    30070
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30068
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30081
+Key       30024
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset D 30069 5 2 100 -2
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30070
+Name      Dungeon Catacombs~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The catacombs lead off in many directions, with each alcove being dark
+and moist.  A whispy mist hangs just a few inches above the floor all
+through-out these chambers.
+~
+#EXIT
+Direction north~
+ToRoom    30072
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30071
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30073
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30069
+#ENDEXIT
+
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30071
+Name      Entering the Catacombs~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Here a ladder leads back up into the square tower.  An underground
+labrynth made from the former dungeons of this keep sprawl are to the
+west.  A swirling mist hangs just above the ground, and creates a most
+disturbing and unholy atmosphere.  Above there is a trapdoor in the
+ceiling.
+~
+#EXIT
+Direction west~
+ToRoom    30070
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30057
+Key       30020
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset D 30071 4 2 100 -2
+#EXDESC
+ExDescKey    trapdoor~
+ExDesc       This trapdoor could very easily be locked.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30072
+Name      Catacomb Niche~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This chamber was probably the general holding cell, but is now the
+lair of a most horrible creature.  There is a coffin placed roughly
+in the center of this room, and from which the wispy mist which fills
+these catacombs is steadily streaming.
+~
+#EXIT
+Direction south~
+ToRoom    30070
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30079
+Keywords  coffin~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 30025 1 30072 -1 -1 -1 100
+Reset O 30025 0 30072 -1 -1 -1 100
+  Reset P 0 30028 0 30025 100
+Reset O 30035 0 30072 -1 -1 -1 100
+Reset D 30072 5 1 100 -2
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30073
+Name      Catacomb Niche~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The cell has been modified to the tastes of the fiend occuping it.  A
+variety of bones and bits of flesh have been discarded or tucked away
+for later.  An un-natural mist floats covers the floor, making you a
+bit worried about pit traps.
+~
+#EXIT
+Direction north~
+ToRoom    30070
+#ENDEXIT
+
+Reset M 30023 1 30073 -1 -1 -1 100
+Reset O 30026 0 30073 -1 -1 -1 100
+  Reset P 0 30028 0 30026 100
+Reset O 30021 0 30073 -1 -1 -1 100
+Reset O 30006 0 30073 -1 -1 -1 100
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30074
+Name      Catacomb Niche~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The cell has been modified to the tastes of the fiend occuping it.  A
+variety of bones and bits of flesh have been discarded or tucked away
+for later.  The strange mist dances about the ground here is a chaotic
+fashion.
+~
+#EXIT
+Direction north~
+ToRoom    30068
+#ENDEXIT
+
+Reset M 30024 1 30074 -1 -1 -1 100
+Reset O 30026 0 30074 -1 -1 -1 100
+  Reset P 0 30028 0 30026 100
+  Reset P 0 30036 0 30026 100
+Reset O 30035 0 30074 -1 -1 -1 100
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30075
+Name      Catacomb Niche~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The cell has been modified to the tastes of the fiend occuping it.  A
+variety of bones and bits of flesh have been discarded or tucked away
+for later.  The white, wispy mist circles around your ankles in this
+niche.
+~
+#EXIT
+Direction south~
+ToRoom    30068
+#ENDEXIT
+
+Reset M 30022 1 30075 -1 -1 -1 100
+  Reset G 30034 0 100
+Reset O 30026 0 30075 -1 -1 -1 100
+  Reset P 0 30028 0 30026 100
+  Reset P 0 30033 0 30026 100
+Reset O 30033 0 30075 -1 -1 -1 100
+#EXDESC
+ExDescKey    mist~
+ExDesc       The mist move almost as if it was alive.  The stuff is giving you the
+creeps.  Luckily, you do not hear any organ music, although you think
+you are being watched by someone or something.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30076
+Name      Studychamber in the Tower~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      From here the spiral staircase leads up and down.  Below there is a
+large chamber at the base of the tower.  A few items of furniture are
+still here waiting to be explored, while a non-animated skeleton is
+laying near the staircase.  It appears both the furniture and skeleton
+have been here for some time.
+~
+#EXIT
+Direction up~
+ToRoom    30077
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30062
+#ENDEXIT
+
+#EXDESC
+ExDescKey    spiral staircase~
+ExDesc       The spiral staircase runs the entire height of the circular tower.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    furniture~
+ExDesc       This stuff is old, dusty, and needs to be thrown out.  Some furniture
+has sheets drapped over them.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    skeleton~
+ExDesc       The skeleton is curled up next to the wall near the staircase.  It has
+been here for a very, very long time.  Thankfully, it is not animated
+and attacking you.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30077
+Name      Bedchamber in the Tower~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The staircase leads both up and down, while the rest of the room was
+probably used as a bedchamber.  A semi-circular set of rings are set
+around the stairs where a curtain probably once hung.  There could be
+a few items hidden away here.  For some reason, going back down sounds
+alot better than going up.
+~
+#EXIT
+Direction up~
+ToRoom    30078
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30076
+#ENDEXIT
+
+#EXDESC
+ExDescKey    spiral staircase~
+ExDesc       The spiral staircase runs the entire height of the circular tower.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    rings~
+ExDesc       The rings once had a curtain attached to them to provide some privacy
+for the occupants.  There has not been any living occupants for quiet
+some time now.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30078
+Name      Lair of the Banshee~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Here, at the top most chamber in the tower, a dark soul resides.  The
+furniture here has not been used in ages, a think layer of dust and
+alot of cobwebs are found over everything.  There are several windows
+here looking out in each direction.  Below a spiral staircase decends
+all the way to the base of the tower.
+~
+#EXIT
+Direction down~
+ToRoom    30077
+#ENDEXIT
+
+Reset M 30028 1 30078 -1 -1 -1 100
+  Reset G 30024 0 100
+#EXDESC
+ExDescKey    spiral staircase~
+ExDesc       The spiral staircase runs the entire height of the circular tower.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30079
+Name      Earthen Tunnel~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      An earthen tunnel leads deeper down into the earth.  The walls of this
+passage are bare soil, giving the area a musty, earth smell.  Above is
+a secret trapdoor that is set into the bottom of a coffin.  Put in the
+center of this chamber is yet another coffin, from which the all this
+mist has been coming.
+~
+#EXIT
+Direction up~
+ToRoom    30072
+Keywords  coffin~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30080
+Key       30022
+Desc      The coffin appears to be locked by a tiny bronze mechanism at the top
+and bottom.  There are small holes in the sides of the coffin to allow
+mist to escape.
+~
+Keywords  coffin~
+Flags     isdoor closed locked nopassdoor bashproof~
+#ENDEXIT
+
+Reset O 30025 0 30079 -1 -1 -1 100
+Reset D 30079 5 2 100 -2
+Reset D 30079 4 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30080
+Name      Dark Recesses of the Catacombs~
+Sector    indoors~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Here at the bottom of the earthen catacombs is the lair of a powerful
+undead fiend.  A few items that the creature had collected are placed
+about the chamber, center most is its coffin.  An passage leads up to
+the rest of the dungeon catacombs through a false coffin.
+~
+#EXIT
+Direction up~
+ToRoom    30079
+Key       30022
+Keywords  coffin~
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset M 30027 1 30080 -1 -1 -1 100
+  Reset G 30023 0 100
+Reset O 30027 0 30080 -1 -1 -1 100
+  Reset P 0 30028 0 30027 100
+Reset D 30080 4 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30081
+Name      Entering the Crypts~
+Sector    indoors~
+Flags     dark nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Entering the crypts below the tall, circular tower, the atmosphere of
+the area turns even more sinister and evil.  Stairs lead up through a
+trapdoor into the tower, while the crypts continue to the west.
+~
+#EXIT
+Direction west~
+ToRoom    30082
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30069
+Key       30024
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset D 30081 4 2 100 -2
+#EXDESC
+ExDescKey    stairs~
+ExDesc       These stairs look safe enough to climb or decend.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   p arrives from above.~
+Comlist   mpechoat $n To the west the sound of bones rattling is ~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      30082
+Name      Crypts beneath the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  To the east is a staircase
+leading back up the small, circular tower.
+~
+#EXIT
+Direction north~
+ToRoom    30083
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30081
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30087
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30085
+#ENDEXIT
+
+Reset M 30032 6 30082 -1 -1 -1 100
+  Reset G 30021 0 100
+  Reset G 30032 0 100
+Reset O 30006 0 30082 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30083
+Name      Crypts beneath the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  The walls are made of earthen
+walls and supported by stone collumns.
+~
+#EXIT
+Direction south~
+ToRoom    30082
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30084
+#ENDEXIT
+
+Reset M 30032 6 30083 -1 -1 -1 100
+  Reset G 30031 0 100
+  Reset G 30031 0 100
+Reset O 30007 0 30083 -1 -1 -1 100
+#EXDESC
+ExDescKey    earthen walls~
+ExDesc       The walls are made of moist earth.  They are supported by collumns and
+archways of wood.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30084
+Name      Crypts beneath the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  The walls are made of earthen
+walls and supported by stone collumns.
+~
+#EXIT
+Direction east~
+ToRoom    30083
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30085
+#ENDEXIT
+
+Reset M 30032 6 30084 -1 -1 -1 100
+  Reset G 30021 0 100
+  Reset G 30032 0 100
+Reset O 30006 0 30084 -1 -1 -1 100
+#EXDESC
+ExDescKey    earthen walls~
+ExDesc       The walls are made of moist earth.  They are supported by collumns and
+archways of wood.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30085
+Name      Crypts beneath the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  To the south there are stairs
+leading down deeper into the crypt.
+~
+#EXIT
+Direction north~
+ToRoom    30084
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30082
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30086
+#ENDEXIT
+
+Reset M 30032 6 30085 -1 -1 -1 100
+  Reset G 30032 0 100
+  Reset G 30031 0 100
+Reset O 30007 0 30085 -1 -1 -1 100
+#EXDESC
+ExDescKey    staircase stairs~
+ExDesc       The staircase is made of stone, thats about all that can be said about
+them.  Pretty ordinary looking, aside from a few bones that are on the
+steps.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30086
+Name      Crypts beneath the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  Below a staircase leads down
+into a lower section of the crypts.
+~
+#EXIT
+Direction north~
+ToRoom    30085
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30087
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30088
+#ENDEXIT
+
+Reset M 30032 6 30086 -1 -1 -1 100
+  Reset G 30021 0 100
+  Reset G 30031 0 100
+Reset O 30006 0 30086 -1 -1 -1 100
+#EXDESC
+ExDescKey    staircase stairs~
+ExDesc       The staircase is made of stone, thats about all that can be said about
+them.  Pretty ordinary looking, aside from a few bones that are on the
+steps.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30087
+Name      Crypts beneath the Keep~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The floor of this crypt is literred with all manner of bones, some are
+however, animated and quiet aggressive.  To the west there are stairs
+leading down.
+~
+#EXIT
+Direction north~
+ToRoom    30082
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30086
+#ENDEXIT
+
+Reset M 30032 6 30087 -1 -1 -1 100
+  Reset G 30021 0 100
+  Reset G 30032 0 100
+Reset O 30007 0 30087 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30088
+Name      Decending into the Lower Crypts~
+Sector    indoors~
+Flags     dark nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The stairs leading down into the lower crypts are steep, while the
+passages are very narrow, and the ceiling is just a bit too low.  To
+the south there is a small wooden door set into the damp earthen wall.
+~
+#EXIT
+Direction south~
+ToRoom    30089
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30086
+#ENDEXIT
+
+Reset O 30007 0 30088 -1 -1 -1 100
+Reset D 30088 2 1 100 -2
+#EXDESC
+ExDescKey    small wooden door~
+ExDesc       The door does not appear to have form of lock or magical protection.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    earthen wall~
+ExDesc       The walls are made of moist earth.  They are supported by collumns and
+archways of wood.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30089
+Name      Narrow Passage in the Crypts~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      To the north is a simple wooden door, and beyond a staircase leading
+out of this place.  To the south there is a narrow passage that passes
+beneath a stone archway.
+~
+#EXIT
+Direction north~
+ToRoom    30088
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30090
+#ENDEXIT
+
+Reset O 30006 0 30089 -1 -1 -1 100
+Reset D 30089 0 1 100 -2
+#EXDESC
+ExDescKey    stone archway~
+ExDesc       The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    staircase~
+ExDesc       The stairs are made of stone blocks, they do not appear to have any
+secret compartment or traps.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30090
+Name      Lower Depths of the Crypt~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Here in the lower depths of the crypt the walls are made of bare earth
+and reinforced with stone collumns and archways.  There is an archway
+to the north, leading into a passage.  To the south there is another
+archway opening into a small chamber.  A foul stench comes drifts in
+from the east, from where animated corpse move about.
+~
+#EXIT
+Direction north~
+ToRoom    30089
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30091
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30095
+#ENDEXIT
+
+#EXDESC
+ExDescKey    archway~
+ExDesc       The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    collumn~
+ExDesc       The collumns are about a foot wide and made of stone.  Around some of
+them are piles of skulls and bones.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    wall earth~
+ExDesc       The walls are made of moist earth.  They are supported by collumns and
+archways of wood.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30091
+Name      Lair of the Ghouls~
+Sector    indoors~
+Flags     dark nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This chamber has archways leading north, east, south, and west.  North
+and south lead to different parts of some kind of undead processing
+plant, while to the east and west the crypt continues.  The air down
+here in the crypts smells like rotting flesh, only worse.
+~
+#EXIT
+Direction north~
+ToRoom    30093
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30092
+Flags     noflee~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30096
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30090
+Flags     noflee~
+#ENDEXIT
+
+Reset M 30031 3 30091 -1 -1 -1 100
+Reset M 30031 3 30091 -1 -1 -1 100
+Reset M 30031 3 30091 -1 -1 -1 100
+#EXDESC
+ExDescKey    archways~
+ExDesc       The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30092
+Name      Lair of the Ghoul Lord~
+Sector    indoors~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This lair if filled with bits of flesh, meat, and bones.  The air is
+enough to make someone nausious.  There are archways leading to the
+north and south into smaller chambers.  A few human skins have been
+tacked to the earthen walls here as decoration.
+~
+#EXIT
+Direction north~
+ToRoom    30094
+Flags     noflee~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30097
+Flags     noflee~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30091
+Flags     noflee~
+#ENDEXIT
+
+Reset M 30033 1 30092 -1 -1 -1 100
+Reset O 30006 0 30092 -1 -1 -1 100
+#EXDESC
+ExDescKey    archways~
+ExDesc       The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    human skins~
+ExDesc       These skins are stretched out on the eastern wall and held in place
+with iron spikes.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    flesh meat bone~
+ExDesc       How disgusting!
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30093
+Name      Below the Skeletal Transformer~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      At the base of the skeletal transformer the recently departed are then
+raised into skeletons.  Quiet an efficent operation actually.  In one
+of the corners there is a pile of bones that have been rejected for
+one reason or another.  A hole in the ceiling leads up to the upper
+part of the transformer.  An archway to the south heads back into the
+crypts.
+~
+#EXIT
+Direction south~
+ToRoom    30091
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30096
+#ENDEXIT
+
+Reset M 30029 12 30093 -1 -1 -1 100
+Reset M 30029 12 30093 -1 -1 -1 100
+Reset M 30029 12 30093 -1 -1 -1 100
+Reset M 30029 12 30093 -1 -1 -1 100
+Reset M 30029 12 30093 -1 -1 -1 100
+Reset M 30029 12 30093 -1 -1 -1 100
+Reset M 30029 12 30093 -1 -1 -1 100
+Reset M 30029 12 30093 -1 -1 -1 100
+Reset M 30029 12 30093 -1 -1 -1 100
+Reset O 30007 0 30093 -1 -1 -1 100
+#EXDESC
+ExDescKey    archway~
+ExDesc       The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30094
+Name      Necromancer Living Quarters~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This corner of the crypt has been converted into living quarters for
+the necromancers that have been animating all these corpses and have
+been causing all the problems.  For the most part these folk who live
+amongst the dead do not care for material wealth.  An archway to the
+south leads back into the crypt.
+~
+#EXIT
+Direction south~
+ToRoom    30092
+#ENDEXIT
+
+Reset M 30035 1 30094 -1 -1 -1 100
+  Reset E 30042 0 5 100
+#EXDESC
+ExDescKey    archway~
+ExDesc       The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30095
+Name      Spell Preparation Chamber~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The earthen walled chamber is reinforced with stone collumns and an
+archway to the north that leads back into the crypt.  Upon the earth
+floor a pentagram has been scrawled and various candles luminate this
+chamber.  Various symbols have been scrawled in blood upon the walls.
+~
+#EXIT
+Direction north~
+ToRoom    30090
+#ENDEXIT
+
+Reset M 30034 1 30095 -1 -1 -1 100
+  Reset E 30042 0 5 100
+#EXDESC
+ExDescKey    archway~
+ExDesc       The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    collumn~
+ExDesc       These collumns are made of stone and support the earthen walls.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    pentagram~
+ExDesc       The pentagram has been scrawled in the dirt and is about five feet
+wide in diameter.  Inside the grooves of the pentagram a white, power-
+like substance you guess is bone.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    candles~
+ExDesc       The candles are white, and most are over half-way melted.  They are
+place upon spikes driven into the ground just outside of the penta-
+gram.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    symbol blood~
+ExDesc       The symbols are strange to you, and no doubt have some part in the
+animating the dead.  Many are skull-like or contain pentagrams.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30096
+Name      Above the Skeletal Transformer~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This room is housed by a pack of ghasts who feast upon whatever living
+creature wanders, or is placed, in this chamber.  The flesh is quickly
+devoured in a matter of seconds and the body is through into a hole in
+the center of the chamber.  An archway leads back to the crypt to the
+north.
+~
+#EXIT
+Direction north~
+ToRoom    30091
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30093
+#ENDEXIT
+
+Reset M 30010 9 30096 -1 -1 -1 100
+Reset M 30010 9 30096 -1 -1 -1 100
+Reset M 30010 9 30096 -1 -1 -1 100
+Reset M 30010 9 30096 -1 -1 -1 100
+Reset M 30010 9 30096 -1 -1 -1 100
+Reset M 30010 9 30096 -1 -1 -1 100
+Reset O 30006 0 30096 -1 -1 -1 100
+#EXDESC
+ExDescKey    archway~
+ExDesc       The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30097
+Name      Necromancer Living Quarters~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This corner of the crypt has been converted into living quarters for
+the necromancers that have been animating all these corpses and have
+been causing all the problems.  For the most part these folk who live
+amongst the dead do not care for material wealth.  An archway to the
+north leads back into the crypt, while a staircase leads down into a
+storage room.
+~
+#EXIT
+Direction north~
+ToRoom    30092
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30098
+#ENDEXIT
+
+Reset M 30036 1 30097 -1 -1 -1 100
+  Reset E 30042 0 5 100
+#EXDESC
+ExDescKey    archway~
+ExDesc       The archway is made of stone and helps support the earthen walls.  On
+the top of the archway is a human skull.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30098
+Name      Ill-Stocked Storage Chamber~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This room is used for storage by the cult of necromancers living in
+the ruins.  Crates of dried food and barrels of water, along with a
+couple of spools of black cloth are all stacked orderly against the
+walls.  A staircase leads up into the crypt, while there is a wooden
+door in the south wall.
+~
+#EXIT
+Direction south~
+ToRoom    30099
+Flags     isdoor closed noflee~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30097
+#ENDEXIT
+
+Reset M 30037 1 30098 -1 -1 -1 100
+  Reset E 30043 0 5 100
+Reset O 30047 0 30098 -1 -1 -1 100
+Reset O 30048 0 30098 -1 -1 -1 100
+Reset D 30098 2 1 100 -2
+#EXDESC
+ExDescKey    wooden door~
+ExDesc       The door looks pretty simple and does not have a lock.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    staircase~
+ExDesc       These stairs are made of large stone blocks.  They do not appear to be
+trapped or contain any hidden compartments.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    spool black cloth~
+ExDesc       The spool is about four feet tall, and contains probably hundreds of
+yards of a durable black cloth.  Obviously whoever is living down here
+does not have expensive tastes.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30099
+Name      Lair of the Master Necromancer~
+Sector    indoors~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This chamber is lined with wooden panels, and is furnished with some
+basic items.  A dim glow radiates from a globe of light placed in the
+center of the room.  Along the walls are several bookshelves that are
+filled with all kinds of manuals, tomes, and grimoires.  To the north
+is a door leading back into the crypt.
+~
+#EXIT
+Direction north~
+ToRoom    30098
+Flags     isdoor closed noflee~
+#ENDEXIT
+
+Reset M 30038 1 30099 -1 -1 -1 100
+  Reset E 30045 0 6 100
+  Reset E 30044 0 5 100
+Reset O 30016 0 30099 -1 -1 -1 100
+  Reset P 0 30046 0 30016 100
+Reset D 30099 0 1 100 -2
+#EXDESC
+ExDescKey    wooden panels~
+ExDesc       The wooden panels are fitted along the walls to give this chamber a
+bit more 'lived in' look.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    globe light~
+ExDesc       This item looks alot like the product of a continual light spell put
+into a harness and hung from the ceiling.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    door~
+ExDesc       The door looks pretty simple and does not have a lock.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ENDAREA

@@ -1,0 +1,3296 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Sea of Tears~
+Author          Uriel~
+Vnums           26500 26600
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          0 0 0 0
+ResetMsg        The tides ebb with life.~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      26500
+Keywords  moray eel giant~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Specfun   spec_breath_gas~
+Short     a giant moray eel~
+Long      A large, snake-like fish with large teeth rests here.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    30 21 0 0 20 1 20
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  hide~
+Attacks   bite tail poison~
+Defenses  dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum      26501
+Keywords  cannibal native~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     An insane cannibal~
+Long      A man with a viscious look in his eyes stalks here.
+~
+Nattacks  4.000000
+Stats1    0 -1 0 0 0 0
+Stats2    30 21 0 0 30 1 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Attacks   bite gouge poison~
+Defenses  parry dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum      26502
+Keywords  captain nerskal wraith~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     Captain Nerskal~
+Long      A shimmering wraith floats here with vengance in its eyes.
+~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  sanctuary truesight~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if rand(10)
+mpe As the fell wraith dies, its body explodes in a shimmering light,
+mpe Sending its dammed soul to salvation. The Tides swell with life,
+mpe Welcoming Nerskal back to the waves. The blessing of the waves is
+mpe Left behind... Waverunner.
+mpoload 26501
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   mpe _lbl Captain Nerskal emits a deathly blast of cold!
+mpdamage $r 200
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      26503
+Keywords  siren woman~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  sitting~
+DefPos    sitting~
+Short     The Siren~
+Long      A hideous half bird, half woman perches upon the rocks, singing.
+~
+Nattacks  3.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    35 21 0 0 15 5 10
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis detect_hidden sanctuary~
+Bodyparts head arms brains guts ear wings tail~
+Attacks   bite tail gouge~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   mpe _cya The Siren sings a devestating song!
+shriek
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if sex($n) == 1
+smile $n
+say Let me enthrall you...
+c charm $n
+c charm $n
+endif
+if sex($n) == 2
+snarl $n
+say BEGONE, you SOW!
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   20~
+Comlist   say I'm sorry...
+mpe _ora The Siren crumbles, and her dying tears form a small stone.
+mpoload 26505
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      26510
+Keywords  swarm rot grubs~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a swarm of rot grubs~
+Long      A swarm of rot grubs looks for flesh to devour.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive~
+#ENDMOBILE
+
+#MOBILE
+Vnum      26511
+Keywords  zombie sailor drowned~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a drowned one~
+Long      A swollen, bloated corpse wanders in a state of undeath.
+~
+Nattacks  3.000000
+Stats1    0 -1 0 0 0 0
+Stats2    30 21 0 0 30 1 10
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Bodyparts head arms legs brains guts~
+Attacks   bite gouge poison~
+Defenses  dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mea $n _cya A drowned-one gurgles and lunges towards you!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      26512
+Keywords  pirate first mate Donovan~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     Donovan~
+Long      The ship's First Mate keeps a keen watch over the crew.
+~
+Nattacks  4.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    45 21 0 0 3 30 20
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis sanctuary~
+Bodyparts head arms legs brains guts ear~
+Immune    drain sleep~
+Attacks   bite punch kick gouge~
+Defenses  parry dodge disarm~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p DISARMS you!~
+Comlist   take cutlass
+say Argh, ye want me blade, do ye?
+mpjunk cutlass
+mea $n _cya Donovan hurls his cutlass at your heart!
+mer $n _cya Donovan hurls his cutlass at $n's heart!
+mpdamage $n 600
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   snarl
+say Landlubbers, aboard me vessel!
+head $n
+say I'll walk ye to tha plank!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      26513
+Keywords  scout pirate~
+Race      human~
+Class     Rogue~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     A pirate scout~
+Long      A slim pirate keeps a watch on the open seas.
+~
+Nattacks  3.000000
+Stats1    -300 -1 0 0 0 0
+Stats2    40 21 0 0 2 30 15
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis scrying~
+Bodyparts head arms legs guts ear eye~
+Attacks   bite punch~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   75~
+Comlist   mea $n _cya The pirate grabs you in his death throes, falling from the mast!
+mpe _cya The pirate falls from the mast!
+mptrans $n 26556
+mpgoto 26556
+mptrans $n 26555
+mpgoto 26555
+doorbash d
+mpe _gre The pirates body crashes into the deck!
+mpdamage $n 100
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      26514
+Keywords  pirate Captain Skulldagger~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     Captain SkullDagger~
+Long      The pirate captain rests in his chambers, checking maps.
+~
+Nattacks  4.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    45 21 0 0 30 3 30
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  sanctuary truesight~
+Bodyparts head arms legs brains guts fingers ear eye~
+Immune    drain sleep magic~
+Attacks   bite punch kick bash stun gouge~
+Defenses  parry dodge disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   say Arr... ye be stowaways!
+snarl
+say Prepare to walk the plank!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if rand(20)
+cackle
+say Ye fight like a landlubber!
+disarm
+stun
+else
+if rand(15)
+gouge
+say Har!
+else
+if rand(10)
+say Arr... fisticuffs, eh?
+punch
+elbow
+head
+kick
+bash
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      26515
+Keywords  pirate guard guard1~
+Race      human~
+Class     Rogue~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     a wiery pirate~
+Long      A wiery pirate stands guard here.
+~
+Nattacks  3.000000
+Stats1    -400 -1 0 0 0 0
+Stats2    40 21 0 0 3 10 20
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Bodyparts head arms legs brains guts hands ear~
+Attacks   bite kick gouge~
+Defenses  parry dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum      26516
+Keywords  pirate guard guard2~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     a stocky pirate~
+Long      A stocky pirate dozes by the brig.
+~
+Nattacks  0.000000
+Stats1    -400 -1 0 0 0 0
+Stats2    40 21 0 0 4 20 20
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Bodyparts head arms legs brains guts hands feet ear eye~
+Attacks   bite punch kick gouge~
+Defenses  parry dodge disarm~
+#ENDMOBILE
+
+#MOBILE
+Vnum      26517
+Keywords  prisoner Helthms~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     Helthms~
+Long      An emaciated and tortured man cowers in the corner.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel pacifist~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mea $n _cya Helthms looks around wearily.
+mea $n _lbl Helthms says 'Oh dear...'
+mea $n _lbl Helthms says 'You're not one of those bloody pirates'
+mea $n _lbl Helthms says 'Will you help me escape?'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   'i will help you'~
+Comlist   smile
+say Thank you, kind soul.
+say For your generosity, I will tell you a secret...
+peer
+say There is a desolate island, in this sea.
+say At its center, is a tomb, buried deep in the ground...
+shudder
+say Captain Nerskal was buried there, the Reaver of the Seas!
+say Legend says his treasure lies with him.
+shiver
+say Thank you again, kind soul...
+wave
+mpgoto 2
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      26518
+Keywords  pirate guard guard3~
+Race      human~
+Class     Rogue~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     a pirate~
+Long      An iron faced pirate stands guard to the Captain's Quarters.
+~
+Nattacks  3.000000
+Stats1    0 -1 0 0 0 0
+Stats2    40 21 0 0 3 20 10
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis~
+Bodyparts head arms legs brains guts ear eye~
+Attacks   bite punch kick gouge~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if hitprcnt($n) >= 100
+say Arr... die, matey!
+backstab $n
+else
+say Arr...
+murder $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      26600
+Keywords  ghost davy jones~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a newly created ghost davy jones~
+Long      Some god abandoned a newly created ghost davy jones here.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc secretive~
+Affected  truesight~
+#ENDMOBILE
+
+#OBJECT
+Vnum      26500
+Keywords  rusty cutlass~
+Type      weapon~
+Short     a rusty cutlass~
+Long      A rusty blade has fallen here.~
+Flags     nodrop noremove~
+WFlags    take wield~
+Values    3 15 3 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 50 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData damroll -1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26501
+Keywords  waverunner boots~
+Type      armor~
+Short     Waverunner~
+Long      A set of boots made from elemental water rests here.~
+Flags     glow hum~
+WFlags    take feet~
+Values    0 30 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 32 None None None
+AffData hit 30 -1 -1 0
+AffData mana 30 -1 -1 0
+AffData move 100 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData damroll 4 -1 -1 0
+AffData wearspell 'aqua breath' -1 -1 0
+#MUDPROG
+Progtype  get_prog~
+Arglist   100~
+Comlist   if race($n) == human
+or race($n) == elf
+or race($n) == half-elf
+mea $n As you take the boots in your hands, you are charged with memory...
+mea $n The great war against darkness... mighty battles... Waverunner...
+mea $n A relic of the Alliance of the Human and Elven nations!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if race($n) == human
+or race($n) == elf
+or race($n) == half-elf
+mea $n As you place Waverunner upon your feet, the tides swell to give
+mea $n their strength!
+else
+mpdamage $n 200
+mpforce $n rem waverunner
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   if race($n) == human
+or race($n) == elf
+or race($n) == half-elf
+mea $n The tides ebb with sorrow as you remove this relic...
+else
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      26502
+Keywords  tomb captain nerskal~
+Type      container~
+Short     The Tomb of Captain Nerskal~
+Long      An engraved stone tomb lies here.~
+Flags     buried~
+Values    1000 5 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    tomb~
+ExDesc       *********************************************************************
+
+
+                            HERE RESTS
+
+                         CAPTAIN NERSKAL
+
+                     PIRATE OF THE SEA OF TEARS
+
+
+*********************************************************************
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p opens The Tomb of Captain Nerskal.~
+Comlist   mea $n _ora As you slide the lid from the tomb, dark energies arise!
+mer $n _ora As $n slides the lid from the tomb, dark energies arise!
+mpmload 26502
+mpforce captain say You have awoken me, $n!
+mpforce captain c gas
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p closes The Tomb of Captain Nerskal.~
+Comlist   mea $n You seal away the evil for this day...
+mptrans $n 21000
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      26503
+Keywords  mask mud~
+Type      armor~
+Short     a mud dried mask~
+Long      A mask fashioned from dried mud and foliage lies here.~
+Flags     antigood anticleric~
+WFlags    take eyes~
+Values    5 5 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 20 -1 -1 0
+AffData mana 10 -1 -1 0
+AffData damroll 4 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData dexterity -2 -1 -1 0
+AffData class 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26504
+Keywords  loincloth stained~
+Type      armor~
+Short     a stained loincloth~
+Long      A soiled loincloth has been discarded here... purposely.~
+WFlags    take waist~
+Values    7 7 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData sex -4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26505
+Keywords  gift siren~
+Type      armor~
+Short     Gift of the Siren~
+Long      A glowing stone has fallen here.~
+Flags     glow hum~
+WFlags    take ears~
+Values    15 15 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 30 -1 -1 0
+AffData mana 50 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 4 -1 -1 0
+AffData resistant sleep~ -1 -1 0
+AffData sex 3 -1 -1 0
+AffData wisdom 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26506
+Keywords  ballista mounted pirate~
+Type      lever~
+Short     The Pirate's Ballista~
+Long      A mighty ballista is aimed over the bow of the ship.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#MUDPROG
+Progtype  push_prog~
+Arglist   100~
+Comlist   mea $n _gre You swing the large ballista around, and it fires suddenly!
+mer $n _gre $n swings the large ballista around, and it fires suddenly!
+mpat 26554 mpforce donovan yell ARRRRRRRGGGGGGHHHHHHHH!!!!!!
+mpat 26554 mpslay donovan
+
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      26507
+Keywords  leather vest~
+Type      armor~
+Short     a leather vest~
+Long      A sturdy leather vest has been discarded here.~
+WFlags    take body~
+Values    10 10 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 20 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 1 -1 -1 0
+AffData intelligence 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26508
+Keywords  pantaloons green~
+Type      armor~
+Short     green pantaloons~
+Long      A pair of green trousers has fallen here.~
+WFlags    take legs~
+Values    8 8 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 2 -1 -1 0
+AffData hit 5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26509
+Keywords  cutlass pirate~
+Type      weapon~
+Short     A Pirate's Cutlass~
+Long      A well crafted cutlass has been placed here.~
+WFlags    take wield~
+Values    0 40 3 3 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hitroll 9 -1 -1 0
+AffData damroll 15 -1 -1 0
+AffData hit 20 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26510
+Keywords  spyglass bronze~
+Type      armor~
+Short     a bronze spyglass~
+Long      A bronze tube rests here.~
+Flags     glow~
+WFlags    take hold~
+Values    2 2 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData wearspell 'scry' -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26511
+Keywords  rapier pirate thin~
+Type      weapon~
+Short     a thin rapier~
+Long      A thin, flimsy looking sword rests here.~
+WFlags    take wield~
+Values    0 20 3 2 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 3 -1 -1 0
+AffData hitroll 14 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData save_para -19 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26512
+Keywords  dirk pirate dagger~
+Type      weapon~
+Short     a dirk~
+Long      A small blade rests here.~
+Flags     antiwarrior~
+WFlags    take wield~
+Values    0 12 4 2 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 10 -1 -1 0
+AffData backstab 20 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26513
+Keywords  admiral cap~
+Type      armor~
+Short     An Admiral's Cap~
+Long      A decorative cap adorned with feathers and tassles lies here.~
+Flags     magic bless antirogue~
+WFlags    take head~
+Values    15 15 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 50 -1 -1 0
+AffData mana 50 -1 -1 0
+AffData hitroll 6 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData class 1 -1 -1 0
+AffData save_rod -4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26514
+Keywords  golden bracer~
+Type      armor~
+Short     A Golden Bracer~
+Long      A dull gold wristguard has been discarded here.~
+Flags     glow magic~
+WFlags    take wrist~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 5 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData intelligence 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      26515
+Keywords  spine cutter sword~
+Type      weapon~
+Short     Spine Cutter~
+Long      A wicked sword stands, its point in the ground.~
+Flags     glow hum antigood evil~
+WFlags    take wield~
+Values    0 30 5 3 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 75 -1 -1 0
+AffData mana 25 -1 -1 0
+AffData hitroll 13 -1 -1 0
+AffData damroll 15 -1 -1 0
+AffData dexterity -2 -1 -1 0
+AffData class -1 -1 -1 0
+AffData wearspell 'dispel magic' -1 -1 0
+#ENDOBJECT
+
+#ROOM
+Vnum      26500
+Name      Losing the Mainland~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The mainland fades into nothingness as the sea stretches to the horizion.
+Schools of fish can be seen under the surface, numerous in the warmth of
+the sea. Far to the South, dolphins can be seen playing in the deeper
+waters near the edge of the costal shelf. This area is heavy with traffic
+of merchant ships taking their goods to mainland.
+~
+#EXIT
+Direction south~
+ToRoom    26501
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26501
+Name      Before the Costal Shelf~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The costal shelf lies directly to the South, the division between the
+bottomless sea and the shallows where trade is heavy. The shallows are
+patroled heavily by naval vessels, ensuring safe trade for merchantmen,
+but beyond the shelf, the only law is the sword. Pirates are notorious
+deep in the Sea of Tears, but even they are wary when dealing with the
+native creatures of this place.
+~
+#EXIT
+Direction north~
+ToRoom    26500
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26502
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26506
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26504
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26502
+Name      Before the Costal Shelf~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The costal shelf lies directly to the South, the division between the
+bottomless sea and the shallows where trade is heavy. The shallows are
+patroled heavily by naval vessels, ensuring safe trade for merchantmen,
+but beyond the shelf, the only law is the sword. Pirates are notorious
+deep in the Sea of Tears, but even they are wary when dealing with the
+native creatures of this place.
+~
+#EXIT
+Direction east~
+ToRoom    26503
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26510
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26501
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26503
+Name      Before the Costal Shelf~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The costal shelf lies directly to the South, the division between the
+bottomless sea and the shallows where trade is heavy. The shallows are
+patroled heavily by naval vessels, ensuring safe trade for merchantmen,
+but beyond the shelf, the only law is the sword. Pirates are notorious
+deep in the Sea of Tears, but even they are wary when dealing with the
+native creatures of this place.
+~
+#EXIT
+Direction east~
+ToRoom    26509
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26508
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26502
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26504
+Name      Before the Costal Shelf~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The costal shelf lies directly to the South, the division between the
+bottomless sea and the shallows where trade is heavy. The shallows are
+patroled heavily by naval vessels, ensuring safe trade for merchantmen,
+but beyond the shelf, the only law is the sword. Pirates are notorious
+deep in the Sea of Tears, but even they are wary when dealing with the
+native creatures of this place.
+~
+#EXIT
+Direction east~
+ToRoom    26501
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26510
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26505
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26505
+Name      Before the Costal Shelf~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The costal shelf lies directly to the South, the division between the
+bottomless sea and the shallows where trade is heavy. The shallows are
+patroled heavily by naval vessels, ensuring safe trade for merchantmen,
+but beyond the shelf, the only law is the sword. Pirates are notorious
+deep in the Sea of Tears, but even they are wary when dealing with the
+native creatures of this place.
+~
+#EXIT
+Direction east~
+ToRoom    26504
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26511
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26512
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26506
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction east~
+ToRoom    26506
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    26507
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26508
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26509
+#ENDEXIT
+
+Reset R 26506 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessle!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26507
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction east~
+ToRoom    26509
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    26506
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26509
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26519
+#ENDEXIT
+
+Reset R 26507 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessle!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26508
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction east~
+ToRoom    26509
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26512
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    26510
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26511
+#ENDEXIT
+
+Reset R 26508 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessle!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26509
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction north~
+ToRoom    26514
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26516
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26517
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26511
+#ENDEXIT
+
+Reset R 26509 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessle!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26510
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction north~
+ToRoom    26507
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26516
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26518
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26517
+#ENDEXIT
+
+Reset R 26510 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessle!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26511
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction north~
+ToRoom    26510
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26512
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26520
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26515
+#ENDEXIT
+
+Reset R 26511 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessle!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26512
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction east~
+ToRoom    26517
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26513
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    26518
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26509
+#ENDEXIT
+
+Reset R 26512 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessel!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26513
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction north~
+ToRoom    26507
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26518
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26519
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26509
+#ENDEXIT
+
+Reset R 26513 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessel!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26514
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction north~
+ToRoom    26515
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26511
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26519
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26520
+#ENDEXIT
+
+Reset R 26514 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessel!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26515
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction east~
+ToRoom    26516
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    26513
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26517
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26514
+#ENDEXIT
+
+Reset R 26515 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessel!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26516
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction south~
+ToRoom    26509
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    26511
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26515
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26510
+#ENDEXIT
+
+Reset R 26516 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessel!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26517
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction north~
+ToRoom    26513
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26519
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26507
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26509
+#ENDEXIT
+
+Reset R 26517 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessel!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26518
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction east~
+ToRoom    26519
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    26513
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26511
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26510
+#ENDEXIT
+
+Reset R 26518 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   20~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessel!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26519
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction north~
+ToRoom    26508
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26520
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26518
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26516
+#ENDEXIT
+
+Reset R 26519 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   20~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessel!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26520
+Name      Lost at Sea~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Sea of Tears extends in all directions, seemingly forever. Without
+any navigational equipment, it would be easy to get lost on the endless
+blue. Without navigational equipment, only dumb luck will keep a man
+alive.
+~
+#EXIT
+Direction north~
+ToRoom    26506
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26515
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26510
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26512
+#ENDEXIT
+
+Reset R 26520 3 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p drops~
+Comlist   mpat 26600 mpforce ghost mpat $n take all
+mpat 26600 mpforce ghost drop all
+mea $n You watch in horror as $O sinks to the bottom of the sea...
+mer $n $n watches in horror as $O sinks to the bottom of the sea...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   30~
+Comlist   if rand(3)
+mea $n You are washed to an exotic reef!
+mptrans $n 26521
+else
+if rand(10)
+mea $n You are washed to the shore of a desolate island!
+mptrans $n 26531
+else
+if rand(3)
+mea $n You find yourself in very rough waters!
+mptrans $n 26543
+else
+if rand(3)
+mea $n You are washed to some large rocks!
+mptrans $n 26548
+else
+if rand(3)
+mea $n You are washed near an unmarked vessel!
+mptrans $n 26552
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26521
+Name      An Exotic Reef~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small section of shallows is home to an exotic reef, full of fish
+and other sea dwelling creatures. Reefs like this are the bane to ships,
+and most crews will sail wide and far to avoid destroying their hulls
+in the jagged coral. This is the only feature around for miles.
+~
+#EXIT
+Direction east~
+ToRoom    26507
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    26522
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26522
+Name      Travelling the Reef~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The beautiful reef continues, a garden of exotic coral just below the
+surface. Schools of exotic fish can be seen darting in and out of the
+formations, along with anemone and other exotic and dangerous animals.
+A break in the coral formations resembles a cave leading towards the
+shallow ocean floor.
+~
+#EXIT
+Direction north~
+ToRoom    26523
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    26524
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    26521
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26523
+Name      The End of the Reef~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The reef ends here, the shallows slowly giving way to the deeper sea
+towards the North. A large number of exotic creatures dwell in the
+warm waters here. This place is highly avoided by travelling ships,
+the shallows a death trap for large boats.
+~
+#EXIT
+Direction north~
+ToRoom    26509
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26522
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26524
+Name      The Base of the Reef~
+Sector    oceanfloor~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sunlight diffuses through the shallow water, creating an eerie
+lightshow among the beautiful coral formations. Broken and dead coral
+litter the ground here like gravel, and the inhabitants are not happy
+with any intrusion. Great kelp forests have grown in this area, halting
+any progress save along the reef itself.
+~
+#EXIT
+Direction north~
+ToRoom    26525
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    26522
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    26527
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26525
+Name      The Ocean Floor~
+Sector    oceanfloor~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This open space upon the ocean floor is almost devoid of life. Many
+skeletal remains litter the floor here, indicitave of a feeding ground
+for a local predator. The dim light from the sun is almost completley
+obscured from the surrounding reef and kelp. A small opening lies to
+the West, almost unnoticable...
+~
+#EXIT
+Direction south~
+ToRoom    26524
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26526
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26526
+Name      An Unwelcome Lair~
+Sector    oceanfloor~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small hollow appears to be a natural formation within the reef,
+littered with the bones of unwary visitors. Some predator seems to have
+claimed this place as home, and intrusions may be a foolish venture.
+Unfortunatley, whatever lives here seems to be home...
+~
+#EXIT
+Direction east~
+ToRoom    26525
+#ENDEXIT
+
+Reset M 26500 1 26526 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      26527
+Name      The Ocean Floor~
+Sector    oceanfloor~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small area of open ground upon the ocean floor is littered with
+dead coral, much like gravel or small pebbles. The kelp forest, dense
+at most places, gives way to the East, but the low light restricts a
+glimpse as to what lies down that path.
+~
+#EXIT
+Direction east~
+ToRoom    26528
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    26524
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26528
+Name      A Broken Hull~
+Sector    oceanfloor~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The kelp forest has parted, leaving an East West path across the bottom
+of the ocean floor. To the East, the hull of a mighty warship rests on
+the rocky ground, her final resting place. From this distance, numerous
+holes can be seen, allowing entrance to the wreckage. Besides the kelp,
+a suprising lack of ocean life occupies this area.
+~
+#EXIT
+Direction east~
+ToRoom    26529
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26527
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26529
+Name      Within the Woodworks~
+Sector    oceanfloor~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The massive hull of this once might warship is suffering from advanced
+stages of rot and decay. The wood is swollen and warped, and the corpses
+of her crew can be seen in eternal sleep with their ship. The largest
+part of the hull lies to the East, where some movement can be seen.
+~
+#EXIT
+Direction east~
+ToRoom    26530
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26528
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ispc($n)
+mea $n _gre Your entry draws a swarm of rot grubs from the swollen wood!
+mpmload 26510
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26530
+Name      A Soaken Grave...~
+Sector    oceanfloor~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The innermost part of the mighty hull has become a grave for her crew,
+unfortunatley, her crew does not seem to be here. No remains of any
+kind can be found. Perhaps the most interesting fact is that the debris
+seems to have been disturbed. Recently.
+~
+#EXIT
+Direction west~
+ToRoom    26529
+#ENDEXIT
+
+Reset M 26511 1 26530 -1 -1 -1 100
+  Reset E 26500 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      26531
+Name      Washed Ashore~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The carelessness of many sailor lives in a chaotic legacy upon this
+barren and desolate beach. Driftwood and remnants of shipwreck are
+strewn about this rocky shore, a silent grave for those unfortunate
+enough to find this small island. To the South, a barren and desolate
+beach can be seen.
+~
+#EXIT
+Direction south~
+ToRoom    26532
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26532
+Name      An Empty Beach~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This sandy beach is barren and lifeless. Not even crabs or gulls seem
+to find refuge in this forsaken place. The beach surrounds this small
+island, with a small jungle at its center. The endless sea can be seen
+off-shore, perhaps the only way off this forgotten island.
+~
+#EXIT
+Direction north~
+ToRoom    26507
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26533
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26539
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   33~
+Comlist   if mobinworld(26501) > 0
+mea $n _gre The bushes shake with life as a cannibal leaps from cover!
+mer $n _gre The bushes shake with life as a cannibal leaps from cover!
+mptrans 'cannibal native'
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26533
+Name      An Empty Beach~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This sandy beach is barren and lifeless. Not even crabs or gulls seem
+to find refuge in this forsaken place. The beach surrounds this small
+island, with a small jungle at its center. The endless sea can be seen
+off-shore, perhaps the only way off this forgotten island.
+~
+#EXIT
+Direction west~
+ToRoom    26532
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    26509
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    26534
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   33~
+Comlist   if mobinworld(26501) > 0
+mea $n _gre The bushes shake with life as a cannibal leaps from cover!
+mer $n _gre The bushes shake with life as a cannibal leaps from cover!
+mptrans 'cannibal native'
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26534
+Name      An Empty Beach~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This sandy beach is barren and lifeless. Not even crabs or gulls seem
+to find refuge in this forsaken place. The beach surrounds this small
+island, with a small jungle at its center. The endless sea can be seen
+off-shore, perhaps the only way off this forgotten island.
+~
+#EXIT
+Direction south~
+ToRoom    26535
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    26515
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    26533
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   33~
+Comlist   if mobinworld(26501) > 0
+mea $n _gre The bushes shake with life as a cannibal leaps from cover!
+mer $n _gre The bushes shake with life as a cannibal leaps from cover!
+mptrans 'cannibal native'
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26535
+Name      An Empty Beach~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This sandy beach is barren and lifeless. Not even crabs or gulls seem
+to find refuge in this forsaken place. The beach surrounds this small
+island, with a small jungle at its center. The endless sea can be seen
+off-shore, perhaps the only way off this forgotten island.
+~
+#EXIT
+Direction north~
+ToRoom    26534
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26517
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    26536
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   33~
+Comlist   if mobinworld(26501) > 0
+mea $n _gre The bushes shake with life as a cannibal leaps from cover!
+mer $n _gre The bushes shake with life as a cannibal leaps from cover!
+mptrans 'cannibal native'
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26536
+Name      An Empty Beach~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This sandy beach is barren and lifeless. Not even crabs or gulls seem
+to find refuge in this forsaken place. The beach surrounds this small
+island, with a small jungle at its center. The endless sea can be seen
+off-shore, perhaps the only way off this forgotten island. To the North,
+a break in the trees can be seen, leading into the jungle.
+~
+#EXIT
+Direction north~
+ToRoom    26540
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    26535
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    26537
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    26513
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   33~
+Comlist   if mobinworld(26501) > 0
+mea $n _gre The bushes shake with life as a cannibal leaps from cover!
+mer $n _gre The bushes shake with life as a cannibal leaps from cover!
+mptrans 'cannibal native'
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26537
+Name      An Empty Beach~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This sandy beach is barren and lifeless. Not even crabs or gulls seem
+to find refuge in this forsaken place. The beach surrounds this small
+island, with a small jungle at its center. The endless sea can be seen
+off-shore, perhaps the only way off this forgotten island.
+~
+#EXIT
+Direction north~
+ToRoom    26538
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    26536
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    26519
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   33~
+Comlist   if mobinworld(26501) > 0
+mea $n _gre The bushes shake with life as a cannibal leaps from cover!
+mer $n _gre The bushes shake with life as a cannibal leaps from cover!
+mptrans 'cannibal native'
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26538
+Name      An Empty Beach~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This sandy beach is barren and lifeless. Not even crabs or gulls seem
+to find refuge in this forsaken place. The beach surrounds this small
+island, with a small jungle at its center. The endless sea can be seen
+off-shore, perhaps the only way off this forgotten island.
+~
+#EXIT
+Direction south~
+ToRoom    26537
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    26508
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    26539
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   33~
+Comlist   if mobinworld(26501) > 0
+mea $n _gre The bushes shake with life as a cannibal leaps from cover!
+mer $n _gre The bushes shake with life as a cannibal leaps from cover!
+mptrans 'cannibal native'
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26539
+Name      An Empty Beach~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This sandy beach is barren and lifeless. Not even crabs or gulls seem
+to find refuge in this forsaken place. The beach surrounds this small
+island, with a small jungle at its center. The endless sea can be seen
+off-shore, perhaps the only way off this forgotten island.
+~
+#EXIT
+Direction east~
+ToRoom    26532
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    26511
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    26538
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   33~
+Comlist   if mobinworld(26501) > 0
+mea $n _gre The bushes shake with life as a cannibal leaps from cover!
+mer $n _gre The bushes shake with life as a cannibal leaps from cover!
+mptrans 'cannibal native'
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26540
+Name      The Path Less Traveled.~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small path leading inland seems unused for years. Fallen logs and
+vines make progress slow at best, and swarms of insects are a constant
+nuisance. The lack of birds and animals is somewhat disturbing, leaving
+this place more like a cemetary than a tropical refuge. The path leads
+to the North and the beack lies to the South.
+~
+#EXIT
+Direction north~
+ToRoom    26541
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26536
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   80~
+Comlist   if ispc($n)
+mea $n _red A swarm of mosquitoes descends upon you!
+mpdamage $n 30
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      26541
+Name      A Silent Clearing~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The difficult path slowly gives way to a small clearing near the center
+of this small island. This place has been kept free of debris and the
+ever-growing foliage. It almost appears if someone has been... living
+here. Perhaps its just coincidence...
+~
+#EXIT
+Direction north~
+ToRoom    26542
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26540
+#ENDEXIT
+
+Reset M 26501 1 26541 -1 -1 -1 100
+  Reset E 26503 1 20 100
+  Reset E 26504 1 13 100
+#ENDROOM
+
+#ROOM
+Vnum      26542
+Name      A Hidden Grave~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path ends here, in a dense area of foliage, almost pitch black at
+noon. This place feels cold, and somewhat unholy, but nothing obvious
+sticks out. Perhaps a search of the area would reveal more. But perhaps,
+what ever is here is better left alone...
+~
+#EXIT
+Direction south~
+ToRoom    26541
+#ENDEXIT
+
+Reset O 26502 1 26542 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      26543
+Name      Rough Waters~
+Sector    water_noswim~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The unsure currents and strong winds have made this section of the Sea
+a certain death for most travellers. A large whirlpool can lies ahead,
+the strong currents and winds keeping any unwary visitor from leaving.
+This area of rough seas is kind enough to leave an exit back to the
+open waters, whatever blessing that is...
+~
+#EXIT
+Direction west~
+ToRoom    26512
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    26544
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26544
+Name      Approaching the Whirlpool~
+Sector    water_noswim~
+Flags     nomob nosummon silence noastral~
+Stats     0 0 0 0 0
+Desc      For one to travel this far could be labled as insane. Fierce currents
+and strong winds would keep anything from turning away from the great
+whirlpool ahead. The roar of the cascading water is very loud, muffling
+all other sound. The only choice is to press onward, or pray.
+~
+#EXIT
+Direction east~
+ToRoom    26545
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26545
+Name      Circling the Whirlpool~
+Sector    water_noswim~
+Flags     nomob nosummon silence noastral~
+Stats     0 0 0 0 0
+Desc      The mighty whirlpool looms just ahead. The cascading water is deafening,
+drowning out any possibility of communication save sign language. The
+great current and gale winds attempt to force everything through the
+malestorm of water below, making it impossible to return to the open
+sea.
+~
+#EXIT
+Direction down~
+ToRoom    26546
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26546
+Name      Vertical Waters~
+Sector    water_noswim~
+Flags     nomob nosummon silence noastral~
+Stats     0 0 0 0 0
+Desc      Finnaly, the whirlpool in all its glory...
+
+Unfortunatley, the cascading water impacts at several tons per second,
+forcing anything solid down with deadly force. The roar of the water
+is so incredible, all seems silent here... almost the sound one could
+expect in death. Perhaps the Gods will show mercy in those who find a
+way here... perhaps...
+~
+#EXIT
+Direction down~
+ToRoom    26547
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26547
+Name      Connection Room~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This room should be connected to an underwater area!
+~
+#ENDROOM
+
+#ROOM
+Vnum      26548
+Name      A Rocky Outcropping~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The tides sometimes take unwary travellers to places of safety, or to
+places of danger. This rocky formation could be seen as a danger to a
+ship, but a safehaven to a stranded soul. The open sea extends in all
+directions save South, where the rocks grow dense.
+~
+#EXIT
+Direction north~
+ToRoom    26510
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26549
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26549
+Name      A Sweet Song~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As the largest of the rocks draws nearer, a wonderful song can drifts
+over the waves. Its wonderous beauty would make a normal man weep, and
+force them towards the source. The song drifts in from the Southeast,
+towards the tallest rock.
+~
+#EXIT
+Direction north~
+ToRoom    26548
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    26550
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26550
+Name      Lost in the Euphoria...~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As the collection of rocks begin to ascend, the sweet song grows only
+louder, enthralling in its essence. The song contains no words, but is
+more beautiful than an entire orchestra. Nothing seems to matter, save
+reaching the source...
+~
+#EXIT
+Direction northwest~
+ToRoom    26549
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    26551
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26551
+Name      A Welcoming Nest~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The large amount of human bones and the stench of decaying flesh are
+all trivial compared to the sweet song which comes from this nest. A
+thing of beauty, the music... what could be capable of such things?
+From this perch, the sea extends forever, but even that cannot draw
+attention from the song... the oh so beautiful song...
+~
+#EXIT
+Direction northwest~
+ToRoom    26550
+#ENDEXIT
+
+Reset M 26503 1 26551 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      26552
+Name      An Unmarked Vessel~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The open seas would appear the same to the untrained eye, but certain
+dangerous routes are travelled less frequently. This route is a common
+place for smugglers and pirates, like this ship with a black flag. It
+could be possible to sneak aboard unnoticed, but the crew would be less
+than thrilled...
+~
+#EXIT
+Direction west~
+ToRoom    26513
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    26553
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26553
+Name      The Bow of the Ship~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The bow of this large vessel is where the secondary lookout will be
+found. A large ballista is also fastened to the deck, for battle with
+patrol and naval vessels, and to cripple merchant ships. The bow comes
+together at a point, with a large post for ramming other vessels. To
+the South, the ship unfolds.
+~
+#EXIT
+Direction south~
+ToRoom    26554
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    26552
+#ENDEXIT
+
+Reset O 26506 1 26553 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      26554
+Name      On the Deck~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The wide deck of a ship this size would normally be bustling with life,
+but the pirate lifestyle tends towards laziness unless loot is in sight.
+Battle scars can be seen in the beams of the deck, patched and patched
+again. The ship's bow lies to the North while the deck continues to the
+South.
+~
+#EXIT
+Direction north~
+ToRoom    26553
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26555
+#ENDEXIT
+
+Reset M 26512 1 26554 -1 -1 -1 100
+  Reset E 26507 1 5 100
+  Reset E 26508 1 7 100
+  Reset E 26509 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      26555
+Name      On the Deck~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The mainmast of the ship is fixed to the deck here, rising some fifty
+feet into the air. On to the South, the ship's cabin can be seen, the
+resting place of the captain. Markings on the deck indicate a trapdoor
+which leads to the ship's hold, and the brig.
+~
+#EXIT
+Direction north~
+ToRoom    26554
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26558
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    26556
+Flags     can_climb~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    26560
+Keywords  trapdoor~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 26555 5 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      26556
+Name      The Mainmast~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The mainmast is a post, five feet in diameter, slowly tapering to the
+top. It is accessable through a network of ropes, designed to guide
+sails and allow one to climb to the crow's nest. Numerous iron bands
+help suport the mast in strong winds. This climb is definatley not for
+the inexperienced.
+~
+#EXIT
+Direction up~
+ToRoom    26557
+Flags     can_climb~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    26555
+Flags     can_climb~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26557
+Name      The Crow's Nest~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The crow's nest resembles a large wooden bucket, for a man to sit and
+keep watch some fifty feet above the ship. A very precarious profession,
+for the fall could easily be fatal. The Sea of Tears extends forever,
+looking from this vantage.
+~
+#EXIT
+Direction down~
+ToRoom    26556
+Flags     can_climb~
+#ENDEXIT
+
+Reset M 26513 1 26557 -1 -1 -1 100
+  Reset E 26507 1 5 100
+  Reset E 26508 1 7 100
+  Reset E 26510 1 17 100
+  Reset E 26511 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      26558
+Name      On the Deck~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The deck ends here, with the ship's cabin just to the south. This part
+of the ship is prone to more activity, with pirates attempting to lick
+the captain's boots for favor. The captian would probably be upset with
+any intrusion, and would not treat 'guest' kindly. To the North, the
+mainmast rises into the sky.
+~
+#EXIT
+Direction north~
+ToRoom    26555
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26559
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 26518 1 26558 -1 -1 -1 100
+  Reset E 26507 1 5 100
+  Reset E 26508 1 7 100
+  Reset E 26512 1 16 100
+Reset D 26558 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      26559
+Name      The Captain's Quarters~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This cabin is truly a very opulent chamber, and well designed for the
+sea. Cabinents, chests and tables are all nailed down, leaving very few
+things to slide about. A large bed is also nailed down in the corner
+of the cabin. It is doubtful the captain leaves this chamber often.
+~
+#EXIT
+Direction north~
+ToRoom    26558
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 26514 1 26559 -1 -1 -1 100
+  Reset E 26513 1 6 100
+  Reset E 26514 1 14 100
+  Reset E 26515 1 16 100
+Reset D 26559 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      26560
+Name      The Hold~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This dark and dank part of the ship smells of bilge water, stale food
+and liquor. Crates are stacked tall, mostly pirated goods from unwary
+ships. Rats and other vermin are a constant problem, infesting the food
+and fresh water supply. The creak of the ship is mind numbing, making
+this a very depressing place to remain. A trapdoor in the ceiling leads
+from the hold.
+~
+#EXIT
+Direction north~
+ToRoom    26561
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26562
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    26555
+Keywords  trapdoor~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 26560 4 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      26561
+Name      The Hold~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This dark and dank part of the ship smells of bilge water, stale food
+and liquor. Crates are stacked tall, mostly pirated goods from unwary
+ships. Rats and other vermin are a constant problem, infesting the food
+and fresh water supply. The creak of the ship is mind numbing, making
+this a very depressing place to remain. An iorn bound door stands to the
+North, where the stench of urine is too strong for comfort.
+~
+#EXIT
+Direction north~
+ToRoom    26563
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    26560
+#ENDEXIT
+
+Reset M 26515 1 26561 -1 -1 -1 100
+  Reset E 26507 1 5 100
+  Reset E 26508 1 7 100
+  Reset E 26512 1 16 100
+Reset M 26516 1 26561 -1 -1 -1 100
+  Reset E 26507 1 5 100
+  Reset E 26508 1 7 100
+  Reset E 26511 1 16 100
+Reset D 26561 0 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      26562
+Name      The Hold~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This dark and dank part of the ship smells of bilge water, stale food
+and liquor. Crates are stacked tall, mostly pirated goods from unwary
+ships. Rats and other vermin are a constant problem, infesting the food
+and fresh water supply. The creak of the ship is mind numbing, making
+this a very depressing place to remain.
+~
+#EXIT
+Direction north~
+ToRoom    26560
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      26563
+Name      The Brig~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This dank and dark chamber reeks of urine and defication, to such an
+extent, the odor could be poisonous. Mixed with the smells of human
+waste is the tell tale aroma of death and pestilence. An iron bound
+door stands to the South, heavily locked, keeping wretched souls in a
+state of imprisonment, until their health and mind fail.
+~
+#EXIT
+Direction south~
+ToRoom    26561
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 26517 1 26563 -1 -1 -1 100
+Reset D 26563 2 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      26600
+Name      Davy Jones's Locker~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This area is copyrighted to Jeff Tatum, all rights reserved.
+
+Redistribution is allowed only if the author's name is unchanged.
+~
+Reset M 26600 1 26600 -1 -1 -1 100
+#ENDROOM
+
+#ENDAREA

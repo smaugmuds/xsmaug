@@ -1,0 +1,4853 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Along the Forest Path~
+Author          Lycorlyntras~
+Vnums           400 499
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          5 25 0 65
+ResetMsg        With a slow creak, the trees move in the wind.~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      400
+Keywords  effects mob one~
+Race      gnoll~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a forest spirit~
+Long      The number one effects mob stands here.
+~
+Desc      He should always be Mobinvis at 51.  He wanders around and generates
+atmosphere effects, rather than having stacks of Rprogs laying around.
+~
+Nattacks  0.000000
+Stats1    -550 0 0 0 0 0
+Stats2    55 21 -2 5000 1 1 1
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc autonomous mobinvis noassist~
+Affected  sneak~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    hold plus6~
+Attacks   punch~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if ismobinvis($i)
+else
+mpinvis 51
+endif
+if mobinvislevel($i)<51
+mpinvis 51
+endif
+if isaffected($i) == sneak
+else
+sneak
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   mpecho With a slowly creaking, the trees move in the wind.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpecho You jump as a branch snaps nearby with a *crack!*
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho A single leaf floats down from the trees to the forest floor in front of
+you.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   mpecho Your fighting has quickened the anger of the spirits.
+if inroom($i)==417
+mpgoto 403
+else
+mpgoto 417
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      401
+Keywords  effects mob two~
+Race      gnoll~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a forest spirit~
+Long      The number two effects mob stands here.
+~
+Desc      He should always be Mobinvis at 51.  He wanders around and generates
+atmosphere effects, rather than having stacks of Rprogs laying around.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    55 21 -3 5000 1 1 0
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc autonomous mobinvis noassist~
+Affected  sneak~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    hold plus6~
+Attacks   kick~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if ismobinvis($i)
+else
+mpinvis 51
+endif
+if mobinvislevel($i)<51
+mpinvis 51
+endif
+if isaffected($i) == sneak
+else
+sneak
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   mpecho Your fighting has quickened the anger of the spirits.
+if inroom($i)==421
+mpgoto 429
+else
+mpgoto 421
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho You hear a crash in the distance.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpecho A small animal moves through a nearby bush, with barely a sound.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpecho The waft of something that died sometime ago reaches your nose.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      402
+Keywords  effects mob three~
+Race      gnoll~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a forest spirit~
+Long      The number three effects mob stands here.
+~
+Desc      He should always be Mobinvis at 51.  He wanders around and generates
+atmosphere effects, rather than having stacks of Rprogs laying around.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    55 21 -3 5000 1 1 0
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc autonomous secretive mobinvis noassist~
+Affected  sneak~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    hold plus6~
+Attacks   kick~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if ismobinvis($i)
+else
+mpinvis 51
+endif
+if mobinvislevel($i)<51
+mpinvis 51
+endif
+if isaffected($i) == sneak
+else
+sneak
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   mpecho Your fighting has quickened the anger of the spirits.
+if inroom($i)==435
+mpgoto 404
+else
+mpgoto 435
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   mpecho Something rustles in the bushes.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpecho A small yipping sound is heard nearby, then is gone.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpecho You sight a deer in the distance, it also spots you then bounds off.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      403
+Keywords  gray female she wolf~
+Race      zombie~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     the she-wolf~
+Long      A thin, and desperate she-wolf, climbs this part of the forest for hunting.
+~
+Desc      A vicious carnivore.  Times look fairly lean for this mother, and maybe
+the pups don't help.   Her matted gray fur is limp against her body.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    10 21 -3 121 2 4 2
+Speaks    common clan~
+Speaking  common~
+Actflags  npc aggressive~
+Affected  infrared sneak~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   bite~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   13~
+Comlist   snarl
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   17~
+Comlist   emote sniffs at the air, as though looking for something.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   if mobinroom(404) >= 1
+mpecho The she-wolf goes berserk in the defense of her young.
+bite
+bite
+bite
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   if mobinroom(419)>=1
+mpecho Seeing a free meal the wolf attacks the deer!
+mpslay fallow
+get all corpse
+endif
+if mobinroom(404)>=1
+if ovnumcarry(420)>=1
+mpecho The wolf drops part of the remains of a deer for her cub.
+drop venison
+mpecho The cub hungrily picks up the bloodied meat.
+mpforce cub get venison
+mpforce cub eat venison
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      404
+Keywords  wolf cub~
+Race      porcine~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the wolf cub~
+Long      A small furry wolf cub looks at you, small teeth bared.
+~
+Desc      A small wolf, its coat still more fuzzy than furry.  It doesn't look
+ready to be around on its own.
+~
+Nattacks  2.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 -3 60 1 6 1
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   bite~
+Defenses  dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum      405
+Keywords  theggory knight tall man~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Theggory the knight~
+Long      A tall man, clad in heraldic branded armor imposes his presence here.
+~
+Desc      A tall man of mighty thews and stronger ideals.  Theggory seeks to be the
+perfect knight, enhancing the honor of his house, the griffin.
+~
+Nattacks  1.000000
+Stats1    0 -1 0 0 0 0
+Stats2    15 21 -3 208 1 6 3
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   punch~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+emote bows from the saddle.
+if sex($n) == 2
+say Greetings my Lady.
+else
+say Greeting my Lord.
+endif
+say I am upon a great quest, mayhaps you could provide assistance?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   quest~
+Comlist   say Yes! I quest to find Acwellan, the Druid. Have you seen him?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   Druid Acwellan~
+Comlist   say Yes. The Druid Acwellan, a tall man.  Dresses in Druidic garb,
+say is supposed to be here some where.  Tales have come to mine ears
+say he needs help.  You know where he is?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   No~
+Comlist   nod
+say I will continue my search then.  If you see him please mention
+say that I seek him.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   say Great!  Thank you for the aid in my quest.  Where may I find him?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   south north east west~
+Comlist   say Great thanks for your aid.
+emote bows from the saddle.
+say I shall proceed forth with after my horse is watered.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   20~
+Comlist   if position($i) == 8
+mount destrier
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p a small camp~
+Comlist   say Yes!  I thank you greatly for your aid traveller!
+emote bounces in the saddle
+say As soon as my mightly stead is refreshed again for travel I will
+say proceed post-haste.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      406
+Keywords  sturdy destrier horse~
+Race      humanoid~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     sturdy destrier~
+Long      A large destrier paws the ground.
+~
+Desc      A massive horse, bred and trained for war.   With out a doubt one of the largest
+pieces of equine flesh you have ever seen.  It looks combat ready and not easily
+panicked.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    10 21 -3 121 2 4 2
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc sentinel mountable~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   kick~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   snort
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote stamps a foot on the ground in impatience.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      407
+Keywords  druid Acwellan tall man~
+Race      human~
+Class     Druid~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     Acwellan the druid~
+Long      A tall skinny man, serenity fills his weather-lined face.
+~
+Desc      This nature priest has seen many seasons pass.  His lives work is the
+furthering of the cycles of nature.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    9 21 -3 110 1 6 2
+Speaks    common elvish pixie halfling clan~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   90~
+Comlist   if ispc($n)
+if class($n) == druid
+say Welcome my fellow guardian of nature.  This forest is in trouble
+say mayhaps you could help?
+else
+say Welcome traveler.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   Theggory knight~
+Comlist   say Yes, I sent out a message for aid to help me, help this forest.
+say All is not as healthy as it seems.  Could you help?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   say The forest, and Nature herself thanks you.   The guardian of these
+say woods, a dryad has been driven from her tree.  She has since sought
+say refuge somewhere in the forest.  The problem is that she left the
+say symbol of her guardianship in her old home.  She needs to be found
+say and the symbol returned to her for the forest to regain its full
+say health. Call her by her name - Semlina - to summon her from her tree.
+say Then tell her you wish to help.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   no~
+Comlist   say I am sorry then for this whole forest.
+Emote hangs his head in silent contemplation.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      408
+Keywords  bandersnatch ball fur~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the bandersnatch~
+Long      A heaving, bouncing ball of fur.
+~
+Desc      A ball of fur, about five feet around, bearing four clawed limbs and a huge mouth.
+A veracious predator it wants to make a meal of you.
+~
+Nattacks  1.000000
+Stats1    -400 -1 0 0 0 0
+Stats2    10 21 -3 121 2 4 2
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc aggressive autonomous~
+Bodyparts head arms legs heart brains guts hands feet ear eye claws~
+Attacks   bite~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   12~
+Comlist   scream
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   if inroom($i) == 497
+else
+mpgoto 497
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   3~
+Comlist   scream $n
+bite $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      409
+Keywords  bandit Eric halfelf~
+Race      half-elf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Eric the Bandit~
+Long      A powerfully build half-elf, in hunting leathers sneers at you.
+~
+Desc      The master of the band of outlaws, Eric betrays his elven heritage.
+Gathering a following of rough characters he plaques the surrounding
+forest, allowing no safe passage if he thinks he can earn some money.
+~
+Nattacks  2.000000
+Stats1    -300 -1 0 0 0 0
+Stats2    22 21 -5 400 2 4 2
+Speaks    common elvish clan~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   punch kick~
+Defenses  parry dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum      410
+Keywords  bandit lucellia lucky petite woman~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Lucellia the Lucky~
+Long      A petite woman looks you over, her raggedness not despoiling her beauty.
+~
+Desc      Lieutenant of the band under Eric.   The real reason for her being here is
+unknown.  None of her equipment shows much maintenance or value.
+~
+Nattacks  1.000000
+Stats1    0 -1 0 0 0 0
+Stats2    16 21 -3 233 1 6 2
+Speaks    common goblin clan~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   kick~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   if isnpc($r)
+or isimmort($r)
+else
+say Hey! You don't belong here!
+mpkill $r
+endif
+invis
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   whistle self
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      411
+Keywords  bandit fnord quick tall thin man~
+Race      human~
+Class     Rogue~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Fnord the Quick~
+Long      A very tall, thin man looks around nervously.
+~
+Desc      An ex-hunter who got caught poaching.  Now he has found refuge from
+the law and a place to make more money both in the same place.
+~
+Nattacks  0.000000
+Stats1    -400 -1 0 0 0 0
+Stats2    14 21 -3 190 1 6 2
+Speaks    common goblin clan~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   gouge~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   if isnpc($r)
+or isimmort($r)
+else
+yell Intruders! Arggh! Attack!
+mpkill $r
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   mea $n Fnord tries to knee you in the groin!
+mer $n Fnord tries to knee $n in the groin!
+if rand(25)
+mpecho And scores a hit!
+mpdamage $n 15
+else
+mpecho And misses!
+mpforce $n emote sighs in relief.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote pulls out a rough stick and begins whittling.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      412
+Keywords  bandit ogre brute short man~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Ogre the Brute~
+Long      A short man, almost as wide as he is tall stands here, bristling weaponry.
+~
+Desc      A man of vile moods and manners, he moved out here where he would be appreciated.
+A the vile smells coming from his body not complained about as much.
+~
+Nattacks  1.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    15 21 -3 208 1 8 4
+Speaks    clan~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   punch bash~
+Defenses  parry~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   scream
+mea $n Ogre headbutts you!
+mer $r Ogre headbutts $n!
+mpdamage $n 20
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   emote bellows with rage!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   scream $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      413
+Keywords  forest bandit man outdoor~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     The forest bandit~
+Long      A man in dirty forest leathers skulks here
+~
+Desc      Ill times or bad fortune, has driven this rather unwashed man into seeking a life
+of banditry.
+~
+Nattacks  0.000000
+Stats1    -200 -1 0 0 0 0
+Stats2    8 21 3 85 1 5 1
+Speaks    common goblin clan~
+Speaking  common~
+Actflags  npc aggressive autonomous~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   emote gumbles something about the weather under his breath.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote looks around, making sure that no-one sneaks up on him.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   5~
+Comlist   say Argh! Die!
+kick $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   5~
+Comlist   say Give me all yer money or die!
+trip $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   5~
+Comlist   say Hand over yer valuables and we will let ya live... Maybe!
+muhaha
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      414
+Keywords  blood hawk large~
+Race      monster~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     The Blood Hawk~
+Long      A large hawk with razor claws arcs through the trees.
+~
+Desc      A massive brown bird, the blood hawks are renowned for their for the fact that they
+are untamable.  The name is derived from the fact that blood tends to spray from
+creatures they attack, so swift do they fly and so sharp are their talons.
+~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    10 21 -3 121 2 4 2
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc~
+Affected  flying~
+Bodyparts head legs heart brains guts hands eye wings claws beak feathers~
+Attacks   claws~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   70~
+Comlist   if isimmort($r)
+or isnpc($n)
+else
+mpecho Spying a future meal, the huge hawk swoops down.
+mpkill ($r)
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpecho With a swish the hawk swoops down into some bushes and rises again
+mpecho carrying some small mammal impaled on its claws.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   emote shreaks loudly!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      415
+Keywords  giant boar beast~
+Race      cat~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A giant boar~
+Long      A true massive beast.  Its huge tusks threaten the lives of all nearby.
+~
+Desc      One of the most massive pieces of porcine flesh you have ever observed.
+With blood shot eyes and razor sharp tusks the boar will deny any who
+seek pork as meal, and gives the distinct possibility that the tables
+may even be turned.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    12 21 -3 150 1 10 3
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc~
+Affected  detect_hidden~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   bash~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   33~
+Comlist   if isimmort($r)
+or isnpc($r)
+else
+mpecho With a wild look in its eyes, the boar charges!
+mpkill $r
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   emote snorts in the dirt, looking for something.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote raises its head and sniffs loudly at the air.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   3~
+Comlist   emote with a loud squeal of rage, the boar at gores you!
+mpdamage $n 10
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      416
+Keywords  willum halfling thief~
+Race      halfling~
+Class     Rogue~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Willum~
+Long      A short halfling creeps around, looking for an easy score.
+~
+Desc      A quick and larcenous halfling, he prowls around seeking an easy victim carrying
+anything of value.  His furred feet carry him silently over the forest floor and
+his size and skill makes him almost invisible.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    10 21 -3 121 1 5 1
+Speaks    common halfling clan~
+Speaking  halfling~
+Actflags  npc wimpy secretive~
+Affected  infrared sneak hide~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   trip~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   75~
+Comlist   if inroom($i) == 416
+open tree
+n
+drop all
+s
+close tree
+e
+sw
+e
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   25~
+Comlist   if isimmort($r)
+else
+steal bag $r
+steal potion $r
+steal key $r
+ne
+e
+s
+sw
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   say Oh Woah is me!  You wouldn't want to let a poor halfling go?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   3~
+Comlist   if race($n) == halfling
+or race($n) == pixie
+say Why would you, a fellow short person hurt me?
+emote sniffs to himself.
+else
+yell Go away and pick on someone your own size!
+punch $n
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      417
+Keywords  choke creeper vine creeper~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the choke creeper~
+Long      A series of vines and creepers infest the local flora.
+~
+Desc      The this series of creepers looks to more than a parasite, the plants
+underneath this creeper seem to be definitely dying.
+~
+Nattacks  1.000000
+Stats1    0 -1 0 0 0 0
+Stats2    8 21 -3 96 1 7 2
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc sentinel~
+Bodyparts guts feet tentacles~
+Defenses  parry~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   33~
+Comlist   if isimmort($r)
+or isnpc($r)
+else
+mpecho With lashing vines, the creeper attacks!
+mpkill $r
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      418
+Keywords  young wyvern reptile~
+Race      fly~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the young wyvern~
+Long      A large winged reptile with wings instead of forearms, its scales bright with youth.
+~
+Desc      This young wyvern is a close kin of dragons and is almost as fierce.  It looks hungry.
+Green scales gleam with brightness of youth and its battle strategies are sure to be
+uncomplex.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    16 21 -3 208 2 6 3
+Speaks    common reptile clan~
+Speaking  reptile~
+Actflags  npc wimpy~
+Affected  flying~
+Bodyparts head legs heart brains guts feet ear eye wings scales claws~
+Attacks   claws poison~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   75~
+Comlist   if isnpc($r)
+or isimmort($r)
+else
+mpecho The wyverns head swivels at is notices you.
+scream $r
+mpecho The wyvern lauches itself in attack!
+mpkill $r
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      419
+Keywords  fallow deer~
+Race      gnoll~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     fallow deer~
+Long      A nervous fallow deer stands here looking at you.
+~
+Desc      A small nervous mammal.  It obviously thinks you are a threat and it looks
+of an opportunity to escape.  The thin flanks move very quickly showing the
+poor things agitation.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 5 60 1 6 1
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc mountable~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   kick~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   10~
+Comlist   if inroom($i)>= 446
+emote bounds away from you quickly
+mpgoto 435
+else
+mpecho The fallow deer, shies then bounds away from you.
+ne
+n
+e
+s
+sw
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   15~
+Comlist   emote looks at you with soft, brown doeful eyes.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 420 1
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      420
+Keywords  black crow bird~
+Race      monster~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the crow~
+Long      A black bird sits here up a tree.  The raven looks at you intently.
+~
+Desc      A large example of its species.  It sits what it hopes is a safe distance
+from you.  Perhaps it knows that death follows your tracks, which could provide
+a nice meal for the carrion eater.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    4 21 8 46 1 5 1
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc mountable~
+Affected  flying~
+Bodyparts head legs heart brains guts eye wings claws beak feathers~
+Attacks   claws~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote caws softly.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote looks around for something, what you do not know.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   if isnpc($r)
+or isimmort($r)
+else
+emote swoops down in an atempt for something shiney.
+steal 100 coins $r
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      421
+Keywords  porcupine~
+Race      monster~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the small porcupine~
+Long      A small heavily quilled porcupine waddles through here.
+~
+Desc      A small mammal whose defensive relies on predators finding out that it as not
+as easy a victim as it looks.  The large sharp quills are already half raised
+from you presence.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    3 21 -3 35 1 6 0
+Speaks    common goblin clan~
+Speaking  goblin~
+Actflags  npc wimpy noassist~
+Bodyparts head legs heart brains guts eye~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote snuffles around through the bushes.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   emote freezes for a minute as if sensing a threat.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      422
+Keywords  sylvan dryad guardian spirit semlina~
+Race      horse~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the dryad~
+Long      A thin pale forest spirit is here, the dryad is at one with her sylvan environment.
+~
+Desc      This nature spirit appears to be a beautiful female when applied to the human
+standard.  Vanities such as this are not her reason for being, she is the guardian
+of the forest around her.   Her unity with the sylvan land is unmatched even by
+the druids.
+~
+Nattacks  1.000000
+Stats1    0 0 0 0 0 0
+Stats2    20 21 -3 333 2 8 5
+Speaks    elvish pixie rodent mammal reptile spiritual halfling~
+Speaking  halfling~
+Actflags  npc sentinel autonomous hardhat~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    drain sleep~
+Defenses  parry dodge heal~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   15~
+Comlist   if inroom($i) == 497
+else
+mpecho With a quick look around the pale spirit slips back into the tree.
+Mpgoto 497
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   mpecho With a scream the spirit flees into the tree.
+mpjunk all
+Mpgoto 497
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you The Heart of the Forest.~
+Comlist   if ovnumcarry(499)<1
+say Oh, thank you mighty adventurer.  Perhaps now the forest can be saved!
+Say Here, please be granted the blessing of the forest.
+Kiss $n
+Cast heal $n
+Cast bless $n
+Cast 'cure poison' $n
+Bow $n
+Mpecho Looking fondly at you the dryad steps back into her tree.
+Mpgoto 497
+mpjunk heart
+mpoload 499
+else
+say Thank but I have already recovered the heart, you must have a false one.
+Say I am sorry thank you for your effort.
+Smile $n
+Cast bless $n
+Mpecho The dryad turns and enters back into her tree.
+Mpgoto 497
+mpjunk heart
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  time_prog~
+Arglist   0~
+Comlist   mpjunk all
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   help~
+Comlist   if ovnumcarry(499)>=1
+say I have recovered the heart already and am starting to work on repairing
+say the forest.  Thank you for your offer, friend.
+Bow
+Mpecho The dryad slips back into her tree.
+Mpgoto 497
+Else
+Say Thank you mighty Adventurer.  The hope of this forest may rest in your
+say hands.  I have been driven from my tree by a group of foul and destructive
+say people.  Because I am the guardian of these woods I was able to shelter
+say here in a child of my own tree.   While the loss of the hurts me most
+say direly, it is the loss of the Heart of the Forest that matters more.
+say I need you to recover the Heart for in my weakened state I can only leave
+say this tree here for extremely short amounts of time.
+say Will you please help me?
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   yes~
+Comlist   say Oh thank you for your generous offer of aid.  The tree is the huge tree to
+say the east. I know that the vile ones have sheltered under the roots in my
+say precious tree.  Look for a secret door of bones in the pit at the trees base.
+say Once you are in the lair you need to make your way one of the rooms at the
+say end of the complex.  I know that the one of the band has a hidden room.  
+say In that room there is a secret unknown to the despoiler.  Open the branch
+say of roots to discover where the heart itself sits.  Then simply return the
+say Heart to me.
+emote Looks at you hopefully before fading slowly back into her adopted tree.
+Mpgoto 497
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   no~
+Comlist   sigh
+say I understand some things are too hard in the judgment of mortals.
+Mpecho Quietly the spirit reenters her tree.
+Mpgoto 497
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      423
+Keywords  forest bandit man indoor~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     The forest bandit~
+Long      A man in dirty forest leathers.
+~
+Desc      Ill times or bad fortune, has driven this rather unwashed man into seeking a life
+of banditry.
+~
+Nattacks  0.000000
+Stats1    -200 -1 0 0 0 0
+Stats2    7 21 3 85 1 5 1
+Speaks    orcish trollese rodent insectoid mammal reptile dragon spiritual magical goblin god ancient halfling gith~
+Speaking  common~
+Actflags  npc aggressive~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   4~
+Comlist   emote mutters something about not being stuck outside.
+grin
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   if mobinroom(423)>=2
+emote looks at one of his fellows accusingly.
+emote But quickly looks away again before he is noticed.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   emote mumbles '..mutter..bigger......treasure..mumble...share...'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      498
+Keywords  zombie2 mob~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a zombie mob~
+Long      A zombie mob to do tasks namely mpat because it can't be done by rooms :)
+~
+Desc      Basic slave labour.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    50 21 0 5000 0 0 0
+Speaking  common~
+Actflags  npc autonomous secretive noassist proto~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   one~
+Comlist   if mobinroom(413)>=1
+mptrans outdoor 405
+mpat 405 mpecho A lone bandit leaps from the covering bushes 
+mpat 405 mpecho to seperate you from your money and life.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      499
+Keywords  zombie1 mob~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a zombie mob~
+Long      A zombie mob to do tasks namely mpat because it can't be done by rooms :)
+~
+Desc      Basic slave labour.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    50 21 0 5000 0 0 0
+Speaking  common~
+Actflags  npc sentinel autonomous secretive noassist~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if ismobinvis($i)
+else
+mpinvis 51
+endif
+if mobinvislevel($i)< 51
+mpinvis 51
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   4bandits~
+Comlist   mpgoto 497
+if mobinroom(413)>=3
+mpat 405 mpecho Bandits leap from the bushes after your money or your life!
+else
+if mobinroom(413)>=2
+mpat 405 mpecho A pair of bandits leap from the bushes in an attempted ambush.
+else
+if mobinroom(413)>=1
+mpat 405 mpecho A lone bandit leaps from the bushes threatening you.
+endif
+endif
+endif
+say bandit
+say bandit
+say bandit
+say bandit
+mpgoto 498
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   2bandits~
+Comlist   mpgoto 497
+if mobinroom(413)>=2
+mpat 405 mpecho A pair of bandits leap from the bushes in an attempted ambush.
+else
+if mobinroom(413)>=1
+mpat 405 mpecho A lone bandit leaps from the bushes threatening you.
+endif
+endif
+say bandit
+say bandit
+mpgoto 498
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   1bandits~
+Comlist   mpgoto 497
+if mobinroom(413)>=1
+mpat 405 mpecho A lone bandit leaps from the bushes threatening you.
+endif
+say bandit
+mpgoto 498
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   bander1~
+Comlist   mpgoto 497
+if mobinroom(408)>=1
+mpat 418 mpecho With a ferocious growl a long furred beast jumps out at you!
+endif
+say bandersnatch
+mpgoto 498
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   dryad1943~
+Comlist   mpgoto 497
+if mobinroom(422)>=1
+mpat 445 mpecho A thin and pale forest spirit steps from the center of the tree
+endif
+say dryad
+mpgoto 498
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum      400
+Keywords  ash bow~
+Type      missileweapon~
+Short     a huge ash bow~
+Long      A large ash wood bow lays here waiting to be used.~
+WFlags    take missile~
+Values    12 0 0 14 2 0 0 0 0 0 0
+Stats     5 400 -2 1 0 None None None
+AffData hitroll 3 -1 -1 0
+#EXDESC
+ExDescKey    ash bow~
+ExDesc       A finely crafted ash long bow,  powerful is its power and sure its aim.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      401
+Keywords  leather archers bracer~
+Type      armor~
+Short     a leather archer's bracer~
+Long      A leather archer's bracer sits here.~
+WFlags    take wrist~
+Values    2 2 0 0 0 0 0 0 0 0 0
+Stats     2 200 -2 9999 0 None None None
+AffData hitroll 1 -1 -1 0
+AffData damroll 1 -1 -1 0
+#EXDESC
+ExDescKey    leather archers bracers~
+ExDesc       A pair of thick, but pliable leather bracers.  These will prevent self-inflicted
+wounds through the use of a bow.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      402
+Keywords  stream water~
+Type      fountain~
+Short     stream water~
+Long      A small creek winds its way amongst the bushes and trees.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1500 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    stream water~
+ExDesc       The stream bubbles merrily along through the large rocks and occasional
+fallen branch or log.  The air is a little damper and the moss and lichen is
+more prevalent.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      403
+Keywords  stream fordwater~
+Type      fountain~
+Short     ford of the stream~
+Long      A small creek winds spreads out through large rocks creating a small ford.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1500 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    stream water ford~
+ExDesc       The stream here is very wide and shallow.  The water level doesn't even pass
+over the top of a lot of the rocks of this constructed ford.  The stream
+emanates a soothing sound as finds its way downstream.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      404
+Keywords  hunters cap leather~
+Type      armor~
+Short     a leather hunters cap~
+Long      A finely made leather hunters cap, has been placed on the ground.~
+WFlags    take head~
+Values    3 3 0 0 0 0 0 0 0 0 0
+Stats     2 100 -2 9999 0 None None None
+AffData move 10 -1 -1 0
+#EXDESC
+ExDescKey    hunters cap leather~
+ExDesc       This soft leather cap has been made more for warding the affects of the
+weather than blows, but the softness of the leather also belies that it
+is quite thick and will act as a cushion against blows.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      405
+Keywords  guards arm heraldic griffin~
+Type      armor~
+Short     Heraldic arm guards~
+Long      A set of arm guards, heavily ornamented with the heraldry of a griffin.~
+Flags     metal antievil~
+WFlags    take arms~
+Values    4 4 0 0 0 0 0 0 0 0 0
+Stats     5 200 -2 9999 0 None None None
+#EXDESC
+ExDescKey    guards arm heraldic griffin~
+ExDesc       These well-crafted arm guards are made more for functionality in war than
+the parade ground.  Even the proud griffin house engravings are of
+variable depth, not as poor crafting, but to help drive the blows away from
+the wearer.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      406
+Keywords  breast plate heraldic griffin~
+Type      armor~
+Short     Heraldic breast plate~
+Long      A fine breast plate, the heraldic symbol of a griffin stands proudly in the centre.~
+Flags     metal antievil~
+WFlags    take body~
+Values    6 6 0 0 0 0 0 0 0 0 0
+Stats     8 1500 -2 1 0 None None None
+AffData armor -4 -1 -1 0
+#EXDESC
+ExDescKey    breast plate heraldic griffin~
+ExDesc       This magnificent breast plate is made more for functionality in war than
+the parade ground.  Even the proud griffin engraving stamped over the
+center of the chest is of  variable depth, not as poor crafting, but to
+help drive the blows away from the wearer.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      407
+Keywords  leggings heraldic griffin~
+Type      armor~
+Short     Heraldic leggings~
+Long      A set of leggings heraldicly embossed with griffins has been left here.~
+Flags     metal antievil~
+WFlags    take legs~
+Values    6 6 0 0 0 0 0 0 0 0 0
+Stats     8 500 -2 1 0 None None None
+#EXDESC
+ExDescKey    leggings heraldic griffin~
+ExDesc       These well-crafted leggings are made more for functionality in war than
+the parade ground.  Even the proud griffin house engravings are of
+variable depth, not as poor crafting, but to help drive the blows away from
+the wearer.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      408
+Keywords  pair huge vicious cestus~
+Type      weapon~
+Short     a pair of huge cestus~
+Long      A pair of  vicious cestus lay here, waiting to be worn.~
+WFlags    take wield~
+Values    15 0 0 11 0 0 0 0 0 0 0
+Stats     9 400 -2 1 0 None None None
+AffData intelligence -1 -1 -1 0
+AffData damroll 3 -1 -1 0
+#EXDESC
+ExDescKey    Huge cestus~
+ExDesc       These nasty over gloves are sturdily built of leather and steel.  Sharp
+bands of metal protrude from the cestus promising a very bloody wound upon
+impact.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      409
+Keywords  sturdy shined boots~
+Type      armor~
+Short     a pair of sturdy, shined boots~
+Long      A pair of highly shined, sturdy boots wait here.~
+Flags     metal antievil~
+WFlags    take feet~
+Values    5 5 0 0 0 0 0 0 0 0 0
+Stats     7 500 -2 1 0 None None None
+AffData strength 1 -1 -1 0
+#EXDESC
+ExDescKey    sturdy shined boots~
+ExDesc       These fine boots have metal reinforcing right around the base of the
+boots in several sections to provide flexibility.   But still enough
+to protect the feet significantly and weigh less than a solid metal
+footwear.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      410
+Keywords  shield heraldic griffin~
+Type      armor~
+Short     the griffin heraldic shield.~
+Long      A shield bearing the heraldic symbol of the griffin rests on the ground.~
+Flags     metal antievil~
+WFlags    take shield~
+Values    4 4 0 0 0 0 0 0 0 0 0
+Stats     2 500 -2 1 0 None None None
+AffData constitution 1 -1 -1 0
+#EXDESC
+ExDescKey    shield heraldic griffin~
+ExDesc       This finely made shield is more for functionality in war than
+the parade ground.  Even the proud griffin house engravings are of
+variable depth, not as poor crafting, but to help drive the blows away from
+the wearer.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      411
+Keywords  elven rune sword~
+Type      weapon~
+Short     an elven rune sword~
+Long      A sword bearing glowing elven runes lays here.~
+Flags     metal magic bless~
+WFlags    take wield~
+Values    12 0 0 6 0 0 0 0 0 0 0
+Stats     5 3000 -2 1 0 None None None
+AffData wearspell 'bless' -1 -1 0
+#EXDESC
+ExDescKey    elven rune sword~
+ExDesc       This fine blade was made by the elven nation for one of their wars with evil
+in the distant past.   Time has weathered the blade and it is not what it once 
+was, but it is still functional.  Very light even patterns only just be made
+out along the length of the weapon.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   4~
+Comlist   mea $n The ancient magic of the sword backfires through you!
+mpdamage $n 40
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      412
+Keywords  leather leggings green~
+Type      armor~
+Short     the leather leggings~
+Long      A set of greenish dyed leather leggings has been dropped here.~
+WFlags    take legs~
+Values    4 4 0 0 0 0 0 0 0 0 0
+Stats     6 100 -2 9999 0 None None None
+#EXDESC
+ExDescKey    leather leggings green~
+ExDesc       These leggings look like any pair of thick work pants.  The greenish dye is
+so weak that it could almost have been caused by brushing the leather against
+plants.  Of a plain and simple construction with thickened hems and reinforced
+knees it would serve anyone well for a number of years yet.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      413
+Keywords  leather jerkin green~
+Type      armor~
+Short     a leather jerkin~
+Long      A greenish colored leather jerkin is crumpled in a corner.~
+WFlags    take body~
+Values    5 5 0 0 0 0 0 0 0 0 0
+Stats     6 200 -2 9999 0 None None None
+#EXDESC
+ExDescKey    leather jerkin green~
+ExDesc       A garment of plain construction and sturdy materials,  created for use in harsh
+weather conditions.   A few scratches and tears show that this has also seen use
+as a thing to ward of the blows of men as well as nature.   It is only very pale
+green, perhaps a weak dye.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      414
+Keywords  leather sleeves reinforced~
+Type      armor~
+Short     leather sleeves~
+Long      A pair of thick reinforced leather sleeves has been left on the ground.~
+WFlags    take arms~
+Values    4 4 0 0 0 0 0 0 0 0 0
+Stats     5 350 -2 1 0 None None None
+AffData strength 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
+#EXDESC
+ExDescKey    leather sleeves reinforced~
+ExDesc       Multiple layers of thick leather have gone into the construction of this
+pair of sleeves.   Heavy stitching and padded elbows mean this piece of
+leather armor was made to last battle, weather and time.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      415
+Keywords  thick leather boots~
+Type      armor~
+Short     a pair of thick leather boots~
+Long      A pair of thick leather boots wait here.~
+WFlags    take feet~
+Values    4 4 0 0 0 0 0 0 0 0 0
+Stats     4 150 -2 9999 0 None None None
+AffData move 15 -1 -1 0
+#EXDESC
+ExDescKey    thick leather boots~
+ExDesc       A pair of weathered, but still sturdy boots.  The leather shows the stretch
+marks of heavy wear and you judge them to be a few years old but still in
+serviceable condition.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      416
+Keywords  long hunters knife~
+Type      weapon~
+Short     A long, hunter's knife~
+Long      A large knife, its curved blade has been slightly rusted by the elements.~
+Flags     metal~
+WFlags    take wield~
+Values    12 0 0 6 0 0 0 0 0 0 0
+Stats     5 200 -2 9999 0 None None None
+AffData damroll 1 -1 -1 0
+AffData hitroll -1 -1 -1 0
+#EXDESC
+ExDescKey    long hunters knife~
+ExDesc       This long curved blade has a slight amount of surface rust resulting from
+abuse by the owner who lived outdoors.  Never the less it is still a serviceable
+blade that could easily turn a wound inflicted by it tainted.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      417
+Keywords  ironshod quarterstaff bronzewood wood~
+Type      weapon~
+Short     an ironshod quarterstaff~
+Long      A large ironshod quarterstaff made from bronzewood lays here.~
+WFlags    take wield~
+Values    12 0 0 6 0 0 0 0 0 0 0
+Stats     5 100 -2 9999 0 None None None
+#EXDESC
+ExDescKey    ironshod quarterstaff bronzewood wood~
+ExDesc       This is only really a carved branch.  What makes it into a worthy weapon is the
+fact that the wood is made from a very hard wood and simple iron bands have been
+welded on each end.   Showing some dents and scratches from battle you judge it
+could even turn aside a sword blade.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      418
+Keywords  false creeper~
+Type      armor~
+Short     A series of vines and creeper infest the local flora~
+Long      A series of vines and creeper infest the local flora.~
+Values    3 3 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    creeper vines~
+ExDesc       The this series of creepers looks to more than a parasite, the plants
+underneath this creeper seem to be definitely dying.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      419
+Keywords  heart forest~
+Type      trash~
+Short     The Heart of the Forest~
+Long      A large knot of highly polished wood sits here, it almost seems to pulse.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    heart forest~
+ExDesc       This almost appears to be only a very large and highly polished knot of wood.
+Then it moves slightly. It pulses as if it has some magical connection.  You can
+feel a slight buzz in your hand from holding it.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      420
+Keywords  deer side meat venison~
+Type      food~
+Short     the bloodied side of a deer~
+Long      The side of a deer lays here amongst a small pool of blood~
+WFlags    take~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     30 50 -2 9999 0 None None None
+#EXDESC
+ExDescKey    deer corpse meat venison~
+ExDesc       This is the bloodied remains of a once fine and beautiful animal.  Now it
+just looks like a very fine dinner.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      421
+Keywords  mushroom pale gray~
+Type      pill~
+Short     a pale gray mushroom~
+Long      A pale gray mushroom grows here~
+WFlags    take~
+Values    36 -1 -1 -1 5 0 0 0 0 0 0
+Stats     1 200 -2 9999 0 None None None
+Spells       'kindred strength' 'poison' 'NONE'
+#EXDESC
+ExDescKey    mushroom pale gray~
+ExDesc       This piece of fungi is quite large,  with a large cap and a short stem it
+will break apart easily in your hand if your not careful.  Looking at it
+carefully it seams to be a fairly uniform light gray color.  Whether it is
+edible is something you can only determine with magical aid.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      422
+Keywords  mushroom sickly red~
+Type      pill~
+Short     a sickly red mushroom~
+Long      A sickly red mushroom protrudes from the ground.~
+WFlags    take~
+Values    20 -1 -1 -1 5 0 0 0 0 0 0
+Stats     1 200 -2 9999 0 None None None
+Spells       'lethargy' 'cure critical' 'NONE'
+#EXDESC
+ExDescKey    mushroom sickly red~
+ExDesc       This small fungus definitely looks unappetizing.   The blotchy reddish
+sheen that covers it makes you think consumption is a very bad idea.
+Even the idea of putting something such as this in your mouth makes
+your gorge rise.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      423
+Keywords  short battle spear~
+Type      weapon~
+Short     a short battle spear~
+Long      A short, wide bladed spear sits here waiting for someone to use it.~
+Flags     metal magic bless antievil~
+WFlags    take wield~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     5 1000 -2 1 0 None None None
+AffData class 1 -1 -1 0
+AffData damroll 1 -1 -1 0
+AffData strength 1 -1 -1 0
+#EXDESC
+ExDescKey    short battle spear~
+ExDesc       This fine weapon has sharp and wide blade at its end is metal shod for
+more than half of its length.  You are sure that wielded in battle it
+would be a fearsome implement of destruction.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      424
+Keywords  sword thick wide heavy broad~
+Type      weapon~
+Short     a very thick and heavy broad sword~
+Long      A black iron sword the seems almost ridiculously wide and thick lays here.~
+Flags     metal~
+WFlags    take wield~
+Values    12 0 0 6 0 0 0 0 0 0 0
+Stats     5 700 -2 1 0 None None None
+AffData constitution 2 -1 -1 0
+AffData damroll 4 -1 -1 0
+#EXDESC
+ExDescKey    sword thick wide heavy broad~
+ExDesc       This blade is nothing but a crude implement of destruction.  Made to cleave
+and batter the foes of its wielder you feel this could batter its way through
+any normal armor scoring grievous wounds.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      425
+Keywords  boar leg roast~
+Type      food~
+Short     a roasted boar leg~
+Long      A leg of roasted boar sits here filling the air with the smell of cooked meat.~
+WFlags    take~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     5 100 -2 9999 0 None None None
+#EXDESC
+ExDescKey    boar leg roast~
+ExDesc       The leg of a large boar this leg has been very well prepared and even cold
+is a delight to the senses, both smell and taste.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      426
+Keywords  large pile treasure mixed~
+Type      money~
+Short     a large pile of mixed treasure~
+Long      A large pile of mixed treasures lays here in a rough jumble.~
+WFlags    take~
+Values    3328 0 0 0 0 0 0 0 0 0 0
+Stats     30 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    treasure pile mixed large~
+ExDesc       This is a large mass of valuable and semi-valuable items, its contains
+everything from nobles braclets to copper tins stolen from tinkers.
+The whole mass of this is probably worth quite a bit of money and
+it shows Eric is successful at his chosen profession.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      427
+Keywords  quiver arrows~
+Type      quiver~
+Short     a quiver of arrows~
+Long      A quiver has been left here.~
+WFlags    take~
+Values    12 0 -1 12 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    quiver arrows~
+ExDesc       A rough leather quiver, made to hold arrows for ease of use in combat.
+It is thick based and the round casing has been laced together with
+strips leather.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      428
+Keywords  arrow~
+Type      projectile~
+Short     an arrow~
+Long      An arrow has fallen here~
+WFlags    take~
+Values    0 0 0 14 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    arrow~
+ExDesc       A rough, wooden arrow with a simple steel head, this has been made
+quickly by a competant fletcher for reliable use in combat,
+but no time spent on making the arrow anthing more than a simple
+instrument of death.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      498
+Keywords  regen token~
+Type      armor~
+Short     (null)~
+Values    3 3 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      499
+Keywords  last item~
+Type      armor~
+Short     (null)~
+Long      A token for the dryad as give an item checked seems to stuff Ovnumcarry check.~
+WFlags    take~
+Values    3 3 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      400
+Name      Surrounded by bushes~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are amongst the foliage.  Thick bushes press in from all sides
+a sticky sap from the leaves of one of the kinds of bushes deposits
+itself on your clothing, tinting it green.  The trees here are relatively
+sparse, but the thick brush itself stops most progress.
+~
+#EXIT
+Direction southeast~
+ToRoom    409
+Desc      Back onto the path
+~
+#ENDEXIT
+
+Reset M 414 2 400 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      401
+Name      A corner of the Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A thickened area of the woods.  You haven't traveled far off the path
+and already the trees have formed a cordon around you preventing most
+further travel.   A large moss covered rock sits here, mostly hidden
+by the underbrush.
+~
+#EXIT
+Direction south~
+ToRoom    409
+Desc      Back onto the path
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    410
+Desc      Back onto the path
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      402
+Name      Inside the woods~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small corner of the forest is lined by a grove of trees forming a
+symetrical wall of green and brown around you, blocking progress in
+all directions except back the way you came.   The grass in the centre
+of the grove has grown out of the shade of the trees and looks like
+an inviting place to rest.
+~
+#EXIT
+Direction south~
+ToRoom    410
+Desc      Back onto the path
+~
+#ENDEXIT
+
+Reset M 421 3 402 -1 -1 -1 100
+Reset O 418 1 402 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      403
+Name      A small ford~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sylvan wildness is broken here by a small stream passing through.
+The trees loom just away from the bubbling water, and the sounds do
+much to soothe you.  This looks like a good place to rest amongst the
+greens.
+~
+#EXIT
+Direction east~
+ToRoom    404
+Desc      Along the Path
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    410
+Desc      Along the Path
+~
+#ENDEXIT
+
+Reset M 406 1 403 -1 -1 -1 100
+Reset M 405 1 403 -1 -1 -1 100
+  Reset E 410 1 11 100
+  Reset E 406 1 5 100
+  Reset E 405 1 10 100
+  Reset E 409 1 8 100
+  Reset E 407 1 7 100
+  Reset E 423 1 16 100
+Reset O 403 1 403 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      404
+Name      Along the path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The forest continues along either side, again you notice a few patches of
+brown in the mass of green.  A few bushes creep near the trail itself
+providing an ideal ambush site here.  The trees also provide much cover
+to an unsavory lurkers.
+~
+#EXIT
+Direction east~
+ToRoom    405
+Desc      Along the Path
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    403
+Desc      Along the Path
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      405
+Name      Along the Forest Path~
+Sector    forest~
+Flags     arena~
+Stats     0 0 0 0 0
+Desc      The main path turns here from, continuing west and south.  The brush rises up
+sharply at the sides of the trail and trees loom over even the path itself.
+Many large trees also loom nearby, creating an almost solid wall
+of cover on each side of the path.
+~
+#EXIT
+Direction south~
+ToRoom    413
+Desc      Along the Path
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    404
+Desc      Along the Path
+~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   20~
+Comlist   if isnpc($n)
+or isimmort($n)
+or mobinroom(413)>=1
+else
+mpmload 499
+if rand(33)
+tell zombie1 4bandits
+else
+if rand(50)
+tell zombie1 2bandits
+else
+tell zombie1 1bandits
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      406
+Name      An underground grotto~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The sound of dripping water greets you as you enter.   The slick moss
+the covers the walls of this small cave looks healthy.  A few small
+bones line part of the caves floor.  A dank smell permeates the area
+from being too enclosed with some unknown substances.
+~
+#EXIT
+Direction southeast~
+ToRoom    415
+Desc      A natural depression
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    small bones~
+ExDesc       The scattered remains of a small animal or bird eaten by a small
+sharp toothed carnivore.  They have been here for some time and
+the carpet of moss has already begun to encroach over them.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      407
+Name      A small cave~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This is a small natural cave.  Thick hanging moss covers the walls and
+ceiling and the sound of dripping water is almost constant.  The slime
+covered rocks of the floor offer somewhat treacherous footing.
+~
+#EXIT
+Direction south~
+ToRoom    415
+Desc      A natural depression
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      408
+Name      Inside a large tree~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small room is setup to be a home.  The wood has been polished into a 
+sheen with the wood grain showing prominently.  The furniture is all of good
+quality wood construction.  Although the furniture is sized for someone in
+the vicinity of three feet tall.
+~
+#EXIT
+Direction south~
+ToRoom    416
+Desc      Back onto the path
+~
+Keywords  tree~
+Flags     isdoor closed secret~
+#ENDEXIT
+
+Reset D 408 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      409
+Name      Along the Forest Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path continues along here through the sylvan forest.  Thick
+brush gives way in many directions.  The sky is visible as a long
+band through the middle of the path, here it seems to wind its
+way like a river in the air.
+~
+#EXIT
+Direction north~
+ToRoom    401
+Desc      Into the trees
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    410
+Desc      Along the path
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    400
+Desc      Thick shrouded undergrowth
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    416
+Desc      Along the path
+~
+#ENDEXIT
+
+Reset M 416 1 409 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      410
+Name      Along the Forest Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path continues along here through the sylvan forest.  Thick
+brush gives way in many directions.  The sky is visible as a long
+band through the middle of the path, here it seems to wind its
+way like a river in the air.
+~
+#EXIT
+Direction north~
+ToRoom    402
+Desc      Into the forest
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    418
+Desc      Thick brush amongst the trees
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    409
+Desc      Along the path
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    403
+Desc      Along the path
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    401
+Desc      Into the forest
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      411
+Name      Larger trees~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This part of the forest is definitely old growth.  The huge trees loom overhead
+and their distance apart is quite large.   The floor is littered with the
+remains of trees which fell, branches, leaves and other debris from from
+the forest.  A pungent smell come from something nearby.
+~
+#EXIT
+Direction east~
+ToRoom    412
+Desc      Among larger trees
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    419
+Desc      Among larger trees
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    448
+Desc      Up the large tree
+~
+#ENDEXIT
+
+Reset M 418 1 411 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      412
+Name      Larger trees~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This area of the forest contains larger trees than the rest you have seen,
+here the tree cover is almost complete and the undercover is sparse.
+A few mottled steams of moss climb the trees to near the canopy.
+~
+#EXIT
+Direction west~
+ToRoom    411
+Desc      Among the larger trees
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    419
+Desc      Among the larger trees
+~
+#ENDEXIT
+
+Reset M 417 4 412 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      413
+Name      Along the Forest Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path continues along through the forest.   Directly alongside the trail
+brush grows almost five feet tall in places and the trees long high overhead.
+There are a few patches of brown amongst the strong greens but they remain
+sparse.
+~
+#EXIT
+Direction north~
+ToRoom    405
+Desc      Along the path
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    420
+Desc      Along the path
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      414
+Name      A forested gully~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This lightly wooded area, contains a few moss covered rocks and small
+shrubs.  The area exudes peace, tranquillity and being one with nature.
+The ground gently slopes down towards the west.
+~
+#EXIT
+Direction east~
+ToRoom    415
+Desc      Down to a hollow depression
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    422
+Desc      Back onto the path
+~
+#ENDEXIT
+
+Reset M 417 4 414 -1 -1 -1 100
+#MUDPROG
+Progtype  entry_prog~
+Arglist   6~
+Comlist   mpecho A bird song is heard faintly from the east.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      415
+Name      A hollow depression~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The ground has sloped down into a depression, a rough rock wall juts
+from the earth.   The ground has large amounts of covering low
+shrubs and creepers that could conceal almost any amount of small
+creatures.
+~
+#EXIT
+Direction north~
+ToRoom    407
+Desc      Into a small cave
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    414
+Desc      The gully
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    406
+Desc      A grotto
+~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   6~
+Comlist   mpecho Something scuttles through the creepers.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      416
+Name      Along the Forest Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path here enters a small glade.   The trees that are scattered
+around the edges of the path are all old and large, stunting the
+growth of other plants with their canopy.   A carpet of soft
+grass spreads out before you for a short distance before reaching
+the edge of the trees.  
+~
+#EXIT
+Direction north~
+ToRoom    408
+Desc      Inside a tree
+~
+Keywords  tree~
+Flags     isdoor closed secret nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    417
+Desc      Along the path
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    409
+Desc      Further along the path
+~
+#ENDEXIT
+
+Reset O 418 1 416 -1 -1 -1 100
+Reset D 416 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      417
+Name      Along the Forest Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This area has show some use of late, a few of the bushes alongside the trail
+proper have been ripped from the ground.  Also a few of the huge trees in the
+area show signs of abuse and have brown blotches amongst them.
+~
+#EXIT
+Direction east~
+ToRoom    418
+Desc      An overgrown area
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    416
+Desc      Along the trade route
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    424
+Desc      Along the path
+~
+#ENDEXIT
+
+Reset M 420 2 417 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      418
+Name      Deep in the bushes~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Standing deep in the bushes you can barely see patches of the ground.
+Forcing your way deeper, you hear the sounds of bushes moving around
+you.  You stop, but the sounds don't.
+~
+#EXIT
+Direction north~
+ToRoom    410
+Desc      Back to the path
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    417
+Desc      To the path
+~
+#ENDEXIT
+
+Reset O 402 1 418 -1 -1 -1 100
+#MUDPROG
+Progtype  entry_prog~
+Arglist   66~
+Comlist   if isnpc($n)
+or isimmort($n)
+or mobinroom(408)>=1
+else
+mpmload 499
+tell zombie1 bander1
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      419
+Name      Amongst the forest~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You have entered an area where the trees are slightly larger.
+This simply means that the trees now loom right out of sight
+amongst the mass of foliage.  The brush is a little lighter
+maybe because of the lack of natural light down here.
+~
+#EXIT
+Direction north~
+ToRoom    411
+Desc      Large trees
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    420
+Desc      Back to the path
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    412
+Desc      Into the forest
+~
+#ENDEXIT
+
+Reset O 418 1 419 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      420
+Name      A corner in the forest path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The wide forest trail takes a sharp corner here around a large, thick stand
+of bushes.  The vegetation is thick on either side of the trail.
+The sylvan vegitation is a healthy green which fills your soul with
+soothing feelings of harmony, or maybe there is just something in the
+air.
+~
+#EXIT
+Direction east~
+ToRoom    421
+Desc      Into the woods
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    419
+Desc      Along the route
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    413
+Desc      Along the trade path
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      421
+Name      Along the Forest Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Proceeding along the wide path, apparently not many wagons have traveled
+this track recently.  Patches of green already attempt to regain the path
+in the name of the woods.
+~
+#EXIT
+Direction east~
+ToRoom    422
+Desc      The trade path
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    420
+Desc      The trade path
+~
+#ENDEXIT
+
+Reset M 421 1 421 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      422
+Name      Along start of the Forest Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      >From here you can still see the signs of gnomish habitation to the east.  The 
+main path continues wide and strong through east to west.  A small trail, not
+much more than a game trail heads south from here.  The trees rise up above you
+blocking any sign of the sky.
+~
+#EXIT
+Direction north~
+ToRoom    414
+Desc      Down a slope
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    423
+Desc      Towards the forest exit
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    430
+Desc      Down the ill-used path
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    421
+Desc      Along the main trail
+~
+#ENDEXIT
+
+Reset M 401 1 422 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      423
+Name      East end of the Forest Path~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This is the entrance to a patch of the forest.  A sign has been plunged
+into the earth here, providing some type of warning.  Thick brush hems you
+onto the path in most places.
+~
+#EXIT
+Direction east~
+ToRoom    1501
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    422
+Desc      Along the wide path.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       By decree of the Gnome Council of Leaders, the old trade path, commonly
+known as the Forest Path, is declared an unsafe area.  It is outside
+the protection of the Gnome Guards, enter at your own risk.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      424
+Name      West end of the Forest Path~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Stopping at the entrance to the forest, the trees and undergrowth go up
+like a wall before you.  A sign has been hammered into the ground here,
+obviously providing some information for those who wish to travel the
+depths of the forest.   A path wide enough for a small wagon proceeds
+into the sylvan gloom.
+~
+#EXIT
+Direction east~
+ToRoom    425
+Desc      Into the forest.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    21119
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    417
+Desc      Along the path.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       By decree of the Lords of Darkhaven, the old trade path, commonly
+known as the Forest Path, is declared an unsafe area.  It is outside
+the protection of the City of Darkhaven, enter at your own risk.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      425
+Name      Amongst the trees~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A small creek passes through here not that far from the trade route.
+Were the route a true long distance path and not a simple short cut for
+trades this idyllic watering hole would have seen more use.
+~
+#EXIT
+Direction south~
+ToRoom    433
+Desc      Onto a slope
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    424
+Desc      Back to start of the path
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    432
+Desc      Following the creek through the bushes
+~
+#ENDEXIT
+
+Reset M 400 1 425 -1 -1 -1 100
+Reset M 421 2 425 -1 -1 -1 100
+Reset O 402 1 425 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      426
+Name      Along a slope~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Standing on the north west corner of the slope with trees surrounding you
+invokes a feeling of peace and nature, to the east, you can now see a huge
+tree raising above the forest.
+~
+#EXIT
+Direction east~
+ToRoom    427
+Desc      To the huge tree
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    434
+Desc      Up on top of the hill
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    433
+Desc      Bottom of the hill
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      427
+Name      A massive tree~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Standing before you is an embodiment of the power of nature.  This
+tree is so large that the curve in the trunk seems almost flat.
+Great funnels of moss and lichen run in strands along and up the
+trunk.  This is one of the oldest living things in the world.
+Standing as you are on the south side of the trunk you can see the
+slope of the hill curving around to the east and west.  
+~
+#EXIT
+Direction south~
+ToRoom    435
+Desc      On top of the hill
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    426
+Desc      Along the slope
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    453
+Desc      Down into the roots
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    436
+Desc      At the base of the hill
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      428
+Name      End of the faint path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The trees seem to move in and get closer and the underbrush covers the ground.
+The faint path comes to an end here.  It disappears completely amongst
+the underbrush.   A row of broad leaved bushes stands along the path, then
+helps to obscure it.
+~
+#EXIT
+Direction east~
+ToRoom    429
+Desc      Back along the faint trail
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    436
+Desc      Onto a slope
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    437
+Desc      Into the trees
+~
+#ENDEXIT
+
+Reset M 420 1 428 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      429
+Name      Along the faint path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path along this tranquil area of the forest is almost non-existent.
+Trees and bushes crowd along the sides of the trail.
+~
+#EXIT
+Direction west~
+ToRoom    428
+Desc      Along the faint trail
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    438
+Desc      On the path
+~
+#ENDEXIT
+
+Reset O 418 1 429 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      430
+Name      Along the faint path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are just south of the main path, the faint path you traverse quickly
+decreases from the main trade route into a disused game trail.  Green
+foliage quickly rises close on either side of you.
+~
+#EXIT
+Direction north~
+ToRoom    422
+Desc      The main trail
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    431
+Desc      Into the vegetation
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    439
+Desc      Along the trail
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      431
+Name      In among the trees~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The trees stand like sentinels around you.  Heavy creepers try to choke the
+life from these sentinels in the natural fight for survival.  Patches of
+brown are quite prevelant in amongst the green.
+~
+#EXIT
+Direction south~
+ToRoom    439
+Desc      Back to the trail
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    430
+Desc      A small game trail
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      432
+Name      In among the trees~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The brush here is thick, showing that nothing of any real size has passed
+here.   The trees project upwards into the almost seamless canopy.  Moss
+and creepers grow here with great profusion in the damp conditions.
+~
+#EXIT
+Direction east~
+ToRoom    433
+Desc      The base of the hill
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    440
+Desc      A small clearing
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    425
+Desc      Following the creek
+~
+#ENDEXIT
+
+Reset O 402 1 432 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      433
+Name      Bottom of the hill~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The trees rise in a gentle slope to the east.  The canopy above seems never
+to loose its almost seamless hold on the sight of the sky, the underbrush
+here suffers as a result, making passage somewhat easy.
+~
+#EXIT
+Direction north~
+ToRoom    425
+Desc      Into the forest
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    441
+Desc      Trees
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    432
+Desc      Among the bushes
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    426
+Desc      The northern slope
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    442
+Desc      The southern slope
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      434
+Name      West side of the hill~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here at the top of the hill you can get part of an overview of the forest, but
+only part.  The canopy is still fairly complete.   This area is fairly flat
+and bare of shrubbery, leaving a long bladed grass to cower the ground.
+~
+#EXIT
+Direction north~
+ToRoom    426
+Desc      Down the slope
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    435
+Desc      Across to the east side of the hill
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    442
+Desc      Down the slope
+~
+#ENDEXIT
+
+Reset M 415 1 434 -1 -1 -1 100
+Reset O 418 1 434 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      435
+Name      East side of the hill~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here at the top of the hill you can get part of an overview of the forest, but
+only part.  The canopy is still fairly complete.  Very noticeable to the north
+is a massive tree rising far above its fellows.
+~
+#EXIT
+Direction north~
+ToRoom    427
+Desc      Down to the huge tree
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    443
+Desc      Down the slope
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    434
+Desc      Across to the west side of the hill
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      436
+Name      Bottom of the hill~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here at the bottom of the hill you see the canopy arching up and across to the
+west.  The foliage blocks path directly up the hill, but you can make passage
+to the southern slope.  Upon the northern slope stands one of the greatest trees
+you have every laid eyes upon.
+~
+#EXIT
+Direction north~
+ToRoom    428
+Desc      Into the foliage
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    437
+Desc      Among the woods
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    427
+Desc      To the great tree
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    443
+Desc      Along the southern slope
+~
+#ENDEXIT
+
+Reset M 402 1 436 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      437
+Name      In the forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Admiring you sylvan surroundings you look around through the trees
+and shrubs you realize that almost any creature could sneak up on
+you in this situation.
+~
+#EXIT
+Direction west~
+ToRoom    436
+Desc      Through the forest.
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    428
+Desc      An faint path.
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    446
+Desc      Deep in the forest.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    444
+Desc      Further into the trees.
+~
+#ENDEXIT
+
+Reset M 417 1 437 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      438
+Name      Along the faint path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Shoving the aside light underbrush is needed to follow this trail.  The
+smell of broken plants assails your nose.  The mass of vegetation continues
+to loom up and around you, seemingly continuing forever.
+~
+#EXIT
+Direction east~
+ToRoom    439
+Desc      The faint trail
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    429
+Desc      The narrow path
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    447
+Desc      A small glade
+~
+#ENDEXIT
+
+Reset M 419 2 438 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      439
+Name      Along the faint path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The forest here seems a little greener.  Although most of the rest of the
+forest seems healthy this place along the faint path seems even more healthy
+and abundant.  The path itself is almost less than a game trail now.
+~
+#EXIT
+Direction north~
+ToRoom    431
+Desc      Into the forest
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    447
+Desc      A small glade
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    438
+Desc      Along the trail
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    430
+Desc      The faint path
+~
+#ENDEXIT
+
+Reset O 418 1 439 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      440
+Name      A small clearing~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small clearing is heavily shielded by the surrounding bushes.  Judging
+by the amount of tracks, the smell of dank fur and occasional bones this
+is the lair of at least one carnivore.  The bushes themselves are thick
+with leaves, some of which are mottled.
+~
+#EXIT
+Direction north~
+ToRoom    432
+Desc      A creek amongst the vegetation
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    441
+Desc      Amongst the forest
+~
+#ENDEXIT
+
+Reset M 403 1 440 -1 -1 -1 100
+Reset M 404 1 440 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      441
+Name      In the forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The trees grow thick slowing progress down to a crawl.   Few bushes
+grow here as the sun has difficulty reaching down into here.  There
+is a faint smell of decay here as decomposed vegetation covers the
+forest floor and a few pieces of fungi are growing around.
+The smell seems to be stronger the closer you get to a hole in the
+ground.  You might think twice before going down there.
+~
+#EXIT
+Direction north~
+ToRoom    433
+Desc      The base of the slope
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    440
+Desc      A small clearing
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    469
+#ENDEXIT
+
+Reset M 417 4 441 -1 -1 -1 100
+Reset O 421 1 441 -1 -1 -1 100
+Reset O 422 1 441 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      442
+Name      Along the forested slope~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The forest continues unabated along the slope here,  travel to the south
+is blocked by the dense vegetation, but the hill itself is passable. To
+the north and east you can see a massive tree rising far above the rest of
+the forest.
+~
+#EXIT
+Direction north~
+ToRoom    434
+Desc      The top of the hill
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    443
+Desc      Along the base of the slope
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    433
+Desc      Along the base of the slope
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      443
+Name      On the slope~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The slope continues along here, the brush confines your progress along
+the south.  The top of the hill stops your view to the north.  Trees
+gather in clumps here almost as if purposely planted as such.
+~
+#EXIT
+Direction north~
+ToRoom    435
+Desc      Up to the top of the hill
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    442
+Desc      Along the slope
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    436
+Desc      Down to the bottom of the hill
+~
+#ENDEXIT
+
+Reset M 414 2 443 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      444
+Name      Amongst the trees~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Wading deep through the underbrush, moving the smaller trees and
+going around the larger trees.  All manner of leaves and twigs stick to
+your clothing as you press forth.
+~
+#EXIT
+Direction east~
+ToRoom    445
+Desc      A sylvan glade.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    437
+Desc      Deep in the forest.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      445
+Name      A small glade~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The simplicity of this glade exudes an almost magical aura of peace
+and harmony, even your most aggressive urges are suppressed in this
+place.   The vegetation seems to be in the epitome of life and vitality.
+~
+#EXIT
+Direction east~
+ToRoom    446
+Desc      Into the forest
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    444
+Desc      Into the woods
+~
+#ENDEXIT
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   semlina~
+Comlist   mpmload 499
+tell zombie1 dryad1943
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      446
+Name      In the forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The forest here seems greener and more alive.  Any unhealthy spots you
+have seen elsewhere are banished from you mind.  All the plants and
+trees seem almost cared for, but wilder at the same time.
+~
+#EXIT
+Direction west~
+ToRoom    445
+Desc      A sylvan glade
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    437
+Desc      Into the forest
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      447
+Name      A small camp~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small clearing seems to be two things at once.  An idyllic sylvan glade
+mixes perfectly with a small encampment.  A moss-covered log seems to have
+become a seat and a tiny fire burns in the middle of the opening, far from
+threatening any of the vegetation.
+~
+#EXIT
+Direction north~
+ToRoom    439
+Desc      Back to the path
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    438
+Desc      Onto the trail
+~
+#ENDEXIT
+
+Reset M 407 1 447 -1 -1 -1 100
+  Reset E 417 1 16 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      448
+Name      Half way up a tree~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You have ascended half way up the massive tree,  a little foliage is here
+to grab a hold of and some depressions in the tree allow you to stop your
+ascent here for a rest.  You view is mostly stopped by the dense leaves of
+this and surrounding trees.
+~
+#EXIT
+Direction up~
+ToRoom    451
+Desc      Up onto a small platform
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    411
+Desc      Back down to the forest floor
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      449
+Name      The top of the tree~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Having managed to get to the top of this massive tree you now reap the
+benefits.  A breathtaking view is spread around you.   The carpet of the
+forest is almost complete around you as you sit in the tall clump of trees.
+Off to the south you notice a hill, indicated by the gentle rise of the tree
+tops in that area.  Standing out predominately, just before the hill is a
+huge tree, such as that the rest of the forest looks like saplings.
+~
+#EXIT
+Direction down~
+ToRoom    451
+Desc      Down to the platform
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      450
+Name      Out on the limb~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand out over the forest floor, any further progress is unattainable
+simply because the limb you are on becomes too thin.  The ground seems a
+long way making a fall inadvisable.   There is the remains of a large
+nest here, its state of decay suggest it has not been used for some time.
+~
+#EXIT
+Direction east~
+ToRoom    451
+Desc      Back to the platform
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      451
+Name      A platform nestled in the tree~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This platform seems to be made out of the tree itself, some nature magic
+has shaped it into a usable structure.  It is large enough for a small
+group of people to rest and shelter away from the dangers of the forest
+below.   Looking down you see that the surrounding foliage provides
+almost perfect cover to anyone below and the smell of the forest wafts
+gently past you encouraging you to rest in this seemingly safe, haven.
+~
+#EXIT
+Direction east~
+ToRoom    452
+Desc      A small cavity in the tree
+~
+Keywords  bark~
+Flags     isdoor closed secret nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    450
+Desc      Out on a limb
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    449
+Desc      Further up the tree
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    448
+Desc      Starting back down the tree
+~
+#ENDEXIT
+
+Reset D 451 1 1 100 -2
+#MUDPROG
+Progtype  entry_prog~
+Arglist   25~
+Comlist   if race($n) == elf
+mea $n Your knowledge of these platforms tells you that there should be
+mea $n a cache here, maybe behind a bark wall.
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      452
+Name      Inside the hollow~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small cubby in the tree is a seemingly natural space hidden into the
+tree itself with a hidden opening stopping easy location of this place.
+The trees inside surface is a smooth, almost polished finish, the
+wood grain and swirls makes entrancing patterns around you.
+~
+#EXIT
+Direction west~
+ToRoom    451
+Desc      Back onto the platform
+~
+Keywords  bark~
+Flags     isdoor closed secret~
+#ENDEXIT
+
+Reset O 411 1 452 -1 -1 -1 100
+Reset D 452 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      453
+Name      A pit amongst the roots~
+Sector    city~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      You have descended deep into a natural crevasse in the roots.  This pit is
+fairly large and has been smoothed down by the passage of water and 
+animals as a few bones lay on the bottom.  Perhaps some poor beasts have
+fallen to their doom here.
+~
+#EXIT
+Direction south~
+ToRoom    457
+Desc      In among the roots
+~
+Keywords  bones ~
+Flags     isdoor closed secret nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    427
+Desc      Up to the base of tree
+~
+#ENDEXIT
+
+Reset D 453 2 1 100 -2
+#EXDESC
+ExDescKey    bones bone~
+ExDesc       The bones are of perhaps a wolf or some other canine.  You can really
+identify as the bones have worn into the dirt and are bleached of all
+flesh.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      454
+Name      The end of the feast hall~
+Sector    city~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This enlarged area of the root tunnels has a soot lined roof, showing that
+the cooking utensils that lay here are used.  The stench of smoke and soot
+further brings this feeling home.
+~
+#EXIT
+Direction south~
+ToRoom    458
+#ENDEXIT
+
+Reset O 425 1 454 -1 -1 -1 100
+#EXDESC
+ExDescKey    utensils cooking~
+ExDesc       A few large pots, a much beaten kettle and some malformed spoons and
+ladles make up the cooks equipment here.  As elsewhere in here everything
+is of differing quality, with the bandits using what they find
+thats is useful but not valuable enough to fence for some quick
+profit.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      455
+Name      Heart of the tree~
+Sector    city~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This a very small and cramped crack in the center of the tree.  Deeper inside
+through the split caused by the damage to the great trees roots is a small
+open section about two feet around.
+~
+#EXIT
+Direction east~
+ToRoom    456
+Desc      Erics treasure room.
+~
+Keywords  branch ~
+Flags     isdoor closed secret~
+#ENDEXIT
+
+Reset O 419 1 455 -1 -1 -1 100
+Reset D 455 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      456
+Name      A hidden room~
+Sector    city~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This room seems to be used for storage.   A lining of roots and dirt have provided
+a stable roof and wall, along the east wall a rough hession blanket has been attached
+to the wall, obviously to prevent anything falling upon the bench along that wall.
+On the been are several items that gleam with the luster of precious metals and gems.
+~
+#EXIT
+Direction south~
+ToRoom    460
+Desc      Eric's bedroom.
+~
+Keywords  board~
+Flags     isdoor closed secret~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    455
+Desc      A narrow crack in the trees heart
+~
+Keywords  branch ~
+Flags     isdoor closed secret nopassdoor~
+#ENDEXIT
+
+Reset O 426 1 456 -1 -1 -1 100
+Reset D 456 2 1 100 -2
+Reset D 456 3 1 100 -2
+#EXDESC
+ExDescKey    hession blanket~
+ExDesc       The large coarse weave blanket seems to have been attached to the wall with large
+iron nails sticking into the thick roots.  A quick look behind the covering
+reveals only more wall.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      457
+Name      A root lined tunnel~
+Sector    city~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A small narrow passage further under the tree.   With the natural substance along
+roof, floor and walls only the relatively flat floor gives away the fact that
+this passage sees use.
+~
+#EXIT
+Direction north~
+ToRoom    453
+Desc      Bottom of the pit
+~
+Keywords  bones ~
+Flags     isdoor secret~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    461
+Desc      An enlargement of the passage
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      458
+Name      The feast hall~
+Sector    city~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The largest room you have seen here under the tree, the roots almost seem
+to have been cut back too savagely.   The safety of the room does not seem
+to be too bad as the purpose of this room seems to be to provide the bandit
+group a place to eat their meals.  A large table and simple benches provide
+seating and the plain silver and steel cutlery and plates you feel must have
+been stolen.
+~
+#EXIT
+Direction north~
+ToRoom    454
+Desc      A rough kitchen
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    462
+Desc      The armory
+~
+#ENDEXIT
+
+Reset M 423 5 458 -1 -1 -1 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 413 1 5 100
+  Reset E 416 1 16 100
+  Reset E 415 1 8 100
+Reset M 423 5 458 -1 -1 -1 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 413 1 5 100
+  Reset E 415 1 8 100
+  Reset E 416 1 16 100
+#EXDESC
+ExDescKey    silver steel cutlery plates~
+ExDesc       All of the eating utensils are now showing the signs of heavy and
+abusive use.   Even though some of them were quite fine and
+expensive items, harsh use has devalued all of the items to
+next to nothing.   Perhaps with the lack of merchants travelling
+through the bandit group is starting to feel a degrading lifestyle.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      459
+Name      Fnords Room~
+Sector    city~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This rooms walls are lined with cured deer hides.  Even the roof is covered
+by a canvas covering, perhaps the owner of room does not like being underground.
+The floor is covered by a series of thick fur pelts, they would be worth money
+except for the fact they are dirty, stained and damaged.  The plush bed seems
+out of place in the surroundings, perhaps it fell of the back of a cart.
+~
+#EXIT
+Direction south~
+ToRoom    463
+Desc      The root lined hallway
+~
+#ENDEXIT
+
+Reset M 411 1 459 -1 -1 -1 100
+  Reset E 416 1 16 100
+  Reset E 416 1 18 100
+  Reset E 404 1 6 100
+  Reset E 412 1 7 100
+  Reset E 413 1 5 100
+  Reset E 414 1 10 100
+  Reset E 415 1 8 100
+#ENDROOM
+
+#ROOM
+Vnum      460
+Name      Erics Room~
+Sector    city~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The most fancy room in the place this is obviously the leaders quarters.
+Someone has even gone to the trouble of nailing wooden boards to all sides
+of the room, thus this appears to be any normal room.  Well any normal room
+without any windows and a musty dirt smell pervading it.  A few pieces of
+fine furniture are in place, including a bed, dresser and a couple of fine
+chairs.
+~
+#EXIT
+Direction north~
+ToRoom    456
+Desc      A hidden room
+~
+Keywords  board~
+Flags     isdoor closed secret~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    464
+Desc      The root lined hall
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 409 1 460 -1 -1 -1 100
+  Reset E 415 1 8 100
+  Reset E 414 1 10 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 424 1 16 100
+Reset D 460 0 1 100 -2
+Reset D 460 2 1 100 -2
+#EXDESC
+ExDescKey    board wall wood~
+ExDesc       A cursory look over the room shows that boards from many sourses
+have been tacked here to make the walls.  There is a general mottled
+effect caused by the very different grains and sizes of boards used.
+Little furniture is directly against the walls, perhaps for safety.
+A quick search of the rough walls reveals that one large board in
+the north wall is actually a hidden door.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      461
+Name      The guard room~
+Sector    city~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A simple utility is filled by this room.  This is a guardroom, the occupants
+will try their best to stop any unwelcome intruders from passing any further.
+When the guards are not fighting invaders to the death they are playing some
+simple game of cards on the table here.
+~
+#EXIT
+Direction north~
+ToRoom    457
+Desc      A narrow tunnel
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    462
+Desc      A room under the tree
+~
+#ENDEXIT
+
+Reset M 423 13 461 -1 -1 -1 100
+  Reset E 414 1 10 100
+  Reset E 412 1 7 100
+  Reset E 413 1 5 100
+  Reset E 415 1 8 100
+  Reset E 417 1 16 100
+Reset M 423 13 461 -1 -1 -1 100
+  Reset E 414 1 10 100
+  Reset E 412 1 7 100
+  Reset E 413 1 5 100
+  Reset E 415 1 8 100
+  Reset E 416 1 16 100
+Reset M 423 13 461 -1 -1 -1 100
+  Reset E 412 1 7 100
+  Reset E 413 1 5 100
+  Reset E 415 1 8 100
+  Reset E 400 1 16 100
+  Reset E 414 1 10 100
+Reset M 423 13 461 -1 -1 -1 100
+  Reset E 414 1 10 100
+  Reset E 412 1 7 100
+  Reset E 413 1 5 100
+  Reset E 415 1 8 100
+  Reset E 417 1 16 100
+Reset M 423 13 461 -1 -1 -1 100
+  Reset G 414 1 100
+  Reset G 412 1 100
+  Reset G 413 1 100
+  Reset G 415 1 100
+  Reset G 416 1 100
+#EXDESC
+ExDescKey    table cards~
+ExDesc       Redit the table looks to be of very strong and thick construction
+perhaps the inhabitants use the table as a makeshift barricade
+when they are attacked.  The set of cards upon the table show
+some heavy use and there are multiple layers of grime pressed
+into each of them.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      462
+Name      The armory~
+Sector    city~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A large cross roads type room with many apparent exits, this place serves
+as a storage place for weapons and armor while not in use.  Bare roots and
+dirt make up the construction of this room.  The roots of the roof have been
+cut back to allow an increase in the overall height of the room.
+~
+#EXIT
+Direction north~
+ToRoom    458
+Desc      A large long room.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    463
+Desc      A hallway.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    466
+Desc      A room filled with chairs and tables.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    461
+Desc      The guard room.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    465
+Desc      A very large room.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      463
+Name      A musty hallway~
+Sector    city~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A large hallway, the dirt making the floor, roof and walls is lined with
+roots of all shapes and sizes.   The hallway is almost circular in shape
+suggesting a mostly natural origin, although the floor is flattened down
+to an almost smooth surface by the passage of booted feet.
+~
+#EXIT
+Direction north~
+ToRoom    459
+Desc      A bedroom
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    464
+Desc      The end of the hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    467
+Desc      A large room
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    462
+Desc      The armory
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      464
+Name      End of the hallway~
+Sector    city~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The roof rapidly descends meeting the floor, roots are almost solid
+over head.  Roots have been torn away to the north and south and
+now doors stand in holes.
+~
+#EXIT
+Direction north~
+ToRoom    460
+Desc      A large bedroom.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    468
+Desc      A small cozy room.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    463
+Desc      Along the hallway.
+~
+#ENDEXIT
+
+Reset D 464 0 1 100 -2
+Reset D 464 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      465
+Name      Common room~
+Sector    city~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A very large root lined room,  rough boards make up the floor.  Most of
+the area is filled with numerous bunks and pallets.  Many people seem
+to use this place as sleeping room as the combined smell of many unwashed
+bodies combines into an almost palpable aura.
+~
+#EXIT
+Direction northeast~
+ToRoom    462
+Desc      The armory
+~
+#ENDEXIT
+
+Reset M 423 8 465 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 415 1 8 100
+  Reset E 417 1 16 100
+Reset M 423 8 465 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 415 1 8 100
+  Reset E 416 1 16 100
+Reset M 423 8 465 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 415 1 8 100
+  Reset E 400 1 16 100
+#EXDESC
+ExDescKey    bunk pallet~
+ExDesc       You do not approach the either the bunks or the pallets as the
+smell is not good, and their appearance is worse.  All are stained
+to some degree and you swear that something moves in at least
+some of them proclaiming pestial infestation.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      466
+Name      Game room~
+Sector    city~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A rest room for the troops.   A few tables stand with cards and dice
+upon them.  A target board with several knives sticking from it has been
+hung upon the wall and the room is finished off by the smells of stale
+beer and spilled wine.
+~
+#EXIT
+Direction north~
+ToRoom    462
+Desc      The armory
+~
+#ENDEXIT
+
+Reset M 423 3 466 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 414 1 10 100
+  Reset E 412 1 7 100
+  Reset E 415 1 8 100
+  Reset E 417 1 16 100
+Reset M 423 3 466 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 414 1 10 100
+  Reset E 412 1 7 100
+  Reset E 415 1 8 100
+  Reset E 416 1 16 100
+Reset M 423 3 466 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 414 1 10 100
+  Reset E 412 1 7 100
+  Reset E 415 1 8 100
+  Reset E 400 1 16 100
+#EXDESC
+ExDescKey    table cards dice~
+ExDesc       The tables are fairly primitive wood construction, maybe the kind
+that a peasant would use.  They are all fairly stained with pools
+and residue of various types of spilled alcohol.  The cards
+and dice are of a poor quality and some of the cards sport
+rather large stains making gaming against those who know
+the splotches on the back of the cards inadvisable.
+The dice look as they are made from somethings bone.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    target~
+ExDesc       The target is a large fairly circular tree cross-section.  With
+prominent bands in its ring variation.  Apparently these are use for
+scoring the game.  The whole front of the target is a mass of wood
+pulp from being repeatedly hit by knives and daggers.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      467
+Name      Ogres room~
+Sector    city~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The owner of this room goes for the simple things in life.   A large
+plain pallet serves as a simple bed, a piece of cut off wood is a stool.
+An old barrel seems be a simple table.
+~
+#EXIT
+Direction north~
+ToRoom    463
+Desc      The hallway.
+~
+#ENDEXIT
+
+Reset M 412 1 467 -1 -1 -1 100
+  Reset E 408 1 16 100
+  Reset G 416 1 100
+  Reset G 400 1 100
+  Reset E 412 1 7 100
+  Reset E 415 1 8 100
+#EXDESC
+ExDescKey    barrel table~
+ExDesc       The ball come table is very basic and only contains an empty
+beer mug.   Tapping on the barrel itself sounds like it is hollow
+and probably contains nothing.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      468
+Name      Lucellias room~
+Sector    city~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A fair simple room, the owner doesn't seem to that worried with emphereal things
+in life.  The basic simplicity of the bed, closet and table makes you wonder why
+the occupant has taken up the life of a bandit.  Even the bare roots and dirt that
+make up this underground complex are not covered.
+~
+#EXIT
+Direction north~
+ToRoom    464
+Desc      The root lined hallway.
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 410 1 468 -1 -1 -1 100
+  Reset E 415 1 8 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 404 1 6 100
+  Reset E 400 1 16 100
+  Reset E 401 1 14 100
+  Reset E 401 1 15 100
+Reset D 468 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      469
+Name      Into the cave~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
+Desc      The stench is almost overpowering now as you go further into the cave.
+Pieces of rotting flesh and decaying bone are strewn about the ground.
+Something really disgusting must live down here.  There are scratches
+on the wall.
+~
+#EXIT
+Direction south~
+ToRoom    251
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    441
+#ENDEXIT
+
+#EXDESC
+ExDescKey    scratches~
+ExDesc       Long grooves have been cut into the rock here.  It had to take something
+powerful to make these marks.   Whatever lives down here probably does
+not want to be disturbed.  Make sure you're up to the challenge before
+you go any further.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      470
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
+#ENDROOM
+
+#ROOM
+Vnum      497
+Name      The mob closet~
+Sector    city~
+Flags     nomob nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This room stores the bandits that go to different places to
+ambush the player characters.  This is so MpMload isn't used and
+creating an infinite supply of them.
+~
+Reset M 422 1 497 -1 -1 -1 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 400 1 16 100
+  Reset E 415 1 8 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 416 1 16 100
+  Reset E 415 1 8 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 400 1 16 100
+  Reset E 415 1 8 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 400 1 16 100
+  Reset E 415 1 8 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 400 1 16 100
+  Reset E 415 1 8 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 400 1 16 100
+  Reset E 415 1 8 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 416 1 16 100
+  Reset E 415 1 8 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 417 1 16 100
+  Reset E 415 1 8 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 415 1 8 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 416 1 16 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 417 1 16 100
+  Reset E 415 1 8 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 416 1 16 100
+  Reset E 415 1 8 100
+Reset M 413 12 497 -1 -1 -1 100
+  Reset E 413 1 5 100
+  Reset E 412 1 7 100
+  Reset E 414 1 10 100
+  Reset E 417 1 16 100
+  Reset E 415 1 8 100
+Reset M 408 1 497 -1 -1 -1 100
+#MUDPROG
+Progtype  speech_prog~
+Arglist   bandit~
+Comlist   if mobinroom(413)>=1
+mptrans outdoor 405
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   bandersnatch~
+Comlist   if mobinroom(408)>=1
+mptrans bandersnatch 418
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   dryad~
+Comlist   if mobinroom(422)>=1
+mptrans dryad 445
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      498
+Name      Trash Room~
+Sector    city~
+Flags     nomob nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Purges mobs that so that purge self isn't needed.
+~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   33~
+Comlist   mppurge
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      499
+Name      Last Room~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      An Information room for Immortals.
+Examine the following:
+"Plots" for an overview of the plots.
+"Area" for general information.
+"Info" for Placement and integration into the world.
+~
+#EXDESC
+ExDescKey    Info~
+ExDesc       Make sure mobs 400,401 and 402 have mpinvis settings correct
+for what your level your mud goes to, players should never
+see them.
+In Black Aria is is place from the start of the gnomes 
+Shattered Refuge(Vnum 1501) to the south east corner of
+the trail around Darkhaven (Vnum 21119).
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    area~
+ExDesc       Originally from Black Aria:
+
+                     aria.tander.com 4000
+
+Okay here is my second area.   This Area represents more of a
+'realistic fantasy' rather than an 'epic fantasy' setting.
+
+This area is a path to go from one area to another, but is a
+bit too dangerous to probably be considered a linkage area.
+
+Note that some of the mobs have Rand_progs for them attacking
+rather than being outright aggressive, both to suprise
+experienced players and give newbies more a chance to
+determine combat.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    plot plots~
+ExDesc       This represents an old trade route, made unusable by the
+Bandit Eric and his group.
+
+Along the main path the players meet the Knight Theggory.
+He tells of seeking a druid. 
+The Druid tells of needing to help the forest as it isn't as
+healthy as it seems, so he seeks the guardian of the forest a
+dryad.
+The Dryad says that she has been driven from her tree by
+humans, she needs the Heart of the Tree to regain her home.
+The Tree is the base Erics Band and entry is hard to find
+without talking to the Dryad, deep in the tree is the 
+heart for which the dryad will reward the return of.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ENDAREA

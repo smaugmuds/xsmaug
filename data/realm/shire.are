@@ -1,0 +1,2596 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Shire~
+Author          Anon~
+Vnums           1100 1157
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          5 35 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      1100
+Keywords  elven wizard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the Elven Wizard~
+Long      An Elven Wizard is here, creating fireworks for the festivities.
+~
+Desc      The Elven Wizard looks at you in a solemn sort of way.  His gaze seems to
+penetrate through your innermost being.  He is wearing a silvery cloak
+and holding a multi-colored staff.  Although he appears to be older
+than the oldest man, he seems to have an inner strength which most mortals
+cannot overcome.
+~
+Nattacks  0.000000
+Stats1    500 2109 0 0 0 0
+Stats2    18 21 0 180 3 2 15
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1101
+Keywords  ring keeper~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     the Keeper of the Ring~
+Long      The Keeper of the Ring is here, guarding his treasure jealously.
+~
+Desc      The Ring Keeper is a rather big but short halfling.  His short stature and
+bulbous nose belie his true nature.  An elven sword that glows with a blue
+light hangs from his belt, and on his finger you see the One Ring.  Although
+usually a halfling of peace, he will fight you to the death if you attempt
+to take away that which belongs to him.
+~
+Nattacks  0.000000
+Stats1    0 1231 0 0 0 0
+Stats2    19 21 -5 190 1 8 16
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  invisible detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1102
+Keywords  farmer gamgee~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  resting~
+DefPos    resting~
+Short     Farmer Gamgee~
+Long      Farmer Gamgee sniffs the air, wondering if harvest time is near.
+~
+Desc      Farmer Gamgee is a short, stout halfling of thirty years.  His skin has
+been tanned from working the fields night and day.  He's quite a jolly
+chap, always ready to befriend an injured bunny rabbit.
+~
+Nattacks  0.000000
+Stats1    350 0 0 0 0 0
+Stats2    7 21 4 77 1 4 5
+Speaking  common~
+Actflags  npc sentinel wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1103
+Keywords  toddler~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     a toddler~
+Long      A toddler crawls about, looking for something to chew on.
+~
+Desc      The toddler is dressed in nothing but his birthday suit.  He crawls about
+for he hasn't learned to walk yet.  He peers up at you and asks "da da?"
+~
+Nattacks  0.000000
+Stats1    100 0 0 0 0 0
+Stats2    2 21 9 22 1 3 1
+Speaking  common~
+Actflags  npc sentinel wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1104
+Keywords  nursemaid~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a nursemaid~
+Long      A nursemaid wanders about, trying to keep track of all the toddlers.
+~
+Desc      The nursemaid looks rather tired and worn out.  Taking care of so many
+toddlers for too long has evidently taken its toll.  She looks to you and
+in her eyes you can see her longing for a better life.
+~
+Nattacks  0.000000
+Stats1    100 30 0 0 0 0
+Stats2    5 21 5 55 1 3 4
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1105
+Keywords  cow~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  resting~
+DefPos    resting~
+Short     a cow~
+Long      A cow is here, chewing her cud.
+~
+Desc      The cow looks like it hasn't been milked in quite some time.  Although she
+is past her prime, you see that she still has a lot of years left, and that
+if provoked, her rear kick can be quite deadly.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    4 21 6 44 1 4 3
+Speaking  common~
+Actflags  npc stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1106
+Keywords  pig~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  resting~
+DefPos    resting~
+Short     a pig~
+Long      A pig wallows in the mud and oinks in contentment.
+~
+Desc      The pig appears quite happy to be a pig.  He is oblivious to your presence
+and cares only for the care-free life that he leads.  It is enormously fat
+and consequently cannot move around very quickly.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    3 21 7 33 2 2 1
+Speaking  common~
+Actflags  npc stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1107
+Keywords  chicken~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  sitting~
+DefPos    sitting~
+Short     a chicken~
+Long      A chicken sits on her nest.
+~
+Desc      The chicken is bright and healthy.  She has no weapons but her beak.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    2 21 7 22 1 4 0
+Speaking  common~
+Actflags  npc stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1108
+Keywords  bull~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a bull~
+Long      A bull scratches at the ground and lowers his head.
+~
+Desc      The bull is in top condition.  He looks like quite a fighter, nothing to be
+reckoned with.  With his horns and his hooves he can attack just about
+anything.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    6 21 4 66 1 4 4
+Speaking  common~
+Actflags  npc sentinel aggressive~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1109
+Keywords  horse~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a horse~
+Long      A horse becomes frightened by your presence.
+~
+Desc      The horse looks at you and turns away.  You can tell that it is afraid of you.
+~
+Nattacks  0.000000
+Stats1    0 2 0 0 0 0
+Stats2    4 21 6 44 1 8 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1110
+Keywords  shiriff~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Specfun   spec_guard~
+Short     a shiriff~
+Long      A shiriff of the Shire looks for signs of trouble.
+~
+Desc      The shiriff is over waist high, quite tall for a halfling.  His eyes are
+ever roaming, looking for signs of trouble from riff-raff like you.  In
+his belt is a thin dagger, and on his body he wears a suit of leather armor.
+This is one halfling you don't want to mess with.
+~
+Nattacks  0.000000
+Stats1    150 50 0 0 0 0
+Stats2    8 21 5 88 1 4 5
+Speaking  common~
+Actflags  npc scavenger stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1111
+Keywords  shiriff~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Specfun   spec_guard~
+Short     a shiriff~
+Long      A shiriff of the Shire looks for signs of trouble.
+~
+Desc      The shiriff is over waist high, quite tall for a halfling.  His eyes are
+ever roaming, looking for signs of trouble from riff raff like you.  In
+his belt is a thin dagger, and on his body he wears a suit of leather armor.
+This is one halfling you don't want to mess with.
+~
+Nattacks  0.000000
+Stats1    150 50 0 0 0 0
+Stats2    8 21 5 88 1 4 5
+Speaking  common~
+Actflags  npc scavenger stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1112
+Keywords  thain~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Specfun   spec_guard~
+Short     the Thain~
+Long      The Thain commands respect from all Shire folk.
+~
+Desc      A personable yet serious halfling, the Thain looks at you and yells a
+deep 'Hullo'.  He walks about comfortably, secure in the knowledge that
+as long as he's in office, the Shire will always remain a safe haven for
+Shire folk.
+~
+Nattacks  0.000000
+Stats1    400 500 0 0 0 0
+Stats2    14 21 -3 140 1 4 12
+Speaking  common~
+Actflags  npc stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1113
+Keywords  innkeeper~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the Innkeeper~
+Long      The Innkeeper stands here awaiting your order.
+~
+Desc      The Innkeeper is a jolly old halfling who spends his days eavesdropping on
+local gossip.  In his younger days, he was quite a seasoned traveller.
+~
+Nattacks  0.000000
+Stats1    200 700 0 0 0 0
+Stats2    12 21 2 120 1 4 10
+Speaking  common~
+Actflags  npc sentinel stayarea~
+ShopData   17 0 0 0 0 150 50 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum      1114
+Keywords  miller~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the Miller~
+Long      The Miller is here, overseeing his busy mill workers.
+~
+Desc      The Miller is an impatient young halfling, always trying to command more
+respect from his workers than he can get.  He looks like the type of person
+who deserves a spanking but never got one.
+~
+Nattacks  0.000000
+Stats1    50 200 0 0 0 0
+Stats2    6 21 4 66 1 4 4
+Speaking  common~
+Actflags  npc scavenger stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1115
+Keywords  mill worker~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the mill worker~
+Long      The mill worker runs to and fro.
+~
+Desc      The mill worker is in fine shape from the hard labor that he does at the
+mill.  He doesn't notice your presence, but he looks like he could break you
+in two without thinking about it.
+~
+Nattacks  0.000000
+Stats1    0 50 0 0 0 0
+Stats2    5 21 5 55 1 6 3
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1116
+Keywords  elven warrior~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Specfun   spec_cast_mage~
+Short     the elven warrior~
+Long      The elven warrior watches you solemnly.
+~
+Desc      The tall elven warrior is light and fair-skinned.  The expression that he wears
+on his countenance is solemn and tragic.  He cares not for this world any
+longer and wearies of it.
+~
+Nattacks  0.000000
+Stats1    600 500 0 0 0 0
+Stats2    17 21 -4 170 1 4 15
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1117
+Keywords  dwarven prince~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Specfun   spec_cast_mage~
+Short     the dwarven prince~
+Long      The dwarven prince sits here patiently for the return of his king.
+~
+Desc      Grim and cold, the dwarven prince is quite strong and bulky, even for the
+dwarves of his land.  His glowing eyes peer out of his bushy face and stare
+beyond your gaze.
+~
+Nattacks  0.000000
+Stats1    200 700 0 0 0 0
+Stats2    17 21 -8 170 1 4 15
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1118
+Keywords  shopkeeper~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the shopkeeper~
+Long      The shopkeeper smiles and patiently waits for you to buy something.
+~
+Desc      The shopkeeper will fight like a madman to protect his store from riff-raff
+like you.
+~
+Nattacks  0.000000
+Stats1    600 12000 0 0 0 0
+Stats2    21 21 -12 222 2 4 22
+Speaking  common~
+Actflags  npc sentinel~
+ShopData   13 5 15 1 17 150 50 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum      1119
+Keywords  grocer~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the grocer~
+Long      The grocer offers you the finest breads in all the land.
+~
+Desc      The grocer is a large, jovial halfling who knows how to enjoy his pipeweed.
+However, he also knows that it's worth protecting and so will do everything
+in his power to prevent riff-raff like you from stealing it.
+~
+Nattacks  0.000000
+Stats1    600 1500 0 0 0 0
+Stats2    21 21 -12 222 2 4 22
+Speaking  common~
+Actflags  npc sentinel~
+ShopData   13 5 15 1 17 150 50 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum      1120
+Keywords  blacksmith~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the blacksmith~
+Long      The blacksmith bids you welcome to his humble store.
+~
+Desc      The blacksmith is a lean and mean fighting machine.  His knowledge of weapons
+and armour would certainly help him in any fight against riff-raff like you.
+~
+Nattacks  0.000000
+Stats1    600 18000 0 0 0 0
+Stats2    50 21 -30 500 1 6 36
+Speaking  common~
+Actflags  npc sentinel~
+ShopData   9 5 0 0 0 150 50 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum      1121
+Keywords  battle master~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     the battle master~
+Long      The battle master offers you the services of his fine trainees.
+~
+Desc      The battle master is a wizened fighter, with many scars to prove his worth.
+~
+Nattacks  0.000000
+Stats1    350 1500 0 0 0 0
+Stats2    25 21 -15 250 2 6 20
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1122
+Keywords  halfling youth~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a halfling youth~
+Long      A halfling youth stands here, waiting for nothing in particular.
+~
+Desc      The halfling youth is not yet quite in the prime of his youth.  He's knee
+high and you get the sudden urge to step on him.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    3 21 7 33 1 6 1
+Speaking  common~
+Actflags  npc stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1123
+Keywords  seasoned adventurer~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     a seasoned adventurer~
+Long      A seasoned adventurer sits here, telling tales of fame and fortune.
+~
+Desc      The seasoned adventurer has seen his share of glory days.  Although he is
+past his prime, he still looks like he could put up more than his share of
+a good fight.
+~
+Nattacks  0.000000
+Stats1    100 170 0 0 0 0
+Stats2    8 21 3 88 2 3 7
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1124
+Keywords  local gossip~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  sitting~
+DefPos    sitting~
+Short     a local gossip~
+Long      A local gossip asks you, "Have you heard the latest?"
+~
+Desc      The gossip is all talk and no action.  You're transfixed by her ability to
+talk so much so quickly.
+~
+Nattacks  0.000000
+Stats1    0 25 0 0 0 0
+Stats2    4 21 6 44 1 4 2
+Speaking  common~
+Actflags  npc sentinel wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1125
+Keywords  halfling beauty~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a halfling beauty~
+Long      A halfling beauty stares dreamily into your eyes.
+~
+Desc      She is the most beautiful creature you've seen in quite some time.  As you
+stare at her, thoughts of all else vanish.  You get the sudden urge to grovel
+at her feet, hoping she'll take you in like a lost puppy.  You wouldn't dare
+harm a hair on her precious little head.
+~
+Nattacks  0.000000
+Stats1    1000 75 0 0 0 0
+Stats2    6 21 4 66 1 4 4
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1126
+Keywords  trainee~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a trainee~
+Long      A trainee screams a death cry as he delivers the fatal blow to a dummy.
+~
+Desc      The trainee smiles smugly, aware of your interest in him.  He's a little
+fresh, but his enthusiasm and desire to please more than make up for what
+he lacks in skill.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 5 55 1 6 3
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1127
+Keywords  chic urbanite~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     a chic urbanite~
+Long      A chic urbanite sits here, enjoying his class status.
+~
+Desc      The urbanite seems very much at home in his surroundings.  His clothes are
+all of the latest fashions and his manners impeccable.  He offers you some
+coins if you'd be so good as to order a drink for him.
+~
+Nattacks  0.000000
+Stats1    0 100 0 0 0 0
+Stats2    4 21 6 44 2 2 2
+Speaking  common~
+Actflags  npc sentinel wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1128
+Keywords  country bumpkin~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sleeping~
+DefPos    sleeping~
+Short     a country bumpkin~
+Long      A country bumpkin dreams of pipeweed and its many uses.
+~
+Desc      The country bumpkin snores noisily.
+~
+Nattacks  0.000000
+Stats1    0 70 0 0 0 0
+Stats2    5 21 5 55 1 4 3
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1130
+Keywords  innkeeper~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the Innkeeper~
+Long      The Innkeeper stands here awaiting your order.
+~
+Desc      The Innkeeper is a jolly old halfling who spends his days eavesdropping on
+local gossip.  In his younger days, he was quite a seasoned traveller.
+~
+Nattacks  0.000000
+Stats1    200 1000 0 0 0 0
+Stats2    12 21 2 120 1 4 10
+Speaking  common~
+Actflags  npc sentinel~
+ShopData   17 0 0 0 0 150 50 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum      1131
+Keywords  receptionist~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the receptionist~
+Long      The receptionist sits here, signing forms.
+~
+Desc      He is a very professional looking type.
+~
+Nattacks  0.000000
+Stats1    200 70 0 0 0 0
+Stats2    12 21 -2 120 1 8 14
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1132
+Keywords  shiriff~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     a shiriff~
+Long      A shiriff of the Shire looks for the lost halfling youth.
+~
+Desc      The shiriff is over waist high, quite tall for a halfling.
+He looks at you, smiles and asks you if you have seen a halfling youth
+somewhere outside the shire.
+~
+Nattacks  0.000000
+Stats1    150 50 0 0 0 0
+Stats2    8 21 5 88 1 4 6
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#OBJECT
+Vnum      1100
+Keywords  rainbow staff~
+Type      light~
+Short     the rainbow staff~
+Long      The rainbow staff lies here.~
+Flags     magic~
+WFlags    take ears~
+Values    0 0 -1 0 0 0 0 0 0 0 0
+Stats     8 5000 -2 1 0 None None None
+AffData dexterity 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1101
+Keywords  sting~
+Type      weapon~
+Short     Sting~
+Long      Sting lies here.~
+Flags     glow hum antievil~
+WFlags    take wield~
+Values    0 2 7 10 0 0 0 0 0 0 0
+Stats     1 10000 -2 1 0 None None None
+AffData intelligence 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1102
+Keywords  sign~
+Type      furniture~
+Short     a sign~
+Long      A sign demands your attention.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    sign~
+ExDesc       Welcome to the Shire.  As you enter the Shire from Haon-Dor you come under
+the jurisdiction of the Thain, the peacekeeper of the Shire.  Consequently,
+by entering these lands you agree to obey our laws.  If you break these laws,
+you will be severely punished.  We do not like riff raff in our peaceful
+town.
+
+					The Thain
+					Peacekeeper of the Shire
+
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      1103
+Keywords  pipeweed bread~
+Type      food~
+Short     a pipeweed bread~
+Long      A loaf of pipeweed bread arouses your hunger.~
+WFlags    take~
+Values    24 0 0 0 0 0 0 0 0 0 0
+Stats     1 13 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      1104
+Keywords  silvery cloak~
+Type      armor~
+Short     a silvery cloak~
+Long      A silvery cloak lies here.~
+Flags     glow~
+Values    7 0 0 0 0 0 0 0 0 0 0
+Stats     3 10000 -2 1 0 None None None
+AffData save_spell -2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1105
+Keywords  one ring~
+Type      armor~
+Short     the One Ring~
+Long      The One Ring is here.~
+Flags     magic~
+WFlags    take finger hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 2500 -2 1 0 None None None
+AffData armor 10 -1 -1 0
+AffData mana 20 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1106
+Keywords  elven bow~
+Type      weapon~
+Short     an elven bow~
+Long      An elven bow lies here.~
+Flags     hum magic antievil~
+WFlags    take wield~
+Values    0 2 8 4 0 0 0 0 0 0 0
+Stats     10 2000 -2 1 0 None None None
+AffData hitroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1107
+Keywords  mithril axe~
+Type      weapon~
+Short     a mithril axe~
+Long      A mithril axe lies here.~
+Flags     hum~
+Values    0 2 8 5 0 0 0 0 0 0 0
+Stats     12 4000 -2 1 0 None None None
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1108
+Keywords  thain girth~
+Type      armor~
+Short     the thain girth~
+Long      The girth of the thain lies here.~
+WFlags    take waist~
+Values    5 3 0 0 0 0 0 0 0 0 0
+Stats     4 1000 -2 1 0 None None None
+AffData dexterity 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1109
+Keywords  tiny dagger~
+Type      weapon~
+Short     a tiny dagger~
+Long      A tiny dagger lies here.~
+WFlags    take wield~
+Values    0 1 6 11 0 0 0 0 0 0 0
+Stats     3 40 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      1110
+Keywords  egg~
+Type      food~
+Short     an egg~
+Long      An egg lies here.~
+WFlags    take~
+Values    12 0 0 0 0 0 0 0 0 0 0
+Stats     1 9 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      1111
+Keywords  bag~
+Type      container~
+Short     a bag~
+Long      A bag is on the floor.~
+WFlags    take~
+Values    50 0 0 0 0 0 0 0 0 0 0
+Stats     5 50 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      1112
+Keywords  lantern~
+Type      light~
+Short     a lantern~
+Long      A lantern is on the floor.~
+WFlags    take~
+Values    0 0 20 0 0 0 0 0 0 0 0
+Stats     4 50 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      1113
+Keywords  bardiche~
+Type      weapon~
+Short     a bardiche~
+Long      A long weapon with a sharp end is on the floor.~
+WFlags    take~
+Values    0 3 4 3 0 0 0 0 0 0 0
+Stats     10 1000 -2 1 0 None None None
+AffData hitroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1114
+Keywords  flail~
+Type      weapon~
+Short     a flail~
+Long      A flail is on the floor.~
+WFlags    take~
+Values    0 2 4 6 0 0 0 0 0 0 0
+Stats     8 300 -2 1 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      1100
+Name      A dimly lit path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You tread through the deep, dark forest on a dimly lit path.  Up ahead you
+can hear the faint sounds of a village.
+~
+#EXIT
+Direction north~
+ToRoom    1101
+Desc      The dimly lit path leads north through the dense forest.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    6000
+Desc      The dimly lit path leads south through the light forest.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1101
+Name      A dimly lit path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You tread through the deep, dark forest on a dimly lit path.  Up ahead you
+can hear the faint sounds of a village.
+~
+#EXIT
+Direction north~
+ToRoom    1102
+Desc      The dimly lit path leads north through the dense forest.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1100
+Desc      The dimly lit path leads south through the dense forest.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1102
+Name      A dimly lit path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You tread through the deep, dark forest on a dimly lit path.  The forest
+here seems less dense than to the south.  Northward you see the faint outline
+of a village.
+~
+#EXIT
+Direction north~
+ToRoom    1103
+Desc      The dimly lit path leads to a village.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1101
+Desc      The dimly lit path leads south through the dense forest.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1103
+Name      Entrance to the Shire~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand at the entrance to the Shire.  You see halflings, no more than
+wee tall, every which way you look. Bywater Road leads east and west.
+~
+#EXIT
+Direction east~
+ToRoom    1104
+Desc      To the east runs Bywater Road.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1102
+Desc      To the south you see a dimly lit path which leads to a dense forest.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1118
+Desc      To the west runs Bywater Road.
+~
+#ENDEXIT
+
+Reset O 1102 1 1103 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1104
+Name      Bywater Road~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on Bywater Road, the busiest street in all of Shiredom.  The road
+continues to the east and west while to the north lies the general store.
+~
+#EXIT
+Direction north~
+ToRoom    1105
+Desc      The general store lies to the north.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1106
+Desc      To the east runs Bywater Road.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1103
+Desc      To the west you see the entrance to the Shire.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1105
+Name      The General Store~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are inside the general store.  All sorts of goodies are stacked on the
+many shelves.  Your local friendly shopkeeper is smiling patiently, waiting to 
+serve you to the best of his abilities.  The only exit is to the south.
+~
+#EXIT
+Direction south~
+ToRoom    1104
+Desc      The only exit lies to the south.
+~
+#ENDEXIT
+
+Reset M 1118 1 1105 -1 -1 -1 100
+  Reset G 1111 999 100
+  Reset G 1112 999 100
+#ENDROOM
+
+#ROOM
+Vnum      1106
+Name      Bywater Road~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on Bywater Road, the busiest street in all of Shiredom.  The road
+continues to the east and west.  To the north, steps lead to a friendly looking
+weaponry/armory while a nursery lies to the south.
+~
+#EXIT
+Direction north~
+ToRoom    1107
+Desc      Steps lead to a friendly looking weaponry and armory.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1109
+Desc      To the east runs Bywater Road.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1108
+Desc      To the south lies Kid'n Keep, the local nursery.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1104
+Desc      To the west runs Bywater Road.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1107
+Name      The House of Arms~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are inside the finest weapons and armour shop in all of Shiredom.  The
+shopkeeper proudly displays his fine wares and humbly offers the best daggers
+that you have ever laid eyes on.
+~
+#EXIT
+Direction south~
+ToRoom    1106
+Desc      The only exit lies to the south.
+~
+#ENDEXIT
+
+Reset M 1120 1 1107 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1108
+Name      Kid'n Keep~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are inside Kid'n Keep, the convenient one-stop nursery that maintains
+the youth of the Shire.  Toddlers run every which way while their nursemaids
+sigh in exasperation.  The only exit lies to the north.
+~
+#EXIT
+Direction north~
+ToRoom    1106
+Desc      The only exit lies to the north.
+~
+#ENDEXIT
+
+Reset M 1104 2 1108 -1 -1 -1 100
+Reset M 1104 2 1108 -1 -1 -1 100
+Reset M 1103 6 1108 -1 -1 -1 100
+Reset M 1103 6 1108 -1 -1 -1 100
+Reset M 1103 6 1108 -1 -1 -1 100
+Reset M 1103 6 1108 -1 -1 -1 100
+Reset M 1103 6 1108 -1 -1 -1 100
+Reset M 1103 6 1108 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1109
+Name      A bend in the road~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Bywater Road continues west and south.  A large, imposing building lies
+to the east.  Farther to the south, you can see an Inn of some sort.
+~
+#EXIT
+Direction east~
+ToRoom    1110
+Desc      A large, imposing building lies to the east.  A sign reads 'Shiriff Post'.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1112
+Desc      To the south runs Bywater Road.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1106
+Desc      To the west runs Bywater Road.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1110
+Name      Shiriff Post of the Eastern Shire~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in the Shiriff Post which acts as the nucleus for the three shiriffs
+of the Eastern Shire.  As you examine the shiriffs on duty, you come to realize
+that the halflings of the Shire are not to be reckoned with.  You cower with 
+awe.  A door offers passage to the east.
+~
+#EXIT
+Direction east~
+ToRoom    1111
+Desc      A door offers passage to the office of the Thain.
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1109
+Desc      To the west you can see Bywater Road.
+~
+#ENDEXIT
+
+Reset M 1110 8 1110 -1 -1 -1 100
+  Reset E 1109 9 16 100
+Reset M 1110 8 1110 -1 -1 -1 100
+Reset M 1111 4 1110 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1111
+Name      Thain's Office~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand inside the office of the Thain, the police protectorate of the
+great Shire.  The Thain has sworn to protect the Shire from all thieves and
+murderers with his life, and so eyes you suspiciously.  A door to the west
+leads to the Shiriff Post.
+~
+#EXIT
+Direction west~
+ToRoom    1110
+Desc      A door offers passage to the Shiriff Post.
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 1112 1 1111 -1 -1 -1 100
+  Reset E 1113 100 16 100
+  Reset E 1108 5 13 100
+#ENDROOM
+
+#ROOM
+Vnum      1112
+Name      Bywater Road~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on Bywater Road, the busiest street in all of Shiredom.  The road
+continues to the north and south.  To the east you spy the training grounds for
+shiriffs in training.
+~
+#EXIT
+Direction north~
+ToRoom    1109
+Desc      To the north runs Bywater Road.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1117
+Desc      The Shiriff Training Grounds lies to the east.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1113
+Desc      To the south runs Bywater Road.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1113
+Name      Bywater Road~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on Bywater Road, the busiest street in all of Shiredom.  The road
+continues to the north.  The private residences of Shire inhabitants are to
+the east and west while to the south lies the Ivy Bush, second only to the
+Green Dragon for its hospitality and service.
+~
+#EXIT
+Direction north~
+ToRoom    1112
+Desc      To the north runs Bywater Road.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1115
+Desc      You spy the private dwelling of a Shire folk to the east.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1116
+Desc      To the south you see the Ivy Bush, a favorite haunt of Shire urbanites and
+seasoned travelers.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1114
+Desc      You spy the private dwelling of a Shire folk to the west.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1114
+Name      A smial~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are inside a smial, a hole in the ground which serves as the proper
+dwelling place for halflings.  As you look around this private abode, you feel
+as if you were intruding and so quickly cover your eyes.  The only exit lies
+to the east.
+~
+#EXIT
+Direction east~
+ToRoom    1113
+Desc      The only exit lies to the east.
+~
+#ENDEXIT
+
+Reset M 1128 4 1114 -1 -1 -1 100
+  Reset G 1103 99 100
+#ENDROOM
+
+#ROOM
+Vnum      1115
+Name      A smial~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are inside a smial, a hole in the ground which serves as the proper
+dwelling place for halflings.  As you look around this private abode, you feel
+as if you were intruding and so quickly cover your eyes.  The only exit lies
+to the west.
+~
+#EXIT
+Direction west~
+ToRoom    1113
+Desc      The only exit lies to the west.
+~
+#ENDEXIT
+
+Reset M 1128 4 1115 -1 -1 -1 100
+  Reset G 1103 99 100
+#ENDROOM
+
+#ROOM
+Vnum      1116
+Name      The Ivy Bush~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in the Ivy Bush, one of the most famous inns in all of Shiredom.
+Chique Shire urbanites and seasoned travelers fill the confines of the room
+with gay and lively talk.  A jovial innkeeper stops all that he is doing to
+await your command.  The only exit lies to the north.
+~
+#EXIT
+Direction north~
+ToRoom    1113
+Desc      The only exit lies to the north.
+~
+#ENDEXIT
+
+Reset M 1113 1 1116 -1 -1 -1 100
+  Reset G 1110 999 100
+Reset M 1123 4 1116 -1 -1 -1 100
+Reset M 1123 4 1116 -1 -1 -1 100
+Reset M 1124 2 1116 -1 -1 -1 100
+Reset M 1124 2 1116 -1 -1 -1 100
+Reset M 1127 7 1116 -1 -1 -1 100
+Reset M 1127 7 1116 -1 -1 -1 100
+Reset M 1127 7 1116 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1117
+Name      Shiriff Training Grounds~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sounds of mock battle and feigned death cries fill your ears.  Every
+which way you turn you see halfling trainees at the prime of their youth.  A
+wizened old battle instructor meets your gaze and asks if he may be of 
+service.  The only exit lies to the west.
+~
+#EXIT
+Direction west~
+ToRoom    1112
+Desc      The only exit lies to the west.
+~
+#ENDEXIT
+
+Reset M 1121 1 1117 -1 -1 -1 100
+  Reset E 1113 100 16 100
+Reset M 1126 3 1117 -1 -1 -1 100
+  Reset E 1113 100 16 100
+Reset M 1126 3 1117 -1 -1 -1 100
+  Reset E 1113 100 16 100
+Reset M 1126 3 1117 -1 -1 -1 100
+  Reset E 1113 100 16 100
+#ENDROOM
+
+#ROOM
+Vnum      1118
+Name      Bywater Road~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on Bywater Road, the busiest street in all of Shiredom.  The road
+continues to the east and west.  A large, imposing building lies to the south.
+You catch a glimpse of the Brandywine River to the north.
+~
+#EXIT
+Direction east~
+ToRoom    1103
+Desc      To the east you see the entrance to the Shire.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1119
+Desc      A large, imposing building lies to the south.  A sign reads 'Shiriff Post'.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1120
+Desc      To the west runs Bywater Road.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1119
+Name      Shiriff Post of the Bridge~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in the Shiriff Post which acts as the nucleus for the three shiriffs
+of the Bridge.  As you examine the shiriffs on duty, you come to realize that
+the halflings of the Shire are not to be reckoned with.  You cower with awe.
+The only exit is to the north.
+~
+#EXIT
+Direction north~
+ToRoom    1118
+Desc      The only exit is to the north.
+~
+#ENDEXIT
+
+Reset M 1110 8 1119 -1 -1 -1 100
+  Reset E 1109 3 16 100
+Reset M 1110 8 1119 -1 -1 -1 100
+Reset M 1111 4 1119 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1120
+Name      Bywater Road~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on Bywater Road, the busiest street in all of Shiredom.  The road
+continues to the east and west.  To the south you spy the Grocer's Delight,
+the premium grocer's shop in all the realm while to the north lies Brandywine
+Bridge.
+~
+#EXIT
+Direction north~
+ToRoom    1131
+Desc      Brandywine Bridge offers safe passage across the tumultuous river.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1118
+Desc      To the east runs Bywater Road.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1121
+Desc      You see the Grocer's Delight to the south.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1122
+Desc      To the west runs Bywater Road.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1121
+Name      The Grocer's Delight~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You tremble with ecstasy as the tempting odors of freshly made pipeweed
+bread fill your lungs.  Rumor has it that the pipeweed bread sold here can
+restore vitality.  You look around but find no one to take your order.  
+You then peep over the counter and discover a friendly grocer who is too 
+short to be seen over the counter.  The only exit is to the north.
+~
+#EXIT
+Direction north~
+ToRoom    1120
+Desc      The only exit is to the north.
+~
+#ENDEXIT
+
+Reset M 1119 1 1121 -1 -1 -1 100
+  Reset G 1103 999 100
+#ENDROOM
+
+#ROOM
+Vnum      1122
+Name      Bywater Road~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on Bywater Road, the busiest street in all of Shiredom.  The road
+continues to the east.  A small hill lies to the west while you can see a
+watermill to the far south.  You catch a glimpse of the Brandywine River to
+the north.
+~
+#EXIT
+Direction east~
+ToRoom    1120
+Desc      To the east runs Bywater Road.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1123
+Desc      An entrance to the watermill lies to the south.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1126
+Desc      A small hill to the west blocks your view.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1123
+Name      Entrance to Watermill~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand at the entrance to a watermill.  You hear the bustle of busy
+workers and the sound of a creaking mill.  Bywater Road is to the north while
+the watermill continues to the south.
+~
+#EXIT
+Direction north~
+ToRoom    1122
+Desc      You see Bywater Road to the north.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1124
+Desc      A watermill meets your gaze.
+~
+#ENDEXIT
+
+Reset M 1115 6 1123 -1 -1 -1 100
+Reset M 1115 6 1123 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1124
+Name      The Watermill~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Halfling workers are scattered everywhere, busy at work.  You see the river
+to the west and get a compelling urge to grab the nearest worker and to toss
+him into the river.  The entrance stands to the north while a door offers
+passage to the south.
+~
+#EXIT
+Direction north~
+ToRoom    1123
+Desc      You see the entrance.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1125
+Desc      A wooden door leads to the rear of the watermill.
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 1115 6 1124 -1 -1 -1 100
+Reset M 1115 6 1124 -1 -1 -1 100
+Reset M 1115 6 1124 -1 -1 -1 100
+Reset M 1114 1 1124 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1125
+Name      Rear of watermill~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a damp, dimly lit room.  Mildew clings to the walls and it
+appears as if you were the first person to enter the room in ages.  A barely
+visible portal in the ground catches your eye.
+~
+#EXIT
+Direction north~
+ToRoom    1124
+Desc      A watermill meets your gaze.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1146
+Desc      A hidden portal reveals a passageway down.
+~
+#ENDEXIT
+
+Reset M 1115 6 1125 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1126
+Name      Took Hill~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on top of Took Hill, named after the legendary Bandobras Took.
+You feel honored to be standing on a hill named after your hero.  From this
+vantage point you can see all of shiredom.  You get the feeling that with
+one stomp you could eliminate their great city.  You can see the outline of
+Midgaard to the far east.  Sounds of joyful celebration are heard from the
+fields west of here.  The Brandywine flows by lazily nearby.
+~
+#EXIT
+Direction east~
+ToRoom    1122
+Desc      To the east runs Bywater Road.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1128
+Desc      You see a grassy field to the west.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1127
+Name      Northern end of grassy field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand in a grassy field--nothing to get too excited about.  The field
+extends toward the south and the west.  To the east you see Took Hill.
+~
+#EXIT
+Direction south~
+ToRoom    1128
+Desc      You see a grassy field.
+~
+#ENDEXIT
+
+Reset M 1122 9 1127 -1 -1 -1 100
+Reset M 1122 9 1127 -1 -1 -1 100
+Reset M 1122 9 1127 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1128
+Name      A grassy field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand in the center of a grassy field.  A great birthday party appears
+to be taking place.  Great tables of food are spread out and a young halfling
+beauty offers you welcome.  You are enticed by her generosity and suggestive
+winks.
+~
+#EXIT
+Direction north~
+ToRoom    1127
+Desc      You see a grassy field.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1126
+Desc      A small hill to the east blocks your view.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1129
+Desc      You see a grassy field.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1130
+Desc      You see a grassy field.
+~
+#ENDEXIT
+
+Reset M 1125 1 1128 -1 -1 -1 100
+Reset M 1100 1 1128 -1 -1 -1 100
+  Reset E 1104 1 12 100
+  Reset E 1100 1 0 100
+#ENDROOM
+
+#ROOM
+Vnum      1129
+Name      Southern end of grassy field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand in a grassy field--nothing to get too excited about.  The field
+extends toward the north and the west.  To the east you see Took Hill.
+~
+#EXIT
+Direction north~
+ToRoom    1128
+Desc      You see a grassy field.
+~
+#ENDEXIT
+
+Reset M 1122 9 1129 -1 -1 -1 100
+Reset M 1122 9 1129 -1 -1 -1 100
+Reset M 1122 9 1129 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1130
+Name      Western end of grassy field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand in a grassy field--nothing to get too excited about.  The field
+extends every which way but west.
+~
+#EXIT
+Direction east~
+ToRoom    1128
+Desc      You see a grassy field.
+~
+#ENDEXIT
+
+Reset M 1122 9 1130 -1 -1 -1 100
+Reset M 1122 9 1130 -1 -1 -1 100
+Reset M 1122 9 1130 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1131
+Name      Brandywine Bridge~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on a solidly built bridge.  As you look down you spy gaily
+colored fish swimming with the current of Brandywine River.  The cool water
+looks invitingly refreshing and you get a sudden urge to strip and bathe in
+the river, but you hear the laughter of women nearby and so resist the urge.
+Delving Lane extends to the north while Bywater Road can be seen to the south.
+~
+#EXIT
+Direction north~
+ToRoom    1132
+Desc      You see Delving Lane.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1120
+Desc      To the south runs Bywater Road.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1132
+Name      Delving Lane~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Delving Lane runs north and south in this small borough of the Shire.  To 
+the south stands Brandywine Bridge.  The Green Dragon, the undisputed leader
+in the art of innkeeping, offers rest and comfort to the east.  You hear the
+bray of horses from the west.
+~
+#EXIT
+Direction north~
+ToRoom    1133
+Desc      You see Delving Lane.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1144
+Desc      The Green Dragon offers food, drink, and above all hospitality for mere gold.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1131
+Desc      Brandywine Bridge offers safe passage across the tumultuous river.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1133
+Name      Delving Lane~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Delving Lane runs north and south in this small borough of the Shire.  A 
+large, imposing building lies to the east.  You hear the bray of horses from
+the west.
+~
+#EXIT
+Direction north~
+ToRoom    1134
+Desc      You see Delving Lane.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1145
+Desc      A large, imposing building lies to the east.  A sign reads 'Shiriff Post'.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1132
+Desc      You see Delving Lane.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1138
+Desc      You see a grassy field.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1134
+Name      Delving Lane~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Delving Lane runs north and south in this small borough of the Shire. There
+is a small house to the west, nothing to the east, and up ahead you see a round
+door which leads to a rather impressive abode.
+~
+#EXIT
+Direction north~
+ToRoom    1135
+Desc      A large, magnificent house meets your steady gaze.  Above the round door a
+sign reads 'Bag End'.
+~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1133
+Desc      You see Delving Lane.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1135
+Name      Bag End~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a comfortably well-equipped house, a palace by humble halfling
+standards.  On the wall you see a banner which reads "Home Sweet Home".
+A solid oak door to the east leads to a pantry while you see a cozy bedroom
+to the west.
+~
+#EXIT
+Direction east~
+ToRoom    1137
+Desc      Through the keyhole you see what looks like a well stocked pantry.
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1134
+Desc      You see Delving Lane.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1136
+Desc      You see a bedroom.  It looks like the beds have recently been slept in.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1136
+Name      Bedroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand in the private bedroom of Bag End.  There are two beds to the
+side, neither of which are made.  Portraits of halflings hang on the wall,
+and as you gaze upon them you come to the conclusion that the owner of
+Bag End comes from a long line of distinguished halflings.  A cozy fire
+in the fireplace keeps the room warm and comfortable.
+~
+#EXIT
+Direction east~
+ToRoom    1135
+Desc      Through the doorway you see the main room of Bag End.
+~
+#ENDEXIT
+
+Reset M 1116 1 1136 -1 -1 -1 100
+  Reset E 1106 1 16 100
+Reset M 1117 1 1136 -1 -1 -1 100
+  Reset E 1107 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      1137
+Name      Pantry~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are inside the pantry.  Shelves filled with food and drink surround
+you on all sides.  You wonder why a halfling would need so much to eat.
+The presence of something unseen chills you to your bones.  On the floor
+you spy a trapdoor.
+~
+#EXIT
+Direction west~
+ToRoom    1135
+Desc      Beyond the door you see the main room of Bag End.
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1156
+Desc      It's anyone's guess as to where the trapdoor leads.
+~
+#ENDEXIT
+
+Reset M 1101 1 1137 -1 -1 -1 100
+  Reset E 1101 1 16 100
+  Reset E 1105 10 1 100
+#ENDROOM
+
+#ROOM
+Vnum      1138
+Name      A grassy field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand upon a grassy field.  A bull stands grazing not far away and
+out of the corner of your eye you can see him considering you.  The sound
+of animals fill the air from the north.  To the south you see a pig pen.
+~
+#EXIT
+Direction north~
+ToRoom    1142
+Desc      You see a large barn.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1133
+Desc      You see Delving Lane.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1139
+Desc      A rather large pig pen is to the south.
+~
+#ENDEXIT
+
+Reset M 1108 1 1138 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1139
+Name      Pig pen~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You feel your boots sinking into the mud.  Numerous pigs roam about,
+oblivious to your company.  A grassy field is to the north while you see
+a small path winding to the west.
+~
+#EXIT
+Direction north~
+ToRoom    1138
+Desc      You see a grassy field.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1140
+Desc      A small path winds its way eastward.
+~
+#ENDEXIT
+
+Reset M 1106 5 1139 -1 -1 -1 100
+Reset M 1106 5 1139 -1 -1 -1 100
+Reset M 1106 5 1139 -1 -1 -1 100
+Reset M 1106 5 1139 -1 -1 -1 100
+Reset M 1106 5 1139 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1140
+Name      A stony path~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You walk on a stony path which leads to a small residence to the north.
+From the east you hear the noisy din of pigs.
+~
+#EXIT
+Direction north~
+ToRoom    1141
+Desc      To the north you see a modest house.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1139
+Desc      A rather large pig pen is to the east.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1141
+Name      Gamgee Residence~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand inside a modest home.  You deduce that this is indeed the home
+of whomever owns the surrounding lands.  The air is somewhat musty and 
+the smell reminds you of a stable.  As you look around disdainfully, you
+think to yourself that this is more of a shack than a proper residence and
+you long for the urban riches of the Shire proper.
+~
+#EXIT
+Direction south~
+ToRoom    1140
+Desc      You see a small path winding its way southward.
+~
+#ENDEXIT
+
+Reset M 1102 1 1141 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1142
+Name      A barn~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Animals of every sort fill the small barn.  You feel the hot breath of
+horses and cows on your neck and you feel the sudden need for fresh air.
+Other than that, you feel cozy and protected and don't mind staying for a
+bit longer.  All the warmth and good vibes remind you of the days when your
+mother would hold you in her arms and sing you to sleep.  You find yourself
+wanting to cradle all the animals.
+~
+#EXIT
+Direction north~
+ToRoom    1143
+Desc      You see a chicken coop to the north.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1138
+Desc      You see a grassy field.
+~
+#ENDEXIT
+
+Reset M 1105 3 1142 -1 -1 -1 100
+Reset M 1105 3 1142 -1 -1 -1 100
+Reset M 1105 3 1142 -1 -1 -1 100
+Reset M 1109 4 1142 -1 -1 -1 100
+Reset M 1109 4 1142 -1 -1 -1 100
+Reset M 1109 4 1142 -1 -1 -1 100
+Reset M 1109 4 1142 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1143
+Name      A chicken coop~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand inside a rather crowded chicken coop.  The cackle of hens fill
+the air.  The only exit is to the south.
+~
+#EXIT
+Direction south~
+ToRoom    1142
+Desc      You see a large barn.
+~
+#ENDEXIT
+
+Reset M 1107 6 1143 -1 -1 -1 100
+  Reset G 1110 100 100
+Reset M 1107 6 1143 -1 -1 -1 100
+  Reset G 1110 100 100
+Reset M 1107 6 1143 -1 -1 -1 100
+  Reset G 1110 100 100
+Reset M 1107 6 1143 -1 -1 -1 100
+  Reset G 1110 100 100
+Reset M 1107 6 1143 -1 -1 -1 100
+  Reset G 1110 100 100
+Reset M 1107 6 1143 -1 -1 -1 100
+  Reset G 1110 100 100
+#ENDROOM
+
+#ROOM
+Vnum      1144
+Name      The Green Dragon~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Welcome to the Green Dragon, the undisputed leader in the art of
+innkeeping.  A rather charming and friendly hostess stands to the side,
+ready to offer you food and drink.  While most of the patrons are halfling
+locals, you spy an occasional human or two.  As you listen more closely
+to the conversations that fill the inn, you hear the tales of great and
+seasoned adventurers as well as the usual gossip.  You feel as if you've
+found your second home in the Green Dragon.  You see a stairway leading
+upwards.
+~
+#EXIT
+Direction west~
+ToRoom    1132
+Desc      You see Delving Lane.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1157
+Desc      You see the reception.
+~
+#ENDEXIT
+
+Reset M 1130 1 1144 -1 -1 -1 100
+  Reset G 1110 999 100
+Reset M 1123 6 1144 -1 -1 -1 100
+Reset M 1123 6 1144 -1 -1 -1 100
+Reset M 1123 6 1144 -1 -1 -1 100
+Reset M 1127 7 1144 -1 -1 -1 100
+Reset M 1127 7 1144 -1 -1 -1 100
+Reset M 1127 7 1144 -1 -1 -1 100
+Reset M 1127 7 1144 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1145
+Name      Shiriff Post of Delving Lane~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in the Shiriff Post which acts as the nucleus for the three shiriffs
+of Delving Lane.  As you examine the shiriffs on duty, you come to realize
+that the halflings of the Shire are not to be reckoned with.  You cower with
+awe.  The only exit is to the west.
+~
+#EXIT
+Direction west~
+ToRoom    1133
+Desc      You see Delving Lane.
+~
+#ENDEXIT
+
+Reset M 1110 8 1145 -1 -1 -1 100
+  Reset E 1109 3 16 100
+Reset M 1110 8 1145 -1 -1 -1 100
+Reset M 1111 4 1145 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1146
+Name      A dark tunnel~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand inside a small underground tunnel.  The ceiling is so low that
+you must crouch to avoid hitting your head.  You see light from a small
+hole in the ceiling while to the east you see nothing but darkness.
+~
+#EXIT
+Direction east~
+ToRoom    1147
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1125
+Desc      You see a portal which leads to a small room.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1147
+Name      A dark tunnel~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand inside a small underground tunnel.  The ceiling is so low that
+you must crouch to avoid hitting your head.  The tunnel continues east and
+west.  All you can see is darkness.
+~
+#EXIT
+Direction east~
+ToRoom    1148
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1146
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1148
+Name      A dark tunnel~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand inside a small underground tunnel.  The ceiling is so low that
+you must crouch to avoid hitting your head.  The tunnel continues east and
+west.  All you can see is darkness.
+~
+#EXIT
+Direction east~
+ToRoom    1149
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1147
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1149
+Name      A three way intersection~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand at an intersection.  The tunnel continues east and west while
+to the north you can barely make out a smaller trail.
+~
+#EXIT
+Direction north~
+ToRoom    1151
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1150
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1148
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1150
+Name      End of a dark tunnel~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand at the end of a dark tunnel.  The underground tunnel continues
+to the west.  From a trapdoor in the ceiling you can hear the din of
+adventurers.
+~
+#EXIT
+Direction west~
+ToRoom    1149
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3001
+Desc      You hear the din of adventurers.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1151
+Name      A dark tunnel~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand inside a small underground tunnel.  The ceiling is so low that
+you must crouch to avoid hitting your head.  The tunnel continues north and
+south.  To the west you see a Shirriff Post while to the east lies a small
+home.  All you can see is darkness.
+~
+#EXIT
+Direction north~
+ToRoom    1152
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1154
+Desc      You see a halfling hole.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1149
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1153
+Desc      Above a great oak door you see a sign which reads 'Shirriff Post'.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1152
+Name      A dark tunnel~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand inside a small underground tunnel.  The ceiling is so low that 
+you must crouch to avoid hitting your head.  The tunnel continues north and
+south.  To the west lies a small home.  All you can see is darkness.
+~
+#EXIT
+Direction north~
+ToRoom    1156
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1151
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1155
+Desc      You see a halfling hole.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1153
+Name      Shiriff Post of the Lower Shire~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in the shiriff Post which acts as the nucleus for the three shiriffs 
+of the Lower Shire.  As you examine the shiriffs on duty, you come to realize
+that the halflings of the Shire are not to be reckoned with.  You cower with
+awe.  The only exit is to the east.
+~
+#EXIT
+Direction east~
+ToRoom    1151
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+Reset M 1110 8 1153 -1 -1 -1 100
+  Reset E 1109 3 16 100
+Reset M 1110 8 1153 -1 -1 -1 100
+Reset M 1111 4 1153 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1154
+Name      A halfling hole~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand inside a rather crudely built halfling hole.  The many passageways
+and winding paths remind you of a rodent's lair.  The air is musty and damp
+and you feel the need for fresh air.
+~
+#EXIT
+Direction west~
+ToRoom    1151
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+Reset M 1128 4 1154 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1155
+Name      A halfling hole~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand inside a rather crudely built halfling hole.  The many passageways
+and winding paths remind you of a rodent's lair.  The air is musty and damp
+and you feel the need for fresh air.
+~
+#EXIT
+Direction east~
+ToRoom    1152
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+Reset M 1128 4 1155 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1156
+Name      End of a dark tunnel~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are at one end of a dark tunnel.  The tunnel continues to the south
+while on the ceiling you can make out a trapdoor.
+~
+#EXIT
+Direction south~
+ToRoom    1152
+Desc      You see a dark tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1137
+Desc      A trapdoor on the ceiling reveals a passageway.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1157
+Name      The Inn of the Green Dragon~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in the Inn of the Green dragon.  Large paintings of 
+halflings at work, and halflings at play adorn the walls.  Comfortable 
+benches and seats line the walls.  A stairway leads down.
+~
+#EXIT
+Direction down~
+ToRoom    1144
+#ENDEXIT
+
+Reset M 1131 1 1157 -1 -1 -1 100
+#ENDROOM
+
+#ENDAREA

@@ -1,0 +1,3545 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Underdark~
+Author          Yaegar~
+Vnums           14000 14099
+Continent       one~
+Coordinates     0 0
+Dates           1403837156 1403837156
+Ranges          20 50 0 115
+ResetFreq       15
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      14000
+Keywords  umber hulk~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     an umber hulk~
+Long      An umber hulk lumbers toward you!
+~
+Desc      This is a large, bulky creature with a thick purple hide. Multiple eyes
+glare at you from above two huge jagged tusks that protrude from its drooling
+maw. This grotesque has slain many adventurers- lets hope you're not next!
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    36 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14001
+Keywords  riding lizard~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a riding lizard~
+Long      A Drow riding lizard glares sullenly at you.
+~
+Desc      This reptile resembles a huge Komodo dragon, save that it has a leather saddle
+upon its back, and an ornate bridle upon its huge scaly head. Its eyes are
+sullen and mean, but also rather lifeless, as if domesticity has drained the
+urge to kill from this beast.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    28 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea pet nowander~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14002
+Keywords  drow merchant~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a Drow merchant~
+Long      A Drow merchant eyes you suspiciously.
+~
+Desc      Drow are dark-skinned elves, evil brethren of the fair surface-dwelling elves
+that you are familiar with. And while most Drow attack any outsiders on sight,
+this fellow holds back, for he is a merchant first and a drow second, and will
+never alienate potential customers...
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    27 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared protect~
+ShopData   2 3 4 8 12 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum      14003
+Keywords  bugbear~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a bugbear guard~
+Long      A bugbear guards eyes you suspiciously as he hefts his weapon.
+~
+Desc      Bugbears are evil creatures, eight feet tall and covered with patchy grey
+fur. Beady red eyes stare from a feline face topped with huge ears. They
+are very aggressive, but not when controlled by their Drow masters, whom they
+hate and fear.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14004
+Keywords  trog troglodyte~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a troglodyte slave~
+Long      A troglodyte slave snarls menacingly.
+~
+Desc      The weakest creatures native to the underdark, these pathetic miscreants
+resemble slimy reptillian elves, with large fins atop their heads. They
+typically wield clubs and spears while serving as guards, but usually are
+found bearing heavy parcels for their Drow masters.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    16 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14005
+Keywords  displacer beast~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A displacer beast~
+Long      A displacer beast shimmers into existence and attacks!
+~
+Desc      These creatures resemble giant panthers with four suckered tentacles 
+protruding from their abdomens. They have the ability to distort the
+perceptions of their victims, making them very hard to hit.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    32 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  invisible infrared sneak hide~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14006
+Keywords  hook horror~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a hook horror~
+Long      Seconds after you hear the dreadful clicking, a hook horror attacks!
+~
+Desc      Hook horrors are giant scaly creatures with giant sets of pincers for hands,
+which rend the flesh of their foes, causing horrific injuries. Hook horrors 
+are infamous for the distinctive clicking they make with their claws, which 
+warn an alert traveller of their imminent attack.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    30 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14007
+Keywords  gnome svirfneblin~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a Svirfneblin~
+Long      A Svirfneblin, or Deep Gnome, cautiously approaches you.
+~
+Desc      These gnomes are distant cousins of the surface-dwelling variety of gnomes,
+and share many characteristics. They are the only good-natured race native
+to the underdark, but are by no means weak because of it. They share a close
+friendship with earth elementals, and it wouldn't be wise to challenge a
+deep gnome when one is nearby.
+~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc stayarea wimpy~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14008
+Keywords  drow scout~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a Drow scout~
+Long      A Drow scout curses as you spot him!
+~
+Desc      These scouts are intended for reconnaissance, not combat, and thus this Drow
+is irritated at being discovered, for he is woefully unprepared to deal with
+you.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    19 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc stayarea wimpy~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14009
+Keywords  nightmare~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a nightmare~
+Long      A nightmare, steed of some Drow noble, is here.
+~
+Desc      These fell black stallions are native to the Lower Planes. They reek of fire
+and brimstone, and flame spews from their mouths at will.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    30 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14010
+Keywords  mezzodaemon demon~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a Mezzodaemon~
+Long      A huge Mezzodaemon roars and attacks!
+~
+Desc      This daemon is a huge bloated grotesque creature with massive claws and tiny
+wings that don't seem capable of supporting its weight, but they do.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    46 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea deadly~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary infrared flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14011
+Keywords  piercer~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a piercer~
+Long      A piercer drops from the ceiling toward you.
+~
+Desc      These nasties are sentient predators that resemble stalactites, and drop
+down on unwitting passers-by.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger aggressive~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14012
+Keywords  lurker above~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a lurker above~
+Long      A lurker above seeks to enfold and suffocate you!
+~
+Desc      This foul aberration feeds on any and all that enter its lair- even the
+drow and corporeal undead avoid it...
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    32 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive wimpy~
+Affected  infrared flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14013
+Keywords  gelatinous cube~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_acid~
+Short     a gelatinous cube~
+Long      A gelatinous cube oozes toward you.
+~
+Desc      This huge transparent cube secretes a powerful acid that will quickly dissolve
+your flesh!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    19 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14014
+Keywords  gray ooze~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_gas~
+Short     a gray ooze~
+Long      A pile of gray liquid oozes toward you.
+~
+Desc      "Oh," I hear you say. "How threatening". Well, just you wait!
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    32 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive~
+Affected  sanctuary infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14015
+Keywords  kuotoa kuotoan scout~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a Kuotoan scout~
+Long      A Kuotoan scout snarls at you and attacks!
+~
+Desc      This fanatic worshipper of Blibdoolpoolp seeks to eradicate all non-aquatic
+creatures, of whose ranks you number.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive wimpy~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14016
+Keywords  earth elemental~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     an earth elemental~
+Long      An earth elemental lumbers ungainly along here.
+~
+Desc      This earthen automaton is under the control of the Svirfneblin.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14017
+Keywords  nycadaemon daemon demon~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a nycadaemon~
+Long      A nycadaemon cackles insanely and strikes!
+~
+Desc      This is a tall (7'), slender black-skinned daemon with a horned head and 
+sharp claws. However, it wields an evil-looking battleaxe as well.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    43 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy deadly~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14018
+Keywords  ghoul~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a ghoul~
+Long      A ghoul gibbers insanely and attacks!
+~
+Desc      This demented undead creature is under the control of some faraway Drow
+priestess.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    19 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy deadly~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14019
+Keywords  ghast~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a ghast~
+Long      A ghast gibbers insanely and attacks!
+~
+Desc      This demented undead creature is under the control of some faraway Drow
+priestess.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy deadly~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14020
+Keywords  jermlaine~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a jermlaine~
+Long      A jermlaine plans some mischief!
+~
+Desc      These tiny faerie-kin are not intrinsically evil, but they do enjoy a good
+bashing of surface dwellers who stray into their lairs.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    17 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  invisible infrared sneak hide~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14021
+Keywords  drow vampire mage~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a Drow vampire mage~
+Long      A Drow vampire mage laughs diabolically at you!
+~
+Desc      This fellow was evil enough before he met his succubus lover- now he's 
+utterly diabolical!
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    39 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy deadly~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14022
+Keywords  succubus~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a succubus~
+Long      A beautiful female smiles charmingly at you, revealing sharp fangs...
+~
+Desc      You see a dazingly attractive voluptuous naked female here. Wait a minute.
+Is it your imagination, or does she have little horns and fangs...?
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    38 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14023
+Keywords  gnome slave~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a gnome slave~
+Long      A gnome slave stares blankly at you.
+~
+Desc      This poor fellow has been drained of all his will.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    16 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14024
+Keywords  wererat lycanthrope ratman~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a wererat~
+Long      A wererat in ratman form brandishes a sharp Drow sword menacingly.
+~
+Desc      These fell creatures are mercenaries who work for any race as long as the
+pay is right.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    27 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14025
+Keywords  drow priestess~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a Drow priestess~
+Long      A Drow priestess screams at you and attacks!
+~
+Desc      She is in charge of this outpost and it won't look good on her report if she
+fails to apprehend a simple adventurer.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    28 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14026
+Keywords  drow guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a Drow guard~
+Long      A drow guard loads his hand crossbow and fires!
+~
+Desc      These are simple male Drow soldiers- cannon fodder so to speak.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14027
+Keywords  drow mage~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a Drow mage~
+Long      A Drow mage prepares a spell.
+~
+Desc      This fellow is actually a noble, a member of house Barrison del'Armgo, the
+second house of Menzoberranzan, and will not let his house's reputation
+suffer by letting you escape!
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14028
+Keywords  purple worm~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_acid~
+Short     a purple worm~
+Long      A dreaded purple worm attacks!
+~
+Desc      This foul creature is over thirty feet long and has a circular mouth with
+row upon row of razor sharp teeth, which it is trying to sink into you!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_hidden infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      14029
+Keywords  drow sentry~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     a drow sentry~
+Long      A Drow sentry nods curtly and warns you to stay clear of the southern path.
+~
+Desc      This fellow is used to seeing all manner of creatures enter the city, and
+compared to them you're but a minor curiosity. He doesn't really know why
+you want to enter, nor does he really care. He's actually looking forward to
+a good romp with his dryad slave girls, then some goblin hunting in the
+mushroom forests after he finishes his shift.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared~
+#ENDMOBILE
+
+#OBJECT
+Vnum      14000
+Keywords  saddle~
+Type      armor~
+Short     a riding saddle~
+Long      This saddle is made for Drow riding lizards.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     25 0 -2 9999 0 None None None
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14001
+Keywords  drow cloak~
+Type      armor~
+Short     a drow cloak~
+Long      A black Drow cloak is crumpled on the floor here.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData save_breath -1 -1 -1 0
+AffData save_spell -1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14002
+Keywords  drow boots~
+Type      armor~
+Short     a pair of drow boots~
+Long      A pair of black drow boots is here.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData move 50 -1 -1 0
+AffData armor -5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14003
+Keywords  drow chain chainmail~
+Type      armor~
+Short     a suit of drow chainmail~
+Long      A suit of finely crafted adamantite chainmail is here.
+~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14004
+Keywords  drow short sword~
+Type      weapon~
+Short     a drow short sword~
+Long      An adamantite short sword with a razor sharp blade is here.
+~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+AffData hitroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14005
+Keywords  crossbow~
+Type      wand~
+Short     a drow hand crossbow~
+Long      A Drow hand crossbow is here.
+~
+WFlags    take~
+Values    20 10 10 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'poison'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14006
+Keywords  bar silver~
+Type      treasure~
+Short     a bar of silver~
+Long      A bar of silver has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 1000 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14007
+Keywords  bar gold~
+Type      treasure~
+Short     a bar of gold~
+Long      A bar of gold has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     11 2000 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14008
+Keywords  bar mithril~
+Type      treasure~
+Short     a bar of mithril~
+Long      A bar of mithril has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     12 3000 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14009
+Keywords  bar adamantite~
+Type      treasure~
+Short     a bar of adamantite~
+Long      A bar of adamantite has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     15 5000 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14010
+Keywords  morning star~
+Type      weapon~
+Short     an adamantite morning star~
+Long      This drow-fashioned morning star grants its wielder superior accuracy.
+~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 8 0 0 0 0 0 0 0
+Stats     20 10000 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14011
+Keywords  spear~
+Type      pipe~
+Short     a spear~
+Long      This throwing spear has a barbed tip.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14012
+Keywords  pick axe~
+Type      weapon~
+Short     a svirfneblin pick axe~
+Long      This pick axe is extraordinarily well made.
+~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14013
+Keywords  chain chainmail~
+Type      armor~
+Short     a suit of svirfneblin chainmail~
+Long      A suit of finely crafted adamantite chainmail is here.
+~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData strength 2 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14014
+Keywords  stone~
+Type      armor~
+Short     an earth stone~
+Long      This earth stone has potent magical properties.
+~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
+AffData mana 25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14015
+Keywords  gem~
+Type      treasure~
+Short     a sparkling gem~
+Long      A gem sparkles here.
+~
+Flags     glow~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14016
+Keywords  mineral pill~
+Type      pill~
+Short     a mineral pill~
+Long      When eaten, this mineral pill heals and repairs the wounded.
+~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'cure poison' 'cure serious' 'stone skin'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14017
+Keywords  net~
+Type      staff~
+Short     a net~
+Long      This net snares fleeing foes.
+~
+WFlags    take~
+Values    35 7 7 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'weaken'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14018
+Keywords  trident~
+Type      weapon~
+Short     a barbed trident~
+Long      A barbed trident is stuck in the ground here.
+~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll 1 -1 -1 0
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14019
+Keywords  harness~
+Type      armor~
+Short     a leather body harness~
+Long      A leather body harness lies here.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData strength 1 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14020
+Keywords  battle axe~
+Type      weapon~
+Short     a battle axe~
+Long      A battle axe lies here.
+~
+Flags     hum magic antigood evil~
+WFlags    take~
+Values    0 0 0 1 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+AffData damroll 6 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14021
+Keywords  wand~
+Type      wand~
+Short     a wand~
+Long      A magic wand glows brightly here.
+~
+Flags     glow magic~
+WFlags    take~
+Values    40 8 8 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'cause critical'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14022
+Keywords  jewelry~
+Type      treasure~
+Short     some expensive jewelry~
+Long      This is very expensive jewelry.
+~
+Flags     glow~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14023
+Keywords  chest~
+Type      container~
+Short     an oak chest~
+Long      A solid oak chest sits here.
+~
+WFlags    take~
+Values    1000 2 1024 0 0 0 0 0 0 0 0
+Stats     100 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14024
+Keywords  key~
+Type      key~
+Short     a key~
+Long      A bronze key lies here.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14025
+Keywords  scroll~
+Type      scroll~
+Short     a scroll~
+Long      A scroll lies here.
+~
+Flags     magic~
+WFlags    take~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'blindness' 'cause serious' 'chill touch'
+#ENDOBJECT
+
+#OBJECT
+Vnum      14026
+Keywords  jewelry~
+Type      treasure~
+Short     some expensive jewelry~
+Long      This is very expensive jewelry.
+~
+Flags     glow~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14027
+Keywords  lesser tentacle rod~
+Type      weapon~
+Short     a Lesser Tentacle Rod~
+Long      A Lesser Tentacle Rod writhes menacingly about here.
+~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 10 0 0 0 0 0 0 0
+Stats     25 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14028
+Keywords  brooch~
+Type      armor~
+Short     a Drow brooch~
+Long      A brooch bearing the insignia of Barrison del'Armgo lies here.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
+AffData mana 25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14029
+Keywords  key~
+Type      key~
+Short     a key~
+Long      A mithril key lies here.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hitroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      14030
+Keywords  hessian sack~
+Type      container~
+Short     a hessian sack~
+Long      This sturdy sack is used for holding ore.~
+WFlags    take~
+Values    100 1 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14031
+Keywords  ore~
+Type      treasure~
+Short     ore~
+Long      Some valuable ore is here.
+~
+Flags     glow~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      14032
+Keywords  portal~
+Type      incense~
+Short     a dark portal~
+Long      A dark portal to the Drow homeland is here.~
+Flags     glow hum~
+Values    5100 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      14000
+Name      Descent Into The Underdark~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You slowly advance into the solid darkness that lies before you, your light
+source flickering feeble as it combats the inky blackness here. It almost has
+a substance, and you feel like it is pressing at you from all sides, suffocating
+you. Fighting off a wave of claustrophobic-induced nausea, you steel yourself
+and march into the depths.
+~
+#EXIT
+Direction south~
+ToRoom    14001
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    8840
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14001
+Name      The Underdark~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      What little light that emanated from your entrance point to the north has now
+disappeared entirely, and you feel another wave of panic overcome you, as 
+your mind rebels against this utterly alien environment. Even the Dwarven
+mines weren't as bad as this- here there is no light, no sound, just utter
+darkness, only slightly lessened by your light source. It is said that the
+Underdark itself has a far greater impact on adventurers than its many
+dangerous denizens.
+~
+#EXIT
+Direction north~
+ToRoom    14000
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14002
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14002
+Name      A Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You suddenly emerge into a large cavern, and are relieved to see more light
+as your light source reflects off hundreds of tiny crystals imbedded in the
+walls and ceiling of this cave. Hundreds of stalactites and stalagmites
+obscure your vision, but you are fairly sure you can see exits to the east
+and south. You hear what sounds like construction going on to the east.
+~
+#EXIT
+Direction north~
+ToRoom    14001
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14054
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14003
+#ENDEXIT
+
+Reset M 14011 6 14002 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14003
+Name      A Sloping Passage~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This passage is very narrow and begins to slope abruptly downward as you
+advance. Up ahead it seems to drop almost vertically into the darkness.
+~
+#EXIT
+Direction north~
+ToRoom    14002
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14004
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14004
+Name      A Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered yet another of the innumerable caverns that exist in the
+underdark. This one has no crystals to enhance your light, however, and
+you slowly creep around the circumference to locate any exits. You find
+passages to the east and west, and steeply sloping passages to the north and
+south, the northern one sloping upward, the souther downward.
+~
+#EXIT
+Direction east~
+ToRoom    14007
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14005
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    14003
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14008
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14005
+Name      A Lair~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have stumbled across the lair of some horrid beast, evidenced by the
+numerous skeletons that crunch beneath your boots as you advance. You are
+not sure, but you think you can hear snorting up ahead, but your relief at
+finally hearing SOMETHING is overcome by a feeling of dread regarding what is
+making the noise.
+~
+#EXIT
+Direction north~
+ToRoom    14006
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14004
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14006
+Name      An Umber Hulk Lair~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Oh NO! You have entered the lair of an Umber Hulk! These distinctive creatures
+are known for their penchant for gems, and the floor of this place is scattered
+with them, along with many more skeletons. You better hope the occupant isn't
+home...
+~
+#EXIT
+Direction south~
+ToRoom    14005
+#ENDEXIT
+
+Reset M 14000 1 14006 -1 -1 -1 100
+Reset O 14015 0 14006 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14007
+Name      A Dead End~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are dispirited as you find this passage ends after a short distance in a
+dead end, as do many passages in the Underdark.
+~
+#EXIT
+Direction west~
+ToRoom    14004
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14008
+Name      A Junction~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have reached a junction, where the sloping passage meets a broad, well-
+travelled east-west thoroughfare. You think you can see dim lights bobbing
+up and down to the east. Darkness extends for what seems like forever to the
+west.
+~
+#EXIT
+Direction east~
+ToRoom    14030
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14009
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    14004
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14009
+Name      A Narrow Passage~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are cautiously working your way along a narrow east-west passage. Darkness
+extends in both directions without any apparent end.
+~
+#EXIT
+Direction east~
+ToRoom    14008
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14010
+#ENDEXIT
+
+Reset M 14008 4 14009 -1 -1 -1 100
+  Reset E 14001 1 12 100
+  Reset E 14002 1 8 100
+  Reset E 14003 1 5 100
+  Reset E 14004 1 16 100
+  Reset E 14005 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14010
+Name      A Junction~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You suddenly reach a junction, where you may proceed north, east or south.
+~
+#EXIT
+Direction north~
+ToRoom    14011
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14009
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14012
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14011
+Name      A Lair~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered the lair of some beast, evidenced by the bones scattered
+across the floor and the almost unbearable stench of decay that lingers in 
+the stale air. Wonder where the occupant is?
+~
+#EXIT
+Direction south~
+ToRoom    14010
+#ENDEXIT
+
+Reset M 14005 1 14011 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14012
+Name      A Small Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This cavern was the site of a small skirmish recently. Corpses of dark elves,
+stripped of their equipment lie scattered about, though there are no corpses
+of other races- evidently the victors took their dead with them.
+
+Passages head north, east and south here.
+~
+#EXIT
+Direction north~
+ToRoom    14010
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14018
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14013
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14013
+Name      Another Junction~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have reached a junction where you may proceed north, south or west. The
+tracks of several large creatures can be made out in some dirt heading west.
+~
+#EXIT
+Direction north~
+ToRoom    14012
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14014
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14015
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14014
+Name      A Dead End~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are dispirited as you find this passage ends after a short distance in a
+dead end, as do many passages in the Underdark.
+~
+#EXIT
+Direction north~
+ToRoom    14013
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14015
+Name      A Crossroads~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have arrived at a crossroads, at which points the passages widen 
+sufficiently to allow for the establishment of some sort of way station. A
+few tents are pitched haphazardly here and there, while small campfires burn
+near the edges, surrounded by huddled, chained figures.
+~
+#EXIT
+Direction north~
+ToRoom    14017
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14013
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14016
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14049
+#ENDEXIT
+
+Reset M 14002 2 14015 -1 -1 -1 100
+  Reset E 14001 1 12 100
+  Reset E 14002 1 8 100
+  Reset E 14003 1 5 100
+  Reset E 14004 1 16 100
+  Reset E 14005 1 17 100
+  Reset G 14006 0 100
+  Reset G 14007 0 100
+  Reset G 14008 0 100
+  Reset G 14009 0 100
+Reset M 14001 2 14015 -1 -1 -1 100
+  Reset E 14000 1 5 100
+Reset M 14003 6 14015 -1 -1 -1 100
+  Reset E 14010 1 16 100
+Reset M 14004 6 14015 -1 -1 -1 100
+  Reset E 14011 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      14016
+Name      Storage Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This cavern is full of boxes, crates and other paraphenalia, of no use to
+you, but obviously of significant use to the merchants who stop here.
+~
+#EXIT
+Direction north~
+ToRoom    14015
+#ENDEXIT
+
+Reset M 14003 6 14016 -1 -1 -1 100
+  Reset E 14010 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      14017
+Name      Storage Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This cavern is full of boxes, crates and other paraphenalia, of no use to
+you, but obviously of significant use to the merchants who stop here.
+~
+#EXIT
+Direction south~
+ToRoom    14015
+#ENDEXIT
+
+Reset M 14004 6 14017 -1 -1 -1 100
+  Reset E 14011 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      14018
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction south~
+ToRoom    14019
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14012
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14019
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction north~
+ToRoom    14018
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14020
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14020
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction south~
+ToRoom    14021
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14019
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14021
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction north~
+ToRoom    14020
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14022
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14022
+Name      Another Junction~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have reached a point where you can go north, south or drop down a small
+hole into a lower passage.
+~
+#EXIT
+Direction north~
+ToRoom    14021
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14038
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14023
+#ENDEXIT
+
+Reset M 14011 6 14022 -1 -1 -1 100
+Reset M 14008 4 14022 -1 -1 -1 100
+  Reset E 14001 1 12 100
+  Reset E 14002 1 8 100
+  Reset E 14003 1 5 100
+  Reset E 14004 1 16 100
+  Reset E 14005 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14023
+Name      A Narrow Passage~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This narrow passage is cold, damp and if possible even darker than the ones
+you were following before. A chill wind blows from the east, unusual in this
+generally stuffy world, and you shiver uncomfortably. Far away, someone
+suddenly screams, and you think twice about proceeding.
+~
+#EXIT
+Direction east~
+ToRoom    14024
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    14022
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14024
+Name      A Narrow Passage~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This narrow passage is cold, damp and if possible even darker than the ones
+you were following before. A chill wind blows from the east, unusual in this
+generally stuffy world, and you shiver uncomfortably. Far away, someone
+suddenly screams, and you think twice about proceeding.
+~
+#EXIT
+Direction east~
+ToRoom    14025
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14023
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14025
+Name      Entrance to the Fungus Garden~
+Sector    forest~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You suddenly enter a spacious, well-lit (by Underdark standards) cavern,
+full of a wide variety of fungi, molds and moss, which in their own way
+are quite beautiful. You hear soft music playing far, far away, and are
+sorely tempted to enter and relax for a while.
+~
+#EXIT
+Direction east~
+ToRoom    14026
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14024
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14026
+Name      In the Garden~
+Sector    forest~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The music is louder now, as you walk among the garden exhibits. You see some
+old statues, once fine but now chipped and stained. There is an adamantite
+door to the north, from behind which the music seems to emanate.
+~
+#EXIT
+Direction north~
+ToRoom    14027
+Keywords  adamantite door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14025
+#ENDEXIT
+
+Reset D 14026 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14027
+Name      A Luxurious Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered the boudoir of some noblewoman, if the expensive silk, 
+furniture, tapestries and unguents are any indication. The singing seems to
+be coming from the north of here, and you now hear a voice calling for you
+as well, speaking sweetly and in friendly tones.
+~
+#EXIT
+Direction north~
+ToRoom    14028
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14029
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14026
+Keywords  adamantite door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14027 2 1 100 -2
+Reset D 14027 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14028
+Name      Room of the Occupants~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You walk north, happily expecting good food, wine and the comfort of a friendly
+visitor like yourself, when suddenly there is a flash, and what was once
+luxuriant and fresh now appears decayed and stale. Torn shreds of cheap 
+material hang from battered and splintered wardrobes while stained sheets
+cover a wooden plank suspended between two barrels. The illusion which 
+enticed you has been dispelled, and now you must deal with the very real
+peril which now faces you.
+~
+#EXIT
+Direction south~
+ToRoom    14027
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14028 2 1 100 -2
+Reset M 14021 1 14028 -1 -1 -1 100
+  Reset E 14021 1 17 100
+  Reset G 14024 0 100
+Reset M 14022 1 14028 -1 -1 -1 100
+  Reset E 14022 1 3 100
+  Reset E 14022 1 4 100
+  Reset E 14026 1 14 100
+  Reset E 14026 1 15 100
+#ENDROOM
+
+#ROOM
+Vnum      14029
+Name      A Storage Room~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are appalled by what you find here- jars of blood, rotting carcasses,
+withered limbs and sacks of entrails. The stench is overwhelming and you
+fight an urge to vomit.
+~
+#EXIT
+Direction west~
+ToRoom    14027
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 14029 3 1 100 -2
+Reset M 14023 1 14029 -1 -1 -1 100
+Reset O 14023 0 14029 -1 -1 -1 100
+  Reset P 1 14025 0 14023 100
+  Reset P 1 14015 0 14023 100
+#ENDROOM
+
+#ROOM
+Vnum      14030
+Name      A Long Passage~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This passage continues for what seems like forever. You see no end in
+sight.
+~
+#EXIT
+Direction east~
+ToRoom    14031
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14008
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14031
+Name      An Outpost~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have stumbled into a Drow outpost! Soldier run everywhere as you enter,
+shouting alarms, and you instinctively ready your weapons. Passages run
+north and south of here, while iron doors block access further east.
+~
+#EXIT
+Direction north~
+ToRoom    14032
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14036
+Key       14029
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14034
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14030
+#ENDEXIT
+
+Reset D 14031 1 2 100 -2
+Reset M 14026 8 14031 -1 -1 -1 100
+  Reset E 14001 1 12 100
+  Reset E 14002 1 8 100
+  Reset E 14003 1 5 100
+  Reset E 14004 1 16 100
+  Reset E 14005 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14032
+Name      Warrior's Quarters~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered the quarters of the Drow soldiers stationed here. They ready
+their equipment with practiced precision and prepare to defend themselves.
+~
+#EXIT
+Direction north~
+ToRoom    14033
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14031
+#ENDEXIT
+
+Reset M 14026 8 14032 -1 -1 -1 100
+  Reset E 14001 1 12 100
+  Reset E 14002 1 8 100
+  Reset E 14003 1 5 100
+  Reset E 14004 1 16 100
+  Reset E 14005 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14033
+Name      Warrior's Quarters~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered the quarters of the Drow soldiers stationed here. They ready
+their equipment with practiced precision and prepare to defend themselves.
+~
+#EXIT
+Direction south~
+ToRoom    14032
+#ENDEXIT
+
+Reset M 14026 8 14033 -1 -1 -1 100
+  Reset E 14001 1 12 100
+  Reset E 14002 1 8 100
+  Reset E 14003 1 5 100
+  Reset E 14004 1 16 100
+  Reset E 14005 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14034
+Name      Cleric's Quarters~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered the quarters of the Drow priestess in command here. It is
+sacrilege for even a male Drow to do this, let alone an outsider.
+~
+#EXIT
+Direction north~
+ToRoom    14031
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14035
+#ENDEXIT
+
+Reset M 14025 1 14034 -1 -1 -1 100
+  Reset E 14001 1 12 100
+  Reset E 14002 1 8 100
+  Reset E 14003 1 5 100
+  Reset E 14027 1 16 100
+  Reset E 14029 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14035
+Name      Cleric's Quarters~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered the quarters of the Drow priestess in command here. It is
+sacrilege for even a male Drow to do this, let alone an outsider.
+~
+#EXIT
+Direction north~
+ToRoom    14034
+#ENDEXIT
+
+Reset M 14009 1 14035 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14036
+Name      Inside the Iron Doors~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered the area the Drow were guarding. There is a foul stench in
+the air, and you are not sure if you want to continue.
+~
+#EXIT
+Direction east~
+ToRoom    14037
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14031
+Key       14029
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset D 14036 3 2 100 -2
+Reset M 14027 1 14036 -1 -1 -1 100
+  Reset E 14001 1 12 100
+  Reset E 14002 1 8 100
+  Reset E 14004 1 16 100
+  Reset E 14028 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14037
+Name      The Portal Chamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the Drow maintain a portal to their city, so they can hurry home quickly
+to make reports. Anyone is free to use it, if they can get past its guard...
+~
+#EXIT
+Direction west~
+ToRoom    14036
+#ENDEXIT
+
+Reset O 14032 1 14037 -1 -1 -1 100
+Reset M 14017 1 14037 -1 -1 -1 100
+  Reset E 14020 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      14038
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction north~
+ToRoom    14022
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14039
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14039
+Name      A Junction~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Passages lead to the north, south, east and west from here. There is a small
+sign affixed to a stalagmite.
+~
+#EXIT
+Direction north~
+ToRoom    14038
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14043
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14040
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14041
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       The sign says-
+
+  "BEWARE THE LURKERS!"
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      14040
+Name      An Empty Chamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This corridor ends in a dead end in the form of a small empty chamber. There
+appears to be nothing of interest...
+~
+#EXIT
+Direction north~
+ToRoom    14039
+#ENDEXIT
+
+Reset M 14012 1 14040 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14041
+Name      A Dark Cave~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered a dark L-shaped cave. Bones and rubble are strewn across
+the stalagmite-peppered floor. You step lightly, hoping to avoid spraining
+an ankle. You think you can hear a clicking noise...
+~
+#EXIT
+Direction north~
+ToRoom    14042
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14039
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14042
+Name      End of the Cave~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The clicking is louder here... MUCH louder. You have stumbled into a HOOK
+HORROR lair. Best hope there are none too close to you...
+~
+#EXIT
+Direction south~
+ToRoom    14041
+#ENDEXIT
+
+Reset M 14006 3 14042 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14043
+Name      A Narrow Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are making your way through a long narrow cavern that runs east-west.
+There are several cracks in the wall that a small creature may be able
+to squeeze through, but you doubt that you could.
+~
+#EXIT
+Direction east~
+ToRoom    14044
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14039
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14044
+Name      A Narrow Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are making your way through a long narrow cavern that runs east-west.
+There are several cracks in the wall that a small creature may be able
+to squeeze through, but you doubt that you could.
+~
+#EXIT
+Direction east~
+ToRoom    14045
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14043
+#ENDEXIT
+
+Reset M 14013 3 14044 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14045
+Name      A Narrow Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are making your way through a long narrow cavern that runs east-west.
+There are several cracks in the wall that a small creature may be able
+to squeeze through, but you doubt that you could. However, one rather wide
+crack to the north does look navigable.
+~
+#EXIT
+Direction north~
+ToRoom    14046
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14047
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14044
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14046
+Name      A Tiny Cave~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have squeezed into a tiny cave with no other exits. You curse wasting
+your time and prepare to leave, when you suddenly hear a tiny squeak. 
+Turning round, you see nothing. What's going on here...?
+~
+#EXIT
+Direction south~
+ToRoom    14045
+#ENDEXIT
+
+Reset M 14020 3 14046 -1 -1 -1 100
+  Reset E 14011 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      14047
+Name      A Narrow Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have reached the easternmost point of a long narrow cavern that runs 
+east-west. There are several cracks in the wall that a small creature may 
+be able to squeeze through, but you doubt that you could, save one to the
+south.
+~
+#EXIT
+Direction south~
+ToRoom    14048
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14045
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14048
+Name      A Dead End~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are dispirited as you find this passage ends after a short distance in a
+dead end, as do many passages in the Underdark.
+~
+#EXIT
+Direction north~
+ToRoom    14047
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14049
+Name      A Bend in the Passage~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The passage bends sharply to the south, becoming much larger and even as it
+does.
+~
+#EXIT
+Direction east~
+ToRoom    14015
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14050
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14050
+Name      A Major Passage~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The passage you are currently in is one of the most-travelled in the Underdark.
+Travellers of all descriptions continually move along this passage- most
+of them unfriendly. You ready your weapons, certain that you are bound to
+run into some of them soon.
+~
+#EXIT
+Direction north~
+ToRoom    14049
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14051
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14053
+#ENDEXIT
+
+Reset M 14015 2 14050 -1 -1 -1 100
+  Reset E 14017 1 17 100
+  Reset E 14018 1 16 100
+  Reset E 14019 1 5 100
+#ENDROOM
+
+#ROOM
+Vnum      14051
+Name      A Major Passage~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The passage you are currently in is one of the most-travelled in the Underdark.
+Travellers of all descriptions continually move along this passage- most
+of them unfriendly. You ready your weapons, certain that you are bound to
+run into some of them soon.
+~
+#EXIT
+Direction north~
+ToRoom    14050
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14052
+#ENDEXIT
+
+Reset M 14008 4 14051 -1 -1 -1 100
+  Reset E 14001 1 12 100
+  Reset E 14002 1 8 100
+  Reset E 14003 1 5 100
+  Reset E 14004 1 16 100
+  Reset E 14005 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14052
+Name      A Major Passage~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The passage you are currently in is one of the most-travelled in the Underdark.
+Travellers of all descriptions continually move along this passage- most
+of them unfriendly. You ready your weapons, certain that you are bound to
+run into some of them soon.
+~
+#EXIT
+Direction north~
+ToRoom    14051
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14059
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14053
+Name      A Dead End~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are dispirited as you find this passage ends after a short distance in a
+dead end, as do many passages in the Underdark.
+~
+#EXIT
+Direction east~
+ToRoom    14050
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14054
+Name      A Mine Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered what looks like a mine. Iron rails run along the ground
+to the east, and sitting atop these rails is a metal trolley half covered in
+ore. You hear shouts and the ringing sound of metal being struck against
+stone in the distance.
+~
+#EXIT
+Direction east~
+ToRoom    14055
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14002
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14055
+Name      A Mine Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered what looks like a mine. Iron rails run along the ground
+to the east, and sitting atop these rails is a metal trolley half covered in
+ore. You hear shouts and the ringing sound of metal being struck against
+stone in the distance.
+~
+#EXIT
+Direction east~
+ToRoom    14056
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14054
+#ENDEXIT
+
+Reset M 14007 6 14055 -1 -1 -1 100
+  Reset E 14012 1 16 100
+  Reset E 14013 1 5 100
+  Reset E 14014 1 14 100
+  Reset G 14015 0 100
+  Reset G 14016 0 100
+#ENDROOM
+
+#ROOM
+Vnum      14056
+Name      A Mine Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered what looks like a mine. Iron rails run along the ground
+to the east, and sitting atop these rails is a metal trolley half covered in
+ore. The rails end at a giant wooden buffer. You hear shouts and the ringing 
+sound of metal being struck against stone all around you.
+~
+#EXIT
+Direction north~
+ToRoom    14057
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14058
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14055
+#ENDEXIT
+
+Reset M 14007 6 14056 -1 -1 -1 100
+  Reset E 14012 1 16 100
+  Reset E 14013 1 5 100
+  Reset E 14014 1 14 100
+  Reset G 14015 0 100
+  Reset G 14016 0 100
+Reset M 14016 1 14056 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14057
+Name      A Storage Room~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Hessian sacks full of ore are stacked neatly along the walls of this place.
+Metal racks on the walls above them hold a variety of mining tools, as well
+as an assortment of weapons.
+~
+#EXIT
+Direction south~
+ToRoom    14056
+#ENDEXIT
+
+Reset M 14007 6 14057 -1 -1 -1 100
+  Reset E 14012 1 16 100
+  Reset E 14013 1 5 100
+  Reset E 14014 1 14 100
+  Reset G 14015 0 100
+  Reset G 14016 0 100
+Reset O 14030 0 14057 -1 -1 -1 100
+  Reset P 1 14031 0 14030 100
+#ENDROOM
+
+#ROOM
+Vnum      14058
+Name      A Dead End~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are dispirited as you find this passage ends after a short distance in a
+dead end, as do many passages in the Underdark.
+~
+#EXIT
+Direction west~
+ToRoom    14056
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14059
+Name      A Major Passage~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The passage you are currently in is one of the most-travelled in the Underdark.
+Travellers of all descriptions continually move along this passage- most
+of them unfriendly. You ready your weapons, certain that you are bound to
+run into some of them soon.
+~
+#EXIT
+Direction north~
+ToRoom    14052
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14060
+#ENDEXIT
+
+Reset M 14013 3 14059 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14060
+Name      A Large Cave~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This cave has been cleared of all stalactites and stalagmites, for some
+purpose unclear to you. Passages run to the east south and north.
+~
+#EXIT
+Direction north~
+ToRoom    14059
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14062
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14061
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14061
+Name      A Dead End~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are dispirited as you find this passage ends after a short distance in a
+dead end, as do many passages in the Underdark.
+~
+#EXIT
+Direction north~
+ToRoom    14060
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14062
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction south~
+ToRoom    14063
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14060
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14063
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction north~
+ToRoom    14062
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14064
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14064
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction south~
+ToRoom    14065
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14063
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14065
+Name      A Large Cave~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This cave has been cleared of all stalactites and stalagmites, for some
+purpose unclear to you. Passages run to the east south and north.
+~
+#EXIT
+Direction north~
+ToRoom    14064
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14066
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14073
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14066
+Name      A Wide Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered a wide, east-west tunnel that is almost perfectly circular.
+You see lines in some dirt that indicate something large has been dragged
+here, a corpse perhaps, or perhaps the passage of a snake or worm.
+~
+#EXIT
+Direction east~
+ToRoom    14067
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14065
+#ENDEXIT
+
+Reset M 14013 3 14066 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14067
+Name      A Junction~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have reached a widening of the passage where exits lead in all cardinal
+directions.
+~
+#EXIT
+Direction north~
+ToRoom    14068
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14070
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14076
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14066
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14068
+Name      A Rubble-Strewn Passage~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This passage is narrow and difficult to traverse. It appears to end in a
+dead end directly ahead.
+~
+#EXIT
+Direction north~
+ToRoom    14069
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14067
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14069
+Name      A Dead End~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are dispirited as you find this passage ends after a short distance in a
+dead end, as do many passages in the Underdark.
+
+However, you think you could worm your way through a narrow crack in the
+north wall if you wanted, although you doubt you'd be able to return the
+same way.
+~
+#EXIT
+Direction north~
+ToRoom    14043
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14068
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14070
+Name      A Wide Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered a wide, east-west tunnel that is almost perfectly circular.
+You see lines in some dirt that indicate something large has been dragged
+here, a corpse perhaps, or perhaps the passage of a snake or worm.
+~
+#EXIT
+Direction east~
+ToRoom    14071
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14067
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14071
+Name      A Wide Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered a wide, east-west tunnel that is almost perfectly circular.
+You see lines in some dirt that indicate something large has been dragged
+here, a corpse perhaps, or perhaps the passage of a snake or worm.
+~
+#EXIT
+Direction east~
+ToRoom    14072
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14070
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14072
+Name      A Wide Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have reached the end of a wide, east-west tunnel that is almost perfectly 
+circular. The lines in the dirt end here.
+~
+#EXIT
+Direction west~
+ToRoom    14071
+#ENDEXIT
+
+Reset M 14028 1 14072 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14073
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction north~
+ToRoom    14065
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14074
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14074
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction east~
+ToRoom    14073
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14075
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14075
+Name      A Dead End~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are dispirited as you find this passage ends after a short distance in a
+dead end, as do many passages in the Underdark.
+~
+#EXIT
+Direction north~
+ToRoom    14074
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14076
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction north~
+ToRoom    14067
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14077
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14077
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction south~
+ToRoom    14078
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14076
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14078
+Name      A Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You enter a large cavern, filled with the usual array of stalactites and
+stalagmites, with two small caves to the east and west. A north-south
+passage runs through the middle.
+~
+#EXIT
+Direction north~
+ToRoom    14077
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14079
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14081
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14080
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14079
+Name      A Cave~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This small cave is obviously the lair of some denizen of the Underdark. As
+you pick your way past decaying corpses, skeletons and pieces of broken
+equipment, you silently pray that this particular denizen is not home right 
+now.
+~
+#EXIT
+Direction west~
+ToRoom    14078
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14080
+Name      A Cave~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This small cave is obviously the lair of some denizen of the Underdark. As
+you pick your way past decaying corpses, skeletons and pieces of broken
+equipment, you silently pray that this particular denizen is not home right 
+now.
+~
+#EXIT
+Direction east~
+ToRoom    14078
+#ENDEXIT
+
+Reset M 14014 1 14080 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14081
+Name      A Long Passageway~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This passageway stretches out deep into the Underdark, and begins to slope
+steeply downward directly ahead of here.
+~
+#EXIT
+Direction north~
+ToRoom    14078
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14082
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14082
+Name      A Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This area of the Underdark looks heavily travelled. Large numbers of humanoids
+of many races have travelled east up and down from here.
+~
+#EXIT
+Direction east~
+ToRoom    14083
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    14081
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14084
+#ENDEXIT
+
+Reset M 14011 6 14082 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14083
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction east~
+ToRoom    14082
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14089
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14084
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction south~
+ToRoom    14085
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    14082
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14085
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction north~
+ToRoom    14084
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14086
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14086
+Name      A Small Cave~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Several large crates and containers have been left here, along with dozens
+of corpses- creatures who have had their brains sucked out by hungry 
+Illithids.
+~
+#EXIT
+Direction north~
+ToRoom    14088
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14085
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14087
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14087
+Name      A Slow Descent~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You find yourself heading down a sloping path that heads into the inky 
+blackness of a large cave dead ahead. 
+~
+#EXIT
+Direction north~
+ToRoom    14086
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14400
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14088
+Name      Wererat Chambers~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here reside the Wererat guards/bully boys who work for the Illithid slave
+traders. You see some Illithid have a penchant for brains, and the Wererats
+are excellent purveyors.
+~
+#EXIT
+Direction south~
+ToRoom    14086
+#ENDEXIT
+
+Reset M 14024 4 14088 -1 -1 -1 100
+  Reset E 14004 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      14089
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction north~
+ToRoom    14083
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14090
+#ENDEXIT
+
+Reset M 14008 4 14089 -1 -1 -1 100
+  Reset E 14001 1 12 100
+  Reset E 14002 1 8 100
+  Reset E 14003 1 5 100
+  Reset E 14004 1 16 100
+  Reset E 14005 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14090
+Name      Outside the Pens~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are standing in a large cave with a metal gate barring access to the
+north. From behind this grate emanates an awful stench. You have no idea
+what the purpose of this area is, and you aren't sure you care to find out...
+~
+#EXIT
+Direction north~
+ToRoom    14091
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    14092
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14089
+#ENDEXIT
+
+Reset D 14090 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14091
+Name      The Ghoul Pens~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the Drow breed new ghouls for their armies, by creating one or two and
+then throwing unarmed human slaves to them to be tortured and slain, and
+resurrected as ghouls. It is an effective, low cost breeding system. Pity
+you're in here- you're considered feed...
+~
+#EXIT
+Direction south~
+ToRoom    14090
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset D 14091 2 2 100 -2
+Reset M 14018 6 14091 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14092
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction south~
+ToRoom    14093
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14090
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14093
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction north~
+ToRoom    14092
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14094
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14094
+Name      A Twisting Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tunnel twists and turns as it wends its sinuous way into the depths of
+the Underdark. Strange moss and lichen glow dimly in small recesses in the
+walls, though they provide insufficient light to navigate by.
+~
+#EXIT
+Direction north~
+ToRoom    14093
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14095
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14095
+Name      Outside the Pens~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are standing in a large cave with a metal gate barring access to the
+south. From behind this grate emanates an awful stench. You have no idea
+what the purpose of this area is, and you aren't sure you care to find out...
+~
+#EXIT
+Direction east~
+ToRoom    14094
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14096
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14097
+#ENDEXIT
+
+Reset D 14095 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      14096
+Name      The Ghast Pens~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the Drow breed new ghasts for their armies, by creating one or two and
+then throwing unarmed human slaves to them to be tortured and slain, and
+resurrected as ghasts. It is an effective, low cost breeding system. Pity
+you're in here- you're considered feed...
+~
+#EXIT
+Direction north~
+ToRoom    14095
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset D 14096 0 2 100 -2
+Reset M 14019 3 14096 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      14097
+Name      An Even Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This passage runs directly east-west, and looks to lead to some sort of
+large settlement. You may want to proceed cautiously...
+~
+#EXIT
+Direction east~
+ToRoom    14095
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    14098
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      14098
+Name      An Even Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This passage runs directly east-west, and looks to lead to some sort of
+large settlement. You may want to proceed cautiously...
+
+The entrance to a large city lies directly west of here.
+~
+#EXIT
+Direction east~
+ToRoom    14097
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    14099
+Desc      A rest stop~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    5100
+#ENDEXIT
+
+Reset M 14029 4 14098 -1 -1 -1 100
+  Reset E 14001 1 12 100
+  Reset E 14002 1 8 100
+  Reset E 14003 1 5 100
+  Reset E 14004 1 16 100
+  Reset E 14005 1 17 100
+#ENDROOM
+
+#ROOM
+Vnum      14099
+Name      A Rest Stop~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a rest stop for travellers going to and from Menzoberranzan, fell
+capital of the Drow holdings. It has been deserted for some time now,
+perhaps due to the unsavory habits of its latest occupant...
+~
+#EXIT
+Direction north~
+ToRoom    14098
+#ENDEXIT
+
+Reset M 14010 1 14099 -1 -1 -1 100
+#ENDROOM
+
+#ENDAREA

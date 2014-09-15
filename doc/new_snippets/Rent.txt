@@ -1,0 +1,775 @@
+Rent Code V2.0
+--------------
+
+Originally written by Garil, Desolation of the Dragon 2
+Version 2.0 code by Samson of Alsherok
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This code adds a CircleMud/SillyMud style rent system whereby players
+must make their way to an inn and rent a room in order to log out
+and not lose their equipment. Unlike those types of muds though,
+rent is ONLY charged against items which fall at or above the
+minimum rent value. The minimum value to determine if an item should
+charge rent is set by the MIN_RENT value in rent.h, and can be adjusted
+as you see fit. An option in the cset panel lets you turn of the portion
+of the code which charges rent.
+
+Note that the quit function has been altered in this rent code to
+call a helpfile for 'quit'. It is suggested you compose one telling
+your players that quitting will cause them to lose all their eq and
+inventory, and that they should instead rent at an inn.
+
+Also, because of how the quit function now works, it was necessary to
+change the way automatic quitting is handled. A new argument to the
+quit command, "auto" was needed. Various places throughout the code
+use do_quit( ch, "" ); to make a player leave, such as the spamguard
+and the autosave after link death. Players who rely on link death as
+a means of avoiding rent will also face a 1 in 3 chance of having their
+rent charges quintupled upon being saved out.
+
+The code also enables object limits which will carry over reboots
+so that no more than a set amount of the object will load, even if
+players take them out of the game by logging out.
+
+In order for the code to perform its daily scans to update and charge
+rent on the players, you will require the installation of my pfiles
+code as well. The pfiles code is not necessary to maintain object limit
+counts though, and rent will still be properly charged on players without
+it, but they can remove an object from play by renting out with enough to
+pay for one day and then not logging back on.
+
+NOTE: Users of Shadroth's rare item code:
+You cannot use ALL of this rent code if you are already using Shadroth's
+rare item snippet. Many of the changes required for my code are already
+implemented in some fasion by his code. You would be creating conflicts
+in how things operate. It is possible to adapt the portions of the code
+which charge rent to his code, but I will not assist in any way with
+that process, and I doubt he will either. Your on your own with this one.
+
+Installation Instructions
+-------------------------
+
+1. To install this code:
+   
+   Copy rent.c and rent.h into your code directory, then add rent.o
+   and rent.c to the appropriate locations in your Makefile.
+
+2. In mud.h:
+
+   Find the following code:
+
+	#define LEVEL_HIGOD		    LEVEL_GOD
+ 
+   and below it add: #include "rent.h"
+
+   Locate the ACT bits for mobiles.
+   Use an available space to add the following:
+
+   #define ACT_INNKEEPER           X         /* Innkeeper for renting - Samson 1-14-98 */
+   
+   Where 'X' is an available bitvector slot.
+
+   Locate structure system_data, and add the following line to the end:
+
+   bool RENT; /* Toggle to enable or disable charging rent - Samson 7-24-99 */
+
+   Locate structure pc_data, and add the following lines to the end:
+
+   int rent; /* Saves amount of daily rent built up - Samson 1-24-00 */
+   bool norares; /* Toggled so we can tell the PC he ran out of money - Samson 1-24-00 */
+   bool autorent; /* Is this PC an autorent? - Samson 7-27-00 */
+
+   Locate structure obj_index_data, and add the following to the end:
+
+   int limit;  /* Limit on how many of these are allowed to load - Samson 1-9-00 */
+
+3. In act_comm.c, comment out the existing copies of do_quit and do_rent.
+
+4. In comm.c, function nanny, below the following:
+
+    mail_count(ch);
+
+    Add the following:
+
+    scan_rent( ch );
+
+5. In build.c, find const act_flags.
+
+   Add "innkeeper" in the list corresponding to the location of the
+   bitvector you used in mud.h.
+
+   The in do_oset, locate the following:
+
+   if( !str_cmp( arg2, "rent" ) )
+   {
+      if( !can_omodify( ch, obj ) )
+         return;
+      if( IS_OBJ_STAT( obj, ITEM_PROTOTYPE ) )
+         obj->pIndexData->rent = value;
+      else
+         send_to_char( "Item must have prototype flag to set this value.\r\n", ch );
+      return;
+   }
+
+   Below that, add:
+
+   if( !str_cmp( arg2, "limit" ) )
+   {
+      if( IS_OBJ_STAT( obj, ITEM_PROTOTYPE ) )
+      {
+         obj->pIndexData->limit = value;
+         send_to_char( "Object limit set.\r\n", ch );
+      }
+      else
+         send_to_char( "Item must have prototype flag to set this value.\r\n", ch );
+      return;
+   }
+
+   Then in fold_area, locate the following:
+
+      fprintf( fpout, "%d %d %d\n", pObjIndex->weight,
+               pObjIndex->cost, pObjIndex->rent ? pObjIndex->rent : ( int )( pObjIndex->cost / 10 ) );
+
+   Replace it with:
+
+      fprintf( fpout, "%d %d %d %d\n", pObjIndex->weight,
+               pObjIndex->cost, pObjIndex->rent ? pObjIndex->rent : ( int )( pObjIndex->cost / 10 ), pObjIndex->limit );
+
+6. In reset.c, find function reset_area.
+
+   In the declarations section, add:
+
+   int num;
+
+   Find the following code:
+
+         case 'G':
+         case 'E':
+            if( !( pObjIndex = get_obj_index( pReset->arg1 ) ) )
+            {
+               sprintf( buf, "%s Reset_area: 'E' or 'G': bad obj vnum %d.", pArea->filename, pReset->arg1 );
+               bug( buf, 0 );
+               continue;
+            }
+            if( !mob )
+            {
+               lastobj = NULL;
+               break;
+            }
+            if( mob->pIndexData->pShop )
+            {
+               int olevel = generate_itemlevel( pArea, pObjIndex );
+               obj = create_object( pObjIndex, olevel );
+               xSET_BIT( obj->extra_flags, ITEM_INVENTORY );
+            }
+            else
+               obj = create_object( pObjIndex, number_fuzzy( level ) );
+            obj->level = URANGE( 0, obj->level, LEVEL_AVATAR );
+            obj = obj_to_char( obj, mob );
+            if( pReset->command == 'E' )
+            {
+               if( obj->carried_by != mob )
+               {
+                  bug( "'E' reset: can't give object %d to mob %d.", obj->pIndexData->vnum, mob->pIndexData->vnum );
+                  break;
+               }
+               equip_char( mob, obj, pReset->arg3 );
+            }
+            lastobj = obj;
+            break;
+
+   Replace that code with:
+
+         case 'G':
+         case 'E':
+            if( !( pObjIndex = get_obj_index( pReset->arg1 ) ) )
+            {
+               bug( "%s: %s: 'E' or 'G': bad obj vnum %d.", __FUNCTION__, pArea->filename, pReset->arg1 );
+               continue;
+            }
+            if( !mob )
+            {
+               lastobj = NULL;
+               break;
+            }
+
+            if( pObjIndex->count >= pObjIndex->limit )
+            {
+               obj = NULL;
+               lastobj = NULL;
+               break;
+            }
+
+            if( mob->pIndexData->pShop )
+            {
+               int olevel = generate_itemlevel( pArea, pObjIndex );
+               obj = create_object( pObjIndex, olevel );
+               xSET_BIT( obj->extra_flags, ITEM_INVENTORY );
+            }
+            else
+               obj = create_object( pObjIndex, number_fuzzy( level ) );
+            obj->level = URANGE( 0, obj->level, LEVEL_AVATAR );
+            obj = obj_to_char( obj, mob );
+            if( pReset->command == 'E' )
+            {
+               if( obj->carried_by != mob )
+               {
+                  bug( "'E' reset: can't give object %d to mob %d.", obj->pIndexData->vnum, mob->pIndexData->vnum );
+                  break;
+               }
+               equip_char( mob, obj, pReset->arg3 );
+            }
+            lastobj = obj;
+            break;
+
+  Find the following code:
+
+         case 'O':
+            if( !( pObjIndex = get_obj_index( pReset->arg1 ) ) )
+            {
+/*
+	sprintf (buf, "%s Reset_area: 'O': bad obj vnum %d.",
+		pArea->filename, pReset->arg1 );
+	bug ( buf, 0 );
+*/
+               continue;
+            }
+            if( !( pRoomIndex = get_room_index( pReset->arg3 ) ) )
+            {
+/*
+	sprintf ( buf, "%s Reset_area: 'O': bad room vnum %d.", pArea->filename,
+	   pReset->arg3 );
+	bug ( buf, 0 );
+*/
+               continue;
+            }
+            if( pArea->nplayer > 0 || count_obj_list( pObjIndex, pRoomIndex->first_content ) > 0 )
+            {
+               obj = NULL;
+               lastobj = NULL;
+               break;
+            }
+            obj = create_object( pObjIndex, number_fuzzy( generate_itemlevel( pArea, pObjIndex ) ) );
+            obj->level = UMIN( obj->level, LEVEL_AVATAR );
+            obj->count = pReset->arg2; /* Added to fix object counts */
+            obj->cost = 0;
+            obj_to_room( obj, pRoomIndex );
+            lastobj = obj;
+            break;
+
+  Replace it with:
+
+         case 'O':
+            if( !( pObjIndex = get_obj_index( pReset->arg1 ) ) )
+            {
+               bug( "%s: %s: 'O': bad obj vnum %d.", __FUNCTION__, pArea->filename, pReset->arg1 );
+               continue;
+            }
+            if( !( pRoomIndex = get_room_index( pReset->arg3 ) ) )
+            {
+               bug( "%s: %s: 'O': bad room vnum %d.", __FUNCTION__, pArea->filename, pReset->arg3 );
+               continue;
+            }
+            /*
+             * Rent item limits here 
+             */
+            if( ( pObjIndex->count >= pObjIndex->limit )
+                || count_obj_list( pObjIndex, pRoomIndex->first_content ) > 0 )
+            {
+               obj = NULL;
+               lastobj = NULL;
+               break;
+            }
+            if( pObjIndex->count + pReset->arg2 > pObjIndex->limit )
+            {
+               num = pObjIndex->limit - pReset->arg2;
+               if( num < 1 )
+               {
+                  obj = NULL;
+                  lastobj = NULL;
+                  break;
+               }
+            }
+            else
+               num = pReset->arg2;
+
+            obj = create_object( pObjIndex, number_fuzzy( generate_itemlevel( pArea, pObjIndex ) ) );
+            if( num > 1 )
+               pObjIndex->count += ( num - 1 );
+            obj->count = num;
+            obj->level = UMIN( obj->level, LEVEL_AVATAR );
+            obj->cost = 0;
+            obj_to_room( obj, pRoomIndex );
+            lastobj = obj;
+            break;
+ 
+   Find the following code:
+
+         case 'P':
+            if( !( pObjIndex = get_obj_index( pReset->arg1 ) ) )
+            {
+/*
+	sprintf ( buf, "%s Reset_area: 'P': bad obj vnum %d.", pArea->filename,
+	   pReset->arg1 );
+	bug ( buf, 0 );
+*/
+               continue;
+            }
+            if( pReset->arg3 > 0 )
+            {
+               if( !( pObjToIndex = get_obj_index( pReset->arg3 ) ) )
+               {
+/*
+	  sprintf(buf,"%s Reset_area: 'P': bad objto vnum %d.",pArea->filename,
+		pReset->arg3 );
+	  bug( buf, 0 );
+*/
+                  continue;
+               }
+               if( pArea->nplayer > 0 ||
+                   !( to_obj = get_obj_type( pObjToIndex ) ) ||
+                   !to_obj->in_room ||
+                   count_obj_list( pObjIndex, to_obj->first_content ) > 0 ||
+                   ( pObjIndex->count >= pReset->arg2 && pObjIndex->rent >= MIN_RENT ) )
+               {
+                  obj = NULL;
+                  break;
+               }
+               lastobj = to_obj;
+            }
+            else
+            {
+               int iNest;
+
+               if( !lastobj )
+                  break;
+               to_obj = lastobj;
+               for( iNest = 0; iNest < pReset->extra; iNest++ )
+                  if( !( to_obj = to_obj->last_content ) )
+                  {
+/*
+	    sprintf(buf,"%s Reset_area: 'P': Invalid nesting obj %d."
+		,pArea->filename, pReset->arg1 );
+	    bug( buf, 0 );
+*/
+                     iNest = -1;
+                     break;
+                  }
+               if( iNest < 0 )
+                  continue;
+            }
+            obj = create_object( pObjIndex, number_fuzzy( UMAX( generate_itemlevel( pArea, pObjIndex ), to_obj->level ) ) );
+            obj->level = UMIN( obj->level, LEVEL_AVATAR );
+            obj->count = pReset->arg2; /* Added to fix object counts */
+            obj_to_obj( obj, to_obj );
+            break;
+
+     Change it to read like this:
+
+         case 'P':
+            if( !( pObjIndex = get_obj_index( pReset->arg1 ) ) )
+            {
+               bug( "%s: %s: 'P': bad obj vnum %d.", __FUNCTION__, pArea->filename, pReset->arg1 );
+               continue;
+            }
+            if( pReset->arg3 > 0 )
+            {
+               if( !( pObjToIndex = get_obj_index( pReset->arg3 ) ) )
+               {
+                  bug( "%s: %s: 'P': bad objto vnum %d.", __FUNCTION__, pArea->filename, pReset->arg3 );
+                  continue;
+               }
+               if( !( to_obj = get_obj_type( pObjToIndex ) ) || !to_obj->in_room ||
+                   ( pObjIndex->count >= pObjIndex->limit )
+                   || count_obj_list( pObjIndex, to_obj->first_content ) > 0 )
+               {
+                  obj = NULL;
+                  break;
+               }
+               lastobj = to_obj;
+            }
+            else
+            {
+               int iNest;
+
+               if( !lastobj )
+                  break;
+               to_obj = lastobj;
+               for( iNest = 0; iNest < pReset->extra; iNest++ )
+                  if( !( to_obj = to_obj->last_content ) )
+                  {
+                     bug( "%s: %s: 'P': Invalid nesting obj %d.", __FUNCTION__, pArea->filename, pReset->arg1 );
+                     iNest = -1;
+                     break;
+                  }
+               if( iNest < 0 )
+                  continue;
+            }
+
+            if( pObjIndex->count + pReset->arg2 > pObjIndex->limit )
+            {
+               num = pObjIndex->limit - pReset->arg2;
+               if( num < 1 )
+               {
+                  obj = NULL;
+                  break;
+               }
+            }
+            else
+               num = pReset->arg2;
+
+            obj = create_object( pObjIndex, number_fuzzy( UMAX( generate_itemlevel( pArea, pObjIndex ), to_obj->level ) ) );
+            if( num > 1 )
+               pObjIndex->count += ( num - 1 );
+            obj->count = num;
+            obj->level = UMIN( obj->level, LEVEL_AVATAR );
+            obj->count = pReset->arg2;
+            obj_to_obj( obj, to_obj );
+            break;
+
+7. In save.c, find function fwrite_obj.
+
+   Locate this line:
+
+    fprintf( fp, "Vnum         %d\n",	obj->pIndexData->vnum	     );
+
+   Change it to read:
+
+    fprintf( fp, "Ovnum         %d\n",	obj->pIndexData->vnum	     );
+
+ Find function fread_obj
+
+   Locate this code:
+
+	case 'N':
+	    KEY( "Name",	obj->name,		fread_string( fp ) );
+
+	    if ( !strcmp( word, "Nest" ) )
+	    {
+		iNest = fread_number( fp );
+		if ( iNest < 0 || iNest >= MAX_NEST )
+		{
+		    bug( "Fread_obj: bad nest %d.", iNest );
+		    iNest = 0;
+		    fNest = FALSE;
+		}
+		fMatch = TRUE;
+	    }
+	    break;
+
+   And immediately following it, add this code:
+
+	case 'O':
+	    if ( !strcmp( word, "Ovnum" ) )
+	    {
+		int vnum;
+
+		vnum = fread_number( fp );
+		/*  bug( "Fread_obj: bad vnum %d.", vnum );  */
+		if ( ( obj->pIndexData = get_obj_index( vnum ) ) == NULL )
+		    fVnum = FALSE;
+		else
+		{
+		    fVnum = TRUE;
+		    obj->cost = obj->pIndexData->cost;
+		    obj->weight = obj->pIndexData->weight;
+		    obj->item_type = obj->pIndexData->item_type;
+		    obj->wear_flags = obj->pIndexData->wear_flags;
+		    obj->extra_flags = obj->pIndexData->extra_flags;
+		}
+		fMatch = TRUE;
+		break;
+	    }
+	    break;
+
+   Locate this code:
+
+		    if ( !obj->name )
+			obj->name = QUICKLINK( obj->pIndexData->name );
+		    if ( !obj->description )
+			obj->description = QUICKLINK( obj->pIndexData->description );
+		    if ( !obj->short_descr )
+			obj->short_descr = QUICKLINK( obj->pIndexData->short_descr );
+		    if ( !obj->action_desc )
+			obj->action_desc = QUICKLINK( obj->pIndexData->action_desc );
+		    LINK(obj, first_object, last_object, next, prev );
+
+   And immediately following it, add this code:
+
+		    /* Altered count method for rare items - Samson 11-5-98 */
+		    obj->pIndexData->count += obj->count;
+
+ 		    if ( obj->pIndexData->rent >= MIN_RENT )
+		        obj->pIndexData->count -= obj->count;
+
+   Find the function load_char_obj and locate the following lines:
+
+    ch->pcdata->first_ignored		= NULL;    /* Ignore list */
+    ch->pcdata->last_ignored		= NULL;
+    ch->pcdata->tell_history		= NULL;	/* imm only lasttell cmnd */
+    ch->pcdata->lt_index		= 0;	/* last tell index */
+    ch->morph                           = NULL;
+
+   Immediately below them, add these lines:
+
+    ch->pcdata->rent			= 0; /* Initialize default rent value - Samson 1-24-00 */
+    ch->pcdata->norares			= FALSE; /* Default value for toggle flag - Samson 1-24-00 */
+    ch->pcdata->autorent		= FALSE;
+
+   In function fread_char, locate these lines:
+
+	    KEY( "Resistant",	ch->resistant,		fread_number( fp ) );
+	    KEY( "Restore_time",ch->pcdata->restore_time, fread_number( fp ) );
+
+   Immediately above them, add this line:
+
+	    KEY( "Rent",		ch->pcdata->rent, fread_number( fp ) );
+
+   Locate these lines:
+
+	    KEY( "Act",		ch->act,		fread_bitvector( fp ) );
+	    KEY( "AffectedBy",	ch->affected_by,	fread_bitvector( fp ) );
+
+
+   And immediately below them add this line:
+
+	    KEY( "Autorent",	ch->pcdata->autorent,	fread_number( fp ) );
+
+   Locate these lines:
+
+	case 'N':
+	    KEY ("Name", ch->name, fread_string( fp ) );
+
+   And immediately below them add this line:
+
+	    KEY( "Norares",	ch->pcdata->norares,	fread_number( fp ) );
+
+   In function fwrite_char, locate these lines:
+
+    fprintf( fp, "Hitroll      %d\n",	ch->hitroll		);
+    fprintf( fp, "Damroll      %d\n",	ch->damroll		);
+    fprintf( fp, "Armor        %d\n",	ch->armor		);
+
+   Immediately above them, add this line:
+
+    fprintf( fp, "Rent		 %d\n",	ch->pcdata->rent  ); /* Accumulated rent - Samson */
+    fprintf( fp, "Norares	 %d\n",	ch->pcdata->norares ); /* Toggle status - Samson */
+    fprintf( fp, "Autorent	 %d\n",	ch->pcdata->autorent ); /* Toggle status - Samson */
+
+8. In db.c, locate the following code in function boot_db:
+
+	log_string( "Fixing exits" );
+	fix_exits( );
+	fBootDb	= FALSE;
+
+   Immediately following it, add this code:
+
+      /* Samson 10-16-98 - scans pfiles for rares */
+	load_equipment_totals( );
+
+   Locate this code:
+
+      log_string( "Loading corpses" );
+      load_corpses( );
+
+   Move those lines of code from their present position to the line
+   immediately below load_equipment_totals
+
+   Find function save_sysdata, and locate the following lines of code:
+
+	fprintf( fp, "End\n\n"						);
+	fprintf( fp, "#END\n"						);
+
+   Add the following line above those:
+
+	fprintf( fp, "Rent		%d\n", sys.RENT );
+
+   Find function fread_sysdata, and locate the following lines of code:
+
+	    KEY( "Readallmail",	   sys->read_all_mail,	fread_number( fp ) );
+	    KEY( "Readmailfree",   sys->read_mail_free,	fread_number( fp ) );
+
+   Add the following line below those:
+
+	    KEY( "Rent",		   sys->RENT,		fread_number( fp ) );
+
+   In load_objects, locate the following:
+
+      pObjIndex->weight = fread_number( fp );
+      pObjIndex->weight = UMAX( 1, pObjIndex->weight );
+      pObjIndex->cost = fread_number( fp );
+      pObjIndex->rent = fread_number( fp );  /* unused */
+
+   Replace those 4 lines with:
+
+      ln = fread_line( fp );
+      x1 = x2 = x3 = 0;
+      x4 = 9999;
+      sscanf( ln, "%d %d %d %d", &x1, &x2, &x3, &x4 );
+      pObjIndex->weight = x1;
+      pObjIndex->weight = UMAX( 1, pObjIndex->weight );
+      pObjIndex->cost = x2;
+      pObjIndex->rent = x3;
+      pObjIndex->limit = x4;
+
+   In make_object, locate:
+
+      pObjIndex->value[0] = 0;
+      pObjIndex->value[1] = 0;
+      pObjIndex->value[2] = 0;
+      pObjIndex->value[3] = 0;
+      pObjIndex->value[4] = 0;
+      pObjIndex->value[5] = 0;
+      pObjIndex->weight = 1;
+      pObjIndex->cost = 0;
+
+   Add the following:
+
+      pObjIndex->rent = 0;
+      pObjIndex->limit = 9999;
+
+   Then locate:
+
+      pObjIndex->value[0] = cObjIndex->value[0];
+      pObjIndex->value[1] = cObjIndex->value[1];
+      pObjIndex->value[2] = cObjIndex->value[2];
+      pObjIndex->value[3] = cObjIndex->value[3];
+      pObjIndex->value[4] = cObjIndex->value[4];
+      pObjIndex->value[5] = cObjIndex->value[5];
+      pObjIndex->weight = cObjIndex->weight;
+      pObjIndex->cost = cObjIndex->cost;
+
+   Add the following:
+
+      pObjIndex->rent = cObjIndex->rent;
+      pObjIndex->limit = cObjIndex->limit;
+
+9. In handler.c, locate function extract_char
+
+   Find the following code:
+
+    xREMOVE_BIT( ch->act, ACT_MOUNTED );
+
+    while ( (obj = ch->last_carrying) != NULL )
+	extract_obj(obj);
+
+    char_from_room(ch);
+
+  Change it to read like this:
+
+    xREMOVE_BIT( ch->act, ACT_MOUNTED );
+
+    while ( (obj = ch->last_carrying) != NULL )
+    {
+      if ( obj->pIndexData->rent >= MIN_RENT )
+	    obj->pIndexData->count += obj->count;
+	extract_obj(obj);
+    }
+
+    char_from_room(ch);
+
+10. In act_wiz.c, locate function do_cset, and find the following lines:
+
+    pager_printf_color(ch, "\r\n&WMail:\r\n  &wRead all mail: &W%d  &wRead mail for free: &W%d  &wWrite mail for free: &W%d\r\n",
+	    sysdata.read_all_mail, sysdata.read_mail_free, sysdata.write_mail_free );
+    pager_printf_color(ch, "  &wTake all mail: &W%d", sysdata.take_others_mail );
+
+    Add the following lines below those:
+
+    pager_printf_color(ch, "&wRent system status: &W%s\r\n",
+	    sysdata.RENT ? "Enabled" : "Disabled" );
+
+    Further down in the function, locate the following code:
+
+  if (!str_cmp(arg, "mudname"))
+  {
+	if (sysdata.mud_name)
+		DISPOSE(sysdata.mud_name);
+	sysdata.mud_name = str_dup( argument );	
+	send_to_char("Name set.\r\n", ch );
+	return;
+  }
+
+    Add the following lines above those:
+
+    if ( !str_cmp( arg, "rent" ) )
+    {
+	sysdata.RENT = !sysdata.RENT;
+
+	if ( sysdata.RENT )
+	  send_to_char( "Rent system enabled.\r\n", ch );
+	else
+	  send_to_char( "Rent system disabled.\r\n", ch );
+	return;
+    }
+
+11. In various places throughout the code, replace this:
+   
+   do_quit( ch, "" );
+
+   with this:
+
+   do_quit( ch, "auto" );
+
+12. Because do_quit and do_rent are stock commands, there should be no
+    need to make an entry in tables.c for them. However, if you have
+    removed the rent command, add the appropriate entries for do_rent.
+    Also add the appropriate entries for do_offer.
+
+13. Add the help text in Rent.help to your help.are file.
+
+14. Make clean, then recompile.
+
+15. Make sure you have commands for 'quit' and 'rent' available, and
+    add a command for 'offer'.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

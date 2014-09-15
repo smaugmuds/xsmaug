@@ -1,199 +1,181 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Dwarven Daycare~
-Author       Sandman~
-WeatherX     0
-WeatherY     0
-Ranges       1 5 0 60
-Economy      0 19976800
-ResetMsg     You hear a small child scream for his mommy.~
-ResetFreq    5
+Version         1
+Name            Dwarven Daycare~
+Author          Sandman~
+Vnums           6600 6651
+Continent       one~
+Coordinates     0 0
+Dates           1403834970 1403834970
+Ranges          1 5 0 60
+ResetMsg        You hear a small child scream for his mommy.~
+ResetFreq       5
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       6600
-Keywords   dwarven child~
-Short      a dwarven child~
-Long       A dwarven child runs around, wreaking havoc everywhere.
+Vnum      6600
+Keywords  dwarven child~
+Race      dwarf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a dwarven child~
+Long      A dwarven child runs around, wreaking havoc everywhere.
 ~
-Desc       This is a young but not totally harmless creature.
+Desc      This is a young but not totally harmless creature.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_thief~
-Gender     male~
-Actflags   npc scavenger stayarea~
-Stats1     -5 3 17 6 300 400
-Stats2     1 4 30
-Stats3     1 3 6
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart hands feet eye~
+Nattacks  0.000000
+Stats1    -5 -1 0 0 0 0
+Stats2    3 21 6 30 1 3 6
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Bodyparts head arms legs heart hands feet eye~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6601
-Keywords   dwarven youth~
-Short      a dwarven youth~
-Long       A dwarven youth slouches here, trying to avoid her chores.
+Vnum      6601
+Keywords  dwarven youth~
+Race      dwarf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a dwarven youth~
+Long      A dwarven youth slouches here, trying to avoid her chores.
 ~
-Desc       This young woman seems quite discontent about the fact that she has to
+Desc      This young woman seems quite discontent about the fact that she has to
 clean up after all these brats.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc scavenger stayarea~
-Stats1     500 3 19 9 450 75
-Stats2     3 5 20
-Stats3     2 3 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs eye~
+Nattacks  0.000000
+Stats1    500 -1 0 0 0 0
+Stats2    3 21 9 20 2 3 2
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Bodyparts head arms legs eye~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6602
-Keywords   dwarven baby~
-Short      a dwarven baby~
-Long       A small dwarven baby sits here, sucking her thumb.
+Vnum      6602
+Keywords  dwarven baby~
+Race      dwarf~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a dwarven baby~
+Long      A small dwarven baby sits here, sucking her thumb.
 ~
-Desc       This small baby looks like she has been cared for with a lot of love.
+Desc      This small baby looks like she has been cared for with a lot of love.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc scavenger stayarea~
-Stats1     300 2 18 9 150 200
-Stats2     2 5 19
-Stats3     1 5 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart eye~
+Nattacks  0.000000
+Stats1    300 -1 0 0 0 0
+Stats2    2 21 9 19 1 5 1
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Bodyparts head arms legs heart eye~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6603
-Keywords   toddler dwarven~
-Short      a dwarven toddler~
-Long       A dwarven toddler sits here, crying for his mommy.
+Vnum      6603
+Keywords  toddler dwarven~
+Race      dwarf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_janitor~
+Short     a dwarven toddler~
+Long      A dwarven toddler sits here, crying for his mommy.
 ~
-Desc       The toddler looks at you with his baby blue eyes, and he doesn't look
+Desc      The toddler looks at you with his baby blue eyes, and he doesn't look
 like he could cause you any harm.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_janitor~
-Gender     male~
-Actflags   npc scavenger stayarea~
-Stats1     -300 3 18 7 100 300
-Stats2     3 5 26
-Stats3     2 3 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart hands feet~
+Nattacks  0.000000
+Stats1    -300 -1 0 0 0 0
+Stats2    3 21 7 26 2 3 2
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Bodyparts head arms legs heart hands feet~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6604
-Keywords   bear ugly stuffed~
-Short      an ugly stuffed bear~
-Long       An ugly stuffed bear stares at you through glass eyes.
+Vnum      6604
+Keywords  bear ugly stuffed~
+Race      bear~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an ugly stuffed bear~
+Long      An ugly stuffed bear stares at you through glass eyes.
 ~
-Desc       This is obviously a reject from the factory.
+Desc      This is obviously a reject from the factory.
 He snarls and growls at you.
 ~
-Race       bear~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc scavenger stayarea~
-Affected   sneak~
-Stats1     -400 3 17 6 300 300
-Stats2     3 4 25
-Stats3     1 3 6
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  arms legs heart eye~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    3 21 6 25 1 3 6
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  sneak~
+Bodyparts arms legs heart eye~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6605
-Keywords   old doll~
-Short      an old doll~
-Long       A worn out old doll flops here lifelessly.
+Vnum      6605
+Keywords  old doll~
+Race      magical~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     an old doll~
+Long      A worn out old doll flops here lifelessly.
 ~
-Desc       This small baby looks like it has been cared for with plenty of love.
+Desc      This small baby looks like it has been cared for with plenty of love.
 ~
-Race       magical~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_thief~
-Gender     female~
-Actflags   npc stayarea~
-Affected   sneak~
-Stats1     -2 1 20 10 200 50
-Stats2     1 1 9
-Stats3     1 3 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs eye~
+Nattacks  0.000000
+Stats1    -2 0 0 0 0 0
+Stats2    1 21 10 9 1 3 4
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  sneak~
+Bodyparts head arms legs eye~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6606
-Keywords   nanny~
-Short      the mean old nanny~
-Long       A mean old nanny stands here, watching over the children.
+Vnum      6606
+Keywords  nanny~
+Race      dwarf~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the mean old nanny~
+Long      A mean old nanny stands here, watching over the children.
 ~
-Desc       You see an old dwarven lady who has been hunched over with age.  However, it
+Desc      You see an old dwarven lady who has been hunched over with age.  However, it
 appears that there is still some fight left in her.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_cleric~
-Gender     female~
-Actflags   npc stayarea~
-Stats1     10 5 16 6 1000 750
-Stats2     4 4 50
-Stats3     1 8 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart hands feet eye~
+Nattacks  0.000000
+Stats1    10 -1 0 0 0 0
+Stats2    5 21 6 50 1 8 2
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head arms legs heart hands feet eye~
 #MUDPROG
 Progtype  all_greet_prog~
 Arglist   33~
@@ -212,110 +194,98 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       6607
-Keywords   knavish bully~
-Short      a knavish bully~
-Long       A knavish bully stands here, guarding the room to the south.
+Vnum      6607
+Keywords  knavish bully~
+Race      dwarf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a knavish bully~
+Long      A knavish bully stands here, guarding the room to the south.
 ~
-Desc       This is a big mean bully who is tired of being lost in this maze.
+Desc      This is a big mean bully who is tired of being lost in this maze.
 You suddenly think that you had better flee.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel scavenger stayarea~
-Affected   detect_invis~
-Stats1     -800 4 9 2 2500 2000
-Stats2     3 5 50
-Stats3     3 2 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart hands feet~
+Nattacks  0.000000
+Stats1    -800 -1 0 0 0 0
+Stats2    4 21 2 50 3 2 3
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel scavenger stayarea~
+Affected  detect_invis~
+Bodyparts head arms legs heart hands feet~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6608
-Keywords   brat spoiled~
-Short      a spoiled brat~
-Long       A spoiled brat sits in the corner, pouting.
+Vnum      6608
+Keywords  brat spoiled~
+Race      dwarf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a spoiled brat~
+Long      A spoiled brat sits in the corner, pouting.
 ~
-Desc       You see a little tyke who has always gotten what he wanted.  You have the
+Desc      You see a little tyke who has always gotten what he wanted.  You have the
 biggest urge to put him out of his misery.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_thief~
-Gender     male~
-Actflags   npc sentinel stayarea~
-Affected   detect_invis~
-Stats1     -400 6 18 9 2000 50
-Stats2     2 5 65
-Stats3     1 3 8
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart hands feet eye~
+Nattacks  0.000000
+Stats1    -400 -1 0 0 0 0
+Stats2    6 21 9 65 1 3 8
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis~
+Bodyparts head arms legs heart hands feet eye~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6609
-Keywords   lady old cook~
-Short      an old cook~
-Long       An old lady stands here, slaving over the hot oven.
+Vnum      6609
+Keywords  lady old cook~
+Race      dwarf~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     an old cook~
+Long      An old lady stands here, slaving over the hot oven.
 ~
-Desc       This old lady looks tired and haggard, perhaps from working in a kitchen
+Desc      This old lady looks tired and haggard, perhaps from working in a kitchen
 for too long.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel~
-Stats1     200 3 0 0 1500 0
-Stats2     2 5 30
-Stats3     2 2 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart hands feet~
+Nattacks  0.000000
+Stats1    200 -1 0 0 0 0
+Stats2    3 21 0 30 2 2 3
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart hands feet~
 #ENDMOBILE
 
 #MOBILE
-Vnum       6610
-Keywords   obnoxious dwarven boy~
-Short      an obnoxious dwarven boy~
-Long       A dwarven boy obnoxiously stamps his feet through the overflowing water.
+Vnum      6610
+Keywords  obnoxious dwarven boy~
+Race      dwarf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     an obnoxious dwarven boy~
+Long      A dwarven boy obnoxiously stamps his feet through the overflowing water.
 ~
-Desc       This is a young but not totally harmless creature.
+Desc      This is a young but not totally harmless creature.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_thief~
-Gender     male~
-Actflags   npc sentinel scavenger stayarea~
-Stats1     -5 3 17 6 300 400
-Stats2     1 4 30
-Stats3     1 3 6
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common dwarven~
-Speaking   common dwarven~
-Bodyparts  head arms legs heart hands feet eye~
+Nattacks  0.000000
+Stats1    -5 -1 0 0 0 0
+Stats2    3 21 6 30 1 3 6
+Speaks    common dwarven~
+Speaking  dwarven~
+Actflags  npc sentinel scavenger stayarea~
+Bodyparts head arms legs heart hands feet eye~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   5~
@@ -326,37 +296,37 @@ Comlist   mpecho The boy slams his foot down, soaking your legs with fetid water
 #ENDMOBILE
 
 #OBJECT
-Vnum     6600
-Keywords axe toy~
-Type     weapon~
-Short    a toy axe~
-Long     An axe made of plastic lies here.~
-WFlags   take wield~
-Values   0 2 8 0 0 0
-Stats    15 600 60 0 0
+Vnum      6600
+Keywords  axe toy~
+Type      weapon~
+Short     a toy axe~
+Long      An axe made of plastic lies here.~
+WFlags    take wield~
+Values    0 2 8 0 0 0 0 0 0 0 0
+Stats     15 600 -2 1 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     6601
-Keywords ring pink ice~
-Type     armor~
-Short    a pink ice ring~
-Long     A pink ice ring draws your eye.~
-WFlags   take finger~
-Values   1 0 0 0 0 0
-Stats    8 7000 700 0 0
-Affect       -1 -1 1 1 0
-Affect       -1 -1 6 13 0
+Vnum      6601
+Keywords  ring pink ice~
+Type      armor~
+Short     a pink ice ring~
+Long      A pink ice ring draws your eye.~
+WFlags    take finger~
+Values    1 0 0 0 0 0 0 0 0 0 0
+Stats     8 7000 -2 1 0 None None None
+AffData strength 1 -1 -1 0
+AffData hit 6 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     6602
-Keywords plaque~
-Type     furniture~
-Short    a small plaque~
-Long     A small plaque is affixed to the wall.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      6602
+Keywords  plaque~
+Type      furniture~
+Short     a small plaque~
+Long      A small plaque is affixed to the wall.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    plaque~
 ExDesc       Before you lies the Dwarven Daycare.  This area is intended for levels 1-5,
@@ -371,43 +341,43 @@ Enjoy the daycare, but watch out for the little anklebiters.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6617
-Keywords swing swings swing-set~
-Type     furniture~
-Short    a set of worn rope swings~
-Long     A set of rope swings twist lazily in the breeze.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      6617
+Keywords  swing swings swing-set~
+Type      furniture~
+Short     a set of worn rope swings~
+Long      A set of rope swings twist lazily in the breeze.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     6618
-Keywords wooden seesaw see-saw~
-Type     furniture~
-Short    a brightly painted wooden see-saw~
-Long     A wooden see-saw promises hours of simple-minded distraction.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      6618
+Keywords  wooden seesaw see-saw~
+Type      furniture~
+Short     a brightly painted wooden see-saw~
+Long      A wooden see-saw promises hours of simple-minded distraction.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     6619
-Keywords wooden bench~
-Type     furniture~
-Short    a low wooden bench~
-Long     A low wooden bench offers respite for your aching feet.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      6619
+Keywords  wooden bench~
+Type      furniture~
+Short     a low wooden bench~
+Long      A low wooden bench offers respite for your aching feet.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     6620
-Keywords tree~
-Type     furniture~
-Short    a large oak tree~
-Long     A large oak tree stands here, waiting for you to climb it.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      6620
+Keywords  tree~
+Type      furniture~
+Short     a large oak tree~
+Long      A large oak tree stands here, waiting for you to climb it.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    tree large oak~
 ExDesc       This majestic tree seems to reach up to the clouds with its beauty.  Its
@@ -418,149 +388,150 @@ branches are so inviting, and you feel like you want to climb it.
 #ENDOBJECT
 
 #OBJECT
-Vnum     6621
-Keywords robe linen~
-Type     armor~
-Short    a linen robe~
-Long     A linen robe is crumpled into a ball here.~
-WFlags   take about~
-Values   1 0 0 0 0 0
-Stats    5 4000 400 0 0
-Affect       -1 -1 1 4 0
-Affect       -1 -1 5 12 0
+Vnum      6621
+Keywords  robe linen~
+Type      armor~
+Short     a linen robe~
+Long      A linen robe is crumpled into a ball here.~
+WFlags    take about~
+Values    1 0 0 0 0 0 0 0 0 0 0
+Stats     5 4000 -2 1 0 None None None
+AffData dexterity 1 -1 -1 0
+AffData mana 5 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     6630
-Keywords beanie multi-coloured~
-Type     armor~
-Short    a multi-coloured beanie~
-Long     A beanie of many colours has been dropped here.~
-WFlags   take head~
-Values   3 3 0 1 0 0
-Stats    7 1450 145 0 0
-Affect       -1 -1 1 5 0
-Affect       -1 -1 1 2 0
-Affect       -1 -1 8 13 0
+Vnum      6630
+Keywords  beanie multi-coloured~
+Type      armor~
+Short     a multi-coloured beanie~
+Long      A beanie of many colours has been dropped here.~
+WFlags    take head~
+Values    3 3 0 1 0 0 0 0 0 0 0
+Stats     7 1450 -2 1 0 None None None
+AffData constitution 1 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData hit 8 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     6631
-Keywords ring frosty roseate~
-Type     armor~
-Short    a frosty roseate ring~
-Long     A frosty roseate ring catches your attention.~
-Flags    magic~
-WFlags   take finger~
-Values   0 0 0 0 0 0
-Stats    8 15000 1500 0 0
-Affect       -1 -1 1 1 0
-Affect       -1 -1 6 13 0
-Affect       -1 -1 6 12 0
+Vnum      6631
+Keywords  ring frosty roseate~
+Type      armor~
+Short     a frosty roseate ring~
+Long      A frosty roseate ring catches your attention.~
+Flags     magic~
+WFlags    take finger~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     8 15000 -2 1 0 None None None
+AffData strength 1 -1 -1 0
+AffData hit 6 -1 -1 0
+AffData mana 6 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     6632
-Keywords saffron potion~
-Type     potion~
-Short    a saffron potion~
-Long     A saffron potion is delicately balanced on the floor here.~
-Flags    glow~
-WFlags   take~
-Values   30 -1 -1 -1 0 0
-Stats    2 1500 150 0 0
-Spells   'cure serious' 'shield' 'refresh'
+Vnum      6632
+Keywords  saffron potion~
+Type      potion~
+Short     a saffron potion~
+Long      A saffron potion is delicately balanced on the floor here.~
+Flags     glow~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     2 1500 -2 1 0 None None None
+Spells       'cure serious' 'shield' 'refresh'
 #ENDOBJECT
 
 #OBJECT
-Vnum     6633
-Keywords pop gun~
-Type     weapon~
-Short    a pop gun~
-Long     A small pop gun lays here unattended.~
-WFlags   take wield~
-Values   0 0 0 0 0 0
-Stats    12 750 75 0 0
+Vnum      6633
+Keywords  pop gun~
+Type      weapon~
+Short     a pop gun~
+Long      A small pop gun lays here unattended.~
+WFlags    take wield~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     12 750 -2 1 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     6634
-Keywords sticky pacifier~
-Type     weapon~
-Short    a sticky pacifier~
-Long     A sticky pacifier sits here, waiting to be sucked.~
-WFlags   take wield~
-Values   0 2 3 12 0 0
-Stats    5 1700 170 0 0
+Vnum      6634
+Keywords  sticky pacifier~
+Type      weapon~
+Short     a sticky pacifier~
+Long      A sticky pacifier sits here, waiting to be sucked.~
+WFlags    take wield~
+Values    0 2 3 12 0 0 0 0 0 0 0
+Stats     5 1700 -2 1 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     6635
-Keywords shawl woolen~
-Type     armor~
-Short    a woolen shawl~
-Long     A delicate woolen shawl has been carelessly dropped here.~
-WFlags   take about~
-Values   1 0 0 0 0 0
-Stats    5 4000 400 0 0
-Affect       -1 -1 1 4 0
-Affect       -1 -1 12 12 0
-Affect       -1 -1 5 13 0
+Vnum      6635
+Keywords  shawl woolen~
+Type      armor~
+Short     a woolen shawl~
+Long      A delicate woolen shawl has been carelessly dropped here.~
+WFlags    take about~
+Values    1 0 0 0 0 0 0 0 0 0 0
+Stats     5 4000 -2 1 0 None None None
+AffData dexterity 1 -1 -1 0
+AffData mana 12 -1 -1 0
+AffData hit 5 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     6644
-Keywords saltine dry~
-Type     food~
-Short    a dry saltine~
-Long     A crumbly saltine is here, waiting to be stepped on.~
-Action   %s noisily eat$q $p.~
-WFlags   take~
-Values   15 0 0 0 0 0
-Stats    5 15 1 0 0
+Vnum      6644
+Keywords  saltine dry~
+Type      food~
+Short     a dry saltine~
+Long      A crumbly saltine is here, waiting to be stepped on.~
+Action    %s noisily eat$q $p.~
+WFlags    take~
+Values    15 0 0 0 0 0 0 0 0 0 0
+Stats     5 15 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     6645
-Keywords steak rotten~
-Type     food~
-Short    a rotten steak~
-Long     A dry steak lies on the floor.~
-Flags    prototype~
-WFlags   take head~
-Values   4 0 0 1 0 0
-Stats    5 14 1 0 0
+Vnum      6645
+Keywords  steak rotten~
+Type      food~
+Short     a rotten steak~
+Long      A dry steak lies on the floor.~
+Flags     proto~
+WFlags    take head~
+Values    4 0 0 1 0 0 0 0 0 0 0
+Stats     5 14 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     6646
-Keywords potion amber~
-Type     potion~
-Short    an amber potion~
-Long     An amber potion sits in a corner.~
-WFlags   take~
-Values   30 -1 -1 -1 0 0
-Stats    1 1500 150 0 0
-Spells   'cure light' 'armor' 'NONE'
+Vnum      6646
+Keywords  potion amber~
+Type      potion~
+Short     an amber potion~
+Long      An amber potion sits in a corner.~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1500 -2 1 0 None None None
+Spells       'cure light' 'armor' 'NONE'
 #ENDOBJECT
 
 #OBJECT
-Vnum     6647
-Keywords gun toy~
-Type     weapon~
-Short    a toy gun~
-Long     A toy gun with a sharp bayonet lies here.~
-WFlags   take wield~
-Values   0 2 3 7 0 0
-Stats    5 1700 170 0 0
+Vnum      6647
+Keywords  gun toy~
+Type      weapon~
+Short     a toy gun~
+Long      A toy gun with a sharp bayonet lies here.~
+WFlags    take wield~
+Values    0 2 3 7 0 0 0 0 0 0 0
+Stats     5 1700 -2 1 0 None None None
 #ENDOBJECT
 
 #ROOM
-Vnum     6601
-Name     The Dwarven Drop Off~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You stand within a short tunnel carved into the hillside, and which leads
+Vnum      6601
+Name      The Dwarven Drop Off~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You stand within a short tunnel carved into the hillside, and which leads
 south to the Dwarven Dropoff.  Built beneath the earth, a place of preference
 and safety for dwarves, this is where the dwarven mothers and fathers come
 to drop off their annoying little brats.  You can hear screams and wails
@@ -602,11 +573,12 @@ Enjoy the daycare, but watch out for the little anklebiters.
 #ENDROOM
 
 #ROOM
-Vnum     6602
-Name     Entrance to the Day Care~
-Sector   inside~
-Flags    indoors~
-Desc     You have entered into north-east corner of the dwarven daycare.  As you 
+Vnum      6602
+Name      Entrance to the Day Care~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered into north-east corner of the dwarven daycare.  As you 
 look around, you can see toddlers running and playing.  There are toys
 and dolls scattered about the room, and the room itself is quite dirty.
 Your nostrils are filled with the scent of food which wafts in from the
@@ -642,15 +614,16 @@ Desc      You see a room full of children wreaking havoc.
 ~
 #ENDEXIT
 
-Reset D 0 6602 0 1
+Reset D 6602 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     6603
-Name     Day Care Center~
-Sector   inside~
-Flags    indoors~
-Desc     You stand in the north-west corner of the dwarven daycare.  As you
+Vnum      6603
+Name      Day Care Center~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand in the north-west corner of the dwarven daycare.  As you
 try to make a path through the toys at your feet, you give up and
 just walk over them.  Toddlers begin to wreak havoc on your legs 
 and you try to shake some off that have clung to your ankles.
@@ -676,16 +649,17 @@ Desc      You see a messy bathroom.
 ~
 #ENDEXIT
 
-Reset M 0 6605 2 6603
-  Reset E 1 6631 1 1
+Reset M 6605 2 6603 -1 -1 -1 100
+  Reset E 6631 1 1 100
 #ENDROOM
 
 #ROOM
-Vnum     6604
-Name     Day Care Center~
-Sector   inside~
-Flags    indoors~
-Desc     As you walk through the daycare, the toddlers seem to get a little more
+Vnum      6604
+Name      Day Care Center~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you walk through the daycare, the toddlers seem to get a little more
 aggravating.  The floor seems to be lost in the sea of toys everywhere,
 and you try to find a path that will lead you out of the chaos.  There
 is a small staircase to the east.
@@ -718,15 +692,16 @@ Desc      You see a room full of children wreaking havoc.
 ~
 #ENDEXIT
 
-Reset M 0 6604 2 6604
+Reset M 6604 2 6604 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     6605
-Name     Day Care Center~
-Sector   inside~
-Flags    indoors~
-Desc     You carefully weave your way through the masses of toys and children
+Vnum      6605
+Name      Day Care Center~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You carefully weave your way through the masses of toys and children
 in the daycare.  The little anklebiters are still attached to your legs
 and you try in vain to shake them off.  There is a small tunnel to the
 west that leads to an open-air playground.  Perhaps if you run in that
@@ -760,16 +735,17 @@ Desc      You see a well worn path leading to the playground.
 ~
 #ENDEXIT
 
-Reset M 0 6601 2 6605
-  Reset G 1 6632 1
+Reset M 6601 2 6605 -1 -1 -1 100
+  Reset G 6632 1 100
 #ENDROOM
 
 #ROOM
-Vnum     6606
-Name     Inside a Filthy Bathroom~
-Sector   inside~
-Flags    indoors~
-Desc     You plug your nose as you enter the rancid bathroom.  The walls are stained
+Vnum      6606
+Name      Inside a Filthy Bathroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You plug your nose as you enter the rancid bathroom.  The walls are stained
 and there is no evidence that this room has been cleaned in a very long time.
 Bath toys are scattered everywhere, and water leaks freely from rotting
 wood tubs and cracked stone basins.
@@ -781,18 +757,19 @@ Desc      You see a room full of children wreaking havoc.
 ~
 #ENDEXIT
 
-Reset M 0 6602 2 6606
-  Reset E 1 6634 1 16
-Reset M 0 6604 2 6606
-Reset M 0 6610 1 6606
+Reset M 6602 2 6606 -1 -1 -1 100
+  Reset E 6634 1 16 100
+Reset M 6604 2 6606 -1 -1 -1 100
+Reset M 6610 1 6606 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     6607
-Name     Atop the Rickety Stairs~
-Sector   inside~
-Flags    indoors~
-Desc     You stand atop a wooden staircase which leads downwards.  The steps
+Vnum      6607
+Name      Atop the Rickety Stairs~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand atop a wooden staircase which leads downwards.  The steps
 seem rickety and unstable, but they look like they're able to hold
 your weight.  You begin to wonder what mystery could lie down there.
 ~
@@ -811,10 +788,12 @@ Desc      You see the entrance to something.
 #ENDROOM
 
 #ROOM
-Vnum     6608
-Name     The Playground~
-Sector   inside~
-Desc     You are in the north-east corner of the playground.  In front of you
+Vnum      6608
+Name      The Playground~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the north-east corner of the playground.  In front of you
 is a comfortable looking wooden bench which you can sit on and take
 a breath from the kids.  You can hear the pleasant sound of birds
 singing, but their melodies are soon drowned out by the grating
@@ -834,16 +813,18 @@ Desc      You see the playground.
 ~
 #ENDEXIT
 
-Reset M 0 6601 2 6608
-  Reset G 1 6632 1
-Reset O 0 6619 1 6608
+Reset M 6601 2 6608 -1 -1 -1 100
+  Reset G 6632 1 100
+Reset O 6619 1 6608 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     6609
-Name     The Playground~
-Sector   inside~
-Desc     You are in the north-west corner of the playground.  Standing before
+Vnum      6609
+Name      The Playground~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the north-west corner of the playground.  Standing before
 you is a brightly painted wooden see-saw, teetering and tottering back
 and forth.  Children frollick all about you, and the sound of their play
 is so comforting.  At least they're not clinging to your legs anymore.
@@ -862,15 +843,17 @@ Desc      You see the playground.
 ~
 #ENDEXIT
 
-Reset M 0 6603 2 6609
-Reset O 0 6618 1 6609
+Reset M 6603 2 6609 -1 -1 -1 100
+Reset O 6618 1 6609 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     6610
-Name     The Playground~
-Sector   inside~
-Desc     You are in the south-east corner of the playground.  Before you is a
+Vnum      6610
+Name      The Playground~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the south-east corner of the playground.  Before you is a
 large oak tree that seems to reach up to the sky.  Lush green grass 
 tickles your ankles, and you can see remnants of wild flowers which
 have been trampled upon by the toddlers.
@@ -905,14 +888,16 @@ Keywords  tree~
 Flags     climb can_climb~
 #ENDEXIT
 
-Reset O 0 6620 1 6610
+Reset O 6620 1 6610 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     6611
-Name     The Playground~
-Sector   inside~
-Desc     You are in the south-west corner of the playground.  Before you stands
+Vnum      6611
+Name      The Playground~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the south-west corner of the playground.  Before you stands
 a large set of swings tethered by old, worn rope.  The swings sway in
 the wind, beckoning you to sit upon them.  The sun beams brightly upon
 your head, making you almost forget the chaos that surrounds you.
@@ -931,18 +916,19 @@ Desc      You see the playground.
 ~
 #ENDEXIT
 
-Reset M 0 6606 2 6611
-  Reset E 1 6635 1 12
-  Reset G 1 6644 1
-Reset O 0 6617 1 6611
+Reset M 6606 2 6611 -1 -1 -1 100
+  Reset E 6635 1 12 100
+  Reset G 6644 1 100
+Reset O 6617 1 6611 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     6612
-Name     Foot of the Stairs~
-Sector   field~
-Flags    dark nomob indoors~
-Desc     You stand in the entrance to a small, but confusing maze.  The area is
+Vnum      6612
+Name      Foot of the Stairs~
+Sector    field~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You stand in the entrance to a small, but confusing maze.  The area is
 dark, but there is still enough light to see by.  You really hope that
 you don't get lost in here.
 ~
@@ -963,24 +949,25 @@ Desc      You see some stairs.
 #ENDROOM
 
 #ROOM
-Vnum     6613
-Name     Lost in a mini-maze~
-Sector   field~
-Flags    dark indoors~
-Desc     You stand in a small passage that looks like every other passage in
+Vnum      6613
+Name      Lost in a mini-maze~
+Sector    field~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a small passage that looks like every other passage in
 this maze.  The area is still quite dim, but your eyes seem to be
 adjusting to it.
 ~
 #EXIT
-Direction east~
-ToRoom    6615
+Direction south~
+ToRoom    6614
 Desc      You see a small passage.
 ~
 #ENDEXIT
 
 #EXIT
-Direction south~
-ToRoom    6614
+Direction east~
+ToRoom    6615
 Desc      You see a small passage.
 ~
 #ENDEXIT
@@ -992,51 +979,46 @@ Desc      You see a small passage.
 ~
 #ENDEXIT
 
-Reset R 0 6613 4
+Reset R 6613 4 100
 #ENDROOM
 
 #ROOM
-Vnum     6614
-Name     Lost in a mini-maze~
-Sector   field~
-Flags    dark indoors~
-Desc     You stand in a small passage that looks like every other passage in
+Vnum      6614
+Name      Lost in a mini-maze~
+Sector    field~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a small passage that looks like every other passage in
 this maze.  The area is still quite dim, but your eyes seem to be
 adjusting to it.
 ~
 #EXIT
 Direction south~
-ToRoom    6613
+ToRoom    6616
 Desc      You see a small passage.
 ~
 #ENDEXIT
 
 #EXIT
 Direction west~
-ToRoom    6616
-Desc      You see a small passage.
-~
-#ENDEXIT
-
-Reset R 0 6614 4
-#ENDROOM
-
-#ROOM
-Vnum     6615
-Name     Lost in a mini-maze~
-Sector   field~
-Flags    dark indoors~
-Desc     You stand in a small passage that looks like every other passage in
-this maze.  The area is still quite dim, but your eyes seem to be
-adjusting to it.
-~
-#EXIT
-Direction north~
 ToRoom    6613
 Desc      You see a small passage.
 ~
 #ENDEXIT
 
+Reset R 6614 4 100
+#ENDROOM
+
+#ROOM
+Vnum      6615
+Name      Lost in a mini-maze~
+Sector    field~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a small passage that looks like every other passage in
+this maze.  The area is still quite dim, but your eyes seem to be
+adjusting to it.
+~
 #EXIT
 Direction east~
 ToRoom    6616
@@ -1044,27 +1026,35 @@ Desc      You see a small passage.
 ~
 #ENDEXIT
 
-Reset R 0 6615 4
+#EXIT
+Direction north~
+ToRoom    6613
+Desc      You see a small passage.
+~
+#ENDEXIT
+
+Reset R 6615 4 100
 #ENDROOM
 
 #ROOM
-Vnum     6616
-Name     Lost in a mini-maze~
-Sector   field~
-Flags    dark indoors~
-Desc     You stand in a small passage that looks like every other passage in
+Vnum      6616
+Name      Lost in a mini-maze~
+Sector    field~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a small passage that looks like every other passage in
 this maze.  The area is still quite dim, but your eyes seem to be
 adjusting to it.
 ~
 #EXIT
-Direction north~
+Direction south~
 ToRoom    6615
 Desc      You see a small passage.
 ~
 #ENDEXIT
 
 #EXIT
-Direction south~
+Direction north~
 ToRoom    6614
 Desc      You see a small passage.
 ~
@@ -1077,15 +1067,16 @@ Desc      The end of the mini-maze.
 ~
 #ENDEXIT
 
-Reset R 0 6616 4
+Reset R 6616 4 100
 #ENDROOM
 
 #ROOM
-Vnum     6617
-Name     A Darkened Cloakroom~
-Sector   inside~
-Flags    nomob indoors~
-Desc     Before you lies a pile of child-sized coats and boots.  The room is
+Vnum      6617
+Name      A Darkened Cloakroom~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      Before you lies a pile of child-sized coats and boots.  The room is
 quite dark, and a musty smell wafts in the air.  Ahead, there is a
 small wooden gate blocking you from the daycare.  Presumably, this 
 gate is to guard all of the dwarven children from the real world.
@@ -1106,22 +1097,24 @@ Keywords  gate~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 6617 2 1
+Reset D 6617 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     6619
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6619
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6620
-Name     At the top of the tree~
-Sector   field~
-Flags    nomob~
-Desc     After a swift climb, you have reached the top of the majestic oak tree.
+Vnum      6620
+Name      At the top of the tree~
+Sector    field~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      After a swift climb, you have reached the top of the majestic oak tree.
 As you look around, you can see the town of Darkhaven, and all of the
 people moving in it.  The air is very clean up here, and the leaves of
 the tree graze across your face.
@@ -1137,11 +1130,12 @@ Keywords  tree~
 #ENDROOM
 
 #ROOM
-Vnum     6624
-Name     Near the End~
-Sector   field~
-Flags    dark indoors~
-Desc     You made it through the maze, and you stand at the end of your journey.
+Vnum      6624
+Name      Near the End~
+Sector    field~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You made it through the maze, and you stand at the end of your journey.
 The area is still quite dim, but there seems to be a light coming from
 the south.  The is a scribbled sign here.
 ~
@@ -1159,7 +1153,7 @@ Desc      The end?
 ~
 #ENDEXIT
 
-Reset M 0 6607 1 6624
+Reset M 6607 1 6624 -1 -1 -1 100
 #EXDESC
 ExDescKey    sign~
 ExDesc       If you are not level 5 or above, you should think twice about going south!
@@ -1170,11 +1164,12 @@ The room could be dangerous...
 #ENDROOM
 
 #ROOM
-Vnum     6626
-Name     A Filthy Kitchen~
-Sector   inside~
-Flags    indoors~
-Desc     You stand in the middle of the kitchen and eating area of the daycare
+Vnum      6626
+Name      A Filthy Kitchen~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand in the middle of the kitchen and eating area of the daycare
 centre.  Food is sprayed all over the walls, and copper pots and pans
 are strewn in every direction.  Grubby fingerprints cover nearly every
 surface here, and the stench of rotten food makes your stomach churn.
@@ -1186,23 +1181,25 @@ Desc      You see a room full of children wreaking havoc.
 ~
 #ENDEXIT
 
-Reset M 0 6603 2 6626
-Reset M 0 6609 1 6626
+Reset M 6603 2 6626 -1 -1 -1 100
+Reset M 6609 1 6626 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     6628
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6628
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6631
-Name     Last Stop~
-Sector   field~
-Flags    dark indoors~
-Desc     You have reached the final part of your journey.  This is a room where
+Vnum      6631
+Name      Last Stop~
+Sector    field~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You have reached the final part of your journey.  This is a room where
 all the bad kids go to think about what they've done.  There is a small
 wooden stool in the corner, and a dunce-cap lays nearby.  
 ~
@@ -1213,16 +1210,17 @@ Desc      End of the mini-maze.
 ~
 #ENDEXIT
 
-Reset M 0 6608 1 6631
-  Reset E 1 6630 1 6
+Reset M 6608 1 6631 -1 -1 -1 100
+  Reset E 6630 1 6 100
 #ENDROOM
 
 #ROOM
-Vnum     6632
-Name     Day Care Center~
-Sector   city~
-Flags    nomob~
-Desc     As you walk through the daycare, you can see children screaming and
+Vnum      6632
+Name      Day Care Center~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      As you walk through the daycare, you can see children screaming and
 running everywhere.  Toys are strewn all around the room, and you
 step all over them, tripping over them at times.  The daycare
 continues to the east, south and west.
@@ -1248,16 +1246,17 @@ Desc      You see a room full of children wreaking havoc.
 ~
 #ENDEXIT
 
-Reset M 0 6600 3 6632
-  Reset E 1 6633 1 16
+Reset M 6600 3 6632 -1 -1 -1 100
+  Reset E 6633 1 16 100
 #ENDROOM
 
 #ROOM
-Vnum     6633
-Name     Day Care Center~
-Sector   inside~
-Flags    indoors~
-Desc     As you continue through the daycare, children start babbling nonsense
+Vnum      6633
+Name      Day Care Center~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you continue through the daycare, children start babbling nonsense
 to you.  In an effort to escape the madness, you thrash through the
 masses of toys on the ground, only to find yourself making the mess
 worse.  
@@ -1293,11 +1292,12 @@ Desc      You see a room full of children wreaking havoc.
 #ENDROOM
 
 #ROOM
-Vnum     6634
-Name     Day Care Center~
-Sector   inside~
-Flags    indoors~
-Desc     You are in the south-west corner of the daycare.  This area of the
+Vnum      6634
+Name      Day Care Center~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in the south-west corner of the daycare.  This area of the
 centre seems more subdued, though it is still messy.  Many of the
 children seem to stay away from this corner, as it is rumoured that
 the wicked old nanny visits here often.
@@ -1316,17 +1316,18 @@ Desc      You see a room full of children wreaking havoc.
 ~
 #ENDEXIT
 
-Reset M 0 6606 2 6634
-  Reset E 1 6635 1 12
-  Reset G 1 6644 1
+Reset M 6606 2 6634 -1 -1 -1 100
+  Reset E 6635 1 12 100
+  Reset G 6644 1 100
 #ENDROOM
 
 #ROOM
-Vnum     6635
-Name     Day Care Center~
-Sector   inside~
-Flags    indoors~
-Desc     As you wander through the messy daycare, you start to get a little
+Vnum      6635
+Name      Day Care Center~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you wander through the messy daycare, you start to get a little
 nervewracked by all of the children screaming and clinging at your
 lower appendages.  The floor seems to get messier and messier by the
 second, and you wish you could escape this chaos.
@@ -1352,18 +1353,19 @@ Desc      You see a room full of children wreaking havoc.
 ~
 #ENDEXIT
 
-Reset M 0 6600 3 6635
-  Reset E 1 6633 1 16
-Reset M 0 6605 2 6635
-  Reset E 1 6631 1 1
+Reset M 6600 3 6635 -1 -1 -1 100
+  Reset E 6633 1 16 100
+Reset M 6605 2 6635 -1 -1 -1 100
+  Reset E 6631 1 1 100
 #ENDROOM
 
 #ROOM
-Vnum     6636
-Name     Day Care Center~
-Sector   inside~
-Flags    indoors~
-Desc     You are in the south-east corner of the daycare.  Before you is a large
+Vnum      6636
+Name      Day Care Center~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in the south-east corner of the daycare.  Before you is a large
 easel and a pile of watercolour paints.  You suddenly get the urge to
 plop down in the small wooden chair and paint to your heart's content,
 but you're a little afraid that the mean old nanny would catch you.
@@ -1382,15 +1384,17 @@ Desc      You see a room full of children wreaking havoc.
 ~
 #ENDEXIT
 
-Reset M 0 6602 2 6636
-  Reset E 1 6634 1 16
+Reset M 6602 2 6636 -1 -1 -1 100
+  Reset E 6634 1 16 100
 #ENDROOM
 
 #ROOM
-Vnum     6637
-Name     A well worn path~
-Sector   inside~
-Desc     As you walk along this well trodden path, you can see the daycare to the
+Vnum      6637
+Name      A well worn path~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As you walk along this well trodden path, you can see the daycare to the
 east and the playground to the west.  You can hear laughter of the children
 coming from both directions, but the fresh air outside seems more inviting.
 The sun shines on your head, and the lush green grass sways at your feet.
@@ -1412,10 +1416,12 @@ Desc      You see the playground.
 #ENDROOM
 
 #ROOM
-Vnum     6638
-Name     The Playground~
-Sector   inside~
-Desc     As you walk through the playground, the sound of children playing
+Vnum      6638
+Name      The Playground~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As you walk through the playground, the sound of children playing
 fills your ears with delight.  The air smells much fresher than the
 air in the daycare, and the feeling of the grass upon your heels is
 quite refreshing.
@@ -1441,15 +1447,17 @@ Desc      You see the playground.
 ~
 #ENDEXIT
 
-Reset M 0 6600 3 6638
-  Reset E 1 6633 1 16
+Reset M 6600 3 6638 -1 -1 -1 100
+  Reset E 6633 1 16 100
 #ENDROOM
 
 #ROOM
-Vnum     6639
-Name     The Playground~
-Sector   inside~
-Desc     As you continue walking through the playground, children hop to and
+Vnum      6639
+Name      The Playground~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As you continue walking through the playground, children hop to and
 fro, giggling and frollicking.  The ground is moist, and what were 
 once beautiful wild flowers are now stomped into a mixture of grass
 and mud.
@@ -1478,87 +1486,99 @@ Desc      You see the playground.
 #ENDROOM
 
 #ROOM
-Vnum     6640
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6640
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6641
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6641
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6642
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6642
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6643
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6643
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6644
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6644
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6645
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6645
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6646
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6646
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6647
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6647
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6648
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6648
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6649
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6649
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6650
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6650
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     6651
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      6651
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ENDAREA

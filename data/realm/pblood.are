@@ -1,0 +1,1163 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Plains of Blood~
+Author          Yaegar~
+Vnums           9550 9595
+Continent       one~
+Coordinates     0 0
+Dates           1403837156 1403837156
+Ranges          1 115 0 115
+ResetFreq       15
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      9550
+Keywords  fiend~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  dead~
+DefPos    dead~
+Specfun   spec_poison~
+Short     a swamp fiend~
+Long      A Swamp Fiend swoops down and attacks!
+~
+Desc      These foul creatures have vowed to lay waste to the city of Khellis, and
+are extremely close to doing so. Resembling twisted, vile Elves with huge
+leathery wings, they are seemingly innumerable in number and insatiable in
+appetite.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    30 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea wimpy~
+Affected  protect~
+#ENDMOBILE
+
+#ROOM
+Vnum      9550
+Name      The Plains of Blood~
+Sector    field~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You are walking across the plains of blood, a blasted, desolate area so
+named for the incredible amounts of blood that poured from the bodies of
+slain men and orcs during the Goblin Wars many centuries ago. And although
+the hordes were driven back, this area remained tainted with the scourge
+of evil, and little that is non wholly diabolical has since flourished 
+here.
+~
+#EXIT
+Direction east~
+ToRoom    9551
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9590
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9551
+Name      The Plains of Blood~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking across the plains of blood, a blasted, desolate area so
+named for the incredible amounts of blood that poured from the bodies of
+slain men and orcs during the Goblin Wars many centuries ago. And although
+the hordes were driven back, this area remained tainted with the scourge
+of evil, and little that is non wholly diabolical has since flourished 
+here.
+
+To the east lies a junction.
+~
+#EXIT
+Direction east~
+ToRoom    9552
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9550
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9552
+Name      A Junction~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached a point where a clearly-marked road cuts across the vague
+trail you were following, running to the north and south. There is a battered
+signpost at the point where the three roads meet.
+~
+#EXIT
+Direction north~
+ToRoom    9553
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9554
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9551
+#ENDEXIT
+
+#EXDESC
+ExDescKey    signpost~
+ExDesc       The signpost reads-
+
+"NORTH : The lands of the DEAD.
+
+ SOUTH : The lands of the DEAD.
+
+ WEST : The lands of the LIVING.
+
+Not exactly cheery, is it?
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      9553
+Name      A Second Junction~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      At this point a narrow path runs eastward away from the main road, heading
+into a wood filled with grey, rotting trees and clinging, sickly-looking
+vines.
+~
+#EXIT
+Direction north~
+ToRoom    9580
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9565
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9552
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9554
+Name      A Second Junction~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      At this point a narrow path runs eastward away from the main road, heading
+toward some rocky terrain surrounded by a range of bald hills.
+
+A narrow path to the south heads toward a crumbling stone wall.
+~
+#EXIT
+Direction north~
+ToRoom    9552
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9556
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9555
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9555
+Name      A Narrow Path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As you draw closer to the stone wall, you notice an iron gate set into it,
+badly corroded and defaced. Peering through the gate, you can see what
+appears to be a graveyard of some sort.
+~
+#EXIT
+Direction north~
+ToRoom    9554
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3600
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 9555 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      9556
+Name      A Path Through the Hills~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Going is rough here as you are constantly forced to skirt rocks, boulders
+and bits of jagged stone that jut out of the ground at potentially lethal
+angles. The "path" you are currently taking is simply the one of least
+difficulty, avoiding all the major obstructions and clambering over the
+minor ones. More than one you slip and skin your hands and knees, and you
+pray that you don't have much farther to go.
+~
+#EXIT
+Direction south~
+ToRoom    9557
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9554
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9557
+Name      A Path Through the Hills~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Going is rough here as you are constantly forced to skirt rocks, boulders
+and bits of jagged stone that jut out of the ground at potentially lethal
+angles. The "path" you are currently taking is simply the one of least
+difficulty, avoiding all the major obstructions and clambering over the
+minor ones. More than one you slip and skin your hands and knees, and you
+pray that you don't have much farther to go.
+
+You are relieved to notice a crossroads to the east of here.
+~
+#EXIT
+Direction north~
+ToRoom    9556
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9558
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9558
+Name      A Crossroads~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to a crossroads, where you may proceed north directly into
+the hills, south or west into the rocky terrain surrounding, or east toward
+a rather dismal-looking swamp.
+~
+#EXIT
+Direction north~
+ToRoom    9559
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9561
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9560
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9557
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9559
+Name      Approaching the Hills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As you approach the nearby hills, you quickly deduce that they will be
+quite impassable to one with limited mountaineering skills such as yourself.
+However, as you turn back, you notice a narrow path leading between two
+of the larger hills...
+~
+#EXIT
+Direction north~
+ToRoom    4000
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9558
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9560
+Name      Rubble~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path winds its way through a treacherous field of jagged rock and 
+splintered wood. To the south there is a horrendous stench, while to the
+north is a relatively clear crossroads.
+~
+#EXIT
+Direction north~
+ToRoom    9558
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2800
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9561
+Name      A Dismal Swamp~
+Sector    swamp~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have entered a smelly, fetid swamp full of mosquitoes, muck, vines and
+water. The smell is awful. Are you sure you want to continue?
+~
+#EXIT
+Direction east~
+ToRoom    9562
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9558
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9562
+Name      A Dismal Swamp~
+Sector    swamp~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are trudging wearily through a fetid swamp full of mosquitoes, muck, 
+vines and water. The smell is awful. Are you sure you want to continue?
+~
+#EXIT
+Direction north~
+ToRoom    9563
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9561
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9563
+Name      The Dismal Swamp~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      For what seems like an eternity you slog through the thick muck, wrenching
+your boots free with a mighty effort, a horrible sucking sound accompanying
+each step as your feet briefly clear the mud.
+~
+#EXIT
+Direction east~
+ToRoom    9564
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9562
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9564
+Name      The Dismal Swamp~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      For what seems like an eternity you slog through the thick muck, wrenching
+your boots free with a mighty effort, a horrible sucking sound accompanying
+each step as your feet briefly clear the mud. Mosquitoes the size of 
+blowflies assault you relentlessly, and you know that when (if) you emerge 
+your skin will be in agony for weeks.
+~
+#EXIT
+Direction east~
+ToRoom    9576
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9563
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9565
+Name      A Wood~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have entered the sickly-looking forest you spied earlier, and it looks
+even worse up close, if that is at all possible. Long, clinging vines 
+slowly strangle the life out of spindly half-dead saplings, and a strange
+blue moss slowly eats away its protruding roots. Far away a creature screams
+in agony, then falls silent.
+~
+#EXIT
+Direction east~
+ToRoom    9566
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9553
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9566
+Name      Further into the Wood~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As you proceed further into this place, the little light that was coming from
+the feeble sun above is dimmed to near-nothingness by a thick canopy of dead
+branches and leaves that has formed overhead. Sap drips from this canopy onto
+you, burning your skin where it hits, and you hurry on.
+~
+#EXIT
+Direction east~
+ToRoom    9567
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9565
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9567
+Name      A T-Junction~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path you are following meets another here, offering you three choices
+of direction. At this point the forest is utterly silent, so there is no
+way to tell which way is the better...
+~
+#EXIT
+Direction north~
+ToRoom    9568
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9572
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9566
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9568
+Name      A Northern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Forest actually seems to be even darker and more evil here, if that is
+at all possible. Horrid screams of agony occasionally rent the still of the
+forest, followed by a horrid stillness that can only mean death...
+~
+#EXIT
+Direction north~
+ToRoom    9569
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9567
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9569
+Name      A Northern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Forest actually seems to be even darker and more evil here, if that is
+at all possible. Horrid screams of agony occasionally rent the still of the
+forest, followed by a horrid stillness that can only mean death...
+~
+#EXIT
+Direction north~
+ToRoom    9571
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9568
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9570
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9570
+Name      The Forest Thickens~
+Sector    swamp~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      At this point the forest is almost impenetrably thick. Something curious
+looms up ahead.
+~
+#EXIT
+Direction east~
+ToRoom    9569
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    6130
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9571
+Name      A Northern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The Forest actually seems to be even darker and more evil here, if that is
+at all possible. Horrid screams of agony occasionally rent the still of the
+forest, followed by a horrid stillness that can only mean death...
+
+There is a circle of trees to the east.
+~
+#EXIT
+Direction east~
+ToRoom    6152
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9569
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9572
+Name      Exiting the Forest~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached the far end of the small dark forest you were traveling
+through. Ahead looms a rocky mountain range, with several smaller cousins
+in the middle distance.
+~
+#EXIT
+Direction east~
+ToRoom    9573
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9567
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9573
+Name      The Rocky Plains~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are striding across some rocky, windswept plains, past a sharp ridge
+that connects with a distant mountain range. To the north a narrow path
+runs toward a large cave...
+~
+#EXIT
+Direction north~
+ToRoom    9574
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9575
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9572
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9574
+Name      Approaching the Cave~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are near enough to see now that this cave is large by any standards.
+However it appears to have a couple of non-standard features. If you are
+curious you can step closer...
+~
+#EXIT
+Direction north~
+ToRoom    6142
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9573
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9575
+Name      The Foothills~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached the foothills of this mountain range. Strange black rocky
+formations loom around a bend to the south.
+
+A narrow path twists downward toward a valley running north toward the remote
+highlands.
+~
+#EXIT
+Direction south~
+ToRoom    9585
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9573
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30338
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9576
+Name      The Dismal Swamp~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      For what seems like an eternity you slog through the thick muck, wrenching
+your boots free with a mighty effort, a horrible sucking sound accompanying
+each step as your feet briefly clear the mud. Mosquitoes the size of 
+blowflies assault you relentlessly, and you know that when (if) you emerge 
+your skin will be in agony for weeks.
+~
+#EXIT
+Direction east~
+ToRoom    9577
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9564
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9577
+Name      The Dismal Swamp~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      For what seems like an eternity you slog through the thick muck, wrenching
+your boots free with a mighty effort, a horrible sucking sound accompanying
+each step as your feet briefly clear the mud. Mosquitoes the size of 
+blowflies assault you relentlessly, and you know that when (if) you emerge 
+your skin will be in agony for weeks.
+
+A section of swamp to the south looks particularly treacherous.
+~
+#EXIT
+Direction east~
+ToRoom    9579
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9578
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9576
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9578
+Name      Strange...~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This section of swamp is more marshy, and looks like it was at one stage
+inhabited. Ruined buildings crop up occasionally from the muck, as does the
+occasional corpse. A horrid stench and the sound of high-pitched screaming
+followed by silence comes from the south...
+~
+#EXIT
+Direction north~
+ToRoom    9577
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8301
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9579
+Name      The Dismal Swamp~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      For what seems like an eternity you slog through the thick muck, wrenching
+your boots free with a mighty effort, a horrible sucking sound accompanying
+each step as your feet briefly clear the mud. Mosquitoes the size of 
+blowflies assault you relentlessly, and you know that when (if) you emerge 
+your skin will be in agony for weeks.
+~
+#EXIT
+Direction east~
+ToRoom    9592
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9577
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9580
+Name      A Northern Path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are following a broad, fairly regular path toward what looks like a
+settlement to the north. The occasional ruined house can be seen, as well
+as once-fertile fields gone barren.
+~
+#EXIT
+Direction north~
+ToRoom    9581
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9553
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9581
+Name      A Northern Path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are following a broad, fairly regular path towar what looks like a
+settlement to the north. The occasional ruined house can be seen, as well
+as once-fertile fields gone barren.
+~
+#EXIT
+Direction north~
+ToRoom    9582
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9580
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9582
+Name      A Northern Path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are following a broad, fairly regular path towar what looks like a
+settlement to the north. The occasional ruined house can be seen, as well
+as once-fertile fields gone barren.
+
+One house to the west looks fairly well-preserved.
+
+The outskirts of a ruined town loom up ahead.
+~
+#EXIT
+Direction north~
+ToRoom    9584
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9581
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9583
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 9582 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      9583
+Name      The Farmhouse~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This farmhouse has been abandoned for some time. Scavengers have long since
+taken anything of value, and the elements have taken care of what little
+remained. However, there is a trapdoor in the floor that you may want to
+investigate...
+~
+#EXIT
+Direction east~
+ToRoom    9582
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3801
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 9583 5 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      9584
+Name      The Outskirts of a Ghost Town~
+Sector    indoors~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      A chill wind whips eerily across your face as you gaze upon a deserted
+halmet, which has actually survived intact the ravages that took the places
+nearby. It even appears to have been left untouched by looters. Wonder why?
+~
+#EXIT
+Direction north~
+ToRoom    8100
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9582
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9585
+Name      The Black Rocks~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are intrigued by this glassy black rocklike substance that seems to
+be omnipresent everywhere here. And while the going here is tough, it is
+not impossible, so you may continue further in your explorations should
+you so wish.
+~
+#EXIT
+Direction north~
+ToRoom    9575
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2900
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9587
+Name      The Path Across the Plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are heading across bleak, featureless plains. A huge city looms to the
+west while to the east lies a particularly desolate area.
+
+The gates of the city are directly west of here.
+~
+#EXIT
+Direction east~
+ToRoom    9588
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9591
+Desc      Approaching Anon~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9588
+Name      The Path Across the Plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are heading across bleak, featureless plains. A huge city looms to the
+west while to the east lies a particularly desolate area.
+~
+#EXIT
+Direction east~
+ToRoom    9589
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9587
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9589
+Name      The Path Across the Plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are heading across bleak, featureless plains. A huge city looms to the
+west while to the east lies a particularly desolate area.
+~
+#EXIT
+Direction east~
+ToRoom    9590
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9588
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9590
+Name      The Path Across the Plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are heading across bleak, featureless plains. A huge city looms to the
+west while to the east lies a particularly desolate area.
+
+The desolate Blood Plains begin to the east of here.
+~
+#EXIT
+Direction east~
+ToRoom    9550
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9589
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9591
+Name      Approaching the City~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing outside the towering battlements of a massive fortified
+citadel. The gates, massive affairs fashioned of some gleaming silvery
+metal, loom to the west. Guards march back and forth, resplendent in their
+black and gold livery and shining mithril armor.
+
+To the east looms a vast desolate area and, beyond that, a wood and a
+mountain range.
+~
+#EXIT
+Direction east~
+ToRoom    9587
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    31019
+Desc      Outside the Victory Parade East Gates~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9592
+Name      The Dismal Swamp~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      For what seems like an eternity you slog through the thick muck, wrenching
+your boots free with a mighty effort, a horrible sucking sound accompanying
+each step as your feet briefly clear the mud. Mosquitoes the size of 
+blowflies assault you relentlessly, and you know that when (if) you emerge 
+your skin will be in agony for weeks.
+~
+#EXIT
+Direction east~
+ToRoom    9593
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9579
+#ENDEXIT
+
+Reset M 9550 6 9592 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9593
+Name      The Dismal Swamp~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      For what seems like an eternity you slog through the thick muck, wrenching
+your boots free with a mighty effort, a horrible sucking sound accompanying
+each step as your feet briefly clear the mud. Mosquitoes the size of 
+blowflies assault you relentlessly, and you know that when (if) you emerge 
+your skin will be in agony for weeks.
+~
+#EXIT
+Direction north~
+ToRoom    9594
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9592
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9594
+Name      The Dismal Swamp~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      For what seems like an eternity you slog through the thick muck, wrenching
+your boots free with a mighty effort, a horrible sucking sound accompanying
+each step as your feet briefly clear the mud. Mosquitoes the size of 
+blowflies assault you relentlessly, and you know that when (if) you emerge 
+your skin will be in agony for weeks.
+~
+#EXIT
+Direction east~
+ToRoom    9595
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9593
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9595
+Name      The Dismal Swamp~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      For what seems like an eternity you slog through the thick muck, wrenching
+your boots free with a mighty effort, a horrible sucking sound accompanying
+each step as your feet briefly clear the mud. Mosquitoes the size of 
+blowflies assault you relentlessly, and you know that when (if) you emerge 
+your skin will be in agony for weeks.
+
+To the north there appears to be some sort of settlement...
+~
+#EXIT
+Direction north~
+ToRoom    28398
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9594
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

@@ -1,17 +1,39 @@
 /****************************************************************************
- * [S]imulated [M]edieval [A]dventure multi[U]ser [G]ame      |   \\._.//   *
- * -----------------------------------------------------------|   (0...0)   *
- * SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider      |    ).:.(    *
- * -----------------------------------------------------------|    {o o}    *
- * SMAUG code team: Thoric, Altrag, Blodkai, Narn, Haus,      |   / ' ' \   *
- * Scryn, Rennard, Swordbearer, Gorog, Grishnakh, Nivek,      |~'~.VxvxV.~'~*
- * Tricops and Fireblade                                      |             *
+ *                                                                          *
+ *   X      X  ******* **    **  ******  **    **  ******                   *
+ *    X    X  ******** ***  *** ******** **    ** ********       \\._.//    *
+ *     X  X   **       ******** **    ** **    ** **             (0...0)    *
+ *      XX    *******  ******** ******** **    ** **  ****        ).:.(     *
+ *      XX     ******* ** ** ** ******** **    ** **  ****        {o o}     *
+ *     X  X         ** **    ** **    ** **    ** **    **       / ' ' \    *
+ *    X    X  ******** **    ** **    ** ******** ********    -^^.VxvxV.^^- *
+ *   X      X *******  **    ** **    **  ******   ******                   *
+ *                                                                          *
+ * ------------------------------------------------------------------------ *
+ * Ne[X]t Generation [S]imulated [M]edieval [A]dventure Multi[U]ser [G]ame  *
+ * ------------------------------------------------------------------------ *
+ * XSMAUG 2.4 (C) 2014  by Antonio Cao @burzumishi          |    \\._.//    *
+ * ---------------------------------------------------------|    (0...0)    *
+ * SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider    |     ).:.(     *
+ * SMAUG Code Team: Thoric, Altrag, Blodkai, Narn, Haus,    |     {o o}     *
+ * Scryn, Rennard, Swordbearer, Gorog, Grishnakh, Nivek,    |    / ' ' \    *
+ * Tricops and Fireblade                                    | -^^.VxvxV.^^- *
  * ------------------------------------------------------------------------ *
  * Merc 2.1 Diku Mud improvments copyright (C) 1992, 1993 by Michael        *
  * Chastain, Michael Quan, and Mitchell Tse.                                *
  * Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,          *
  * Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     *
+ * Win32 port by Nick Gammon                                                *
  * ------------------------------------------------------------------------ *
+ * AFKMud Copyright 1997-2012 by Roger Libiez (Samson),                     *
+ * Levi Beckerson (Whir), Michael Ward (Tarl), Erik Wolfe (Dwip),           *
+ * Cameron Carroll (Cam), Cyberfox, Karangi, Rathian, Raine,                *
+ * Xorith, and Adjani.                                                      *
+ * All Rights Reserved.                                                     *
+ *                                                                          *
+ * External contributions from Remcon, Quixadhal, Zarius, and many others.  *
+ *                                                                          *
+ ****************************************************************************
  *                          MSSP Plaintext Module                           *
  ****************************************************************************/
 
@@ -48,76 +70,61 @@
   Thats All....
  */
 
-struct mssp_info
+struct msspinfo
 {
-  char *hostname;
-  char *contact;
-  char *icon;
-  char *language;
-  char *location;
-  char *website;
-  char *family;
-  char *genre;
-  char *gamePlay;
-  char *gameSystem;
-  char *intermud;
-  char *status;
-  char *subgenre;
-  char *equipmentSystem;
-  char *multiplaying;
-  char *playerKilling;
-  char *questSystem;
-  char *roleplaying;
-  char *trainingSystem;
-  char *worldOriginality;
-  short created;
-  short minAge;
-  short worlds;
-  bool ansi;
-  bool mccp;
-  bool mcp;
-  bool msp;
-  bool ssl;
-  bool mxp;
-  bool pueblo;
-  bool vt100;
-  bool xterm256;
-  bool pay2play;
-  bool pay4perks;
-  bool hiringBuilders;
-  bool hiringCoders;
-  bool adultMaterial;
-  bool multiclassing;
-  bool newbieFriendly;
-  bool playerCities;
-  bool playerClans;
-  bool playerCrafting;
-  bool playerGuilds;
-};
+   msspinfo();
 
-#define MSSP_FILE SYSTEM_DIR "mssp.dat"
+   string hostname;
+   string ip;
+   string contact;
+   string icon;
+   string language;
+   string location;
+   string family;
+   string genre;
+   string gamePlay;
+   string gameSystem;
+   string intermud;
+   string status;
+   string subgenre;
+   string equipmentSystem;
+   string multiplaying;
+   string playerKilling;
+   string questSystem;
+   string roleplaying;
+   string trainingSystem;
+   string worldOriginality;
+   short created;
+   short minAge;
+   short worlds;
+   bool ansi;
+   bool mccp;
+   bool mcp;
+   bool msp;
+   bool ssl;
+   bool mxp;
+   bool pueblo;
+   bool vt100;
+   bool xterm256;
+   bool pay2play;
+   bool pay4perks;
+   bool hiringBuilders;
+   bool hiringCoders;
+   bool adultMaterial;
+   bool multiclassing;
+   bool newbieFriendly;
+   bool playerCities;
+   bool playerClans;
+   bool playerCrafting;
+   bool playerGuilds;
+};    
 
 #define MSSP_MINAGE  0
 #define MSSP_MAXAGE  21
 
-#define MSSP_MINCREATED 1970
+#define MSSP_MINCREATED 2001
 #define MSSP_MAXCREATED 2100
 
 #define MSSP_MAXVAL 20000
 #define MAX_MSSP_VAR1 4
 #define MAX_MSSP_VAR2 3
-
-bool load_mssp_data (void);
-void send_mssp_data (DESCRIPTOR_DATA * d);
-void free_mssp_info (void);
-
-//GNUC_FORMAT macro was contrived by Elanthis
-#ifdef __GNUC__
-#define GNUC_FORMAT(fmt,args) __attribute__ ((format (printf, fmt, args)))
-#else
-#define GNUC_FORMAT(fmt,args)
-#endif
-
-void
-mssp_reply (DESCRIPTOR_DATA * d, const char *var, const char *fmt, ...)
-GNUC_FORMAT (3, 4);

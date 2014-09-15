@@ -1,0 +1,3666 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Magic School~
+Author          Wynnia~
+Vnums           57200 57249
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          20 30 0 50
+ResetMsg        The noise of spells going awry fill the magic school.~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      57200
+Keywords  Valandra teacher augurer~
+Race      high-elf~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     Valandra~
+Long      A beautiful teacher stands here stressing about everything.
+~
+Desc      Valandra is easily the most beautiful woman in the school. She is tall
+and thin but not underweight, the leather vest and skirt she wears does
+well to accentuate all of her normally hidden curves. Normally she keeps
+her hair tied back harshly but in order to impress a certain someone she
+has let it loose today. Valandra is also one major over achiever. Not
+only has she succeeded in being one of the best warriors but her magical
+prowess is something to be wary of, making her an excellent augurer.
+~
+Nattacks  3.000000
+Stats1    0 -1 0 0 0 0
+Stats2    35 21 0 6000 3 20 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea nowander~
+Affected  sanctuary protect iceshield~
+Bodyparts head arms legs heart brains guts fingers ear eye~
+Resist    plus6~
+Attacks   causecritical~
+Defenses  curecritical~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57201
+Keywords  Zann teacher cleric~
+Race      human~
+Class     Cleric~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     Zann~
+Long      A devistatingly handsome teacher is here writing a love note.
+~
+Desc      After being the youngest headmaster of the magic school for five years,
+Zann has retired from such a regal position to take up a far more humble
+job of teaching. Zann never really did like to lead and would have rather
+all things to come together on their own. Also, being Valandra's brother
+has added stress upon his life expecially around Christmas when she turns
+into a veritable Christmas nazi. On the plus size though this extremely
+handsome teacher has been happyily married to Liz for the last 5 years
+after their harrowing escape from those seeking to kill all those with
+magic talent.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    35 21 0 6500 3 15 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea nowander~
+Affected  detect_invis sanctuary protect shockshield~
+Bodyparts head arms legs heart brains guts fingers ear eye~
+Resist    plus6~
+Attacks   earthquake causecritical~
+Defenses  heal dispelmagic~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57202
+Keywords  Nasedo teacher man~
+Race      shapeshifter~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Nasedo~
+Long      A very old, gray haired man is here scowling at you.
+~
+Desc      Nasedo is probably the oldest teacher here having been in hiding for
+the last 50 years. His magical ability surpases all others but lacks
+for a good fighting ability. Nasedo was killed about six years ago
+by the folk in town but was brought back to life by Zann. Nasedo is
+neither good nor evil but will do anything to protect himself and
+the teachers. Having been a father figure for Tess it is no wonder
+that she turned out so harsh and shrewd because Nasedo has long
+sworn off all vestiges of his humanity.
+~
+Nattacks  2.000000
+Stats1    0 0 0 0 0 0
+Stats2    35 21 0 5500 3 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea nowander~
+Affected  sanctuary fireshield iceshield~
+Bodyparts head arms legs heart brains guts fingers ear eye~
+Resist    NONE fire plus6~
+Attacks   blindness colorspray weaken~
+Defenses  shield stoneskin~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57203
+Keywords  Kavar teacher sorcerer~
+Race      human~
+Class     pc13~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     Kavar~
+Long      A short, childlike, teacher constantly looks up nervously.
+~
+Desc      Kavar is a recent addition to the teaching staff at the school. No one
+truly knows where he came from and everyone in the town can't seem to
+really recall just when he first arrived. All of the rest of the staff
+with exception to Valandra keep a suspicious distance from Kavar. He
+also has the tendancy to mumble something when Zann passes by about how
+Antar belongs to him though no one seems to truly catch what he is
+saying.
+~
+Nattacks  2.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    35 21 0 6000 3 20 10
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea nowander~
+Affected  sanctuary shockshield~
+Bodyparts head arms legs heart brains guts fingers ear eye~
+Resist    cold electricity plus6~
+Attacks   drain lightnbreath~
+Defenses  dispelmagic shield stoneskin~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57204
+Keywords  Kyle human druid teacher~
+Race      gnome~
+Class     Druid~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Kyle~
+Long      A well built teacher sits on the grass and chants.
+~
+Desc      After being healed by Zann about 6 years ago Kyle has developed an
+ability to harness magic along with the other teachers and students.
+At first Kyle would have much rather have had lived a normal life
+but as a firm believer in destiny Kyle has accepted his new abilities
+and uses them to control and aid nature. Kyle has a very firm belief
+in eastern thought and remains as devoutly neutral as he can in the
+hopes to attain a certain natural balance in life. This of course
+makes Kyle the perfect druid as he loves nature and works to balance
+all aspects of it.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    35 21 0 6000 3 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea nowander~
+Affected  sanctuary protect fireshield iceshield~
+Bodyparts head arms legs heart brains guts fingers ear eye~
+Resist    plus6~
+Attacks   kick earthquake causecritical fireball~
+Defenses  heal bless stoneskin~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57205
+Keywords  Valenti paladin teacher human~
+Race      half-elf~
+Class     Paladin~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Valenti~
+Long      An older teacher is here trying to figure out his life.
+~
+Desc      As a second generation guard Valenti devoutly believes in 
+honor and has a strong attachment to justice. After the events 
+five years ago Valenti and his son Kyle fled with the other 
+teachers to escape the magic persecution in town. Although not 
+really magical himself Valenti is a very powerful fighter for his 
+age and has picked up a few healing spells along the way. 
+Valenti was at once a guide to Zann and his sister Valandra but 
+now can easily look up to them as powerful allies. However 
+such a role reversal has left poor Valenti slightly confused with 
+who he truly is and where he belongs in life. His wife that he 
+left back in town still writes to him constantly but has no clue 
+about him being part of the magical community.
+~
+Nattacks  3.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    35 21 0 6500 3 15 10
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea nowander~
+Affected  sanctuary protect~
+Bodyparts head arms legs heart brains guts fingers ear eye~
+Resist    hold plus6 magic~
+Attacks   punch kick~
+Defenses  cureserious dispelevil bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57206
+Keywords  Headmaster Guerin man mage~
+Race      half-elf~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     Headmaster Guerin~
+Long      A very attractive man stands here very authoritatively.
+~
+Desc      Guerin has worked hard for his position here and was elated when Zann
+stepped down last year to persue his "romantic" interests. Guerin on the
+other hand has never let love get in the way of his duties. Airam the
+girl he left back home totally understands as well but never lets him
+forget just who controls his life, if subliminally. Guerin was always a
+very attractive man but has lived a rather hard life. Being orphaned all
+his life finding this school has been a blessing to him and takes his job
+of running it very seriously. Nothing is more important than home.
+~
+Nattacks  3.000000
+Stats1    0 -1 0 0 0 0
+Stats2    40 21 0 6400 5 5 30
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea nowander~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    acid poison plus6 magic~
+Suscept   acid poison hold plus6 magic~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57207
+Keywords  cook Tess woman~
+Race      humanoid~
+Class     pc13~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     Tess~
+Long      An angry looking cook stands here supervising the preperation of meals.
+~
+Desc      Tess is part of the original group of teachers but hardly has any of
+the attractive features that they do. She is powerfully in love with
+Zann and deeply resent his continuing interest in Liz. Although,
+because of that intense devotion to him she made th ultimate sacrifice
+six years ago to save everyone. In order to draw away the attensions
+of those who sought to kill the teachers she used herself as a small
+deversion as she caused a massive explosion to their base in town.
+Because of lingering feelings of guilt Zann brought her back to life
+but told her that as long as Liz is alive that he would always love
+her instead of Tess. Bad wording on his part, Tess has been plotting
+the death of Liz ever since she has been brought back. Tess has
+almost become obsessed with revenge that her anger spills out to just
+about everyone that comes near her.
+~
+Nattacks  3.000000
+Stats1    -350 0 0 0 0 0
+Stats2    40 21 0 6999 4 10 10
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea nowander~
+Affected  detect_evil detect_invis detect_hidden sanctuary protect shockshield~
+Bodyparts head arms legs heart brains guts fingers ear eye~
+Resist    pierce hold plus6~
+Attacks   punch kick lightnbreath causeserious fireball weaken~
+Defenses  dodge cureserious stoneskin~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57208
+Keywords  student cleric gnome~
+Race      gnome~
+Class     Cleric~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young cleric~
+Long      A short gnomish cleric stands here trying to heal things.
+~
+Desc      A young gnomish cleric looks up at you apparently wondering if he can
+help you in some way. A small badge on his cloak tallies how many heals
+versus casualties he's made. Perhaps it would be better to find a cleric
+slightly more skilled if you are in need of treatment.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   at sarah c sanc sarah
+, utters the words, 'judicandus qfuhuqar'.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57209
+Keywords  student cleric human~
+Race      human~
+Class     Cleric~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     A young cleric~
+Long      A fat human cleric is here studying intensely.
+~
+Desc      Using two chairs to sit on a rather hefty human studies all that she can 
+about the many ways of healing. A small slip of paper sticks out of her
+back pocket with a glaring failure mark circled on the corner. The poor
+girl has already read a half dozen books on the subject but you get the
+impression that perhaps she should change her major to something more
+like warriorism.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57210
+Keywords  student cleric elf~
+Race      high-elf~
+Class     Cleric~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young cleric~
+Long      A tall elven cleric is here reading over his notes.
+~
+Desc      Sitting at a long table in the back of a room is a very tall and thin elf
+comparing notes with his textbook's answers. Sweating a river, he is
+obviously worried about upcomming exams and is probably not to be trusted
+when it comes to needing healing assistance.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57211
+Keywords  student cleric pixie~
+Race      pixie~
+Class     Cleric~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     A young cleric~
+Long      A tiny pixie flits about the room showering things with healing dust.
+~
+Desc      What this pixie lacks in size she makes up for in healing potentcy. No
+larger than a grapefruit she struggles to fly with her cumbersome bag
+of magical healing dust that refills itself whenever some is used. A
+bright, if slightly tiny, badge on her chest shows that she gets top
+marks in class.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   , flitters and flutters about the room.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   c heal
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57212
+Keywords  student cleric drow~
+Race      drow~
+Class     Cleric~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young cleric~
+Long      A thin drow tries to hide in the corner while he heals some bugs.
+~
+Desc      A rather greasy drow lurks in the dark corners hidden behind the grand
+bookshelves that line the walls. He always wanted to be a sorcerer but
+his family forced him to become a cleric so that some day he may heal one
+of their aquaintences' illicitly obtained wounds.
+~
+Nattacks  2.000000
+Stats1    -350 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57213
+Keywords  student cleric dwarf~
+Race      dwarf~
+Class     Cleric~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     A young cleric~
+Long      A short fat dwarven cleric worries about tonight's exam.
+~
+Desc      A rather chunky dwarf paces back and forth in the room worried sick about
+the big exams that are soon coming. She is practically losing weight
+right before your eyes as she works up a frenzy. You can hear her recite
+spells and incantations to herself but as she does so she falters and
+has to start again.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   c 'cure light'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   c 'cure critical'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   c 'cure serious'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57214
+Keywords  student cleric gith~
+Race      gith~
+Class     Cleric~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young cleric~
+Long      A pale gith attemps to clean up after his last failed healing.
+~
+Desc      Looking almost green a very pale gith goes and recovers a mop from the
+storeroom. Mops are just about all he can recover by the looks of his
+last mistake. The poor bunny rabbit now looks more like week-old oatmeal
+than an animal.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57215
+Keywords  student mage dwarf~
+Race      dwarf~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young mage~
+Long      A stocky dwarven mage is here levitating a ball of light.
+~
+Desc      With exam already over for the mages this well muscled dwarven mage makes
+magic look easy. With a swish and flick of his wand he gets a ball of
+pure light to sore all around the room. For his final project he was the
+one that created all of the light balls in the common room.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57216
+Keywords  student mage elf~
+Race      high-elf~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     A young mage~
+Long      A lanky elven mage tries to set her quill on fire.
+~
+Desc      Finally free of final exams an extremely thin elf tries to set her quill
+on fire to celebrate. Of course this doesnt really go over well with the
+class monitor.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57217
+Keywords  student mage pixie~
+Race      pixie~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     A young mage~
+Long      A tiny pixie tries to enlarge herself to human size.
+~
+Desc      For the third time today this poor pixie has almost been stepped on by
+rampaging happy mages. Finally fed up, she tries to cast enlarge on so
+that she can finally not worry about such mishaps any longer.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57218
+Keywords  student mage halfling~
+Race      halfling~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young mage~
+Long      A short halfling mage uses his wand to conjure some food and ale.
+~
+Desc      In order to celebrate the completetion of final exams an adorable little
+halfling hides in the corner and attempts to conjure up some food and ale
+hoping that the class monitor wont find him out. The last thing a happy-
+go-lucky halfling needs right now is to be expelled after a whole week of
+testing.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57219
+Keywords  student mage avian~
+Race      monster~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     A young mage~
+Long      A young avian uses her magic to clean her wings.
+~
+Desc      The class monitor is very angry indeed. After being put in charge of the
+class due to her top marks on the final exam all she wants is a little
+respect from the students but they would rather party instead of prepare
+for next semester. Already has she had to break up a food fight, and a
+mud slinging contest but now students are conjuring alcohol right inside
+the classroom.
+~
+Nattacks  2.000000
+Stats1    0 0 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57220
+Keywords  student mage drow~
+Race      drow~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young mage~
+Long      A dark drow attempts to catch the curtains on fire.
+~
+Desc      A drow, covered in soot from hiding in the fireplace, is here once again
+playing with fire. After being caught lighting the books on fire by the
+class monitor he has now taken to hiding next to the bookcase and setting
+the curtains on fire.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57221
+Keywords  student mage sea elf~
+Race      monster~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     A young mage~
+Long      A blue elf traces a ring before you, creating a magical spring.
+~
+Desc      With exam finally over a sea-elf takes this time to try and recalim all
+of the water lost by sweating up a storm studying and testing by creating
+a spring right in the middle of the carpet on the dais. It would almost
+be a pretty sight as it cascaded down the steps if it wern't for the
+outraged class monitor screming for it to be removed.
+~
+Nattacks  2.000000
+Stats1    0 0 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57222
+Keywords  student augurer drow~
+Race      drow~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young augurer~
+Long      A young augurer is here trying to beat up his friend.
+~
+Desc      A dark drow, tired of casting magic decides it might be more fun to attack
+his friend. Putting down his wand he pounces wielding a small wooden
+sword so that he might hurt, but not harm his buddy.
+~
+Nattacks  2.000000
+Stats1    -350 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57223
+Keywords  student augurer human~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young augurer~
+Long      A small augurer stands in the corner trying to sharpen her blade.
+~
+Desc      After recently passing her final exams a young human augurer feels like
+she can rule the world with her might and magic. Although before she can
+do any form of taking over she needs to sharpen her already razor deadly
+blade with her wand.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57224
+Keywords  student augurer ogre~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young augurer~
+Long      A half-ogre is here struggling to remember how to cast his spells.
+~
+Desc      Not known for their brightness a half-ogre stands here trying to recall
+all of the spells he learned during the year. You can almost see the
+steam coming out of his ears as his head overheats. The lice that live
+in his scalp are litterally jumping off for fear that they will be cooked
+alive.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   , bangs with his fists around him trying to remember. ...
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   say Yes! The answer is ....
+curse
+, angrily exclaims 'I lost it again.'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57225
+Keywords  student augurer dwarf~
+Race      dwarf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young augurer~
+Long      A stocky dwarf sits here levitating his sword around the room.
+~
+Desc      A short dwarf celebrates passing his final exams by levitating his sword
+about the room totally oblivious to the fact that it's almost striking
+his peers.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   , pokes with his pointy sword around him while whistling a happy tune.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57226
+Keywords  student augurer elf~
+Race      high-elf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young augurer~
+Long      A very tall elf stand here pointing her magical sword at you.
+~
+Desc      Feeling rather angry over the way the test exams went a large elf looms
+over you pointing her glass sword at you. With a sneer and a grunt she
+finally turns around and watches the other students activities.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   , mutters angrily at herself.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57227
+Keywords  student augurer human~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young augurer~
+Long      A thin human augurer tries to study how to conjure weapons.
+~
+Desc      Given a week to continue studying this rather bright looking augurer uses
+all the time he can to continue in his studies. Currently the book he is
+reading is entitled 101 ways to sharpen a blade. While he reads the book
+he absentmindedly twirls his dull looking knife in his hand.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57228
+Keywords  student augurer gith~
+Race      gith~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young augurer~
+Long      A shy gith tries to hide while polishing his armor with his wand.
+~
+Desc      Shunned by most of his classmates a very shy gith sits under a table as
+he attempts to polish his armor using a wand he found. Small tears form
+in his eyes pathetically as he fails over and over. What a loser, perhaps
+he should stick to something simpler.
+~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57229
+Keywords  student paladin human~
+Race      human~
+Class     Paladin~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young paladin~
+Long      A chubby paladin kneels here praying to be mighty.
+~
+Desc      In her final year at the magic school a rather chubby paladin prays with
+all her heart to be the most mighty of paladins once she is cast out into
+the world. She has been praying so hard and long that she doesn't even
+notice that she hasnt bathed in 2 weeks.
+~
+Nattacks  2.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   , absentmindly thwaps away a few flies and continues praying.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57230
+Keywords  student paladin elf~
+Race      high-elf~
+Class     Paladin~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young paladin~
+Long      A tall paladin heals a small cut on his sparring partner.
+~
+Desc      Being quicker than his partner a tall elven paladin heals one of the many
+wounds that he inflicted on his sparring partner during their most recent
+duel. As he cuts a small piece of bandage he casts a curative spell to
+quicken the recovery time for his beaten friend.
+~
+Nattacks  2.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   5~
+Comlist   , lunges forwards and sidewards, hitting as many opponents as possible.
+mpdamage $r 50
+mpdamage $r 20
+mpdamage $r 5
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57231
+Keywords  student paladin avian~
+Race      monster~
+Class     Paladin~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young paladin~
+Long      A graceful paladin practices how to fight using her wings.
+~
+Desc      After mastering the sword this paladin practices how to use her rather
+large wings to her advantage. Not only do they shine with a protective
+gleam but they could be razor sharp if spun at you fast enough. Spinning
+about the room her fellow students learn to duck at the right moments to
+avoid painful blows to their bodies as she practices.
+~
+Nattacks  2.000000
+Stats1    1000 0 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   , rapidly flutters with her wings till they become a dangerous tool.
+mea $n _cya The wings caress your arm and leave a big jap.
+mpdamage $n 20
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57232
+Keywords  student paladin elf~
+Race      half-elf~
+Class     Paladin~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young paladin~
+Long      A short elven paladin tries to invoke some crucifixes.
+~
+Desc      A young elven paladin was recently assigned a new job, iventory. As he
+rushes about the room counting books and swords and such things he takes
+note on the apparent lack of crucifixes in the castle. Sitting down after
+all the hustle and bustle he begins to invoke crucifixes until each of
+the students can have a seemingly unending supply.
+~
+Nattacks  2.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   c solomenic
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57233
+Keywords  student paladin human~
+Race      human~
+Class     Paladin~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young paladin~
+Long      A very young paladin tries to polish the alter.
+~
+Desc      A very young paladin child scrambles around the main alter in the room
+as she tries to clean it. The alter is perhaps 5 times here height and
+many times longer than her it's quite a chore, but can be rather comical
+as she jumps up and down to get to the higher parts.
+~
+Nattacks  2.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   , wipes her forehead and reaches out to clean another spot.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57234
+Keywords  student paladin avian~
+Race      monster~
+Class     Paladin~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young paladin~
+Long      A thin avian paladin heals his own broken wing.
+~
+Desc      Sparring can be tough work for an avian sometimes but luckily this one
+has healing powers as well. Perhaps not to the extent of a cleric but
+enough to get by. Almost everytime he gets in a fight he hurts one of his
+iridescent wings, but also eveytime he can heal them lickity-split.
+~
+Nattacks  2.000000
+Stats1    1000 0 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   c solom
+c hez
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57235
+Keywords  student paladin elf~
+Race      high-elf~
+Class     Paladin~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young paladin~
+Long      A thin elven paladin humbles himself while undergoing his punishment.
+~
+Desc      Sweat and filth have mixed and cover this young lad's face. He's sighing
+and panting deeply while he crawls about and cleans thoroughly the classes
+and corridors in the school with a tiny brush. Once in a while he tries to
+escape to the gardens where he prays loudly for mercy.
+~
+Nattacks  2.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57236
+Keywords  student sorcerer human~
+Race      human~
+Class     pc13~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young sorcerer~
+Long      A greasy haired boy stands here trying to set his book on fire.
+~
+Desc      A sorcerer with dark black hair matted to his head is attempting to set
+fire to his book. Not quite a good idea really, seeing as how greasy he
+is the fire could easily jump from the book and light his hair on fire.
+~
+Nattacks  2.000000
+Stats1    -350 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57237
+Keywords  student sorcerer drow~
+Race      drow~
+Class     pc13~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young sorcerer~
+Long      A small whining sorcerer stands here holding her beheaded doll.
+~
+Desc      Wearing black lipstick and a thick red eyeliner this sorcerer is straight
+out of a dark nightmare. She cackles insanely as she sees you and beckons
+you closer to pet her doll. The doll completes her dark look as it happens
+to be missing it's head and her arm is barely holding on by one remaining
+stitch.
+~
+Nattacks  2.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57238
+Keywords  sorc student elf~
+Race      high-elf~
+Class     pc13~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young sorcerer~
+Long      An anorexic looking sorceress is here torturing a toad.
+~
+Desc      A cheery disposition is far, far away from this young sorceress. With
+flaming red hair and piercings all over her ears she is perhaps the last
+person a respectable institution would except in their walls. The fact
+that she is torturing a toad should also be a factor to stay at a safe
+distance.
+~
+Nattacks  2.000000
+Stats1    -350 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   , utters the words 'beenuit' and the toad in her hand croaks in agony.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57239
+Keywords  student sorcerer pixie~
+Race      pixie~
+Class     pc13~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young sorcerer~
+Long      A tiny sorcerer complains in the corner about it being to bright.
+~
+Desc      A tiny dark skinned pixie squints about the room as she complains loudly
+over the amount of light in the room. Fluttering over to a torch she
+closes her eyes and casts a lightning bolt at it to incinerate what is
+left of the light source.
+~
+Nattacks  2.000000
+Stats1    -350 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57240
+Keywords  student sorcerer gith~
+Race      gith~
+Class     pc13~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young sorcerer~
+Long      An extremely pale gith tries to conjure a dark rainstorm in the room.
+~
+Desc      Paled by keeping out of the sun for years a young sorcerer casts a very
+large raincloud over the window in the hopes to block out what light is
+trying to get in through it. Her sunken eyes and shriveled body shows
+that perhaps she has tried this trick before but never quite bothered to
+dry up after herself.
+~
+Nattacks  2.000000
+Stats1    -350 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   , utters the words 'maakregennu'.
+, utters the words 'ikzegnu' with a louder voice.
+, screams the words 'verdorienogaantoenu'.
+mpe _whi A loud noise sounds from right above and lightning strikes down.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57241
+Keywords  student sorcerer gnome~
+Race      gnome~
+Class     pc13~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young sorcerer~
+Long      A very hairy and ugly gnome mutters about how the school is too clean.
+~
+Desc      Because he has lived in the ground for the last 8 years or so of his life
+a small gnome just cant stand the lack of soil inside the room and makes
+frequent trips to the courtyard to collect dirt to drop it into the room.
+So far he has half the room covered in mud, sand and bits of grass.
+~
+Nattacks  2.000000
+Stats1    -350 -1 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57242
+Keywords  student sorcerer avian~
+Race      monster~
+Class     pc13~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A young sorcerer~
+Long      A sorcerer with tattered and moldy wings begs for it to rain.
+~
+Desc      As a last resort to be a rebel from her parents this young sorceres has
+shunned all ways of her family and their generations of working clerics.
+Ruining her wings and casting clouds all around the house was the last
+straw for her parents who finally kicked her out of the house. As she
+found her way to the magic school she walked right by the cleric office
+and into sorcerers admissions. Finally a class she can relate to.
+~
+Nattacks  2.000000
+Stats1    -350 0 0 0 0 0
+Stats2    25 21 0 3000 1 10 5
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  protect~
+Bodyparts head arms legs heart brains hands ear eye~
+Attacks   kick causecritical~
+Defenses  curecritical bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57243
+Keywords  student druid human~
+Race      human~
+Class     Druid~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A young druid~
+Long      A shy druid is here petting the grass absentmindedly.
+~
+Desc      None too bright a short druid sits in the grass under a table making small
+daisy crowns and bracelets. Mold and bits of grass grow out of her hair
+from being down there for so long.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   , carefully slits the stem of a daisy to attach another daisy into them.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      57244
+Keywords  student druid elf~
+Race      high-elf~
+Class     Druid~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A young druid~
+Long      A tall druid is here watering and pruning all of the plants.
+~
+Desc      An elf, being the tallest in the class decides to use her height to her
+advantage. Taking down the plants hanging from the ceiling with ease sets
+herself up for some brownie points from her teacher.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57245
+Keywords  student druid dwarf~
+Race      dwarf~
+Class     Druid~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A young druid~
+Long      A dwarf, dressed all in green, picks some roses for the dining hall.
+~
+Desc      Dwarves, not being the tallest of races are slightly limited to their
+choises of what they can do in druidism. Roses, not being the tallest of
+bushes make for an easy to do job for dwarves. Pruning and picking roses.
+Every 10 roses he picks he tears off all the thorns and wraps them in a
+cloth to transport them to the dining hall for center pieces.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57246
+Keywords  student druid pixie~
+Race      pixie~
+Class     Druid~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A young druid~
+Long      A tiny druid flits through the air putting dew drops on the plants.
+~
+Desc      True to cute little pixie style this little fellow flits from flower to
+flower and leaf to leaf adding tiny dew drops to them making them sparkle
+sweetly. Every now and then the breeze blows through the door and the
+poor pixie tumbles through the air because what might blow a few hairs
+on a human's head is like a gale force wind to Mr. Pixie here.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57247
+Keywords  student druid beast~
+Race      monster~
+Class     Druid~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A young druid~
+Long      A very large druid is here weaving grass into it's wild hair.
+~
+Desc      A massive druid sits here wearing a simple grey tunic. Covering its body
+is a thick shaggy fur that is sparkling with the dew from the pixie when
+ever it takes a tumble. Rather bored with everyday procedings the great
+beastman weaves grass into it's pelt totally oblivious to the procedings
+around it.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Bodyparts guts~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57248
+Keywords  student druid gnome~
+Race      gnome~
+Class     Druid~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A young druid~
+Long      A short gnomish druid is here tired of all the garden gnome jokes.
+~
+Desc      Grumbling loudly is a tiny gnome with a tall red cap and a long beard.
+This is rather unusual actually considering he is only 9 years old but
+already has his full grown beard. Lots of the students, especially the
+sorcerers love to play jokes on him and call him the garden gnome behind
+his back due to his total resemblance to a popular lawn ornament used by
+the non magical folk elsewhere.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+#ENDMOBILE
+
+#MOBILE
+Vnum      57249
+Keywords  student druid avian~
+Race      monster~
+Class     Druid~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A young druid~
+Long      An avian flies high above picking the fruit off of the larger plants.
+~
+Desc      By definition avians are speedy, limber, and a rather flighty race but
+exceptions can be made. This one for example is chubby, slow and just
+about as un-avian as it can be. He can hardly fly but when he does he
+immediatly flies up the fruit tree lands on a sturdy branch and totally
+pigs out on the fruit that is growing there.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Bodyparts guts~
+#ENDMOBILE
+
+#OBJECT
+Vnum      57200
+Keywords  ivory battle armor~
+Type      armor~
+Short     &WIvory plated armor&D~
+Long      A sparking white set of armor lies here.~
+Flags     organic magic antievil antineutral~
+WFlags    take body~
+Values    15 15 0 0 0 0 0 0 0 0 0
+Stats     5 1000 -2 1 0 None None None
+AffData strength 2 -1 -1 0
+AffData constitution 1 -1 -1 0
+AffData hit 75 -1 -1 0
+AffData mana 50 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData save_para -5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      57201
+Keywords  beaded leather skirt~
+Type      armor~
+Short     A &Rb&re&Ra&rd&Re&rd&O leather&D skirt~
+Long      A neatly folded skirt lies here collecting dust.~
+Flags     organic magic~
+WFlags    take legs~
+Values    15 15 0 0 0 0 0 0 0 0 0
+Stats     5 1000 -2 1 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData hit 30 -1 -1 0
+AffData mana 25 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData wisdom 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      57202
+Keywords  sign leader stars~
+Type      armor~
+Short     &CS&Wign &Co&Wf th&Ce &Wle&Ca&Wde&Cr&D~
+Long      A collection of stars lie on the ground looking important.~
+Flags     invis magic bless antievil~
+WFlags    take hands~
+Values    200 200 0 0 0 0 0 0 0 0 0
+Stats     1 10000 -2 1 0 None None None
+AffData dexterity 3 -1 -1 0
+AffData wisdom 2 -1 -1 0
+AffData hit 20 -1 -1 0
+AffData mana 50 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData affected '(null)' -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      57203
+Keywords  mints candy pills~
+Type      pill~
+Short     &GA &WH&Ga&gn&Gd&Wf&Gu&gl &Go&Wf &Gf&gr&Ge&Ws&Gh &gm&Gi&Wn&Gt&gs&D~
+Long      A collection of fresh smelling candy lies on the floor.~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1000 -2 1 0 None None None
+Spells       'refresh' 'cure light' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      57204
+Keywords  skin shedding arms~
+Type      armor~
+Short     &OA thin shedding of skin&D~
+Long      A shedding of skin lies here rapidly decaying.~
+Flags     organic magic antigood groundrot~
+WFlags    take arms~
+Values    10 10 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData class -1 -1 -1 0
+AffData hit -20 -1 -1 0
+AffData mana 80 -1 -1 0
+AffData save_breath -5 -1 -1 0
+AffData hitroll -1 -1 -1 0
+AffData damroll 5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      57205
+Keywords  necklace chain ying yang~
+Type      armor~
+Short     &wA small &zyi&Wn&zg&O-&Wya&zn&Wg&w symbol&D~
+Long      A silver chain with a small ying-yang on it is left here collecting dust.~
+Flags     metal magic antigood antievil~
+WFlags    take neck~
+Values    15 15 0 0 0 0 0 0 0 0 0
+Stats     2 10000 -2 1 0 None None None
+AffData dexterity 2 -1 -1 0
+AffData strength 1 -1 -1 0
+AffData hit 40 -1 -1 0
+AffData mana 50 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData damroll 1 -1 -1 0
+AffData wearspell 'sagacity' -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      57206
+Keywords  poison glass dagger~
+Type      weapon~
+Short     &w A &Op&go&Oi&gs&Oo&gn&Oe&gd&w glass dagger&D~
+Long      A gleaming dagger lies here oozing a white fluid.~
+Flags     metal bless antigood evil~
+WFlags    take wield~
+Values    11 12 3 2 0 0 0 0 0 0 0
+Stats     3 100 -2 9999 0 None None None
+AffData hit 60 -1 -1 0
+AffData mana 40 -1 -1 0
+AffData class 1 -1 -1 0
+AffData hitroll 5 -1 -1 0
+AffData damroll 6 -1 -1 0
+AffData wearspell 'poison' -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      57207
+Keywords  crystal wedding band~
+Type      armor~
+Short     &OA &Bc&Cr&Wy&Cs&Bt&Wa&Cl&O wedding band&D~
+Long      A very valueable wedding band lies here neglected.~
+Flags     organic invis magic antineutral antimage evil~
+WFlags    take finger~
+Values    5 5 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+AffData strength 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData sex 1 -1 -1 0
+AffData hit 30 -1 -1 0
+AffData mana 20 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      57208
+Keywords  marble bench~
+Type      furniture~
+Short     &wA shiny &Wm&za&Wr&zb&Wl&ze&w bench&D~
+Long      &wA shiny &Wm&za&Wr&zb&Wl&ze&w bench is here almost inviting you to rest your feet.&D~
+Values    900 0 585 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      57209
+Keywords  grimy bucket~
+Type      container~
+Short     &zA &Gg&gr&Gi&gm&Gy&z metal bucket&D~
+Long      &zA nasty &Gg&gr&Gi&gm&Gy&z metal bucket sits here smelling foul.~
+Flags     metal~
+WFlags    take hold~
+Values    50 0 0 10 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      57210
+Keywords  rose bush~
+Type      furniture~
+Short     &gA beautiful &rr&po&rs&pe&rb&pu&rs&ph&D~
+Long      &gA beautiful rosebush grows here with &ppurple&g and &rred&g flowers.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    rosebush~
+ExDesc       &gThis beautiful rosebush with its &Ppurple &gand &rred&g flowers
+looks green and well-fed. It's growing rather bushy and can use a bit
+of trimming here and there.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  exa_prog~
+Arglist   3~
+Comlist   mea $n _whi Sweet fragrances assault your nostrils.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  exa_prog~
+Arglist   25~
+Comlist   if rand(50)
+mpe &WA &ppurple&W rosebud falls on the ground.
+mpoload 57218 15
+drop purple-rosebud
+else
+mpe &WA &rred&W rosebud falls on the ground.&D
+mpoload 57219 5
+drop red-rosebud
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      57211
+Keywords  marble fountain~
+Type      fountain~
+Short     &wA shiny &zm&Wa&zr&Wb&zl&We&w fountain&D~
+Long      &wA shiny &zm&Wa&zr&Wb&zl&We&w fountain sprays cool water about it's basin.&D~
+Values    1000000 1000000 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      57212
+Keywords  spider plant~
+Type      furniture~
+Short     &gA la&Gr&gge sp&Gid&ger pl&Ga&gnt&D~
+Long      &gAn extremely large spider plant creeps around the ground looking for good soil.&D~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    spider plant~
+ExDesc       &gA la&Gr&gge sp&Gid&ger pl&Ga&gnt reaches about, trying to fill
+all space there is with itself.
+&D
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  exa_prog~
+Arglist   80~
+Comlist   mea $n _cya A tentacle of the plant slaps against you and stings you!
+mpechoaround $n _cya A tentacle grabs onto $n's ankle!
+mpdamage 0.$n 15
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      57215
+Keywords  metal dunce chair~
+Type      furniture~
+Short     &za high chair&D~
+Long      &zA very high metal chair is here with &PD&CU&RN&BC&GE&z written onto the back of it.&D~
+Values    0 0 2 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      57216
+Keywords  statue fountain~
+Type      fountain~
+Short     water spouting statue~
+Long      &BWater gushes forth from the statue's mouth fixed onto the wall.&D~
+Values    1000 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      57217
+Keywords  wedding cake~
+Type      food~
+Short     a slice of wedding cake~
+Long      A slice of delicious looking cake is lying here.~
+WFlags    take~
+Values    3 0 0 0 0 0 0 0 0 0 0
+Stats     1 300 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      57218
+Keywords  purple rosebud~
+Type      trash~
+Short     &ga &ppurple rosebud&D~
+Long      &gA &ppurple&g rosebud is lying here.&D~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    purple rosebud~
+ExDesc       Dark velvet purple leaves and a light pink kernel feel delicate and
+are dispersing a soft sweet perfume.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  exa_prog~
+Arglist   10~
+Comlist   mea $n _whi You inhale the delicate fragrances deeply of the fragile flower.
+mpforce $n smile
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      57219
+Keywords  red rosebud~
+Type      trash~
+Short     &ga &rred rosebud&D~
+Long      &gA &rred&g rosebud is lying here.&D~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    red rosebud~
+ExDesc       The silky leaves of the red rose feel fragile yet strong as well.
+These flowers don't seem to smell like anything in particular.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  exa_prog~
+Arglist   10~
+Comlist   c 'elven beauty' $n
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      57249
+Keywords  last obj~
+Type      trash~
+Short     a newly created last obj~
+Long      Some god dropped a newly created last obj here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      57200
+Name      .                          &YW&Gy&Rn&On&Bi&Wa&z's &PO&Cf&pf&wi&gc&ce&D~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      &b              &b__
+           &g*%&b( &Ro`&Y=-
+              &b\ \
+              &b/ /
+           &b__/&g**&b\__
+          &b( / &g**&b \ )&r       Welcome to my office if I happen
+          &b| |    | |&r       to not be here, leave a message. 
+           &b\|    |/&r        Don't mind the peacock she won't
+         &O___&Yvv&O__&Yvv&O____&r     bite unless, of course, you want
+        &O/   &Y``  ''&O    \&r    it to. Mrrreeeow! Well, whatever 
+        &O|_____________|&r    such sound peacocks make, hehehe
+          &g*`&b/&p%%%%&b\&g`*
+           &b/&p  %%&b  \
+          &g*&p@&b /&g``&b\&p @&g*
+          &b/&p %%  %%&b \
+&g          *&p@&b /    \ &p@&g*
+         &b/&p %%    %%&b \
+       &g*&b/&p@&b/&g*      *&b\&p@&b\&g*
+       &b(\/          \/)
+       &g`&b(&g*          *&b)&g`
+        &g`&b(&g_&P(&p@&P)  (&p@&P)&g_&b)&g`
+          &b(_&g`&b____&g`&b_)
+            &b!$%$%$!
+~
+#ENDROOM
+
+#ROOM
+Vnum      57201
+Name      The Front Gate~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      &zA great sculpted arch, that easily towers over the students and teachers
+who come to and from the school, separates the vast courtyard to the east
+and the grounds outside. A row of well attended &rroses &zand &gtopiary&z lead
+North and South along the mighty fence surrounding the school premises. From
+within, a myriad of shouts and &R*bangs*&z can be heard as students run amok
+and teachers attempt to keep order.
+~
+#EXIT
+Direction east~
+ToRoom    57202
+Desc      Down the Cobblestoned Path
+~
+Keywords  gate~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    880
+Desc      The astral planes stretch out westward
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57202
+Name      The Western end of the Courtyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      &gInside the front gate life seems to spring to life in vivid color. All 
+along the &zcob&Oble&zsto&One&g path towards the school are brilliant colored
+&Rbl&Yoo&Pms&g and hedges. Even the crushed grass where the resident students
+spend their time seems carefully attended to by the nature-loving druids
+who call this place home. The courtyard continues in every direction away
+from the main gate and further to the east looms the ancient magic school.
+~
+#EXIT
+Direction north~
+ToRoom    57203
+Desc      Further into the Courtyard
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    57205
+Desc      Continueing down the Cobblestone Path
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57207
+Desc      Further into the Courtyard
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57201
+Desc      Back out the Gate
+~
+Keywords  gate~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57203
+Name      The Northern end of the Courtyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      &gThe great protective wall surrounding the school grounds quietly embraces
+the northern corner of the courtyard here offering this seemingly pristine
+environment its silent protection. However quiet this area may be, it has
+not been forgotten by those who seek to maintain all of the beautiful flora
+found in such abundance in the courtyard.
+~
+#EXIT
+Direction east~
+ToRoom    57204
+Desc      Continueing through the Courtyard
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57202
+Desc      Down the Cobblestoned Path
+~
+#ENDEXIT
+
+Reset O 57210 1 57203 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      57204
+Name      The Northern End of the Courtyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      &gThe great protective wall surrounding the school grounds 
+quietly embraces the northern corner of the courtyard here 
+offering this seemingly pristine environment its silent 
+protection. Two large &Wma&wrb&Wle&g benches and a &zgra&wni&zte&g table are 
+situated in the corner to offer a peaceful place to eat or do some 
+homework while the bird feeder nearby attracts all sorts of bird 
+life.
+~
+#EXIT
+Direction south~
+ToRoom    57205
+Desc      In front of the School
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57203
+Desc      Continueing through the Courtyard
+~
+#ENDEXIT
+
+Reset O 57208 1 57204 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      57205
+Name      Before the Entryway of the Magic School~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      &gThe great double doored entrance to the magic school looms over you
+here invitingly. Both &Goa&Ok&Gen&g doors are wide open allowing fresh air and
+sounds in from the the courtyard outside to lighten the mood of studious
+children who are constantly under the critique of their teachers. The
+&zcob&Oble&zsto&One&g path leads back to the entrance to the west and a small
+moss-covered path leads south through the courtyard to the greenhouse
+and animal nursury.
+~
+#EXIT
+Direction north~
+ToRoom    57204
+Desc      Further into the Coutyard
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    57208
+Desc      Into the Magic School
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57206
+Desc      Down a Mossen Path
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57202
+Desc      Continueing up the Cobblestoned Path
+~
+#ENDEXIT
+
+Reset D 57205 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57206
+Name      The Eastern end of the Courtyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      &gA moss-covered stone path lies here going south to the greenhouse where the
+students following the ways of the druid take their class and north to the
+&gmain entrance of the school. &YYellow&g and &rred&g roses line the path
+slightly covering the thick ivy vines that creep up the wall. The rest of the
+courtyard lies west as well as a very large oak tree that is visited often by
+the students that spend their time under his broad canopy while doing their
+homework.
+~
+#EXIT
+Direction north~
+ToRoom    57205
+Desc      Down the Cobblestoned Path
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57222
+Desc      Continueing down a Mossen Path
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57207
+Desc      Further into the Courtyard
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57207
+Name      The Western end of the Courtyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      &gSpectacular rows of &pro&rs&pes&g line the aesthetically pleasing wall to the
+west giving the courtyard here an air of safety and comfort. The grass, as
+always, is very well kept and cut with such a precise level length that only
+magic could resonably account for it. The large &Go&Oa&Gk&g that offers shade
+to the area has also been well taken care of as it is perhaps the largest tree
+in the near vicinity.
+~
+#EXIT
+Direction north~
+ToRoom    57202
+Desc      Down the Cobblestoned Path
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    57206
+Desc      A small Mossen Path
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57221
+Desc      Futher into the courtyard
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57208
+Name      Entry Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &ONothing so far has been as spectacular as this room. The walls in every
+direction span upwards well above the second floor and each wall sports a
+great many tapestries of dazzling colors and paintings depicting the life
+here at the magic school. The floor is made of the finest woodworking that
+is so precise that only magic could account for it. On both sides of the
+entry hall are sweeping stair cases with their sturdy planks of wood and
+inlaid flecks of gold and silver leading to the second floor. Most of the
+classes are found on the first floor just to the east and south. Further
+into the school is the dining hall where the clatter of some plates and
+silverware are heard as students and teachers alike take their meals
+whenever they care to do so.
+~
+#EXIT
+Direction north~
+ToRoom    57209
+Desc      Towards some stairs
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    57211
+Desc      A bend in the hall
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57210
+Desc      Towards some stairs
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57205
+Desc      Back Outside
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 57208 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57209
+Name      Northern Stairwell~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OEach stair is made of a deep &rreddish&O wood that has been smoothed by
+centuries of students and teachers going up and down to their respective 
+destinations. Even with the apparent wear, gold and silver flecks seem to be
+almost weaved into the woodwork magically. The banisters of such a magnificent
+piece of stair artistry are made of ivory with a soft gold band spiraling up
+inlaid with &Rcrimson&O colored garnets and deep &bazure&O sapphires.
+~
+#EXIT
+Direction south~
+ToRoom    57208
+Desc      Towards the hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    57234
+Desc      Up the stairs
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57210
+Name      Southern Stairwell~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OEach stair is made of a deep &rreddish&O wood that has been smoothed by
+centuries of students and teachers going up and down to their respective 
+destinations. Even with the apparent wear, gold and silver flecks seem to be
+almost weaved into the woodwork magically. The banisters of such a magnificent
+piece of stair artistry are made of ivory with a soft gold band spiraling up
+inlaid with &Rcrimson&O colored garnets and deep &bazure&O sapphires.
+~
+#EXIT
+Direction north~
+ToRoom    57208
+Desc      Towards the hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    57235
+Desc      Up the stairs
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57211
+Name      Main Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThe main hall continues down to the south at some length. Statues of
+spun &wsilver&O and&W mithril&O line the walls at regular intervals and very
+large paintings of students playing in the courtyard hang from many
+places. The walls as a whole almost breath with magical life with
+the color and detail of the works hung on them. It is almost as if
+the paintings and statues are real because if someone moves, their
+eyes seem to follow them. Sounds of people eating come from the east
+as the dining hall is very close and a small under used door is to the
+North.
+~
+#EXIT
+Direction north~
+ToRoom    57212
+Desc      A small closet
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    57227
+Desc      Smells of Food
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57213
+Desc      Down a long Corridor
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57208
+Desc      Back to Entry Hall
+~
+#ENDEXIT
+
+Reset D 57211 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57212
+Name      Janitorial Closet~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThis is perhaps the most mundane room in the entire manor. Shelves are
+littered with cleaning supplies but they have been long forgotten due to
+the students' uncanny ability to use magic to clean everything. Even the
+janitor hardly comes in here and even then it is to make sure everything
+is still in it's place and not stolen to make insidious potions or evil
+spells. The only obvious direction to go from here is back south to the
+main hall once more.
+~
+#EXIT
+Direction south~
+ToRoom    57211
+Desc      To the Main Hall
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 57209 1 57212 -1 -1 -1 100
+Reset D 57212 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57213
+Name      Main Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThe main hall continues to the south at some length and a short way
+to the north. Statues of spun &wsilver&O and &Wmithril&O continue to line the
+walls at regular intervals and a few large paintings of students
+studying hard in the dorm rooms hang in seemingly random places. The
+walls as a whole almost breath with magical life with the color and
+detail of the works hung on them. It is almost as if the paintings
+and statues are real because if someone moves, their eyes seem to
+follow them.
+~
+#EXIT
+Direction north~
+ToRoom    57211
+Desc      Up a long Corridor
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57214
+Desc      Down a long Corridor
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57214
+Name      Main Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThe main hall continues to the south for a bit and also goes towards
+the north. Statues of spun &wsilver&O and &Wmithril&O stand on either side
+of the West and East doors. Sounds from the west door resemble many
+students laughing while teachers try to control them unsucessfully.
+A soft &Cblue&O light leaks from under the door to the east as clerics 
+chant newly learned spells healing small animals. A few yips and cries
+are the only clue that not all students seem to be landing the
+correct spell.
+~
+#EXIT
+Direction north~
+ToRoom    57213
+Desc      Up a long Corridor
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    57216
+Desc      A small classroon
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57217
+Desc      Down a long Corridor
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57215
+Desc      A small classroon
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset D 57214 1 1 100 -2
+Reset D 57214 3 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57215
+Name      Mage Class~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThe mage classroom can hardly be called a classroom. Instead
+of desks and chairs there is a large dais in the middle of the 
+room where those students following the way of the mage will 
+perform their various spells at a peer. Needless to say first aid 
+potions and bandages lie on near by shelves along with wands 
+and staves. A loft surrounds the dais so that students can have a 
+good vantage point to observe without worrying about poorly 
+aimed spell casting.
+~
+#EXIT
+Direction east~
+ToRoom    57214
+Desc      Back to the hallway
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 57215 1 57215 -1 -1 -1 100
+Reset M 57216 1 57215 -1 -1 -1 100
+Reset M 57217 1 57215 -1 -1 -1 100
+Reset M 57218 1 57215 -1 -1 -1 100
+Reset M 57219 1 57215 -1 -1 -1 100
+Reset M 57220 1 57215 -1 -1 -1 100
+Reset M 57221 1 57215 -1 -1 -1 100
+Reset D 57215 1 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57216
+Name      Cleric Class~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &CBright &Bblue&C light spills over the room in a near blinding radiance as
+the aura of healing covers everything. Six large &zsteel&C examination
+tables lie in the center of the room with four trays on each corner
+for the students to inspect the animals they are about to heal and
+return to the courtyard outside. &PPink&C crystal lamps hang from the
+ceiling to provide light to the room though they are unnecessary for
+the &Bblue&C light is bright enough to do even the most difficult of
+tasks.
+~
+#EXIT
+Direction west~
+ToRoom    57214
+Desc      Back to the hallway
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 57210 1 57216 -1 -1 -1 100
+Reset M 57211 1 57216 -1 -1 -1 100
+Reset M 57212 1 57216 -1 -1 -1 100
+Reset M 57213 1 57216 -1 -1 -1 100
+Reset M 57214 1 57216 -1 -1 -1 100
+Reset M 57209 1 57216 -1 -1 -1 100
+Reset M 57208 1 57216 -1 -1 -1 100
+Reset D 57216 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57217
+Name      Main Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThe main hall finally comes to an end here connecting the final 
+two classrooms downstairs. As always the &wsilver&O and &Wmithril&O 
+statues stand vigilant on either side of the two doors. A great 
+&rfi&Yre&Rpl&rac&Ye&O takes up the majority of the southern wall but two tiny
+stained-glass windows are next to it to ventilate the room a
+little bit better. A gigantic &Ygolden&O chandelier hangs from the ceiling
+providing light to the southern bit of hallway when the fire dies 
+down. To the east is where those who choose to be paladins go 
+to learn to fight righteously and aid their fellow devout peers. 
+Also from the east comes a rhythmic chant as Augurers take 
+their lessons in healing and harmful magics.
+~
+#EXIT
+Direction north~
+ToRoom    57214
+Desc      Up a long Corridor
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    57219
+Desc      A small classroom
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57218
+Desc      A small classroom
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 57217 1 1 100 -2
+Reset D 57217 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57218
+Name      Augurer Class~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThe augurer classroom is far more cluttered than any of the others
+in the school. Desks and chairs lie in neat rows in the center of
+the room while punching bags dangle from the ceiling near the walls.
+In a small loft there is a platform where students practice dualing
+and a table where they can heal their peers or practice on the same
+small animals that clerics perform their magic. The windows that
+would offer a nice view of the greenhouse outside are covered with
+pictures of fighting stances for magic users. Back to the East is
+the door to the main hall.
+~
+#EXIT
+Direction east~
+ToRoom    57217
+Desc      Back to the hallway
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 57222 1 57218 -1 -1 -1 100
+Reset M 57223 1 57218 -1 -1 -1 100
+Reset M 57224 1 57218 -1 -1 -1 100
+Reset M 57225 1 57218 -1 -1 -1 100
+Reset M 57226 1 57218 -1 -1 -1 100
+Reset M 57227 1 57218 -1 -1 -1 100
+Reset M 57228 1 57218 -1 -1 -1 100
+Reset D 57218 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57219
+Name      Paladin Class~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThis classroom is by far larger than any of the others. On the 
+south wall there is a small stable that leads to the grounds 
+outside. The room also has high vaulted ceilings to make room 
+for a large loft on the north side where the paladins have set up 
+a large alter to praise &WA'estara&O the god to those with &Wangelic&O 
+souls. In the center of the room is a sparring arena where the 
+students can also practice their sword skills under the 
+supervision of their teachers.
+~
+#EXIT
+Direction west~
+ToRoom    57217
+Desc      Back to the hallway
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 57229 1 57219 -1 -1 -1 100
+Reset M 57230 1 57219 -1 -1 -1 100
+Reset M 57231 1 57219 -1 -1 -1 100
+Reset M 57232 1 57219 -1 -1 -1 100
+Reset M 57233 1 57219 -1 -1 -1 100
+Reset M 57234 1 57219 -1 -1 -1 100
+Reset M 57235 1 57219 -1 -1 -1 100
+Reset D 57219 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57220
+Name      Valenti's Office~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &WA bright white radiant light emanates from the globe floating 
+above the room bathing everything here in a pure innocent 
+white glow. The large desk in the northwest corner is made up, 
+somehow, of only one giant hunk of ivory with &zsilver&W filigree 
+embedded up the legs. On the walls are hundreds of small 
+mirrors to reflect the light coming from the globe above or 
+from the light that comes in through the &Prosy-pink&W glass 
+window on the northern wall.
+~
+#EXIT
+Direction southeast~
+ToRoom    57230
+Desc      A huge waiting room
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 57205 1 57220 -1 -1 -1 100
+  Reset E 57200 1 5 100
+Reset D 57220 8 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57221
+Name      The Western end of the Courtyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      &gThe wall takes a turn here to the east offering the courtyard a 
+new little nook in it to provide shade and relaxation during the 
+early hours. Made of solid &wm&War&wbl&We&g, a large fountain was also 
+built into the wall here. &BW&Ca&Bt&Ce&Br&g cascades out of the statue's 
+wand and into the basin below. Students love to toss coins into 
+it and hope for good grades or catch the eye of a special &Rso&Pme&Ron&Pe&g.
+~
+#EXIT
+Direction north~
+ToRoom    57207
+Desc      the main path
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    57222
+Desc      Outside the Greenhouse
+~
+#ENDEXIT
+
+Reset O 57216 1 57221 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      57222
+Name      The Southeastern corner of the Courtyard~
+Sector    field~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      &gNestled snuggly next to the great walls of the school to the east and a
+large greenhouse to the South is another small collection of floral wonders.
+Great vines cover the stone walls of the school and a mound of daisies and
+many small tamed wildflowers line the greenhouse as unwanted seeds were
+likely tossed out of the window. The moss in the stone path back to the main
+part of the school also incredibly seems to be attended to with the same 
+care as the rest of the grounds.
+~
+#EXIT
+Direction north~
+ToRoom    57206
+Desc      Continueing up a Mossen Path
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57223
+Desc      Into the Greenhouse
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57221
+Desc      Further into the Courtyard
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57223
+Name      Druid Class~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      &gThe greenhouse is stuffy and humid. Plants and flowers hang from baskets on
+the ceiling, line the walls, sit on tables, and grow from the very floor. It
+is as if the whole building is alive with the plants within it. The only
+places that don't have some kind of growth on them are the desks where the
+students can do their schoolwork without worrying about having to write on
+top of their precious plants. To the south is the main part of the greenhouse
+where the plants are potted and grown with all the love and attension of
+nature loving druids.
+~
+#EXIT
+Direction north~
+ToRoom    57222
+Desc      Back up the Mossen Path
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57225
+Desc      More plants
+~
+#ENDEXIT
+
+Reset M 57243 1 57223 -1 -1 -1 100
+Reset M 57244 1 57223 -1 -1 -1 100
+Reset M 57245 1 57223 -1 -1 -1 100
+Reset M 57246 1 57223 -1 -1 -1 100
+Reset M 57247 1 57223 -1 -1 -1 100
+Reset M 57248 1 57223 -1 -1 -1 100
+Reset M 57249 1 57223 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      57224
+Name      Valandra's Office~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &YValandra's office has been furnished in all of the best of yellow 
+and &Ro&Ora&Rng&Ois&Rh&Y furniture. A few paintings of sunsets and sunrises 
+compliment the yellow painted room as well; however, her 
+desk is made of &rre&Od&rd&Ois&rh&Y cedar to ward off the moths that may
+come to eat her very important documents contained within it. 
+On the wall behind the desk is a framed certificate saying that 
+she passed Auguerer's training with top marks.
+~
+#EXIT
+Direction south~
+ToRoom    57230
+Desc      A huge waiting room
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 57200 1 57224 -1 -1 -1 100
+  Reset E 57201 1 7 100
+Reset D 57224 2 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57225
+Name      The main part of the Greenhouse~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      &gIn the back of the greenhouse is where most of all the dirty work gets done.
+An entire wall of the greenhouse is devoted to housing the various types of
+soils and manures in order to pot the plants in their favorite natural
+habitats. Rows upon rows of pots and barrels line the floor ready to house
+new resident plants in them and later be planted outside or sold to bring
+profit to the school. Most of the plants in here are unusual and a few of
+them are potted inside of cages to keep unwary students away.
+~
+#EXIT
+Direction north~
+ToRoom    57223
+Desc      A small Classroom
+~
+#ENDEXIT
+
+Reset O 57212 1 57225 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      57226
+Name      Zann's Office~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &CLike the classroom downstairs a healing light &Bblue&C glow 
+washes through the room; however it is not nearly as brilliant. 
+Zann keeps his room a tidy affair but is very liberal when it 
+comes dust collectors, mainly pictures of Liz, his girl back 
+home, that cover all the shelf space wherever there isn't some 
+kind of medical tome listing the cures for faerie foot fungus or 
+nasal troll warts. A bright &Rred&C light hovers in the air that 
+compliments most of the room and illuminates all the places 
+where the &Bblue&C glow doesn't reach.
+~
+#EXIT
+Direction southwest~
+ToRoom    57230
+Desc      A huge waiting room
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 57201 1 57226 -1 -1 -1 100
+  Reset E 57202 1 9 100
+Reset D 57226 9 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57227
+Name      The Dining Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThe dining hall is easily the largest room in the school. Spanning to the
+north are two gigantic dining tables covered in a mass of food. Plush
+mahogany chairs with &Rred&O velvet cusions line themselves next to the tables
+marking just how well off the students at this school seem to be. At the
+end of each table, though, are hard &zmetallic&O chairs that are raised very
+high compared to the comfortable looking ones and sport the word "dunce"
+at the top, well above where a student's head might rest. Stained-glass
+windows on the east wall depict not only the students' feasting on grand
+delicacies but those stuck in the dunce chairs struggling to reach the
+food on the table.
+~
+#EXIT
+Direction north~
+ToRoom    57231
+Desc      More smells of food
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57229
+Desc      A small kitchen
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57211
+Desc      To the Main Hall
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57228
+Name      Third Floor Landing~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OPaintings of all the past and present teachers line the walls here 
+on the landing. Each was painted in the particular style of its 
+time ranging from simple stick figure cavemen from days of 
+old to picturesque wand drawn photographs of those from a 
+more modern time. The largest stained-glass window lies on 
+the eastern wall looking out onto the courtyard, it depicts the 
+most famous and wisest of headmasters of the school with a 
+cane in one hand and an iron maiden in the background.
+~
+#EXIT
+Direction east~
+ToRoom    57230
+Desc      A huge waiting room
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    57243
+Desc      Back to the first floor
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57229
+Name      Kitchen~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThis windowless environment sports five fireplaces and three sinks where
+the students who have been caught misbehaving are required to spend the
+entire dinner in making food without the aid of magic. Needless to say
+the majority of the students banished here to spend out their dinner are
+quite without enthusiasm for cooking the meals that their fellow students
+eat and are not above spitting or flicking boogers into their meal. To
+prevent such occurances a wicker switch hangs from the ceiling with a
+bold red warning.  &RYe have been warned!&D
+~
+#EXIT
+Direction north~
+ToRoom    57227
+Desc      Smells of Food
+~
+#ENDEXIT
+
+Reset M 57207 1 57229 -1 -1 -1 100
+  Reset E 57207 1 1 100
+  Reset E 57206 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      57230
+Name      Waiting Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OA large &rfi&Rre&Ypl&Wac&we&O situates itself in the middle of the room 
+providing warmth to the offices around it and the waiting 
+students and parents sitting in one of the various couches and 
+chairs spread about the room. Because the room is windowless 
+a shimmering ball of &Ylight&O dangles from the ceiling on a thin 
+almost invisible strand of gossamer to illuminate what might have
+otherwise been unseen.
+~
+#EXIT
+Direction north~
+ToRoom    57224
+Desc      A bright yellow office
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    57232
+Desc      A drab grey office
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57240
+Desc      A colorful lounge
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57228
+Desc      Towards the stairs
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    57226
+Desc      A bright blue office
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    57220
+Desc      A brilliant white office
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    57242
+Desc      A stormy humid office
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    57233
+Desc      An office with many plants inside
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57231
+Name      The Dining Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThe dining hall is easily the largest room in the school. Spanning to the
+south are two gigantic dining tables covered in a mass of food. Plush
+mahogany chairs with &Rred&O velvet cusions line themselves next to the tables
+marking just how well off the students at this school seem to be. At the
+end of each table, though, are hard &zmetallic&O chairs that are raised very
+high compared to the comfortable looking ones and sport the word "dunce"
+at the top, well above where a student's head might rest. Stained-glass
+windows on the east wall depict not only the students' feasting on grand
+delicacies but those stuck in the dunce chairs struggling to reach the
+food on the table.
+~
+#EXIT
+Direction south~
+ToRoom    57227
+Desc      Smells of Food
+~
+#ENDEXIT
+
+Reset O 57215 1 57231 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      57232
+Name      Nasedo's Office~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &wA particularly drab off-white colored room, Nasedo prefers the 
+neutrality that being a mage can offer him. &zBlack&w and &Wwhite&w 
+student pencil sketches line the walls offers a little spark to this 
+room but not much. His desk, a shiny &Wwhite&w color, does little to 
+brighten up the room. The best feature by far would be the 
+stained-glass window on the east wall that changes colors all 
+on its own. When the sun comes up in the morning light goes 
+through the window and splashes the whole room in &Cd&Ra&Gz&Yz&Pl&Bi&Wn&pg&w 
+random colors.
+~
+#EXIT
+Direction west~
+ToRoom    57230
+Desc      A huge waiting room
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 57202 1 57232 -1 -1 -1 100
+  Reset G 57203 1 100
+Reset D 57232 3 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57233
+Name      Kyle's Office~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &GKyle, new to the world of magic has just recently developed his 
+ability to harness his powers. A firm believer of eastern 
+thought he has kept this office as natural as possible. His desk 
+is made of a deep &Rre&rdd&ris&Rh&G mahogany wood, and the chairs are 
+lined with deep moss colored velvet. The floor has a deep 
+&ggreen&G shag rug that looks and smells a bit too much like dirt 
+and grass that it might very well be. A window behind his desk 
+looks out on the courtyard that he has his students work into 
+perfection.
+~
+#EXIT
+Direction northeast~
+ToRoom    57230
+Desc      A huge waiting room
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 57204 1 57233 -1 -1 -1 100
+  Reset E 57205 1 3 100
+Reset D 57233 6 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57234
+Name      Second Floor Landing~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OEach stair is made of a deep &rreddish&O wood that has been smoothed by
+centuries of students and teachers going up and down to their respective 
+destinations. Even with the apparent wear, gold and silver flecks seem to be
+almost weaved into the woodwork magically. The banisters of such a magnificent
+piece of stair artistry are made of ivory with a soft gold band spiraling up
+inlaid with &Rcrimson&O colored garnets and deep &bazure&O sapphires. Looking
+down you can see the entry hall and just barely out the door to the
+&gcourtyard &Ooutside.
+~
+#EXIT
+Direction east~
+ToRoom    57236
+Desc      A long hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    57209
+Desc      Back to the first floor
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57235
+Name      Second Floor Landing~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OEach stair is made of a deep &rreddish&O wood that has been smoothed by
+centuries of students and teachers going up and down to their respective 
+destinations. Even with the apparent wear, gold and silver flecks seem to be
+almost weaved into the woodwork magically. The banisters of such a magnificent
+piece of stair artistry are made of ivory with a soft gold band spiraling up
+inlaid with &Rcrimson&O colored garnets and deep &bazure&O sapphires. Looking
+down you can see the entry hall and just barely out the door to the
+&gcourtyard&O outside.
+~
+#EXIT
+Direction east~
+ToRoom    57238
+Desc      A long hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    57210
+Desc      Back to the first floor
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57236
+Name      Second Floor Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OStretching far to the south the second floor hallways is just 
+barely shorter than the main hall downstairs. Plush &Ggreen&O
+benches and small tables line the walls where students can take 
+a small break without needing to return to bustle in the 
+common room and a great &rfi&Rre&Ypl&Wace&O is to the North warming 
+and illuminating the hallway. Runic-scrawl graffiti covers the 
+walls near the benches announcing recent &Pro&Rma&Pnt&Ric&O relations to 
+peers and how the teachers look funny and other typical 
+childish gossip.
+~
+#EXIT
+Direction south~
+ToRoom    57237
+Desc      A long hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57234
+Desc      A grand staircase
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57237
+Name      Second Floor Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OStretching far to the south and a bit to the north the second 
+floor hallway is just barely shorter than the main hall
+downstairs. Plush &Ggreen&O benches and small tables line the walls 
+where students can take a small break without needing to return 
+to bustle in the common room to the East here. Runic-scrawl 
+graffiti covers the walls near the benches announcing recent 
+&Pro&Rma&Pnt&Ric&O relations to peers and how the teachers look funny 
+and other typical childish gossip.
+~
+#EXIT
+Direction north~
+ToRoom    57236
+Desc      A long hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    57246
+Desc      Towards the common room
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57238
+Desc      A long hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57243
+Desc      A spiral staircase leading up
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57238
+Name      Second Floor Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThe second floor hallway is at a midpoint here. To the North 
+and east is the common room where the students spend much 
+of the time relaxing or doing homework when not in the 
+garden. To the south are the headmaster's office and the last 
+remaining magic class. &GPlush&O green benches and small tables 
+still line the walls where students can take a small break 
+without needing to return to bustle in the common room to the 
+east here. Another gigantic &rfi&Rre&Ypl&Wace&O was placed to offer a bit of 
+warmth to the somewhat chilly and drafty school.
+~
+#EXIT
+Direction north~
+ToRoom    57237
+Desc      A long hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57239
+Desc      A long hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57235
+Desc      A grand staircase
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57239
+Name      Second Floor Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThe hallway's far South end lies here with yet another &rfi&Rre&Ypl&Wace&O 
+keeping the upper floor here warm during the chill winters and 
+offering illumination during the night. The headmaster's office 
+is just off to the West behind a heavy looking &Rred&O door with the 
+message &rKEEP OUT!!&O inscribed into the wood. The last class in 
+the school lies to the East giving those following the path of a 
+sorcerer plenty of casting room for all of their &Yenergy&O and 
+&cw&Be&wa&ct&Bh&we&cr&O based spells that they do.
+~
+#EXIT
+Direction north~
+ToRoom    57238
+Desc      A long hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    57244
+Desc      A small classroom
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57241
+Desc      A spotless office
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 57239 1 1 100 -2
+Reset D 57239 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57240
+Name      Teacher's Lounge~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OA home away from home the teacher's lounge offers almost all 
+the comforts that people who work here have come to expect. 
+&GGreen&O, healthy plants hang from the vaulted ceiling, which is 
+nearly invisible behind swirling &cr&za&ci&zn&O clouds. &YYellow&O furniture 
+offers a place for teachers to relax or read one of the many 
+books on the light &Cblue&O shelves. Finally, a large &Wwhite&O table 
+with six sets of &wsilverwear&O sits in the middle of the room where 
+food can be ordered up for hungry staff.
+~
+#EXIT
+Direction north~
+ToRoom    57230
+Desc      A huge waiting room
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57241
+Name      Headmaster's Office~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OWith military precision the office has been meticulously
+cleaned of every dust particle, stray paper, and lost hairs from 
+the headmaster's balding head. All of the furniture seems like it 
+has been mathematically placed equal and level distances as to 
+remain functional but yet rather inhuman. The small &rfi&Rre&Ypl&Wace&O 
+in the Western wall gives off a soft glow from the equal in 
+length firewood kindling inside. The windows on either side of 
+the fireplace would look out into the courtyard if they had not 
+been shuttered up to make sure that no dirt comes in through 
+them.
+~
+#EXIT
+Direction east~
+ToRoom    57239
+Desc      A long hallway
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 57206 1 57241 -1 -1 -1 100
+Reset D 57241 1 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57242
+Name      Kavar's Office~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &cOddly enough the humidity in this room seems to be far higher 
+than the rest of the school. Looking up shows the cause, a thick 
+mass of &zgrey&c thunderclouds circle the ceiling throwing off a 
+light shower of &zr&wa&zi&wn&c creates a moisture level in here to contest 
+any jungle. With all the &zr&wa&zi&wn&c, though, everything in the room 
+has been enchanted to keep things dry and safe. Small &Ylightning&c
+sparks get thrown out of the clouds once and a while striking 
+the protective &Rrubies&c embedded in the wall to ensure the school 
+doesn't burn down.
+~
+#EXIT
+Direction northwest~
+ToRoom    57230
+Desc      A huge waiting room
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 57203 1 57242 -1 -1 -1 100
+  Reset E 57204 1 10 100
+Reset D 57242 7 0 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57243
+Name      Spiral Staircase~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OA marvel in exuberance and in simplicity another staircase lies 
+here spiraling steeply up to the third floor where the teacher's 
+offices may be found. For such simple stairs the banister that 
+spirals up the stairs with it is another story. Made of a bright,
+shimmering, &Cblue&O light it illuminates the stairs as it serves as it 
+also serves as a handhold for teachers and students to safely 
+scale the stairs.
+~
+#EXIT
+Direction east~
+ToRoom    57237
+Desc      A long hallway
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    57228
+Desc      Towards the third floor
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57244
+Name      Sorcerer's Classroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &zCharred black with the constant fires and lighting strikes this 
+classroom creates a vile assault to the senses. Snakes and eels are 
+pickled in jars and a small pile of bones lie in the corner from 
+when the students' spells "accidentally" killed their specimens. 
+An eerie light comes out of &rred&z stones embedded in the walls to 
+prevent the whole school from erupting in a great wave of 
+&Rf&rl&Ra&rm&Re&rs&z from a student's uncontrolled blast of fire. The few 
+desks that remain intact have the words, Pain, Death, 
+Destruction, cut deeply into the wood.
+~
+#EXIT
+Direction west~
+ToRoom    57239
+Desc      A long hallway
+~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 57236 1 57244 -1 -1 -1 100
+Reset M 57237 1 57244 -1 -1 -1 100
+Reset M 57238 1 57244 -1 -1 -1 100
+Reset M 57239 1 57244 -1 -1 -1 100
+Reset M 57240 1 57244 -1 -1 -1 100
+Reset M 57241 1 57244 -1 -1 -1 100
+Reset M 57242 1 57244 -1 -1 -1 100
+Reset D 57244 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      57245
+Name      Boys' Dormitory~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &cThe beds in the boy's dormitory are all shoved against the 
+&wwalls and one of them was even accidentally bewitched to 
+&chover over the room. Using the hovering bed to their advantage 
+&wthe boys have constructed a simple fort in the middle of the 
+&croom using all the bed sheets to make a roof over it and a 
+&wmakeshift carpet.  A window that looks out over the land 
+&cbeyond the school grounds to the far East has a small bench 
+&wunder it for someone to sit in and reflect on whatever might be 
+&cgoing on. Using manly fashion sense the young lads have decided
+&wto paint the room using a neutral blue and white striped motif.
+~
+#EXIT
+Direction north~
+ToRoom    57246
+Desc      Back into the common room
+~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if sex($n) == 2
+mea $n _whi This is the boys room! Out!!!
+mpforce $n north
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      57246
+Name      Common Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &OThe common room not only sports perhaps the largest &rfi&Rre&Ypl&Wace&O 
+in the school inlaid into the Eastern wall, the only floor that has 
+a thick &rred&O rug, but  magical floating &Ggreen&O, &Bblue&O, and &Ppink&O 
+globes of light that harmlessly bounce off the walls and chairs 
+to entertain the people. Students come to relax in the cushy &Rred&O 
+arm chairs next to the &rfi&Rre&Ypl&Wace&O, do their homework on one of 
+the many &Ygolden&O tables against the walls or just play a good 
+game of hit the &Bc&Go&Pl&Bo&Gr&O balls off the wall. The dormitories lie to 
+the North and South and are strictly gender restricted. 
+~
+#EXIT
+Direction north~
+ToRoom    57247
+Desc      A wretchedly pink room
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    57245
+Desc      A blue and grey room
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    57237
+Desc      A long hallway
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      57247
+Name      Girls' Dormitory~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      &pLace &Pcurtains, &phideous &Ppink&p and &Yyellow&P bed&p spreads&P and 
+&pstuffed, &Pbaby &panimals &Pmark &pthe &PGirls' &pDormitory. &PThe 
+&pwalls&P have &pbeen&P painted&p an&P oppressive &ppurple &Ppink &pcolor 
+&Pand &peven &Pthe &pchandelier &Pthat &phangs &Pfrom &pthe &Pceiling &phas 
+&Pbeen&p decorated&P with &Yyellow&p and&R red&P roses&p to&P add&p even
+&Pmore&p horrible &Pfeminine&p feeling&P to&p the&P room. &pA &Psmall &Wmarble
+&pfountain &Pof&p Cupid&P stands&p on&P a&p pillar&P in&p the&P center&p of
+&Pthe&p room&P where &pgirls&P can&p throw&P coins&p into&P and&p hope&P to 
+&pdate&P that&p certain&P someone&p living&P in&p the &BBoy's Dormitories&P to
+&pthe&P south.
+~
+#EXIT
+Direction south~
+ToRoom    57246
+Desc      Back into the common room
+~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if sex($n) < 2
+mea $n _whi Girls start screaming at you!
+mpsleep 3
+mea $n _whi You run out, ducking for brushes flying your way.
+mpforce $n south
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      57248
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
+#ENDROOM
+
+#ROOM
+Vnum      57249
+Name      void~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+#ENDROOM
+
+#ENDAREA

@@ -1,0 +1,1115 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Yggdrasil~
+Author          Glop~
+Vnums           9900 9923
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          15 50 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      9900
+Keywords  hollyphant~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a Hollyphant~
+Long      A Hollyphant is delivering a message here.
+~
+Desc      It looks like a large, winged, furry elephant.  It emits an
+aura of goodness.
+~
+Nattacks  0.000000
+Stats1    1000 2600 0 0 0 0
+Stats2    16 21 -100 25 3 8 11
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9901
+Keywords  planetar~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a planetar~
+Long      A planetar is here watching out for his master's interest.
+~
+Desc      Humanoid in appearance, the planetar has wings and is
+hairless.  He is on a mission from his deity.
+~
+Nattacks  0.000000
+Stats1    900 10000 0 0 0 0
+Stats2    30 21 -200 500 4 10 5
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9902
+Keywords  shedu~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a Shedu~
+Long      A Shedu is here fighting evil.
+~
+Desc      Half man, half beast.  The Shedu is out looking for evil
+anywhere it may be and it will hunt down until death is the
+result.
+~
+Nattacks  0.000000
+Stats1    850 200 0 0 0 0
+Stats2    25 21 -180 470 6 7 6
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_hidden detect_traps~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9903
+Keywords  dretch demon~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a dretch~
+Long      A dretch is here slobbering on you.
+~
+Desc      A pathetic, slobbering thing.  The dretch is constantly
+picked on by its more powerful, demon brothers.
+~
+Nattacks  0.000000
+Stats1    -800 1000 0 0 0 0
+Stats2    10 21 0 140 2 15 5
+Speaking  common~
+Actflags  npc scavenger stayarea wimpy~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9904
+Keywords  chasme fly demon~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a chasme~
+Long      A chasme is flying around here.
+~
+Desc      The chasme or fly demon is half-human and half-fly.  They
+don't like anyone, not even other demons.
+~
+Nattacks  0.000000
+Stats1    -900 2000 0 0 0 0
+Stats2    20 21 -120 310 3 10 7
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9905
+Keywords  babau ebony~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a babau~
+Long      A babau is standing here looking for food.
+~
+Desc      The babau or one-horned horror is a demon of considerable
+fright.  He appears a skeleton with a black leather jumpsuit
+on.  He is constantly searching for flesh to eat.
+~
+Nattacks  0.000000
+Stats1    -1000 4500 0 0 0 0
+Stats2    15 21 -140 225 5 7 0
+Speaking  common~
+Actflags  npc stayarea~
+Affected  sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9906
+Keywords  yagnodemon demon~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a yagnodemon~
+Long      A yagnodemon is here flexing his giant-sized arm.
+~
+Desc      The yagnodemon has one man-sized and one giant-sized arm. 
+With the giant-sized arm it can wield huge weapons.  He is
+not in a good mood right now.
+~
+Nattacks  0.000000
+Stats1    -950 10000 0 0 0 0
+Stats2    25 21 -140 400 4 6 12
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  detect_invis detect_magic detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9907
+Keywords  kostchtchie demon kost~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     Kostchtchie~
+Long      Kostchtchie is here resting on his journey of evil.
+~
+Desc      Kostchtchie a powerful demon lord is here.  Obviously
+derived from giant stock, he is very powerful.  And he does
+not like to be interrupted.
+~
+Nattacks  0.000000
+Stats1    -1000 75000 0 0 0 0
+Stats2    40 21 -280 700 4 10 15
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9908
+Keywords  nabassu demon~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a nabassu~
+Long      A nabassu is here looking to upgrade his status.
+~
+Desc      A tall, thin demon, the nabassu are very bat-like in
+appearance.  He seems to have an intense interest in you.
+~
+Nattacks  0.000000
+Stats1    -950 12500 0 0 0 0
+Stats2    15 21 -90 240 6 5 2
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9909
+Keywords  dragon cloud~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_gas~
+Short     a cloud dragon~
+Long      A cloud dragon is here wanting to be left alone.
+~
+Desc      This dragon is as large as a red dragon, but does not like
+to get involved in the struggle between good and evil.  It
+wants to be left alone.
+~
+Nattacks  0.000000
+Stats1    0 50000 0 0 0 0
+Stats2    35 21 -230 650 10 3 12
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9910
+Keywords  solar~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a solar~
+Long      A solar is here contemplating the fight against evil.
+~
+Desc      A beautiful being, the solar is totally dedicated to the
+continuation of the good beings.
+~
+Nattacks  0.000000
+Stats1    1000 30000 0 0 0 0
+Stats2    35 21 -220 650 10 4 10
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis detect_hidden sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9911
+Keywords  wemic~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a wemic~
+Long      A wemic is hunting here.
+~
+Desc      Part man, part lion, and part horse; the wemic is a creature
+not to be taken lightly.
+~
+Nattacks  0.000000
+Stats1    100 1000 0 0 0 0
+Stats2    10 21 -40 180 3 6 4
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9912
+Keywords  frost giant~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a frost giant~
+Long      A frost giant is here looking for treasure.
+~
+Desc      Large members of the giant family, the frost giants are
+ravenous collectors of treasure.  They don't like to share
+this treasure with anyone.
+~
+Nattacks  0.000000
+Stats1    -300 100000 0 0 0 0
+Stats2    25 21 -140 400 3 12 5
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9913
+Keywords  gorgimera~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_any~
+Short     a gorgimera~
+Long      A gorgimera is here flexing its wings.
+~
+Desc      This three-headed monster is waiting to rip the head off of
+its latest victim to add to its collection.  Watch out for
+that breath attack.
+~
+Nattacks  0.000000
+Stats1    -750 25000 0 0 0 0
+Stats2    20 21 -100 330 4 5 10
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      9914
+Keywords  ratatosk~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     Ratatosk~
+Long      Ratatosk is here delivering the Gods' messages.
+~
+Desc      You see a giant squirrel carrying greetings and tidings from
+the various deities residing in these realms.  He does not
+want to be delayed in his task.
+~
+Nattacks  0.000000
+Stats1    200 5000 0 0 0 0
+Stats2    35 21 -230 600 10 7 1
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  detect_evil detect_invis detect_hidden sanctuary~
+#ENDMOBILE
+
+#OBJECT
+Vnum      9900
+Keywords  polearm body wrecker~
+Type      weapon~
+Short     a body-wrecker~
+Long      A body-wrecker polearm lies here.~
+WFlags    take~
+Values    0 4 6 11 0 0 0 0 0 0 0
+Stats     27 30000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      9901
+Keywords  hammer iron~
+Type      weapon~
+Short     a huge hammer of cold iron~
+Long      A hammer of iron with silver and nickel detail lies here.~
+Flags     evil~
+Values    0 3 10 7 0 0 0 0 0 0 0
+Stats     25 100000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      9902
+Keywords  bastard sword~
+Type      weapon~
+Short     a holy bastard sword~
+Long      A beautiful sword lies on the ground here.~
+Flags     glow~
+Values    0 4 5 3 0 0 0 0 0 0 0
+Stats     19 76000 -2 1 0 None None None
+AffData hit 25 -1 -1 0
+AffData save_spell 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      9903
+Keywords  looking glass~
+Type      staff~
+Short     a looking glass~
+Long      A looking glass lies here.~
+Flags     magic~
+WFlags    take~
+Values    10 10 10 -1 0 0 0 0 0 0 0
+Stats     2 4000 -2 1 0 None None None
+Spells       'detect invis'
+#ENDOBJECT
+
+#OBJECT
+Vnum      9904
+Keywords  cloudy staff~
+Type      staff~
+Short     a cloudy glass staff~
+Long      A staff made of cloudy glass lies here.~
+Flags     invis~
+WFlags    take~
+Values    10 8 4 -1 0 0 0 0 0 0 0
+Stats     4 5000 -2 1 0 None None None
+Spells       'sleep'
+#ENDOBJECT
+
+#OBJECT
+Vnum      9905
+Keywords  crystal sleeves~
+Type      armor~
+Short     a set of sleeves of crystal~
+Long      Some sleeves made of crystal lie here.~
+Flags     invis~
+WFlags    take~
+Values    20 0 0 0 0 0 0 0 0 0 0
+Stats     10 50000 -2 1 0 None None None
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      9906
+Keywords  sparkling green potion~
+Type      potion~
+Short     a sparkling green potion~
+Long      A green potion is lying here sparkling.~
+Flags     glow~
+Values    10 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 5000 -2 1 0 None None None
+Spells       'detect evil' 'detect invis' 'detect magic'
+#ENDOBJECT
+
+#OBJECT
+Vnum      9907
+Keywords  paper triangle~
+Type      scroll~
+Short     a paper triangle~
+Long      A piece of paper in the shape of a triangle is here.~
+Flags     invis~
+WFlags    take~
+Values    50 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 3500 -2 1 0 None None None
+Spells       'armor' 'bless' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      9908
+Keywords  hollyphant tusk~
+Type      wand~
+Short     a hollyphant tusk~
+Long      A tusk of a hollyphant lies here.~
+Flags     glow~
+Values    10 15 10 -1 0 0 0 0 0 0 0
+Stats     1 1000 -2 1 0 None None None
+Spells       'dispel evil'
+#ENDOBJECT
+
+#OBJECT
+Vnum      9909
+Keywords  girth cast iron~
+Type      armor~
+Short     a cast iron girth~
+Long      A cast iron girth lies here.~
+Flags     hum~
+WFlags    take~
+Values    45 0 0 0 0 0 0 0 0 0 0
+Stats     10 4000 -2 1 0 None None None
+AffData wisdom -4 -1 -1 0
+#ENDOBJECT
+
+#ROOM
+Vnum      9900
+Name      The Entrance to Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This is the entrance to Yggdrasil, the World Ash.  Through
+this tree are conduits to many other planes of existence.  The way back
+to the forest is to the north.
+~
+#EXIT
+Direction north~
+ToRoom    10030
+Desc      You see the way back to the forest.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    9901
+Desc      You see the trunk rising up into the sky.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9907
+Desc      You see the trunk descending down into the depths of the
+earth.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9901
+Name      The Trunk of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are traveling in Yggdrasil, the World Ash.  Who knows
+what other travelers you may encounter.
+~
+#EXIT
+Direction up~
+ToRoom    9902
+Desc      The trunk continues to go up here.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9900
+Desc      The entrance to the tree is below.
+~
+#ENDEXIT
+
+Reset M 9911 10 9901 -1 -1 -1 100
+  Reset G 9903 99 100
+#ENDROOM
+
+#ROOM
+Vnum      9902
+Name      The Lower Trunk of Yggrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the lower reaches of Yggdrasil.  The tree top
+cannot be seen.  Lesser astral travelers can be seen moving
+about.
+~
+#EXIT
+Direction north~
+ToRoom    9903
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9906
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9911
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9905
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    9917
+Desc      The trunk continues up the tree.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9901
+Desc      The way down the tree is this way.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9903
+Name      A Lower Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the lower level of Yggdrasil.
+~
+#EXIT
+Direction south~
+ToRoom    9902
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+Reset M 9905 10 9903 -1 -1 -1 100
+Reset M 9905 10 9903 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9904
+Name      The Crest of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on the top of the World Ash.  You can see in the
+distance many realms and dimensions.  This is definitely a
+crossroads to the gods.
+~
+#EXIT
+Direction down~
+ToRoom    9918
+Desc      The way down the trunk of Yggdrasil lies this way.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9905
+Name      A Lower Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the lower level of Yggdrasil.
+~
+#EXIT
+Direction east~
+ToRoom    9902
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9906
+Name      A Lower Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the lower level of Yggdrasil.
+~
+#EXIT
+Direction west~
+ToRoom    9902
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+Reset M 9904 8 9906 -1 -1 -1 100
+Reset M 9904 8 9906 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9907
+Name      The Roots of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are under the ground among the roots of Yggdrasil.  You
+sense a greater preponderance of evil in this area.  Your
+fellow travelers also tend to be of the evil persuasion.
+~
+#EXIT
+Direction north~
+ToRoom    9923
+Desc      The roots lead off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9909
+Desc      The roots lead off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9908
+Desc      The roots lead off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9910
+Desc      The roots lead off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    9900
+Desc      The entrance to the tree is in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9912
+Desc      The deepest part of the tree is down here.
+~
+#ENDEXIT
+
+Reset M 9903 10 9907 -1 -1 -1 100
+Reset M 9903 10 9907 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9908
+Name      The Roots of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the roots of the great tree.  Many odd creatures
+can be seen and felt wandering in the area.
+~
+#EXIT
+Direction north~
+ToRoom    9907
+Desc      The roots continue in this direction.
+~
+#ENDEXIT
+
+Reset M 9907 1 9908 -1 -1 -1 100
+  Reset E 9901 30 16 100
+#ENDROOM
+
+#ROOM
+Vnum      9909
+Name      The Roots of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the roots of the great tree.  Many odd creatures
+can be seen and felt wandering in the area.
+~
+#EXIT
+Direction west~
+ToRoom    9907
+Desc      The roots continue in this direction.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9910
+Name      The Roots of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the roots of the great tree.  Many odd creatures
+can be seen and felt wandering in the area.
+~
+#EXIT
+Direction east~
+ToRoom    9907
+Desc      The roots continue in this direction.
+~
+#ENDEXIT
+
+Reset M 9912 6 9910 -1 -1 -1 100
+  Reset G 9909 99 100
+Reset M 9912 6 9910 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9911
+Name      A Lower Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the lower level of Yggdrasil.
+~
+#EXIT
+Direction north~
+ToRoom    9902
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+Reset M 9908 8 9911 -1 -1 -1 100
+  Reset G 9906 99 100
+Reset M 9908 8 9911 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9912
+Name      The Deepest Roots of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are at the tree's deepest point.  Looking down from here
+you can almost see the foul and evil realms of the followers
+of evil.  You can faintly hear the screams of their tortured
+victims.
+~
+#EXIT
+Direction up~
+ToRoom    9907
+Desc      You see the roots of the tree continue in this direction.
+~
+#ENDEXIT
+
+Reset M 9913 2 9912 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9913
+Name      A Middle Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the middle level of Yggdrasil.
+~
+#EXIT
+Direction east~
+ToRoom    9917
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+Reset M 9902 6 9913 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9914
+Name      A Middle Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the middle level of Yggdrasil.
+~
+#EXIT
+Direction south~
+ToRoom    9917
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+Reset M 9900 6 9914 -1 -1 -1 100
+  Reset G 9908 80 100
+Reset M 9900 6 9914 -1 -1 -1 100
+  Reset G 9908 80 100
+#ENDROOM
+
+#ROOM
+Vnum      9915
+Name      A Middle Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the middle level of Yggdrasil.
+~
+#EXIT
+Direction west~
+ToRoom    9917
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+Reset M 9909 1 9915 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9916
+Name      A Middle Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the middle level of Yggdrasil.
+~
+#EXIT
+Direction north~
+ToRoom    9917
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+Reset M 9912 6 9916 -1 -1 -1 100
+  Reset G 9907 99 100
+Reset M 9912 6 9916 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9917
+Name      The Middle Trunk of Yggrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the middle parts of Yggdrasil.  The tree top
+still cannot be seen.  Many travelers are passing you in
+fulfillment of their quests.
+~
+#EXIT
+Direction north~
+ToRoom    9914
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9915
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9916
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9913
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    9918
+Desc      The trunk continues towards the heavens.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9902
+Desc      The way down the tree is this way.
+~
+#ENDEXIT
+
+Reset M 9911 10 9917 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9918
+Name      The Upper Trunk of Yggrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the topmost section of Yggdrasil.  The tree top
+is just above you.  Great power can be sensed in this area. 
+There is also goodness here.
+~
+#EXIT
+Direction north~
+ToRoom    9921
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    9922
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9919
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    9920
+Desc      A limb branches off in this direction.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    9904
+Desc      The top of the tree can be seen here.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    9917
+Desc      The way down the tree is this way.
+~
+#ENDEXIT
+
+Reset M 9914 1 9918 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      9919
+Name      An Upper Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the upper level of Yggdrasil.
+~
+#EXIT
+Direction north~
+ToRoom    9918
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      9920
+Name      An Upper Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the upper level of Yggdrasil.
+~
+#EXIT
+Direction east~
+ToRoom    9918
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+Reset M 9902 6 9920 -1 -1 -1 100
+  Reset G 9904 99 100
+#ENDROOM
+
+#ROOM
+Vnum      9921
+Name      An Upper Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the upper level of Yggdrasil.
+~
+#EXIT
+Direction south~
+ToRoom    9918
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+Reset M 9910 1 9921 -1 -1 -1 100
+  Reset G 9905 80 100
+#ENDROOM
+
+#ROOM
+Vnum      9922
+Name      An Upper Branch of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a limb on the upper level of Yggdrasil.
+~
+#EXIT
+Direction west~
+ToRoom    9918
+Desc      The main trunk is in this direction.
+~
+#ENDEXIT
+
+Reset M 9901 1 9922 -1 -1 -1 100
+  Reset E 9902 99 16 100
+#ENDROOM
+
+#ROOM
+Vnum      9923
+Name      The Roots of Yggdrasil~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the roots of the great tree.  Many odd creatures
+can be seen and felt wandering in the area.
+~
+#EXIT
+Direction south~
+ToRoom    9907
+Desc      The roots continue in this direction.
+~
+#ENDEXIT
+
+Reset M 9906 4 9923 -1 -1 -1 100
+  Reset E 9900 99 16 100
+Reset M 9906 4 9923 -1 -1 -1 100
+  Reset E 9900 99 16 100
+#ENDROOM
+
+#ENDAREA

@@ -1,0 +1,100 @@
+107 SLAY SLA~
+Syntax: slay <victim> [option]
+ 
+SLAY kills a character in cold blood, no saving throw.
+ 
+To see the current list of options, type slay with no argument.
+ 
+Slay bypasses auto actions such as autoloot and autosac.  Slay should not
+be used to test death_programs on mobs, as it is not the same as an actual
+death to the mobile and may not return accurate results.
+
+Slay types can now be edited online for easier configuration of
+personalized options.
+
+See also: MAKESLAY, DESTROYSLAY, SETSLAY, SHOWSLAY
+~
+
+114 DESTROYSLAY~
+Syntax: destroyslay <type>
+
+This command deletes a slay type from the table of options.
+
+See also: SETSLAY, SHOWSLAY, MAKESLAY, SLAY
+~
+
+107 MAKESLAY~
+Syntax: makeslay <type>
+
+This command creates a new slaytype and sets it up with default options.
+Once created, it can then be edited using the online slay editor.
+
+See also: DESTROYSLAY, SETSLAY, SHOWSLAY, SLAY
+~
+
+107 SETSLAY~
+Syntax: setslay <type> <field> <value>
+
+This command allows you to set the options on a slay type.
+
+<Type> is the command argument for the SLAY command, and identifies which
+slay you will be editing.
+
+Field can be one of the following:
+
+Owner - The person who owns this option. Setting owner to 'any' means any
+        immortal with access to SLAY can use it.
+Color - Numerical value for the color of the messages sent.
+        For now, use color 12 until a better method for setting colors
+        can be found.
+Cmessage - You will be put into the line editor to enter the message the
+           user of the SLAY command will see.
+Vmessage - You will be put into the line editor to enter the message the
+           victim will see when slain.
+Rmessage - You will be put into the line editor to enter the message the
+           rest of the people in the room will see when someone is slain.
+
+The slay editor uses the same variables as the social editor and the
+mudprograms. See VARIABLES.
+
+See also: SHOWSLAY, MAKESLAY, DESTROYSLAY, SLAY
+~
+
+107 SHOWSLAY~
+Syntax: showslay <type>
+
+This command shows the current settings for the selected slaytype.
+
+The slaytype is the command argument for the SLAY command.
+The owner is the person who can use the option, owner 'any' means any
+immortal with access to slay can use it.
+The color is the numerical value for the color of the messages.
+Cmessage is what the user sees when they slay someone.
+Vmessage is what the victim sees when slain.
+Rmessage is what everyone else in the rooms sees.
+
+The slay editor uses the same variables as the social editor and the
+mudprograms. See VARIABLES.
+
+An example listing:
+
+Slaytype: demon
+Owner:    Any
+Color:    12
+Cmessage: 
+You gesture, and a slavering demon appears.
+With a horrible grin, the foul creature turns on
+$N, who screams in panic before being eaten alive!
+
+Vmessage: 
+$n gestures, and a slavering demon appears.
+The foul creature turns on you with a horrible grin.
+You scream in panic before being eaten alive!
+
+Rmessage: 
+$n gestures, and a slavering demon appears.
+With a horrible grin, the foul creature turns on
+$N, who screams in panic before being eaten alive!
+
+See also: MAKESLAY, DESTROYSLAY, SETSLAY, SLAY
+~

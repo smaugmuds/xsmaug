@@ -1,204 +1,189 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Graveyard~
-Author       Alfa~
-WeatherX     0
-WeatherY     0
-Ranges       5 10 0 60
-Economy      0 9999180
+Version         1
+Name            Graveyard~
+Author          Alfa~
+Vnums           3600 3651
+Continent       one~
+Coordinates     0 0
+Dates           1403834970 1403834970
+Ranges          5 10 0 60
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       3600
-Keywords   henry gardener~
-Short      Henry the Gardener~
-Long       Henry the Gardener is sitting here, looking drunk.
+Vnum      3600
+Keywords  henry gardener~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     Henry the Gardener~
+Long      Henry the Gardener is sitting here, looking drunk.
 ~
-Desc       He is a tall but bulky man in his late fifties.  His features are worn with
+Desc      He is a tall but bulky man in his late fifties.  His features are worn with
 decades of hard work and his somewhat crouched expression is one of deep
 sorrow and depression.  He is haunted by a memory of a lost paradise.
 ~
-Race       human~
-Class      warrior~
-Position   aggressive~
-DefPos     aggressive~
-Gender     male~
-Actflags   npc stayarea~
-Stats1     350 4 15 8 10 800
-Stats2     1 12 48
-Stats3     1 6 1
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    punch~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    350 -1 0 0 0 0
+Stats2    4 21 8 48 1 6 1
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   punch~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       3601
-Keywords   zombie~
-Short      the rotting zombie~
-Long       A rotting zombie is staggering towards you with outstretched hands.
+Vnum      3601
+Keywords  zombie~
+Race      undead~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     the rotting zombie~
+Long      A rotting zombie is staggering towards you with outstretched hands.
 ~
-Desc       Maggots crawl all over its decaying body.
+Desc      Maggots crawl all over its decaying body.
 ~
-Race       undead~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_undead~
-Gender     male~
-Actflags   npc sentinel aggressive~
-Affected   infrared~
-Stats1     -750 4 16 5 0 800
-Stats2     2 6 60
-Stats3     1 8 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    punch~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    -750 0 0 0 0 0
+Stats2    4 21 5 60 1 8 2
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   punch~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       3602
-Keywords   ghoul~
-Short      the ghastly ghoul~
-Long       A ghastly ghoul is here.
+Vnum      3602
+Keywords  ghoul~
+Race      undead~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     the ghastly ghoul~
+Long      A ghastly ghoul is here.
 ~
-Desc       It is a walking corpse with long fangs and long, sharp nails that most of
+Desc      It is a walking corpse with long fangs and long, sharp nails that most of
 resemble claws.  Its eyes are a dark yellow colour and glare hungrily at you.
 ~
-Race       undead~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_undead~
-Gender     male~
-Actflags   npc sentinel aggressive~
-Affected   infrared~
-Stats1     -750 6 15 4 20 1500
-Stats2     2 6 72
-Stats3     1 10 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head heart guts hands feet ear eye~
-Attacks    drain~
-Defenses   dodge disarm~
+Nattacks  1.000000
+Stats1    -750 0 0 0 0 0
+Stats2    6 21 4 72 1 10 2
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head heart guts hands feet ear eye~
+Attacks   drain~
+Defenses  dodge disarm~
 #ENDMOBILE
 
 #MOBILE
-Vnum       3603
-Keywords   skeleton~
-Short      a dusty skeleton~
-Long       A dusty skeleton lies here.
+Vnum      3603
+Keywords  skeleton~
+Race      undead~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a dusty skeleton~
+Long      A dusty skeleton lies here.
 ~
-Desc       The dusty bones are almost brown.  It must have been buried for a very long
+Desc      The dusty bones are almost brown.  It must have been buried for a very long
 time.
 ~
-Race       undead~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_undead~
-Gender     male~
-Actflags   npc sentinel aggressive prototype~
-Affected   infrared~
-Stats1     -750 3 17 7 10 600
-Stats2     1 12 36
-Stats3     1 6 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs fingers~
-Resist     pierce slash~
-Suscept    blunt~
-Attacks    punch~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    -750 0 0 0 0 0
+Stats2    3 21 7 36 1 6 2
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive proto~
+Affected  infrared~
+Bodyparts head arms legs fingers~
+Resist    blunt pierce~
+Suscept   energy~
+Attacks   punch~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       3604
-Keywords   skeleton~
-Short      a dusty skeleton~
-Long       A dusty skeleton lies here.
+Vnum      3604
+Keywords  skeleton~
+Race      undead~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a dusty skeleton~
+Long      A dusty skeleton lies here.
 ~
-Desc       The dusty bones are almost brown.  It must have been buried for a very long
+Desc      The dusty bones are almost brown.  It must have been buried for a very long
 time.
 ~
-Race       undead~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_undead~
-Gender     male~
-Actflags   npc aggressive stayarea~
-Affected   infrared~
-Stats1     -750 3 17 7 10 600
-Stats2     1 12 36
-Stats3     1 6 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common insectoid dragon magical god ancient clan~
-Speaking   common insectoid dragon magical god ancient clan~
-Bodyparts  head arms legs hands~
-Resist     pierce slash~
-Suscept    blunt~
-Attacks    punch~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    -750 0 0 0 0 0
+Stats2    3 21 7 36 1 6 2
+Speaks    common insectoid dragon magical god ancient clan~
+Speaking  clan~
+Actflags  npc aggressive stayarea~
+Affected  infrared~
+Bodyparts head arms legs hands~
+Resist    blunt pierce~
+Suscept   energy~
+Attacks   punch~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       3605
-Keywords   zombie~
-Short      the rotting zombie~
-Long       A rotting zombie is staggering towards you with outstretched hands.
+Vnum      3605
+Keywords  zombie~
+Race      undead~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     the rotting zombie~
+Long      A rotting zombie is staggering towards you with outstretched hands.
 ~
-Desc       Maggots crawl all over its decaying body.
+Desc      Maggots crawl all over its decaying body.
 ~
-Race       undead~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_undead~
-Gender     male~
-Actflags   npc aggressive prototype~
-Affected   infrared~
-Stats1     -750 4 16 5 100 800
-Stats2     2 6 60
-Stats3     1 8 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common insectoid dragon magical god ancient clan~
-Speaking   common insectoid dragon magical god ancient clan~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    punch~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    -750 0 0 0 0 0
+Stats2    4 21 5 60 1 8 2
+Speaks    common insectoid dragon magical god ancient clan~
+Speaking  clan~
+Actflags  npc aggressive proto~
+Affected  infrared~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   punch~
+Defenses  dodge~
 #ENDMOBILE
 
 #OBJECT
-Vnum     3600
-Keywords candlestick~
-Type     light~
-Short    a candlestick~
-Long     A pewter candlestick is standing here.~
-WFlags   take hold~
-Values   0 0 24 0 0 0
-Stats    5 150 15 0 0
+Vnum      3600
+Keywords  candlestick~
+Type      light~
+Short     a candlestick~
+Long      A pewter candlestick is standing here.~
+WFlags    take hold~
+Values    0 0 24 0 0 0 0 0 0 0 0
+Stats     5 150 -2 9999 0 None None None
 #EXDESC
 ExDescKey    candlestick~
 ExDesc       It is a rather old-looking three-armed candlestick made from pewter.  Its
@@ -209,14 +194,14 @@ candles are a yellowish white colour.
 #ENDOBJECT
 
 #OBJECT
-Vnum     3601
-Keywords brandy bottle~
-Type     drinkcon~
-Short    a brandy bottle~
-Long     A brandy bottle is lying here.~
-WFlags   take~
-Values   10 10 5 0 0 0
-Stats    2 50 5 0 0
+Vnum      3601
+Keywords  brandy bottle~
+Type      drinkcon~
+Short     a brandy bottle~
+Long      A brandy bottle is lying here.~
+WFlags    take~
+Values    10 10 5 0 0 0 0 0 0 0 0
+Stats     2 50 -2 9999 0 None None None
 #EXDESC
 ExDescKey    brandy bottle~
 ExDesc       The bottle is a special 'Dragon Blood' brandy bottle.  Its neck is shaped
@@ -228,14 +213,14 @@ amount money, even when empty.
 #ENDOBJECT
 
 #OBJECT
-Vnum     3602
-Keywords brandy bottle~
-Type     drinkcon~
-Short    a brandy bottle~
-Long     A brandy bottle is lying here.~
-WFlags   take~
-Values   10 0 5 0 0 0
-Stats    2 50 5 0 0
+Vnum      3602
+Keywords  brandy bottle~
+Type      drinkcon~
+Short     a brandy bottle~
+Long      A brandy bottle is lying here.~
+WFlags    take~
+Values    10 0 5 0 0 0 0 0 0 0 0
+Stats     2 50 -2 9999 0 None None None
 #EXDESC
 ExDescKey    brandy bottle~
 ExDesc       The bottle is a special 'Dragon Blood' brandy bottle.  Its neck is shaped
@@ -247,14 +232,14 @@ even when empty.
 #ENDOBJECT
 
 #OBJECT
-Vnum     3603
-Keywords wheelbarrow~
-Type     boat~
-Short    a wheelbarrow~
-Long     A green-painted wheelbarrow is standing here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    100 100 10 0 0
+Vnum      3603
+Keywords  wheelbarrow~
+Type      boat~
+Short     a wheelbarrow~
+Long      A green-painted wheelbarrow is standing here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     100 100 -2 9999 0 None None None
 #EXDESC
 ExDescKey    wheelbarrow~
 ExDesc       It is a heavy wheelbarrow made from solid oaken planks that have been painted
@@ -265,14 +250,14 @@ a dark, green colour.
 #ENDOBJECT
 
 #OBJECT
-Vnum     3604
-Keywords shovel~
-Type     shovel~
-Short    a shovel~
-Long     A shovel is lying here.~
-WFlags   take wield~
-Values   0 1 5 7 0 0
-Stats    8 30 3 0 0
+Vnum      3604
+Keywords  shovel~
+Type      shovel~
+Short     a shovel~
+Long      A shovel is lying here.~
+WFlags    take wield~
+Values    0 1 5 7 0 0 0 0 0 0 0
+Stats     8 30 -2 9999 0 None None None
 #EXDESC
 ExDescKey    shovel~
 ExDesc       It is a large metal shovel with a solid wooden handle.
@@ -282,14 +267,14 @@ ExDesc       It is a large metal shovel with a solid wooden handle.
 #ENDOBJECT
 
 #OBJECT
-Vnum     3605
-Keywords rake~
-Type     weapon~
-Short    a rake~
-Long     A rake is lying here.~
-WFlags   take wield~
-Values   0 1 4 5 0 0
-Stats    8 30 3 0 0
+Vnum      3605
+Keywords  rake~
+Type      weapon~
+Short     a rake~
+Long      A rake is lying here.~
+WFlags    take wield~
+Values    0 1 4 5 0 0 0 0 0 0 0
+Stats     8 30 -2 9999 0 None None None
 #EXDESC
 ExDescKey    rake~
 ExDesc       It is a large metal rake with a solid wooden handle.
@@ -299,26 +284,26 @@ ExDesc       It is a large metal rake with a solid wooden handle.
 #ENDOBJECT
 
 #OBJECT
-Vnum     3606
-Keywords maggot edible~
-Type     pill~
-Short    an edible maggot~
-Long     An ugly little maggot crawls along here.~
-WFlags   take hold~
-Values   6 -1 -1 -1 0 0
-Stats    1 250 25 0 0
-Spells   'cure critical' 'NONE' 'NONE'
+Vnum      3606
+Keywords  maggot edible~
+Type      pill~
+Short     an edible maggot~
+Long      An ugly little maggot crawls along here.~
+WFlags    take hold~
+Values    6 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 250 -2 1 0 None None None
+Spells       'cure critical' 'NONE' 'NONE'
 #ENDOBJECT
 
 #OBJECT
-Vnum     3610
-Keywords skeleton~
-Type     furniture~
-Short    a dusty skeleton~
-Long     A dusty skeleton lies here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    15 0 0 0 0
+Vnum      3610
+Keywords  skeleton~
+Type      furniture~
+Short     a dusty skeleton~
+Long      A dusty skeleton lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    skeleton~
 ExDesc       The dusty bones are almost brown.  It must have been buried for a very long
@@ -330,14 +315,14 @@ A dusty skeleton is in an excellent condition.
 #ENDOBJECT
 
 #OBJECT
-Vnum     3611
-Keywords amethyst gem~
-Type     treasure~
-Short    a amethyst~
-Long     A large, beautifully polished amethyst has been left here.~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    1 3000 300 0 0
+Vnum      3611
+Keywords  amethyst gem~
+Type      treasure~
+Short     a amethyst~
+Long      A large, beautifully polished amethyst has been left here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
 #EXDESC
 ExDescKey    amethyst~
 ExDesc       It has a very deep purple colour.
@@ -347,14 +332,14 @@ ExDesc       It has a very deep purple colour.
 #ENDOBJECT
 
 #OBJECT
-Vnum     3612
-Keywords pendant silver~
-Type     armor~
-Short    a silver pendant~
-Long     A silver pendant has been left here.~
-WFlags   take neck~
-Values   4 0 0 0 0 0
-Stats    1 400 40 0 0
+Vnum      3612
+Keywords  pendant silver~
+Type      armor~
+Short     a silver pendant~
+Long      A silver pendant has been left here.~
+WFlags    take neck~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     1 400 -2 1 0 None None None
 #EXDESC
 ExDescKey    pendant silver~
 ExDesc       It resembles Thor's hammer and appears to be made of solid silver.
@@ -364,16 +349,16 @@ ExDesc       It resembles Thor's hammer and appears to be made of solid silver.
 #ENDOBJECT
 
 #OBJECT
-Vnum     3613
-Keywords dagger silver~
-Type     weapon~
-Short    a silver dagger~
-Long     A long silver dagger is lying here.~
-Action   pierce~
-WFlags   take wield~
-Values   0 2 4 11 0 0
-Stats    1 100 10 0 0
-Affect       -1 -1 1 19 0
+Vnum      3613
+Keywords  dagger silver~
+Type      weapon~
+Short     a silver dagger~
+Long      A long silver dagger is lying here.~
+Action    pierce~
+WFlags    take wield~
+Values    0 2 4 11 0 0 0 0 0 0 0
+Stats     1 100 -2 9999 0 None None None
+AffData damroll 1 -1 -1 0
 #EXDESC
 ExDescKey    dagger silver~
 ExDesc       It has a long, sharp blade that is made entirely from silver.  A small rune
@@ -384,10 +369,12 @@ has been engraved on the blade next to the hilt.
 #ENDOBJECT
 
 #ROOM
-Vnum     3600
-Name     A Gravel Road on the Graveyard~
-Sector   field~
-Desc     You are on a well-kept gravel road that leads north-south through the
+Vnum      3600
+Name      A Gravel Road on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.  An iron
 gate stands to the north and narrow gravel paths lead east and west.
 ~
@@ -424,10 +411,12 @@ Desc      The gravel path leads westwards between the dark evergreen trees.
 #ENDROOM
 
 #ROOM
-Vnum     3601
-Name     A Gravel Road on the Graveyard~
-Sector   field~
-Desc     You are on a well-kept gravel road that leads north-south through the
+Vnum      3601
+Name      A Gravel Road on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.
 ~
 #EXIT
@@ -447,10 +436,12 @@ Desc      The gravel road continues southwards.
 #ENDROOM
 
 #ROOM
-Vnum     3602
-Name     A Gravel Road on the Graveyard~
-Sector   field~
-Desc     You are on a well-kept gravel road that leads north-south through the
+Vnum      3602
+Name      A Gravel Road on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.
 ~
 #EXIT
@@ -470,10 +461,12 @@ Desc      The gravel road continues southwards.
 #ENDROOM
 
 #ROOM
-Vnum     3603
-Name     A Gravel Road on the Graveyard~
-Sector   field~
-Desc     You are on a well-kept gravel road that leads north-south through the
+Vnum      3603
+Name      A Gravel Road on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.
 ~
 #EXIT
@@ -494,10 +487,12 @@ building.
 #ENDROOM
 
 #ROOM
-Vnum     3604
-Name     In front of the Chapel~
-Sector   field~
-Desc     You are on an open space before a small chapel.  A gravel road leads north
+Vnum      3604
+Name      In front of the Chapel~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on an open space before a small chapel.  A gravel road leads north
 through the graveyard and the chapel entrance is to the south.
 ~
 #EXIT
@@ -521,14 +516,16 @@ Desc      The gravel path leads westwards between the dark evergreen trees.
 ~
 #ENDEXIT
 
-Reset M 0 3604 4 3604
+Reset M 3604 4 3604 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3606
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3606
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  An old tomb is here.
 ~
 #EXIT
@@ -552,8 +549,8 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3606 5 1
-Reset M 0 3604 4 3606
+Reset D 3606 5 1 100 -2
+Reset M 3604 4 3606 -1 -1 -1 100
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -564,11 +561,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3607
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3607
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -578,15 +576,17 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3607 4 1
-Reset O 0 3610 13 3607
+Reset D 3607 4 1 100 -2
+Reset O 3610 13 3607 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3608
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3608
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and west.  An old tomb is here.
 ~
 #EXIT
@@ -610,7 +610,7 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3608 5 1
+Reset D 3608 5 1 100 -2
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -621,11 +621,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3609
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3609
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -635,15 +636,17 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3609 4 1
-Reset M 0 3603 5 3609
+Reset D 3609 4 1 100 -2
+Reset M 3603 5 3609 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3610
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3610
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads east and south.  An old tomb is here.
 ~
 #EXIT
@@ -667,7 +670,7 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3610 5 1
+Reset D 3610 5 1 100 -2
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -678,11 +681,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3611
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3611
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -692,16 +696,18 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3611 4 1
-Reset M 0 3603 5 3611
-Reset O 0 3613 10 3611
+Reset D 3611 4 1 100 -2
+Reset M 3603 5 3611 -1 -1 -1 100
+Reset O 3613 10 3611 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3612
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3612
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and east.  A small shed is to the west.
 ~
 #EXIT
@@ -727,16 +733,17 @@ Keywords  door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3612 3 1
-Reset M 0 3604 4 3612
+Reset D 3612 3 1 100 -2
+Reset M 3604 4 3612 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3613
-Name     In a shed on the Graveyard~
-Sector   city~
-Flags    indoors~
-Desc     You are in a small shed that looks as if it is used to store all sorts of
+Vnum      3613
+Name      In a shed on the Graveyard~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small shed that looks as if it is used to store all sorts of
 gardening equipment.  The only exit appears to be through a door to the east.
 ~
 #EXIT
@@ -746,20 +753,22 @@ Keywords  door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3613 1 1
-Reset M 0 3600 1 3613
-  Reset G 1 3601 1000
-Reset O 0 3602 1000 3613
-Reset O 0 3603 1 3613
-Reset O 0 3604 1000 3613
-Reset O 0 3605 1000 3613
+Reset D 3613 1 1 100 -2
+Reset M 3600 1 3613 -1 -1 -1 100
+  Reset G 3601 1000 100
+Reset O 3602 1000 3613 -1 -1 -1 100
+Reset O 3603 1 3613 -1 -1 -1 100
+Reset O 3604 1000 3613 -1 -1 -1 100
+Reset O 3605 1000 3613 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3614
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3614
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads south and west.  An old tomb is here.
 ~
 #EXIT
@@ -783,7 +792,7 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3614 5 1
+Reset D 3614 5 1 100 -2
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -794,11 +803,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3615
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3615
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -808,15 +818,17 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3615 4 1
-Reset O 0 3610 13 3615
+Reset D 3615 4 1 100 -2
+Reset O 3610 13 3615 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3616
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3616
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and south.  An old tomb is here.
 ~
 #EXIT
@@ -840,7 +852,7 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3616 5 1
+Reset D 3616 5 1 100 -2
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -851,11 +863,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3617
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3617
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -865,16 +878,18 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3617 4 1
-Reset M 0 3602 1 3617
-  Reset G 1 3612 1000
+Reset D 3617 4 1 100 -2
+Reset M 3602 1 3617 -1 -1 -1 100
+  Reset G 3612 1000 100
 #ENDROOM
 
 #ROOM
-Vnum     3618
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3618
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and east.  An old tomb is here.
 ~
 #EXIT
@@ -898,7 +913,7 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3618 5 1
+Reset D 3618 5 1 100 -2
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -909,11 +924,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3619
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3619
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -923,15 +939,17 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3619 4 1
-Reset O 0 3610 13 3619
+Reset D 3619 4 1 100 -2
+Reset O 3610 13 3619 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3638
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3638
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and west.  An old tomb is here.
 ~
 #EXIT
@@ -955,9 +973,9 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3638 5 1
-Reset M 0 3605 3 3638
-  Reset G 1 3606 1
+Reset D 3638 5 1 100 -2
+Reset M 3605 3 3638 -1 -1 -1 100
+  Reset G 3606 1 100
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -968,11 +986,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3639
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3639
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -982,15 +1001,17 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3639 4 1
-Reset M 0 3603 5 3639
+Reset D 3639 4 1 100 -2
+Reset M 3603 5 3639 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3640
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3640
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and south.  An old tomb is here.
 ~
 #EXIT
@@ -1014,8 +1035,8 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3640 5 1
-Reset M 0 3604 4 3640
+Reset D 3640 5 1 100 -2
+Reset M 3604 4 3640 -1 -1 -1 100
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -1026,11 +1047,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3641
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3641
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -1040,15 +1062,17 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3641 4 1
-Reset O 0 3610 13 3641
+Reset D 3641 4 1 100 -2
+Reset O 3610 13 3641 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3642
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3642
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads east and south.  An old tomb is here.
 ~
 #EXIT
@@ -1072,7 +1096,7 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3642 5 1
+Reset D 3642 5 1 100 -2
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -1083,11 +1107,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3643
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3643
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -1097,15 +1122,17 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3643 4 1
-Reset O 0 3603 5 3643
+Reset D 3643 4 1 100 -2
+Reset O 3603 5 3643 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3644
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3644
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and west.  An old tomb is here.
 ~
 #EXIT
@@ -1129,9 +1156,9 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3644 5 1
-Reset M 0 3605 3 3644
-  Reset G 1 3606 1
+Reset D 3644 5 1 100 -2
+Reset M 3605 3 3644 -1 -1 -1 100
+  Reset G 3606 1 100
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -1142,11 +1169,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3645
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3645
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -1156,17 +1184,19 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3645 4 1
-Reset M 0 3601 1 3645
-  Reset G 1 3606 1
-  Reset G 1 3611 1000
+Reset D 3645 4 1 100 -2
+Reset M 3601 1 3645 -1 -1 -1 100
+  Reset G 3606 1 100
+  Reset G 3611 1000 100
 #ENDROOM
 
 #ROOM
-Vnum     3646
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3646
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads south and west.  An old tomb is here.
 ~
 #EXIT
@@ -1190,7 +1220,7 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3646 5 1
+Reset D 3646 5 1 100 -2
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -1201,11 +1231,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3647
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3647
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -1215,15 +1246,17 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3647 4 1
-Reset O 0 3610 13 3647
+Reset D 3647 4 1 100 -2
+Reset O 3610 13 3647 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3648
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3648
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads north and east.  An old tomb is here.
 ~
 #EXIT
@@ -1247,7 +1280,7 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3648 5 1
+Reset D 3648 5 1 100 -2
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -1258,11 +1291,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3649
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3649
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -1272,15 +1306,17 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3649 4 1
-Reset M 0 3603 5 3649
+Reset D 3649 4 1 100 -2
+Reset M 3603 5 3649 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3650
-Name     A Gravel Path on the Graveyard~
-Sector   field~
-Desc     You are on a gravel path winding its way between dark evergreen trees on
+Vnum      3650
+Name      A Gravel Path on the Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a gravel path winding its way between dark evergreen trees on
 the graveyard.  The path leads south and west.  An old tomb is here.
 ~
 #EXIT
@@ -1304,7 +1340,7 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3650 5 1
+Reset D 3650 5 1 100 -2
 #EXDESC
 ExDescKey    tomb stone~
 ExDesc       It is a large rectangular slab of dark grey stone that has been placed face
@@ -1315,11 +1351,12 @@ up in the ground.  The name has been erased by the ravages of time.
 #ENDROOM
 
 #ROOM
-Vnum     3651
-Name     In a dusty Tomb~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a dark burial chamber beneath a large tomb stone.
+Vnum      3651
+Name      In a dusty Tomb~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dark burial chamber beneath a large tomb stone.
 The only exit appears to be up.
 ~
 #EXIT
@@ -1329,9 +1366,9 @@ Keywords  tomb stone~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 3651 4 1
-Reset M 0 3605 3 3651
-  Reset G 1 3606 1
+Reset D 3651 4 1 100 -2
+Reset M 3605 3 3651 -1 -1 -1 100
+  Reset G 3606 1 100
 #ENDROOM
 
 #ENDAREA

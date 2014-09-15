@@ -1,45 +1,45 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Dragon Exports~
-Author       Sandman~
-WeatherX     0
-WeatherY     0
-Ranges       5 25 0 60
-Economy      0 6672836
-ResetMsg     A hollow chant can be heard from somewhere far below...~
+Version         1
+Name            Dragon Exports~
+Author          Sandman~
+Vnums           9800 9899
+Continent       one~
+Coordinates     0 0
+Dates           1403834970 1403834970
+Ranges          5 25 0 60
+ResetMsg        A hollow chant can be heard from somewhere far below...~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       9800
-Keywords   Kylara cult receptionist~
-Short      Kylara~
-Long       The Dragon Exports receptionist greets you with a smile.
+Vnum      9800
+Keywords  Kylara cult receptionist~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Kylara~
+Long      The Dragon Exports receptionist greets you with a smile.
 ~
-Desc       Kylara is a woman of average beauty, but her smile is warming and genuine.
+Desc      Kylara is a woman of average beauty, but her smile is warming and genuine.
 It is her job to keep the doors to the Dragon Exports building closed and
 locked to all who do not know the cult's password.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel~
-Affected   detect_invis detect_hidden sanctuary infrared truesight~
-Stats1     0 4 17 6 100 400
-Stats2     1 0 9999
-Stats3     1 4 3
-Stats4     0 0 0 0 0
-Attribs    15 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs guts hands feet ear eye~
-Resist     nonmagic magic~
-Immune     sleep charm~
-Attacks    trip~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    4 21 6 9999 1 4 3
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary infrared truesight~
+Bodyparts head arms legs guts hands feet ear eye~
+Resist    hold plus6~
+Immune    drain sleep~
+Attacks   trip~
+Defenses  dodge~
 #MUDPROG
 Progtype  all_greet_prog~
 Arglist   100~
@@ -96,94 +96,85 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       9801
-Keywords   minor priest~
-Short      the minor priest~
-Long       A minor priest of the Dragon Cult scuffles along.
+Vnum      9801
+Keywords  minor priest~
+Race      human~
+Class     Cleric~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the minor priest~
+Long      A minor priest of the Dragon Cult scuffles along.
 ~
-Desc       The minor priest seems preoccupied with his worship, so that he barely
+Desc      The minor priest seems preoccupied with his worship, so that he barely
 realizes you are here.  He almost seems to be in a trance of some sort.
 ~
-Race       human~
-Class      cleric~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc stayarea~
-Affected   detect_invis~
-Stats1     -100 12 17 0 100 400
-Stats2     1 4 250
-Stats3     2 5 7
-Stats4     0 0 0 3 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    kick trip~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -100 -1 0 0 0 0
+Stats2    12 21 0 250 2 5 7
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_invis~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   kick trip~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       9802
-Keywords   robed priest~
-Short      the robed priest~
-Long       A robed priest of the Dragon Cult seems startled by your presence.
+Vnum      9802
+Keywords  robed priest~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the robed priest~
+Long      A robed priest of the Dragon Cult seems startled by your presence.
 ~
-Desc       Thie priest is not someone you want to mess with.  He is wearing
+Desc      Thie priest is not someone you want to mess with.  He is wearing
 thick ornate robes and wields a sharp dagger.  His eyes have a look
 of craziness to them, like this man lives in a world of his own.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc aggressive stayarea~
-Affected   detect_magic detect_hidden~
-Stats1     -200 14 17 0 100 400
-Stats2     1 4 300
-Stats3     1 4 12
-Stats4     0 0 0 0 2
-Attribs    15 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Attacks    bite~
+Nattacks  0.000000
+Stats1    -200 -1 0 0 0 0
+Stats2    14 21 0 300 1 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  detect_magic detect_hidden~
+Attacks   bite~
 #ENDMOBILE
 
 #MOBILE
-Vnum       9803
-Keywords   S'goral draconian knight~
-Short      S'goral~
-Long       A Draconian Knight stands here formidably.
+Vnum      9803
+Keywords  S'goral draconian knight~
+Race      dragon~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     S'goral~
+Long      A Draconian Knight stands here formidably.
 ~
-Desc       While human seeming, subtle signs give you another indication. A slight
+Desc      While human seeming, subtle signs give you another indication. A slight
 green tinge to the skin, combined with a hint of vestigial scales, show
 this creature to have more of a reptilian origin. His sole purpose in
 life it to kill the people who pass here without an invitation.
 ~
-Race       dragon~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea~
-Affected   detect_invis detect_magic detect_hidden sanctuary infrared~
-Stats1     -400 16 17 -20 100 400
-Stats2     1 4 400
-Stats3     2 5 15
-Stats4     0 0 0 4 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs guts hands feet ear eye scales~
-Resist     fire~
-Immune     charm~
-Suscept    energy~
-Attacks    kick~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    16 21 -20 400 2 5 15
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_magic detect_hidden sanctuary infrared~
+Bodyparts head arms legs guts hands feet ear eye scales~
+Resist    NONE~
+Immune    sleep~
+Suscept   electricity~
+Attacks   kick~
+Defenses  dodge~
 #MUDPROG
 Progtype  all_greet_prog~
 Arglist   100~
@@ -200,37 +191,34 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       9804
-Keywords   Cosira high priestess mistress~
-Short      Mistress Cosira~
-Long       The High Priestess of the Dragon Cult is infuriated by your intrusion!
+Vnum      9804
+Keywords  Cosira high priestess mistress~
+Race      dragon~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     Mistress Cosira~
+Long      The High Priestess of the Dragon Cult is infuriated by your intrusion!
 ~
-Desc       This woman is beautiful, with a haunting strangeness to her. Her form
+Desc      This woman is beautiful, with a haunting strangeness to her. Her form
 is that of a well endowed human female, but you can tell she is not
 actually human. A slight green tinge to the skin, combined with a hint
 of vestigial scales, show this woman to have more of a reptilian origin.
 ~
-Race       dragon~
-Class      mage~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     female~
-Actflags   npc sentinel stayarea~
-Affected   detect_invis detect_magic detect_hidden sanctuary protect~
-Stats1     -600 18 17 -25 100 400
-Stats2     1 4 400
-Stats3     5 4 8
-Stats4     0 0 0 4 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs guts hands feet ear eye~
-Resist     fire~
-Immune     charm~
-Attacks    bite~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -600 0 0 0 0 0
+Stats2    18 21 -25 400 5 4 8
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_magic detect_hidden sanctuary protect~
+Bodyparts head arms legs guts hands feet ear eye~
+Resist    NONE~
+Immune    sleep~
+Attacks   bite~
+Defenses  dodge~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   20~
@@ -255,30 +243,27 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       9805
-Keywords   Prilla virgin sacrifice~
-Short      Prilla~
-Long       A virgin is here, weeping over her pending death.
+Vnum      9805
+Keywords  Prilla virgin sacrifice~
+Race      pixie~
+Class     Druid~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Prilla~
+Long      A virgin is here, weeping over her pending death.
 ~
-Desc       This innocent, beautiful girl is waiting for some brave, 
+Desc      This innocent, beautiful girl is waiting for some brave, 
 handsome warrior to save her.
 ~
-Race       pixie~
-Class      druid~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel~
-Affected   infrared~
-Stats1     0 5 17 6 100 400
-Stats2     1 5 50
-Stats3     1 4 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     pixie~
-Speaking   common pixie~
-Bodyparts  head arms legs guts hands feet ear eye~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    5 21 6 50 1 4 3
+Speaks    pixie~
+Speaking  pixie~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs guts hands feet ear eye~
 #MUDPROG
 Progtype  death_prog~
 Arglist   100~
@@ -320,34 +305,31 @@ Comlist   cry
 #ENDMOBILE
 
 #MOBILE
-Vnum       9806
-Keywords   dragon wyrmling~
-Short      the Black Dragon Wyrmling~
-Long       A Black Dragon Wyrmling is here, moving to feed on you...
+Vnum      9806
+Keywords  dragon wyrmling~
+Race      dragon~
+Class     Rogue~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     the Black Dragon Wyrmling~
+Long      A Black Dragon Wyrmling is here, moving to feed on you...
 ~
-Desc       The Black Dragon Wyrmling is the center of this obscure Dragon Cult.
+Desc      The Black Dragon Wyrmling is the center of this obscure Dragon Cult.
 It is viciuos and has a nasty bite, so you better be ready!
 ~
-Race       dragon~
-Class      thief~
-Position   standing~
-DefPos     standing~
-Specfun    spec_thief~
-Gender     male~
-Actflags   npc sentinel scavenger aggressive~
-Affected   detect_invis sanctuary infrared~
-Stats1     -1000 25 -15 -12 50000 1000000
-Stats2     10 20 600
-Stats3     3 10 12
-Stats4     0 0 0 4 2
-Attribs    18 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs guts eye tail~
-Resist     fire slash~
-Immune     charm~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    25 21 -12 600 3 10 12
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis sanctuary infrared~
+Bodyparts head arms legs guts eye tail~
+Resist    NONE pierce~
+Immune    sleep~
+Defenses  dodge~
 #MUDPROG
 Progtype  fight_prog~
 Arglist   33~
@@ -364,30 +346,27 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       9807
-Keywords   minor priest~
-Short      the minor priest~
-Long       A minor priest of the Dragon Cult is here, tending to the call of nature.
+Vnum      9807
+Keywords  minor priest~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the minor priest~
+Long      A minor priest of the Dragon Cult is here, tending to the call of nature.
 ~
-Desc       The minor priest seems preoccupied.
+Desc      The minor priest seems preoccupied.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea~
-Affected   detect_invis protect~
-Stats1     -100 12 17 0 100 400
-Stats2     1 4 9
-Stats3     1 4 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Immune     charm~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -100 -1 0 0 0 0
+Stats2    12 21 0 9 1 4 3
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis protect~
+Immune    sleep~
+Defenses  dodge~
 #MUDPROG
 Progtype  all_greet_prog~
 Arglist   100~
@@ -400,30 +379,27 @@ mpechoat $n The priest makes himself presentable.
 #ENDMOBILE
 
 #MOBILE
-Vnum       9808
-Keywords   fanatic monk~
-Short      a fanatic monk~
-Long       A fanatic monk raves about the day of the great black death!
+Vnum      9808
+Keywords  fanatic monk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a fanatic monk~
+Long      A fanatic monk raves about the day of the great black death!
 ~
-Desc       A sincere, if looney, monk ... he wears a look of utter terror.
+Desc      A sincere, if looney, monk ... he wears a look of utter terror.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc~
-Affected   detect_invis~
-Stats1     0 6 17 6 100 400
-Stats2     1 4 60
-Stats3     1 4 10
-Stats4     0 0 2 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Immune     charm~
-Defenses   dodge~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    6 21 6 60 1 4 10
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  detect_invis~
+Immune    sleep~
+Defenses  dodge~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   6~
@@ -438,37 +414,34 @@ mpasound Not far away, an odd monk can be seen sobbing.
 #ENDMOBILE
 
 #MOBILE
-Vnum       9809
-Keywords   Belesdan director~
-Short      Belesdan~
-Long       Belesdan, the head merchandiser, greets you with a smarmy smile.
+Vnum      9809
+Keywords  Belesdan director~
+Race      half-elf~
+Class     Rogue~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     Belesdan~
+Long      Belesdan, the head merchandiser, greets you with a smarmy smile.
 ~
-Desc       Belesdan strikes you as a fast talking, slick deal maker. His smile is
+Desc      Belesdan strikes you as a fast talking, slick deal maker. His smile is
 not quite genuine, but draws you in all the same. His eyes are always
 darting about, making sure he is not missing a thing. At first look
 he appeared human, until you notice his almost too skinny build and
 pointed ears. His elven features are tamed well by his human blood.
 ~
-Race       half-elf~
-Class      thief~
-Position   standing~
-DefPos     standing~
-Specfun    spec_thief~
-Gender     male~
-Actflags   npc sentinel scavenger stayarea~
-Affected   detect_invis detect_hidden infrared~
-Stats1     -1000 7 17 6 100 400
-Stats2     1 20 60
-Stats3     1 4 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common elvish~
-Speaking   common elvish~
-Bodyparts  head arms legs guts hands feet ear eye~
-Immune     charm~
-Attacks    kick~
-Defenses   dodge curelight~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    7 21 6 60 1 4 3
+Speaks    common elvish~
+Speaking  elvish~
+Actflags  npc sentinel scavenger stayarea~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head arms legs guts hands feet ear eye~
+Immune    sleep~
+Attacks   kick~
+Defenses  dodge curelight~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   5~
@@ -538,34 +511,31 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       9810
-Keywords   Moretta~
-Short      Moretta~
-Long       Moretta wanders about here, keeping everything neat and tidy.
+Vnum      9810
+Keywords  Moretta~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Moretta~
+Long      Moretta wanders about here, keeping everything neat and tidy.
 ~
-Desc       Moretta is the maid of this fine institution.  She is sort of mousey
+Desc      Moretta is the maid of this fine institution.  She is sort of mousey
 and quiet, like she is afraid of her own shadow.  She never seems to
 stop working, as if by sheer will she can clean the evil out of this
 place.  She barely glances at you, then goes back to scrubbing.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc scavenger stayarea~
-Affected   detect_invis infrared~
-Stats1     200 12 17 6 100 400
-Stats2     5 15 120
-Stats3     1 4 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs guts hands feet ear eye~
-Attacks    trip~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    200 -1 0 0 0 0
+Stats2    12 21 6 120 1 4 3
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  detect_invis infrared~
+Bodyparts head arms legs guts hands feet ear eye~
+Attacks   trip~
+Defenses  dodge~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   5~
@@ -666,35 +636,32 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       9811
-Keywords   Gemma coordinator~
-Short      Gemma~
-Long       Gemma, the office coordinator, bustles around the office.
+Vnum      9811
+Keywords  Gemma coordinator~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Gemma~
+Long      Gemma, the office coordinator, bustles around the office.
 ~
-Desc       Gemma looks very busy. She runs around the office to make sure everything
+Desc      Gemma looks very busy. She runs around the office to make sure everything
 runs well.  She might be attractive if she weren't so work oriented.  Her
 boss, Fandarel, keeps her more busy than necessary, probably for personal
 reasons.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc stayarea~
-Affected   detect_invis infrared~
-Stats1     -1000 14 17 0 100 400
-Stats2     5 20 190
-Stats3     1 15 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs guts hands feet ear eye~
-Immune     charm~
-Attacks    kick trip~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    14 21 0 190 1 15 4
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_invis infrared~
+Bodyparts head arms legs guts hands feet ear eye~
+Immune    sleep~
+Attacks   kick trip~
+Defenses  dodge~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   5~
@@ -794,35 +761,32 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       9812
-Keywords   Fandarel boss~
-Short      Fandarel~
-Long       Fandarel sits here, smoking a pipe and looking important.
+Vnum      9812
+Keywords  Fandarel boss~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Fandarel~
+Long      Fandarel sits here, smoking a pipe and looking important.
 ~
-Desc       Fandarel is good at being bossy, but makes for an awful person to work
+Desc      Fandarel is good at being bossy, but makes for an awful person to work
 for.  He basically sits around in his office all  day. He does take time
 out to yell at those working under him, and to take a break in Gemma's
 office.  He seems awful interested in watching her work, maybe hoping
 to get a look up her skirt.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea~
-Affected   detect_invis infrared~
-Stats1     -500 12 17 -10 100 400
-Stats2     1 4 300
-Stats3     1 4 11
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs guts hands feet ear eye~
-Attacks    kick~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    12 21 -10 300 1 4 11
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis infrared~
+Bodyparts head arms legs guts hands feet ear eye~
+Attacks   kick~
+Defenses  dodge~
 #MUDPROG
 Progtype  all_greet_prog~
 Arglist   100~
@@ -908,12 +872,17 @@ mpoload 9866 10
 #ENDMOBILE
 
 #MOBILE
-Vnum       9813
-Keywords   Wilam torturer~
-Short      Wilam~
-Long       Wilam, the Cult Torturer, is ready to inflict great pain upon you.
+Vnum      9813
+Keywords  Wilam torturer~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Wilam~
+Long      Wilam, the Cult Torturer, is ready to inflict great pain upon you.
 ~
-Desc       This is one of the most handsome men you have ever seen. His hair is
+Desc      This is one of the most handsome men you have ever seen. His hair is
 a fiery red, shoulder length and wavy. His face has the ruged chiseled
 look. His muscles are well defined, but not overly large. You can not
 believe someone like this could torture people...  that is until he
@@ -921,27 +890,19 @@ smiles. There is an odd twist to his mouth, something dark and flickering
 behind the eyes. A calculating madness lurks deep within that disturbing
 smile. Resisting the urge to shiver, you pull your eyes away.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel scavenger stayarea~
-Affected   detect_invis infrared truesight~
-Stats1     -1000 12 17 -30 100 400
-Stats2     20 10 500
-Stats3     1 7 5
-Stats4     0 0 0 4 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs guts hands feet ear eye~
-Resist     fire energy~
-Immune     sleep charm~
-Suscept    cold~
-Attacks    trip~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    12 21 -30 500 1 7 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel scavenger stayarea~
+Affected  detect_invis infrared truesight~
+Bodyparts head arms legs guts hands feet ear eye~
+Resist    NONE electricity~
+Immune    drain sleep~
+Suscept   fire~
+Attacks   trip~
+Defenses  dodge~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   6~
@@ -994,12 +955,18 @@ mpechoat $n Wilam says 'Welcome to my chamber of torture.. How may I hurt you?'
 #ENDMOBILE
 
 #MOBILE
-Vnum       9814
-Keywords   Jerint sales director~
-Short      Jerint~
-Long       The Portable Dragon's vendor eyes you from bottom to top as you enter.
+Vnum      9814
+Keywords  Jerint sales director~
+Race      human~
+Class     Cleric~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     Jerint~
+Long      The Portable Dragon's vendor eyes you from bottom to top as you enter.
 ~
-Desc       First thing you notice about this man is his eyes, as they scan you from
+Desc      First thing you notice about this man is his eyes, as they scan you from
 bottom to top, they are a vivid steel grey color, full of witty intellect
 and genuine warmth.  Exuding an aura of confidence, this is a man that
 is completely comfortable in his masculinity.  His face is that of an
@@ -1008,27 +975,18 @@ He sports a full head of salt and pepper hair and a handlebar mustache
 with more salt than pepper.  His face breaks into a friendly smile at 
 your appraisal.
 ~
-Race       human~
-Class      cleric~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_cleric~
-Gender     male~
-Actflags   npc sentinel stayarea~
-Affected   detect_invis detect_hidden sanctuary infrared protect~
-Stats1     750 15 17 0 100 400
-Stats2     5 10 150
-Stats3     1 8 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs guts hands feet ear eye~
-Immune     sleep charm~
-Suscept    fire~
-Attacks    punch kick trip gouge~
-Defenses   parry dodge heal curelight~
+Nattacks  0.000000
+Stats1    750 -1 0 0 0 0
+Stats2    15 21 0 150 1 8 4
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared protect~
+Bodyparts head arms legs guts hands feet ear eye~
+Immune    drain sleep~
+Suscept   NONE~
+Attacks   punch kick trip gouge~
+Defenses  parry dodge heal curelight~
 ShopData   0 0 0 0 0 120 90 0 23
 #MUDPROG
 Progtype  all_greet_prog~
@@ -1086,31 +1044,28 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       9815
-Keywords   zombie zmee~
-Short      the zombie~
-Long       The decayed remains of a hapless Dragonslayer.
+Vnum      9815
+Keywords  zombie zmee~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the zombie~
+Long      The decayed remains of a hapless Dragonslayer.
 ~
-Desc       This zombie is pretty fresh.  Not much of the flesh has begun to rot
+Desc      This zombie is pretty fresh.  Not much of the flesh has begun to rot
 off. This used to be a strong Dragonslayer, and chances are he carried
 a lot of that strength into his undeath.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel aggressive stayarea~
-Affected   detect_invis sanctuary~
-Stats1     -1000 15 17 6 100 400
-Stats2     10 10 150
-Stats3     1 7 7
-Stats4     0 0 0 3 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs guts hands feet ear eye~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    15 21 6 150 1 7 7
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis sanctuary~
+Bodyparts head arms legs guts hands feet ear eye~
 #MUDPROG
 Progtype  death_prog~
 Arglist   100~
@@ -1123,69 +1078,63 @@ mpecho The Zombie falls to the ground, in a pile of rotting flesh.
 #ENDMOBILE
 
 #MOBILE
-Vnum       9816
-Keywords   Adrathom lich priest~
-Short      Adrathom~
-Long       The Lich Priest glares at you through dead eyes.
+Vnum      9816
+Keywords  Adrathom lich priest~
+Race      undead~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Adrathom~
+Long      The Lich Priest glares at you through dead eyes.
 ~
-Desc       This is the living corpse of a once powerfull priest of the cult.  In his
+Desc      This is the living corpse of a once powerfull priest of the cult.  In his
 quest for power he learned the ways of the mage and made himself a 
 monstrocity.  He is a creature to be reckoned with, and unless the
 gods are in your favor he will probably kill you.
 ~
-Race       undead~
-Class      mage~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel aggressive stayarea~
-Affected   detect_magic detect_hidden sanctuary fireshield~
-Stats1     -1000 37 17 -75 100 400
-Stats2     10 30 750
-Stats3     5 4 12
-Stats4     0 0 0 4 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs guts eye~
-Resist     magic~
-Immune     charm paralysis~
-Attacks    bite trip~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    37 21 -75 750 5 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_magic detect_hidden sanctuary fireshield~
+Bodyparts head arms legs guts eye~
+Resist    plus6~
+Immune    sleep magic~
+Attacks   bite trip~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       9817
-Keywords   G'narish old monk~
-Short      G'narish~
-Long       An old, dangerous looking monk is here attempting to sell you candy.
+Vnum      9817
+Keywords  G'narish old monk~
+Race      ghoul~
+Class     Cleric~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     G'narish~
+Long      An old, dangerous looking monk is here attempting to sell you candy.
 ~
-Desc       This monk is so old, he looks as if he should be long dead and buried.
+Desc      This monk is so old, he looks as if he should be long dead and buried.
 His face is a series of wrinkles, blurring all his features.  His
 breath is awful, and as you look closer, you can see why.  His teeth
 are rotten and his tongue is a disgusting black.
 ~
-Race       ghoul~
-Class      cleric~
-Position   standing~
-DefPos     standing~
-Specfun    spec_fido~
-Gender     male~
-Actflags   npc sentinel~
-Affected   detect_invis detect_hidden sanctuary protect truesight~
-Stats1     -200 20 17 -300 100 400
-Stats2     1 1 10000
-Stats3     10 5 10
-Stats4     0 0 3 3 0
-Attribs    13 13 13 16 13 13 13
-Saves      0 0 0 0 -3
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms heart brains guts feet fingers ear~
-Immune     blunt pierce sleep charm nonmagic~
-Attacks    bite punch trip gouge flamestrike colorspray~
-Defenses   dodge curecritical dispelevil sanctuary~
+Nattacks  3.000000
+Stats1    -200 0 0 0 0 0
+Stats2    20 21 -300 10000 10 5 10
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary protect truesight~
+Bodyparts head arms heart brains guts feet fingers ear~
+Immune    energy blunt drain sleep hold~
+Attacks   bite punch trip gouge flamestrike colorspray~
+Defenses  dodge curecritical dispelevil sanctuary~
 ShopData   26 0 0 0 0 205 200 0 23
 #MUDPROG
 Progtype  rand_prog~
@@ -1207,395 +1156,388 @@ Comlist   , runs a blackened tongue over his rotting teeth, then grins.
 #ENDMOBILE
 
 #MOBILE
-Vnum       9863
-Keywords   priest~
-Short      the robed priest~
-Long       A trusted priest of the Dragon Cult wanders here, deep in worship.
+Vnum      9863
+Keywords  priest~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the robed priest~
+Long      A trusted priest of the Dragon Cult wanders here, deep in worship.
 ~
-Desc       Thie priest is not someone you want to mess with.  He is wearing
+Desc      Thie priest is not someone you want to mess with.  He is wearing
 thick ornate robes and wields a sharp dagger.  His eyes have a look
 of craziness to them, like this man lives in a world of his own.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc stayarea~
-Affected   detect_magic detect_hidden~
-Stats1     -200 14 17 0 100 400
-Stats2     1 4 300
-Stats3     1 4 12
-Stats4     0 0 0 0 0
-Attribs    15 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Attacks    bite~
+Nattacks  0.000000
+Stats1    -200 -1 0 0 0 0
+Stats2    14 21 0 300 1 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_magic detect_hidden~
+Attacks   bite~
 #ENDMOBILE
 
 #MOBILE
-Vnum       9899
-Keywords   spacer mob~
-Short      a newly created spacer mob~
-Long       Some god abandoned a newly created spacer mob here.
+Vnum      9899
+Keywords  spacer mob~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a newly created spacer mob~
+Long      Some god abandoned a newly created spacer mob here.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc prototype~
-Stats1     0 1 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc proto~
 #ENDMOBILE
 
 #OBJECT
-Vnum     9810
-Keywords altar~
-Type     trash~
-Short    a newly created altar~
-Long     Some god dropped a newly created altar here.~
-Flags    prototype~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      9810
+Keywords  altar~
+Type      trash~
+Short     a newly created altar~
+Long      Some god dropped a newly created altar here.~
+Flags     proto~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     9825
-Keywords black key~
-Type     key~
-Short    a black key~
-Long     You see a very important key here!~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      9825
+Keywords  black key~
+Type      key~
+Short     a black key~
+Long      You see a very important key here!~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     9826
-Keywords primitive key~
-Type     key~
-Short    a primitive key~
-Long     You see a primitive key here!~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      9826
+Keywords  primitive key~
+Type      key~
+Short     a primitive key~
+Long      You see a primitive key here!~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     9827
-Keywords skull key~
-Type     key~
-Short    a skull key~
-Long     You see a skull key here!~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      9827
+Keywords  skull key~
+Type      key~
+Short     a skull key~
+Long      You see a skull key here!~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     9828
-Keywords bone sword~
-Type     weapon~
-Short    a bone sword~
-Long     A sharp piece of bone lays here.~
-Flags    antigood~
-WFlags   take wield~
-Values   0 0 0 1 0 0
-Stats    40 4000 400 0 0
-Affect       -1 -1 2 1 0
-Affect       -1 -1 2 2 0
-Affect       -1 -1 -1 3 0
-Affect       -1 -1 1 19 0
-Affect       -1 -1 1 18 0
+Vnum      9828
+Keywords  bone sword~
+Type      weapon~
+Short     a bone sword~
+Long      A sharp piece of bone lays here.~
+Flags     antigood~
+WFlags    take wield~
+Values    0 0 0 1 0 0 0 0 0 0 0
+Stats     40 4000 -2 1 0 None None None
+AffData strength 2 -1 -1 0
+AffData intelligence 2 -1 -1 0
+AffData wisdom -1 -1 -1 0
+AffData damroll 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     9829
-Keywords skull helm dragon~
-Type     armor~
-Short    a helm made from a dragon's skull~
-Long     The skull of a dragon lies here.~
-Flags    glow~
-WFlags   take head~
-Values   0 0 0 0 0 0
-Stats    15 4000 400 0 0
-Affect       -1 -1 -1 3 0
-Affect       -1 -1 2 5 0
+Vnum      9829
+Keywords  skull helm dragon~
+Type      armor~
+Short     a helm made from a dragon's skull~
+Long      The skull of a dragon lies here.~
+Flags     glow~
+WFlags    take head~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     15 4000 -2 1 0 None None None
+AffData wisdom -1 -1 -1 0
+AffData constitution 2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     9830
-Keywords dark robes~
-Type     armor~
-Short    some dark robes~
-Long     Some dark robes lay here.~
-WFlags   take body~
-Values   0 0 0 0 0 0
-Stats    5 1000 100 0 0
-Affect       -1 -1 30 12 0
+Vnum      9830
+Keywords  dark robes~
+Type      armor~
+Short     some dark robes~
+Long      Some dark robes lay here.~
+WFlags    take body~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 1000 -2 1 0 None None None
+AffData mana 30 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     9831
-Keywords black pen~
-Type     weapon~
-Short    a black pen~
-Long     A black pen catches your eye.~
-WFlags   take wield~
-Values   0 0 0 11 0 0
-Stats    8 300 30 0 0
+Vnum      9831
+Keywords  black pen~
+Type      weapon~
+Short     a black pen~
+Long      A black pen catches your eye.~
+WFlags    take wield~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     8 300 -2 1 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     9832
-Keywords evil black dagger~
-Type     weapon~
-Short    an evil looking black dagger~
-Long     A black dagger is here radiating evil.~
-Flags    evil~
-WFlags   take wield~
-Values   0 0 0 11 0 0
-Stats    10 300 30 0 0
-Affect       -1 -1 3 19 0
-Affect       -1 -1 2 18 0
+Vnum      9832
+Keywords  evil black dagger~
+Type      weapon~
+Short     an evil looking black dagger~
+Long      A black dagger is here radiating evil.~
+Flags     evil~
+WFlags    take wield~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     10 300 -2 1 0 None None None
+AffData damroll 3 -1 -1 0
+AffData hitroll 2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     9833
-Keywords black staff~
-Type     weapon~
-Short    a black staff~
-Long     A long, blackened stick is here.~
-Flags    evil antivampire~
-WFlags   take wield~
-Values   0 0 0 7 0 0
-Stats    10 300 30 0 0
-Affect       -1 -1 3 18 0
-Affect       -1 -1 1 3 0
+Vnum      9833
+Keywords  black staff~
+Type      weapon~
+Short     a black staff~
+Long      A long, blackened stick is here.~
+Flags     evil~
+WFlags    take wield~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     10 300 -2 1 0 None None None
+AffData hitroll 3 -1 -1 0
+AffData wisdom 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     9834
-Keywords heap scales black dragonscale robes~
-Type     armor~
-Short    dragonscale robes~
-Long     You see a shimering black heap of scales.~
-Flags    evil magic antigood antineutral~
-WFlags   take body~
-Values   0 0 0 0 0 0
-Stats    20 5000 500 0 0
-Affect       -1 -1 50 12 0
-Affect       -1 -1 3 3 0
-Affect       -1 -1 3 4 0
-Affect       -1 -1 25 13 0
+Vnum      9834
+Keywords  heap scales black dragonscale robes~
+Type      armor~
+Short     dragonscale robes~
+Long      You see a shimering black heap of scales.~
+Flags     magic antigood antineutral evil~
+WFlags    take body~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     20 5000 -2 1 0 None None None
+AffData mana 50 -1 -1 0
+AffData wisdom 3 -1 -1 0
+AffData dexterity 3 -1 -1 0
+AffData hit 25 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     9835
-Keywords ornate robes~
-Type     armor~
-Short    ornate robes~
-Long     You see a pile of finely woven cloth.~
-WFlags   take body~
-Values   0 0 0 0 0 0
-Stats    20 5000 500 0 0
-Affect       -1 -1 1 3 0
-Affect       -1 -1 1 4 0
+Vnum      9835
+Keywords  ornate robes~
+Type      armor~
+Short     ornate robes~
+Long      You see a pile of finely woven cloth.~
+WFlags    take body~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     20 5000 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     9836
-Keywords white dress torn~
-Type     armor~
-Short    a torn white dress~
-Long     A once pretty dress is lying here with holes torn in it.~
-WFlags   take body~
-Values   0 0 0 0 0 0
-Stats    5 10 1 0 0
+Vnum      9836
+Keywords  white dress torn~
+Type      armor~
+Short     a torn white dress~
+Long      A once pretty dress is lying here with holes torn in it.~
+WFlags    take body~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 10 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     9837
-Keywords rusty key~
-Type     key~
-Short    a rusty key~
-Long     A hunk of metal is on the ground.~
-Flags    hidden~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      9837
+Keywords  rusty key~
+Type      key~
+Short     a rusty key~
+Long      A hunk of metal is on the ground.~
+Flags     hidden~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     9838
-Keywords cheap plaid pants pair~
-Type     armor~
-Short    a pair of cheap plaid pants~
-Long     Some really ugly pants are on the ground here.~
-WFlags   take legs~
-Values   0 0 0 0 0 0
-Stats    5 1000 100 0 0
-Affect       -1 -1 -4 25 0
+Vnum      9838
+Keywords  cheap plaid pants pair~
+Type      armor~
+Short     a pair of cheap plaid pants~
+Long      Some really ugly pants are on the ground here.~
+WFlags    take legs~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 1000 -2 1 0 None None None
+AffData sex -4 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     9839
-Keywords donut~
-Type     food~
-Short    a donut~
-Long     There is a jelly filled donut here.~
-WFlags   take~
-Values   100 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      9839
+Keywords  donut~
+Type      food~
+Short     a donut~
+Long      There is a jelly filled donut here.~
+WFlags    take~
+Values    100 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     9840
-Keywords coffee~
-Type     drinkcon~
-Short    a cup of coffee~
-Long     There is a piping hot cup of coffee here~
-WFlags   take~
-Values   15 15 12 0 0 0
-Stats    1 0 0 0 0
+Vnum      9840
+Keywords  coffee~
+Type      drinkcon~
+Short     a cup of coffee~
+Long      There is a piping hot cup of coffee here~
+WFlags    take~
+Values    15 15 12 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     9841
-Keywords dragon candy~
-Type     pill~
-Short    dragon candy~
-Long     A piece of Dragon candy.~
-WFlags   take~
-Values   0 -1 -1 -1 0 0
-Stats    1 200 20 0 0
-Spells   'blindness' 'harm' 'NONE'
+Vnum      9841
+Keywords  dragon candy~
+Type      pill~
+Short     dragon candy~
+Long      A piece of Dragon candy.~
+WFlags    take~
+Values    0 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 200 -2 9999 0 None None None
+Spells       'blindness' 'harm' 'NONE'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9842
-Keywords zombie candy~
-Type     pill~
-Short    zombie candy~
-Long     A piece of Zombie candy.~
-WFlags   take~
-Values   0 -1 -1 -1 0 0
-Stats    1 320 32 0 0
-Spells   'blindness' 'teleport' 'curse'
+Vnum      9842
+Keywords  zombie candy~
+Type      pill~
+Short     zombie candy~
+Long      A piece of Zombie candy.~
+WFlags    take~
+Values    0 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 320 -2 1 0 None None None
+Spells       'blindness' 'teleport' 'curse'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9843
-Keywords lich candy~
-Type     pill~
-Short    lich candy~
-Long     A piece of Lich candy.~
-WFlags   take~
-Values   0 -1 -1 -1 0 0
-Stats    1 50 5 0 0
-Spells   'poison' 'NONE' 'NONE'
+Vnum      9843
+Keywords  lich candy~
+Type      pill~
+Short     lich candy~
+Long      A piece of Lich candy.~
+WFlags    take~
+Values    0 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 50 -2 9999 0 None None None
+Spells       'poison' 'NONE' 'NONE'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9844
-Keywords vampire candy~
-Type     pill~
-Short    vampire candy~
-Long     A piece of Vampire candy.~
-WFlags   take~
-Values   0 -1 -1 -1 0 0
-Stats    1 100 10 0 0
-Spells   'energy drain' 'energy drain' 'energy drain'
+Vnum      9844
+Keywords  vampire candy~
+Type      pill~
+Short     vampire candy~
+Long      A piece of Vampire candy.~
+WFlags    take~
+Values    0 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 100 -2 9999 0 None None None
+Spells       'energy drain' 'energy drain' 'energy drain'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9845
-Keywords beholder candy~
-Type     pill~
-Short    beholder candy~
-Long     A piece of Beholder candy.~
-WFlags   take~
-Values   0 -1 -1 -1 0 0
-Stats    1 1000 100 0 0
-Spells   'detect hidden' 'detect invis' 'detect magic'
+Vnum      9845
+Keywords  beholder candy~
+Type      pill~
+Short     beholder candy~
+Long      A piece of Beholder candy.~
+WFlags    take~
+Values    0 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1000 -2 1 0 None None None
+Spells       'animal senses' 'detect invis' 'detect magic'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9846
-Keywords ogre candy~
-Type     pill~
-Short    ogre candy~
-Long     A piece of Ogre candy.~
-WFlags   take~
-Values   1 -1 -1 -1 0 0
-Stats    1 2000 200 0 0
-Spells   'kindred strength' 'stone skin' 'NONE'
+Vnum      9846
+Keywords  ogre candy~
+Type      pill~
+Short     ogre candy~
+Long      A piece of Ogre candy.~
+WFlags    take~
+Values    1 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 2000 -2 1 0 None None None
+Spells       'NONE' 'stone skin' 'NONE'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9847
-Keywords troll candy~
-Type     pill~
-Short    troll candy~
-Long     A piece of Troll candy.~
-WFlags   take~
-Values   0 -1 -1 -1 0 0
-Stats    1 1500 150 0 0
-Spells   'cure light' 'cure light' 'NONE'
+Vnum      9847
+Keywords  troll candy~
+Type      pill~
+Short     troll candy~
+Long      A piece of Troll candy.~
+WFlags    take~
+Values    0 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1500 -2 1 0 None None None
+Spells       'cure light' 'cure light' 'NONE'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9848
-Keywords death candy~
-Type     pill~
-Short    death candy~
-Long     A piece of Death candy.~
-WFlags   take~
-Values   0 -1 -1 -1 0 0
-Stats    1 15000 1500 0 0
-Spells   'sanctuary' 'stone skin' 'shield'
+Vnum      9848
+Keywords  death candy~
+Type      pill~
+Short     death candy~
+Long      A piece of Death candy.~
+WFlags    take~
+Values    0 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 15000 -2 1 0 None None None
+Spells       'sanctuary' 'stone skin' 'shield'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9849
-Keywords emerald stone~
-Type     treasure~
-Short    an emerald stone~
-Long     A dark green stone lies here forgotten~
-Flags    glow~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    16960 0 0 0 0
-Affect       -1 -1 2 1 0
-Affect       -1 -1 2 2 0
-Affect       -1 -1 2 3 0
-Affect       -1 -1 2 4 0
-Affect       -1 -1 2 5 0
-Affect       -1 -1 50 12 0
-Affect       -1 -1 50 13 0
-Affect       -1 -1 15 17 0
-Affect       -1 -1 15 18 0
-Affect       -1 -1 15 19 0
+Vnum      9849
+Keywords  emerald stone~
+Type      treasure~
+Short     an emerald stone~
+Long      A dark green stone lies here forgotten~
+Flags     glow~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     16960 0 -2 9999 0 None None None
+AffData strength 2 -1 -1 0
+AffData intelligence 2 -1 -1 0
+AffData wisdom 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData constitution 2 -1 -1 0
+AffData mana 50 -1 -1 0
+AffData hit 50 -1 -1 0
+AffData armor 15 -1 -1 0
+AffData hitroll 15 -1 -1 0
+AffData damroll 15 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     9850
-Keywords brochure~
-Type     trash~
-Short    a brochure~
-Long     A sharp looking flyer flutters here in the breeze.~
-Flags    nodrop noremove~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      9850
+Keywords  brochure~
+Type      trash~
+Short     a brochure~
+Long      A sharp looking flyer flutters here in the breeze.~
+Flags     nodrop noremove~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    brochure~
 ExDesc       The brochure reads:
@@ -1624,14 +1566,14 @@ ExDesc       The brochure reads:
 #ENDOBJECT
 
 #OBJECT
-Vnum     9851
-Keywords glowing caution sign~
-Type     furniture~
-Short    a brightly glowing sign of caution~
-Long     A new, brightly glowing caution sign beckons to you.~
-Flags    glow hum~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      9851
+Keywords  glowing caution sign~
+Type      furniture~
+Short     a brightly glowing sign of caution~
+Long      A new, brightly glowing caution sign beckons to you.~
+Flags     glow hum~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    glowing sign caution~
 ExDesc       This area has been updated to take advantage of special functions and
@@ -1645,27 +1587,27 @@ are not should seek adventure elsewhere.
 #ENDOBJECT
 
 #OBJECT
-Vnum     9852
-Keywords ornate robes~
-Type     armor~
-Short    ornate robes~
-Long     You see a pile of finely woven cloth.~
-Flags    glow~
-WFlags   take neck~
-Values   0 0 0 0 0 0
-Stats    7 5000 500 0 0
-Affect       -1 -1 1 3 0
-Affect       -1 -1 1 4 0
+Vnum      9852
+Keywords  ornate robes~
+Type      armor~
+Short     ornate robes~
+Long      You see a pile of finely woven cloth.~
+Flags     glow~
+WFlags    take neck~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     7 5000 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     9855
-Keywords statue~
-Type     trash~
-Short    a statues of a dragon~
-Long     A pure gold dragon statue stands in the center of the room.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      9855
+Keywords  statue~
+Type      trash~
+Short     a statues of a dragon~
+Long      A pure gold dragon statue stands in the center of the room.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    statue~
 ExDesc       This statue is made from gold, molded into the shape of a majestic
@@ -1678,73 +1620,73 @@ a mouth full of sharp teeth.
 #ENDOBJECT
 
 #OBJECT
-Vnum     9860
-Keywords brown dragon staff~
-Type     staff~
-Short    a brown dragon staff~
-Long     Here lies a staff carved in a dark brown wood in the shape of a dragon.~
-Flags    glow magic organic~
-WFlags   take hold~
-Values   40 1 1 -1 0 0
-Stats    15 10000 1000 0 0
-Spells   'dragon wit'
+Vnum      9860
+Keywords  brown dragon staff~
+Type      staff~
+Short     a brown dragon staff~
+Long      Here lies a staff carved in a dark brown wood in the shape of a dragon.~
+Flags     glow organic magic~
+WFlags    take hold~
+Values    40 1 1 -1 0 0 0 0 0 0 0
+Stats     15 10000 -2 1 0 None None None
+Spells       'dragon wit'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9861
-Keywords golden dragon statuette~
-Type     armor~
-Short    a golden dragon statuette~
-Long     A golden statuette, carved into the shape of a dragon, lies here.~
-Flags    hum magic~
-WFlags   take hold~
-Values   5 7 0 0 0 0
-Stats    12 75000 7500 0 0
-Affect       -1 -1 2 31 0
-Affect       -1 -1 1 3 0
-Affect       -1 -1 20 12 0
+Vnum      9861
+Keywords  golden dragon statuette~
+Type      armor~
+Short     a golden dragon statuette~
+Long      A golden statuette, carved into the shape of a dragon, lies here.~
+Flags     hum magic~
+WFlags    take hold~
+Values    5 7 0 0 0 0 0 0 0 0 0
+Stats     12 75000 -2 1 0 None None None
+AffData class 2 -1 -1 0
+AffData wisdom 1 -1 -1 0
+AffData mana 20 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     9862
-Keywords red dragon wand~
-Type     wand~
-Short    a red dragon wand~
-Long     A red wand with the grip carved into the shape of a dragon.~
-Flags    glow magic~
-WFlags   take hold~
-Values   20 1 1 -1 0 0
-Stats    10 95000 9500 0 0
-Spells   'dragonskin'
+Vnum      9862
+Keywords  red dragon wand~
+Type      wand~
+Short     a red dragon wand~
+Long      A red wand with the grip carved into the shape of a dragon.~
+Flags     glow magic~
+WFlags    take hold~
+Values    20 1 1 -1 0 0 0 0 0 0 0
+Stats     10 95000 -2 1 0 None None None
+Spells       'dragonskin'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9863
-Keywords black dragon potion~
-Type     potion~
-Short    a black dragon potion~
-Long     A black liquid, inside a dragon shaped flask, lies here bubbling.~
-Flags    glow hum magic nodrop~
-WFlags   take~
-Values   30 -1 -1 -1 0 0
-Stats    20 111111 11111 0 0
-Spells   'dispel magic' 'bless' 'armor'
+Vnum      9863
+Keywords  black dragon potion~
+Type      potion~
+Short     a black dragon potion~
+Long      A black liquid, inside a dragon shaped flask, lies here bubbling.~
+Flags     glow hum magic nodrop~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     20 111111 -2 1 0 None None None
+Spells       'dispel magic' 'bless' 'armor'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9864
-Keywords leaky quill~
-Type     weapon~
-Short    a leaky quill~
-Long     A battered quill lies here, leaking ink everywhere.~
-Flags    glow hum magic~
-WFlags   take wield~
-Values   0 0 0 11 0 0
-Stats    8 300 30 0 0
-Affect       -1 -1 -1 25 0
-Affect       -1 -1 4 13 0
-Affect       -1 -1 2 19 0
-Affect       -1 -1 3 18 0
+Vnum      9864
+Keywords  leaky quill~
+Type      weapon~
+Short     a leaky quill~
+Long      A battered quill lies here, leaking ink everywhere.~
+Flags     glow hum magic~
+WFlags    take wield~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     8 300 -2 1 0 None None None
+AffData sex -1 -1 -1 0
+AffData hit 4 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData hitroll 3 -1 -1 0
 #MUDPROG
 Progtype  use_prog~
 Arglist   100~
@@ -1757,15 +1699,15 @@ mpechoaround $n $n splashes ink on $s armour, making $m look messy.
 #ENDOBJECT
 
 #OBJECT
-Vnum     9865
-Keywords meerschaum dragon pipe~
-Type     pipe~
-Short    a meerschaum dragon pipe~
-Long     Here lies a pipe bowl, carved from white meerschaum, in the shape of a dragon.~
-Flags    glow~
-WFlags   take~
-Values   90 0 0 0 0 0
-Stats    5 12500 1250 0 0
+Vnum      9865
+Keywords  meerschaum dragon pipe~
+Type      pipe~
+Short     a meerschaum dragon pipe~
+Long      Here lies a pipe bowl, carved from white meerschaum, in the shape of a dragon.~
+Flags     glow~
+WFlags    take~
+Values    90 0 0 0 0 0 0 0 0 0 0
+Stats     5 12500 -2 1 0 None None None
 #EXDESC
 ExDescKey    pipe~
 ExDesc       This pipe is made from a white clay, called meerschaum.  It is carved
@@ -1776,56 +1718,57 @@ into the shape of a dragon head caught in mid-growl.
 #ENDOBJECT
 
 #OBJECT
-Vnum     9866
-Keywords dragon nip herb~
-Type     herb~
-Short    a pinch of dragon nip herb~
-Long     A brown herb lies here in a small pile.~
-Flags    organic~
-WFlags   take~
-Values   30 30 0 0 0 0
-Stats    3 1100 110 0 0
+Vnum      9866
+Keywords  dragon nip herb~
+Type      herb~
+Short     a pinch of dragon nip herb~
+Long      A brown herb lies here in a small pile.~
+Flags     organic~
+WFlags    take~
+Values    30 30 0 0 0 0 0 0 0 0 0
+Stats     3 1100 -2 1 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     9892
-Keywords Dragon candy~
-Type     pill~
-Short    dragon candy~
-Long     A piece of Dragon candy.~
-WFlags   take~
-Values   5 -1 -1 -1 0 0
-Stats    1 450 45 0 0
-Spells   'dragon wit' 'create fire' 'NONE'
+Vnum      9892
+Keywords  Dragon candy~
+Type      pill~
+Short     dragon candy~
+Long      A piece of Dragon candy.~
+WFlags    take~
+Values    5 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 450 -2 1 0 None None None
+Spells       'dragon wit' 'create fire' 'NONE'
 #ENDOBJECT
 
 #OBJECT
-Vnum     9893
-Keywords rusty key~
-Type     key~
-Short    a rusty key~
-Long     A hunk of metal is on the ground.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      9893
+Keywords  rusty key~
+Type      key~
+Short     a rusty key~
+Long      A hunk of metal is on the ground.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     9899
-Keywords spacerobj~
-Type     trash~
-Short    a newly created spacerobj~
-Long     Some god dropped a newly created spacerobj here.~
-Flags    prototype~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      9899
+Keywords  spacerobj~
+Type      trash~
+Short     a newly created spacerobj~
+Long      Some god dropped a newly created spacerobj here.~
+Flags     proto~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #ROOM
-Vnum     9810
-Name     Winter Altar~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9810
+Name      Winter Altar~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction south~
 ToRoom    9833
@@ -1839,10 +1782,11 @@ ToRoom    9834
 #ENDROOM
 
 #ROOM
-Vnum     9811
-Name     The Winter Pit~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9811
+Name      The Winter Pit~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction south~
 ToRoom    9895
@@ -1851,24 +1795,26 @@ ToRoom    9895
 #ENDROOM
 
 #ROOM
-Vnum     9812
-Name     A dark cell~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9812
+Name      A dark cell~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9813
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9812 1 1
+Reset D 9812 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9813
-Name     North Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9813
+Name      North Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9814
@@ -1885,14 +1831,15 @@ ToRoom    9812
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9813 3 1
+Reset D 9813 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9814
-Name     North Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9814
+Name      North Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9815
@@ -1904,14 +1851,15 @@ Direction west~
 ToRoom    9813
 #ENDEXIT
 
-Reset D 0 9814 1 1
+Reset D 9814 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9815
-Name     Spring~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9815
+Name      Spring~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9816
@@ -1923,14 +1871,15 @@ ToRoom    9814
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9815 3 1
+Reset D 9815 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9816
-Name     Spring Altar~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9816
+Name      Spring Altar~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction west~
 ToRoom    9815
@@ -1944,10 +1893,11 @@ ToRoom    9838
 #ENDROOM
 
 #ROOM
-Vnum     9817
-Name     The Spring Pit~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9817
+Name      The Spring Pit~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction south~
 ToRoom    9897
@@ -1956,24 +1906,26 @@ ToRoom    9897
 #ENDROOM
 
 #ROOM
-Vnum     9818
-Name     A dark cell~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9818
+Name      A dark cell~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction south~
 ToRoom    9819
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9818 2 1
+Reset D 9818 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9819
-Name     East Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9819
+Name      East Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9818
@@ -1990,14 +1942,15 @@ Direction west~
 ToRoom    9840
 #ENDEXIT
 
-Reset D 0 9819 0 1
+Reset D 9819 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9820
-Name     East Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9820
+Name      East Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9819
@@ -2009,14 +1962,15 @@ ToRoom    9821
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9820 2 1
+Reset D 9820 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9821
-Name     Summer~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9821
+Name      Summer~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9820
@@ -2028,14 +1982,15 @@ Direction south~
 ToRoom    9822
 #ENDEXIT
 
-Reset D 0 9821 0 1
+Reset D 9821 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9822
-Name     Summer Altar~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9822
+Name      Summer Altar~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9821
@@ -2054,10 +2009,11 @@ ToRoom    9842
 #ENDROOM
 
 #ROOM
-Vnum     9823
-Name     The Summer Pit~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9823
+Name      The Summer Pit~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9897
@@ -2074,14 +2030,15 @@ ToRoom    9824
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9823 3 1
+Reset D 9823 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9824
-Name     A dark cell~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9824
+Name      A dark cell~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9823
@@ -2094,15 +2051,16 @@ ToRoom    9825
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9824 1 1
-Reset D 0 9824 3 1
+Reset D 9824 1 1 100 -2
+Reset D 9824 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9825
-Name     South Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9825
+Name      South Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9844
@@ -2119,14 +2077,15 @@ Direction west~
 ToRoom    9826
 #ENDEXIT
 
-Reset D 0 9825 1 1
+Reset D 9825 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9826
-Name     South Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9826
+Name      South Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9825
@@ -2138,14 +2097,15 @@ ToRoom    9827
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9826 3 1
+Reset D 9826 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9827
-Name     Autumn~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9827
+Name      Autumn~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9826
@@ -2157,14 +2117,15 @@ Direction west~
 ToRoom    9828
 #ENDEXIT
 
-Reset D 0 9827 1 1
+Reset D 9827 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9828
-Name     Autumn Altar~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9828
+Name      Autumn Altar~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9827
@@ -2178,10 +2139,11 @@ ToRoom    9846
 #ENDROOM
 
 #ROOM
-Vnum     9829
-Name     The Autumn Pit~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9829
+Name      The Autumn Pit~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9895
@@ -2190,10 +2152,11 @@ ToRoom    9895
 #ENDROOM
 
 #ROOM
-Vnum     9830
-Name     A dark cell~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9830
+Name      A dark cell~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9831
@@ -2206,15 +2169,16 @@ ToRoom    9829
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9830 0 1
-Reset D 0 9830 2 1
+Reset D 9830 0 1 100 -2
+Reset D 9830 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9831
-Name     West Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9831
+Name      West Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9832
@@ -2231,14 +2195,15 @@ ToRoom    9830
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9831 2 1
+Reset D 9831 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9832
-Name     West Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9832
+Name      West Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9833
@@ -2250,14 +2215,15 @@ Direction south~
 ToRoom    9831
 #ENDEXIT
 
-Reset D 0 9832 0 1
+Reset D 9832 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9833
-Name     Winter~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9833
+Name      Winter~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9810
@@ -2269,14 +2235,15 @@ ToRoom    9832
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9833 2 1
+Reset D 9833 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9834
-Name     Winter Attendant~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9834
+Name      Winter Attendant~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction northwest~
 ToRoom    9810
@@ -2290,10 +2257,11 @@ ToRoom    9835
 #ENDROOM
 
 #ROOM
-Vnum     9835
-Name     Winter Liar~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9835
+Name      Winter Liar~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction down~
 ToRoom    9811
@@ -2307,10 +2275,11 @@ ToRoom    9834
 #ENDROOM
 
 #ROOM
-Vnum     9836
-Name     North Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9836
+Name      North Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9813
@@ -2324,10 +2293,11 @@ ToRoom    9837
 #ENDROOM
 
 #ROOM
-Vnum     9837
-Name     North Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9837
+Name      North Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9836
@@ -2341,10 +2311,11 @@ ToRoom    9891
 #ENDROOM
 
 #ROOM
-Vnum     9838
-Name     Spring Attendant~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9838
+Name      Spring Attendant~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction northeast~
 ToRoom    9816
@@ -2358,10 +2329,11 @@ ToRoom    9839
 #ENDROOM
 
 #ROOM
-Vnum     9839
-Name     Spring Liar~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9839
+Name      Spring Liar~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction down~
 ToRoom    9817
@@ -2375,10 +2347,11 @@ ToRoom    9838
 #ENDROOM
 
 #ROOM
-Vnum     9840
-Name     East Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9840
+Name      East Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9819
@@ -2392,10 +2365,11 @@ ToRoom    9841
 #ENDROOM
 
 #ROOM
-Vnum     9841
-Name     East Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9841
+Name      East Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9840
@@ -2409,10 +2383,11 @@ ToRoom    9891
 #ENDROOM
 
 #ROOM
-Vnum     9842
-Name     Summer Attendant~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9842
+Name      Summer Attendant~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction northwest~
 ToRoom    9843
@@ -2426,10 +2401,11 @@ ToRoom    9822
 #ENDROOM
 
 #ROOM
-Vnum     9843
-Name     Summer Liar~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9843
+Name      Summer Liar~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction down~
 ToRoom    9823
@@ -2443,10 +2419,11 @@ ToRoom    9842
 #ENDROOM
 
 #ROOM
-Vnum     9844
-Name     South Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9844
+Name      South Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9845
@@ -2460,10 +2437,11 @@ ToRoom    9825
 #ENDROOM
 
 #ROOM
-Vnum     9845
-Name     South Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9845
+Name      South Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9891
@@ -2477,10 +2455,11 @@ ToRoom    9844
 #ENDROOM
 
 #ROOM
-Vnum     9846
-Name     Autumn Attendant~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9846
+Name      Autumn Attendant~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction northeast~
 ToRoom    9847
@@ -2494,10 +2473,11 @@ ToRoom    9828
 #ENDROOM
 
 #ROOM
-Vnum     9847
-Name     Autumn Liar~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9847
+Name      Autumn Liar~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction down~
 ToRoom    9829
@@ -2511,10 +2491,11 @@ ToRoom    9846
 #ENDROOM
 
 #ROOM
-Vnum     9848
-Name     West Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9848
+Name      West Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9849
@@ -2528,10 +2509,11 @@ ToRoom    9831
 #ENDROOM
 
 #ROOM
-Vnum     9849
-Name     West Mage Route~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9849
+Name      West Mage Route~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction east~
 ToRoom    9891
@@ -2542,17 +2524,18 @@ Direction west~
 ToRoom    9848
 #ENDEXIT
 
-Reset M 0 9802 4 9849
-  Reset E 1 9832 6 16
-  Reset E 1 9852 4 3
+Reset M 9802 4 9849 -1 -1 -1 100
+  Reset E 9832 6 16 100
+  Reset E 9852 4 3 100
 #ENDROOM
 
 #ROOM
-Vnum     9850
-Name     Dragon Exports front desk~
-Sector   forest~
-Flags    dark nomob indoors~
-Desc     You have entered a very orderly office.  The room is painted in a light
+Vnum      9850
+Name      Dragon Exports front desk~
+Sector    forest~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a very orderly office.  The room is painted in a light
 gold with a few sparse paintings on the east wall and a massive painting
 on the west wall.  In the center of the room is a carved desk, impressive
 in stature and design.  A few potted plants stand sentry along the north
@@ -2576,8 +2559,8 @@ Desc      To the south is Law Avenue, of the town of Darkhaven.
 ~
 #ENDEXIT
 
-Reset M 0 9800 1 9850
-Reset D 0 9850 0 2
+Reset M 9800 1 9850 -1 -1 -1 100
+Reset D 9850 0 2 100 -2
 #EXDESC
 ExDescKey    west~
 ExDesc       A massive picture adorns the west wall, barely allowing the light
@@ -2704,11 +2687,12 @@ July 30, 1996
 #ENDROOM
 
 #ROOM
-Vnum     9851
-Name     A dimly lit corridor~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     It takes a few moments for your eyes to adjust to the sudden darkness
+Vnum      9851
+Name      A dimly lit corridor~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      It takes a few moments for your eyes to adjust to the sudden darkness
 of this hallway.  The room is completely bare of color and decor.  The
 emptiness appears purposeful, a ruse to make the building appear bland
 enough to deter potential adventurers.
@@ -2730,15 +2714,16 @@ Keywords  door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9851 2 1
+Reset D 9851 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9852
-Name     Dragon Hall Foyer~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     This is the formal foyer for the Dragon Exports office.  The room is a
+Vnum      9852
+Name      Dragon Hall Foyer~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This is the formal foyer for the Dragon Exports office.  The room is a
 stark contrast to the hallway leading into it.  The walls are painted
 in a flat gold color.  There are two paintings on the east wall and two
 paintings on the west wall.  To the north is an open doorway, leading
@@ -2786,11 +2771,12 @@ dragons. Those like Tiamat and Shimmergloom.
 #ENDROOM
 
 #ROOM
-Vnum     9853
-Name     The Front Office~
-Sector   inside~
-Flags    dark indoors~
-Desc     You have reached the front office of the Dragon Exports.  The decor here
+Vnum      9853
+Name      The Front Office~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You have reached the front office of the Dragon Exports.  The decor here
 is somewhat gaudy compared to the parts of the building you have seen so
 far.  The walls maintain the flat golden hue, but the knick knacks are
 more overblown.  Bigger and brighter seems to be the theme here.  The
@@ -2828,11 +2814,11 @@ Keywords  trapdoor~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 9809 1 9853
-  Reset E 1 9838 2 7
-  Reset E 1 9864 2 16
-Reset D 0 9853 1 1
-Reset D 0 9853 5 1
+Reset M 9809 1 9853 -1 -1 -1 100
+  Reset E 9838 2 7 100
+  Reset E 9864 2 16 100
+Reset D 9853 1 1 100 -2
+Reset D 9853 5 1 100 -2
 #EXDESC
 ExDescKey    plaque~
 ExDesc       The Dragon Cult Temple was created by Sandman,
@@ -2881,11 +2867,12 @@ ExDesc       There is a door to the east, with a sign reading: Caution -- Do not
 #ENDROOM
 
 #ROOM
-Vnum     9854
-Name     A five-way intersection~
-Sector   inside~
-Flags    dark indoors~
-Desc     You stand at a wide intersection of hallways.  There are exits to the
+Vnum      9854
+Name      A five-way intersection~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand at a wide intersection of hallways.  There are exits to the
 north, south, east, and west.  Above you, you can see the outlines of
 a trap door.  From the south you notice a bright glow, catching your
 attention.
@@ -2927,18 +2914,19 @@ Keywords  trapdoor~
 Flags     isdoor closed nomob~
 #ENDEXIT
 
-Reset M 0 9802 4 9854
-  Reset E 1 9832 6 16
-  Reset E 1 9835 4 5
-Reset D 0 9854 4 1
+Reset M 9802 4 9854 -1 -1 -1 100
+  Reset E 9832 6 16 100
+  Reset E 9835 4 5 100
+Reset D 9854 4 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9855
-Name     The Candlelit Shrine~
-Sector   inside~
-Flags    indoors~
-Desc     The light in this place is overwhelming.  Candles completely cover
+Vnum      9855
+Name      The Candlelit Shrine~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The light in this place is overwhelming.  Candles completely cover
 the walls, making this place hot as well as bright.  This place is
 a place of worship, and the idol is a golden dragon statue.
 ~
@@ -2949,17 +2937,18 @@ Desc      You see the intersection.
 ~
 #ENDEXIT
 
-Reset M 0 9801 7 9855
-  Reset E 1 9830 8 5
-Reset O 0 9855 1 9855
+Reset M 9801 7 9855 -1 -1 -1 100
+  Reset E 9830 8 5 100
+Reset O 9855 1 9855 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     9856
-Name     The Tapestry Room~
-Sector   inside~
-Flags    dark indoors~
-Desc     The walls of this room are covered with tapestries depicting various dragon
+Vnum      9856
+Name      The Tapestry Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The walls of this room are covered with tapestries depicting various dragon
 scenes.  Befitting the theme seen throughout this building, there are five
 distinct tapestries - two to the north, two to the south, and one large
 tapestry to the east.  As you begin to look them over in detail, you see
@@ -2982,13 +2971,13 @@ Desc      You see the intersection.
 ~
 #ENDEXIT
 
-Reset M 0 9801 7 9856
-  Reset E 1 9830 8 5
-  Reset E 1 9833 6 16
-Reset M 0 9801 7 9856
-  Reset E 1 9830 8 5
-  Reset E 1 9833 6 16
-Reset D 0 9856 1 1
+Reset M 9801 7 9856 -1 -1 -1 100
+  Reset E 9830 8 5 100
+  Reset E 9833 6 16 100
+Reset M 9801 7 9856 -1 -1 -1 100
+  Reset E 9830 8 5 100
+  Reset E 9833 6 16 100
+Reset D 9856 1 1 100 -2
 #EXDESC
 ExDescKey    w west~
 ExDesc       The two tapestries on the west wall feature an early spring and
@@ -3048,11 +3037,12 @@ to be shielding an opening in the wall.
 #ENDROOM
 
 #ROOM
-Vnum     9857
-Name     An ordinary hallway.~
-Sector   inside~
-Flags    dark indoors~
-Desc     This is a small hallway, leading away from the more busy parts of the
+Vnum      9857
+Name      An ordinary hallway.~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is a small hallway, leading away from the more busy parts of the
 temple area.  The walls here are deprived of color and decor.  Only
 the doors have any color.  One door leads off the the east and the
 other to the north.
@@ -3081,16 +3071,17 @@ Desc      You see the intersection.
 ~
 #ENDEXIT
 
-Reset D 0 9857 0 1
-Reset D 0 9857 1 1
+Reset D 9857 0 1 100 -2
+Reset D 9857 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9858
-Name     The lavatory~
-Sector   inside~
-Flags    dark indoors~
-Desc     A horrible stench assaults your nostrils as you enter this room.  The
+Vnum      9858
+Name      The lavatory~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      A horrible stench assaults your nostrils as you enter this room.  The
 presence of defecation and urine is heavy in the air.  While appearing
 to come from the much abused toilet, the scent could in fact be sourced
 to several places within this putrid room.  You allow the strange and
@@ -3106,16 +3097,17 @@ Keywords  door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 9807 1 9858
-Reset D 0 9858 3 1
+Reset M 9807 1 9858 -1 -1 -1 100
+Reset D 9858 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9859
-Name     A hallway~
-Sector   inside~
-Flags    indoors~
-Desc     This portion of the hallway is lit by a strange glow that seems to be
+Vnum      9859
+Name      A hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This portion of the hallway is lit by a strange glow that seems to be
 rising from the floor.  It's as if the stones had an internal light,
 making them radiate this faint lambency.  No matter how closely you
 peer into the flooring, you cannot locate the source of this power.
@@ -3143,11 +3135,12 @@ ExDesc       The stones covering the floor are glowing with an undefined power.
 #ENDROOM
 
 #ROOM
-Vnum     9860
-Name     Bend in the hallway~
-Sector   inside~
-Flags    dark indoors~
-Desc     You have come to a bend in the hallway of this strange place.  The
+Vnum      9860
+Name      Bend in the hallway~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You have come to a bend in the hallway of this strange place.  The
 room is dark and dismal, devoid of all light and color.  The walls
 look as if they have never experienced a cleaning, and the floors
 are scuffed from the passing of many feet over time.
@@ -3166,23 +3159,24 @@ Desc      You see a hallway.
 ~
 #ENDEXIT
 
-Reset M 0 9801 7 9860
-  Reset E 1 9830 8 5
-  Reset E 1 9833 6 16
-Reset M 0 9801 7 9860
-  Reset E 1 9830 8 5
-  Reset E 1 9833 6 16
-Reset M 0 9801 7 9860
-  Reset E 1 9830 8 5
-  Reset E 1 9833 6 16
+Reset M 9801 7 9860 -1 -1 -1 100
+  Reset E 9830 8 5 100
+  Reset E 9833 6 16 100
+Reset M 9801 7 9860 -1 -1 -1 100
+  Reset E 9830 8 5 100
+  Reset E 9833 6 16 100
+Reset M 9801 7 9860 -1 -1 -1 100
+  Reset E 9830 8 5 100
+  Reset E 9833 6 16 100
 #ENDROOM
 
 #ROOM
-Vnum     9861
-Name     A place of worship~
-Sector   inside~
-Flags    dark indoors~
-Desc     This darkened room is where the minor priests celebrate the passing
+Vnum      9861
+Name      A place of worship~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This darkened room is where the minor priests celebrate the passing
 of vows and rituals, prerequisites to being allowed to descend deeper
 into the temple.  On the floor are patterns, drawings, and recordings
 of the rites performed here.  Worked into the patterning on the floor
@@ -3212,12 +3206,12 @@ Keywords  trapdoor~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 9802 4 9861
-  Reset E 1 9832 6 16
-  Reset E 1 9852 4 3
-Reset M 0 9801 7 9861
-  Reset E 1 9830 8 5
-Reset D 0 9861 5 1
+Reset M 9802 4 9861 -1 -1 -1 100
+  Reset E 9832 6 16 100
+  Reset E 9852 4 3 100
+Reset M 9801 7 9861 -1 -1 -1 100
+  Reset E 9830 8 5 100
+Reset D 9861 5 1 100 -2
 #EXDESC
 ExDescKey    floor~
 ExDesc       Drawn and scratched into the floor are hundreds of patterns, drawings,
@@ -3247,11 +3241,12 @@ foolish enough to descend where it leads?
 #ENDROOM
 
 #ROOM
-Vnum     9862
-Name     Dark Room~
-Sector   inside~
-Flags    dark indoors~
-Desc     The darkness is everpresent here.  The light you have barely breaks through
+Vnum      9862
+Name      Dark Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The darkness is everpresent here.  The light you have barely breaks through
 its tight grip.  Above is a small ladder, leading up to the minor priests'
 section of the temple.  To the south is a circular room.
 ~
@@ -3271,7 +3266,7 @@ Keywords  trapdoor~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9862 4 1
+Reset D 9862 4 1 100 -2
 #EXDESC
 ExDescKey    ladder~
 ExDesc       This small ladder looks like it will support your weight, but not
@@ -3282,11 +3277,12 @@ much else.  It will take you to the upper levels of the temple.
 #ENDROOM
 
 #ROOM
-Vnum     9863
-Name     The Inner Circle~
-Sector   inside~
-Flags    dark indoors~
-Desc     Dark and foreboding, this place of worship has a penetrating evil about
+Vnum      9863
+Name      The Inner Circle~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Dark and foreboding, this place of worship has a penetrating evil about
 it. The priests barely maintain human form, as if turning into the very
 dragons they so devotedly worship.  The walls are splashed with a maroon
 red, that you can imagine used to be blood.  The room is a half circle,
@@ -3316,12 +3312,12 @@ Desc      You see a corridor.
 Flags     nomob~
 #ENDEXIT
 
-Reset M 0 9863 2 9863
-  Reset E 1 9835 4 3
-  Reset E 1 9832 6 16
-Reset M 0 9863 2 9863
-  Reset E 1 9835 4 3
-  Reset E 1 9832 6 16
+Reset M 9863 2 9863 -1 -1 -1 100
+  Reset E 9835 4 3 100
+  Reset E 9832 6 16 100
+Reset M 9863 2 9863 -1 -1 -1 100
+  Reset E 9835 4 3 100
+  Reset E 9832 6 16 100
 #EXDESC
 ExDescKey    walls~
 ExDesc       The walls are a dark, chiselled rock, bare except for splashings of
@@ -3349,11 +3345,12 @@ except for splashings of long dried blood.
 #ENDROOM
 
 #ROOM
-Vnum     9864
-Name     Priest Quarters~
-Sector   inside~
-Flags    dark indoors~
-Desc     The Priests of the Dragon Cult sleep here.  The room is very neat and tidy,
+Vnum      9864
+Name      Priest Quarters~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The Priests of the Dragon Cult sleep here.  The room is very neat and tidy,
 except for one large tile on the floor with dirt around the edges.  The
 only way out is west.
 ~
@@ -3373,9 +3370,9 @@ Keywords  tile~
 Flags     isdoor closed nomob~
 #ENDEXIT
 
-Reset M 0 9802 4 9864
-  Reset E 1 9852 4 3
-Reset D 0 9864 5 1
+Reset M 9802 4 9864 -1 -1 -1 100
+  Reset E 9852 4 3 100
+Reset D 9864 5 1 100 -2
 #EXDESC
 ExDescKey    tile~
 ExDesc       This heavy tile appears to be placed directly over a hole in the ground.
@@ -3385,11 +3382,12 @@ ExDesc       This heavy tile appears to be placed directly over a hole in the gr
 #ENDROOM
 
 #ROOM
-Vnum     9865
-Name     A foreboding corridor~
-Sector   inside~
-Flags    dark indoors~
-Desc     A cold chill soaks through your garments as you enter this room.  You
+Vnum      9865
+Name      A foreboding corridor~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      A cold chill soaks through your garments as you enter this room.  You
 hear echos of soft weeping resounding through this darkened corridor.
 A small cell lies to the north.  The hall continues east and west.
 ~
@@ -3417,19 +3415,20 @@ Desc      It's not a safe place to go.
 ~
 #ENDEXIT
 
-Reset M 0 9803 1 9865
-  Reset G 1 9826 1
-  Reset E 1 9828 1 16
-  Reset E 1 9829 1 6
-Reset D 0 9865 0 2
+Reset M 9803 1 9865 -1 -1 -1 100
+  Reset G 9826 1 100
+  Reset E 9828 1 16 100
+  Reset E 9829 1 6 100
+Reset D 9865 0 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9866
-Name     The Virgins' Cell~
-Sector   inside~
-Flags    dark indoors~
-Desc     This dark, damp place is apparently where the Virgin Sacrifices are kept.
+Vnum      9866
+Name      The Virgins' Cell~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This dark, damp place is apparently where the Virgin Sacrifices are kept.
 This room's size alone is enough to impose the feeling of impending doom
 that the virgins that are forced to wait here must feel.  The mortar walls
 show scratch marks along the seems, where countless maidens have tried
@@ -3455,18 +3454,19 @@ Keywords  trapdoor~
 Flags     isdoor closed climb can_climb~
 #ENDEXIT
 
-Reset M 0 9805 1 9866
-  Reset E 1 9836 1 5
-Reset D 0 9866 2 2
-Reset D 0 9866 4 1
+Reset M 9805 1 9866 -1 -1 -1 100
+  Reset E 9836 1 5 100
+Reset D 9866 2 2 100 -2
+Reset D 9866 4 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9867
-Name     An even more forboding corridor...~
-Sector   inside~
-Flags    dark indoors~
-Desc     You're really getting somewhere now.  This you can tell by the knots
+Vnum      9867
+Name      An even more forboding corridor...~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You're really getting somewhere now.  This you can tell by the knots
 forming in your stomach.  Exits open to the east and, if you really
 wish to continue, to the west.
 ~
@@ -3486,15 +3486,16 @@ Keywords  door~
 Flags     isdoor closed nopassdoor~
 #ENDEXIT
 
-Reset D 0 9867 3 1
+Reset D 9867 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9868
-Name     The Chamber of the High Priestess~
-Sector   inside~
-Flags    dark indoors~
-Desc     This is the bed chamber of Mistress Cosira, the High Priestess of the
+Vnum      9868
+Name      The Chamber of the High Priestess~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is the bed chamber of Mistress Cosira, the High Priestess of the
 Dragon cult.  Being caught in here could cause you serious trouble.  A
 huge bed occupies the southern part of the room.  The room is lit by
 candle light, as hundreds of candles flicker in holders along the walls.
@@ -3518,11 +3519,11 @@ Keywords  door~
 Flags     isdoor closed nopassdoor~
 #ENDEXIT
 
-Reset M 0 9804 1 9868
-  Reset G 1 9827 1
-  Reset E 1 9834 1 5
-Reset D 0 9868 0 1
-Reset D 0 9868 1 1
+Reset M 9804 1 9868 -1 -1 -1 100
+  Reset G 9827 1 100
+  Reset E 9834 1 5 100
+Reset D 9868 0 1 100 -2
+Reset D 9868 1 1 100 -2
 #EXDESC
 ExDescKey    bed~
 ExDesc       This bed is by far larger than any you have seen before.  It is very
@@ -3539,11 +3540,12 @@ ExDesc       The wall is covered in candle holders, each housing a lit candle.
 #ENDROOM
 
 #ROOM
-Vnum     9869
-Name     A foul smelling hallway~
-Sector   inside~
-Flags    dark indoors~
-Desc     Stench assults your senses as you enter this room.  Putrid wafts of
+Vnum      9869
+Name      A foul smelling hallway~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Stench assults your senses as you enter this room.  Putrid wafts of
 stale air surround you, making you think of death and decay.  Your
 eyes begin to accept the darkness of the room, yet water in response
 to the awful scent.  Along the walls are skeletal remains of humanoid
@@ -3571,16 +3573,17 @@ Desc      You see the room in which the High Priestess resides.
 Flags     isdoor closed nopassdoor~
 #ENDEXIT
 
-Reset D 0 9869 0 2
-Reset D 0 9869 2 1
+Reset D 9869 0 2 100 -2
+Reset D 9869 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9870
-Name     Chamber of the Wyrmling~
-Sector   inside~
-Flags    dark indoors~
-Desc     You feel eyes on you the instant you enter this room.  As you fall silent,
+Vnum      9870
+Name      Chamber of the Wyrmling~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You feel eyes on you the instant you enter this room.  As you fall silent,
 you can hear the rumbling breathing of a large beast.  In the north corner
 is a huge creature, looking at you like you're going to be its next meal.
 It's then that you notice the gnawed bones and large piles of dragon feces
@@ -3597,16 +3600,17 @@ Keywords  door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 9806 1 9870
-Reset D 0 9870 2 1
+Reset M 9806 1 9870 -1 -1 -1 100
+Reset D 9870 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9871
-Name     A Waiting Room~
-Sector   inside~
-Flags    dark indoors~
-Desc     This room is filled with chairs, coffee tables and parchments.  You may
+Vnum      9871
+Name      A Waiting Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This room is filled with chairs, coffee tables and parchments.  You may
 sit and rest here until your appointment.  The office has a number of
 employees about, doing their jobs.  The front office is to the east and
 the workshops, the Portable Dragon, and the main offices can be found
@@ -3635,15 +3639,16 @@ Keywords  door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9871 3 1
+Reset D 9871 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9872
-Name     Dragon Exports central hall~
-Sector   inside~
-Flags    dark indoors~
-Desc     This room is all a bustle with employees and visitors to the Dragon
+Vnum      9872
+Name      Dragon Exports central hall~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This room is all a bustle with employees and visitors to the Dragon
 Exports.  Most here are in transit from one section of the office to
 another, as this is the middle hallway.  West is where the fruits
 their labor are sold, the Portable Dragon.  North is the Gemma's
@@ -3681,15 +3686,16 @@ Desc      The Portable Dragon shop.
 ~
 #ENDEXIT
 
-Reset M 0 9811 1 9872
+Reset M 9811 1 9872 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     9873
-Name     A strange, glowing room...~
-Sector   inside~
-Flags    dark indoors~
-Desc     The door snaps shut and you are left standing, locked in a small, tight,
+Vnum      9873
+Name      A strange, glowing room...~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The door snaps shut and you are left standing, locked in a small, tight,
 glowing room ... it does not look like there is any way out, so you may
 as well lie down on the rug that covers the floor.
 ~
@@ -3710,8 +3716,8 @@ Keywords  trapdoor~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9873 1 2
-Reset D 0 9873 5 1
+Reset D 9873 1 2 100 -2
+Reset D 9873 5 1 100 -2
 #EXDESC
 ExDescKey    rug~
 ExDesc       It's pretty big rug, but it isn't nailed down or anything....
@@ -3735,11 +3741,12 @@ Hey, you think there could be something under it?
 #ENDROOM
 
 #ROOM
-Vnum     9874
-Name     A hallway in the office~
-Sector   inside~
-Flags    dark indoors~
-Desc     This is a basic hallway, free from any furnishing or decoration,
+Vnum      9874
+Name      A hallway in the office~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is a basic hallway, free from any furnishing or decoration,
 save one large painting on the east wall.  This hall sees much less
 traffic than the one south, as only Gemma's office and an odd door
 can be accessed from this direction.
@@ -3766,7 +3773,7 @@ Desc      You see Gemma's office to the west.
 ~
 #ENDEXIT
 
-Reset D 0 9874 0 1
+Reset D 9874 0 1 100 -2
 #EXDESC
 ExDescKey    door~
 ExDesc       This is a door made of a thick metal, unlike anything else so far
@@ -3785,11 +3792,12 @@ fierce and deadly, even through this portrait.
 #ENDROOM
 
 #ROOM
-Vnum     9875
-Name     Gemma's office~
-Sector   inside~
-Flags    dark indoors~
-Desc     This office is very clean, almost too clean for the amount of work
+Vnum      9875
+Name      Gemma's office~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This office is very clean, almost too clean for the amount of work
 Gemma does around here.  This office is painted an off white and
 the doorframe and windows are trimmed in a dark brown.  Both windows
 are on the western wall, facing out to Vertic Avenue of the town of
@@ -3833,11 +3841,12 @@ drawers.
 #ENDROOM
 
 #ROOM
-Vnum     9876
-Name     Fandarel's office~
-Sector   inside~
-Flags    dark indoors~
-Desc     Fandarel's office is the epitome of disarray.  There are parchments,
+Vnum      9876
+Name      Fandarel's office~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Fandarel's office is the epitome of disarray.  There are parchments,
 ashtrays, and coffee cups littering his desk.  It's amazing that any
 work could be accomplished amongst this disaster.  Actually, by the
 look of things, you doubt he really does any work around here.  Back
@@ -3851,7 +3860,7 @@ Desc      You see a large workshop directly south if this office.
 ~
 #ENDEXIT
 
-Reset M 0 9812 1 9876
+Reset M 9812 1 9876 -1 -1 -1 100
 #EXDESC
 ExDescKey    desk~
 ExDesc       This desk is in shambles, stained and littered.  It's amazing that any
@@ -3862,11 +3871,12 @@ work can be done amongst the garbage here.
 #ENDROOM
 
 #ROOM
-Vnum     9877
-Name     A small break room~
-Sector   inside~
-Flags    dark indoors~
-Desc     This room sees a lot less activity than would be expected from a business
+Vnum      9877
+Name      A small break room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This room sees a lot less activity than would be expected from a business
 this large.  Fandarel prefers his workers to break at their workstation
 rather than spend the extra two minutes walking between rooms.  On lunch
 break, the workers prefer to leave the building to get away from their
@@ -3882,11 +3892,12 @@ Desc      The supply room.
 #ENDROOM
 
 #ROOM
-Vnum     9878
-Name     A large workshop~
-Sector   inside~
-Flags    dark indoors~
-Desc     This room, though oddly placed, is well equiped for crafting the
+Vnum      9878
+Name      A large workshop~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This room, though oddly placed, is well equiped for crafting the
 items sold at the shop.  The entire south wall is workbenches and
 stools, broken up into individual work sections by short wooden
 dividers.  As you peer north, you realize that the main boss has
@@ -3926,11 +3937,12 @@ and likely to withstand several years of use.
 #ENDROOM
 
 #ROOM
-Vnum     9879
-Name     The Portable Dragon~
-Sector   inside~
-Flags    dark indoors nosummon noastral~
-Desc     This shop appears to be the central point of this organization.  A place
+Vnum      9879
+Name      The Portable Dragon~
+Sector    indoors~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This shop appears to be the central point of this organization.  A place
 to sell the items crafted in the attached workshops.  All items are dragon
 related, in shape or spell, as a way to worship these enormous, fantastical
 beasts.  There are four separate shelves attached to the back wall.  Each
@@ -3946,11 +3958,11 @@ Desc      You see the entranceway to the office.
 ~
 #ENDEXIT
 
-Reset M 0 9814 1 9879
-  Reset G 1 9860 1
-  Reset G 1 9861 1
-  Reset G 1 9862 1
-  Reset G 1 9863 1
+Reset M 9814 1 9879 -1 -1 -1 100
+  Reset G 9860 1 100
+  Reset G 9861 1 100
+  Reset G 9862 1 100
+  Reset G 9863 1 100
 #EXDESC
 ExDescKey    shelves~
 ExDesc       There are four shelves here, each heavily ladden with dragon items.
@@ -3986,11 +3998,12 @@ the shopkeeper to the floor in a heap.
 #ENDROOM
 
 #ROOM
-Vnum     9880
-Name     A back hallway~
-Sector   inside~
-Flags    dark indoors~
-Desc     This hallway is used by the employees to bypass the busier parts
+Vnum      9880
+Name      A back hallway~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This hallway is used by the employees to bypass the busier parts
 of the building.  It is bare from any decor, except the same flat
 gold paint on the walls of the entrance hall and the front office.
 You wonder again at the caution posted on the door that lead here, 
@@ -4014,15 +4027,16 @@ Keywords  door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9880 3 1
+Reset D 9880 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9881
-Name     End of the hallway~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     This hallway is completely bare.  You can not understand the reason for
+Vnum      9881
+Name      End of the hallway~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This hallway is completely bare.  You can not understand the reason for
 the cautions on the doors leading here.  The hallway continues south and
 there is a door leading west.  There is also a closed door to the north.
 ~
@@ -4051,8 +4065,8 @@ Keywords  door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9881 0 1
-Reset D 0 9881 3 1
+Reset D 9881 0 1 100 -2
+Reset D 9881 3 1 100 -2
 #EXDESC
 ExDescKey    door~
 ExDesc       There is a door to the north, with a sign reading: 
@@ -4063,11 +4077,12 @@ Caution -- Do not enter!
 #ENDROOM
 
 #ROOM
-Vnum     9882
-Name     Storage and supplies~
-Sector   inside~
-Flags    dark indoors~
-Desc     This room is stacked with several shelves ladden with raw materials
+Vnum      9882
+Name      Storage and supplies~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This room is stacked with several shelves ladden with raw materials
 used in the creation of Dragon Exports crafts.  Many types of woods,
 herbs, liquids, and clays line the shelves.  There are even a few
 items you have never seen before, and are not sure you would want
@@ -4098,8 +4113,8 @@ Desc      You see the middle of the office.
 ~
 #ENDEXIT
 
-Reset M 0 9810 1 9882
-Reset D 0 9882 1 1
+Reset M 9810 1 9882 -1 -1 -1 100
+Reset D 9882 1 1 100 -2
 #EXDESC
 ExDescKey    door east~
 ExDesc       There is a door to the east, with a sign reading: Caution -- Do not enter!
@@ -4109,11 +4124,12 @@ ExDesc       There is a door to the east, with a sign reading: Caution -- Do not
 #ENDROOM
 
 #ROOM
-Vnum     9883
-Name     The dungeon~
-Sector   inside~
-Flags    dark indoors~
-Desc     You now find yourself at the bottom of a long, dark, vertical tunnel.
+Vnum      9883
+Name      The dungeon~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You now find yourself at the bottom of a long, dark, vertical tunnel.
 More than fifty feet above is the Dragon Cult's export business.  As
 you peer about the room, it becomes obvious what a farse this business
 really is.  You begin to wonder what they are hiding to go to such
@@ -4131,16 +4147,17 @@ Keywords  door~
 Flags     isdoor closed locked pickproof~
 #ENDEXIT
 
-Reset M 0 9815 1 9883
-Reset D 0 9883 3 2
+Reset M 9815 1 9883 -1 -1 -1 100
+Reset D 9883 3 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9884
-Name     The torture chamber~
-Sector   inside~
-Flags    dark indoors nosummon noastral~
-Desc     All sorts of horrible devices, implements of pain, are strewn about the
+Vnum      9884
+Name      The torture chamber~
+Sector    indoors~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      All sorts of horrible devices, implements of pain, are strewn about the
 room.  A decomposing corpse rots on a rack in the south corner.  This
 room holds nothing but pain and torture for those unlucky enough to find
 it.  You will want to leave here, as quickly, and hopefully painlessly,
@@ -4165,10 +4182,10 @@ Keywords  door~
 Flags     isdoor closed locked pickproof nopassdoor~
 #ENDEXIT
 
-Reset M 0 9813 1 9884
-  Reset G 1 9837 1
-Reset D 0 9884 0 2
-Reset D 0 9884 1 2
+Reset M 9813 1 9884 -1 -1 -1 100
+  Reset G 9837 1 100
+Reset D 9884 0 2 100 -2
+Reset D 9884 1 2 100 -2
 #MUDPROG
 Progtype  death_prog~
 Arglist   100~
@@ -4183,11 +4200,12 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     9885
-Name     Sliding down the tunnel~
-Sector   inside~
-Flags    dark indoors norecall nosummon noastral~
-Desc     You're falling down...  You manage to stop your fall about midway
+Vnum      9885
+Name      Sliding down the tunnel~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      You're falling down...  You manage to stop your fall about midway
 down this long drop in the tunnel.  You look up to where you were, 
 and see you dropped a good twenty-five feet.  The sides are far too
 slick here to make your way back up.  Now, do you let go and fall
@@ -4209,11 +4227,12 @@ Desc      The tunnel ends at a dark dungeon.
 #ENDROOM
 
 #ROOM
-Vnum     9886
-Name     A secret passageway~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     This is a dark, damp passageway, with spiders and cob webs all around.
+Vnum      9886
+Name      A secret passageway~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This is a dark, damp passageway, with spiders and cob webs all around.
 Excluding all the twists and turns it takes, there appears to be one
 way out.  To the west you can see the backside of a huge tapestry, 
 it hides this passageway from those who might happen into that room.
@@ -4240,8 +4259,8 @@ Keywords  tapestry~
 Flags     isdoor closed nopassdoor~
 #ENDEXIT
 
-Reset D 0 9886 2 1
-Reset D 0 9886 3 1
+Reset D 9886 2 1 100 -2
+Reset D 9886 3 1 100 -2
 #EXDESC
 ExDescKey    wall panel panelling~
 ExDesc       The panelled wall seems oddly out of place here, like it is more
@@ -4261,11 +4280,12 @@ tapestry and pass into the next room.
 #ENDROOM
 
 #ROOM
-Vnum     9887
-Name     A Downward Tunnel~
-Sector   inside~
-Flags    dark indoors nofloor~
-Desc     This looks like a large air vent, leading from deep in the
+Vnum      9887
+Name      A Downward Tunnel~
+Sector    indoors~
+Flags     dark indoors nofloor~
+Stats     0 0 0 0 0
+Desc      This looks like a large air vent, leading from deep in the
 ground to well above your head.  Looking up, you can see the
 tunnel closes to a small hole about five feet up.  Below, you
 can see the tunnel disappear into a bottomless darkness.  To
@@ -4290,15 +4310,16 @@ Desc      sliding down the vertical tunnel.
 ~
 #ENDEXIT
 
-Reset D 0 9887 2 1
+Reset D 9887 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9888
-Name     Deeper into the pit~
-Sector   inside~
-Flags    dark indoors~
-Desc     A great evil seems to radiates from the earth below.  The darkness is
+Vnum      9888
+Name      Deeper into the pit~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      A great evil seems to radiates from the earth below.  The darkness is
 not only visual, but has a distinct presence.  This staircase leads
 away from the Priests Quarters, to the deepest parts of the Cultists
 Temple. The stairs are sturdy, but seem to not welcome your intrusion.
@@ -4319,15 +4340,16 @@ Desc      You see a spiral staircase leading down, deep into the ground.
 ~
 #ENDEXIT
 
-Reset D 0 9888 4 1
+Reset D 9888 4 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9889
-Name     A darkened landing~
-Sector   inside~
-Flags    dark indoors~
-Desc     You have reached a landing on the staircase.  To the east is a small
+Vnum      9889
+Name      A darkened landing~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You have reached a landing on the staircase.  To the east is a small
 doorway, leading away from the stairwell.  In the middle of the floor
 is a gaping whole, leading to the bottom of the pit.  You can see
 movement below, but have trouble finding the cause.  Should you explore
@@ -4356,15 +4378,16 @@ Desc      Below you is the bottom of this deep pit.
 ~
 #ENDEXIT
 
-Reset D 0 9889 1 1
+Reset D 9889 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9890
-Name     A dark alcove~
-Sector   inside~
-Flags    dark indoors~
-Desc     This darkened alcove appears to be used as a changing room.  There
+Vnum      9890
+Name      A dark alcove~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This darkened alcove appears to be used as a changing room.  There
 is a spigot in the upper southeast corner, dripping a steady flow of
 water.  This looks like a place for bathing.  On the eastern wall are
 several hooks, holding various articles of clothing.
@@ -4378,7 +4401,7 @@ Keywords  door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 9890 3 1
+Reset D 9890 3 1 100 -2
 #EXDESC
 ExDescKey    wall~
 ExDesc       The wall is plain, without paint or polish.  Attached in several places
@@ -4396,11 +4419,12 @@ the opportunity to wash.
 #ENDROOM
 
 #ROOM
-Vnum     9891
-Name     The bottom of the pit~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are surrounded by corpses in various stages of decay.  A coldness
+Vnum      9891
+Name      The bottom of the pit~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are surrounded by corpses in various stages of decay.  A coldness
 sinks into your spine as you realize the full magnitude of what you've
 stumbled upon.  This is the home of Adrathom, a powerful lich, and he
 does not look pleased at your intrusion.
@@ -4412,15 +4436,16 @@ Desc      It is too dark to see.
 ~
 #ENDEXIT
 
-Reset M 0 9816 1 9891
+Reset M 9816 1 9891 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     9892
-Name     Cultic Candies~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     This backroom is where the cultists keep and sell their candies.  Each
+Vnum      9892
+Name      Cultic Candies~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This backroom is where the cultists keep and sell their candies.  Each
 candy is a secret brew of magical ingredients.  You should be cautious
 of eating anything you buy here, as the place does not look clean.  The
 walls are covered in a thick layer of dust, and so is the shopkeeper!
@@ -4433,24 +4458,25 @@ Desc      You see the hallway.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 9817 1 9892
-  Reset G 1 9892 3
-  Reset G 1 9842 1
-  Reset G 1 9843 1
-  Reset G 1 9844 1
-  Reset G 1 9845 1
-  Reset G 1 9846 1
-  Reset G 1 9847 1
-  Reset G 1 9848 1
-Reset D 0 9892 2 1
+Reset M 9817 1 9892 -1 -1 -1 100
+  Reset G 9892 3 100
+  Reset G 9842 1 100
+  Reset G 9843 1 100
+  Reset G 9844 1 100
+  Reset G 9845 1 100
+  Reset G 9846 1 100
+  Reset G 9847 1 100
+  Reset G 9848 1 100
+Reset D 9892 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9893
-Name     Top of the staircase~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     This is a staircase that leads downward, into a darkness that is
+Vnum      9893
+Name      Top of the staircase~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This is a staircase that leads downward, into a darkness that is
 not only seen, but felt.  The walls change from the painted walls
 of the office area to a dark stone surface.  Whatever is below,
 they do not want to make you feel too welcome.
@@ -4470,15 +4496,16 @@ Desc      You see the bottom of the staircase.
 ~
 #ENDEXIT
 
-Reset D 0 9893 2 1
+Reset D 9893 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     9894
-Name     Bottom of the staircase~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     As you stand at the bottom of this staircase, you wonder why anyone
+Vnum      9894
+Name      Bottom of the staircase~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      As you stand at the bottom of this staircase, you wonder why anyone
 would want to be down here.  The darkness is so dense as to have an
 almost physical presence.  The result is oppressive.  The cold, harsh
 stone walls seem to close in on you as you listen to the mezmerizing
@@ -4501,10 +4528,11 @@ Desc      You see the top of the staircase.
 #ENDROOM
 
 #ROOM
-Vnum     9895
-Name     The deepest pit~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9895
+Name      The deepest pit~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9811
@@ -4523,10 +4551,11 @@ ToRoom    9829
 #ENDROOM
 
 #ROOM
-Vnum     9896
-Name     The fire pit~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9896
+Name      The fire pit~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9898
@@ -4545,10 +4574,11 @@ ToRoom    9895
 #ENDROOM
 
 #ROOM
-Vnum     9897
-Name     The deepest pit~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9897
+Name      The deepest pit~
+Sector    indoors~
+Flags     dark indoors proto~
+Stats     0 0 0 0 0
 #EXIT
 Direction north~
 ToRoom    9817
@@ -4567,10 +4597,11 @@ ToRoom    9896
 #ENDROOM
 
 #ROOM
-Vnum     9898
-Name     The Passage to the pits~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9898
+Name      The Passage to the pits~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
 #EXIT
 Direction south~
 ToRoom    9896
@@ -4584,10 +4615,11 @@ ToRoom    9899
 #ENDROOM
 
 #ROOM
-Vnum     9899
-Name     The servants passage~
-Sector   inside~
-Flags    dark indoors~
+Vnum      9899
+Name      The servants passage~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
 #EXIT
 Direction south~
 ToRoom    9890

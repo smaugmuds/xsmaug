@@ -1,0 +1,270 @@
+Automatic Pfile Cleanup
+-----------------------
+
+Written by Samson of Alsherok
+With a major assist from Dave <turtle@mfn.org>.
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This code performs automatic pfile or manual pfile purging every 24 hrs based
+on preset levels, and is intended as a replacement for the grux utility
+for this purpose. The amount of time to hold newbie files, and regular
+files is adjustable via the cset control panel, and the automated scanning
+code can also be enabled or disabled from there. A backup of the pfiles is
+made before the purge begins in case something nasty happens.
+
+Currently, the point at which a player becomes a "regular file" is at level 
+10, governed by this if check in pfiles.c, function fread_pfile:
+
+  if ( ( level < 10 && tdiff > sysdata.newbie_purge )
+
+If you wish to have that set to a different level, change the 10 here and in
+the if check a few lines below it.
+
+This code also contains tie-ins to the rent code to let it perform automatic
+daily rent updates on your players if you use the rent code. If you are using
+the rent code, this snippet is required to enable daily updates. The purging
+portion of the code need not be active for this to happen.
+
+It is STRONGLY recommended that you backup your pfiles before testing
+this code!!
+
+Installation Instructions
+-------------------------
+
+1. To install this code, put pfiles.c and pfiles.h into your source
+   directory. Add pfiles.c and pfiles.o to the appropriate sections of the Makefile.
+
+2. In mud.h, somewhere below
+
+   #define LEVEL_AVATAR		   (MAX_LEVEL - 15)
+
+   Add: #include "pfiles.h"
+
+   Locate structure system_data
+
+   Add the following lines to the end of the structure:
+
+   short newbie_purge; /* Level to auto-purge newbies at - Samson 12-27-98 */
+   short regular_purge; /* Level to purge normal players at - Samson 12-27-98 */
+   bool CLEANPFILES; /* Should the mud clean up pfiles daily? - Samson 12-27-98 */
+
+   Locate the player_flags; enum, and add PLR_EXEMPT to the list.
+
+3. In db.c, function save_sysdata:
+
+   Locate the following lines of code:
+
+	fprintf( fp, "End\n\n"						);
+	fprintf( fp, "#END\n"						);
+
+   On the line immediately above those, insert these 3 lines:
+
+      fprintf( fp, "Newbie_purge   %d\n", sys.newbie_purge );
+      fprintf( fp, "Regular_purge  %d\n", sys.regular_purge );
+      fprintf( fp, "Autopurge      %d\n", sys.CLEANPFILES );
+
+   In function fread_sysdata, locate the following lines of code:
+
+	case '*':
+	    fMatch = TRUE;
+	    fread_to_eol( fp );
+	    break;
+
+    Add the following lines of code below the break:
+
+         case 'A':
+            KEY( "Autopurge", sys->CLEANPFILES, fread_number( fp ) );
+            break;
+
+    Locate the following lines of code:
+
+	case 'N':
+            KEY( "Nameresolving",  sys->NO_NAME_RESOLVING, fread_number( fp ) );
+	    break;
+    
+    Below the KEY statement, add this line:
+
+            KEY( "Newbie_purge", sys->newbie_purge, fread_number( fp ) );
+
+    Locate the following lines of code:
+
+	case 'R':
+	    KEY( "Readallmail",	   sys->read_all_mail,	fread_number( fp ) );
+	    KEY( "Readmailfree",   sys->read_mail_free,	fread_number( fp ) );
+	    break;
+
+    Below the second KEY statement, add this line:
+
+            KEY( "Regular_purge", sys->regular_purge, fread_number( fp ) );
+
+4. In comm.c, locate the following lines of code:
+
+    /* Bug fix submitted by Gabe Yoder */
+    new_boot_time_t = mktime(new_boot_time);
+    reboot_check(mktime(new_boot_time));
+    /* Set reboot time string for do_time */
+    get_reboot_string();
+
+    Add the following line after them:
+
+   init_pfile_scan_time(); /* Pfile autocleanup initializer - Samson 5-8-99 */
+
+5. In act_wiz.c, function do_cset
+
+   Locate the following lines of code:
+
+    pager_printf_color(ch, "\r\n&WMail:\r\n  &wRead all mail: &W%d  &wRead mail for free: &W%d  &wWrite mail for free: &W%d\r\n",
+	    sysdata.read_all_mail, sysdata.read_mail_free, sysdata.write_mail_free );
+    pager_printf_color(ch, "  &wTake all mail: &W%d", sysdata.take_others_mail );
+
+   And below them, add these lines:
+
+      pager_printf_color( ch, "\r\n&wPfile autocleanup status: &W%s  &wDays before purging newbies: &W%d\r\n",
+         sysdata.CLEANPFILES ? "On" : "Off", sysdata.newbie_purge );
+      pager_printf_color( ch, "&wDays before purging regular players: &W%d\r\n", sysdata.regular_purge );
+
+
+ Locate the following lines of code:
+
+  if (!str_cmp(arg, "save"))
+  {
+     save_sysdata(sysdata);
+     send_to_char( "Cset functions saved.\r\n", ch );
+     return;
+  }
+
+ And above them, add the following lines of code:
+
+   if( !str_cmp( arg, "pfiles" ) )
+   {
+      sysdata.CLEANPFILES = !sysdata.CLEANPFILES;
+
+      if( sysdata.CLEANPFILES )
+         send_to_char( "Pfile autocleanup enabled.\r\n", ch );
+      else
+         send_to_char( "Pfile autocleanup disabled.\r\n", ch );
+      return;
+   }
+
+ Locate the following lines of code:
+
+  level = (sh_int) atoi(argument);
+
+  if (!str_prefix( arg, "savefrequency" ) )
+  {
+    sysdata.save_frequency = level;
+    send_to_char("Ok.\r\n", ch);
+    return;
+  }
+
+ And below them, add these lines of code:
+
+   if( !str_cmp( arg, "newbie_purge" ) )
+   {
+      if( level < 1 )
+      {
+         send_to_char( "You must specify a period of at least 1 day.\r\n", ch );
+         return;
+      }
+      sysdata.newbie_purge = level;
+      send_to_char( "Ok.\r\n", ch );
+      return;
+   }
+
+   if( !str_cmp( arg, "regular_purge" ) )
+   {
+      if( level < 1 )
+      {
+         send_to_char( "You must specify a period of at least 1 day.\r\n", ch );
+         return;
+      }
+      sysdata.regular_purge = level;
+      send_to_char( "Ok.\r\n", ch );
+      return;
+   }
+
+6. In update.c, function update_handler
+
+   Locate the following lines of code:
+
+    if ( --pulse_second   <= 0 )
+    {
+	pulse_second	= PULSE_PER_SECOND;
+	char_check( ); 
+      reboot_check(0);
+    }
+
+   And above the call to reboot_check, add this line:
+
+      check_pfiles( 0 );
+
+7. In act_info.c, function do_time
+
+   Locate the following lines of code:
+
+	(char *) ctime( &current_time ),
+	reboot_time
+	);
+
+   Directly beneath those, add the following:
+
+   if( sysdata.CLEANPFILES )
+      ch_printf( ch, "Next pfile cleanup is scheduled for: %s\r\n", (char *)ctime( &new_pfile_time_t ) );
+
+7. In build.c, locate the plr_flags list.
+   Add "exempt" ( with the quotes ) to the list.
+
+8. Add the appropriate entries in tables.c for do_pfiles.
+
+9. Make clean, then recompile. You backed up your pfiles before you rebooted, didn't you?
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

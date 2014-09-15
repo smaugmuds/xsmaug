@@ -1,0 +1,1114 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Old Marsh~
+Author          Generic~
+Vnums           8301 8321
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          15 25 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      8301
+Keywords  troll~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    resting~
+Short     a swamp troll~
+Long      A swamp troll charges towards you.
+~
+Desc      This huge behemoth towers to a height of 15 feet.  He sneers at you 
+as he approaches and raises two black taloned claws to strike you.
+~
+Nattacks  0.000000
+Stats1    -600 10000 0 0 0 0
+Stats2    16 21 1 200 4 4 8
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8302
+Keywords  troll~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a green troll~
+Long      A green troll attempts to get a hold on you.
+~
+Desc      This big troll towers several feet over you.  He has a large spear
+which he seems to ply with utmost prowess.  He jabs his spear at you
+and cackles with glee.
+~
+Nattacks  0.000000
+Stats1    -400 8000 0 0 0 0
+Stats2    14 21 3 150 2 4 6
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8303
+Keywords  ogre~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an ogre~
+Long      An ogre stands here getting ready to beat in your face.
+~
+Desc      This mean bastard looks like he could tear you limb from limb.
+~
+Nattacks  0.000000
+Stats1    -500 10000 0 0 0 0
+Stats2    20 21 0 250 5 5 8
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8304
+Keywords  thing~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    resting~
+Short     the Swamp Thing~
+Long      The Swamp Thing shambles about here.  It seems hungry.
+~
+Desc      The Swamp Thing has huge fists, which look like they could pound you flat.
+~
+Nattacks  0.000000
+Stats1    -700 25000 0 0 0 0
+Stats2    24 21 8 500 4 5 10
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8305
+Keywords  gnoll~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a gnoll~
+Long      There is a mean looking gnoll here.
+~
+Desc      The Gnoll seems annoyed at your presence.
+~
+Nattacks  0.000000
+Stats1    -1000 25000 0 0 0 0
+Stats2    30 21 -3 750 2 8 15
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8306
+Keywords  beast~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a huge hairy beast~
+Long      A huge hairy beast shambles towards you with death in his eyes.
+~
+Desc      This huge beast stands about 20 feet in height and has huge green clawed
+appendages. 
+~
+Nattacks  0.000000
+Stats1    -450 10000 0 0 0 0
+Stats2    21 21 0 210 2 4 15
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8307
+Keywords  beast~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a rather small beast~
+Long      A rather small beast cringes in terror as it notices you.
+~
+Desc      This rather small beast looks like you could take it out with a single
+sword blow.
+~
+Nattacks  0.000000
+Stats1    0 500 0 0 0 0
+Stats2    3 21 9 40 1 20 1
+Speaking  common~
+Actflags  npc scavenger stayarea wimpy~
+Affected  sneak~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8308
+Keywords  will will-o-wisp~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the Will-O-Wisp~
+Long      A Will-O-Wisp darts hear and there, making fun of you.
+~
+Desc      This strange little creature seems very hard to keep your eyes on.
+You stare as hard as you can at the glowing ball of floating light and
+are just able to notice a small pair of glowing eyes.
+~
+Nattacks  0.000000
+Stats1    0 3000 0 0 0 0
+Stats2    10 21 -5 100 3 3 3
+Speaking  common~
+Actflags  npc scavenger stayarea wimpy~
+Affected  sneak~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8309
+Keywords  snake anaconda~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     the monstrous snake~
+Long      A monstrous snake slithers towards you, thinking 'breakfast'.
+~
+Desc      This 10 meter anaconda looks rather hungry.
+~
+Nattacks  0.000000
+Stats1    -100 10000 0 0 0 0
+Stats2    16 21 1 200 4 4 6
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea wimpy~
+Affected  sneak hide~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8310
+Keywords  snake python~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a large snake~
+Long      A rather large python rests in a coil here.
+~
+Desc      It's the largest Amazon python you have ever seen.
+~
+Nattacks  0.000000
+Stats1    -100 0 0 0 0 0
+Stats2    11 21 2 100 3 3 5
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea wimpy~
+Affected  sneak hide~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8312
+Keywords  hag~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     the Marsh Hag~
+Long      A Marsh Hag is here.
+~
+Desc      Yech!  She manages to make even Smurfette look attractive.  That's ok,
+because she thinks you stink too, and she's about to do something about it.
+~
+Nattacks  0.000000
+Stats1    -200 1000 0 0 0 0
+Stats2    9 21 3 300 3 5 10
+Speaking  common~
+Actflags  npc scavenger stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8313
+Keywords  slaad~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a Death Slaad~
+Long      A Death Slaad is standing here distraught.  He seems lost.
+~
+Desc      This dark apparition stands a meager 13 feet in height.  Even in the dim
+swamp light, the blade of his scythe gleams.
+~
+Nattacks  0.000000
+Stats1    -200 14000 0 0 0 0
+Stats2    20 21 -2 300 5 5 15
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8314
+Keywords  wolf~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a marsh wolf~
+Long      A marsh wolf sniffs the ground has followed your scent.
+~
+Desc      This wolf looks plump.  She probably ate a friend or two of yours who came
+into the marsh.
+~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    8 21 3 50 3 5 1
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8318
+Keywords  mound shambling~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a shambling mound~
+Long      A heap of garbage shambles towards you.
+~
+Desc      This grotesque pile of plant matter fills you with utmost horror.
+~
+Nattacks  0.000000
+Stats1    -100 0 0 0 0 0
+Stats2    13 21 10 150 3 6 2
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  hide~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8319
+Keywords  shaman orc~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the orc shaman~
+Long      An orc shaman stands before you holding a staff and wearing robes.
+~
+Desc      This old orc has an array of bones stuck in his hair and strange symbols
+painted on his face and hands.
+~
+Nattacks  0.000000
+Stats1    -100 350 0 0 0 0
+Stats2    12 21 7 120 3 4 1
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive stayarea~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8320
+Keywords  giant~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a marsh giant~
+Long      A marsh giant stomps towards you.
+~
+Desc      This huge monster of a man has green gnarly teeth and a BIG stick.
+~
+Nattacks  0.000000
+Stats1    -100 12000 0 0 0 0
+Stats2    15 21 5 300 2 4 10
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive stayarea~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8321
+Keywords  gargoyle~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a gargoyle~
+Long      A large gargoyle lands next to you, baring his fangs at you.
+~
+Desc      This creepy fellow looks like he could use you as a meal.
+~
+Nattacks  0.000000
+Stats1    -100 2000 0 0 0 0
+Stats2    12 21 0 200 4 4 4
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive stayarea~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#OBJECT
+Vnum      8301
+Keywords  spear long~
+Type      weapon~
+Short     a long spear~
+Long      A strange spear lies here.~
+Flags     nodrop~
+Values    0 3 5 2 0 0 0 0 0 0 0
+Stats     10 20000 -2 1 0 None None None
+AffData damroll 3 -1 -1 0
+AffData intelligence 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      8302
+Keywords  horned helmet~
+Type      armor~
+Short     a dark horned helmet~
+Long      A wicked looking horned helmet lies here.~
+Flags     nodrop~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     5 15000 -2 1 0 None None None
+AffData damroll 1 -1 -1 0
+AffData wisdom -3 -1 -1 0
+#EXDESC
+ExDescKey    horns horn~
+ExDesc       These horns appear to be made of adamantite.~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      8303
+Keywords  chain mail chainmail~
+Type      armor~
+Short     A suit of chainmail~
+Long      An old suit of chainmail lies here, corroded by the marsh.~
+Flags     nodrop~
+Values    7 0 0 0 0 0 0 0 0 0 0
+Stats     20 2000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      8306
+Keywords  scythe~
+Type      weapon~
+Short     A huge, wicked-looking scythe~
+Long      An evil, wicked-looking scythe lies in the shadows.~
+Flags     nodrop~
+Values    0 4 4 1 0 0 0 0 0 0 0
+Stats     16 100000 -2 1 0 None None None
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      8307
+Keywords  green potion~
+Type      potion~
+Short     A murky green potion~
+Long      A murky green potion lies here in the mud.~
+Flags     glow hum~
+WFlags    take~
+Values    43 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1000 -2 1 0 None None None
+Spells       'cure critical' 'NONE' 'NONE'
+#EXDESC
+ExDescKey    potion~
+ExDesc       It looks really disgusting and doesn't smell very nice either.~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#ROOM
+Vnum      8301
+Name      Muddy Path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This section of the path is slowly being drowned by the nearby swamp to the
+south, which is creeping slowly inland.  Several caved-in buildings sprawl
+here, torn apart both by battle and the elements.
+~
+#EXIT
+Direction north~
+ToRoom    6125
+Desc      The path looks drier here.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8302
+Desc      A broken road leading southward into the marsh.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    swamp~
+ExDesc       The swamp to the south even reaches as far as this point ... it makes the
+ground and air about you moist and fetid.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8302
+Name      Swamp's Edge~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Briars and marsh plants stick to your boots and clothes, and clouds cover the
+skies above the murky marsh, leaving the path before you dark and sinister.
+You see some disturbances in the marsh, but after a few strangled screams,
+the sounds stop.
+~
+#EXIT
+Direction north~
+ToRoom    8301
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8303
+Desc      To the east lies a series of bogs and shallows that look rather threatening.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8304
+Desc      You notice a large hill rising out of the marsh to the south.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8303
+Name      Marshy Forest~
+Sector    mountain~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This area is by no means a forest, but for those who dwell in these sparse
+trees it is one.  Occasionally you see a whole humanoid form floating face down
+in the water, but mostly you only find pieces.  You hear a loud bellow in the
+distance.  And feel fear creep into your heart.
+~
+#EXIT
+Direction east~
+ToRoom    8305
+Desc      Eastward is the thick bog of ooze...
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8302
+Desc      Westward lies the remanents of a broken and shattered roadway being swallowed
+by the marsh.
+~
+#ENDEXIT
+
+Reset M 8301 2 8303 -1 -1 -1 100
+Reset M 8302 12 8303 -1 -1 -1 100
+  Reset G 8307 20 100
+Reset M 8303 2 8303 -1 -1 -1 100
+#EXDESC
+ExDescKey    humanoid corpse~
+ExDesc       He looks mangled and shredded.  You see one large gash mark that looks
+like it came from the claw of some huge beast.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    pieces~
+ExDesc       You see severed limbs and spongy intestines.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8304
+Name      On a hill.~
+Sector    hills~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand atop a hill on the northwestern side of the evil swamp. Dark
+clouds whip around you and the wind raises its voice and assails you.
+~
+#EXIT
+Direction north~
+ToRoom    8302
+Desc      To the north lies a damp broken roadway.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8309
+Desc      A dark pool congeals to the east.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8310
+Desc      A gloomy path leads down the hill into the swamp.
+~
+#ENDEXIT
+
+Reset M 8302 2 8304 -1 -1 -1 100
+Reset M 8306 2 8304 -1 -1 -1 100
+Reset M 8310 2 8304 -1 -1 -1 100
+Reset M 8314 8 8304 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8305
+Name      An Oozing Bog~
+Sector    mountain~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand in an oozing quagmire.  A creaking beat fills the air, 
+accompanied by groans and soughing of the air.  Several large winged
+beasts flap over you and send chilling glares your way.  You feel out
+of place, and feel that the occupants of this realm will soon 
+have you for a feast.
+~
+#EXIT
+Direction east~
+ToRoom    8306
+Desc      Eastward lies a horde of disgusting looking monsters.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8303
+Desc      Westward lies a marshy area.
+~
+#ENDEXIT
+
+Reset M 8307 2 8305 -1 -1 -1 100
+Reset M 8309 2 8305 -1 -1 -1 100
+Reset M 8310 2 8305 -1 -1 -1 100
+Reset M 8314 8 8305 -1 -1 -1 100
+#EXDESC
+ExDescKey    beasts~
+ExDesc       You see a large creature, possibly a demon, flapping heavily above you.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8306
+Name      An Oozing Bog~
+Sector    mountain~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The ground here is soft and oozing.  You feel slimy water seeping into your
+boots.  Better stop and check for leeches when you get out of here.
+~
+#EXIT
+Direction west~
+ToRoom    8305
+Desc      You see a large tree limb that looks easily moved.
+~
+Keywords  limb~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 8302 2 8306 -1 -1 -1 100
+Reset M 8305 2 8306 -1 -1 -1 100
+  Reset E 8303 20 5 100
+Reset M 8314 8 8306 -1 -1 -1 100
+#EXDESC
+ExDescKey    limb~
+ExDesc       The limb looks like it is attached to a trap door in the ground.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8307
+Name      Swamp Thing's Lair~
+Sector    water_swim~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      A horrible swamp thing resides here.  Mutilated corpses suffuse the air with
+the overwhelming stench of putrid flesh.
+~
+#EXIT
+Direction west~
+ToRoom    8308
+Desc      A pool of quick sand lies to the west.
+~
+#ENDEXIT
+
+Reset M 8303 2 8307 -1 -1 -1 100
+Reset M 8304 1 8307 -1 -1 -1 100
+Reset M 8314 8 8307 -1 -1 -1 100
+Reset M 8320 2 8307 -1 -1 -1 100
+  Reset G 8301 10 100
+#EXDESC
+ExDescKey    corpses~
+ExDesc       You notice a note on one of the corpses reading:  'Best ye forget the temple,
+it is not for the likes of you...'
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8308
+Name      Pool of Quick Sand~
+Sector    water_swim~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand by a large oozing pool of quick sand.  Luckily only a complete
+klutz could not avoid it.  Dancing lights fly about you and one seems to
+be taunting you towards the pool.
+~
+#EXIT
+Direction east~
+ToRoom    8307
+Desc      The swamp thing's lair.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8314
+Desc      A murky bog.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8309
+Desc      A dark pool lies to the west.
+~
+#ENDEXIT
+
+Reset M 8301 2 8308 -1 -1 -1 100
+Reset M 8308 1 8308 -1 -1 -1 100
+Reset M 8314 8 8308 -1 -1 -1 100
+#EXDESC
+ExDescKey    lights ~
+ExDesc       From the stories you have heard, you recognize them as will-o-wisps.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    quicksand~
+ExDesc       It looks deadly to the foolish.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8309
+Name      A Dark Pool.~
+Sector    water_swim~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand beside a large dark pond.  The water boils not with heat, but with
+motion, as if it is alive.  A creaking beat pulses through the air, leaving
+you with a cold sweat and fear in your heart.
+~
+#EXIT
+Direction east~
+ToRoom    8308
+Desc      A large pool of quicksand lies to the east.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8311
+Desc      You see a cloud of darkness to the south.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8304
+Desc      A hill rises out of the swamp to the east.
+~
+#ENDEXIT
+
+Reset M 8312 2 8309 -1 -1 -1 100
+Reset M 8314 8 8309 -1 -1 -1 100
+Reset M 8320 2 8309 -1 -1 -1 100
+  Reset G 8301 10 100
+#EXDESC
+ExDescKey    pond~
+ExDesc       It looks ALIVE ...
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8310
+Name      Gloomy Path Through the Marsh.~
+Sector    water_swim~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      To the north lies a hill, shrouded in dark clouds, and to the south lies
+a huge patch of vegetation.  You sense an evil presence and notice 
+a beast flying overhead to the south east, towards what looks to be a 
+huge fortress, half buried in the marsh.
+~
+#EXIT
+Direction north~
+ToRoom    8304
+Desc      To the north a hill protrudes from the marshes.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8312
+Desc      To the south a huge mass of vegetation seems to quiver with life.
+~
+#ENDEXIT
+
+Reset M 8306 2 8310 -1 -1 -1 100
+Reset M 8312 2 8310 -1 -1 -1 100
+Reset M 8313 1 8310 -1 -1 -1 100
+  Reset E 8302 5 6 100
+  Reset E 8306 1 16 100
+#EXDESC
+ExDescKey    clouds~
+ExDesc       The clouds look dark and foreboding.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    beast~
+ExDesc       It looks to be a demon of some foul breed.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    fortress~
+ExDesc       It is surrounded by walls nearly 20 meters high.  In a tall tower on the
+northeast side, a window glows blue with magical energy.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    vegetation~
+ExDesc       It looks sentient.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8311
+Name      Cloud of Darkness.~
+Sector    water_swim~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      As you travel through this cloud of darkness, a fear such as you have never
+known before assails you.
+~
+#EXIT
+Direction north~
+ToRoom    8309
+Desc      A dark pool lies to the north.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8313
+Desc      An obelisk lies to the south.
+~
+#ENDEXIT
+
+Reset M 8309 2 8311 -1 -1 -1 100
+Reset M 8320 2 8311 -1 -1 -1 100
+  Reset G 8301 10 100
+#ENDROOM
+
+#ROOM
+Vnum      8312
+Name      Near Vegetation from Hell.~
+Sector    water_swim~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand near some of the strangest plant life you have ever seen, a mixture
+of tumescent vegetables, evil-smelling fruit trees, and malignant ferns.
+~
+#EXIT
+Direction north~
+ToRoom    8310
+Desc      To the north is a gloomy path through the marsh.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8313
+Desc      Eastward is a large, black stone monolith.
+~
+#ENDEXIT
+
+Reset M 8318 3 8312 -1 -1 -1 100
+  Reset G 8307 20 100
+Reset M 8318 3 8312 -1 -1 -1 100
+  Reset G 8307 20 100
+#EXDESC
+ExDescKey    plant plants~
+ExDesc       They look rather violent, and snap at you when you come near.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8313
+Name      By the Monolith.~
+Sector    mountain~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are standing near a monolith which protrudes some 20 feet from the
+marsh into the air.  Its black obsidian surface shines darkly in the 
+strange, almost unearthly light that enters through the clouds above.
+~
+#EXIT
+Direction north~
+ToRoom    8311
+Desc      To the north is a cloud of darkest evil.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8314
+Desc      Eastward lies a murky bog.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8312
+Desc      Near Vegetation from Hell.
+~
+#ENDEXIT
+
+Reset M 8303 2 8313 -1 -1 -1 100
+Reset M 8307 2 8313 -1 -1 -1 100
+Reset M 8320 2 8313 -1 -1 -1 100
+  Reset G 8301 10 100
+#EXDESC
+ExDescKey    monolith~
+ExDesc       This huge monolith resembles nothing you have ever seen before.
+You have a strong feeling not to go within.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8314
+Name      Murky Bog.~
+Sector    mountain~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      A murky bog surrounds you.  To the east a black monolith juts forth from the
+ground.  Far to the north lies a huge pool of quicksand.  Snarls can be heard
+echoing as if from a great distance.
+~
+#EXIT
+Direction north~
+ToRoom    8308
+Desc      To the north lies a huge pool of quicksand.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8315
+Desc      To the east the marsh turns into a small lake.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8313
+Desc      Westward a large monolith awaits adventurers.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    monolith~
+ExDesc       This is a huge obsidian stone block stuck in the marsh.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8315
+Name      Northern Lake Side.~
+Sector    water_noswim~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Floating on this boiling lake is not what you would consider an enjoyable 
+experience.  Many a creature bumps the bottom of your boat, and glares 
+at you through unblinking eyes from the waters below.  The southern 
+portion of the lake looks calm and serene compared to this wild place.
+~
+#EXIT
+Direction south~
+ToRoom    8316
+Desc      The southern portion of the lake lies to the south.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8314
+Desc      To the west lies a murky bog.
+~
+#ENDEXIT
+
+Reset M 8320 2 8315 -1 -1 -1 100
+  Reset E 8302 5 6 100
+  Reset G 8301 10 100
+#ENDROOM
+
+#ROOM
+Vnum      8316
+Name      Southern Lake Side.~
+Sector    water_noswim~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are floating on a calm section of blue crystal water.  You feel much more
+at ease then you were before in this area.  Then a wave of fear passes over
+you.  You are not alone.
+~
+#EXIT
+Direction north~
+ToRoom    8315
+Desc      Northern lake side.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8317
+Desc      To the west is a beach where your boat can land.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    north~
+ExDesc       The way to the north seems to be impassable, due to the rough water and
+strange wild life.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8317
+Name      Beach~
+Sector    mountain~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are on a sandy shore.  Marsh life creeps across the surface.  To the west
+lies an evil fortress.  You see figures walking along the battlements.
+~
+#EXIT
+Direction east~
+ToRoom    8316
+Desc      To the east lies the southern portion of a small lake.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8318
+Desc      The great gates.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    fortress~
+ExDesc       It is hewn of black stone and heavily fortified.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8318
+Name      Before the Great Gates.~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand before the gates of a huge fortress.  The drawbridge is up, the
+gates closed, and the portcullis down.  This place looks very dangerous,
+and you decide not to continue onward.
+~
+#EXIT
+Direction east~
+ToRoom    8317
+Desc      To the east is a marshy beach.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    -1
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 8321 2 8318 -1 -1 -1 100
+Reset M 8321 2 8318 -1 -1 -1 100
+#ENDROOM
+
+#ENDAREA

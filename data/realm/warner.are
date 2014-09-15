@@ -1,1004 +1,904 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Looney Tunes Time!~
-Author       Desconocido~
-WeatherX     0
-WeatherY     0
-Ranges       45 60 65 65
-Economy      2 0
-ResetMsg     ~
+Version         1
+Name            Looney Tunes~
+Author          Yaegar/Aurorix~
+Vnums           15000 15050
+Continent       one~
+Coordinates     0 0
+Dates           1403837156 1403837156
+Ranges          50 110 0 115
+ResetFreq       15
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       15000
-Keywords   bugs bunny~
-Short      Bugs Bunny~
-Long       Bugs Bunny gnaws a carrot saying, "Ehhhh What's Up Doc?"
+Vnum      15000
+Keywords  bugs bunny~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Bugs Bunny~
+Long      Bugs Bunny gnaws a carrot saying, "Ehhhh What's Up Doc?"
 ~
-Desc       Bugs must have taken a wrong turn at Albuquerque again. He's got a good
+Desc      Bugs must have taken a wrong turn at Albuquerque again. He's got a good
 supply of carrots, though, and an endless stream of one liners.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc stayarea wimpy~
-Affected   sanctuary infrared protect~
-Stats1     0 60 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    60 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc stayarea wimpy~
+Affected  sanctuary infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15001
-Keywords   daffy duck~
-Short      Daffy Duck~
-Long       Daffy Duck splutters, "You're despicable!"
+Vnum      15001
+Keywords  daffy duck~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Daffy Duck~
+Long      Daffy Duck splutters, "You're despicable!"
 ~
-Desc       This little black duck sure seems mad about something. Perhaps it's because
+Desc      This little black duck sure seems mad about something. Perhaps it's because
 of those cheesy western-themed clothes he has to wear.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   infrared protect~
-Stats1     0 55 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    55 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15002
-Keywords   porky pig~
-Short      Porky Pig~
-Long       Porky Pig says "A-biya-biya-biya-That's All Folks!"
+Vnum      15002
+Keywords  porky pig~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Porky Pig~
+Long      Porky Pig says "A-biya-biya-biya-That's All Folks!"
 ~
-Desc       What a quaint little pig. So neatly dressed too. He seems to be quite well-
+Desc      What a quaint little pig. So neatly dressed too. He seems to be quite well-
 mannered and even tempered, but in this world anything could happen to make
 him suddenly blow a fuse. Did you notice that he isn't wearing any pants?
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   infrared protect~
-Stats1     0 56 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    56 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15003
-Keywords   elmer fudd~
-Short      Elmer Fudd~
-Long       Elmer Fudd says "Be vewy vewy quiet. I'm hunting wabbits!"
+Vnum      15003
+Keywords  elmer fudd~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Elmer Fudd~
+Long      Elmer Fudd says "Be vewy vewy quiet. I'm hunting wabbits!"
 ~
-Desc       He certainly is, with his trusty shotgun. He is rugged up against the cold,
+Desc      He certainly is, with his trusty shotgun. He is rugged up against the cold,
 with his wool hat with ear warmers, his flannel jacket, and his hunting
 boots. But you get the feeling that he won't have a very successful hunt.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   infrared protect~
-Stats1     0 54 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    54 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15004
-Keywords   yosetime sam~
-Short      Yosemite Sam~
-Long       Yosemite Sam roars "Aah HATE that rabbit!"
+Vnum      15004
+Keywords  yosetime sam~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Yosemite Sam~
+Long      Yosemite Sam roars "Aah HATE that rabbit!"
 ~
-Desc       This ferocious, red-moustachioed gunslinger has a foul temper. Uh Oh. Looks
+Desc      This ferocious, red-moustachioed gunslinger has a foul temper. Uh Oh. Looks
 like he has mistaken you for a rabbit. Better run!
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     male~
-Actflags   npc sentinel aggressive stayarea~
-Affected   infrared protect~
-Stats1     -400 57 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    57 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15005
-Keywords   foghorn leghorn~
-Short      Foghorn Leghorn~
-Long       Foghorn Leghorn utters "Well I say I say I say!"
+Vnum      15005
+Keywords  foghorn leghorn~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Foghorn Leghorn~
+Long      Foghorn Leghorn utters "Well I say I say I say!"
 ~
-Desc       This imposing rooster is master of the farmyard. You better not mess with
+Desc      This imposing rooster is master of the farmyard. You better not mess with
 him, he has the ability to utterly pulverise you, even if his amicable
 manner suggests he is a pushover.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   infrared protect~
-Stats1     0 58 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    58 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15006
-Keywords   lepew skunk~
-Short      Pepe LePew~
-Long       Pepe LePew says "Ah, mon cherie!"
+Vnum      15006
+Keywords  lepew skunk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Pepe LePew~
+Long      Pepe LePew says "Ah, mon cherie!"
 ~
-Desc       Pepe LePew is an amorous Parisian skunk with exceedingly poor eyesight. He
+Desc      Pepe LePew is an amorous Parisian skunk with exceedingly poor eyesight. He
 seems to think you are a skunk, and is attempting to seduce you.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   infrared protect~
-Stats1     0 50 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15007
-Keywords   sylvester~
-Short      Sylvester~
-Long       Sylvester splutters "Sufferin' Succotash!"
+Vnum      15007
+Keywords  sylvester~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Sylvester~
+Long      Sylvester splutters "Sufferin' Succotash!"
 ~
-Desc       Sylvester is determined to feast upon Tweety Pie, and will not brook any
+Desc      Sylvester is determined to feast upon Tweety Pie, and will not brook any
 interference from you. You'd be best to leave him to it- with his ineptitude
 and bad luck, he will damage himself far more than you ever could.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   infrared protect~
-Stats1     0 52 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    52 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15008
-Keywords   tweety pie~
-Short      Tweety Pie~
-Long       Tweety Pie asks if you thaw a puddy tat.
+Vnum      15008
+Keywords  tweety pie~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Tweety Pie~
+Long      Tweety Pie asks if you thaw a puddy tat.
 ~
-Desc       Tweety Pie is a sweet little bird with an adoring owner. However his life
+Desc      Tweety Pie is a sweet little bird with an adoring owner. However his life
 is constantly threatened by hungry cats such as Sylvester. Actually, that
 isn't true- Sylvester is so incompetent that Tweety has never been in any
 real danger of being eaten.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   infrared protect flying~
-Stats1     400 45 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared protect flying~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15009
-Keywords   granny~
-Short      Granny~
-Long       Granny asks if you have seen her darling Tweety Pie.
+Vnum      15009
+Keywords  granny~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Granny~
+Long      Granny asks if you have seen her darling Tweety Pie.
 ~
-Desc       This elderly pensioner's only joy in life is her darling bird, and if it were
+Desc      This elderly pensioner's only joy in life is her darling bird, and if it were
 to be taken from her she would be most upset. Upset enough to bash your head
 in with her umbrella.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel stayarea wimpy~
-Affected   protect~
-Stats1     500 59 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    500 0 0 0 0 0
+Stats2    59 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15010
-Keywords   wile coyote~
-Short      Wile E. Coyote~
-Long       Wile E. Coyote is here hatching up another scheme.
+Vnum      15010
+Keywords  wile coyote~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Wile E. Coyote~
+Long      Wile E. Coyote is here hatching up another scheme.
 ~
-Desc       Wile E. Coyote spends his entire life thinking up ingenious schemes to catch
+Desc      Wile E. Coyote spends his entire life thinking up ingenious schemes to catch
 the Road Runner, all of which fail miserably. He'd be better off seeking
 other prey.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   infrared protect~
-Stats1     -400 53 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    53 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15011
-Keywords   road runner~
-Short      the Road Runner~
-Long       The Road Runner goes "BEEP BEEP!"
+Vnum      15011
+Keywords  road runner~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the Road Runner~
+Long      The Road Runner goes "BEEP BEEP!"
 ~
-Desc       "Road Runner, that Coyote's after you.
+Desc      "Road Runner, that Coyote's after you.
  Road Runner, if he catches you you're through!"
 
 Personally I always wished he would.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   sanctuary infrared protect~
-Stats1     0 48 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    48 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  sanctuary infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15012
-Keywords   chickenhawk~
-Short      Chickenhawk~
-Long       Chickenhawk asks if you are a chicken.
+Vnum      15012
+Keywords  chickenhawk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Chickenhawk~
+Long      Chickenhawk asks if you are a chicken.
 ~
-Desc       Chickenhawk is looking for a chicken to eat. And he seems to think that you
+Desc      Chickenhawk is looking for a chicken to eat. And he seems to think that you
 fit the bill.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   sanctuary infrared protect~
-Stats1     0 58 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    58 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  sanctuary infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15013
-Keywords   baby roo~
-Short      a baby roo~
-Long       A baby roo kicks you in the chest.
+Vnum      15013
+Keywords  baby roo~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a baby roo~
+Long      A baby roo kicks you in the chest.
 ~
-Desc       This aggressive little beast has come all the way from Australia. It is
+Desc      This aggressive little beast has come all the way from Australia. It is
 very cute. Aw look, he wants to play.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel aggressive stayarea wimpy~
-Affected   infrared protect~
-Stats1     0 52 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    52 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15014
-Keywords   son cat~
-Short      Sylvester's son~
-Long       Sylvester's son says "Oh, the shame of it all!"
+Vnum      15014
+Keywords  son cat~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Sylvester's son~
+Long      Sylvester's son says "Oh, the shame of it all!"
 ~
-Desc       Sylvester's son is most disheartened by the fact that the roo in the next
+Desc      Sylvester's son is most disheartened by the fact that the roo in the next
 room has beaten the tar out of his father.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   infrared~
-Stats1     0 48 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    48 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15015
-Keywords   spike~
-Short      Spike~
-Long       Spike the bulldog growls menacingly at you.
+Vnum      15015
+Keywords  spike~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Spike~
+Long      Spike the bulldog growls menacingly at you.
 ~
-Desc       Spike is a loyal and loving dog- to his master, Granny. He kills everyone
+Desc      Spike is a loyal and loving dog- to his master, Granny. He kills everyone
 else.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel aggressive stayarea~
-Affected   infrared protect~
-Stats1     0 58 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    58 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15016
-Keywords   speedy gonzales~
-Short      Speedy Gonzales~
-Long       Speedy Gonzales shouts "Andere Andere Areeeeeeba!"
+Vnum      15016
+Keywords  speedy gonzales~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Speedy Gonzales~
+Long      Speedy Gonzales shouts "Andere Andere Areeeeeeba!"
 ~
-Desc       This mischievious little mouse is the hero of his village, for with his
+Desc      This mischievious little mouse is the hero of his village, for with his
 super speed he has driven all cats from the village.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   sanctuary infrared protect~
-Stats1     0 54 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    54 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  sanctuary infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15017
-Keywords   cat~
-Short      a cat~
-Long       A cat that resembles a skunk begs you to be quiet.
+Vnum      15017
+Keywords  cat~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a cat~
+Long      A cat that resembles a skunk begs you to be quiet.
 ~
-Desc       This unfortunate cat has a white stripe painted on her back, and now Pepe
+Desc      This unfortunate cat has a white stripe painted on her back, and now Pepe
 thinks her to be a fellow skunk. She implored you not to to give away her
 hiding place.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   infrared~
-Stats1     0 44 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    44 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15018
-Keywords   el toro~
-Short      el Toro~
-Long       El Toro lowers his head and charges!
+Vnum      15018
+Keywords  el toro~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     el Toro~
+Long      El Toro lowers his head and charges!
 ~
-Desc       This savage bull will tear you apart!
+Desc      This savage bull will tear you apart!
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel aggressive stayarea~
-Affected   infrared protect~
-Stats1     -500 54 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    54 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15019
-Keywords   marvin martian~
-Short      Marvin the Martian~
-Long       Marvin the Martian exclaims- Exactness is useless, you will be approximated!
+Vnum      15019
+Keywords  marvin martian~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Marvin the Martian~
+Long      Marvin the Martian exclaims- Exactness is useless, you will be approximated!
 ~
-Desc       Marvin is from Mars. He is wearing what looks like a Roman centurion's
+Desc      Marvin is from Mars. He is wearing what looks like a Roman centurion's
 helmet which obscures his face save for his huge white eyes. He seems to
 favor green accoutrements.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     male~
-Actflags   npc stayarea wimpy~
-Affected   detect_invis infrared protect~
-Stats1     0 56 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    56 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc stayarea wimpy~
+Affected  detect_invis infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15020
-Keywords   genie~
-Short      an angry genie~
-Long       An angry genie shouts "Infidels!"
+Vnum      15020
+Keywords  genie~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     an angry genie~
+Long      An angry genie shouts "Infidels!"
 ~
-Desc       He sure looks mad.
+Desc      He sure looks mad.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     male~
-Actflags   npc sentinel aggressive stayarea~
-Affected   sanctuary infrared protect~
-Stats1     -500 55 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    55 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  sanctuary infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15021
-Keywords   elvis chickenhawk~
-Short      Elvis the chickenhawk~
-Long       Elvis the chickenhawk asks you if you want some black-eyed peas.
+Vnum      15021
+Keywords  elvis chickenhawk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     Elvis the chickenhawk~
+Long      Elvis the chickenhawk asks you if you want some black-eyed peas.
 ~
-Desc       Elvis is a chickenhawk from the deep south. The DEEP south judging by his
+Desc      Elvis is a chickenhawk from the deep south. The DEEP south judging by his
 atrocious good ol' boy accent.
 ~
-Race       human~
-Class      warrior~
-Position   dead~
-DefPos     dead~
-Gender     male~
-Actflags   npc sentinel healer stayarea wimpy~
-Affected   infrared flying~
-Stats1     0 45 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared flying~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15022
-Keywords   pappy chickenhawk~
-Short      Pappy the chickenhawk~
-Long       Pappy the chickenhawk asks you if you want some black-eyed peas.
+Vnum      15022
+Keywords  pappy chickenhawk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     Pappy the chickenhawk~
+Long      Pappy the chickenhawk asks you if you want some black-eyed peas.
 ~
-Desc       Pappy is a chickenhawk from the deep south. The DEEP south judging by his
+Desc      Pappy is a chickenhawk from the deep south. The DEEP south judging by his
 atrocious good ol' boy accent.
 ~
-Race       human~
-Class      warrior~
-Position   dead~
-DefPos     dead~
-Gender     male~
-Actflags   npc sentinel healer stayarea wimpy~
-Affected   infrared flying~
-Stats1     0 45 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared flying~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15023
-Keywords   sam beagle~
-Short      Sam the beagle~
-Long       Sam the beagle is here plotting revenge against Foghorn Leghorn.
+Vnum      15023
+Keywords  sam beagle~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     Sam the beagle~
+Long      Sam the beagle is here plotting revenge against Foghorn Leghorn.
 ~
-Desc       Sam eyes you craftily and asks if you want to help him out a little. He is
+Desc      Sam eyes you craftily and asks if you want to help him out a little. He is
 determined to get back at Yosemite Sam.
 ~
-Race       human~
-Class      warrior~
-Position   dead~
-DefPos     dead~
-Gender     male~
-Actflags   npc sentinel healer stayarea~
-Affected   infrared protect~
-Stats1     0 48 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    48 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared protect~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15024
-Keywords   henrietta~
-Short      Henrietta~
-Long       Henrietta the hen clucks contentedly.
+Vnum      15024
+Keywords  henrietta~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  dead~
+DefPos    dead~
+Short     Henrietta~
+Long      Henrietta the hen clucks contentedly.
 ~
-Desc       Henrietta is the prospective prey of the chickenhawks, and is thus under the
+Desc      Henrietta is the prospective prey of the chickenhawks, and is thus under the
 protective custody of Sam the beagle.
 ~
-Race       human~
-Class      warrior~
-Position   dead~
-DefPos     dead~
-Gender     female~
-Actflags   npc sentinel stayarea wimpy~
-Affected   flying~
-Stats1     500 42 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    500 0 0 0 0 0
+Stats2    42 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  flying~
 #ENDMOBILE
 
 #OBJECT
-Vnum     15000
-Keywords bugs bunny ears~
-Type     armor~
-Short    a pair of large floppy rabbit ears~
-Long     Bugs Bunny's ears lie here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 3 3 0
-Affect       -1 -1 25 12 0
-Affect       -1 -1 -20 17 0
+Vnum      15000
+Keywords  bugs bunny ears~
+Type      armor~
+Short     a pair of large floppy rabbit ears~
+Long      Bugs Bunny's ears lie here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData wisdom 3 -1 -1 0
+AffData mana 25 -1 -1 0
+AffData armor -20 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15001
-Keywords carrot~
-Type     food~
-Short    a carrot~
-Long     A juicy carrot lies here, half-eaten.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 6 18 0
-Affect       -1 -1 2 19 0
+Vnum      15001
+Keywords  carrot~
+Type      food~
+Short     a carrot~
+Long      A juicy carrot lies here, half-eaten.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hitroll 6 -1 -1 0
+AffData damroll 2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15002
-Keywords duck bill~
-Type     armor~
-Short    a duck's bill~
-Long     Daffy Duck's bill lies here, still talking.~
-Flags    noremove~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 -1 3 0
-Affect       -1 -1 -2 4 0
-Affect       -1 -1 15 17 0
+Vnum      15002
+Keywords  duck bill~
+Type      armor~
+Short     a duck's bill~
+Long      Daffy Duck's bill lies here, still talking.~
+Flags     noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData wisdom -1 -1 -1 0
+AffData dexterity -2 -1 -1 0
+AffData armor 15 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15003
-Keywords cowboy hat~
-Type     armor~
-Short    a cowboy hat~
-Long     A cowboy hat lies in the dust here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15003
+Keywords  cowboy hat~
+Type      armor~
+Short     a cowboy hat~
+Long      A cowboy hat lies in the dust here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15004
-Keywords vest~
-Type     armor~
-Short    a leather vest~
-Long     A leather vest has been left here by some cowpoke.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 25 13 0
-Affect       -1 -1 -15 17 0
+Vnum      15004
+Keywords  vest~
+Type      armor~
+Short     a leather vest~
+Long      A leather vest has been left here by some cowpoke.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 25 -1 -1 0
+AffData armor -15 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15005
-Keywords bowtie~
-Type     armor~
-Short    a smart bowtie~
-Long     A smart bowtie is here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 1 5 0
-Affect       -1 -1 20 12 0
+Vnum      15005
+Keywords  bowtie~
+Type      armor~
+Short     a smart bowtie~
+Long      A smart bowtie is here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+AffData mana 20 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15006
-Keywords tail~
-Type     armor~
-Short    a pig's tail~
-Long     A pig's tail lies curled up here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 3 2 0
+Vnum      15006
+Keywords  tail~
+Type      armor~
+Short     a pig's tail~
+Long      A pig's tail lies curled up here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 3 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15007
-Keywords cap hat~
-Type     armor~
-Short    a hunting cap~
-Long     A hunting cap has been carelessly left here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15007
+Keywords  cap hat~
+Type      armor~
+Short     a hunting cap~
+Long      A hunting cap has been carelessly left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15008
-Keywords jacket~
-Type     armor~
-Short    a hunting jacket~
-Long     A hunting jacket has been carelessly left here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    5 0 0 0 0
+Vnum      15008
+Keywords  jacket~
+Type      armor~
+Short     a hunting jacket~
+Long      A hunting jacket has been carelessly left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15009
-Keywords shotgun~
-Type     weapon~
-Short    a double-barreled shotgun~
-Long     A double-barreled shotgun lies here.~
-Flags    hum~
-WFlags   take~
-Values   0 0 0 6 0 0
-Stats    10 0 0 0 0
-Affect       -1 -1 6 18 0
-Affect       -1 -1 6 19 0
+Vnum      15009
+Keywords  shotgun~
+Type      weapon~
+Short     a double-barreled shotgun~
+Long      A double-barreled shotgun lies here.~
+Flags     hum~
+WFlags    take~
+Values    0 0 0 6 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll 6 -1 -1 0
+AffData damroll 6 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15010
-Keywords pistol~
-Type     weapon~
-Short    a pistol~
-Long     A pistol lies here.~
-Flags    hum~
-WFlags   take~
-Values   0 0 0 6 0 0
-Stats    5 0 0 0 0
-Affect       -1 -1 4 18 0
-Affect       -1 -1 6 19 0
+Vnum      15010
+Keywords  pistol~
+Type      weapon~
+Short     a pistol~
+Long      A pistol lies here.~
+Flags     hum~
+WFlags    take~
+Values    0 0 0 6 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData hitroll 4 -1 -1 0
+AffData damroll 6 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15011
-Keywords moustache~
-Type     armor~
-Short    a bright red moustache~
-Long     A bright red moustache lies here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    2 0 0 0 0
-Affect       -1 -1 3 5 0
-Affect       -1 -1 30 13 0
+Vnum      15011
+Keywords  moustache~
+Type      armor~
+Short     a bright red moustache~
+Long      A bright red moustache lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData constitution 3 -1 -1 0
+AffData hit 30 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15012
-Keywords comb~
-Type     armor~
-Short    a rooster's comb~
-Long     Foghorn Leghorn's comb lies here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    7 0 0 0 0
-Affect       -1 -1 2 5 0
-Affect       -1 -1 50 13 0
+Vnum      15012
+Keywords  comb~
+Type      armor~
+Short     a rooster's comb~
+Long      Foghorn Leghorn's comb lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     7 0 -2 9999 0 None None None
+AffData constitution 2 -1 -1 0
+AffData hit 50 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15013
-Keywords feather~
-Type     armor~
-Short    a white rooster feather~
-Long     A white rooster feather lies here.~
-Flags    glow~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 5 18 0
+Vnum      15013
+Keywords  feather~
+Type      armor~
+Short     a white rooster feather~
+Long      A white rooster feather lies here.~
+Flags     glow~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hitroll 5 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15014
-Keywords skunk smell~
-Type     armor~
-Short    skunk smell!~
-Long     Eeyew! Skunk smell! Sacre Bleau!~
-Flags    hum noremove~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 -3 5 0
-Affect       -1 -1 -50 13 0
+Vnum      15014
+Keywords  skunk smell~
+Type      armor~
+Short     skunk smell!~
+Long      Eeyew! Skunk smell! Sacre Bleau!~
+Flags     hum noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData constitution -3 -1 -1 0
+AffData hit -50 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15015
-Keywords whiskers~
-Type     armor~
-Short    cat whiskers~
-Long     Sylvester's whiskers have been chopped off. Again.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15015
+Keywords  whiskers~
+Type      armor~
+Short     cat whiskers~
+Long      Sylvester's whiskers have been chopped off. Again.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15016
-Keywords dead fish~
-Type     food~
-Short    a dead fish~
-Long     A half-eaten dead fish lies rotting away here.~
-WFlags   take~
-Values   4 0 0 1 0 0
-Stats    1 0 0 0 0
+Vnum      15016
+Keywords  dead fish~
+Type      food~
+Short     a dead fish~
+Long      A half-eaten dead fish lies rotting away here.~
+WFlags    take~
+Values    4 0 0 1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15017
-Keywords trash can~
-Type     container~
-Short    a trash can~
-Long     A trash can stands here.~
-WFlags   take~
-Values   500 1 0 0 0 0
-Stats    10 0 0 0 0
+Vnum      15017
+Keywords  trash can~
+Type      container~
+Short     a trash can~
+Long      A trash can stands here.~
+WFlags    take~
+Values    500 1 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15018
-Keywords pole~
-Type     weapon~
-Short    a long wooden pole~
-Long     A long wooden pole, useful for tightrope walkers, lies here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    10 0 0 0 0
-Affect       -1 -1 -2 18 0
-Affect       -1 -1 -2 19 0
+Vnum      15018
+Keywords  pole~
+Type      weapon~
+Short     a long wooden pole~
+Long      A long wooden pole, useful for tightrope walkers, lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll -2 -1 -1 0
+AffData damroll -2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15019
-Keywords cage~
-Type     container~
-Short    a bird cage~
-Long     Tweety's Cage hangs from the ceiling here.~
-WFlags   take~
-Values   25 1 0 0 0 0
-Stats    5 0 0 0 0
+Vnum      15019
+Keywords  cage~
+Type      container~
+Short     a bird cage~
+Long      Tweety's Cage hangs from the ceiling here.~
+WFlags    take~
+Values    25 1 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15020
-Keywords bird feed~
-Type     food~
-Short    some bird feed~
-Long     Some bird feed is scattered about here.~
-WFlags   take~
-Values   1 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15020
+Keywords  bird feed~
+Type      food~
+Short     some bird feed~
+Long      Some bird feed is scattered about here.~
+WFlags    take~
+Values    1 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15021
-Keywords umbrella~
-Type     weapon~
-Short    a sturdy black umbrella~
-Long     A sturdy black umbrella lies here.~
-Flags    hum magic~
-WFlags   take~
-Values   0 0 0 7 0 0
-Stats    6 0 0 0 0
-Affect       -1 -1 2 1 0
-Affect       -1 -1 20 13 0
-Affect       -1 -1 10 18 0
-Affect       -1 -1 10 19 0
+Vnum      15021
+Keywords  umbrella~
+Type      weapon~
+Short     a sturdy black umbrella~
+Long      A sturdy black umbrella lies here.~
+Flags     hum magic~
+WFlags    take~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     6 0 -2 9999 0 None None None
+AffData strength 2 -1 -1 0
+AffData hit 20 -1 -1 0
+AffData hitroll 10 -1 -1 0
+AffData damroll 10 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15022
-Keywords glasses~
-Type     wand~
-Short    a pair of granny glasses~
-Long     A pair of granny glasses lie here.~
-Flags    magic~
-WFlags   take~
-Values   50 10 10 -1 0 0
-Stats    1 0 0 0 0
-Spells   'blindness'
+Vnum      15022
+Keywords  glasses~
+Type      wand~
+Short     a pair of granny glasses~
+Long      A pair of granny glasses lie here.~
+Flags     magic~
+WFlags    take~
+Values    50 10 10 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'blindness'
 #ENDOBJECT
 
 #OBJECT
-Vnum     15023
-Keywords hair bun~
-Type     armor~
-Short    a hair bun~
-Long     A hair bun lies here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 2 3 0
-Affect       -1 -1 2 4 0
+Vnum      15023
+Keywords  hair bun~
+Type      armor~
+Short     a hair bun~
+Long      A hair bun lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15024
-Keywords dress~
-Type     armor~
-Short    granny's dress~
-Long     Granny's dress lies here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 -40 17 0
+Vnum      15024
+Keywords  dress~
+Type      armor~
+Short     granny's dress~
+Long      Granny's dress lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData armor -40 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15025
-Keywords bird seed~
-Type     food~
-Short    a pile of bird seed~
-Long     A pile of bird seed with a sign stuck in it lies here.~
-WFlags   take~
-Values   1 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15025
+Keywords  bird seed~
+Type      food~
+Short     a pile of bird seed~
+Long      A pile of bird seed with a sign stuck in it lies here.~
+WFlags    take~
+Values    1 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    sign seed~
 ExDesc       The sign says- BIRD SEED
@@ -1008,211 +908,211 @@ ExDesc       The sign says- BIRD SEED
 #ENDOBJECT
 
 #OBJECT
-Vnum     15026
-Keywords dynamite~
-Type     staff~
-Short    a stick of dynamite~
-Long     A stick of dynamite lies here.~
-Flags    glow~
-WFlags   take~
-Values   45 1 1 -1 0 0
-Stats    1 0 0 0 0
-Spells   'cause critical'
+Vnum      15026
+Keywords  dynamite~
+Type      staff~
+Short     a stick of dynamite~
+Long      A stick of dynamite lies here.~
+Flags     glow~
+WFlags    take~
+Values    45 1 1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'cause critical'
 #ENDOBJECT
 
 #OBJECT
-Vnum     15027
-Keywords wire~
-Type     furniture~
-Short    a tightrope wire~
-Long     A tightrope wire has been stretched to the block from here.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15027
+Keywords  wire~
+Type      furniture~
+Short     a tightrope wire~
+Long      A tightrope wire has been stretched to the block from here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15028
-Keywords log~
-Type     furniture~
-Short    a huge log~
-Long     A huge log looks set to crush you.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15028
+Keywords  log~
+Type      furniture~
+Short     a huge log~
+Long      A huge log looks set to crush you.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15029
-Keywords crate~
-Type     furniture~
-Short    a packing crate~
-Long     This packing crate looks like it once held animals...~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15029
+Keywords  crate~
+Type      furniture~
+Short     a packing crate~
+Long      This packing crate looks like it once held animals...~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15030
-Keywords crowbar~
-Type     weapon~
-Short    a crowbar~
-Long     A crowbar has been left on the ground here.~
-WFlags   take~
-Values   0 0 0 7 0 0
-Stats    4 0 0 0 0
+Vnum      15030
+Keywords  crowbar~
+Type      weapon~
+Short     a crowbar~
+Long      A crowbar has been left on the ground here.~
+WFlags    take~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15031
-Keywords sombrero~
-Type     armor~
-Short    a sombrero~
-Long     A very small sombrero lies here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 3 2 0
-Affect       -1 -1 250 14 0
+Vnum      15031
+Keywords  sombrero~
+Type      armor~
+Short     a sombrero~
+Long      A very small sombrero lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 3 -1 -1 0
+AffData move 250 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15032
-Keywords clothes~
-Type     armor~
-Short    some white clothes~
-Long     Some tiny white clothes are bundled up here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15032
+Keywords  clothes~
+Type      armor~
+Short     some white clothes~
+Long      Some tiny white clothes are bundled up here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15033
-Keywords white paint stripe~
-Type     armor~
-Short    a white paint stripe~
-Long     A stripe of white paint is on the floor here.~
-Flags    noremove~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15033
+Keywords  white paint stripe~
+Type      armor~
+Short     a white paint stripe~
+Long      A stripe of white paint is on the floor here.~
+Flags     noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15034
-Keywords kennel~
-Type     furniture~
-Short    a dog kennel~
-Long     A white dog kennel with a red roof sits here.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15034
+Keywords  kennel~
+Type      furniture~
+Short     a dog kennel~
+Long      A white dog kennel with a red roof sits here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15035
-Keywords matador costume~
-Type     armor~
-Short    a matador's costume~
-Long     A matador's costume has been laid out here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 2 2 0
-Affect       -1 -1 1 5 0
-Affect       -1 -1 10 12 0
-Affect       -1 -1 15 13 0
-Affect       -1 -1 25 14 0
-Affect       -1 -1 -15 17 0
-Affect       -1 -1 2 18 0
-Affect       -1 -1 4 19 0
-Affect       -1 -1 3 25 0
+Vnum      15035
+Keywords  matador costume~
+Type      armor~
+Short     a matador's costume~
+Long      A matador's costume has been laid out here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 2 -1 -1 0
+AffData constitution 1 -1 -1 0
+AffData mana 10 -1 -1 0
+AffData hit 15 -1 -1 0
+AffData move 25 -1 -1 0
+AffData armor -15 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 4 -1 -1 0
+AffData sex 3 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15036
-Keywords red cloth~
-Type     trash~
-Short    a red cloth~
-Long     A red cloth used for enraging bulls lies here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15036
+Keywords  red cloth~
+Type      trash~
+Short     a red cloth~
+Long      A red cloth used for enraging bulls lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15037
-Keywords anvil~
-Type     furniture~
-Short    a large iron anvil~
-Long     A large iron anvil rests here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    250 0 0 0 0
+Vnum      15037
+Keywords  anvil~
+Type      furniture~
+Short     a large iron anvil~
+Long      A large iron anvil rests here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     250 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15038
-Keywords rocket skates~
-Type     staff~
-Short    a pair of ACME rocket skates~
-Long     A pair of ACME rocket skates have been left here.~
-Flags    hum~
-WFlags   take~
-Values   50 10 10 -1 0 0
-Stats    9 0 0 0 0
-Affect       -1 -1 250 14 0
-Spells   'teleport'
+Vnum      15038
+Keywords  rocket skates~
+Type      staff~
+Short     a pair of ACME rocket skates~
+Long      A pair of ACME rocket skates have been left here.~
+Flags     hum~
+WFlags    take~
+Values    50 10 10 -1 0 0 0 0 0 0 0
+Stats     9 0 -2 9999 0 None None None
+AffData move 250 -1 -1 0
+Spells       'teleport'
 #ENDOBJECT
 
 #OBJECT
-Vnum     15039
-Keywords ray gun~
-Type     wand~
-Short    a ray gun~
-Long     Marvin Martian's cosmic ray gun lies here.~
-Flags    glow hum~
-WFlags   take~
-Values   50 10 10 -1 0 0
-Stats    2 0 0 0 0
-Affect       -1 -1 2 18 0
-Affect       -1 -1 2 19 0
-Spells   'cause critical'
+Vnum      15039
+Keywords  ray gun~
+Type      wand~
+Short     a ray gun~
+Long      Marvin Martian's cosmic ray gun lies here.~
+Flags     glow hum~
+WFlags    take~
+Values    50 10 10 -1 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+Spells       'cause critical'
 #ENDOBJECT
 
 #OBJECT
-Vnum     15040
-Keywords helmet~
-Type     armor~
-Short    a martian helmet~
-Long     Marvin Martian's Roman helmet sits here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    5 0 0 0 0
-Affect       -1 -1 3 3 0
-Affect       -1 -1 -20 17 0
+Vnum      15040
+Keywords  helmet~
+Type      armor~
+Short     a martian helmet~
+Long      Marvin Martian's Roman helmet sits here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData wisdom 3 -1 -1 0
+AffData armor -20 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15041
-Keywords collar~
-Type     armor~
-Short    spike's collar~
-Long     Spike has dropped his collar here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    3 0 0 0 0
-Affect       -1 -1 5 19 0
+Vnum      15041
+Keywords  collar~
+Type      armor~
+Short     spike's collar~
+Long      Spike has dropped his collar here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData damroll 5 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15042
-Keywords business card~
-Type     scroll~
-Short    wile E. Coyote's business card~
-Long     Wile E. Coyote's business card lies here.~
-WFlags   take~
-Values   50 -1 -1 -1 0 0
-Stats    1 0 0 0 0
-Spells   'bless' 'cure blindness' 'cure poison'
+Vnum      15042
+Keywords  business card~
+Type      scroll~
+Short     wile E. Coyote's business card~
+Long      Wile E. Coyote's business card lies here.~
+WFlags    take~
+Values    50 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'bless' 'cure blindness' 'cure poison'
 #EXDESC
 ExDescKey    card~
 ExDesc       It reads- "Wile E. Coyote- GENIUS"
@@ -1222,75 +1122,81 @@ ExDesc       It reads- "Wile E. Coyote- GENIUS"
 #ENDOBJECT
 
 #OBJECT
-Vnum     15043
-Keywords cheese~
-Type     food~
-Short    a piece of cheese~
-Long     This cheese could feed you for days.~
-WFlags   take~
-Values   48 0 0 0 0 0
-Stats    5 0 0 0 0
+Vnum      15043
+Keywords  cheese~
+Type      food~
+Short     a piece of cheese~
+Long      This cheese could feed you for days.~
+WFlags    take~
+Values    48 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15044
-Keywords lamp~
-Type     staff~
-Short    a genie's lamp~
-Long     Give it a rub and see what pops out.~
-Flags    glow hum~
-WFlags   take~
-Values   55 11 11 -1 0 0
-Stats    3 0 0 0 0
-Spells   'summon'
+Vnum      15044
+Keywords  lamp~
+Type      staff~
+Short     a genie's lamp~
+Long      Give it a rub and see what pops out.~
+Flags     glow hum~
+WFlags    take~
+Values    55 11 11 -1 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+Spells       'summon'
 #ENDOBJECT
 
 #OBJECT
-Vnum     15045
-Keywords treasure~
-Type     money~
-Short    a MAGNIFICENT treasure!~
-Long     A MAGNIFICENT treasure lies here!~
-Flags    glow~
-WFlags   take~
-Values   100000 0 0 0 0 0
-Stats    100 0 0 0 0
+Vnum      15045
+Keywords  treasure~
+Type      money~
+Short     a MAGNIFICENT treasure!~
+Long      A MAGNIFICENT treasure lies here!~
+Flags     glow~
+WFlags    take~
+Values    100000 0 0 0 0 0 0 0 0 0 0
+Stats     100 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15046
-Keywords marvin martian spaceship~
-Type     furniture~
-Short    marvin the Martian's Spaceship~
-Long     Marvin the Martian's Spaceship floats past.~
-Flags    antithief~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15046
+Keywords  marvin martian spaceship~
+Type      furniture~
+Short     marvin the Martian's Spaceship~
+Long      Marvin the Martian's Spaceship floats past.~
+Flags     antirogue~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15047
-Keywords black eyed peas~
-Type     food~
-Short    some black-eyed peas~
-Long     Some black-eyed peas are scattered here.~
-WFlags   take~
-Values   4 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      15047
+Keywords  black eyed peas~
+Type      food~
+Short     some black-eyed peas~
+Long      Some black-eyed peas are scattered here.~
+WFlags    take~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #ROOM
-Vnum     15000
-Name     Entrance to Looney Tunes Land~
-Sector   field~
-Flags    nomob~
-Desc     You are heading along a small path lined with white stones toward a grassy
+Vnum      15000
+Name      Entrance to Looney Tunes Land~
+Sector    field~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You are heading along a small path lined with white stones toward a grassy
 field. This field seems to extend in all directions as far as you can see.
 It looks strangely two-dimensional. You hear the strains of "The Merry-Go-
 Round broke down" playing somewhere...
 
 There is a small sign here.
 ~
+#EXIT
+Direction east~
+ToRoom    14607
+#ENDEXIT
+
 #EXIT
 Direction west~
 ToRoom    15001
@@ -1305,10 +1211,12 @@ ExDesc       This area written by Aurorix and Yaegar in March 1996 for AnonyMud.
 #ENDROOM
 
 #ROOM
-Vnum     15001
-Name     A Grassy Field~
-Sector   field~
-Desc     You are walking across a wide, grassy field. To the north you imagine you
+Vnum      15001
+Name      A Grassy Field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking across a wide, grassy field. To the north you imagine you
 can see a farmhouse, while a large stadium looms in the distance to the
 south. To the west a dark and thick forest starts abruptly.
 ~
@@ -1335,10 +1243,12 @@ ToRoom    15004
 #ENDROOM
 
 #ROOM
-Vnum     15002
-Name     Approaching the Farmhouse~
-Sector   field~
-Desc     You are heading along an even path toward a red farmhouse that looks as if it
+Vnum      15002
+Name      Approaching the Farmhouse~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are heading along an even path toward a red farmhouse that looks as if it
 has been painted onto the sky, which resembles a sheet of blue paper with
 blobs of white paint on it.
 ~
@@ -1355,10 +1265,12 @@ ToRoom    15001
 #ENDROOM
 
 #ROOM
-Vnum     15003
-Name     Approaching the Stadium~
-Sector   field~
-Desc     The walls of the stadium lie to the south of here. They are plastered with
+Vnum      15003
+Name      Approaching the Stadium~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The walls of the stadium lie to the south of here. They are plastered with
 a variety of posters. From here, you cannot see any way of entering the
 stadium. However, there is a small hole in the ground near an old oak
 tree to the left of the path.
@@ -1376,10 +1288,12 @@ ToRoom    15011
 #ENDROOM
 
 #ROOM
-Vnum     15004
-Name     A Thick Forest~
-Sector   forest~
-Desc     This forest is rather forbidding, though some of its impact is lessened by
+Vnum      15004
+Name      A Thick Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This forest is rather forbidding, though some of its impact is lessened by
 the fact that it feels as if you are walking past sheets of paper with
 drawings of trees on them. No matter which way you walk, the trees converge
 to one side of you, never in front, or behind, or around you. You can't seem
@@ -1406,10 +1320,12 @@ Some older posters read- DUCK SEASON!
 #ENDROOM
 
 #ROOM
-Vnum     15005
-Name     The Farmyard~
-Sector   field~
-Desc     You are walking through the farmyard. You hear strains of square dance music
+Vnum      15005
+Name      The Farmyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking through the farmyard. You hear strains of square dance music
 coming from somewhere. Strangely two-dimensional animals stand about,
 remaining unnaturally motionless. Come to think of it, you haven't seen
 ANYTHING move here.
@@ -1427,10 +1343,12 @@ ToRoom    15002
 #ENDROOM
 
 #ROOM
-Vnum     15006
-Name     Outside the Coop~
-Sector   field~
-Desc     A big red door to the east marks the entrance to the chicken coop. You may
+Vnum      15006
+Name      Outside the Coop~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A big red door to the east marks the entrance to the chicken coop. You may
 enter if you wish, or you may head west toward the farmhouse itself.
 ~
 #EXIT
@@ -1449,17 +1367,19 @@ Direction west~
 ToRoom    15007
 #ENDEXIT
 
-Reset D 1 15006 1 1
-Reset M 0 15005 1 15006
-  Reset E 1 15012 1 6
-  Reset G 1 15013 0
+Reset D 15006 1 1 100 -2
+Reset M 15005 1 15006 -1 -1 -1 100
+  Reset E 15012 1 6 100
+  Reset G 15013 0 100
 #ENDROOM
 
 #ROOM
-Vnum     15007
-Name     Outside the Farmhouse~
-Sector   field~
-Desc     You are standing outside the red farmhouse you saw earlier. It is your
+Vnum      15007
+Name      Outside the Farmhouse~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing outside the red farmhouse you saw earlier. It is your
 typical farmhouse on your typical farm, if farms were two-dimensional
 cartoons.
 ~
@@ -1479,15 +1399,16 @@ Direction west~
 ToRoom    15048
 #ENDEXIT
 
-Reset D 1 15007 0 1
+Reset D 15007 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     15008
-Name     Inside the Farmhouse~
-Sector   inside~
-Flags    indoors~
-Desc     You have entered the main room of the farmhouse, and true to its cartoon
+Vnum      15008
+Name      Inside the Farmhouse~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered the main room of the farmhouse, and true to its cartoon
 unreality, it is the ONLY room in the farmhouse. You can't really take
 anything, because it is all drawn on the walls.
 ~
@@ -1497,18 +1418,19 @@ ToRoom    15007
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 1 15008 2 1
-Reset M 0 15002 1 15008
-  Reset E 1 15005 1 3
-  Reset E 1 15006 1 13
+Reset D 15008 2 1 100 -2
+Reset M 15002 1 15008 -1 -1 -1 100
+  Reset E 15005 1 3 100
+  Reset E 15006 1 13 100
 #ENDROOM
 
 #ROOM
-Vnum     15009
-Name     Inside the Coop~
-Sector   inside~
-Flags    indoors~
-Desc     You are standing inside a handsome coop, lined with shelves with little
+Vnum      15009
+Name      Inside the Coop~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing inside a handsome coop, lined with shelves with little
 nests for the large egg-laying hens of the farmyard. There they are, all
 sitting in a row, laying away.
 ~
@@ -1518,16 +1440,18 @@ ToRoom    15006
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 1 15009 3 1
-Reset M 0 15012 1 15009
-Reset M 0 15024 1 15009
+Reset D 15009 3 1 100 -2
+Reset M 15012 1 15009 -1 -1 -1 100
+Reset M 15024 1 15009 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15010
-Name     Further Inside the Forest~
-Sector   forest~
-Desc     This forest is rather forbidding, though some of its impact is lessened by
+Vnum      15010
+Name      Further Inside the Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This forest is rather forbidding, though some of its impact is lessened by
 the fact that it feels as if you are walking past sheets of paper with
 drawings of trees on them. No matter which way you walk, the trees converge
 to one side of you, never in front, or behind, or around you. You can't seem
@@ -1555,10 +1479,10 @@ Direction down~
 ToRoom    15013
 #ENDEXIT
 
-Reset M 0 15003 1 15010
-  Reset E 1 15007 1 6
-  Reset E 1 15008 1 5
-  Reset E 1 15009 1 16
+Reset M 15003 1 15010 -1 -1 -1 100
+  Reset E 15007 1 6 100
+  Reset E 15008 1 5 100
+  Reset E 15009 1 16 100
 #EXDESC
 ExDescKey    poster posters~
 ExDesc       The posters read- RABBIT SEASON!
@@ -1570,11 +1494,12 @@ Some older posters read- DUCK SEASON!
 #ENDROOM
 
 #ROOM
-Vnum     15011
-Name     Inside a Rabbit Warren~
-Sector   inside~
-Flags    dark~
-Desc     You are in a long narrow underground passage, obviously the home of some
+Vnum      15011
+Name      Inside a Rabbit Warren~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a long narrow underground passage, obviously the home of some
 rabbit, though it is unlike any rabbit warren that you have ever seen
 before. Deckchairs, beach towels and several pairs of sunglasses lie stacked
 next to old Billie Holliday 78s and a pile of old newspapers. There is also
@@ -1598,11 +1523,12 @@ ToRoom    15003
 #ENDROOM
 
 #ROOM
-Vnum     15012
-Name     Inside a Rabbit Warren~
-Sector   inside~
-Flags    dark~
-Desc     You are in a long narrow underground passage, obviously the home of some
+Vnum      15012
+Name      Inside a Rabbit Warren~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a long narrow underground passage, obviously the home of some
 rabbit, though it is unlike any rabbit warren that you have ever seen
 before. Deckchairs, beach towels and several pairs of sunglasses lie stacked
 next to old Billie Holliday 78s and a pile of old newspapers. There is also
@@ -1621,11 +1547,12 @@ ToRoom    15013
 #ENDROOM
 
 #ROOM
-Vnum     15013
-Name     Inside a Rabbit Warren~
-Sector   inside~
-Flags    dark~
-Desc     You are in a long narrow underground passage, obviously the home of some
+Vnum      15013
+Name      Inside a Rabbit Warren~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a long narrow underground passage, obviously the home of some
 rabbit, though it is unlike any rabbit warren that you have ever seen
 before. Deckchairs, beach towels and several pairs of sunglasses lie stacked
 next to old Billie Holliday 78s and a pile of old newspapers. There is also
@@ -1644,11 +1571,12 @@ ToRoom    15010
 #ENDROOM
 
 #ROOM
-Vnum     15014
-Name     Inside a Rabbit Warren~
-Sector   inside~
-Flags    dark~
-Desc     You are in a long narrow underground passage, obviously the home of some
+Vnum      15014
+Name      Inside a Rabbit Warren~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a long narrow underground passage, obviously the home of some
 rabbit, though it is unlike any rabbit warren that you have ever seen
 before. Deckchairs, beach towels and several pairs of sunglasses lie stacked
 next to old Billie Holliday 78s and a pile of old newspapers. There is also
@@ -1672,10 +1600,12 @@ ToRoom    15015
 #ENDROOM
 
 #ROOM
-Vnum     15015
-Name     Inside a Bull Ring~
-Sector   desert~
-Desc     You emerge onto the sandy floor of a Bull Fighting Arena. The crowd goes
+Vnum      15015
+Name      Inside a Bull Ring~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You emerge onto the sandy floor of a Bull Fighting Arena. The crowd goes
 wild as you enter, and you suddenly realize that they think you are the
 matador! You look around nervously for El Toro...
 ~
@@ -1695,16 +1625,18 @@ Direction down~
 ToRoom    15014
 #ENDEXIT
 
-Reset D 1 15015 2 1
-Reset M 0 15018 1 15015
-Reset O 0 15037 1 15015
+Reset D 15015 2 1 100 -2
+Reset M 15018 1 15015 -1 -1 -1 100
+Reset O 15037 1 15015 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15016
-Name     The Stadium~
-Sector   city~
-Desc     You are standing among the audience of the stadium. They don't look too
+Vnum      15016
+Name      The Stadium~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing among the audience of the stadium. They don't look too
 impressed by this. Especially in light of the fact that the bull is still
 coming for you!
 ~
@@ -1716,11 +1648,12 @@ ToRoom    15015
 #ENDROOM
 
 #ROOM
-Vnum     15017
-Name     The Changing Rooms~
-Sector   inside~
-Flags    indoors~
-Desc     Here the Matadors change from their civilian clothing into their costumes
+Vnum      15017
+Name      The Changing Rooms~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Here the Matadors change from their civilian clothing into their costumes
 prior to entering the arena. It is currently empty right now.
 ~
 #EXIT
@@ -1729,16 +1662,18 @@ ToRoom    15015
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 1 15017 0 1
-Reset O 0 15035 1 15017
-Reset O 0 15036 1 15017
+Reset D 15017 0 1 100 -2
+Reset O 15035 1 15017 -1 -1 -1 100
+Reset O 15036 1 15017 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15018
-Name     A Small Clearing~
-Sector   field~
-Desc     This clearing is bare save for a huge scorch mark in the center of it, which
+Vnum      15018
+Name      A Small Clearing~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This clearing is bare save for a huge scorch mark in the center of it, which
 appears to have been made by rocket engines...
 ~
 #EXIT
@@ -1746,17 +1681,19 @@ Direction south~
 ToRoom    15010
 #ENDEXIT
 
-Reset M 0 15019 1 15018
-  Reset E 1 15039 1 17
-  Reset E 1 15040 1 6
-Reset O 0 15046 1 15018
+Reset M 15019 1 15018 -1 -1 -1 100
+  Reset E 15039 1 17 100
+  Reset E 15040 1 6 100
+Reset O 15046 1 15018 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15019
-Name     Out of the Woods~
-Sector   city~
-Desc     You have emerged onto a black bitumen flat top with white lines painted on
+Vnum      15019
+Name      Out of the Woods~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have emerged onto a black bitumen flat top with white lines painted on
 it. It runs toward a city to the west.
 ~
 #EXIT
@@ -1772,10 +1709,12 @@ ToRoom    15020
 #ENDROOM
 
 #ROOM
-Vnum     15020
-Name     In the City~
-Sector   city~
-Desc     You have entered the city, and you quickly avoid several two-dimensional
+Vnum      15020
+Name      In the City~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have entered the city, and you quickly avoid several two-dimensional
 cars that suddenly rush past, driven by faceless people with strange voices.
 You may head north from here toward an apartment building, or south and
 east out of town toward the desert and a forest respectively. To the west
@@ -1804,10 +1743,12 @@ ToRoom    15041
 #ENDROOM
 
 #ROOM
-Vnum     15021
-Name     Outside an Apartment Block~
-Sector   city~
-Desc     The door to the block lies north. Standing here, you notice a telephone
+Vnum      15021
+Name      Outside an Apartment Block~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The door to the block lies north. Standing here, you notice a telephone
 pole towering high above you, and a tall fence with a metal gate to the
 west, behind which you can hear the barking of dogs.
 ~
@@ -1839,19 +1780,20 @@ Direction up~
 ToRoom    15025
 #ENDEXIT
 
-Reset D 1 15021 0 1
-Reset D 1 15021 1 1
-Reset D 1 15021 3 1
-Reset O 0 15017 1 15021
-  Reset P 1 15016 1 15017
+Reset D 15021 0 1 100 -2
+Reset D 15021 1 1 100 -2
+Reset D 15021 3 1 100 -2
+Reset O 15017 1 15021 -1 -1 -1 100
+  Reset P 1 15016 1 15017 100
 #ENDROOM
 
 #ROOM
-Vnum     15022
-Name     Inside the Apartment Block~
-Sector   inside~
-Flags    indoors~
-Desc     This apartment block is rather nice, like those found in Manhattan. A set
+Vnum      15022
+Name      Inside the Apartment Block~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This apartment block is rather nice, like those found in Manhattan. A set
 of stairs leads up to granny's apartment.
 ~
 #EXIT
@@ -1865,17 +1807,18 @@ Direction up~
 ToRoom    15023
 #ENDEXIT
 
-Reset D 1 15022 2 1
-Reset O 0 15017 1 15022
-  Reset P 1 15016 1 15017
+Reset D 15022 2 1 100 -2
+Reset O 15017 1 15022 -1 -1 -1 100
+  Reset P 1 15016 1 15017 100
 #ENDROOM
 
 #ROOM
-Vnum     15023
-Name     Granny's Apartment~
-Sector   inside~
-Flags    indoors~
-Desc     Granny lives here with Tweety Pie, her beloved avian friend. His cage hangs
+Vnum      15023
+Name      Granny's Apartment~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Granny lives here with Tweety Pie, her beloved avian friend. His cage hangs
 near the window. Outside, you can see the top of the telephone pole you
 saw earlier; it is about the same height as this apartment. A rather odd
 cat appears to be doing something whilst perched atop it. Wonder what he's
@@ -1892,22 +1835,24 @@ Direction down~
 ToRoom    15022
 #ENDEXIT
 
-Reset M 0 15008 1 15023
-Reset M 0 15009 1 15023
-  Reset E 1 15021 1 16
-  Reset E 1 15023 1 6
-  Reset E 1 15024 1 5
-  Reset G 1 15022 0
-Reset O 0 15019 1 15023
-  Reset P 1 15020 1 15019
-Reset O 0 15027 1 15023
+Reset M 15008 1 15023 -1 -1 -1 100
+Reset M 15009 1 15023 -1 -1 -1 100
+  Reset E 15021 1 16 100
+  Reset E 15023 1 6 100
+  Reset E 15024 1 5 100
+  Reset G 15022 0 100
+Reset O 15019 1 15023 -1 -1 -1 100
+  Reset P 1 15020 1 15019 100
+Reset O 15027 1 15023 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15024
-Name     A Yard~
-Sector   city~
-Desc     This yard is full of savage dogs! You shriek and claw madly at the door.
+Vnum      15024
+Name      A Yard~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This yard is full of savage dogs! You shriek and claw madly at the door.
 High above, you notice a cat is hanging for dear life from the telephone
 pole. Were he to let go, he would surely fall into the yard too...
 ~
@@ -1917,19 +1862,21 @@ ToRoom    15021
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 1 15024 1 1
-Reset M 0 15015 4 15024
-  Reset E 1 15041 1 3
-Reset O 0 15017 1 15024
-  Reset P 1 15016 1 15017
-Reset O 0 15034 1 15024
+Reset D 15024 1 1 100 -2
+Reset M 15015 4 15024 -1 -1 -1 100
+  Reset E 15041 1 3 100
+Reset O 15017 1 15024 -1 -1 -1 100
+  Reset P 1 15016 1 15017 100
+Reset O 15034 1 15024 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15025
-Name     The Top of the Telephone Pole~
-Sector   city~
-Desc     Someone has built a small platform here, and affixed a wire to it that runs
+Vnum      15025
+Name      The Top of the Telephone Pole~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Someone has built a small platform here, and affixed a wire to it that runs
 to a window of the apartment block. Through the window you can see a bird
 cage. If you want, you can try and head across the wire, though there is
 a yard full of savage dogs down below...
@@ -1944,18 +1891,20 @@ Direction down~
 ToRoom    15021
 #ENDEXIT
 
-Reset M 0 15007 1 15025
-  Reset E 1 15015 1 6
-  Reset E 1 15018 1 16
-  Reset G 1 15016 0
-Reset O 0 15027 1 15025
+Reset M 15007 1 15025 -1 -1 -1 100
+  Reset E 15015 1 6 100
+  Reset E 15018 1 16 100
+  Reset G 15016 0 100
+Reset O 15027 1 15025 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15026
-Name     A Highway~
-Sector   desert~
-Desc     This highway stretches south into the desert, past towering mesas and
+Vnum      15026
+Name      A Highway~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This highway stretches south into the desert, past towering mesas and
 buttes, and sloping tors eroded by fierce desert winds.
 ~
 #EXIT
@@ -1971,10 +1920,12 @@ ToRoom    15027
 #ENDROOM
 
 #ROOM
-Vnum     15027
-Name     A Highway~
-Sector   desert~
-Desc     This highway stretches south into the desert, past towering mesas and
+Vnum      15027
+Name      A Highway~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This highway stretches south into the desert, past towering mesas and
 buttes, and sloping tors eroded by fierce desert winds. The road bends west
 here, and is by a narrow dirt track running south.
 ~
@@ -1996,10 +1947,12 @@ ToRoom    15028
 #ENDROOM
 
 #ROOM
-Vnum     15028
-Name     A Highway~
-Sector   desert~
-Desc     This highway stretches south into the desert, past towering mesas and
+Vnum      15028
+Name      A Highway~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This highway stretches south into the desert, past towering mesas and
 buttes, and sloping tors eroded by fierce desert winds. You see something
 unusual on the road ahead.
 ~
@@ -2023,14 +1976,16 @@ Direction west~
 ToRoom    15029
 #ENDEXIT
 
-Reset M 0 15011 1 15028
+Reset M 15011 1 15028 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15029
-Name     A Highway~
-Sector   desert~
-Desc     This highway stretches south into the desert, past towering mesas and
+Vnum      15029
+Name      A Highway~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This highway stretches south into the desert, past towering mesas and
 buttes, and sloping tors eroded by fierce desert winds. It stretches out to
 the west for what seems like forever, and you decide not to bother continuing
 that way.
@@ -2050,14 +2005,16 @@ Direction up~
 ToRoom    15030
 #ENDEXIT
 
-Reset O 0 15025 1 15029
+Reset O 15025 1 15029 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15030
-Name     Atop a Mesa~
-Sector   hills~
-Desc     Here some fiendish creature has rigged a trap whereby a huge log suspended
+Vnum      15030
+Name      Atop a Mesa~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here some fiendish creature has rigged a trap whereby a huge log suspended
 by a thick rope will swing down and crush whoever is below when the rope is
 cut. Well, the rope has been cut, but the trap doesn't seem to be working...
 ~
@@ -2066,18 +2023,19 @@ Direction down~
 ToRoom    15029
 #ENDEXIT
 
-Reset M 0 15010 1 15030
-  Reset E 1 15038 1 8
-  Reset E 1 15042 1 17
-Reset O 0 15028 1 15030
+Reset M 15010 1 15030 -1 -1 -1 100
+  Reset E 15038 1 8 100
+  Reset E 15042 1 17 100
+Reset O 15028 1 15030 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15031
-Name     A Small Cave~
-Sector   inside~
-Flags    indoors~
-Desc     You have entered a small cave where Wile lurks in between attempts on the
+Vnum      15031
+Name      A Small Cave~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a small cave where Wile lurks in between attempts on the
 Road Runner's life. There are boxes and boxes full of evil death-dealing
 equipment, all made by ACME (of course it's reliable).
 ~
@@ -2086,14 +2044,16 @@ Direction north~
 ToRoom    15029
 #ENDEXIT
 
-Reset O 0 15026 1 15031
+Reset O 15026 1 15031 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15032
-Name     Outside a Hacienda~
-Sector   field~
-Desc     You are approaching a Mexican hacienda, complete with white-washed walls,
+Vnum      15032
+Name      Outside a Hacienda~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are approaching a Mexican hacienda, complete with white-washed walls,
 many archways and a terracotta tiled roof. There is also a small hole in
 the ground near your feet.
 ~
@@ -2115,11 +2075,12 @@ ToRoom    15035
 #ENDROOM
 
 #ROOM
-Vnum     15033
-Name     Inside the Hacienda~
-Sector   inside~
-Flags    indoors~
-Desc     You are in a quaint, well-furnished hacienda, which seems to be bereft of
+Vnum      15033
+Name      Inside the Hacienda~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a quaint, well-furnished hacienda, which seems to be bereft of
 inhabitants save for several field mice. There is a small hole in the south
 wall you may want to examine.
 ~
@@ -2133,17 +2094,18 @@ Direction west~
 ToRoom    15032
 #ENDEXIT
 
-Reset M 0 15016 1 15033
-  Reset E 1 15031 1 6
-  Reset E 1 15032 1 5
+Reset M 15016 1 15033 -1 -1 -1 100
+  Reset E 15031 1 6 100
+  Reset E 15032 1 5 100
 #ENDROOM
 
 #ROOM
-Vnum     15034
-Name     A Mouse Lair~
-Sector   inside~
-Flags    indoors~
-Desc     You enter a tiny lair with tiny beds lined up neatly against one wall, and
+Vnum      15034
+Name      A Mouse Lair~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You enter a tiny lair with tiny beds lined up neatly against one wall, and
 a tiny wardrobe sits near a tiny mirror on the other. A HUGE piece of cheese
 dominates the whole affair.
 ~
@@ -2152,15 +2114,16 @@ Direction north~
 ToRoom    15033
 #ENDEXIT
 
-Reset O 0 15043 1 15034
+Reset O 15043 1 15034 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15035
-Name     Inside a Rabbit Warren~
-Sector   inside~
-Flags    dark~
-Desc     You are in a long narrow underground passage, obviously the home of some
+Vnum      15035
+Name      Inside a Rabbit Warren~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a long narrow underground passage, obviously the home of some
 rabbit, though it is unlike any rabbit warren that you have ever seen
 before. Deckchairs, beach towels and several pairs of sunglasses lie stacked
 next to old Billie Holliday 78s and a pile of old newspapers. There is also
@@ -2186,18 +2149,20 @@ Direction up~
 ToRoom    15032
 #ENDEXIT
 
-Reset M 0 15000 1 15035
-  Reset E 1 15000 1 6
-  Reset E 1 15035 1 5
-  Reset E 1 15036 1 17
-  Reset E 1 15001 1 16
+Reset M 15000 1 15035 -1 -1 -1 100
+  Reset E 15000 1 6 100
+  Reset E 15035 1 5 100
+  Reset E 15036 1 17 100
+  Reset E 15001 1 16 100
 #ENDROOM
 
 #ROOM
-Vnum     15036
-Name     A Small Path~
-Sector   field~
-Desc     You are heading south across a prairie toward what looks like a small town
+Vnum      15036
+Name      A Small Path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are heading south across a prairie toward what looks like a small town
 in the Old West, save that this town has only two buildings, both of them
 saloons.
 ~
@@ -2214,10 +2179,12 @@ ToRoom    15037
 #ENDROOM
 
 #ROOM
-Vnum     15037
-Name     Outside the Saloons~
-Sector   field~
-Desc     You are standing on the dusty road outside the two saloons, owned by rival
+Vnum      15037
+Name      Outside the Saloons~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing on the dusty road outside the two saloons, owned by rival
 competitors. There is a huge crowd in one saloon, while the other is empty.
 There is a hole in the ground here.
 ~
@@ -2243,16 +2210,17 @@ Direction down~
 ToRoom    15040
 #ENDEXIT
 
-Reset D 1 15037 1 1
-Reset D 1 15037 3 1
+Reset D 15037 1 1 100 -2
+Reset D 15037 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     15038
-Name     A Saloon~
-Sector   inside~
-Flags    indoors~
-Desc     This saloon is well-appointed, but it is currently deserted. Only the lonely
+Vnum      15038
+Name      A Saloon~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This saloon is well-appointed, but it is currently deserted. Only the lonely
 owner is currently here.
 ~
 #EXIT
@@ -2261,19 +2229,20 @@ ToRoom    15037
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 1 15038 1 1
-Reset M 0 15001 1 15038
-  Reset E 1 15002 1 6
-  Reset E 1 15004 1 5
-  Reset G 1 15003 0
+Reset D 15038 1 1 100 -2
+Reset M 15001 1 15038 -1 -1 -1 100
+  Reset E 15002 1 6 100
+  Reset E 15004 1 5 100
+  Reset G 15003 0 100
 #ENDROOM
 
 #ROOM
-Vnum     15039
-Name     A Saloon~
-Sector   inside~
-Flags    indoors~
-Desc     This saloon is doing a roaring trade, with patrons literally coming out the
+Vnum      15039
+Name      A Saloon~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This saloon is doing a roaring trade, with patrons literally coming out the
 doors and windows.
 ~
 #EXIT
@@ -2282,20 +2251,21 @@ ToRoom    15037
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 1 15039 3 1
-Reset M 0 15004 1 15039
-  Reset E 1 15010 1 16
-  Reset E 1 15010 1 17
-  Reset E 1 15011 1 6
-  Reset G 1 15003 0
+Reset D 15039 3 1 100 -2
+Reset M 15004 1 15039 -1 -1 -1 100
+  Reset E 15010 1 16 100
+  Reset E 15010 1 17 100
+  Reset E 15011 1 6 100
+  Reset G 15003 0 100
 #ENDROOM
 
 #ROOM
-Vnum     15040
-Name     Inside a Rabbit Warren~
-Sector   inside~
-Flags    dark~
-Desc     You are in a long narrow underground passage, obviously the home of some
+Vnum      15040
+Name      Inside a Rabbit Warren~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a long narrow underground passage, obviously the home of some
 rabbit, though it is unlike any rabbit warren that you have ever seen
 before. Deckchairs, beach towels and several pairs of sunglasses lie stacked
 next to old Billie Holliday 78s and a pile of old newspapers. There is also
@@ -2314,10 +2284,12 @@ ToRoom    15037
 #ENDROOM
 
 #ROOM
-Vnum     15041
-Name     A City Park~
-Sector   field~
-Desc     This park is quite pretty for a two-dimensional drawing. Paper trees glued
+Vnum      15041
+Name      A City Park~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This park is quite pretty for a two-dimensional drawing. Paper trees glued
 to cardboard fields surround you, and a lovely flat lake filled with
 motionless ducks to the south looks very peaceful.
 ~
@@ -2331,15 +2303,17 @@ Direction west~
 ToRoom    15042
 #ENDEXIT
 
-Reset M 0 15006 1 15041
-  Reset E 1 15014 1 12
+Reset M 15006 1 15041 -1 -1 -1 100
+  Reset E 15014 1 12 100
 #ENDROOM
 
 #ROOM
-Vnum     15042
-Name     A City Park~
-Sector   field~
-Desc     This park is quite pretty for a two-dimensional drawing. Paper trees glued
+Vnum      15042
+Name      A City Park~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This park is quite pretty for a two-dimensional drawing. Paper trees glued
 to cardboard fields surround you, and a lovely flat lake filled with
 motionless ducks to the south looks very peaceful.
 ~
@@ -2348,16 +2322,17 @@ Direction east~
 ToRoom    15041
 #ENDEXIT
 
-Reset M 0 15017 1 15042
-  Reset E 1 15033 1 5
+Reset M 15017 1 15042 -1 -1 -1 100
+  Reset E 15033 1 5 100
 #ENDROOM
 
 #ROOM
-Vnum     15043
-Name     A Warehouse~
-Sector   inside~
-Flags    indoors~
-Desc     This warehouse is full of crates and boxes of all varieties. Some of them
+Vnum      15043
+Name      A Warehouse~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This warehouse is full of crates and boxes of all varieties. Some of them
 have come from such remote and dangerous places as Africa, Australia and
 Detroit. You hear a thumping coming from the east.
 ~
@@ -2372,18 +2347,19 @@ ToRoom    15021
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 1 15043 3 1
-Reset M 0 15014 1 15043
-Reset O 0 15029 1 15043
-Reset O 0 15030 1 15043
+Reset D 15043 3 1 100 -2
+Reset M 15014 1 15043 -1 -1 -1 100
+Reset O 15029 1 15043 -1 -1 -1 100
+Reset O 15030 1 15043 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15044
-Name     A Warehouse~
-Sector   inside~
-Flags    indoors~
-Desc     This warehouse is full of crates and boxes of all varieties. Some of them
+Vnum      15044
+Name      A Warehouse~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This warehouse is full of crates and boxes of all varieties. Some of them
 have come from such remote and dangerous places as Africa, Australia and
 Detroit. There is a strange odor in this room, as of animals, and you
 suddenly begin to feel very nervous.
@@ -2393,14 +2369,16 @@ Direction west~
 ToRoom    15043
 #ENDEXIT
 
-Reset M 0 15013 1 15044
+Reset M 15013 1 15044 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15045
-Name     Outside the Cave~
-Sector   desert~
-Desc     You are outside a cave, the entrance to which lies east. You see prints in
+Vnum      15045
+Name      Outside the Cave~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are outside a cave, the entrance to which lies east. You see prints in
 the dirt that look to have been made by a tiny donkey. There is a hole in
 the ground here.
 ~
@@ -2420,15 +2398,16 @@ Direction down~
 ToRoom    15047
 #ENDEXIT
 
-Reset D 1 15045 1 1
+Reset D 15045 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     15046
-Name     Inside the Cave~
-Sector   inside~
-Flags    indoors~
-Desc     This cave is full of fabulous treasures, but they are guarded by an angry
+Vnum      15046
+Name      Inside the Cave~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This cave is full of fabulous treasures, but they are guarded by an angry
 genie! You better get out of here...
 ~
 #EXIT
@@ -2437,18 +2416,19 @@ ToRoom    15045
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 1 15046 3 1
-Reset M 0 15020 1 15046
-  Reset E 1 15044 1 17
-  Reset G 1 15045 0
+Reset D 15046 3 1 100 -2
+Reset M 15020 1 15046 -1 -1 -1 100
+  Reset E 15044 1 17 100
+  Reset G 15045 0 100
 #ENDROOM
 
 #ROOM
-Vnum     15047
-Name     Inside a Rabbit Warren~
-Sector   inside~
-Flags    dark~
-Desc     You are in a long narrow underground passage, obviously the home of some
+Vnum      15047
+Name      Inside a Rabbit Warren~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a long narrow underground passage, obviously the home of some
 rabbit, though it is unlike any rabbit warren that you have ever seen
 before. Deckchairs, beach towels and several pairs of sunglasses lie stacked
 next to old Billie Holliday 78s and a pile of old newspapers. There is also
@@ -2467,10 +2447,12 @@ ToRoom    15045
 #ENDROOM
 
 #ROOM
-Vnum     15048
-Name     Western Field~
-Sector   city~
-Desc     You are in the western end of the farmyard. There is a doghouse south of
+Vnum      15048
+Name      Western Field~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the western end of the farmyard. There is a doghouse south of
 here, and a large tree.
 ~
 #EXIT
@@ -2491,11 +2473,12 @@ ToRoom    15050
 #ENDROOM
 
 #ROOM
-Vnum     15049
-Name     Inside Sam's Kennel~
-Sector   inside~
-Flags    indoors~
-Desc     You are inside a rather cramped doghouse that reeks of wet blankets, stale
+Vnum      15049
+Name      Inside Sam's Kennel~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are inside a rather cramped doghouse that reeks of wet blankets, stale
 food and urine. It isn't very pleasant, even by cartoon standards.
 ~
 #EXIT
@@ -2503,14 +2486,16 @@ Direction north~
 ToRoom    15048
 #ENDEXIT
 
-Reset M 0 15023 1 15049
+Reset M 15023 1 15049 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15050
-Name     Up A Tree~
-Sector   city~
-Desc     You are clambering amongst the thick limbs of an old oak tree. You see
+Vnum      15050
+Name      Up A Tree~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are clambering amongst the thick limbs of an old oak tree. You see
 several birds' nests in its leafy branches.
 ~
 #EXIT
@@ -2518,10 +2503,10 @@ Direction down~
 ToRoom    15048
 #ENDEXIT
 
-Reset M 0 15021 1 15050
-  Reset G 1 15047 0
-Reset M 0 15022 1 15050
-  Reset G 1 15047 0
+Reset M 15021 1 15050 -1 -1 -1 100
+  Reset G 15047 0 100
+Reset M 15022 1 15050 -1 -1 -1 100
+  Reset G 15047 0 100
 #ENDROOM
 
 #ENDAREA

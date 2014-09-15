@@ -1,369 +1,332 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Sewer~
-Author       Diku~
-WeatherX     0
-WeatherY     0
-Ranges       5 30 0 60
-Economy      0 7253836
+Version         1
+Name            Sewer~
+Author          Diku~
+Vnums           7000 7445
+Continent       one~
+Coordinates     0 0
+Dates           1403834970 1403834970
+Ranges          5 30 0 60
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       7000
-Keywords   mud monster mudmonster~
-Short      the horrifying Mudmonster~
-Long       A horrifying Mudmonster is slowly evolving from the mud ...
+Vnum      7000
+Keywords  mud monster mudmonster~
+Race      magical~
+Class     Warrior~
+Gender    neuter~
+Position  resting~
+DefPos    resting~
+Short     the horrifying Mudmonster~
+Long      A horrifying Mudmonster is slowly evolving from the mud ...
 ~
-Desc       It sure looks like something out of a horror movie. It strongly resembles
+Desc      It sure looks like something out of a horror movie. It strongly resembles
 a huge figure made up from mud alone, and it sure looks like it had human 
 flesh for breakfast and is strongly intent on having the same for dinner.
 ~
-Race       magical~
-Class      warrior~
-Position   sitting~
-DefPos     sitting~
-Gender     neuter~
-Actflags   npc stayarea~
-Affected   sneak~
-Stats1     -250 12 9 -2 100 4000
-Stats2     12 12 120
-Stats3     2 6 5
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head heart guts feet ear eye~
-Attacks    bite~
+Nattacks  1.000000
+Stats1    -250 0 0 0 0 0
+Stats2    12 21 -2 120 2 6 5
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  sneak~
+Bodyparts head heart guts feet ear eye~
+Attacks   bite~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7001
-Keywords   bat~
-Short      the small bat~
-Long       The small fierce-looking bat is hanging from the ceiling.
+Vnum      7001
+Keywords  bat~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  sleeping~
+DefPos    sleeping~
+Short     the small bat~
+Long      The small fierce-looking bat is hanging from the ceiling.
 ~
-Desc       You have never in your entire life seen such a mean looking small creature,
+Desc      You have never in your entire life seen such a mean looking small creature,
 though it looks rather peaceful, hanging there. The thought of arousing this
 cruel creature doesn't seem appealing.
 ~
-Race       mammal~
-Class      warrior~
-Position   sleeping~
-DefPos     sleeping~
-Gender     neuter~
-Actflags   npc aggressive stayarea~
-Affected   sneak flying~
-Stats1     -500 1 20 4 0 20
-Stats2     5 2 6
-Stats3     1 5 0
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head legs heart guts ear eye~
-Attacks    bite~
+Nattacks  1.000000
+Stats1    -500 0 0 0 0 0
+Stats2    1 21 4 6 1 5 0
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc aggressive stayarea~
+Affected  sneak flying~
+Bodyparts head legs heart guts ear eye~
+Attacks   bite~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7002
-Keywords   rat~
-Short      the great sewer rat~
-Long       The huge hungry-looking sewer rat sits here.
+Vnum      7002
+Keywords  rat~
+Race      rat~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the great sewer rat~
+Long      The huge hungry-looking sewer rat sits here.
 ~
-Race       rat~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc aggressive~
-Affected   infrared~
-Stats1     -1000 5 16 5 0 600
-Stats2     5 5 50
-Stats3     2 4 0
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head legs heart guts feet ear eye tail~
+Nattacks  1.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    5 21 5 50 2 4 0
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc aggressive~
+Affected  infrared~
+Bodyparts head legs heart guts feet ear eye tail~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7003
-Keywords   spider~
-Short      the small spider~
-Long       The small hairy spider.
+Vnum      7003
+Keywords  spider~
+Race      spider~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the small spider~
+Long      The small hairy spider.
 ~
-Race       spider~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc aggressive~
-Affected   sneak~
-Stats1     -700 1 20 3 0 100
-Stats2     1 12 8
-Stats3     1 4 0
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     insectoid~
-Speaking   insectoid~
-Bodyparts  head legs heart guts ear eye~
-Attacks    bite~
+Nattacks  1.000000
+Stats1    -700 0 0 0 0 0
+Stats2    1 21 3 8 1 4 0
+Speaks    insectoid~
+Speaking  insectoid~
+Actflags  npc aggressive~
+Affected  sneak~
+Bodyparts head legs heart guts ear eye~
+Attacks   bite~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7004
-Keywords   beetle~
-Short      the giant earth beetle~
-Long       The giant mean-looking earth beetle crawls towards you.
+Vnum      7004
+Keywords  beetle~
+Race      insect~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the giant earth beetle~
+Long      The giant mean-looking earth beetle crawls towards you.
 ~
-Race       insect~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc~
-Affected   infrared~
-Stats1     -300 8 13 3 0 2000
-Stats2     8 8 80
-Stats3     2 5 1
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     insectoid~
-Speaking   insectoid~
-Bodyparts  head legs guts ear eye~
-Attacks    bite~
+Nattacks  1.000000
+Stats1    -300 0 0 0 0 0
+Stats2    8 21 3 80 2 5 1
+Speaks    insectoid~
+Speaking  insectoid~
+Actflags  npc~
+Affected  infrared~
+Bodyparts head legs guts ear eye~
+Attacks   bite~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7005
-Keywords   maggot~
-Short      the maggot~
-Long       The giant maggot crawls toward you.
+Vnum      7005
+Keywords  maggot~
+Race      insect~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the maggot~
+Long      The giant maggot crawls toward you.
 ~
-Race       insect~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc~
-Affected   infrared~
-Stats1     300 3 17 9 0 350
-Stats2     2 5 35
-Stats3     1 7 0
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     insectoid~
-Speaking   insectoid~
-Bodyparts  head guts eye~
-Attacks    bite~
+Nattacks  1.000000
+Stats1    300 0 0 0 0 0
+Stats2    3 21 9 35 1 7 0
+Speaks    insectoid~
+Speaking  insectoid~
+Actflags  npc~
+Affected  infrared~
+Bodyparts head guts eye~
+Attacks   bite~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7006
-Keywords   snake~
-Short      the slithering snake~
-Long       The snake slithers towards you.
+Vnum      7006
+Keywords  snake~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     the slithering snake~
+Long      The snake slithers towards you.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_poison~
-Gender     neuter~
-Actflags   npc aggressive~
-Affected   infrared~
-Stats1     -500 5 16 7 0 500
-Stats2     4 4 40
-Stats3     1 9 0
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     reptile~
-Speaking   reptile~
-Bodyparts  heart guts ear eye tail~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    5 21 7 40 1 9 0
+Speaks    reptile~
+Speaking  reptile~
+Actflags  npc aggressive~
+Affected  infrared~
+Bodyparts heart guts ear eye tail~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7007
-Keywords   wanderer~
-Short      the evil wanderer~
-Long       The evil wanderer stares at you.
+Vnum      7007
+Keywords  wanderer~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the evil wanderer~
+Long      The evil wanderer stares at you.
 ~
-Desc       The evil wanderer is very thin.  He is dressed in a grey cloak.
+Desc      The evil wanderer is very thin.  He is dressed in a grey cloak.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc scavenger wimpy prototype~
-Affected   infrared~
-Stats1     -1000 10 11 2 300 2500
-Stats2     10 10 100
-Stats3     2 6 1
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    punch~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    10 21 2 100 2 6 1
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger wimpy proto~
+Affected  infrared~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   punch~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7008
-Keywords   homonculus homo~
-Short      the homonculus~
-Long       The homonculus is here, looking at you with an evil look.
+Vnum      7008
+Keywords  homonculus homo~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the homonculus~
+Long      The homonculus is here, looking at you with an evil look.
 ~
-Desc       The Homonculus appears in a man-like form, about 18'' tall, it has a
+Desc      The Homonculus appears in a man-like form, about 18'' tall, it has a
 greenish, reptilian skin, leathery wings, and a bat-like mouth, with
 teeth gleaming yellow.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc stayarea~
-Affected   detect_invis infrared~
-Stats1     -780 11 10 -1 10 3500
-Stats2     11 11 110
-Stats3     2 6 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye wings horns~
-Attacks    claws~
+Nattacks  0.000000
+Stats1    -780 -1 0 0 0 0
+Stats2    11 21 -1 110 2 6 2
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_invis infrared~
+Bodyparts head arms legs heart guts hands feet ear eye wings horns~
+Attacks   claws~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7010
-Keywords   chreffn~
-Short      the evil chreffn~
-Long       The chreffn are crawling here, looking around with their yellow eyes.
+Vnum      7010
+Keywords  chreffn~
+Race      magical~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the evil chreffn~
+Long      The chreffn are crawling here, looking around with their yellow eyes.
 ~
-Desc       The head and torso of a chreffn is copper-covered, with yellow,
+Desc      The head and torso of a chreffn is copper-covered, with yellow,
 glowing eyes. The lower body is in an orange shading.
 ~
-Race       magical~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc scavenger wimpy~
-Affected   detect_invis sneak~
-Stats1     -830 12 9 2 0 5000
-Stats2     2 26 148
-Stats3     2 7 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     magical~
-Speaking   magical~
-Bodyparts  head arms legs guts hands feet ear eye~
-Attacks    claws~
+Nattacks  0.000000
+Stats1    -830 0 0 0 0 0
+Stats2    12 21 2 148 2 7 1
+Speaks    magical~
+Speaking  magical~
+Actflags  npc scavenger wimpy~
+Affected  detect_invis sneak~
+Bodyparts head arms legs guts hands feet ear eye~
+Attacks   claws~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7011
-Keywords   morkoth~
-Short      the shadowy morkoth~
-Long       The morkoth is standing here, waiting for someone to KILL!
+Vnum      7011
+Keywords  morkoth~
+Race      magical~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the shadowy morkoth~
+Long      The morkoth is standing here, waiting for someone to KILL!
 ~
-Desc       It's a five feet tall, shadow monster. The shape of this creature lies
+Desc      It's a five feet tall, shadow monster. The shape of this creature lies
 somewhere between a human and a rat. It breaths very heavily, while staring
 at you with such a glint in the eyes that reminds you of immense hunger.
 ~
-Race       magical~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc aggressive wimpy~
-Affected   infrared~
-Stats1     -900 10 11 0 25 3000
-Stats2     10 10 100
-Stats3     2 6 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs hands feet ear eye~
-Attacks    bite~
+Nattacks  1.000000
+Stats1    -900 0 0 0 0 0
+Stats2    10 21 0 100 2 6 2
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive wimpy~
+Affected  infrared~
+Bodyparts head arms legs hands feet ear eye~
+Attacks   bite~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7013
-Keywords   mud monster mudmonster~
-Short      the horrifying mudmonster~
-Long       A horrifying mudmonster is slowly evolving from the mud ...
+Vnum      7013
+Keywords  mud monster mudmonster~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  resting~
+DefPos    resting~
+Short     the horrifying mudmonster~
+Long      A horrifying mudmonster is slowly evolving from the mud ...
 ~
-Desc       It sure looks like something out of a horror movie. It strongly resembles
+Desc      It sure looks like something out of a horror movie. It strongly resembles
 a huge figure made up from mud alone, and it sure looks like it had human 
 flesh for breakfast and is strongly intent on having the same for dinner.
 ~
-Race       human~
-Class      warrior~
-Position   sitting~
-DefPos     sitting~
-Gender     neuter~
-Actflags   npc aggressive stayarea~
-Affected   sneak~
-Stats1     -250 12 9 -2 1000 8000
-Stats2     12 12 120
-Stats3     2 6 5
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -250 1000 0 0 0 0
+Stats2    12 21 -2 120 2 6 5
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  sneak~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7040
-Keywords   fierce red dragon~
-Short      a fierce red dragon~
-Long       A fierce looking red dragon, its slumber disturbed, awakes angrily.
+Vnum      7040
+Keywords  fierce red dragon~
+Race      dragon~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_fire~
+Short     a fierce red dragon~
+Long      A fierce looking red dragon, its slumber disturbed, awakes angrily.
 ~
-Desc       The red dragon stares at you, angrily, as it wakes when you
+Desc      The red dragon stares at you, angrily, as it wakes when you
 arrives.  It says 'Oh, human YOU woke me up ... Hsss', while
 it moves closer.  'Can one NEVER sleep in peace ... Hsss'.
 ~
-Race       dragon~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_breath_fire~
-Gender     neuter~
-Actflags   npc sentinel scavenger aggressive~
-Affected   detect_invis infrared~
-Stats1     -1000 33 -10 -10 5000 450000
-Stats2     500 2 2500
-Stats3     3 4 30
-Stats4     0 0 3 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     dragon ancient~
-Speaking   common dragon~
-Bodyparts  head brains feet ear wings tail claws~
-Resist     blunt pierce slash~
-Immune     fire sleep charm~
-Suscept    cold~
-Attacks    bite claws~
+Nattacks  3.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    33 21 -10 2500 3 4 30
+Speaks    dragon ancient~
+Speaking  dragon~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis infrared~
+Bodyparts head brains feet ear wings tail claws~
+Resist    energy blunt pierce~
+Immune    NONE drain sleep~
+Suscept   fire~
+Attacks   bite claws~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   10~
@@ -386,391 +349,342 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       7041
-Keywords   sea hag~
-Short      the sea hag~
-Long       The sea hag is swimming around here.
+Vnum      7041
+Keywords  sea hag~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     the sea hag~
+Long      The sea hag is swimming around here.
 ~
-Desc       The sea hag is so ghastly looking that you feel the deepest fear.
+Desc      The sea hag is so ghastly looking that you feel the deepest fear.
 Big yellow eyes and sharp teeth.  Its ears are very big,
 and it has small sharp horns.  It hates beauty.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_undead~
-Gender     female~
-Actflags   npc aggressive~
-Affected   infrared~
-Stats1     -800 14 7 1 0 18000
-Stats2     1 8 172
-Stats3     2 8 1
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    trip~
-Defenses   disarm~
+Nattacks  1.000000
+Stats1    -800 -1 0 0 0 0
+Stats2    14 21 1 172 2 8 1
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   trip~
+Defenses  disarm~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7042
-Keywords   guardian naga~
-Short      the guardian naga~
-Long       The guardian naga looks kindly at you.
+Vnum      7042
+Keywords  guardian naga~
+Race      magical~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the guardian naga~
+Long      The guardian naga looks kindly at you.
 ~
-Desc       The naga are a snake-liked creature. She is covered in green-gold
+Desc      The naga are a snake-liked creature. She is covered in green-gold
 scale with silvery triangles along her back. Her eyes are golden.
 She notice that you look at her, and she says: 'Watch out. This way
 leads to some evil creatures'.
 ~
-Race       magical~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_cleric~
-Gender     female~
-Actflags   npc sentinel~
-Affected   infrared~
-Stats1     700 12 9 2 50 13500
-Stats2     1 18 148
-Stats3     2 7 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   magical~
-Bodyparts  head arms heart guts hands ear eye tail scales~
-Attacks    bite~
-Defenses   parry disarm~
+Nattacks  0.000000
+Stats1    700 0 0 0 0 0
+Stats2    12 21 2 148 2 7 1
+Speaks    common~
+Speaking  magical~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms heart guts hands ear eye tail scales~
+Attacks   bite~
+Defenses  parry disarm~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7043
-Keywords   basilisk~
-Short      the scaled basilisk~
-Long       The scaled basilisk crawls towards you slowly.
+Vnum      7043
+Keywords  basilisk~
+Race      reptile~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_any~
+Short     the scaled basilisk~
+Long      The scaled basilisk crawls towards you slowly.
 ~
-Desc       The basilisk is a reptilian monster. It has eight legs, and a strong
+Desc      The basilisk is a reptilian monster. It has eight legs, and a strong
 toothy jaws. It is dull brown with yellowish underbelly. It's eyes are
 glowing pale green.
 ~
-Race       reptile~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_breath_any~
-Gender     male~
-Actflags   npc scavenger aggressive prototype~
-Affected   detect_invis infrared~
-Stats1     -250 13 11 0 0 16000
-Stats2     1 12 160
-Stats3     2 7 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     reptile~
-Speaking   reptile~
-Bodyparts  legs heart guts ear eye scales horns~
-Attacks    bite claws~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    -250 0 0 0 0 0
+Stats2    13 21 0 160 2 7 2
+Speaks    reptile~
+Speaking  reptile~
+Actflags  npc scavenger aggressive proto~
+Affected  detect_invis infrared~
+Bodyparts legs heart guts ear eye scales horns~
+Attacks   bite claws~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7044
-Keywords   lemure blob~
-Short      the lemure blob~
-Long       The lemure blob slithers terribly precisely towards you for an attack!
+Vnum      7044
+Keywords  lemure blob~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the lemure blob~
+Long      The lemure blob slithers terribly precisely towards you for an attack!
 ~
-Desc       This looks like a vaguely human blob. Big black yellow eyes, and a
+Desc      This looks like a vaguely human blob. Big black yellow eyes, and a
 mouth going a little bit out from the face. The lemure does not look
 interested in you at all, but anyway it attacks. It looks like it's
 mind has been burned out.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc aggressive~
-Affected   sneak~
-Stats1     -500 5 16 6 0 1000
-Stats2     3 5 57
-Stats3     2 4 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    5 21 6 57 2 4 0
+Speaking  common~
+Actflags  npc aggressive~
+Affected  sneak~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7045
-Keywords   jones cruncher ettin~
-Short      Jones~
-Long       Jones 'Cruncher' the ettin is standing here glaring at you.
+Vnum      7045
+Keywords  jones cruncher ettin~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  resting~
+DefPos    resting~
+Short     Jones~
+Long      Jones 'Cruncher' the ettin is standing here glaring at you.
 ~
-Desc       At the first sight you thought Jones was an orc, but when it came
+Desc      At the first sight you thought Jones was an orc, but when it came
 closer you saw his second head. He wears an animal skin dress,
 filthy and moth eaten. Jones really stinks...
 ~
-Race       human~
-Class      warrior~
-Position   sitting~
-DefPos     sitting~
-Gender     male~
-Actflags   npc scavenger aggressive~
-Affected   infrared~
-Stats1     -480 10 11 2 60 4000
-Stats2     10 10 100
-Stats3     2 6 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -480 60 0 0 0 0
+Stats2    10 21 2 100 2 6 4
+Speaking  common~
+Actflags  npc scavenger aggressive~
+Affected  infrared~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7046
-Keywords   herald mouse killer ettin~
-Short      Herald~
-Long       Herald 'Mouse-Killer' the ettin is standing here looking confused at you.
+Vnum      7046
+Keywords  herald mouse killer ettin~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  resting~
+DefPos    resting~
+Short     Herald~
+Long      Herald 'Mouse-Killer' the ettin is standing here looking confused at you.
 ~
-Desc       When you look at Herald, you feel pity. His dress are really poor,
+Desc      When you look at Herald, you feel pity. His dress are really poor,
 and the one of his heads hangs down. At the rope around his stomach
 hangs dead mouses and rats. He does not smell good.
 ~
-Race       human~
-Class      warrior~
-Position   sitting~
-DefPos     sitting~
-Gender     male~
-Actflags   npc scavenger~
-Affected   infrared~
-Stats1     200 6 14 4 40 1000
-Stats2     6 6 60
-Stats3     1 8 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    200 40 0 0 0 0
+Stats2    6 21 4 60 1 8 0
+Speaking  common~
+Actflags  npc scavenger~
+Affected  infrared~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7200
-Keywords   master mind mindflayer~
-Short      the master mindflayer~
-Long       The master mindflayer is here, looking at you with an evil look.
+Vnum      7200
+Keywords  master mind mindflayer~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the master mindflayer~
+Long      The master mindflayer is here, looking at you with an evil look.
 ~
-Desc       It's a seven foot tall humanoid dressed in a purple cloak, and swinging a
+Desc      It's a seven foot tall humanoid dressed in a purple cloak, and swinging a
 black and purple rod above its head as if it was going to attack you any
 moment now. In the middle of its head are four tentacles with sharp points.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     neuter~
-Actflags   npc scavenger aggressive~
-Affected   detect_invis infrared~
-Stats1     -800 14 7 0 1000 18000
-Stats2     14 14 140
-Stats3     3 4 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -800 1000 0 0 0 0
+Stats2    14 21 0 140 3 4 4
+Speaking  common~
+Actflags  npc scavenger aggressive~
+Affected  detect_invis infrared~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7201
-Keywords   senior mind mindflayer~
-Short      the senior mindflayer~
-Long       The senior mindflayer walks around here, looking for something useful.
+Vnum      7201
+Keywords  senior mind mindflayer~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the senior mindflayer~
+Long      The senior mindflayer walks around here, looking for something useful.
 ~
-Desc       This is a horrifying monster indeed, 6'6" high. Dressed in purple and black,
+Desc      This is a horrifying monster indeed, 6'6" high. Dressed in purple and black,
 and carrying a large mace in its hand. In the center of its head are four large
 tentacles with very sharp points.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     neuter~
-Actflags   npc scavenger aggressive~
-Affected   detect_invis infrared~
-Stats1     -600 8 13 2 400 3000
-Stats2     8 8 80
-Stats3     2 4 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -600 400 0 0 0 0
+Stats2    8 21 2 80 2 4 3
+Speaking  common~
+Actflags  npc scavenger aggressive~
+Affected  detect_invis infrared~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7202
-Keywords   junior mind mindflayer~
-Short      the junior mindflayer~
-Long       The junior mindflayer is here, watching you carefully from the corner.
+Vnum      7202
+Keywords  junior mind mindflayer~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the junior mindflayer~
+Long      The junior mindflayer is here, watching you carefully from the corner.
 ~
-Desc       This mindflayer is six foot high. It has a small mace in its belt, and is
+Desc      This mindflayer is six foot high. It has a small mace in its belt, and is
 dressed in purple and black cloth. It has four small tentacles in the 
 center of its head.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     neuter~
-Actflags   npc scavenger aggressive~
-Affected   detect_invis infrared~
-Stats1     -350 6 15 4 200 1500
-Stats2     6 6 60
-Stats3     1 4 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -350 200 0 0 0 0
+Stats2    6 21 4 60 1 4 3
+Speaking  common~
+Actflags  npc scavenger aggressive~
+Affected  detect_invis infrared~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7203
-Keywords   wererat rat were~
-Short      the ugly wererat~
-Long       An ugly wererat is here, looking at you with a strange flick in his eyes.
+Vnum      7203
+Keywords  wererat rat were~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     the ugly wererat~
+Long      An ugly wererat is here, looking at you with a strange flick in his eyes.
 ~
-Desc       The wererat is about four foot tall. It looks very much like rat, except
+Desc      The wererat is about four foot tall. It looks very much like rat, except
 that it is standing.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_poison~
-Gender     neuter~
-Actflags   npc scavenger aggressive stayarea~
-Affected   infrared~
-Stats1     -700 6 15 3 50 1200
-Stats2     4 6 69
-Stats3     2 4 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -700 50 0 0 0 0
+Stats2    6 21 3 69 2 4 2
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea~
+Affected  infrared~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7204
-Keywords   rat gigantic~
-Short      the gigantic rat~
-Long       There is a gigantic rat here, looking at you with a hungry look.
+Vnum      7204
+Keywords  rat gigantic~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sleeping~
+DefPos    standing~
+Specfun   spec_poison~
+Short     the gigantic rat~
+Long      There is a gigantic rat here, looking at you with a hungry look.
 ~
-Desc       The gigantic rat is about ten foot long from head to tail and has claws
+Desc      The gigantic rat is about ten foot long from head to tail and has claws
 the size of your head looking very nasty.
 ~
-Race       human~
-Class      warrior~
-Position   sleeping~
-DefPos     standing~
-Specfun    spec_poison~
-Gender     male~
-Actflags   npc sentinel aggressive~
-Affected   infrared~
-Stats1     -800 12 9 -2 2513 10000
-Stats2     12 12 120
-Stats3     2 6 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -800 2513 0 0 0 0
+Stats2    12 21 -2 120 2 6 2
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7205
-Keywords   jay~
-Short      a newly created jay~
-Long       Some god abandoned a newly created jay here.
+Vnum      7205
+Keywords  jay~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a newly created jay~
+Long      Some god abandoned a newly created jay here.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc prototype~
-Stats1     0 1 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc proto~
 #ENDMOBILE
 
 #MOBILE
-Vnum       7206
-Keywords   bird~
-Short      a newly created bird~
-Long       Some god abandoned a newly created bird here.
+Vnum      7206
+Keywords  bird~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a newly created bird~
+Long      Some god abandoned a newly created bird here.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc prototype~
-Stats1     0 1 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc proto~
 #ENDMOBILE
 
 #OBJECT
-Vnum     7190
-Keywords ring silver~
-Type     armor~
-Short    a glinting ring of silver~
-Long     A lovely silver ring has been left here.~
-Flags    magic~
-WFlags   take finger~
-Values   4 0 0 0 0 0
-Stats    1 2000 200 0 0
-Affect       -1 -1 -3 17 0
-Affect       -1 -1 5 12 0
-Affect       -1 -1 5 13 0
-Affect       -1 -1 1 18 0
+Vnum      7190
+Keywords  ring silver~
+Type      armor~
+Short     a glinting ring of silver~
+Long      A lovely silver ring has been left here.~
+Flags     magic~
+WFlags    take finger~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     1 2000 -2 1 0 None None None
+AffData armor -3 -1 -1 0
+AffData mana 5 -1 -1 0
+AffData hit 5 -1 -1 0
+AffData hitroll 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     7200
-Keywords rod devil~
-Type     weapon~
-Short    the devil rod~
-Long     The mysterious devil rod lies on the floor.~
-Flags    magic~
-WFlags   take wield~
-Values   0 3 5 5 0 0
-Stats    6 16000 1600 0 0
-Affect       -1 -1 2 18 0
-Affect       -1 -1 1 1 0
+Vnum      7200
+Keywords  rod devil~
+Type      weapon~
+Short     the devil rod~
+Long      The mysterious devil rod lies on the floor.~
+Flags     magic~
+WFlags    take wield~
+Values    0 3 5 5 0 0 0 0 0 0 0
+Stats     6 16000 -2 1 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData strength 1 -1 -1 0
 #EXDESC
 ExDescKey    devil rod~
 ExDesc       This is indeed a mysterious rod.  It is dark black at the base but has four
@@ -781,17 +695,17 @@ very sharp purple tentacles at the end.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7201
-Keywords mace large~
-Type     weapon~
-Short    the large mace~
-Long     A large mace lies here.~
-Action   crush~
-Flags    magic~
-WFlags   take wield~
-Values   0 2 6 8 0 0
-Stats    10 1000 100 0 0
-Affect       -1 -1 2 19 0
+Vnum      7201
+Keywords  mace large~
+Type      weapon~
+Short     the large mace~
+Long      A large mace lies here.~
+Action    crush~
+Flags     magic~
+WFlags    take wield~
+Values    0 2 6 8 0 0 0 0 0 0 0
+Stats     10 1000 -2 1 0 None None None
+AffData damroll 2 -1 -1 0
 #EXDESC
 ExDescKey    large mace~
 ExDesc       The mace is pretty large with a weight of 10 lbs.  The head is actually four
@@ -802,17 +716,17 @@ purple tentacles tied together.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7202
-Keywords mace small~
-Type     weapon~
-Short    the small mace~
-Long     A small mace has been left here.~
-Action   crush~
-Flags    magic~
-WFlags   take wield~
-Values   0 2 5 8 0 0
-Stats    6 600 60 0 0
-Affect       -1 -1 1 19 0
+Vnum      7202
+Keywords  mace small~
+Type      weapon~
+Short     the small mace~
+Long      A small mace has been left here.~
+Action    crush~
+Flags     magic~
+WFlags    take wield~
+Values    0 2 5 8 0 0 0 0 0 0 0
+Stats     6 600 -2 1 0 None None None
+AffData damroll 1 -1 -1 0
 #EXDESC
 ExDescKey    small mace~
 ExDesc       This weapon doesn't look like it does a lot of damage, but then you never know.
@@ -823,53 +737,53 @@ It consists of a black handle and a purple head.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7203
-Keywords cloak purple~
-Type     armor~
-Short    a purple cloak~
-Long     A purple cloak lies on the floor.~
-Flags    magic~
-WFlags   take neck~
-Values   6 0 0 0 0 0
-Stats    20 5000 500 0 0
-Affect       -1 -1 -1 24 0
+Vnum      7203
+Keywords  cloak purple~
+Type      armor~
+Short     a purple cloak~
+Long      A purple cloak lies on the floor.~
+Flags     magic~
+WFlags    take neck~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     20 5000 -2 1 0 None None None
+AffData save_spell -1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     7204
-Keywords potion neon blue~
-Type     potion~
-Short    an neon blue potion~
-Long     A neon blue potion stands on the floor.~
-Flags    magic~
-WFlags   take~
-Values   14 -1 -1 -1 0 0
-Stats    4 100 10 0 0
-Spells   'heal' 'invis' 'word of recall'
+Vnum      7204
+Keywords  potion neon blue~
+Type      potion~
+Short     an neon blue potion~
+Long      A neon blue potion stands on the floor.~
+Flags     magic~
+WFlags    take~
+Values    14 -1 -1 -1 0 0 0 0 0 0 0
+Stats     4 100 -2 9999 0 None None None
+Spells       'heal' 'invisibility' 'word of recall'
 #ENDOBJECT
 
 #OBJECT
-Vnum     7205
-Keywords key black~
-Type     key~
-Short    a black key~
-Long     A black key has been left on the floor.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    2 10 1 0 0
+Vnum      7205
+Keywords  key black~
+Type      key~
+Short     a black key~
+Long      A black key has been left on the floor.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 10 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     7206
-Keywords skull white~
-Type     armor~
-Short    a strange white skull~
-Long     A strange white skull lies on the floor looking at you.~
-Flags    magic nodrop~
-WFlags   take head~
-Values   1 0 0 0 0 0
-Stats    30 0 0 0 0
-Affect       -1 -1 -4 2 0
+Vnum      7206
+Keywords  skull white~
+Type      armor~
+Short     a strange white skull~
+Long      A strange white skull lies on the floor looking at you.~
+Flags     magic nodrop~
+WFlags    take head~
+Values    1 0 0 0 0 0 0 0 0 0 0
+Stats     30 0 -2 9999 0 None None None
+AffData intelligence -4 -1 -1 0
 #EXDESC
 ExDescKey    white skull~
 ExDesc       The skull has two small horns in the forehead. You notice some writing on
@@ -886,27 +800,27 @@ ExDesc       You read the number '666'.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7207
-Keywords eye basilisk~
-Type     staff~
-Short    a basilisk's eye~
-Long     Rolling on the ground before you is the eye of a foul beast.~
-Flags    dark evil magic~
-WFlags   take hold~
-Values   20 8 8 -1 0 0
-Stats    3 3256 325 0 0
-Spells   'cure critical'
+Vnum      7207
+Keywords  eye basilisk~
+Type      staff~
+Short     a basilisk's eye~
+Long      Rolling on the ground before you is the eye of a foul beast.~
+Flags     magic evil~
+WFlags    take hold~
+Values    20 8 8 -1 0 0 0 0 0 0 0
+Stats     3 3256 -2 1 0 None None None
+Spells       'cure critical'
 #ENDOBJECT
 
 #OBJECT
-Vnum     7208
-Keywords stick small light~
-Type     light~
-Short    a small stick~
-Long     A small stick lies here.~
-WFlags   take hold~
-Values   0 0 120 0 0 0
-Stats    4 200 20 0 0
+Vnum      7208
+Keywords  stick small light~
+Type      light~
+Short     a small stick~
+Long      A small stick lies here.~
+WFlags    take hold~
+Values    0 0 120 0 0 0 0 0 0 0 0
+Stats     4 200 -2 9999 0 None None None
 #EXDESC
 ExDescKey    small stick~
 ExDesc       The small stick does not look interesting at all.  But just as you are going
@@ -923,16 +837,16 @@ ExDesc       It reads 'Hold me'.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7209
-Keywords boots muddy~
-Type     armor~
-Short    a pair of muddy boots~
-Long     A pair of muddy boots has been dropped here.~
-Flags    magic~
-WFlags   take feet~
-Values   3 0 0 0 0 0
-Stats    20 75 7 0 0
-Affect       -1 -1 1 2 0
+Vnum      7209
+Keywords  boots muddy~
+Type      armor~
+Short     a pair of muddy boots~
+Long      A pair of muddy boots has been dropped here.~
+Flags     magic~
+WFlags    take feet~
+Values    3 0 0 0 0 0 0 0 0 0 0
+Stats     20 75 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
 #EXDESC
 ExDescKey    The boots are muddy and they look well worn, but also very comfortable.~
 #ENDEXDESC
@@ -940,14 +854,14 @@ ExDescKey    The boots are muddy and they look well worn, but also very comforta
 #ENDOBJECT
 
 #OBJECT
-Vnum     7210
-Keywords treasure coins~
-Type     money~
-Short    a huge treasure~
-Long     There is a huge treasure here, looking very valuable.~
-WFlags   take~
-Values   15000 0 0 0 0 0
-Stats    1 15000 1500 0 0
+Vnum      7210
+Keywords  treasure coins~
+Type      money~
+Short     a huge treasure~
+Long      There is a huge treasure here, looking very valuable.~
+WFlags    take~
+Values    15000 0 0 0 0 0 0 0 0 0 0
+Stats     1 15000 -2 1 0 None None None
 #EXDESC
 ExDescKey    treasure~
 ExDesc       This looks like a whole lot of coins.
@@ -957,29 +871,29 @@ ExDesc       This looks like a whole lot of coins.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7211
-Keywords sword short~
-Type     weapon~
-Short    a short sword~
-Long     There lies a short sword.~
-WFlags   take wield~
-Values   0 2 4 11 0 0
-Stats    4 60 6 0 0
-Affect       -1 -1 1 18 0
+Vnum      7211
+Keywords  sword short~
+Type      weapon~
+Short     a short sword~
+Long      There lies a short sword.~
+WFlags    take wield~
+Values    0 2 4 11 0 0 0 0 0 0 0
+Stats     4 60 -2 9999 0 None None None
+AffData hitroll 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     7216
-Keywords claw red redclaw~
-Type     weapon~
-Short    the enormous claw of a red dragon~
-Long     On the floor rests the enormous claw of a red dragon.~
-Flags    evil magic antigood~
-WFlags   take wield~
-Values   0 4 4 5 0 0
-Stats    19 1800 180 0 0
-Affect       -1 -1 5 17 0
-Affect       -1 -1 5 19 0
+Vnum      7216
+Keywords  claw red redclaw~
+Type      weapon~
+Short     the enormous claw of a red dragon~
+Long      On the floor rests the enormous claw of a red dragon.~
+Flags     magic antigood evil~
+WFlags    take wield~
+Values    0 4 4 5 0 0 0 0 0 0 0
+Stats     19 1800 -2 1 0 None None None
+AffData armor 5 -1 -1 0
+AffData damroll 5 -1 -1 0
 #EXDESC
 ExDescKey    claw red redclaw~
 ExDesc       This big claw looks like a part of a dragon.
@@ -989,16 +903,16 @@ ExDesc       This big claw looks like a part of a dragon.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7217
-Keywords plate breast silvery~
-Type     armor~
-Short    a silvery breast plate~
-Long     There is a silvery breast plate on the floor.~
-Flags    magic bless antievil antineutral~
-WFlags   take body~
-Values   8 0 0 0 0 0
-Stats    40 25000 2500 0 0
-Affect       -1 -1 3 1 0
+Vnum      7217
+Keywords  plate breast silvery~
+Type      armor~
+Short     a silvery breast plate~
+Long      There is a silvery breast plate on the floor.~
+Flags     magic bless antievil antineutral~
+WFlags    take body~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     40 25000 -2 1 0 None None None
+AffData strength 3 -1 -1 0
 #EXDESC
 ExDescKey    plate breast silvery~
 ExDesc       On the breast plate you notice a relief of large rose. The metal seems to be 
@@ -1009,16 +923,16 @@ some kind of silver or platinum.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7218
-Keywords plates leg silvery~
-Type     armor~
-Short    some silvery leg plates~
-Long     On the floor you see some silvery leg plates.~
-Flags    magic bless antievil antineutral~
-WFlags   take legs~
-Values   8 0 0 0 0 0
-Stats    20 12500 1250 0 0
-Affect       -1 -1 3 3 0
+Vnum      7218
+Keywords  plates leg silvery~
+Type      armor~
+Short     some silvery leg plates~
+Long      On the floor you see some silvery leg plates.~
+Flags     magic bless antievil antineutral~
+WFlags    take legs~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     20 12500 -2 1 0 None None None
+AffData wisdom 3 -1 -1 0
 #EXDESC
 ExDescKey    leg plates silvery~
 ExDesc       They seem to be made from silver or platinum.  You see the outline of a rose.
@@ -1028,17 +942,17 @@ ExDesc       They seem to be made from silver or platinum.  You see the outline 
 #ENDOBJECT
 
 #OBJECT
-Vnum     7219
-Keywords gloves silvery~
-Type     armor~
-Short    a pair of silvery gloves~
-Long     You can see a pair of silvery gloves on the floor.~
-Flags    magic bless antievil antineutral~
-WFlags   take hands~
-Values   8 0 0 0 0 0
-Stats    14 900 90 0 0
-Affect       -1 -1 3 18 0
-Affect       -1 -1 1 19 0
+Vnum      7219
+Keywords  gloves silvery~
+Type      armor~
+Short     a pair of silvery gloves~
+Long      You can see a pair of silvery gloves on the floor.~
+Flags     magic bless antievil antineutral~
+WFlags    take hands~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     14 900 -2 1 0 None None None
+AffData hitroll 3 -1 -1 0
+AffData damroll 1 -1 -1 0
 #EXDESC
 ExDescKey    gloves silvery~
 ExDesc       The gloves are made of silver threads.
@@ -1048,16 +962,16 @@ ExDesc       The gloves are made of silver threads.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7220
-Keywords helmet silvery~
-Type     armor~
-Short    a silvery helmet~
-Long     The silvery helmet lies here.~
-Flags    magic bless antievil antineutral~
-WFlags   take head~
-Values   9 0 0 0 0 0
-Stats    35 9000 900 0 0
-Affect       -1 -1 3 4 0
+Vnum      7220
+Keywords  helmet silvery~
+Type      armor~
+Short     a silvery helmet~
+Long      The silvery helmet lies here.~
+Flags     magic bless antievil antineutral~
+WFlags    take head~
+Values    9 0 0 0 0 0 0 0 0 0 0
+Stats     35 9000 -2 1 0 None None None
+AffData dexterity 3 -1 -1 0
 #EXDESC
 ExDescKey    helmet silvery~
 ExDesc       The helmet is made from platinum or silver and has a white fur brush attached
@@ -1068,16 +982,16 @@ on the top.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7221
-Keywords shield~
-Type     armor~
-Short    the shield of the rose~
-Long     The shield of the rose rests on the floor.~
-Flags    magic bless antievil antineutral~
-WFlags   take shield~
-Values   10 0 0 0 0 0
-Stats    60 15000 1500 0 0
-Affect       -1 -1 -10 17 0
+Vnum      7221
+Keywords  shield~
+Type      armor~
+Short     the shield of the rose~
+Long      The shield of the rose rests on the floor.~
+Flags     magic bless antievil antineutral~
+WFlags    take shield~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     60 15000 -2 1 0 None None None
+AffData armor -10 -1 -1 0
 #EXDESC
 ExDescKey    shield~
 ExDesc       On the shield you see a clear and perfect painting of a dark red rose on a white
@@ -1088,16 +1002,16 @@ background. You also notice the inscription :'Pax Est Sanctuum'.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7222
-Keywords boots silvery~
-Type     armor~
-Short    a pair of silvery boots~
-Long     A pair of silvery boots stand on the floor.~
-Flags    magic bless antievil antineutral~
-WFlags   take feet~
-Values   8 0 0 0 0 0
-Stats    40 2000 200 0 0
-Affect       -1 -1 3 2 0
+Vnum      7222
+Keywords  boots silvery~
+Type      armor~
+Short     a pair of silvery boots~
+Long      A pair of silvery boots stand on the floor.~
+Flags     magic bless antievil antineutral~
+WFlags    take feet~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     40 2000 -2 1 0 None None None
+AffData intelligence 3 -1 -1 0
 #EXDESC
 ExDescKey    boots silvery~
 ExDesc       The boots are made from a silvery metal.
@@ -1107,16 +1021,16 @@ ExDesc       The boots are made from a silvery metal.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7223
-Keywords plates arm silvery~
-Type     armor~
-Short    some silvery arm plates~
-Long     On the floor you see some silvery arm plates.~
-Flags    magic bless antievil antineutral~
-WFlags   take arms~
-Values   8 0 0 0 0 0
-Stats    40 12500 1250 0 0
-Affect       -1 -1 3 5 0
+Vnum      7223
+Keywords  plates arm silvery~
+Type      armor~
+Short     some silvery arm plates~
+Long      On the floor you see some silvery arm plates.~
+Flags     magic bless antievil antineutral~
+WFlags    take arms~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     40 12500 -2 1 0 None None None
+AffData constitution 3 -1 -1 0
 #EXDESC
 ExDescKey    plates arm silvery~
 ExDesc       They seem to be made from silver or platinum. You see the outline of a rose.
@@ -1126,16 +1040,16 @@ ExDesc       They seem to be made from silver or platinum. You see the outline o
 #ENDOBJECT
 
 #OBJECT
-Vnum     7224
-Keywords cloak white~
-Type     armor~
-Short    a white cloak~
-Long     A white cloak lies on the floor.~
-Flags    magic bless antievil antineutral~
-WFlags   take about~
-Values   10 0 0 0 0 0
-Stats    20 10000 1000 0 0
-Affect       -1 -1 -5 24 0
+Vnum      7224
+Keywords  cloak white~
+Type      armor~
+Short     a white cloak~
+Long      A white cloak lies on the floor.~
+Flags     magic bless antievil antineutral~
+WFlags    take about~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     20 10000 -2 1 0 None None None
+AffData save_spell -5 -1 -1 0
 #EXDESC
 ExDescKey    cloak white~
 ExDesc       This is a very fine made cloak from an unknown material, in a bright white
@@ -1146,14 +1060,14 @@ color.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7298
-Keywords treasure coins~
-Type     money~
-Short    a huge treasure~
-Long     A huge treasure is lying here, looking very valuable.~
-WFlags   take~
-Values   25000 0 0 0 0 0
-Stats    1 25000 2500 0 0
+Vnum      7298
+Keywords  treasure coins~
+Type      money~
+Short     a huge treasure~
+Long      A huge treasure is lying here, looking very valuable.~
+WFlags    take~
+Values    25000 0 0 0 0 0 0 0 0 0 0
+Stats     1 25000 -2 1 0 None None None
 #EXDESC
 ExDescKey    treasure~
 ExDesc       Looks like a LOT of coins.
@@ -1163,15 +1077,15 @@ ExDesc       Looks like a LOT of coins.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7299
-Keywords sword short~
-Type     weapon~
-Short    a short sword~
-Long     There lies a short sword.~
-Action   stab~
-WFlags   take wield~
-Values   0 2 5 2 0 0
-Stats    4 60 6 0 0
+Vnum      7299
+Keywords  sword short~
+Type      weapon~
+Short     a short sword~
+Long      There lies a short sword.~
+Action    stab~
+WFlags    take wield~
+Values    0 2 5 2 0 0 0 0 0 0 0
+Stats     4 60 -2 9999 0 None None None
 #EXDESC
 ExDescKey    small sword~
 ExDesc       This is a very nice little weapon.
@@ -1181,154 +1095,155 @@ ExDesc       This is a very nice little weapon.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7300
-Keywords backpack pack back~
-Type     container~
-Short    a backpack~
-Long     A backpack stands upright here.~
-WFlags   take about~
-Values   60 5 -1 0 0 0
-Stats    2 100 10 0 0
+Vnum      7300
+Keywords  backpack pack back~
+Type      container~
+Short     a backpack~
+Long      A backpack stands upright here.~
+WFlags    take about~
+Values    60 5 -1 0 0 0 0 0 0 0 0
+Stats     2 100 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     7301
-Keywords beltpouch pouch~
-Type     container~
-Short    a large beltpouch~
-Long     A large beltpouch lies here on the ground.~
-WFlags   take waist~
-Values   5 5 -1 0 0 0
-Stats    1 20 2 0 0
+Vnum      7301
+Keywords  beltpouch pouch~
+Type      container~
+Short     a large beltpouch~
+Long      A large beltpouch lies here on the ground.~
+WFlags    take waist~
+Values    5 5 -1 0 0 0 0 0 0 0 0
+Stats     1 20 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     7303
-Keywords orb dragonorb~
-Type     staff~
-Short    the Red DragonOrb~
-Long     A large reddish orb draws your eye.~
-Flags    evil magic antigood~
-WFlags   take hold~
-Values   12 7 7 -1 0 0
-Stats    8 10000 1000 0 0
-Affect       -1 -1 2 3 0
-Affect       -1 -1 2 4 0
-Spells   'sanctuary'
+Vnum      7303
+Keywords  orb dragonorb~
+Type      staff~
+Short     the Red DragonOrb~
+Long      A large reddish orb draws your eye.~
+Flags     magic antigood evil~
+WFlags    take hold~
+Values    12 7 7 -1 0 0 0 0 0 0 0
+Stats     8 10000 -2 1 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
+Spells       'sanctuary'
 #ENDOBJECT
 
 #OBJECT
-Vnum     7304
-Keywords red torso~
-Type     armor~
-Short    a torso of red dragonscale~
-Long     A large pile of red dragonscale lies on the ground.~
-Flags    evil magic antigood~
-WFlags   take body~
-Values   9 0 0 0 0 0
-Stats    40 780000 78000 0 0
-Affect       -1 -1 -25 17 0
-Affect       -1 -1 -50 14 0
-Affect       -1 -1 -2 2 0
-Affect       -1 -1 2 5 0
-Affect       -1 -1 35 13 0
-Affect       -1 -1 3 18 0
-Affect       -1 -1 4 19 0
+Vnum      7304
+Keywords  red torso~
+Type      armor~
+Short     a torso of red dragonscale~
+Long      A large pile of red dragonscale lies on the ground.~
+Flags     magic antigood evil~
+WFlags    take body~
+Values    9 0 0 0 0 0 0 0 0 0 0
+Stats     40 780000 -2 1 0 None None None
+AffData armor -25 -1 -1 0
+AffData move -50 -1 -1 0
+AffData intelligence -2 -1 -1 0
+AffData constitution 2 -1 -1 0
+AffData hit 35 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 4 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     7305
-Keywords leggings red~
-Type     armor~
-Short    leggings of red dragonscale~
-Long     On the floor are two leggings of red dragonscale.~
-Flags    evil magic antigood~
-WFlags   take legs~
-Values   9 0 0 0 0 0
-Stats    17 12500 1250 0 0
-Affect       -1 -1 -1 2 0
-Affect       -1 -1 2 19 0
+Vnum      7305
+Keywords  leggings red~
+Type      armor~
+Short     leggings of red dragonscale~
+Long      On the floor are two leggings of red dragonscale.~
+Flags     magic antigood evil~
+WFlags    take legs~
+Values    9 0 0 0 0 0 0 0 0 0 0
+Stats     17 12500 -2 1 0 None None None
+AffData intelligence -1 -1 -1 0
+AffData damroll 2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     7306
-Keywords red dragonclaws fore claws~
-Type     armor~
-Short    the fore claws of a red dragon~
-Long     A set of claws covered in red dragonscale lie here.~
-Flags    evil magic antigood~
-WFlags   take hands~
-Values   9 0 0 0 0 0
-Stats    6 85000 8500 0 0
-Affect       -1 -1 2 19 0
-Affect       -1 -1 2 18 0
+Vnum      7306
+Keywords  red dragonclaws fore claws~
+Type      armor~
+Short     the fore claws of a red dragon~
+Long      A set of claws covered in red dragonscale lie here.~
+Flags     magic antigood evil~
+WFlags    take hands~
+Values    9 0 0 0 0 0 0 0 0 0 0
+Stats     6 85000 -2 1 0 None None None
+AffData damroll 2 -1 -1 0
+AffData hitroll 2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     7307
-Keywords skull dragonhelm red~
-Type     armor~
-Short    a red dragonhelm~
-Long     A helmet fashioned into the likeness of a dragon skull is here.~
-Flags    evil magic antigood~
-WFlags   take head~
-Values   9 0 0 0 0 0
-Stats    15 250000 25000 0 0
-Affect       -1 -1 -1 2 0
-Affect       -1 -1 2 19 0
-Affect       -1 -1 2 4 0
-Affect       -1 -1 1 3 0
+Vnum      7307
+Keywords  skull dragonhelm red~
+Type      armor~
+Short     a red dragonhelm~
+Long      A helmet fashioned into the likeness of a dragon skull is here.~
+Flags     magic antigood evil~
+WFlags    take head~
+Values    9 0 0 0 0 0 0 0 0 0 0
+Stats     15 250000 -2 1 0 None None None
+AffData intelligence -1 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData wisdom 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     7308
-Keywords dragonshield red shield~
-Type     armor~
-Short    a shield of red dragonscale~
-Long     A large shield of red dragonscale rests on the floor.~
-Flags    evil magic antigood~
-WFlags   take shield~
-Values   10 0 0 0 0 0
-Stats    10 100000 10000 0 0
-Affect       -1 -1 -15 17 0
-Affect       -1 -1 2 19 0
+Vnum      7308
+Keywords  dragonshield red shield~
+Type      armor~
+Short     a shield of red dragonscale~
+Long      A large shield of red dragonscale rests on the floor.~
+Flags     magic antigood evil~
+WFlags    take shield~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     10 100000 -2 1 0 None None None
+AffData armor -15 -1 -1 0
+AffData damroll 2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     7309
-Keywords red greaves rear claws~
-Type     armor~
-Short    the rear claws of a red dragon~
-Long     The rear claws of a red dragon lay on the foor.~
-Flags    evil magic antigood~
-WFlags   take feet~
-Values   9 0 0 0 0 0
-Stats    40 100000 10000 0 0
-Affect       -1 -1 2 19 0
-Affect       -1 -1 -1 2 0
+Vnum      7309
+Keywords  red greaves rear claws~
+Type      armor~
+Short     the rear claws of a red dragon~
+Long      The rear claws of a red dragon lay on the foor.~
+Flags     magic antigood evil~
+WFlags    take feet~
+Values    9 0 0 0 0 0 0 0 0 0 0
+Stats     40 100000 -2 1 0 None None None
+AffData damroll 2 -1 -1 0
+AffData intelligence -1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     7310
-Keywords arm guards red~
-Type     armor~
-Short    armguards of red dragonscale~
-Long     On the ground are two armguards of red dragonscale.~
-Flags    evil magic antigood~
-WFlags   take arms~
-Values   9 0 0 0 0 0
-Stats    30 125000 12500 0 0
-Affect       -1 -1 2 19 0
-Affect       -1 -1 1 18 0
-Affect       -1 -1 -1 2 0
+Vnum      7310
+Keywords  arm guards red~
+Type      armor~
+Short     armguards of red dragonscale~
+Long      On the ground are two armguards of red dragonscale.~
+Flags     magic antigood evil~
+WFlags    take arms~
+Values    9 0 0 0 0 0 0 0 0 0 0
+Stats     30 125000 -2 1 0 None None None
+AffData damroll 2 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData intelligence -1 -1 -1 0
 #ENDOBJECT
 
 #ROOM
-Vnum     7001
-Name     The muddy sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in mud to your knees. This is not the kind of place
+Vnum      7001
+Name      The muddy sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in mud to your knees. This is not the kind of place
 for a picnic. The muddy sewer stretches further into the south.
 ~
 #EXIT
@@ -1348,11 +1263,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7002
-Name     The muddy sewer junction~
-Sector   underground~
-Flags    dark indoors~
-Desc     The muddy sewer stretches into the dark to the south. It looks as if 
+Vnum      7002
+Name      The muddy sewer junction~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The muddy sewer stretches into the dark to the south. It looks as if 
 no person has ever sat his foot here before. It's too muddy for that
 anyway. The sewer leads north, south and east from here.
 ~
@@ -1387,11 +1303,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7003
-Name     The mudhole~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You stand in mud all the way up to your thighs and it's not too 
+Vnum      7003
+Name      The mudhole~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You stand in mud all the way up to your thighs and it's not too 
 comfortable since you are used to a somewhat different environment.
 The sewer leads to the north of here. In the middle you can just make
 out an enormous drainpipe leading down.
@@ -1420,11 +1337,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7004
-Name     The Dark Pit~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing by the edge of a dark pit that leads down into even
+Vnum      7004
+Name      The Dark Pit~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing by the edge of a dark pit that leads down into even
 deeper darkness. >BWWAAADDRR< - The smell from down there is unbearable.
 The sewer stretches into the darkness to the east.
 ~
@@ -1443,16 +1361,17 @@ bottom anyway. There are bars that function as a ladder on the side.
 ~
 #ENDEXIT
 
-Reset M 0 7001 12 7004
-Reset M 0 7001 12 7004
+Reset M 7001 12 7004 -1 -1 -1 100
+Reset M 7001 12 7004 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7005
-Name     The muddy sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in the middle of a bend of the sewer pipe. It is very
+Vnum      7005
+Name      The muddy sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in the middle of a bend of the sewer pipe. It is very
 dark around here and the mud is sticking to your legs, not very pleasant.
 The pipe leads east and south from here.
 ~
@@ -1481,11 +1400,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7006
-Name     The muddy sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in something that reminds you very much of porridge, this
+Vnum      7006
+Name      The muddy sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in something that reminds you very much of porridge, this
 has the advantage that it's not hot, it's rather cold actually. The pipe 
 bends to the north and east.
 ~
@@ -1514,11 +1434,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7007
-Name     The muddy sewer bend~
-Sector   underground~
-Flags    dark indoors~
-Desc     This isn't your idea of a place to stay too long. You're in up to your
+Vnum      7007
+Name      The muddy sewer bend~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This isn't your idea of a place to stay too long. You're in up to your
 knees in something that resembles mud, but you're not quite sure. The
 bend in which you stand leads west and south.
 ~
@@ -1548,11 +1469,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7008
-Name     A muddy intersection~
-Sector   underground~
-Flags    dark indoors~
-Desc     You have both your feet safely stuck in mud. It isn't the mud that's wrong
+Vnum      7008
+Name      A muddy intersection~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You have both your feet safely stuck in mud. It isn't the mud that's wrong
 it's the smell, the sounds, the total darkness that surrounds you. Everything
 here is so depressing. The pipe leads on with a trail of thick mud to the
 north, east and south.
@@ -1593,11 +1515,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7009
-Name     The Sewer Junction~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in the middle of a huge junction of sewer pipes right under
+Vnum      7009
+Name      The Sewer Junction~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in the middle of a huge junction of sewer pipes right under
 what you'd think was an air shaft. The sewer pipes lead to the north,
 south, east and west. It look quite impossible to force your way up.
 ~
@@ -1641,11 +1564,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7010
-Name     A bend in sewer pipe~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a bend in the sewer pipe. A strong smell seeps in from the north.
+Vnum      7010
+Name      A bend in sewer pipe~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a bend in the sewer pipe. A strong smell seeps in from the north.
 The sewer goes north and east.
 ~
 #EXIT
@@ -1665,11 +1589,12 @@ Desc      East. The Pipe leads into utter darkness that way.
 #ENDROOM
 
 #ROOM
-Vnum     7011
-Name     The muddy sewer pipe~
-Sector   underground~
-Flags    dark indoors~
-Desc     You have entered a kind of tube intersection that leads south, west and east.
+Vnum      7011
+Name      The muddy sewer pipe~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a kind of tube intersection that leads south, west and east.
 Your legs are covered in mud up to the knees. REAL yucky! 
 ~
 #EXIT
@@ -1704,11 +1629,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7012
-Name     The bend in the Muddy sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     This is not your idea of a holiday. You stand in mud up to your knees.
+Vnum      7012
+Name      The bend in the Muddy sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is not your idea of a holiday. You stand in mud up to your knees.
 It's absolutely inconceivable how all this mud could have been placed
 here. The pipe leads to the west and south.
 ~
@@ -1738,11 +1664,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7013
-Name     A MUDDY intersection~
-Sector   underground~
-Flags    dark indoors~
-Desc     You wouldn't want to know the true feeling of standing in this mud up to 
+Vnum      7013
+Name      A MUDDY intersection~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You wouldn't want to know the true feeling of standing in this mud up to 
 your hips. >BWAADR<. All that fills your mind right now is the dream of 
 a hot bath. This is NOT very clean mud you know, remember you're in the
 sewer! The pipes leads north, south and east.
@@ -1790,11 +1717,12 @@ REAL YUCKY!
 #ENDROOM
 
 #ROOM
-Vnum     7014
-Name     Muddy sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in a bend of the pipe system of the sewer with mud up to your
+Vnum      7014
+Name      Muddy sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a bend of the pipe system of the sewer with mud up to your
 thighs. Contemplating a higher level of existence here would be utterly
 inappropriate, as the smell would keep any intelligent creature from even
 thinking of anything but getting away from this foul end of the WORLD.
@@ -1826,11 +1754,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7015
-Name     The old well~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing by an old and worn well from before this century. The sewer
+Vnum      7015
+Name      The old well~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing by an old and worn well from before this century. The sewer
 leads to the east from here and the well leads down into darkness. Metal
 bars implanted in the side of the well lead down as a ladder.
 ~
@@ -1860,11 +1789,12 @@ enough for you to climb down, WITH both hands on them.
 #ENDROOM
 
 #ROOM
-Vnum     7016
-Name     The ordinary bend~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in the middle of a bend in the pipe system of the sewer system, 
+Vnum      7016
+Name      The ordinary bend~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in the middle of a bend in the pipe system of the sewer system, 
 WHAT a place!!! The pipe leads to the south and the east.
 ~
 #EXIT
@@ -1885,11 +1815,12 @@ Desc      South. You see nothing at all in that direction it's too dark anyway.
 #ENDROOM
 
 #ROOM
-Vnum     7017
-Name     The sewer junction~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a junction that leads north, west and south.
+Vnum      7017
+Name      The sewer junction~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a junction that leads north, west and south.
 ~
 #EXIT
 Direction north~
@@ -1916,11 +1847,12 @@ Desc      West. There's a junction with four pipelines in that direction.
 #ENDROOM
 
 #ROOM
-Vnum     7018
-Name     The ordinary junction~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     This looks like an ordinary junction, actually it seems very quiet
+Vnum      7018
+Name      The ordinary junction~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This looks like an ordinary junction, actually it seems very quiet
 here. The pipelines lead west, east and north.
 ~
 #EXIT
@@ -1948,11 +1880,12 @@ Desc      There's a bend to the west leading north.
 #ENDROOM
 
 #ROOM
-Vnum     7021
-Name     A quiet pipe junction~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     This is the kind of place to rest, though the smell could be a LOT better
+Vnum      7021
+Name      A quiet pipe junction~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This is the kind of place to rest, though the smell could be a LOT better
 than this. The sewer goes east, north and west from here.
 ~
 #EXIT
@@ -1980,11 +1913,12 @@ that direction.
 #ENDROOM
 
 #ROOM
-Vnum     7022
-Name     The odd room with smooth walls~
-Sector   underground~
-Flags    dark indoors~
-Desc     As you enter you hear a loud click from one of the walls ... and you fall
+Vnum      7022
+Name      The odd room with smooth walls~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      As you enter you hear a loud click from one of the walls ... and you fall
 and fall and fall ...
 .
 .
@@ -2005,11 +1939,12 @@ Keywords  entryway~
 #ENDROOM
 
 #ROOM
-Vnum     7024
-Name     The sewer~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are standing in mud up to your ankles. This is an intersection with 
+Vnum      7024
+Name      The sewer~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in mud up to your ankles. This is an intersection with 
 sewer pipes leading east, south and west.
 ~
 #EXIT
@@ -2037,11 +1972,12 @@ leading south and west.
 #ENDROOM
 
 #ROOM
-Vnum     7025
-Name     Another intersection~
-Sector   underground~
-Flags    dark indoors~
-Desc     You have never seen anything so BORING...This is an intersection with pipes
+Vnum      7025
+Name      Another intersection~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You have never seen anything so BORING...This is an intersection with pipes
 leading north, south and east.
 ~
 #EXIT
@@ -2067,15 +2003,16 @@ Desc      Another intersection lies to the south. It leads west and south.
 ~
 #ENDEXIT
 
-Reset M 0 7001 12 7025
+Reset M 7001 12 7025 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7026
-Name     A junction~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     This one seems interesting, a big difference from all the other junctions.
+Vnum      7026
+Name      A junction~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This one seems interesting, a big difference from all the other junctions.
 It seems cleaner than the rest of them. Weird. Something that looks like 
 an air shaft leads upwards, but it looks far too slippery to climb.
 The pipes lead to the south, west and north.
@@ -2112,11 +2049,12 @@ the smell is absolutely OVERWHELMING.
 #ENDROOM
 
 #ROOM
-Vnum     7028
-Name     The sewer junction~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in a junction of sewer pipes leading north, east and west.
+Vnum      7028
+Name      The sewer junction~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a junction of sewer pipes leading north, east and west.
 ~
 #EXIT
 Direction north~
@@ -2140,11 +2078,12 @@ Desc      To the west you can just make out an old well.
 #ENDROOM
 
 #ROOM
-Vnum     7029
-Name     The Triple Junction~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in the middle of a huge junction of concrete sewer pipes. The 
+Vnum      7029
+Name      The Triple Junction~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in the middle of a huge junction of concrete sewer pipes. The 
 pipes lead into three different directions : east, south and west.
 ~
 #EXIT
@@ -2173,11 +2112,12 @@ you are standing in.
 #ENDROOM
 
 #ROOM
-Vnum     7030
-Name     A junction point under the southern gate~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are standing in something that reminds you of an entry to an ant hive.
+Vnum      7030
+Name      A junction point under the southern gate~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in something that reminds you of an entry to an ant hive.
 There are enormous concrete pipes leading north, south, east and west. 
 There's also a metal ladder built into the concrete wall leading up through
 a layer of garbage. 
@@ -2231,11 +2171,12 @@ it's firmly set into the concrete wall.
 #ENDROOM
 
 #ROOM
-Vnum     7031
-Name     A darker junction~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in a darkly-shadowed junction, with passages leading west, north
+Vnum      7031
+Name      A darker junction~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a darkly-shadowed junction, with passages leading west, north
 and east, while a crude opening in the earth leads south.
 ~
 #EXIT
@@ -2267,15 +2208,16 @@ Desc      West. You can just make out a triple junction leading north and west.
 ~
 #ENDEXIT
 
-Reset M 0 7002 3 7031
+Reset M 7002 3 7031 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7034
-Name     A bend in the sewer pipe~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can look in two directions where the pipe leads : south and west.
+Vnum      7034
+Name      A bend in the sewer pipe~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can look in two directions where the pipe leads : south and west.
 ~
 #EXIT
 Direction south~
@@ -2294,11 +2236,12 @@ Desc      West. You can just make out a triple junction leading north and west.
 #ENDROOM
 
 #ROOM
-Vnum     7035
-Name     The sewer pipe bend~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can look in two different directions where the pipe goes : west and 
+Vnum      7035
+Name      The sewer pipe bend~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can look in two different directions where the pipe goes : west and 
 north.
 ~
 #EXIT
@@ -2319,11 +2262,12 @@ going south and west.
 #ENDROOM
 
 #ROOM
-Vnum     7036
-Name     The pit~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in a section of a pipe that leads to a dead end. In the floor
+Vnum      7036
+Name      The pit~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a section of a pipe that leads to a dead end. In the floor
 there's a pit leading down. There are bars set in the side of the pit wall
 functioning as a ladder.
 ~
@@ -2344,11 +2288,12 @@ Desc      Down the pit it's utterly dark you can't see a thing.
 #ENDROOM
 
 #ROOM
-Vnum     7037
-Name     The round room~
-Sector   underground~
-Flags    dark indoors~
-Desc     As you enter the room it starts rotating - at first slowly, later faster
+Vnum      7037
+Name      The round room~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      As you enter the room it starts rotating - at first slowly, later faster
 and faster - You get totally confused as to where up and down is, but you are
 certain that the doorway is in the opposite direction of what it was when
 you entered. It now leads east. There was only this one exit.
@@ -2360,16 +2305,17 @@ Desc      You can just make out a smaller room with a chair.
 ~
 #ENDEXIT
 
-Reset M 0 7003 8 7037
-Reset M 0 7003 8 7037
+Reset M 7003 8 7037 -1 -1 -1 100
+Reset M 7003 8 7037 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7038
-Name     The three way junction~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in a junction of pipes that lead west, east and south.
+Vnum      7038
+Name      The three way junction~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a junction of pipes that lead west, east and south.
 ~
 #EXIT
 Direction east~
@@ -2395,11 +2341,12 @@ Desc      West. You see another junction similar to this one leading north and s
 #ENDROOM
 
 #ROOM
-Vnum     7039
-Name     The Sewer Store Room~
-Sector   underground~
-Flags    indoors~
-Desc     You stand in a small room lit by a single torch set in the wall. The only 
+Vnum      7039
+Name      The Sewer Store Room~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a small room lit by a single torch set in the wall. The only 
 way out of here is to the north.
 ~
 #EXIT
@@ -2409,17 +2356,18 @@ Desc      To the north you see a pipe junction.
 ~
 #ENDEXIT
 
-Reset M 0 7003 8 7039
-Reset M 0 7003 8 7039
-Reset M 0 7003 8 7039
+Reset M 7003 8 7039 -1 -1 -1 100
+Reset M 7003 8 7039 -1 -1 -1 100
+Reset M 7003 8 7039 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7041
-Name     The Shaft~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing by the edge of a deep, dark shaft leading down. A single
+Vnum      7041
+Name      The Shaft~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing by the edge of a deep, dark shaft leading down. A single
 ladder is your tool to work your way down if you so wish. The sewer pipe
 leads south from here.
 ~
@@ -2438,7 +2386,7 @@ direction.
 ~
 #ENDEXIT
 
-Reset M 0 7001 12 7041
+Reset M 7001 12 7041 -1 -1 -1 100
 #EXDESC
 ExDescKey    ladder~
 ExDesc       Firmly set into the wall of the shaft it's impossible to even rock, is your
@@ -2449,11 +2397,12 @@ estimate.
 #ENDROOM
 
 #ROOM
-Vnum     7043
-Name     The Sewer Entrance~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in the middle of a pipe that leads from north to south. Above you
+Vnum      7043
+Name      The Sewer Entrance~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in the middle of a pipe that leads from north to south. Above you
 an air shaft leads up into sunlight. It seems totally impossible to go up
 that way.
 ~
@@ -2474,11 +2423,12 @@ Desc      To the south you can see a triple junction leading west and east.
 #ENDROOM
 
 #ROOM
-Vnum     7044
-Name     The junction going three ways~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a passageway in the pipes of the sewer system leading north, east
+Vnum      7044
+Name      The junction going three ways~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a passageway in the pipes of the sewer system leading north, east
 and west.
 ~
 #EXIT
@@ -2504,11 +2454,12 @@ and west.
 #ENDROOM
 
 #ROOM
-Vnum     7045
-Name     The Sewer Room~
-Sector   underground~
-Flags    indoors~
-Desc     You are standing in a large room with chairs set in the walls. You have the
+Vnum      7045
+Name      The Sewer Room~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a large room with chairs set in the walls. You have the
 feeling of being watched. To the south there's an entry to a larger room.
 The room is lit by five torches, also set in the walls. To the west there
 is a doorway leading out to the sewers.
@@ -2530,11 +2481,12 @@ Desc      To the west you can see the sewers.
 #ENDROOM
 
 #ROOM
-Vnum     7046
-Name     The Sewer room~
-Sector   underground~
-Flags    indoors~
-Desc     This is a Room with walls that glitters like gold though not quite like it.
+Vnum      7046
+Name      The Sewer room~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is a Room with walls that glitters like gold though not quite like it.
 This is strange as it looks as if the glitter lights the whole room. It
 looks very bright. To the south the floor is covered with yucky water. The
 North leads to sort of a Guard Room.
@@ -2556,11 +2508,12 @@ Desc      To the south there is nothing but water and an exit leads east from th
 #ENDROOM
 
 #ROOM
-Vnum     7047
-Name     The Pool in the Sewer~
-Sector   underground~
-Flags    indoors~
-Desc     You stand in water to your waist.  To the north is the entrance to this room.
+Vnum      7047
+Name      The Pool in the Sewer~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand in water to your waist.  To the north is the entrance to this room.
 A single door leads east.
 ~
 #EXIT
@@ -2580,11 +2533,12 @@ Desc      You can see an enormous hall through the doorway.
 #ENDROOM
 
 #ROOM
-Vnum     7048
-Name     The Sewers~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in a dead end of the sewer. The only way out is south.
+Vnum      7048
+Name      The Sewers~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a dead end of the sewer. The only way out is south.
 You can see a shaft leading up but it looks too difficult to go up
 that way.
 ~
@@ -2596,11 +2550,12 @@ ToRoom    7049
 #ENDROOM
 
 #ROOM
-Vnum     7049
-Name     The junction~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in a junction leading north, west and east.
+Vnum      7049
+Name      The junction~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a junction leading north, west and east.
 ~
 #EXIT
 Direction north~
@@ -2623,15 +2578,16 @@ and west.
 ~
 #ENDEXIT
 
-Reset M 0 7002 3 7049
+Reset M 7002 3 7049 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7050
-Name     The small room~
-Sector   underground~
-Flags    dark indoors~
-Desc     The only thing in this room of interest is a chair, and that's tight to the 
+Vnum      7050
+Name      The small room~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The only thing in this room of interest is a chair, and that's tight to the 
 rock floor. A doorway leads south and another leads east into darkness.
 ~
 #EXIT
@@ -2648,7 +2604,7 @@ Desc      You can see a room with a lot of light in it. You can't make out any d
 ~
 #ENDEXIT
 
-Reset M 0 7003 8 7050
+Reset M 7003 8 7050 -1 -1 -1 100
 #EXDESC
 ExDescKey    chair~
 ExDesc       This chair is made of marble, but the fact that it is worn and attached to the
@@ -2659,11 +2615,12 @@ floor makes you think twice about taking it along with you.
 #ENDROOM
 
 #ROOM
-Vnum     7051
-Name     The Sewer pipe~
-Sector   underground~
-Flags    indoors~
-Desc     You are in what reminds you of a foul sewer, as if you liked being here! 
+Vnum      7051
+Name      The Sewer pipe~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in what reminds you of a foul sewer, as if you liked being here! 
 You can see two exits leading either north or south.
 ~
 #EXIT
@@ -2681,11 +2638,12 @@ Desc      To the south you can see a strange light flowing from there.
 #ENDROOM
 
 #ROOM
-Vnum     7052
-Name     The Grand Sewer~
-Sector   underground~
-Flags    indoors~
-Desc     You are in a Grand Sewer Pipe. This stretches toward the south. It's large 
+Vnum      7052
+Name      The Grand Sewer~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a Grand Sewer Pipe. This stretches toward the south. It's large 
 indeed! A doorway leads to the east from here.
 ~
 #EXIT
@@ -2712,11 +2670,12 @@ Desc      In the south end of the pipe the "floor" is completely covered with wa
 #ENDROOM
 
 #ROOM
-Vnum     7053
-Name     The South end of the Grand Pipe~
-Sector   underground~
-Flags    indoors~
-Desc     You stand in water to your knees. A doorway leads west from here. The Pipe
+Vnum      7053
+Name      The South end of the Grand Pipe~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stand in water to your knees. A doorway leads west from here. The Pipe
 stretches north.
 ~
 #EXIT
@@ -2734,11 +2693,12 @@ ToRoom    7047
 #ENDROOM
 
 #ROOM
-Vnum     7055
-Name     The Edge of The Water Sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in a room where half of the floor is covered in water. The water
+Vnum      7055
+Name      The Edge of The Water Sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a room where half of the floor is covered in water. The water
 leads east and a doorway leads west.
 ~
 #EXIT
@@ -2763,11 +2723,12 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7056
-Name     The Dark hallway~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see much of this, even with a light. The hallway goes into a
+Vnum      7056
+Name      The Dark hallway~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see much of this, even with a light. The hallway goes into a
 passageway to the south. A doorway leads west.
 ~
 #EXIT
@@ -2787,11 +2748,12 @@ Desc      You see a lot of light, bright as daylight, but nothing of interest.
 #ENDROOM
 
 #ROOM
-Vnum     7057
-Name     The dark passageway~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the ground where you put your feet. The 
+Vnum      7057
+Name      The dark passageway~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the ground where you put your feet. The 
 passageway seems to continue south and north.
 ~
 #EXIT
@@ -2813,11 +2775,12 @@ that far.
 #ENDROOM
 
 #ROOM
-Vnum     7058
-Name     The dark passageway~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the ground where you put your feet. The
+Vnum      7058
+Name      The dark passageway~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the ground where you put your feet. The
 passageway seems to continue south and north.
 ~
 #EXIT
@@ -2839,11 +2802,12 @@ that far.
 #ENDROOM
 
 #ROOM
-Vnum     7059
-Name     The dark passageway~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the ground where you put your feet. The
+Vnum      7059
+Name      The dark passageway~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the ground where you put your feet. The
 passageway seems to continue south and north.
 ~
 #EXIT
@@ -2865,11 +2829,12 @@ that far.
 #ENDROOM
 
 #ROOM
-Vnum     7060
-Name     The dark passageway~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the ground where you put your feet. The
+Vnum      7060
+Name      The dark passageway~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the ground where you put your feet. The
 passageway seems to continue west and north. To the east there's water
 covering the floor and that leads through an arched entry to a watery
 sewer.
@@ -2906,11 +2871,12 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7061
-Name     The Watery Sewer Bend~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the water you're in up to your hips. The sewer
+Vnum      7061
+Name      The Watery Sewer Bend~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the water you're in up to your hips. The sewer
 seems to bend and lead south and west.
 ~
 #EXIT
@@ -2938,11 +2904,12 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7062
-Name     The Watery sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the water you're in up to your hips. The sewer
+Vnum      7062
+Name      The Watery sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the water you're in up to your hips. The sewer
 seems to lead south and north.
 ~
 #EXIT
@@ -2970,11 +2937,12 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7063
-Name     The Watery sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the water you're in up to your hips. The sewer
+Vnum      7063
+Name      The Watery sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the water you're in up to your hips. The sewer
 seems to lead south and north.
 ~
 #EXIT
@@ -3002,11 +2970,12 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7064
-Name     The Watery Sewer Junction~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the water you're in up to your hips. The sewer
+Vnum      7064
+Name      The Watery Sewer Junction~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the water you're in up to your hips. The sewer
 seems to lead into a junction going south, north and east.
 ~
 #EXIT
@@ -3042,11 +3011,12 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7065
-Name     The Watery sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the water you're in up to your hips. The sewer
+Vnum      7065
+Name      The Watery sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the water you're in up to your hips. The sewer
 seems to lead south and north.
 ~
 #EXIT
@@ -3074,11 +3044,12 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7066
-Name     The Watery sewer junction~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the water you're in up to your hips. The sewer
+Vnum      7066
+Name      The Watery sewer junction~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the water you're in up to your hips. The sewer
 seems to lead into a junction that goes north, south and east.
 ~
 #EXIT
@@ -3114,11 +3085,12 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7067
-Name     The Watery sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the water you're in up to your hips. The sewer
+Vnum      7067
+Name      The Watery sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the water you're in up to your hips. The sewer
 seems to lead south and north.
 ~
 #EXIT
@@ -3146,11 +3118,12 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7068
-Name     The Watery sewer bend~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see anything but the water you're in up to your hips. The sewer
+Vnum      7068
+Name      The Watery sewer bend~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see anything but the water you're in up to your hips. The sewer
 seems to bend and lead west and north.
 ~
 #EXIT
@@ -3178,11 +3151,12 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7069
-Name     A ledge by the dark pool~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see much here but the echo tells you that there's quite a drop
+Vnum      7069
+Name      A ledge by the dark pool~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see much here but the echo tells you that there's quite a drop
 down. You can just make out a huge dark pool out there in the darkness, 
 mostly because of the trickling of water. The water from the sewer actually
 washes over this ledge and makes it quite slippery. From here it drops, 
@@ -3211,11 +3185,12 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7070
-Name     A ledge by the dark pool~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can't see much here but the echo tells you that there's quite a drop
+Vnum      7070
+Name      A ledge by the dark pool~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can't see much here but the echo tells you that there's quite a drop
 down. You can just make out a huge dark pool out there in the darkness,
 mostly because of the trickling of water. The water from the sewer actually
 washes over this ledge and makes it quite slippery. From here it drops,
@@ -3250,18 +3225,20 @@ ExDesc       It looks dark and murky, and emanates a foul stench.
 #ENDROOM
 
 #ROOM
-Vnum     7071
-Name     Floating in a void~
-Sector   underground~
-Flags    dark nomob indoors~
+Vnum      7071
+Name      Floating in a void~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     7099
-Name     The fissure under the ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     This is a small fissure in the solid rock. Under you lies the deep dark pool.
+Vnum      7099
+Name      The fissure under the ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This is a small fissure in the solid rock. Under you lies the deep dark pool.
 The water trickles quietly down from the ledge above you. The water smells 
 like the water in a sewer.
 ~
@@ -3280,11 +3257,12 @@ Desc      The water edge.
 #ENDROOM
 
 #ROOM
-Vnum     7101
-Name     Under the mudhole~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You stand in a small room with a great big opening in the ceiling. From this
+Vnum      7101
+Name      Under the mudhole~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a small room with a great big opening in the ceiling. From this
 opening there's mud dripping down in large lumps. >YUCK<. You can smell the 
 foul stench of the slimy sediment as you try not to get covered by the 
 falling sludge. To the east there is an entryway leading out from here and 
@@ -3297,7 +3275,7 @@ Desc      East. You see nothing of interest.
 ~
 #ENDEXIT
 
-Reset M 0 7006 5 7101
+Reset M 7006 5 7101 -1 -1 -1 100
 #EXDESC
 ExDescKey    mud~
 ExDesc       You never saw such disgusting matter before, it nearly makes you puke.
@@ -3307,11 +3285,12 @@ ExDesc       You never saw such disgusting matter before, it nearly makes you pu
 #ENDROOM
 
 #ROOM
-Vnum     7102
-Name     Under the Dark Pit~
-Sector   underground~
-Flags    dark indoors~
-Desc     Nice place you found yourself. You stand in the middle of a room with only
+Vnum      7102
+Name      Under the Dark Pit~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Nice place you found yourself. You stand in the middle of a room with only
 two exits, Up and East. A tall ladder is left here so that you can climb
 up through the Pit without the use of a rope.
 ~
@@ -3334,8 +3313,8 @@ Keywords  trapdoor~
 Flags     isdoor~
 #ENDEXIT
 
-Reset M 0 7004 3 7102
-Reset M 0 7006 5 7102
+Reset M 7004 3 7102 -1 -1 -1 100
+Reset M 7006 5 7102 -1 -1 -1 100
 #EXDESC
 ExDescKey    ladder~
 ExDesc       This is funny enough a wooden ladder and, after closer inspection, you
@@ -3347,11 +3326,12 @@ greatest effort, rock it at ALL!
 #ENDROOM
 
 #ROOM
-Vnum     7103
-Name     A muddy bend in the sewer system~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in what looks like a bend in the pipe system of the
+Vnum      7103
+Name      A muddy bend in the sewer system~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in what looks like a bend in the pipe system of the
 sewer. The 'floor' is covered completely by mud! This includes covering
 your legs up to your knees as well. The pipe leads west and south.
 ~
@@ -3371,8 +3351,8 @@ apart from in you direction.
 ~
 #ENDEXIT
 
-Reset M 0 7000 3 7103
-Reset M 0 7000 3 7103
+Reset M 7000 3 7103 -1 -1 -1 100
+Reset M 7000 3 7103 -1 -1 -1 100
 #EXDESC
 ExDescKey    mud~
 ExDesc       You never saw such disgusting matter before, it nearly makes you puke.
@@ -3382,11 +3362,12 @@ ExDesc       You never saw such disgusting matter before, it nearly makes you pu
 #ENDROOM
 
 #ROOM
-Vnum     7104
-Name     A junction in the sewer pipes~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in the middle of what looks like a triple junction of pipes
+Vnum      7104
+Name      A junction in the sewer pipes~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in the middle of what looks like a triple junction of pipes
 going east, west and north.
 ~
 #EXIT
@@ -3410,16 +3391,17 @@ Desc      West. There's a room with a ladder leading up.
 ~
 #ENDEXIT
 
-Reset M 0 7002 7 7104
-Reset M 0 7006 5 7104
+Reset M 7002 7 7104 -1 -1 -1 100
+Reset M 7006 5 7104 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7105
-Name     Down the old well~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are dangling on the slippery sides of the old well leading down and up.
+Vnum      7105
+Name      Down the old well~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are dangling on the slippery sides of the old well leading down and up.
 The only secure point here is the metal bars that are cemented into the 
 sides, the ones that you cling frantically to so that you don't fall. Who
 knows how deep this well is?
@@ -3442,11 +3424,12 @@ not go down any further.
 #ENDROOM
 
 #ROOM
-Vnum     7106
-Name     The northwestern corner of the ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You stand, swaying out from the ledge, with only a couple of inches of safe, 
+Vnum      7106
+Name      The northwestern corner of the ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You stand, swaying out from the ledge, with only a couple of inches of safe, 
 solid ledge under your feet. The ledge continues to the east but not back
 south. It seems that the ledge is too narrow to turn on so you'll have to
 continue forward.
@@ -3468,11 +3451,12 @@ Desc      The ledge continues south.
 #ENDROOM
 
 #ROOM
-Vnum     7107
-Name     The narrow ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in the progress of walking all the way around the ledge since there's
+Vnum      7107
+Name      The narrow ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in the progress of walking all the way around the ledge since there's
 no way of turning around on this all too narrow path. There IS another exit
 from here but that leads right into mid-air and with high probability of a
 free fall session afterwards.
@@ -3502,11 +3486,12 @@ Desc      South. The ledge leads further south into utter darkness.
 #ENDROOM
 
 #ROOM
-Vnum     7108
-Name     The narrow ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in the progress of walking all the way around the ledge since there's
+Vnum      7108
+Name      The narrow ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in the progress of walking all the way around the ledge since there's
 no way of turning around on this all too narrow path. There IS another exit
 from here but that leads right into mid-air and with high probability of a
 free fall session afterwards.
@@ -3536,11 +3521,12 @@ Desc      The ledge continues further south into darkness.
 #ENDROOM
 
 #ROOM
-Vnum     7109
-Name     The narrow ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in the progress of walking all the way around the ledge since there's
+Vnum      7109
+Name      The narrow ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in the progress of walking all the way around the ledge since there's
 no way of turning around on this all too narrow path. There IS another exit
 from here but that leads right into mid-air and with high probability of a
 free fall session afterwards.
@@ -3570,11 +3556,12 @@ Desc      The ledge continues south into darkness.
 #ENDROOM
 
 #ROOM
-Vnum     7110
-Name     The narrow ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in the progress of walking all the way around the ledge since there's
+Vnum      7110
+Name      The narrow ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in the progress of walking all the way around the ledge since there's
 no way of turning around on this all too narrow path. There IS another exit
 from here but that leads right into mid-air and with high probability of a
 free fall session afterwards.
@@ -3604,11 +3591,12 @@ Desc      South. You can just make out the south-western corner of this ledge.
 #ENDROOM
 
 #ROOM
-Vnum     7111
-Name     The southwestern corner of the ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     This seems like a ledge that is a little broader than the one just to the 
+Vnum      7111
+Name      The southwestern corner of the ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This seems like a ledge that is a little broader than the one just to the 
 north of here. The ledge seems to lead around some sort of Abyss of total 
 darkness. The ledge seems to have an odd-looking edge here.
 ~
@@ -3665,11 +3653,12 @@ the way down.
 #ENDROOM
 
 #ROOM
-Vnum     7112
-Name     An odd intersection~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in a rather odd intersection of pipes. The pipes actually don't
+Vnum      7112
+Name      An odd intersection~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a rather odd intersection of pipes. The pipes actually don't
 resemble pipes anymore. They look more like a real stone tunnel, or a
 passageway hewn directly into the rock. The ways from here lead north, east
 and west.
@@ -3691,16 +3680,17 @@ Direction west~
 ToRoom    7104
 #ENDEXIT
 
-Reset M 0 7005 7 7112
-Reset M 0 7005 7 7112
+Reset M 7005 7 7112 -1 -1 -1 100
+Reset M 7005 7 7112 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7113
-Name     The narrow ledge going east to west~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in the process of walking all the way around the ledge since there's
+Vnum      7113
+Name      The narrow ledge going east to west~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in the process of walking all the way around the ledge since there's
 no way of turning around on this all too narrow path. There IS another exit
 from here but that leads right into mid-air and with high probability of a
 free fall session afterwards.
@@ -3730,11 +3720,12 @@ Desc      The ledge leads further west.
 #ENDROOM
 
 #ROOM
-Vnum     7114
-Name     Mid-air~
-Sector   underground~
-Flags    nomob indoors~
-Desc     You've just stepped into the most unlucky position in the whole of Merc Mud.
+Vnum      7114
+Name      Mid-air~
+Sector    underground~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You've just stepped into the most unlucky position in the whole of Merc Mud.
 The result of such a foolish act should be punished with death, you know.
 With an acceleration of approximately 9.82 metres per second per second, you
 are now descending the Abyss. What awaits you at the bottom will continue to
@@ -3745,11 +3736,12 @@ You've fallen, and you can't get up!!!
 #ENDROOM
 
 #ROOM
-Vnum     7115
-Name     The Broad ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are standing on a ledge that seems quite a lot larger than the rest 
+Vnum      7115
+Name      The Broad ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing on a ledge that seems quite a lot larger than the rest 
 of the ledges. This one leads to the west and the east, plus it has an exit
 going to the south. Though you could jump into mid-air, but it probably 
 wouldn't be such a good idea. The way south is in utter darkness.
@@ -3777,11 +3769,12 @@ ToRoom    7111
 #ENDROOM
 
 #ROOM
-Vnum     7116
-Name     The northeastern corner of the ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You stand, swaying out from the ledge, with only a couple of inches of safe,
+Vnum      7116
+Name      The northeastern corner of the ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You stand, swaying out from the ledge, with only a couple of inches of safe,
 solid ledge under your feet. The ledge continues to the west and leads south
 from here into darkness.
 ~
@@ -3804,9 +3797,9 @@ Keywords  secret trapdoor entrance~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 1 7116 5 1
-Reset D 0 7116 5 1
-Reset D 1 7116 5 1
+Reset D 7116 5 1 100 -2
+Reset D 7116 5 1 100 -2
+Reset D 7116 5 1 100 -2
 #EXDESC
 ExDescKey    ground ledge rock~
 ExDesc       The ground here seems a little different from all the other ledges along the
@@ -3826,11 +3819,12 @@ into the seemingly solid rock face of the ledge.
 #ENDROOM
 
 #ROOM
-Vnum     7117
-Name     The narrow eastern ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in the progress of walking all the way around the ledge since there's
+Vnum      7117
+Name      The narrow eastern ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in the progress of walking all the way around the ledge since there's
 no way of turning around on this all too narrow path. There IS another exit
 from here but that leads right into mid-air and with high probability of a
 free fall session afterwards. And THAT is west of here so watch your step.
@@ -3853,11 +3847,12 @@ darkness. You shiver by the thought of falling that distance.
 #ENDROOM
 
 #ROOM
-Vnum     7118
-Name     The narrow eastern ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in the progress of walking all the way around the ledge since there's
+Vnum      7118
+Name      The narrow eastern ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in the progress of walking all the way around the ledge since there's
 no way of turning around on this all too narrow path. There IS another exit
 from here but that leads right into mid-air and with high probability of a
 free fall session afterwards. And THAT is west of here so watch your step.
@@ -3880,11 +3875,12 @@ darkness. You shiver by the thought of falling that distance.
 #ENDROOM
 
 #ROOM
-Vnum     7119
-Name     The narrow eastern ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in the progress of walking all the way around the ledge since there's
+Vnum      7119
+Name      The narrow eastern ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in the progress of walking all the way around the ledge since there's
 no way of turning around on this all too narrow path. There IS another exit
 from here but that leads right into mid-air and with high probability of a
 free fall session afterwards. And THAT is west of here so watch your step.
@@ -3907,11 +3903,12 @@ darkness. You shiver by the thought of falling that distance.
 #ENDROOM
 
 #ROOM
-Vnum     7120
-Name     The narrow eastern ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in the progress of walking all the way around the ledge since there's
+Vnum      7120
+Name      The narrow eastern ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in the progress of walking all the way around the ledge since there's
 no way of turning around on this all too narrow path. There IS another exit
 from here but that leads right into mid-air and with high probability of a
 free fall session afterwards. And THAT is west of here so watch your step.
@@ -3942,11 +3939,12 @@ darkness. You shiver by the thought of falling that distance.
 #ENDROOM
 
 #ROOM
-Vnum     7121
-Name     The southeastern corner of the ledge~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     This seems like a ledge that is a little broader than the one just to the
+Vnum      7121
+Name      The southeastern corner of the ledge~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This seems like a ledge that is a little broader than the one just to the
 north of here. The ledge seems to lead around some sort of abyss of total
 darkness.
 ~
@@ -3967,18 +3965,19 @@ Desc      The ledge leads further west.
 #ENDROOM
 
 #ROOM
-Vnum     7122
-Name     Under the pit~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in a completely dark cavern leading west. The wall looks weird here.
+Vnum      7122
+Name      Under the pit~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a completely dark cavern leading west. The wall looks weird here.
 ~
 #EXIT
 Direction west~
 ToRoom    7112
 #ENDEXIT
 
-Reset M 0 7005 7 7122
+Reset M 7005 7 7122 -1 -1 -1 100
 #EXDESC
 ExDescKey    wall~
 ExDesc       There is a crack here that looks like it has been made recently.
@@ -3988,11 +3987,12 @@ ExDesc       There is a crack here that looks like it has been made recently.
 #ENDROOM
 
 #ROOM
-Vnum     7123
-Name     Under The Shaft~
-Sector   underground~
-Flags    dark indoors~
-Desc     A ladder leads up from here to the Shaft.
+Vnum      7123
+Name      Under The Shaft~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      A ladder leads up from here to the Shaft.
 A small opening leads west from here.
 ~
 #EXIT
@@ -4012,11 +4012,12 @@ Desc      It's too dark up there.
 #ENDROOM
 
 #ROOM
-Vnum     7129
-Name     The sewer line.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a narrow part of the sewer. Down the sewer continues and to the
+Vnum      7129
+Name      The sewer line.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a narrow part of the sewer. Down the sewer continues and to the
 north is the ledge.
 ~
 #EXIT
@@ -4036,22 +4037,24 @@ Desc      You look deeper down into the drain.
 #ENDROOM
 
 #ROOM
-Vnum     7130
-Name     The sewer pipe.~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in an odd sewer pipe You see some odd scratches on the pipe wall, as
+Vnum      7130
+Name      The sewer pipe.~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in an odd sewer pipe You see some odd scratches on the pipe wall, as
 from a gigantic rat. You can see some slimy water gently running down into
 a sewer drain, and north the drain continues.
 ~
 #ENDROOM
 
 #ROOM
-Vnum     7190
-Name     Mid-air~
-Sector   underground~
-Flags    nomob indoors~
-Desc     You've just stepped into the most unlucky position in the whole of the
+Vnum      7190
+Name      Mid-air~
+Sector    underground~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You've just stepped into the most unlucky position in the whole of the
 Realms.  The result of such a foolish act should be punished with death,
 you know.  With an acceleration of approximately 9.82 metres per second
 per second, you are now descending the Abyss.  What awaits you at the
@@ -4061,11 +4064,12 @@ will be a long, long fall.  Bye cruel world... this may be the end.
 #ENDROOM
 
 #ROOM
-Vnum     7199
-Name     The Edge of the Water~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     The pool side is dimly lit up by your light. You can see absolutely nothing
+Vnum      7199
+Name      The Edge of the Water~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      The pool side is dimly lit up by your light. You can see absolutely nothing
 else nearby. The darkness here seems enormously oppressive here. The air is
 damp and the rock on which you stand is slippery. The pool seems too dark 
 to make anything clear. The rock can be climbed upwards from here.
@@ -4078,11 +4082,12 @@ ToRoom    7099
 #ENDROOM
 
 #ROOM
-Vnum     7200
-Name     The Treasury~
-Sector   underground~
-Flags    nomob indoors~
-Desc     You are in a small but well equipped treasury.  You can see some writing on
+Vnum      7200
+Name      The Treasury~
+Sector    underground~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small but well equipped treasury.  You can see some writing on
 the wall.  The ceiling has a funny glow, which enables you to see.  You can
 get back into the inner lair through the stone door which is east.
 ~
@@ -4096,7 +4101,7 @@ Keywords  door stone~
 Flags     isdoor~
 #ENDEXIT
 
-Reset O 0 7204 6 7200
+Reset O 7204 6 7200 -1 -1 -1 100
 #EXDESC
 ExDescKey    door stone~
 ExDesc       This is a heavy black stone door it looks very solid.
@@ -4112,11 +4117,12 @@ ExDesc       You read the number '666'.
 #ENDROOM
 
 #ROOM
-Vnum     7201
-Name     The inner Lair~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a octagonal room with smooth purple stone walls.  The floor is 
+Vnum      7201
+Name      The inner Lair~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a octagonal room with smooth purple stone walls.  The floor is 
 made from black stone.  In the western wall you see a large black stone door.
 ~
 #EXIT
@@ -4138,20 +4144,21 @@ Keywords  door stone~
 Flags     isdoor closed locked~
 #ENDEXIT
 
-Reset D 0 7201 3 2
-Reset D 0 7201 2 1
-Reset M 0 7200 1 7201
-  Reset E 1 7200 4 16
-  Reset E 1 7203 4 3
-  Reset G 1 7205 7200
+Reset D 7201 3 2 100 -2
+Reset D 7201 2 1 100 -2
+Reset M 7200 1 7201 -1 -1 -1 100
+  Reset E 7200 4 16 100
+  Reset E 7203 4 3 100
+  Reset G 7205 7200 100
 #ENDROOM
 
 #ROOM
-Vnum     7202
-Name     The Lair~
-Sector   underground~
-Flags    indoors~
-Desc     On the floor you see a lot of human decay, like bones and skulls. You also
+Vnum      7202
+Name      The Lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      On the floor you see a lot of human decay, like bones and skulls. You also
 see a lot of slime. On the wall is a torch sitting in its sconce. To the north 
 are a wooden door.
 ~
@@ -4178,7 +4185,7 @@ Desc      You see another part of the lair.
 ~
 #ENDEXIT
 
-Reset D 0 7202 0 1
+Reset D 7202 0 1 100 -2
 #EXDESC
 ExDescKey    skull skulls bones decay~
 ExDesc       On all the skulls you notice that there is a three inch hole in the 
@@ -4201,11 +4208,12 @@ ExDesc       The torch is bolted to the sconce and the sconce to the wall.
 #ENDROOM
 
 #ROOM
-Vnum     7203
-Name     The Lair~
-Sector   underground~
-Flags    indoors~
-Desc     On the floor you see a lot of human decay, like bones and skulls. You also
+Vnum      7203
+Name      The Lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      On the floor you see a lot of human decay, like bones and skulls. You also
 see a lot of slime. On the wall is a torch sitting in its sconce.
 ~
 #EXIT
@@ -4229,8 +4237,8 @@ Desc      You see another part of the lair.
 ~
 #ENDEXIT
 
-Reset M 0 7201 1 7203
-  Reset E 1 7201 4 16
+Reset M 7201 1 7203 -1 -1 -1 100
+  Reset E 7201 4 16 100
 #EXDESC
 ExDescKey    skull skulls bones decay~
 ExDesc       On all the skulls you notice that there is a three inch hole in the 
@@ -4253,11 +4261,12 @@ ExDesc       The torch is bolted to the sconce and the sconce to the wall.
 #ENDROOM
 
 #ROOM
-Vnum     7204
-Name     The Lair~
-Sector   underground~
-Flags    indoors~
-Desc     On the floor you see a lot of human decay, like bones and skulls. You also
+Vnum      7204
+Name      The Lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      On the floor you see a lot of human decay, like bones and skulls. You also
 see a lot of slime. On the wall is a torch sitting in its sconce.
 ~
 #EXIT
@@ -4305,11 +4314,12 @@ ExDesc       The torch is bolted to the sconce and the sconce to the wall.
 #ENDROOM
 
 #ROOM
-Vnum     7205
-Name     The Lair~
-Sector   underground~
-Flags    indoors~
-Desc     On the floor you see a lot of human decay, like bones and skulls. You also
+Vnum      7205
+Name      The Lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      On the floor you see a lot of human decay, like bones and skulls. You also
 see a lot of slime. On the wall is a torch sitting in its sconce.
 ~
 #EXIT
@@ -4326,8 +4336,8 @@ Desc      You see another part of the lair.
 ~
 #ENDEXIT
 
-Reset M 0 7202 2 7205
-  Reset E 1 7202 8 16
+Reset M 7202 2 7205 -1 -1 -1 100
+  Reset E 7202 8 16 100
 #EXDESC
 ExDescKey    skull skulls bones decay~
 ExDesc       On all the skulls you notice that there is a three inch hole in the 
@@ -4350,11 +4360,12 @@ ExDesc       The torch is bolted to the sconce and the sconce to the wall.
 #ENDROOM
 
 #ROOM
-Vnum     7206
-Name     The lair.~
-Sector   underground~
-Flags    nomob indoors~
-Desc     On the floor you see a lot of human decay, like bones and skulls. You also
+Vnum      7206
+Name      The lair.~
+Sector    underground~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      On the floor you see a lot of human decay, like bones and skulls. You also
 see a lot of slime. On the wall is a torch sitting in its sconce.
 ~
 #EXIT
@@ -4378,7 +4389,7 @@ Desc      You see another part of the lair.
 ~
 #ENDEXIT
 
-Reset O 0 7206 4 7206
+Reset O 7206 4 7206 -1 -1 -1 100
 #EXDESC
 ExDescKey    bones decay~
 ExDesc       All the bones are broken and old.
@@ -4400,11 +4411,12 @@ ExDesc       The torch is bolted to the sconce and the sconce to the wall.
 #ENDROOM
 
 #ROOM
-Vnum     7207
-Name     The lair.~
-Sector   underground~
-Flags    indoors~
-Desc     On the floor you see a lot of human decay, like bones and skulls. You also
+Vnum      7207
+Name      The lair.~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      On the floor you see a lot of human decay, like bones and skulls. You also
 see a lot of slime. On the wall is a torch sitting in its sconce.
 ~
 #EXIT
@@ -4422,8 +4434,8 @@ Desc      You see another part of the lair.
 Flags     isdoor~
 #ENDEXIT
 
-Reset M 0 7202 2 7207
-  Reset E 1 7202 8 16
+Reset M 7202 2 7207 -1 -1 -1 100
+  Reset E 7202 8 16 100
 #EXDESC
 ExDescKey    skull skulls bones decay~
 ExDesc       On all the skulls you notice that there is a three inch hole in the 
@@ -4446,11 +4458,12 @@ ExDesc       The torch is bolted to the sconce and the sconce to the wall.
 #ENDROOM
 
 #ROOM
-Vnum     7208
-Name     The lair entrance.~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in a dry part of the sewer. To the north is a wooden door, you 
+Vnum      7208
+Name      The lair entrance.~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dry part of the sewer. To the north is a wooden door, you 
 can see some slime at the lower part of the door. You also see some skulls
 and some broken bones.
 ~
@@ -4470,7 +4483,7 @@ Desc      You see a crawlway.
 ~
 #ENDEXIT
 
-Reset D 0 7208 0 1
+Reset D 7208 0 1 100 -2
 #EXDESC
 ExDescKey    slime~
 ExDesc       The slime is slimy and uninteresting.
@@ -4480,11 +4493,12 @@ ExDesc       The slime is slimy and uninteresting.
 #ENDROOM
 
 #ROOM
-Vnum     7209
-Name     The crawlway.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a narrow crawlway.  You don't notice anything interesting here.
+Vnum      7209
+Name      The crawlway.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a narrow crawlway.  You don't notice anything interesting here.
 ~
 #EXIT
 Direction east~
@@ -4503,11 +4517,12 @@ Desc      You see the entrance to a lair.
 #ENDROOM
 
 #ROOM
-Vnum     7210
-Name     The four-way junction.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a sewer junction. To the north is a small hole, to the west is a
+Vnum      7210
+Name      The four-way junction.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a sewer junction. To the north is a small hole, to the west is a
 narrow crawlway and to the east and south the sewer continues.
 ~
 #EXIT
@@ -4541,11 +4556,12 @@ Desc      You can see a narrow crawlway.
 #ENDROOM
 
 #ROOM
-Vnum     7211
-Name     The small cave.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a collapsed sewer drain, which now is more like a small cave.
+Vnum      7211
+Name      The small cave.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a collapsed sewer drain, which now is more like a small cave.
 ~
 #EXIT
 Direction south~
@@ -4557,11 +4573,12 @@ Desc      You look back into the four-way junction.
 #ENDROOM
 
 #ROOM
-Vnum     7212
-Name     The sewer drain.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a dry sewer drain which bends to the north.
+Vnum      7212
+Name      The sewer drain.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dry sewer drain which bends to the north.
 ~
 #EXIT
 Direction north~
@@ -4580,11 +4597,12 @@ Desc      You can see the four-way junction.
 #ENDROOM
 
 #ROOM
-Vnum     7213
-Name     The sewer drain.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a dry sewer drain which bends to the east.
+Vnum      7213
+Name      The sewer drain.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dry sewer drain which bends to the east.
 ~
 #EXIT
 Direction east~
@@ -4600,16 +4618,17 @@ Desc      You can see the drain continuing south.
 ~
 #ENDEXIT
 
-Reset M 0 7203 10 7213
-  Reset E 1 7211 16 16
+Reset M 7203 10 7213 -1 -1 -1 100
+  Reset E 7211 16 16 100
 #ENDROOM
 
 #ROOM
-Vnum     7214
-Name     The drain end.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are at the end of the drain around you the sewer has collapsed, the only
+Vnum      7214
+Name      The drain end.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are at the end of the drain around you the sewer has collapsed, the only
 exit is west.
 ~
 #EXIT
@@ -4619,16 +4638,17 @@ Desc      You see the sewer drain.
 ~
 #ENDEXIT
 
-Reset M 0 7203 10 7214
-  Reset E 1 7211 16 16
+Reset M 7203 10 7214 -1 -1 -1 100
+  Reset E 7211 16 16 100
 #ENDROOM
 
 #ROOM
-Vnum     7215
-Name     The half-wet drain.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a sewer drain where the floor is covered with water. To the north
+Vnum      7215
+Name      The half-wet drain.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a sewer drain where the floor is covered with water. To the north
 it looks more dry, south however the drain runs down into some water.
 ~
 #EXIT
@@ -4645,8 +4665,8 @@ Desc      To the south you see a sewer drain filled with water.
 ~
 #ENDEXIT
 
-Reset M 0 7203 10 7215
-  Reset E 1 7211 16 16
+Reset M 7203 10 7215 -1 -1 -1 100
+  Reset E 7211 16 16 100
 #EXDESC
 ExDescKey    water~
 ExDesc       The water is dirty but it looks like you would be able to swim in it.
@@ -4656,11 +4676,12 @@ ExDesc       The water is dirty but it looks like you would be able to swim in i
 #ENDROOM
 
 #ROOM
-Vnum     7216
-Name     Under water in the sewer.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You begin swimming through some dirty water and hold your breath.  You'd
+Vnum      7216
+Name      Under water in the sewer.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You begin swimming through some dirty water and hold your breath.  You'd
 better continue before you drown.  It's a good thing that you can hold
 your light above water-level.
 ~
@@ -4681,11 +4702,12 @@ Desc      It is hard to see, but it looks like the drain runs a little bit upwar
 #ENDROOM
 
 #ROOM
-Vnum     7217
-Name     The half-dry drain.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a half-dry sewer drain. To the north the drain runs a little bit
+Vnum      7217
+Name      The half-dry drain.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a half-dry sewer drain. To the north the drain runs a little bit
 downwards into some water to the east you can see a small hole. To the west
 you see another drain.
 ~
@@ -4710,9 +4732,9 @@ Desc      You see a drain running to the west.
 ~
 #ENDEXIT
 
-Reset M 0 7203 10 7217
-  Reset G 1 7208 20
-  Reset E 1 7211 16 16
+Reset M 7203 10 7217 -1 -1 -1 100
+  Reset G 7208 20 100
+  Reset E 7211 16 16 100
 #EXDESC
 ExDescKey    water~
 ExDesc       The water is dirty but it looks like you would be able to swim in it.
@@ -4728,11 +4750,12 @@ ExDesc       Through the hole you can just make out a very small room.
 #ENDROOM
 
 #ROOM
-Vnum     7218
-Name     The very small room.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a very small room, it is pretty uninteresting.
+Vnum      7218
+Name      The very small room.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a very small room, it is pretty uninteresting.
 ~
 #EXIT
 Direction west~
@@ -4744,11 +4767,12 @@ Desc      Through the little hole you can see a half-dry drain.
 #ENDROOM
 
 #ROOM
-Vnum     7219
-Name     A dry sewer drain.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a dry but dirty sewer drain. The drain continues east and south.
+Vnum      7219
+Name      A dry sewer drain.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a dry but dirty sewer drain. The drain continues east and south.
 ~
 #EXIT
 Direction east~
@@ -4764,17 +4788,18 @@ Desc      You see another boring sewer drain.
 ~
 #ENDEXIT
 
-Reset M 0 7203 10 7219
-  Reset E 1 7209 4 8
-  Reset E 1 7211 16 16
+Reset M 7203 10 7219 -1 -1 -1 100
+  Reset E 7209 4 8 100
+  Reset E 7211 16 16 100
 #ENDROOM
 
 #ROOM
-Vnum     7220
-Name     A boring drain.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in yet another sewer drain.
+Vnum      7220
+Name      A boring drain.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in yet another sewer drain.
 ~
 #EXIT
 Direction north~
@@ -4793,11 +4818,12 @@ Desc      You can see another drain to the east.
 #ENDROOM
 
 #ROOM
-Vnum     7221
-Name     The sewer drain.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a sewer drain, there is nothing special inhere, except for a 
+Vnum      7221
+Name      The sewer drain.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a sewer drain, there is nothing special inhere, except for a 
 loud echo.
 ~
 #EXIT
@@ -4821,17 +4847,18 @@ Desc      You can see a sewer line.
 ~
 #ENDEXIT
 
-Reset M 0 7203 10 7221
-  Reset G 1 7208 20
-  Reset E 1 7211 16 16
+Reset M 7203 10 7221 -1 -1 -1 100
+  Reset G 7208 20 100
+  Reset E 7211 16 16 100
 #ENDROOM
 
 #ROOM
-Vnum     7222
-Name     The sewer drain.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a drain, with some slimy water on the floor.
+Vnum      7222
+Name      The sewer drain.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a drain, with some slimy water on the floor.
 ~
 #EXIT
 Direction east~
@@ -4856,11 +4883,12 @@ ExDesc       The water floats to the east from here.
 #ENDROOM
 
 #ROOM
-Vnum     7223
-Name     The sewer bend.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You find yourself in an ordinary sewer bend, which bend from west to north.
+Vnum      7223
+Name      The sewer bend.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You find yourself in an ordinary sewer bend, which bend from west to north.
 ~
 #EXIT
 Direction north~
@@ -4876,17 +4904,18 @@ Desc      You see a sewer drain.
 ~
 #ENDEXIT
 
-Reset M 0 7203 10 7223
-  Reset E 1 7209 4 8
-  Reset E 1 7211 16 16
+Reset M 7203 10 7223 -1 -1 -1 100
+  Reset E 7209 4 8 100
+  Reset E 7211 16 16 100
 #ENDROOM
 
 #ROOM
-Vnum     7224
-Name     The sewer junction~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in a junction of three sewer drains. You see some odd scratches on
+Vnum      7224
+Name      The sewer junction~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in a junction of three sewer drains. You see some odd scratches on
 the pipe wall, as from a gigantic rat.North and south the sewer continues 
 as usual, but west it looks a little strange.
 ~
@@ -4914,11 +4943,12 @@ Desc      You see a strange sewer pipe.
 #ENDROOM
 
 #ROOM
-Vnum     7225
-Name     The sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a sewer, where the slimy water runs down through a tiny hole.
+Vnum      7225
+Name      The sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a sewer, where the slimy water runs down through a tiny hole.
 You see some odd scratches on the pipe wall, as from a gigantic rat. There 
 is a sewer drain south.
 ~
@@ -4929,16 +4959,17 @@ Desc      You see a sewer drain.
 ~
 #ENDEXIT
 
-Reset M 0 7203 10 7225
-  Reset E 1 7211 16 16
+Reset M 7203 10 7225 -1 -1 -1 100
+  Reset E 7211 16 16 100
 #ENDROOM
 
 #ROOM
-Vnum     7229
-Name     The strange sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a very strange sewer indeed, there are some odd scratches on the
+Vnum      7229
+Name      The strange sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a very strange sewer indeed, there are some odd scratches on the
 pipe wall, as from a gigantic rat. And you can see a lot of organic decay
 like bones from animals AND humans. West the drain runs slightly upwards.
 ~
@@ -4959,11 +4990,12 @@ Desc      You see a slimy sewer drain.
 #ENDROOM
 
 #ROOM
-Vnum     7230
-Name     The damp sewer~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in a sewer drain with a funny damp substance on the floor, in the 
+Vnum      7230
+Name      The damp sewer~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in a sewer drain with a funny damp substance on the floor, in the 
 substance you see a lot of decay. You see some odd scratches on the wall, as
 from a gigantic rat. Both to the east and west the pipe seems to run down.
 ~
@@ -4984,11 +5016,12 @@ Desc      You see a sewer.
 #ENDROOM
 
 #ROOM
-Vnum     7231
-Name     The strange sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in an ordinary sewer except for a lot of scratches on the sewer wall,
+Vnum      7231
+Name      The strange sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in an ordinary sewer except for a lot of scratches on the sewer wall,
 ad a lot of debris on the floor.
 ~
 #EXIT
@@ -5014,11 +5047,12 @@ ExDesc       You see a lot of organic decay on the floor.
 #ENDROOM
 
 #ROOM
-Vnum     7232
-Name     The sewer~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a sewer with more scratches on the walls. And of course a whole lot
+Vnum      7232
+Name      The sewer~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a sewer with more scratches on the walls. And of course a whole lot
 of decay. The drain runs east and north.
 ~
 #EXIT
@@ -5038,11 +5072,12 @@ Desc      You see a sewer pipe.
 #ENDROOM
 
 #ROOM
-Vnum     7233
-Name     The sewer drain~
-Sector   underground~
-Flags    dark indoors~
-Desc     You stand in in a sewer drain, you are able to see some kind of cave-like
+Vnum      7233
+Name      The sewer drain~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in in a sewer drain, you are able to see some kind of cave-like
 room. You see some odd scratches on the drain wall, as from a gigantic rat. 
 The sewer leads south.
 ~
@@ -5060,20 +5095,21 @@ Desc      You see a sewer.
 ~
 #ENDEXIT
 
-Reset M 0 7203 10 7233
-  Reset G 1 7208 20
-  Reset E 1 7211 16 16
-Reset M 0 7203 10 7233
-  Reset E 1 7209 4 8
-  Reset E 1 7211 16 16
+Reset M 7203 10 7233 -1 -1 -1 100
+  Reset G 7208 20 100
+  Reset E 7211 16 16 100
+Reset M 7203 10 7233 -1 -1 -1 100
+  Reset E 7209 4 8 100
+  Reset E 7211 16 16 100
 #ENDROOM
 
 #ROOM
-Vnum     7234
-Name     The rat's lair~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a little cave. You are able to see quite a lot of debris on the 
+Vnum      7234
+Name      The rat's lair~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a little cave. You are able to see quite a lot of debris on the 
 floor. There is a sewer drain west of here.
 ~
 #EXIT
@@ -5083,29 +5119,32 @@ Desc      You see the sewer system that way.
 ~
 #ENDEXIT
 
-Reset M 0 7204 1 7234
+Reset M 7204 1 7234 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7235
-Name     Floating in a void~
-Sector   underground~
-Flags    nomob~
+Vnum      7235
+Name      Floating in a void~
+Sector    underground~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     7268
-Name     Floating in a void~
-Sector   underground~
-Flags    nomob~
+Vnum      7268
+Name      Floating in a void~
+Sector    underground~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     7279
-Name     The Wall of the Abyss~
-Sector   underground~
-Flags    dark indoors~
-Desc     You hang onto some steps leading down into utter darkness. There's an exit 
+Vnum      7279
+Name      The Wall of the Abyss~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You hang onto some steps leading down into utter darkness. There's an exit 
 leading up as well, though you'll have to open the tiny rock again to do so.
 ~
 #EXIT
@@ -5121,11 +5160,12 @@ ToRoom    7399
 #ENDROOM
 
 #ROOM
-Vnum     7280
-Name     The entrance.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a very dark room. You notice that some faces are
+Vnum      7280
+Name      The entrance.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a very dark room. You notice that some faces are
 staring at you from inside the walls. In the middle of the room
 there is a small altar. To the north there is a small round
 door.
@@ -5146,10 +5186,10 @@ Keywords  secret door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 1 7280 4 1
-Reset D 0 7280 4 1
-Reset M 0 7000 8 7280
-Reset D 1 7280 4 1
+Reset D 7280 4 1 100 -2
+Reset D 7280 4 1 100 -2
+Reset M 7000 8 7280 -1 -1 -1 100
+Reset D 7280 4 1 100 -2
 #EXDESC
 ExDescKey    altar~
 ExDesc       This altar are very special. Faces are smiling from it. There
@@ -5167,11 +5207,12 @@ never seen before.
 #ENDROOM
 
 #ROOM
-Vnum     7281
-Name     The corridor.~
-Sector   underground~
-Flags    indoors~
-Desc     The corridor is glowing oppressively in a red hue. You can hear wailing
+Vnum      7281
+Name      The corridor.~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The corridor is glowing oppressively in a red hue. You can hear wailing
 through an open black hole to the east. To the south there is a round door.
 ~
 #EXIT
@@ -5189,8 +5230,8 @@ Keywords  small round door~
 Flags     isdoor~
 #ENDEXIT
 
-Reset M 0 7000 8 7281
-Reset M 0 7000 8 7281
+Reset M 7000 8 7281 -1 -1 -1 100
+Reset M 7000 8 7281 -1 -1 -1 100
 #EXDESC
 ExDescKey    small round door~
 ExDesc       The door is completely round without a keyhole.
@@ -5212,11 +5253,12 @@ ExDesc       The walls look alive.
 #ENDROOM
 
 #ROOM
-Vnum     7282
-Name     The Realm of lost souls~
-Sector   underground~
-Flags    indoors~
-Desc     You are standing in nothing. All around you there are stars.
+Vnum      7282
+Name      The Realm of lost souls~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in nothing. All around you there are stars.
 Sometimes a shadow flies closely by you, wailing very loudly. 
 To the north there is a small bright hole. To the west there is 
 a small red hole.
@@ -5244,11 +5286,12 @@ ExDesc       The shadow looks like a man in great pain.
 #ENDROOM
 
 #ROOM
-Vnum     7283
-Name     The T-crossing~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are in a small hallway. There are doors to the east and to
+Vnum      7283
+Name      The T-crossing~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small hallway. There are doors to the east and to
 the west. To the south there are a black hole. There is writing
 in the wall. Wails can be heard from the south.
 ~
@@ -5284,11 +5327,12 @@ To the west you will surely END your quest!'.
 #ENDROOM
 
 #ROOM
-Vnum     7284
-Name     The firedeath~
-Sector   underground~
-Flags    nomob indoors~
-Desc     This room is very hot. There are flames surrounding you.  You can
+Vnum      7284
+Name      The firedeath~
+Sector    underground~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      This room is very hot. There are flames surrounding you.  You can
 see no exits at all!  Skeletons are lying all over the floor.
 ~
 #EXDESC
@@ -5308,11 +5352,12 @@ the only exit is death..... Mother, I love you'.
 #ENDROOM
 
 #ROOM
-Vnum     7285
-Name     The tortureroom.~
-Sector   underground~
-Flags    indoors~
-Desc     You are standing in a middle of a square room. Along the walls skeletons 
+Vnum      7285
+Name      The tortureroom.~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a middle of a square room. Along the walls skeletons 
 are hanging in rusty chains. In the middle of the room there is a big metal 
 box, covered with dust. To the south you can just make out a small exit.
 ~
@@ -5325,9 +5370,9 @@ Keywords  door iron~
 Flags     isdoor~
 #ENDEXIT
 
-Reset M 0 7002 5 7285
-  Reset E 1 7190 10 2
-Reset M 0 7002 5 7285
+Reset M 7002 5 7285 -1 -1 -1 100
+  Reset E 7190 10 2 100
+Reset M 7002 5 7285 -1 -1 -1 100
 #EXDESC
 ExDescKey    skeletons~
 ExDesc       When you look at the skeletons, you can see that they once had been in great 
@@ -5346,11 +5391,12 @@ filled with coal, as you see some of them.
 #ENDROOM
 
 #ROOM
-Vnum     7286
-Name     The hells yard~
-Sector   underground~
-Flags    nomob indoors~
-Desc     You are standing in a lot of mud. A disgusting smell surrounds
+Vnum      7286
+Name      The hells yard~
+Sector    underground~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a lot of mud. A disgusting smell surrounds
 the place, and makes you fell sick. Small flames sometimes shoot
 up from the hot mud. To the west there is a small door. To the 
 north you can see an iron door.
@@ -5371,16 +5417,17 @@ Desc      To dark to tell.
 ~
 #ENDEXIT
 
-Reset M 0 7000 8 7286
-Reset M 0 7013 3 7286
+Reset M 7000 8 7286 -1 -1 -1 100
+Reset M 7013 3 7286 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7301
-Name     The Entrance to the Realm of silence~
-Sector   underground~
-Flags    nomob indoors~
-Desc     This is an utterly silent place. As you look around you see that there
+Vnum      7301
+Name      The Entrance to the Realm of silence~
+Sector    underground~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      This is an utterly silent place. As you look around you see that there
 hasn't been a living thing in a long time. The dust lies here in a thick
 layer on the floor and on the furniture. On the wall hangs a bleak and 
 worn tapestry. A winding stone staircase leads up into darkness. On the 
@@ -5411,11 +5458,12 @@ penetrates the rock from which these steps are chiselled.
 #ENDROOM
 
 #ROOM
-Vnum     7399
-Name     On the walls of the Abyss~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are clutching the steps on the wall so that you don't fall to the ground
+Vnum      7399
+Name      On the walls of the Abyss~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are clutching the steps on the wall so that you don't fall to the ground
 down below.
 A large sign says : I haven't gotten any further ... Yet. But  I'm pushing
                     to get finished with this sewer. 
@@ -5432,11 +5480,12 @@ ToRoom    7279
 #ENDROOM
 
 #ROOM
-Vnum     7400
-Name     Cave entrance~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in the cave entrance. It is very dark
+Vnum      7400
+Name      Cave entrance~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in the cave entrance. It is very dark
 down here. There is writing at the wall. There is an exit
 to the north. A stairway leads up.
 ~
@@ -5463,11 +5512,12 @@ ExDesc       The writing says 'BEWARE adventurer!'
 #ENDROOM
 
 #ROOM
-Vnum     7401
-Name     Cave tunnel~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are walking in a tunnel. It is very cold. You
+Vnum      7401
+Name      Cave tunnel~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are walking in a tunnel. It is very cold. You
 can feel the presence of a living thing ... SOMEWHERE.
 ~
 #EXIT
@@ -5484,15 +5534,16 @@ Desc      To the south tunnel continuing.
 ~
 #ENDEXIT
 
-Reset M 0 7008 4 7401
+Reset M 7008 4 7401 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7402
-Name     Cave room~
-Sector   underground~
-Flags    indoors~
-Desc     You are standing in a room. It's much cooler now.
+Vnum      7402
+Name      Cave room~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a room. It's much cooler now.
 The walls are glowing.
 ~
 #EXIT
@@ -5517,11 +5568,12 @@ ToRoom    7421
 #ENDROOM
 
 #ROOM
-Vnum     7403
-Name     Cave T-cross~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in a mud-like substance. The smell here is
+Vnum      7403
+Name      Cave T-cross~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a mud-like substance. The smell here is
 awful, it is rotten. To the west you can see some light.
 ~
 #EXIT
@@ -5543,7 +5595,7 @@ Desc      You can see some light to the west.
 ~
 #ENDEXIT
 
-Reset M 0 7013 3 7403
+Reset M 7013 3 7403 -1 -1 -1 100
 #EXDESC
 ExDescKey    mud~
 ExDesc       When you examine the mud, you notice small worms crawling
@@ -5560,11 +5612,12 @@ ExDesc       The worms are purple. They do not look edible.
 #ENDROOM
 
 #ROOM
-Vnum     7404
-Name     Cave turning-point~
-Sector   underground~
-Flags    dark indoors~
-Desc     The mud is getting deeper. You are wondering, 'Would
+Vnum      7404
+Name      Cave turning-point~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The mud is getting deeper. You are wondering, 'Would
 it be an idea to leave, before I disappear?'. To the
 south you notice a flat round stone are blocking the
 way. To the west you can see mud.
@@ -5583,7 +5636,7 @@ Direction west~
 ToRoom    7403
 #ENDEXIT
 
-Reset D 0 7404 2 1
+Reset D 7404 2 1 100 -2
 #EXDESC
 ExDescKey    flat round stone~
 ExDesc       The stone looks very uninteresting. BUT as you are
@@ -5595,11 +5648,12 @@ through a small hole. Conclusion: The stone is movable.
 #ENDROOM
 
 #ROOM
-Vnum     7405
-Name     The secret room~
-Sector   underground~
-Flags    indoors~
-Desc     There is dust all over the place. It looks like nobody
+Vnum      7405
+Name      The secret room~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      There is dust all over the place. It looks like nobody
 has been here for ages. In the middle of the room you see
 a socket with a crystal globe. The globe glows with a
 pulsing light. To the north you see a stone door. To the
@@ -5623,8 +5677,8 @@ Keywords  grey block~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 7405 2 1
-Reset D 0 7405 0 1
+Reset D 7405 2 1 100 -2
+Reset D 7405 0 1 100 -2
 #EXDESC
 ExDescKey    socket~
 ExDesc       The socket looks like the work of a dwarf. It is VERY beautiful.
@@ -5641,11 +5695,12 @@ looks like there is smoke inside it.
 #ENDROOM
 
 #ROOM
-Vnum     7406
-Name     The mudhole~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in a lot of mud. The mud goes to your
+Vnum      7406
+Name      The mudhole~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a lot of mud. The mud goes to your
 chest. You feel the presence of something IN the mud.
 The only obvious exit is to the west.
 ~
@@ -5663,16 +5718,17 @@ Direction west~
 ToRoom    7407
 #ENDEXIT
 
-Reset D 0 7406 0 1
-Reset M 0 7044 6 7406
+Reset D 7406 0 1 100 -2
+Reset M 7044 6 7406 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7407
-Name     Tunnel~
-Sector   underground~
-Flags    dark indoors~
-Desc     The mud goes to your knees. Otherwise the tunnel looks
+Vnum      7407
+Name      Tunnel~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The mud goes to your knees. Otherwise the tunnel looks
 very normal.
 ~
 #EXIT
@@ -5695,11 +5751,12 @@ ToRoom    7409
 #ENDROOM
 
 #ROOM
-Vnum     7408
-Name     The long tunnel~
-Sector   underground~
-Flags    dark indoors~
-Desc     Here There is almost no mud, as you stand at the top
+Vnum      7408
+Name      The long tunnel~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Here There is almost no mud, as you stand at the top
 of a small rock. Just beside you there are a sign which
 says 'WARNING! The worms are dangerous!'.
 ~
@@ -5720,11 +5777,12 @@ Desc      The tunnel goes a little downwards.
 #ENDROOM
 
 #ROOM
-Vnum     7409
-Name     The hot room~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are very surprised, as this room for a change are
+Vnum      7409
+Name      The hot room~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are very surprised, as this room for a change are
 hot instead of cold. To the north it goes downwards into
 some mud. There are also an exit to the west.
 ~
@@ -5745,11 +5803,12 @@ Desc      You see a entrance to a small room.
 #ENDROOM
 
 #ROOM
-Vnum     7410
-Name     The small room~
-Sector   underground~
-Flags    dark indoors~
-Desc     As you look around you notice a small statue. There are
+Vnum      7410
+Name      The small room~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      As you look around you notice a small statue. There are
 exits to the west and to the east.
 ~
 #EXIT
@@ -5776,11 +5835,12 @@ looks like a man with horns and a tail.
 #ENDROOM
 
 #ROOM
-Vnum     7411
-Name     The stalagmite cave~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in a stalagmite cave. Water is dripping
+Vnum      7411
+Name      The stalagmite cave~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a stalagmite cave. Water is dripping
 from the walls. It is very cold in here.
 ~
 #EXIT
@@ -5809,11 +5869,12 @@ ExDesc       The stalagmites are very tall, and looks very beautiful.
 #ENDROOM
 
 #ROOM
-Vnum     7412
-Name     The stalagmite tunnel~
-Sector   underground~
-Flags    dark indoors~
-Desc     You has entered a small tunnel. Here it is quite dry.
+Vnum      7412
+Name      The stalagmite tunnel~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You has entered a small tunnel. Here it is quite dry.
 Maybe it would be an idea to rest here.
 ~
 #EXIT
@@ -5828,15 +5889,16 @@ Direction west~
 ToRoom    7413
 #ENDEXIT
 
-Reset M 0 7013 3 7412
+Reset M 7013 3 7412 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7413
-Name     The spongy room~
-Sector   underground~
-Flags    nomob indoors~
-Desc     You definately do NOT like this area.  It is very dank, and nearly
+Vnum      7413
+Name      The spongy room~
+Sector    underground~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You definately do NOT like this area.  It is very dank, and nearly
 every inch of the floor is covered in a damp dew.
 ~
 #EXIT
@@ -5852,11 +5914,12 @@ ToRoom    7445
 #ENDROOM
 
 #ROOM
-Vnum     7414
-Name     The stalagmite T-cross~
-Sector   underground~
-Flags    nomob indoors~
-Desc     You are standing in a cross. To the north you can see
+Vnum      7414
+Name      The stalagmite T-cross~
+Sector    underground~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a cross. To the north you can see
 some light. Otherwise it is dark.
 ~
 #EXIT
@@ -5879,11 +5942,12 @@ ToRoom    7411
 #ENDROOM
 
 #ROOM
-Vnum     7415
-Name     The blind end room~
-Sector   underground~
-Flags    dark indoors~
-Desc     This room is obviously a blind end. To the north you see
+Vnum      7415
+Name      The blind end room~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This room is obviously a blind end. To the north you see
 a primitive picture.
 ~
 #EXIT
@@ -5900,7 +5964,7 @@ Direction west~
 ToRoom    7414
 #ENDEXIT
 
-Reset D 0 7415 0 1
+Reset D 7415 0 1 100 -2
 #EXDESC
 ExDescKey    primitive picture~
 ExDesc       You see some persons dancing around a huge sun. The
@@ -5912,11 +5976,12 @@ of the picture.
 #ENDROOM
 
 #ROOM
-Vnum     7416
-Name     The treasure room~
-Sector   underground~
-Flags    dark indoors~
-Desc     This room is rich ornamented. The walls has carves showing
+Vnum      7416
+Name      The treasure room~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This room is rich ornamented. The walls has carves showing
 persons dancing around a sun which is drawn at the floor. It
 looks very old, and it is very dusty. To the south you see a
 secret door.
@@ -5931,15 +5996,16 @@ Keywords  door picture sun moon~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 7416 2 1
+Reset D 7416 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     7417
-Name     The square lair~
-Sector   underground~
-Flags    indoors~
-Desc     You are standing in the south-east part of the lair. You can
+Vnum      7417
+Name      The square lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in the south-east part of the lair. You can
 see a skeleton lying at the wall.
 ~
 #EXIT
@@ -5971,11 +6037,12 @@ watch out-
 #ENDROOM
 
 #ROOM
-Vnum     7418
-Name     The square lair~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in the north-east part of the lair. You see
+Vnum      7418
+Name      The square lair~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in the north-east part of the lair. You see
 a sign at the wall
 ~
 #EXIT
@@ -6001,7 +6068,7 @@ Desc      another part of the lair.
 ~
 #ENDEXIT
 
-Reset D 0 7418 1 1
+Reset D 7418 1 1 100 -2
 #EXDESC
 ExDescKey    sign wall~
 ExDesc       The sign says 'Gods of War I call you, my sword is by my side,
@@ -6013,11 +6080,12 @@ ExDesc       The sign says 'Gods of War I call you, my sword is by my side,
 #ENDROOM
 
 #ROOM
-Vnum     7419
-Name     The square lair~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in the north-west part of the lair. Here's
+Vnum      7419
+Name      The square lair~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in the north-west part of the lair. Here's
 another sign. There are a exit from the lair to the north.
 ~
 #EXIT
@@ -6041,7 +6109,7 @@ Desc      another part of the lair.
 ~
 #ENDEXIT
 
-Reset M 0 7045 1 7419
+Reset M 7045 1 7419 -1 -1 -1 100
 #EXDESC
 ExDescKey    sign~
 ExDesc       The sign says 'I'm wandering around in a everlasting tale,
@@ -6053,11 +6121,12 @@ ExDesc       The sign says 'I'm wandering around in a everlasting tale,
 #ENDROOM
 
 #ROOM
-Vnum     7420
-Name     The lair end~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can see a table in front of you. It's very dusty.
+Vnum      7420
+Name      The lair end~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can see a table in front of you. It's very dusty.
 Around the table five skeletons are siting. Exits are
 north and east.
 ~
@@ -6101,11 +6170,12 @@ drained.
 #ENDROOM
 
 #ROOM
-Vnum     7421
-Name     East tunnel~
-Sector   underground~
-Flags    nomob indoors~
-Desc     You are standing in dark tunnel, the exits are east
+Vnum      7421
+Name      East tunnel~
+Sector    underground~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in dark tunnel, the exits are east
 and west. To the west you see a wooden door.
 ~
 #EXIT
@@ -6124,15 +6194,16 @@ Keywords  wooden door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 7421 3 1
+Reset D 7421 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     7422
-Name     North tunnel~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in a dark tunnel, it leads upwards.
+Vnum      7422
+Name      North tunnel~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a dark tunnel, it leads upwards.
 ~
 #EXIT
 Direction north~
@@ -6155,15 +6226,16 @@ Desc      You can see a cave entrance.
 ~
 #ENDEXIT
 
-Reset M 0 7007 3 7422
+Reset M 7007 3 7422 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7423
-Name     The L-shaped room.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in deep darkness. To the south there is a small exit.
+Vnum      7423
+Name      The L-shaped room.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in deep darkness. To the south there is a small exit.
 To the east you can see a gaping hole.
 ~
 #EXIT
@@ -6176,15 +6248,16 @@ Direction south~
 ToRoom    7422
 #ENDEXIT
 
-Reset M 0 7011 3 7423
+Reset M 7011 3 7423 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7424
-Name     The Circular hall.~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in round hall. To the north, east and south you
+Vnum      7424
+Name      The Circular hall.~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in round hall. To the north, east and south you
 can see a stone head hanging on the walls.
 ~
 #EXIT
@@ -6203,8 +6276,8 @@ Desc      you see a room far away.
 ~
 #ENDEXIT
 
-Reset D 0 7424 1 1
-Reset M 0 7046 1 7424
+Reset D 7424 1 1 100 -2
+Reset M 7046 1 7424 -1 -1 -1 100
 #EXDESC
 ExDescKey    head heads~
 ExDesc       When you study the faces of the heads you see that it
@@ -6235,11 +6308,12 @@ ExDesc       This looks like a good dragon
 #ENDROOM
 
 #ROOM
-Vnum     7425
-Name     Dusty tunnel~
-Sector   underground~
-Flags    nomob indoors~
-Desc     You are standing in dust. This place has not been
+Vnum      7425
+Name      Dusty tunnel~
+Sector    underground~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in dust. This place has not been
 touched for a long time. Otherwise it is quite boring
 here, looks like a place to rest! To the west you see
 the outline of a door. A tunnel leads to the east.
@@ -6262,15 +6336,16 @@ Keywords  door~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 7425 3 1
+Reset D 7425 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     7426
-Name     The crossing~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in a crossing of hallways. You can leave this place
+Vnum      7426
+Name      The crossing~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a crossing of hallways. You can leave this place
 in every direction, except up and down. In the dust you notice strange
 footprints.
 ~
@@ -6303,11 +6378,12 @@ ExDesc       You have never seen this kind of footprints before!
 #ENDROOM
 
 #ROOM
-Vnum     7427
-Name     The L-shaped room~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in a L-shaped room. You can hear noises from the long
+Vnum      7427
+Name      The L-shaped room~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a L-shaped room. You can hear noises from the long
 tunnel to the east. You can feel fear! A sign is hanging on the wall.
 ~
 #EXIT
@@ -6331,11 +6407,12 @@ ExDesc       The sign says 'DANGER!!'.
 #ENDROOM
 
 #ROOM
-Vnum     7428
-Name     The Lair of the Red Dragon~
-Sector   underground~
-Flags    dark nomob indoors nosummon noastral~
-Desc     You see burned walls, and the floorstones are fiery red.  Bones of all types
+Vnum      7428
+Name      The Lair of the Red Dragon~
+Sector    underground~
+Flags     dark nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      You see burned walls, and the floorstones are fiery red.  Bones of all types
 are scattered all over the floor, on the walls you see burned, and you smell
 burned flesh.  Two creatures are melted into the floor.
 You're next.
@@ -6354,24 +6431,25 @@ Desc      You can see nothing but darkness.
 ~
 #ENDEXIT
 
-Reset M 0 7040 1 7428
-  Reset E 1 7304 99 5
-  Reset E 1 7305 99 7
-  Reset E 1 7306 99 9
-  Reset E 1 7307 99 6
-  Reset E 1 7308 99 11
-  Reset E 1 7309 99 8
-  Reset E 1 7310 99 10
-  Reset E 1 7216 99 16
-  Reset E 1 7303 99 17
+Reset M 7040 1 7428 -1 -1 -1 100
+  Reset E 7304 99 5 100
+  Reset E 7305 99 7 100
+  Reset E 7306 99 9 100
+  Reset E 7307 99 6 100
+  Reset E 7308 99 11 100
+  Reset E 7309 99 8 100
+  Reset E 7310 99 10 100
+  Reset E 7216 99 16 100
+  Reset E 7303 99 17 100
 #ENDROOM
 
 #ROOM
-Vnum     7429
-Name     The burned room~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are in a room, which once had been quite burned.
+Vnum      7429
+Name      The burned room~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a room, which once had been quite burned.
 There is writing on the wall.
 ~
 #EXIT
@@ -6386,7 +6464,7 @@ Direction west~
 ToRoom    7430
 #ENDEXIT
 
-Reset M 0 7010 2 7429
+Reset M 7010 2 7429 -1 -1 -1 100
 #EXDESC
 ExDescKey    writing~
 ExDesc       The writing says 'DANGER!!!'
@@ -6396,11 +6474,12 @@ ExDesc       The writing says 'DANGER!!!'
 #ENDROOM
 
 #ROOM
-Vnum     7430
-Name     The wind tunnel~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in a tunnel. Above you, you can feel
+Vnum      7430
+Name      The wind tunnel~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a tunnel. Above you, you can feel
 a breeze.
 ~
 #EXIT
@@ -6425,11 +6504,12 @@ there.
 #ENDROOM
 
 #ROOM
-Vnum     7431
-Name     The glittering room~
-Sector   underground~
-Flags    indoors~
-Desc     This room are all bright. In the walls you can see some
+Vnum      7431
+Name      The glittering room~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room are all bright. In the walls you can see some
 silver. Exits are: West, east and south.
 ~
 #EXIT
@@ -6456,11 +6536,12 @@ ExDesc       The glittering silver looks like it is INSIDE the walls.
 #ENDROOM
 
 #ROOM
-Vnum     7432
-Name     The secret passageroom~
-Sector   underground~
-Flags    dark indoors~
-Desc     You have entered a tiny room. There WAS an exit down, and an
+Vnum      7432
+Name      The secret passageroom~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a tiny room. There WAS an exit down, and an
 exit to the west.
 ~
 #EXIT
@@ -6479,11 +6560,12 @@ ExDesc       A sign is blocking the way. It says 'we have closed an entrance to 
 #ENDROOM
 
 #ROOM
-Vnum     7433
-Name     End of long tunnel~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are at a end of a long tunnel. Right in front of you,
+Vnum      7433
+Name      End of long tunnel~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are at a end of a long tunnel. Right in front of you,
 you can see a grey mass. To the east you can see a tremendous
 long tunnel, but you know that, you has just been there.
 ~
@@ -6510,11 +6592,12 @@ ExDesc       The mass is nothing but a mass, but it is quite suspicious!
 #ENDROOM
 
 #ROOM
-Vnum     7434
-Name     Stair-room~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in a small room. Drawings of faces in pain
+Vnum      7434
+Name      Stair-room~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a small room. Drawings of faces in pain
 are on the walls. You can feel darkness is ruling the place.
 there are two exits: south and down.
 ~
@@ -6528,11 +6611,12 @@ Desc      nothing but darkness
 #ENDROOM
 
 #ROOM
-Vnum     7435
-Name     Dark tunnel~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are standing in a dark tunnel. It continues to the north
+Vnum      7435
+Name      Dark tunnel~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a dark tunnel. It continues to the north
 and to the south. Bones are spread on the floor
 ~
 #EXIT
@@ -6545,7 +6629,7 @@ Direction south~
 ToRoom    7436
 #ENDEXIT
 
-Reset M 0 7042 2 7435
+Reset M 7042 2 7435 -1 -1 -1 100
 #EXDESC
 ExDescKey    bones bone~
 ExDesc       it looks like bones of a human.
@@ -6555,11 +6639,12 @@ ExDesc       it looks like bones of a human.
 #ENDROOM
 
 #ROOM
-Vnum     7436
-Name     Entrance to lair~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     The smell here is awful.  To the south you can see some smoke.
+Vnum      7436
+Name      Entrance to lair~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      The smell here is awful.  To the south you can see some smoke.
 A tunnel leads north, and east.
 ~
 #EXIT
@@ -6584,11 +6669,12 @@ Desc      the only thing you can see are smoke.
 #ENDROOM
 
 #ROOM
-Vnum     7437
-Name     North-eastern part of Basilisks cave~
-Sector   underground~
-Flags    dark indoors~
-Desc     It is hard to see here because of the smoke. To the north you
+Vnum      7437
+Name      North-eastern part of Basilisks cave~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      It is hard to see here because of the smoke. To the north you
 can see barely see a small tunnel. Other exits are to the south
 and to the west.
 ~
@@ -6610,11 +6696,12 @@ ToRoom    7439
 #ENDROOM
 
 #ROOM
-Vnum     7438
-Name     South-eastern part of basilisks cave~
-Sector   underground~
-Flags    dark indoors~
-Desc     There are a very small hole in wall, from where the smoke
+Vnum      7438
+Name      South-eastern part of basilisks cave~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      There are a very small hole in wall, from where the smoke
 are coming from. Otherwise it is pitch dark. Exits are north
 and west.
 ~
@@ -6641,11 +6728,12 @@ ExDesc       It's a small hole. About 1 feet in diameter.
 #ENDROOM
 
 #ROOM
-Vnum     7439
-Name     North-western part of basilisks cave~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can see some hay spread on the floor. The smell is awful here,
+Vnum      7439
+Name      North-western part of basilisks cave~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can see some hay spread on the floor. The smell is awful here,
 and it makes you feel sick.  The basilisk sleeps here.
 Watch out ... Maybe it is not far away.
 ~
@@ -6659,9 +6747,9 @@ Direction south~
 ToRoom    7440
 #ENDEXIT
 
-Reset M 0 7043 3 7439
-  Reset G 1 7207 1
-Reset O 0 7300 8 7439
+Reset M 7043 3 7439 -1 -1 -1 100
+  Reset G 7207 1 100
+Reset O 7300 8 7439 -1 -1 -1 100
 #EXDESC
 ExDescKey    hay~
 ExDesc       The hay is very dirty. The smell of it makes you feel sick.
@@ -6671,11 +6759,12 @@ ExDesc       The hay is very dirty. The smell of it makes you feel sick.
 #ENDROOM
 
 #ROOM
-Vnum     7440
-Name     South-western part of basilisks cave~
-Sector   underground~
-Flags    dark indoors~
-Desc     You can see nothing but smoke. 
+Vnum      7440
+Name      South-western part of basilisks cave~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You can see nothing but smoke. 
 ~
 #EXIT
 Direction north~
@@ -6695,11 +6784,12 @@ ToRoom    7441
 #ENDROOM
 
 #ROOM
-Vnum     7441
-Name     The small cave~
-Sector   underground~
-Flags    dark nomob indoors~
-Desc     You are standing in small cave. You can see
+Vnum      7441
+Name      The small cave~
+Sector    underground~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in small cave. You can see
 some light in the end. Exits are north and south.
 ~
 #EXIT
@@ -6719,11 +6809,12 @@ Desc      You can see a blue glow. And you feel a fresh breeze.
 #ENDROOM
 
 #ROOM
-Vnum     7442
-Name     The northern end of the pool~
-Sector   underground~
-Flags    indoors~
-Desc     You have wet feet, you are standing in water. The water looks calm. You can
+Vnum      7442
+Name      The northern end of the pool~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have wet feet, you are standing in water. The water looks calm. You can
 see that it's a big lake. Light seeps from the water.
 ~
 #EXIT
@@ -6750,11 +6841,12 @@ Desc      You can see water.
 #ENDROOM
 
 #ROOM
-Vnum     7443
-Name     The pool~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are swimming in water. It is getting deep here. It is dark in this end.
+Vnum      7443
+Name      The pool~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are swimming in water. It is getting deep here. It is dark in this end.
 ~
 #EXIT
 Direction south~
@@ -6773,11 +6865,12 @@ Desc      You see calm water.
 #ENDROOM
 
 #ROOM
-Vnum     7444
-Name     The south end of the pool~
-Sector   underground~
-Flags    indoors~
-Desc     You standing in water up to you neck. You can only see water.
+Vnum      7444
+Name      The south end of the pool~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You standing in water up to you neck. You can only see water.
 ~
 #EXIT
 Direction north~
@@ -6793,15 +6886,16 @@ Desc      To dark to tell, but you can feel something nearby.
 ~
 #ENDEXIT
 
-Reset M 0 7041 2 7444
+Reset M 7041 2 7444 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7445
-Name     The pool~
-Sector   underground~
-Flags    dark indoors~
-Desc     You are swimming in DARKNESS. You feel something
+Vnum      7445
+Name      The pool~
+Sector    underground~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are swimming in DARKNESS. You feel something
 touching your right leg.
 ~
 #EXIT

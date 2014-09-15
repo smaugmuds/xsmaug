@@ -1,0 +1,2168 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Mirkwood~
+Author          Yaegar~
+Vnums           8800 8869
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          5 10 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      8800
+Keywords  sylvan elf scout~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     a sylvan elf scout~
+Long      A Sylvan Elf scout is offended at your intrusion!
+~
+Desc      The Sylvan Elves are a good people, but centuries of subjection to the
+violences and prejudices of other races have made them wary and very
+hostile toward outsiders. However, if you're tough enough, perhaps he'll
+back down. As natives of Mirkwood, they are virtually imposssible to see
+if they don't want to be seen.
+~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_hidden infrared hide~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8801
+Keywords  sylvan elf warrior~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     a sylvan elf warrior~
+Long      A Sylvan Elf warrior lunges at you with his sword!
+~
+Desc      The Sylvan Elves are a good people, but centuries of subjection to the
+violences and prejudices of other races have made them wary and very
+hostile toward outsiders. However, if you're tough enough, perhaps he'll
+back down. 
+~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    7 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8802
+Keywords  orc scout~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Specfun   spec_thief~
+Short     an orc scout~
+Long      An Orcish scout screams and attacks!
+~
+Desc      These foul creatures have been sent in advance by Orcish forces to scout
+out the defenses of Mirkwood. So far, their attempts have resulted only
+in their own demise, but eventually the Elves will be worn down by the
+sheer weight of numbers of the immense Orcish hordes.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger aggressive wimpy~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8803
+Keywords  orc warrior~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     an orc warrior~
+Long      An Orcish warrior screams and attacks!
+~
+Desc      These fell minions of Sauron have been sent in an attempt to subjugate 
+Mirkwood. So far, their attempts have resulted only in their own demise, 
+but eventually the Elves will be worn down by the
+sheer weight of numbers of the immense Orcish hordes.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger aggressive~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8804
+Keywords  guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     a wood elf guard~
+Long      A Wood Elf guard angrily accosts you.
+~
+Desc      This angry guard is incensed at your trespass in the hall of his king, and
+will attempt to forcibly eject you.
+~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    8 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8805
+Keywords  chief guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     the chief of the guard~
+Long      A Wood Elf chief of the guard lunges at you with his sword!
+~
+Desc      The Wood Elves are a good people, but centuries of subjection to the
+violences and prejudices of other races have made them wary and very
+hostile toward outsiders. However, if you're tough enough, perhaps he'll
+back down. 
+~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    12 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8806
+Keywords  galion butler~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     Galion the butler~
+Long      A Wood Elf butler glares at you accusingly.
+~
+Desc      Galion has a tremenous fondness for Dorwinion Wine, and he is now well and
+truly inebriated. However that does not mean he won't react to your
+intrusion.
+~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8807
+Keywords  thranduil~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     Thranduil, king of the Wood Elves~
+Long      Thranduil, King of the Wood Elves, eyes you suspiciously.
+~
+Desc      While not immune to the prejudices of his brethren, Thranduil is a trifle
+wiser (and more civilized) and he will not attack without provocation.
+~
+Nattacks  0.000000
+Stats1    500 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8808
+Keywords  wood elf~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     a male wood elf~
+Long      A male Wood Elf glares angrily at you.
+~
+Desc      This person won't attack you like the guards will, but that doesn't mean
+he likes you any more than they do...
+~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    6 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc wimpy~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8809
+Keywords  wood elf~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  dead~
+DefPos    dead~
+Short     a female wood elf~
+Long      A female Wood Elf glares angrily at you.
+~
+Desc      This person won't attack you like the guards will, but that doesn't mean
+ahe likes you any more than they do...
+~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    6 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc wimpy~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8810
+Keywords  turnkey elf~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     the turnkey~
+Long      The turnkey sleeps here.
+~
+Desc      This surly fellow is almost always passed out from copious alcohol
+consumption.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    9 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger stayarea~
+Affected  infrared sleep~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8811
+Keywords  thorin oakenshield~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  dead~
+DefPos    dead~
+Short     Thorin Oakenshield~
+Long      Thorin Oakenshield politely bows before you.
+~
+Desc      This Dwarf is descended from noble blood. He and his fellows were waylaid
+by the Wood Elves while journeying to avenge their brethren against the
+dragon Smaug.
+~
+Nattacks  0.000000
+Stats1    500 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger~
+Affected  protect~
+#ENDMOBILE
+
+#OBJECT
+Vnum      8800
+Keywords  pool~
+Type      fountain~
+Short     a pool~
+Long      A pool of crystal-clear water fills this clearing.
+~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    pool~
+ExDesc       It looks tasty. Have a drink!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      8801
+Keywords  sword~
+Type      weapon~
+Short     an elvish sword~
+Long      A beautiful sword has been left here.
+~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      8802
+Keywords  cloak~
+Type      armor~
+Short     a plain elven cloak~
+Long      A plain, but practical, Elven cloak lies here.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData hit 5 -1 -1 0
+AffData armor -2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      8803
+Keywords  boots~
+Type      armor~
+Short     a pair of plain elven boots~
+Long      A plain, but practical, pair of Elven boots.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData move 50 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      8804
+Keywords  water flask~
+Type      drinkcon~
+Short     a water flask~
+Long      An Elven water flask. It is rumored that they can provide water for days.
+~
+WFlags    take~
+Values    10 10 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      8805
+Keywords  shield~
+Type      armor~
+Short     a spiked metal shield~
+Long      An Orcish spiked metal shield has been left here.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      8806
+Keywords  scimitar~
+Type      weapon~
+Short     an orcish scimitar~
+Long      An Orcish scimitar has been left here.
+~
+WFlags    take~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+AffData strength 1 -1 -1 0
+AffData damroll 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      8807
+Keywords  helm~
+Type      weapon~
+Short     an ugly spiked helm~
+Long      An ugly Orcish spiked helm has been left here.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData armor -5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      8808
+Keywords  flask wine~
+Type      drinkcon~
+Short     a flask of Dorwinion wine~
+Long      A half-drunk flask of fine Dorwinion wine lies here.
+~
+WFlags    take~
+Values    4 2 2 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      8809
+Keywords  barrel wine~
+Type      drinkcon~
+Short     a barrel of Dorwinion wine~
+Long      A barrel of Dorwinion wine is here.
+~
+WFlags    take~
+Values    10 10 2 0 0 0 0 0 0 0 0
+Stats     25 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      8810
+Keywords  barrel~
+Type      container~
+Short     an empty barrel~
+Long      This empty barrel would make a fine boat.
+~
+Flags     organic~
+Values    500 0 0 1 0 0 0 0 0 0 0
+Stats     25 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      8811
+Keywords  sword~
+Type      weapon~
+Short     a fine elven sword~
+Long      A fine Elven sword glimmers softly here.
+~
+Flags     glow~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     18 0 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      8812
+Keywords  key~
+Type      key~
+Short     a key~
+Long      A key to a cell door is here.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      8813
+Keywords  key~
+Type      key~
+Short     a key~
+Long      A key to a cave door is here.
+~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      8800
+Name      Entrance to Mirkwood~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have entered the quasi-magical Elven forest of Mirkwood, populated by
+Sylvan Elves and their mysterious allies. Strangers are frowned upon here,
+so be on your guard. It is rumored that many different races of Elves
+actually inhabit this forest, in various parts and sometimes they are
+carefully hidden, away from the prying eyes of strangers.
+
+There is a sign tacked to a tree nearby.
+~
+#EXIT
+Direction north~
+ToRoom    8801
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8855
+#ENDEXIT
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       This area serves as a connector for many areas with an Elven or Faerie
+flavour, favored areas of the Immortal Yaegar. Tread carefully, and remember
+to keep track of where you have been.
+
+--Yaegar
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      8801
+Name      The Path Through Mirkwood~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are advancing along a narrow path that runs deep into the forest of
+Mirkwood. Giant, ancient trees tower over you to either side, and sweet
+songbirds sing in their lofty branches. However, despite this serene scene,
+you can't shake the feeling that you're being watched.
+~
+#EXIT
+Direction north~
+ToRoom    8802
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8800
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8802
+Name      The Path Through Mirkwood~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are advancing along a narrow path that runs deep into the forest of
+Mirkwood. Giant, ancient trees tower over you to either side, and sweet
+songbirds sing in their lofty branches. However, despite this serene scene,
+you can't shake the feeling that you're being watched.
+~
+#EXIT
+Direction north~
+ToRoom    8803
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8801
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8803
+Name      A Fork in the Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached a point where the path branches, with paths running to the
+east and west. A wild animal suddenly howls angrily some distance away, and
+you involuntarily jump.
+~
+#EXIT
+Direction east~
+ToRoom    8804
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8802
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8820
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8804
+Name      A Broad Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This branch of the path widens out after a short distance, and you notice
+signs of heavy use, evidently by non-Elves, as Elves do not leave footprints.
+The trees are thinner and smaller in this part of the forest, giving the
+impression that it has been recently cleared.
+~
+#EXIT
+Direction east~
+ToRoom    8805
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8803
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8805
+Name      Another Junction~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path once again divides, this time into northern and southern branches.
+To the north an impressive-looking citadel looms over the treetops, while
+to the south the trail becomes significantly narrower, and overgrown.
+~
+#EXIT
+Direction north~
+ToRoom    8806
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8808
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8804
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8806
+Name      A Bend in the Road~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The northern road bends to the east at this point, allowing you to gaze
+upon a wondrous Elven Fortress. Although you are more than a mile away,
+it still looms large ahead of you.
+~
+#EXIT
+Direction east~
+ToRoom    8807
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8805
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8807
+Name      Plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The road opens onto an area cleared of trees here, a broad plain dotted with
+the occasional hedge or distant farmhouse. There is a marked path running
+due east toward the west gate of the distant fortress.
+~
+#EXIT
+Direction east~
+ToRoom    400
+Desc      the plains of malathar~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8806
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8808
+Name      The Southern Trail~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Progress along this narrow, overgrown path is next to impossible, and you
+find yourself having to stop several times for a rest. There doesn't seem to
+be any quick end to it either.
+~
+#EXIT
+Direction north~
+ToRoom    8805
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8809
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8809
+Name      The Southern Trail~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Progress along this narrow, overgrown path is next to impossible, and you
+find yourself having to stop several times for a rest. There doesn't seem to
+be any quick end to it either.
+
+You spy a rope ladder ascending to a platform in a nearby tree.
+~
+#EXIT
+Direction north~
+ToRoom    8808
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8811
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    8810
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8810
+Name      A Guard Post~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have stumbled into a Sylvan Elf guard post, from which they carefully
+watch out for intruding Orcs or Goblins. They dislike strangers in general,
+and detest interlopers into their personal areas even more. Expect a violent
+reception if there is a guard present...
+~
+#EXIT
+Direction down~
+ToRoom    8809
+#ENDEXIT
+
+Reset M 8800 4 8810 -1 -1 -1 100
+  Reset E 8801 0 16 100
+  Reset E 8802 0 12 100
+  Reset E 8803 0 8 100
+  Reset G 8804 0 100
+#ENDROOM
+
+#ROOM
+Vnum      8811
+Name      The Southern Trail~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Progress along this narrow, overgrown path is next to impossible, and you
+find yourself having to stop several times for a rest. There doesn't seem to
+be any quick end to it either.
+
+At this point you may follow a side trail which runs to the east. It seems 
+to be a little less overgrown.
+~
+#EXIT
+Direction north~
+ToRoom    8809
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8813
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8812
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8812
+Name      A Dead End~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      WHAT? After all that exertion, the path ends at a DEAD END??? Ah well, I
+guess you had better turn back...
+~
+#EXIT
+Direction north~
+ToRoom    8811
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8813
+Name      The Eastern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path is certainly less overgrown than the north-south one. You actually
+find yourself able to move relatively quickly through the forest, stopping
+only occasionally to hack away an overhanging branch or vine.
+~
+#EXIT
+Direction east~
+ToRoom    8814
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8811
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8814
+Name      The Eastern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path is certainly less overgrown than the north-south one. You actually
+find yourself able to move relatively quickly through the forest, stopping
+only occasionally to hack away an overhanging branch or vine.
+~
+#EXIT
+Direction east~
+ToRoom    8815
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8813
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8815
+Name      A Bend in the Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached a point where the path bends to the north.
+~
+#EXIT
+Direction north~
+ToRoom    8816
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8814
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8816
+Name      The Northern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path here is fairly clear and free of vegetation. It actually looks
+fairly well-maintained. You think you can hear a distant singing to the
+north.
+~
+#EXIT
+Direction north~
+ToRoom    8817
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8815
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8817
+Name      The Northern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path here is fairly clear and free of vegetation. It actually looks
+fairly well-maintained. You think you can hear a distant singing to the
+north.
+
+Another path runs to the east of here.
+~
+#EXIT
+Direction north~
+ToRoom    8819
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8818
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8816
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8818
+Name      The End of the Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path ends here in a small clearing with a small shallow pool of crystal
+clear water. You feel strangely at ease here.
+~
+#EXIT
+Direction west~
+ToRoom    8817
+#ENDEXIT
+
+Reset O 8800 0 8818 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8819
+Name      Approaching the Holy Grove~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The singing is clearly audible here, and it is coming from a well-tended
+grove to the east. Dimly visible are all manner of man and beast, and 
+although they would usually feed upon each other, they all seem to be at
+peace.
+~
+#EXIT
+Direction east~
+ToRoom    8904
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8817
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8820
+Name      The Western Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path is rather overgrown but it is still easily navigable. You fancy
+you can see a rope ladder ascending into the brances of a tall oak near the
+eastern side of the road.
+~
+#EXIT
+Direction east~
+ToRoom    8803
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8822
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    8821
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8821
+Name      A Guard Post~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have stumbled into a Sylvan Elf guard post, from which they carefully
+watch out for intruding Orcs or Goblins. They dislike strangers in general,
+and detest interlopers into their personal areas even more. Expect a violent
+reception if there is a guard present...
+~
+#EXIT
+Direction down~
+ToRoom    8820
+#ENDEXIT
+
+Reset M 8801 4 8821 -1 -1 -1 100
+  Reset E 8801 0 16 100
+  Reset E 8802 0 12 100
+  Reset E 8803 0 8 100
+  Reset G 8804 0 100
+#ENDROOM
+
+#ROOM
+Vnum      8822
+Name      A Bend to the North~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path bends to the north here, running for some distance toward a stream.
+~
+#EXIT
+Direction north~
+ToRoom    8823
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8820
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8823
+Name      A Northern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path is fairly even and well-used, so going is not as rough as the
+previous paths. There is a wide stream dead ahead.
+~
+#EXIT
+Direction north~
+ToRoom    8824
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8822
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8824
+Name      A Stream~
+Sector    water_swim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This stream is too wide and deep to wade across. You'll need a boat or a 
+spell. Mind you, you could always whip out your rod and start angling :)
+~
+#EXIT
+Direction north~
+ToRoom    8825
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8866
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8823
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8825
+Name      A Northern Path~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This path is fairly even and well-used, so going is not as rough as the
+previous paths. There is a wide stream to the south.
+
+A broad, tree-lined path runs to the east.
+~
+#EXIT
+Direction north~
+ToRoom    8826
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8856
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8824
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8826
+Name      A Junction~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached a point where you can proceed either north or west. Your
+choice. You still have the feeling you're being watched...
+~
+#EXIT
+Direction north~
+ToRoom    8830
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8825
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8827
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8827
+Name      The Western Path~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path you are on here runs down a gently sloping hill, to the base of a
+beautiful valley below.
+~
+#EXIT
+Direction east~
+ToRoom    8826
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    8828
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8828
+Name      The Hill~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path you are on here runs down a gently sloping hill, to the base of a
+beautiful valley below.
+~
+#EXIT
+Direction up~
+ToRoom    8827
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    8829
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8829
+Name      The Base of the Hill~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You can proceed north toward the valley from here, or return to the summit
+above.
+~
+#EXIT
+Direction north~
+ToRoom    7800
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    8828
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8830
+Name      A Northern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path is fairly even and well-used, so going is not as rough as the
+previous paths. There is a narrow path to the east.
+~
+#EXIT
+Direction north~
+ToRoom    8832
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8831
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8826
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8831
+Name      A Narrow Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking along a narrow path that runs from the major northern path
+through Mirkwood. Up ahead the path ends in a dead end.
+~
+#EXIT
+Direction east~
+ToRoom    29001
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8830
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8832
+Name      A Northern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path is fairly even and well-used, so going is not as rough as the
+previous paths.
+~
+#EXIT
+Direction north~
+ToRoom    8833
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8830
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8833
+Name      A Northern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path is fairly even and well-used, so going is not as rough as the
+previous paths. There is a broad junction to the north.
+~
+#EXIT
+Direction north~
+ToRoom    8834
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8832
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8834
+Name      A Broad Junction~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come to another junction in the forest. The path to the east runs
+through some handsome aspen and pine, but the northern passage is lined by
+sickly-looking, dying trees of unidentifiable type.
+~
+#EXIT
+Direction north~
+ToRoom    8835
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8841
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8833
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8835
+Name      An Evil Section of the Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      There is a palpable evil in this area that causes you to shiver as you pass
+by the blighted vegetation that lines this twisted gray path. The sky can
+no longer be seen overhead- instead a canopy of decaying leaves and rotten
+branches obscures your view.
+~
+#EXIT
+Direction north~
+ToRoom    8836
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8834
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8836
+Name      An Evil Section of the Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      There is a palpable eveil in this area that causes you to shiver as you pass
+by the blighted vegetation that lines this twisted gray path. The sky can
+no longer be seen overhead- instead a canopy of decaying leaves and rotten
+branches obscures your view.
+~
+#EXIT
+Direction south~
+ToRoom    8835
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8837
+#ENDEXIT
+
+Reset M 8802 3 8836 -1 -1 -1 100
+  Reset E 8805 0 11 100
+  Reset E 8806 0 16 100
+  Reset E 8807 0 6 100
+#ENDROOM
+
+#ROOM
+Vnum      8837
+Name      An Evil Section of the Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      There is a palpable eveil in this area that causes you to shiver as you pass
+by the blighted vegetation that lines this twisted gray path. The sky can
+no longer be seen overhead- instead a canopy of decaying leaves and rotten
+branches obscures your view.
+
+The dying screams of some animal can be heard.
+~
+#EXIT
+Direction east~
+ToRoom    8836
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8838
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8838
+Name      An Evil Section of the Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      There is a palpable eveil in this area that causes you to shiver as you pass
+by the blighted vegetation that lines this twisted gray path. The sky can
+no longer be seen overhead- instead a canopy of decaying leaves and rotten
+branches obscures your view.
+
+Maggots crawl from a decaying Elven corpse hanging from an overhead branch.
+The stench is unbearable.
+
+To the north you see a shadowy area of the forest.
+~
+#EXIT
+Direction north~
+ToRoom    1300
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8837
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8839
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8839
+Name      An Evil Section of the Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      There is a palpable eveil in this area that causes you to shiver as you pass
+by the blighted vegetation that lines this twisted gray path. The sky can
+no longer be seen overhead- instead a canopy of decaying leaves and rotten
+branches obscures your view.
+
+At this point the twisting turning path runs sharply downward toward a large
+gash in the side of a grey cliff face.
+~
+#EXIT
+Direction east~
+ToRoom    8838
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8840
+#ENDEXIT
+
+Reset M 8803 3 8839 -1 -1 -1 100
+  Reset E 8805 0 11 100
+  Reset E 8806 0 16 100
+  Reset E 8807 0 6 100
+#ENDROOM
+
+#ROOM
+Vnum      8840
+Name      The Cliff Face~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing before the gash in the cliff-face now, wondering whether
+you should continue into the inky darkness beyond...
+~
+#EXIT
+Direction north~
+ToRoom    8839
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    14000
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8841
+Name      A Bend in the Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You reach a bend in the path, where you can head north or west.
+~
+#EXIT
+Direction north~
+ToRoom    8842
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8834
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8842
+Name      A Bend in the Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You reach a bend in the path, where you can head south or east.
+~
+#EXIT
+Direction east~
+ToRoom    8843
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8841
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8843
+Name      A Junction~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path once again divides, this time into northern and southern branches.
+To the north lies another bend in the trail, while to the south the trail 
+becomes significantly narrower, and overgrown.
+~
+#EXIT
+Direction north~
+ToRoom    8845
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8844
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8842
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8844
+Name      A Dead End~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The passage ends in a dead end, but you see a small rope ladder hanging down
+from a nearby oak tree, disappearing in its bushy branches above.
+~
+#EXIT
+Direction north~
+ToRoom    8843
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    8846
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8845
+Name      A Bend in the Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here, the path bends sharply to the east, heading toward an area of the
+forest that is very different from the previous section. A second path
+runs to the north.
+~
+#EXIT
+Direction north~
+ToRoom    8868
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8847
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8843
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8846
+Name      A Guard Post~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have stumbled into a Sylvan Elf guard post, from which they carefully
+watch out for intruding Orcs or Goblins. They dislike strangers in general,
+and detest interlopers into their personal areas even more. Expect a violent
+reception if there is a guard present...
+~
+#EXIT
+Direction down~
+ToRoom    8844
+#ENDEXIT
+
+Reset M 8800 4 8846 -1 -1 -1 100
+  Reset E 8801 0 16 100
+  Reset E 8802 0 12 100
+  Reset E 8803 0 8 100
+  Reset G 8804 0 100
+#ENDROOM
+
+#ROOM
+Vnum      8847
+Name      A T-Junction~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have come out of Mirkwood onto a rather dusty trail. At this point you
+may proceed east toward some well-cultivated fields, or south and west back
+into the forest.
+~
+#EXIT
+Direction east~
+ToRoom    8848
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8849
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8845
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8848
+Name      Cultivated Field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This field borders on a neatly-tended area with several small farmhouses and
+a small watch-tower near a wide stream.
+~
+#EXIT
+Direction east~
+ToRoom    5600
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8847
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8849
+Name      A Desolate Section of the Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have entered a rather forlorn section of the forest, littered with dead
+and dying trees, plus the occasional corpse. Howls and cries of pain sound
+far off to the south.
+~
+#EXIT
+Direction north~
+ToRoom    8847
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8850
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8850
+Name      A Desolate Section of the Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have entered a rather forlorn section of the forest, littered with dead
+and dying trees, plus the occasional corpse. Howls and cries of pain sound
+far off to the south.
+~
+#EXIT
+Direction south~
+ToRoom    8851
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8849
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8851
+Name      A Desolate Section of the Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have entered a rather forlorn section of the forest, littered with dead
+and dying trees, plus the occasional corpse. Howls and cries of pain sound
+far off to the south.
+
+To the south is a particularly dark patch of forest.
+~
+#EXIT
+Direction north~
+ToRoom    8850
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3505
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8852
+Name      The Path to Firetop Mountain~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path runs past the rubble and up into the foothills of an immense
+mountain range. far in the distance looms Firetop Mountain.
+~
+#EXIT
+Direction north~
+ToRoom    8853
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    5649
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8853
+Name      The Path Continues~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue for what seems like an eternity, drawing slowly closer to the
+distant peak.
+~
+#EXIT
+Direction north~
+ToRoom    8854
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8852
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8854
+Name      The Path Continues~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue for what seems like an eternity, drawing slowly closer to the
+distant peak.
+~
+#EXIT
+Direction north~
+ToRoom    5735
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8853
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8855
+Name      Approaching Mirkwood~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The forest begins to surround you as you step into its depths. The path
+abruptly turns to the north and you continue.
+~
+#EXIT
+Direction north~
+ToRoom    8800
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    338
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8856
+Name      A Broad Tree-Lined Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path runs for some distance toward a huge cave, entrance to which is 
+restricted by a massive, handsome door that glows with magic. Magnificent
+oaks tower high to either side, and everywhere there is light and beauty.
+However, intruders are frowned upon here, so be on your guard.
+~
+#EXIT
+Direction east~
+ToRoom    8857
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8825
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8857
+Name      A Broad Tree-Lined Path~
+Sector    forest~
+Flags     nomagic~
+Stats     0 0 0 0 0
+Desc      This path runs for some distance toward a huge cave, entrance to which is 
+restricted by a massive, handsome door that glows with magic. Magnificent
+oaks tower high to either side, and everywhere there is light and beauty.
+However, intruders are frowned upon here, so be on your guard.
+
+The entrance is directly before you.
+~
+#EXIT
+Direction east~
+ToRoom    8858
+Key       8813
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8856
+#ENDEXIT
+
+Reset M 8804 4 8857 -1 -1 -1 100
+  Reset E 8801 0 16 100
+  Reset E 8802 0 12 100
+  Reset E 8803 0 8 100
+  Reset G 8804 0 100
+  Reset G 8813 0 100
+Reset D 8857 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      8858
+Name      Inside the Cave~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in the castle of the Wood Elven King Thranduil. The corridor here
+is usually deserted. It would be advisable to keep a low profile, as the
+natives are hostile...
+
+The enchantments here prohibit spellcasting of any form.
+~
+#EXIT
+Direction north~
+ToRoom    8859
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8864
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8857
+Key       8813
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset D 8858 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      8859
+Name      Inside the Cave~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in the castle of the Wood Elven King Thranduil. The corridor here
+is usually deserted. It would be advisable to keep a low profile, as the
+natives are hostile...
+~
+#EXIT
+Direction east~
+ToRoom    8860
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8858
+#ENDEXIT
+
+Reset M 8808 2 8859 -1 -1 -1 100
+Reset D 8859 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      8860
+Name      A Guard Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have stumbled into the guard room! The guards will definitely not
+be happy to see you. You fancy you can hear muffled cries for help.
+~
+#EXIT
+Direction north~
+ToRoom    8867
+Key       8812
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8861
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8859
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 8810 1 8860 -1 -1 -1 100
+  Reset G 8812 0 100
+  Reset G 8808 0 100
+Reset D 8860 3 1 100 -2
+Reset D 8860 0 2 100 -2
+Reset D 8860 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      8861
+Name      Storage Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      In this room the Elves store their foodstuffs and beloved Dorwinion Wine.
+A trapdoor in the floor allows access to the river, and it is through here
+that the Elves deposit their empty barrels, so that the river may carry
+them down to Lake Town.
+~
+#EXIT
+Direction west~
+ToRoom    8860
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    8862
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 8805 1 8861 -1 -1 -1 100
+  Reset G 8808 0 100
+Reset M 8806 1 8861 -1 -1 -1 100
+  Reset E 8801 0 16 100
+  Reset E 8802 0 12 100
+  Reset E 8803 0 8 100
+  Reset G 8804 0 100
+Reset O 8809 0 8861 -1 -1 -1 100
+Reset O 8810 0 8861 -1 -1 -1 100
+Reset D 8861 3 1 100 -2
+Reset D 8861 5 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      8862
+Name      The River~
+Sector    water_noswim~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You are floating along a river that will carry you back through the forest,
+and eventually to Lake Town.
+~
+#EXIT
+Direction south~
+ToRoom    8863
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    8861
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 8862 4 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      8863
+Name      The River~
+Sector    water_noswim~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You are floating along a river that will carry you back through the forest,
+and eventually to Lake Town.
+~
+#EXIT
+Direction north~
+ToRoom    8862
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8866
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8864
+Name      Inside the Cave~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in the castle of the Wood Elven King Thranduil. The corridor here
+is usually deserted. It would be advisable to keep a low profile, as the
+natives are hostile...
+~
+#EXIT
+Direction north~
+ToRoom    8858
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8865
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 8809 2 8864 -1 -1 -1 100
+Reset D 8864 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      8865
+Name      The Throne Room of Thrandul~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Now you've blown it. You've gone and stumbled into the King's Throne Room.
+He is seated upon an intricately-carved wooden throne at the end of the hall.
+Dour guards glare at you on all sides.
+~
+#EXIT
+Direction west~
+ToRoom    8864
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 8807 1 8865 -1 -1 -1 100
+  Reset E 8811 0 16 100
+Reset M 8804 4 8865 -1 -1 -1 100
+  Reset E 8801 0 16 100
+  Reset E 8802 0 12 100
+  Reset E 8803 0 8 100
+  Reset G 8804 0 100
+Reset D 8865 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      8866
+Name      The River~
+Sector    water_noswim~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You are floating along a river that will carry you back through the forest,
+and eventually to Lake Town.
+~
+#EXIT
+Direction north~
+ToRoom    8863
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8824
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8867
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This damp cell is small and cramped, and offers little comfort to its 
+single inhabitant.
+~
+#EXIT
+Direction south~
+ToRoom    8860
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 8811 1 8867 -1 -1 -1 100
+Reset D 8867 2 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      8868
+Name      A Northern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path runs more or less directly north toward a rather old-looking
+section of the woods.
+~
+#EXIT
+Direction north~
+ToRoom    8869
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8845
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8869
+Name      A Northern Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are progressing along a long, straight northern path. Up ahead, you can 
+see some sort of clearing.
+~
+#EXIT
+Direction north~
+ToRoom    9001
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8868
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

@@ -1,64 +1,67 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Gods~
-Author       ROD~
-WeatherX     0
-WeatherY     0
-Ranges       0 60 0 60
-Economy      0 45000000
-ResetMsg     A low humming noise can be heard.~
+Version         1
+Name            Gods~
+Author          ROD~
+Vnums           1200 1201
+Continent       one~
+Coordinates     0 0
+Dates           1403834970 1403834970
+Ranges          0 60 0 60
+ResetMsg        A low humming noise can be heard.~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       1200
-Keywords   mobile~
-Short      a mobile~
-Long       A mobile is here.
+Vnum      1200
+Keywords  mobile~
+Race      halfling~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a mobile~
+Long      A mobile is here.
 ~
-Race       halfling~
-Class      mage~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc prototype~
-Stats1     0 1 50 0 100 4000
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 0
-Saves      0 0 0 0 0
-Speaks     common halfling~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaks    common halfling~
+Speaking  common~
+Actflags  npc proto~
 #ENDMOBILE
 
 #OBJECT
-Vnum     1200
-Keywords immortal board~
-Type     furniture~
-Short    the immortal board~
-Long     Mystical sparkling colors converge here to form arcane runes...~
-Values   0 0 0 0 0 0
-Stats    1 10 1 0 0
+Vnum      1200
+Keywords  immortal board~
+Type      furniture~
+Short     the immortal board~
+Long      Mystical sparkling colors converge here to form arcane runes...~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 10 -2 9999 0 None None None
 #ENDOBJECT
 
 #ROOM
-Vnum     1200
-Name     The Parlour of the Immortals~
-Sector   inside~
-Flags    nomob indoors nosummon noastral~
-Desc     You are lounging in a quiet cosy parlour, warmed by a gentle magical fire
+Vnum      1200
+Name      The Parlour of the Immortals~
+Sector    indoors~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      You are lounging in a quiet cosy parlour, warmed by a gentle magical fire
 which twinkles happily in a warm fireplace. 
  
 ~
+Reset O 1200 1 1200 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     1201
-Name     Thoric's Den~
-Sector   inside~
-Flags    nomob indoors private nosummon noastral~
-Desc     You find yourself in a cozy little room.
+Vnum      1201
+Name      Thoric's Den~
+Sector    indoors~
+Flags     nomob indoors nosummon private noastral~
+Stats     0 0 0 0 0
+Desc      You find yourself in a cozy little room.
 This is the place where Thoric comes to relax, and get inspired!
 Looking around yourself, you find this to be quite a comfortable, medieval
 room, which seems to be inside some sort of log cabin.  There's a very nice

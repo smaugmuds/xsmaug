@@ -1,197 +1,179 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Chapel of the Gods~
-Author       Paladia~
-WeatherX     0
-WeatherY     0
-Ranges       5 50 5 65
-Economy      0 1398692
+Version         1
+Name            Chapel of the Gods~
+Author          Paladia~
+Vnums           12000 12050
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          5 50 5 65
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       12000
-Keywords   Palace Guard~
-Short      a Chapel guard~
-Long       A menacing guard stands here protecting the innocent.
+Vnum      12000
+Keywords  Palace Guard~
+Race      dwarf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a Chapel guard~
+Long      A menacing guard stands here protecting the innocent.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea~
-Affected   sanctuary truesight~
-Stats1     0 35 0 0 350000 0
-Stats2     10 30 2000
-Stats3     5 5 5
-Stats4     0 0 2 20 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   dwarven~
-Immune     sleep charm~
-Attacks    kick trip~
-Defenses   dodge~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    35 21 0 2000 5 5 5
+Speaks    common~
+Speaking  dwarven~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary truesight~
+Immune    drain sleep~
+Attacks   kick trip~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12001
-Keywords   Loyal Follower~
-Short      a loyal follower~
-Long       A loyal follower of Paladia smiles happily.
+Vnum      12001
+Keywords  Loyal Follower~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a loyal follower~
+Long      A loyal follower of Paladia smiles happily.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc sentinel stayarea~
-Affected   truesight~
-Stats1     0 43 0 0 150000 0
-Stats2     1000 1 3000
-Stats3     3 2 0
-Stats4     0 0 3 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Immune     sleep charm paralysis~
-Attacks    trip~
-Defenses   dodge~
+Nattacks  3.000000
+Stats1    0 -1 0 0 0 0
+Stats2    43 21 0 3000 3 2 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  truesight~
+Immune    drain sleep magic~
+Attacks   trip~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12002
-Keywords   Devout Follower~
-Short      a Devout Follower~
-Long       A devout worshiper of Paladia screams in ecstacy.
+Vnum      12002
+Keywords  Devout Follower~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a Devout Follower~
+Long      A devout worshiper of Paladia screams in ecstacy.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc~
-Affected   truesight~
-Stats1     0 50 0 -100 150000 0
-Stats2     30 20 1000
-Stats3     3 3 5
-Stats4     0 0 2 20 0
-Attribs    13 13 13 18 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Immune     fire sleep charm paralysis~
-Attacks    kick gouge~
-Defenses   dodge~
+Nattacks  2.000000
+Stats1    0 -1 0 0 0 0
+Stats2    50 21 -100 1000 3 3 5
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  truesight~
+Immune    NONE drain sleep magic~
+Attacks   kick gouge~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12003
-Keywords   Quiet Priest~
-Short      a Quiet Priest~
-Long       A quiet priest goes about his daily duties.
+Vnum      12003
+Keywords  Quiet Priest~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a Quiet Priest~
+Long      A quiet priest goes about his daily duties.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_cleric~
-Gender     neuter~
-Actflags   npc stayarea~
-Affected   detect_invis detect_hidden sanctuary truesight~
-Stats1     1000 50 0 -100 250000 0
-Stats2     100 10 2500
-Stats3     5 10 0
-Stats4     0 0 3 40 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Immune     sleep charm magic~
-Attacks    kick~
-Defenses   dodge~
+Nattacks  3.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    50 21 -100 2500 5 10 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_invis detect_hidden sanctuary truesight~
+Immune    drain sleep plus6~
+Attacks   kick~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12004
-Keywords   Head Priest~
-Short      the Head priest~
-Long       A quiet priest goes about his daily duties.
+Vnum      12004
+Keywords  Head Priest~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the Head priest~
+Long      A quiet priest goes about his daily duties.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_cleric~
-Gender     neuter~
-Actflags   npc sentinel stayarea~
-Affected   detect_invis detect_hidden sanctuary truesight fireshield iceshield~
-Stats1     1000 50 0 -100 250000 0
-Stats2     10 10 4900
-Stats3     5 10 0
-Stats4     0 0 3 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Immune     sleep charm magic~
-Attacks    kick nastypoison curse harm weaken~
-Defenses   dodge heal bless~
+Nattacks  3.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    50 21 -100 4900 5 10 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary truesight fireshield iceshield~
+Immune    drain sleep plus6~
+Attacks   kick nastypoison curse harm weaken~
+Defenses  dodge heal bless~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12005
-Keywords   Angry Guard~
-Short      a angry guard~
-Long       A angry guard wants to know why you are here.
+Vnum      12005
+Keywords  Angry Guard~
+Race      dwarf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a angry guard~
+Long      A angry guard wants to know why you are here.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel scavenger aggressive stayarea nowander~
-Affected   sanctuary truesight~
-Stats1     0 53 0 -130 350000 0
-Stats2     6000 1 0
-Stats3     10 3 5
-Stats4     0 0 3 40 0
-Attribs    13 13 13 16 13 13 13
-Saves      0 0 0 0 0
-Speaks     common dwarven~
-Speaking   dwarven~
-Immune     sleep charm paralysis~
-Attacks    kick trip~
-Defenses   dodge heal disarm~
+Nattacks  3.000000
+Stats1    0 -1 0 0 0 0
+Stats2    53 21 -130 0 10 3 5
+Speaks    common dwarven~
+Speaking  dwarven~
+Actflags  npc sentinel scavenger aggressive stayarea nowander~
+Affected  sanctuary truesight~
+Immune    drain sleep magic~
+Attacks   kick trip~
+Defenses  dodge heal disarm~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12006
-Keywords   Sleeping Priest~
-Short      a sleeping priest~
-Long       A Priest lies here and sleeps heavily.
+Vnum      12006
+Keywords  Sleeping Priest~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a sleeping priest~
+Long      A Priest lies here and sleeps heavily.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_cleric~
-Gender     neuter~
-Actflags   npc sentinel stayarea~
-Affected   detect_invis detect_hidden sanctuary truesight fireshield iceshield~
-Stats1     1000 50 0 -100 250000 0
-Stats2     5555 1 4444
-Stats3     5 10 10
-Stats4     0 0 3 20 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Immune     sleep charm magic~
-Attacks    kick nastypoison curse harm weaken~
-Defenses   dodge heal bless~
+Nattacks  3.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    50 21 -100 4444 5 10 10
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary truesight fireshield iceshield~
+Immune    drain sleep plus6~
+Attacks   kick nastypoison curse harm weaken~
+Defenses  dodge heal bless~
 #MUDPROG
 Progtype  fight_prog~
 Arglist   100~
@@ -202,42 +184,28 @@ Comlist   c gas
 #ENDMOBILE
 
 #MOBILE
-Vnum       12007
-Keywords   Avatar Paladia~
-Short      the Avatar of Paladia~
-Long       An avatar to a god sits on his throne pondering your exsistence.
+Vnum      12007
+Keywords  Avatar Paladia~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the Avatar of Paladia~
+Long      An avatar to a god sits on his throne pondering your exsistence.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     male~
-Actflags   npc sentinel stayarea~
-Affected   sanctuary protect truesight fireshield shockshield iceshield~
-Stats1     1000 50 0 0 1500000 0
-Stats2     20000 1 10000
-Stats3     15 4 15
-Stats4     0 0 4 75 20
-Attribs    18 13 13 13 13 13 13
-Saves      -30 -30 -30 -30 -30
-Speaks     common~
-Speaking   common~
-Resist     nonmagic~
-Immune     sleep charm magic paralysis~
-Attacks    trip bash~
-Defenses   dodge heal dispelevil disarm~
-#MUDPROG
-Progtype  act_prog~
-Arglist   p DISARMS you!~
-Comlist   laugh
-shake
-'Nice try little man.
-mpdamage $n 200
-wie div
-~
-#ENDPROG
-
+Nattacks  4.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    50 21 0 10000 15 4 15
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary protect truesight fireshield shockshield iceshield~
+Resist    hold~
+Immune    drain sleep plus6 magic~
+Attacks   trip bash~
+Defenses  dodge heal dispelevil disarm~
 #MUDPROG
 Progtype  fight_prog~
 Arglist   100~
@@ -266,60 +234,65 @@ at 1 wear all
 ~
 #ENDPROG
 
+#MUDPROG
+Progtype  act_prog~
+Arglist   p DISARMS you!~
+Comlist   laugh
+shake
+'Nice try little man.
+mpdamage $n 200
+wie div
+~
+#ENDPROG
+
 #ENDMOBILE
 
 #MOBILE
-Vnum       12008
-Keywords   Importanat Guard~
-Short      A Important Guard~
-Long       A Important man guards the Avatar to the north.
+Vnum      12008
+Keywords  Importanat Guard~
+Race      dwarf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A Important Guard~
+Long      A Important man guards the Avatar to the north.
 ~
-Race       dwarf~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel scavenger aggressive stayarea nowander~
-Affected   sanctuary truesight~
-Stats1     0 53 0 -130 350000 0
-Stats2     6000 1 0
-Stats3     10 3 5
-Stats4     0 0 3 30 0
-Attribs    13 13 13 16 13 13 13
-Saves      0 0 0 0 0
-Speaks     common dwarven~
-Speaking   dwarven~
-Immune     sleep charm paralysis~
-Attacks    trip bash harm~
-Defenses   dodge heal bless stoneskin~
+Nattacks  3.000000
+Stats1    0 -1 0 0 0 0
+Stats2    53 21 -130 0 10 3 5
+Speaks    common dwarven~
+Speaking  dwarven~
+Actflags  npc sentinel scavenger aggressive stayarea nowander~
+Affected  sanctuary truesight~
+Immune    drain sleep magic~
+Attacks   trip bash harm~
+Defenses  dodge heal bless stoneskin~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12009
-Keywords   High Priest~
-Short      A high priest of the Avatar~
-Long       A high priest of the avatar sits here doing his duty.
+Vnum      12009
+Keywords  High Priest~
+Race      human~
+Class     Cleric~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     A high priest of the Avatar~
+Long      A high priest of the avatar sits here doing his duty.
 ~
-Race       human~
-Class      cleric~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_cleric~
-Gender     neuter~
-Actflags   npc sentinel stayarea~
-Affected   detect_invis detect_hidden sanctuary truesight fireshield shockshield iceshield~
-Stats1     1000 50 0 -100 250000 0
-Stats2     3000 1 8000
-Stats3     5 10 0
-Stats4     0 0 3 30 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Resist     nonmagic~
-Immune     sleep charm magic~
-Attacks    nastypoison curse harm weaken~
-Defenses   dodge heal bless~
+Nattacks  3.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    50 21 -100 8000 5 10 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary truesight fireshield shockshield iceshield~
+Resist    hold~
+Immune    drain sleep plus6~
+Attacks   nastypoison curse harm weaken~
+Defenses  dodge heal bless~
 #MUDPROG
 Progtype  fight_prog~
 Arglist   100~
@@ -350,46 +323,28 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       12010
-Keywords   Gift Shop Priest~
-Short      A gift shop priest~
-Long       A Priest runs a shop here
+Vnum      12010
+Keywords  Gift Shop Priest~
+Race      high-elf~
+Class     Mage~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     A gift shop priest~
+Long      A Priest runs a shop here
 ~
-Race       elf~
-Class      mage~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel~
-Affected   detect_invis detect_hidden truesight~
-Stats1     0 50 0 0 1000000 0
-Stats2     1 1 30000
-Stats3     4 5 100
-Stats4     0 0 6 0 0
-Attribs    18 18 18 18 13 13 18
-Saves      0 0 0 0 0
-Speaks     common elvish~
-Speaking   elvish~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Immune     sleep charm nonmagic magic paralysis~
-Attacks    punch kick~
-Defenses   parry dodge~
+Nattacks  6.000000
+Stats1    0 -1 0 0 0 0
+Stats2    50 21 0 30000 4 5 100
+Speaks    common elvish~
+Speaking  elvish~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden truesight~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    drain sleep hold plus6 magic~
+Attacks   punch kick~
+Defenses  parry dodge~
 ShopData   0 0 0 0 0 120 100 0 23
-#MUDPROG
-Progtype  fight_prog~
-Arglist   100~
-Comlist   mpslay $n
-~
-#ENDPROG
-
-#MUDPROG
-Progtype  speech_prog~
-Arglist   p take me back~
-Comlist   nod $n
-mptransfer $n doorman
-~
-#ENDPROG
-
 #MUDPROG
 Progtype  act_prog~
 Arglist   p gives you Lowbie token.~
@@ -418,46 +373,67 @@ endif
 ~
 #ENDPROG
 
-#ENDMOBILE
-
-#MOBILE
-Vnum       12011
-Keywords   Doorman~
-Short      A doorman~
-Long       A doorman stands here watching the people walk by.
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p take me back~
+Comlist   nod $n
+mptransfer $n doorman
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea wimpy~
-Affected   protect truesight~
-Stats1     1000 55 7 0 50 15000
-Stats2     30000 1 0
-Stats3     20 20 200
-Stats4     0 0 10 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Immune     fire electricity energy pierce poison sleep charm nonmagic magic paralysis~
+#ENDPROG
+
 #MUDPROG
 Progtype  fight_prog~
 Arglist   100~
-Comlist   mpecho $I hurries off to attend to a new customer.
-mpgoto 1
-c heal 
-c heal 
-c heal 
-c heal 
-c heal 
-c heal 
-c heal 
-c heal 
-c heal 
-mpgoto 12001
-say Leave, i abhor violence.
+Comlist   mpslay $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      12011
+Keywords  Doorman~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A doorman~
+Long      A doorman stands here watching the people walk by.
+~
+Nattacks  10.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    55 21 0 0 20 20 200
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  protect truesight~
+Immune    NONE cold electricity blunt acid drain sleep hold plus6 magic~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if level($n) <= 25
+'Hey, this area is really not for you, but maybe out Sunday school is more your
+'Speed, if you think youd like to go, please just say 'Sunday School'
+'And if you would like to visit out gift shop say 'Gift shop'
+smile $n
+else
+Bow $n
+'Good day.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p Sunday School~
+Comlist   if level($n) <= 25
+mpechoat $n You quickly run off to suday school.
+mptrans 0.$n 12030
+else
+shake
+'Its only for youngins, go to regular church.
+endif
 ~
 #ENDPROG
 
@@ -477,178 +453,150 @@ endif
 #ENDPROG
 
 #MUDPROG
-Progtype  speech_prog~
-Arglist   p Sunday School~
-Comlist   if level($n) <= 25
-mpechoat $n You quickly run off to suday school.
-mptrans 0.$n 12030
-else
-shake
-'Its only for youngins, go to regular church.
-endif
-~
-#ENDPROG
-
-#MUDPROG
-Progtype  greet_prog~
+Progtype  fight_prog~
 Arglist   100~
-Comlist   if level($n) <= 25
-'Hey, this area is really not for you, but maybe out Sunday school is more your
-'Speed, if you think youd like to go, please just say 'Sunday School'
-'And if you would like to visit out gift shop say 'Gift shop'
-smile $n
-else
-Bow $n
-'Good day.
-endif
+Comlist   mpecho $I hurries off to attend to a new customer.
+mpgoto 1
+c heal 
+c heal 
+c heal 
+c heal 
+c heal 
+c heal 
+c heal 
+c heal 
+c heal 
+mpgoto 12001
+say Leave, i abhor violence.
 ~
 #ENDPROG
 
 #ENDMOBILE
 
 #MOBILE
-Vnum       12012
-Keywords   Small Toddler~
-Short      a young toddler~
-Long       A young toddler plays quietly.
+Vnum      12012
+Keywords  Small Toddler~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a young toddler~
+Long      A young toddler plays quietly.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc stayarea~
-Stats1     900 13 4 0 3500 6000
-Stats2     12 12 120
-Stats3     1 7 7
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    900 -1 0 0 0 0
+Stats2    13 21 0 120 1 7 7
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12013
-Keywords   Child~
-Short      A little child~
-Long       A child smiles at you.
+Vnum      12013
+Keywords  Child~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A little child~
+Long      A child smiles at you.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel immortal~
-Stats1     0 16 0 -8 20000 52000
-Stats2     10 4 250
-Stats3     2 8 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    16 21 -8 250 2 8 3
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel immortal~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12014
-Keywords   Baby~
-Short      a Baby~
-Long       A baby stares at you interested.
+Vnum      12014
+Keywords  Baby~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a Baby~
+Long      A baby stares at you interested.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel immortal~
-Stats1     500 3 16 6 75 400
-Stats2     5 3 33
-Stats3     2 4 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    500 75 0 0 0 0
+Stats2    3 21 6 33 2 4 3
+Speaking  common~
+Actflags  npc sentinel immortal~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12015
-Keywords   Teenager~
-Short      Teenager~
-Long       A teenager watches the teacher intently.
+Vnum      12015
+Keywords  Teenager~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Teenager~
+Long      A teenager watches the teacher intently.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel immortal~
-Stats1     0 20 0 -8 45000 52000
-Stats2     10 10 1000
-Stats3     3 10 4
-Stats4     0 0 0 7 5
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    20 21 -8 1000 3 10 4
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel immortal~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12016
-Keywords   Young Adult~
-Short      Young Adult~
-Long       A young adult is here pondering the meaning of life.
+Vnum      12016
+Keywords  Young Adult~
+Race      halfling~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     Young Adult~
+Long      A young adult is here pondering the meaning of life.
 ~
-Desc       *sniffle* How depressing.  The essence before you conveys such a feeling of 
+Desc      *sniffle* How depressing.  The essence before you conveys such a feeling of 
 unspeakable loss and depression that you can't help but cry.  You can feel 
 your knees grow weak from the emotion, and it becomes an effort to stand.
 ~
-Race       halfling~
-Class      mage~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc~
-Affected   flying~
-Stats1     0 25 0 -100 0 0
-Stats2     10 20 2000
-Stats3     5 12 6
-Stats4     0 0 0 20 0
-Attribs    13 13 13 13 13 13 0
-Saves      0 0 0 0 0
-Speaks     common halfling~
-Speaking   halfling~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    25 21 -100 2000 5 12 6
+Speaks    common halfling~
+Speaking  halfling~
+Actflags  npc~
+Affected  flying~
 #ENDMOBILE
 
 #MOBILE
-Vnum       12017
-Keywords   Teacher~
-Short      The Teacher~
-Long       The teacher is showing the class how to study.
+Vnum      12017
+Keywords  Teacher~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     The Teacher~
+Long      The teacher is showing the class how to study.
 ~
-Desc       Nothing in all the realms is this evil, not Anakin, not Darrek, not Arcane, not
+Desc      Nothing in all the realms is this evil, not Anakin, not Darrek, not Arcane, not
 Semaj, nothing. Your heart freezes with dread, you throat tightens, and your
 flesh chills.  You try to scream, but nothing comes out.  This  is  pure  evil.
 Lets think about it, what did you ever hate more than the thought of a person
 who's sole job in life was to give you tests and make you do homework?
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc sentinel stayarea~
-Affected   detect_invis detect_hidden sanctuary flying~
-Stats1     0 30 0 0 666 0
-Stats2     5000 1 1000
-Stats3     9 9 5
-Stats4     0 0 0 15 5
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Defenses   heal disarm~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    30 21 0 1000 9 9 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary flying~
+Defenses  heal disarm~
 #MUDPROG
 Progtype  death_prog~
 Arglist   50~
@@ -661,73 +609,73 @@ give token $r
 #ENDMOBILE
 
 #OBJECT
-Vnum     12000
-Keywords Chapel Sword~
-Type     weapon~
-Short    Chapel Sword~
-Long     A holy sword lies here glowing with power.~
-Action   Divine power~
-Flags    glow hum invis magic bless antievil metal~
-WFlags   take wield~
-Values   0 11 3 1 0 0
-Stats    3 0 0 0 0
-Affect       -1 -1 1 1 0
-Affect       -1 -1 1 2 0
-Affect       -1 -1 6 18 0
-Affect       -1 -1 4 19 0
-Affect       -1 -1 35 13 0
+Vnum      12000
+Keywords  Chapel Sword~
+Type      weapon~
+Short     Chapel Sword~
+Long      A holy sword lies here glowing with power.~
+Action    Divine power~
+Flags     glow hum metal invis magic bless antievil~
+WFlags    take wield~
+Values    0 11 3 1 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData strength 1 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData hitroll 6 -1 -1 0
+AffData damroll 4 -1 -1 0
+AffData hit 35 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     12001
-Keywords Amulet Gods Paladia~
-Type     armor~
-Short    Amulet of the Gods~
-Long     An Amulet glows with power.~
-Flags    glow hum invis antievil antineutral antithief~
-WFlags   take neck~
-Values   15 15 0 0 0 0
-Stats    2 500000 50000 0 0
-Affect       -1 -1 20 13 0
-Affect       -1 -1 4 18 0
-Affect       -1 -1 3 19 0
-Affect       -1 -1 -20 17 0
+Vnum      12001
+Keywords  Amulet Gods Paladia~
+Type      armor~
+Short     Amulet of the Gods~
+Long      An Amulet glows with power.~
+Flags     glow hum invis antievil antineutral antirogue~
+WFlags    take neck~
+Values    15 15 0 0 0 0 0 0 0 0 0
+Stats     2 500000 -2 1 0 None None None
+AffData hit 20 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData armor -20 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     12002
-Keywords Robe of the Gods~
-Type     armor~
-Short    Robe of the Gods~
-Long     A Robe glowing of power hurts you vision.~
-Flags    glow hum magic bless antievil antineutral~
-WFlags   take about~
-Values   0 0 0 0 0 0
-Stats    1 10000 1000 0 0
-Affect       -1 -1 3 19 0
-Affect       -1 -1 5 18 0
-Affect       -1 -1 -10 17 0
-Affect       -1 -1 4 25 0
-Affect       -1 -1 1 3 0
-Affect       -1 -1 25 13 0
+Vnum      12002
+Keywords  Robe of the Gods~
+Type      armor~
+Short     Robe of the Gods~
+Long      A Robe glowing of power hurts you vision.~
+Flags     glow hum magic bless antievil antineutral~
+WFlags    take about~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 10000 -2 1 0 None None None
+AffData damroll 3 -1 -1 0
+AffData hitroll 5 -1 -1 0
+AffData armor -10 -1 -1 0
+AffData sex 4 -1 -1 0
+AffData wisdom 1 -1 -1 0
+AffData hit 25 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     12003
-Keywords Angelic light~
-Type     armor~
-Short    Angelic Light~
-Long     A Sihmmering staff glows brightly.~
-Flags    glow hum magic antievil antineutral~
-WFlags   take hold~
-Values   20 0 0 0 0 0
-Stats    1 10 1 0 0
-Affect       -1 -1 75 12 0
-Affect       -1 -1 2 3 0
-Affect       -1 -1 2 4 0
-Affect       -1 -1 35 13 0
-Affect       -1 -1 5 18 0
-Affect       -1 -1 5 19 0
+Vnum      12003
+Keywords  Angelic light~
+Type      armor~
+Short     Angelic Light~
+Long      A Sihmmering staff glows brightly.~
+Flags     glow hum magic antievil antineutral~
+WFlags    take hold~
+Values    20 0 0 0 0 0 0 0 0 0 0
+Stats     1 10 -2 9999 0 None None None
+AffData mana 75 -1 -1 0
+AffData wisdom 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData hit 35 -1 -1 0
+AffData hitroll 5 -1 -1 0
+AffData damroll 5 -1 -1 0
 #MUDPROG
 Progtype  wear_prog~
 Arglist   100~
@@ -741,86 +689,64 @@ c 'dragon wit' $n
 #ENDOBJECT
 
 #OBJECT
-Vnum     12004
-Keywords Chapel key~
-Type     key~
-Short    a Chapel key~
-Long     A Chapel key is here on the ground.~
-WFlags   take~
-Values   3 0 0 0 0 0
-Stats    5 1 0 0 0
+Vnum      12004
+Keywords  Chapel key~
+Type      key~
+Short     a Chapel key~
+Long      A Chapel key is here on the ground.~
+WFlags    take~
+Values    3 0 0 0 0 0 0 0 0 0 0
+Stats     5 1 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     12005
-Keywords Steel key~
-Type     key~
-Short    A Steel key~
-Long     A Steel key glimmers in the light.~
-WFlags   take~
-Values   1 0 0 0 0 0
-Stats    5 1 0 0 0
+Vnum      12005
+Keywords  Steel key~
+Type      key~
+Short     A Steel key~
+Long      A Steel key glimmers in the light.~
+WFlags    take~
+Values    1 0 0 0 0 0 0 0 0 0 0
+Stats     5 1 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     12006
-Keywords Holy Mace~
-Type     weapon~
-Short    Holy Mace~
-Long     A mace of amazing power hums majesticly.~
-Flags    hum magic bless antievil antineutral antithief antiwarrior metal antivampire~
-WFlags   take wield~
-Values   20 14 3 7 0 0
-Stats    5 1000000 100000 0 0
-Affect       -1 -1 10 19 0
-Affect       -1 -1 10 18 0
-Affect       -1 -1 -2 24 0
-Affect       -1 -1 -2 22 0
-Affect       -1 -1 4 27 0
-Affect       -1 -1 100 12 0
-Affect       -1 -1 50 13 0
+Vnum      12006
+Keywords  Holy Mace~
+Type      weapon~
+Short     Holy Mace~
+Long      A mace of amazing power hums majesticly.~
+Flags     hum metal magic bless antievil antineutral antirogue antiwarrior~
+WFlags    take wield~
+Values    20 14 3 7 0 0 0 0 0 0 0
+Stats     5 1000000 -2 1 0 None None None
+AffData damroll 10 -1 -1 0
+AffData hitroll 10 -1 -1 0
+AffData save_spell -2 -1 -1 0
+AffData save_para -2 -1 -1 0
+AffData resistant cold~ -1 -1 0
+AffData mana 100 -1 -1 0
+AffData hit 50 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     12007
-Keywords Divine Power~
-Type     weapon~
-Short    Divine Power~
-Long     A sword of unimaginable power glows brightly.~
-Flags    hum magic bless antievil antineutral antimage anticleric metal prototype~
-WFlags   take wield~
-Values   20 22 2 2 0 0
-Stats    5 1000000 100000 0 0
-Affect       -1 -1 -2 24 0
-Affect       -1 -1 -2 22 0
-Affect       -1 -1 4 27 0
-Affect       -1 -1 8192 26 0
-Affect       -1 -1 12 18 0
-Affect       -1 -1 10 19 0
-Affect       -1 -1 100 13 0
-Affect       -1 -1 50 12 0
-#MUDPROG
-Progtype  sac_prog~
-Arglist   10~
-Comlist   mpechoat $n As you sacrifice the Sword, you realise you have done a good thing.
-mpecho The Divine Power starts to glow, brighter and brighter, till soon you 
-mpecho cannot even see it anymore.  You hear a voice call down from the heavens
-mpecho and Pronnounce 'For such a beautiful sacrifice we will reward you.'
-mpecho The Sword dissapears and in its place you see a amazing blade.
-mpoload 12008 90
-mpat $n give might $n
-~
-#ENDPROG
-
-#MUDPROG
-Progtype  remove_prog~
-Arglist   100~
-Comlist   mpechoat $n Removing the sword you feel as if all the power has left you.
-mpechoat $n You feel as if you havent slept, ate or drank for a entire week.
-mpechoaround $n The light from above dissipates from around $n.
-~
-#ENDPROG
-
+Vnum      12007
+Keywords  Divine Power~
+Type      weapon~
+Short     Divine Power~
+Long      A sword of unimaginable power glows brightly.~
+Flags     hum metal magic bless antievil antineutral anticleric antimage proto~
+WFlags    take wield~
+Values    20 22 2 2 0 0 0 0 0 0 0
+Stats     5 1000000 -2 1 0 None None None
+AffData save_spell -2 -1 -1 0
+AffData save_para -2 -1 -1 0
+AffData resistant cold~ -1 -1 0
+AffData affected '(null)' -1 -1 0
+AffData hitroll 12 -1 -1 0
+AffData damroll 10 -1 -1 0
+AffData hit 100 -1 -1 0
+AffData mana 50 -1 -1 0
 #MUDPROG
 Progtype  wear_prog~
 Arglist   100~
@@ -834,37 +760,50 @@ c bless $n
 ~
 #ENDPROG
 
-#ENDOBJECT
-
-#OBJECT
-Vnum     12008
-Keywords Heaven Might~
-Type     weapon~
-Short    Heavens Might~
-Long     Something that has fallen from heaven emenates power.~
-Flags    hum loyal bless antievil antineutral metal~
-WFlags   take wield~
-Values   20 12 4 2 0 0
-Stats    5 1000000 100000 0 0
-Affect       -1 -1 1 1 0
-Affect       -1 -1 1 2 0
-Affect       -1 -1 1 31 0
-Affect       -1 -1 -5 23 0
-Affect       -1 -1 -5 24 0
-Affect       -1 -1 -5 22 0
-Affect       -1 -1 11 18 0
-Affect       -1 -1 14 19 0
-Affect       -1 -1 125 13 0
-Affect       -1 -1 110 12 0
 #MUDPROG
 Progtype  remove_prog~
 Arglist   100~
-Comlist   mpechoat $n As you release this weapon you feel as weak as a kitten.
-mpechoat $n the power has left you, leaving you with the desire to use it again
-mpechoaround $n As $n removes the sword, $n looks almost human again.
+Comlist   mpechoat $n Removing the sword you feel as if all the power has left you.
+mpechoat $n You feel as if you havent slept, ate or drank for a entire week.
+mpechoaround $n The light from above dissipates from around $n.
 ~
 #ENDPROG
 
+#MUDPROG
+Progtype  sac_prog~
+Arglist   10~
+Comlist   mpechoat $n As you sacrifice the Sword, you realise you have done a good thing.
+mpecho The Divine Power starts to glow, brighter and brighter, till soon you 
+mpecho cannot even see it anymore.  You hear a voice call down from the heavens
+mpecho and Pronnounce 'For such a beautiful sacrifice we will reward you.'
+mpecho The Sword dissapears and in its place you see a amazing blade.
+mpoload 12008 90
+mpat $n give might $n
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      12008
+Keywords  Heaven Might~
+Type      weapon~
+Short     Heavens Might~
+Long      Something that has fallen from heaven emenates power.~
+Flags     hum metal bless antievil antineutral loyal~
+WFlags    take wield~
+Values    20 12 4 2 0 0 0 0 0 0 0
+Stats     5 1000000 -2 1 0 None None None
+AffData strength 1 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData class 1 -1 -1 0
+AffData save_breath -5 -1 -1 0
+AffData save_spell -5 -1 -1 0
+AffData save_para -5 -1 -1 0
+AffData hitroll 11 -1 -1 0
+AffData damroll 14 -1 -1 0
+AffData hit 125 -1 -1 0
+AffData mana 110 -1 -1 0
 #MUDPROG
 Progtype  wear_prog~
 Arglist   100 ~
@@ -875,19 +814,28 @@ mpechoaround $n $n is huge, you wish you had a sword like his.
 ~
 #ENDPROG
 
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mpechoat $n As you release this weapon you feel as weak as a kitten.
+mpechoat $n the power has left you, leaving you with the desire to use it again
+mpechoaround $n As $n removes the sword, $n looks almost human again.
+~
+#ENDPROG
+
 #ENDOBJECT
 
 #OBJECT
-Vnum     12009
-Keywords Chapel Blessing~
-Type     potion~
-Short    a Chapel's Blessing~
-Long     A Chapel's blessing is on the ground.~
-Flags    glow magic bless~
-WFlags   take~
-Values   25 -1 -1 -1 0 0
-Stats    1 25000 2500 0 0
-Spells   'heal' 'heal' 'NONE'
+Vnum      12009
+Keywords  Chapel Blessing~
+Type      potion~
+Short     a Chapel's Blessing~
+Long      A Chapel's blessing is on the ground.~
+Flags     glow magic bless~
+WFlags    take~
+Values    25 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 25000 -2 1 0 None None None
+Spells       'heal' 'heal' 'NONE'
 #EXDESC
 ExDescKey    violet~
 ExDesc       Textures of both deep red and pale purple swirl together inside the vial.
@@ -897,90 +845,90 @@ ExDesc       Textures of both deep red and pale purple swirl together inside the
 #ENDOBJECT
 
 #OBJECT
-Vnum     12010
-Keywords Chapel Candy~
-Type     pill~
-Short    Chapel Candy~
-Long     A Cute little pice of candy with a cross lays on the ground.~
-WFlags   take~
-Values   20 -1 -1 -1 0 0
-Stats    1 50000 5000 0 0
-Spells   'shockshield' 'fireshield' 'iceshield'
+Vnum      12010
+Keywords  Chapel Candy~
+Type      pill~
+Short     Chapel Candy~
+Long      A Cute little pice of candy with a cross lays on the ground.~
+WFlags    take~
+Values    20 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 50000 -2 1 0 None None None
+Spells       'shockshield' 'fireshield' 'iceshield'
 #ENDOBJECT
 
 #OBJECT
-Vnum     12011
-Keywords Chapel Vision~
-Type     pill~
-Short    a Chapel's Vision~
-Long     A piece of candy with a translucent cross is on the ground.~
-WFlags   take~
-Values   20 -1 -1 -1 0 0
-Stats    1 50000 5000 0 0
-Spells   'detect hidden' 'NONE' 'NONE'
+Vnum      12011
+Keywords  Chapel Vision~
+Type      pill~
+Short     a Chapel's Vision~
+Long      A piece of candy with a translucent cross is on the ground.~
+WFlags    take~
+Values    20 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 50000 -2 1 0 None None None
+Spells       'animal senses' 'NONE' 'NONE'
 #ENDOBJECT
 
 #OBJECT
-Vnum     12012
-Keywords Holy Strength~
-Type     pill~
-Short    Holy Strength~
-Long     A Dark black pill with a silver cross gets contaimnated by the ground.~
-WFlags   take~
-Values   39 -1 -1 -1 0 0
-Stats    1 25000 2500 0 0
-Spells   'trollish vigor' 'sagacity' 'dragon wit'
+Vnum      12012
+Keywords  Holy Strength~
+Type      pill~
+Short     Holy Strength~
+Long      A Dark black pill with a silver cross gets contaimnated by the ground.~
+WFlags    take~
+Values    39 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 25000 -2 1 0 None None None
+Spells       'trollish vigor' 'sagacity' 'dragon wit'
 #ENDOBJECT
 
 #OBJECT
-Vnum     12013
-Keywords Skull ring~
-Type     armor~
-Short    Skull Ring~
-Long     A Ring with a skull and crossbones is on the ground.~
-Flags    glow magic~
-WFlags   take finger~
-Values   5 5 0 0 0 0
-Stats    1 2000 200 0 0
-Affect       -1 -1 5 13 0
-Affect       -1 -1 1 2 0
-Affect       -1 -1 2 18 0
-Affect       -1 -1 1 1 0
+Vnum      12013
+Keywords  Skull ring~
+Type      armor~
+Short     Skull Ring~
+Long      A Ring with a skull and crossbones is on the ground.~
+Flags     glow magic~
+WFlags    take finger~
+Values    5 5 0 0 0 0 0 0 0 0 0
+Stats     1 2000 -2 1 0 None None None
+AffData hit 5 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData strength 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     12014
-Keywords Death and Decadance~
-Type     armor~
-Short    Death and Decadance~
-Long     You see your future death.~
-WFlags   take neck~
-Values   10 10 0 0 0 0
-Stats    3 50000 5000 0 0
-Affect       -1 -1 1 4 0
-Affect       -1 -1 2 5 0
-Affect       -1 -1 1 2 0
-Affect       -1 -1 5 13 0
-Affect       -1 -1 3 18 0
+Vnum      12014
+Keywords  Death and Decadance~
+Type      armor~
+Short     Death and Decadance~
+Long      You see your future death.~
+WFlags    take neck~
+Values    10 10 0 0 0 0 0 0 0 0 0
+Stats     3 50000 -2 1 0 None None None
+AffData dexterity 1 -1 -1 0
+AffData constitution 2 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData hit 5 -1 -1 0
+AffData hitroll 3 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     12015
-Keywords Deadly Visions~
-Type     armor~
-Short    Deadly Visions~
-Long     A long rod with some notches is here.~
-Flags    metal~
-WFlags   take hold~
-Values   5 5 0 0 0 0
-Stats    1 1234 123 0 0
-Affect       -1 -1 1 3 0
-Affect       -1 -1 1 5 0
-Affect       -1 -1 1 4 0
-Affect       -1 -1 10 13 0
-Affect       -1 -1 10 12 0
-Affect       -1 -1 2 18 0
-Affect       -1 -1 2 19 0
+Vnum      12015
+Keywords  Deadly Visions~
+Type      armor~
+Short     Deadly Visions~
+Long      A long rod with some notches is here.~
+Flags     metal~
+WFlags    take hold~
+Values    5 5 0 0 0 0 0 0 0 0 0
+Stats     1 1234 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData constitution 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData mana 10 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
 #EXDESC
 ExDescKey    sets~
 ExDesc       Regular equipment setup:              Equipment setup during dual wield:
@@ -1033,82 +981,84 @@ capital letters above.
 #ENDOBJECT
 
 #OBJECT
-Vnum     12016
-Keywords Lowbie Token~
-Type     trash~
-Short    Lowbie token~
-Long     A token for lowbies is here~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    10 0 0 0 0
+Vnum      12016
+Keywords  Lowbie Token~
+Type      trash~
+Short     Lowbie token~
+Long      A token for lowbies is here~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     12017
-Keywords Graduation Hat~
-Type     armor~
-Short    A Graduation Hat~
-Long     Someone's graduation hat is lying here in a heap.~
-Flags    hum dark metal~
-WFlags   take eyes~
-Values   10 3 0 0 0 0
-Stats    2 5700 570 0 0
-Affect       -1 -1 1 19 0
-Affect       -1 -1 1 18 0
-Affect       -1 -1 10 13 0
-Affect       -1 -1 2 3 0
-Affect       -1 -1 2 4 0
+Vnum      12017
+Keywords  Graduation Hat~
+Type      armor~
+Short     A Graduation Hat~
+Long      Someone's graduation hat is lying here in a heap.~
+Flags     hum metal~
+WFlags    take eyes~
+Values    10 3 0 0 0 0 0 0 0 0 0
+Stats     2 5700 -2 1 0 None None None
+AffData damroll 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData wisdom 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     12018
-Keywords Band Aid~
-Type     armor~
-Short    Band Aid~
-Long     A Band Aid lies here waiting to be used.~
-Flags    magic metal clanobject~
-WFlags   take finger~
-Values   10 10 0 0 0 0
-Stats    3 100 10 0 0
-Affect       -1 -1 25 13 0
-Affect       -1 -1 75 12 0
+Vnum      12018
+Keywords  Band Aid~
+Type      armor~
+Short     Band Aid~
+Long      A Band Aid lies here waiting to be used.~
+Flags     metal magic clanobject~
+WFlags    take finger~
+Values    10 10 0 0 0 0 0 0 0 0 0
+Stats     3 100 -2 9999 0 None None None
+AffData hit 25 -1 -1 0
+AffData mana 75 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     12019
-Keywords Mental Strength~
-Type     armor~
-Short    Mental Strength~
-Long     A Robe of shimmering light lies here.~
-WFlags   take about~
-Values   15 15 0 1 0 0
-Stats    1 300000 30000 0 0
-Affect       -1 -1 1 3 0
-Affect       -1 -1 100 12 0
-Affect       -1 -1 1 4 0
+Vnum      12019
+Keywords  Mental Strength~
+Type      armor~
+Short     Mental Strength~
+Long      A Robe of shimmering light lies here.~
+WFlags    take about~
+Values    15 15 0 1 0 0 0 0 0 0 0
+Stats     1 300000 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData mana 100 -1 -1 0
+AffData dexterity 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     12020
-Keywords Friendship Bracelet~
-Type     armor~
-Short    Friendship Bracelet~
-Long     A Small band is just asking to be picked up.~
-Flags    hum evil magic~
-WFlags   take wrist~
-Values   20 0 0 0 0 0
-Stats    1 1000000 100000 0 0
-Affect       -1 -1 1 19 0
-Affect       -1 -1 1 1 0
-Affect       -1 -1 30 12 0
-Affect       -1 -1 10 13 0
+Vnum      12020
+Keywords  Friendship Bracelet~
+Type      armor~
+Short     Friendship Bracelet~
+Long      A Small band is just asking to be picked up.~
+Flags     hum magic evil~
+WFlags    take wrist~
+Values    20 0 0 0 0 0 0 0 0 0 0
+Stats     1 1000000 -2 1 0 None None None
+AffData damroll 1 -1 -1 0
+AffData strength 1 -1 -1 0
+AffData mana 30 -1 -1 0
+AffData hit 10 -1 -1 0
 #ENDOBJECT
 
 #ROOM
-Vnum     12000
-Name     Entrance to the Holy Chapel~
-Sector   city~
-Desc     Walking along the Forest you notice a beautiful chapel to the north, it 
+Vnum      12000
+Name      Entrance to the Holy Chapel~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Walking along the Forest you notice a beautiful chapel to the north, it 
 is incredibly tall and looks as if it might actually be touching the 'Gods'
 The pathway widens to a beautifully paved rad to the north meaning it must be
 well traversed.  The Outer beauty can mean only one thing, the inside must be
@@ -1128,16 +1078,16 @@ Direction south~
 ToRoom    21201
 #ENDEXIT
 
-Reset M 0 12011 1 12000
+Reset M 12011 1 12000 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12001
-Name     Entranceway~
-Sector   city~
-Flags    tunnel~
-Stats    0 0 4
-Desc     Upon entering the first portion of the chapel, it dawns upon you it is heavily
+Vnum      12001
+Name      Entranceway~
+Sector    city~
+Flags     tunnel~
+Stats     0 0 4 0 0
+Desc      Upon entering the first portion of the chapel, it dawns upon you it is heavily
 guarded, for there are two very large guards at the enterance.  They wear 
 beautiful steel outfits, quite polished and in incredibly good condition.
 Amazingly enough, you think the Doors may be made of Steel, making you wonder
@@ -1160,19 +1110,20 @@ Desc      Enterance to the Holy Chapel
 ~
 #ENDEXIT
 
-Reset M 0 12000 2 12001
-  Reset G 1 12005 1
-  Reset E 1 12000 1 16
-Reset M 0 12000 2 12001
-Reset D 0 12001 0 2
+Reset M 12000 2 12001 -1 -1 -1 100
+  Reset G 12005 1 100
+  Reset E 12000 1 16 100
+Reset M 12000 2 12001 -1 -1 -1 100
+Reset D 12001 0 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     12002
-Name     Inside the Chapel~
-Sector   inside~
-Flags    indoors norecall~
-Desc     Looking at all the beautiful pictuesque items, you feel as if you may be in a
+Vnum      12002
+Name      Inside the Chapel~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      Looking at all the beautiful pictuesque items, you feel as if you may be in a
 museum as opposed to a chapel.  There are stained-glass-windows in the ceiling
 an amazing sculpture of what appears to be a incredibly hansome and muscular 
 god, and incredible artworks lining the walls.  The carpet looks to be a hand
@@ -1212,17 +1163,18 @@ Desc      Next to the Donation Box
 ~
 #ENDEXIT
 
-Reset M 0 12001 7 12002
-Reset M 0 12001 7 12002
-Reset D 0 12002 2 2
+Reset M 12001 7 12002 -1 -1 -1 100
+Reset M 12001 7 12002 -1 -1 -1 100
+Reset D 12002 2 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     12003
-Name     Next to confessionals~
-Sector   inside~
-Flags    indoors norecall~
-Desc     The small hallway has the same lush carpet and beautiful paintings that the
+Vnum      12003
+Name      Next to confessionals~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      The small hallway has the same lush carpet and beautiful paintings that the
 other places you have visted in this chapel, however as you look at it, it
 seems to make you feel more guilty, as if you have sinned and they know it.
 To the east you see you a confession box where you can hopefully get this 
@@ -1244,15 +1196,16 @@ Desc      Inside the Chapel
 ~
 #ENDEXIT
 
-Reset M 0 12002 5 12003
+Reset M 12002 5 12003 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12004
-Name     Inside the Confessional Box~
-Sector   inside~
-Flags    indoors norecall~
-Desc     On the inside of the confession box, you feel very cramped, for it is quite 
+Vnum      12004
+Name      Inside the Confessional Box~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      On the inside of the confession box, you feel very cramped, for it is quite 
 small.  It is covered with red velvet and have plush satin seats, which look
 very vell used.  There is a small screen against the south wall where you can
 vaguely make out the appearance of a priest who will willing hear your 
@@ -1271,15 +1224,16 @@ Desc      Next to confessionals
 ~
 #ENDEXIT
 
-Reset D 0 12004 2 1
+Reset D 12004 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     12005
-Name     Other Side of Confessional box~
-Sector   inside~
-Flags    indoors norecall~
-Desc     On the other side of the confessional box, you almost feel guilt.  You could
+Vnum      12005
+Name      Other Side of Confessional box~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      On the other side of the confessional box, you almost feel guilt.  You could
 pertend to be the priest and hear everyone elses sins, and then use it as dirt
 later.  Imagine the horror you could cause.  You now understand the horrible
 pressure most priests have to bear when they do this.  The priests have a very
@@ -1299,16 +1253,17 @@ Desc      Priest chamber
 ~
 #ENDEXIT
 
-Reset M 0 12003 4 12005
-Reset D 0 12005 0 1
+Reset M 12003 4 12005 -1 -1 -1 100
+Reset D 12005 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     12006
-Name     Priest chamber~
-Sector   inside~
-Flags    indoors norecall~
-Desc     This is one of the many rest chambers for the priests.  This one is quite
+Vnum      12006
+Name      Priest chamber~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      This is one of the many rest chambers for the priests.  This one is quite
 un-lavish in comparison to the rest of the chapel.  Making you realise that
 clearly not all people are into this for the money. There are 3 beds and you 
 think thank maybe they work in 3 shifts of 8 hours each.  It looks as if they
@@ -1321,16 +1276,17 @@ Desc      Other Side of the confessional Box
 ~
 #ENDEXIT
 
-Reset M 0 12003 4 12006
-Reset M 0 12003 4 12006
+Reset M 12003 4 12006 -1 -1 -1 100
+Reset M 12003 4 12006 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12007
-Name     Next to the Donation Box~
-Sector   inside~
-Flags    indoors norecall~
-Desc     The small hallway with its relatively lush carpets and beautifuly painted
+Vnum      12007
+Name      Next to the Donation Box~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      The small hallway with its relatively lush carpets and beautifuly painted
 ceiling pales in comparison to the rest of the amazing chapel.  As much as
 You'd like to stay and view it all, but you feel as it you may be missing more 
 of it if you don't move on.  A sign saying 'Donation Box' points to the west.
@@ -1353,11 +1309,12 @@ Desc      Donation Box
 #ENDROOM
 
 #ROOM
-Vnum     12008
-Name     Donation Box~
-Sector   inside~
-Flags    indoors norecall~
-Desc     The donation box coveres the entire west side of the room, its not as much a
+Vnum      12008
+Name      Donation Box~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      The donation box coveres the entire west side of the room, its not as much a
 box as its a 'vault'.  Forget trying to take it all, your not ever sure how to
 get to it.  The wall is made of solid steel and theres a hole where you can 
 drop the gold bags.  Its a very well run operation, if you do say so yourself.
@@ -1380,11 +1337,12 @@ Desc      Vatican Gift Shop
 #ENDROOM
 
 #ROOM
-Vnum     12009
-Name     Southern end of the Chapel~
-Sector   inside~
-Flags    indoors norecall~
-Desc     Rows and rows of pews dominate this huge room of worship.  The room has a
+Vnum      12009
+Name      Southern end of the Chapel~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      Rows and rows of pews dominate this huge room of worship.  The room has a
 warmth and a feel all it's own.  At the front is a large altar where a High
 Priest runs a service for all those present.  The ceiling has an amazing
 painting covering it leading you to believe it is the most beutiful thing you
@@ -1416,15 +1374,16 @@ Desc      Southwestern section
 ~
 #ENDEXIT
 
-Reset M 0 12002 5 12009
+Reset M 12002 5 12009 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12010
-Name     Middle of the Chapel~
-Sector   inside~
-Flags    indoors norecall~
-Desc     Rows and rows of pews dominate this huge room of worship.  The room has a
+Vnum      12010
+Name      Middle of the Chapel~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      Rows and rows of pews dominate this huge room of worship.  The room has a
 warmth and a feel all it's own.  At the front is a large altar where a High
 Priest runs a service for all those present.  The ceiling has an amazing
 painting covering it leading you to believe it is the most beutiful thing you
@@ -1461,11 +1420,12 @@ Desc      Middle of the chappel
 #ENDROOM
 
 #ROOM
-Vnum     12011
-Name     The Front of the Chapel~
-Sector   inside~
-Flags    indoors norecall~
-Desc     The front of the chapel is no different than anywhere else, extravagant and
+Vnum      12011
+Name      The Front of the Chapel~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      The front of the chapel is no different than anywhere else, extravagant and
 beautiful. There is a walkway to the east that looks very unused.  To the 
 north is the temple altar where a High Priest runs service.  The ceiling has 
 the most beautiful painting you have ever seen.  There is this amazing red
@@ -1495,11 +1455,12 @@ Desc      Middle of the chapel
 #ENDROOM
 
 #ROOM
-Vnum     12012
-Name     Enterance to the back~
-Sector   inside~
-Flags    indoors norecall~
-Desc     To the north you notice a door with the sign 'Unless you work here please 
+Vnum      12012
+Name      Enterance to the back~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      To the north you notice a door with the sign 'Unless you work here please 
 stay out, or we will be forced to take measures to force you out.'  Even 
 though it doesnt make you feel as wanted as you would have liked it sure makes
 you want to know what is behind that door.  The door is clearly locked, now
@@ -1521,16 +1482,17 @@ Desc      The front of the chapel
 ~
 #ENDEXIT
 
-Reset M 0 12002 5 12012
-Reset D 0 12012 0 2
+Reset M 12002 5 12012 -1 -1 -1 100
+Reset D 12012 0 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     12013
-Name     Before the Altar~
-Sector   inside~
-Flags    indoors norecall~
-Desc     You have reached the area right before the altar, a priest is here setting up
+Vnum      12013
+Name      Before the Altar~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      You have reached the area right before the altar, a priest is here setting up
 candles for people to blow out.  He is also cleaning up everything in sight.
 The amazing oriental rug contunes to the north and the south, otherwise this
 areas is quite barren.
@@ -1552,11 +1514,12 @@ Desc      The front of the chapel
 #ENDROOM
 
 #ROOM
-Vnum     12014
-Name     The Altar~
-Sector   inside~
-Flags    indoors norecall~
-Desc     The altar is a huge golden slab that must weigh a ton.  It has amazing jewels
+Vnum      12014
+Name      The Altar~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      The altar is a huge golden slab that must weigh a ton.  It has amazing jewels
 engraved in the sides, mainly diamonds and large opals the size of small
 animals. On top of the altar there is an enscription that reads : To my 
 wonderful followers.  Leading you to believe that they didnt make this 
@@ -1567,16 +1530,17 @@ Direction south~
 ToRoom    12013
 #ENDEXIT
 
-Reset M 0 12004 1 12014
-  Reset G 1 12004 1
+Reset M 12004 1 12014 -1 -1 -1 100
+  Reset G 12004 1 100
 #ENDROOM
 
 #ROOM
-Vnum     12015
-Name     South Eastern End of the Chapel~
-Sector   inside~
-Flags    indoors norecall~
-Desc     Rows and rows of pews dominate this huge room of worship.  The room has a
+Vnum      12015
+Name      South Eastern End of the Chapel~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      Rows and rows of pews dominate this huge room of worship.  The room has a
 warmth and a feel all it's own.  At the front is a large altar where a High
 Priest runs a service for all those present.  The ceiling has an amazing
 painting covering it leading you to believe it is the most beutiful thing you
@@ -1596,18 +1560,19 @@ Desc      Southern end of chapel
 ~
 #ENDEXIT
 
-Reset M 0 12001 7 12015
-Reset M 0 12001 7 12015
-Reset M 0 12001 7 12015
-Reset M 0 12002 5 12015
+Reset M 12001 7 12015 -1 -1 -1 100
+Reset M 12001 7 12015 -1 -1 -1 100
+Reset M 12001 7 12015 -1 -1 -1 100
+Reset M 12002 5 12015 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12016
-Name     South Western Section of the Chapel~
-Sector   inside~
-Flags    indoors norecall~
-Desc     Rows and rows of pews dominate this huge room of worship.  The room has a
+Vnum      12016
+Name      South Western Section of the Chapel~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      Rows and rows of pews dominate this huge room of worship.  The room has a
 warmth and a feel all it's own.  At the front is a large altar where a High
 Priest runs a service for all those present.  The ceiling has an amazing
 painting covering it leading you to believe it is the most beutiful thing you
@@ -1627,16 +1592,17 @@ Desc      Southern end of chapel
 ~
 #ENDEXIT
 
-Reset M 0 12001 7 12016
-Reset M 0 12002 5 12016
+Reset M 12001 7 12016 -1 -1 -1 100
+Reset M 12002 5 12016 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12017
-Name     Middle of the Chapel~
-Sector   inside~
-Flags    indoors norecall~
-Desc     Rows and rows of pews dominate this huge room of worship.  The room has a
+Vnum      12017
+Name      Middle of the Chapel~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      Rows and rows of pews dominate this huge room of worship.  The room has a
 warmth and a feel all it's own.  At the front is a large altar where a High
 Priest runs a service for all those present.  The ceiling has an amazing
 painting covering it leading you to believe it is the most beutiful thing you
@@ -1656,15 +1622,16 @@ Desc      Southwest section
 ~
 #ENDEXIT
 
-Reset M 0 12001 7 12017
+Reset M 12001 7 12017 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12018
-Name     Middle of the Chapel~
-Sector   inside~
-Flags    indoors norecall~
-Desc     Rows and rows of pews dominate this huge room of worship.  The room has a
+Vnum      12018
+Name      Middle of the Chapel~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      Rows and rows of pews dominate this huge room of worship.  The room has a
 warmth and a feel all it's own.  At the front is a large altar where a High
 Priest runs a service for all those present.  The ceiling has an amazing
 painting covering it leading you to believe it is the most beutiful thing you
@@ -1684,15 +1651,16 @@ Desc      Middle of chapel
 ~
 #ENDEXIT
 
-Reset M 0 12003 4 12018
+Reset M 12003 4 12018 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12019
-Name     Corridor~
-Sector   inside~
-Flags    indoors norecall~
-Desc     The elegant corridor has a nice blue satin carpet, and a beautiful black marble
+Vnum      12019
+Name      Corridor~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      The elegant corridor has a nice blue satin carpet, and a beautiful black marble
 wall. Glowing lights hang from the ceiling lighting your way, there is however
 sounds coming from up the corrdor, warning you about what may be coming next.
 ~
@@ -1712,18 +1680,19 @@ Desc      Enterance to the back
 Flags     isdoor closed locked pickproof nopassdoor~
 #ENDEXIT
 
-Reset M 0 12005 6 12019
-Reset M 0 12005 6 12019
-Reset O 0 22 1 12019
-Reset D 0 12019 2 2
+Reset M 12005 6 12019 -1 -1 -1 100
+Reset M 12005 6 12019 -1 -1 -1 100
+Reset O 12020 1 12019 -1 -1 -1 100
+Reset D 12019 2 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     12020
-Name     Corridor~
-Sector   inside~
-Flags    indoors norecall~
-Desc     The elegant corridor has a nice blue satin carpet, and a beautiful black marble
+Vnum      12020
+Name      Corridor~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      The elegant corridor has a nice blue satin carpet, and a beautiful black marble
 wall. Glowing lights hang from the ceiling lighting your way, there is however
 sounds coming from up the corrdor, warning you about what may be coming next.
 ~
@@ -1744,11 +1713,12 @@ Desc      corridor
 #ENDROOM
 
 #ROOM
-Vnum     12021
-Name     Turn in Corridor~
-Sector   inside~
-Flags    indoors norecall~
-Desc     The elegant corridor has a nice blue satin carpet, and a beautiful black marble
+Vnum      12021
+Name      Turn in Corridor~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      The elegant corridor has a nice blue satin carpet, and a beautiful black marble
 wall. Glowing lights hang from the ceiling lighting your way, there is however
 sounds coming from up the corrdor, warning you about what may be coming next.
 ~
@@ -1766,17 +1736,18 @@ Desc      Corridor
 ~
 #ENDEXIT
 
-Reset M 0 12005 6 12021
-  Reset E 1 12000 1 16
-Reset M 0 12005 6 12021
+Reset M 12005 6 12021 -1 -1 -1 100
+  Reset E 12000 1 16 100
+Reset M 12005 6 12021 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12022
-Name     Corridor~
-Sector   inside~
-Flags    indoors norecall~
-Desc     The elegant corridor has a nice blue satin carpet, and a beautiful black marble
+Vnum      12022
+Name      Corridor~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      The elegant corridor has a nice blue satin carpet, and a beautiful black marble
 wall. Glowing lights hang from the ceiling lighting your way, there is however
 sounds coming from up the corrdor, warning you about what may be coming next.
 ~
@@ -1797,11 +1768,12 @@ Desc      End of the Corridor
 #ENDROOM
 
 #ROOM
-Vnum     12023
-Name     End of the Corridor~
-Sector   inside~
-Flags    indoors norecall~
-Desc     The elegant corridor has a nice blue satin carpet, and a beautiful black marble
+Vnum      12023
+Name      End of the Corridor~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      The elegant corridor has a nice blue satin carpet, and a beautiful black marble
 wall. Glowing lights hang from the ceiling lighting your way, there is however
 sounds coming from up the corrdor, warning you about what may be coming next.
 To the north is a door, which has the name Priests on it.
@@ -1821,17 +1793,18 @@ Desc      Corridor
 ~
 #ENDEXIT
 
-Reset M 0 12005 6 12023
-Reset M 0 12005 6 12023
-Reset D 0 12023 0 1
+Reset M 12005 6 12023 -1 -1 -1 100
+Reset M 12005 6 12023 -1 -1 -1 100
+Reset D 12023 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     12024
-Name     Priests Chamber~
-Sector   inside~
-Flags    indoors norecall~
-Desc     Entering the priest chambers you know something about this one is way different
+Vnum      12024
+Name      Priests Chamber~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      Entering the priest chambers you know something about this one is way different
 than any of the other ones you have seen.  Far to the north looks to be be a 
 throne, which you have never seen in any form in a chapel before.  The 
 chambers look more like a palace than they do a high priests chambers.  The 
@@ -1866,15 +1839,16 @@ Desc      Priests sleeping quaters
 ~
 #ENDEXIT
 
-Reset D 0 12024 2 1
+Reset D 12024 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     12025
-Name     Priests sleeping quarters~
-Sector   inside~
-Flags    indoors norecall~
-Desc     This is where the high priests must sleep.  There are 3 beds here leading you
+Vnum      12025
+Name      Priests sleeping quarters~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      This is where the high priests must sleep.  There are 3 beds here leading you
 to think that maybe, just maybe there might be 3 of them.  However, one of the
 beds is considerably larger than the others, it must belong to the Highest 
 ranking priest here.  There is currently one sleeping soundly in his bed.  he
@@ -1886,16 +1860,17 @@ Direction east~
 ToRoom    12024
 #ENDEXIT
 
-Reset M 0 12006 1 12025
-  Reset E 1 12002 1 12
+Reset M 12006 1 12025 -1 -1 -1 100
+  Reset E 12002 1 12 100
 #ENDROOM
 
 #ROOM
-Vnum     12026
-Name     Before a Throne~
-Sector   inside~
-Flags    indoors norecall~
-Desc     There is a small amount of stairs here, making you look up to find the throne
+Vnum      12026
+Name      Before a Throne~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      There is a small amount of stairs here, making you look up to find the throne
 however, before you can get a good look, you see 2 large guards who think you
 dont belong here. They have amazing looking armor with an etheral look to it as
 if its made of magic, which also serves as a benefit of partially blinding you.
@@ -1914,16 +1889,17 @@ Desc      priests chamber
 ~
 #ENDEXIT
 
-Reset M 0 12008 2 12026
-Reset M 0 12008 2 12026
+Reset M 12008 2 12026 -1 -1 -1 100
+Reset M 12008 2 12026 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12027
-Name     A Throne~
-Sector   inside~
-Flags    indoors norecall~
-Desc     Entering the throne room you are in total awe.  For an avatar of a god sits
+Vnum      12027
+Name      A Throne~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      Entering the throne room you are in total awe.  For an avatar of a god sits
 upon the throne, this is the closest you have been to imortality that you have
 been since you pulled that trick on the teacher back in school so long ago.
 The throne itself must be 20 feet tall, meaning the avatar is at least 30.
@@ -1937,17 +1913,19 @@ Desc      Before a throne
 ~
 #ENDEXIT
 
-Reset M 0 12007 1 12027
-  Reset E 1 12001 1 3
-Reset O 0 22 1 12027
+Reset M 12007 1 12027 -1 -1 -1 100
+  Reset E 12007 1 16 100
+  Reset E 12001 1 3 100
+Reset O 12020 1 12027 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12028
-Name     Priests Washroom~
-Sector   inside~
-Flags    indoors norecall~
-Desc     The room is where the priests must go to relieve themselves.  Not only is it
+Vnum      12028
+Name      Priests Washroom~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 0 0 0
+Desc      The room is where the priests must go to relieve themselves.  Not only is it
 spotless, but there is a beautiful contraption that sprays down water onto
 the lucky priests.  From the water running out of it now it looks steaming hot.
 There is currently a Priest sitting on a stool that looks like it is used for
@@ -1958,17 +1936,18 @@ Direction west~
 ToRoom    12024
 #ENDEXIT
 
-Reset M 0 12009 1 12028
-  Reset E 1 12006 1 16
-  Reset E 1 12003 1 17
+Reset M 12009 1 12028 -1 -1 -1 100
+  Reset E 12006 1 16 100
+  Reset E 12003 1 17 100
 #ENDROOM
 
 #ROOM
-Vnum     12029
-Name     Vatican Gift Shop~
-Sector   inside~
-Flags    indoors norecall nosummon~
-Desc     You have walked into a small gift shop where people can buy momento's of
+Vnum      12029
+Name      Vatican Gift Shop~
+Sector    indoors~
+Flags     indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      You have walked into a small gift shop where people can buy momento's of
 thier trip here. The priest is a cute little fellow who looks like he has 
 benn running this shop for years and has it down to a science.  The back 
 wall has a amazing array of potions and pills, and the the east wall are the
@@ -1981,19 +1960,20 @@ Desc      Donation Box
 ~
 #ENDEXIT
 
-Reset M 0 12010 1 12029
-  Reset G 1 12012 1
-  Reset G 1 12011 1
-  Reset G 1 12009 1
-  Reset G 1 12010 1
+Reset M 12010 1 12029 -1 -1 -1 100
+  Reset G 12012 1 100
+  Reset G 12011 1 100
+  Reset G 12009 1 100
+  Reset G 12010 1 100
 #ENDROOM
 
 #ROOM
-Vnum     12030
-Name     Start of Sunday School~
-Sector   inside~
-Flags    nomob indoors norecall nosummon~
-Desc     You have reched the start of the sunday school.  From here there two classrooms
+Vnum      12030
+Name      Start of Sunday School~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      You have reched the start of the sunday school.  From here there two classrooms
 one to the east and one to the west.  Both are surprisingly quiet and it makes
 you think that they must run a pretty tight ship.  There is a wooden sign with
 two arrows in it.
@@ -2025,11 +2005,12 @@ mptrans $n 12001
 #ENDROOM
 
 #ROOM
-Vnum     12031
-Name     Large Room~
-Sector   inside~
-Flags    nomob indoors norecall nosummon~
-Desc     You are a very large room, where children are allowed to roam free and do as
+Vnum      12031
+Name      Large Room~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      You are a very large room, where children are allowed to roam free and do as
 they so choose and instead of the utter chaos one would expect from such a
 situation it is quite the opposite children are playing peacefully with one
 another and there is a feeling of true love eminating from them all.
@@ -2063,16 +2044,17 @@ Desc      Start of Sunday School
 ~
 #ENDEXIT
 
-Reset M 0 12013 3 12031
-Reset M 0 12012 4 12031
+Reset M 12013 3 12031 -1 -1 -1 100
+Reset M 12012 4 12031 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12032
-Name     Large Room~
-Sector   inside~
-Flags    nomob indoors norecall nosummon~
-Desc     You are a very large room, where children are allowed to roam free and do as
+Vnum      12032
+Name      Large Room~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      You are a very large room, where children are allowed to roam free and do as
 they so choose and instead of the utter chaos one would expect from such a
 situation it is quite the opposite children are playing peacefully with one
 another and there is a feeling of true love eminating from them all.
@@ -2091,15 +2073,16 @@ Desc      Large Room
 ~
 #ENDEXIT
 
-Reset M 0 12012 4 12032
+Reset M 12012 4 12032 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12033
-Name     Large Room~
-Sector   inside~
-Flags    nomob indoors norecall nosummon~
-Desc     You are a very large room, where children are allowed to roam free and do as
+Vnum      12033
+Name      Large Room~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      You are a very large room, where children are allowed to roam free and do as
 they so choose and instead of the utter chaos one would expect from such a
 situation it is quite the opposite children are playing peacefully with one
 another and there is a feeling of true love eminating from them all.
@@ -2118,16 +2101,17 @@ Desc      Large Room
 ~
 #ENDEXIT
 
-Reset M 0 12012 4 12033
-Reset M 0 12012 4 12033
+Reset M 12012 4 12033 -1 -1 -1 100
+Reset M 12012 4 12033 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12034
-Name     Large Room~
-Sector   inside~
-Flags    nomob indoors norecall nosummon~
-Desc     You are a very large room, where children are allowed to roam free and do as
+Vnum      12034
+Name      Large Room~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      You are a very large room, where children are allowed to roam free and do as
 they so choose and instead of the utter chaos one would expect from such a
 situation it is quite the opposite children are playing peacefully with one
 another and there is a feeling of true love eminating from them all.
@@ -2146,16 +2130,17 @@ Desc      Large Room
 ~
 #ENDEXIT
 
-Reset M 0 12014 3 12034
-Reset M 0 12014 3 12034
+Reset M 12014 3 12034 -1 -1 -1 100
+Reset M 12014 3 12034 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12035
-Name     Large Room~
-Sector   inside~
-Flags    nomob indoors norecall nosummon~
-Desc     You are a very large room, where children are allowed to roam free and do as
+Vnum      12035
+Name      Large Room~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      You are a very large room, where children are allowed to roam free and do as
 they so choose and instead of the utter chaos one would expect from such a
 situation it is quite the opposite children are playing peacefully with one
 another and there is a feeling of true love eminating from them all.
@@ -2181,16 +2166,17 @@ Desc      Large Room
 ~
 #ENDEXIT
 
-Reset M 0 12013 3 12035
-Reset M 0 12013 3 12035
+Reset M 12013 3 12035 -1 -1 -1 100
+Reset M 12013 3 12035 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12036
-Name     Large Room~
-Sector   inside~
-Flags    nomob indoors norecall nosummon~
-Desc     You are a very large room, where children are allowed to roam free and do as
+Vnum      12036
+Name      Large Room~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      You are a very large room, where children are allowed to roam free and do as
 they so choose and instead of the utter chaos one would expect from such a
 situation it is quite the opposite children are playing peacefully with one
 another and there is a feeling of true love eminating from them all.
@@ -2209,15 +2195,16 @@ Desc      Large Room
 ~
 #ENDEXIT
 
-Reset M 0 12014 3 12036
+Reset M 12014 3 12036 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12037
-Name     Older Classroom~
-Sector   inside~
-Flags    nomob indoors norecall nosummon~
-Desc     The children in this classroom are not children but rather a small gathering
+Vnum      12037
+Name      Older Classroom~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      The children in this classroom are not children but rather a small gathering
 of young adults.  They are actually quieter than the young children eastward.
 A teacher in the front smiles politely at you and asks you if you would like to
 join but you politely decline.  Undaunted she continues her lesson.
@@ -2243,15 +2230,16 @@ Desc      Older Classroom
 ~
 #ENDEXIT
 
-Reset M 0 12015 5 12037
+Reset M 12015 5 12037 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12038
-Name     Older Classroom~
-Sector   inside~
-Flags    nomob indoors norecall nosummon~
-Desc     The children in this classroom are not children but rather a small gathering
+Vnum      12038
+Name      Older Classroom~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      The children in this classroom are not children but rather a small gathering
 of young adults.  They are actually quieter than the young children eastward.
 A teacher in the front smiles politely at you and asks you if you would like to
 join but you politely decline.  Undaunted she continues her lesson.
@@ -2280,11 +2268,12 @@ Desc      Older Classroom
 #ENDROOM
 
 #ROOM
-Vnum     12039
-Name     Older Classroom~
-Sector   inside~
-Flags    nomob indoors norecall nosummon~
-Desc     The children in this classroom are not children but rather a small gathering
+Vnum      12039
+Name      Older Classroom~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      The children in this classroom are not children but rather a small gathering
 of young adults.  They are actually quieter than the young children eastward.
 A teacher in the front smiles politely at you and asks you if you would like to
 join but you politely decline.  Undaunted she continues her lesson.
@@ -2303,16 +2292,17 @@ Desc      Older Classroom
 ~
 #ENDEXIT
 
-Reset M 0 12015 5 12039
-Reset M 0 12015 5 12039
+Reset M 12015 5 12039 -1 -1 -1 100
+Reset M 12015 5 12039 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12040
-Name     Older Classroom~
-Sector   inside~
-Flags    nomob indoors norecall nosummon~
-Desc     The children in this classroom are not children but rather a small gathering
+Vnum      12040
+Name      Older Classroom~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      The children in this classroom are not children but rather a small gathering
 of young adults.  They are actually quieter than the young children eastward.
 A teacher in the front smiles politely at you and asks you if you would like to
 join but you politely decline.  Undaunted she continues her lesson.
@@ -2341,11 +2331,12 @@ Desc      Older Classroom
 #ENDROOM
 
 #ROOM
-Vnum     12041
-Name     Older Classroom~
-Sector   inside~
-Flags    indoors norecall nosummon~
-Desc     The children in this classroom are not children but rather a small gathering
+Vnum      12041
+Name      Older Classroom~
+Sector    indoors~
+Flags     indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      The children in this classroom are not children but rather a small gathering
 of young adults.  They are actually quieter than the young children eastward.
 A teacher in the front smiles politely at you and asks you if you would like to
 join but you politely decline.  Undaunted she continues her lesson.
@@ -2376,18 +2367,19 @@ Desc      Older Classroom
 ~
 #ENDEXIT
 
-Reset M 0 12016 5 12041
-  Reset E 1 12020 1 14
-Reset M 0 12016 5 12041
-  Reset E 1 12020 1 14
+Reset M 12016 5 12041 -1 -1 -1 100
+  Reset E 12020 1 14 100
+Reset M 12016 5 12041 -1 -1 -1 100
+  Reset E 12020 1 14 100
 #ENDROOM
 
 #ROOM
-Vnum     12042
-Name     Older Classroom~
-Sector   inside~
-Flags    indoors norecall nosummon~
-Desc     The children in this classroom are not children but rather a small gathering
+Vnum      12042
+Name      Older Classroom~
+Sector    indoors~
+Flags     indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      The children in this classroom are not children but rather a small gathering
 of young adults.  They are actually quieter than the young children eastward.
 A teacher in the front smiles politely at you and asks you if you would like to
 join but you politely decline.  Undaunted she continues her lesson.
@@ -2411,18 +2403,19 @@ Desc      Older Classroom
 ~
 #ENDEXIT
 
-Reset M 0 12015 5 12042
-Reset M 0 12015 5 12042
-Reset M 0 12016 5 12042
-  Reset E 1 12020 1 14
+Reset M 12015 5 12042 -1 -1 -1 100
+Reset M 12015 5 12042 -1 -1 -1 100
+Reset M 12016 5 12042 -1 -1 -1 100
+  Reset E 12020 1 14 100
 #ENDROOM
 
 #ROOM
-Vnum     12043
-Name     Older Classroom~
-Sector   inside~
-Flags    indoors norecall nosummon~
-Desc     The children in this classroom are not children but rather a small gathering
+Vnum      12043
+Name      Older Classroom~
+Sector    indoors~
+Flags     indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      The children in this classroom are not children but rather a small gathering
 of young adults.  They are actually quieter than the young children eastward.
 A teacher in the front smiles politely at you and asks you if you would like to
 join but you politely decline.  Undaunted she continues her lesson.
@@ -2442,11 +2435,12 @@ ToRoom    12044
 #ENDROOM
 
 #ROOM
-Vnum     12044
-Name     Older Classroom~
-Sector   inside~
-Flags    indoors norecall nosummon~
-Desc     The children in this classroom are not children but rather a small gathering
+Vnum      12044
+Name      Older Classroom~
+Sector    indoors~
+Flags     indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      The children in this classroom are not children but rather a small gathering
 of young adults.  They are actually quieter than the young children eastward.
 A teacher in the front smiles politely at you and asks you if you would like to
 join but you politely decline.  Undaunted she continues her lesson.
@@ -2472,19 +2466,20 @@ Desc      Older Classroom
 ~
 #ENDEXIT
 
-Reset M 0 12017 1 12044
-  Reset E 1 12019 1 12
-  Reset E 1 12018 1 1
-Reset M 0 12016 5 12044
-Reset M 0 12016 5 12044
+Reset M 12017 1 12044 -1 -1 -1 100
+  Reset E 12019 1 12 100
+  Reset E 12018 1 1 100
+Reset M 12016 5 12044 -1 -1 -1 100
+Reset M 12016 5 12044 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     12045
-Name     Older Classroom~
-Sector   inside~
-Flags    indoors norecall nosummon~
-Desc     The children in this classroom are not children but rather a small gathering
+Vnum      12045
+Name      Older Classroom~
+Sector    indoors~
+Flags     indoors nosummon norecall~
+Stats     0 0 0 0 0
+Desc      The children in this classroom are not children but rather a small gathering
 of young adults.  They are actually quieter than the young children eastward.
 A teacher in the front smiles politely at you and asks you if you would like to
 join but you politely decline.  Undaunted she continues her lesson.
@@ -2506,38 +2501,43 @@ Desc      Older Classroom
 #ENDROOM
 
 #ROOM
-Vnum     12046
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      12046
+Name      Floating in a void~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     12047
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      12047
+Name      Floating in a void~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     12048
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      12048
+Name      Floating in a void~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     12049
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      12049
+Name      Floating in a void~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     12050
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      12050
+Name      Floating in a void~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ENDAREA

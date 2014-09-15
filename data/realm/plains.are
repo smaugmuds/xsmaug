@@ -1,283 +1,259 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Plains of the North~
-Author       Copper~
-WeatherX     0
-WeatherY     0
-Ranges       1 20 0 60
-Economy      0 4835660
+Version         1
+Name            Plains of the North~
+Author          Copper~
+Vnums           300 350
+Continent       one~
+Coordinates     0 0
+Dates           1403834970 1403834970
+Ranges          1 20 0 60
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       300
-Keywords   druid Aruncus~
-Short      Aruncus the Druid~
-Long       Aruncus the Druid is walking around here, searching for herbs.
+Vnum      300
+Keywords  druid Aruncus~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Aruncus the Druid~
+Long      Aruncus the Druid is walking around here, searching for herbs.
 ~
-Desc       Aruncus is a tall, skinny druid with a face marked by nature.
+Desc      Aruncus is a tall, skinny druid with a face marked by nature.
 He seems to be in peace with himself and his surroundings.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc stayarea wimpy~
-Affected   detect_invis~
-Stats1     -500 13 8 2 500 15000
-Stats2     13 13 130
-Stats3     3 5 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts feet ear eye~
-Attacks    punch~
-Defenses   parry dodge disarm~
+Nattacks  1.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    13 21 2 130 3 5 2
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea wimpy~
+Affected  detect_invis~
+Bodyparts head arms legs heart guts feet ear eye~
+Attacks   punch~
+Defenses  parry dodge disarm~
 #ENDMOBILE
 
 #MOBILE
-Vnum       301
-Keywords   hermit sorbus~
-Short      Sorbus the Hermit~
-Long       Sorbus the Hermit is sitting here, roasting a rabbit.
+Vnum      301
+Keywords  hermit sorbus~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     Sorbus the Hermit~
+Long      Sorbus the Hermit is sitting here, roasting a rabbit.
 ~
-Desc       Sorbus bares the marks of a long, hard life in solitude.
+Desc      Sorbus bares the marks of a long, hard life in solitude.
 He is dressed in simple clothing and looks like he has little
 or nothing to say.
 ~
-Race       human~
-Class      warrior~
-Position   aggressive~
-DefPos     aggressive~
-Gender     male~
-Actflags   npc sentinel~
-Stats1     0 8 16 6 0 400
-Stats2     4 4 40
-Stats3     1 9 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    punch~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    0 -1 0 0 0 0
+Stats2    8 21 6 40 1 9 2
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   punch~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       303
-Keywords   Ofcol man villageman~
-Short      an Ofcol village man~
-Long       A man of the Ofcol village is here, watching you closely.
+Vnum      303
+Keywords  Ofcol man villageman~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an Ofcol village man~
+Long      A man of the Ofcol village is here, watching you closely.
 ~
-Desc       He seems like a nice person with no interest in harming you or others.
+Desc      He seems like a nice person with no interest in harming you or others.
 He wears normal, light clothing and has an anonymous face.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc scavenger stayarea~
-Stats1     0 6 15 6 200 800
-Stats2     6 6 60
-Stats3     2 4 2
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    0 -1 0 0 0 0
+Stats2    6 21 6 60 2 4 2
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       304
-Keywords   Ofcol woman villagewoman~
-Short      an Ofcol village woman~
-Long       A woman of the Ofcol village glances at you warily.
+Vnum      304
+Keywords  Ofcol woman villagewoman~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     an Ofcol village woman~
+Long      A woman of the Ofcol village glances at you warily.
 ~
-Desc       She seems like a nice person with no interest in harming you or others.
+Desc      She seems like a nice person with no interest in harming you or others.
 She wears a minimum of clothing and has big ... eyes.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc scavenger stayarea~
-Stats1     0 6 16 5 100 600
-Stats2     5 5 50
-Stats3     2 4 1
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    trip~
+Nattacks  1.000000
+Stats1    0 -1 0 0 0 0
+Stats2    6 21 5 50 2 4 1
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   trip~
 #ENDMOBILE
 
 #MOBILE
-Vnum       305
-Keywords   worm Shudde-M'ell~
-Short      Shudde-M'ell~
-Long       Shudde-M'ell the Giant worm of G'harne is guarding his treasure.
+Vnum      305
+Keywords  worm Shudde-M'ell~
+Race      worm~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Shudde-M'ell~
+Long      Shudde-M'ell the Giant worm of G'harne is guarding his treasure.
 ~
-Desc       Shudde-M'ell is about 15 ft long and is surrounded by an evil stench,
+Desc      Shudde-M'ell is about 15 ft long and is surrounded by an evil stench,
 The worm is the protector of the treasure of G'harne and has been so
 for as long anyone can remember.
 ~
-Race       worm~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel aggressive~
-Affected   detect_invis detect_hidden infrared~
-Stats1     -1000 22 -2 0 50666 75000
-Stats2     10 10 500
-Stats3     8 2 6
-Stats4     0 0 3 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     ancient~
-Speaking   ancient~
-Bodyparts  head arms legs heart guts claws horns~
-Attacks    bite tail~
-Defenses   parry dodge~
+Nattacks  3.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    22 21 0 500 8 2 6
+Speaks    ancient~
+Speaking  ancient~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head arms legs heart guts claws horns~
+Attacks   bite tail~
+Defenses  parry dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       306
-Keywords   luxan shopkeeper~
-Short      Luxan~
-Long       Luxan the Shopkeeper is here, eager to sell you anything.
+Vnum      306
+Keywords  luxan shopkeeper~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Luxan~
+Long      Luxan the Shopkeeper is here, eager to sell you anything.
 ~
-Desc       He looks like a mean trader from the outskirts of Darkhaven.  His life
+Desc      He looks like a mean trader from the outskirts of Darkhaven.  His life
 seems to be totally occupied with trading.  He looks very fit and capable
 of protecting his goods.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel scavenger~
-Stats1     400 23 0 0 27000 80000
-Stats2     0 0 0
-Stats3     2 10 0
-Stats4     0 0 3 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    punch bash stun~
-Defenses   parry dodge disarm~
+Nattacks  3.000000
+Stats1    400 -1 0 0 0 0
+Stats2    23 21 0 0 2 10 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel scavenger~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   punch bash stun~
+Defenses  parry dodge disarm~
 ShopData   1 10 11 19 0 120 60 0 23
 #ENDMOBILE
 
 #MOBILE
-Vnum       308
-Keywords   keeper innkeeper~
-Short      the Innkeeper~
-Long       An Innkeeper is here waiting for your order.
+Vnum      308
+Keywords  keeper innkeeper~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the Innkeeper~
+Long      An Innkeeper is here waiting for your order.
 ~
-Desc       The Innkeeper looks skilled in brewing different beers and mixing the
+Desc      The Innkeeper looks skilled in brewing different beers and mixing the
 wierdest drinks known. He also looks very big.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Stats1     -100 23 0 0 100 80000
-Stats2     0 0 0
-Stats3     2 10 1
-Stats4     0 0 3 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    punch bash stun~
-Defenses   parry dodge disarm~
+Nattacks  3.000000
+Stats1    -100 -1 0 0 0 0
+Stats2    23 21 0 0 2 10 1
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   punch bash stun~
+Defenses  parry dodge disarm~
 ShopData   0 0 0 0 0 110 100 0 23
 #ENDMOBILE
 
 #MOBILE
-Vnum       309
-Keywords   rabbit~
-Short      the cute rabbit~
-Long       A cute rabbit is here.
+Vnum      309
+Keywords  rabbit~
+Race      mammal~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the cute rabbit~
+Long      A cute rabbit is here.
 ~
-Desc       It is a small, furry creature with long ears and big feet.
+Desc      It is a small, furry creature with long ears and big feet.
 ~
-Race       mammal~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc stayarea~
-Stats1     0 1 20 6 0 50
-Stats2     1 4 1
-Stats3     1 4 0
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head legs heart guts feet ear eye~
-Attacks    kick~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 6 1 1 4 0
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc stayarea~
+Bodyparts head legs heart guts feet ear eye~
+Attacks   kick~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       350
-Keywords   dragon pet~
-Short      the pet dragon~
-Long       Ravan's pet dragon is bouncing around here flapping her cute wings.
+Vnum      350
+Keywords  dragon pet~
+Race      dragon~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the pet dragon~
+Long      Ravan's pet dragon is bouncing around here flapping her cute wings.
 ~
-Desc       Ravan's pet dragon is about 3 ft. tall with small pointy teeth.
+Desc      Ravan's pet dragon is about 3 ft. tall with small pointy teeth.
 The small wings are eagerly trying to lift her from the ground,
 but so far they haven't succeeded.
 ~
-Race       dragon~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     female~
-Actflags   npc sentinel wimpy prototype~
-Affected   detect_invis sanctuary flying~
-Stats1     1000 10 0 0 0 30000
-Stats2     10 10 100
-Stats3     10 10 0
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     dragon~
-Speaking   dragon~
-Bodyparts  head legs heart guts feet ear eye wings claws~
-Attacks    bite claws tail~
-Defenses   parry dodge disarm~
+Nattacks  1.000000
+Stats1    1000 0 0 0 0 0
+Stats2    10 21 0 100 10 10 0
+Speaks    dragon~
+Speaking  dragon~
+Actflags  npc sentinel wimpy proto~
+Affected  detect_invis sanctuary flying~
+Bodyparts head legs heart guts feet ear eye wings claws~
+Attacks   bite claws tail~
+Defenses  parry dodge disarm~
 #ENDMOBILE
 
 #OBJECT
-Vnum     300
-Keywords herbs herb timian~
-Type     pill~
-Short    a small dusk of timian herbs~
-Long     Some herbs are lying here, small green leaves and tiny pink flowers.~
-WFlags   take~
-Values   12 -1 -1 -1 0 0
-Stats    1 5 0 0 0
-Spells   'bless' 'NONE' 'NONE'
+Vnum      300
+Keywords  herbs herb timian~
+Type      pill~
+Short     a small dusk of timian herbs~
+Long      Some herbs are lying here, small green leaves and tiny pink flowers.~
+WFlags    take~
+Values    12 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 5 -2 9999 0 None None None
+Spells       'bless' 'NONE' 'NONE'
 #EXDESC
 ExDescKey    herbs herb timian~
 ExDesc       This herb smells rather spicy; maybe you should try it?
@@ -287,18 +263,16 @@ ExDesc       This herb smells rather spicy; maybe you should try it?
 #ENDOBJECT
 
 #OBJECT
-Vnum     301
-Keywords herbs herb gyvel~
-Type     pill~
-Short    a small dusk of black gyvel~
-Long     Some black gyvel is lying here, dark green with black leaves and tiny
-
-
+Vnum      301
+Keywords  herbs herb gyvel~
+Type      pill~
+Short     a small dusk of black gyvel~
+Long      Some black gyvel is lying here, dark green with black leaves and tiny
 blood red flowers.~
-WFlags   take~
-Values   45 -1 -1 -1 0 0
-Stats    1 50 5 0 0
-Spells   'poison' 'NONE' 'NONE'
+WFlags    take~
+Values    45 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 50 -2 9999 0 None None None
+Spells       'poison' 'NONE' 'NONE'
 #EXDESC
 ExDescKey    herbs herb gyvel~
 ExDesc       This herb smells rather special, but is it poisonous?
@@ -308,14 +282,14 @@ ExDesc       This herb smells rather special, but is it poisonous?
 #ENDOBJECT
 
 #OBJECT
-Vnum     302
-Keywords plant ivy~
-Type     food~
-Short    a small dusk of poison ivy~
-Long     Some poison ivy is growing here.~
-WFlags   take~
-Values   1 0 0 1 0 0
-Stats    1 5 0 0 0
+Vnum      302
+Keywords  plant ivy~
+Type      food~
+Short     a small dusk of poison ivy~
+Long      Some poison ivy is growing here.~
+WFlags    take~
+Values    1 0 0 1 0 0 0 0 0 0 0
+Stats     1 5 -2 9999 0 None None None
 #EXDESC
 ExDescKey    plant ivy~
 ExDesc       This plant has dark green juicy leaves.
@@ -325,14 +299,14 @@ You notice some small white thorns on it.~
 #ENDOBJECT
 
 #OBJECT
-Vnum     303
-Keywords blood jar~
-Type     drinkcon~
-Short    a dark red jar~
-Long     A small jar in a dark, red colour.~
-WFlags   take~
-Values   2 2 13 0 0 0
-Stats    2 50 5 0 0
+Vnum      303
+Keywords  blood jar~
+Type      drinkcon~
+Short     a dark red jar~
+Long      A small jar in a dark, red colour.~
+WFlags    take~
+Values    2 2 13 0 0 0 0 0 0 0 0
+Stats     2 50 -2 9999 0 None None None
 #EXDESC
 ExDescKey    blood jar~
 ExDesc       The jar is made of dry clay, covered with markings suggesting its
@@ -343,15 +317,15 @@ occult origin.
 #ENDOBJECT
 
 #OBJECT
-Vnum     304
-Keywords wild flowers~
-Type     trash~
-Short    wild flowers~
-Long     A bunch of pretty wild flowers is here.~
-Flags    antievil~
-WFlags   take head hold~
-Values   0 0 0 0 0 0
-Stats    1 10 1 0 0
+Vnum      304
+Keywords  wild flowers~
+Type      trash~
+Short     wild flowers~
+Long      A bunch of pretty wild flowers is here.~
+Flags     antievil~
+WFlags    take head hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 10 -2 9999 0 None None None
 #EXDESC
 ExDescKey    wild flowers~
 ExDesc       These wild flowers are really pretty.
@@ -361,17 +335,17 @@ Just like the flowers you would wear in your hair.~
 #ENDOBJECT
 
 #OBJECT
-Vnum     307
-Keywords amulet~
-Type     armor~
-Short    a strange amulet~
-Long     A strange looking amulet is lying here, half covered with dust.~
-Flags    magic nodrop~
-WFlags   take neck~
-Values   2 0 0 0 0 0
-Stats    1 500 50 0 0
-Affect       -1 -1 -5 21 0
-Affect       -1 -1 1 31 0
+Vnum      307
+Keywords  amulet~
+Type      armor~
+Short     a strange amulet~
+Long      A strange looking amulet is lying here, half covered with dust.~
+Flags     magic nodrop~
+WFlags    take neck~
+Values    2 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+AffData save_rod -5 -1 -1 0
+AffData class 1 -1 -1 0
 #EXDESC
 ExDescKey    amulet~
 ExDesc       Judging from the signs inscripted in the amulet, you gather it must
@@ -383,17 +357,17 @@ dominating it.
 #ENDOBJECT
 
 #OBJECT
-Vnum     308
-Keywords staff stick~
-Type     armor~
-Short    a druish staff~
-Long     A staff with druidic marks have been left here.~
-WFlags   wield hold~
-Values   0 0 0 0 0 0
-Stats    4 15 1 0 0
-Affect       -1 -1 15 12 0
-Affect       -1 -1 1 31 0
-Affect       -1 -1 1 25 0
+Vnum      308
+Keywords  staff stick~
+Type      armor~
+Short     a druish staff~
+Long      A staff with druidic marks have been left here.~
+WFlags    wield hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 15 -2 9999 0 None None None
+AffData mana 15 -1 -1 0
+AffData class 1 -1 -1 0
+AffData sex 1 -1 -1 0
 #EXDESC
 ExDescKey    staff stick~
 ExDesc       Then staff is about 5 ft long, engraved with mythical signs and figures.
@@ -404,14 +378,14 @@ Otherwise the staff seems of no real interest.
 #ENDOBJECT
 
 #OBJECT
-Vnum     309
-Keywords rabbit roast wabbit~
-Type     food~
-Short    a rabbit roast~
-Long     You see a deliciously looking rabbit roast.~
-WFlags   take~
-Values   24 0 0 0 0 0
-Stats    5 40 4 0 0
+Vnum      309
+Keywords  rabbit roast wabbit~
+Type      food~
+Short     a rabbit roast~
+Long      You see a deliciously looking rabbit roast.~
+WFlags    take~
+Values    24 0 0 0 0 0 0 0 0 0 0
+Stats     5 40 -2 9999 0 None None None
 #EXDESC
 ExDescKey    roast rabbit wabbit~
 ExDesc       Well the rabbit looks rather dead.
@@ -423,16 +397,16 @@ changed to that of a tasty wabbit woast.
 #ENDOBJECT
 
 #OBJECT
-Vnum     310
-Keywords template scroll~
-Type     scroll~
-Short    a strange template~
-Long     A strange template made of an exotic green metal is placed here~
-Flags    magic~
-WFlags   take hold~
-Values   20 -1 -1 -1 0 0
-Stats    1 15000 1500 0 0
-Spells   'blazebane' 'blindness' 'fireball'
+Vnum      310
+Keywords  template scroll~
+Type      scroll~
+Short     a strange template~
+Long      A strange template made of an exotic green metal is placed here~
+Flags     magic~
+WFlags    take hold~
+Values    20 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 15000 -2 1 0 None None None
+Spells       'blazebane' 'blindness' 'fireball'
 #EXDESC
 ExDescKey    template scroll metal~
 ExDesc       The template is made of an exotic green metal and looks
@@ -446,16 +420,16 @@ And beneath the inscription you see horrifying death scenes depicted.
 #ENDOBJECT
 
 #OBJECT
-Vnum     311
-Keywords potion clear~
-Type     potion~
-Short    a clear potion~
-Long     A clear potion wrapped in leather is unnoticed placed here.~
-Flags    magic~
-WFlags   take~
-Values   20 -1 -1 -1 0 0
-Stats    2 2500 250 0 0
-Spells   'detect evil' 'detect invis' 'detect magic'
+Vnum      311
+Keywords  potion clear~
+Type      potion~
+Short     a clear potion~
+Long      A clear potion wrapped in leather is unnoticed placed here.~
+Flags     magic~
+WFlags    take~
+Values    20 -1 -1 -1 0 0 0 0 0 0 0
+Stats     2 2500 -2 1 0 None None None
+Spells       'detect evil' 'detect invis' 'detect magic'
 #EXDESC
 ExDescKey    potion clear~
 ExDesc       As you examine the potion more, you notice the oddities of this
@@ -473,15 +447,15 @@ from an, to you, unknown creature.~
 #ENDOBJECT
 
 #OBJECT
-Vnum     312
-Keywords scroll jhyfrdow~
-Type     scroll~
-Short    a scroll titled 'jhyfrdow'~
-Long     An odd looking scroll is here.~
-WFlags   take~
-Values   12 -1 -1 -1 0 0
-Stats    1 500 50 0 0
-Spells   'harm' 'NONE' 'NONE'
+Vnum      312
+Keywords  scroll jhyfrdow~
+Type      scroll~
+Short     a scroll titled 'jhyfrdow'~
+Long      An odd looking scroll is here.~
+WFlags    take~
+Values    12 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+Spells       'harm' 'NONE' 'NONE'
 #EXDESC
 ExDescKey    scroll jhyfrdow~
 ExDesc       The scroll is titled 'jhyfrdow' and looks very old.
@@ -501,14 +475,14 @@ It seems they are sacrificing some of their own species.
 #ENDOBJECT
 
 #OBJECT
-Vnum     313
-Keywords crimson flask blood~
-Type     blood~
-Short    a flask of crimson liquid~
-Long     A flask of crimson liquid draws your attention.~
-WFlags   take~
-Values   1 1 13 0 0 0
-Stats    3 35000 3500 0 0
+Vnum      313
+Keywords  crimson flask blood~
+Type      blood~
+Short     a flask of crimson liquid~
+Long      A flask of crimson liquid draws your attention.~
+WFlags    take~
+Values    1 1 13 0 0 0 0 0 0 0 0
+Stats     3 35000 -2 1 0 None None None
 #EXDESC
 ExDescKey    blood jar~
 ExDesc       The jar is made of dry clay, covered with markings suggesting its
@@ -519,10 +493,12 @@ occult origin.
 #ENDOBJECT
 
 #ROOM
-Vnum     300
-Name     Path in the plains~
-Sector   field~
-Desc     You are walking on a path situated in the rough plains.
+Vnum      300
+Name      Path in the plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking on a path situated in the rough plains.
 You feel the strong winds blow through your hair as you study
 the beautiful landscaping here. The path continues east, north
 and west leads to plains and you see the path around Darkhaven
@@ -543,6 +519,13 @@ Desc      You notice nothing special, except that the path in the plains continu
 #ENDEXIT
 
 #EXIT
+Direction south~
+ToRoom    3904
+Desc      Towards the south you notice the citywall of Darkhaven.
+~
+#ENDEXIT
+
+#EXIT
 Direction west~
 ToRoom    316
 Desc      You see the grassy plains.
@@ -552,10 +535,12 @@ Desc      You see the grassy plains.
 #ENDROOM
 
 #ROOM
-Vnum     301
-Name     Path in the plains~
-Sector   field~
-Desc     You are walking on a path situated in the rough plains.
+Vnum      301
+Name      Path in the plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking on a path situated in the rough plains.
 You feel the strong winds blow through your hair as you study
 the beautiful landscaping here. The path continues east and west.
 ~
@@ -576,10 +561,12 @@ Desc      You notice nothing special, except that the path in the plains continu
 #ENDROOM
 
 #ROOM
-Vnum     302
-Name     Path in the plains~
-Sector   field~
-Desc     You are walking on a path situated in the rough plains.
+Vnum      302
+Name      Path in the plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking on a path situated in the rough plains.
 You feel the strong winds blow through your hair as you study
 the beautiful landscaping here. The path continues north and west.
 ~
@@ -600,10 +587,12 @@ Desc      You notice nothing special, except that the path in the plains continu
 #ENDROOM
 
 #ROOM
-Vnum     303
-Name     Path in the plains~
-Sector   field~
-Desc     You are walking on a path situated in the rough plains.
+Vnum      303
+Name      Path in the plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking on a path situated in the rough plains.
 You feel the strong winds blow through your hair as you study
 the beautiful landscaping here. The path leads north and south.
 To the east and the west you have the grassy plains.
@@ -639,10 +628,12 @@ Desc      To the west you can see more of the beautiful grassy plains.
 #ENDROOM
 
 #ROOM
-Vnum     304
-Name     Path in the plains~
-Sector   field~
-Desc     You are walking on a path situated in the rough plains.
+Vnum      304
+Name      Path in the plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking on a path situated in the rough plains.
 You feel the strong winds blow through your hair as you study
 the beautiful landscaping here. The Path leads north and south.
 ~
@@ -663,10 +654,12 @@ Desc      The path leads south towards the town.
 #ENDROOM
 
 #ROOM
-Vnum     305
-Name     Path in the plains~
-Sector   field~
-Desc     You are walking on a path situated in the rough plains.
+Vnum      305
+Name      Path in the plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking on a path situated in the rough plains.
 You feel the strong winds blow through your hair as you watch the
 beautiful landscaping here. To the east and west you see the grassy plains.
 The path extends into small foothills to the north and also continues south.
@@ -702,10 +695,12 @@ Desc      You see the grassy plains here.
 #ENDROOM
 
 #ROOM
-Vnum     306
-Name     Path in the foothills~
-Sector   field~
-Desc     You are on the path leading through the small foothills.
+Vnum      306
+Name      Path in the foothills~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on the path leading through the small foothills.
 The wind blow through your hair as you study the beautiful
 landscaping here. From the north you sense a certain freshness.
 The path continues east and south. You smell freshness from north.
@@ -734,10 +729,12 @@ Desc      The path in the plains wind through the small foothills.
 #ENDROOM
 
 #ROOM
-Vnum     307
-Name     Path in the foothills~
-Sector   field~
-Desc     You are walking on a path situated in the small foothills.
+Vnum      307
+Name      Path in the foothills~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking on a path situated in the small foothills.
 The winds are more than average here but it feels nice. You can follow
 the path east or west.
 ~
@@ -758,10 +755,12 @@ Desc      To the west the path takes a bend southwards.
 #ENDROOM
 
 #ROOM
-Vnum     308
-Name     Path in the foothills~
-Sector   field~
-Desc     You are walking on a narrow path in the foothills.
+Vnum      308
+Name      Path in the foothills~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking on a narrow path in the foothills.
 You feel the strong winds blow through your hair as you study
 the beautiful landscaping here. The path goes north and west.
 ~
@@ -782,10 +781,12 @@ Desc      To the west you can see the path continues.
 #ENDROOM
 
 #ROOM
-Vnum     309
-Name     Path in the foothills~
-Sector   field~
-Desc     You are walking on a path situated in foothills.
+Vnum      309
+Name      Path in the foothills~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking on a path situated in foothills.
 To the west you sense a certain freshness and the path continues
 south and east.
 ~
@@ -813,10 +814,12 @@ Desc      You see grassy plains and perhaps some crystal clear water.
 #ENDROOM
 
 #ROOM
-Vnum     310
-Name     Path in the foothills~
-Sector   field~
-Desc     You are walking on a long path in the east-west direction.
+Vnum      310
+Name      Path in the foothills~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking on a long path in the east-west direction.
 The surroundings are green, vegetated foothills.
 You are able to force your way through some dense plants to the north.
 ~
@@ -844,10 +847,12 @@ Desc      You just see the path through the foothills.
 #ENDROOM
 
 #ROOM
-Vnum     311
-Name     Path in the foothills~
-Sector   field~
-Desc     You are walking on the long, narrow path through the foothills.
+Vnum      311
+Name      Path in the foothills~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking on the long, narrow path through the foothills.
 To your east you see a T-intersection and to the west the path
 continues far.
 ~
@@ -868,10 +873,12 @@ Desc      You can see the long path through the plains.
 #ENDROOM
 
 #ROOM
-Vnum     312
-Name     The path intersection~
-Sector   field~
-Desc     You are standing on an intersection between 3 paths.
+Vnum      312
+Name      The path intersection~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing on an intersection between 3 paths.
 To the west you can follow a long, narrow path through the foothills.
 To the north a wide path leads to the Village of Ofcol and an
 ancient path leads towards the south.
@@ -900,10 +907,12 @@ Desc      You can see the long narrow path running through the foothills.
 #ENDROOM
 
 #ROOM
-Vnum     313
-Name     The Road to Ofcol~
-Sector   field~
-Desc     You travel down a wide road with trail marks on it.  To the north stands the
+Vnum      313
+Name      The Road to Ofcol~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You travel down a wide road with trail marks on it.  To the north stands the
 township of Ofcol, dominated by a great, gleaming citadel to its northeast.
 South of you lies the T intersection, or you can enter the foothills to the
 west.  The foothills east of you appear to be too steep to climb.
@@ -932,15 +941,24 @@ Desc      You think you can climb these foothills.
 #ENDROOM
 
 #ROOM
-Vnum     314
-Name     Nearing Ofcol~
-Sector   field~
-Flags    nomob~
-Desc     You are standing outside the town of Ofcol.  There appears to be a small
+Vnum      314
+Name      Nearing Ofcol~
+Sector    field~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You are standing outside the town of Ofcol.  There appears to be a small
 village portion ahead that may be a nice, safe place to stay before entering
 the city itself.  You can journey northward to the town, or back south to
 an intersection of paths.
 ~
+#EXIT
+Direction north~
+ToRoom    5550
+Desc      You notice a sign saying : Stranger we welcome you to the
+                           peaceful city of Ofcol.
+~
+#ENDEXIT
+
 #EXIT
 Direction south~
 ToRoom    313
@@ -951,10 +969,12 @@ Desc      Here you see the road go towards the intersection.
 #ENDROOM
 
 #ROOM
-Vnum     315
-Name     Gallow hill~
-Sector   hills~
-Desc     You walk in the grassy plains. On this little hill you can see
+Vnum      315
+Name      Gallow hill~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You walk in the grassy plains. On this little hill you can see
 two gallows, with rotting human tissue hanging from the robe.
 There is a sign here.
 ~
@@ -1002,10 +1022,12 @@ ExDesc       The sign says:
 #ENDROOM
 
 #ROOM
-Vnum     316
-Name     Grassy plains~
-Sector   hills~
-Desc     You walk in the grassy plains among the herbs which grow here. The wind is
+Vnum      316
+Name      Grassy plains~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You walk in the grassy plains among the herbs which grow here. The wind is
 strong and rough. Far to the north you can see the foothills and further on
 mountain peaks are visible.
 ~
@@ -1023,14 +1045,16 @@ Desc      When you look to the east you notice at small path.
 ~
 #ENDEXIT
 
-Reset O 0 304 3 316
+Reset O 304 3 316 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     317
-Name     Grassy plains~
-Sector   hills~
-Desc     You walk in the grassy plains among the herbs which grow here. The wind is
+Vnum      317
+Name      Grassy plains~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You walk in the grassy plains among the herbs which grow here. The wind is
 strong and rough. Far to the north you can see the foothills and further on
 mountain peaks are visible. City of Darkhaven is to the south but so are some
 VERY steep slopes.
@@ -1059,10 +1083,12 @@ Desc      A small path is running through the plains.
 #ENDROOM
 
 #ROOM
-Vnum     318
-Name     Grassy plains~
-Sector   hills~
-Desc     You walk in the beautiful grassy plains. The wind is strong and rough.
+Vnum      318
+Name      Grassy plains~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You walk in the beautiful grassy plains. The wind is strong and rough.
 Far to the north you can see the foothills and further on mountain peaks
 are visible.
 ~
@@ -1087,14 +1113,16 @@ Desc      The plains extend far to the south.
 ~
 #ENDEXIT
 
-Reset M 0 309 10 318
+Reset M 309 10 318 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     319
-Name     Grassy plains~
-Sector   hills~
-Desc     You walk in the grassy plains among the herbs which grow here. The wind is
+Vnum      319
+Name      Grassy plains~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You walk in the grassy plains among the herbs which grow here. The wind is
 strong and rough. To the north you can see the foothills and just behind
 mountain peaks are visible.
 ~
@@ -1120,14 +1148,16 @@ Desc      The plains extend far to the south.
 ~
 #ENDEXIT
 
-Reset O 0 301 10 319
+Reset O 301 10 319 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     320
-Name     Grassy plains~
-Sector   hills~
-Desc     You walk in some grassy plains. The wind is strong and rough. To the
+Vnum      320
+Name      Grassy plains~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You walk in some grassy plains. The wind is strong and rough. To the
 north you can see the foothills and further on mountain peaks are visible.
 ~
 #EXIT
@@ -1161,10 +1191,12 @@ Desc      The plains extend far to the west.
 #ENDROOM
 
 #ROOM
-Vnum     321
-Name     Grassy plains~
-Sector   hills~
-Desc     You walk in the grassy plains. The wind is fairly strong.
+Vnum      321
+Name      Grassy plains~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You walk in the grassy plains. The wind is fairly strong.
 ~
 #EXIT
 Direction south~
@@ -1183,10 +1215,12 @@ Desc      A small path is running through the plains.
 #ENDROOM
 
 #ROOM
-Vnum     322
-Name     Grassy foothills~
-Sector   hills~
-Desc     You walk in the grassy foothills north of the plains. The wind is rough.
+Vnum      322
+Name      Grassy foothills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You walk in the grassy foothills north of the plains. The wind is rough.
 To the north you can see foothills and just behind them mountain peaks
 are visible.
 ~
@@ -1214,12 +1248,21 @@ Desc      The small foothills extend far to the west.
 #ENDROOM
 
 #ROOM
-Vnum     323
-Name     The steep foothills~
-Sector   hills~
-Desc     You walk in the steep foothills. It is rather hard to move here.
+Vnum      323
+Name      The steep foothills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You walk in the steep foothills. It is rather hard to move here.
 To the north you can see a grassy valley with wildflowers.
 ~
+#EXIT
+Direction north~
+ToRoom    7800
+Desc      You see a path toward the valley.
+~
+#ENDEXIT
+
 #EXIT
 Direction east~
 ToRoom    324
@@ -1234,22 +1277,31 @@ Desc      On the horizon you can see the City of Darkhaven.
 ~
 #ENDEXIT
 
-Reset O 0 304 3 323
-Reset M 0 300 1 323
-  Reset E 1 308 2 17
-  Reset E 1 307 2 3
-  Reset G 1 312 1
-  Reset G 1 302 10
+Reset O 304 3 323 -1 -1 -1 100
+Reset M 300 1 323 -1 -1 -1 100
+  Reset E 308 2 17 100
+  Reset E 307 2 3 100
+  Reset G 312 1 100
+  Reset G 302 10 100
 #ENDROOM
 
 #ROOM
-Vnum     324
-Name     The steep foothills~
-Sector   hills~
-Desc     You are walking in the steep foothills. It is rather hard to move here.
+Vnum      324
+Name      The steep foothills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking in the steep foothills. It is rather hard to move here.
 To the north you can see the mountains towering over you.  Pine trees
 grow here.
 ~
+#EXIT
+Direction north~
+ToRoom    901
+Desc      The path continues up the mountain.
+~
+#ENDEXIT
+
 #EXIT
 Direction east~
 ToRoom    325
@@ -1272,7 +1324,7 @@ Desc      The foothills extend far to the west.
 ~
 #ENDEXIT
 
-Reset M 0 309 10 324
+Reset M 309 10 324 -1 -1 -1 100
 #EXDESC
 ExDescKey    mountains~
 ExDesc       The mountains seems dark and all most alive, as they contrast against
@@ -1289,10 +1341,12 @@ ExDesc       The all too quiet trees suggest that something roams these woods.
 #ENDROOM
 
 #ROOM
-Vnum     325
-Name     The steep foothills~
-Sector   hills~
-Desc     You are walking in the steep foothills. It is rather hard to move here.
+Vnum      325
+Name      The steep foothills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking in the steep foothills. It is rather hard to move here.
 Further to the north you can see the mountains towering over you.
 Several pinetrees grow here.
 ~
@@ -1313,10 +1367,12 @@ Desc      The foothills extend far to the west.
 #ENDROOM
 
 #ROOM
-Vnum     326
-Name     The pool in the foothills~
-Sector   hills~
-Desc     You are standing by a pool in the small foothills. It is clear and cold.
+Vnum      326
+Name      The pool in the foothills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing by a pool in the small foothills. It is clear and cold.
 A steep slope rises up into the foothills to the north. Behind them ...
 the mountains.
 ~
@@ -1351,10 +1407,12 @@ you can't see the bottom of it ... it must be pretty deep.
 #ENDROOM
 
 #ROOM
-Vnum     327
-Name     The foothills~
-Sector   hills~
-Desc     You are walking in some foothills. It is rather hard to move here.
+Vnum      327
+Name      The foothills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking in some foothills. It is rather hard to move here.
 Further to the north you can see the mountains towering over you.
 Several pinetrees grow here.
 ~
@@ -1372,14 +1430,16 @@ Desc      To the south a steep slope runs down to a small path in the foothills.
 ~
 #ENDEXIT
 
-Reset O 0 300 10 327
+Reset O 300 10 327 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     330
-Name     In front of hut in foothills~
-Sector   hills~
-Desc     You are standing in the foothills. To the west, well hidden among the small
+Vnum      330
+Name      In front of hut in foothills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing in the foothills. To the west, well hidden among the small
 foothills and pines, you see a small hut. To the north you can see
 the foothills, and some pineforrest. Further on mountain peaks are visible.
 ~
@@ -1416,11 +1476,12 @@ Flags     isdoor~
 #ENDROOM
 
 #ROOM
-Vnum     331
-Name     Hermit's hut~
-Sector   inside~
-Flags    indoors~
-Desc     You are inside the hermit's hut. It is rather old, but serves it purpose.
+Vnum      331
+Name      Hermit's hut~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are inside the hermit's hut. It is rather old, but serves it purpose.
 It keeps its habitant from the rough winds and dangerous beasts of the
 plains and foothills. There is a small fireplace here.
 ~
@@ -1433,9 +1494,9 @@ Keywords  door~
 Flags     isdoor~
 #ENDEXIT
 
-Reset M 0 301 1 331
-  Reset G 1 303 2
-Reset O 0 309 30 331
+Reset M 301 1 331 -1 -1 -1 100
+  Reset G 303 2 100
+Reset O 309 30 331 -1 -1 -1 100
 #EXDESC
 ExDescKey    fireplace~
 ExDesc       The hermit cooks here.
@@ -1445,10 +1506,12 @@ ExDesc       The hermit cooks here.
 #ENDROOM
 
 #ROOM
-Vnum     332
-Name     The ancient path~
-Sector   forest~
-Desc     You are moving on an ancient path. The path is slightly covered with
+Vnum      332
+Name      The ancient path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are moving on an ancient path. The path is slightly covered with
 leaves and twitches.
 To the north you can see the T-crossing and the path continues south.
 ~
@@ -1469,10 +1532,12 @@ Desc      The ancient path continues through the plains.
 #ENDROOM
 
 #ROOM
-Vnum     333
-Name     The ancient path~
-Sector   forest~
-Desc     You are standing on the ancient path which runs north and south.
+Vnum      333
+Name      The ancient path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing on the ancient path which runs north and south.
 The path is hardly visible here.
 ~
 #EXIT
@@ -1492,10 +1557,12 @@ Desc      You trace the path carefully and see no immediate dangers.
 #ENDROOM
 
 #ROOM
-Vnum     334
-Name     The ancient path~
-Sector   forest~
-Desc     You are standing on the ancient path which runs north and south.
+Vnum      334
+Name      The ancient path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing on the ancient path which runs north and south.
 The path is hardly visible here.
 ~
 #EXIT
@@ -1512,14 +1579,16 @@ Desc      You trace the path carefully and see no immediate dangers.
 ~
 #ENDEXIT
 
-Reset M 0 309 10 334
+Reset M 309 10 334 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     335
-Name     The ancient path~
-Sector   forest~
-Desc     The path runs north and east from here.  You notice some markers placed
+Vnum      335
+Name      The ancient path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path runs north and east from here.  You notice some markers placed
 along the side of the path.
 ~
 #EXIT
@@ -1546,10 +1615,12 @@ arranged makes you think there is something special about them.
 #ENDROOM
 
 #ROOM
-Vnum     336
-Name     The wooden bridge~
-Sector   field~
-Desc     You have stepped upon a wooden bridge. It looks old but safe to cross.
+Vnum      336
+Name      The wooden bridge~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have stepped upon a wooden bridge. It looks old but safe to cross.
 It is made of a wood you haven't seen before.
 ~
 #EXIT
@@ -1577,10 +1648,12 @@ You notice it's possible to enter the ring.
 #ENDROOM
 
 #ROOM
-Vnum     337
-Name     The ancient path~
-Sector   forest~
-Desc     You find yourself located between the bridge and the rock formations.
+Vnum      337
+Name      The ancient path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You find yourself located between the bridge and the rock formations.
 As you approach the formations you begin to realize the true size of
 them, about 15 feet tall and almost perfect rectangular shape.
 You feel impressed with the awesome sight.
@@ -1609,10 +1682,12 @@ You notice it's possible to enter the ring.
 #ENDROOM
 
 #ROOM
-Vnum     338
-Name     Grassy plains~
-Sector   hills~
-Desc     You walk in the grassy plains among the herbs which grow here. The wind is
+Vnum      338
+Name      Grassy plains~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You walk in the grassy plains among the herbs which grow here. The wind is
 strong and rough. Far to the north you can see the foothills and further on
 mountain peaks are visible.
 ~
@@ -1630,14 +1705,16 @@ Desc      The plains extend far to the east.
 ~
 #ENDEXIT
 
-Reset O 0 304 3 338
+Reset O 304 3 338 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     339
-Name     The Stones of G'harne~
-Sector   field~
-Desc     You are in the center of 7, 15 ft tall monolithic stones.  In the center of
+Vnum      339
+Name      The Stones of G'harne~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the center of 7, 15 ft tall monolithic stones.  In the center of
 the ring stands a large sacrificial altar.  Though the ground is covered
 with dirt, the altar shows no sign of such.  You spin around in awe,
 forgetting your bearings.
@@ -1659,7 +1736,7 @@ Keywords  altar~
 Flags     isdoor closed secret nopassdoor~
 #ENDEXIT
 
-Reset D 0 339 5 1
+Reset D 339 5 1 100 -2
 #EXDESC
 ExDescKey    stones g'harne monolith~
 ExDesc       The stones of G'harne tower fifteen feet over you.
@@ -1687,11 +1764,12 @@ There are people calling giant worms into existence with dark spells.
 #ENDROOM
 
 #ROOM
-Vnum     340
-Name     Dark smelly tunnels~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     You are standing in a gloomy tunnel leading south and west.  The walls
+Vnum      340
+Name      Dark smelly tunnels~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      You are standing in a gloomy tunnel leading south and west.  The walls
 are covered with a smelly slime and small rotting pieces of a meat like
 substance, fills the air with an unbearable stench.  You might be able
 to force your way into fresh air from here.
@@ -1715,7 +1793,7 @@ Keywords  slime~
 Flags     isdoor closed secret nopassdoor~
 #ENDEXIT
 
-Reset D 0 340 4 1
+Reset D 340 4 1 100 -2
 #EXDESC
 ExDescKey    meat rotting slime substance~
 ExDesc       You try to examine the substance closer, but must refrain from this
@@ -1727,11 +1805,12 @@ You puke.
 #ENDROOM
 
 #ROOM
-Vnum     341
-Name     Dead end tunnel~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     The tunnel comes to an abrupt end here. It simply looks like it hasn't been
+Vnum      341
+Name      Dead end tunnel~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      The tunnel comes to an abrupt end here. It simply looks like it hasn't been
 excavated further.  North of here the tunnel makes a turn west.
 ~
 #EXIT
@@ -1742,11 +1821,12 @@ ToRoom    340
 #ENDROOM
 
 #ROOM
-Vnum     342
-Name     Dark smelly tunnels~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     You are standing in a gloomy tunnel leading east and west.
+Vnum      342
+Name      Dark smelly tunnels~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      You are standing in a gloomy tunnel leading east and west.
 The walls are covered with a smelly slime and small rotting pieces of a
 meat like substance, fills the air with an unbearable stench.
 ~
@@ -1775,11 +1855,12 @@ You puke.
 #ENDROOM
 
 #ROOM
-Vnum     343
-Name     Dark smelly tunnels~
-Sector   inside~
-Flags    tunnel~
-Desc     You are standing in a small smelly tunnel under the plains.
+Vnum      343
+Name      Dark smelly tunnels~
+Sector    indoors~
+Flags     tunnel~
+Stats     0 0 0 0 0
+Desc      You are standing in a small smelly tunnel under the plains.
 The smell is growing stronger to the west, so is the density of the
 slime and other undeterminable substances ...
 ~
@@ -1806,11 +1887,12 @@ ExDesc       BWADR! ...
 #ENDROOM
 
 #ROOM
-Vnum     344
-Name     The Hall of G'harne~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     You stand in the hall of G'harne. The walls are dressed with strange
+Vnum      344
+Name      The Hall of G'harne~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      You stand in the hall of G'harne. The walls are dressed with strange
 carving, symbolizing human sacrifice and people worshipping giant worms.
 Disgusting slime and gore are also very dominant in your view of this room.
 ~
@@ -1821,9 +1903,9 @@ Desc      It looks like a good idea just to run in this direction.
 ~
 #ENDEXIT
 
-Reset M 0 305 1 344
-  Reset G 1 310 5
-  Reset G 1 311 5
+Reset M 305 1 344 -1 -1 -1 100
+  Reset G 310 5 100
+  Reset G 311 5 100
 #EXDESC
 ExDescKey    slime gore~
 ExDesc       You puke.
@@ -1833,11 +1915,12 @@ ExDesc       You puke.
 #ENDROOM
 
 #ROOM
-Vnum     345
-Name     Steep slope~
-Sector   field~
-Flags    nomob indoors~
-Desc     You try to climb down the slope.
+Vnum      345
+Name      Steep slope~
+Sector    field~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You try to climb down the slope.
 ~
 #ENDROOM
 

@@ -1,0 +1,6643 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Glacial Rift of the Jarl~
+Author          Rolindar~
+Vnums           32200 32299
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          35 45 20 65
+ResetMsg        A chilling gale rips through the center of the rift.~
+ResetFreq       20
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      32200
+Keywords  frost giant guard~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a frost giant guard~
+Long      A blueskinned giant peers warily down each corridor.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2000 6 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Attacks   punch~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   peer
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if race($n) == dwarf
+snarl
+mpe The giant roars in rage as he sights the ancient foe of his people!
+else
+if ispc($n)
+snarl
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   mpe _yel The giant hurls a large chunk of ice into the fray!
+mpdamage $r 50
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32201
+Keywords  frost giant south guard~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a frost giant guard~
+Long      A frost giant stands ready to intercept intruders.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2000 6 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Attacks   punch~
+Defenses  dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+else
+yell Intruders at the northeast caves! Send help!
+growl
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   fire~
+Comlist   cringe
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   mpe The giant leaps for a large chunk of ice, and hurls it into the fray!
+mpdamage $r 50
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32202
+Keywords  winter wolf~
+Race      wolf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_frost~
+Short     a winter wolf~
+Long      A huge wolf, its fur tinged with frost, stalks through the ice cavern.
+~
+Desc      Faithful pets of the frost giants, these wolves serve as both hunting
+and guard beasts, and are intelligent enough to understand a series of
+spoken commands. Their fur exudes a chill that causes discomfort to 
+their foes, while their icy breath can smite a lesser foe.
+~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    35 21 0 600 4 4 8
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden infrared sneak iceshield~
+Bodyparts head legs heart brains guts ear eye tail haunches paws~
+Immune    fire~
+Suscept   NONE~
+Attacks   bite~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   growl
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   18~
+Comlist   mpe _lbl Waves of cold emanate from the beast!
+mpdamage $n 50
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32203
+Keywords  wandering frost giant~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a frost giant~
+Long      A frost giant wanders the rift, on business of his own.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2000 6 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Attacks   punch~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mutter
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   scowl
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isimmort($n)
+else
+if isnpc($n)
+else
+say Hark, intruder! What business have ye in the halls of Grugnur?
+mea $n The giant reaches for a hefty chunk of ice and hurls it at you!
+if rand(33)
+   if dex($n) > 16
+   mea $n You nimbly dodge the missile!
+   else
+   mea $n The ice crashes into you!
+   mpdamage $n 50
+   endif
+else
+mea $n The ice sails over your head!
+curse
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   grunt
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32204
+Keywords  ogre mercenary~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an ogre mercenary~
+Long      A burly ogre mercenary is cleaning his weapons.
+~
+Desc      Like all the giantish races, the frost giants supplant their relatively
+small numbers with large volumes of troops of other races, most notably
+ogres, trolls and gnolls. These mercenaries serve well as long as they
+are paid and fed, and the odds are stacked in their favor. They are not
+as powerful as giants, but are still very tough and strong.
+~
+Nattacks  0.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    35 21 0 800 1 10 10
+Speaks    ogre~
+Speaking  ogre~
+Actflags  npc sentinel scavenger aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart guts~
+Attacks   punch trip~
+Defenses  parry~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpe The ogre lovingly polishes his stout oaken club.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   33~
+Comlist   grunt
+if ispc($n)
+snarl
+yell 'umies and odders in da cavez, boyz!
+flex
+say Lemme show you wot we do to intruders, then!
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   20~
+Comlist   wield club
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   10~
+Comlist   mpoload 32209 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32205
+Keywords  frost giant elite guard~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an elite frost giant guard~
+Long      A member of the Jarl's elite guard stands ready for action.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2000 6 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Attacks   punch~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   flex
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+eye $n
+else
+sneer $n
+say Puny stripling, I will squash ye like a bug!
+cackle
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   roar
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   snarl
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   scream
+say Death to the puny little folk!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   33~
+Comlist   mpoload 32209
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32206
+Keywords  toad ice~
+Race      amphibian~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     an ice toad~
+Long      A hideous toad the size of a horse leaps down from a ledge above.
+~
+Desc      These foul amphibians are similar to the giant toads of the swamps 
+to the south, save that they belch frost instead of gas, and radiate
+an extreme cold, that is damaging to those without adequate protection.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    34 21 0 600 2 4 8
+Speaks    reptile~
+Speaking  reptile~
+Actflags  npc sentinel aggressive~
+Affected  infrared iceshield~
+Bodyparts head legs heart brains guts eye long_tongue haunches~
+Resist    energy~
+Immune    fire~
+Suscept   NONE blunt~
+Attacks   bite frostbreath~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   , croaks loudly, and a blast of frost escapes!
+mpasound A loud croak, followed by a blast of frost, is detected!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32207
+Keywords  yeti~
+Race      monster~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a yeti~
+Long      A towering, hirsute beast stalks about the cavern.
+~
+Desc      These monstrous yeti serve the frost giants as shock troops and also
+as guards, for they strike terror into smaller races due to their
+ferocity, though in truth they are weaker than their masters, if not
+less skilled in battle. They reek abominably.
+~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    36 21 0 1000 2 8 9
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet ear eye claws~
+Immune    fire~
+Suscept   NONE~
+Attacks   bite claws~
+Defenses  dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   5~
+Comlist   gouge
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   5~
+Comlist   stun
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   5~
+Comlist   disarm
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   12~
+Comlist   snarl
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+else
+if ispc($n)
+scream
+mpe The yeti leaps forth, claws bared!
+mpforce $n cringe
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32208
+Keywords  yeti leader~
+Race      monster~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the yeti leader~
+Long      A larger, uglier, smellier yeti snarls and licks his lips.
+~
+Desc      These monstrous yeti serve the frost giants as shock troops and also
+as guards, for they strike terror into smaller races due to their
+ferocity, though in truth they are weaker than their masters, if not
+less skilled in battle. They reek abominably.
+~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    36 21 0 1200 2 8 12
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc sentinel aggressive~
+Affected  infrared iceshield~
+Bodyparts head arms legs heart brains guts hands feet ear eye claws~
+Immune    fire~
+Suscept   NONE~
+Attacks   bite claws bash stun~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   snarl
+lick
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   20~
+Comlist   wield frost
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   wield frost
+disarm
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32209
+Keywords  snow leopard~
+Race      feline~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a snow leopard~
+Long      A snow leopard blends into the icy background.
+~
+Desc      These beautiful but deadly felines are used as companions on the hunt
+by the giants, and also serve as excellent guards for their enhanced
+senses can detect hidden foes.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    34 21 0 700 2 4 8
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc sentinel aggressive~
+Affected  detect_hidden infrared sneak hide~
+Bodyparts head legs heart brains guts ear eye tail claws haunches paws~
+Immune    fire~
+Suscept   NONE~
+Attacks   bite claws~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   growl
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   snarl
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32210
+Keywords  frost giant soldier~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a frost giant soldier~
+Long      A frost giant soldier wanders through the barracks complex.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2000 6 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Attacks   punch~
+Defenses  dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+yell Intruders! Come here lads, I got me an intruder!
+grin $n
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   grunt
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32211
+Keywords  frost giant guard~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a frost giant guard~
+Long      A frost giant guard is sleeping soundly here.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2000 6 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Attacks   punch~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   snore
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mutter
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32212
+Keywords  hill giant envoy~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a hill giant envoy~
+Long      A hill giant envoy brings grim tidings for the Jarl.
+~
+Desc      These ugly, stinking giants bear ill tidings indeed for the Jarl; they
+managed to escape the sacking of the Steading and flee here to warn the
+Jarl that adventurers were bound his way... most likely you!
+~
+Nattacks  0.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    34 21 0 1200 2 8 8
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart guts~
+Attacks   punch~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   open sack
+get skull sack
+grunt
+nod
+put skull sack
+close sack
+say Skull safe.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mea $n The giant eyes you cautiously but does not attack...
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32213
+Keywords  stone giant envoy~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a stone giant~
+Long      A stone giant envoy awaits an audience with the Jarl.
+~
+Desc      Made from the substance they are named after, stone giants can withstand
+incredible amounts of damage, and are very difficult to injure in the
+first place. They are not an evil race, but rather they work for whoever
+pays them in much-loved gems and jewels. This envoy is here to represent
+his people, and to decide whether there'd be much gain in working for the
+Jarl.
+~
+Nattacks  1.000000
+Stats1    0 -1 0 0 0 0
+Stats2    38 21 -300 4000 4 6 24
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel scavenger~
+Affected  detect_hidden sanctuary infrared~
+Resist    NONE fire cold electricity pierce slash acid drain sleep charm hold plus6 magic~
+Immune    blunt~
+Suscept   energy~
+Attacks   stun~
+Defenses  dodge stoneskin~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   bow $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   twiddle
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32214
+Keywords  fire giant envoy~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a fire giant envoy~
+Long      A fire giant envoy mutters and tries to keep warm.
+~
+Desc      Fire giants are large, powerfully built humanoids, with deep red skin
+and bristling red hair covering most of their eighteen foot frames.
+Powerful hands that can rend steel usually grasp large two-handed swords
+or war hammers, unusable except by other large creatures. Highly trained
+and organized, they are nevertheless thoroughly evil and bent on the
+conquest of others. This envoy has been sent to liase with the Jarl on the
+behalf of King Snurre, and it hating every second of it.
+~
+Nattacks  0.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    42 21 0 3000 8 4 18
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    drain sleep~
+Immune    NONE~
+Suscept   fire~
+Attacks   punch~
+Defenses  parry dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32215
+Keywords  barlakaag white dragon ancient male~
+Race      dragon~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_frost~
+Short     Barlakaag~
+Long      An ancient white dragon of immense size stretches and unfolds his wings.
+~
+Desc      Although white dragons are the weakest and most cowardly of wyrmkind,
+Barlakaag is a dangerous and unpredictable foe. He has survived for
+centuries, by currying the favor of the frost giants (most notably the
+Jarl), and won't give up his cushy life easily.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    45 21 0 8000 7 4 24
+Speaks    common dragon ancient~
+Speaking  common~
+Actflags  npc sentinel scavenger~
+Affected  detect_invis detect_hidden infrared protect iceshield~
+Bodyparts head heart brains guts ear eye wings tail claws sharpscales haunches~
+Resist    blunt plus6~
+Immune    fire drain sleep magic~
+Suscept   NONE~
+Attacks   bite claws tail~
+Defenses  dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpe As the mighty wyrm thrashes about, he destroys much of his hoard!
+mpe A few pieces are salvagable from the ruins...
+if rand(75)
+mpoload 32219 40
+endif
+if rand(75)
+mpoload 32220 40
+endif
+if rand(75)
+mpoload 32221 40
+endif
+if rand(50)
+mpoload 32222 40
+endif
+if rand(25)
+mpoload 32223 40
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if isimmort($n)
+grovel $n
+say Please don't hurt me...
+cower $n
+else
+if isnpc($n)
+growl $n
+mpforce $n eep
+mptrans $n 32269
+else
+if clan($n) == dragonslayer
+sneer
+say You don't scare me, $n Wyrmsbane. 
+mpe $I attempts to look powerful, but his fear is evident.
+else
+mpe $I flexes his mighty wingspan and rises to his full height.
+say Mortals, you err by interrupting the sleep of $I...
+say But it is too late... now you must pay for your misdeed!
+cackle
+mpforce $n cringe
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   33~
+Comlist   snarl
+gouge
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   scream
+stun
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   32~
+Comlist   close boulder
+mprestore self 100
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   32~
+Comlist   close boulder
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   lick
+mmm
+grin
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  bribe_prog~
+Arglist   100~
+Comlist   mmm
+say Gold! 
+snicker
+say My thanks, $n.
+bow $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32216
+Keywords  Strekaal~
+Race      dragon~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_frost~
+Short     Strekaal~
+Long      An old white dragon lies curled up asleep on a high ledge.
+~
+Desc      The mate of Barlakaag, Strekaal is a little younger, though no less vile
+and cruel, in fact probably more so. She adores her mate, and he adores
+her, and she will aid him as best she can.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    45 21 0 6000 5 4 24
+Speaks    common dragon ancient~
+Speaking  common~
+Actflags  npc sentinel scavenger~
+Affected  detect_invis detect_hidden infrared protect iceshield~
+Bodyparts head heart brains guts ear eye wings tail claws sharpscales haunches~
+Resist    blunt plus6~
+Immune    fire drain sleep magic~
+Suscept   NONE~
+Attacks   bite claws tail~
+Defenses  dodge~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+say Go 'way, sleeping.
+mptrans $n 32269
+else
+if isimmort($n)
+snuggle $n
+say Hello cutie.
+else
+if clan($n) == dragonslayer
+whimper
+say Alas! My time has come! Slay me quickly Drakebane!
+else
+yawn
+mutter
+mea $n $I looks at you sleepily.
+say Wha...
+scream
+say ADVENTURERS! HOW *DARE* YOU!
+mpe _whi A billow of white frost erupts from $I's maw, striking $n!
+c 'frost breath' $n
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpe _lbl As $I perishes, she rolls over, revealing her secret cache of gems!
+if rand(75)
+mpoload 32242 1
+endif
+if rand(50)
+mpoload 32242 1
+endif
+if rand(25)
+mpoload 32242 1
+endif
+if rand(25)
+mpoload 32243 1
+endif
+if rand(10)
+mpoload 32243 1
+endif
+if rand(5)
+mpoload 32243 1
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  bribe_prog~
+Arglist   100~
+Comlist   mmm
+say Gold! 
+snicker
+say My thanks, $n.
+bow $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32217
+Keywords  toad ice~
+Race      amphibian~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     an ice toad~
+Long      A hideous toad the size of a horse leaps down from a ledge above.
+~
+Desc      These foul amphibians are similar to the giant toads of the swamps 
+to the south, save that they belch frost instead of gas, and radiate
+an extreme cold, that is damaging to those without adequate protection.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    34 21 0 600 2 4 8
+Speaks    reptile~
+Speaking  reptile~
+Actflags  npc sentinel aggressive~
+Affected  infrared iceshield~
+Bodyparts head legs heart brains guts eye long_tongue haunches~
+Resist    energy~
+Immune    fire~
+Suscept   NONE blunt~
+Attacks   bite frostbreath~
+Defenses  dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32218
+Keywords  frost giant sentry~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a frost giant sentry~
+Long      A burly frost giant stands guard here.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2200 6 4 18
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Attacks   punch~
+Defenses  dodge disarm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   15~
+Comlist   mpe The giant leaps for the long bronze horn and attempts to wind it!
+if rand(25)
+mpe _yel A long, low blast emerges from the horn!
+mpe Another giant comes running to join the fray!
+mpmload 32218
+else
+mpe The guard stumbles and falls, failing to reach the horn.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   peer
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32219
+Keywords  ogre mage~
+Race      half-ogre~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     an ogre-mage~
+Long      A taller, leaner ogre with long horns and fierce tattoos awaits the Jarl.
+~
+Desc      These ogre-magi are from the far east, having travelled far to listen
+to tales of giant unification against humanity, and to see whether they
+should add their numbers to the fray. Despite the obvious successes of
+the giants, they harbor doubts, for they know full well a darker power
+is behind all of this, a power they distrust and even fear.
+~
+Nattacks  0.000000
+Stats1    -800 -1 0 0 0 0
+Stats2    36 21 0 1000 2 8 14
+Speaks    ogre~
+Speaking  ogre~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye horns~
+Resist    fire acid plus6~
+Immune    drain sleep~
+Attacks   gouge~
+Defenses  parry dodge shield stoneskin~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   wield glaive
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   c 'chill touch'
+mpdamage $n 50
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   33~
+Comlist   snarl
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   33~
+Comlist   if isnpc($n)
+say Leave us!
+else
+say Foolish of you to intrude, humanoid!
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32220
+Keywords  storm giant~
+Race      half-ogre~
+Class     Cleric~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a storm giant~
+Long      A towering storm giant scowls at the walls of her gaol.
+~
+Desc      This storm giant noble was captured by the frost giants (at the cost
+of a dozen lives) and brought here, in the hopes that the Jarl could
+seduce her into becoming his leman. She finds the concept appalling,
+and would destroy him, had she the chance.
+~
+Nattacks  0.000000
+Stats1    750 -1 0 0 0 0
+Stats2    48 21 0 8000 6 7 28
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary infrared protect shockshield~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    acid poison drain sleep plus6~
+Immune    cold magic~
+Attacks   stun lightnbreath~
+Defenses  dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+snarl
+mpe The giant leaps at this newcomer to her gaol!
+mpkill $n
+else
+if isimmort($n)
+growl
+say Free me, $n!
+else
+if isevil($n)
+say Foul one, release me and I will not destroy you!
+snarl $n
+else
+say Adventurer, pray release me from my shackles!
+frown
+say I can stand not this durance vile!
+scream
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpe _yel The giant strains against her bonds, to no avail.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32221
+Keywords  cloud giant ~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a cloud giant~
+Long      This burly cloud giant is set to join the Jarl as a henchman.
+~
+Desc      This large, ugly, brutal giant has been recruited as a new heavy by
+the Jarl, a task he will doubtless excel at. His powerful frame is
+capable of far greater feats of strength than any frost giant, and
+thus he is a powerful ally.
+~
+Nattacks  0.000000
+Stats1    -760 -1 0 0 0 0
+Stats2    45 21 0 5000 6 6 28
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis sanctuary infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    fire cold plus6~
+Immune    drain sleep~
+Attacks   stun~
+Defenses  parry dodge disarm~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32222
+Keywords  ogre servant~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an ogre servant~
+Long      An ogre servant awaits his next assignment.
+~
+Desc      Like all the giantish races, the frost giants supplant their relatively
+small numbers with large volumes of troops of other races, most notably
+ogres, trolls and gnolls. These mercenaries serve well as long as they
+are paid and fed, and the odds are stacked in their favor. They are not
+as powerful as giants, but are still very tough and strong.
+~
+Nattacks  0.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    32 21 0 600 1 10 10
+Speaks    ogre~
+Speaking  ogre~
+Actflags  npc sentinel scavenger aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart guts~
+Attacks   punch trip~
+Defenses  parry~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32223
+Keywords  frost giant jarl grugnur~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Grugnur~
+Long      The frost giant Jarl sits here, scowling, upon his throne.
+~
+Desc      Grugnur is a frost giant, as large as a cloud giant, and as strong as
+one too. He is ugly; all giants are ugly by the standards of your race
+but he is of particularly foul visage, and mein. He holds all other 
+races in contempt, save for those who sponser his raids on humanity.
+~
+Nattacks  2.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    45 21 0 12000 6 6 24
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy acid plus6 magic~
+Immune    fire drain sleep~
+Suscept   NONE~
+Attacks   punch~
+Defenses  parry dodge grip~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   snarl
+stun
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   gouge
+cackle
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   18~
+Comlist   bash
+flex
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+nod 
+else
+if inroom($i) == 32295
+eye $n
+say Ho, little one, you are brave indeed to trespass 'pon my realm.
+chuckle
+mpe $I's ostensibly bright mood grows suddenly dark.
+say But you will pay for your transgression, wretch. You will pay.
+mpe $I rises to his full twenty feet and draws an impossibly long sword.
+say I will grant you the first blow...
+cackle
+else
+if inroom($i) == 32299
+say You have me cornered $n... but I will not perish easily!
+   if isimmort($n)
+   else
+   murder $n
+   endif
+else
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   mprestore self 200
+if ispc($r)
+poke $r
+say Strike, now, or I will rescind my offer...
+grin
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  hitprcnt_prog~
+Arglist   20~
+Comlist   if inroom($i) == 32295
+mpe Sensing his imminent defeat, $I hurls his shield at you and runs!
+rem shield
+drop shield
+mpdamage $n 100
+say It's been agreeable, but I have other things to do...
+wink $n
+mpgoto 32299
+say They're coming after me! Prepare to do battle...
+else
+if inroom($i) == 32299
+say You have me at a disadvantage, $n.
+say But I will not cede victory easily!
+bash
+gouge
+else
+mpgoto 32295
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if inroom($i) == 32299
+mpe As the Jarl perishes, his gaze lingers on an iron bar set in the wall...
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32224
+Keywords  guard elite frost giant~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the Jarl's guard~
+Long      A burly frost giant stands beside his Jarl.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2000 6 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Attacks   punch~
+Defenses  dodge~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   66~
+Comlist   wield spear
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   disarm
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32225
+Keywords  remorhaz~
+Race      monster~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a remorhaz~
+Long      A massive, frost covered wormlike creature erupts from the snow!
+~
+Desc      This vile beast has laired here for a few weeks, disguising its maw as
+a cave entrance, with the hope of luring prey. It will leap upon any
+who venture near it, and the Jarl intends to send a team to see it off
+soon.
+~
+Nattacks  0.000000
+Stats1    -650 0 0 0 0 0
+Stats2    44 21 0 4000 2 10 40
+Speaks    ancient~
+Speaking  ancient~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head heart brains guts ear eye tail~
+Resist    energy pierce~
+Immune    fire sleep~
+Suscept   NONE~
+Attacks   bite tail earthquake~
+Defenses  dodge~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if isimmort($n)
+else
+mea $n It is with a growing horror that you realize the cave is in fact a maw!
+roar
+c earthquake
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpe _lbl As the creature thrashes at the end of $n's weapon, it cries out!
+if rand(25)
+mpe _lbl A magnificent sword is belched up by the beast, landing in the snow.
+mpoload 32238
+drop giantsbane
+else
+mpe _lbl A magnificent sword is belched up by the beast, soaring into the rift!
+mpforce $r curse
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   mpe _lbl A thin layer of ice forms over the remorhaz's wounds!
+mprestore self 50
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   c 'frost breath' $r
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   33~
+Comlist   disarm
+get all
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32226
+Keywords  wolf winter wandering~
+Race      wolf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_frost~
+Short     a winter wolf~
+Long      A winter wolf lopes through the tunnels.
+~
+Desc      Faithful pets of the frost giants, these wolves serve as both hunting
+and guard beasts, and are intelligent enough to understand a series of
+spoken commands. Their fur exudes a chill that causes discomfort to 
+their foes, while their icy breath can smite a lesser foe.
+~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    35 21 0 600 4 4 8
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc scavenger aggressive stayarea~
+Affected  detect_invis detect_hidden infrared sneak iceshield~
+Bodyparts head legs heart brains guts ear eye tail haunches paws~
+Immune    fire~
+Suscept   NONE~
+Attacks   bite~
+Defenses  dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+growl $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   growl
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32227
+Keywords  frost giant sentry~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a frost giant sentry~
+Long      A burly frost giant stands guard here.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2200 6 4 18
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Defenses  dodge disarm~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   peer
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+else
+if ispc($n)
+   if rand(33)
+   yell Intruders near the throne room!
+   else
+   if rand(43)
+   sneer
+   say Stupid whelp, prepare to die!
+   else
+   say I will squash ye like a bug, swine!
+   scream
+   endif
+   endif
+else
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32228
+Keywords  frost giant ballista boy~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a ballista boy~
+Long      A frost giant 'ballista boy' has fallen asleep at his post.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2200 6 4 18
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Attacks   gouge~
+Defenses  dodge disarm~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   snore
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32229
+Keywords  ogre mercenary wandering~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an ogre mercenary~
+Long      An ogre mercenary wanders the tunnels on some errand or another.
+~
+Desc      Like all the giantish races, the frost giants supplant their relatively
+small numbers with large volumes of troops of other races, most notably
+ogres, trolls and gnolls. These mercenaries serve well as long as they
+are paid and fed, and the odds are stacked in their favor. They are not
+as powerful as giants, but are still very tough and strong.
+~
+Nattacks  0.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    35 21 0 800 1 10 10
+Speaks    ogre~
+Speaking  ogre~
+Actflags  npc scavenger aggressive stayarea~
+Affected  infrared~
+Bodyparts head arms legs heart guts~
+Attacks   punch trip~
+Defenses  parry~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32230
+Keywords  fire giant cook~
+Race      half-ogre~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a fire giant cook~
+Long      A huge fire giant cook makes her away around the roasting humans.
+~
+Desc      While not as large as a fire giant male, this cook is burlier than most
+frost giants of either gender, and as such her cooking is rarely, if ever,
+criticized; one such opponent of her culinary adventures was last week's
+feast.
+~
+Nattacks  0.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    40 21 0 3000 8 4 18
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    drain sleep~
+Immune    NONE~
+Suscept   fire~
+Attacks   punch~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   curse
+say No, cook it on the LEFT fire!
+say Do ye want to burn it!?
+roll
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mutter
+say Bah, these humans are too tough!
+mpe The giant pours a mixture of herbs over one of the cooking corpses.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32231
+Keywords  ogre servant~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an ogre servant~
+Long      An ogre servant carries out the cook's orders.
+~
+Desc      Like all the giantish races, the frost giants supplant their relatively
+small numbers with large volumes of troops of other races, most notably
+ogres, trolls and gnolls. These mercenaries serve well as long as they
+are paid and fed, and the odds are stacked in their favor. They are not
+as powerful as giants, but are still very tough and strong.
+~
+Nattacks  0.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    32 21 0 600 1 10 10
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart guts~
+Attacks   punch trip~
+Defenses  parry~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32232
+Keywords  frost giantess~
+Race      half-ogre~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a frost giantess~
+Long      A frost giantess mends some hides and armor.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2000 6 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Attacks   punch trip gouge~
+Defenses  dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum      32233
+Keywords  polar bear~
+Race      bear~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a polar bear~
+Long      A truly enormous white furred bear rises from the ground.
+~
+Desc      These mammoth beasts are favored by the Jarl as pets and guards, for
+they could easily rend most giants in a heartbeat. They are truly
+awe inspiring with their sheer size and ferocity, being able to bring
+their 2000-odd pounds to bear in battle in a matter of seconds.
+~
+Nattacks  2.000000
+Stats1    0 0 0 0 0 0
+Stats2    40 21 0 2800 3 8 24
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc sentinel aggressive~
+Affected  detect_hidden infrared~
+Bodyparts head arms legs heart brains guts ear eye claws haunches~
+Immune    fire~
+Suscept   NONE~
+Attacks   bite claws bash~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   growl
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32234
+Keywords  frost giant carl~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a frost giant carl~
+Long      A burly, muscular giant rests on a pile of furs.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  0.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    38 21 0 2000 6 4 12
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    fire~
+Suscept   NONE~
+Attacks   punch~
+Defenses  dodge~
+#MUDPROG
+Progtype  death_prog~
+Arglist   20~
+Comlist   mpoload 32209
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32235
+Keywords  frost giant djala~
+Race      half-ogre~
+Class     Cleric~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     Djala~
+Long      A burly frost giant woman sits at the table, drinking.
+~
+Desc      Blueskinned creatures with knotted, muscular limbs and flowing white
+beards, frost giants are totally acclimatized to the freezing cold of
+the rift, though they are in turn susceptible to more than a mild 
+increase in temperature. Burly, mean-spirited and cruel, they favor
+combat and pillaging to talking and creating, and this is evident in
+all aspects of their warlike culture.
+~
+Nattacks  2.000000
+Stats1    -750 -1 0 0 0 0
+Stats2    43 21 0 6000 6 4 22
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis detect_hidden sanctuary infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    acid magic~
+Immune    fire sleep~
+Suscept   NONE~
+Attacks   punch~
+Defenses  dodge disarm~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p DISARMS you!~
+Comlist   sneer
+if rand(33)
+mpe Djala scoffs at your attempt to remove her weapon.
+wield mace
+else
+mpe Djala ignores your action, and switches to a brutal hand attack!
+punch
+bash
+mpdamage $n 100
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   wield mace
+scream
+mpe Djala hurls bits of furniture into the fray!
+mpdamage $r 100
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+say Leave me...
+mpforce $n nod
+mpforce $n w
+else
+mpe $I leaps to her feet as you enter!
+snarl
+say Foolish whelps! I'll string yer guts from the arches at Ttechay!
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32236
+Keywords  flaming skull~
+Race      undead~
+Class     Cleric~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a flaming skull~
+Long      A flaming skull shrieks in your face!
+~
+Desc      Used as guardians in lairs everywhere, this horrid undead seems out
+of place in such a cold environment. It also begs the question- how
+did the Jarl manage to summon and control one?
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    40 21 0 800 2 8 14
+Speaks    ancient~
+Speaking  ancient~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis detect_hidden infrared fireshield~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+Immune    NONE blunt sleep~
+Suscept   fire energy~
+Attacks   gouge firebreath~
+Defenses  dodge~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if isimmort($n)
+else
+shriek
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   18~
+Comlist   shriek
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      32299
+Keywords  final mobile~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a newly created final mobile~
+Long      Some god abandoned a newly created final mobile here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc~
+#ENDMOBILE
+
+#OBJECT
+Vnum      32200
+Keywords  large sack~
+Type      container~
+Short     a large sack~
+Long      A large sack lies on the ground, filled with something.~
+Flags     organic~
+WFlags    take~
+Values    50 5 -1 0 0 0 0 0 0 0 0
+Stats     5 30 -2 9999 0 None None None
+#EXDESC
+ExDescKey    large sack~
+ExDesc       This hessain sack is used to store various personal possessions of its
+owner.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32201
+Keywords  jewelled belt~
+Type      armor~
+Short     a jewelled belt~
+Long      A broad leather belt set with gems glitters in the light.~
+Flags     glow~
+WFlags    take waist~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     1 16000 -2 1 0 None None None
+AffData constitution 2 -1 -1 0
+AffData hit 30 -1 -1 0
+AffData save_spell 2 -1 -1 0
+#EXDESC
+ExDescKey    jewelled belt~
+ExDesc       This leather girdle is set with semi precious stones, and inlaid with
+silver.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32202
+Keywords  necklace jewelled~
+Type      armor~
+Short     a jewelled necklace~
+Long      A necklace made of various gems shines brightly.~
+Flags     glow~
+WFlags    take neck wrist~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     1 30000 -2 1 0 None None None
+AffData mana 30 -1 -1 0
+AffData sex 3 -1 -1 0
+#EXDESC
+ExDescKey    jewelled necklace~
+ExDesc       This is a valuable piece of jewelry, due to the quality of the stones
+set in it. Its a good bet that it wasn't made by giants. Though its
+owner wears it around his wrist, it was apparently originally made for
+a smaller person's neck.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32203
+Keywords  barrel~
+Type      container~
+Short     a wooden barrel~
+Long      A wooden barrel banded with bronze rests on the icy floor.~
+Values    10000 5 -1 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    barrel~
+ExDesc       This barrel is too heavy to lift.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32204
+Keywords  scroll blue~
+Type      scroll~
+Short     a blue scroll~
+Long      Arcane writings inscribed on blue paper catch your eye.~
+Flags     magic~
+WFlags    take~
+Values    35 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+Spells       'cure serious' 'cure poison' 'NONE'
+#EXDESC
+ExDescKey    blue scroll~
+ExDesc       The runes appear to be ones of healing and rejuvenation.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32205
+Keywords  hacked body~
+Type      furniture~
+Short     a hacked up body~
+Long      The hacked up body of an adventurer has been frozen into the ice.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    hacked body~
+ExDesc       The corpse appears to still be carrying some equipment. Perhaps you
+could destroy the ice surrounding it and fetch some...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32206
+Keywords  elemental band~
+Type      armor~
+Short     elemental band~
+Long      A thin band of bronze, shaped to form a ring, lies half buried here.~
+Flags     glow metal magic antievil buried~
+WFlags    take finger~
+Values    11 0 0 0 0 0 0 0 0 0 0
+Stats     2 75000 -2 1 0 None None None
+AffData hit 20 -1 -1 0
+AffData mana 20 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData resistant NONE~ -1 -1 0
+AffData resistant fire~ -1 -1 0
+#EXDESC
+ExDescKey    elemental band~
+ExDesc       This ancient and curious item possesses potent abjurative magicks,
+and can protect the wearer from a variety of attacks, as well as add
+to their other abilities.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32207
+Keywords  club oak~
+Type      weapon~
+Short     an oak club~
+Long      A brutal looking ogre war club rests here.~
+Flags     organic~
+WFlags    take wield~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     20 50 -2 9999 0 None None None
+AffData damroll 3 -1 -1 0
+#EXDESC
+ExDescKey    club oak~
+ExDesc       A crude, but effective weapon, its punishing power enhanced by several
+rusted iron nails hammered through it, though whoever did it apparently
+didn't know that the pointed ends of nails hurt more...
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32208
+Keywords  ogre brew~
+Type      potion~
+Short     bottle of ogre brew~
+Long      Ogres drink this foul herbal mixture for strength...~
+Flags     organic evil~
+WFlags    take~
+Values    35 -1 -1 -1 0 0 0 0 0 0 0
+Stats     5 450 -2 1 0 None None None
+Spells       'poison' 'NONE' 'trollish vigor'
+#EXDESC
+ExDescKey    ogre brew~
+ExDesc       This filthy liquid looks disgusting and almost undrinkable... only
+those with a strong stomach should try to imbibe it.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32209
+Keywords  gold armband ~
+Type      armor~
+Short     a gold armband inset with ivory~
+Long      A gold armband inset with an ivory bear rests here.~
+Flags     metal antigood evil~
+WFlags    take arms~
+Values    11 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData strength 2 -1 -1 0
+AffData damroll 4 -1 -1 0
+#EXDESC
+ExDescKey    gold armband~
+ExDesc       This heavy piece of jewelry bestows a certain strength upon those who
+are of a non-devout nature. It bears the image of the polar bear, a
+sacred animal to frost giants.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32210
+Keywords  piece amethyst toad~
+Type      treasure~
+Short     a toad-shaped chunk of amethyst~
+Long      A toad-shaped chunk of amethyst sits in the center of the room.~
+Flags     glow~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 50000 -2 1 0 None None None
+#EXDESC
+ExDescKey    piece amethyst~
+ExDesc       This hideous, but naturally formed, chunk of semi-precious stone is
+worshipped as a god by the ice toads. Idiots.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32211
+Keywords  frost blade~
+Type      weapon~
+Short     a frost blade~
+Long      A shimmering blade of ice drips water onto the ground.~
+Flags     glow magic~
+WFlags    take wield~
+Values    0 0 0 6 0 0 0 0 0 0 0
+Stats     12 65000 -2 1 0 None None None
+AffData mana 30 -1 -1 0
+AffData hit 30 -1 -1 0
+AffData hitroll 6 -1 -1 0
+AffData damroll 6 -1 -1 0
+AffData resistant fire~ -1 -1 0
+AffData susceptible NONE~ -1 -1 0
+#EXDESC
+ExDescKey    frost blade~
+ExDesc       This weapon is forged from frost, and held together by magic. It sends
+forth an icy blast of cold to strike those it is raised against.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32212
+Keywords  ivory tusk~
+Type      weapon~
+Short     an ivory tusk~
+Long      An ivory tusk lies in a mound of snow.~
+Flags     organic~
+WFlags    take wield~
+Values    0 0 0 2 0 0 0 0 0 0 0
+Stats     10 800 -2 1 0 None None None
+#EXDESC
+ExDescKey    ivory tusk~
+ExDesc       Torn from the maw of a mammoth, this device serves as a crude but
+effective weapon.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32213
+Keywords  clear spring water~
+Type      fountain~
+Short     a clear spring of water~
+Long      A clear spring of water bubbles into a stone basin.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    clear spring water~
+ExDesc       This natural spring is heated by an underground source and thus does
+not freeze over. It provides bitter, but drinkable water.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32214
+Keywords  spear hunting~
+Type      weapon~
+Short     a hunting spear~
+Long      A short, by giantish standards, hunting spear rests against one wall.~
+Flags     organic~
+WFlags    take wield~
+Values    0 0 0 2 0 0 0 0 0 0 0
+Stats     20 300 -2 1 0 None None None
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+#EXDESC
+ExDescKey    spear hunting~
+ExDesc       This weapon is short enough to be hurled great distances by the giants,
+and to be used by most races as a melee weapon.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if race($n) == pixie
+or race($n) == halfling
+mea $n You are too small and weak to properly heft this weapon.
+mpforce $n rem $o
+else
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32215
+Keywords  gold inlayed skull~
+Type      treasure~
+Short     a gold inlayed skull~
+Long      A gold inlayed skull has significance to the giantish races.~
+Flags     glow metal~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 6000 -2 1 0 None None None
+#EXDESC
+ExDescKey    gold inlayed skull~
+ExDesc       This skull is used as a receptacle for private messages by several giants,
+and also serves as the key to the hall of King Snurre, thus envoys are
+granted it to hasten access.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    message~
+ExDesc       It reads- We lost! Send help! Ask Dark Ones for more people!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32216
+Keywords  fur cloak~
+Type      armor~
+Short     a fur cloak~
+Long      A smelly fur cloak rife with fleas lies here.~
+Flags     organic~
+WFlags    take about~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     10 6000 -2 1 0 None None None
+AffData hit 20 -1 -1 0
+AffData damroll 3 -1 -1 0
+#EXDESC
+ExDescKey    fur cloak~
+ExDesc       This stinking garment needs a good wash.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32217
+Keywords  jeweled crown~
+Type      armor~
+Short     a jeweled crown~
+Long      A magnificent jeweled crown of stone giant manufacture rests here.~
+Flags     glow metal~
+WFlags    take head~
+Values    9 0 0 0 0 0 0 0 0 0 0
+Stats     10 15000 -2 1 0 None None None
+AffData dexterity 2 -1 -1 0
+#EXDESC
+ExDescKey    jeweled crown~
+ExDesc       This crown is intended as a gift for the frost giant Jarl.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32218
+Keywords  token fealty statue silver bear~
+Type      armor~
+Short     a token of fealty~
+Long      A solid silver statue of a rampant bear stands here.~
+Flags     glow metal magic~
+WFlags    take hold~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     20 6000 -2 1 0 None None None
+AffData armor -20 -1 -1 0
+AffData damroll 4 -1 -1 0
+#EXDESC
+ExDescKey    token fealty~
+ExDesc       This heavy silver statue is a mark of the Jarl's respect for Snurre,
+and would also double as a decent addition to melee, due to its weight
+and sharp edges.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32219
+Keywords  potion bottle~
+Type      potion~
+Short     an old potion~
+Long      The label on this bottle is faded and crumbling.~
+Flags     hum~
+WFlags    take~
+Values    50 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1750 -2 1 0 None None None
+Spells       'blazeward' 'slink' 'true sight'
+#EXDESC
+ExDescKey    old potion~
+ExDesc       It is impossible to determine the effects of quaffing this ancient
+liquid will have without some sort of magical spell.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32220
+Keywords  potion bottle~
+Type      potion~
+Short     an old potion~
+Long      The label on this bottle is faded and crumbling.~
+Flags     hum~
+WFlags    take~
+Values    50 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1750 -2 1 0 None None None
+Spells       'winter mist' 'ethereal funnel' 'energy drain'
+#EXDESC
+ExDescKey    old potion~
+ExDesc       It is impossible to determine the effects of quaffing this ancient
+liquid will have without some sort of magical spell.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32221
+Keywords  potion bottle~
+Type      potion~
+Short     an old potion~
+Long      The label on this bottle is faded and crumbling.~
+Flags     hum~
+WFlags    take~
+Values    50 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1750 -2 1 0 None None None
+Spells       'eldritch sphere' 'poison' 'fireball'
+#EXDESC
+ExDescKey    old potion~
+ExDesc       It is impossible to determine the effects of quaffing this ancient
+liquid will have without some sort of magical spell.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32222
+Keywords  silver dagger~
+Type      weapon~
+Short     a silver dagger~
+Long      The bane of undead, silver weapons possess unusual properties.~
+Flags     glow metal magic~
+WFlags    take wield~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     1 50000 -2 1 0 None None None
+AffData intelligence 3 -1 -1 0
+AffData hitroll 6 -1 -1 0
+AffData damroll 6 -1 -1 0
+AffData resistant poison~ -1 -1 0
+#EXDESC
+ExDescKey    silver dagger~
+ExDesc       This ancient weapon was once used against barrow wights north of the
+lands of humanity, but passed from view after the fall of the old 
+empire. It is older than the current empire itself, and still holds
+an edge.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32223
+Keywords  silvered chainmail~
+Type      armor~
+Short     a suit of silvered chainmail~
+Long      A suit of magical chain glows with an inner warmth.~
+Flags     glow metal magic~
+WFlags    take body~
+Values    17 0 0 0 0 0 0 0 0 0 0
+Stats     10 35600 -2 1 0 None None None
+AffData armor -20 -1 -1 0
+AffData hit 50 -1 -1 0
+AffData mana 50 -1 -1 0
+AffData hitroll 6 -1 -1 0
+AffData damroll 6 -1 -1 0
+AffData save_breath -3 -1 -1 0
+#EXDESC
+ExDescKey    silvered chainmail~
+ExDesc       Armor of ancient make, this was once worn by a Troalian prince on his
+campaigns against the Xavay during the first Chaos War. It has been
+passed down through the generations, before being stolen from the last
+prince of the line by the wyrm who now hoards it.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if rand(50)
+mea $n _red A glowing warmth radiates through your frame!
+c 'inner warmth' $n
+else
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32224
+Keywords  bronze shield~
+Type      armor~
+Short     a bronze shield~
+Long      A heavy bronze shield lies half-buried in the snow.~
+Flags     metal magic~
+WFlags    take shield~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     20 6500 -2 1 0 None None None
+AffData armor -10 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32225
+Keywords  broadsword~
+Type      weapon~
+Short     a heavy broadsword~
+Long      A heavy steel broadsword covered in frost lies here.~
+Flags     metal~
+WFlags    take wield~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     30 600 -2 1 0 None None None
+AffData hitroll 5 -1 -1 0
+AffData damroll 5 -1 -1 0
+#EXDESC
+ExDescKey    broadsword~
+ExDesc       This weapon is small to a giant, who was its original owner, but its
+a powerfully large weapon to most other races.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32226
+Keywords  thick iron bar ~
+Type      lever~
+Short     a thick iron bar~
+Long      A thick iron bar protrudes from the wall.~
+Flags     metal~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     43 32 -2 9999 0 None None None
+#EXDESC
+ExDescKey    thick iron bar~
+ExDesc       This bar is set in a slot, and can be moved up and down.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  push_prog~
+Arglist   100~
+Comlist   mea $n As you push the rod down, you suddenly feel dizzy...
+mptrans $n 32000
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  pull_prog~
+Arglist   100~
+Comlist   mea $n As you pull the rod upwards, you suddenly feel dizzy...
+mptrans $n 32000
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32227
+Keywords  glaive~
+Type      weapon~
+Short     a glaive~
+Long      A sharp glaive rests on the rocky ground.~
+Flags     metal magic antigood anticleric antidruid~
+WFlags    take wield~
+Values    0 0 0 1 0 0 0 0 0 0 0
+Stats     18 7650 -2 1 0 None None None
+AffData damroll 5 -1 -1 0
+AffData mana 60 -1 -1 0
+#EXDESC
+ExDescKey    glaive~
+ExDesc       This magical weapon is a favorite of the ogre-magi.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32228
+Keywords  box holding~
+Type      container~
+Short     a box of holding~
+Long      A wooden pox plated with precious metals rests here.~
+Flags     magic~
+WFlags    take~
+Values    300 5 -1 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    box holding~
+ExDesc       This seemingly innocuous box can hold a great deal of equipment.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32229
+Keywords  ochre potion~
+Type      potion~
+Short     an ochre potion~
+Long      An ochre potion spills some liquid on the ground.~
+Flags     hum magic~
+WFlags    take~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 450 -2 1 0 None None None
+Spells       'NONE' 'trollish vigor' 'slink'
+#EXDESC
+ExDescKey    potion~
+ExDesc       This liquid possesses potent magical qualities.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32230
+Keywords  mauve potion~
+Type      potion~
+Short     a mauve potion~
+Long      A mauve potion spills some liquid on the ground.~
+Flags     hum magic~
+WFlags    take~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 450 -2 1 0 None None None
+Spells       'teleport' 'teleport' 'teleport'
+#EXDESC
+ExDescKey    potion~
+ExDesc       This liquid possesses potent magical qualities.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32231
+Keywords  fire necklace~
+Type      armor~
+Short     necklace of fire~
+Long      A warm string of bronze plates dangles from a hook.~
+Flags     glow metal magic antigood~
+WFlags    take neck~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     10 15000 -2 1 0 None None None
+AffData mana 20 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData resistant fire~ -1 -1 0
+#EXDESC
+ExDescKey    fire necklace~
+ExDesc       This strangely warm item is appropriately named; it fills your whole
+body with warmth.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32232
+Keywords  manacles~
+Type      armor~
+Short     a pair of manacles~
+Long      A pair of iron manacles lies here.~
+Flags     noremove~
+WFlags    take arms~
+Values    20 0 0 0 0 0 0 0 0 0 0
+Stats     15 1200 -2 1 0 None None None
+AffData intelligence -4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      32233
+Keywords  jarl chain jack~
+Type      armor~
+Short     a chain jack~
+Long      A chain jack protects the torso of creatures large enough to wear it.~
+Flags     metal~
+WFlags    take body~
+Values    22 0 0 0 0 0 0 0 0 0 0
+Stats     50 5000 -2 1 0 None None None
+AffData armor -30 -1 -1 0
+AffData hit 60 -1 -1 0
+AffData hitroll 6 -1 -1 0
+AffData damroll 6 -1 -1 0
+AffData save_breath -3 -1 -1 0
+AffData save_para -3 -1 -1 0
+AffData intelligence -2 -1 -1 0
+#EXDESC
+ExDescKey    chain jack~
+ExDesc       Only a giant, troll or ogre could wear this armor, such is its size
+and weight.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if race($n) == half-troll
+or race($n) == half-ogre
+else
+mea $n The armor is far too large for you.
+mpforce $n rem $o
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32234
+Keywords  jarl shield~
+Type      armor~
+Short     the Jarl's shield~
+Long      A huge shield of iron rests on the ground.~
+Flags     metal magic~
+WFlags    take shield~
+Values    17 0 0 0 0 0 0 0 0 0 0
+Stats     30 65000 -2 1 0 None None None
+AffData armor -20 -1 -1 0
+AffData hit 20 -1 -1 0
+AffData mana 20 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 3 -1 -1 0
+#EXDESC
+ExDescKey    jarl shield~
+ExDesc       This defensive piece of equipment is possessed of special magical 
+qualities that enhance its power.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32235
+Keywords  jarl greatsword~
+Type      weapon~
+Short     the Jarl's greatsword~
+Long      An immense greatsword, easily eight feet long, rests here.~
+Flags     metal magic~
+WFlags    take wield~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     50 10000 -2 1 0 None None None
+AffData hit 120 -1 -1 0
+AffData hitroll 6 -1 -1 0
+AffData damroll 6 -1 -1 0
+#EXDESC
+ExDescKey    jarl greatsword~
+ExDesc       Only the doughtiest of warriors could hope to heft this blade.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32236
+Keywords  hammer thunderbolts~
+Type      weapon~
+Short     Hammer of Thunderbolts~
+Long      A great war hammer covered in runes rests on the floor.~
+Flags     magic hidden~
+WFlags    take wield~
+Values    0 12 4 6 0 0 0 0 0 0 0
+Stats     55 750000 -2 1 0 None None None
+AffData strength 2 -1 -1 0
+AffData hit 100 -1 -1 0
+AffData hitroll 10 -1 -1 0
+AffData damroll 10 -1 -1 0
+AffData resistant cold~ -1 -1 0
+AffData save_spell -10 -1 -1 0
+#EXDESC
+ExDescKey    hammer thunderbolts~
+ExDesc       This hammer packs the power of a lightning strike with each hit it makes.
+Only the strongest of warriors could hope to wield it effectively.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32237
+Keywords  sleeves ice~
+Type      armor~
+Short     sleeves of ice~
+Long      A pair of icy cold sleeves of unidentifiable origin chill the air.~
+Flags     glow invis magic buried~
+WFlags    take arms~
+Values    9 0 0 0 0 0 0 0 0 0 0
+Stats     7 75000 -2 1 0 None None None
+AffData intelligence 2 -1 -1 0
+AffData mana 20 -1 -1 0
+AffData hit 20 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData damroll 5 -1 -1 0
+AffData resistant fire~ -1 -1 0
+AffData susceptible NONE~ -1 -1 0
+#EXDESC
+ExDescKey    sleeves ice~
+ExDesc       These sleeves glisten with ice that refuses to melt despite the heat.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n _lbl A sheet of ice covers your arms.
+mer $n _lbl A sheet of ice covers $n's arms.
+if rand(10)
+c iceshield $n
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32238
+Keywords  giantsbane sword~
+Type      weapon~
+Short     Giantsbane~
+Long      A glowing blue sword lies half-buried in a block of ice.~
+Flags     metal antievil anticleric antimage~
+WFlags    take wield~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     18 60000 -2 1 0 None None None
+AffData strength 2 -1 -1 0
+AffData hit 75 -1 -1 0
+AffData hitroll 8 -1 -1 0
+AffData damroll 8 -1 -1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   if isevil($n)
+else
+if race($n) == half-troll
+or race($n) == half-ogre
+mea $n Touching this weapon makes you feel sick to the stomach.
+mpforce $n shudder
+mpforce $n rem $o
+else
+mea $n You heft the handsome blade with a grin.
+mpforce $n grin
+endif
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32239
+Keywords  club iron shod~
+Type      weapon~
+Short     an iron shod club~
+Long      An iron shod club rests here.~
+Flags     metal~
+WFlags    take wield~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     8 60 -2 9999 0 None None None
+AffData damroll 4 -1 -1 0
+AffData intelligence 1 -1 -1 0
+#EXDESC
+ExDescKey    club iron shod~
+ExDesc       Small for a giant weapon, it compensates for this with power and the
+speed with which it can be brought to bear.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32240
+Keywords  white dragon hide~
+Type      armor~
+Short     a white dragon hide~
+Long      A white dragon hide hangs behind the throne.~
+Flags     organic antigood antineutral antirogue~
+WFlags    take about~
+Values    11 0 0 0 0 0 0 0 0 0 0
+Stats     10 50000 -2 1 16 None None None
+AffData resistant fire~ -1 -1 0
+AffData resistant blunt~ -1 -1 0
+AffData susceptible NONE~ -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData hit 20 -1 -1 0
+#EXDESC
+ExDescKey    cloak white dragon hide~
+ExDesc       Taken from the back of an ice wyrm, this hide offers significant benefit
+in the form of resistance to cold, which is the bane of fire giants of
+all types. Thus it is highly prized by its former owner for these qualities.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32241
+Keywords  throne ivory bone~
+Type      furniture~
+Short     a throne of ivory and bone~
+Long      A twisted throne of ivory and bone rests here.~
+Flags     evil~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    throne ivory bone~
+ExDesc       Skulls covered in silver make up much of this dark artifact, while large
+gems gleam from their eyesockets. The whole affect is rather grim and
+macabre.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32242
+Keywords  opal~
+Type      treasure~
+Short     an opal~
+Long      A polished opal, perfect in form, lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 10000 -2 1 0 None None None
+#EXDESC
+ExDescKey    opal~
+ExDesc       This is a fine gemstone!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32243
+Keywords  diamond~
+Type      treasure~
+Short     a diamond~
+Long      A polished diamond, perfect in form, lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 50000 -2 1 0 None None None
+#EXDESC
+ExDescKey    diamond~
+ExDesc       This is a fine gemstone!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32244
+Keywords  alabaster statue~
+Type      lever~
+Short     an alabaster statue~
+Long      A statue of alabaster rests unsteadily atop a pile of crushed gems.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    alabaster statue~
+ExDesc       Although too bulky to cart away, its unstable positioning makes it easy
+to shift about.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  push_prog~
+Arglist   100~
+Comlist   mea $n You give the statue a shove, and it topples over!
+mpe _whi The statue falls to the ground with a crash!
+mpforce $n wince
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  pull_prog~
+Arglist   100~
+Comlist   mea $n With a great effort, you heave the statue upright.
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32245
+Keywords  cloak sabretooth tiger hide~
+Type      armor~
+Short     a cloak of sabretooth tiger hide~
+Long      This cloak was formed from the hide of a great cat.~
+Flags     organic antigood~
+WFlags    take about~
+Values    11 0 0 0 0 0 0 0 0 0 0
+Stats     18 7500 -2 1 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData strength 1 -1 -1 0
+AffData hit 35 -1 -1 0
+AffData hitroll 5 -1 -1 0
+AffData damroll 5 -1 -1 0
+#EXDESC
+ExDescKey    cloak sabretooth tiger hide~
+ExDesc       The sabretooth this garment was taken from must have been bigger than
+a Maritshome warhorse.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32246
+Keywords  iron mace~
+Type      weapon~
+Short     a mace of iron~
+Long      A heavy iron mace rests on the ground.~
+Flags     metal magic antigood antirogue~
+WFlags    take wield~
+Values    0 0 0 8 0 0 0 0 0 0 0
+Stats     45 5000 -2 1 0 None None None
+AffData strength 2 -1 -1 0
+AffData hitroll 8 -1 -1 0
+AffData damroll 8 -1 -1 0
+AffData susceptible cold~ -1 -1 0
+#EXDESC
+ExDescKey    iron mace~
+ExDesc       This cumbersome weapon could inflict considerable damage- if you could
+lift it.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32247
+Keywords  gold flagon gems~
+Type      staff~
+Short     a gold flagon set with gems~
+Long      A gold flagon set with gems rests on the table.~
+Flags     hum metal magic~
+WFlags    take hold~
+Values    40 10 10 -1 0 0 0 0 0 0 0
+Stats     20 76000 -2 1 0 None None None
+AffData sex 4 -1 -1 0
+Spells       'heal'
+#EXDESC
+ExDescKey    gold flagon gems~
+ExDesc       An inscription on the base reads-
+ 
+This cup will bring health and happiness to everyone you know.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32248
+Keywords  bronze shield~
+Type      armor~
+Short     a bronze shield~
+Long      A bronze shield hangs atop the fireplace.~
+Flags     metal magic antigood antirogue antiwarrior~
+WFlags    take shield~
+Values    10 42 0 0 0 0 0 0 0 0 0
+Stats     20 6500 -2 1 0 None None None
+AffData armor -20 -1 -1 0
+AffData dexterity 3 -1 -1 0
+AffData mana 75 -1 -1 0
+#EXDESC
+ExDescKey    bronze shield~
+ExDesc       Inlaid with runes by the Magi-Priests of Ebberggehw, this device bestows
+great mystical, but little physical, power upon those of the right mind
+set to bear it. As the Magi-Priests prefer neutrality, it is prohibited
+to those of lawful or good mein, though evil beings can more easily fool
+the device into missing the motives hidden in their dark hearts.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32259
+Keywords  jewelled collar~
+Type      armor~
+Short     a jewelled collar~
+Long      A jewelled collar glitters in the light.~
+Flags     glow~
+WFlags    take neck~
+Values    7 0 0 0 0 0 0 0 0 0 0
+Stats     1 1800 -2 1 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData strength 1 -1 -1 0
+AffData damroll 3 -1 -1 0
+#EXDESC
+ExDescKey    jewelled collar~
+ExDesc       Made for a bear, it could easily be adjusted to fit most races.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      32260
+Keywords  box~
+Type      container~
+Short     a large box~
+Long      A large wooden box is nailed to the floor.~
+Values    150 5 -1 0 0 0 0 0 0 0 0
+Stats     22 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32261
+Keywords  iron chest~
+Type      container~
+Short     an iron chest~
+Long      A sturdy iron chest sits near the bed.~
+Values    150 5 -1 0 0 0 0 0 0 0 0
+Stats     22 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32262
+Keywords  silver coffer~
+Type      container~
+Short     a silver coffer~
+Long      A silver coffer is welded to a sheet of iron behind the bed.~
+Values    150 5 -1 0 0 0 0 0 0 0 0
+Stats     22 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32263
+Keywords  giant potion~
+Type      potion~
+Short     the giant's potion~
+Long      A strange brew bubbles ominously.~
+Flags     hum~
+WFlags    take~
+Values    42 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 540 -2 1 0 None None None
+Spells       'poison' 'NONE' 'heal'
+#ENDOBJECT
+
+#OBJECT
+Vnum      32264
+Keywords  giant scroll~
+Type      scroll~
+Short     the giant's scroll~
+Long      A heavy piece of tattered leather lies here.~
+Flags     magic~
+WFlags    take~
+Values    43 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 7500 -2 1 0 None None None
+Spells       'curse' 'antimagic shell' 'energy drain'
+#ENDOBJECT
+
+#OBJECT
+Vnum      32265
+Keywords  jewelry giant~
+Type      treasure~
+Short     the giant's jewelry~
+Long      A string of semi-precious stones lies here.~
+WFlags    take neck~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 80000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      32299
+Keywords  final object~
+Type      trash~
+Short     a newly created final object~
+Long      Some god dropped a newly created final object here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      32200
+Name      A Windswept Ledge~
+Sector    mountain~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The moment you materialize on this ledge you are almost swept off it
+by a strong gust of icy wind, that almost sends you hurtling down the
+sheer slope of the mountain that this tiny section of level stone is
+set into. A yawning abyss beckons there, you cannot even see to the
+bottom through the blizzard that is raging through the region. Other
+snow-covered spires loom all around, while gale force winds buffet you
+mercilessly. The wind howls and shrieks as it blows through the gaps
+between the peaks; the effect is quite disturbing. The only apparent
+escape from this torment is a small hole in the ground, that leads on
+down into the darkness within the mountain.
+~
+#EXIT
+Direction down~
+ToRoom    32201
+Desc      A dark passage.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32201
+Name      A Dark Passage~
+Sector    indoors~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A tunnel descends steeply from the ledge, heading down to whatever is
+within the bowels of the peak you arrived on. No torches light the
+area, at least not here, though a dim light is visible far, far below.
+Snow drifts formed by snow that has come in the hole above pile high to
+either side, and are marked with the tracks of various creatures, some
+of whom are rather large; giantish in fact. The howling wind above is
+nerve wracking, and it takes little incentive to proceed downwards to
+where it is quieter.
+~
+#EXIT
+Direction up~
+ToRoom    32200
+Desc      Back outside.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    32202
+Desc      A dark passage.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32202
+Name      A Divided Tunnel~
+Sector    indoors~
+Flags     dark nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      At this point the tunnel splits, with two branches heading further down
+into the depths of the mountain, though at a noticeably flatter gradient;
+gone is the steep descent you have up till now endured. A dim glow can 
+be seen to the southeast, where the majority of the tracks seem to pass
+to and from. The walls are of crevice-ridden granite, covered with thin
+layers of ice and frost, frozen by the chilly temperatures here, though
+they are at least bearable with adequate clothing, unlike outside.
+~
+#EXIT
+Direction up~
+ToRoom    32201
+Desc      A dark passage ascends to the ledge outside.
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    32203
+Desc      A new path beckons.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32233
+Desc      A new path beckons.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32203
+Name      The Rift~
+Sector    indoors~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      After roughly one hundred yards, the path emerges onto another ledge,
+though this one is inside instead of outside. To your surprise, it
+runs for a short distance along the eastern edge of a truly massive
+rift, which yawns to the west, stretching into the distance to the far
+south. Gusts of wind whistle up and down the rift, the floor of which
+is not visible from this vantage. The ledge continues to the south,
+disappearing around a bend to the southwest, as it circles the rift.
+An opening in the wall just south of here offers an alternate route,
+however, and it is to here that most of the tracks run.
+~
+#EXIT
+Direction south~
+ToRoom    32204
+Desc      A ledge skirts the edge of the rift.
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    32202
+Desc      A tunnel ascends sharply.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32204
+Name      An Opening in the Rift Wall~
+Sector    indoors~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The ledge continues its course along the eastern rim of the rift,
+narrowing a little as it nears a bend to the southwest. An opening in
+the eastern wall looms up ahead, opening onto a darkened tunnel that
+heads away from the rift, towards whatever else lies down here. A
+faint greenish glow provides a little light here and there, though the
+conditions are still gloomy, to your eyes at least.
+~
+#EXIT
+Direction north~
+ToRoom    32203
+Desc      A ledge skirts the edge of the rift.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32205
+Desc      A narrow passage disappears into the gloom.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32214
+Desc      A ledge skirts the edge of the rift.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32205
+Name      A Junction~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Two passages lead away from this narrow accessway, which ends in a dead
+end a short distance to the north of here. The floor underfoot is slick,
+though not dangerously so, at least not yet. The walls are covered in 
+ice, which has been worn away in portions due to contact with the bodies
+of passing creatures, who where apparently of considerable stature. The
+faint greenish glow is still present, illuminating fresh tracks in the
+thin layer of powdery snow that layers the floor at random intervals.
+~
+#EXIT
+Direction north~
+ToRoom    32207
+Desc      A guard room.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32206
+Desc      A guard room.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32204
+Desc      The rift edge.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32206
+Name      An Icy Cave~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Several piles of sleeping skins cover the floor of this cave, which
+is for the most part covered in layers of ice, save for where the
+sleeping area is. Piles of boulders and blocks of ice lay near the
+entrance, presumably to serve as primitive missile weapons for the
+monsters that lair here, who are undoubtedly sentient, and more than
+likely of malevolent mein. No other exit umbrages the icy walls; the
+cave is isolated from the rest of the complex save for the opening
+to the north.
+~
+#EXIT
+Direction north~
+ToRoom    32205
+Desc      A meeting of passages.
+~
+#ENDEXIT
+
+Reset M 32201 2 32206 -1 -1 -1 100
+  Reset G 32200 1 100
+  Reset E 32201 1 13 100
+Reset M 32201 2 32206 -1 -1 -1 100
+  Reset G 32200 1 100
+  Reset E 32202 1 14 100
+#ENDROOM
+
+#ROOM
+Vnum      32207
+Name      An Icy Cavern~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This natural cavern was hollowed out by centuries of erosion from the
+movement of ice through the bowels of the mountain, and as such could
+escape notice as being the residence of giants, save for the four fur
+covered mounds that serve as their beds. Large icy stalactites depend
+from the high roof; excessive heat or noise could bring them tumbling
+down, so caution would be advised. A broad passage, leading further 
+into the icy home of the frost giants, can be detected to the east.
+~
+#EXIT
+Direction east~
+ToRoom    32208
+Desc      Another passage awaits!
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32205
+Desc      A meeting of passages.
+~
+#ENDEXIT
+
+Reset M 32200 2 32207 -1 -1 -1 100
+  Reset G 32200 1 100
+Reset M 32200 2 32207 -1 -1 -1 100
+  Reset G 32200 1 100
+#ENDROOM
+
+#ROOM
+Vnum      32208
+Name      An Icy Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This broad passage runs east for a short distance, before turning to
+the south, heading directly towards the center of the mountain, and
+running parallel to the rift to the west, beyond the guard rooms. It
+appears that this passage sees frequent usage; fresh footprints mark
+small patches of snow, while several of the icy protrusions have also
+been snapped off as clumsy giants stumble into them, especially when
+they are intoxicated.
+~
+#EXIT
+Direction south~
+ToRoom    32209
+Desc      This major passage continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32207
+Desc      An icy cavern filled with sleeping furs.
+~
+Flags     nomob~
+#ENDEXIT
+
+Reset M 32203 10 32208 -1 -1 -1 100
+Reset M 32226 4 32208 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32209
+Name      An Icy Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The passage continues, stretching into the distance as far as one can
+see under the current lighting conditions. The air is cold, though 
+not unbearably so, and the walls covered with ice, some of which has
+melted and formed dangerous semi-frozen puddles on the floor in the
+numerous potholes that mar the tunnel. A larger creature, such as a
+giant or troll, may well stumble and fall upon these hazards, though
+the injury would do more damage to their pride than their rears.
+~
+#EXIT
+Direction north~
+ToRoom    32208
+Desc      This major passage continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32210
+Desc      This major passage continues.
+~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if race($n) == half-troll
+or race($n) == half-ogre
+   if dex($n) < 18
+   mea $n You slip and fall on one of the icy puddles!
+   mer $n $n loses his footing and goes sailing into the air!
+   mpforce $n sit
+   mpdamage $n 20
+   mpforce $n mutter
+   else
+   mea $n Your heavy feet are almost swept away, but you recover.
+   mer $n $n waves $s arms about as $e almost slips on the ice.
+   mpforce $n whew
+   endif
+else
+endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      32210
+Name      An Icy Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Onwards and downwards the passage runs, continuing deeper into this
+haven of giants. The footprints are just as frequent, and just as
+fresh; it appears dozens of giants have been on the move recently.
+This is no surprise; you are here because of their 'movements' that
+have taken them into conflict with the peaceful races of the south.
+The frost giants are a violent and bloodthirsty lot, far tougher and
+braver than their brutish hill giant cousins.
+~
+#EXIT
+Direction north~
+ToRoom    32209
+Desc      This major passage continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32211
+Desc      This major passage continues.
+~
+#ENDEXIT
+
+Reset M 32229 3 32210 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32211
+Name      An Icy Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      At this point the passage begins to bend to the southwest, changing its
+course for the first time in several hundred yards. An opening in the
+west wall is the first side passage the tunnel has boasted for nearly
+its entire length, though judging by the tracks it is not a popular
+section of the rift. Your sense of direction tells you that heading 
+around the bend to the west will take you back out towards the ledges
+that line the rift, though there appears to be little choice but to
+return and skirt that ominous feature.
+~
+#EXIT
+Direction north~
+ToRoom    32210
+Desc      This major passage continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32213
+Desc      A storage cavern, of sorts?
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32212
+Desc      The passage bends sharply.
+~
+#ENDEXIT
+
+Reset M 32203 10 32211 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32212
+Name      An Icy Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The tunnel narrows slighty here, as it bends, though only a score of
+giants would notice any inconvenience. To the west, it narrows to an
+opening back onto the sections of ledge that line the great rift at
+random intervals, while to the northeast it winds around a bend and
+heads back north towards the entrance to this monstrous subterranean
+lair. Stomping and shouting echo all about, as giants make their way
+through their glacial home.
+~
+#EXIT
+Direction west~
+ToRoom    32219
+Desc      The rift.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32211
+Desc      The passage bends sharply.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32213
+Name      A Storage Cave~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This small cavern is filled at periodic intervals with all manner of
+supplies for the giant raiding parties before they set out to do 
+harm to humanity. Currently, it is almost empty, a sure sign that in
+fact such a raid is taking place right now. Deep marks in the ice on
+the floor show where heavy barrels and casks once rested.
+~
+#EXIT
+Direction east~
+ToRoom    32211
+Desc      An icy passage.
+~
+#ENDEXIT
+
+Reset O 32203 1 32213 -1 -1 -1 100
+  Reset P 0 32204 1 32203 100
+#ENDROOM
+
+#ROOM
+Vnum      32214
+Name      A Narrow Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The ledge hugs the rift wall here, allowing scant purchase for anyone
+to travel; at times you have to hug the wall as well, grabbing what
+handholds you can to avoid being swept off the icy ledge, which affords
+precious little purchase, by the winds that gust through the rift. A
+lone wolf howls somewhere in the distance; a warning, perhaps, or a cry
+of distress?
+~
+#EXIT
+Direction south~
+ToRoom    32215
+Desc      The ledge widens again.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32204
+Desc      Safer terrain.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32215
+Name      A Rocky Platform~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The ledge ends here, at a rubble strewn ledge that boasts a broad
+cave entrance to the east, within which lies the gods-know-what... 
+it is far too dark to see far, despite the greenish glow given off
+at sporadic intervals by the unusual lithic anomalies that are so
+common in this subterranean rift. Tracks in the thin layer of snow
+that carpets the rubble appear to be canine, or more accurately,
+lupine in origin.
+~
+#EXIT
+Direction north~
+ToRoom    32214
+Desc      A narrow ledge.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32216
+Desc      The cave is swathed in gloom.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32216
+Name      An Icy Cave~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This gloomy cavern does not contain the luminescent stone found in 
+other sections of the caves, and thus it is quite difficult to see
+and navigate. Large chunks of ice litter the floor, having fallen 
+from the roof above; apparently the ceiling of icicles is extremely 
+unstable. Dark openings beckon to the east and south; the wolf tracks
+pass to and from the opening to the east.
+~
+#EXIT
+Direction east~
+ToRoom    32217
+Desc      The source of the tracks.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32218
+Desc      A gloomy chamber.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32215
+Desc      The rocky platform without.
+~
+#ENDEXIT
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   50~
+Comlist   if ispc($r)
+mea $r _lbl A large chunk of ice falls from the ceiling, striking you!
+mer $r _lbl A large chunk of ice falls from the ceiling, striking $r!
+mpdamage $r 50
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   33~
+Comlist   if ispc($n)
+mea $n _lbl A sudden vibration sends chunks of ice tumbling downwards!
+   if dex($n) < 16
+   mea $n You are struck by several small chunks!
+   mpdamage $n 20
+   else
+   mea $n You nimbly avoid the larger pieces.
+   endif
+else
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      32217
+Name      Wolf Pack~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This small cave is devoid of rubble; instead it boasts piles of frozen
+corpses, in various stages of consumption, and piles of bones, covered
+in bite marks. Whatever beast tore these people apart, it must have a
+set of powerful jaws. An awful smell, of wet canine, permeates all of
+this cave, insulting your nostrils with its stench.
+~
+#EXIT
+Direction west~
+ToRoom    32216
+Desc      An icy cave.
+~
+#ENDEXIT
+
+Reset M 32202 2 32217 -1 -1 -1 100
+Reset M 32202 2 32217 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32218
+Name      A Burial Chamber, of Sorts~
+Sector    underground~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Several hacked and mutilated bodies have been frozen upright into the
+icy walls of this chamber, to intimidate intruders, as these are the
+remains of previous trespassers, displaying the fate they met. Many 
+of them still appear to be wearing their equipment; perhaps some of
+it is still in reasonable condition. The corpses are of elves, dwarves
+and humans, doubtless previous adventurers who sought to put down the
+leadership that has inspired the giants to war against humanity. Most of
+them were slain by blows to the head, then savaged by wolves, or perhaps
+even trolls. Frozen blood still carpets most of their forms, which stand
+with mouths agape, captured in the shock of death.
+~
+#EXIT
+Direction north~
+ToRoom    32216
+Desc      An icy cave.
+~
+#ENDEXIT
+
+Reset O 32205 1 32218 -1 -1 -1 100
+Reset O 32206 1 32218 -1 -1 -1 100
+#MUDPROG
+Progtype  act_prog~
+Arglist   p begins digging.~
+Comlist   mea $n Excavating the ice is hard work...
+mea $n _lbl Additionally, your labors are causing the roof to vibrate...
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      32219
+Name      An Icy Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The tunnel opens onto another icy ledge, this one marginally wider
+than the one near the entrance to the north, which is dimly visible
+from here, bending sharply away to the northeast some 300 feet away,
+in between lying one of the deep gorges opening into the rift, which
+runs north and south parallel to the ledge as far as you can see. A
+fierce wind whistles eerily through the rift, chilling you even in
+your warm clothing. The floor of the rift is some 200 feet below, a
+fall that would kill the stoutest of men; flying down is also out of
+the question as the fierce winds would smash you against the rift wall.
+~
+#EXIT
+Direction east~
+ToRoom    32212
+Desc      A tunnel leads away from the ledge.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32220
+Desc      The ledge continues.
+~
+#ENDEXIT
+
+Reset M 32203 10 32219 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32220
+Name      An Icy Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The ledge ends abruptly just south of here, the only choice of route
+to proceed being another opening in the eastern wall. The wind howls
+and screams, while flecks of snow from a blizzard raging in the very
+center of the rift strike you in the face. Visibility is poor; you 
+are effectively snowblinded, able to see only a short distance by the
+aid of the greenish glow that suffuses this place.
+~
+#EXIT
+Direction north~
+ToRoom    32219
+Desc      The ledge runs north.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32221
+Desc      Back inside.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32221
+Name      A Junction~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Several passages branch off into the icy depths of the caverns that
+surround the glacial rift, most of them heading to the south, and 
+thus deeper into the complex maze of passages. It is south that you
+must go, for it is there that you will surely encounter the Jarl, but
+the possibility of gathering loot from those along the way should not
+be ignored either. Numerous giants can be seen moving about in the
+distance, though a careful adventurer shouldn't find them terribly hard
+to avoid.
+~
+#EXIT
+Direction east~
+ToRoom    32222
+Desc      Piles of furs serve as beds for mercenaries.
+~
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32224
+Desc      A long tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32220
+Desc      An icy ledge.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32227
+Desc      A twisting passage that appears little-used.
+~
+#ENDEXIT
+
+Reset M 32203 10 32221 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32222
+Name      The Ogre Caverns~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Heaps of furry hides cover the floor of this cavern, which is not lit
+by the greenish glow so common in most of the rift. Instead, the walls
+are a dull grey, visible through the thin translucent layer of frost
+that coats them. This cavern is the quarters for some of the many non-
+giantish mercenaries that serve the Jarl, their stature indicated by the
+quality of their bedding, which could best be described as inadequate.
+~
+#EXIT
+Direction south~
+ToRoom    32223
+Desc      Ogre! Ogre!
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32221
+Desc      A collection of passages converge here.
+~
+#ENDEXIT
+
+Reset M 32204 6 32222 -1 -1 -1 100
+  Reset E 32207 1 16 100
+  Reset G 32208 1 100
+Reset M 32204 6 32222 -1 -1 -1 100
+  Reset E 32207 1 16 100
+Reset M 32204 6 32222 -1 -1 -1 100
+  Reset E 32207 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      32223
+Name      The Ogre Caverns~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The bedding here is little better than that to the north, and the same
+can be said for the lighting, which is also poor/nonexistant. A vile
+smell, of unwashed ogre combined with excrement and stale food, is
+noticeable from even a dozen yards away. How a creature could live like
+this is beyond you, though the chill does mean that the spoiled food and
+waste is usually frozen before disease afflicts the occupants, who seem
+to not mind the stench.
+~
+#EXIT
+Direction north~
+ToRoom    32222
+Desc      Ogre! Ogre!
+~
+#ENDEXIT
+
+Reset M 32204 6 32223 -1 -1 -1 100
+  Reset E 32207 1 16 100
+  Reset G 32208 1 100
+Reset M 32204 6 32223 -1 -1 -1 100
+  Reset E 32207 1 16 100
+Reset M 32204 6 32223 -1 -1 -1 100
+  Reset E 32207 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      32224
+Name      A Major Passage~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The volume of footprints in the thin layer of snow that carpets this
+tunnel, having blown in from the rift to the north, indicates that 
+this is a busy thoroughfare, and undoubtedly proceeds to chambers of
+some import. Whether that is a good thing or not remains to be seen.
+A great deal of noise- bragging, laughing, shouting and swearing- is
+audible south of here, its source a brightly lit cavern that appears 
+to be filled with giants.
+~
+#EXIT
+Direction north~
+ToRoom    32221
+Desc      Several passages converge here.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32225
+Desc      The cavern guard barracks.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32225
+Name      Caverns of the Elite~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A series of ledges at various heights in this broad chamber bear piles
+of furs and hides, and serve as the bunks for the guards garrisoned in
+here. A small campfire sheds illumination through most of the cavern,
+the heat enough to keep its occupants a good distance away while their
+meal cooks, though generous amounts of alcohol have dulled their innate
+fear of fire. The cavern continues to the southeast, where more giants
+are stationed.
+~
+#EXIT
+Direction north~
+ToRoom    32224
+Desc      A popular thoroughfare.
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    32226
+Desc      Caverns of the elite.
+~
+#ENDEXIT
+
+Reset M 32205 4 32225 -1 -1 -1 100
+Reset M 32205 4 32225 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32226
+Name      Caverns of the Elite~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Piles of rumpled furs bearing numerous stains of an unidentifiable
+nature abound here, spread on the floor, the ledges and some even
+nailed to the walls, to cover the bare rock and make the place seem
+more comfortable. Tankards of foul ale and (literally) ice cold beer
+litter the floor, as do haunches of half-cooked (and half-eaten) meat.
+A broad, well-travelled passageway runs due west of here, towards a
+visible junction lit by smoldering torches.
+~
+#EXIT
+Direction west~
+ToRoom    32267
+Desc      A popular thoroughfare.
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    32225
+Desc      Caverns of the elite.
+~
+#ENDEXIT
+
+Reset M 32205 4 32226 -1 -1 -1 100
+Reset M 32205 4 32226 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32227
+Name      A Little-Used Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This corridor is knee-deep in snow, that has blown in from the west,
+where it opens onto an icy ledge that overlooks the blizzard-ridden
+glacial rift. No tracks mar the white powder, as it slowly turns to
+slush; it would appear the giants have no need, or desire, to travel
+down this section of their lair. It is cold here, colder even than
+usual in this chilly place, and you find it hard to keep moving.
+~
+#EXIT
+Direction west~
+ToRoom    32228
+Desc      An icy ledge.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32221
+Desc      Several passages converge here.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32228
+Name      A Blizzard-Ridden Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This section of the ledges that surround in part the glacial rift is
+the most exposed to the raging blizzard that continually assaults the
+center of the rift. Snow is whipped into your face by winds of terrific
+speed, which threaten to send you sailing off the icy ledge to the icy
+ground far, far below. Even if the fall didn't kill you, the howling
+wind would most likely dash you against the rocks long before you did
+in fact impact with the ground.
+~
+#EXIT
+Direction east~
+ToRoom    32227
+Desc      A snow-filled passage.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32229
+Desc      The ledge continues.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32229
+Name      A Blizzard-Ridden Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The blizzard continues its relentless assault, chilling you to the bone
+as it batters you and the ledge you fight to stay on. The ledge ends
+before another opening in the wall, but it is blocked by a huge boulder
+of solid stone, which is immovable except by great strength. Desperation
+can drive a person to feats of incredible strength and stamina, however,
+and the desire to get out of this blizzard is certainly an incentive!
+~
+#EXIT
+Direction north~
+ToRoom    32228
+Desc      The ledge continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32230
+Desc      A large boulder fills most of the opening.
+~
+Keywords  boulder~
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+Reset D 32229 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32230
+Name      Cave of Bones~
+Sector    indoors~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      You stumble into a small cavern littered with literally hundreds of
+skeletons, of giants, ogres and other creatures; yetis, most likely.
+This chamber evidently serves as a burial ground for these creatures,
+though judging by the unceremonious way the bodies have been thrown in
+here they place little value in the afterlife. Some frozen corpses,
+the latest addition, lie propped up against the far wall, staring at
+you with dead eyes.
+~
+#EXIT
+Direction south~
+ToRoom    32231
+Desc      The cave continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32229
+Desc      A boulder fills most of the opening.
+~
+Keywords  boulder~
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+Reset D 32230 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32231
+Name      Cave of the Toad~
+Sector    indoors~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Past the macabre graveyard lies an even odder sight; a single stone
+ledge rises up in the center of the cave, surrounded by low-hanging
+stalactites of ice, bearing a curious object that appears to be the
+object of worship of the foul inhabitants of this glacial cave. The
+wind howls outside, audible through an opening in the western wall.
+~
+#EXIT
+Direction north~
+ToRoom    32230
+Desc      A cave of bones.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32232
+Desc      An icy ledge.
+~
+#ENDEXIT
+
+Reset M 32206 3 32231 -1 -1 -1 100
+Reset M 32206 3 32231 -1 -1 -1 100
+Reset M 32206 3 32231 -1 -1 -1 100
+Reset O 32210 1 32231 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32232
+Name      An Icy Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Stepping out takes you back into the full force of the blizzard, and
+you reel momentarily, almost plummeting straight over the edge to the
+hidden fates that await any unlucky enough to be swept into the dark
+rift. The superstitious could be forgiven for believing that the rift
+was possessed of some malevolent intelligence, bent on causing others
+suffering and pain, through its treacherous paths and foul tempests.
+At any rate, there is no way to continue here, save for back into the
+toads' temple.
+~
+#EXIT
+Direction east~
+ToRoom    32231
+Desc      Weirdness.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32233
+Name      A Long, Narrow Ledge~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The sloping tunnel suddenly evens out, passing onto a long, narrow
+ledge that skirts a massive glacial rift, gaping like an open wound
+to the east. This amazing natual phenomenon runs through the center
+of the cave system that honeycombs the icy peak you arrived upon. A
+raging blizzard fills the center of the rift; the force of the wind
+can be felt even here; it almost disguises the awful stench that is
+detectable to the west.
+~
+#EXIT
+Direction west~
+ToRoom    32234
+Desc      A horrid stench is noticeable even here.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32202
+Desc      The way out.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32236
+Desc      The ledge continues.
+~
+#ENDEXIT
+
+Reset M 32203 10 32233 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32234
+Name      The Yeti Camp~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This rubble-strewn cave is filled with piles of frozen bodies, slain
+by the inhabitants of this foul den, to be saved for later meals. A
+series of freshly slain humanoids hang from the ceiling, their feet
+frozen into the ice that coats this surface. Deep gouges and slashes
+mar their blood-drained bodies, evidence of the power of the beasts
+that slew them. The cave continues to the northeast, around a bend.
+~
+#EXIT
+Direction east~
+ToRoom    32233
+Desc      A ledge skirts the rift.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32235
+Desc      The camp continues.
+~
+#ENDEXIT
+
+Reset M 32207 2 32234 -1 -1 -1 100
+Reset M 32207 2 32234 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32235
+Name      The Yeti Camp~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This smallish section of the cave is devoid of corpses, or rubble;
+instead it sports a pile of furs and hides, that serve as the bed 
+for the creature quartered here. Apparently a leader of those to
+the southwest, he enjoys special privileges accorded to his rank as
+leader of the band. 
+ 
+~
+#EXIT
+Direction southwest~
+ToRoom    32234
+Desc      The camp continues.
+~
+#ENDEXIT
+
+Reset M 32208 1 32235 -1 -1 -1 100
+  Reset E 32211 1 16 100
+  Reset E 32212 1 18 100
+#ENDROOM
+
+#ROOM
+Vnum      32236
+Name      A Narrow, Mist-Shrouded Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This section of the icy ledge is shrouded in mist that surges in great
+volumes from a cave to the northwest, its source apparently a change in
+temperature that is melting the frost laid over the centuries. A light
+layer of snow, from the blizzard, covers the ledge, and shows numerous
+tracks, though none head into the misty cave. Either it serves no major
+purpose, or it is considered dangerous.
+~
+#EXIT
+Direction west~
+ToRoom    32238
+Desc      The ledge continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32233
+Desc      The ledge continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    32237
+Desc      It is impossible to see through the mist. It would be inadvisable to wander blindly in.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32237
+Name      A Misty Cave~
+Sector    indoors~
+Flags     dark death nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      As you pass into the cave, you are engulfed in mist, and find it hard
+to see further than the tip of your nose. Stumbling blindly through
+the interior, you are surprised to suddenly find the floor disappear
+beneath your feet! The hidden heat source has melted the icy floor of
+the cave, exposing a gaping hole that plummets many scores of yards
+downwards through the center of the mountain, and it is down this hole
+you plummet; even a fly spell couldn't save you as strong currents of
+wind grab ahold of you and dash you against jagged protrusions as you
+fall. You are dead long before your battered form is impaled on the 
+sharp icicles that line the bottom of this gorge, where it will remain,
+undiscovered for, most likely, all eternity.
+~
+#ENDROOM
+
+#ROOM
+Vnum      32238
+Name      The Rift's Edge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The ledge continues, illuminated, albeit dimly, by a strange stone,
+possessed of luminescent properties and found naturally in the dark
+stone that lies beneath much of the icy formations of the rift. The
+tracks in the light powder continue; at this point several sets of
+feline pawprints head northwest into a small cave. Larger giantish
+prints proceed in either direction.
+~
+#EXIT
+Direction east~
+ToRoom    32236
+Desc      This section of ledge is shrouded in mist.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32240
+Desc      A sharp corner dotted with openings.
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    32239
+Desc      A feline lair.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32239
+Name      Lair of the Leopards~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This small cave serves as home to the snow leopards kept by the giants
+as companions on the hunt or on guard, for they are silent, deadly
+killers who are loyal to their owners (feeders). The floor is littered
+with gnawed bones, and scraps of bloodstained clothing. It wouldn't
+be a good idea to linger in this lair.
+~
+#EXIT
+Direction southeast~
+ToRoom    32238
+#ENDEXIT
+
+Reset M 32209 2 32239 -1 -1 -1 100
+Reset M 32209 2 32239 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32240
+Name      A Sharp Bend in the Ledge~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The ledge bends sharply here, heading east and south, with two large
+openings in the corner leading into cave systems. Traffic is heavy
+here, and frequent; giants and their dark allies heading to and from
+these caves on missions of evil. Voices raised in excitement and also
+anger echo all around, booming laughter shaking small chunks of ice
+loose from the roof.
+~
+#EXIT
+Direction north~
+ToRoom    32241
+Desc      A barracks cave.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32238
+Desc      The ledge continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32245
+Desc      The ledge continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32243
+Desc      A barracks cave.
+~
+#ENDEXIT
+
+Reset M 32203 10 32240 -1 -1 -1 100
+Reset M 32226 4 32240 -1 -1 -1 100
+Reset M 32229 3 32240 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32241
+Name      The Barracks Complex~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The giants housed here are the ones who are sent on regular raids on
+humanity, armed with spear and boulder, relying on their sheer size
+strength to overcome the smaller races, who outnumber them. Each cave
+contains bedrolls, dried foodstuffs and piles of weapons, to be taken
+by the giants and their ogre mercenaries, on the long march south to
+the human settlements. There is an unusually efficient feel to all of
+these preparations, unusual amongst the chaotic and dim frost giants.
+~
+#EXIT
+Direction south~
+ToRoom    32240
+Desc      The ledge outside.
+~
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32242
+Desc      The barracks continue.
+~
+#ENDEXIT
+
+Reset M 32210 5 32241 -1 -1 -1 100
+  Reset E 32214 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      32242
+Name      The Barracks Complex~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The giants housed here are the ones who are sent on regular raids on
+humanity, armed with spear and boulder, relying on their sheer size
+strength to overcome the smaller races, who outnumber them. Each cave
+contains bedrolls, dried foodstuffs and piles of weapons, to be taken
+by the giants and their ogre mercenaries, on the long march south to
+the human settlements. There is an unusually efficient feel to all of
+these preparations, unusual amongst the chaotic and dim frost giants.
+~
+#EXIT
+Direction east~
+ToRoom    32241
+Desc      The barracks continue.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32243
+Desc      The barracks continue.
+~
+#ENDEXIT
+
+Reset M 32210 5 32242 -1 -1 -1 100
+  Reset E 32214 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      32243
+Name      The Barracks Complex~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The giants housed here are the ones who are sent on regular raids on
+humanity, armed with spear and boulder, relying on their sheer size
+strength to overcome the smaller races, who outnumber them. Each cave
+contains bedrolls, dried foodstuffs and piles of weapons, to be taken
+by the giants and their ogre mercenaries, on the long march south to
+the human settlements. There is an unusually efficient feel to all of
+these preparations, unusual amongst the chaotic and dim frost giants.
+~
+#EXIT
+Direction north~
+ToRoom    32242
+Desc      The ledge outside.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32240
+Desc      The ledge outside.
+~
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32244
+Desc      The ledge outside.
+~
+#ENDEXIT
+
+Reset M 32210 5 32243 -1 -1 -1 100
+  Reset E 32214 1 16 100
+Reset M 32210 5 32243 -1 -1 -1 100
+  Reset E 32214 1 16 100
+Reset O 32213 1 32243 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32244
+Name      The Barracks Complex~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The giants housed here are the ones who are sent on regular raids on
+humanity, armed with spear and boulder, relying on their sheer size
+strength to overcome the smaller races, who outnumber them. Each cave
+contains bedrolls, dried foodstuffs and piles of weapons, to be taken
+by the giants and their ogre mercenaries, on the long march south to
+the human settlements. There is an unusually efficient feel to all of
+these preparations, unusual amongst the chaotic and dim frost giants.
+~
+#EXIT
+Direction northeast~
+ToRoom    32243
+Desc      The ledge outside.
+~
+#ENDEXIT
+
+Reset M 32210 5 32244 -1 -1 -1 100
+  Reset E 32214 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      32245
+Name      The Icy Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The ledge runs north and south here, parallel to the great rift that
+gapes to the east, as if it were eager to devour you. A large boulder
+blocks a passage to the west; sheer strength is the only force that
+can budge these massive makeshift doors. A chilling wind blows through
+the rift at random intervals, freezing you even through your armor.
+~
+#EXIT
+Direction north~
+ToRoom    32240
+Desc      The ledge bends sharply.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32247
+Desc      The ledge bends sharply.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32246
+Desc      A storage cavern.
+~
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+Reset D 32245 9 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32246
+Name      A Storage Cave~
+Sector    underground~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This unremarkable cavern contains a pile of frozen meat, to be taken
+by the raiding party gathering to the north on their raids against
+the southern lands. Barrels filled with ale line the walls, though
+most of it could most politely be described as undrinkable. The floor
+is soft, powdered snow and crushed ice, and comes up to your knees
+when you enter.
+~
+#EXIT
+Direction northeast~
+ToRoom    32245
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+Reset O 32237 1 32246 -1 -1 -1 100
+Reset D 32246 6 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32247
+Name      The Edge of the Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The ledge ends here, stopping sharply before a tunnel that runs west
+into the bedrock, away from the rift. To the far south another ledge
+can be seen, doubtlessly accessible through more tunnels in that same
+direction. Footprints cover the light layer of snow, made by the many
+giants that use this passageway. 
+~
+#EXIT
+Direction north~
+ToRoom    32245
+Desc      The ledge runs north.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32248
+Desc      A tunnel runs into the mountain.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32248
+Name      A Junction~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Several tunnels branch off into the depths of the mountain here, each
+showing some sign of traffic, save for the western passage, where no
+footprints lead. Voices echo through the tunnels, from the south where
+presumably more giants are quartered. The giants make little effort to
+be quiet, despite the effect vibrations can have on the ice that their
+lair is composed of.
+~
+#EXIT
+Direction south~
+ToRoom    32251
+Desc      A long tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32249
+Desc      An apparent dead end.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32247
+Desc      The icy ledge.
+~
+#ENDEXIT
+
+Reset M 32203 10 32248 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32249
+Name      A Dead End~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The most striking feature at the end of this passage is a glowing rune,
+set in the rocky floor, which has melted all the nearby ice so as to
+be visible. Although it is giantish, its function is obvious; it is a
+dire warning against proceeding south down the narrow passage that is
+visible here. A dim glow reveals the tunnel is low-ceilinged, and the
+roof is lined with large chunks of ice which fall off as you watch at  
+frequent intervals. The smallest could crush the skull of an ogre; it
+would be foolish to proceed in this direction.
+~
+#EXIT
+Direction east~
+ToRoom    32248
+Desc      A junction.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32250
+Desc      This section of the tunnel looks extremely unsafe.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32250
+Name      A Grim Fate~
+Sector    indoors~
+Flags     death nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      It would be unfair of you to be upset at the fate you befell, after
+ignoring both the warning and the evidence seen by your own two eyes.
+Seconds before several large chunks of ice reduce you to a smear, you
+wonder if your ancestors were as stupid as you, and if so how did they
+survive long enough to breed? Your body will remain here, entombed
+beneath hundreds of tons of rubble, never to be seen again.
+~
+#ENDROOM
+
+#ROOM
+Vnum      32251
+Name      A Dimly Lit Tunnel~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This long tunnel runs directly south, deeper into the lair of the dark
+frost giants and their allies. Laughter and shouts can be heard to the
+south, their source a dimly lit cavern to the south, the light spewing
+out into this tunnel, though it also possesses the strangely glowing 
+rock that fills much of the cavern system surrounding the rift.
+~
+#EXIT
+Direction north~
+ToRoom    32248
+Desc      Several tunnels meet here.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32252
+Desc      A guard chamber.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32252
+Name      A Guard Chamber~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This guard chamber is of significant importance, as it guards the
+only way on this side of the rift to pass through to the chambers of
+the important giants, including numerous ambassadors and of course
+the Jarl himself. As such, it is constantly manned, the piles of furs
+and foodstuffs evidence of this. Deep gouges in the wall mark places
+where yetis used to take out their aggression when stationed here with
+the giants.
+~
+#EXIT
+Direction north~
+ToRoom    32251
+Desc      A dimly lit tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32253
+Desc      Back onto the ledge.
+~
+#ENDEXIT
+
+Reset M 32211 2 32252 -1 -1 -1 100
+  Reset G 32200 1 100
+Reset M 32211 2 32252 -1 -1 -1 100
+  Reset G 32200 1 100
+#ENDROOM
+
+#ROOM
+Vnum      32253
+Name      Back Out on the Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Once again you find yourself back on one of the many sections of ledge
+that circle most of the rift. This ledge is much closer to the raging
+blizzard that fills the center of the rift, and thus you find it quite
+difficult to maintain your position on the icy ground. Flight more than
+a few inches off the ground is both inadvisable and stupid; the fierce
+winds would pick you up and dash you against the rock walls. The ledge
+runs south, past several openings in the western wall.
+~
+#EXIT
+Direction south~
+ToRoom    32254
+Desc      The ledge continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32252
+Desc      Back inside.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32254
+Name      The Icy Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Violent winds rip at you as you struggle along the icy ledge, passing
+several small niches that offer small comfort when you need to rest.
+Larger openings crop up occasionally, such as the one to the southwest
+that opens onto a long tunnel winding back away from the ledge. To the
+southeast, the ledge heads towards several cave openings, though it will
+be hazardous to proceed in these conditions.
+~
+#EXIT
+Direction north~
+ToRoom    32253
+Desc      The ledge continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    32255
+Desc      The ledge continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32260
+Desc      Another tunnel.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32255
+Name      The Icy Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The wind ravages this section of the ledge, as it passes closest to
+the raging storm visible from here as a whirling maelstrom of snow
+and debris, battering all within its considerable reach. Scuff marks
+near the edge of the ledge show where previous victims have plummeted
+to their deaths, though giants are strong enough to resist such a fate.
+A cave of said beasts lies to the southwest; guests of the Jarl, here on
+official business.
+~
+#EXIT
+Direction south~
+ToRoom    32257
+Desc      Onwards the ledge runs.
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    32254
+Desc      Safer conditions.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32256
+Desc      A small cave.
+~
+#ENDEXIT
+
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   if dex($n) > 16
+mea $n _lbl Strong winds threaten to tear you from the ledge!
+mea $n _lbl You manage to maintain your grip and continue.
+else
+if str($n) > 16
+mea $n _lbl Strong winds threaten to tear you from the ledge!
+mea $n _lbl You rely on your strength to keep you on the ledge.
+else
+if lck($n) > 16
+mea $n _lbl Strong winds threaten to tear you from the ledge!
+mea $n _lbl Luckily, you manage to avoid being swept off.
+else
+mea $n _lbl Strong winds threaten to tear you from the ledge!
+mea $n _lbl Devoid of dexterity, strength or luck, you fail to hang on!
+mea $n _lbl You are lifted up and away from the ledge, only to be hurled
+mea $n _lbl back down with astonishing force!
+mer $n _lbl $n is lifted from the ledge, and hurled back with great force!
+mpslay $n
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      32256
+Name      The Hill Giant Embassy~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This cave quarters the representatives of the hill giants, who keep
+the Jarl informed of the progress of their people, and keep Nosnra 
+equally informed of the Jarl's plans, as ordained by Snurre of the
+fire giants, the leaders of the alliance. However, this has changed
+recently with the destruction of the Steading at the hands of mighty
+adventurers, and now the hill giants have the unenviable task here
+of informing the Jarl of this occurence. The Jarl has a reputation 
+for blaming the bearer of ill tidings, and these three know for sure
+that their heads will soon decorate the Jarl's trophy room.
+~
+#EXIT
+Direction northeast~
+ToRoom    32255
+Desc      The storm ravaged ledge.
+~
+#ENDEXIT
+
+Reset M 32212 3 32256 -1 -1 -1 100
+  Reset G 32200 1 100
+    Reset P 0 32215 1 11000 100
+  Reset E 32216 1 12 100
+Reset M 32212 3 32256 -1 -1 -1 100
+  Reset G 32200 1 100
+    Reset P 0 32215 1 11000 100
+  Reset E 32216 1 12 100
+Reset M 32212 3 32256 -1 -1 -1 100
+  Reset G 32200 1 100
+    Reset P 0 32215 1 11000 100
+  Reset E 32216 1 12 100
+#ENDROOM
+
+#ROOM
+Vnum      32257
+Name      The Icy Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Although this section of ledge is still assaulted by driving snow and
+gusts of wind, it is not as difficult to keep your footing, though
+progress is slow. Another cave opening offers shelter from the storm,
+though it is undoubtedly inhabited, as the Jarl keeps most of the many
+visitors to the rift quartered here, to discourage random roamings. A
+snarl from far below, in the rift, is the first indication that there
+is life down there, undoubtedly of the unfriendly variety.
+~
+#EXIT
+Direction north~
+ToRoom    32255
+Desc      The storm ravaged ledge.
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    32258
+Desc      The edge of the ledge.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32259
+Desc      A small cave.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32258
+Name      The End of the Journey~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The ledge ends here, abruptly, at the souternmost end of the rift; the
+wall south of here is also the southern wall of the rift. Bones lie
+scattered about the ledge here, near a gaping hole in the wall, which
+appears to be the home of some glacial horror; perhaps one not allied
+with the giants, but undoubtedly still no friend of yours. The tunnel
+is large enough to enter, though there is no point; the back wall is
+visible from here and the whole cave is obviously empty.
+~
+#EXIT
+Direction northwest~
+ToRoom    32257
+Desc      The only way back.
+~
+#ENDEXIT
+
+Reset M 32225 1 32258 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32259
+Name      The Stone Giant Quarters~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This chamber houses several stone giants, whom the Jarl is trying to
+woo into working for him; stone giants are revered by all other races
+of giants for their immense strength, resistance to damage and most of
+all their unparalleled ability to work stone and metal. Extraordinary
+smiths, some even work in the employ of the Emperor; stone giants have
+no real scruples as to the nature of their employer as long as the pay
+is good and the hours reasonable.
+~
+#EXIT
+Direction northeast~
+ToRoom    32257
+#ENDEXIT
+
+Reset M 32213 2 32259 -1 -1 -1 100
+  Reset G 32200 1 100
+    Reset P 0 32217 1 11000 100
+Reset M 32213 2 32259 -1 -1 -1 100
+  Reset G 32200 1 100
+#ENDROOM
+
+#ROOM
+Vnum      32260
+Name      A Busy Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This tunnel runs deeper into the mountain, descending as it does so,
+an indication that perhaps you are approaching a lower level of the
+rift. Traffic is heavy here, and harder to avoid as the tunnel is well
+lit and the occupants alert. More voices echo on either side, from 
+groups of giants heading to or from duty. Bloodstains mark the snow
+next to two drag marks where dinner was dragged along earlier.
+~
+#EXIT
+Direction northeast~
+ToRoom    32254
+Desc      A windswept ledge.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32261
+Desc      The tunnel deepens.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32261
+Name      A Bend in the Tunnel~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The wind howls and shrieks at regular intervals to the northeast, though
+at this distance down the tunnel you are safe from the brunt of it. But
+despite the distance, snow drifts have still managed to form, piling in
+the corners to chest height on a giant. Booted feet have trampled down
+the snow nearest the center of the passage. The air is chill, more than
+usual, and you feel you are approaching the lower levels.
+~
+#EXIT
+Direction south~
+ToRoom    32262
+Desc      Another passage.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32260
+Desc      A busy passage.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32262
+Name      An Unexpected Sensation~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      At this point in the corridor you are assaulted by a blast of heat,
+totally unexpected in this icy domain. The tracks in the snow skirt
+wide of its source- a large opening in the southeastern wall. A dim
+reddish glow, like that of embers, is visible, and the heat has all
+but melted the ice in the vicinity, leaving bare the rock underneath.
+Evidently this chamber has been customised to suit the needs of some
+visitors.
+~
+#EXIT
+Direction north~
+ToRoom    32261
+Desc      Another passage.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32264
+Desc      Another passage.
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    32263
+Desc      Waves of heat strike you from this direction.
+~
+Flags     nomob~
+#ENDEXIT
+
+Reset M 32203 10 32262 -1 -1 -1 100
+Reset M 32203 10 32262 -1 -1 -1 100
+#MUDPROG
+Progtype  entry_prog~
+Arglist   100~
+Comlist   mea $n _red An almost welcome wave of heat washes over you.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      32263
+Name      The Fire Giant Embassy~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Plumes of flame leap forth from hidden openings in the rock, flickering
+and dancing as their source- natural gas- fluctuates in the pressure it
+comes out with. The entire cavern is devoid of ice; instead it contains
+some unusual (for a frost giant lair) furniture of obsidian- a table, a
+chair and several benches, plus several braziers stacked with burning
+coals. If the cold is so unpleasant for one of your race, you cannot 
+imagine how discomforting it must be for a fire giant.
+~
+#EXIT
+Direction northwest~
+ToRoom    32262
+Desc      Back out in the cold.
+~
+#ENDEXIT
+
+Reset M 32214 2 32263 -1 -1 -1 100
+  Reset G 32200 1 100
+    Reset P 0 32218 1 11000 100
+Reset M 32214 2 32263 -1 -1 -1 100
+  Reset G 32200 1 100
+#ENDROOM
+
+#ROOM
+Vnum      32264
+Name      The End of the Tunnel~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The tunnel ends abruptly here, where it meets another running in a
+perpindicular course to it. Tracks are heavy in the thin layer of ice
+and snow underfoot, most of them heading east, where the passage slopes
+downward, towards a new level of the rift. The corridor is more even 
+and better illuminated than the upper ones; torches set in cressets on
+the smooth stone walls light the way.
+~
+#EXIT
+Direction north~
+ToRoom    32262
+Desc      A dull reddish glow illuminates this section of the tunnels.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32265
+Desc      A long, even passage.
+~
+#ENDEXIT
+
+Reset M 32226 4 32264 -1 -1 -1 100
+Reset M 32229 3 32264 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32265
+Name      A Sloping Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The passage slopes downward to the east, a gentle but definite angle
+of descent. Traffic is heavy here; at all times you can see various
+creatures moving about on business of their own, most of them giants.
+Other races are pretty much restricted to quarters, save for several
+wolves, that roam the tunnels in search of magically concealed foes.
+~
+#EXIT
+Direction east~
+ToRoom    32266
+Desc      The passage slopes downwards.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32264
+Desc      The passage slopes upwards.
+~
+#ENDEXIT
+
+Reset M 32203 10 32265 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32266
+Name      A Sloping Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The passage continues, the walls here of even, though undressed, stone.
+The icy layer is thinner here than earlier, and no longer forms the
+bulk of the architecture. Thus it is safe for the giants to place some
+torches here, set in cressets on the walls, to cast ample light to see
+by, without fear of the tunnel collapsing. Howls and shrieks, from one
+of several monsters rather than the wind for a change, echo all around
+you.
+~
+#EXIT
+Direction east~
+ToRoom    32267
+Desc      The passage slopes downwards.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32265
+Desc      The passage slopes upwards.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32267
+Name      A Sloping Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      At this point the passage is met by another, much older tunnel that
+runs south as far as is visible in the light cast by several brands,
+smoldering from rusted iron cressets set in the walls. An eerie calm
+exists in this direction- no giants can be seen or heard moving in
+there, nor any other beasts. Perhaps they are expected to keep well
+clear of the older tunnels.
+~
+#EXIT
+Direction east~
+ToRoom    32226
+Desc      The passage slopes upward to a guard chamber.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32268
+Desc      The Lower Levels
+~
+Flags     nomob~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32266
+Desc      The passage slopes upward.
+~
+#ENDEXIT
+
+Reset M 32226 4 32267 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32268
+Name      The Lower Levels~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This section of tunnel marks the beginning of the lower levels of the
+Jarl's capital. No snow or ice coats the walls here; instead they are
+of smooth, though unworked, stone, which bear small tapestries and a
+torch or three. The hard stony ground underfoot cannot betray signs of
+passage, though the stone worn smooth along the walls by encounters 
+with giantish shoulders show that some creatures do frequent this area.
+Although there are no markings or indicators, you feel certain that you
+are nearing the Jarl's own chambers, or at least his palace.
+~
+#EXIT
+Direction north~
+ToRoom    32267
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32269
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32269
+Name      An Open Cavern~
+Sector    mountain~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      The passage exits into a high, open cavern, that stretches away in all
+three directions. The starry sky is visible far, far above, over 300
+yards away; the effect is quite enthralling. The cavern is eerily quiet
+save for the sound of water dripping onto stone somewhere far away. A
+grim sense of foreboding comes over you as you consider your options; 
+there is a definite evil at work somewhere here, its source not obvious
+immediately, but definitely present. Large boulders block two passages
+to the east and west, movable only by a stout warrior, while the cavern
+continues to the south.
+~
+#EXIT
+Direction north~
+ToRoom    32268
+Desc      from the cavern.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32270
+Desc      A huge boulder conceals unknown perils.
+~
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32272
+Desc      A dead end?
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32273
+Desc      A huge boulder conceals unknown perils.
+~
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+Reset D 32269 1 1 100 -2
+Reset D 32269 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32270
+Name      A Vaulted Cavern~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The boulder opens onto a chamber of breathtaking beauty. Instead of
+rocky, unhewn walls, this cavern is actually a chamber proper; the 
+stone has been carefully worked into a series of doric columns, that
+support a vaulted roof heavily decorated with art that appears elvish
+in origin, though it is unlike any you have ever seen. Evidently this
+place was fashioned by creatures centuries older than the giants, and
+abandoned some time ago. The floor is of polished marble, its lustre
+adding a glorious shine as your light reflects off of it and onto all
+the jewelled statues that ring the hall. It continues to the northeast,
+the floor raising slightly to match the terrain. A legion of dwarves
+would take decades to match this marvel; even stone giants would be left
+gasping in awe at the work that went into bending the natural stone to
+the will of the master artisans.
+~
+#EXIT
+Direction west~
+ToRoom    32269
+Desc      A boulder bars the exit.
+~
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32271
+Desc      The marvels continue.
+~
+#ENDEXIT
+
+Reset M 32215 1 32270 -1 -1 -1 100
+Reset D 32270 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32271
+Name      Mistress of the Wyrm~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The floor rises here, to a set of marble steps that, flanked by columns
+carved to resemble vase-bearing maidens, rise to a ledge lined with many
+statues of bronze, surprisingly free of corrosion, surrounding a dais,
+upon which the Queen of this ancient race once reclined. A different kind
+of queen now resides here, though she has similar vanities and taste in
+furnishings. A jewelled box filled with priceless metals has been almost
+casually crushed beneath the weight of an apparently worthless alabaster
+statue that would require 6 people to shift. A priceless tapestry has
+been sliced to ribbons to bind together a frail, and unappealing, wooden
+carving of a giant. Whatever creatures are now masters of this domain,
+they have curious values.
+~
+#EXIT
+Direction southwest~
+ToRoom    32270
+Desc      The marvels continue.
+~
+#ENDEXIT
+
+Reset M 32216 1 32271 -1 -1 -1 100
+Reset O 32244 1 32271 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32272
+Name      A Dead End~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The cave narrows to a small tunnel here, which runs south for a short
+distance before ending in a dead end. Snow from some recent blizzard
+has blown in through the hole in the cavern to the north, and piled
+high here, blocking the passage. Large tracks of an unusual type mark
+the presence of other perils besides hypothermia and frostbite...
+~
+#EXIT
+Direction north~
+ToRoom    32269
+Desc      The open cavern.
+~
+#ENDEXIT
+
+Reset M 32217 3 32272 -1 -1 -1 100
+Reset M 32217 3 32272 -1 -1 -1 100
+Reset M 32217 3 32272 -1 -1 -1 100
+Reset O 32224 1 32272 -1 -1 -1 100
+Reset O 3 1 32272 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32273
+Name      The Jarl's Complex~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A guard post behind the boulder marks the beginning of the Jarl's 
+complex, where he and the elite of frost giant society reside. The
+Jarl has poor taste in decor, if the tacky tapestries that line the
+walls here are any indication; they are cheaply made, and of poor
+quality and worksmanship. A long bronze horn, to be winded by the  
+guards in emergencies, hangs between two of these insulting works
+of 'art'.
+~
+#EXIT
+Direction east~
+ToRoom    32269
+Desc      A boulder bars the way.
+~
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32275
+Desc      A junction.
+~
+#ENDEXIT
+
+Reset M 32218 2 32273 -1 -1 -1 100
+  Reset E 32225 1 16 100
+Reset M 32218 2 32273 -1 -1 -1 100
+  Reset E 32225 1 16 100
+Reset D 32273 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32274
+Name      Ogre Pens~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The ogres that serve the Jarl as mercenaries and servants are quartered
+here, on piles of fur next to which rest small chests for the ogres'
+meagre personal possessions. A campfire burns in the center, between 
+the bedding, where the ogres prepare their humble meals. The conditions
+are poor, but doubtless better than they'd be used to, especially when
+most of them are undoubtedly natives of the Kore or the Drachensgrab.
+~
+#EXIT
+Direction north~
+ToRoom    32275
+Desc      A junction.
+~
+#ENDEXIT
+
+Reset M 32222 6 32274 -1 -1 -1 100
+  Reset G 32200 1 100
+Reset M 32222 6 32274 -1 -1 -1 100
+  Reset G 32200 1 100
+Reset M 32222 6 32274 -1 -1 -1 100
+  Reset G 32200 1 100
+Reset M 32222 6 32274 -1 -1 -1 100
+  Reset G 32200 1 100
+Reset M 32222 6 32274 -1 -1 -1 100
+  Reset G 32200 1 100
+Reset M 32222 6 32274 -1 -1 -1 100
+  Reset G 32200 1 100
+#ENDROOM
+
+#ROOM
+Vnum      32275
+Name      A Junction~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Numerous openings beckon to either side from this widening in the cave
+passage. A large cavern lies to the northeast, and a second to the south.
+A heavy boulder blocks the entrance to the north, while to the west the
+passage continues, towards a bend. Giants move about on all sides, but
+few leave the caves they are in.
+~
+#EXIT
+Direction north~
+ToRoom    32277
+Desc      A boulder blocks the opening.
+~
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32273
+Desc      A guard post.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32274
+Desc      The ogre thrall pens.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32279
+Desc      The passage continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32276
+Desc      Another guest cavern.
+~
+#ENDEXIT
+
+Reset D 32275 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32276
+Name      Emissaries' Cavern~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A group of Ogre Magi, ogres from the mystical realms to the east, are
+currently quartered here, privileged guests of the Jarl, and are now
+considering whether to commit their forces to the Jarl's cause. They
+have been bribed with numerous gifts and many promises, which they of
+course place little stock in. Ogre Magi, unlike regular ogres or even
+giants, are highly intelligent and cunning, and recognize a situation
+where they are in danger far more readily. 
+~
+#EXIT
+Direction southwest~
+ToRoom    32275
+Desc      A junction.
+~
+#ENDEXIT
+
+Reset M 32219 3 32276 -1 -1 -1 100
+  Reset E 32227 1 16 100
+  Reset G 32228 1 100
+  Reset E 32231 1 3 100
+Reset M 32219 3 32276 -1 -1 -1 100
+  Reset E 32227 1 16 100
+  Reset G 32229 1 100
+Reset M 32219 3 32276 -1 -1 -1 100
+  Reset E 32227 1 16 100
+  Reset G 32230 1 100
+#ENDROOM
+
+#ROOM
+Vnum      32277
+Name      A Guest Chamber~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This small cavern houses a single giant- a cloud giant from the far
+away realms of his kind, here to listen to the Jarl's spiel. He has
+been convinced that the Jarl has a very good chance of making a tidy
+sum of money from his raids, and has signed on as a mercenary. Other
+giants, not as easily impressed by the Jarl's speeches, have declined
+an alliance, and returned home; many of the cloud giants have stayed
+here, and subsequently left in disgust- not all cloud giants are evil.
+A table laden with food and fine cutlery are just some of the cajolery
+employed by the cunning frost giant lord.
+~
+#EXIT
+Direction south~
+ToRoom    32275
+Desc      A boulder bars the way.
+~
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+Reset M 32221 1 32277 -1 -1 -1 100
+Reset D 32277 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32278
+Name      An Opulent Prison~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This room is elaborately furnished, in a strikingly subtle manner for
+giants. Fine silverware and gold platters laden with sweetmeats rest
+on a table of polished oak, covered with satin cloth. Wall hangings 
+of elvish manufacture cover the bleak grey stone walls, and thick rugs
+protect your feet from the cold floor. The Jarl has gone to great pains
+to make the occupant of this cell as comfortable as possible, though it
+is still a cell, despite its trappings.
+~
+#EXIT
+Direction south~
+ToRoom    32279
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+Reset M 32220 1 32278 -1 -1 -1 100
+  Reset E 32232 1 10 100
+Reset D 32278 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32279
+Name      The Great Southern Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      At this point a broad cavern runs due south, lined by an impressive 
+array of stalagmites carved to resemble heroic giants. Tapestries 
+hang between these natural formations, most of them espousing the
+virtues of frost giant kind in glorious exaggeration. Torches set in
+iron cressets at chest height (to a giant) cast long shadows on the
+stone floor, obscuring whatever may lurk in the corners. This cavern
+runs due south to the throne of the Jarl himself.
+~
+#EXIT
+Direction north~
+ToRoom    32278
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32275
+Desc      A junction.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32280
+Desc      The great southern passage continues.
+~
+#ENDEXIT
+
+Reset D 32279 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32280
+Name      The Great Southern Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Onwards the cavern continues, almost striking in its stark majesty.
+It is apparent that the frost giants have lived and labored in the
+caves surrounding the dark rift for centuries, slowly bending the 
+rock to suit their needs, until they had carved from the rock this
+system of caves to house their people. It would be an admirable feat
+were it not achieved by a vile, cruel race using slave labor without
+concern for the well being of those so abused.
+~
+#EXIT
+Direction north~
+ToRoom    32279
+Desc      A passage away from the chambers.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32281
+Desc      An antechamber.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32281
+Name      The Jarl's Antechamber~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A group of giants stand guard in this chamber at all times, keeping 
+an eye on all who come and go, refusing any past this point who do
+not have the blessings of the Jarl himself. A pile of boulders used
+against unruly visitors lies stacked near the entrance, while several
+heavy weapons lie leaned up against the walls, ready to be used.
+~
+#EXIT
+Direction north~
+ToRoom    32280
+Desc      A passage away from the Jarl's chambers.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32282
+Desc      The great cavern of the Jarl.
+~
+#ENDEXIT
+
+Reset M 32227 2 32281 -1 -1 -1 100
+  Reset E 32214 1 16 100
+  Reset E 32239 1 18 100
+Reset M 32227 2 32281 -1 -1 -1 100
+  Reset E 32214 1 16 100
+  Reset E 32239 1 18 100
+#ENDROOM
+
+#ROOM
+Vnum      32282
+Name      The Great Cavern of the Jarl~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      At last the passage emerges into a huge cavern, easily two hundred 
+yards long, stretching away to the south. Eerie lighting casts long
+distorted shadows that disturb and confound visitors, while several
+giants stationed about the place also intimidate, purposely, those
+who come to visit the Jarl for whatever purpose. The Jarl must be
+close by now, surely.
+~
+#EXIT
+Direction north~
+ToRoom    32281
+Desc      A passage away from the Jarl's chambers.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32283
+Desc      The great cavern of the Jarl.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32289
+Desc      The great cavern of the Jarl.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32283
+Name      The Great Cavern of the Jarl~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      At this point two passages lead away from the cavern, one heading to
+the north towards a bright red glow, the other east into a darkened,
+deserted chamber. Shadows flicker and dance on the walls, cast from
+you and the many giants in the region by both the wooden torches and
+the strangely glowing stone so common around the rift.
+~
+#EXIT
+Direction north~
+ToRoom    32284
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32285
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32291
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32282
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32284
+Name      The Kitchens~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The reddish glow visible from this place is cast from several firepits,
+above which several spitted humans slowly rotate, basting over the
+open flame. Several giants and ogres are here at all times, preparing
+feasts for the giants and ogres in the cave system. The stench of
+burning human meat would repulse most races, though giants apparently
+relish in human meat, as well as halfling, naturally, which is generally
+considered the most succulent meat.
+~
+#EXIT
+Direction south~
+ToRoom    32283
+Desc      The great cavern of the Jarl.
+~
+#ENDEXIT
+
+Reset M 32230 1 32284 -1 -1 -1 100
+Reset M 32231 3 32284 -1 -1 -1 100
+Reset M 32231 3 32284 -1 -1 -1 100
+Reset M 32231 3 32284 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32285
+Name      The Armory~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This chamber is devoid of giants, but boasts piles of rocks, shields,
+spears, clubs and helmets, made for frost giants and far too large 
+for smaller races. They are also of poor quality, and bespeak hasty 
+manufacture by unskilled hands. A boulder blocks an opening in the
+east wall, while passages exit to the north and west.
+~
+#EXIT
+Direction north~
+ToRoom    32286
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32287
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32283
+Desc      The great cavern of the Jarl.
+~
+#ENDEXIT
+
+Reset D 32285 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32286
+Name      Common Quarters~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The families of the frost giant soldiers quartered in the barracks all
+reside here, performing various mundane tasks to contribute to the war
+effort. Piles of sleeping hides lie all about the chamber, arranged
+next to chests and baskets containing various goods of little value. A
+strong smell, of oil, used on the clothing of giants, fills the room.
+~
+#EXIT
+Direction south~
+ToRoom    32285
+Desc      The armory.
+~
+#ENDEXIT
+
+Reset M 32232 4 32286 -1 -1 -1 100
+Reset M 32232 4 32286 -1 -1 -1 100
+Reset M 32232 4 32286 -1 -1 -1 100
+Reset M 32232 4 32286 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32287
+Name      The Kennels~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This cavern is totally devoid of furnishings or decorations; the reason
+for this becomes readily apparent when you deduce the nature of its
+occupants. Several chunks of meat litter the floor, bearing bite marks
+as big as your head. A vile smell, of animal fur and blood, fills the
+air, and makes you even more eager to leave; even a vampire would have
+difficulty stomaching blood this putrid.
+~
+#EXIT
+Direction west~
+ToRoom    32285
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    32288
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+Reset M 32233 2 32287 -1 -1 -1 100
+  Reset E 32259 1 3 100
+Reset M 32233 2 32287 -1 -1 -1 100
+  Reset E 32259 1 3 100
+Reset D 32287 3 1 100 -2
+Reset D 32287 8 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32288
+Name      Chamber of the Carls~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Those giants who are of higher status in the caverns reside here, near
+the quarters of the Jarl himself. They have proper beds, not piles of
+hides, and considerable amounts of furnishings, stolen from races they
+have raided or conquered. Evidently those quartered here are also of
+considerable means.
+~
+#EXIT
+Direction west~
+ToRoom    32298
+Desc      Chamber of the carls.
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    32287
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+Reset M 32234 4 32288 -1 -1 -1 100
+Reset M 32234 4 32288 -1 -1 -1 100
+Reset D 32288 7 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32289
+Name      The Great Cavern of the Jarl~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      At this point a narrow stair runs up to a ledge shrouded in shadow, from
+which someone could establish a good view of most of the cave. The throne
+lies further south, flanked by the Jarl's personal guard naturally; the
+Jarl must have many enemies, to protect himself so.
+~
+#EXIT
+Direction north~
+ToRoom    32282
+Desc      The cavern of the Jarl.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32291
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32293
+Desc      The cavern of the Jarl.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    32290
+Desc      A stair runs up to a narrow ledge.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32290
+Name      A High Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This high ledge affords an excellent view of the throne room below, and
+thus is a perfect vantage point for guards of the Jarl to keep an eye
+out for intruders. Intruders, however, have yet to penetrate this far,
+and thus the guards are less than alert. A large iron post marks the
+point where the great giantish ballista is mounted, to fire its eighteen
+foot bolts at whatever unfortunate may pass below.
+~
+#EXIT
+Direction down~
+ToRoom    32289
+Desc      The great cavern lies at the bottom of the stair.
+~
+#ENDEXIT
+
+Reset M 32228 2 32290 -1 -1 -1 100
+  Reset E 32239 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      32291
+Name      The Great Cavern of the Jarl~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      At this point a narrow stair runs up to a ledge shrouded in shadow, from
+which someone could establish a good view of most of the cave. The throne
+lies further south, flanked by the Jarl's personal guard naturally; the
+Jarl must have many enemies, to protect himself so.
+~
+#EXIT
+Direction north~
+ToRoom    32283
+Desc      The cavern of the Jarl.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32294
+Desc      The cavern of the Jarl.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32289
+Desc      The cavern of the Jarl.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    32292
+Desc      A stair runs up to a narrow ledge.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32292
+Name      A High Ledge~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This high ledge affords an excellent view of the throne room below, and
+thus is a perfect vantage point for guards of the Jarl to keep an eye
+out for intruders. Intruders, however, have yet to penetrate this far,
+and thus the guards are less than alert. A large iron post marks the
+point where the great giantish ballista is mounted, to fire its eighteen
+foot bolts at whatever unfortunate may pass below.
+~
+#EXIT
+Direction down~
+ToRoom    32291
+Desc      The great cavern lies at the bottom of the stair.
+~
+#ENDEXIT
+
+Reset M 32228 2 32292 -1 -1 -1 100
+  Reset E 32239 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      32293
+Name      The Great Cavern of the Jarl~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The cavern narrows here, the throne resting within an alcove to the
+southeast, flanked by numerous carvings, reliefs and of course guards.
+You constantly feel as if dozens of pairs of eyes were watching you,
+even when you cannot see anyone immediately near you. The end of this
+sortie against the frost giants is at hand; perhaps you should take a
+moment to prepare.
+~
+#EXIT
+Direction north~
+ToRoom    32289
+Desc      The cavern of the Jarl.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32294
+Desc      The cavern of the Jarl.
+~
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    32295
+Desc      The throne of the Jarl.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32294
+Name      The Great Cavern of the Jarl~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The cavern narrows here, to a point to the southwest where a stone dais
+holds the throne of the Jarl. Guttering torches cast ample light here,
+though the long shadows they cast are disconcerting. Voices raised in
+anger and excitement can be heard at random intervals from various parts
+of the caverns.
+~
+#EXIT
+Direction north~
+ToRoom    32291
+Desc      The cavern of the Jarl.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32293
+Desc      The cavern of the Jarl.
+~
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    32295
+Desc      The throne of the Jarl.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      32295
+Name      The Seat of Power~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Here rests the Jarl's throne of bone and ivory; silvered skulls supported
+by ivory tusks, bearing a seat made from mammoth rib cages. Two torches
+flank the monstrous seat, casting long shadows with its bulk, obscuring
+most of the steps that approach the dais, covered by bearskin rugs and
+the hides of other, unidentifiable creatures. More hides decorate the walls
+and ceiling, while a bear hide almost obscures a narrow passage that runs
+east, presumably to the Jarl's private quarters.
+~
+#EXIT
+Direction east~
+ToRoom    32296
+Desc      A short passage.
+~
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    32294
+Desc      Away from the throne.
+~
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    32293
+Desc      Away from the throne.
+~
+#ENDEXIT
+
+Reset M 32224 2 32295 -1 -1 -1 100
+  Reset E 32214 1 16 100
+Reset M 32224 2 32295 -1 -1 -1 100
+  Reset E 32214 1 16 100
+Reset M 32223 1 32295 -1 -1 -1 100
+  Reset E 32233 1 5 100
+  Reset E 32234 1 11 100
+  Reset E 32235 1 16 100
+Reset O 32240 1 32295 -1 -1 -1 100
+Reset O 32241 1 32295 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32296
+Name      A Short Passage~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The tunnel ends after a short distance before another boulder, these
+rocks that serve as doors to this burly people. Scuff marks mark where
+it has been shoved casually aside in the past by the mighty giant Jarl
+on the way to or from his private quarters. A crude rune carved into
+the rock, of dwarven and giantish origin, spells one word- KING.
+~
+#EXIT
+Direction east~
+ToRoom    32297
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32295
+Desc      The throne room.
+~
+#ENDEXIT
+
+Reset D 32296 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32297
+Name      A Macabre Trophy Chamber~
+Sector    indoors~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This spacious chamber is filled with all manner of trophies. The skins
+and hides of a score of different creatures cover the walls and floor,
+and even the ceiling. Shelves lined with skulls- human, giant, elven,
+dwarven, ogre and even gnomish- are placed in front of the hides, while
+a fireplace supports a row of mastodon tusks, flanked by the mighty
+tusks of an Umber Hulk. The skins of the creatures range from mundane 
+(boars, bears, snakes and birds) to the exotic (wyverns, dragons, sabre
+tooth tigers and even a shedu). Arms and armor taken from foes from many
+parts of the world are also present, each bearing the scars from blows of
+the Jarl that were the end of their former owners. A lynx pelt hangs over
+an exit in the eastern wall, where presumably the Jarl rests, while a hide
+of a giant lizard flanked by a pair of eagle's wings hang above the exit
+to the north.
+~
+#EXIT
+Direction north~
+ToRoom    32298
+Desc      Chamber of the carls.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    32299
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    32296
+Keywords  boulder~
+Flags     isdoor closed pickproof nopassdoor~
+#ENDEXIT
+
+Reset M 32236 1 32297 -1 -1 -1 100
+Reset O 32248 1 32297 -1 -1 -1 100
+Reset O 32236 1 32297 -1 -1 -1 100
+Reset D 32297 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      32298
+Name      Chamber of the Carls~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      Those giants who are of higher status in the caverns reside here, near
+the quarters of the Jarl himself. They have proper beds, not piles of
+hides, and considerable amounts of furnishings, stolen from races they
+have raided or conquered. Evidently those quartered here are also of
+considerable means.
+~
+#EXIT
+Direction east~
+ToRoom    32288
+Desc      Chamber of the carls.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    32297
+#ENDEXIT
+
+Reset M 32234 4 32298 -1 -1 -1 100
+Reset M 32234 4 32298 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      32299
+Name      The Jarl's Private Chamber~
+Sector    indoors~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      In comparison to the Jarl's grisly trophy lounge, this chamber is
+strikingly bare. Only a few sparse decorative features are present;
+the most notable is a large bear skin, a beloved pet of the Jarl and
+his wife, that covers the floor. A large table littered with jacks
+of ale and goblets of wine is ample evidence of the tastes these two
+have for alcohol, and the fine foods from a dozen different cultures
+is a result of the many raids made by the Jarl; he has developed a
+taste for foreign cuisine. Several boxes and chests stuffed with a
+range of worthless clothing and similar line the walls.
+~
+#EXIT
+Direction west~
+ToRoom    32297
+#ENDEXIT
+
+Reset M 32235 1 32299 -1 -1 -1 100
+  Reset E 32245 1 12 100
+  Reset E 32246 1 16 100
+Reset O 32226 1 32299 -1 -1 -1 100
+Reset O 32247 1 32299 -1 -1 -1 100
+Reset O 32260 1 32299 -1 -1 -1 100
+  Reset P 0 32263 1 32260 100
+Reset O 32261 1 32299 -1 -1 -1 100
+  Reset P 0 32264 1 32261 100
+Reset O 32262 1 32299 -1 -1 -1 100
+  Reset P 0 32265 1 32262 100
+#ENDROOM
+
+#ENDAREA

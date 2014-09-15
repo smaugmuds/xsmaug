@@ -1,0 +1,4067 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Domain of World Eater~
+Author          Rolindar~
+Vnums           3000 3059
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          30 50 0 65
+ResetMsg        Deep, booming laughter echoes through the halls of the citadel.~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      3000
+Keywords  world eater monolith~
+Race      human~
+Class     king~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     World Eater~
+Long      A towering monolith of black stone stands in the center of the chamber.
+~
+Desc      Few beings in the known (or unknown) multiverses are as powerful (or
+arrogant) as the all-powerful World Eater. A galactic power of immense
+strength and magical power, the world eater is a demon trapped in a
+massive stone monolith, who must travel the planes, devouring worlds and
+civilizations. Brythunia is next on his agenda; pray that he fails...
+~
+Nattacks  6.000000
+Stats1    0 -1 0 0 0 0
+Stats2    55 21 -300 29999 10 20 100
+Speaks    common spiritual magical god ancient~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared protect truesight fireshield shockshield iceshield~
+Resist    NONE fire cold electricity pierce slash hold~
+Immune    fire blunt acid poison drain sleep charm plus5 plus6 magic~
+Suscept   energy~
+Attacks   stun firebreath frostbreath acidbreath lightnbreath gasbreath~
+Defenses  stoneskin~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+mpe _yel A brilliant beam of energy strikes $n in the chest!
+mpforce $n scream
+mpdamage $n 5000
+mpforce $n flee
+else
+if rand(10)
+mpe _yel Bolts of energy lance from the monolith, striking many combatants.
+mpdamage $n 600
+mpdamage $r 400
+mpdamage $r 200
+cackle
+else
+if rand(20)
+say Seek not to test my power, mortal $n!
+mpe _whi An aura of intense light issues forth from the monolith!
+muhaha
+mpdamage $n 500
+c frost
+else
+if rand(30)
+say My powers are not to be trifled with!
+c feebleness
+c blazebane
+c winter
+c quantum
+c necro
+c 'fire breath'
+c chill
+else
+if rand(40)
+yell I AM WORLD EATER! I AM INVINCIBLE!
+disarm
+sneer $n
+get all
+mpjunk all
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpe The World Eater screams, as cracks appear along its surface.
+mpe With a mighty roar, it epxlodes, showering the room with shards of stone!
+mpdamage $r 200
+mpdamage $r 200
+mpdamage $r 200
+mpdamage $r 200
+mpdamage $r 200
+mpe When the dust settles, you see a metal belt lying amidst the debris.
+mpoload 3000 50
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isimmort($n)
+sneer $n
+say Hark, so-called 'immortal', I am here at the behest of greater
+say powers than you... Leave before I destroy ye pfile!
+else
+if ispc($n)
+hmm
+say Mortal named $n, you realize not the powers you meddle with.
+say Normally, I would destroy thee without a thought... and be glad!
+snicker
+say But I admire you for passing my guardians, and shall spare you.
+say Speak your wish to be gone from this place, and I shall send you away.
+say But, should you elect to remain, be aware that I will smite you down!
+cackle
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p grovels in the dirt before you.~
+Comlist   chuckle
+say Ahh, you truly are a worthless creature, $n.
+pat $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p I wish to be gone from this place~
+Comlist   nod
+say So be it!
+mea $n $I whispers a word, and you find yourself suddenly falling...
+mpechoaround $n $I whispers a word, and $n disappears!
+mpat 21056 mpe $n suddenly comes hurtling down from the heavens!
+mptrans $n 21056
+mpat 21056 mpforce talus say By the Gods! What an entrance!
+mpat $n mea $n You hit the ground... HARD.
+mpat $n mpdamage $n 500
+mpat $n mpasound You hear a body smash into the stone road nearby.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p looks at you.~
+Comlist   say Stare not upon my magnificence, $n!
+mea $n A bolt of black energy strikes you in the chest!
+mpechoaround $n $n cries out as a blast of energy strikes $m!
+mpdamage $n 400
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3001
+Keywords  unearthly guardian~
+Race      golem~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_frost~
+Short     an unearthly guardian~
+Long      A massive stone statue looms over you.
+~
+Nattacks  3.000000
+Stats1    0 0 0 0 0 0
+Stats2    48 21 -200 9000 8 10 80
+Speaks    spiritual~
+Speaking  spiritual~
+Actflags  npc sentinel aggressive stayarea~
+Affected  sanctuary infrared truesight~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    NONE fire cold electricity pierce slash hold~
+Immune    blunt acid drain sleep charm plus6 magic~
+Suscept   energy~
+Attacks   bash stun~
+Defenses  parry dodge disarm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   c winter $r
+c chill $r
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpe At the moment of 'death', the head of the guardian topples off.
+mpoload 3056 1
+mpat 3045 drop head
+mpe It strikes the floor and bounces high and hard into the south wall.
+mpe It smashes into the wall with such force that the stone is shattered!
+mpe Peering through the rubble, you can make out a hidden passage.
+mpopenpassage 3045 3046 2
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3002
+Keywords  bronze dragon blue shruaurgaz~
+Race      dragon~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     Shruaurgaz~
+Long      A mighty blue dragon roars in anger!
+~
+Desc      Your first reaction upon glimpsing this mighty dragon is one of terror;
+blue dragons are one of the most powerful types of dragons. It is said
+that their lightning breath can fell giants like pixies. However, you
+notice no trance of the magical lightning sparks one normally sees about
+such a beast; instead you note a faint golden hue, as if magical illusion
+obfuscated the true nature of this ensorcelled beast.
+~
+Nattacks  5.000000
+Stats1    750 0 0 0 0 0
+Stats2    50 21 -300 16000 40 2 40
+Speaks    common dragon~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary protect flying truesight shockshield iceshield~
+Bodyparts head legs heart brains ear eye wings tail claws sharpscales~
+Resist    NONE fire cold electricity energy pierce slash poison~
+Immune    acid drain sleep charm plus6 magic~
+Suscept   blunt~
+Attacks   bite claws tail bash stun gasbreath~
+Defenses  dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+say Stranger, pray attack me not; I am a dragon of good mein, 
+say imprisoned here against my will by the vile World Eater. If you
+say wish to slay him, say so and I can try and help you.
+else
+say Begone from this place, else I slay you $n!
+roar $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   80~
+Comlist   if isnpc($n)
+mpe $I levels $n with a withering blast of energy!
+mpdamage $n 1000
+mpforce $n scream
+mpforce $n yell THE PAIN!!!!!
+mpforce $n flee
+else
+if rand(5)
+mea $n You are hit by a breath attack of tremendous force!
+mpechoaround $n A bolt of flame strikes $n, searing $m badly!
+mpforce $n yell IT BURNS! IT BURNS!
+mpdamage $n 800
+mpforce $n flee
+else
+if rand(10)
+mpe $I roars in fury, unleashing a gout of fire and gas!
+c 'fire breath'
+c 'gas breath'
+mpe Flesh is charred and seared by the blast!
+else
+if rand(20)
+mpe $I unleashes a volley of spells!
+c 'black lightning'
+c 'sulfurous spray'
+c chill
+c 'spiral blast'
+c 'caustic fount'
+else
+if rand(30)
+mpe $I works an array of debilitating magicks upon $r!
+c unravel $r
+c winter $r
+c blazebane $r
+c swordbait $r
+c weaken $r
+else
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if rand(40)
+mpe As the mighty blue dies, it reverts to its true, bronze, colorings.
+mpe A shimmering token falls from its maw as it collapses, dead.
+mpoload 3006
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p i wish to slay him~
+Comlist   say Good. His lair is hidden by magical forces, without my help you
+say would not reach his sanctum. However, he may have other barriers
+say that I do not know of; the master loves his little tricks.
+sigh
+say Be sure to explore every avenue, for he is an ancient and deadly foe.
+say Now, go!
+mea $n A swirling mass of colours surrounds you, and you shift dimensions.
+mpechoaround $n $n is surrounded by a swirling mass of colours.
+mptrans $n 3049
+mpat $n tell $n This is his sanctum! Be careful, and may Law be with you!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3003
+Keywords  shrua elder god~
+Race      human~
+Class     Cleric~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_adept~
+Short     Shrua~
+Long      A beautiful woman with wise eyes stares quietly ahead.
+~
+Desc      Sister of Urgaz, Shrua and her brothers were the elder gods of an ancient
+culture destroyed by the World Eater, who found the deities amusing and
+decided to bring them to his otherworldly manse. They are good and
+honest deities, who can only hope for salvation if their token is
+returned to them, the key by which they may traverse to another world.
+~
+Nattacks  0.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    48 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary floating truesight~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+say You are not welcome here!
+mpforce $n w
+else
+say O adventurer, why are you in this accursed place willingly?
+sigh
+say Pray, destroy the vile evil that keeps us imprisoned here,
+say and return to my brother and I the token that may free us
+say from this foul domain.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   , sings sadly, in a high, soft voice.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  give_prog~
+Arglist   token elder gods~
+Comlist   say Joy! I can be free, to flee this fell domain!
+swoon
+say Mayhap I can find some of my worshippers, yet alive somewhere...
+sigh
+say At any rate, I am glad to be free of this place. Pray, accept this-
+mpe Shrua produces a shining shield, used by her in many battles against chaos.
+mpoload 3005 45
+give shield $n
+say Use it wisely, and justly, as I know you will, dear $n.
+yell World Eater! I am free of your foul clutches! HA!
+mpat world mpforce world yell NNNOOOO! HOW IS THIS POSSIBLE???
+mea $n World Eater will surely remember your act...
+smile
+c sanc $n
+wave
+mpe _whi $I suddenly vanishes, in a blinding flash of light!
+mpgoto 2
+mpjunk all
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3004
+Keywords  urgaz~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Urgaz~
+Long      A proud man, clad in white armor, stands before you.
+~
+Desc      Urgaz and his twin sister Shrua were the deities of an ancient civilization
+that was obliterated by the fell World Eater, who took them prisoner to
+amuse himself. They are prevented from escaping by the fact that the
+dragon that once served them as herald has been ensorcelled and forced to
+guard it, ironically so in that he who was once sworn to protect them now
+enslaves them, albeit against his will.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    48 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary infrared floating~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if isnpc($n)
+say Leave, $n, you cannot help us.
+mpforce $n bow
+mpforce $n e
+else
+say Adventurer, you truly must be strong of arm and heart, to venture
+say this far into the World Eater's damned citadel. Pray, would you
+say help my sister and I to be free of this place, so that we may
+say properly mourn the death of our people? Return to us the token,
+say borne by the dragon that bears our names, and you shall be rewarded.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  give_prog~
+Arglist   token elder gods~
+Comlist   say At last! $n, I am in your debt. Please, take my sword as payment.
+mpe Urgaz unsheathes a magnificent blade, and hands it over.
+mpoload 3004 46
+give urgaz $n
+say May it serve you well. I shall have no further use of it.
+bow $n
+say Fare thee well, $n
+yell World Eater! I have defeated your prison! I am free!
+mpat world mpforce world yell NNNOOOOOO! HOW IS THIS POSSIBLE?
+mea $n You feel fairly sure that the World Eater will not be pleased...
+wave $n
+mpe _whi Urgaz disappears in a blinding flash of holy light!
+mpgoto 2
+mpjunk all
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3005
+Keywords  forsaken entity~
+Race      human~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the Forsaken Entity~
+Long      A pathetic old man is huddled up in one corner.
+~
+Desc      This old man was once a mighty deity, immortal god king of a proud
+and powerful empire that spanned whole planes of existence. He and
+his world were utterly destroyed by the World Eater, and he was brought
+here as a souvenir of this accomplishment. Without his world, his power
+is greatly reduced, though he is still a powerful spellcaster.
+~
+Nattacks  3.000000
+Stats1    -400 -1 0 0 0 0
+Stats2    46 21 -100 3860 8 8 12
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary truesight~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    acid hold plus6 magic~
+Immune    drain sleep charm~
+Suscept   pierce~
+Attacks   bash gouge drain curse weaken~
+Defenses  dodge cureserious~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if rand(15)
+yell Leave me ALONE!
+stun
+c q
+c 'charged beacon'
+c 'ethereal funnel'
+c quantum
+else
+if rand(20)
+c acid
+c fireball
+c 'galvanic whip'
+c chill
+c weaken
+else
+if rand(30)
+c 'energy drain'
+c feebleness
+c necro
+else
+c 'black fist'
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   , babbles incoherently.
+mpe Looking up, the old man's eyes refocus, and he opens his toothless mouth.
+say Just... just... leave... me... alone...please...
+cry
+drool
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpe As the old man dies, a glove slips from his gnarled hands.
+mpoload 3008 
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3006
+Keywords  enraged berserker warrior eyrtug~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Eyrtug~
+Long      An enraged berserker warrior screams and attacks!
+~
+Desc      Once a mighty barbarian prince from some far off world, Eyrtug was
+snatched from his home seconds before its destruction by the World
+Eater, as he alone dared challenge the destroyer of worlds to 
+combat. World Eater destroyed his mind, then imprisoned him here,
+as a souvenir.
+~
+Nattacks  3.000000
+Stats1    -654 -1 0 0 0 0
+Stats2    42 21 0 2500 0 0 0
+Speaks    ancient~
+Speaking  ancient~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis detect_hidden protect truesight~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy blunt pierce plus6~
+Immune    acid drain sleep charm magic~
+Attacks   punch kick bash stun gouge~
+Defenses  parry dodge disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   snarl
+say More flesh to fall beneath the blades of my axes!
+cackle
+mpkill $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if rand(10)
+disarm
+cackle
+gouge
+else
+if rand(25)
+stun
+mea $n $I slams his huge fist into your groin!
+mpdamage $n 150
+mpforce $n say OOOO! Me 'nads!
+grin
+else
+if rand(30)
+wield axe
+wield axe
+muhaha
+say Best not try to disarm me again!
+mpe $I slams his foot down, hard, sending shockhaves through the room!
+c earthquake
+mpdamage $n 100
+mpdamage $r 50
+mpdamage $r 50
+else
+kick
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3007
+Keywords  vigilant watcher~
+Race      golem~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the vigilant watcher~
+Long      A steel statue stands before the archway.
+~
+Desc      This armored steel construct has been placed to ward off any of the
+minions without from entering the domain of World Eater. However, it
+will not bother more powerful intruders, unless provoked.
+~
+Nattacks  1.000000
+Stats1    0 0 0 0 0 0
+Stats2    33 21 -123 0 0 0 0
+Speaks    spiritual~
+Speaking  spiritual~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared protect floating truesight~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    NONE electricity energy blunt pierce slash plus6~
+Immune    fire acid drain sleep charm magic~
+Suscept   cold~
+Attacks   bash~
+Defenses  parry dodge grip~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if level($n) < 30
+mpe The vigilant watcher moves to intercept you!
+mpkill $n
+else
+mpe The vigilant watcher remains motionless as you approach.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpoload 3013
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   key~
+Comlist   mpe The vigilant watcher shifts suddenly, and points to his chest.
+mpe you almost fancy that his featureless face was about to grin.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3008
+Keywords  lost soul~
+Race      spirit~
+Class     Rogue~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a lost soul~
+Long      A shrieking apparition hurtles past.
+~
+Desc      The unfortunates are some of the souls of the billions of creatures
+slain by World Eater and his minions over the aeons.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaks    spiritual~
+Speaking  spiritual~
+Actflags  npc stayarea~
+Affected  infrared floating~
+Bodyparts guts~
+Immune    acid drain sleep charm~
+Attacks   drain curse weaken~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   scream
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   drool
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   25~
+Comlist   cringe $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3009
+Keywords  scribe~
+Race      spirit~
+Class     Cleric~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a spectral scribe~
+Long      A spectral scribe rushes about the library.
+~
+Nattacks  1.000000
+Stats1    0 0 0 0 0 0
+Stats2    37 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  invisible detect_invis detect_hidden sanctuary infrared floating truesight iceshield~
+Bodyparts guts~
+Resist    hold plus6~
+Immune    fire cold acid drain sleep magic~
+Attacks   drain curse weaken~
+Defenses  dodge shield~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   33~
+Comlist   c chill
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   sigh
+say Oh my!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   yell Violence in the place of learning!
+, mutters a few words, and you suddenly feel quite odd...
+mpforce $n say hmm... now what was it i was doing?
+mpechoaround $n $n suddenly wanders out of the library!
+mea $n You lose interest in this battle, and wander outside!
+mptrans $n 3025
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if rand(5)
+mpe As the scribe dies, a scroll slips from his grasp...
+mpoload 3023 30
+else
+if rand(10)
+mpe As the scribe dies, a scroll slips from his grasp...
+mpoload 3019 30
+else
+if rand(15)
+mpe As the scribe dies, a scroll slips from his grasp...
+mpoload 3020 30
+else
+if rand(20)
+mpe As the scribe dies, a scroll slips from his grasp...
+mpoload 3021 30
+else
+if rand(25)
+mpe As the scribe dies, a scroll slips from his grasp...
+mpoload 3022 30
+else
+endif
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3010
+Keywords  the spectral librarian~
+Race      human~
+Class     Cleric~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the spectral librarian~
+Long      A ghostly librarian sits here reading.
+~
+Desc      This spectre resembles a ghostly old man, not unlike the bespectacled
+gentleman who is the archiver of the city records in Maritshome.
+Once a famous and respected historian, the World Eater resurrected him
+after obliterating his home world, and made him the archiver of his
+own records, also totally wiping any memory of his previous life from
+his mind.
+~
+Nattacks  2.000000
+Stats1    400 -1 0 0 0 0
+Stats2    40 21 -123 3333 8 2 64
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared protect truesight scrying shockshield iceshield~
+Resist    electricity plus6~
+Immune    fire cold acid poison drain sleep charm hold magic~
+Suscept   NONE blunt slash~
+Defenses  parry dodge cureserious dispelmagic dispelevil~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the west.~
+Comlist   if isnpc($n)
+and name($n) == scribe
+sigh
+say Not NOW, fellow! I am BUSY!
+sigh
+mpforce $n roll
+mpforce $n w
+else
+if ispc($n)
+say What? What do you want? Do you have a particular reason
+say for disturbing my research, or are you a pest by nature?
+mea $n The librarian glares at you from over his spectacles.
+mea $n Suddenly you feel as if you were in school, and in trouble.
+mpforce $n blush
+mutter
+say Shoo! I have work to do!
+mpe With that, the librarian returns to his book.
+else
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  bribe_prog~
+Arglist   100000~
+Comlist   say Oh, well you DO have a valid reason to disturb me, then!
+, winks at you knowingly.
+say They don't pay us much here, you know.
+say After something more exciting? Well don't forget that
+say World Eater loves levers.
+smirk
+mpjunk coins
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   , clears his throat, and reads aloud from one of his books.
+say The time has come, my little friends, to talk of other things.
+say Of shoes and ships, and ceiling whacks, and cabbages, and
+say ...kings...
+mpe The librarian pauses, as if suddenly remembering something.
+sniff
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   c winter
+c chill
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   15~
+Comlist   c charged
+c 'black lightning'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   c 'ethereal funnel'
+c quantum
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   25~
+Comlist   c feebleness
+c necro
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpe As the librarian slips into the cold embrace of death again, he smiles.
+mpe Although I wish you had succeeded, know that my master will bring me
+mpe back, and I will be once again his slave...
+if rand(10)
+mpe Before he dies, the librarian casts a glance at the loose book.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpe The librarian suddenly raps his staff upon the ground, visibly upset.
+say QUIET! Too much chatter!
+mutter
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   33~
+Comlist   pull tome
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3011
+Keywords  deranged alchemist~
+Race      human~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a deranged alchemist~
+Long      A wild-eyed old man sniggers softly as he brews a bubbling potion.
+~
+Desc      This mad-looking character is totally devoted to his work. He stumbled
+in here one day by accident, and was almost destroyed by the gargoyles.
+World Eater saved him, but not before his mind became rather...unhinged.
+You note with interest the curious brace he wears on his neck, which 
+supports a heavy tome at arm's length, so he can glance at his notes
+whilst brewing, leaving his hands free.
+~
+Nattacks  3.000000
+Stats1    -400 -1 0 0 0 0
+Stats2    42 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary fireshield iceshield~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    NONE fire cold electricity slash acid poison magic~
+Immune    drain sleep charm plus6~
+Attacks   bite gouge drain poison curse fireball weaken~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpe The alchemist glances down at the book supported on the brace.
+hmm
+say Yesss..... heh heh...heh heh...
+, sniggers uncontrollably.
+mpe The alchemist adds another drop of brown liquid to his potion.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpe _whi A sudden explosion rocks the chamber, sending glass everywhere!
+say Aw crap... not good....heh heh... but nice explosion...
+, sniggers uncontrollably.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+say heh heh... visitors... niiiiiiice....
+say heh heh.... made a potion.... wanna try it?
+, sniggers uncontrollably.
+else
+say heh heh, who are you $n!
+say Want a potion?
+mpe $n wisely declines.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   if rand(10)
+mpoload 3031 39
+give bubbling $n
+mpe You take a sip...
+mpforce $n quaff bubbling
+say Uh oh, bad one...
+, sniggers uncontrollably.
+else
+if rand(15)
+mpoload 3034 39
+give bubbling $n
+mpe You take a sip...
+mpforce $n quaff bubbling
+say Heh heh me make a nice one there... heh heh
+else
+if rand(20)
+mpoload 3032 39
+give bubbling $n
+mpe You take a sip...
+mpforce $n quaff bubbling
+say Heh heh oops...
+muhaha
+else
+if rand(30)
+mpoload 3033 39
+give bubbling $n
+mpe You take a sip...
+mpforce $n quaff bubbling
+say OOOO.... you pretty now! Not like before...heh heh
+else
+mpoload 3035 39
+give bubbling $n
+mpe You take a sip...
+mpforce $n quaff bubbling
+shrug
+say It happens... heh heh....heh heh....
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p no~
+Comlist   shrug
+say Your loss... heh heh....heh heh...
+drool
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if rand(10)
+say Heh heh... bad move $n...
+mea $n hurls a vial of acid in your face!
+mpechoaround $n $I hurls a vial of acid in $n's face!
+mpforce $n scream
+mpforce $n say AAAAAGH! My eyes!
+mpdamage $n 200
+else
+if rand(20)
+say Heh heh.... make magic now... heh heh....
+c q
+c unravel
+c 'caustic fount'
+c chill
+else
+if rand(30)
+gouge $r
+poke $r
+wink $r
+slap $r
+mpdamage $r 75
+else
+c 'acid blast'
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  hitprcnt_prog~
+Arglist   20~
+Comlist   cry
+say You hurt me... heh heh.... but i get better...
+snicker
+mpe The alchemist quickly quaffs a vial of black liquid.
+mpat 3 c heal
+mpat 3 c troll
+mpat 3 c 'antimagic shell'
+mpat 3 c shadowform
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   mpasound A sudden explosion, and someone laughing uncontrollably, is heard.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3012
+Keywords  zombie janitor~
+Race      zombie~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_janitor~
+Short     a zombie janitor~
+Long      A rotting corpse slowly shuffles along.
+~
+Desc      This undead servant shuffles along the many twisting corridors, picking
+up any rubbish, and mopping up stains left by slain adventurers.
+~
+Nattacks  1.000000
+Stats1    0 0 0 0 0 0
+Stats2    32 21 0 0 0 0 0
+Speaks    spiritual~
+Speaking  spiritual~
+Actflags  npc scavenger stayarea~
+Affected  detect_invis detect_hidden infrared protect~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy plus6~
+Immune    fire acid drain sleep charm~
+Suscept   blunt pierce~
+Attacks   bash~
+Defenses  parry~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   33~
+Comlist   bash
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   , stops and picks his nose.
+say Gaaaaaahhhh.....
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   5~
+Comlist   if inroom($n) == 3018
+mpe The zombie's face contorts in a rictus of agony.
+mpe Even he finds the stench unbearable...
+else
+mpe The zombie clumsily swipes at a patch of dust with the mop.
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3013
+Keywords  troll guard~
+Race      half-troll~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the troll guard~
+Long      A troll clad in splint mail sits here, sobbing uncontrollably.
+~
+Desc      This poor troll has been set to guard something, but exactly what he
+is not sure. All he knows is that it is imperative he keep ahold of the
+little stuffed toy he was given by the nice big black stone what has
+a deep voice...
+~
+Nattacks  2.000000
+Stats1    -200 -1 0 0 0 0
+Stats2    36 21 -75 0 0 0 0
+Speaks    common trollese~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head arms legs heart guts~
+Resist    fire cold pierce plus6~
+Immune    energy acid drain sleep charm magic~
+Suscept   NONE slash~
+Attacks   bash stun gouge~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+mpe As you enter the troll rubs at his eyes, and attempts to regain
+mpe his composure.
+say Err.... hello...
+, shuffles his feet nervously, unsure of what he is meant to do.
+say Er... have you seen my doll?
+, blinks innocently.
+say It...er... isn't that I like dolls or anything, its just that...
+mpe The troll suddenly breaks down again, weeping uncontrollably.
+else
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   say You HAVE? That's... incredible!
+gasp
+say May I have it please?
+, does his best to look appealing and friendly.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p no~
+Comlist   cry
+say Waaah... I'll NEVER get it back...
+sniff
+say I lost it when I was going wee-wees. It fell down the-
+blush
+say ... you know...
+, rubs his toe in the dirt sheepishly.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  give_prog~
+Arglist   fluffy toy doll~
+Comlist   mpe Tears well in the troll's eyes, this time tears of joy.
+say Oh THANK YOU!
+mpe The troll grabs the doll and hugs it tightly.
+mpe As he does, a small silver key slips from the stuffing.
+mpoload 3041
+drop key
+mpjunk fluffy 
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   33~
+Comlist   bash
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   close s
+close trapdoor
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   sigh
+mpat 3 c troll
+mpat 3 c stone
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3014
+Keywords  demonic butler~
+Race      undead~
+Class     Rogue~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_fire~
+Short     a demonic butler~
+Long      A demonic butler stands here, awaiting guests.
+~
+Desc      This helpful little valet is clad in a smart black jacket, and looks
+quite the part. His mannerisms, however, such as sudden howls and 
+vocalizing his desire to drink the blood of virgins, are unsettling
+reminders of his true nature.
+~
+Nattacks  1.000000
+Stats1    -400 0 0 0 0 0
+Stats2    32 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary protect flying~
+Bodyparts head arms legs heart guts wings tail claws horns~
+Resist    acid sleep magic~
+Immune    NONE cold electricity pierce slash drain charm plus6~
+Suscept   energy~
+Attacks   bite claws bash gouge drain poison weaken~
+Defenses  dodge~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the south.~
+Comlist   if ispc($n)
+say Ahh, greetings and welcome to the residence of my master.
+smile
+say Can I take your cloak for you. $n?
+else
+roll $n
+say MORE vagrants. Tsk.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p from the north.~
+Comlist   if ispc($n)
+say Leaving so soon, $n?
+snicker
+else
+say Good, be off wih you, $n.
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   smile
+say Excellent! I'll have those off ye in a second.
+mea $n The demon whips the cloak from your back, and whisks it away!
+mpforce $n rem cloak
+mpforce $n rem coat
+mpforce $n rem cape
+mpforce $n give cloak butler
+mpforce $n give coat butler
+mpforce $n give cape butler
+mpechoaround $n The demon grabs $n's cloak, and disappears!
+mpat 4 drop all
+mpat 4 mppurge
+say There!
+smile
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3015
+Keywords  elderly gith mage aaquervus~
+Race      gith~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     Aaquervus~
+Long      An elderly gith mage sits here, reading quietly.
+~
+Desc      This venerable gith warlock wants nothing more than to be left alone in
+his contemplation of the works of Chaos.
+~
+Nattacks  0.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    44 21 0 3500 4 10 50
+Speaks    gith~
+Speaking  gith~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden infrared floating truesight~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    NONE fire cold electricity slash acid drain charm plus6 magic~
+Immune    sleep~
+Attacks   curse fireball colorspray weaken~
+Defenses  parry dodge dispelmagic shield stoneskin~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   if rand(20)
+snarl
+say You anger me, adventurer!
+mpe The mage launches a volley of offensive magic!
+c q
+c 'caustic fount'
+c 'galvanic whip'
+c 'sulfurous spray'
+c 'black fist'
+c chill
+else
+if rand(25)
+mpe The mage throws up a wall of defensive spells!
+c antimagic
+c eldritch
+c shadowform
+c dragonskin
+c demonskin
+c inner
+c blazeward
+else
+if rand(30)
+mpe The mage launches a variety of debilitating magic!
+c 'ethereal funnel'
+c blazebane
+c winter
+c weaken
+c 'charged beacon'
+c unravel
+else
+c fireball
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if name($n) == scribe
+sigh
+say Please, do not disturb my work, you ghostly apparition!
+mpforce $n roll
+mpforce $n s
+mutter
+else
+if ispc($n)
+say What is it NOW? Oh dear, an adventurer!
+roll
+say Please, I am not in the mood to kill you right now.
+say Just leave me alone, and depart!
+else
+say MORE interruptions!
+boggle
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   4~
+Comlist   mutter
+say What does a mage have to do to get some PEACE around here???
+say Be off before I call the librarian!
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3016
+Keywords  grinning gargoyle~
+Race      gargoyle~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a grinning gargoyle~
+Long      A gargoyle leers menacingly at you from atop a pedestal.
+~
+Desc      Not dissimilar to the statues downstairs, this one differs in that it
+slowly, but surely, creaks to life as you pass it, squatting down to
+stare intently at you.
+~
+Nattacks  3.000000
+Stats1    -745 0 0 0 0 0
+Stats2    38 21 -100 0 0 0 0
+Speaks    magical~
+Speaking  magical~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden infrared flying~
+Bodyparts head arms legs heart brains guts ear eye tail claws horns~
+Resist    NONE fire cold electricity pierce slash drain sleep magic~
+Immune    blunt acid charm hold~
+Suscept   energy~
+Attacks   bite claws tail bash gouge~
+Defenses  dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mea $n The gargoyle stares intently at you as you pass.
+snicker
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mpat 3 c stone
+mpat 3 c heal
+mpat 3 c antimagic
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   33~
+Comlist   gouge
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   stun
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      3017
+Keywords  jedevirk thief rogue~
+Race      half-elf~
+Class     Rogue~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     Jedevirk~
+Long      A rogue clad in black armor slinks near the shadowy corner.
+~
+Desc      The infamous rogue Jedevirk is legendary all across Brythunia. He claims
+that there is nothing he cannot steal; perhaps, though, he is a little
+in over his head here. Despite his arrogance, he is in fact a superb
+swordsman and spellcaster, and has bested foes far more powerful tham
+himself through guile and cunning.
+~
+Nattacks  3.000000
+Stats1    -100 -1 0 0 0 0
+Stats2    49 21 -300 8800 8 10 35
+Speaks    common elvish~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  invisible detect_invis detect_hidden sanctuary infrared sneak hide floating shockshield iceshield~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy blunt pierce hold plus6~
+Immune    acid drain sleep magic~
+Attacks   trip bash gouge backstab blindness curse weaken~
+Defenses  parry dodge disarm grip~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   wield blade
+wield dagger
+if rand(15)
+gouge
+disarm
+sac staff
+sac sword
+sac spear
+sac mace
+sac axe
+sac hammer
+sac club
+chuckle
+else
+if rand(25)
+say Fancy yourself a swordsmaster? Ha!
+mpe $I launches into a devastating assault, slicing and stabbing repeatedly!
+mpdamage $n 500
+else
+if rand(35)
+say Magic as well as might is mine to command!
+c unravel
+c blindness
+c weaken
+c razorbait
+c swordbait
+c curse
+else
+if rand(40)
+c 'acetum primus'
+else
+c 'black fist'
+endif
+endif
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   flees~
+Comlist   cackle
+mpat $n mea $n Jedevirk fishes out a throwing dagger and nails you in the back!
+mpat $n mpdamage $n 300
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum      3000
+Keywords  cosmic belt~
+Type      armor~
+Short     The Cosmic Belt~
+Long      A girth of titanic proportions lies here.~
+Flags     hum metal magic nodrop noremove~
+WFlags    take waist~
+Values    30 0 0 0 0 0 0 0 0 0 0
+Stats     25 750000 -2 1 0 None None None
+AffData strength 3 -1 -1 0
+AffData constitution 3 -1 -1 0
+AffData hit 200 -1 -1 0
+AffData armor -50 -1 -1 0
+AffData hitroll 5 -1 -1 0
+AffData damroll 6 -1 -1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n As you fasten the sparkling girth about your waist, you feel 
+mea $n strange magics begin to work upon you.
+c kin $n
+c troll $n
+c armor $n
+c valiance $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mea $n You reluctantly remove the Cosmic belt from your waist.
+mea $n Immediately you feel relieved to be rid of the immense burden.
+c refresh $r
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  sac_prog~
+Arglist   100~
+Comlist   mpe _whi A beam of white light shines down from the heavens!
+c sanc $r
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3001
+Keywords  trident stone~
+Type      weapon~
+Short     a stone trident~
+Long      A massive three pronged stone dart rests here.~
+Flags     hum magic anticleric antidruid~
+WFlags    take wield~
+Values    0 0 0 2 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+AffData strength 2 -1 -1 0
+AffData hit 60 -1 -1 0
+AffData hitroll 8 -1 -1 0
+AffData damroll 9 -1 -1 0
+AffData save_para -3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3002
+Keywords  graystone cloak~
+Type      armor~
+Short     Graystone Cloak~
+Long      A sheet of stone that appears to be moving slides across the floor...~
+Flags     hum magic antigood antievil anticleric antimage antidruid~
+WFlags    take about~
+Values    25 0 0 0 0 0 0 0 0 0 0
+Stats     45 50000 -2 1 0 None None None
+AffData constitution 2 -1 -1 0
+AffData hit 80 -1 -1 0
+AffData damroll 7 -1 -1 0
+AffData save_para -4 -1 -1 0
+AffData save_spell -4 -1 -1 0
+AffData resistant blunt~ -1 -1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   c troll $n
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3003
+Keywords  circlet of perception~
+Type      armor~
+Short     Circlet of Perception~
+Long      A thin band of white metal lies here.~
+Flags     hum magic antigood antievil antimage antirogue antidruid~
+WFlags    take eyes~
+Values    18 0 0 0 0 0 0 0 0 0 0
+Stats     4 63211 -2 1 0 None None None
+AffData damroll 3 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData affected 'aqua_breath' -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3004
+Keywords  sword urgaz~
+Type      weapon~
+Short     the Sword of Urgaz~
+Long      A glowing metal blade is buried to the hilt in the floor.~
+Flags     metal bless antievil antirogue loyal~
+WFlags    take wield~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     7 1500000 -2 1 0 None None None
+AffData intelligence 2 -1 -1 0
+AffData class 2 -1 -1 0
+AffData hit 100 -1 -1 0
+AffData mana 100 -1 -1 0
+AffData hitroll 9 -1 -1 0
+AffData damroll 10 -1 -1 0
+AffData save_breath -5 -1 -1 0
+AffData resistant NONE fire~ -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3005
+Keywords  shield shrua~
+Type      armor~
+Short     the Shield of Shrua~
+Long      The shield of a forgotten god lies here, forgotten.~
+Flags     hum metal magic bless antievil antirogue~
+WFlags    take shield~
+Values    30 0 0 0 0 0 0 0 0 0 0
+Stats     35 150000 -2 1 0 None None None
+AffData armor -55 -1 -1 0
+AffData resistant cold acid magic~ -1 -1 0
+AffData hit 125 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData damroll 6 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3006
+Keywords  token elder gods~
+Type      key~
+Short     the Token of the Elder Gods~
+Long      A shimmering symbol lies on the ground in a pool of blood.~
+Flags     magic bless antievil~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData mana 75 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3007
+Keywords  bubbling fountain~
+Type      fountain~
+Short     a bubbling fountain~
+Long      A bubbling fountain rests in the center of the chamber.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3008
+Keywords  grasp futility~
+Type      armor~
+Short     the Grasp of Futility~
+Long      A glowing, clawed glove lies here.~
+Flags     magic antigood antievil antirogue antiwarrior~
+WFlags    take hands~
+Values    18 0 0 0 0 0 0 0 0 0 0
+Stats     18 0 -2 9999 0 None None None
+AffData strength -1 -1 -1 0
+AffData intelligence -1 -1 -1 0
+AffData mana 75 -1 -1 0
+AffData hit 40 -1 -1 0
+AffData save_spell -5 -1 -1 0
+AffData resistant poison~ -1 -1 0
+AffData hitroll 5 -1 -1 0
+AffData damroll 7 -1 -1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n The utter futility of existence suddenly becomes aware to you.
+mpforce $n say It's hopeless, really.
+shrug
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3009
+Keywords  axe eyrtug~
+Type      trash~
+Short     Axe of Eyrtug~
+Long      A vicious-looking, broad bladed axe lies on the ground.~
+Flags     metal antigood anticleric antimage antirogue antidruid~
+WFlags    take wield~
+Values    0 0 0 1 0 0 0 0 0 0 0
+Stats     20 7600 -2 1 0 None None None
+AffData strength 1 -1 -1 0
+AffData hit 60 -1 -1 0
+AffData hitroll 5 -1 -1 0
+AffData damroll 7 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3010
+Keywords  girth humanhair ~
+Type      armor~
+Short     humanhair girth~
+Long      This girth has been fashioned from hair torn from the head of a maiden.~
+Flags     organic~
+WFlags    take waist~
+Values    19 0 0 0 0 0 0 0 0 0 0
+Stats     1 1500 -2 1 0 None None None
+AffData dexterity 2 -1 -1 0
+AffData constitution 2 -1 -1 0
+AffData hit 30 -1 -1 0
+AffData mana 30 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3011
+Keywords  blood covered leggings~
+Type      armor~
+Short     blood covered leggings~
+Long      A pair of leggings stained with blood lies here.~
+Flags     organic~
+WFlags    take legs~
+Values    11 0 0 0 0 0 0 0 0 0 0
+Stats     2 23 -2 9999 0 None None None
+AffData hit 20 -1 -1 0
+AffData move 45 -1 -1 0
+AffData damroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3012
+Keywords  steel rod~
+Type      weapon~
+Short     a steel rod~
+Long      A slim steel rod lies on the floor.~
+Flags     hum metal magic~
+WFlags    take wield~
+Values    0 0 0 6 0 0 0 0 0 0 0
+Stats     6 150000 -2 1 0 None None None
+AffData hitroll 7 -1 -1 0
+AffData damroll 5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3013
+Keywords  steel key~
+Type      key~
+Short     a steel key~
+Long      A steel key has been left here.~
+Flags     hum metal~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 200 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3014
+Keywords  stone lever~
+Type      lever~
+Short     a stone lever~
+Long      A stone lever is set into one wall.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#MUDPROG
+Progtype  push_prog~
+Arglist   100~
+Comlist   mpecho As the lever is pushed slowly upwards, a grating sound is heard.
+mpecho It sounds as if some massive stone portal were opening nearby.
+mpopenpassage 3049 3050 0
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  pull_prog~
+Arglist   100~
+Comlist   mpecho As the lever is slowly pulled back down, a grating sound is heard.
+mpecho Somewhere nearby, a stone door is slowly closing.
+mpclosepassage 3049 0
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3015
+Keywords  stone key~
+Type      key~
+Short     the stone key~
+Long      A massive stone key lies on the ground.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3016
+Keywords  dusty tome~
+Type      lever~
+Short     a dusty tome~
+Long      A dusty tome sits slightly forward from the other books.~
+Values    40 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    tome~
+ExDesc       It looks like whoever placed this book back on the shelf did not push
+it all the way in. Perhaps you could do it for them.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  push_prog~
+Arglist   100~
+Comlist   mpe As the book is pushed back into place, the shelf suddenly opens!
+mpe A small crawlspace is revealed...
+mpopenpassage 3033 3034 4
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  pull_prog~
+Arglist   100~
+Comlist   mpe As the book is pulled from the shelf, you hear a click.
+mpe A section of shelf slides back into place.
+mpclosepassage 3033 4
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3017
+Keywords  dusty bookshelf~
+Type      furniture~
+Short     a dusty bookshelf~
+Long      A dusty bookshelf crammed with tattered tomes and manuscripts lines one wall.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    bookshelf~
+ExDesc       The books are neatly arranged in rows, 30 per shelf, and cover a variety
+of topics, from the nomenclature of pole arms, to the basic rituals required
+to invoke a greater demon. Only one book is out of place, protruding like
+a probing digit from the body of librams.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3018
+Keywords  ghostly quill~
+Type      weapon~
+Short     a ghostly quill~
+Long      A translucent feather covered in ink floats here.~
+Flags     invis magic antievil antiwarrior~
+WFlags    take wield~
+Values    0 0 0 2 0 0 0 0 0 0 0
+Stats     1 10002 -2 1 0 None None None
+AffData intelligence 2 -1 -1 0
+AffData wisdom 2 -1 -1 0
+AffData mana 25 -1 -1 0
+AffData hitroll 7 -1 -1 0
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3019
+Keywords  tattered scroll~
+Type      scroll~
+Short     a tattered scroll~
+Long      A tattered scroll lies curled up on the ground.~
+Flags     invis magic~
+WFlags    take hold~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+Spells       'iceshield' 'inner warmth' 'antimagic shell'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3020
+Keywords  tattered scroll~
+Type      scroll~
+Short     a tattered scroll~
+Long      A tattered scroll lies curled up on the ground.~
+Flags     invis magic~
+WFlags    take hold~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+Spells       'fireshield' 'trollish vigor' 'blazeward'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3021
+Keywords  tattered scroll~
+Type      scroll~
+Short     a tattered scroll~
+Long      A tattered scroll lies curled up on the ground.~
+Flags     invis magic~
+WFlags    take hold~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+Spells       'shockshield' 'grounding' 'eldritch sphere'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3022
+Keywords  tattered scroll~
+Type      scroll~
+Short     a tattered scroll~
+Long      A tattered scroll lies curled up on the ground.~
+Flags     invis magic~
+WFlags    take hold~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+Spells       'stone skin' 'demonskin' 'dragonskin'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3023
+Keywords  tattered scroll~
+Type      scroll~
+Short     a tattered scroll~
+Long      A tattered scroll lies curled up on the ground.~
+Flags     invis magic~
+WFlags    take hold~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+Spells       'shadowform' 'valiance' 'alertness'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3024
+Keywords  wooden staff~
+Type      weapon~
+Short     the librarian's staff~
+Long      This sturdy piece of yew would serve as a decent weapon.~
+Flags     antievil antirogue~
+WFlags    take wield~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 430 -2 1 0 None None None
+AffData mana 35 -1 -1 0
+AffData hit 40 -1 -1 0
+AffData hitroll 5 -1 -1 0
+AffData damroll 5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3025
+Keywords  spectacles~
+Type      trash~
+Short     ghostly spectacles~
+Long      A pair of ghostly spectacles floats past.~
+Flags     metal invis magic antievil antirogue~
+WFlags    take eyes~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     2 53432 -2 1 0 None None None
+AffData affected 'sanctuary' -1 -1 0
+AffData wisdom 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData mana 22 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3026
+Keywords  huge wooden desk~
+Type      container~
+Short     a huge wooden desk~
+Long      A huge wooden desk fills most of the chamber.~
+Values    1000 13 3027 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    desk~
+ExDesc       Most of this desk is covered in papers, quills and books. Peering down,
+you see a large drawer on one side, with an elaborate lock.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3027
+Keywords  desk key~
+Type      key~
+Short     the desk key~
+Long      A tiny metal key is here.~
+Flags     metal~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 50 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3028
+Keywords  map~
+Type      book~
+Short     a faded map~
+Long      A piece of parchment covered in scribblings could be a map...~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    map~
+ExDesc       The map is faded and torn, and little can be deciphered. However, you
+can make out a series of rooms, leading off a central room marked with
+the ancient rune for guardian, or protector. The room to the west has
+the rune for L marked on it, while a skull and crossbones has been
+scrawled on the room to the right. 
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3029
+Keywords  glowing amulet~
+Type      armor~
+Short     glowing amulet~
+Long      An amulet that glows strangely hangs from a gold chain.~
+Flags     hum metal magic antigood antirogue antiwarrior~
+WFlags    take neck~
+Values    11 0 0 0 0 0 0 0 0 0 0
+Stats     3 12000 -2 1 0 None None None
+AffData mana 60 -1 -1 0
+AffData wisdom 4 -1 -1 0
+AffData affected 'sneak' -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3030
+Keywords  alchemical manual~
+Type      armor~
+Short     an alchemical manual~
+Long      This manual is fitted to a brace so it can be worn on the neck, leaving hands free for brewing.~
+Flags     hum magic~
+WFlags    take neck~
+Values    27 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData brew 20 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3031
+Keywords  bubbling potion~
+Type      potion~
+Short     a bubbling potion~
+Long      A bubbling potion sits here.~
+Flags     hum magic~
+WFlags    take~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+Spells       'poison' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3032
+Keywords  bubbling potion~
+Type      potion~
+Short     a bubbling potion~
+Long      A bubbling potion sits here.~
+Flags     hum magic~
+WFlags    take~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+Spells       'blindness' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3033
+Keywords  bubbling potion~
+Type      potion~
+Short     a bubbling potion~
+Long      A bubbling potion sits here.~
+Flags     hum magic~
+WFlags    take~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+Spells       'elven beauty' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3034
+Keywords  bubbling potion~
+Type      potion~
+Short     a bubbling potion~
+Long      A bubbling potion sits here.~
+Flags     hum magic~
+WFlags    take~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+Spells       'sanctuary' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3035
+Keywords  bubbling potion~
+Type      potion~
+Short     a bubbling potion~
+Long      A bubbling potion sits here.~
+Flags     hum magic~
+WFlags    take~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+Spells       'curse' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3036
+Keywords  vial black liquid~
+Type      potion~
+Short     a vial of black liquid~
+Long      A vial of black liquid rests here.~
+Flags     hum magic~
+WFlags    take~
+Values    40 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1 -2 9999 0 None None None
+Spells       'heal' 'antimagic shell' 'shadowform'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3037
+Keywords  mop~
+Type      weapon~
+Short     a mop~
+Long      A dirty mop is dripping brown water on the floor.~
+WFlags    take wield~
+Values    0 0 0 6 0 0 0 0 0 0 0
+Stats     4 75 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3038
+Keywords  loose tome~
+Type      lever~
+Short     a loose tome~
+Long      A small book is wedged near the top of the shelf. Maybe you could pull it free...~
+Values    40 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#MUDPROG
+Progtype  pull_prog~
+Arglist   100~
+Comlist   mpe As the book is yanked free, the remainder of the precariously stacked
+mpe books come crashing down, along with the heavy wooden bookshelf!
+mpe $n is buried beneath tons of books and wooden shelving!
+mpdamage $n 275
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3039
+Keywords  filthy latrine~
+Type      furniture~
+Short     a filthy latrine~
+Long      A gaping hole in the floor serves as a latrine.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3040
+Keywords  fluffy toy doll~
+Type      container~
+Short     a fluffy toy~
+Long      A fluffy toy lies half-buried in the muck.~
+WFlags    take~
+Values    5 5 -1 0 0 0 0 0 0 0 0
+Stats     1 10 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3041
+Keywords  silver key~
+Type      key~
+Short     a silver key~
+Long      This key is covered in what appears to be the stuffing from a toy.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3042
+Keywords  splint mail~
+Type      armor~
+Short     splint mail~
+Long      A suit of splint mail covered in tear stains lies here.~
+Flags     antimage antirogue~
+WFlags    take body~
+Values    11 0 0 0 0 0 0 0 0 0 0
+Stats     30 750 -2 1 0 None None None
+AffData strength 1 -1 -1 0
+AffData constitution 1 -1 -1 0
+AffData move -100 -1 -1 0
+AffData hit 50 -1 -1 0
+AffData damroll 5 -1 -1 0
+AffData save_spell -3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3043
+Keywords  wooden rack~
+Type      container~
+Short     a wooden rack~
+Long      A wooden rack lines one wall.~
+Values    100 1 -1 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    rack~
+ExDesc       Peering closely, you think you can see something glinting at the bottom
+of the rack.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3044
+Keywords  broom~
+Type      weapon~
+Short     a broom~
+Long      A dirty broom lies here.~
+WFlags    take wield~
+Values    0 0 0 6 0 0 0 0 0 0 0
+Stats     4 75 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3045
+Keywords  silver ring~
+Type      armor~
+Short     a silver ring~
+Long      Someone has carelessly dropped a silver ring here.~
+Flags     metal invis magic antievil antirogue antiwarrior~
+WFlags    take finger~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     1 45000 -2 1 0 None None None
+AffData mana 30 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData resistant drain sleep~ -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3046
+Keywords  gargoyle~
+Type      container~
+Short     a grinning gargoyle~
+Long      A grinning gargoyle leers down at you.~
+Flags     magic~
+Values    10 5 -1 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    gargoyle~
+ExDesc       Perring closely, you think you can see a small panel set in the statue's
+midsection.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3047
+Keywords  silver helm~
+Type      armor~
+Short     a silver helm~
+Long      A silver helm lies on the floor.~
+Flags     metal invis magic bless antievil antineutral antirogue antiwarrior~
+WFlags    take head~
+Values    18 0 0 0 0 0 0 0 0 0 0
+Stats     5 7500 -2 1 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData mana 75 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData resistant sleep~ -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3048
+Keywords  tapestry~
+Type      furniture~
+Short     a massive tapestry~
+Long      A massive tapestry depicting the Chaos Wars hangs here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#MUDPROG
+Progtype  exa_prog~
+Arglist   100~
+Comlist   mea $n As you peer closely at the tapestry, you notice a rather odd feature.
+mea $n Standing amidst the forces of chaos is a massive black monolith.
+mea $n Beams of energy surge forth from it, smiting humans and demons alike.
+mea $n Suddenly a terror grips your heart, and you realize that this is
+mea $n World Eater, destroyer of realities.
+mpforce $n gasp
+mpforce $n say Look! It's him!
+mpe Deep, booming laughter echoes all about the Hall.
+mpat world mpforce world mpat 3022 say HARK MORTALS! PREPARE FOR THY DOOMS!
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      3049
+Keywords  comfortable chair~
+Type      armor~
+Short     a comfortable chair~
+Long      A comfortable chair rests near the bookshelf.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData dexterity -2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3050
+Keywords  bracer magic~
+Type      armor~
+Short     a bracer of magic~
+Long      A metal bracer covered in arcane script can be seen.~
+Flags     metal magic anticleric antirogue antiwarrior antidruid~
+WFlags    take wrist~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     2 10000 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData strength -1 -1 -1 0
+AffData mana 20 -1 -1 0
+AffData damroll 1 -1 -1 0
+AffData save_spell -5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3051
+Keywords  staff energy~
+Type      staff~
+Short     an energy staff~
+Long      This metal staff hums with energy.~
+Flags     hum metal magic~
+WFlags    take hold~
+Values    50 5 5 -1 0 0 0 0 0 0 0
+Stats     4 100000 -2 1 0 None None None
+Spells       'shockshield'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3052
+Keywords  chaos sceptre~
+Type      armor~
+Short     a chaos sceptre~
+Long      This sceptre contains a portion of the essence of Chaos.~
+Flags     hum metal magic antigood anticleric antiwarrior~
+WFlags    take hold~
+Values    12 0 0 0 0 0 0 0 0 0 0
+Stats     10 120000 -2 1 0 None None None
+AffData dexterity -2 -1 -1 0
+AffData mana 100 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData resistant NONE~ -1 -1 0
+AffData susceptible sleep~ -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3053
+Keywords  metal earring~
+Type      armor~
+Short     a metal earring~
+Long      A tiny metal stud rolls about on the floor.~
+Flags     metal magic antigood antirogue antiwarrior~
+WFlags    take ears~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     1 6521 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
+AffData class 1 -1 -1 0
+AffData mana 30 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData damroll 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3054
+Keywords  black dagger~
+Type      weapon~
+Short     a black dagger~
+Long      An evil black blade lies here.~
+Flags     hum metal antigood antiwarrior evil~
+WFlags    take wield~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     10 21112 -2 1 0 None None None
+AffData intelligence 3 -1 -1 0
+AffData hit 25 -1 -1 0
+AffData hitroll 7 -1 -1 0
+AffData damroll 7 -1 -1 0
+AffData sex -2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3055
+Keywords  ruby~
+Type      treasure~
+Short     a massive ruby~
+Long      A massive ruby pulses with an unearthly energy.~
+Flags     glow~
+WFlags    take~
+Values    20 0 0 0 0 0 0 0 0 0 0
+Stats     4 150000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3056
+Keywords  head stone guardian~
+Type      lever~
+Short     the head of the stone guardian~
+Long      A massive stone head rests on the floor.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3057
+Keywords  blade night~
+Type      weapon~
+Short     the Blade of Night~
+Long      Forged from darkness by a shady smith, this blade is as fine as any in Brythunia.~
+Flags     antigood anticleric evil antidruid~
+WFlags    take wield~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     4 750000 -2 1 0 None None None
+AffData intelligence 3 -1 -1 0
+AffData hit 50 -1 -1 0
+AffData mana 80 -1 -1 0
+AffData hitroll 9 -1 -1 0
+AffData damroll 10 -1 -1 0
+AffData affected '(null)' -1 -1 0
+AffData backstab 25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3058
+Keywords  dagger shard~
+Type      weapon~
+Short     Shard~
+Long      A single shard of obsidian lies here.~
+Flags     magic antigood evil~
+WFlags    take wield~
+Values    0 0 0 2 0 0 0 0 0 0 0
+Stats     3 500 -2 1 0 None None None
+AffData strength 2 -1 -1 0
+AffData hit 75 -1 -1 0
+AffData hitroll 8 -1 -1 0
+AffData damroll 8 -1 -1 0
+AffData resistant blunt~ -1 -1 0
+AffData save_poison -2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3059
+Keywords  ring jedevirk~
+Type      armor~
+Short     the ring of Jedevirk~
+Long      A plain gold band rests on the floor.~
+Flags     antigood anticleric antimage antiwarrior antidruid~
+WFlags    take finger~
+Values    12 0 0 0 0 0 0 0 0 0 0
+Stats     1 42141 -2 1 0 None None None
+AffData intelligence 2 -1 -1 0
+AffData hit 20 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData save_poison -3 -1 -1 0
+#ENDOBJECT
+
+#ROOM
+Vnum      3000
+Name      A Formless void~
+Sector    city~
+Flags     indoors nosummon norecall noastral nodrop~
+Stats     0 0 0 0 0
+Desc      You find yourself falling, floating, drifting through a formless grey void
+devoid of sound, shape or colour. Howls and shrieks occasionally cut through
+the silence, the only distraction from the seemingly unending vista of grey.
+Words fail you as you attempt to rationalize this place, to define it, to
+describe it; it is as if it defied existence itself.
+~
+#EXIT
+Direction west~
+ToRoom    3002
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3001
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3003
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    3006
+#ENDEXIT
+
+Reset M 3008 9 3000 -1 -1 -1 100
+Reset M 3008 9 3000 -1 -1 -1 100
+Reset R 3000 4 100
+#ENDROOM
+
+#ROOM
+Vnum      3001
+Name      A Formless void~
+Sector    city~
+Flags     indoors nosummon norecall noastral nodrop~
+Stats     0 0 0 0 0
+Desc      You find yourself falling, floating, drifting through a formless grey void
+devoid of sound, shape or colour. Howls and shrieks occasionally cut through
+the silence, the only distraction from the seemingly unending vista of grey.
+Words fail you as you attempt to rationalize this place, to define it, to
+describe it; it is as if it defied existence itself.
+~
+#EXIT
+Direction east~
+ToRoom    3000
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3002
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3004
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    3007
+#ENDEXIT
+
+Reset R 3001 4 100
+#ENDROOM
+
+#ROOM
+Vnum      3002
+Name      A Formless void~
+Sector    city~
+Flags     indoors nosummon norecall noastral nodrop~
+Stats     0 0 0 0 0
+Desc      You find yourself falling, floating, drifting through a formless grey void
+devoid of sound, shape or colour. Howls and shrieks occasionally cut through
+the silence, the only distraction from the seemingly unending vista of grey.
+Words fail you as you attempt to rationalize this place, to define it, to
+describe it; it is as if it defied existence itself.
+~
+#EXIT
+Direction north~
+ToRoom    3008
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3001
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3005
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3000
+#ENDEXIT
+
+Reset M 3008 9 3002 -1 -1 -1 100
+Reset M 3008 9 3002 -1 -1 -1 100
+Reset R 3002 4 100
+#ENDROOM
+
+#ROOM
+Vnum      3003
+Name      A Formless void~
+Sector    city~
+Flags     indoors nosummon norecall noastral nodrop~
+Stats     0 0 0 0 0
+Desc      You find yourself falling, floating, drifting through a formless grey void
+devoid of sound, shape or colour. Howls and shrieks occasionally cut through
+the silence, the only distraction from the seemingly unending vista of grey.
+Words fail you as you attempt to rationalize this place, to define it, to
+describe it; it is as if it defied existence itself.
+~
+#EXIT
+Direction east~
+ToRoom    3005
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    3004
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3006
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3000
+#ENDEXIT
+
+Reset R 3003 4 100
+#ENDROOM
+
+#ROOM
+Vnum      3004
+Name      A Formless void~
+Sector    city~
+Flags     indoors nosummon norecall noastral nodrop~
+Stats     0 0 0 0 0
+Desc      You find yourself falling, floating, drifting through a formless grey void
+devoid of sound, shape or colour. Howls and shrieks occasionally cut through
+the silence, the only distraction from the seemingly unending vista of grey.
+Words fail you as you attempt to rationalize this place, to define it, to
+describe it; it is as if it defied existence itself.
+~
+#EXIT
+Direction east~
+ToRoom    3003
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    3001
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3007
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3005
+#ENDEXIT
+
+Reset M 3008 9 3004 -1 -1 -1 100
+Reset R 3004 4 100
+#ENDROOM
+
+#ROOM
+Vnum      3005
+Name      A Formless void~
+Sector    city~
+Flags     indoors nosummon norecall noastral nodrop~
+Stats     0 0 0 0 0
+Desc      You find yourself falling, floating, drifting through a formless grey void
+devoid of sound, shape or colour. Howls and shrieks occasionally cut through
+the silence, the only distraction from the seemingly unending vista of grey.
+Words fail you as you attempt to rationalize this place, to define it, to
+describe it; it is as if it defied existence itself.
+~
+#EXIT
+Direction east~
+ToRoom    3002
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3004
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    3003
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3008
+#ENDEXIT
+
+Reset R 3005 4 100
+#ENDROOM
+
+#ROOM
+Vnum      3006
+Name      A Formless void~
+Sector    city~
+Flags     indoors nosummon norecall noastral nodrop~
+Stats     0 0 0 0 0
+Desc      You find yourself falling, floating, drifting through a formless grey void
+devoid of sound, shape or colour. Howls and shrieks occasionally cut through
+the silence, the only distraction from the seemingly unending vista of grey.
+Words fail you as you attempt to rationalize this place, to define it, to
+describe it; it is as if it defied existence itself.
+~
+#EXIT
+Direction east~
+ToRoom    3003
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    3000
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3007
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3008
+#ENDEXIT
+
+Reset M 3008 9 3006 -1 -1 -1 100
+Reset M 3008 9 3006 -1 -1 -1 100
+Reset R 3006 4 100
+#ENDROOM
+
+#ROOM
+Vnum      3007
+Name      A Formless void~
+Sector    city~
+Flags     indoors nosummon norecall noastral nodrop~
+Stats     0 0 0 0 0
+Desc      You find yourself falling, floating, drifting through a formless grey void
+devoid of sound, shape or colour. Howls and shrieks occasionally cut through
+the silence, the only distraction from the seemingly unending vista of grey.
+Words fail you as you attempt to rationalize this place, to define it, to
+describe it; it is as if it defied existence itself.
+~
+#EXIT
+Direction south~
+ToRoom    3008
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3004
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3006
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    3009
+#ENDEXIT
+
+Reset R 3007 4 100
+#ENDROOM
+
+#ROOM
+Vnum      3008
+Name      A Formless void~
+Sector    city~
+Flags     indoors nosummon norecall noastral nodrop~
+Stats     0 0 0 0 0
+Desc      You find yourself falling, floating, drifting through a formless grey void
+devoid of sound, shape or colour. Howls and shrieks occasionally cut through
+the silence, the only distraction from the seemingly unending vista of grey.
+Words fail you as you attempt to rationalize this place, to define it, to
+describe it; it is as if it defied existence itself.
+~
+#EXIT
+Direction north~
+ToRoom    3002
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3007
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3006
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3005
+#ENDEXIT
+
+Reset M 3008 9 3008 -1 -1 -1 100
+Reset M 3008 9 3008 -1 -1 -1 100
+Reset R 3008 4 100
+#ENDROOM
+
+#ROOM
+Vnum      3009
+Name      The Arches of Oblivion~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Rising up out of the void is a set of ghostly arches, two pairs, 
+encased in shimmering spheres of magic. One set of arches sits about
+three feet in fron of the others, and in between them shimmers a 
+field of black energy, the purpose of which is unfathomable to you.
+Presumably the arch can be entered, but a large steel gate bearing
+a massive padlock bars it; you see no sign of a key on the ground or
+nearby.
+~
+#EXIT
+Direction north~
+ToRoom    3010
+Key       3013
+Keywords  arch~
+Flags     isdoor closed locked pickproof nopassdoor can_enter bashproof~
+#ENDEXIT
+
+Reset M 3007 1 3009 -1 -1 -1 100
+  Reset E 3012 1 16 100
+Reset D 3009 0 2 100 -2
+#MUDPROG
+Progtype  rand_prog~
+Arglist   33~
+Comlist   mpe _blu Sparks of energy crackle and fizz about the arches.
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      3010
+Name      Beyond the Arches~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      You pass through the arches and emerge in a long hallway, the walls of
+which are fashioned from a dull grey stone, devoid of architectural
+features or any specific design. They stretch high on either side, as
+far as you can see, towards a mist shrouded ceiling several hundred
+feet up. You think you can hear something flapping about up there, and
+imagine for a second thick, leathery wings beating in the still air.
+To the north, the hallway stretches as far as you can see, while a 
+locked steel gate leads south back into the void.
+~
+#EXIT
+Direction north~
+ToRoom    3013
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3009
+Key       3013
+Keywords  arch~
+Flags     isdoor closed locked pickproof nopassdoor can_leave bashproof~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3011
+Flags     fly~
+#ENDEXIT
+
+Reset D 3010 2 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3011
+Name      Within the Mists~
+Sector    air~
+Flags     indoors nosummon norecall noastral nofloor~
+Stats     0 0 0 0 0
+Desc      You soar upwards, reaching the mists sooner than you expected, and are
+soon surrounded by thick, chill mists that cause you to shiver to your
+very soul. Vile odors, accompanied by cries of pain and fear, reach
+your ears, and a feeling of dread washes over you as you imagine what
+might lie beyond the mists. To your admittedly unnerved mind, they
+may conceal a world out of your darkest nightmares.
+~
+#EXIT
+Direction up~
+ToRoom    3012
+Flags     fly~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3010
+Flags     fly~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3012
+Name      The World of Nightmares~
+Sector    city~
+Flags     death nomob indoors nosummon private norecall noastral~
+Stats     0 0 0 0 0
+Desc      You pass through the mist, and enter a whirling maelstrom of titanic
+proportions. Huge, hideous beasts, with massive maws and the leathery
+wings you imagined, fly into your face, assaulting your body and your
+mind. Horrible images of death, torture and mutilation flood your mind,
+and you scream and scream again before you sink, mercifully, into
+oblivion, seconds before your physical form is totally torn to shreds.
+~
+#ENDROOM
+
+#ROOM
+Vnum      3013
+Name      The Grey Corridors~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The featureless grey corridor continues, heading north towards a small
+staircase, visible in the distance. To the south, it stretches back
+towards the shimmering arches that marked the entry to the unusual
+domain of World Eater.
+~
+#EXIT
+Direction north~
+ToRoom    3014
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3010
+#ENDEXIT
+
+Reset M 3014 1 3013 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3014
+Name      The Foot of the Stair~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      At this point a stone staircase ascends to a second, presumably more
+interesting, level, leaving the bleak grey corridor behind. You certainly
+aren't reluctant to do so either. You hear nary a sound in this place,
+every step you take echoes around the cavernous hall a thousand times.
+~
+#EXIT
+Direction south~
+ToRoom    3013
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3015
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3015
+Name      The Top of the Stairs~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The stairs lead into a wood panelled corridor, lined with neatly
+framed lithographs and oil paintings, depicting pastoral scenes on a
+dozen different worlds. Despite his habit of devouring whole realities,
+World Eater appears to have a slightly sentimental attachment to those
+he destroys. Small chandeliers hang from the high ceiling, illuminating
+the corridor for the short distance it travels east and west.
+~
+#EXIT
+Direction east~
+ToRoom    3017
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3016
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3014
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3016
+Name      The Western Hall~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The corridor passes into a broad, marble floored hall at this point,
+the transition in decor apparently almost seamless. Gone are the
+framed pictures; now you are confronted with grinning gargoyles, in
+various poses, which leer down from their pedestals to either side
+of the hall. Stout marble pillars, in stark doric form, rest in between
+each pair, supporting the high arched ceiling, which is richly decorated
+with elaborate murals.
+~
+#EXIT
+Direction east~
+ToRoom    3015
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3022
+#ENDEXIT
+
+Reset O 3046 1 3016 -1 -1 -1 100
+  Reset P 0 3047 1 3046 100
+#ENDROOM
+
+#ROOM
+Vnum      3017
+Name      The End of the Corridor~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The corridor ends before three doors, each bearing a small metal 
+plaque denoting their function, save the door to the south which bears
+no distinguishing mark. A vile smell fills the air; you think it is
+emanating from behind the northern door.
+~
+#EXIT
+Direction north~
+ToRoom    3018
+Desc      LATRINE
+~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3020
+Desc      STOREROOM
+~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3021
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3015
+#ENDEXIT
+
+Reset M 3012 1 3017 -1 -1 -1 100
+  Reset E 3037 1 16 100
+Reset D 3017 0 1 100 -2
+Reset D 3017 1 2 100 -2
+Reset D 3017 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3018
+Name      A Foul Latrine~
+Sector    city~
+Flags     ~
+Stats     0 0 4 0 0
+Desc      For some reason, presumably the usual one, you have decided to wander
+into a latrine. How do you know its a latrine? Well, you see a massive
+gaping black pit, from which an unmeasurably bad smell arises, and note
+the various stains about the rim. For such an immaculate residence, the
+toilet facilities certainly could do with some renovation.
+~
+#EXIT
+Direction south~
+ToRoom    3017
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction somewhere~
+ToRoom    3019
+Keywords  latrine~
+Flags     hidden can_enter~
+#ENDEXIT
+
+Reset O 3039 1 3018 -1 -1 -1 100
+Reset D 3018 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3019
+Name      An Excrementally Bad Situation~
+Sector    underground~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 3 0 0
+Desc      You slip down the hole, sliding down a chute slick with gods-know what,
+and land waist deep in a mass of unspeakably awful waste matter. A smell,
+perhaps the most vile smell you have ever had the displeasure to be
+exposed to, hits you like a sledge hammer, and you reel as if a giant had
+struck you. You are quite sure that you will become deathly ill if you
+do not get out of here, and fast, though as you stare up the slick chute
+that is devoid of any hand holds you wonder just exactly how you will
+accomplish this...
+~
+#EXIT
+Direction up~
+ToRoom    3018
+Flags     fly~
+#ENDEXIT
+
+Reset O 3040 1 3019 -1 -1 -1 100
+  Reset P 0 3041 1 3040 100
+#ENDROOM
+
+#ROOM
+Vnum      3020
+Name      A Storeroom~
+Sector    indoors~
+Flags     indoors norecall~
+Stats     0 0 4 0 0
+Desc      This room is significantly different from the others you have visited,
+in that it has no wood panelling or decorative features. Plain grey stone
+walls lie in every direction, while the floor of the room is piled with
+various goods of little worth, such as ropes, lanterns, tinderboxes and
+jacks of ale.
+~
+#EXIT
+Direction west~
+ToRoom    3017
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset D 3020 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3021
+Name      A Broom Closet~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 2 0 0
+Desc      This tiny cramped closet boasts a wooden rack, in which several mops,
+dustpans and brushes are stored. Presumably these are the tools of the
+zombie without's trade.
+~
+#EXIT
+Direction north~
+ToRoom    3017
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 3043 1 3021 -1 -1 -1 100
+  Reset P 0 3044 1 3043 100
+  Reset P 1 3045 1 3044 100
+Reset D 3021 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3022
+Name      Before a Polished Wooden Door~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The Hall ends at a polished wooden door, set in the north wall. The
+end of the hall to the west is covered by a massive tapestry, depicting
+a battle from centuries past, presumably fought on some otherworldly
+plain, between humanity and chaos. From the view of the artist, the
+forces of chaos are pitiable wretches, being set upon by hordes of angry
+aggressive humans intent on their destruction; a decidedly biased 
+depiction.
+~
+#EXIT
+Direction north~
+ToRoom    3023
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3016
+#ENDEXIT
+
+Reset O 3048 1 3022 -1 -1 -1 100
+Reset D 3022 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3023
+Name      A Guard House~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The door opens onto a small, cramped chamber, which boasts a rickety
+wooden table, bearing a jack of ale and a half-eaten loaf of bread.
+Next to the table rest two equally rickety chairs, laden with loose nails
+and splinters, while a narrow cot covered in crumpled bedding lies in
+the northeast corner. The only other feature of note is the ceiling,
+which bears a very interesting mural depicting the gods opening a rift
+to another world.
+~
+#EXIT
+Direction south~
+ToRoom    3022
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3024
+Key       3041
+Keywords  trapdoor~
+Flags     isdoor closed locked secret pickproof climb nopassdoor searchable bashproof~
+#ENDEXIT
+
+Reset M 3013 1 3023 -1 -1 -1 100
+  Reset E 3042 1 5 100
+Reset D 3023 2 1 100 -2
+Reset D 3023 4 2 100 -2
+#EXDESC
+ExDescKey    mural~
+ExDesc       The center of the mural is a gaping black hole, which the gods are
+presumably opening.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    hole~
+ExDesc       As you peer closer, you notice a tiny silver keyhole in the center of
+the hole, and note that a trapdoor has been cunningly concealed within
+the mural.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      3024
+Name      A Somber Hallway~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      You clamber up into the end of a narrow hallway, the walls of which
+are painted a subdued brown. No ornaments or other decorative features
+embellish its starkness. The only other way out of here is to head east,
+towards a junction.
+~
+#EXIT
+Direction east~
+ToRoom    3025
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3023
+Key       3041
+Keywords  trapdoor~
+Flags     isdoor closed locked secret pickproof climb nopassdoor searchable bashproof~
+#ENDEXIT
+
+Reset D 3024 5 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3025
+Name      A Choice of Passages~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      At this point the hallway splits, with forks heading off in various
+directions. The sound of chanting, accompanied by whispering and the
+occasional thumping sound, come from the northeast, while to the southeast
+someone or something is creating a considerable racket, giggling and cursing
+accompanied by periodic explosions and the like.
+~
+#EXIT
+Direction west~
+ToRoom    3024
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    3027
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    3026
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3026
+Name      A Marble Hallway~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This section of hallway is lined with gargoyles similar to those in the
+grand hallway on the lower level, save that in this case there are no
+pillars, as the ceiling is apparently not in need of such support, and
+the statues are smaller (but no less threatening). The sounds of
+activity grow louder to the east.
+~
+#EXIT
+Direction east~
+ToRoom    3032
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    3025
+#ENDEXIT
+
+Reset M 3016 1 3026 -1 -1 -1 100
+  Reset G 3055 1 100
+#ENDROOM
+
+#ROOM
+Vnum      3027
+Name      The Libraries of World Eater~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      As you step into the famous halls of the Libraries, a wave of magic
+washes over you, as if the books themselves radiated power and eldritch
+energies. You shiver, partially in nervousness, partially in delight, and
+gaze in awe down the innumerable rows of bookshelves that stretch into
+the distance in this vast hall.
+~
+#EXIT
+Direction north~
+ToRoom    3028
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    3025
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3028
+Name      The Center of the Library~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      It is rumored that World Eater, in the course of his rampage across the
+planes, has managed to acquire practically every scrap of knowledge of
+the cultures he has eliminated, thereby preserving this knowledge, albeit
+only for his own selfish ends. Powerful sorcerers often travel here to
+attempt to glean some valuable information from the books gathered here,
+though in truth it would take a godlike intellect and many decades of
+research to even begin to comprehend the wealth of knowledge gathered
+here.
+~
+#EXIT
+Direction north~
+ToRoom    3030
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3031
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3027
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3029
+#ENDEXIT
+
+Reset M 3009 3 3028 -1 -1 -1 100
+  Reset E 3018 1 16 100
+Reset M 3009 3 3028 -1 -1 -1 100
+  Reset E 3018 1 16 100
+Reset M 3009 3 3028 -1 -1 -1 100
+  Reset E 3018 1 16 100
+Reset O 3017 1 3028 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3029
+Name      A Storage Space~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Piled here are countless volumes of work, deemed to be of only secondary
+importance by the librarian to his master, and thereby stored here, awaiting
+transportation to one of the many extradimensional realms of the World Eater,
+for the World Eater never discards any work of literature, no matter how
+useless it may appear. Were it not for his habit of destroying worlds, the
+scholarly nature of World Eater would make him an admirable...entity.
+~
+#EXIT
+Direction east~
+ToRoom    3028
+#ENDEXIT
+
+Reset O 3017 1 3029 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3030
+Name      A Reading Room~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This area is used by visitors to the domain of World Eater to rest and
+research the demon's impressive collection of arcane lore. A risky
+proposition, because World Eater can be very fickle about his guests,
+but equally so because to read many of the books in this place can mean
+death, insanity, or worse.
+~
+#EXIT
+Direction south~
+ToRoom    3028
+#ENDEXIT
+
+Reset M 3015 1 3030 -1 -1 -1 100
+  Reset E 3050 1 14 100
+  Reset E 3050 1 15 100
+  Reset G 3051 1 100
+  Reset E 3052 1 17 100
+  Reset E 3053 1 19 100
+  Reset E 3054 1 16 100
+Reset O 3017 1 3030 -1 -1 -1 100
+Reset O 3049 1 3030 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3031
+Name      Private Offices~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The halls end here before a door marked "PRIVATE"; presumably the
+offices of who or whatever administers the library. An eerie wind
+blows through the many rows of shelves, issuing from some unknown
+source.
+~
+#EXIT
+Direction east~
+ToRoom    3033
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3028
+#ENDEXIT
+
+Reset O 3017 1 3031 -1 -1 -1 100
+Reset D 3031 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3032
+Name      Labratorie Subsicivus~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The corridor ends in a large chamber, which used to be a dining hall,
+but has been converted into a most unusual laboratory. The dinner tables
+are strewn with flask, urns, vials, beakers, test tubes, alembics and
+magical braziers, all in various states of disrepair. Powdered glass,
+the result of innumerable accidents, covers the floor, and larger shards
+are imbedded in the wood panelling that covers the walls. An acrid odor
+fills the room, stinging your nostrils.
+~
+#EXIT
+Direction west~
+ToRoom    3026
+#ENDEXIT
+
+Reset M 3011 1 3032 -1 -1 -1 100
+  Reset E 3029 1 3 100
+  Reset E 3030 1 4 100
+  Reset G 3036 1 100
+#ENDROOM
+
+#ROOM
+Vnum      3033
+Name      Bibliotheca Splendidus~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The walls of this cramped office are lined with more shelves, containing
+books yet to be sorted and shelved. The extremely busy head librarian must
+read each one, and determine which category it is to be shelved under. It is
+fortunate that he is undead, for the spells and traps placed upon many of
+these works by previous owners would have slain him dozens of times.
+~
+#EXIT
+Direction west~
+ToRoom    3031
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 3010 1 3033 -1 -1 -1 100
+  Reset E 3024 1 16 100
+  Reset E 3025 1 20 100
+  Reset G 3027 1 100
+Reset O 3017 1 3033 -1 -1 -1 100
+Reset O 3026 1 3033 -1 -1 -1 100
+  Reset P 0 3028 1 3026 100
+Reset O 3016 1 3033 -1 -1 -1 100
+Reset D 3033 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3034
+Name      The Menagerie~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The crawlspace opens onto a long corridor, which runs north from here
+past several doorways. towards a set of stairs far to the north. It is
+here that the World Eater keeps his prized (living) trophies; surely
+you must be near the demon now. The crawlspace shuts behind you as
+you enter; you have no choice but to proceed north.
+~
+#EXIT
+Direction north~
+ToRoom    3037
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3035
+Name      Rage~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Every item of furniture in this chamber has been smashed to flinders,
+piled in the center of the room, and burned. Whoever did this also
+added the tattered remains of the wall hangings and carpet, scorched
+scraps of which remain. A foul smell, of unwashed human, fills the air.
+~
+#EXIT
+Direction west~
+ToRoom    3037
+#ENDEXIT
+
+Reset M 3006 1 3035 -1 -1 -1 100
+  Reset E 3009 1 16 100
+  Reset E 3009 1 18 100
+  Reset E 3010 1 13 100
+  Reset E 3011 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      3036
+Name      A Pitiful Sight~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This small cell bears pleasant, if not opulent, furnishings, including
+a comfortable easychair with ottoman, a plush carpet, several small chairs
+and an oak desk. All of these items have been ignored by the occupant,
+however, who spends his time huddled in a corner, his mind incapable of
+handling the trauma of his experiences at the hand of World Eater.
+~
+#EXIT
+Direction east~
+ToRoom    3037
+#ENDEXIT
+
+Reset M 3005 1 3036 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3037
+Name      A Long Corridor~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Doorways open to the east and west, onto small, well-appointed cells,
+wherein reside the prisoners of World Eater, held captive by magical
+enchantments that are nearly impossible to break. Perhaps, however, 
+there is an item within the depths of the citadel that would enable
+some of these unfortunate souls to escape...
+~
+#EXIT
+Direction north~
+ToRoom    3039
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3035
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3034
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3036
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3038
+Name      A Flowery Gaol~
+Sector    indoors~
+Flags     indoors safe nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The entirely of this lavish chamber is filled with bouquets of the
+freshest flowers from a hundred different universes, arranged in a 
+most impeccable manner, which is disquieting in a place such as this
+otherworldly domain. Despite the beauty of this room, it still has
+the feel of a prison; there are no doors or locks, but you do not
+doubt that the warder of this gaol has other ways to keep his prisoners
+within.
+~
+#EXIT
+Direction west~
+ToRoom    3039
+#ENDEXIT
+
+Reset M 3003 1 3038 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3039
+Name      A Pair of Cells~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The corridor ends in a spacious chamber, which leads onto two smaller rooms,
+doubtlessly more cells for World Eater's 'exhibits'. Quiet music is piped
+into the room from some unknown, presumably magical, source, and a bubbling
+fountain fills the center of the chamber. The walls bear pleasant murals
+depicting ancient civilizations which flourished millenia ago, before the
+coming of World Eater.
+~
+#EXIT
+Direction north~
+ToRoom    3041
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3038
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3037
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3040
+#ENDEXIT
+
+Reset O 3007 1 3039 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3040
+Name      A Spartan Chamber~
+Sector    indoors~
+Flags     indoors safe nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Little effort has been put into decorating this bare chamber; the plain
+white stone walls bear no decorations, nor does the floor bear any rug.
+Only a narrow cot and a small table piled with refreshments can be seen.
+And evidently this is to the liking of whomever is imprisoned within.
+~
+#EXIT
+Direction east~
+ToRoom    3039
+#ENDEXIT
+
+Reset M 3004 1 3040 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3041
+Name      A Way Out...~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The corridor leads out of the menagerie and into a small area which
+contains a marble staircase, which ascends to whatever lies next within
+the unholy citadel. You cannot hear or smell anything coming from above,
+and have little idea what may await. However, knowing this place, it
+will not be pleasant...
+~
+#EXIT
+Direction south~
+ToRoom    3039
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3045
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3042
+Name      A Small Chamber~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The entirety of this chamber is shrouded in shadow, which could conceal
+innumerable threats. Imagining a foe lurking in every corner, you
+make your way slowly and cautiously into the room. Your light illuminates
+a small stone lever, set in the far wall.
+~
+#EXIT
+Direction east~
+ToRoom    3045
+Key       3015
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset M 3017 1 3042 -1 -1 -1 100
+  Reset E 3057 1 16 100
+  Reset E 3058 1 18 100
+  Reset G 3059 1 100
+Reset O 3014 1 3042 -1 -1 -1 100
+Reset D 3042 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3043
+Name      Vacuum~
+Sector    city~
+Flags     dark death nomob nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      As you step through the stone door, you suddenly realize that you
+are floating in space, literally, outer space. Vacuum tears the air
+from your lungs, and decompression begins to wreak its traumatic
+effects on your fragile form. Blood vessels burst all over your body,
+and your eyes explode in their sockets, blood pouring down into your
+mouth, which is frozen wide open, in a silent scream. 
+~
+#ENDROOM
+
+#ROOM
+Vnum      3044
+Name      A Small Study~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This small room serves as a study for someone, and is not dissimilar to
+the one occupied by the librarian downstairs, though less cluttered
+with papers and books. A thick layer of dust coats the floor; you wonder
+how this much dust got in here.
+~
+#EXIT
+Direction west~
+ToRoom    3045
+Key       3015
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+Reset O 3017 1 3044 -1 -1 -1 100
+Reset O 3038 1 3044 -1 -1 -1 100
+Reset D 3044 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3045
+Name      The End of the Line~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The staircase emerges into a plain stone chamber, devoid of furnishings,
+and boasting three stout stone doors, facing north, east and west. These
+chambers serve an unknown purpose, though presumably they are important
+to World Eater in some way, as he has positioned a mighty stone guardian
+to watch over them.
+~
+#EXIT
+Direction north~
+ToRoom    3043
+Key       3015
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3044
+Key       3015
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3042
+Key       3015
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3041
+#ENDEXIT
+
+Reset M 3001 1 3045 -1 -1 -1 100
+  Reset E 3001 1 16 100
+  Reset E 3002 1 12 100
+  Reset E 3003 1 20 100
+  Reset G 3015 1 100
+Reset D 3045 0 2 100 -2
+Reset D 3045 1 2 100 -2
+Reset D 3045 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3046
+Name      A Rubble Strewn Passage~
+Sector    indoors~
+Flags     dark nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      This section of corridor is littered with chunks of masonry, sent
+flying by the impact of the guardian's head with the wall. The air here
+is thick and still, and quite stale; you doubt it has been breathed in
+quite some time. A flickering light issues forth from somewhere far to
+the south.
+~
+#EXIT
+Direction south~
+ToRoom    3047
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3047
+Name      A Flickering Light~
+Sector    indoors~
+Flags     dark nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      The light grows steadily brighter here, coming from a cavern of immense
+size to the south, wherein resides something of immense size, casting
+giant draconian shadows upon the wall near you- draconian? Hmm. It
+figures; you had been expecting a dragon at some stage; what megalomaniacal
+tyrant's residence is complete without one?
+~
+#EXIT
+Direction north~
+ToRoom    3046
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3048
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3048
+Name      A Cavernous Lair~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Imprisoned within this chamber is a massive dragon, of great power
+and age, ensorcelled by World Eater to both serve as his final
+guardian and to hoard the tokens belonging to the elder gods he has
+imprisoned below. Both tasks are not to the dragon's liking, though
+the sorcery has seriously warped its mind.
+~
+#EXIT
+Direction north~
+ToRoom    3047
+#ENDEXIT
+
+Reset M 3002 1 3048 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3049
+Name      Sanctum Sanctorum~
+Sector    indoors~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      This room appears to be some sort of study or drawing room. An
+antique desk rests near one wall, which is covered by bookshelves crammed
+with ancient texts. A plush rug covers the floor, and a fire crackles
+merrily in a fireplace set in the eastern wall. The northern wall is,
+however, curiously bare. There are deep grooves in the floor, partially
+concealed by the rug, as if the wall had been shoved aside, then dragged
+back. 
+~
+#EXDESC
+ExDescKey    desk~
+ExDesc       A letter on the desk, partially drafted, bears the words- Lever to
+the Left of the Guardian. 
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      3050
+Name      The Center of the Antiverse~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The stone walls open onto the void that you encountered entering the
+domain of World Eater, save that this time the surrounding vista is
+lit by fiery explosions and sparks of electrical current, lancing between
+hidden targets. Howls, cries and screams of pain, anguish, distress and
+terror echo all around you, the noise almost deafening you. Your mind
+rebels against the images that suddenly fill it, images of destruction
+on an impossibly vast scale.
+~
+Reset M 3000 1 3050 -1 -1 -1 100
+#ENDROOM
+
+#ENDAREA

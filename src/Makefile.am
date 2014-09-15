@@ -1,17 +1,18 @@
  ############################################################################
- # [S]imulated [M]edieval [A]dventure multi[U]ser [G]ame      |   \\._.//   #
- # -----------------------------------------------------------|   (0...0)   #
- # SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider      |    ).:.(    #
- # -----------------------------------------------------------|    {o o}    #
- # SMAUG code team: Thoric, Altrag, Blodkai, Narn, Haus,      |   / ' ' \   #
- # Scryn, Rennard, Swordbearer, Gorog, Grishnakh, Nivek,      |~'~.VxvxV.~'~#
- # Tricops and Fireblade                                      |             #
+ #                                                                          #
+ #   X      X  ******* **    **  ******  **    **  ******                   #
+ #    X    X  ******** ***  *** ******** **    ** ********       \\._.//    #
+ #     X  X   **       ******** **    ** **    ** **             (0...0)    #
+ #      XX    *******  ******** ******** **    ** **  ****        ).:.(     #
+ #      XX     ******* ** ** ** ******** **    ** **  ****        {o o}     #
+ #     X  X         ** **    ** **    ** **    ** **    **       / ' ' \    #
+ #    X    X  ******** **    ** **    ** ******** ********    -^^.VxvxV.^^- #
+ #   X      X *******  **    ** **    **  ******   ******                   #
+ #                                                                          #
  # ------------------------------------------------------------------------ #
- # Merc 2.1 Diku Mud improvments copyright (C) 1992, 1993 by Michael        #
- # Chastain, Michael Quan, and Mitchell Tse.                                #
- # Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,          #
- # Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     #
- # Win32 port by Nick Gammon                                                #
+ # Ne[X]t Generation [S]imulated [M]edieval [A]dventure Multi[U]ser [G]ame  #
+ # ------------------------------------------------------------------------ #
+ # XSMAUG 2.4 (C) 2014  by Antonio Cao @burzumishi                          #
  # ------------------------------------------------------------------------ #
  #                                  XSMAUG                                  #
  #                                 Makefile                                 #
@@ -25,11 +26,100 @@ ARCH = `uname -m`
 
 bin_PROGRAMS = xsmaug dnsresolv
 
-xsmaug_SOURCES = act_comm.c act_info.c act_move.c act_obj.c act_wiz.c ban.c boards.c build.c calendar.c chess.c clans.c color.c comm.c comments.c const.c db.c deity.c dns.c dump.c fight.c handler.c hashstr.c healer.c hint.c hotboot.c imm_host.c interp.c liquids.c magic.c makeobjs.c mapout.c mapper.c mccp.c misc.c mpxset.c mssp.c mud_comm.c mud_prog.c news.c petfind.c planes.c player.c polymorph.c renumber.c reset.c save.c services.c sha256.c shops.c skills.c special.c tables.c track.c update.c variables.c weather.c qbits.c
+xsmaug_SOURCES = act_comm.cpp \
+act_info.cpp \
+act_move.cpp \
+act_obj.cpp \
+act_wiz.cpp \
+archery.cpp \
+areaconvert.cpp \
+area.cpp \
+auction.cpp \
+ban.cpp \
+bank.cpp \
+bits.cpp \
+boards.cpp \
+build.cpp \
+calendar.cpp \
+channels.cpp \
+channels_share.cpp \
+character.cpp \
+chess.cpp \
+clans.cpp \
+color.cpp \
+commands.cpp \
+comments.cpp \
+connhist.cpp \
+const.cpp \
+db.cpp \
+deity.cpp \
+descriptor.cpp \
+editor.cpp \
+environment.cpp \
+event.cpp \
+event_handler.cpp \
+fight.cpp \
+finger.cpp \
+handler.cpp \
+hashstr.cpp \
+help.cpp \
+hotboot.cpp \
+imm_host.cpp \
+liquids.cpp \
+magic.cpp \
+mapout.cpp \
+mapper.cpp \
+mccp.cpp \
+md5.cpp \
+misc.cpp \
+mobindex.cpp \
+modules.cpp \
+mongoose.cpp \
+mspecial.cpp \
+mssp.cpp \
+mud_cfg.cpp \
+mud_comm.cpp \
+mud_prog.cpp \
+mud_prog_comm.cpp \
+mud_auth.cpp \
+object.cpp \
+objindex.cpp \
+olc_mob.cpp \
+olc_obj.cpp \
+olc_room.cpp \
+overland.cpp \
+pfiles.cpp \
+player.cpp \
+polymorph.cpp \
+rare.cpp \
+renumber.cpp \
+reset.cpp \
+roomindex.cpp \
+save.cpp \
+search.cpp \
+sha256.cpp \
+shell.cpp \
+ships.cpp \
+shops.cpp \
+skills.cpp \
+skyship.cpp \
+slay.cpp \
+starmap.cpp \
+sql.cpp \
+tables.cpp \
+track.cpp \
+treasure.cpp \
+update.cpp \
+variables.cpp \
+web.cpp \
+win32.cpp
 
-dnsresolv_SOURCES = dnsresolv.c
+dnsresolv_SOURCES = dnsresolv.cpp
 
-include_HEADERS = mud.h
+include_HEADERS = mud.h mud_cfg.h
 
 xsmaug_CXXFLAGS = -O3 -pipe -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
 xsmaug_CFLAGS = -O3 -pipe -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
+
+dnsresolv_CXXFLAGS = -O3 -pipe -Wno-all
+dnsresolv_CFLAGS = -O3 -pipe -Wno-all

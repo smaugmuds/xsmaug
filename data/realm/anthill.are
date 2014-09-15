@@ -1,0 +1,1622 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Anthill~
+Author          Uriel~
+Vnums           8049 8099
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          5 15 2 20
+ResetMsg        The clickety clack of the new generation can be heard in the tunnels.~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      8049
+Keywords  aphid drone bug~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a giant aphid~
+Long      A green, bulbuous bug chirps around the tunnels.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head legs guts wings forelegs~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if rand(50)
+mpe _gre The aphid sputters and dies, leaving a sack of milk!
+mpoload 8049 2
+else
+mpe _gre The aphid sputters and dies, leaving a sack of honey!
+mpoload 8050 2
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      8050
+Keywords  ant worker drone~
+Race      ant~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a worker ant~
+Long      A large ant hurredly works about, completing task after task.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head legs tail forelegs~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if rand(50)
+mpe _gre The ant sputters and dies, leaving an eye!
+mpoload 8051 2
+else
+mpe _gre The ant sputters and dies, leaving its thorax!
+mpoload 8052 2
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      8051
+Keywords  ant warrior drone~
+Race      ant~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A warrior ant~
+Long      A massive ant with large mandibles wanders the tunnels.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Bodyparts guts~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if rand(50)
+mpe _gre The ant sputters and dies, leaving an eye!
+mpoload 8051 2
+else
+mpe _gre The ant sputters and dies, leaving its thorax!
+mpoload 8052 2
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      8052
+Keywords  ant apis drone~
+Race      ant~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     an apis drone~
+Long      An ant with a large head wanders here, keeping the Queen's link.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if rand(50)
+mpe _gre The ant sputters and dies, leaving an eye!
+mpoload 8051 2
+else
+mpe _gre The ant sputters and dies, leaving its thorax!
+mpoload 8052 2
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      8053
+Keywords  shrieker mushroom fungus~
+Race      shrieker~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     a shrieker~
+Long      A large mushroom grows here, ominously silent...
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Bodyparts guts~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8054
+Keywords  ant breeder drone~
+Race      ant~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a breeder ant~
+Long      A small ant with wings buzzes around the tunnels.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head legs~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if rand(50)
+mpe _gre The ant sputters and dies, leaving an eye!
+mpoload 8051 2
+else
+mpe _gre The ant sputters and dies, leaving its thorax!
+mpoload 8052 2
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      8055
+Keywords  ant larvae~
+Race      ant~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     an ant larvae~
+Long      A grub like creature writhes on the floor.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    6 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts guts~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8056
+Keywords  earthworm worm~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     an earthworm~
+Long      A large earthworm burrows through the anthill.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    30 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      8057
+Keywords  queen ant~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  sitting~
+DefPos    sitting~
+Short     the queen ant~
+Long      A large ant, bulbuous and might, rests here, making eggs.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    35 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary~
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mpe _gre The Queen sputters and dies, leaving a sack of precious jelly!
+mpoload 8053 2
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum      8049
+Keywords  milk sack aphid~
+Type      potion~
+Short     An aphid's milk sack~
+Long      A bulbuous milk sack is laying here.~
+WFlags    take~
+Values    10 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'cure poison' 'remove curse' 'refresh'
+#ENDOBJECT
+
+#OBJECT
+Vnum      8050
+Keywords  honey aphid sack~
+Type      pill~
+Short     An aphid's honey sack~
+Long      A bulbuous honey sack has fallen here.~
+WFlags    take~
+Values    10 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'cure light' 'cure serious' 'cure light'
+#ENDOBJECT
+
+#OBJECT
+Vnum      8051
+Keywords  ant eye~
+Type      pill~
+Short     an ant eye~
+Long      The eye of an ant has fallen here.~
+WFlags    take~
+Values    20 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'scry' 'infravision' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      8052
+Keywords  ant thorax~
+Type      pill~
+Short     an ant thorax~
+Long      The edible midsection of an ant lays here.~
+WFlags    take~
+Values    20 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'trollish vigor' 'refresh' 'kindred strength'
+#ENDOBJECT
+
+#OBJECT
+Vnum      8053
+Keywords  royal jelly~
+Type      pill~
+Short     royal jelly~
+Long      This sack of honey glows brightly.~
+Flags     glow~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'sanctuary' 'quickening' 'fly'
+#ENDOBJECT
+
+#OBJECT
+Vnum      8054
+Keywords  spring fountain resivoir~
+Type      fountain~
+Short     A resivoir~
+Long      A resivoir of condensed water has collected here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      8049
+Name      Before a Large Hole~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The grass of the surrounding land is suspiciously dead, and the source
+is obvious. A loud 'clickety-clickety' and a wide gaping hole in the
+ground is surely the home of giant ants. These ants are more less of a
+threat, but a real nuisance to local farmers.
+~
+#EXIT
+Direction east~
+ToRoom    8098
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    8050
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8050
+Name      Within the Anthill~
+Sector    underground~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The interior of the anthill is dark and humid. Ants like it warm, and
+they don't need light to see. Of course, most of the ants are passive,
+save the warrior ants, who attack anything that move. The anthill branches
+like a maze, heading in numerous directions.
+~
+#EXIT
+Direction north~
+ToRoom    8051
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8053
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8058
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8055
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    8049
+#ENDEXIT
+
+Reset M 8049 2 8050 -1 -1 -1 100
+Reset M 8049 2 8050 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8051
+Name      A Small Tunnel~
+Sector    underground~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This tunnel is small and cramped. It is obviously not heavily used,
+or the ants would have widened it. It would appear that only a few
+people could occupy this tunnel at once, making it a tricky situation
+for explorers wanting through.
+~
+#EXIT
+Direction south~
+ToRoom    8050
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    8052
+#ENDEXIT
+
+Reset M 8050 2 8051 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8052
+Name      A Way Down~
+Sector    underground~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This chamber holds a passage leading deeper into the anthill. Obviously
+the deeper the anthill goes, the more ants will be abound. The loud and
+obnoxious clickity click of the ants at work echoes through these large
+tunnels.
+~
+#EXIT
+Direction down~
+ToRoom    8059
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    8051
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8053
+Name      A Desolate Tunnel~
+Sector    underground~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This tunnel stinks of trash and decay, and the ants do not travel this
+part of the hill often. Ants are tidy insects, choosing to keep trash
+and dead bodies away from the rest of their lair. The smell grows stronger
+to the East.
+~
+#EXIT
+Direction east~
+ToRoom    8054
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8050
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8054
+Name      A Refuse Chamber~
+Sector    underground~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The ants have piled their ages of waste and refuse in this secluded
+and distant chamber. The trash and waste is very conducive to fungal
+decay, so it seems to decompose quickly. Of course, the ants aren't
+dumb, and have cultivated help in the process...
+~
+#EXIT
+Direction west~
+ToRoom    8053
+#ENDEXIT
+
+Reset M 8053 3 8054 -1 -1 -1 100
+Reset M 8053 3 8054 -1 -1 -1 100
+Reset M 8053 3 8054 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8055
+Name      A Busy Intersection~
+Sector    underground~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The tunnel splits in this busy intersection, where ants of all kinds
+hurridly shuffle past, doing chores. Most of the ants don't care if
+a forigen species is in their lair, but watch out for the warrior ants,
+they like to fight.
+~
+#EXIT
+Direction east~
+ToRoom    8050
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8056
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    8057
+#ENDEXIT
+
+Reset M 8050 4 8055 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8056
+Name      A Guard Station~
+Sector    underground~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This chamber is used only for a waiting room for the large warrior ants,
+waiting for the scent of warning pheremones from the workers. But, like
+most ants, warrior ants are prone to wander aimlessly, so this chamber
+is not always occupied.
+~
+#EXIT
+Direction north~
+ToRoom    8055
+#ENDEXIT
+
+Reset M 8051 4 8056 -1 -1 -1 100
+Reset M 8051 4 8056 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8057
+Name      A Guard Station~
+Sector    underground~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This chamber is used only for a waiting room for the large warrior ants,
+waiting for the scent of warning pheremones from the workers. But, like
+most ants, warrior ants are prone to wander aimlessly, so this chamber
+is not always occupied.
+~
+#EXIT
+Direction southeast~
+ToRoom    8055
+#ENDEXIT
+
+Reset M 8051 2 8057 -1 -1 -1 100
+Reset M 8051 2 8057 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8058
+Name      A Way Down~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This chamber holds a passage leading deeper into the anthill. Obviously
+the deeper the anthill goes, the more ants will be abound. The loud and
+obnoxious clickity click of the ants at work echoes through these large
+tunnels.
+~
+#EXIT
+Direction north~
+ToRoom    8050
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    8060
+#ENDEXIT
+
+Reset M 8050 3 8058 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8059
+Name      Deeper Into the Hill~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The air gets warmer as the tunnels go deeper into the ground. The ants
+enjoy warmth, and cultivate a special fungus to keep their lair warm.
+But, the deeper into the hill, the more ants there seem to be, working
+busily away.
+~
+#EXIT
+Direction up~
+ToRoom    8052
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    8064
+#ENDEXIT
+
+Reset M 8050 5 8059 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8060
+Name      Deeper Into the Hill~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The air gets warmer as the tunnels go deeper into the ground. The ants
+enjoy warmth, and cultivate a special fungus to keep their lair warm.
+But, the deeper into the hill, the more ants there seem to be, working
+busily away.
+~
+#EXIT
+Direction up~
+ToRoom    8058
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    8061
+#ENDEXIT
+
+Reset M 8052 3 8060 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8061
+Name      A Large Tunnel~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is very wide, allowing for many ants to pass through at
+one time. The large tunnels always designate a busy part of the hill,
+places where more ants pass at once. The tunnel has been painstakingly
+widened and hardened, a true testament to the iron will of the ants.
+~
+#EXIT
+Direction north~
+ToRoom    8062
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    8060
+#ENDEXIT
+
+Reset M 8050 10 8061 -1 -1 -1 100
+Reset M 8050 10 8061 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8062
+Name      A Large Tunnel~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is very wide, allowing for many ants to pass through at
+one time. The large tunnels always designate a busy part of the hill,
+places where more ants pass at once. The tunnel has been painstakingly
+widened and hardened, a true testament to the iron will of the ants.
+~
+#EXIT
+Direction east~
+ToRoom    8063
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8061
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8063
+Name      A Communal Chamber~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This large chamber serves as a communal feeding chamber for the ants,
+where the workers may feed the other castes. Ants are not very social
+creatures outside work, so little time is spent at rest. The hurried
+clicks of ants at work echoes through the hill.
+~
+#EXIT
+Direction north~
+ToRoom    8064
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8065
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8062
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    8069
+#ENDEXIT
+
+Reset M 8049 4 8063 -1 -1 -1 100
+Reset M 8049 4 8063 -1 -1 -1 100
+Reset M 8050 6 8063 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8064
+Name      A Busy Tunnel~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This wide tunnel is very busy and heavily used by the ants. The worker
+ants bustle in and out, unconcerned with who they pass. Warrior ants
+keep a watch over the workers and the well being of the nest as a whole.
+~
+#EXIT
+Direction south~
+ToRoom    8063
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    8059
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8065
+Name      A Busy Tunnel~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This wide tunnel is very busy and heavily used by the ants. The worker
+ants bustle in and out, unconcerned with who they pass. Warrior ants
+keep a watch over the workers and the well being of the nest as a whole.
+~
+#EXIT
+Direction east~
+ToRoom    8066
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8063
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    8067
+#ENDEXIT
+
+Reset M 8050 7 8065 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8066
+Name      Condensed Moisture~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This clever chamber has been designed to collect and condense moisture
+throughout the nest with a rapid change in temperature. The moisture
+has cooled and collected into a large resivoir, for the ants to have
+a fresh water supply.
+~
+#EXIT
+Direction west~
+ToRoom    8065
+#ENDEXIT
+
+Reset M 8050 8 8066 -1 -1 -1 100
+Reset M 8052 2 8066 -1 -1 -1 100
+Reset O 8054 1 8066 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8067
+Name      A Small Tunnel~
+Sector    underground~
+Flags     indoors private~
+Stats     0 0 0 0 0
+Desc      This tunnel is small and cramped. It is obviously not heavily used,
+or the ants would have widened it. It would appear that only a few
+people could occupy this tunnel at once, making it a tricky situation
+for explorers wanting through.
+~
+#EXIT
+Direction east~
+ToRoom    8068
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    8065
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8068
+Name      A Storage Chamber~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This large chamber sees an occasional ant, placing foraged materials
+for storage. The ants store foodstuff in preperation of long winters
+or other disasters. Never let it be said ants did not have foresight.
+~
+#EXIT
+Direction west~
+ToRoom    8067
+#ENDEXIT
+
+Reset M 8052 1 8068 -1 -1 -1 100
+Reset M 8050 1 8068 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8069
+Name      Deeper Into the Hill~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The air gets warmer as the tunnels go deeper into the ground. The ants
+enjoy warmth, and cultivate a special fungus to keep their lair warm.
+But, the deeper into the hill, the more ants there seem to be, working
+busily away.
+~
+#EXIT
+Direction east~
+ToRoom    8072
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8075
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    8063
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    8070
+#ENDEXIT
+
+Reset M 8049 6 8069 -1 -1 -1 100
+Reset M 8049 6 8069 -1 -1 -1 100
+Reset M 8050 11 8069 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8070
+Name      A Large Tunnel~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is very wide, allowing for many ants to pass through at
+one time. The large tunnels always designate a busy part of the hill,
+places where more ants pass at once. The tunnel has been painstakingly
+widened and hardened, a true testament to the iron will of the ants.
+~
+#EXIT
+Direction west~
+ToRoom    8071
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    8069
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8071
+Name      A Hatchery~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This chamber is extremely humid, so much so that it is difficult to
+breathe. The stench of newly born ants is overwhelming, as the larvae
+which occupy this chamber squirm and chrysalis into adults. The ants
+seem overly protective of this chamber.
+~
+#EXIT
+Direction east~
+ToRoom    8070
+#ENDEXIT
+
+Reset M 8055 10 8071 -1 -1 -1 100
+Reset M 8055 10 8071 -1 -1 -1 100
+Reset M 8055 10 8071 -1 -1 -1 100
+Reset M 8055 10 8071 -1 -1 -1 100
+Reset M 8055 10 8071 -1 -1 -1 100
+Reset M 8054 4 8071 -1 -1 -1 100
+Reset M 8054 4 8071 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8072
+Name      A Busy Intersection~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The tunnel splits in this busy intersection, where ants of all kinds
+hurridly shuffle past, doing chores. Most of the ants don't care if
+a forigen species is in their lair, but watch out for the warrior ants,
+they like to fight.
+~
+#EXIT
+Direction west~
+ToRoom    8069
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    8073
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    8074
+#ENDEXIT
+
+Reset M 8050 12 8072 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8073
+Name      A Guard Station~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This chamber is used only for a waiting room for the large warrior ants,
+waiting for the scent of warning pheremones from the workers. But, like
+most ants, warrior ants are prone to wander aimlessly, so this chamber
+is not always occupied.
+~
+#EXIT
+Direction southwest~
+ToRoom    8072
+#ENDEXIT
+
+Reset M 8051 6 8073 -1 -1 -1 100
+Reset M 8051 6 8073 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8074
+Name      A Guard Station~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This chamber is used only for a waiting room for the large warrior ants,
+waiting for the scent of warning pheremones from the workers. But, like
+most ants, warrior ants are prone to wander aimlessly, so this chamber
+is not always occupied.
+~
+#EXIT
+Direction northwest~
+ToRoom    8072
+#ENDEXIT
+
+Reset M 8051 8 8074 -1 -1 -1 100
+Reset M 8051 8 8074 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8075
+Name      A Busy Intersection~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The tunnel splits in this busy intersection, where ants of all kinds
+hurridly shuffle past, doing chores. Most of the ants don't care if
+a forigen species is in their lair, but watch out for the warrior ants,
+they like to fight.
+~
+#EXIT
+Direction north~
+ToRoom    8069
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8076
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    8077
+#ENDEXIT
+
+Reset M 8050 13 8075 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8076
+Name      Descending Into the Lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The tunnels descend yet again, leading into warmer and more humid
+chambers. These connections between levels of the nest are always
+busy and bustling, like road intersections. The ants are always
+curteous to one another, as they roam about.
+~
+#EXIT
+Direction east~
+ToRoom    8075
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    8080
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8077
+Name      A Large Tunnel~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is very wide, allowing for many ants to pass through at
+one time. The large tunnels always designate a busy part of the hill,
+places where more ants pass at once. The tunnel has been painstakingly
+widened and hardened, a true testament to the iron will of the ants.
+~
+#EXIT
+Direction east~
+ToRoom    8078
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    8075
+#ENDEXIT
+
+Reset M 8050 15 8077 -1 -1 -1 100
+Reset M 8050 15 8077 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8078
+Name      Descending Into the Lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The tunnels descend yet again, leading into warmer and more humid
+chambers. These connections between levels of the nest are always
+busy and bustling, like road intersections. The ants are always
+curteous to one another, as they roam about.
+~
+#EXIT
+Direction west~
+ToRoom    8077
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    8079
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8079
+Name      Deeper Into the Lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The air gets warmer as the tunnels go deeper into the ground. The ants
+enjoy warmth, and cultivate a special fungus to keep their lair warm.
+But, the deeper into the hill, the more ants there seem to be, working
+busily away.
+~
+#EXIT
+Direction north~
+ToRoom    8086
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    8078
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8080
+Name      Deeper Into the Lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The air gets warmer as the tunnels go deeper into the ground. The ants
+enjoy warmth, and cultivate a special fungus to keep their lair warm.
+But, the deeper into the hill, the more ants there seem to be, working
+busily away.
+~
+#EXIT
+Direction up~
+ToRoom    8076
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    8081
+#ENDEXIT
+
+Reset M 8052 7 8080 -1 -1 -1 100
+Reset M 8052 7 8080 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8081
+Name      A Large Tunnel~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is very wide, allowing for many ants to pass through at
+one time. The large tunnels always designate a busy part of the hill,
+places where more ants pass at once. The tunnel has been painstakingly
+widened and hardened, a true testament to the iron will of the ants.
+~
+#EXIT
+Direction east~
+ToRoom    8082
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    8080
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8082
+Name      Communal Chambers~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This large chamber serves as a communal feeding chamber for the ants,
+where the workers may feed the other castes. Ants are not very social
+creatures outside work, so little time is spent at rest. The hurried
+clicks of ants at work echoes through the hill.
+~
+#EXIT
+Direction north~
+ToRoom    8083
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8085
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8087
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8081
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    8089
+#ENDEXIT
+
+Reset M 8049 8 8082 -1 -1 -1 100
+Reset M 8049 8 8082 -1 -1 -1 100
+Reset M 8052 5 8082 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8083
+Name      A Large Tunnel~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is very wide, allowing for many ants to pass through at
+one time. The large tunnels always designate a busy part of the hill,
+places where more ants pass at once. The tunnel has been painstakingly
+widened and hardened, a true testament to the iron will of the ants.
+~
+#EXIT
+Direction south~
+ToRoom    8082
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    8084
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8084
+Name      The Final Descent~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Yet again, the tunnels descend deeper into the anthill. But this is
+the final descent, where the queen herself lives. The ants will be
+very defensive for sure, so be on guard...
+~
+#EXIT
+Direction down~
+ToRoom    8090
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    8083
+#ENDEXIT
+
+Reset M 8051 12 8084 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8085
+Name      A Large Tunnel~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is very wide, allowing for many ants to pass through at
+one time. The large tunnels always designate a busy part of the hill,
+places where more ants pass at once. The tunnel has been painstakingly
+widened and hardened, a true testament to the iron will of the ants.
+~
+#EXIT
+Direction south~
+ToRoom    8086
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8082
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8086
+Name      A Large Tunnel~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is very wide, allowing for many ants to pass through at
+one time. The large tunnels always designate a busy part of the hill,
+places where more ants pass at once. The tunnel has been painstakingly
+widened and hardened, a true testament to the iron will of the ants.
+~
+#EXIT
+Direction north~
+ToRoom    8085
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8079
+#ENDEXIT
+
+Reset M 8052 4 8086 -1 -1 -1 100
+Reset M 8051 11 8086 -1 -1 -1 100
+Reset M 8050 16 8086 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8087
+Name      A Large Tunnel~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is very wide, allowing for many ants to pass through at
+one time. The large tunnels always designate a busy part of the hill,
+places where more ants pass at once. The tunnel has been painstakingly
+widened and hardened, a true testament to the iron will of the ants.
+~
+#EXIT
+Direction north~
+ToRoom    8082
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    8088
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8088
+Name      A Hatchery~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This chamber is extremely humid, so much so that it is difficult to
+breathe. The stench of newly born ants is overwhelming, as the larvae
+which occupy this chamber squirm and chrysalis into adults. The ants
+seem overly protective of this chamber.
+~
+#EXIT
+Direction northeast~
+ToRoom    8087
+#ENDEXIT
+
+Reset M 8055 5 8088 -1 -1 -1 100
+Reset M 8055 5 8088 -1 -1 -1 100
+Reset M 8055 5 8088 -1 -1 -1 100
+Reset M 8055 5 8088 -1 -1 -1 100
+Reset M 8055 5 8088 -1 -1 -1 100
+Reset M 8054 2 8088 -1 -1 -1 100
+Reset M 8054 2 8088 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8089
+Name      The Royal Chambers~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      These final chambers are where the ants congregate to be in the presence
+of their queen. Ants move through these chambers in droves, seeking the
+scent of the queen's pheremones. The number of ants should be observed,
+becuase if a fight were to break out, it could get ugly.
+~
+#EXIT
+Direction east~
+ToRoom    8092
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    8094
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    8082
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    8091
+#ENDEXIT
+
+Reset M 8050 18 8089 -1 -1 -1 100
+Reset M 8050 18 8089 -1 -1 -1 100
+Reset M 8051 13 8089 -1 -1 -1 100
+Reset M 8052 8 8089 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8090
+Name      The Deep Lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This seems to be as deep as the tunnels go, very deep, warm and humid,
+all oppressivley so. The ants seem to pay no mind to visitors, well,
+all but the large warrior ants, who attack anything that moves that
+is not ant or aphid.
+~
+#EXIT
+Direction up~
+ToRoom    8084
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    8091
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8091
+Name      An Odd Sight~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is very odd indeed, slimy and humid. Large holes have been
+tunneled in a criss crossing fashion, smaller than an ant can fit. Of
+course, the ants don't seem to mind the strange sight, so long as it
+presents no threat to their queen.
+~
+#EXIT
+Direction northeast~
+ToRoom    8090
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    8089
+#ENDEXIT
+
+Reset M 8056 1 8091 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8092
+Name      The Royal Chambers~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      These final chambers are where the ants congregate to be in the presence
+of their queen. Ants move through these chambers in droves, seeking the
+scent of the queen's pheremones. The number of ants should be observed,
+becuase if a fight were to break out, it could get ugly.
+~
+#EXIT
+Direction south~
+ToRoom    8093
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8089
+#ENDEXIT
+
+Reset M 8052 9 8092 -1 -1 -1 100
+Reset M 8051 14 8092 -1 -1 -1 100
+Reset M 8050 20 8092 -1 -1 -1 100
+Reset M 8050 20 8092 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8093
+Name      The Royal Chambers~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      These final chambers are where the ants congregate to be in the presence
+of their queen. Ants move through these chambers in droves, seeking the
+scent of the queen's pheremones. The number of ants should be observed,
+becuase if a fight were to break out, it could get ugly.
+~
+#EXIT
+Direction north~
+ToRoom    8092
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8094
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    8095
+#ENDEXIT
+
+Reset M 8050 22 8093 -1 -1 -1 100
+Reset M 8050 22 8093 -1 -1 -1 100
+Reset M 8052 10 8093 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8094
+Name      The Royal Chambers~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      These final chambers are where the ants congregate to be in the presence
+of their queen. Ants move through these chambers in droves, seeking the
+scent of the queen's pheremones. The number of ants should be observed,
+becuase if a fight were to break out, it could get ugly.
+~
+#EXIT
+Direction north~
+ToRoom    8089
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    8093
+#ENDEXIT
+
+Reset M 8050 24 8094 -1 -1 -1 100
+Reset M 8050 24 8094 -1 -1 -1 100
+Reset M 8051 15 8094 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8095
+Name      The Queen's Lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is immense, allowing for hordes of ants to pass through
+at once. The smell of pheremones is very strong, almost overpowering.
+This surely must be the lair of the Queen, because everything here
+seems... 'royal'.
+~
+#EXIT
+Direction south~
+ToRoom    8096
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    8093
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8096
+Name      The Queen's Lair~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel is immense, allowing for hordes of ants to pass through
+at once. The smell of pheremones is very strong, almost overpowering.
+This surely must be the lair of the Queen, because everything here
+seems... 'royal'.
+~
+#EXIT
+Direction north~
+ToRoom    8095
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    8097
+#ENDEXIT
+
+Reset M 8051 18 8096 -1 -1 -1 100
+Reset M 8051 18 8096 -1 -1 -1 100
+Reset M 8051 18 8096 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8097
+Name      The Queen's Nest~
+Sector    underground~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The final chamber is beyond immense, stretching beyond the limits of
+torchlight. The clickety click of ants working is almost deafining,
+and the strong smell of pheremones is overwhelming. This surely is
+the lair of the Queen.
+~
+#EXIT
+Direction northeast~
+ToRoom    8096
+#ENDEXIT
+
+Reset M 8057 1 8097 -1 -1 -1 100
+Reset M 8051 10 8097 -1 -1 -1 100
+Reset M 8051 10 8097 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      8098
+Name      The Farm~
+Sector    underground~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This large farm was once a place of beauty, but now many of the crops
+seem to have failed. A large mound stands to the West, which seems to
+be the source of the crop failure in this farm, and a house stands to
+the North, worn and rickety.
+~
+#EXIT
+Direction north~
+ToRoom    8099
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    26713
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    8049
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      8099
+Name      In the Farmhouse~
+Sector    underground~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Kilman's farmhouse was once a beautiful, yet quaint, cottage, providing
+food for Archengarde. Now, without a source of income, the Kilman clan
+has moved away from this place, leaving their past home in a state of
+ill repair.
+~
+#EXIT
+Direction south~
+ToRoom    8098
+#ENDEXIT
+
+#ENDROOM
+
+#ENDAREA

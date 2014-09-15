@@ -1,0 +1,1553 @@
+Obscurities Weather System & AFKMud Calendar System
+----------------------------------------------------
+
+Original Weather code from the Obscurities codebase.
+Modified for Smaug compatibility by Kayle of Malevolent Whispers.
+Original Calendar code from the AFKMud codebase by Samson of Alsherok.
+Modified for Smaug compatibility by Kayle of Malevolent Whispers.
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from me.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. 
+
+
+What this code does
+-------------------
+
+This code replaces the stock calendar and weather systems, with more diverse
+and readily expandable systems. The Calendar fixes the faults of the Smaug 
+Calendar by converting certain values to csettable systemdata entries, allowing
+time to persist over reboots, and implements seasons and seasonal changes, such
+as freshwater sectors freezing, and things such as this.
+
+The weather system completely revises how weather in Smaug is handled. It uses
+an influence map to account for all neighboring cells, and allows for all cells
+to influence one another based on snapshots taken at the time of update. Messages
+describing the weather are more fluid, describing changes in the amount of 
+precipitation, cloud cover, or temperature. These messages are easily expandable
+to include the other monitored values for each cell. Also, Climate controllers can
+be applied to certain cells to prevent the weather from reaching equilibrium, the
+point where all cells and all values within those cells are equal. In addition to
+climate, hemisphere flags can be applied to each cell as well. In conjunction with
+the climate flags, the hemisphere flags will effectively reverse the weather patterns
+for the seasons, so that summer in the southern hemisphere produces frigid temperatures
+and snow, while the northern would produce heat and rain. The system is about as 
+encapsulated as C will allow, functions have been provided, and several examples 
+have been placed thoughout the code to showcase how to interact with the system through
+those provided function.
+
+Installation Instructions
+-------------------------
+
+1. The following files will be modified during the course of this installation:
+	act_info.c, act_wiz.c, build.c, comm.c, db.c, fight.c, handler.c magic.c, mud.h, 
+	player.c, save.c, update.c, Makefile.
+
+
+****************
+* ACT_INFO.C   *
+****************
+
+
+2. void look_sky( CHAR_DATA * ch )
+   remove precip variable from defines.
+
+3. REPLACE:
+   precip = ( ch->in_room->area->weather->precip + 3 * weath_unit - 1 ) / weath_unit;
+   if( precip > 1 )
+   {
+      send_to_char( "There are some clouds in the sky so you cannot see anything else.\r\n", ch );
+      return;
+   }
+
+   WITH:
+   struct	WeatherCell *cell = getWeatherCell( ch->in_room->area ); 
+	   
+   if( isModeratelyCloudy( getCloudCover( cell ) ) )
+   {
+      send_to_char( "There are too many clouds in the sky so you cannot see anything else.\r\n", ch );
+      return;
+   }
+
+4. Find and remove the following:
+	void do_weather( CHAR_DATA * ch, char *argument )
+	char *const day_name[] = {
+	char *const month_name[] = {
+	void do_time( CHAR_DATA * ch, char *argument )
+
+
+***************
+* ACT_WIZ.C   *
+***************
+
+
+5. Find: void close_area( AREA_DATA * pArea )
+   At the top in the defines remove: 
+     NEIGHBOR_DATA *neighbor, *neighbor_next;
+   Further down, remove:
+   if( pArea->weather )
+   {
+      for( neighbor = pArea->weather->first_neighbor; neighbor; neighbor = neighbor_next )
+      {
+         neighbor_next = neighbor->next;
+         UNLINK( neighbor, pArea->weather->first_neighbor, pArea->weather->last_neighbor, next, prev );
+         STRFREE( neighbor->name );
+         DISPOSE( neighbor );
+      }
+      DISPOSE( pArea->weather );
+   }
+
+6. Find: void do_cset( CHAR_DATA * ch, char *argument )
+   Just before that, add:
+void update_calendar( void )
+{
+   sysdata.daysperyear = sysdata.dayspermonth * sysdata.monthsperyear;
+   sysdata.hoursunrise = sysdata.hoursperday / 4;
+   sysdata.hourdaybegin = sysdata.hoursunrise + 1;
+   sysdata.hournoon = sysdata.hoursperday / 2;
+   sysdata.hoursunset = ( ( sysdata.hoursperday / 4 ) * 3 );
+   sysdata.hournightbegin = sysdata.hoursunset + 1;
+   sysdata.hourmidnight = sysdata.hoursperday;
+   calc_season(  );
+   return;
+}
+
+void update_timers( void )
+{
+   sysdata.pulsetick = sysdata.secpertick * sysdata.pulsepersec;
+   sysdata.pulseviolence = 3 * sysdata.pulsepersec;
+   sysdata.pulsemobile = 4 * sysdata.pulsepersec;
+   sysdata.pulsecalendar = 4 * sysdata.pulsetick;
+   return;
+}
+   
+7. In: void do_cset( CHAR_DATA * ch, char *argument )
+
+   Find: int level;
+   Change to: int level, value;
+
+   Find: 
+   pager_printf_color( ch, "  &wSave flags: &W%s\r\n", flag_string( sysdata.save_flags, save_flag ) );
+
+   Below this, Add:
+   pager_printf_color( ch, "&WCalendar:\r\n" );
+	  pager_printf_color( ch, "  &wSeconds per tick: &W%d   &wPulse per second: &W%d\n\r",
+                    sysdata.secpertick, sysdata.pulsepersec );
+	  pager_printf_color( ch, "  &wHours per day: &W%d &wDays per week: &W%d &wDays per month: &W%d &wMonths per year: &W%d &wDays per year: &W%d\r\n",
+                    sysdata.hoursperday, sysdata.daysperweek, sysdata.dayspermonth, sysdata.monthsperyear,
+                    sysdata.daysperyear );
+        pager_printf( ch, "\n\r   &wSeconds per tick: &G%d   &wPulse per second: &G%d\n\r",
+					sysdata.secpertick, sysdata.pulsepersec );
+	  pager_printf_color( ch, "  &wPULSE_TICK: &W%d &wPULSE_VIOLENCE: &W%d &wPULSE_MOBILE: &W%d &wPULSE_CALENDAR: &W%d\r\n",
+                    sysdata.pulsetick, sysdata.pulseviolence, sysdata.pulsemobile, sysdata.pulsecalendar );
+   Next Find: if( !str_prefix( arg, "guild_advisor" ) )
+   {
+      STRFREE( sysdata.guild_advisor );
+      sysdata.guild_advisor = STRALLOC( argument );
+      send_to_char( "Ok.\r\n", ch );
+      return;
+   }
+   
+   After this, add:
+   value = ( short )atoi( argument );
+
+   if( !str_cmp( arg, "max-holidays" ) )
+   {
+      sysdata.maxholiday = value;
+      ch_printf( ch, "Max Holiday set to %d.\r\n", value );
+      save_sysdata( sysdata );
+      return;
+   }
+
+   if( !str_cmp( arg, "hours-per-day" ) )
+   {
+      sysdata.hoursperday = value;
+      ch_printf( ch, "Hours per day set to %d.\r\n", value );
+      update_calendar(  );
+      save_sysdata( sysdata );
+      return;
+   }
+
+   if( !str_cmp( arg, "days-per-week" ) )
+   {
+      sysdata.daysperweek = value;
+      ch_printf( ch, "Days per week set to %d.\r\n", value );
+      update_calendar(  );
+      save_sysdata( sysdata );
+      return;
+   }
+
+   if( !str_cmp( arg, "days-per-month" ) )
+   {
+      sysdata.dayspermonth = value;
+      ch_printf( ch, "Days per month set to %d.\r\n", value );
+      update_calendar(  );
+      save_sysdata( sysdata );
+      return;
+   }
+
+   if( !str_cmp( arg, "months-per-year" ) )
+   {
+      sysdata.monthsperyear = value;
+      ch_printf( ch, "Months per year set to %d.\r\n", value );
+      update_calendar(  );
+      save_sysdata( sysdata );
+      return;
+   }
+
+   if( !str_cmp( arg, "seconds-per-tick" ) )
+   {
+      sysdata.secpertick = value;
+      ch_printf( ch, "Seconds per tick set to %d.\r\n", value );
+      update_timers(  );
+      save_sysdata( sysdata );
+      return;
+   }
+
+   if( !str_cmp( arg, "pulse-per-second" ) )
+   {
+      sysdata.pulsepersec = value;
+      ch_printf( ch, "Pulse per second set to %d.\r\n", value );
+      update_timers(  );
+      save_sysdata( sysdata );
+      return;
+   }
+
+8. Find and remove the following functions:
+   do_setweather
+   do_showweather
+
+
+*****************
+* BUILD.C       *
+*****************
+
+
+9. Find: void assign_area( CHAR_DATA * ch )
+   Remove the following:
+	CREATE( tarea->weather, WEATHER_DATA, 1 );   /* FB */
+         tarea->weather->temp = 0;
+         tarea->weather->precip = 0;
+         tarea->weather->wind = 0;
+         tarea->weather->temp_vector = 0;
+         tarea->weather->precip_vector = 0;
+         tarea->weather->wind_vector = 0;
+         tarea->weather->climate_temp = 2;
+         tarea->weather->climate_precip = 2;
+         tarea->weather->climate_wind = 2;
+         tarea->weather->first_neighbor = NULL;
+         tarea->weather->last_neighbor = NULL;
+         tarea->weather->echo = NULL;
+         tarea->weather->echo_color = AT_GREY;
+
+***ALTERNATE***
+If installing this in a non-FUSS 1.8 version. You'll need to save things
+a little differently, You'll follow this step 10. Please note, this code is untested,
+and may require troubleshooting.
+
+10. Find: void fold_area( AREA_DATA * tarea, char *filename, bool install )
+	Locate: fprintf( fpout, "#SPELLLIMIT %d\n", tarea->spelllimit );
+	Below that, Add: fprintf( fpout, "#WEATHERCELL %d %d\n\n", tarea->weatherx, tarea->weathery );
+	
+	Locate and Remove:
+	NEIGHBOR_DATA *neigh;
+    And further down:
+      /*
+    * Climate info - FB 
+    */
+   fprintf( fpout, "#CLIMATE %d %d %d\n\n", tarea->weather->climate_temp,
+            tarea->weather->climate_precip, tarea->weather->climate_wind );
+
+   /*
+    * neighboring weather systems - FB 
+    */
+   for( neigh = tarea->weather->first_neighbor; neigh; neigh = neigh->next )
+      fprintf( fpout, "#NEIGHBOR %s~\n\n", neigh->name );
+
+***END ALTERNATE***
+
+10. Find: void fwrite_area_header( FILE * fpout, AREA_DATA * tarea, bool install )
+    Remove:
+	NEIGHBOR_DATA *neigh;
+
+    Further Down, find: fprintf( fpout, "Author       %s~\n", tarea->author );
+
+    Below this, Add:
+    fprintf( fpout, "WeatherX	 %d\n", tarea->weatherx );
+    fprintf( fpout, "WeatherY	 %d\n", tarea->weathery );
+
+    And further down:
+   /*
+    * Climate info - FB 
+    */
+   fprintf( fpout, "Climate      %d %d %d\n", tarea->weather->climate_temp, tarea->weather->climate_precip,
+            tarea->weather->climate_wind );
+
+   /*
+    * neighboring weather systems - FB 
+    */
+   for( neigh = tarea->weather->first_neighbor; neigh; neigh = neigh->next )
+      fprintf( fpout, "Neighbor     %s~\n", neigh->name );
+
+11. Find: void old_fold_area( AREA_DATA * tarea, char *filename, bool install )
+    Remove:
+	NEIGHBOR_DATA *neigh;
+    And further down:
+      /*
+    * Climate info - FB 
+    */
+   fprintf( fpout, "#CLIMATE %d %d %d\n\n", tarea->weather->climate_temp,
+            tarea->weather->climate_precip, tarea->weather->climate_wind );
+
+   /*
+    * neighboring weather systems - FB 
+    */
+   for( neigh = tarea->weather->first_neighbor; neigh; neigh = neigh->next )
+      fprintf( fpout, "#NEIGHBOR %s~\n\n", neigh->name );
+
+12. Find: void do_astat( CHAR_DATA * ch, char *argument )
+	Find: ch_printf_color( ch, "&wAge: &W%-3d  &wCurrent number of players: &W%-3d  &wMax players: &W%d\r\n",
+                      tarea->age, tarea->nplayer, tarea->max_players );
+	Below that, Add:
+      ch_printf_color( ch, "&wWeather: X Coord: &W%-3d  &w Y Coord: &W%-3d\r\n", tarea->weatherx, tarea->weathery );
+
+13. Find: void do_aset( CHAR_DATA * ch, char *argument )
+	Find: send_to_char( "  author credits resetmsg resetfreq flags\r\n", ch );
+	Below that, Add:
+      if( get_trust( ch ) >= LEVEL_ASCENDANT )
+		send_to_char( "  weatherx weathery\r\n", ch );
+
+	Then Find: if( !str_cmp( arg2, "low_room" ) )
+	Above this, Add:
+   if( !str_cmp( arg2, "weatherx" ) )
+   {
+	  if( get_trust( ch ) < LEVEL_ASCENDANT )
+		 send_to_char( "I don't recognize that field. Please double check.\r\n",ch );
+	  else
+	  {
+		 tarea->weatherx = vnum;
+		 send_to_char( "Done.\r\n", ch );
+	  }
+      return;
+   }
+
+   if( !str_cmp( arg2, "weathery" ) )
+   {
+      if( get_trust( ch ) < LEVEL_ASCENDANT )
+		 send_to_char( "I don't recognize that field. Please double check.\r\n", ch );
+	  else
+	  {
+		 tarea->weathery = vnum;
+		 send_to_char( "Done.\r\n", ch );
+	  }
+      return;
+   }
+
+14. Find and remove do_climate function.
+
+
+*****************
+* COMM.C        *
+*****************
+
+15.  Find: char *alarm_section = "(unknown)";
+	Below that, Add: bool winter_freeze = FALSE;
+
+16. Find: void nanny_read_motd( DESCRIPTOR_DATA * d, char *argument )
+	Locate: snprintf( buf, MAX_STRING_LENGTH, "the %s", title_table[ch->Class][ch->level][ch->sex == SEX_FEMALE ? 1 : 0] );
+	Above, Add:
+	/*
+       * Set player birthday to current mud day, -17 years - Samson 10-25-99
+       */
+       ch->pcdata->day = time_info.day;
+       ch->pcdata->month = time_info.month;
+       ch->pcdata->year = time_info.year - 17;
+       ch->pcdata->age = 17;
+       ch->pcdata->age_bonus = 0;
+
+*****************
+* CONST.C       *
+*****************
+
+17. Delete the following from the bottom of the file:
+    /* Weather constants - FB */
+    char *const temp_settings[MAX_CLIMATE] = {
+    char *const precip_settings[MAX_CLIMATE] = {
+    char *const wind_settings[MAX_CLIMATE] = {
+    char *const preciptemp_msg[6][6] = {
+    char *const windtemp_msg[6][6] = {
+    char *const precip_msg[3] = {
+    char *const wind_msg[6] = {
+
+
+
+
+*****************
+* DB.C          *
+*****************
+	
+17. Top of file, with the defines, Find and remove: 
+WEATHER_DATA weather_info;
+
+int weath_unit;   /* global weather param */
+int rand_factor;
+int climate_factor;
+int neigh_factor;
+int max_vector;
+
+18. Find: bool load_systemdata( SYSTEM_DATA * sys );
+    Below that, Add: void save_sysdata( SYSTEM_DATA sys );
+
+19. Find: void boot_db( bool fCopyOver )
+    Find: sysdata.wizlock = FALSE;
+	Below that, Add:
+   sysdata.secpertick = 70;
+   sysdata.pulsepersec = 4;
+   sysdata.hoursperday = 24;
+   sysdata.daysperweek = 7;
+   sysdata.dayspermonth = 31;
+   sysdata.monthsperyear = 17;
+
+20. Still in boot_db, Find and Replace:
+   if( !load_systemdata( &sysdata ) )
+   {
+      log_string( "Not found.  Creating new configuration." );
+      sysdata.alltimemax = 0;
+      sysdata.mud_name = str_dup( "(Name not set)" );
+   }
+
+    With: 
+   if( !load_systemdata( &sysdata ) )
+   {
+      log_string( "Not found.  Creating new configuration." );
+      sysdata.alltimemax = 0;
+      sysdata.mud_name = str_dup( "(Name not set)" );
+	update_timers(  );
+      update_calendar(  );
+      save_sysdata( sysdata );
+   }
+
+22. Find and remove:
+   weath_unit = 10;
+   rand_factor = 2;
+   climate_factor = 1;
+   neigh_factor = 3;
+   max_vector = weath_unit * 3;
+
+22. Still in boot_db, Find: /*
+    * Set time and weather.
+    */
+   {
+      long lhour, lday, lmonth;
+
+      log_string( "Setting time and weather" );
+
+      lhour = ( current_time - 650336715 ) / ( PULSE_TICK / PULSE_PER_SECOND );
+      time_info.hour = lhour % 24;
+      lday = lhour / 24;
+      time_info.day = lday % 35;
+      lmonth = lday / 35;
+      time_info.month = lmonth % 17;
+      time_info.year = lmonth / 17;
+
+      if( time_info.hour < 5 )
+         time_info.sunlight = SUN_DARK;
+      else if( time_info.hour < 6 )
+         time_info.sunlight = SUN_RISE;
+      else if( time_info.hour < 19 )
+         time_info.sunlight = SUN_LIGHT;
+      else if( time_info.hour < 20 )
+         time_info.sunlight = SUN_SET;
+      else
+         time_info.sunlight = SUN_DARK;
+
+      /*
+       * weather_info.change  = 0;
+       * weather_info.mmhg = 960;
+       * if ( time_info.month >= 7 && time_info.month <=12 )
+       * weather_info.mmhg += number_range( 1, 50 );
+       * else
+       * weather_info.mmhg += number_range( 1, 80 );
+       * 
+       * if ( weather_info.mmhg <=  980 ) weather_info.sky = SKY_LIGHTNING;
+       * else if ( weather_info.mmhg <= 1000 ) weather_info.sky = SKY_RAINING;
+       * else if ( weather_info.mmhg <= 1020 ) weather_info.sky = SKY_CLOUDY;
+       * else                                  weather_info.sky = SKY_CLOUDLESS;
+       */
+   }
+
+Replace with:/*
+    * Set time and weather.
+    */
+   {
+      long lhour, lday, lmonth;
+
+      log_string( "Setting time and weather." );
+
+      if( !load_timedata(  ) )   /* Loads time from stored file if TRUE - Samson 1-21-99 */
+      {
+         boot_log( "Resetting mud time based on current system time." );
+         lhour = ( current_time - 650336715 ) / ( sysdata.pulsetick / sysdata.pulsepersec );
+         time_info.hour = lhour % sysdata.hoursperday;
+         lday = lhour / sysdata.hoursperday;
+         time_info.day = lday % sysdata.dayspermonth;
+         lmonth = lday / sysdata.dayspermonth;
+         time_info.month = lmonth % sysdata.monthsperyear;
+         time_info.year = lmonth / sysdata.monthsperyear;
+      }
+
+      if( time_info.hour < sysdata.hoursunrise )
+         time_info.sunlight = SUN_DARK;
+      else if( time_info.hour < sysdata.hourdaybegin )
+         time_info.sunlight = SUN_RISE;
+      else if( time_info.hour < sysdata.hoursunset )
+         time_info.sunlight = SUN_LIGHT;
+      else if( time_info.hour < sysdata.hournightbegin )
+         time_info.sunlight = SUN_SET;
+      else
+         time_info.sunlight = SUN_DARK;
+   }
+
+   if( !load_weathermap(  ) )
+   {
+	   InitializeWeatherMap(  );
+   }
+
+   log_string( "Loading holiday chart..." ); /* Samson 5-13-99 */
+   load_holidays(  );
+
+
+23. Further Down in boot_db, find and remove:
+   /*
+    * Initialize area weather data 
+    */
+   load_weatherdata(  );
+   init_area_weather(  );
+
+
+
+24. Find: AREA_DATA *load_area( FILE * fp, int aversion )
+	Locate and Remove the following:
+   /*
+    * initialize weather data - FB 
+    */
+   CREATE( pArea->weather, WEATHER_DATA, 1 );
+   pArea->weather->temp = 0;
+   pArea->weather->precip = 0;
+   pArea->weather->wind = 0;
+   pArea->weather->temp_vector = 0;
+   pArea->weather->precip_vector = 0;
+   pArea->weather->wind_vector = 0;
+   pArea->weather->climate_temp = 2;
+   pArea->weather->climate_precip = 2;
+   pArea->weather->climate_wind = 2;
+   pArea->weather->first_neighbor = NULL;
+   pArea->weather->last_neighbor = NULL;
+   pArea->weather->echo = NULL;
+   pArea->weather->echo_color = AT_GREY;
+
+	Where the above was removed, Add: 
+   pArea->weatherx = 0;
+   pArea->weathery = 0;
+
+25. Find: void load_buildlist( void )
+	Locate and Remove the following:
+		CREATE( pArea->weather, WEATHER_DATA, 1 );   /* FB */
+            pArea->weather->temp = 0;
+            pArea->weather->precip = 0;
+            pArea->weather->wind = 0;
+            pArea->weather->temp_vector = 0;
+            pArea->weather->precip_vector = 0;
+            pArea->weather->wind_vector = 0;
+            pArea->weather->climate_temp = 2;
+            pArea->weather->climate_precip = 2;
+            pArea->weather->climate_wind = 2;
+            pArea->weather->first_neighbor = NULL;
+            pArea->weather->last_neighbor = NULL;
+            pArea->weather->echo = NULL;
+            pArea->weather->echo_color = AT_GREY;
+
+	Where the above was removed, Add: 
+   pArea->weatherx = 0;
+   pArea->weathery = 0;
+
+
+26. Find: AREA_DATA *create_area( void )
+	Locate and remove the following:
+   /*
+    * initialize weather data - FB 
+    */
+   CREATE( pArea->weather, WEATHER_DATA, 1 );
+   pArea->weather->temp = 0;
+   pArea->weather->precip = 0;
+   pArea->weather->wind = 0;
+   pArea->weather->temp_vector = 0;
+   pArea->weather->precip_vector = 0;
+   pArea->weather->wind_vector = 0;
+   pArea->weather->climate_temp = 2;
+   pArea->weather->climate_precip = 2;
+   pArea->weather->climate_wind = 2;
+   pArea->weather->first_neighbor = NULL;
+   pArea->weather->last_neighbor = NULL;
+   pArea->weather->echo = NULL;
+   pArea->weather->echo_color = AT_GREY;
+
+	Where the above was removed, Add: 
+   pArea->weatherx = 0;
+   pArea->weathery = 0;
+
+
+***ALTERNATE*** 
+If installing this in a non-FUSS 1.8 version. You'll need to load things
+a little differently, You'll follow this step 27. Please note, this code is untested,
+and may require troubleshooting.
+
+27. Find: void load_area_file( AREA_DATA * tarea, const char *filename )
+	Locate: else if( !str_cmp( word, "RESETMSG" ) )
+         load_resetmsg( tarea, fpArea );
+	Below that, Add:
+	else if( !str_cmp( word, "WEATHERCELL" ) )
+         load_weathercell( tarea, fpArea );
+
+Then Find: void load_resetmsg( AREA_DATA * tarea, FILE * fp )
+Below this function, Add: /*
+ * Load an weather cell. -Kayle
+ */
+void load_weathercell( AREA_DATA * tarea, FILE * fp )
+{
+   if( !tarea )
+   {
+      bug( "Load_economy: no #AREA seen yet." );
+      if( fBootDb )
+      {
+         shutdown_mud( "No #AREA" );
+         exit( 1 );
+      }
+      else
+         return;
+   }
+
+   tarea->weatherx = fread_number( fp );
+   tarea->weathery = fread_number( fp );
+   return;
+}
+***END ALTERNATE***
+
+
+27. Find: void fread_fuss_areadata( FILE * fp, AREA_DATA * tarea )
+	Locate and remove:
+		if( !str_cmp( word, "Climate" ) )
+            {
+               tarea->weather->climate_temp = fread_number( fp );
+               tarea->weather->climate_precip = fread_number( fp );
+               tarea->weather->climate_wind = fread_number( fp );
+               break;
+            }
+	and:
+		if( !str_cmp( word, "Neighbor" ) )
+            {
+               NEIGHBOR_DATA *tnew;
+
+               CREATE( tnew, NEIGHBOR_DATA, 1 );
+               tnew->address = NULL;
+               tnew->name = fread_string( fp );
+               LINK( tnew, tarea->weather->first_neighbor, tarea->weather->last_neighbor, next, prev );
+               break;
+            }
+
+	Add:
+	case 'W':
+			KEY( "WeatherX", tarea->weatherx, fread_number( fp ) );
+			KEY( "WeatherY", tarea->weathery, fread_number( fp ) );
+			break;
+
+28. Find: /*
+ * Load climate information for the area
+ * Last modified: July 13, 1997
+ * Fireblade
+ */
+void load_climate( AREA_DATA * tarea, FILE * fp )
+{
+   if( !tarea )
+   {
+      bug( "load_climate: no #AREA seen yet" );
+      if( fBootDb )
+      {
+         shutdown_mud( "No #AREA" );
+         exit( 1 );
+      }
+      else
+         return;
+   }
+
+   tarea->weather->climate_temp = fread_number( fp );
+   tarea->weather->climate_precip = fread_number( fp );
+   tarea->weather->climate_wind = fread_number( fp );
+
+   return;
+}
+
+Replace with: /*
+ * Load climate information for the area
+ * Last modified: July 13, 1997
+ * Fireblade
+ */
+/*
+ * With the new Weather System, these are unneeded as the weather is it's own
+ * entity seperated from everything else. - Kayle 10-17-07
+ */
+void load_climate( AREA_DATA * tarea, FILE * fp )
+{
+   fread_number( fp );
+   fread_number( fp );
+   fread_number( fp );
+}
+
+
+29. Find: /*
+ * Load data for a neghboring weather system
+ * Last modified: July 13, 1997
+ * Fireblade
+ */
+void load_neighbor( AREA_DATA * tarea, FILE * fp )
+{
+   NEIGHBOR_DATA *tnew;
+
+   if( !tarea )
+   {
+      bug( "load_neighbor: no #AREA seen yet." );
+      if( fBootDb )
+      {
+         shutdown_mud( "No #AREA" );
+         exit( 1 );
+      }
+      else
+         return;
+   }
+
+   CREATE( tnew, NEIGHBOR_DATA, 1 );
+   tnew->next = NULL;
+   tnew->prev = NULL;
+   tnew->address = NULL;
+   tnew->name = fread_string( fp );
+   LINK( tnew, tarea->weather->first_neighbor, tarea->weather->last_neighbor, next, prev );
+
+   return;
+}
+
+Replace with: /*
+ * Load data for a neghboring weather system
+ * Last modified: July 13, 1997
+ * Fireblade
+ */
+/*
+ * With the new Weather System, these are unneeded as the weather is it's own
+ * entity seperated from everything else. - Kayle 10-17-07
+ */
+void load_neighbor( AREA_DATA * tarea, FILE * fp )
+{
+   fread_flagstring(fp);
+}
+
+30. Find save_sysdata:
+	Locate: fprintf( fp, "Pkloot	     %d\n", sys.pk_loot );
+
+	Below that, Add:
+       fprintf( fp, "Maxholiday	    %d\n", sys.maxholiday );
+       fprintf( fp, "Secpertick	    %d\n", sys.secpertick );
+       fprintf( fp, "Pulsepersec	    %d\n", sys.pulsepersec );
+       fprintf( fp, "Hoursperday	    %d\n", sys.hoursperday );
+       fprintf( fp, "Daysperweek	    %d\n", sys.daysperweek );
+       fprintf( fp, "Dayspermonth    %d\n", sys.dayspermonth );
+ 	 fprintf( fp, "Monthsperyear   %d\n", sys.monthsperyear );
+
+
+31. Find: bool load_systemdata( SYSTEM_DATA * sys )
+	Locate: KEY( "Dodgemod", sys->dodge_mod, fread_number( fp ) );
+
+	Below that, Add:
+		KEY( "Daysperweek", sys->daysperweek, fread_number( fp ) );
+            KEY( "Dayspermonth", sys->dayspermonth, fread_number( fp ) );
+	
+	Locate: KEY( "Highplayertime", sys->time_of_max, fread_string_nohash( fp ) );
+
+	Below that, Add:
+		KEY( "Hoursperday", sys->hoursperday, fread_number( fp ) );
+
+	Locate: KEY( "Muse", sys->muse_level, fread_number( fp ) );
+
+	Below that, Add:
+		KEY( "Maxholiday", sys->maxholiday, fread_number( fp ) );	
+            KEY( "Monthsperyear", sys->monthsperyear, fread_number( fp ) );
+
+	Locate: KEY( "Protoflag", sys->level_modify_proto, fread_number( fp ) );
+
+	Below that, Add:
+		KEY( "Pulsepersec", sys->pulsepersec, fread_number( fp ) );
+
+	Locate: KEY( "Savefreq", sys->save_frequency, fread_number( fp ) );
+
+	Below that, Add:
+		KEY( "Secpertick", sys->secpertick, fread_number( fp ) );
+
+	Locate: fclose( fp );
+      fp = NULL;
+	Below, Add:	  update_timers(  );
+      update_calendar(  );
+
+32. Locate and remove the following functions:
+	load_weatherdata
+	init_area_weather
+	save_weatherdata
+
+
+*****************
+* HANDLER.C     *
+*****************
+
+33. Find: /*
+ * Retrieve a character's age.
+ */
+short get_age( CHAR_DATA * ch )
+{
+   return 17 + ( ch->played + ( current_time - ch->logon ) ) / 7200;
+}
+Replace with:
+/* One hopes this will do as planned and determine how old a PC is based on the birthdate
+   we record at creation. - Samson 10-25-99 */
+short calculate_age( CHAR_DATA * ch )
+{
+   short age, num_days, ch_days;
+
+   if( IS_NPC( ch ) )
+      return -1;
+
+   num_days = ( time_info.month + 1 ) * sysdata.dayspermonth;
+   num_days += time_info.day;
+
+   ch_days = ( ch->pcdata->month + 1 ) * sysdata.dayspermonth;
+   ch_days += ch->pcdata->day;
+
+   age = time_info.year - ch->pcdata->year;
+
+   if( ch_days - num_days > 0 )
+      age -= 1;
+
+   return age;
+}
+
+
+
+*****************
+* MAGIC.C       *
+*****************
+
+34. Find: ch_ret spell_call_lightning( int sn, int level, CHAR_DATA * ch, void *vo )
+	Locate:
+   if( ch->in_room->area->weather->precip <= 0 )
+   {
+      send_to_char( "You need bad weather.\r\n", ch );
+      return rSPELL_FAILED;
+   }
+	Replace with:
+   struct	WeatherCell *cell = getWeatherCell( ch->in_room->area );
+	
+   if( getPrecip( cell ) < 40 && getEnergy( cell ) < 30 )
+   {
+      send_to_char( "You need bad weather.\r\n", ch );
+      return rSPELL_FAILED;
+   }
+
+35. Find: ch_ret spell_control_weather( int sn, int level, CHAR_DATA * ch, void *vo )
+
+Replace the whole function with:
+ch_ret spell_control_weather( int sn, int level, CHAR_DATA * ch, void *vo )
+{
+   SKILLTYPE *skill = get_skilltype( sn );
+   int change;
+   struct	WeatherCell *cell = getWeatherCell( ch->in_room->area );
+
+   change = URANGE( 5, number_range( 5, 15 ) + ( ch->level / 10 ), 15 );
+
+   if( !str_cmp( target_name, "warmer" ) )
+      IncreaseTemp( cell, change );
+   else if( !str_cmp( target_name, "colder" ) )
+      DecreaseTemp( cell, change );
+   else if( !str_cmp( target_name, "wetter" ) )
+      IncreasePrecip( cell, change );
+   else if( !str_cmp( target_name, "drier" ) )
+      DecreasePrecip( cell, change );
+   else if( !str_cmp( target_name, "stormier" ) )
+      IncreaseEnergy( cell, change );
+   else if( !str_cmp( target_name, "calmer" ) )
+      DecreaseEnergy( cell, change );
+   else
+   {
+      send_to_char( "Do you want it to get warmer, colder, wetter, " "drier, stormier, or calmer?\r\n", ch );
+      return rSPELL_FAILED;
+   }
+   successful_casting( skill, ch, NULL, NULL );
+   return rNONE;
+}
+
+36. Find: ch_ret spell_create_water( int sn, int level, CHAR_DATA * ch, void *vo )
+	Find: WEATHER_DATA *weath;
+	Replace with: struct	WeatherCell *cell = getWeatherCell( ch->in_room->area );
+
+	Little further down, find: weath = ch->in_room->area->weather;
+
+   water = UMIN( level * ( weath->precip >= 0 ? 4 : 2 ), obj->value[0] - obj->value[1] );
+	
+	Replace with: water = UMIN( level * ( getPrecip( cell ) >= 0 ? 4 : 2 ), obj->value[0] - obj->value[1] );
+
+
+37. Find: ch_ret spell_solar_flight( int sn, int level, CHAR_DATA * ch, void *vo )
+	Find: WEATHER_DATA *weath = ch->in_room->area->weather;
+	Replace with: struct	WeatherCell *cell = getWeatherCell( ch->in_room->area );
+
+	Further down, find: || weath->precip >= 0
+	Replace with: || getCloudCover( cell ) >= 20
+
+38. Find: ch_ret spell_obj_inv( int sn, int level, CHAR_DATA * ch, void *vo )
+	Find: WEATHER_DATA *weath = ch->in_room->area->weather;
+	Replace with:  struct	WeatherCell *cell = getWeatherCell( ch->in_room->area );
+
+	Littler further down, find: water = UMIN( ( skill->dice ? dice_parse( ch, level, skill->dice ) : level )
+                          * ( weath->precip >= 0 ? 2 : 1 ), obj->value[0] - obj->value[1] );
+	Replace with: water = UMIN( ( skill->dice ? dice_parse( ch, level, skill->dice ) : level )
+                          * ( getPrecip( cell ) >= 0 ? 2 : 1 ), obj->value[0] - obj->value[1] );
+
+
+
+*****************
+* MUD.H         *
+*****************
+
+39. In the list of defined structs, Find and remove:
+typedef struct weather_data WEATHER_DATA;
+typedef struct neighbor_data NEIGHBOR_DATA;  /* FB */
+
+40. Find: #define MAX_INBUF_SIZE		 1024
+	Below, Add: /* Shorthand versions used througout the code */
+#define MSL MAX_STRING_LENGTH 
+#define MIL MAX_INPUT_LENGTH
+
+41. Find: 
+#define SECONDS_PER_TICK			 70
+
+#define PULSE_PER_SECOND			  4
+#define PULSE_VIOLENCE				 (3 * PULSE_PER_SECOND)
+#define PULSE_MOBILE				 (4 * PULSE_PER_SECOND)
+#define PULSE_TICK		  (SECONDS_PER_TICK * PULSE_PER_SECOND)
+#define PULSE_AREA				(60 * PULSE_PER_SECOND)
+#define PULSE_AUCTION				 (9 * PULSE_PER_SECOND)
+
+Replace with:
+#define SECONDS_PER_TICK		sysdata.secpertick
+
+#define PULSE_PER_SECOND		sysdata.pulsepersec
+#define PULSE_VIOLENCE			sysdata.pulseviolence
+#define PULSE_MOBILE			sysdata.pulsemobile
+#define PULSE_TICK				sysdata.pulsetick
+#define PULSE_AREA				(60 * PULSE_PER_SECOND)
+#define PULSE_AUCTION				 (9 * PULSE_PER_SECOND)
+
+42. Find: #include "hotboot.h"
+	Below, Add: #include "calendar.h" /* AFKMud Calendar Replacement - Samson */
+#include "weather.h" /* Weather System Replacement -Kayle */
+
+43. Find: struct time_info_data
+	End of the struct, Add:
+   int season; /* Samson 5-6-99 */
+
+44. Find: struct pc_data
+	Near the bottom of the struct, add:
+   short age_bonus;
+   short age;
+   short day;
+   short month;
+   short year;
+   int timezone;
+
+45. Find: SECT_DUNNO, SECT_OCEANFLOOR, SECT_UNDERGROUND, SECT_LAVA, SECT_SWAMP, 
+	Change it to read: SECT_DUNNO, SECT_OCEANFLOOR, SECT_UNDERGROUND, SECT_LAVA, SECT_SWAMP, SECT_ICE,
+
+46. Find: struct area_data
+    Then Find: int low_economy;
+	Below that, Add:
+   short weatherx; /* Weather Cell Assignment for the X-Axis */
+   short weathery; /* Weather Cell Assignment for the Y-Axis */
+
+47. Find: struct system_data
+	At the end of the struct, Add:
+   int maxholiday; /* Maximum Number of Holidays settable. */
+   /* Settings Things for calendar - Most changable in cset */
+   int secpertick; 
+   int pulsepersec;
+   int pulsetick;
+   int pulseviolence;
+   int pulsemobile;
+   int pulsecalendar;
+   /* direct influence over the calendar */
+   int hoursperday;
+   int daysperweek;
+   int dayspermonth;
+   int monthsperyear;
+   int daysperyear;
+   int hoursunrise;
+   int hourdaybegin;
+   int hournoon;
+   int hoursunset;
+   int hournightbegin;
+   int hourmidnight;
+
+48. Find: struct room_index_data
+	Locate: short sector_type;
+	Below that, Add: short winter_sector;
+
+49. Find,and remove the following:
+ /* Define maximum number of climate settings - FB */
+ #define MAX_CLIMATE 5
+ 
+ struct weather_data
+ {
+ /*    int			mmhg;
+     int			change;
+     int			sky;
+     int			sunlight; */
+    int temp;   /* temperature */
+    int precip; /* precipitation */
+    int wind;   /* umm... wind */
+    int temp_vector;  /* vectors controlling */
+    int precip_vector;   /* rate of change */
+    int wind_vector;
+    int climate_temp; /* climate of the area */
+    int climate_precip;
+    int climate_wind;
+    NEIGHBOR_DATA *first_neighbor;   /* areas which affect weather sys */
+    NEIGHBOR_DATA *last_neighbor;
+    char *echo; /* echo string */
+    int echo_color;   /* color for the echo */
+ };
+ 
+ struct neighbor_data
+ {
+    NEIGHBOR_DATA *next;
+    NEIGHBOR_DATA *prev;
+    char *name;
+    AREA_DATA *address;
+ };
+ 
+50. Find, and remove the following: 
+extern int weath_unit;
+extern int rand_factor;
+extern int climate_factor;
+extern int neigh_factor;
+extern int max_vector;
+
+51. Find: #define HAS_BODYPART( ch, part ) ( xIS_EMPTY( (ch)->xflags ) || xIS_SET( (ch)->xflags, (part) ) )
+	Below that, Add:
+#define GET_TIME_PLAYED(ch)     (((ch)->played + (current_time - (ch)->logon)) / 3600)
+
+52. Locate and remove: DECLARE_DO_FUN( do_climate ); /* FB */
+
+
+*****************
+* PLAYER.C      *
+*****************
+
+53. Find: void do_score( CHAR_DATA * ch, char *argument )
+	Find: pager_printf( ch, "LEVEL: %-3d         Race : %-10.10s        Played: %d hours\r\n",
+                 ch->level, capitalize( get_race( ch ) ), ( get_age( ch ) - 17 ) * 2 );
+	Change to: pager_printf( ch, "LEVEL: %-3d         Race : %-10.10s        Played: %ld hours\r\n",
+                 ch->level, capitalize( get_race( ch ) ), ( long int )GET_TIME_PLAYED( ch ) );
+
+54. Find: void do_newscore( CHAR_DATA * ch, char *argument )
+	Find: pager_printf_color( ch, "Level: &W%-3d         &CRace : &W%-10.10s        &CPlayed: &W%d &Chours\r\n",
+                       ch->level, capitalize( get_race( ch ) ), ( get_age( ch ) - 17 ) * 2 );
+	Change to: pager_printf_color( ch, "Level: &W%-3d         &CRace : &W%-10.10s        &CPlayed: &W%ld &Chours\r\n",
+                       ch->level, capitalize( get_race( ch ) ), ( long int )GET_TIME_PLAYED( ch ) );
+
+55. Find: void do_oldscore( CHAR_DATA * ch, char *argument )
+	Find: pager_printf( ch,
+                   "You are %s%s, level %d, %d years old (%d hours).\r\n",
+                   ch->name, IS_NPC( ch ) ? "" : ch->pcdata->title, ch->level, get_age( ch ), ( get_age( ch ) - 17 ) * 2 );
+	Change to: pager_printf( ch,
+                   "You are %s%s, level %d, %d years old (%ld hours).\r\n",
+                  ch->name, IS_NPC( ch ) ? "" : ch->pcdata->title, ch->level, calculate_age( ch ), ( long int )GET_TIME_PLAYED( ch ) );
+
+
+
+OPTIONAL:
+	If you want players to be able to see their birthdays on score, you'll need to add the following to both do_score, and do_newscore.
+	
+	Top of each file, under int iLang; Add:
+   char *suf;
+   short day;
+
+   day = ch->pcdata->day + 1;
+
+   if( day > 4 && day < 20 )
+      suf = "th";
+   else if( day % 10 == 1 )
+      suf = "st";
+   else if( day % 10 == 2 )
+      suf = "nd";
+   else if( day % 10 == 3 )
+      suf = "rd";
+   else
+      suf = "th";
+
+	Then, wherever you want it displayed, I have mine just above bestowments add:
+	send_to_pager_color( "----------------------------------------------------------------------------\r\n", ch );
+    if( time_info.day == ch->pcdata->day && time_info.month == ch->pcdata->month )
+      send_to_char( "Today is your birthday!\r\n", ch );
+   else
+      ch_printf( ch, "Your birthday is: Day of %s, %d%s day in the Month of %s, in the year %d.\r\n",
+                 day_name[ch->pcdata->day % sysdata.daysperweek], day, suf, month_name[ch->pcdata->month], ch->pcdata->year );
+      send_to_pager_color( "----------------------------------------------------------------------------\r\n", ch );
+
+
+*****************
+* SAVE.C        *
+*****************
+
+56. Locate: 
+/*
+ * Increment with every major format change.
+ */
+#define SAVEVERSION 4
+
+Change to:
+/*
+ * Increment with every major format change.
+ * Upped to 5 for addition of new Age Setup. -Kayle
+ */
+#define SAVEVERSION 5
+
+57. Find: void re_equip_char( CHAR_DATA * ch )
+	Below this function, Add:
+short find_old_age( CHAR_DATA * ch )
+{
+   short age;
+
+   if( IS_NPC( ch ) )
+      return -1;
+
+   age = ch->played / 86400;   /* Calculate realtime number of days played */
+
+   age = age / 7; /* Calculates rough estimate on number of mud years played */
+
+   age += 17;  /* Add 17 years, new characters begin at 17. */
+
+   ch->pcdata->day = ( number_range( 1, sysdata.dayspermonth ) - 1 );   /* Assign random day of birth */
+   ch->pcdata->month = ( number_range( 1, sysdata.monthsperyear ) - 1 );   /* Assign random month of birth */
+   ch->pcdata->year = time_info.year - age;  /* Assign birth year based on calculations above */
+
+   return age;
+}
+
+58. Find: fread_char
+	Find: KEY( "AffectedBy", ch->affected_by, fread_bitvector( fp ) );
+
+	Below that, Add:
+ 		  if( file_ver < 5 )
+ 			find_old_age( ch );
+ 	        else
+ 		  {
+ 			if( !str_cmp( word, "Age" ) )
+			{
+				line = fread_line( fp );
+				x1 = x2 = x3 = x4 = 0;
+				sscanf( line, "%d %d %d %d", &x1, &x2, &x3, &x4 );
+				ch->pcdata->age_bonus = x1;
+				ch->pcdata->day = x2;
+				ch->pcdata->month = x3;
+				ch->pcdata->year = x4;
+				fMatch = TRUE;
+				break;
+			}
+ 		  }
+
+59. Find: fwrite_char
+	Find: fprintf( fp, "Race         %d\n", ch->race );
+
+	Below that, Add:
+   fprintf( fp, "Age          %d %d %d %d\n",
+            ch->pcdata->age_bonus, ch->pcdata->day, ch->pcdata->month, ch->pcdata->year );
+
+
+
+*****************
+* UPDATE.C      *
+*****************
+
+60. Find and remove:
+/* weather functions - FB */
+void adjust_vectors( WEATHER_DATA * weather );
+void get_weather_echo( WEATHER_DATA * weather );
+void get_time_echo( WEATHER_DATA * weather );
+
+And the corresponding functions:
+void adjust_vectors( 
+void weather_update(
+void get_weather_echo( 
+void get_time_echo( 
+
+Also: Find: /*
+ * Global Variables
+ */
+
+Below that, Add:
+CHAR_DATA *gch_prev;
+OBJ_DATA *gobj_prev;
+
+61. Locate: void time_update( void )
+And Replace with:
+/*
+ * update the time
+ */
+void time_update( void )
+{
+   DESCRIPTOR_DATA *d;
+   int n;
+   char *echo; /* echo string */
+   int echo_color;   /* color for the echo */
+
+   n = number_bits( 2 );
+   echo = NULL;
+   echo_color = AT_GREY;
+
+   ++time_info.hour;
+
+   if( time_info.hour == 1 )
+      update_month_trigger = FALSE; 
+
+   if( time_info.hour == sysdata.hourdaybegin || time_info.hour == sysdata.hoursunrise
+       || time_info.hour == sysdata.hournoon || time_info.hour == sysdata.hoursunset
+       || time_info.hour == sysdata.hournightbegin )
+   {
+      for( d = first_descriptor; d; d = d->next )
+      {
+         if( d->connected == CON_PLAYING && IS_OUTSIDE( d->character ) && IS_AWAKE( d->character ) )
+         {
+            struct	WeatherCell *cell = getWeatherCell( d->character->in_room->area );
+
+			switch( time_info.hour )
+			{
+				case 6:
+				{
+					char *echo_strings[4] = {
+						"The day has begun.\r\n",
+						"The day has begun.\r\n",
+						"The sky slowly begins to glow.\r\n",
+						"The sun slowly embarks upon a new day.\r\n"
+					};
+					time_info.sunlight = SUN_RISE;
+					echo = echo_strings[n];
+					echo_color = AT_YELLOW;
+					break;
+				}
+				case 7:
+				{
+					char *echo_strings[4] = {
+						"The sun rises in the east.\r\n",
+						"The sun rises in the east.\r\n",
+						"The hazy sun rises over the horizon.\r\n",
+						"Day breaks as the sun lifts into the sky.\r\n"
+					};
+					time_info.sunlight = SUN_LIGHT;
+					echo = echo_strings[n];
+					echo_color = AT_ORANGE;
+					break;
+				}
+				case 12:
+				{
+					if( getCloudCover( cell ) > 21 )
+					{
+						echo = "It's noon.\r\n";
+					}
+					else
+					{
+						char *echo_strings[2] = {
+							"The intensity of the sun heralds the noon hour.\r\n",
+							"The sun's bright rays beat down upon your shoulders.\r\n"
+						};
+						echo = echo_strings[n % 2];
+					}
+					time_info.sunlight = SUN_LIGHT;
+					echo_color = AT_WHITE;
+					break;
+				}
+				case 18:
+				{
+					 char *echo_strings[4] = {
+						"The sun slowly disappears in the west.\r\n",
+						"The reddish sun sets past the horizon.\r\n",
+						"The sky turns a reddish orange as the sun ends its journey.\r\n",
+						"The sun's radiance dims as it sinks in the sky.\r\n"
+					};
+					time_info.sunlight = SUN_SET;
+					echo = echo_strings[n];
+					echo_color = AT_RED;
+					break;
+				}
+				case 19:
+				{
+					if( getCloudCover( cell ) > 21 )
+					{
+						char *echo_strings[2] = {
+							"The night begins.\r\n",
+							"Twilight descends around you.\r\n"
+						};
+						echo = echo_strings[n % 2];
+					}
+					else
+					{
+						char *echo_strings[2] = {
+							"The moon's gentle glow diffuses through the night sky.\r\n",
+							"The night sky gleams with glittering starlight.\r\n"
+						};
+						echo = echo_strings[n % 2];
+					}
+					time_info.sunlight = SUN_DARK;
+					echo_color = AT_DBLUE;
+					break;
+				}
+			}
+
+            if( !echo )
+               continue;
+            set_char_color( echo_color, d->character );
+            send_to_char( echo, d->character );
+         }
+		 
+      }
+   }
+
+   if( time_info.hour == sysdata.hourmidnight )
+   {
+      time_info.hour = 0;
+      time_info.day++;
+	  RandomizeCells(  );
+      /*
+       * Sweep old crap from auction houses on daily basis - Samson 11-1-99 
+       */
+     // clean_auctions(  );
+   }
+
+   if( time_info.day >= sysdata.dayspermonth )
+   {
+      time_info.day = 0;
+      time_info.month++;
+      update_month_trigger = TRUE;
+   }
+
+   if( time_info.month >= sysdata.monthsperyear )
+   {
+      time_info.month = 0;
+      time_info.year++;
+   }
+   calc_season(  );  /* Samson 5-6-99 */
+   /*
+    * Save game world time - Samson 1-21-99 
+    */
+   save_timedata(  );
+   return;
+}
+
+62. Locate: void char_update( void )
+	Just Above, Add: 
+/* Anything that should be updating based on time should go here - like hunger/thirst for one */
+void char_calendar_update( void )
+{
+   CHAR_DATA *ch;
+
+   for( ch = last_char; ch; ch = gch_prev )
+   {
+      if( ch == first_char && ch->prev )
+      {
+         bug( "%s", "char_calendar_update: first_char->prev != NULL... fixed" );
+         ch->prev = NULL;
+      }
+      gch_prev = ch->prev;
+      if( gch_prev && gch_prev->next != ch )
+      {
+         bug( "%s", "char_calendar_update: ch->prev->next != ch" );
+         return;
+      }
+
+      if( !IS_NPC( ch ) && !IS_IMMORTAL( ch ) )
+      {
+         gain_condition( ch, COND_DRUNK, -1 );
+
+         /*
+          * Newbies won't starve now - Samson 10-2-98 
+          */
+         if( ch->in_room && ch->level > 3 )
+            gain_condition( ch, COND_FULL, -1 + race_table[ch->race]->hunger_mod );
+
+         /*
+          * Newbies won't dehydrate now - Samson 10-2-98 
+          */
+         if( ch->in_room && ch->level > 3 )
+         {
+            int sector;
+
+            sector = ch->in_room->sector_type;
+
+            switch ( sector )
+            {
+               default:
+                  gain_condition( ch, COND_THIRST, -1 + race_table[ch->race]->thirst_mod );
+                  break;
+               case SECT_DESERT:
+                  gain_condition( ch, COND_THIRST, -3 + race_table[ch->race]->thirst_mod );
+                  break;
+               case SECT_UNDERWATER:
+               case SECT_OCEANFLOOR:
+                  if( number_bits( 1 ) == 0 )
+                     gain_condition( ch, COND_THIRST, -1 + race_table[ch->race]->thirst_mod );
+                  break;
+            }
+         }
+      }
+   }
+}
+
+63. Inside: void char_update( void )
+	Find and Remove:
+	if( ch->in_room )
+            switch ( ch->in_room->sector_type )
+            {
+               default:
+                  gain_condition( ch, COND_THIRST, -1 + race_table[ch->race]->thirst_mod );
+                  break;
+               case SECT_DESERT:
+                  gain_condition( ch, COND_THIRST, -3 + race_table[ch->race]->thirst_mod );
+                  break;
+               case SECT_UNDERWATER:
+               case SECT_OCEANFLOOR:
+                  if( number_bits( 1 ) == 0 )
+                     gain_condition( ch, COND_THIRST, -1 + race_table[ch->race]->thirst_mod );
+                  break;
+            }
+
+64. Find: void update_handler( void )
+	Find:static int pulse_second;
+   	Below that, Add: static int pulse_time;
+	
+	Further down, Find: if( --pulse_point <= 0 )
+   {
+      pulse_point = number_range( ( int )( PULSE_TICK * 0.75 ), ( int )( PULSE_TICK * 1.25 ) );
+
+      auth_update(  );  /* Gorog */
+      time_update(  );
+      weather_update(  );
+      hint_update(  );
+      char_update(  );
+      obj_update(  );
+      clear_vrooms(  ); /* remove virtual rooms */
+   }
+
+	Replace with:  if( --pulse_time <= 0 )
+   {
+      pulse_time = sysdata.pulsecalendar;
+      char_calendar_update(  );
+   }
+
+   if( --pulse_point <= 0 )
+   {
+      pulse_point = number_range( ( int )( PULSE_TICK * 0.75 ), ( int )( PULSE_TICK * 1.25 ) );
+
+      auth_update(  );  /* Gorog */
+      time_update(  );  /* If looking for slower passing time, move this to just above char_calendar_update(  ); */
+      UpdateWeather(  ); /* New Weather Updater -Kayle */
+      hint_update(  );
+      char_update(  );
+      obj_update(  );
+      clear_vrooms(  ); /* remove virtual rooms */
+   }
+
+
+
+*****************
+
+65. In the following files:
+act_info.c
+act_wiz.c
+fight.c
+magic.c
+mud.h
+player.c
+
+Replace all occurences of get_age with calculate_age
+
+*****************
+* MAKEFILE      *
+*****************
+
+66. Add calendar.c and weather.c to your Makefile.
+
+67. Make clean, compile.
+
+68. Open up commands.dat, and remove the following:
+#COMMAND
+Name        climate~
+Code        do_climate
+Position    100
+Level       61
+Log         0
+End
+
+
+69. Boot mud, log in on your Imm and do the following:
+cedit weather level 1
+cedit setweather level 60
+cedit setweather log 1
+cedit showweather level 51
+cedit timezone create do_timezone
+cedit timezone level 1
+cedit holidays create do_holidays
+cedit holidays level 7
+cedit setholiday create do_setholiday
+cedit setholiday level 60
+cedit setholiday log 1
+cedit saveholiday create do_saveholiday
+cedit saveholiday level 60
+cedit save cmdtable
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://www.fussproject.org.
+
+This code has been installed and tested on Smaug 1.8 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.fussproject.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and I am not responsible for any damages which may result
+from the application of this snippet to your codebase. I cannot guarantee compatibility
+any codebase outside of Smaug.
+
+Kayle
+Owner/Coder
+Malevolent Whispers
+telnet://whispers.arthmoor.com:1070
+http://whispers.arthmoor.com
+
+IMC2 Contact: Kayle@MW
+            : Kayle@MWDev

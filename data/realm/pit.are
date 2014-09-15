@@ -1,0 +1,1827 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Pit Fighters' Arena~
+Author          Zafnax~
+Vnums           3300 3338
+Continent       one~
+Coordinates     0 0
+Dates           1403837156 1403837156
+Ranges          10 50 0 115
+ResetFreq       15
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      3300
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter brandishes his flail menacingly.
+~
+Desc      This fellow has been trained from birth for but one purpose- to fight in
+the pits until he achieves sufficient wealth to buy his freedom or until
+he is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    4 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3301
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter brandishes her trident menacingly.
+~
+Desc      This woman has been trained from birth for but one purpose- to fight in
+the pits until she achieves sufficient wealth to buy his freedom or until
+she is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    4 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3302
+Keywords  ref referee~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the ref~
+Long      The pit ref struggles to keep the competitors at bay until the next round.
+~
+Desc      This beleagured fellow's sole task is to attempt to adjudicate the pit
+fights and stop the fighters from killing each other until the right time.
+He has a rather tough time of it, as the many scars on his body attest, but
+he looks bad enough to handle himself.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    8 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3303
+Keywords  member audience spectator~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     an audience member~
+Long      An audience member cheers himself hoarse as another pit fighter falls.
+~
+Desc      This bloodthirsty spectator comes to the fights to watch men and women slay
+each other, or to watch them be torn apart by wild animals, placing bets on
+the outcome.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    3 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3304
+Keywords  member audience spectator~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     an audience member~
+Long      An audience member cheers herself hoarse as another pit fighter falls.
+~
+Desc      This bloodthirsty spectator comes to the fights to watch men and women slay
+each other, or to watch them be torn apart by wild animals, placing bets on
+the outcome.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    3 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3305
+Keywords  bookie~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a bookie~
+Long      A bookie roams the stands collecting bets.
+~
+Desc      This ambitious entrepeneur has made a LOT of money arranging bets on the
+illegal fights carried out in this arena of death. He asks you if you wish
+to place a small wager on the outcome of the next fight.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3306
+Keywords  food vendor~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a food vendor~
+Long      A food vendor sells snacks here to the spectators.
+~
+Desc      It may seem a little off to be serving light refreshments at a pit fight, but
+hell, if ya gotta eat, ya gotta eat.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    9 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary infrared protect~
+ShopData   17 19 1 0 0 120 80 0 23
+#ENDMOBILE
+
+#MOBILE
+Vnum      3307
+Keywords  wild dog~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a wild dog~
+Long      A wild dog snarls at you and attacks!
+~
+Desc      This vicious little mongrel has been specially trained through a mixture of
+starvation and abuse to be as mean and violent as possible. It is aching to
+tear the flesh from as many people as it can.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3308
+Keywords  fighting cock~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_acid~
+Short     a fighting cock~
+Long      A fighting cock struts proudly past you.
+~
+Desc      This rooster has been specially trained to fight in the arena against other
+cocks for the enjoyment of the bloodthirsty spectators.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    2 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3309
+Keywords  boar~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a wild boar~
+Long      A wild boar grunts and charges at you.
+~
+Desc      These ferocious swine were captured on the Plains of Blood and brought here
+to use in mortal combat against the pit fighters.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    7 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3310
+Keywords  pit master~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the pit master~
+Long      The pit master cackles at you, and asks if you want to fight.
+~
+Desc      The pit master has been capturing and training potential pit fighters all
+his adult life. And though you are a little older than most of his students
+when they begin training, he still sizes you up as a potential combatant.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3311
+Keywords  pit guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     a pit guard~
+Long      A pit guard patrols for escaping pit fighters.
+~
+Desc      These guards are kept to make sure the pit fighters don't escape. Most of
+them are retired pit fighters themselves, and are thus very well-trained
+and lethal.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    8 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3312
+Keywords  pit fighter champion champ butch~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the champion~
+Long      Butch, the pit fighter champion, flexes his muscles and roars!
+~
+Desc      Butch has fought an unprecedented 100 fights, and has not lost a one (well
+that's obvious- if he had lost he wouldn't be alive). He is also one of
+the most vicious and brutal of the pit fighters, and specializes in slaying
+his opponents by grabbing them when they are stunned and snapping them in
+half.
+~
+Nattacks  0.000000
+Stats1    -800 0 0 0 0 0
+Stats2    12 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3313
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter brandishes his flail menacingly.
+~
+Desc      This fellow has been trained from birth for but one purpose- to fight in
+the pits until he achieves sufficient wealth to buy his freedom or until
+he is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3314
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter brandishes her dagger menacingly.
+~
+Desc      This woman has been trained from birth for but one purpose- to fight in
+the pits until she achieves sufficient wealth to buy his freedom or until
+she is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    4 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3315
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter brandishes his spear menacingly.
+~
+Desc      This fellow has been trained from birth for but one purpose- to fight in
+the pits until he achieves sufficient wealth to buy his freedom or until
+he is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3316
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter brandishes her trident menacingly.
+~
+Desc      This woman has been trained from birth for but one purpose- to fight in
+the pits until she achieves sufficient wealth to buy his freedom or until
+she is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    4 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3317
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter battles ferociously against wild beasts here.
+~
+Desc      This fellow has been trained from birth for but one purpose- to fight in
+the pits until he achieves sufficient wealth to buy his freedom or until
+he is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3318
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter battles ferociously against wild beasts here.
+~
+Desc      This woman has been trained from birth for but one purpose- to fight in
+the pits until she achieves sufficient wealth to buy his freedom or until
+she is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    4 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3319
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter brandishes his spear menacingly.
+~
+Desc      This fellow has been trained from birth for but one purpose- to fight in
+the pits until he achieves sufficient wealth to buy his freedom or until
+he is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3320
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter brandishes her spear menacingly.
+~
+Desc      This woman has been trained from birth for but one purpose- to fight in
+the pits until she achieves sufficient wealth to buy his freedom or until
+she is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    4 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3321
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter is resting here.
+~
+Desc      This fellow has been trained from birth for but one purpose- to fight in
+the pits until he achieves sufficient wealth to buy his freedom or until
+he is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      3322
+Keywords  pit fighter~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a pit fighter~
+Long      A pit fighter is resting here.
+~
+Desc      This woman has been trained from birth for but one purpose- to fight in
+the pits until she achieves sufficient wealth to buy his freedom or until
+she is slain.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    4 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#OBJECT
+Vnum      3300
+Keywords  flail~
+Type      weapon~
+Short     a military flail~
+Long      A military flail has been left here.~
+WFlags    take~
+Values    0 0 0 4 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3301
+Keywords  trident~
+Type      weapon~
+Short     a trident~
+Long      A barbed trident is stuck in the ground here.~
+WFlags    take~
+Values    0 0 0 2 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3302
+Keywords  shield~
+Type      armor~
+Short     a bronze shield~
+Long      A bronze shield lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     7 0 -2 9999 0 None None None
+AffData armor -3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3303
+Keywords  helm~
+Type      armor~
+Short     a bronze helm~
+Long      A bronze helm has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3304
+Keywords  breast plate breastplate~
+Type      armor~
+Short     a bronze breastplate~
+Long      A bronze breastplate lies on the floor here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     9 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3305
+Keywords  greaves~
+Type      armor~
+Short     a pair of bronze greaves~
+Long      A pair of bronze greaves has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     6 0 -2 9999 0 None None None
+AffData intelligence -1 -1 -1 0
+AffData move -20 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3306
+Keywords  bracer~
+Type      armor~
+Short     a bronze bracer~
+Long      A bronze bracer is lying on the floor here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3307
+Keywords  dagger~
+Type      weapon~
+Short     an obsidian dagger~
+Long      An obsidian dagger is wedged into a crack in the floor here.~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3308
+Keywords  net~
+Type      wand~
+Short     a net~
+Long      A net has been piled up on the floor here.~
+WFlags    take~
+Values    5 1 1 -1 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+Spells       'weaken'
+#ENDOBJECT
+
+#OBJECT
+Vnum      3309
+Keywords  spear~
+Type      pipe~
+Short     a sturdy spear~
+Long      A sturdy spear with a barbed head is stuck in the wall here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3310
+Keywords  girdle~
+Type      armor~
+Short     a leather girdle~
+Long      A leather girdle with bronze studs is curled up on the floor here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3311
+Keywords  slip~
+Type      treasure~
+Short     a betting slip~
+Long      A betting slip has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 150 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3312
+Keywords  belt pouch~
+Type      container~
+Short     a belt pouch~
+Long      A belt pouch lies here.~
+WFlags    take~
+Values    10 1 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3313
+Keywords  dog collar~
+Type      armor~
+Short     a dog collar~
+Long      A dog collar has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3314
+Keywords  rooster collar~
+Type      armor~
+Short     a rooster collar~
+Long      A rooster collar has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3315
+Keywords  boar collar~
+Type      armor~
+Short     a boar collar~
+Long      A boar collar has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3316
+Keywords  cloak~
+Type      armor~
+Short     a fine cloak~
+Long      A fine cloak has been neatly folded up here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData save_breath -1 -1 -1 0
+AffData sex 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3317
+Keywords  gauntlets~
+Type      armor~
+Short     a pair of leather gauntlets~
+Long      These leather gauntlets look very supple and well-made.~
+Flags     hum~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3318
+Keywords  bracers~
+Type      armor~
+Short     a set of leather bracers~
+Long      A set of leather bracers lie here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData hit 5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3319
+Keywords  sandals~
+Type      armor~
+Short     a pair of sandals~
+Long      A pair of sandals has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3320
+Keywords  sword~
+Type      weapon~
+Short     an iron sword~
+Long      A rare iron sword lies in its scabbard here.~
+Flags     nodrop antigood evil~
+WFlags    take~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     13 0 -2 9999 0 None None None
+AffData strength 1 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3321
+Keywords  tunic~
+Type      armor~
+Short     an embroidered tunic~
+Long      An embroidered tunic lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3322
+Keywords  ring~
+Type      armor~
+Short     a pit guard's ring~
+Long      A pit guard's ring has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+AffData hit 8 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3323
+Keywords  helm~
+Type      armor~
+Short     a plumed bronze helm~
+Long      A plumed bronze helm rests here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData dexterity 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3324
+Keywords  club~
+Type      armor~
+Short     a stout club~
+Long      A stout club used for subduing slaves lies here.~
+WFlags    take~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3325
+Keywords  shield~
+Type      armor~
+Short     a bronze shield~
+Long      A bronze shield with a gold insignia lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData armor -8 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3326
+Keywords  greaves~
+Type      armor~
+Short     a pair of lightweight bronze greaves~
+Long      A pair of lightweight bronze greaves has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData move 20 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3327
+Keywords  girdle~
+Type      armor~
+Short     a broad girdle~
+Long      A broad girdle is laid out here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData hit 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3328
+Keywords  cloak~
+Type      armor~
+Short     a pit guard's cloak~
+Long      A pit guard's cloak lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData save_breath -1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3329
+Keywords  cuirass~
+Type      armor~
+Short     a bronze cuirass~
+Long      A bronze cuirass has been left here.~
+WFlags    take~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData armor -5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3330
+Keywords  champ girdle~
+Type      armor~
+Short     the champ's girdle~
+Long      The champ's girdle is here! Wear it!~
+Flags     glow magic noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData strength 1 -1 -1 0
+AffData constitution 1 -1 -1 0
+AffData hit 5 -1 -1 0
+AffData armor -6 -1 -1 0
+AffData sex 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3331
+Keywords  great axe~
+Type      weapon~
+Short     a great axe~
+Long      A great axe is leaned against a wall here.~
+Flags     hum antigood evil~
+WFlags    take~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     25 0 -2 9999 0 None None None
+AffData damroll 5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3332
+Keywords  mask~
+Type      armor~
+Short     a black mask~
+Long      A black mask is here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3333
+Keywords  boots~
+Type      armor~
+Short     a pair of fur boots~
+Long      A pair of fur boots has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     7 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3334
+Keywords  water flask~
+Type      drinkcon~
+Short     a flask of water~
+Long      A flask of water rests here.~
+WFlags    take~
+Values    5 5 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3335
+Keywords  wine flask~
+Type      drinkcon~
+Short     a flask of wine~
+Long      A flask of wine rests here.~
+WFlags    take~
+Values    5 5 2 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3336
+Keywords  meat~
+Type      food~
+Short     a strip of dried meat~
+Long      A strip of dried meat lies here.~
+WFlags    take~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      3337
+Keywords  bone~
+Type      weapon~
+Short     a bone~
+Long      A human bone lies here.~
+WFlags    take~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+AffData hitroll -2 -1 -1 0
+AffData damroll -2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      3338
+Keywords  raw meat~
+Type      food~
+Short     some raw meat~
+Long      A pile of raw meat lies here festering.~
+WFlags    take~
+Values    8 0 0 1 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      3300
+Name      Entry to the Pits~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are heading down a steep staircase toward a dimly-lit room which serves
+as the entry to the Pits- the bloodstained arenas where lethal fights between
+pit fighters and animals take place, accompanied by the betting of the
+bloodthirsty spectators. This cruel sport was abolished by the time of
+Present Anon, but here in the past it is alive and well.
+~
+#EXIT
+Direction up~
+ToRoom    14100
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3301
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      3301
+Name      The Entryway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Passages run in all directions from this large central area. Spectators
+rush back and forth, toward the main pits to the east and west, eager for
+action. You hear shouts, cheers and screams echoing from each of these
+directions. There is a large sign post in the center of the room which
+gives directions.
+~
+#EXIT
+Direction north~
+ToRoom    3302
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3306
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3304
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3314
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3300
+#ENDEXIT
+
+Reset M 3303 12 3301 -1 -1 -1 100
+Reset M 3304 12 3301 -1 -1 -1 100
+Reset M 3311 12 3301 -1 -1 -1 100
+  Reset E 3322 1 1 100
+  Reset E 3323 1 6 100
+  Reset E 3324 1 16 100
+  Reset E 3325 1 11 100
+  Reset E 3326 1 7 100
+  Reset E 3327 1 13 100
+  Reset E 3328 1 3 100
+  Reset E 3329 1 5 100
+#EXDESC
+ExDescKey    signpost~
+ExDesc       The signpost reads-
+
+NORTH- The Dog Pens. Keep Out!
+
+SOUTH- The Cock Pens. Keep Out!
+
+EAST- The Beast Pit.
+
+WEST- The Fighter Pit.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      3302
+Name      Outside the Dog Pens~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      From behind the door to the east you can hear the barking and growling of
+what sounds like several large savage dogs. A huge sign on the door reads-
+"DANGER. WILD DOGS. KEEP OUT!". Hmm...
+~
+#EXIT
+Direction east~
+ToRoom    3303
+Desc      The door has a sign warning people to stay away~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3301
+#ENDEXIT
+
+Reset D 3302 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3303
+Name      The Dog Pens~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Yup. This is them all right. You aren't sure what gives it away more- the
+piles of raw meat and steaming dog turds, or the rather large and mean-
+looking dogs themselves...
+~
+#EXIT
+Direction west~
+ToRoom    3302
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 3307 9 3303 -1 -1 -1 100
+  Reset E 3313 1 3 100
+Reset O 3337 1 3303 -1 -1 -1 100
+Reset O 3338 1 3303 -1 -1 -1 100
+Reset D 3303 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3304
+Name      Outside the Cock Pens~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      From the east comes the sounds of several roosters squabbling and feeding.
+The sound of their steel-tipped claws scraping on the stone floor causes
+you to shudder. There seems to be little to be gained by disturbing them,
+but then again adventurers are always barging into the lairs of aggressive
+animals.
+~
+#EXIT
+Direction north~
+ToRoom    3301
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3305
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 3304 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3305
+Name      Inside the Cock Pens~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This room looks like a subterranean farmyard, complete with a small wooden
+shed and troughs containing bird seed and water. You see a water pump in
+one corner. These cocks are well looked after.
+~
+#EXIT
+Direction west~
+ToRoom    3304
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 3308 9 3305 -1 -1 -1 100
+  Reset E 3314 1 3 100
+Reset O 3337 1 3305 -1 -1 -1 100
+Reset D 3305 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3306
+Name      Outside the Beast Pits~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      To the west lie a series of beast pits where a variety of animals battle
+each other as well as the occasional pit fighter. You hear loud cheers amid
+the cries of wounded animals.
+~
+#EXIT
+Direction east~
+ToRoom    3307
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3301
+#ENDEXIT
+
+Reset M 3306 1 3306 -1 -1 -1 100
+  Reset G 3334 0 100
+  Reset G 3335 0 100
+  Reset G 3336 0 100
+#ENDROOM
+
+#ROOM
+Vnum      3307
+Name      The Stands~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Crowds gather here to observe the fighting taking place in the pit below.
+Peering down, you see what looks like wild boars battling with a rather
+beleagured pit fighter, who seems to have little chance of winning. The
+spectators are all betting on the boars...
+~
+#EXIT
+Direction north~
+ToRoom    3308
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3309
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    3306
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3310
+#ENDEXIT
+
+Reset M 3302 6 3307 -1 -1 -1 100
+  Reset E 3324 1 16 100
+Reset M 3303 12 3307 -1 -1 -1 100
+Reset M 3304 12 3307 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3308
+Name      The Stands~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Crowds gather here to observe the fighting taking place in the pit below.
+Peering down, you see what looks like wild dogs battling each other, snapping
+and snarling as they gnaw at each other's vitals. The spectators are all
+cheering wildly. You find yourself feeling rather ill.
+~
+#EXIT
+Direction south~
+ToRoom    3307
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3311
+#ENDEXIT
+
+Reset M 3302 6 3308 -1 -1 -1 100
+  Reset E 3324 1 16 100
+Reset M 3303 12 3308 -1 -1 -1 100
+Reset M 3304 12 3308 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3309
+Name      The Stands~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Crowds gather here to observe the fighting taking place in the pit below.
+Peering down, you see what looks like roosters battling with each other
+in a small ring. They are rather battered-looking, and both look close to
+exhaustion.
+~
+#EXIT
+Direction north~
+ToRoom    3307
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3312
+#ENDEXIT
+
+Reset M 3302 6 3309 -1 -1 -1 100
+  Reset E 3324 1 16 100
+Reset M 3303 12 3309 -1 -1 -1 100
+Reset M 3304 12 3309 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3310
+Name      The Boar Pit~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Uh Oh. You have jumped down into the boar pit. Not a wise move. Its likely
+that the boars will turn on you, and also probable that the pit fighter
+will as well, for making him look weak by trying to save him (even if you
+weren't...).
+~
+#EXIT
+Direction east~
+ToRoom    3313
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3307
+#ENDEXIT
+
+Reset M 3309 4 3310 -1 -1 -1 100
+  Reset E 3315 1 3 100
+Reset M 3317 1 3310 -1 -1 -1 100
+  Reset E 3300 1 16 100
+  Reset E 3302 1 11 100
+  Reset E 3309 1 17 100
+  Reset E 3303 1 6 100
+  Reset E 3304 1 5 100
+  Reset E 3305 1 7 100
+  Reset E 3306 1 14 100
+  Reset E 3306 1 15 100
+  Reset E 3310 1 13 100
+Reset M 3318 1 3310 -1 -1 -1 100
+  Reset E 3300 1 16 100
+  Reset E 3302 1 11 100
+  Reset E 3309 1 17 100
+  Reset E 3303 1 6 100
+  Reset E 3304 1 5 100
+  Reset E 3305 1 7 100
+  Reset E 3306 1 14 100
+  Reset E 3306 1 15 100
+  Reset E 3310 1 13 100
+Reset O 3337 1 3310 -1 -1 -1 100
+Reset D 3310 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3311
+Name      The Dog Pit~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Way to go slick. Just drop right on down into a pit full of savage dogs.
+How brilliant. The crowd up above goes wild though, at the thought of fresh
+blood.
+~
+#EXIT
+Direction east~
+ToRoom    3324
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3308
+#ENDEXIT
+
+Reset M 3307 9 3311 -1 -1 -1 100
+  Reset E 3313 1 3 100
+Reset O 3337 1 3311 -1 -1 -1 100
+Reset D 3311 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3312
+Name      The Cock Pit~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a small ring with two roosters. Amazingly enough, they
+don't react violently to your intrusions- they are probably too tired. The
+audience above is yelling for you to clear out.
+~
+#EXIT
+Direction east~
+ToRoom    3325
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3309
+#ENDEXIT
+
+Reset M 3308 9 3312 -1 -1 -1 100
+  Reset E 3314 1 3 100
+Reset O 3337 1 3312 -1 -1 -1 100
+Reset D 3312 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3313
+Name      The Boar Pens~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The boars are kept in this room that runs off the pit. They are released
+near combat time by the pit guards, then ushered back with tridents and
+large clubs.
+~
+#EXIT
+Direction west~
+ToRoom    3310
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 3309 4 3313 -1 -1 -1 100
+  Reset E 3315 1 3 100
+Reset O 3338 1 3313 -1 -1 -1 100
+Reset D 3313 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3314
+Name      The Stands~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Crowds gather here to observe the fighting taking place in the pit below.
+Peering down, you see pit fighters battling with each other using a variety
+of weapons and armor. The audience is busy placing bets. A staircase leads
+up to the owner's box.
+
+More pits lie to the north and south.
+~
+#EXIT
+Direction north~
+ToRoom    3315
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    3301
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    3316
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3321
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3318
+#ENDEXIT
+
+Reset M 3302 6 3314 -1 -1 -1 100
+  Reset E 3324 1 16 100
+Reset M 3303 12 3314 -1 -1 -1 100
+Reset M 3304 12 3314 -1 -1 -1 100
+Reset M 3305 1 3314 -1 -1 -1 100
+  Reset G 3311 0 100
+#ENDROOM
+
+#ROOM
+Vnum      3315
+Name      The Stands~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Crowds gather here to observe the fighting taking place in the pit below.
+Peering down, you see pit fighters battling with each other using a variety
+of weapons and armor. The audience is busy placing bets.
+~
+#EXIT
+Direction south~
+ToRoom    3314
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3317
+#ENDEXIT
+
+Reset M 3302 6 3315 -1 -1 -1 100
+  Reset E 3324 1 16 100
+Reset M 3303 12 3315 -1 -1 -1 100
+Reset M 3304 12 3315 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3316
+Name      The Stands~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Crowds gather here to observe the fighting taking place in the pit below.
+Peering down, you see pit fighters battling with each other using a variety
+of weapons and armor. The audience is busy placing bets.
+~
+#EXIT
+Direction north~
+ToRoom    3314
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    3319
+#ENDEXIT
+
+Reset M 3302 6 3316 -1 -1 -1 100
+  Reset E 3324 1 16 100
+Reset M 3303 12 3316 -1 -1 -1 100
+Reset M 3304 12 3316 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      3317
+Name      A Pit~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Pit fighters in this pit rush at each other with the most bizarre weapons
+you have ever seen. They seem to be designed more for their ability to
+inflict pain than for practicality. The fighters are intent on their combat
+and ignore you, though the audience above issues catcalls and demand you
+get out at once. Or join in ;)
+~
+#EXIT
+Direction west~
+ToRoom    3322
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3315
+#ENDEXIT
+
+Reset M 3300 1 3317 -1 -1 -1 100
+  Reset E 3300 1 16 100
+  Reset E 3302 1 11 100
+  Reset E 3303 1 6 100
+  Reset E 3304 1 5 100
+  Reset E 3305 1 7 100
+  Reset E 3306 1 14 100
+  Reset E 3306 1 15 100
+  Reset E 3310 1 13 100
+Reset M 3301 1 3317 -1 -1 -1 100
+  Reset E 3301 1 16 100
+  Reset E 3308 1 17 100
+  Reset E 3303 1 6 100
+  Reset E 3304 1 5 100
+  Reset E 3305 1 7 100
+  Reset E 3306 1 14 100
+  Reset E 3306 1 15 100
+  Reset E 3310 1 13 100
+Reset M 3316 1 3317 -1 -1 -1 100
+  Reset E 3301 1 16 100
+  Reset E 3308 1 17 100
+  Reset E 3303 1 6 100
+  Reset E 3304 1 5 100
+  Reset E 3305 1 7 100
+  Reset E 3306 1 14 100
+  Reset E 3306 1 15 100
+  Reset E 3310 1 13 100
+Reset M 3319 1 3317 -1 -1 -1 100
+  Reset E 3300 1 16 100
+  Reset E 3308 1 17 100
+  Reset E 3303 1 6 100
+  Reset E 3304 1 5 100
+  Reset E 3305 1 7 100
+  Reset E 3306 1 14 100
+  Reset E 3306 1 15 100
+  Reset E 3310 1 13 100
+Reset M 3320 1 3317 -1 -1 -1 100
+  Reset E 3301 1 16 100
+  Reset E 3302 1 11 100
+  Reset E 3303 1 6 100
+  Reset E 3304 1 5 100
+  Reset E 3305 1 7 100
+  Reset E 3306 1 14 100
+  Reset E 3306 1 15 100
+  Reset E 3310 1 13 100
+Reset O 3337 1 3317 -1 -1 -1 100
+Reset D 3317 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3318
+Name      A Pit~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Pit fighters in this pit rush at each other with the most bizarre weapons
+you have ever seen. They seem to be designed more for their ability to
+inflict pain than for praticality. The fighters are intent on their combat
+and ignore you, though the audience above issues catcalls and demand you
+get out at once. Or join in ;)
+~
+#EXIT
+Direction west~
+ToRoom    3320
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3314
+#ENDEXIT
+
+Reset M 3312 1 3318 -1 -1 -1 100
+  Reset E 3330 1 13 100
+  Reset E 3331 1 16 100
+  Reset E 3332 1 6 100
+  Reset E 3333 1 8 100
+Reset M 3313 1 3318 -1 -1 -1 100
+  Reset E 3300 1 16 100
+  Reset E 3302 1 11 100
+  Reset E 3303 1 6 100
+  Reset E 3304 1 5 100
+  Reset E 3305 1 7 100
+  Reset E 3306 1 14 100
+  Reset E 3306 1 15 100
+  Reset E 3310 1 13 100
+Reset M 3314 1 3318 -1 -1 -1 100
+  Reset E 3307 1 16 100
+  Reset E 3308 1 17 100
+  Reset E 3303 1 6 100
+  Reset E 3304 1 5 100
+  Reset E 3305 1 7 100
+  Reset E 3306 1 14 100
+  Reset E 3306 1 15 100
+  Reset E 3310 1 13 100
+Reset O 3337 1 3318 -1 -1 -1 100
+Reset D 3318 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3319
+Name      A Pit~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Pit fighters in this pit rush at each other with the most bizarre weapons
+you have ever seen. They seem to be designed more for their ability to
+inflict pain than for praticality. The fighters are intent on their combat
+and ignore you, though the audience above issues catcalls and demand you
+get out at once. Or join in ;)
+~
+#EXIT
+Direction west~
+ToRoom    3323
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    3316
+#ENDEXIT
+
+Reset M 3315 1 3319 -1 -1 -1 100
+  Reset E 3309 1 16 100
+  Reset E 3302 1 11 100
+  Reset E 3303 1 6 100
+  Reset E 3304 1 5 100
+  Reset E 3305 1 7 100
+  Reset E 3306 1 14 100
+  Reset E 3306 1 15 100
+  Reset E 3310 1 13 100
+Reset O 3337 1 3319 -1 -1 -1 100
+Reset D 3319 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3320
+Name      Pit Fighter Barracks~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The Pit Fighters are quartered in these dingy rooms that open up onto the
+pit. Guards are usually here to make sure that they don't escape. The guards
+live in the town above.
+~
+#EXIT
+Direction east~
+ToRoom    3318
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 3321 6 3320 -1 -1 -1 100
+Reset M 3322 6 3320 -1 -1 -1 100
+Reset D 3320 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3321
+Name      The Owner's Box~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The Pit master sits up here, with whatever young girl (or boy) he is courting
+at the time, and observes his fighters battle to death in the pits below.
+It is a luxuriously appointed affair, with silk curtains and soft cushions
+from Araby. An opium pipe sits on a table nearby.
+~
+#EXIT
+Direction down~
+ToRoom    3314
+#ENDEXIT
+
+Reset M 3310 1 3321 -1 -1 -1 100
+  Reset E 3316 1 3 100
+  Reset E 3317 1 9 100
+  Reset E 3318 1 10 100
+  Reset E 3319 1 8 100
+  Reset E 3320 1 16 100
+  Reset E 3321 1 5 100
+#ENDROOM
+
+#ROOM
+Vnum      3322
+Name      Pit Fighter Barracks~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The Pit Fighters are quartered in these dingy rooms that open up onto the
+pit. Guards are usually here to make sure that they don't escape. The guards
+live in the town above.
+~
+#EXIT
+Direction east~
+ToRoom    3317
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 3321 6 3322 -1 -1 -1 100
+Reset M 3322 6 3322 -1 -1 -1 100
+Reset D 3322 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3323
+Name      Pit Fighter Barracks~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The Pit Fighters are quartered in these dingy rooms that open up onto the
+pit. Guards are usually here to make sure that they don't escape. The guards
+live in the town above.
+~
+#EXIT
+Direction east~
+ToRoom    3319
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 3321 6 3323 -1 -1 -1 100
+Reset M 3322 6 3323 -1 -1 -1 100
+Reset D 3323 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3324
+Name      A Dog Pen~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      While the bulk of the dogs are kept in the kennels near the entrance, some
+who are used frequently are quartered here, in this filthy pit.
+~
+#EXIT
+Direction west~
+ToRoom    3311
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 3307 9 3324 -1 -1 -1 100
+  Reset E 3313 1 3 100
+Reset O 3338 1 3324 -1 -1 -1 100
+Reset D 3324 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      3325
+Name      A Cock Pen~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The majority of the fighting cocks are kept in the well-appointed pens near
+the entrance. The ones who are considered expendable or too weak are kept
+here for frequent use.
+~
+#EXIT
+Direction west~
+ToRoom    3312
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 3308 9 3325 -1 -1 -1 100
+  Reset E 3314 1 3 100
+Reset O 3338 1 3325 -1 -1 -1 100
+Reset D 3325 3 1 100 -2
+#ENDROOM
+
+#ENDAREA

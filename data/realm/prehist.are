@@ -1,298 +1,274 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Prehistory~
-Author       Yaegar~
-WeatherX     0
-WeatherY     0
-Ranges       10 30 0 65
-Economy      0 5000000
-ResetFreq    15
+Version         1
+Name            Prehistoria~
+Author          Yaegar~
+Vnums           15400 15425
+Continent       one~
+Coordinates     0 0
+Dates           1403837156 1403837156
+Ranges          20 50 0 115
+ResetFreq       15
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       15400
-Keywords   pteranodon~
-Short      a pteranodon~
-Long       A pteranodon glares at you as it flies past.
+Vnum      15400
+Keywords  pteranodon~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a pteranodon~
+Long      A pteranodon glares at you as it flies past.
 ~
-Desc       Pteranodons are carniverous flying reptiles, true, but you are a little
+Desc      Pteranodons are carniverous flying reptiles, true, but you are a little
 large and armored for it to bother with.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc stayarea mobinvis~
-Affected   flying~
-Stats1     0 18 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    18 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc stayarea mobinvis~
+Affected  flying~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15401
-Keywords   roc~
-Short      a HUGE Roc~
-Long       A HUGE Roc screeches and attacks!
+Vnum      15401
+Keywords  roc~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a HUGE Roc~
+Long      A HUGE Roc screeches and attacks!
 ~
-Desc       This mighty bird is the most powerful inhabitant of Prehistoria. It has
+Desc      This mighty bird is the most powerful inhabitant of Prehistoria. It has
 inhabited this peak for centuries, and isn't about to give it up now!
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_cleric~
-Gender     neuter~
-Actflags   npc sentinel aggressive stayarea mobinvis~
-Affected   sanctuary flying~
-Stats1     -400 30 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    30 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea mobinvis~
+Affected  sanctuary flying~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15402
-Keywords   wild pack animal dog~
-Short      a wild dog~
-Long       A wild pack animal that resembles a dog snarls at you.
+Vnum      15402
+Keywords  wild pack animal dog~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a wild dog~
+Long      A wild pack animal that resembles a dog snarls at you.
 ~
-Desc       These "dogs" are about three times as large, tough and ferocious as any dog
+Desc      These "dogs" are about three times as large, tough and ferocious as any dog
 you have ever seen. Ancestors of the Beastly Fidos of your time, they will
 tear your throat out in a second.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_fido~
-Gender     neuter~
-Actflags   npc aggressive stayarea wimpy mobinvis~
-Stats1     0 14 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea wimpy mobinvis~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15403
-Keywords   triceratops~
-Short      a triceratops~
-Long       A triceratops lowers its head and charges!
+Vnum      15403
+Keywords  triceratops~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a triceratops~
+Long      A triceratops lowers its head and charges!
 ~
-Desc       These fierce-looking reptiles are actually herbivorous, and quite peaceful,
+Desc      These fierce-looking reptiles are actually herbivorous, and quite peaceful,
 despite their appearance. However, the sun and the situation has driven this
 poor brute mad.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc sentinel aggressive stayarea mobinvis~
-Stats1     0 25 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea mobinvis~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15404
-Keywords   buzzard~
-Short      a buzzard~
-Long       A buzzard circles patiently, looking for a cadaver.
+Vnum      15404
+Keywords  buzzard~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a buzzard~
+Long      A buzzard circles patiently, looking for a cadaver.
 ~
-Desc       These birds are engaged in their death watch; they know from experience that
+Desc      These birds are engaged in their death watch; they know from experience that
 death occurs very rapidly in this dangerous and desolate place.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_fido~
-Gender     neuter~
-Actflags   npc stayarea wimpy mobinvis~
-Affected   flying~
-Stats1     0 8 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    8 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc stayarea wimpy mobinvis~
+Affected  flying~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15405
-Keywords   giant insect~
-Short      a giant insect~
-Long       A giant insect that resembles a dragonfly buzzes by.
+Vnum      15405
+Keywords  giant insect~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a giant insect~
+Long      A giant insect that resembles a dragonfly buzzes by.
 ~
-Desc       These massive dragonflies are occasionally captured and tamed by wandering
+Desc      These massive dragonflies are occasionally captured and tamed by wandering
 tribesmen to be used as mounts. They are not aggressive, despite their
 size and fearsome countenance suggesting otherwise.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     neuter~
-Actflags   npc sentinel stayarea mobinvis~
-Affected   sanctuary flying~
-Stats1     400 12 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    12 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea mobinvis~
+Affected  sanctuary flying~
 #ENDMOBILE
 
 #MOBILE
-Vnum       15406
-Keywords   wandering tribesman hunter~
-Short      a wandering tribesman~
-Long       A wandering tribesman glares at you with deep suspicion.
+Vnum      15406
+Keywords  wandering tribesman hunter~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a wandering tribesman~
+Long      A wandering tribesman glares at you with deep suspicion.
 ~
-Desc       This fellow is part of a nomadic tribe that wanders the land of prehistoria.
+Desc      This fellow is part of a nomadic tribe that wanders the land of prehistoria.
 He isn't sure whether you are friend or foe.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea~
-Stats1     400 15 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
 #ENDMOBILE
 
 #OBJECT
-Vnum     15400
-Keywords pool oasis~
-Type     fountain~
-Short    a pool of clear drinking water~
-Long     A pool of clear drinking water lies here.~
-Values   0 0 0 0 0 0
-Stats    999 0 0 0 0
+Vnum      15400
+Keywords  pool oasis~
+Type      fountain~
+Short     a pool of clear drinking water~
+Long      A pool of clear drinking water lies here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     999 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15401
-Keywords spear~
-Type     pipe~
-Short    a wooden spear~
-Long     A wooden spear has been left here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    7 0 0 0 0
-Affect       -1 -1 3 18 0
+Vnum      15401
+Keywords  spear~
+Type      pipe~
+Short     a wooden spear~
+Long      A wooden spear has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     7 0 -2 9999 0 None None None
+AffData hitroll 3 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15402
-Keywords quiver~
-Type     scraps~
-Short    a leather quiver~
-Long     A leather quiver for spears lies here.~
-WFlags   take~
-Values   21 1 0 0 0 0
-Stats    5 0 0 0 0
+Vnum      15402
+Keywords  quiver~
+Type      scraps~
+Short     a leather quiver~
+Long      A leather quiver for spears lies here.~
+WFlags    take~
+Values    21 1 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15403
-Keywords furs~
-Type     armor~
-Short    some thick beast furs~
-Long     Some thick furs lie here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    8 0 0 0 0
-Affect       -1 -1 1 5 0
-Affect       -1 -1 10 13 0
-Affect       -1 -1 -10 17 0
-Affect       -1 -1 -2 25 0
+Vnum      15403
+Keywords  furs~
+Type      armor~
+Short     some thick beast furs~
+Long      Some thick furs lie here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     8 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData armor -10 -1 -1 0
+AffData sex -2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     15404
-Keywords egg~
-Type     food~
-Short    a roc egg~
-Long     A roc egg sits here, ready to hatch.~
-WFlags   take~
-Values   100 0 0 0 0 0
-Stats    25 0 0 0 0
+Vnum      15404
+Keywords  egg~
+Type      food~
+Short     a roc egg~
+Long      A roc egg sits here, ready to hatch.~
+WFlags    take~
+Values    100 0 0 0 0 0 0 0 0 0 0
+Stats     25 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15405
-Keywords bones~
-Type     trash~
-Short    some bones~
-Long     Some humanoid bones have been scattered here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    20 0 0 0 0
+Vnum      15405
+Keywords  bones~
+Type      trash~
+Short     some bones~
+Long      Some humanoid bones have been scattered here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15406
-Keywords carcass~
-Type     food~
-Short    a rotting carcass~
-Long     (Nauseating) A half-eaten, rotting carcass lies here.~
-WFlags   take~
-Values   24 0 0 1 0 0
-Stats    75 0 0 0 0
+Vnum      15406
+Keywords  carcass~
+Type      food~
+Short     a rotting carcass~
+Long      (Nauseating) A half-eaten, rotting carcass lies here.~
+WFlags    take~
+Values    24 0 0 1 0 0 0 0 0 0 0
+Stats     75 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     15407
-Keywords dead tree~
-Type     furniture~
-Short    a dead tree~
-Long     A twisted, dead tree protrudes here.~
-Values   0 0 0 0 0 0
-Stats    100 0 0 0 0
+Vnum      15407
+Keywords  dead tree~
+Type      furniture~
+Short     a dead tree~
+Long      A twisted, dead tree protrudes here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     100 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #ROOM
-Vnum     15400
-Name     Wild Plains~
-Sector   field~
-Flags    nomob~
-Desc     You are walking across wide, open plains overgrown with thick tall grass
+Vnum      15400
+Name      Wild Plains~
+Sector    field~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You are walking across wide, open plains overgrown with thick tall grass
 and the occasional shrub or tree. Birds of several varieties soar across
 the pale blue sky above, while prehistoric animals roam the land below.
 The plain continues to the east, while to the west it encounters more
@@ -303,13 +279,20 @@ Direction east~
 ToRoom    15401
 #ENDEXIT
 
+#EXIT
+Direction west~
+ToRoom    5365
+#ENDEXIT
+
 #ENDROOM
 
 #ROOM
-Vnum     15401
-Name     Wild Plains~
-Sector   field~
-Desc     You are walking across wide, open plains overgrown with thick tall grass
+Vnum      15401
+Name      Wild Plains~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are walking across wide, open plains overgrown with thick tall grass
 and the occasional shrub or tree. Birds of several varieties soar across
 the pale blue sky above, while prehistoric animals roam the land below.
 ~
@@ -323,14 +306,16 @@ Direction west~
 ToRoom    15400
 #ENDEXIT
 
-Reset M 0 15400 4 15401
+Reset M 15400 4 15401 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15402
-Name     A Junction~
-Sector   field~
-Desc     Here the fields are interrupted by the intrusion of the foothills of a small
+Vnum      15402
+Name      A Junction~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here the fields are interrupted by the intrusion of the foothills of a small
 volcanic mountain range to the north, and an ancient forest to the east.
 ~
 #EXIT
@@ -348,17 +333,19 @@ Direction west~
 ToRoom    15401
 #ENDEXIT
 
-Reset M 0 15406 8 15402
-  Reset E 1 15401 1 16
-  Reset E 1 15402 1 5
-  Reset E 1 15403 1 12
+Reset M 15406 8 15402 -1 -1 -1 100
+  Reset E 15401 1 16 100
+  Reset E 15402 1 5 100
+  Reset E 15403 1 12 100
 #ENDROOM
 
 #ROOM
-Vnum     15403
-Name     The Foothills~
-Sector   hills~
-Desc     You are making your way through the foothills of the mountain range you
+Vnum      15403
+Name      The Foothills~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are making your way through the foothills of the mountain range you
 spied earlier. One look at those treacherous slopes tells you that you
 won't be able to proceed too far. But perhaps there are civilized peoples
 living up in those ranges somewhere...?
@@ -373,15 +360,17 @@ Direction south~
 ToRoom    15402
 #ENDEXIT
 
-Reset M 0 15405 4 15403
-Reset O 0 15405 1 15403
+Reset M 15405 4 15403 -1 -1 -1 100
+Reset O 15405 1 15403 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15404
-Name     The Mountains of Prehistoria~
-Sector   mountain~
-Desc     These jagged peaks and treacherous slopes comprise one of the first mountain
+Vnum      15404
+Name      The Mountains of Prehistoria~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      These jagged peaks and treacherous slopes comprise one of the first mountain
 ranges to erupt on a continent which will one day be almost surrounded by
 them. You hear a sudden explosion, and, finding your footing on the shaking
 ground, turn to see a distant volcano fiercely erupting, spewing its lethal
@@ -404,14 +393,21 @@ Direction south~
 ToRoom    15403
 #ENDEXIT
 
-Reset M 0 15400 4 15404
+#EXIT
+Direction up~
+ToRoom    901
+#ENDEXIT
+
+Reset M 15400 4 15404 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15405
-Name     A Goat Track~
-Sector   mountain~
-Desc     This tenuous trail makes its way through the less dangerous parts of the
+Vnum      15405
+Name      A Goat Track~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This tenuous trail makes its way through the less dangerous parts of the
 mountains, avoiding jagged rocks, sudden pits and recent lava flows. After
 a while, you pass a point where you might even be able to attempt to ascend
 to the peak of a smaller mountain should you wish to.
@@ -434,10 +430,12 @@ ToRoom    15406
 #ENDROOM
 
 #ROOM
-Vnum     15406
-Name     Ascending the Mountain~
-Sector   mountain~
-Desc     You manage to clamber part way up the slope to a small ledge, where you
+Vnum      15406
+Name      Ascending the Mountain~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You manage to clamber part way up the slope to a small ledge, where you
 pause to gather your wits. But looking upward, you quickly realize that
 further progress won't be possible, unless you can fly.
 ~
@@ -451,15 +449,17 @@ Direction down~
 ToRoom    15405
 #ENDEXIT
 
-Reset O 0 15405 1 15406
-Reset O 0 15407 1 15406
+Reset O 15405 1 15406 -1 -1 -1 100
+Reset O 15407 1 15406 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15407
-Name     The Path Ends~
-Sector   mountain~
-Desc     The trail you were following ends here rather abruptly, at the foot of a
+Vnum      15407
+Name      The Path Ends~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The trail you were following ends here rather abruptly, at the foot of a
 sheer cliff face. However, from here you see another, downward-sloping
 path you could now take, down into a small valley.
 ~
@@ -476,10 +476,12 @@ ToRoom    14122
 #ENDROOM
 
 #ROOM
-Vnum     15408
-Name     An Ancient Forest~
-Sector   forest~
-Desc     You find yourself suddenly on a broad, well-trodden path that runs through
+Vnum      15408
+Name      An Ancient Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You find yourself suddenly on a broad, well-trodden path that runs through
 the center of this magnificent forest. Trees as thick as a castle turret
 soar one hundred, two hundred feet into the air all around you, their huge
 trunks thick with moss and entwined with vines as thick as your thigh. The
@@ -499,10 +501,12 @@ ToRoom    15402
 #ENDROOM
 
 #ROOM
-Vnum     15409
-Name     An Ancient Forest~
-Sector   forest~
-Desc     You continue deeper along this path further into the forest. Trees as thick
+Vnum      15409
+Name      An Ancient Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue deeper along this path further into the forest. Trees as thick
 as a castle turret soar one hundred, two hundred feet into the air all around
 you, their huge trunks thick with moss and entwined with vines as thick as
 your thigh. The cries of strange animals that you have never heard before
@@ -534,10 +538,12 @@ ToRoom    2400
 #ENDROOM
 
 #ROOM
-Vnum     15410
-Name     Grasslands~
-Sector   desert~
-Desc     You are back on the grassy fields that dominate most of prehistoric Anon,
+Vnum      15410
+Name      Grasslands~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are back on the grassy fields that dominate most of prehistoric Anon,
 though these fields are drier and sparser than those you encountered
 previously. To the south lies the shimmering sands of a desert.
 ~
@@ -551,14 +557,16 @@ Direction south~
 ToRoom    15411
 #ENDEXIT
 
-Reset M 0 15404 6 15410
+Reset M 15404 6 15410 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15411
-Name     The Desert~
-Sector   desert~
-Desc     You suddenly find yourself struggling across long, wide dunes of deep red
+Vnum      15411
+Name      The Desert~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You suddenly find yourself struggling across long, wide dunes of deep red
 sand, which extend in all directions. There appears to be an oasis to the
 south, while to the east lies what looks like some sort of city.
 ~
@@ -577,15 +585,17 @@ Direction south~
 ToRoom    15412
 #ENDEXIT
 
-Reset M 0 15400 4 15411
-Reset O 0 15405 1 15411
+Reset M 15400 4 15411 -1 -1 -1 100
+Reset O 15405 1 15411 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15412
-Name     An Oasis~
-Sector   water_swim~
-Desc     You have reached a small oasis in the desert, and pause to rest and quench
+Vnum      15412
+Name      An Oasis~
+Sector    water_swim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have reached a small oasis in the desert, and pause to rest and quench
 your thirst. Unfortunately, many wild animals trapped in the desert seek
 refuge at such places, and not all of them are friendly...
 ~
@@ -594,15 +604,17 @@ Direction north~
 ToRoom    15411
 #ENDEXIT
 
-Reset M 0 15403 1 15412
-Reset O 0 15400 1 15412
+Reset M 15403 1 15412 -1 -1 -1 100
+Reset O 15400 1 15412 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15413
-Name     The Desert~
-Sector   desert~
-Desc     You continue to struggle across the desert, heading for the city you saw (or
+Vnum      15413
+Name      The Desert~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue to struggle across the desert, heading for the city you saw (or
 you think you saw) further to the north east. The hot sun burns down on you,
 causing you to sweat profusely inside your cumbersome armor.
 ~
@@ -616,23 +628,30 @@ Direction west~
 ToRoom    15411
 #ENDEXIT
 
-Reset M 0 15405 4 15413
-Reset M 0 15406 8 15413
-  Reset E 1 15401 1 16
-  Reset E 1 15402 1 5
-  Reset E 1 15403 1 12
+Reset M 15405 4 15413 -1 -1 -1 100
+Reset M 15406 8 15413 -1 -1 -1 100
+  Reset E 15401 1 16 100
+  Reset E 15402 1 5 100
+  Reset E 15403 1 12 100
 #ENDROOM
 
 #ROOM
-Vnum     15414
-Name     The Desert~
-Sector   desert~
-Desc     You continue to struggle across the desert, heading for the city you saw (or
+Vnum      15414
+Name      The Desert~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue to struggle across the desert, heading for the city you saw (or
 you think you saw) further to the north east. The hot sun burns down on you,
 causing you to sweat profusely inside your cumbersome armor.
 
 Whatever it was that you saw now lies to the north of here.
 ~
+#EXIT
+Direction north~
+ToRoom    29300
+#ENDEXIT
+
 #EXIT
 Direction west~
 ToRoom    15413
@@ -641,10 +660,12 @@ ToRoom    15413
 #ENDROOM
 
 #ROOM
-Vnum     15415
-Name     An Ancient Forest~
-Sector   forest~
-Desc     You continue deeper along this path further into the forest. Trees as thick
+Vnum      15415
+Name      An Ancient Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue deeper along this path further into the forest. Trees as thick
 as a castle turret soar one hundred, two hundred feet into the air all around
 you, their huge trunks thick with moss and entwined with vines as thick as
 your thigh. The cries of strange animals that you have never heard before
@@ -660,18 +681,20 @@ Direction west~
 ToRoom    15409
 #ENDEXIT
 
-Reset M 0 15405 4 15415
-Reset M 0 15406 8 15415
-  Reset E 1 15401 1 16
-  Reset E 1 15402 1 5
-  Reset E 1 15403 1 12
+Reset M 15405 4 15415 -1 -1 -1 100
+Reset M 15406 8 15415 -1 -1 -1 100
+  Reset E 15401 1 16 100
+  Reset E 15402 1 5 100
+  Reset E 15403 1 12 100
 #ENDROOM
 
 #ROOM
-Vnum     15416
-Name     An Ancient Forest~
-Sector   forest~
-Desc     You continue deeper along this path further into the forest. Trees as thick
+Vnum      15416
+Name      An Ancient Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue deeper along this path further into the forest. Trees as thick
 as a castle turret soar one hundred, two hundred feet into the air all around
 you, their huge trunks thick with moss and entwined with vines as thick as
 your thigh. The cries of strange animals that you have never heard before
@@ -697,10 +720,12 @@ ToRoom    15415
 #ENDROOM
 
 #ROOM
-Vnum     15417
-Name     A Feast~
-Sector   field~
-Desc     You have entered a clearing in the forest, which was the site of a recent
+Vnum      15417
+Name      A Feast~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You have entered a clearing in the forest, which was the site of a recent
 kill of a herbivorous mammal by a pack of carniverous ones. The corpse of
 the herbivore lies in the center of the clearing. You'd better hope that
 what killed it isn't still around.
@@ -710,15 +735,17 @@ Direction south~
 ToRoom    15416
 #ENDEXIT
 
-Reset M 0 15402 4 15417
-Reset O 0 15406 1 15417
+Reset M 15402 4 15417 -1 -1 -1 100
+Reset O 15406 1 15417 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15418
-Name     An Ancient Forest~
-Sector   forest~
-Desc     You continue deeper along this path further into the forest. Trees as thick
+Vnum      15418
+Name      An Ancient Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You continue deeper along this path further into the forest. Trees as thick
 as a castle turret soar one hundred, two hundred feet into the air all around
 you, their huge trunks thick with moss and entwined with vines as thick as
 your thigh. The cries of strange animals that you have never heard before
@@ -734,14 +761,16 @@ Direction west~
 ToRoom    15416
 #ENDEXIT
 
-Reset O 0 15407 1 15418
+Reset O 15407 1 15418 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15419
-Name     Out of the Forest~
-Sector   field~
-Desc     You emerge from the trees onto a flat, desolate tundra that stretches out to
+Vnum      15419
+Name      Out of the Forest~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You emerge from the trees onto a flat, desolate tundra that stretches out to
 the north and east. The path twists northward to avoid several large rocky
 outcrops.
 ~
@@ -755,15 +784,17 @@ Direction west~
 ToRoom    15418
 #ENDEXIT
 
-Reset M 0 15400 4 15419
-Reset O 0 15405 1 15419
+Reset M 15400 4 15419 -1 -1 -1 100
+Reset O 15405 1 15419 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15420
-Name     The Wastelands~
-Sector   desert~
-Desc     You are heading across a barren wasteland, dotted with dead trees and the
+Vnum      15420
+Name      The Wastelands~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are heading across a barren wasteland, dotted with dead trees and the
 occasional rocky outcrop. Buzzards circle above you, waiting patiently for
 you to either slay something they can eat, or die yourself. The path you
 are following twists and turns to avoid major obstructions.
@@ -778,18 +809,20 @@ Direction south~
 ToRoom    15419
 #ENDEXIT
 
-Reset M 0 15405 4 15420
-Reset M 0 15406 8 15420
-  Reset E 1 15401 1 16
-  Reset E 1 15402 1 5
-  Reset E 1 15403 1 12
+Reset M 15405 4 15420 -1 -1 -1 100
+Reset M 15406 8 15420 -1 -1 -1 100
+  Reset E 15401 1 16 100
+  Reset E 15402 1 5 100
+  Reset E 15403 1 12 100
 #ENDROOM
 
 #ROOM
-Vnum     15421
-Name     The Wastelands~
-Sector   desert~
-Desc     You are heading across a barren wasteland, dotted with dead trees and the
+Vnum      15421
+Name      The Wastelands~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are heading across a barren wasteland, dotted with dead trees and the
 occasional rocky outcrop. Buzzards circle above you, waiting patiently for
 you to either slay something they can eat, or die yourself. The path you
 are following twists and turns to avoid major obstructions.
@@ -809,14 +842,16 @@ Direction west~
 ToRoom    15420
 #ENDEXIT
 
-Reset M 0 15404 6 15421
+Reset M 15404 6 15421 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15422
-Name     The Wastelands~
-Sector   desert~
-Desc     You are heading across a barren wasteland, dotted with dead trees and the
+Vnum      15422
+Name      The Wastelands~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are heading across a barren wasteland, dotted with dead trees and the
 occasional rocky outcrop. Buzzards circle above you, waiting patiently for
 you to either slay something they can eat, or die yourself. The path you
 are following twists and turns to avoid major obstructions.
@@ -830,32 +865,46 @@ Direction north~
 ToRoom    15421
 #ENDEXIT
 
-Reset O 0 15407 1 15422
+#EXIT
+Direction down~
+ToRoom    2001
+#ENDEXIT
+
+Reset O 15407 1 15422 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15423
-Name     The Wastelands~
-Sector   desert~
-Desc     You are heading across a barren wasteland, dotted with dead trees and the
+Vnum      15423
+Name      The Wastelands~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are heading across a barren wasteland, dotted with dead trees and the
 occasional rocky outcrop. Buzzards circle above you, waiting patiently for
 you to either slay something they can eat, or die yourself. The path you
 are following twists and turns to avoid major obstructions.
 ~
 #EXIT
+Direction east~
+ToRoom    14700
+#ENDEXIT
+
+#EXIT
 Direction south~
 ToRoom    15421
 #ENDEXIT
 
-Reset O 0 15405 1 15423
-Reset O 0 15407 1 15423
+Reset O 15405 1 15423 -1 -1 -1 100
+Reset O 15407 1 15423 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15424
-Name     Flying up the Mountain~
-Sector   air~
-Desc     You are quickly ascending, by magical means, a slope that would take normal
+Vnum      15424
+Name      Flying up the Mountain~
+Sector    air~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are quickly ascending, by magical means, a slope that would take normal
 climbers days to ascend. You can see the summit just above you. You shiver
 and gasp for breath in the cold thin air.
 ~
@@ -869,14 +918,16 @@ Direction down~
 ToRoom    15406
 #ENDEXIT
 
-Reset O 0 15407 1 15424
+Reset O 15407 1 15424 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     15425
-Name     The Summit (An Aerie)~
-Sector   city~
-Desc     Uh Oh. You are at the summit, inside a nest. The nest of something BIG. You
+Vnum      15425
+Name      The Summit (An Aerie)~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Uh Oh. You are at the summit, inside a nest. The nest of something BIG. You
 desperately hope that whatever inhabits this nest isn't around right now...
 ~
 #EXIT
@@ -884,9 +935,9 @@ Direction down~
 ToRoom    15424
 #ENDEXIT
 
-Reset M 0 15401 1 15425
-Reset O 0 15404 1 15425
-Reset O 0 15405 1 15425
+Reset M 15401 1 15425 -1 -1 -1 100
+Reset O 15404 1 15425 -1 -1 -1 100
+Reset O 15405 1 15425 -1 -1 -1 100
 #ENDROOM
 
 #ENDAREA

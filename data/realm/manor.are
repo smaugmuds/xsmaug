@@ -1,42 +1,42 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Tullfuhrzky Manor~
-Author       Cedrick~
-WeatherX     0
-WeatherY     0
-Ranges       0 10 0 60
-Economy      0 59671270
-ResetFreq    10
+Version         1
+Name            Tullfuhrzky Manor~
+Author          Cedrick~
+Vnums           2405 2499
+Continent       one~
+Coordinates     0 0
+Dates           1403834970 1403834970
+Ranges          0 10 0 60
+ResetFreq       10
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       2405
-Keywords   snake python~
-Short      a python~
-Long       A python lies here, ready to sink its fangs into you.
+Vnum      2405
+Keywords  snake python~
+Race      reptile~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a python~
+Long      A python lies here, ready to sink its fangs into you.
 ~
-Desc       This snake could pick you up and swallow you whole!  You're terrified at
+Desc      This snake could pick you up and swallow you whole!  You're terrified at
 the thought of coming anywhere near it. 
 ~
-Race       reptile~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_poison~
-Gender     neuter~
-Actflags   npc sentinel stayarea~
-Stats1     -100 7 0 -20 7000 0
-Stats2     5 4 60
-Stats3     2 3 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head guts long_tongue tail~
-Resist     pierce poison~
-Attacks    bite~
+Nattacks  0.000000
+Stats1    -100 0 0 0 0 0
+Stats2    7 21 -20 60 2 3 1
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head guts long_tongue tail~
+Resist    blunt acid~
+Attacks   bite~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   85~
@@ -77,30 +77,27 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2407
-Keywords   dog collie~
-Short      a collie~
-Long       A collie approaches you, looking rather dangerous.
+Vnum      2407
+Keywords  dog collie~
+Race      canine~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a collie~
+Long      A collie approaches you, looking rather dangerous.
 ~
-Desc       Although friendly with family members, this collie is a superb watchdog.
+Desc      Although friendly with family members, this collie is a superb watchdog.
 She doesn't approve of your presence in the house.
 ~
-Race       canine~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel~
-Stats1     150 5 0 -10 0 0
-Stats2     1 1 50
-Stats3     1 1 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head legs heart brains guts feet ear tail claws~
-Suscept    sleep~
+Nattacks  0.000000
+Stats1    150 0 0 0 0 0
+Stats2    5 21 -10 50 1 1 1
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head legs heart brains guts feet ear tail claws~
+Suscept   drain~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -135,29 +132,26 @@ growl $n
 #ENDMOBILE
 
 #MOBILE
-Vnum       2408
-Keywords   a large rat~
-Short      a large rat~
-Long       An enormous rat scurries around here.
+Vnum      2408
+Keywords  a large rat~
+Race      rodent~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a large rat~
+Long      An enormous rat scurries around here.
 ~
-Desc       Disgusting and disease-ridden fur makes this rat something that you 
+Desc      Disgusting and disease-ridden fur makes this rat something that you 
 do not want to approach.
 ~
-Race       rodent~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc stayarea~
-Stats1     -200 4 0 -10 75 0
-Stats2     0 0 0
-Stats3     3 3 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head heart ear eye tail~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    4 21 -10 0 3 3 3
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head heart ear eye tail~
 #MUDPROG
 Progtype  death_prog~
 Arglist   100~
@@ -168,29 +162,26 @@ Comlist   mpecho The rat hisses and squeals with its dying breath.
 #ENDMOBILE
 
 #MOBILE
-Vnum       2409
-Keywords   large rat~
-Short      A large rat~
-Long       A large rat wanders about here.
+Vnum      2409
+Keywords  large rat~
+Race      rodent~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A large rat~
+Long      A large rat wanders about here.
 ~
-Desc       Disgusting and disease-ridden fur makes this rat something that you 
+Desc      Disgusting and disease-ridden fur makes this rat something that you 
 do not want to approach.
 ~
-Race       rodent~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc sentinel~
-Stats1     -1 5 0 -10 75 0
-Stats2     5 4 60
-Stats3     3 2 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     elvish ogre rodent insectoid dragon halfling clan~
-Speaking   common elvish ogre orcish rodent mammal spiritual magical goblin god clan~
-Bodyparts  head legs tail claws~
+Nattacks  0.000000
+Stats1    -1 0 0 0 0 0
+Stats2    5 21 -10 60 3 2 2
+Speaks    elvish ogre rodent insectoid dragon halfling clan~
+Speaking  clan~
+Actflags  npc sentinel~
+Bodyparts head legs tail claws~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -220,29 +211,26 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2410
-Keywords   grandpa man~
-Short      old grandpa~
-Long       An old grandpa sits here, smoking a pipe and reading a book.
+Vnum      2410
+Keywords  grandpa man~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     old grandpa~
+Long      An old grandpa sits here, smoking a pipe and reading a book.
 ~
-Desc       This old man has been around for a long, long time.  Although ancient, a
+Desc      This old man has been around for a long, long time.  Although ancient, a
 dangerous glimmer in his eye makes you wonder just how frail he is.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Stats1     275 7 0 10 2000 0
-Stats2     5 2 60
-Stats3     2 2 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Nattacks  0.000000
+Stats1    275 -1 0 0 0 0
+Stats2    7 21 10 60 2 2 1
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -297,30 +285,27 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2411
-Keywords   lady cook Kery~
-Short      the fat cook~
-Long       An old, fat lady is preparing food here.
+Vnum      2411
+Keywords  lady cook Kery~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     the fat cook~
+Long      An old, fat lady is preparing food here.
 ~
-Desc       Kery the cook looks like she really enjoys taste-testing!  She is very large,
+Desc      Kery the cook looks like she really enjoys taste-testing!  She is very large,
 and very friendly.  
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel~
-Affected   blind truesight~
-Stats1     250 5 0 0 2000 0
-Stats2     5 4 40
-Stats3     3 1 1
-Stats4     0 0 0 0 0
-Attribs    13 6 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Nattacks  0.000000
+Stats1    250 -1 0 0 0 0
+Stats2    5 21 0 40 3 1 1
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  blind truesight~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -369,54 +354,48 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2412
-Keywords   rat large~
-Short      a huge rat~
-Long       An enormous rat scurries around here.
+Vnum      2412
+Keywords  rat large~
+Race      rodent~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a huge rat~
+Long      An enormous rat scurries around here.
 ~
-Desc       Disgusting and disease-ridden fur makes this rat something that you 
+Desc      Disgusting and disease-ridden fur makes this rat something that you 
 do not want to approach.
 ~
-Race       rodent~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc stayarea~
-Stats1     -200 5 0 -10 75 0
-Stats2     5 5 52
-Stats3     3 2 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head heart ear eye tail~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    5 21 -10 52 3 2 2
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head heart ear eye tail~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2420
-Keywords   child~
-Short      A small child~
-Long       A small child washes himself in the tub.
+Vnum      2420
+Keywords  child~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A small child~
+Long      A small child washes himself in the tub.
 ~
-Desc       This is one of the young children in the Tullfuhrzky family.  
+Desc      This is one of the young children in the Tullfuhrzky family.  
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Stats1     250 5 0 -10 400 0
-Stats2     3 3 45
-Stats3     2 2 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Nattacks  0.000000
+Stats1    250 -1 0 0 0 0
+Stats2    5 21 -10 45 2 2 2
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -457,30 +436,27 @@ mpechoaround $n The child looks up at $n, draws his last breath, and dies.
 #ENDMOBILE
 
 #MOBILE
-Vnum       2421
-Keywords   baby~
-Short      a baby~
-Long       A cute baby crawls along on the floor.
+Vnum      2421
+Keywords  baby~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a baby~
+Long      A cute baby crawls along on the floor.
 ~
-Desc       The baby is so little and helpless.  You feel a sense of calm come over you, 
+Desc      The baby is so little and helpless.  You feel a sense of calm come over you, 
 and couldn't even consider violence.  It would be a sin to harm such a precious
 little creature.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel~
-Stats1     1000 3 0 -10 10 0
-Stats2     5 5 50
-Stats3     2 2 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Nattacks  0.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    3 21 -10 50 2 2 1
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -518,30 +494,27 @@ Comlist   mpecho The baby crawls around.
 #ENDMOBILE
 
 #MOBILE
-Vnum       2422
-Keywords   Robert boy child~
-Short      Robert~
-Long       Robert Tullfuhrzky is drawing pictures here.
+Vnum      2422
+Keywords  Robert boy child~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Robert~
+Long      Robert Tullfuhrzky is drawing pictures here.
 ~
-Desc       Robert Tullfuhrzky is quite a budding artist at age 4.  He is very friendly, 
+Desc      Robert Tullfuhrzky is quite a budding artist at age 4.  He is very friendly, 
 and is not afraid of anyone.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Stats1     250 6 0 -10 1000 0
-Stats2     5 6 80
-Stats3     2 2 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear~
-Attacks    kick~
+Nattacks  0.000000
+Stats1    250 -1 0 0 0 0
+Stats2    6 21 -10 80 2 2 2
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart brains guts hands feet fingers ear~
+Attacks   kick~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -575,57 +548,51 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2423
-Keywords   young child~
-Short      a young child~
-Long       A young child sits on his bed.
+Vnum      2423
+Keywords  young child~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a young child~
+Long      A young child sits on his bed.
 ~
-Desc       This is a young child of the Tullfuhrzky household.
+Desc      This is a young child of the Tullfuhrzky household.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Stats1     150 3 0 1 600 0
-Stats2     4 5 75
-Stats3     2 3 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Nattacks  0.000000
+Stats1    150 -1 0 0 0 0
+Stats2    3 21 1 75 2 3 2
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2425
-Keywords   Joshua Tullfuhrzky master man~
-Short      Master Tullfuhrzky~
-Long       Master Tullfuhrzky is angered by your presence.
+Vnum      2425
+Keywords  Joshua Tullfuhrzky master man~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Master Tullfuhrzky~
+Long      Master Tullfuhrzky is angered by your presence.
 ~
-Desc       Mr. Joshua Tullfuhrzky is a bear of a man, standing over two meters tall.
+Desc      Mr. Joshua Tullfuhrzky is a bear of a man, standing over two meters tall.
 Although he is aging, you can see that he still has some fight left in him.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Affected   detect_invis detect_hidden~
-Stats1     350 12 0 1 7000 0
-Stats2     7 5 130
-Stats3     5 3 4
-Stats4     0 0 0 1 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Immune     charm~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    350 -1 0 0 0 0
+Stats2    12 21 1 130 5 3 4
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    sleep~
+Defenses  dodge~
 #MUDPROG
 Progtype  fight_prog~
 Arglist   50~
@@ -694,33 +661,30 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2426
-Keywords   Lady Tullfuhrzky woman~
-Short      Lady Tullfuhrzky~
-Long       Lady Tullfuhrzky is terrified by your presence.
+Vnum      2426
+Keywords  Lady Tullfuhrzky woman~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Lady Tullfuhrzky~
+Long      Lady Tullfuhrzky is terrified by your presence.
 ~
-Desc       Lady Tullfuhrzky is one of the most beautiful women you have ever seen.
+Desc      Lady Tullfuhrzky is one of the most beautiful women you have ever seen.
 She is tall and lithe, with dark brown hair, sparkling eyes, and a
 dazzling smile.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel~
-Affected   detect_invis detect_hidden~
-Stats1     350 10 0 1 4000 0
-Stats2     10 2 130
-Stats3     5 3 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Immune     charm~
-Attacks    punch~
+Nattacks  0.000000
+Stats1    350 -1 0 0 0 0
+Stats2    10 21 1 130 5 3 4
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    sleep~
+Attacks   punch~
 #MUDPROG
 Progtype  fight_prog~
 Arglist   30~
@@ -771,30 +735,28 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2442
-Keywords   spirit~
-Short      the corpse's spirit~
-Long       The corpse's spirit floats above the rotting carcass.
+Vnum      2442
+Keywords  spirit~
+Race      ghoul~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the corpse's spirit~
+Long      The corpse's spirit floats above the rotting carcass.
 ~
-Desc       There's not really much to see, since this is the ghost of a man.  Peering
+Desc      There's not really much to see, since this is the ghost of a man.  Peering
 intently, you seem to be able to make out a vague shape of shimmering energy.
 ~
-Race       ghoul~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc sentinel~
-Affected   invisible detect_invis detect_hidden floating truesight~
-Stats1     -200 6 0 1 100 0
-Stats2     1 1 55
-Stats3     5 5 5
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    6 21 1 55 5 5 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  invisible detect_invis detect_hidden floating truesight~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+Defenses  dodge~
 #MUDPROG
 Progtype  act_prog~
 Arglist   p gets a panther-crested shield from a rotting corpse.~
@@ -834,57 +796,51 @@ mpat 3 c invis
 #ENDMOBILE
 
 #MOBILE
-Vnum       2443
-Keywords   rotting corpse~
-Short      this mob is not used~
-Long       A corpse slowly decomposes here.
+Vnum      2443
+Keywords  rotting corpse~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     this mob is not used~
+Long      A corpse slowly decomposes here.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc~
-Stats1     0 1 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2450
-Keywords   torturer~
-Short      an evil-looking torturer~
-Long       A black-hooded torturer stands here, ready to massacre you.
+Vnum      2450
+Keywords  torturer~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     an evil-looking torturer~
+Long      A black-hooded torturer stands here, ready to massacre you.
 ~
-Desc       You see a man dressed completely in black.  His entire body is covered, except
+Desc      You see a man dressed completely in black.  His entire body is covered, except
 for his mouth, which is drawn into an evil grin.  He looks like he enjoys
 dishing out pain.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc sentinel~
-Affected   detect_invis detect_hidden truesight~
-Stats1     -500 11 0 1 25000 0
-Stats2     10 3 120
-Stats3     3 2 6
-Stats4     0 0 0 2 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  arms legs heart brains guts hands feet fingers ear eye~
-Immune     charm~
-Attacks    bite kick~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -500 -1 0 0 0 0
+Stats2    11 21 1 120 3 2 6
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden truesight~
+Bodyparts arms legs heart brains guts hands feet fingers ear eye~
+Immune    sleep~
+Attacks   bite kick~
+Defenses  dodge~
 #MUDPROG
 Progtype  fight_prog~
 Arglist   40~
@@ -928,30 +884,27 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2455
-Keywords   riding horse~
-Short      a riding horse~
-Long       A beautiful manor riding horse stands here.
+Vnum      2455
+Keywords  riding horse~
+Race      horse~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a riding horse~
+Long      A beautiful manor riding horse stands here.
 ~
-Desc       A strong, proud, and properly groomed manor horse meets your gaze.
+Desc      A strong, proud, and properly groomed manor horse meets your gaze.
 You are just dying for a ride, aren't you?
 ~
-Race       horse~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc mountable~
-Affected   detect_invis detect_hidden~
-Stats1     200 8 0 1 1000 0
-Stats2     9 3 100
-Stats3     3 3 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common clan~
-Bodyparts  head legs heart brains guts eye tail~
+Nattacks  0.000000
+Stats1    200 0 0 0 0 0
+Stats2    8 21 1 100 3 3 2
+Speaks    common~
+Speaking  clan~
+Actflags  npc mountable~
+Affected  detect_invis detect_hidden~
+Bodyparts head legs heart brains guts eye tail~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   4~
@@ -969,29 +922,26 @@ Comlist   nuzzle $n
 #ENDMOBILE
 
 #MOBILE
-Vnum       2456
-Keywords   stablehand man~
-Short      a stablehand~
-Long       An old stablehand is hard at work.
+Vnum      2456
+Keywords  stablehand man~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a stablehand~
+Long      An old stablehand is hard at work.
 ~
-Desc       You see an old man with gnarled hands.  He has been performing the same
+Desc      You see an old man with gnarled hands.  He has been performing the same
 tasks for over thirty-five years, and is quite bitter about it.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc~
-Stats1     200 7 0 1 3000 0
-Stats2     5 5 80
-Stats3     3 2 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Nattacks  0.000000
+Stats1    200 -1 0 0 0 0
+Stats2    7 21 1 80 3 2 1
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -1002,30 +952,27 @@ Comlist   mpechoat $n The stablehand looks up at you and sees nothing of interes
 #ENDMOBILE
 
 #MOBILE
-Vnum       2460
-Keywords   Nanny Nana~
-Short      a decrepit old nanny~
-Long       Nana is here, rocking merrily away.
+Vnum      2460
+Keywords  Nanny Nana~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a decrepit old nanny~
+Long      Nana is here, rocking merrily away.
 ~
-Desc       Nana can't be less than 100 years old.  Her skin is wrinkled, her eyesight
+Desc      Nana can't be less than 100 years old.  Her skin is wrinkled, her eyesight
 is failing, and her hearing is poor.  In spite of this, her face has a 
 kindness to it.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc stayarea~
-Stats1     250 7 0 1 25000 0
-Stats2     10 2 60
-Stats3     2 2 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart hands~
+Nattacks  0.000000
+Stats1    250 -1 0 0 0 0
+Stats2    7 21 1 60 2 2 1
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head arms legs heart hands~
 #MUDPROG
 Progtype  all_greet_prog~
 Arglist   100~
@@ -1045,31 +992,28 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2462
-Keywords   servant boy~
-Short      a servant boy~
-Long       A small servant boy relaxes here.
+Vnum      2462
+Keywords  servant boy~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a servant boy~
+Long      A small servant boy relaxes here.
 ~
-Desc       The little boy is only about five years old, and has already been introduced
+Desc      The little boy is only about five years old, and has already been introduced
 to the harsh world of forced labor.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_thief~
-Gender     male~
-Actflags   npc sentinel~
-Affected   detect_invis~
-Stats1     -100 5 0 15 20 0
-Stats2     3 3 60
-Stats3     2 2 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Nattacks  0.000000
+Stats1    -100 -1 0 0 0 0
+Stats2    5 21 15 60 2 2 2
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -1100,29 +1044,26 @@ Comlist   yell $n is killing children!  Help me!
 #ENDMOBILE
 
 #MOBILE
-Vnum       2463
-Keywords   man servant~
-Short      a house servant~
-Long       A house servant rests after a long day.
+Vnum      2463
+Keywords  man servant~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a house servant~
+Long      A house servant rests after a long day.
 ~
-Desc       Years of labor have worn this man down.  He looks tired and unhappy, and
+Desc      Years of labor have worn this man down.  He looks tired and unhappy, and
 is not particularly happy to be looking at you.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Stats1     200 6 0 1 3000 0
-Stats2     4 5 60
-Stats3     2 3 3
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
+Nattacks  0.000000
+Stats1    200 -1 0 0 0 0
+Stats2    6 21 1 60 2 3 3
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
 #MUDPROG
 Progtype  all_greet_prog~
 Arglist   100~
@@ -1149,31 +1090,28 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2465
-Keywords   gardener man~
-Short      the gardener~
-Long       The gardener works hard to produce fresh vegetables.
+Vnum      2465
+Keywords  gardener man~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the gardener~
+Long      The gardener works hard to produce fresh vegetables.
 ~
-Desc       The man before you has been worn down by years of tilling the soil.
+Desc      The man before you has been worn down by years of tilling the soil.
 He looks old and frail, but has a glint of wisdom in his eye.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel scavenger~
-Stats1     250 9 0 1 4000 0
-Stats2     5 5 160
-Stats3     4 5 5
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Immune     charm~
-Attacks    kick~
+Nattacks  0.000000
+Stats1    250 -1 0 0 0 0
+Stats2    9 21 1 160 4 5 5
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel scavenger~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Immune    sleep~
+Attacks   kick~
 ShopData   0 0 0 0 0 150 90 0 23
 #MUDPROG
 Progtype  act_prog~
@@ -1224,30 +1162,27 @@ mpechoat $n The gardener motions for you to sit.
 #ENDMOBILE
 
 #MOBILE
-Vnum       2471
-Keywords   cockroach roach~
-Short      a giant cockroach~
-Long       An extremely LARGE roach wanders about.
+Vnum      2471
+Keywords  cockroach roach~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a giant cockroach~
+Long      An extremely LARGE roach wanders about.
 ~
-Desc       This is the biggest, most disgusting roach you have ever seen in your life.
+Desc      This is the biggest, most disgusting roach you have ever seen in your life.
 ~
-Race       insect~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc stayarea~
-Stats1     -275 7 0 1 100 0
-Stats2     4 3 78
-Stats3     3 4 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head heart brains guts eye tentacles~
-Resist     fire~
-Suscept    poison~
+Nattacks  0.000000
+Stats1    -275 0 0 0 0 0
+Stats2    7 21 1 78 3 4 4
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head heart brains guts eye tentacles~
+Resist    NONE~
+Suscept   acid~
 #MUDPROG
 Progtype  death_prog~
 Arglist   100~
@@ -1263,62 +1198,56 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2472
-Keywords   cockroach roach~
-Short      this mob is not used~
-Long       An extremely LARGE roach wanders about.
+Vnum      2472
+Keywords  cockroach roach~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     this mob is not used~
+Long      An extremely LARGE roach wanders about.
 ~
-Desc       This is the biggest, most disgusting roach you have ever seen in your life.
+Desc      This is the biggest, most disgusting roach you have ever seen in your life.
 ~
-Race       insect~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc stayarea~
-Stats1     -275 3 0 0 0 0
-Stats2     4 3 20
-Stats3     3 2 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head heart brains guts eye tentacles~
-Resist     fire~
-Suscept    poison~
+Nattacks  0.000000
+Stats1    -275 0 0 0 0 0
+Stats2    3 21 0 20 3 2 2
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Bodyparts head heart brains guts eye tentacles~
+Resist    NONE~
+Suscept   acid~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2484
-Keywords   judge~
-Short      The Judge~
-Long       The Final Judge glares at you.
+Vnum      2484
+Keywords  judge~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_janitor~
+Short     The Judge~
+Long      The Final Judge glares at you.
 ~
-Desc       The Judge is dressed in long, flowing robes, and has an air of arrogant
+Desc      The Judge is dressed in long, flowing robes, and has an air of arrogant
 superiority about him.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_janitor~
-Gender     neuter~
-Actflags   npc scavenger prototype~
-Affected   detect_invis detect_hidden sanctuary fireshield shockshield iceshield~
-Stats1     -1000 2 0 0 0 0
-Stats2     1 1 30000
-Stats3     1 1 1000
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye wings~
-Resist     pierce slash acid~
-Immune     fire cold electricity energy blunt pierce slash acid poison sleep charm magic~
-Attacks    trip bash stun firebreath frostbreath acidbreath gasbreath poison causecritical fireball weaken~
-Defenses   parry dodge heal curecritical dispelmagic stoneskin disarm~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    2 21 0 30000 1 1 1000
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger proto~
+Affected  detect_invis detect_hidden sanctuary fireshield shockshield iceshield~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye wings~
+Resist    blunt pierce slash~
+Immune    NONE fire cold electricity energy blunt pierce slash acid drain sleep plus6~
+Attacks   trip bash stun firebreath frostbreath acidbreath gasbreath poison causecritical fireball weaken~
+Defenses  parry dodge heal curecritical dispelmagic stoneskin disarm~
 #MUDPROG
 Progtype  all_greet_prog~
 Arglist   100~
@@ -1358,13 +1287,13 @@ endif
 #ENDMOBILE
 
 #OBJECT
-Vnum     2400
-Keywords toybox box~
-Type     container~
-Short    a cute wooden toybox~
-Long     A cute wooden toybox sits here~
-Values   50 5 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2400
+Keywords  toybox box~
+Type      container~
+Short     a cute wooden toybox~
+Long      A cute wooden toybox sits here~
+Values    50 5 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    box toybox~
 ExDesc       The box is painted white, with pictures of butterflies and wooden blocks.
@@ -1374,28 +1303,28 @@ ExDesc       The box is painted white, with pictures of butterflies and wooden b
 #ENDOBJECT
 
 #OBJECT
-Vnum     2401
-Keywords mixing bowl~
-Type     container~
-Short    a mixing bowl~
-Long     Here sits a large mixing bowl.~
-WFlags   take~
-Values   30 0 0 0 0 0
-Stats    1 50 5 0 0
+Vnum      2401
+Keywords  mixing bowl~
+Type      container~
+Short     a mixing bowl~
+Long      Here sits a large mixing bowl.~
+WFlags    take~
+Values    30 0 0 0 0 0 0 0 0 0 0
+Stats     1 50 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2402
-Keywords wooden spoon~
-Type     weapon~
-Short    a wooden spoon~
-Long     A cook's wooden spoon has been dropped here.~
-Flags    magic organic~
-WFlags   take wield~
-Values   12 2 5 0 0 0
-Stats    1 100 10 0 0
-Affect       -1 -1 1 18 0
-Affect       -1 -1 1 19 0
+Vnum      2402
+Keywords  wooden spoon~
+Type      weapon~
+Short     a wooden spoon~
+Long      A cook's wooden spoon has been dropped here.~
+Flags     organic magic~
+WFlags    take wield~
+Values    12 2 5 0 0 0 0 0 0 0 0
+Stats     1 100 -2 9999 0 None None None
+AffData hitroll 1 -1 -1 0
+AffData damroll 1 -1 -1 0
 #EXDESC
 ExDescKey    spoon~
 ExDesc       The spoon is long and strong.
@@ -1405,73 +1334,73 @@ ExDesc       The spoon is long and strong.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2403
-Keywords well~
-Type     fountain~
-Short    a well~
-Long     A small stone water well descends into the ground here.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2403
+Keywords  well~
+Type      fountain~
+Short     a well~
+Long      A small stone water well descends into the ground here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2404
-Keywords baker's apron~
-Type     container~
-Short    this object is not used~
-Long     A plain baker's apron has been discarded here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2404
+Keywords  baker's apron~
+Type      container~
+Short     this object is not used~
+Long      A plain baker's apron has been discarded here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2405
-Keywords rolling pin~
-Type     weapon~
-Short    a rolling pin~
-Long     A rolling pin lies on the ground, forgotten.~
-Flags    magic antiwarrior antivampire~
-WFlags   take wield~
-Values   12 0 0 7 0 0
-Stats    3 500 50 0 0
-Affect       -1 -1 2 18 0
-Affect       -1 -1 1 1 0
+Vnum      2405
+Keywords  rolling pin~
+Type      weapon~
+Short     a rolling pin~
+Long      A rolling pin lies on the ground, forgotten.~
+Flags     magic antiwarrior~
+WFlags    take wield~
+Values    12 0 0 7 0 0 0 0 0 0 0
+Stats     3 500 -2 1 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData strength 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2406
-Keywords pile gold coins~
-Type     money~
-Short    a large pile of gold~
-Long     A large pile of gold coins lies here.~
-WFlags   take~
-Values   40000 0 0 0 0 0
-Stats    1 50000 5000 0 0
+Vnum      2406
+Keywords  pile gold coins~
+Type      money~
+Short     a large pile of gold~
+Long      A large pile of gold coins lies here.~
+WFlags    take~
+Values    40000 0 0 0 0 0 0 0 0 0 0
+Stats     1 50000 -2 1 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2407
-Keywords safe~
-Type     container~
-Short    a safe~
-Long     A safe sits in the corner.~
-Flags    loyal~
-Values   100 15 2425 0 0 0
-Stats    1 0 0 0 0
+Vnum      2407
+Keywords  safe~
+Type      container~
+Short     a safe~
+Long      A safe sits in the corner.~
+Flags     loyal~
+Values    100 15 2425 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2408
-Keywords book~
-Type     wand~
-Short    a book entitled "50 Ways to Heal the Dying"~
-Long     A book entitled "50 Ways to Heal the Dying" lies on the ground.~
-Flags    magic~
-WFlags   take hold~
-Values   15 3 3 -1 0 0
-Stats    1 0 0 0 0
-Spells   'cure critical'
+Vnum      2408
+Keywords  book~
+Type      wand~
+Short     a book entitled "50 Ways to Heal the Dying"~
+Long      A book entitled "50 Ways to Heal the Dying" lies on the ground.~
+Flags     magic~
+WFlags    take hold~
+Values    15 3 3 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'cure critical'
 #EXDESC
 ExDescKey    book~
 ExDesc       Instructions:  just hold this book and zap somebody with it to make
@@ -1482,246 +1411,246 @@ them feel better!
 #ENDOBJECT
 
 #OBJECT
-Vnum     2409
-Keywords smoking jacket~
-Type     armor~
-Short    a plaid smoking jacket~
-Long     A old, plaid smoking jacket has been left on the ground.~
-Flags    bless~
-WFlags   take body~
-Values   6 5 0 0 0 0
-Stats    8 0 0 0 0
-Affect       -1 -1 -4 17 0
-Affect       -1 -1 1 18 0
+Vnum      2409
+Keywords  smoking jacket~
+Type      armor~
+Short     a plaid smoking jacket~
+Long      A old, plaid smoking jacket has been left on the ground.~
+Flags     bless~
+WFlags    take body~
+Values    6 5 0 0 0 0 0 0 0 0 0
+Stats     8 0 -2 9999 0 None None None
+AffData armor -4 -1 -1 0
+AffData hitroll 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2410
-Keywords pipe~
-Type     staff~
-Short    a hand-carved pipe~
-Long     Someone carelessly dropped their pipe on the ground.~
-WFlags   take hold~
-Values   11 3 3 -1 0 0
-Stats    2 4000 400 0 0
-Affect       -1 -1 2 3 0
-Spells   'faerie fire'
+Vnum      2410
+Keywords  pipe~
+Type      staff~
+Short     a hand-carved pipe~
+Long      Someone carelessly dropped their pipe on the ground.~
+WFlags    take hold~
+Values    11 3 3 -1 0 0 0 0 0 0 0
+Stats     2 4000 -2 1 0 None None None
+AffData wisdom 2 -1 -1 0
+Spells       'faerie fire'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2411
-Keywords row cabinet cabinets~
-Type     container~
-Short    a large array of cabinets~
-Long     A large row of cabinets hangs above the sink.~
-Values   30 5 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2411
+Keywords  row cabinet cabinets~
+Type      container~
+Short     a large array of cabinets~
+Long      A large row of cabinets hangs above the sink.~
+Values    30 5 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2412
-Keywords toolshed shed~
-Type     container~
-Short    a small toolshed~
-Long     A small toolshed stands on the grounds here.~
-Values   999 5 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2412
+Keywords  toolshed shed~
+Type      container~
+Short     a small toolshed~
+Long      A small toolshed stands on the grounds here.~
+Values    999 5 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2413
-Keywords gardening shears~
-Type     weapon~
-Short    a small pair of gardening shears~
-Long     A small pair of gardening shears sits here.~
-Flags    magic anticleric antidruid~
-WFlags   take wield~
-Values   12 0 0 1 0 0
-Stats    4 0 0 0 0
-Affect       -1 -1 1 19 0
-Affect       -1 -1 1 2 0
+Vnum      2413
+Keywords  gardening shears~
+Type      weapon~
+Short     a small pair of gardening shears~
+Long      A small pair of gardening shears sits here.~
+Flags     magic anticleric antidruid~
+WFlags    take wield~
+Values    12 0 0 1 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+AffData damroll 1 -1 -1 0
+AffData intelligence 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2414
-Keywords snakeskin hide cloak~
-Type     armor~
-Short    the hide of a python~
-Long     A cloak made from the skin of a python lies here.~
-Flags    organic~
-WFlags   take about~
-Values   6 6 0 0 0 0
-Stats    2 0 0 0 0
-Affect       -1 -1 1 5 0
-Affect       -1 -1 256 27 0
+Vnum      2414
+Keywords  snakeskin hide cloak~
+Type      armor~
+Short     the hide of a python~
+Long      A cloak made from the skin of a python lies here.~
+Flags     organic~
+WFlags    take about~
+Values    6 6 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+AffData resistant acid~ -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2415
-Keywords wand venom fang~
-Type     wand~
-Short    a fang filled with venom~
-Long     A fang filled with python's venom has been dropped here.~
-WFlags   take hold~
-Values   15 6 6 -1 0 0
-Stats    1 2000 200 0 0
-Spells   'poison'
+Vnum      2415
+Keywords  wand venom fang~
+Type      wand~
+Short     a fang filled with venom~
+Long      A fang filled with python's venom has been dropped here.~
+WFlags    take hold~
+Values    15 6 6 -1 0 0 0 0 0 0 0
+Stats     1 2000 -2 1 0 None None None
+Spells       'poison'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2416
-Keywords dresser~
-Type     container~
-Short    object not used~
-Long     Some god dropped a newly created dresser here.~
-Values   10 5 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2416
+Keywords  dresser~
+Type      container~
+Short     object not used~
+Long      Some god dropped a newly created dresser here.~
+Values    10 5 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2417
-Keywords panther-crested ring~
-Type     armor~
-Short    panther-crested ring~
-Long     A ring with the crest of a panther glitters on the ground.~
-Flags    magic metal~
-WFlags   take finger~
-Values   5 5 0 0 0 0
-Stats    1 4000 400 0 0
-Affect       -1 -1 1 2 0
-Affect       -1 -1 1 1 0
-Affect       -1 -1 1 18 0
+Vnum      2417
+Keywords  panther-crested ring~
+Type      armor~
+Short     panther-crested ring~
+Long      A ring with the crest of a panther glitters on the ground.~
+Flags     metal magic~
+WFlags    take finger~
+Values    5 5 0 0 0 0 0 0 0 0 0
+Stats     1 4000 -2 1 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData strength 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2418
-Keywords bar soap~
-Type     pill~
-Short    a bar of soap~
-Long     A bar of soap is here for you to trip over.~
-WFlags   take~
-Values   30 -1 -1 -1 0 0
-Stats    1 3000 300 0 0
-Spells   'heal' 'armor' 'refresh'
+Vnum      2418
+Keywords  bar soap~
+Type      pill~
+Short     a bar of soap~
+Long      A bar of soap is here for you to trip over.~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
+Spells       'heal' 'armor' 'refresh'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2419
-Keywords nightshirt shirt~
-Type     armor~
-Short    a nightshirt~
-Long     A nightshirt with the image of a panther has been discarded here.~
-WFlags   take body~
-Values   5 0 0 0 0 0
-Stats    2 100 10 0 0
-Affect       -1 -1 -10 17 0
-Affect       -1 -1 1 5 0
+Vnum      2419
+Keywords  nightshirt shirt~
+Type      armor~
+Short     a nightshirt~
+Long      A nightshirt with the image of a panther has been discarded here.~
+WFlags    take body~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     2 100 -2 9999 0 None None None
+AffData armor -10 -1 -1 0
+AffData constitution 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2420
-Keywords cabinet~
-Type     container~
-Short    a small wooden cabinet~
-Long     A cabinet is here, waiting to be opened.~
-Values   50 5 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2420
+Keywords  cabinet~
+Type      container~
+Short     a small wooden cabinet~
+Long      A cabinet is here, waiting to be opened.~
+Values    50 5 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2421
-Keywords silk robe~
-Type     armor~
-Short    a silk bathrobe~
-Long     A soft silk bathrobe sits here, waiting to be worn.~
-Flags    organic~
-WFlags   take body~
-Values   8 0 0 0 0 0
-Stats    7 1600 160 0 0
-Affect       -1 -1 -4 17 0
-Affect       -1 -1 1 4 0
-Affect       -1 -1 1 25 0
+Vnum      2421
+Keywords  silk robe~
+Type      armor~
+Short     a silk bathrobe~
+Long      A soft silk bathrobe sits here, waiting to be worn.~
+Flags     organic~
+WFlags    take body~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     7 1600 -2 1 0 None None None
+AffData armor -4 -1 -1 0
+AffData dexterity 1 -1 -1 0
+AffData sex 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2422
-Keywords ivory cane~
-Type     staff~
-Short    an ivory cane~
-Long     An expensive-looking ivory cane has been carelessly left here.~
-Flags    magic bless~
-WFlags   take hold~
-Values   1 1 1 -1 0 0
-Stats    15 10000 1000 0 0
-Spells   'sanctuary'
+Vnum      2422
+Keywords  ivory cane~
+Type      staff~
+Short     an ivory cane~
+Long      An expensive-looking ivory cane has been carelessly left here.~
+Flags     magic bless~
+WFlags    take hold~
+Values    1 1 1 -1 0 0 0 0 0 0 0
+Stats     15 10000 -2 1 0 None None None
+Spells       'sanctuary'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2423
-Keywords black patent leather shoes~
-Type     armor~
-Short    black patent leather shoes~
-Long     Some rich person has left their black patent leather shoes here.~
-Flags    organic~
-WFlags   take feet~
-Values   5 5 0 0 0 0
-Stats    2 1000 100 0 0
-Affect       -1 -1 -5 17 0
-Affect       -1 -1 50 14 0
+Vnum      2423
+Keywords  black patent leather shoes~
+Type      armor~
+Short     black patent leather shoes~
+Long      Some rich person has left their black patent leather shoes here.~
+Flags     organic~
+WFlags    take feet~
+Values    5 5 0 0 0 0 0 0 0 0 0
+Stats     2 1000 -2 1 0 None None None
+AffData armor -5 -1 -1 0
+AffData move 50 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2424
-Keywords sapphire ring~
-Type     armor~
-Short    a dazzling sapphire ring~
-Long     A sapphire ring glistens and sparkles.~
-Flags    glow magic~
-WFlags   take finger~
-Values   5 5 0 0 0 0
-Stats    1 2000 200 0 0
-Affect       -1 -1 5 13 0
-Affect       -1 -1 1 2 0
-Affect       -1 -1 2 18 0
+Vnum      2424
+Keywords  sapphire ring~
+Type      armor~
+Short     a dazzling sapphire ring~
+Long      A sapphire ring glistens and sparkles.~
+Flags     glow magic~
+WFlags    take finger~
+Values    5 5 0 0 0 0 0 0 0 0 0
+Stats     1 2000 -2 1 0 None None None
+AffData hit 5 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData hitroll 2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2425
-Keywords key safekey~
-Type     key~
-Short    a small, metal safe key~
-Long     A small, metal safe key sits here.~
-Flags    metal~
-WFlags   take~
-Values   2407 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2425
+Keywords  key safekey~
+Type      key~
+Short     a small, metal safe key~
+Long      A small, metal safe key sits here.~
+Flags     metal~
+WFlags    take~
+Values    2407 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2426
-Keywords vial potion undead~
-Type     potion~
-Short    a vial of undead spirits~
-Long     On the ground is a vial of undead spirit potion.~
-Flags    evil magic~
-WFlags   take~
-Values   10 -1 -1 -1 0 0
-Stats    1 3000 300 0 0
-Spells   'heal' 'detect evil' 'invis'
+Vnum      2426
+Keywords  vial potion undead~
+Type      potion~
+Short     a vial of undead spirits~
+Long      On the ground is a vial of undead spirit potion.~
+Flags     magic evil~
+WFlags    take~
+Values    10 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 3000 -2 1 0 None None None
+Spells       'heal' 'detect evil' 'invisibility'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2427
-Keywords dog collar~
-Type     armor~
-Short    a gem encrusted dog collar~
-Long     On the ground sits a gem-encrusted dog collar.~
-Flags    metal~
-WFlags   take neck~
-Values   3 3 0 0 0 0
-Stats    8 0 0 0 0
-Affect       -1 -1 -1 17 0
-Affect       -1 -1 1 3 0
+Vnum      2427
+Keywords  dog collar~
+Type      armor~
+Short     a gem encrusted dog collar~
+Long      On the ground sits a gem-encrusted dog collar.~
+Flags     metal~
+WFlags    take neck~
+Values    3 3 0 0 0 0 0 0 0 0 0
+Stats     8 0 -2 9999 0 None None None
+AffData armor -1 -1 -1 0
+AffData wisdom 1 -1 -1 0
 #MUDPROG
 Progtype  wear_prog~
 Arglist   100~
@@ -1736,30 +1665,30 @@ endif
 #ENDOBJECT
 
 #OBJECT
-Vnum     2428
-Keywords cowhide whip~
-Type     weapon~
-Short    a cowhide whip~
-Long     A long whip made of cowhide lies on the ground.~
-Flags    antievil organic antivampire~
-WFlags   take wield~
-Values   12 2 6 4 0 0
-Stats    2 560 56 0 0
-Affect       -1 -1 2 18 0
+Vnum      2428
+Keywords  cowhide whip~
+Type      weapon~
+Short     a cowhide whip~
+Long      A long whip made of cowhide lies on the ground.~
+Flags     organic antievil~
+WFlags    take wield~
+Values    12 2 6 4 0 0 0 0 0 0 0
+Stats     2 560 -2 1 0 None None None
+AffData hitroll 2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2429
-Keywords exoskeleton breastplate plate~
-Type     armor~
-Short    a cockroach's exoskeleton~
-Long     Here lies a breastplate fashioned from the exoskeleton of an enormous roach.~
-Flags    organic~
-WFlags   take body~
-Values   5 7 0 0 0 0
-Stats    3 10000 1000 0 0
-Affect       -1 -1 1 5 0
-Affect       -1 -1 -7 17 0
+Vnum      2429
+Keywords  exoskeleton breastplate plate~
+Type      armor~
+Short     a cockroach's exoskeleton~
+Long      Here lies a breastplate fashioned from the exoskeleton of an enormous roach.~
+Flags     organic~
+WFlags    take body~
+Values    5 7 0 0 0 0 0 0 0 0 0
+Stats     3 10000 -2 1 0 None None None
+AffData constitution 1 -1 -1 0
+AffData armor -7 -1 -1 0
 #MUDPROG
 Progtype  use_prog~
 Arglist   100~
@@ -1771,201 +1700,201 @@ mpechoat $n Squishing noises abound as you squeeze into $O.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2430
-Keywords gold~
-Type     money~
-Short    this object is not used~
-Long     25000 gold coins lie here.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 25000 2500 0 0
+Vnum      2430
+Keywords  gold~
+Type      money~
+Short     this object is not used~
+Long      25000 gold coins lie here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 25000 -2 1 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2431
-Keywords purse coin~
-Type     container~
-Short    a coin purse~
-Long     A small coin purse lies here.~
-Flags    magic bless~
-WFlags   take~
-Values   65 5 0 0 0 0
-Stats    1 50 5 0 0
+Vnum      2431
+Keywords  purse coin~
+Type      container~
+Short     a coin purse~
+Long      A small coin purse lies here.~
+Flags     magic bless~
+WFlags    take~
+Values    65 5 0 0 0 0 0 0 0 0 0
+Stats     1 50 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2432
-Keywords spectacles glasses~
-Type     armor~
-Short    gold spectacles~
-Long     Somebody has lost their spectacles here.~
-Flags    metal~
-WFlags   take eyes~
-Values   4 3 0 0 0 0
-Stats    1 8600 860 0 0
-Affect       -1 -1 1 3 0
+Vnum      2432
+Keywords  spectacles glasses~
+Type      armor~
+Short     gold spectacles~
+Long      Somebody has lost their spectacles here.~
+Flags     metal~
+WFlags    take eyes~
+Values    4 3 0 0 0 0 0 0 0 0 0
+Stats     1 8600 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2433
-Keywords shawl~
-Type     armor~
-Short    a shawl~
-Long     A raggedy shawl is lying in the dirt.~
-Flags    bless~
-WFlags   take neck~
-Values   4 3 0 0 0 0
-Stats    4 4000 400 0 0
-Affect       -1 -1 -5 17 0
-Affect       -1 -1 1 4 0
+Vnum      2433
+Keywords  shawl~
+Type      armor~
+Short     a shawl~
+Long      A raggedy shawl is lying in the dirt.~
+Flags     bless~
+WFlags    take neck~
+Values    4 3 0 0 0 0 0 0 0 0 0
+Stats     4 4000 -2 1 0 None None None
+AffData armor -5 -1 -1 0
+AffData dexterity 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2434
-Keywords wooden knife~
-Type     weapon~
-Short    a wooden knife~
-Long     A child has dropped a wooden knife here.~
-Flags    magic organic~
-WFlags   take wield~
-Values   12 0 0 2 0 0
-Stats    1 50 5 0 0
+Vnum      2434
+Keywords  wooden knife~
+Type      weapon~
+Short     a wooden knife~
+Long      A child has dropped a wooden knife here.~
+Flags     organic magic~
+WFlags    take wield~
+Values    12 0 0 2 0 0 0 0 0 0 0
+Stats     1 50 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2435
-Keywords fairy tale book~
-Type     scroll~
-Short    a book of fairy tales~
-Long     A book of fairy tales has been left on the floor.~
-WFlags   take~
-Values   2 -1 -1 -1 0 0
-Stats    1 1000 100 0 0
-Spells   'detect magic' 'fly' 'armor'
+Vnum      2435
+Keywords  fairy tale book~
+Type      scroll~
+Short     a book of fairy tales~
+Long      A book of fairy tales has been left on the floor.~
+WFlags    take~
+Values    2 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1000 -2 1 0 None None None
+Spells       'detect magic' 'fly' 'armor'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2436
-Keywords pocket watch~
-Type     armor~
-Short    an expensive-looking pocket watch~
-Long     An expensive-looking pocket watch has been left here.~
-Flags    metal~
-WFlags   take hold~
-Values   4 4 0 0 0 0
-Stats    2 24000 2400 0 0
-Affect       -1 -1 1 2 0
-Affect       -1 -1 -14 9 0
+Vnum      2436
+Keywords  pocket watch~
+Type      armor~
+Short     an expensive-looking pocket watch~
+Long      An expensive-looking pocket watch has been left here.~
+Flags     metal~
+WFlags    take hold~
+Values    4 4 0 0 0 0 0 0 0 0 0
+Stats     2 24000 -2 1 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData age -14 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2437
-Keywords candle~
-Type     light~
-Short    a wax candle~
-Long     A wax candle flickers in the darkness.~
-Flags    glow~
-WFlags   take hold~
-Values   0 0 65 0 0 0
-Stats    1 0 0 0 0
+Vnum      2437
+Keywords  candle~
+Type      light~
+Short     a wax candle~
+Long      A wax candle flickers in the darkness.~
+Flags     glow~
+WFlags    take hold~
+Values    0 0 65 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2438
-Keywords cloth diaper~
-Type     armor~
-Short    a cloth diaper~
-Long     A cloth diaper lies on the ground.~
-WFlags   take waist~
-Values   1 1 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2438
+Keywords  cloth diaper~
+Type      armor~
+Short     a cloth diaper~
+Long      A cloth diaper lies on the ground.~
+WFlags    take waist~
+Values    1 1 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2439
-Keywords paintbrush brush~
-Type     wand~
-Short    a paintbrush~
-Long     A brush drips with fresh watercolor paint.~
-Flags    magic~
-WFlags   take hold~
-Values   9 4 4 -1 0 0
-Stats    1 0 0 0 0
-Spells   'colour spray'
+Vnum      2439
+Keywords  paintbrush brush~
+Type      wand~
+Short     a paintbrush~
+Long      A brush drips with fresh watercolor paint.~
+Flags     magic~
+WFlags    take hold~
+Values    9 4 4 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'colour spray'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2440
-Keywords make-up compact~
-Type     staff~
-Short    an ivory make-up compact~
-Long     A small, ivory make-up compact has been forgotten on the floor.~
-Flags    magic bless~
-WFlags   take hold~
-Values   14 3 3 -1 0 0
-Stats    1 1000 100 0 0
-Spells   'elven beauty'
+Vnum      2440
+Keywords  make-up compact~
+Type      staff~
+Short     an ivory make-up compact~
+Long      A small, ivory make-up compact has been forgotten on the floor.~
+Flags     magic bless~
+WFlags    take hold~
+Values    14 3 3 -1 0 0 0 0 0 0 0
+Stats     1 1000 -2 1 0 None None None
+Spells       'elven beauty'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2441
-Keywords chef apron~
-Type     armor~
-Short    a chef's apron~
-Long     A white chef's apron has been discarded here.~
-WFlags   take body~
-Values   3 3 0 0 0 0
-Stats    1 1000 100 0 0
-Affect       -1 -1 -5 17 0
-Affect       -1 -1 5 13 0
+Vnum      2441
+Keywords  chef apron~
+Type      armor~
+Short     a chef's apron~
+Long      A white chef's apron has been discarded here.~
+WFlags    take body~
+Values    3 3 0 0 0 0 0 0 0 0 0
+Stats     1 1000 -2 1 0 None None None
+AffData armor -5 -1 -1 0
+AffData hit 5 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2442
-Keywords panther-crested helmet~
-Type     armor~
-Short    a panther-crested helmet~
-Long     Someone has dropped a helmet with the crest of a panther here.~
-WFlags   take head~
-Values   2 4 0 0 0 0
-Stats    2 75 7 0 0
-Affect       -1 -1 1 5 0
+Vnum      2442
+Keywords  panther-crested helmet~
+Type      armor~
+Short     a panther-crested helmet~
+Long      Someone has dropped a helmet with the crest of a panther here.~
+WFlags    take head~
+Values    2 4 0 0 0 0 0 0 0 0 0
+Stats     2 75 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2443
-Keywords panther-crested shield~
-Type     armor~
-Short    a panther-crested shield~
-Long     Lying here is a shield with the crest of a panther.~
-WFlags   take shield~
-Values   4 4 0 0 0 0
-Stats    3 50 5 0 0
-Affect       -1 -1 -6 17 0
-Affect       -1 -1 -1 24 0
+Vnum      2443
+Keywords  panther-crested shield~
+Type      armor~
+Short     a panther-crested shield~
+Long      Lying here is a shield with the crest of a panther.~
+WFlags    take shield~
+Values    4 4 0 0 0 0 0 0 0 0 0
+Stats     3 50 -2 9999 0 None None None
+AffData armor -6 -1 -1 0
+AffData save_spell -1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2444
-Keywords rotting corpse~
-Type     container~
-Short    a rotting corpse~
-Long     A grotesque corpse rots away.~
-Values   5 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2444
+Keywords  rotting corpse~
+Type      container~
+Short     a rotting corpse~
+Long      A grotesque corpse rots away.~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2445
-Keywords scroll avatar avatar's~
-Type     scroll~
-Short    an avatar's scroll~
-Long     An avatar's scroll lies here.~
-Flags    glow magic~
-WFlags   take~
-Values   4 -1 -1 -1 0 0
-Stats    1 10000 1000 0 0
-Spells   'kindred strength' 'sagacity' 'dragon wit'
+Vnum      2445
+Keywords  scroll avatar avatar's~
+Type      scroll~
+Short     an avatar's scroll~
+Long      An avatar's scroll lies here.~
+Flags     glow magic~
+WFlags    take~
+Values    4 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 10000 -2 1 0 None None None
+Spells       'NONE' 'sagacity' 'dragon wit'
 #EXDESC
 ExDescKey    scroll~
 ExDesc       You are looking at a scroll which contains the 5 best lines heard over the
@@ -2012,299 +1941,300 @@ ExDesc       "Where can I buy roots?"
 #ENDOBJECT
 
 #OBJECT
-Vnum     2446
-Keywords tin shield~
-Type     armor~
-Short    a tin shield~
-Long     Somebody dropped a cheap tin shield on the floor.~
-WFlags   take shield~
-Values   2 2 0 0 0 0
-Stats    3 50 5 0 0
-Affect       -1 -1 -3 17 0
-Affect       -1 -1 -1 22 0
+Vnum      2446
+Keywords  tin shield~
+Type      armor~
+Short     a tin shield~
+Long      Somebody dropped a cheap tin shield on the floor.~
+WFlags    take shield~
+Values    2 2 0 0 0 0 0 0 0 0 0
+Stats     3 50 -2 9999 0 None None None
+AffData armor -3 -1 -1 0
+AffData save_para -1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2447
-Keywords rat fur cloak~
-Type     armor~
-Short    a rat fur cloak~
-Long     A cloak made of rat fur sits on the ground.~
-Flags    organic~
-WFlags   take about~
-Values   3 4 0 0 0 0
-Stats    2 100 10 0 0
-Affect       -1 -1 -6 17 0
-Affect       -1 -1 10 13 0
+Vnum      2447
+Keywords  rat fur cloak~
+Type      armor~
+Short     a rat fur cloak~
+Long      A cloak made of rat fur sits on the ground.~
+Flags     organic~
+WFlags    take about~
+Values    3 4 0 0 0 0 0 0 0 0 0
+Stats     2 100 -2 9999 0 None None None
+AffData armor -6 -1 -1 0
+AffData hit 10 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2448
-Keywords small mirror~
-Type     wand~
-Short    a small mirror~
-Long     A small mirror has been left on the ground.~
-Flags    magic bless~
-WFlags   take hold~
-Values   10 2 2 -1 0 0
-Stats    1 50 5 0 0
-Spells   'charm person'
+Vnum      2448
+Keywords  small mirror~
+Type      wand~
+Short     a small mirror~
+Long      A small mirror has been left on the ground.~
+Flags     magic bless~
+WFlags    take hold~
+Values    10 2 2 -1 0 0 0 0 0 0 0
+Stats     1 50 -2 9999 0 None None None
+Spells       'charm person'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2449
-Keywords undershirt shirt tattered~
-Type     armor~
-Short    a tattered undershirt~
-Long     An old, tattered undershirt has been discarded here.~
-WFlags   take body~
-Values   1 3 0 0 0 0
-Stats    1 50 5 0 0
-Affect       -1 -1 -4 17 0
+Vnum      2449
+Keywords  undershirt shirt tattered~
+Type      armor~
+Short     a tattered undershirt~
+Long      An old, tattered undershirt has been discarded here.~
+WFlags    take body~
+Values    1 3 0 0 0 0 0 0 0 0 0
+Stats     1 50 -2 9999 0 None None None
+AffData armor -4 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2450
-Keywords key~
-Type     key~
-Short    skeleton key~
-Long     A skeleton key lies here.~
-WFlags   take~
-Values   2450 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2450
+Keywords  key~
+Type      key~
+Short     skeleton key~
+Long      A skeleton key lies here.~
+WFlags    take~
+Values    2450 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2451
-Keywords torturer's whip~
-Type     weapon~
-Short    a nasty torturer's whip~
-Long     A long, nasty-looking whip lies here.~
-Flags    dark evil magic antigood antineutral antiwarrior anticleric~
-WFlags   take wield~
-Values   12 0 0 4 0 0
-Stats    2 5400 540 0 0
-Affect       -1 -1 20 13 0
-Affect       -1 -1 4 18 0
-Affect       -1 -1 5 19 0
+Vnum      2451
+Keywords  torturer's whip~
+Type      weapon~
+Short     a nasty torturer's whip~
+Long      A long, nasty-looking whip lies here.~
+Flags     magic antigood antineutral anticleric antiwarrior evil~
+WFlags    take wield~
+Values    12 0 0 4 0 0 0 0 0 0 0
+Stats     2 5400 -2 1 0 None None None
+AffData hit 20 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData damroll 5 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2452
-Keywords torturer's mask~
-Type     armor~
-Short    black torturer's mask~
-Long     On the ground lies a black mask with two eyeholes.~
-Flags    dark evil antigood antineutral antiwarrior anticleric~
-WFlags   take head~
-Values   4 5 0 0 0 0
-Stats    3 3000 300 0 0
-Affect       -1 -1 1 3 0
-Affect       -1 -1 1 18 0
+Vnum      2452
+Keywords  torturer's mask~
+Type      armor~
+Short     black torturer's mask~
+Long      On the ground lies a black mask with two eyeholes.~
+Flags     antigood antineutral anticleric antiwarrior evil~
+WFlags    take head~
+Values    4 5 0 0 0 0 0 0 0 0 0
+Stats     3 3000 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2453
-Keywords torn pants~
-Type     armor~
-Short    a pair of torn pants~
-Long     An old pair of torn pants have been dropped here.~
-WFlags   take legs~
-Values   2 3 0 0 0 0
-Stats    1 100 10 0 0
-Affect       -1 -1 -2 17 0
+Vnum      2453
+Keywords  torn pants~
+Type      armor~
+Short     a pair of torn pants~
+Long      An old pair of torn pants have been dropped here.~
+WFlags    take legs~
+Values    2 3 0 0 0 0 0 0 0 0 0
+Stats     1 100 -2 9999 0 None None None
+AffData armor -2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2454
-Keywords gavel judgement~
-Type     weapon~
-Short    the Gavel of Judgement~
-Long     The Gavel of Judgement lies on the ground.~
-WFlags   take wield~
-Values   12 50 70 7 0 0
-Stats    5 2000000 200000 0 0
+Vnum      2454
+Keywords  gavel judgement~
+Type      weapon~
+Short     the Gavel of Judgement~
+Long      The Gavel of Judgement lies on the ground.~
+WFlags    take wield~
+Values    12 50 70 7 0 0 0 0 0 0 0
+Stats     5 2000000 -2 1 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2455
-Keywords riding stick~
-Type     weapon~
-Short    a riding stick~
-Long     A riding stick has been dropped here.~
-Flags    magic~
-WFlags   take wield~
-Values   12 0 0 0 0 0
-Stats    4 450 45 0 0
-Affect       -1 -1 1 18 0
-Affect       -1 -1 2 19 0
-Affect       -1 -1 -1 2 0
+Vnum      2455
+Keywords  riding stick~
+Type      weapon~
+Short     a riding stick~
+Long      A riding stick has been dropped here.~
+Flags     magic~
+WFlags    take wield~
+Values    12 0 0 0 0 0 0 0 0 0 0
+Stats     4 450 -2 1 0 None None None
+AffData hitroll 1 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData intelligence -1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2456
-Keywords pair of chaps~
-Type     armor~
-Short    a pair of leather chaps~
-Long     A pair of leather chaps have been discarded here.~
-Flags    organic~
-WFlags   take legs~
-Values   2 5 0 0 0 0
-Stats    2 630 63 0 0
-Affect       -1 -1 -2 17 0
+Vnum      2456
+Keywords  pair of chaps~
+Type      armor~
+Short     a pair of leather chaps~
+Long      A pair of leather chaps have been discarded here.~
+Flags     organic~
+WFlags    take legs~
+Values    2 5 0 0 0 0 0 0 0 0 0
+Stats     2 630 -2 1 0 None None None
+AffData armor -2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2457
-Keywords oil lamp~
-Type     light~
-Short    an oil lamp~
-Long     An oil lamp burns brightly.~
-Flags    glow metal~
-WFlags   take~
-Values   0 0 70 0 0 0
-Stats    4 5 0 0 0
+Vnum      2457
+Keywords  oil lamp~
+Type      light~
+Short     an oil lamp~
+Long      An oil lamp burns brightly.~
+Flags     glow metal~
+WFlags    take~
+Values    0 0 70 0 0 0 0 0 0 0 0
+Stats     4 5 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2458
-Keywords carrot~
-Type     pill~
-Short    an orange carrot~
-Long     A large, orange carrot pokes up from the ground.~
-Flags    organic~
-WFlags   take~
-Values   3 -1 -1 -1 0 0
-Stats    6 500 50 0 0
-Spells   'detect invis' 'NONE' 'NONE'
+Vnum      2458
+Keywords  carrot~
+Type      pill~
+Short     an orange carrot~
+Long      A large, orange carrot pokes up from the ground.~
+Flags     organic~
+WFlags    take~
+Values    3 -1 -1 -1 0 0 0 0 0 0 0
+Stats     6 500 -2 1 0 None None None
+Spells       'detect invis' 'NONE' 'NONE'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2460
-Keywords chest drawers~
-Type     container~
-Short    a chest of drawers~
-Long     A chest of drawers sits in the corner.~
-Flags    organic~
-Values   30 5 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2460
+Keywords  chest drawers~
+Type      container~
+Short     a chest of drawers~
+Long      A chest of drawers sits in the corner.~
+Flags     organic~
+Values    30 5 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2461
-Keywords watermelon~
-Type     pill~
-Short    a juicy watermelon~
-Long     A tantalizing watermelon grows here.~
-Flags    organic~
-WFlags   take~
-Values   5 -1 -1 -1 0 0
-Stats    15 900 90 0 0
-Spells   'kindred strength' 'fly' 'NONE'
+Vnum      2461
+Keywords  watermelon~
+Type      pill~
+Short     a juicy watermelon~
+Long      A tantalizing watermelon grows here.~
+Flags     organic~
+WFlags    take~
+Values    5 -1 -1 -1 0 0 0 0 0 0 0
+Stats     15 900 -2 1 0 None None None
+Spells       'NONE' 'fly' 'NONE'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2462
-Keywords head lettuce~
-Type     pill~
-Short    a head of lettuce~
-Long     A head of lettuce is growing here.~
-Flags    organic~
-WFlags   take~
-Values   14 -1 -1 -1 0 0
-Stats    4 500 50 0 0
-Spells   'cure critical' 'NONE' 'NONE'
+Vnum      2462
+Keywords  head lettuce~
+Type      pill~
+Short     a head of lettuce~
+Long      A head of lettuce is growing here.~
+Flags     organic~
+WFlags    take~
+Values    14 -1 -1 -1 0 0 0 0 0 0 0
+Stats     4 500 -2 1 0 None None None
+Spells       'cure critical' 'NONE' 'NONE'
 #ENDOBJECT
 
 #OBJECT
-Vnum     2463
-Keywords port barrel wine~
-Type     drinkcon~
-Short    a barrel of port wine~
-Long     Several barrels of port wine are stacked here.~
-Flags    organic~
-WFlags   take~
-Values   20 20 2 0 0 0
-Stats    14 0 0 0 0
+Vnum      2463
+Keywords  port barrel wine~
+Type      drinkcon~
+Short     a barrel of port wine~
+Long      Several barrels of port wine are stacked here.~
+Flags     organic~
+WFlags    take~
+Values    20 20 2 0 0 0 0 0 0 0 0
+Stats     14 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2464
-Keywords dried meat~
-Type     food~
-Short    some dried meat~
-Long     On a shelf sits some dried meat.~
-WFlags   take~
-Values   5 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2464
+Keywords  dried meat~
+Type      food~
+Short     some dried meat~
+Long      On a shelf sits some dried meat.~
+WFlags    take~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2465
-Keywords cheese~
-Type     food~
-Short    delicious cheddar cheese~
-Long     The shelves contain some wonderful cheddar cheese.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2465
+Keywords  cheese~
+Type      food~
+Short     delicious cheddar cheese~
+Long      The shelves contain some wonderful cheddar cheese.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2466
-Keywords deck cards~
-Type     armor~
-Short    a deck of playing cards~
-Long     A deck of playing cards lies here.~
-WFlags   take hold~
-Values   2 2 0 0 0 0
-Stats    2 0 0 0 0
-Affect       -1 -1 1 4 0
-Affect       -1 -1 1 2 0
+Vnum      2466
+Keywords  deck cards~
+Type      armor~
+Short     a deck of playing cards~
+Long      A deck of playing cards lies here.~
+WFlags    take hold~
+Values    2 2 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData dexterity 1 -1 -1 0
+AffData intelligence 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2486
-Keywords trough~
-Type     fountain~
-Short    a water trough~
-Long     A trough filled with cool water stands here.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2486
+Keywords  trough~
+Type      fountain~
+Short     a water trough~
+Long      A trough filled with cool water stands here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2498
-Keywords sword~
-Type     weapon~
-Short    not used~
-Long     A deadly elvenbane lies here.~
-WFlags   take wield~
-Values   12 60 100 3 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 -399 17 0
-Affect       -1 -1 100 18 0
-Affect       -1 -1 100 19 0
+Vnum      2498
+Keywords  sword~
+Type      weapon~
+Short     not used~
+Long      A deadly elvenbane lies here.~
+WFlags    take wield~
+Values    12 60 100 3 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData armor -399 -1 -1 0
+AffData hitroll 100 -1 -1 0
+AffData damroll 100 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     2499
-Keywords potion sprite~
-Type     potion~
-Short    not used~
-Long     A Sprite~
-WFlags   take~
-Values   50 -1 -1 -1 0 0
-Stats    1 0 0 0 0
-Spells   'heal' 'heal' 'heal'
+Vnum      2499
+Keywords  potion sprite~
+Type      potion~
+Short     not used~
+Long      A Sprite~
+WFlags    take~
+Values    50 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+Spells       'heal' 'heal' 'heal'
 #ENDOBJECT
 
 #ROOM
-Vnum     2400
-Name     The Main Gate~
-Sector   inside~
-Flags    indoors~
-Desc     As you reach the top of the hill, you come upon a large, three-story manor.
+Vnum      2400
+Name      The Main Gate~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you reach the top of the hill, you come upon a large, three-story manor.
 Past the gate, you can see a nice, well-maintained yard, with trees and
 flowers.  The house is red brick with white trim, and two candle lamps are
 on either side of the door.  You could turn around and go back the way you 
@@ -2327,7 +2257,7 @@ Desc      This direction leads back down the hill.
 ~
 #ENDEXIT
 
-Reset D 0 2400 0 1
+Reset D 2400 0 1 100 -2
 #EXDESC
 ExDescKey    plaque~
 ExDesc       Welcome!  This area is intended for levels 1 to 10.  Remember, LOOK at 
@@ -2346,11 +2276,12 @@ ExDesc       The rock has a small plaque embedded in it.
 #ENDROOM
 
 #ROOM
-Vnum     2401
-Name     Before the Front Door~
-Sector   inside~
-Flags    indoors~
-Desc     As you pass through the gate, you come up to the house's front door.  The
+Vnum      2401
+Name      Before the Front Door~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you pass through the gate, you come up to the house's front door.  The
 white lacy blinds are drawn across the front windows, preventing you from
 peeking inside.  You peer through the window in the door.  Apparently
 nobody is home.  It really is a nice looking house.  It wouldn't hurt to
@@ -2389,8 +2320,8 @@ Desc      The yard continues on to the west.
 ~
 #ENDEXIT
 
-Reset D 0 2401 0 1
-Reset D 0 2401 2 1
+Reset D 2401 0 1 100 -2
+Reset D 2401 2 1 100 -2
 #EXDESC
 ExDescKey    door~
 ExDesc       The door has a small square window built into it.
@@ -2406,11 +2337,12 @@ ExDesc       Looks pretty empty.
 #ENDROOM
 
 #ROOM
-Vnum     2402
-Name     East of the Front Door~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You walk around the east side of the house.  Looking in the windows, you
+Vnum      2402
+Name      East of the Front Door~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You walk around the east side of the house.  Looking in the windows, you
 can see a parlor.  To the west is the front door to the home, and east takes
 you around the house.
 ~
@@ -2431,11 +2363,12 @@ Desc      You see the front of the house.
 #ENDROOM
 
 #ROOM
-Vnum     2403
-Name     West of the Front Door~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You are standing in the yard, west of the front door.  A small well is
+Vnum      2403
+Name      West of the Front Door~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in the yard, west of the front door.  A small well is
 full of cold, clear water.  The beautiful lawn takes you around the manor
 to the west, or back east to the main enterance.
 ~
@@ -2453,15 +2386,16 @@ Desc      The yard continues west.
 ~
 #ENDEXIT
 
-Reset O 0 2403 1 2403
+Reset O 2403 1 2403 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2404
-Name     Southwest Corner of the Manor~
-Sector   inside~
-Flags    nomob indoors~
-Desc     This is the southwest corner of the manor house.  To the north, you see the
+Vnum      2404
+Name      Southwest Corner of the Manor~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      This is the southwest corner of the manor house.  To the north, you see the
 yard extends far back into the distance.  A large fence prevents movement
 to the west.  More yard lies north, or you could return the way you came.
 ~
@@ -2489,11 +2423,12 @@ anyone wandering around here.
 #ENDROOM
 
 #ROOM
-Vnum     2405
-Name     Southeast Corner of the Manor~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You are standing at the southeast corner of the manor.  A large fence prevents
+Vnum      2405
+Name      Southeast Corner of the Manor~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing at the southeast corner of the manor.  A large fence prevents
 movement to the east.  Your only choices are to go around the house to the
 north, or to return west to the front door.
 ~
@@ -2514,11 +2449,12 @@ Desc      The yard continues to the west.
 #ENDROOM
 
 #ROOM
-Vnum     2406
-Name     The Foyer~
-Sector   inside~
-Flags    indoors~
-Desc     As you step into the house, you take a look around.  You are standing in
+Vnum      2406
+Name      The Foyer~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you step into the house, you take a look around.  You are standing in
 what appears to be the front hallway.  A mirror hangs on the wall to the
 east, and a coat stand sits in the corner.  On the floor, a beautiful rug
 draws your attention.  Wait!  What's that?  You hear noises coming from
@@ -2554,10 +2490,10 @@ Keywords  trapdoor~
 Flags     isdoor closed secret~
 #ENDEXIT
 
-Reset M 0 2407 1 2406
-  Reset E 1 2427 1 3
-Reset D 0 2406 2 1
-Reset D 0 2406 5 1
+Reset M 2407 1 2406 -1 -1 -1 100
+  Reset E 2427 1 3 100
+Reset D 2406 2 1 100 -2
+Reset D 2406 5 1 100 -2
 #EXDESC
 ExDescKey    rug~
 ExDesc       As you lift up the rug, you see...a trapdoor!
@@ -2585,11 +2521,12 @@ ExDesc       Would you care to hang your coat?
 #ENDROOM
 
 #ROOM
-Vnum     2407
-Name     The Basement~
-Sector   inside~
-Flags    indoors norecall nosummon noastral~
-Desc     Oops!  You wonder why you went down without looking first.  You slide down a
+Vnum      2407
+Name      The Basement~
+Sector    indoors~
+Flags     indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Oops!  You wonder why you went down without looking first.  You slide down a
 chute, and land with a *THUMP* on the well-padded floor.  As you look at the 
 opening well above your head, you realize that you will have to find another
 way out of here.  Other than a small safe built into the wall, there does
@@ -2603,20 +2540,21 @@ Desc      South leads to a staircase.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2409 2 2407
-Reset O 0 2407 1 2407
-  Reset P 0 2450 1 2407
-  Reset P 0 2406 1 2407
-  Reset P 0 2445 1 2407
-Reset D 0 2407 2 1
+Reset M 2409 2 2407 -1 -1 -1 100
+Reset O 2407 1 2407 -1 -1 -1 100
+  Reset P 1 2450 1 2407 100
+  Reset P 1 2406 1 2407 100
+  Reset P 1 2445 1 2407 100
+Reset D 2407 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2408
-Name     A Luxurious Living Room~
-Sector   inside~
-Flags    indoors~
-Desc     You find yourself in a comfortable living room.  Beautiful artwork adorns
+Vnum      2408
+Name      A Luxurious Living Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You find yourself in a comfortable living room.  Beautiful artwork adorns
 the walls, and you take a second to look at it all.  A crackling fire burns
 in the fireplace.  A large, sturdy oak chair and a nice couch makes this
 place feel like home.  Turning around, you see the curtains which prevented
@@ -2659,7 +2597,7 @@ Direction down~
 ToRoom    2409
 #ENDEXIT
 
-Reset D 0 2408 1 0
+Reset D 2408 1 0 100 -2
 #EXDESC
 ExDescKey    artwork~
 ExDesc       Wow!  A real Picasso!
@@ -2711,11 +2649,12 @@ ExDesc       Wow!  A real Picasso!
 #ENDROOM
 
 #ROOM
-Vnum     2409
-Name     The Secret Room~
-Sector   inside~
-Flags    nomob indoors~
-Desc     Well what do you know?  A secret room!  It is quite dark in here, although
+Vnum      2409
+Name      The Secret Room~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      Well what do you know?  A secret room!  It is quite dark in here, although
 the living room windows provide enough light to see with.  It is very damp
 in this room, and there is a tunnel leading down from here.  You try to peer
 down, but can not penetrate the blackness.  You shiver unconsciously and 
@@ -2736,11 +2675,12 @@ Desc      You see darkness.
 #ENDROOM
 
 #ROOM
-Vnum     2410
-Name     A Comfortable Study~
-Sector   inside~
-Flags    indoors~
-Desc     As you enter a large room, all you see is books, books, and more books!
+Vnum      2410
+Name      A Comfortable Study~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you enter a large room, all you see is books, books, and more books!
 Every wall is lined with bookshelves.  They run from the ceiling to the
 floor, all completely full.  You glance over some of the titles.  Two
 leather chairs sit in the corner with a coffee table between them.
@@ -2755,12 +2695,12 @@ Desc      West takes you back to the living room.
 Flags     isdoor~
 #ENDEXIT
 
-Reset M 0 2410 1 2410
-  Reset G 1 2436 1
-  Reset G 1 2408 1
-  Reset E 1 2410 1 17
-  Reset E 1 2409 1 5
-Reset D 0 2410 3 0
+Reset M 2410 1 2410 -1 -1 -1 100
+  Reset G 2436 1 100
+  Reset G 2408 1 100
+  Reset E 2410 1 17 100
+  Reset E 2409 1 5 100
+Reset D 2410 3 0 100 -2
 #EXDESC
 ExDescKey    books~
 ExDesc       Some of the titles include "Immortality on the Realms of Despair", "How to
@@ -2791,11 +2731,12 @@ ExDesc       This thing must have cost a fortune!
 #ENDROOM
 
 #ROOM
-Vnum     2411
-Name     The Kitchen~
-Sector   inside~
-Flags    indoors~
-Desc     Upon entering the kitchen, you begin to feel very warm.  A huge oven
+Vnum      2411
+Name      The Kitchen~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Upon entering the kitchen, you begin to feel very warm.  A huge oven
 dominates the entire west wall.  Looking under it, you see the large
 amount of wood fueling the flame.  Along the north wall is a small
 basin, with a pitcher and towel alongside.  There are cabinets above
@@ -2827,22 +2768,23 @@ Desc      You see a spacious living room.
 ~
 #ENDEXIT
 
-Reset M 0 2411 1 2411
-  Reset E 1 2405 1 16
-  Reset E 1 2441 1 5
-Reset O 0 2411 1 2411
-  Reset P 0 2402 1 2411
-  Reset P 0 2401 1 2411
-Reset D 0 2411 0 1
-Reset D 0 2411 1 1
+Reset M 2411 1 2411 -1 -1 -1 100
+  Reset E 2405 1 16 100
+  Reset E 2441 1 5 100
+Reset O 2411 1 2411 -1 -1 -1 100
+  Reset P 1 2402 1 2411 100
+  Reset P 1 2401 1 2411 100
+Reset D 2411 0 1 100 -2
+Reset D 2411 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2412
-Name     West of the Manor~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You are standing west of the manor.  Other than a toolshed sitting here,
+Vnum      2412
+Name      West of the Manor~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing west of the manor.  Other than a toolshed sitting here,
 there is nothing of interest.  The fence prevents your going west.
 ~
 #EXIT
@@ -2859,16 +2801,17 @@ Desc      The yard continues south.
 ~
 #ENDEXIT
 
-Reset O 0 2412 1 2412
-  Reset P 0 2413 1 2412
+Reset O 2412 1 2412 -1 -1 -1 100
+  Reset P 1 2413 1 2412 100
 #ENDROOM
 
 #ROOM
-Vnum     2413
-Name     Continuing Along the West Side of the Manor~
-Sector   inside~
-Flags    nomob indoors~
-Desc     The yard continues north around the house.
+Vnum      2413
+Name      Continuing Along the West Side of the Manor~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      The yard continues north around the house.
 ~
 #EXIT
 Direction north~
@@ -2887,11 +2830,12 @@ Desc      The yard continues south.
 #ENDROOM
 
 #ROOM
-Vnum     2414
-Name     Northwest Corner of the Manor~
-Sector   inside~
-Flags    nomob indoors~
-Desc     This is the northwest corner of the manor.  The fence prevents your
+Vnum      2414
+Name      Northwest Corner of the Manor~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      This is the northwest corner of the manor.  The fence prevents your
 movement north and west.  To the east, you can see the back door to the
 home.  
 ~
@@ -2912,11 +2856,12 @@ Desc      The yard continues south.
 #ENDROOM
 
 #ROOM
-Vnum     2415
-Name     East of the Manor~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You are walking around the east side of the house.  The fence runs along
+Vnum      2415
+Name      East of the Manor~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are walking around the east side of the house.  The fence runs along
 to your right.
 ~
 #EXIT
@@ -2936,11 +2881,12 @@ Desc      The yard continues south.
 #ENDROOM
 
 #ROOM
-Vnum     2416
-Name     Continuing Along the East Side of the Manor~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You are following the yard around the east side of the house.  You can see a
+Vnum      2416
+Name      Continuing Along the East Side of the Manor~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are following the yard around the east side of the house.  You can see a
 study through a window to the west.  The fence still runs to your right. 
 ~
 #EXIT
@@ -2960,11 +2906,12 @@ Desc      The yard continues south.
 #ENDROOM
 
 #ROOM
-Vnum     2417
-Name     Northeast Corner of the Manor~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You are standing at the northeast corner of the house.  Going west leads to
+Vnum      2417
+Name      Northeast Corner of the Manor~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing at the northeast corner of the house.  Going west leads to
 more yard.  South takes you back towards the front of the house.
 ~
 #EXIT
@@ -2984,11 +2931,12 @@ Desc      West leads to the backyard.
 #ENDROOM
 
 #ROOM
-Vnum     2418
-Name     The Backyard~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You are standing behind the manor.  The yard stretches out to the north.
+Vnum      2418
+Name      The Backyard~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are standing behind the manor.  The yard stretches out to the north.
 Looking that way, you see two small structures standing next to each other.
 Farther on, you see a small garden, and beyond that, you think you can see
 another building but can't quite make it out behind all the hedges.  The
@@ -3022,15 +2970,16 @@ Direction west~
 ToRoom    2414
 #ENDEXIT
 
-Reset D 0 2418 2 1
+Reset D 2418 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2419
-Name     The Second Floor Landing~
-Sector   inside~
-Flags    indoors~
-Desc     The second floor branches off in all directions.  The carpeting here is
+Vnum      2419
+Name      The Second Floor Landing~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The second floor branches off in all directions.  The carpeting here is
 worn and stained.  It evidently gets quite a bit of use, because you can
 see the wood floor in the spots where the carpet has worn through.  You see
 paintings on the wall, along with a portrait of the entire family.  Looking
@@ -3084,16 +3033,17 @@ Desc      The staircase takes you back to the living room.
 Keywords  staircase~
 #ENDEXIT
 
-Reset D 0 2419 1 1
-Reset D 0 2419 3 1
+Reset D 2419 1 1 100 -2
+Reset D 2419 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2420
-Name     A Large Bathroom~
-Sector   inside~
-Flags    indoors~
-Desc     This is just a standard bathroom.  A wash basin, complete with a pitcher
+Vnum      2420
+Name      A Large Bathroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is just a standard bathroom.  A wash basin, complete with a pitcher
 and towel, sits to your left.  Above that is a small, but adequate mirror.
 Linen cabinets line the wall.  A large tub sits along the wall to your right.
 A candle chandelier provides overhead illumination.
@@ -3106,10 +3056,10 @@ Desc      The landing lies in this direction.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2420 1 2420
-Reset O 0 2420 1 2420
-  Reset P 0 2421 1 2420
-Reset D 0 2420 3 1
+Reset M 2420 1 2420 -1 -1 -1 100
+Reset O 2420 1 2420 -1 -1 -1 100
+  Reset P 1 2421 1 2420 100
+Reset D 2420 3 1 100 -2
 #EXDESC
 ExDescKey    basin~
 ExDesc       Just a standard basin, used for washing up.
@@ -3149,11 +3099,12 @@ ExDesc       You aren't sure if you're looking at a tub or a swimming pool.
 #ENDROOM
 
 #ROOM
-Vnum     2421
-Name     The Playroom~
-Sector   inside~
-Flags    indoors~
-Desc     What a mess!  There are toys strewn about the room, and children are 
+Vnum      2421
+Name      The Playroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      What a mess!  There are toys strewn about the room, and children are 
 everywhere.  You carefully aviod stepping on anything.  The windows to the
 west offer you a view of the endless forest beyond the house.  A toybox sits
 along the north wall.
@@ -3166,12 +3117,12 @@ Desc      East will return you to the landing.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2421 1 2421
-  Reset E 1 2438 1 13
-Reset O 0 2400 1 2421
-  Reset P 0 2434 1 2400
-  Reset P 0 2435 1 2400
-Reset D 0 2421 1 1
+Reset M 2421 1 2421 -1 -1 -1 100
+  Reset E 2438 1 13 100
+Reset O 2400 1 2421 -1 -1 -1 100
+  Reset P 1 2434 1 2400 100
+  Reset P 1 2435 1 2400 100
+Reset D 2421 1 1 100 -2
 #EXDESC
 ExDescKey    window~
 ExDesc       You see a sprawling forest.
@@ -3181,11 +3132,12 @@ ExDesc       You see a sprawling forest.
 #ENDROOM
 
 #ROOM
-Vnum     2422
-Name     A Hallway on the Second Floor~
-Sector   inside~
-Flags    indoors~
-Desc     You are in a hallway on the second floor.  To the east, you can see
+Vnum      2422
+Name      A Hallway on the Second Floor~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a hallway on the second floor.  To the east, you can see
 a fairly large bed and a dresser.  It doesn't appear to be in use, and you
 figure that it is a guest room.  To the west is a room filled with beds and
 several dressers.  North you can see a huge room with an enormous bed and
@@ -3222,17 +3174,18 @@ Desc      You see a room full of beds and dressers.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2422 0 1
-Reset D 0 2422 1 1
-Reset D 0 2422 3 1
+Reset D 2422 0 1 100 -2
+Reset D 2422 1 1 100 -2
+Reset D 2422 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2423
-Name     The Children's Bedroom~
-Sector   inside~
-Flags    indoors~
-Desc     Here is where all the children in the house sleep.  Beds line the wall to the
+Vnum      2423
+Name      The Children's Bedroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Here is where all the children in the house sleep.  Beds line the wall to the
 north, and rows of dressers sit to the south.  It is brightly painted, giving
 a sense of happiness and warmth.  Hanging on the walls are whimsical drawings
 which the children created.  
@@ -3245,9 +3198,9 @@ Desc      You see the hallway.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2422 1 2423
-  Reset E 1 2439 1 17
-Reset D 0 2423 1 1
+Reset M 2422 1 2423 -1 -1 -1 100
+  Reset E 2439 1 17 100
+Reset D 2423 1 1 100 -2
 #EXDESC
 ExDescKey    drawing painting drawings~
 ExDesc       What a cute drawing!  You see a picture of the entire family, mom, dad,
@@ -3258,11 +3211,12 @@ and all the siblings.
 #ENDROOM
 
 #ROOM
-Vnum     2424
-Name     The Guest Bedroom~
-Sector   inside~
-Flags    indoors~
-Desc     This room is small and spartan, containing a bed, a chair, and a tiny
+Vnum      2424
+Name      The Guest Bedroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room is small and spartan, containing a bed, a chair, and a tiny
 Oriental rug.  The master of the manor must not entertain a lot of house
 guests.  The tiny window in the east wall provides a poor view of the 
 outlying forest. 
@@ -3275,7 +3229,7 @@ Desc      You see the hallway.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2424 3 1
+Reset D 2424 3 1 100 -2
 #EXDESC
 ExDescKey    bed~
 ExDesc       Your baby crib was bigger than this.
@@ -3304,11 +3258,12 @@ ExDesc       A remnant of the Ming dynasty.
 #ENDROOM
 
 #ROOM
-Vnum     2425
-Name     The Master Bedroom~
-Sector   inside~
-Flags    indoors~
-Desc     Well, you have found your way to the master bedroom.  The owner would not be
+Vnum      2425
+Name      The Master Bedroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Well, you have found your way to the master bedroom.  The owner would not be
 pleased with your intrustion.  You see a huge, comfortable king-sized bed, 
 along with a large desk, two dressers, and a full-length mirror.  Several
 large windows offer you a wonderful view of the outlying forest.  Hanging
@@ -3329,13 +3284,13 @@ Desc      You see the hallway.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2425 1 2425
-  Reset E 1 2422 1 17
-  Reset E 1 2423 1 8
-  Reset E 1 2424 1 1
-  Reset G 1 2425 1
-Reset D 0 2425 1 1
-Reset D 0 2425 2 1
+Reset M 2425 1 2425 -1 -1 -1 100
+  Reset E 2422 1 17 100
+  Reset E 2423 1 8 100
+  Reset E 2424 1 1 100
+  Reset G 2425 1 100
+Reset D 2425 1 1 100 -2
+Reset D 2425 2 1 100 -2
 #EXDESC
 ExDescKey    bed~
 ExDesc       The king-sized bed looks VERY inviting.
@@ -3370,11 +3325,12 @@ ExDesc       A large shield, crested with a panther.
 #ENDROOM
 
 #ROOM
-Vnum     2426
-Name     The Attic~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     You are in the attic.  It is cold, damp, and really dark.  You can
+Vnum      2426
+Name      The Attic~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in the attic.  It is cold, damp, and really dark.  You can
 barely see five feet in front of your face.  As you walk on the floorboards,
 you can feel them bending beneath your feet.  Apparently nobody comes up here.
 It does not look like this place has been entered in years.  The layer of
@@ -3400,11 +3356,12 @@ Keywords  staircase~
 #ENDROOM
 
 #ROOM
-Vnum     2427
-Name     Further Into the Attic~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     You really feel scared now.  The boards are bending more now, and making
+Vnum      2427
+Name      Further Into the Attic~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You really feel scared now.  The boards are bending more now, and making
 odd creaking sounds.  There aren't even rats up here.  The darkness is
 so thick that your light can't penetrate more than two meters.  As you try
 to peer north, you get a really bad feeling.  Maybe you should turn back 
@@ -3427,11 +3384,12 @@ Desc      You can leave to the east.  Maybe that's a good idea.
 #ENDROOM
 
 #ROOM
-Vnum     2428
-Name     Oops~
-Sector   inside~
-Flags    nomob indoors~
-Desc     On your next step, your foot goes right through the floorboard.  Unable to keep
+Vnum      2428
+Name      Oops~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      On your next step, your foot goes right through the floorboard.  Unable to keep
 you balance, you fall forward.  Fortunately, you fall onto a solid part of the
 floor.  The part of the floor by the door crumbles away, leaving a gaping
 hole!  There's no way out...
@@ -3439,11 +3397,12 @@ hole!  There's no way out...
 #ENDROOM
 
 #ROOM
-Vnum     2429
-Name     The Sub-Basement~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     It is really dark down here.  You can't see a thing.  You seriously
+Vnum      2429
+Name      The Sub-Basement~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      It is really dark down here.  You can't see a thing.  You seriously
 consider turning around immediately.  As a matter of fact, that might
 be a good idea.
 ~
@@ -3464,11 +3423,12 @@ Desc      You think you can see light above.
 #ENDROOM
 
 #ROOM
-Vnum     2430
-Name     The Labyrinth~
-Sector   inside~
-Flags    nomob indoors~
-Desc     Looking up, you see a burning torch mounted high on the wall.  Maybe that's
+Vnum      2430
+Name      The Labyrinth~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      Looking up, you see a burning torch mounted high on the wall.  Maybe that's
 why it was so dark in the room to the west.  The torch must have gone out.
 This room is utterly empty.  Damp, moldy walls make this place reek.  Your 
 only choice is to continue on or turn back.
@@ -3490,11 +3450,12 @@ Desc      West leads out of here.
 #ENDROOM
 
 #ROOM
-Vnum     2431
-Name     The Laybrinth~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You are in some sort of maze underneath the manor house.  The dark gray, moldy
+Vnum      2431
+Name      The Laybrinth~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are in some sort of maze underneath the manor house.  The dark gray, moldy
 walls are disorienting.  You realize that it would be very easy to get 
 hopelessly lost in here.  Looking back, you see the way you came, the path
 back to safety.  In the other directions, all you see is corridors, dark
@@ -3524,11 +3485,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2432
-Name     The Laybrinth~
-Sector   inside~
-Flags    indoors~
-Desc     The laybrinth branches off in many directions.
+Vnum      2432
+Name      The Laybrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The laybrinth branches off in many directions.
 ~
 #EXIT
 Direction north~
@@ -3568,11 +3530,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2433
-Name     The Wine Cellar~
-Sector   inside~
-Flags    indoors~
-Desc     This room is cold and damp.  Wooden kegs of wine are stacked from the floor
+Vnum      2433
+Name      The Wine Cellar~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room is cold and damp.  Wooden kegs of wine are stacked from the floor
 to the ceiling.  Along one wall is a huge wine rack, filled with various
 bottles of choice vintages.
 ~
@@ -3581,15 +3544,16 @@ Direction east~
 ToRoom    2432
 #ENDEXIT
 
-Reset O 0 2463 2 2433
+Reset O 2463 2 2433 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2434
-Name     An Intersection~
-Sector   inside~
-Flags    indoors~
-Desc     The dark corridors branch off here.  You have no way of knowing which path
+Vnum      2434
+Name      An Intersection~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The dark corridors branch off here.  You have no way of knowing which path
 to choose.  You can only pick one, and hope...
 ~
 #EXIT
@@ -3630,11 +3594,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2435
-Name     The Laybrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2435
+Name      The Laybrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -3664,15 +3629,16 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset M 0 2408 2 2435
+Reset M 2408 2 2435 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2436
-Name     The Laybrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2436
+Name      The Laybrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction south~
@@ -3698,11 +3664,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2437
-Name     The Laybrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2437
+Name      The Laybrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -3735,11 +3702,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2438
-Name     The Laybrinth~
-Sector   inside~
-Flags    indoors~
-Desc     As you come up on a corner, you begin to feel completely lost.  Which way
+Vnum      2438
+Name      The Laybrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you come up on a corner, you begin to feel completely lost.  Which way
 did you come from?  You can't remember.  What could be lurking down here?
 You shudder at the thought.  Best to keep moving.
 ~
@@ -3760,11 +3728,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2439
-Name     The Laybrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are really lost now.  As you come up on yet another intersection, you
+Vnum      2439
+Name      The Laybrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are really lost now.  As you come up on yet another intersection, you
 spy a massive slate-grey metal door to the south.  Curious, you pull on the
 handle, but it does not budge.  Pressing your ear to the door, you hear 
 the sound of...machinery?  
@@ -3797,15 +3766,16 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset D 0 2439 2 2
+Reset D 2439 2 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2440
-Name     The Laybrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2440
+Name      The Laybrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -3828,15 +3798,16 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset M 0 2412 4 2440
+Reset M 2412 4 2440 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2441
-Name     The Laybrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2441
+Name      The Laybrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -3855,11 +3826,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2442
-Name     The Laybrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.  An absolutely repulsive stench drifts in
+Vnum      2442
+Name      The Laybrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.  An absolutely repulsive stench drifts in
 from the west.  From the east, you hear a fearsome hissing and rattling.  You 
 shiver as you decide what to do.
 ~
@@ -3883,11 +3855,12 @@ ToRoom    2443
 #ENDROOM
 
 #ROOM
-Vnum     2443
-Name     The Laybrinth~
-Sector   inside~
-Flags    indoors~
-Desc     This is the final resting point of some poor adventurer.  Built into the
+Vnum      2443
+Name      The Laybrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the final resting point of some poor adventurer.  Built into the
 wall is a small niche in which the corpse of a man lies.  The body is beginning
 to decompose, making the whole room stink.  You think about searching the 
 corpse for anything useful, but the very idea repulses you.
@@ -3897,19 +3870,20 @@ Direction east~
 ToRoom    2442
 #ENDEXIT
 
-Reset M 0 2442 1 2443
-  Reset G 1 2426 1
-Reset O 0 2444 1 2443
-  Reset P 0 2442 1 2444
-  Reset P 0 2443 1 2444
+Reset M 2442 1 2443 -1 -1 -1 100
+  Reset G 2426 1 100
+Reset O 2444 1 2443 -1 -1 -1 100
+  Reset P 1 2442 1 2444 100
+  Reset P 1 2443 1 2444 100
 #ENDROOM
 
 #ROOM
-Vnum     2444
-Name     A Gruesome Lair~
-Sector   inside~
-Flags    indoors~
-Desc     What a disgusting, horrible place!  Blood covers every square centimeter
+Vnum      2444
+Name      A Gruesome Lair~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      What a disgusting, horrible place!  Blood covers every square centimeter
 of the walls.  The decaying guts of several animals...or maybe people...
 are scattered across the floor.  Bones are everywhere.  This whole room
 reminds you of only one thing - DEATH.
@@ -3919,15 +3893,16 @@ Direction west~
 ToRoom    2442
 #ENDEXIT
 
-Reset M 0 2405 1 2444
+Reset M 2405 1 2444 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2445
-Name     The Laybrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2445
+Name      The Laybrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -3953,11 +3928,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2446
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2446
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -3983,11 +3959,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2447
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2447
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction south~
@@ -4003,15 +3980,16 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset M 0 2471 4 2447
+Reset M 2471 4 2447 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2448
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2448
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -4030,11 +4008,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2449
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2449
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -4050,15 +4029,16 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset M 0 2408 2 2449
+Reset M 2408 2 2449 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2450
-Name     Torture Room~
-Sector   inside~
-Flags    indoors~
-Desc     Now you've done it.  Maybe you shouldn't have been so curious about
+Vnum      2450
+Name      Torture Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Now you've done it.  Maybe you shouldn't have been so curious about
 this room.  Deadly looking machines and instruments are everywhere.
 You see equipment for every type of torture imaginable.  Cringing,
 you turn around and are greeted with an array of whips, spears,
@@ -4073,17 +4053,18 @@ Desc      North will take you out of this horrible place.
 Flags     isdoor pickproof~
 #ENDEXIT
 
-Reset M 0 2450 1 2450
-  Reset E 1 2452 1 6
-  Reset E 1 2451 1 16
+Reset M 2450 1 2450 -1 -1 -1 100
+  Reset E 2452 1 6 100
+  Reset E 2451 1 16 100
 #ENDROOM
 
 #ROOM
-Vnum     2451
-Name     Farther into the Backyard~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You find yourself standing right outside two wooden shacks.  The one to 
+Vnum      2451
+Name      Farther into the Backyard~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You find yourself standing right outside two wooden shacks.  The one to 
 the west smells horrible.  The shack to the north appears to be a residence
 of some sort.  The yard continues to the east, and also leads back south to
 the manor.
@@ -4118,16 +4099,17 @@ Desc      You catch a whiff of a putrid odor...
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2451 0 1
-Reset D 0 2451 3 1
+Reset D 2451 0 1 100 -2
+Reset D 2451 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2452
-Name     The Outhouse~
-Sector   inside~
-Flags    nomob indoors~
-Desc     Phew!  You really want to get out of here.  The whole place absolutely 
+Vnum      2452
+Name      The Outhouse~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      Phew!  You really want to get out of here.  The whole place absolutely 
 reeks.  How can the servants stand living right next to such a stench?
 Apparently, the master of the house does not care.  At least the walls seem
 to be solid, and the roof is relatively whole.  You hold your nose, for the
@@ -4141,7 +4123,7 @@ Desc      East leads to the yard...and fresh air!
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2452 1 1
+Reset D 2452 1 1 100 -2
 #MUDPROG
 Progtype  rand_prog~
 Arglist   10~
@@ -4153,11 +4135,12 @@ mpforce all puke
 #ENDROOM
 
 #ROOM
-Vnum     2453
-Name     An Intersection~
-Sector   inside~
-Flags    nomob indoors~
-Desc     A few paths intersect here.  The north one brings you to a small, but very
+Vnum      2453
+Name      An Intersection~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      A few paths intersect here.  The north one brings you to a small, but very
 beautiful garden.  Heading west brings you back to the manor.  From the 
 east, you catch a whiff of...hay?  
 ~
@@ -4185,11 +4168,12 @@ Desc      West will take you back toward the house.
 #ENDROOM
 
 #ROOM
-Vnum     2454
-Name     The Stable Entrance~
-Sector   inside~
-Flags    nomob indoors~
-Desc     This is the gate to the stables.  Oddly enough, the stables seem to be in 
+Vnum      2454
+Name      The Stable Entrance~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      This is the gate to the stables.  Oddly enough, the stables seem to be in 
 better condition than the servants' quarters.  It doesn't smell as bad either.
 As you peer past the gate, you think that you see some motion from within. 
 Maybe somebody's in there.
@@ -4210,15 +4194,16 @@ Desc      You see an intersection of paths.
 ~
 #ENDEXIT
 
-Reset D 0 2454 1 1
+Reset D 2454 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2455
-Name     The Horse Stalls~
-Sector   inside~
-Flags    nomob indoors~
-Desc     This is the private stables for the manor.  You see 5 separate stalls,
+Vnum      2455
+Name      The Horse Stalls~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      This is the private stables for the manor.  You see 5 separate stalls,
 each with it's own bed of hay and feeding trough.  The floor is kept 
 incredibly clean.  The owner must take really good care of the horses.
 ~
@@ -4245,18 +4230,19 @@ Keywords  gate~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2455 3 2455
-Reset M 0 2455 3 2455
-Reset D 0 2455 0 0
-Reset D 0 2455 3 1
+Reset M 2455 3 2455 -1 -1 -1 100
+Reset M 2455 3 2455 -1 -1 -1 100
+Reset D 2455 0 0 100 -2
+Reset D 2455 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2456
-Name     Equipment Storage~
-Sector   inside~
-Flags    nomob indoors~
-Desc     This room is used to store extra equipment for the horses.  On the northern
+Vnum      2456
+Name      Equipment Storage~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      This room is used to store extra equipment for the horses.  On the northern
 wall you see several saddles and bridles.  An array of horseshoes dominates
 the west wall.  Hanging on the south wall are several pieces of jockey
 equipment:  whips, riding sticks, and chaps.  The only way out of here is
@@ -4269,17 +4255,19 @@ Desc      You see the horse stalls.
 ~
 #ENDEXIT
 
-Reset M 0 2456 1 2456
-  Reset E 1 2428 1 16
-Reset O 0 2455 1 2456
-Reset O 0 2456 1 2456
+Reset M 2456 1 2456 -1 -1 -1 100
+  Reset E 2428 1 16 100
+Reset O 2455 1 2456 -1 -1 -1 100
+Reset O 2456 1 2456 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2457
-Name     The Field~
-Sector   field~
-Desc     You are in a large field.  This is the area in which the horses are ridden.
+Vnum      2457
+Name      The Field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in a large field.  This is the area in which the horses are ridden.
 You see several obstacles in various spots in the field.  The grass is fairly
 worn.  The owner is obviuosly an avid equestrian.  The field continues north
 and west, and the stables lie to the south.
@@ -4303,15 +4291,16 @@ Direction west~
 ToRoom    2482
 #ENDEXIT
 
-Reset D 0 2457 2 0
+Reset D 2457 2 0 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2458
-Name     A Darkened Hallway on the Second Floor~
-Sector   inside~
-Flags    indoors~
-Desc     You are in a hallway on the second floor.  It is much darker here than the
+Vnum      2458
+Name      A Darkened Hallway on the Second Floor~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a hallway on the second floor.  It is much darker here than the
 rest of the house.  This must be the servant's section of the manor.  East
 and south appear to be bedrooms, and to the west lies another bathroom.
 Apparently, the owners do not want the servants to use the same bathroom.
@@ -4347,17 +4336,18 @@ Desc      This leads to a ridiculously small bathroom.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2458 1 1
-Reset D 0 2458 2 1
-Reset D 0 2458 3 1
+Reset D 2458 1 1 100 -2
+Reset D 2458 2 1 100 -2
+Reset D 2458 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2459
-Name     The Cook's Bedroom~
-Sector   inside~
-Flags    indoors~
-Desc     This room is absolutely pathetic.  You've seen prison cells with more
+Vnum      2459
+Name      The Cook's Bedroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room is absolutely pathetic.  You've seen prison cells with more
 furniture than this.  The only things in the room are the bed, one chair, 
 and a mirror that probably would fit into your pocket.  
 ~
@@ -4369,16 +4359,17 @@ Desc      The hallway lies in this direction.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset O 0 2448 1 2459
-Reset D 0 2459 3 1
+Reset O 2448 1 2459 -1 -1 -1 100
+Reset D 2459 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2460
-Name     Nanny's Bedroom~
-Sector   inside~
-Flags    indoors~
-Desc     This is where the nanny retires for the evening.  It is a sparse room, with
+Vnum      2460
+Name      Nanny's Bedroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is where the nanny retires for the evening.  It is a sparse room, with
 a bed, a small rocking chair, and a rug.  Nothing hangs on the cold, white
 walls.  A tiny window provides minimal light during the daytime.  A single
 candle is on a nightstand next to the bed, and a chest of drawers sits in
@@ -4392,13 +4383,13 @@ Desc      lead back into the hall.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2460 1 2460
-  Reset E 1 2433 1 3
-  Reset E 1 2432 1 20
-Reset O 0 2460 1 2460
-  Reset P 0 2440 1 2460
-  Reset P 0 2431 1 2460
-Reset D 0 2460 0 1
+Reset M 2460 1 2460 -1 -1 -1 100
+  Reset E 2433 1 3 100
+  Reset E 2432 1 20 100
+Reset O 2460 1 2460 -1 -1 -1 100
+  Reset P 1 2440 1 2460 100
+  Reset P 1 2431 1 2460 100
+Reset D 2460 0 1 100 -2
 #EXDESC
 ExDescKey    bed~
 ExDesc       A tiny bed with a cheap mattress.
@@ -4421,11 +4412,12 @@ through the floor
 #ENDROOM
 
 #ROOM
-Vnum     2461
-Name     A Tiny Bathroom~
-Sector   inside~
-Flags    indoors~
-Desc     You can't believe how small this room is.  You barely have room to walk, 
+Vnum      2461
+Name      A Tiny Bathroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You can't believe how small this room is.  You barely have room to walk, 
 let alone do anything else.  There is one candle on the wall, providing 
 scant light for the room.  You can not imagine anyone older than 5 fitting
 into that minute tub.  The washing basin is no wider than a dinner plate.
@@ -4440,8 +4432,8 @@ Desc      You desperately want to get out of this TINY room.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset O 0 2437 1 2461
-Reset D 0 2461 1 1
+Reset O 2437 1 2461 -1 -1 -1 100
+Reset D 2461 1 1 100 -2
 #EXDESC
 ExDescKey    candle~
 ExDesc       It provides a little light for the room.
@@ -4455,11 +4447,12 @@ ExDescKey    tub~
 #ENDROOM
 
 #ROOM
-Vnum     2462
-Name     Servants' Quarters~
-Sector   inside~
-Flags    nomob indoors~
-Desc     You walk through the doorway into a wooden shack.  You know that servants
+Vnum      2462
+Name      Servants' Quarters~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You walk through the doorway into a wooden shack.  You know that servants
 don't usually get the best accomodations, but this is ridiculous.  The whole
 room is virtually empty, except for a small straw mat and a cabinet, and
 underneath your feet is clay;  the poor servants don't even have a floor to
@@ -4476,12 +4469,12 @@ Desc      This way leads you out of this wretched place.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2462 1 2462
-  Reset E 1 2449 1 5
-Reset M 0 2463 1 2462
-  Reset E 1 2453 1 7
-Reset O 0 2457 1 2462
-Reset D 0 2462 2 1
+Reset M 2462 1 2462 -1 -1 -1 100
+  Reset E 2449 1 5 100
+Reset M 2463 1 2462 -1 -1 -1 100
+  Reset E 2453 1 7 100
+Reset O 2457 1 2462 -1 -1 -1 100
+Reset D 2462 2 1 100 -2
 #EXDESC
 ExDescKey    mat~
 ExDesc       A simple straw mat serves as a bed.
@@ -4491,11 +4484,12 @@ ExDesc       A simple straw mat serves as a bed.
 #ENDROOM
 
 #ROOM
-Vnum     2463
-Name     The Pantry~
-Sector   inside~
-Flags    indoors~
-Desc     You have never seen so much food.  It is everywhere, stacked on the floor,
+Vnum      2463
+Name      The Pantry~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have never seen so much food.  It is everywhere, stacked on the floor,
 and on shelves.  You see flour, dried meat, and grain on one wall.  On the
 other side sits pastries, cheese, and baskets full of fruit.  Stacked on
 the floor are a few barrels of portwine.  You become really hungry, and
@@ -4509,18 +4503,19 @@ Desc      West will take you back to the kitchen.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset O 0 2464 1 2463
-Reset O 0 2465 1 2463
-Reset O 0 2463 2 2463
-Reset D 0 2463 3 1
+Reset O 2464 1 2463 -1 -1 -1 100
+Reset O 2465 1 2463 -1 -1 -1 100
+Reset O 2463 2 2463 -1 -1 -1 100
+Reset D 2463 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2464
-Name     The Parlor~
-Sector   inside~
-Flags    indoors~
-Desc     You are in a small, comfortable room.  Several high-backed chairs line the
+Vnum      2464
+Name      The Parlor~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small, comfortable room.  Several high-backed chairs line the
 walls, and between them are solid cherry coffee tables.  The walls are made
 of oak paneling, with stunning crystal candlelamps providing light.  In
 the center of the room sits a round table with several chairs surrounding
@@ -4535,7 +4530,7 @@ Desc      West will return you to the foyer.
 ~
 #ENDEXIT
 
-Reset O 0 2466 1 2464
+Reset O 2466 1 2464 -1 -1 -1 100
 #EXDESC
 ExDescKey    lamp~
 ExDesc       Within the beautiful crystal lamp burns a solitary white candle.
@@ -4557,10 +4552,12 @@ ExDesc       Looks like a genuine Breugel.
 #ENDROOM
 
 #ROOM
-Vnum     2465
-Name     The Garden~
-Sector   inside~
-Desc     You are standing in a beautiful garden.  Row upon row of flowers stretch
+Vnum      2465
+Name      The Garden~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing in a beautiful garden.  Row upon row of flowers stretch
 off into the distance.  A small patch of vegetables grows here as well.  
 A wall standing six meters tall surrounds the garden.  Just beyond the wall
 is a small forest of trees. 
@@ -4570,18 +4567,19 @@ Direction south~
 ToRoom    2453
 #ENDEXIT
 
-Reset M 0 2465 1 2465
-  Reset G 1 2462 1
-  Reset G 1 2461 1
-  Reset G 1 2458 1
+Reset M 2465 1 2465 -1 -1 -1 100
+  Reset G 2462 1 100
+  Reset G 2461 1 100
+  Reset G 2458 1 100
 #ENDROOM
 
 #ROOM
-Vnum     2466
-Name     The Master Bathroom~
-Sector   inside~
-Flags    indoors~
-Desc     Never in your life have you seen a more expensive bathroom.  The elegance and
+Vnum      2466
+Name      The Master Bathroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Never in your life have you seen a more expensive bathroom.  The elegance and
 ostentatiousness of this room astounds you.  Almost everything in the room is
 made of marble.  The mirror hanging on the wall is framed in gold.  Overhead,
 a diamond chandelier provides light.
@@ -4592,11 +4590,11 @@ ToRoom    2425
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2426 1 2466
-  Reset E 1 2419 1 5
-  Reset E 1 2418 1 17
-  Reset E 1 2417 1 1
-Reset D 0 2466 3 1
+Reset M 2426 1 2466 -1 -1 -1 100
+  Reset E 2419 1 5 100
+  Reset E 2418 1 17 100
+  Reset E 2417 1 1 100
+Reset D 2466 3 1 100 -2
 #EXDESC
 ExDescKey    mirror~
 ExDesc       Just looking at this thing makes you feel rich.
@@ -4612,10 +4610,12 @@ ExDesc       The chandelier is made totally of gold and diamonds.
 #ENDROOM
 
 #ROOM
-Vnum     2467
-Name     A Gentle Hill~
-Sector   hills~
-Desc     Your progress becomes a little difficult as the ground slopes up into a hill.
+Vnum      2467
+Name      A Gentle Hill~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Your progress becomes a little difficult as the ground slopes up into a hill.
 To the east and west, all you can see is forest, and at the top of the hill
 you think you can make out a gate and a large fence.  You can continue on
 and explore what lies ahead, or return south toward the pond.
@@ -4637,11 +4637,12 @@ Desc      You think you see a small gate ahead.
 #ENDROOM
 
 #ROOM
-Vnum     2468
-Name     An Intersection~
-Sector   inside~
-Flags    indoors~
-Desc     The dark corridors branch off here.  You have no way of knowing which 
+Vnum      2468
+Name      An Intersection~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The dark corridors branch off here.  You have no way of knowing which 
 path to choose.  You can only pick one, and hope...
 ~
 #EXIT
@@ -4672,16 +4673,17 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset M 0 2412 4 2468
-Reset O 0 2446 1 2468
+Reset M 2412 4 2468 -1 -1 -1 100
+Reset O 2446 1 2468 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2469
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2469
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -4707,11 +4709,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2470
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2470
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -4727,15 +4730,16 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset M 0 2409 2 2470
+Reset M 2409 2 2470 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2471
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2471
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction east~
@@ -4761,11 +4765,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2472
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2472
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction east~
@@ -4788,15 +4793,16 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset M 0 2471 4 2472
+Reset M 2471 4 2472 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2473
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2473
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -4815,11 +4821,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2474
-Name     A Staircase~
-Sector   inside~
-Flags    nomob indoors~
-Desc     Ah!  You knew there had to be a way out!  You climb the stairs and come to 
+Vnum      2474
+Name      A Staircase~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      Ah!  You knew there had to be a way out!  You climb the stairs and come to 
 a door.  You push the door open, and finds that it opens into the parlor.
 Looking at the other side of the door, you find that it is ingeniously 
 concealed in the wall.  You realize that you will not be able to re-enter
@@ -4838,15 +4845,16 @@ Direction up~
 ToRoom    2464
 #ENDEXIT
 
-Reset D 0 2474 0 1
+Reset D 2474 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2475
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2475
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -4865,11 +4873,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2476
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2476
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -4888,11 +4897,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2477
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2477
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction south~
@@ -4904,11 +4914,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2478
-Name     An Intersection~
-Sector   inside~
-Flags    indoors~
-Desc     The dark corridors branch off here.  You have no way of knowing which
+Vnum      2478
+Name      An Intersection~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The dark corridors branch off here.  You have no way of knowing which
 path to choose.  You can only pick one, and hope...
 ~
 #EXIT
@@ -4942,11 +4953,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2479
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2479
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -4969,16 +4981,17 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset M 0 2412 4 2479
-Reset O 0 2447 1 2479
+Reset M 2412 4 2479 -1 -1 -1 100
+Reset O 2447 1 2479 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2480
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2480
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -4997,11 +5010,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2481
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2481
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction east~
@@ -5017,14 +5031,16 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset M 0 2412 4 2481
+Reset M 2412 4 2481 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2482
-Name     The Field~
-Sector   field~
-Desc     The field leads north and east from here.  The ground does not appear to be
+Vnum      2482
+Name      The Field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The field leads north and east from here.  The ground does not appear to be
 as worn here.  You can see a water trough to the north.
 ~
 #EXIT
@@ -5040,10 +5056,12 @@ ToRoom    2457
 #ENDROOM
 
 #ROOM
-Vnum     2483
-Name     The Field~
-Sector   field~
-Desc     You are in the northeast corner of the field.  There is nothing here but
+Vnum      2483
+Name      The Field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in the northeast corner of the field.  There is nothing here but
 open grass.  Well, it used to be grass.  It has been used so much that now
 there is just a large area of mud.
 ~
@@ -5060,23 +5078,25 @@ ToRoom    2486
 #ENDROOM
 
 #ROOM
-Vnum     2484
-Name     Final Judgment~
-Sector   inside~
-Flags    nomob indoors chaotic nosummon noastral~
-Desc     You have really done it now.  You are floating, helpless, in a void. 
+Vnum      2484
+Name      Final Judgment~
+Sector    indoors~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      You have really done it now.  You are floating, helpless, in a void. 
 The judge sits behind his desk, ready to pass judgment on you.
 ~
-Reset M 0 2484 1 2484
-  Reset E 1 2454 1 16
+Reset M 2484 1 2484 -1 -1 -1 100
+  Reset E 2454 1 16 100
 #ENDROOM
 
 #ROOM
-Vnum     2485
-Name     An Antechamber~
-Sector   inside~
-Flags    nomob indoors nomagic norecall nosummon noastral~
-Desc     You are in a room with no walls at all.  Looking around, you see nothing. 
+Vnum      2485
+Name      An Antechamber~
+Sector    indoors~
+Flags     nomob indoors nosummon nomagic norecall noastral~
+Stats     0 0 0 0 0
+Desc      You are in a room with no walls at all.  Looking around, you see nothing. 
 Complete and total nothingness.  A chill envelops your body.  Down below, 
 you can see an important-looking man sitting in a chair.  He doesn't look too
 happy, and you would just as soon leave.
@@ -5096,10 +5116,12 @@ Comlist   mpforce $n down
 #ENDROOM
 
 #ROOM
-Vnum     2486
-Name     The Field~
-Sector   field~
-Desc     This is the northwest corner of the field.  The mud is ankle deep here, and
+Vnum      2486
+Name      The Field~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This is the northwest corner of the field.  The mud is ankle deep here, and
 is sticking to your shoes.  Apparently, the horses like to walk around the 
 water trough.
 ~
@@ -5113,16 +5135,17 @@ Direction south~
 ToRoom    2482
 #ENDEXIT
 
-Reset M 0 2455 3 2486
-Reset O 0 2486 1 2486
+Reset M 2455 3 2486 -1 -1 -1 100
+Reset O 2486 1 2486 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2487
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2487
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -5141,11 +5164,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2488
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2488
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction east~
@@ -5161,15 +5185,16 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset M 0 2471 4 2488
+Reset M 2471 4 2488 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2489
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2489
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -5188,11 +5213,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2490
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2490
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction north~
@@ -5208,15 +5234,16 @@ Desc      You see nothing but darkened corridors.
 ~
 #ENDEXIT
 
-Reset M 0 2471 4 2490
+Reset M 2471 4 2490 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2491
-Name     The Labyrinth~
-Sector   inside~
-Flags    indoors~
-Desc     You are lost in a maze of corridors.
+Vnum      2491
+Name      The Labyrinth~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are lost in a maze of corridors.
 ~
 #EXIT
 Direction south~
@@ -5235,10 +5262,12 @@ Desc      You see nothing but darkened corridors.
 #ENDROOM
 
 #ROOM
-Vnum     2492
-Name     A small path in the forest~
-Sector   forest~
-Desc     You find yourself wandering along a small path through the forest.  Ahead of
+Vnum      2492
+Name      A small path in the forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You find yourself wandering along a small path through the forest.  Ahead of
 you is a gently sloping hill.  You can't quite make out what is at the top.
 Trees and brush surround you to the east and west.  You can investigate
 what lies ahead, or return south to the pond.
@@ -5260,52 +5289,59 @@ Desc      A small pond...
 #ENDROOM
 
 #ROOM
-Vnum     2493
-Name     Floating in a void~
-Sector   inside~
-Flags    nomob indoors~
+Vnum      2493
+Name      Floating in a void~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     2494
-Name     Floating in a void~
-Sector   inside~
-Flags    nomob indoors~
+Vnum      2494
+Name      Floating in a void~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     2495
-Name     Floating in a void~
-Sector   inside~
-Flags    nomob indoors nosummon noastral~
+Vnum      2495
+Name      Floating in a void~
+Sector    indoors~
+Flags     nomob indoors nosummon noastral~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     2496
-Name     Floating in a void~
-Sector   inside~
-Flags    nomob indoors~
+Vnum      2496
+Name      Floating in a void~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     2497
-Name     Floating in a void~
-Sector   inside~
-Flags    nomob indoors~
+Vnum      2497
+Name      Floating in a void~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     2498
-Name     Floating in a void~
-Sector   inside~
-Flags    nomob indoors~
+Vnum      2498
+Name      Floating in a void~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     2499
-Name     Floating in a void~
-Sector   inside~
-Flags    nomob indoors~
+Vnum      2499
+Name      Floating in a void~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ENDAREA

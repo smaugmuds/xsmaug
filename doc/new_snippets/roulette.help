@@ -1,0 +1,20 @@
+1 BET~
+&YSyntax: bet <amount> coins on <something>&w
+
+This is the command used to bet on the roulette; you must be in the roulette
+room for this to work. "amount" can simply be a number, and it accepts the
+special characters used in the "auction" command (such as "10k" for 10000
+coins). "something" can be:
+
+      1-36              Bet on a number
+      odd/even          Bet on odds/evens
+      doz1/doz2/doz3    Bet on a dozen
+
+You can't bet while the ball is rolling. To see what bets are on, simply look
+at the roulette table ("look roulette"). If you quit the game or move out
+of the roulette room before your bet is resolved, you will lose your money.
+
+Example: bet 10k on odd
+
+See also: &YAUCTION2&w
+~

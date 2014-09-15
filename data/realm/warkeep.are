@@ -1,0 +1,2247 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Keep of the Warlock~
+Author          Yaegar~
+Vnums           15700 15742
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          20 30 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      15700
+Keywords  warlock baragar~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the warlock Baragar~
+Long      The warlock Baragar chuckles at you and dares you to attack him.
+~
+Desc      Before you stands the master of the keep, Baragar the warlock. Baragar is
+a handsome young man with long white hair, and deep blue eyes. He would 
+appear to be almost angelic were it not for the diabolical gleam to his 
+eyes, and the evil grin on his thin, cruel lips.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    30 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary infrared protect flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15701
+Keywords  woman witch alara~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the witch Alara~
+Long      A comely woman in her early twenties grins at you.
+~
+Desc      This woman is the witch Alara, associate and lover of Baragar. She is nude
+save for a leather bandolier across her chest and buttocks, which contains
+a variety of potions, scrolls and throwing daggers. She would be very
+attractive if she didn't cackle insanely so much.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    28 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  detect_invis infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15702
+Keywords  demon~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a demon~
+Long      A minor demon hisses and snarls at you.
+~
+Desc      Baragar and Alara managed to capture this demon and keep it in this room,
+but they lacked the power necessary to control it, so they dare not release
+it again. And now you're in here with this eight foot tall, four armed,
+green skinned monstrosity from the lower planes. Great.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    35 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis sanctuary infrared flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15703
+Keywords  cat familiar~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a cat familiar~
+Long      Alara's familiar, a black cat, hisses at you.
+~
+Desc      This angry feline is Alara's familiar. Do away with it.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    10 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  detect_invis infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15704
+Keywords  hawk familiar~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a hawk familiar~
+Long      Alara's familiar, a hawk, screeches at you.
+~
+Desc      This angry bird is Baragar's familiar. Do away with it.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    12 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  detect_invis infrared protect flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15705
+Keywords  troll guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a troll guard~
+Long      A troll guard squints suspiciously at you.
+~
+Desc      These trolls are meant to prevent strangers from entering the inner keep,
+but they see so many strange creatures here they aren't sure which type is
+allowed and which isn't.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15706
+Keywords  flesh golem~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a flesh golem~
+Long      A flesh golem stands here, arms folded.
+~
+Desc      This mindless automaton is a creation of Baragar's. It answers only to him,
+a fact which irritates (and worries) Alara.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    26 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15707
+Keywords  fire drake~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_fire~
+Short     a fire drake~
+Long      A fire drake snorts flames and attacks!
+~
+Desc      This angry dragonkin has been roused from its nap by you, and it isn't happy
+about it...
+~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    28 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15708
+Keywords  zombie servant~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_janitor~
+Short     a zombie servant~
+Long      A zombie servant gazes at you blankly.
+~
+Desc      This poor fellow was once a living servant of Baragar who made one mistake
+too many. Baragar eventually decided undead staff were far more reliable,
+if a little slower, and slew all his staff, turning them subsequently into
+mindless undead. That's what a charming guy he is.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15709
+Keywords  guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     a keep guard~
+Long      A keep guard stands rigidly at attention here.
+~
+Desc      This guard is slightly bemused at your entrance, but doesn't move to stop
+you- Baragar receives dozens of visitors daily, and if they are powerful
+enough to slay him, then the guards certainly don't stand a chance, so they
+keep quiet. You may wonder why in that case Baragar bothers having guards.
+Well, so does he.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    18 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15710
+Keywords  apprentice~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     an apprentice mage~
+Long      An apprentice mage looks up from her work, startled.
+~
+Desc      This woman was a former lover of Alara's who was brought here by the witch
+as a student after Alara hooked up with Baragar, a warlock of a different
+gender. She is small, cute, and evil.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    21 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15711
+Keywords  grell~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a grell~
+Long      A grell gropes at you with its tentacles.
+~
+Desc      This looks like a huge brain with green tentacles and a huge squid-like
+beak. It hovers in the center of the room, glaring at you menacingly.
+~
+Nattacks  0.000000
+Stats1    -800 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15712
+Keywords  mimic~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a mimic~
+Long      A wooden chest suddenly comes to life!
+~
+Desc      This mimic has been placed here by Baragar to fool (and hopefully slay)
+potential thieves.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15713
+Keywords  crocodile~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a hungry crocodile~
+Long      A hungry crocodile snaps its jaws at you.
+~
+Desc      This hungry reptile hasn't been fed in days. Baragar starves his crocs to
+keep them savage. He uses them to punish his guards. They seldom make
+the same mistake twice, because they are usually dead.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    19 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15714
+Keywords  war dog~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a savage war dog~
+Long      A savage war dog snarls viciously at you.
+~
+Desc      Baragar bred these brutes from the most vicious alsatians and pit bulls he
+could find, then infected them with super-rabies to make 'em nice and
+friendly.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    16 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15715
+Keywords  assassin~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     an assassin~
+Long      An assassin appears suddenly before you.
+~
+Desc      This mysterious woman is one of Baragar's elite black-robed assassins.
+Closely aligned with the assassins of Krogthar's domain, they are cold-
+blooded, ruthless fanatics devoted to their ruler.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15716
+Keywords  dagar assassin~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     the assassin Dagar~
+Long      Dagar the assassin urges you to be silent.
+~
+Desc      Dagar is an agent of Thalos, sent here to eliminate Baragar. He has spent
+weeks infiltrating the keep, and is now in the final stages of his plan.
+However, he'd be more than happy for you to complete the task for him.
+~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    27 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared sneak hide~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15717
+Keywords  gnoll slave~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_janitor~
+Short     a gnoll slave~
+Long      A gnoll slave yelps in surprise at your presence.
+~
+Desc      These evil dog-like humanoids have been captured by Baragar and set to work
+as miners and laborers helping to excavate the ancient lower cavers beneath
+the keep.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15718
+Keywords  ogre slave~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_janitor~
+Short     an ogre slave~
+Long      An ogre slave grunts as you enter, then turns back to his work.
+~
+Desc      These evil giant-kin have been captured by Baragar and set to work as miners
+and laborers helping to excavate the ancient lower cavers beneath the keep.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    18 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc stayarea~
+Affected  infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15719
+Keywords  flind slave master~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a flind slave master~
+Long      A flind slave master howls fiercely and orders you to leave.
+~
+Desc      This gnoll-kin has been placed in charge of the gnolls and ogres that
+labor here, and will not tolerate any interruptions.
+~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15720
+Keywords  otyugh~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     an otyugh~
+Long      An otyugh gibbers and attacks!
+~
+Desc      This creature is a trangular mass of flesh with a huge maw and two tentacles.
+It rushes toward you on stubby legs. It is used to devour the garbage of
+the keep.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  sanctuary infrared~
+#ENDMOBILE
+
+#OBJECT
+Vnum      15700
+Keywords  robes~
+Type      armor~
+Short     some black robes~
+Long      Some black robes have been left here.~
+Flags     glow~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData mana 50 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15701
+Keywords  staff~
+Type      staff~
+Short     a bone staff~
+Long      A bone staff lies here.~
+Flags     glow~
+Values    30 12 12 -1 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData dexterity 2 -1 -1 0
+Spells       'call lightning'
+#ENDOBJECT
+
+#OBJECT
+Vnum      15702
+Keywords  sword~
+Type      weapon~
+Short     a bone sword~
+Long      A bone sword is stuck in the ground here.~
+Flags     glow~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll 4 -1 -1 0
+AffData damroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15703
+Keywords  helm~
+Type      armor~
+Short     a bronze helm~
+Long      A bronze helm covered in runes has been left here.~
+Flags     glow~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     7 0 -2 9999 0 None None None
+AffData armor -10 -1 -1 0
+AffData save_breath -3 -1 -1 0
+AffData save_spell -3 -1 -1 0
+AffData sex -2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15704
+Keywords  bandolier~
+Type      container~
+Short     a leather bandolier~
+Long      A leather bandolier lies here.~
+WFlags    take~
+Values    50 1 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+AffData sex 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15705
+Keywords  potion~
+Type      potion~
+Short     a green potion~
+Long      A bright green potion has been left here.~
+Flags     hum~
+Values    28 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 2500 -2 1 0 None None None
+Spells       'stone skin' 'protection from evil' 'cause light'
+#ENDOBJECT
+
+#OBJECT
+Vnum      15706
+Keywords  potion~
+Type      potion~
+Short     a red potion~
+Long      A bright red potion has been left here.~
+Flags     hum~
+Values    28 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 2500 -2 1 0 None None None
+Spells       'curse' 'armor' 'cure serious'
+#ENDOBJECT
+
+#OBJECT
+Vnum      15707
+Keywords  scroll~
+Type      scroll~
+Short     a lightning scroll~
+Long      A lightning scroll is curled up on the floor here.~
+WFlags    take~
+Values    28 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 2500 -2 1 0 None None None
+Spells       'call lightning' 'lightning bolt' 'lightning breath'
+#ENDOBJECT
+
+#OBJECT
+Vnum      15708
+Keywords  scroll~
+Type      scroll~
+Short     a fire scroll~
+Long      A fire scroll is curled up on the floor here.~
+WFlags    take~
+Values    28 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 2500 -2 1 0 None None None
+Spells       'fire breath' 'flamestrike' 'fireball'
+#ENDOBJECT
+
+#OBJECT
+Vnum      15709
+Keywords  wand~
+Type      wand~
+Short     a wand~
+Long      A wand inscribed with strange runes lies here.~
+Flags     glow~
+Values    28 7 7 -1 0 0 0 0 0 0 0
+Stats     1 2500 -2 1 0 None None None
+Spells       'cause critical'
+#ENDOBJECT
+
+#OBJECT
+Vnum      15710
+Keywords  dagger~
+Type      weapon~
+Short     a dagger~
+Long      A rune-covered dagger has been left here.~
+Flags     hum~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData hitroll 6 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15711
+Keywords  staff~
+Type      staff~
+Short     a garthalanium staff~
+Long      A staff fashioned of garthalanium has been left here.~
+Flags     hum~
+Values    28 10 10 -1 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData mana 25 -1 -1 0
+Spells       'energy drain'
+#ENDOBJECT
+
+#OBJECT
+Vnum      15712
+Keywords  pentagram~
+Type      furniture~
+Short     a pentagram~
+Long      A pentagram has been inscribed upon the floor here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15713
+Keywords  spiked club~
+Type      weapon~
+Short     a spiked club~
+Long      A spiked club lies here.~
+Flags     antigood~
+WFlags    take~
+Values    0 0 0 8 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+AffData hitroll -4 -1 -1 0
+AffData damroll 6 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15714
+Keywords  leather hauberk~
+Type      armor~
+Short     a leather hauberk~
+Long      A leather hauberk has been dropped here.~
+WFlags    take~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15715
+Keywords  drake hide~
+Type      armor~
+Short     a fire drake hide~
+Long      The hide of a fire drake has been removed and left here.~
+Flags     hum~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     25 0 -2 9999 0 None None None
+AffData armor -25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15716
+Keywords  bronze plate~
+Type      armor~
+Short     a suit of bronze plate~
+Long      A suit of bronze plate has been piled up here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15717
+Keywords  bronze shield~
+Type      armor~
+Short     a bronze shield~
+Long      A bronze shield lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15718
+Keywords  bronze helm~
+Type      armor~
+Short     a bronze helm~
+Long      A bronze helm has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     6 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15719
+Keywords  bronze sword~
+Type      weapon~
+Short     a bronze sword~
+Long      A bronze sword is buried in the ground here.~
+WFlags    take~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     12 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15720
+Keywords  robes~
+Type      armor~
+Short     some green robes~
+Long      Some green robes are crumpled up on the floor here.~
+Flags     glow~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData mana 20 -1 -1 0
+AffData save_spell -3 -1 -1 0
+AffData sex 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15721
+Keywords  staff~
+Type      weapon~
+Short     a wooden staff~
+Long      A wooden staff with a bronze head lies here.~
+WFlags    take~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     9 0 -2 9999 0 None None None
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15722
+Keywords  spellbook~
+Type      scroll~
+Short     a spellbook~
+Long      A spellbook with bronze fittings lies here.~
+Flags     hum~
+Values    21 -1 -1 -1 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+Spells       'blindness' 'weaken' 'word of recall'
+#ENDOBJECT
+
+#OBJECT
+Vnum      15723
+Keywords  pit~
+Type      container~
+Short     a deep pit~
+Long      A deep pit yawns before you.~
+Flags     organic~
+Values    1000 1 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15724
+Keywords  collar~
+Type      armor~
+Short     a spiked collar~
+Long      A spiked dog collar lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15725
+Keywords  assassin robes~
+Type      armor~
+Short     the robes of an assassin~
+Long      The black robes of an assassin have been torn from her and left here.~
+Flags     antigood~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData intelligence 2 -1 -1 0
+AffData armor -5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15726
+Keywords  dagger~
+Type      pipe~
+Short     a throwing dagger~
+Long      A throwing dagger has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData hitroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15727
+Keywords  sword~
+Type      weapon~
+Short     a steel sword~
+Long      A rare steel sword covered in runes lies here.~
+Flags     glow~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll 4 -1 -1 0
+AffData damroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15728
+Keywords  ring~
+Type      armor~
+Short     a magic ring~
+Long      A magic ring floats by here.~
+Flags     glow~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData mana 10 -1 -1 0
+AffData save_breath -1 -1 -1 0
+AffData save_spell -1 -1 -1 0
+AffData sex 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15729
+Keywords  boots~
+Type      armor~
+Short     elven boots~
+Long      A pair of elven boots lie here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData intelligence 2 -1 -1 0
+AffData move 25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15730
+Keywords  elven cloak~
+Type      armor~
+Short     a green elven cloak~
+Long      A green elven cloak has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData armor -5 -1 -1 0
+AffData sex 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15731
+Keywords  pick~
+Type      weapon~
+Short     a pick~
+Long      A pick rests here.~
+WFlags    take~
+Values    0 0 0 2 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15732
+Keywords  shovel~
+Type      weapon~
+Short     a shovel~
+Long      A shovel rests here.~
+WFlags    take~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15733
+Keywords  rubble~
+Type      trash~
+Short     a pile of rubble~
+Long      A pile of rubble has been made here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     75 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15734
+Keywords  whip~
+Type      weapon~
+Short     a whip~
+Long      A whip has been curled up here.~
+WFlags    take~
+Values    0 0 0 4 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15735
+Keywords  flind bar~
+Type      armor~
+Short     a flind bar~
+Long      A flind bar has been left here.~
+Flags     antigood~
+WFlags    take~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData damroll 5 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15736
+Keywords  rubbish~
+Type      trash~
+Short     a huge pile of rubbish~
+Long      A huge pile of rubbish is here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     150 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15737
+Keywords  rack~
+Type      furniture~
+Short     a torturer's rack~
+Long      A torturer's rack sits near one wall.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    rack~
+ExDesc       It is not currently in use. The warlock enjoys executions, so people he
+captures rarely live long enough to be tortured.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15738
+Keywords  gallows~
+Type      furniture~
+Short     a gallows~
+Long      A gallows has been erected here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    gallows~
+ExDesc       They are used regularly to hang those who piss off the warlock.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15739
+Keywords  stocks~
+Type      furniture~
+Short     the stocks~
+Long      The stocks sit here, holding a pathetic wretch of a gnoll.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    stocks gnoll~
+ExDesc       This unfortunate has been left here for a week for insubordination.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15740
+Keywords  pot boiling oil~
+Type      furniture~
+Short     a pot of boiling oil~
+Long      A pot of boiling oil bubbles away here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    pot boiling oil~
+ExDesc       The warlock enjoys immersing insubordinate or irritating lackeys in here.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15741
+Keywords  flag~
+Type      furniture~
+Short     a black flag~
+Long      A black flag flutters atop a pole here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    flag~
+ExDesc       It is plain black. The warlock isn't very imaginative.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15742
+Keywords  leg irons~
+Type      armor~
+Short     a set of leg irons~
+Long      A set of leg irons rest here.~
+Flags     noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData intelligence -3 -1 -1 0
+AffData move -100 -1 -1 0
+#ENDOBJECT
+
+#ROOM
+Vnum      15700
+Name      The Path to the Keep~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are heading toward a bleak blackstone keep, sitting in the middle of
+a field of scorched earth. Surly guards patrol both on the battlements and
+below before the gate, but they pay you little heed. Evidently the guards
+are used to strange visitors...
+~
+#EXIT
+Direction east~
+ToRoom    5365
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15701
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      15701
+Name      Before the Keep~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are standing outside the massive bronze-bound oak portals that bar the
+way into the keep. They currently stand open, though, as if the warlock
+were expecting visitors...
+~
+#EXIT
+Direction east~
+ToRoom    15700
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15704
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15709 12 15701 -1 -1 -1 100
+  Reset E 15719 1 16 100
+  Reset E 15718 1 6 100
+  Reset E 15717 1 11 100
+  Reset E 15716 1 5 100
+Reset D 15701 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15702
+Name      A Guard Tower~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This tower sits above the gate you just entered. Guards march back and forth.
+They seem mildly surprised by your entrance, but they don't move to hinder
+you. The stairs continue up and down.
+~
+#EXIT
+Direction up~
+ToRoom    15703
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15704
+#ENDEXIT
+
+Reset M 15709 12 15702 -1 -1 -1 100
+  Reset E 15719 1 16 100
+  Reset E 15718 1 6 100
+  Reset E 15717 1 11 100
+  Reset E 15716 1 5 100
+#ENDROOM
+
+#ROOM
+Vnum      15703
+Name      The Roof of the Tower~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You emerge onto the roof of the tower. From here you can see far across the
+plains of Past Anon. The ancient city of Thalos, ruined in your own time,
+lies far to the south, while to the east lie the jagged peaks of the first
+mountain range of Anon. It is rumored that the gods temselves reside at their
+lofty peaks. Beyond them, you can see the peak of Mount Doom, whereupon
+the castle of the dread Lord Krogthar is located.
+~
+#EXIT
+Direction down~
+ToRoom    15702
+#ENDEXIT
+
+Reset O 15741 1 15703 -1 -1 -1 100
+Reset M 15709 12 15703 -1 -1 -1 100
+  Reset E 15719 1 16 100
+  Reset E 15718 1 6 100
+  Reset E 15717 1 11 100
+  Reset E 15716 1 5 100
+#ENDROOM
+
+#ROOM
+Vnum      15704
+Name      Inside the Keep~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Guards march to and fro in this small courtyard. Wooden portals lie to the
+north, west and south, while the entry gate looms to the east. A set of
+stairs leads up into the tower of the gatehouse.
+~
+#EXIT
+Direction north~
+ToRoom    15705
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15701
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15706
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15707
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    15702
+#ENDEXIT
+
+Reset M 15709 12 15704 -1 -1 -1 100
+  Reset E 15719 1 16 100
+  Reset E 15718 1 6 100
+  Reset E 15717 1 11 100
+  Reset E 15716 1 5 100
+Reset D 15704 0 1 100 -2
+Reset D 15704 1 1 100 -2
+Reset D 15704 2 1 100 -2
+Reset D 15704 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15705
+Name      The Stables~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the guards of the Keep keep, or kept, rather, their steeds. A
+particularly harsh winter left the Keep short of food, and necessitated
+the eating of the horses. They have not been replaced yet.
+~
+#EXIT
+Direction south~
+ToRoom    15704
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 15705 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15706
+Name      Barracks~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This room quarters some of the guards of the Keep. There are several bunks
+littered with dirty underwear and frayed tunics- evidently the warlock is
+not a stickler for discipline.
+~
+#EXIT
+Direction north~
+ToRoom    15704
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 15706 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15707
+Name      The Inner Courtyard~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have passed into the inner courtyard, which lies before the stark black
+walls of the inner keep, wherein resides Baragar and his consort Alara.
+Guards occasionally stroll past, as does the occasional servant. The
+servants appear to be rather lifeless and cold...
+~
+#EXIT
+Direction north~
+ToRoom    15708
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15704
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15709
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15710
+#ENDEXIT
+
+Reset O 15738 1 15707 -1 -1 -1 100
+Reset D 15707 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15708
+Name      The Inner Courtyard~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have passed into the inner courtyard, which lies before the stark black
+walls of the inner keep, wherein resides Baragar and his consort Alara.
+Guards occasionally stroll past, as does the occasional servant. The
+servants appear to be rather lifeless and cold...
+~
+#EXIT
+Direction north~
+ToRoom    15741
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15707
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15711
+#ENDEXIT
+
+Reset M 15708 12 15708 -1 -1 -1 100
+Reset D 15708 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15709
+Name      The Inner Courtyard~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have passed into the inner courtyard, which lies before the stark black
+walls of the inner keep, wherein resides Baragar and his consort Alara.
+Guards occasionally stroll past, as does the occasional servant. The
+servants appear to be rather lifeless and cold...
+~
+#EXIT
+Direction north~
+ToRoom    15707
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15742
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15712
+#ENDEXIT
+
+Reset O 15739 1 15709 -1 -1 -1 100
+Reset M 15708 12 15709 -1 -1 -1 100
+Reset D 15709 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15710
+Name      The Inner Courtyard~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have passed into the inner courtyard, which lies before the stark black
+walls of the inner keep, wherein resides Baragar and his consort Alara.
+Guards occasionally stroll past, as does the occasional servant. The
+servants appear to be rather lifeless and cold...
+
+The doors to the inner keep lie to the west of here.
+~
+#EXIT
+Direction north~
+ToRoom    15711
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15707
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15712
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15715
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15705 8 15710 -1 -1 -1 100
+  Reset E 15714 1 5 100
+  Reset E 15713 1 16 100
+Reset D 15710 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15711
+Name      The Inner Courtyard~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have passed into the inner courtyard, which lies before the stark black
+walls of the inner keep, wherein resides Baragar and his consort Alara.
+Guards occasionally stroll past, as does the occasional servant. The
+servants appear to be rather lifeless and cold...
+~
+#EXIT
+Direction east~
+ToRoom    15708
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15710
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15713
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 15740 1 15711 -1 -1 -1 100
+Reset D 15711 5 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15712
+Name      The Inner Courtyard~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have passed into the inner courtyard, which lies before the stark black
+walls of the inner keep, wherein resides Baragar and his consort Alara.
+Guards occasionally stroll past, as does the occasional servant. The
+servants appear to be rather lifeless and cold...
+~
+#EXIT
+Direction north~
+ToRoom    15710
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15709
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15714
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset O 15740 1 15712 -1 -1 -1 100
+Reset D 15712 5 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15713
+Name      The Garbage Pit~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the keep's occupants dump their garbage, to be devoured by the offal-
+eating creature they keep in here. It smells very bad.... very VERY bad...
+~
+#EXIT
+Direction up~
+ToRoom    15711
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15720 1 15713 -1 -1 -1 100
+Reset O 15736 1 15713 -1 -1 -1 100
+Reset D 15713 4 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15714
+Name      The Crocodile Pit~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here Baragar keeps his pet crocodiles, whom he feeds insubordinate guards
+or slaves to. They are rather hungry, and they would take great pleasure
+in devouring you.
+~
+#EXIT
+Direction up~
+ToRoom    15712
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15713 4 15714 -1 -1 -1 100
+Reset D 15714 4 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15715
+Name      The Inner Keep~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand within the inner keep. The entry room is a small dark chamber,
+with only four wooden doors to break the monotony of the black walls.
+~
+#EXIT
+Direction north~
+ToRoom    15716
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15710
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15717
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15718
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 15715 0 1 100 -2
+Reset D 15715 1 1 100 -2
+Reset D 15715 2 1 100 -2
+Reset D 15715 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15716
+Name      Guard Room~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      here some of the Trollish guards of the inner keep reside. They dislike
+intruders, though they are under orders from Baragar not to slay any, for
+he is intensely curious as to the nature of any visitors, welcome or not.
+~
+#EXIT
+Direction south~
+ToRoom    15715
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15705 8 15716 -1 -1 -1 100
+  Reset E 15714 1 5 100
+  Reset E 15713 1 16 100
+Reset D 15716 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15717
+Name      Guard Room~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      here some of the Trollish guards of the inner keep reside. They dislike
+intruders, though they are under orders from Baragar not to slay any, for
+he is intensely curious as to the nature of any visitors, welcome or not.
+~
+#EXIT
+Direction north~
+ToRoom    15715
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15705 8 15717 -1 -1 -1 100
+  Reset E 15714 1 5 100
+  Reset E 15713 1 16 100
+Reset D 15717 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15718
+Name      A Stairwell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      These steps lead up into the upper levels of the keep, or down into the
+dungeons. You can hear sounds of construction coming from below.
+~
+#EXIT
+Direction east~
+ToRoom    15715
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    15719
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15727
+#ENDEXIT
+
+Reset M 15708 12 15718 -1 -1 -1 100
+Reset D 15718 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15719
+Name      A Stairwell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      These steps lead up into the upper levels of the keep, or down into the
+dungeons. You can hear sounds of construction coming from below.
+~
+#EXIT
+Direction east~
+ToRoom    15720
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    15726
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15718
+#ENDEXIT
+
+Reset M 15708 12 15719 -1 -1 -1 100
+Reset D 15719 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15720
+Name      Antechamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This small room is totally windowless, and would be utterly dark were it
+not for your pale light source. You feel uneasy here. Far away, someone
+screams, and you shiver uncomfortably.
+~
+#EXIT
+Direction north~
+ToRoom    15721
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15722
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15719
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 15720 0 1 100 -2
+Reset D 15720 2 1 100 -2
+Reset D 15720 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15721
+Name      Assassins' Quarters~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the assassins of Baragar reside, spending their spare time playing
+cards, making poisons, killing peasant rabble captured by the guards, etc.
+They will not be impressed by your intrusion...
+~
+#EXIT
+Direction south~
+ToRoom    15720
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15715 4 15721 -1 -1 -1 100
+  Reset E 15726 1 16 100
+  Reset E 15725 1 12 100
+Reset D 15721 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15722
+Name      Apprentice Quarters~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here resides Alara's apprentice and sometime bed-partner. The apprentice
+has little to do with Baragar, as Baragar envies and distrusts her, but he
+dares not slay her for Alara would be displeased...
+~
+#EXIT
+Direction north~
+ToRoom    15720
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15710 1 15722 -1 -1 -1 100
+  Reset E 15722 1 17 100
+  Reset E 15721 1 16 100
+  Reset E 15720 1 12 100
+Reset D 15722 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15723
+Name      Antechamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This small room is totally windowless, and would be utterly dark were it
+not for your pale light source. You feel uneasy here. Far away, someone
+screams, and you shiver uncomfortably.
+~
+#EXIT
+Direction north~
+ToRoom    15724
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15725
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15726
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15706 1 15723 -1 -1 -1 100
+Reset O 15737 1 15723 -1 -1 -1 100
+Reset M 15708 12 15723 -1 -1 -1 100
+Reset D 15723 0 1 100 -2
+Reset D 15723 2 1 100 -2
+Reset D 15723 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15724
+Name      Baragar's Chambers~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Baragar himself resides here, in this small room. It is rather spartan,
+furnished only with a small military cot, a desk and a shelf full of books.
+You are surprised that such a wicked man would be so neat and disciplined.
+~
+#EXIT
+Direction south~
+ToRoom    15723
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15700 1 15724 -1 -1 -1 100
+  Reset E 15703 1 6 100
+  Reset E 15702 1 16 100
+  Reset E 15701 1 17 100
+  Reset E 15700 1 12 100
+Reset M 15704 1 15724 -1 -1 -1 100
+Reset D 15724 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15725
+Name      Alara's Chamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Yang to Baragar's Yin, Alara's room represents just how different they are.
+Her room is sloppy and messy, filled with useless junk and piles of unwashed
+clothing. There are two large beds, covered with expensive silks and pillows.
+A set of manacles hangs from one wall, used for some perversion you don't
+care to find out more about.
+~
+#EXIT
+Direction north~
+ToRoom    15723
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15701 1 15725 -1 -1 -1 100
+  Reset E 15711 1 17 100
+  Reset E 15710 1 16 100
+  Reset E 15704 1 5 100
+Reset M 15703 1 15725 -1 -1 -1 100
+Reset D 15725 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15726
+Name      A Stairwell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      These steps lead up into the upper levels of the keep, or down into the
+dungeons. You can hear sounds of construction coming from below.
+~
+#EXIT
+Direction east~
+ToRoom    15723
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    15736
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15719
+#ENDEXIT
+
+Reset M 15708 12 15726 -1 -1 -1 100
+Reset M 15716 1 15726 -1 -1 -1 100
+  Reset E 15730 1 3 100
+  Reset E 15729 1 8 100
+  Reset E 15728 1 2 100
+  Reset E 15728 1 1 100
+  Reset E 15727 1 16 100
+Reset D 15726 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15727
+Name      The Dungeons~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in the dank, damp and dirty dungeons of the Keep. The passage you
+are in extends west into darkness. You can hear the sounds of construction
+more clearly now.
+~
+#EXIT
+Direction west~
+ToRoom    15728
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    15718
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      15728
+Name      The Dungeons~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in the dank, damp and dirty dungeons of the Keep. The passage you
+are in extends west into darkness. You can hear the sounds of construction
+more clearly now.
+
+Doors lie to the north and south of here. The southern door has strange
+runes inscribed upon it.
+~
+#EXIT
+Direction north~
+ToRoom    15729
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15727
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15730
+Desc      This door is inscribed with strange runes~
+Keywords  door~
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15731
+#ENDEXIT
+
+Reset D 15728 0 1 100 -2
+Reset D 15728 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15729
+Name      A Treasure Room~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This room has a huge chest cram-packed with loot in the middle of it. But
+as you enter, you feel rather uneasy about the whole situation.
+~
+#EXIT
+Direction south~
+ToRoom    15728
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15712 1 15729 -1 -1 -1 100
+Reset O 15723 1 15729 -1 -1 -1 100
+Reset O 15723 1 15729 -1 -1 -1 100
+Reset D 15729 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15730
+Name      A Summoning Room~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Baragar and Alara use (or used) this room for practicing their gate spells,
+but when one spell summoned a denizen of the lower planes that they couldn't
+control, they hastily sealed it in this room. And now you have released it.
+Way to go.
+~
+#EXIT
+Direction north~
+ToRoom    15728
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15702 1 15730 -1 -1 -1 100
+Reset O 15712 1 15730 -1 -1 -1 100
+Reset D 15730 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15731
+Name      A Junction~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are at a rather busy junction in the dungeons. To the north runs a dark
+passage, while to the south lies a door. To the west lies the source of
+the noises you heard earlier. it is obvious that a team of workers is
+excavating down here. Perhaps Baraga wishes to unearth the treasures
+rumored to lie in the ancient caverns beneath his keep...?
+~
+#EXIT
+Direction north~
+ToRoom    15733
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15728
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15735
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15732
+#ENDEXIT
+
+Reset D 15731 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15732
+Name      The Entryway to the Mines~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here there is a crude elevator which you can use to lower yourself into
+the lower caverns, wherein the excavation is occuring. But also down there
+lies the entryway to the ancient caverns, where no one dares travel.
+~
+#EXIT
+Direction east~
+ToRoom    15731
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15737
+#ENDEXIT
+
+Reset M 15717 10 15732 -1 -1 -1 100
+  Reset E 15742 1 7 100
+  Reset E 15731 1 16 100
+Reset O 15733 1 15732 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15733
+Name      A Dark Passage~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This passage extends north into a large cave. The cave emits a glow visible
+from here, permeating the perpetual darkness here.
+~
+#EXIT
+Direction north~
+ToRoom    15734
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15731
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      15734
+Name      A Fiery Cavern~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This cave is illuminated by a lava pool in the center of the room, in which
+a fire drake is currently dozing. He awakes as you enter, and prepares to
+cast you out!
+~
+#EXIT
+Direction south~
+ToRoom    15733
+#ENDEXIT
+
+Reset M 15707 1 15734 -1 -1 -1 100
+  Reset E 15715 1 12 100
+#ENDROOM
+
+#ROOM
+Vnum      15735
+Name      A Lab~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This room was once used as a lab, but Baragar grew bored with alchemy,
+and abandoned it. Eventually a Grell from the lower caverns made its way
+up here, and created a nest in this lab. Baragar was fascinated by the
+bizarre creature, and sealed it within, intending one day to study it. He
+occasionally feeds it the odd slave or guard.
+~
+#EXIT
+Direction north~
+ToRoom    15731
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15711 1 15735 -1 -1 -1 100
+Reset D 15735 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15736
+Name      The Roof of the Inner Keep~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing on the roof, atop the highest point of the whole keep.
+The lands of Past Anon lay spread out before you, and from this windswept
+position you can see for miles. You hear the cry of some bird, and look
+above to see several vultures slowly winging their way toward the desolate
+deserts to the south. In those deserts there is rumored to be a fantastic
+place filled with wondrous treasures.
+~
+#EXIT
+Direction down~
+ToRoom    15726
+#ENDEXIT
+
+Reset O 15741 1 15736 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15737
+Name      The Mines~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Workers rush back and forth, busily carting bags of excavated stone to and
+from the digging sites. They are intent on their work, and ignore you. You
+see some rather valuable veins of ore in the walls, left untouched, and
+you assume the treasure below must be magnificent indeed for Baragar to
+ignore such wealth.
+~
+#EXIT
+Direction north~
+ToRoom    15738
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    15732
+#ENDEXIT
+
+Reset M 15717 10 15737 -1 -1 -1 100
+  Reset E 15742 1 7 100
+  Reset E 15732 1 16 100
+Reset O 15733 1 15737 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15738
+Name      The Mines~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Workers rush back and forth, busily carting bags of excavated stone to and
+from the digging sites. They are intent on their work, and ignore you. You
+see some rather valuable veins of ore in the walls, left untouched, and
+you assume the treasure below must be magnificent indeed for Baragar to
+ignore such wealth.
+~
+#EXIT
+Direction north~
+ToRoom    15740
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15737
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15739
+#ENDEXIT
+
+Reset M 15717 10 15738 -1 -1 -1 100
+  Reset E 15742 1 7 100
+  Reset E 15731 1 16 100
+Reset O 15733 1 15738 -1 -1 -1 100
+Reset M 15718 4 15738 -1 -1 -1 100
+  Reset E 15742 1 7 100
+  Reset E 15732 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      15739
+Name      The Mines~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Workers rush back and forth, busily carting bags of excavated stone to and
+from the digging sites. They are intent on their work, and ignore you. You
+see some rather valuable veins of ore in the walls, left untouched, and
+you assume the treasure below must be magnificent indeed for Baragar to
+ignore such wealth.
+~
+#EXIT
+Direction east~
+ToRoom    15738
+#ENDEXIT
+
+Reset M 15717 10 15739 -1 -1 -1 100
+  Reset E 15742 1 7 100
+  Reset E 15732 1 16 100
+Reset O 15733 1 15739 -1 -1 -1 100
+Reset M 15719 1 15739 -1 -1 -1 100
+  Reset G 15734 0 100
+  Reset E 15735 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      15740
+Name      The Mines~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Workers rush back and forth, busily carting bags of excavated stone to and
+from the digging sites. They are intent on their work, and ignore you. You
+see some rather valuable veins of ore in the walls, left untouched, and
+you assume the treasure below must be magnificent indeed for Baragar to
+ignore such wealth.
+~
+#EXIT
+Direction south~
+ToRoom    15738
+#ENDEXIT
+
+Reset M 15717 10 15740 -1 -1 -1 100
+  Reset E 15742 1 7 100
+  Reset E 15731 1 16 100
+Reset O 15733 1 15740 -1 -1 -1 100
+Reset M 15718 4 15740 -1 -1 -1 100
+  Reset E 15742 1 7 100
+  Reset E 15731 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      15741
+Name      The Dog Pits~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here Baragar keeps his vicious war dogs, which he takes with him when on
+campaigns as guards and hunters of fleeing prey. They are incredibly savage
+and will attack anyone on sight save Baragar. They will even attack Alara if
+she enters unaccompanied.
+~
+#EXIT
+Direction south~
+ToRoom    15708
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15714 6 15741 -1 -1 -1 100
+  Reset E 15724 1 3 100
+Reset D 15741 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      15742
+Name      The Dog Pits~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here Baragar keeps his vicious war dogs, which he takes with him when on
+campaigns as guards and hunters of fleeing prey. They are incredibly savage
+and will attack anyone on sight save Baragar. They will even attack Alara if
+she enters unaccompanied.
+~
+#EXIT
+Direction north~
+ToRoom    15709
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 15714 6 15742 -1 -1 -1 100
+  Reset E 15724 1 3 100
+Reset D 15742 0 1 100 -2
+#ENDROOM
+
+#ENDAREA

@@ -1,17 +1,18 @@
  ############################################################################
- # [S]imulated [M]edieval [A]dventure multi[U]ser [G]ame      |   \\._.//   #
- # -----------------------------------------------------------|   (0...0)   #
- # SMAUG 1.4 (C) 1994, 1995, 1996, 1998  by Derek Snider      |    ).:.(    #
- # -----------------------------------------------------------|    {o o}    #
- # SMAUG code team: Thoric, Altrag, Blodkai, Narn, Haus,      |   / ' ' \   #
- # Scryn, Rennard, Swordbearer, Gorog, Grishnakh, Nivek,      |~'~.VxvxV.~'~#
- # Tricops and Fireblade                                      |             #
+ #                                                                          #
+ #   X      X  ******* **    **  ******  **    **  ******                   #
+ #    X    X  ******** ***  *** ******** **    ** ********       \\._.//    #
+ #     X  X   **       ******** **    ** **    ** **             (0...0)    #
+ #      XX    *******  ******** ******** **    ** **  ****        ).:.(     #
+ #      XX     ******* ** ** ** ******** **    ** **  ****        {o o}     #
+ #     X  X         ** **    ** **    ** **    ** **    **       / ' ' \    #
+ #    X    X  ******** **    ** **    ** ******** ********    -^^.VxvxV.^^- #
+ #   X      X *******  **    ** **    **  ******   ******                   #
+ #                                                                          #
  # ------------------------------------------------------------------------ #
- # Merc 2.1 Diku Mud improvments copyright (C) 1992, 1993 by Michael        #
- # Chastain, Michael Quan, and Mitchell Tse.                                #
- # Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,          #
- # Michael Seifert, Hans Henrik St{rfeldt, Tom Madsen, and Katja Nyboe.     #
- # Win32 port by Nick Gammon                                                #
+ # Ne[X]t Generation [S]imulated [M]edieval [A]dventure Multi[U]ser [G]ame  #
+ # ------------------------------------------------------------------------ #
+ # XSMAUG 2.4 (C) 2014  by Antonio Cao @burzumishi                          #
  # ------------------------------------------------------------------------ #
  #                                  XSMAUG                                  #
  #                                 Makefile                                 #
@@ -20,6 +21,9 @@
 CC = g++
 CPP = g++
 CXX = g++
+
+USER = xsmaug
+GROUP = xsmaug
 
 ARCH = `getconf LONG_BIT`
 
@@ -67,6 +71,8 @@ doc_DATA = README AUTHORS INSTALL NEWS LICENSE ChangeLog \
 	doc/license.smaug.txt \
 	doc/license.merc.txt \
 	doc/license.diku.txt \
+	doc/license.afk.txt \
+	doc/license.txt \
 	doc/IdeasDrool.txt \
 	doc/healer.txt \
 	doc/contrib.txt \
@@ -100,9 +106,21 @@ rundir = $(datarootdir)/@PACKAGE@
 logdir = $(localstatedir)/log/@PACKAGE@
 
 install-data-hook:
-	@mkdir -pv $(sharedstatedir)/@PACKAGE@; \
+	@echo "Installing <@PACKAGE@> data files ..."; \
+	mkdir -pv $(sharedstatedir)/@PACKAGE@; \
 	cp -rvf data/* $(sharedstatedir)/@PACKAGE@; \
+	echo "Creating <@PACKAGE@> log directory ..."; \
 	mkdir -pv $(localstatedir)/log/@PACKAGE@; \
+	echo "Installing <@PACKAGE@> man pages ..."; \
 	mkdir -pv $(mandir)/man1; \
-	cp doc/xsmaug.1 $(mandir)/man1/xsmaug.1;
-
+	echo "Installing <@PACKAGE@> documentation ..."; \
+	cp doc/xsmaug.1 $(mandir)/man1/xsmaug.1; \
+	echo "Creating user <$(USER)> and group <$(GROUP)> ..."; \
+	groupadd $(GROUP); \
+	useradd $(USER) -g $(GROUP); \
+	echo "Setting up <$(prefix)> permissions to <$(USER):$(GROUP)> ..."; \
+	chown -R $(USER):$(GROUP) $(prefix); \
+	echo ""; \
+	echo "<@PACKAGE@> has ben installed on <$(prefix)> directory!"; \
+	echo "You can execute $(bindir)/xsmaugd now!"; \
+	echo "";

@@ -1,0 +1,3673 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Dungeon~
+Author          Yaegar/Aurorix~
+Vnums           15100 15169
+Continent       one~
+Coordinates     0 0
+Dates           1403837156 1403837156
+Ranges          20 50 0 115
+ResetFreq       15
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      15100
+Keywords  maniacal prisoner~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a maniacal prisoner~
+Long      A maniacal prisoner giggles insanely at you.
+~
+Desc      This poor soul has been in here so long it has broken his mind. No one even
+remembers why he is here.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    18 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15101
+Keywords  turnkey~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     a drunken turnkey~
+Long      The turnkey snores loudly as he sleeps off another binge.
+~
+Desc      His job bores him to tears. No one ever tries to escape. His duties are
+limited to escorting prisoners to and from their cells, and occasionally
+beating a noisy or frightened prisoner into submission. So he spends most
+(heck, ALL) of his time drinking.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    32 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary sleep~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15102
+Keywords  inquisitor~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the inquisitor~
+Long      The inquisitor stands here, extracting "confessions".
+~
+Desc      He seems somewhat puzzled by your presence, then shrugs and turns back to
+his task. The world is full of sickos, and if you get your jollies watching
+a man being tortured to death, well... that's how he gets his, too.
+~
+Nattacks  0.000000
+Stats1    -750 0 0 0 0 0
+Stats2    40 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  detect_invis detect_hidden sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15103
+Keywords  master torturer~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the master torturer~
+Long      The master torturer grins wickedly and gives the rack another turn.
+~
+Desc      This gap-toothed moron is quite adept at causing hapless prisoners exquisite
+pain without any grave danger to their lives. And, what's more, he enjoys it!
+Job satisfaction is SO important, really. I mean, if you don't enjoy your
+job, what have you got?
+~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    36 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15104
+Keywords  noble prisoner~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a noble prisoner~
+Long      A noble prisoner is being kept here.
+~
+Desc      This fellow was imprisoned by the Castellan for offensive behavior towards
+the Castellan's daughter during the Castellan's Ball held recently. He is of
+high status, however, and thus the Castellan afforded him a decent cell. For
+a price, of course.
+~
+Nattacks  0.000000
+Stats1    400 0 0 0 0 0
+Stats2    25 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15105
+Keywords  man iron mask~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the man in the iron mask~
+Long      The man in the iron mask prepares to dig another tunnel with a spoon.
+~
+Desc      The man in the iron mask managed to escape his last cell, but ended up
+digging into this jail. Thus he has to try and escape again.
+~
+Nattacks  0.000000
+Stats1    500 0 0 0 0 0
+Stats2    28 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15106
+Keywords  skeleton~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     an animated skeleton~
+Long      A pile of bones comes to life before you!
+~
+Desc      The former occupant of this cell died a slow, painful death of starvation,
+and thus his spirit lingers still, animating his earthly remains to attack
+anyone he can.
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis curse protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15107
+Keywords  bat~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a bat~
+Long      A huge bat flies into your face!
+~
+Desc      These massive bats are disturbed by your light.
+~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea wimpy~
+Affected  flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15108
+Keywords  spider~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a giant spider~
+Long      A huge spider crawls toward you.
+~
+Desc      These massive spiders are disturbed by your light.
+~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea wimpy~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15109
+Keywords  rat~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a rat~
+Long      A rat squeaks and runs away.
+~
+Desc      This Dungeon is crawling with rats!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15110
+Keywords  cockroach~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a cockroach~
+Long      A cockroach scuttles across the floor.
+~
+Desc      This Dungeon is crawling with roaches!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    3 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea wimpy~
+Affected  sneak hide~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15111
+Keywords  wretched prisoner~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a wretched prisoner~
+Long      A wretched prisoner cries out for pity.
+~
+Desc      These doomed souls will spend years rotting away in this hell hole.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    12 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15112
+Keywords  wretched prisoner~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a wretched prisoner~
+Long      A wretched prisoner cries out for pity.
+~
+Desc      These doomed souls will spend years rotting away in this hell hole.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    12 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15113
+Keywords  political prisoner~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a political prisoner~
+Long      A political prisoner is on hunger strike.
+~
+Desc      Hunger strike doesn't really work when no one gives a shit whether you live
+or die...
+~
+Nattacks  0.000000
+Stats1    500 0 0 0 0 0
+Stats2    27 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15114
+Keywords  grubby child~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a grubby child~
+Long      A grubby child holds out his hands for food.
+~
+Desc      He can't talk- the guards cut out his tongue to silence his incessant
+whining.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    8 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15115
+Keywords  cook~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the Dungeon cook~
+Long      The cook for the Dungeon grunts as you enter.
+~
+Desc      He wasn't expecting anyone would want to eat yet. Actually, he wasn't
+expecting anyone to EVER want to eat while he was cook...
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15116
+Keywords  guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     a Dungeon guard~
+Long      A Dungeon guard stands wearily at his post.
+~
+Desc      This fellow is bored beyond measure. He is itching for some action.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    30 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc stayarea~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15117
+Keywords  dog~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a war dog~
+Long      A war dog bares its fangs and growls menacingly.
+~
+Desc      These dogs are huge, ferocious canines with teeth six inches long. Is that
+foam coating their muzzles?
+~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    21 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15118
+Keywords  escaped prisoner~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     an escaped prisoner~
+Long      An escaped prisoner begs you to help her.
+~
+Desc      She has been on the run for three days, but hasn't managed to get out of
+this cell block. How unadmirable. Call a guard and claim the reward.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    18 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15119
+Keywords  ghost~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     the ubiquitous Dungeon ghost~
+Long      The ubiquitous Dungeon ghost is here doing its job.
+~
+Desc      Every jail, Dungeon, prison etc has a ghost. This one is no exception. Harry
+the ghost approaches and says "Boo" in a manner that makes Steve Wright seem
+animated. He sure seems to love his job.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    39 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  invisible sanctuary flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15120
+Keywords  crypt walker~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_frost~
+Short     a crypt walker~
+Long      A crypt walker shambles past you.
+~
+Desc      This doomed soul is damned to wander here for eternity.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    34 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc stayarea deadly~
+Affected  detect_invis protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15121
+Keywords  coffer corpse~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a coffer corpse~
+Long      A coffer corpse charges you!
+~
+Desc      This evil undead wants to eat your spleen!
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    31 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  detect_invis infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15122
+Keywords  lich ael~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     the lich Ael~
+Long      The lich Ael screams at your intrusion.
+~
+Desc      Ael was a powerful mage in life, and in death he remains so.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea deadly~
+Affected  detect_invis sanctuary infrared protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15123
+Keywords  vampire baraga~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     the vampiure Baraga~
+Long      The vampire Baraga sneers at you.
+~
+Desc      Baraga was once a powerful noble. Now, Baraga lives only to suck blood.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    42 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea deadly~
+Affected  detect_invis sanctuary infrared protect flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15124
+Keywords  spectre cas~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     the spectre Cas~
+Long      The spectre Cas moves into combat.
+~
+Desc      Cas was once a thief of some importance. Now he is a ruthless undead.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    39 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis sanctuary infrared protect flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15125
+Keywords  wraith deros~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     the wraith Deros~
+Long      The wraith Deros snarls and attacks.
+~
+Desc      Deros was once an evil cleric. Now he's an evil undead cleric.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    36 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive stayarea~
+Affected  detect_invis sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      15126
+Keywords  wight emur~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     the wight emur~
+Long      The wight Emur wearily rises to defend his tomb.
+~
+Desc      Emur is not hostile, but is not good either. Emur was a cowardly autocrat
+slain centuries ago and imprisoned down here by a holy cleric of Argh.
+~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    33 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+Affected  detect_invis infrared protect~
+#ENDMOBILE
+
+#OBJECT
+Vnum      15100
+Keywords  manacles~
+Type      armor~
+Short     a pair of iron manacles~
+Long      A pair of iron manacles lie here.~
+Flags     noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
+AffData intelligence -3 -1 -1 0
+AffData move -50 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15101
+Keywords  straw~
+Type      furniture~
+Short     some filthy straw~
+Long      Some filthy straw is scattered about the floor of this cell.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15102
+Keywords  bowl~
+Type      container~
+Short     a wooden bowl~
+Long      A wooden bowl sits here.~
+WFlags    take~
+Values    2 1 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15103
+Keywords  gruel~
+Type      food~
+Short     some watery gruel~
+Long      Some watery gruel has been slopped here.~
+WFlags    take~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15104
+Keywords  ball chain~
+Type      armor~
+Short     a ball and chain~
+Long      A ball and chain has been left here.~
+Flags     noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     25 0 -2 9999 0 None None None
+AffData intelligence -3 -1 -1 0
+AffData move -200 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15105
+Keywords  bones~
+Type      trash~
+Short     some bones~
+Long      Some bones are scattered about here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15106
+Keywords  iron maiden~
+Type      furniture~
+Short     an iron maiden~
+Long      An iron maiden stands in one corner.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15107
+Keywords  rack~
+Type      furniture~
+Short     a rack~
+Long      The rack is being used to stretch a dying prisoner.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15108
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell A"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15109
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell B"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15110
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell C"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15111
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell D"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15112
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell E"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15113
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell F"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15114
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell G"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15115
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell H"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15116
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell I"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15117
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell J"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15118
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell K"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15119
+Keywords  key~
+Type      key~
+Short     a cell key~
+Long      A cell key hangs here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    key~
+ExDesc       it is labelled "Cell L"
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      15120
+Keywords  bottle grog~
+Type      drinkcon~
+Short     a bottle of grog~
+Long      A bottle of grog sits here.~
+WFlags    take~
+Values    5 3 7 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15121
+Keywords  axe~
+Type      weapon~
+Short     a sturdy axe~
+Long      A sturdy hand axe lies here.~
+WFlags    take~
+Values    0 0 0 1 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData damroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15122
+Keywords  belt~
+Type      armor~
+Short     a leather belt~
+Long      A leather belt once held up someone's trousers.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15123
+Keywords  trousers~
+Type      armor~
+Short     a pair of stained trousers~
+Long      A pair of stained trousers lie here.~
+Flags     hum~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15124
+Keywords  hairy chest~
+Type      armor~
+Short     a hairy chest~
+Long      A hairy chest lies here. Yes, someone's hairy chest.~
+Flags     noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData constitution 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15125
+Keywords  robes~
+Type      armor~
+Short     the inquisitor's robes~
+Long      The inquisitor's robes lie crumpled up here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+AffData mana 25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15126
+Keywords  boots~
+Type      armor~
+Short     the inquisitor's boots~
+Long      The inquisitor's boots sit here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData move 150 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15127
+Keywords  hood~
+Type      armor~
+Short     the inquisitor's hood~
+Long      The inquisitor's hood has been left here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData wisdom 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15128
+Keywords  hot iron~
+Type      light~
+Short     a hot iron~
+Long      A hot iron lies here.~
+Flags     glow~
+WFlags    take~
+Values    0 0 -1 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15129
+Keywords  brazier~
+Type      container~
+Short     a metal brazier~
+Long      A metal brazier sits on a tripod here.~
+Flags     glow~
+Values    10 1 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15130
+Keywords  cabinet~
+Type      container~
+Short     a cabinet~
+Long      A cabinet full of torture implements stands near one wall.~
+Values    1000 1 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15131
+Keywords  iron mask~
+Type      armor~
+Short     an iron mask~
+Long      The man's iron mask has been removed.~
+Flags     noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData armor -20 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15132
+Keywords  prison rags~
+Type      armor~
+Short     prison rags~
+Long      Some rags worn by a prisoner fester here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15133
+Keywords  bed~
+Type      furniture~
+Short     a narrow bed~
+Long      A narrow bed sits here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15134
+Keywords  bat shit~
+Type      trash~
+Short     some bat shit~
+Long      Some bat shit is scattered about here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15135
+Keywords  rat shit~
+Type      trash~
+Short     some rat shit~
+Long      Some rat shit is scattered about here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15136
+Keywords  roach shit~
+Type      trash~
+Short     some cockroach shit~
+Long      Some cockroach shit is scattered about here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15137
+Keywords  pot~
+Type      container~
+Short     a massive iron pot~
+Long      A massive iron pot bubbles away over a hearth here.~
+Flags     glow~
+Values    10 1 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15138
+Keywords  stew~
+Type      food~
+Short     a huge amount of stew~
+Long      This stew is enough to feed a man for days.~
+WFlags    take~
+Values    96 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15139
+Keywords  hearth~
+Type      light~
+Short     a hearth~
+Long      A hearth burns away here.~
+Flags     glow~
+Values    0 0 -1 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15140
+Keywords  sword~
+Type      weapon~
+Short     a broad sword~
+Long      A broad sword rests here, gleaming dully.~
+Flags     magic~
+WFlags    take~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15141
+Keywords  shield~
+Type      armor~
+Short     a shield~
+Long      A shield bearing the Coat of Arms of Anon rests here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15142
+Keywords  tunic~
+Type      armor~
+Short     a black and gold tunic~
+Long      A tunic bearing the Coat of Arms of Anon rests here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15143
+Keywords  coif~
+Type      armor~
+Short     a metal coif~
+Long      A metal coif lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     4 0 -2 9999 0 None None None
+AffData save_breath -2 -1 -1 0
+AffData save_spell -2 -1 -1 0
+AffData sex -1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15144
+Keywords  leggings~
+Type      armor~
+Short     some metal leggings~
+Long      A pair of metal leggings lie here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     7 0 -2 9999 0 None None None
+AffData move 25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15145
+Keywords  gloves~
+Type      armor~
+Short     a pair of leather gloves~
+Long      A pair of leather gloves lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+AffData intelligence 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15146
+Keywords  torch~
+Type      light~
+Short     a torch~
+Long      A torch burns brightly here.~
+WFlags    take~
+Values    0 0 48 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15147
+Keywords  bracer~
+Type      armor~
+Short     a steel bracer~
+Long      A steel bracer lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData strength 1 -1 -1 0
+AffData hit 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15148
+Keywords  dog collar~
+Type      weapon~
+Short     a spiked dog collar~
+Long      A spiked dog collar would make a good punching weapon.~
+Flags     anticleric~
+WFlags    take~
+Values    0 0 0 2 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData damroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15149
+Keywords  file~
+Type      weapon~
+Short     an iron file~
+Long      An iron file lies here.~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     3 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15150
+Keywords  spoon~
+Type      weapon~
+Short     a spoon~
+Long      This spoon has done a LOT of digging.~
+WFlags    take~
+Values    0 1 4 7 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15151
+Keywords  chains~
+Type      armor~
+Short     some rattling chains~
+Long      Some chains that could be rattled lie here.~
+Flags     noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
+AffData intelligence -2 -1 -1 0
+AffData move -25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15152
+Keywords  saliva coated fangs~
+Type      armor~
+Short     some saliva coated fangs~
+Long      Some saliva coated fangs have been torn from a dog's maw.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15153
+Keywords  thumbscrews~
+Type      armor~
+Short     some thumbscrews~
+Long      Some tumbscrews lie here.~
+Flags     noremove~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData strength -1 -1 -1 0
+AffData intelligence -1 -1 -1 0
+AffData hit -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15154
+Keywords  pincers~
+Type      weapon~
+Short     a pair of pincers~
+Long      A pair of pincers hang here.~
+WFlags    take~
+Values    0 0 0 10 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15155
+Keywords  iron chair~
+Type      furniture~
+Short     an iron chair~
+Long      An iron chair with leather straps sits here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15156
+Keywords  flaming feather dulphur~
+Type      light~
+Short     a flaming feather dipped in sulphur~
+Long      A flaming feather dipped in sulphur has been placed here.~
+Flags     antiwarrior~
+WFlags    take~
+Values    0 0 -1 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15157
+Keywords  hot bath lime~
+Type      furniture~
+Short     a hot bath containing lime~
+Long      A hot bath containing lime bubbles away here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15158
+Keywords  a pulley~
+Type      furniture~
+Short     a pulley~
+Long      A pulley with a hooked rope attached hangs from the ceiling.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15159
+Keywords  heavy weights~
+Type      furniture~
+Short     a row of heavy weights~
+Long      A row of heavy weights sit here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     75 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15160
+Keywords  bellows~
+Type      furniture~
+Short     a bellows~
+Long      A bellows used to fan the fires rests here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15161
+Keywords  hot coals~
+Type      light~
+Short     some hot coals~
+Long      Ouch! These coals will burn your fingers!~
+Flags     antiwarrior~
+WFlags    take~
+Values    0 0 -1 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15162
+Keywords  scourge~
+Type      furniture~
+Short     a scourge~
+Long      A spiky scourge affixed to a wheel is used to beat victims.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      15163
+Keywords  sword ael~
+Type      weapon~
+Short     the sword of Ael~
+Long      The sword of Ael glows evilly here.~
+Flags     glow hum magic antigood noremove evil~
+WFlags    take~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+AffData strength 2 -1 -1 0
+AffData mana 20 -1 -1 0
+AffData hit 15 -1 -1 0
+AffData armor -15 -1 -1 0
+AffData hitroll 8 -1 -1 0
+AffData damroll 8 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15164
+Keywords  necklace~
+Type      armor~
+Short     a jewelled necklace~
+Long      A jewelled necklace lies here.~
+Flags     glow antigood evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData mana 25 -1 -1 0
+AffData armor -5 -1 -1 0
+AffData save_breath -2 -1 -1 0
+AffData save_spell -2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15165
+Keywords  boots~
+Type      armor~
+Short     boots of quickness~
+Long      A pair of nice boots rest here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData intelligence 3 -1 -1 0
+AffData move 100 -1 -1 0
+AffData armor -15 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15166
+Keywords  helm~
+Type      armor~
+Short     a platinum helm~
+Long      A platinum helm rests here.~
+Flags     hum antigood noremove evil~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData wisdom -3 -1 -1 0
+AffData dexterity 3 -1 -1 0
+AffData mana 50 -1 -1 0
+AffData armor -25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      15167
+Keywords  cloak~
+Type      armor~
+Short     a plain gray cloak~
+Long      A plain gray cloak has been left here.~
+WFlags    take~
+Values    25 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      15100
+Name      Inside the Gates~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are walking along a short corridor toward the yard. Torch brackets
+line the stone walls on either side, but it still has a cold, merciless
+feel to it.
+~
+#EXIT
+Direction east~
+ToRoom    31075
+Key       31001
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15101
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      15101
+Name      The Yard~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here those few fortunate prisoners with privileges are allowed a short walk.
+Guards stroll back and forth, keeping an eye on them. A chill wind blows
+across this only open air space in the dungeons.
+~
+#EXIT
+Direction north~
+ToRoom    15102
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15100
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15103
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15105
+#ENDEXIT
+
+Reset M 15116 12 15101 -1 -1 -1 100
+  Reset E 15140 1 16 100
+  Reset E 15141 1 11 100
+  Reset E 15142 1 5 100
+  Reset E 15143 1 6 100
+  Reset E 15144 1 7 100
+  Reset E 15145 1 8 100
+  Reset E 15146 1 0 100
+  Reset E 15147 1 14 100
+  Reset E 15148 1 15 100
+#ENDROOM
+
+#ROOM
+Vnum      15102
+Name      The Yard~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here those few fortunate prisoners with privileges are allowed a short walk.
+Guards stroll back and forth, keeping an eye on them. A chill wind blows
+across this only open air space in the dungeons.
+~
+#EXIT
+Direction south~
+ToRoom    15101
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15104
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      15103
+Name      The Yard~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here those few fortunate prisoners with privileges are allowed a short walk.
+Guards stroll back and forth, keeping an eye on them. A chill wind blows
+across this only open air space in the dungeons.
+~
+#EXIT
+Direction north~
+ToRoom    15101
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15106
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      15104
+Name      The Yard~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here those few fortunate prisoners with privileges are allowed a short walk.
+Guards stroll back and forth, keeping an eye on them. A chill wind blows
+across this only open air space in the dungeons.
+
+North lie the Kitchens.
+~
+#EXIT
+Direction north~
+ToRoom    15107
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15102
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15105
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      15105
+Name      The Yard~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here those few fortunate prisoners with privileges are allowed a short walk.
+Guards stroll back and forth, keeping an eye on them. A chill wind blows
+across this only open air space in the dungeons.
+
+A gate to the west marks the entrance down the stairs to the cells below.
+~
+#EXIT
+Direction north~
+ToRoom    15104
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15101
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15106
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15108
+Keywords  gate~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      15106
+Name      The Yard~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here those few fortunate prisoners with privileges are allowed a short walk.
+Guards stroll back and forth, keeping an eye on them. A chill wind blows
+across this only open air space in the dungeons.
+~
+#EXIT
+Direction north~
+ToRoom    15105
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15103
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      15107
+Name      The Kitchens~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Several surly wenches move slowly about here preparing the crap they serve
+the prisoners below (as well as the guards). You see little you would like
+(or be game to) take.
+~
+#EXIT
+Direction south~
+ToRoom    15104
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 15115 1 15107 -1 -1 -1 100
+  Reset E 15121 1 16 100
+Reset O 15137 1 15107 -1 -1 -1 100
+  Reset P 1 15128 1 15137 100
+Reset O 15139 1 15107 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15108
+Name      The Dungeon~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a dank, dismal corridor, lined with dirty stone blocks into which
+the occasional torch bracket has been wedged. A few stubs gutter feebly,
+providing little illumination. Cries of woe and pain echo down this
+depressing passageway.
+~
+#EXIT
+Direction west~
+ToRoom    15109
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    15105
+Keywords  gate~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 15116 12 15108 -1 -1 -1 100
+  Reset E 15140 1 16 100
+  Reset E 15141 1 11 100
+  Reset E 15142 1 5 100
+  Reset E 15143 1 6 100
+  Reset E 15144 1 7 100
+  Reset E 15145 1 8 100
+  Reset E 15146 1 0 100
+  Reset E 15147 1 14 100
+  Reset E 15148 1 15 100
+#ENDROOM
+
+#ROOM
+Vnum      15109
+Name      The Dungeon~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a dank, dismal corridor, lined with dirty stone blocks into which
+the occasional torch bracket has been wedged. A few stubs gutter feebly,
+providing little illumination. Cries of woe and pain echo down this
+depressing passageway.
+
+A door to the north marks the entrance to Cell Block One.
+~
+#EXIT
+Direction north~
+ToRoom    15110
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15108
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15118
+#ENDEXIT
+
+Reset M 15109 20 15109 -1 -1 -1 100
+Reset O 15135 1 15109 -1 -1 -1 100
+Reset M 15110 29 15109 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15110
+Name      Cell Block One~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are marching along a north south passageway lined with several cell
+doors. Cries come from behind some of them, and form behind other comes only
+silence. A guard room lies directly north of here.
+~
+#EXIT
+Direction north~
+ToRoom    15113
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15112
+Key       15111
+Desc      Cell D~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15109
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15111
+Key       15110
+Desc      Cell C~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 15110 29 15110 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15111
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a dank, damp, filthy prison cell. Mice and cockroaches scurry about,
+mingling in the animal and human filth that litters the floor. The cell has
+no windows or sources of ventilation, and the air is fetid and stale. You
+gag and hold your breath in disgust.
+~
+#EXIT
+Direction east~
+ToRoom    15110
+Key       15110
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15111 -1 -1 -1 100
+Reset M 15110 29 15111 -1 -1 -1 100
+Reset M 15111 5 15111 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+Reset M 15112 5 15111 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+  Reset G 15102 0 100
+    Reset P 1 15103 1 15102 100
+#ENDROOM
+
+#ROOM
+Vnum      15112
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a dank, damp, filthy prison cell. Mice and cockroaches scurry about,
+mingling in the animal and human filth that litters the floor. The cell has
+no windows or sources of ventilation, and the air is fetid and stale. You
+gag and hold your breath in disgust.
+~
+#EXIT
+Direction west~
+ToRoom    15110
+Key       15111
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15112 -1 -1 -1 100
+Reset M 15110 29 15112 -1 -1 -1 100
+Reset M 15111 5 15112 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+Reset M 15112 5 15112 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      15113
+Name      Cell Block One~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are marching along a north south passageway lined with several cell
+doors. Cries come from behind some of them, and form behind other comes only
+silence. A guard room lies directly north of here.
+~
+#EXIT
+Direction north~
+ToRoom    15116
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15115
+Key       15109
+Desc      Cell B~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15110
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15114
+Key       15108
+Desc      Cell A~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 15110 29 15113 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15114
+Name      A Well-Appointed Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This cell is clean and well-lit, and has some rather decent furnishings.
+Doubtless someone of some means has managed to requisition this cell, to
+spend their interrment in relative comfort.
+~
+#EXIT
+Direction east~
+ToRoom    15113
+Key       15108
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15114 -1 -1 -1 100
+Reset M 15104 1 15114 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+  Reset G 15102 0 100
+    Reset P 1 15103 1 15102 100
+Reset O 15133 1 15114 -1 -1 -1 100
+Reset M 15110 29 15114 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15115
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a dank, damp, filthy prison cell. Mice and cockroaches scurry about,
+mingling in the animal and human filth that litters the floor. The cell has
+no windows or sources of ventilation, and the air is fetid and stale. You
+gag and hold your breath in disgust.
+~
+#EXIT
+Direction west~
+ToRoom    15113
+Key       15109
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15115 -1 -1 -1 100
+Reset M 15105 1 15115 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15131 1 6 100
+  Reset E 15150 1 16 100
+  Reset E 15104 1 7 100
+  Reset G 15102 0 100
+    Reset P 1 15103 1 15102 100
+Reset M 15110 29 15115 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15116
+Name      A Guard Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered the quarters of the dungeon guards. There are usually a few
+off duty guards here at any given time, playing cards, dice, etc. to while
+away the time before their next shift.  A door to the west is marked- DOGS!
+KEEP OUT!
+
+A trapdoor leads upward to the city square, where prisoners who are
+sentenced to death are led for their execution.
+~
+#EXIT
+Direction south~
+ToRoom    15113
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15117
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    -1
+#ENDEXIT
+
+Reset O 15101 1 15116 -1 -1 -1 100
+Reset M 15110 29 15116 -1 -1 -1 100
+Reset M 15116 12 15116 -1 -1 -1 100
+  Reset E 15140 1 16 100
+  Reset E 15141 1 11 100
+  Reset E 15142 1 5 100
+  Reset E 15143 1 6 100
+  Reset E 15144 1 7 100
+  Reset E 15145 1 8 100
+  Reset E 15146 1 0 100
+  Reset E 15147 1 14 100
+  Reset E 15148 1 15 100
+#ENDROOM
+
+#ROOM
+Vnum      15117
+Name      The Dog Kennels~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The dungeon hounds are kept in here, ready to be released on rioting
+prisoners in emergencies. They are rabid creatures, underfed and constantly
+tormented to keep their anger at a peak.
+~
+#EXIT
+Direction east~
+ToRoom    15116
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15117 -1 -1 -1 100
+Reset O 15105 1 15117 -1 -1 -1 100
+Reset M 15110 29 15117 -1 -1 -1 100
+Reset M 15117 6 15117 -1 -1 -1 100
+  Reset E 15152 1 6 100
+  Reset E 15148 1 16 100
+Reset O 15103 1 15117 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15118
+Name      The Turnkey's Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Here the Turnkey stands his post, managing and guarding the keys to all the
+cells, and keeping an eye out for any trouble. He is a recalcitrant and lazy
+sod, and not much use at either task.
+
+A door to the west leads to Cell Block Two. The torture chamber lies south.
+~
+#EXIT
+Direction east~
+ToRoom    15109
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15119
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15122
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 15101 1 15118 -1 -1 -1 100
+  Reset E 15121 1 16 100
+  Reset E 15122 1 13 100
+  Reset E 15123 1 7 100
+  Reset E 15124 1 5 100
+  Reset G 15120 0 100
+Reset O 15108 1 15118 -1 -1 -1 100
+Reset O 15109 1 15118 -1 -1 -1 100
+Reset O 15110 1 15118 -1 -1 -1 100
+Reset O 15111 1 15118 -1 -1 -1 100
+Reset O 15112 1 15118 -1 -1 -1 100
+Reset O 15113 1 15118 -1 -1 -1 100
+Reset O 15114 1 15118 -1 -1 -1 100
+Reset O 15115 1 15118 -1 -1 -1 100
+Reset O 15116 1 15118 -1 -1 -1 100
+Reset O 15117 1 15118 -1 -1 -1 100
+Reset O 15118 1 15118 -1 -1 -1 100
+Reset O 15119 1 15118 -1 -1 -1 100
+Reset M 15110 29 15118 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15119
+Name      The Torture Chamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is the most feared place in all the dungeon. Any and all prisoners who
+end up here rarely leave in one piece. And even if they do, they are usually
+driven quite insane by the weeks of torture. Long chains hanging from the
+ceiling suspend dead or dying victims, while fresher ones are currently
+being subjected to cruel tortures on the nightmarish devices below.
+~
+#EXIT
+Direction north~
+ToRoom    15118
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15120
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15121
+#ENDEXIT
+
+Reset O 15106 1 15119 -1 -1 -1 100
+Reset O 15130 1 15119 -1 -1 -1 100
+  Reset P 1 15153 1 15130 100
+  Reset P 1 15154 1 15130 100
+  Reset P 1 15156 1 15130 100
+  Reset P 1 15159 1 15130 100
+Reset M 15109 20 15119 -1 -1 -1 100
+Reset O 15135 1 15119 -1 -1 -1 100
+Reset M 15110 29 15119 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15120
+Name      The Torture Chamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is the most feared place in all the dungeon. Any and all prisoners who
+end up here rarely leave in one piece. And even if they do, they are usually
+driven quite insane by the weeks of torture. Long chains hanging from the
+ceiling suspend dead or dying victims, while fresher ones are currently
+being subjected to cruel tortures on the nightmarish devices below.
+~
+#EXIT
+Direction west~
+ToRoom    15119
+#ENDEXIT
+
+Reset O 15162 1 15120 -1 -1 -1 100
+Reset O 15155 1 15120 -1 -1 -1 100
+Reset O 15157 1 15120 -1 -1 -1 100
+Reset O 15158 1 15120 -1 -1 -1 100
+Reset M 15102 1 15120 -1 -1 -1 100
+  Reset E 15125 1 12 100
+  Reset E 15126 1 8 100
+  Reset E 15127 1 6 100
+Reset M 15110 29 15120 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15121
+Name      The Torture Chamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is the most feared place in all the dungeon. Any and all prisoners who
+end up here rarely leave in one piece. And even if they do, they are usually
+driven quite insane by the weeks of torture. Long chains hanging from the
+ceiling suspend dead or dying victims, while fresher ones are currently
+being subjected to cruel tortures on the nightmarish devices below.
+~
+#EXIT
+Direction north~
+ToRoom    15119
+#ENDEXIT
+
+Reset O 15107 1 15121 -1 -1 -1 100
+Reset O 15129 1 15121 -1 -1 -1 100
+  Reset P 1 15128 1 15129 100
+  Reset P 1 15161 1 15129 100
+Reset O 15160 1 15121 -1 -1 -1 100
+Reset M 15103 1 15121 -1 -1 -1 100
+  Reset E 15121 1 16 100
+  Reset E 15128 1 0 100
+Reset M 15110 29 15121 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15122
+Name      Cell Block One~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are marching along a east west passageway lined with several cell
+doors. Cries come from behind some of them, and from behind others comes only
+silence.
+~
+#EXIT
+Direction north~
+ToRoom    15123
+Key       15112
+Desc      Cell E~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15118
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15124
+Key       15113
+Desc      Cell F~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15125
+#ENDEXIT
+
+Reset M 15109 20 15122 -1 -1 -1 100
+Reset O 15135 1 15122 -1 -1 -1 100
+Reset M 15110 29 15122 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15123
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a dank, damp, filthy prison cell. Mice and cockroaches scurry about,
+mingling in the animal and human filth that litters the floor. The cell has
+no windows or sources of ventilation, and the air is fetid and stale. You
+gag and hold your breath in disgust.
+~
+#EXIT
+Direction south~
+ToRoom    15122
+Key       15112
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15123 -1 -1 -1 100
+Reset M 15106 2 15123 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+Reset M 15110 29 15123 -1 -1 -1 100
+Reset M 15116 12 15123 -1 -1 -1 100
+  Reset E 15140 1 16 100
+  Reset E 15141 1 11 100
+  Reset E 15142 1 5 100
+  Reset E 15143 1 6 100
+  Reset E 15144 1 7 100
+  Reset E 15145 1 8 100
+  Reset E 15146 1 0 100
+  Reset E 15147 1 14 100
+  Reset E 15148 1 15 100
+#ENDROOM
+
+#ROOM
+Vnum      15124
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a dank, damp, filthy prison cell. Mice and cockroaches scurry about,
+mingling in the animal and human filth that litters the floor. The cell has
+no windows or sources of ventilation, and the air is fetid and stale. You
+gag and hold your breath in disgust.
+~
+#EXIT
+Direction north~
+ToRoom    15122
+Key       15113
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15124 -1 -1 -1 100
+Reset M 15110 29 15124 -1 -1 -1 100
+Reset M 15111 5 15124 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+Reset M 15112 5 15124 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      15125
+Name      Cell Block One~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are marching along a east west passageway lined with several cell
+doors. Cries come from behind some of them, and from behind others comes only
+silence.
+~
+#EXIT
+Direction north~
+ToRoom    15126
+Key       15114
+Desc      Cell G~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15122
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15127
+Key       15115
+Desc      Cell H~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15128
+#ENDEXIT
+
+Reset M 15110 29 15125 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15126
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a dank, damp, filthy prison cell. Mice and cockroaches scurry about,
+mingling in the animal and human filth that litters the floor. The cell has
+no windows or sources of ventilation, and the air is fetid and stale. You
+gag and hold your breath in disgust.
+~
+#EXIT
+Direction south~
+ToRoom    15125
+Key       15114
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15126 -1 -1 -1 100
+Reset M 15110 29 15126 -1 -1 -1 100
+Reset M 15111 5 15126 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+Reset M 15112 5 15126 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      15127
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a dank, damp, filthy prison cell. Mice and cockroaches scurry about,
+mingling in the animal and human filth that litters the floor. The cell has
+no windows or sources of ventilation, and the air is fetid and stale. You
+gag and hold your breath in disgust.
+~
+#EXIT
+Direction north~
+ToRoom    15125
+Key       15115
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15127 -1 -1 -1 100
+Reset M 15110 29 15127 -1 -1 -1 100
+Reset M 15113 1 15127 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      15128
+Name      Cell Block One~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are marching along a east west passageway lined with several cell
+doors. Cries come from behind some of them, and from behind others comes only
+silence.
+~
+#EXIT
+Direction north~
+ToRoom    15129
+Key       15116
+Desc      Cell I~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15125
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15130
+Key       15117
+Desc      Cell J~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15131
+#ENDEXIT
+
+Reset M 15109 20 15128 -1 -1 -1 100
+Reset O 15135 1 15128 -1 -1 -1 100
+Reset M 15110 29 15128 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15129
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a dank, damp, filthy prison cell. Mice and cockroaches scurry about,
+mingling in the animal and human filth that litters the floor. The cell has
+no windows or sources of ventilation, and the air is fetid and stale. You
+gag and hold your breath in disgust.
+~
+#EXIT
+Direction south~
+ToRoom    15128
+Key       15116
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15129 -1 -1 -1 100
+Reset M 15100 1 15129 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+Reset M 15110 29 15129 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15130
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a dank, damp, filthy prison cell. Mice and cockroaches scurry about,
+mingling in the animal and human filth that litters the floor. The cell has
+no windows or sources of ventilation, and the air is fetid and stale. You
+gag and hold your breath in disgust.
+~
+#EXIT
+Direction north~
+ToRoom    15128
+Key       15117
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15130 -1 -1 -1 100
+Reset M 15106 2 15130 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+Reset M 15110 29 15130 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15131
+Name      Cell Block One~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are marching along a east west passageway lined with several cell
+doors. Cries come from behind some of them, and from behind others comes only
+silence. The passage bends downwards to the west.
+~
+#EXIT
+Direction north~
+ToRoom    15132
+Key       15118
+Desc      Cell K~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15128
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15133
+Key       15119
+Desc      Cell L~
+Keywords  cell~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15134
+#ENDEXIT
+
+Reset M 15110 29 15131 -1 -1 -1 100
+Reset M 15116 12 15131 -1 -1 -1 100
+  Reset E 15140 1 16 100
+  Reset E 15141 1 11 100
+  Reset E 15142 1 5 100
+  Reset E 15143 1 6 100
+  Reset E 15144 1 7 100
+  Reset E 15145 1 8 100
+  Reset E 15146 1 0 100
+  Reset E 15147 1 14 100
+  Reset E 15148 1 15 100
+#ENDROOM
+
+#ROOM
+Vnum      15132
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a dank, damp, filthy prison cell. Mice and cockroaches scurry about,
+mingling in the animal and human filth that litters the floor. The cell has
+no windows or sources of ventilation, and the air is fetid and stale. You
+gag and hold your breath in disgust.
+~
+#EXIT
+Direction south~
+ToRoom    15131
+Key       15118
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15132 -1 -1 -1 100
+Reset M 15110 29 15132 -1 -1 -1 100
+Reset M 15114 2 15132 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+  Reset G 15102 0 100
+    Reset P 1 15103 1 15102 100
+#ENDROOM
+
+#ROOM
+Vnum      15133
+Name      A Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is a dank, damp, filthy prison cell. Mice and cockroaches scurry about,
+mingling in the animal and human filth that litters the floor. The cell has
+no windows or sources of ventilation, and the air is fetid and stale. You
+gag and hold your breath in disgust.
+~
+#EXIT
+Direction north~
+ToRoom    15131
+Key       15119
+Flags     isdoor~
+#ENDEXIT
+
+Reset O 15101 1 15133 -1 -1 -1 100
+Reset M 15110 29 15133 -1 -1 -1 100
+Reset M 15114 2 15133 -1 -1 -1 100
+  Reset E 15132 1 5 100
+  Reset E 15100 1 10 100
+  Reset E 15104 1 7 100
+  Reset G 15102 0 100
+    Reset P 1 15103 1 15102 100
+#ENDROOM
+
+#ROOM
+Vnum      15134
+Name      The Lower Chambers~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      These chambers once held cells, but were long ago abandoned. Rotted doors
+hang open to the north and south, while a hole in the floor gives rise to
+an awful smell. You really don't want to go down there... really.
+~
+#EXIT
+Direction north~
+ToRoom    15137
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15131
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15135
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15136
+#ENDEXIT
+
+Reset M 15109 20 15134 -1 -1 -1 100
+Reset O 15135 1 15134 -1 -1 -1 100
+Reset M 15110 29 15134 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15135
+Name      A Ruined Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Naught remains of whoever once occupied this cell save for some bones. Rats
+scurry away from your light, and you grimace at the stench in this hole.
+~
+#EXIT
+Direction north~
+ToRoom    15134
+#ENDEXIT
+
+Reset O 15105 1 15135 -1 -1 -1 100
+Reset M 15108 4 15135 -1 -1 -1 100
+Reset M 15110 29 15135 -1 -1 -1 100
+Reset M 15118 1 15135 -1 -1 -1 100
+  Reset E 15149 1 16 100
+  Reset E 15104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      15136
+Name      The PIT~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This foul hole is used for disposal of garbage and of unruly prisoners. You
+land in this muck with a squelching noise, and you almost vomit when you
+realize you are chest-deep in human and animal waste. A chill wind whips
+eerily at you from nowhere, and you suddenly get the feeling you're not
+alone down here...
+~
+#EXIT
+Direction up~
+ToRoom    15134
+#ENDEXIT
+
+Reset O 15105 1 15136 -1 -1 -1 100
+Reset M 15110 29 15136 -1 -1 -1 100
+Reset O 15136 1 15136 -1 -1 -1 100
+Reset M 15119 1 15136 -1 -1 -1 100
+  Reset E 15151 1 12 100
+  Reset E 15104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      15137
+Name      A Ruined Cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Naught remains of whoever once occupied this cell save for some bones. Rats
+scurry away from your light, and you grimace at the stench in this hole.
+A hole in the north wall allows passage into a cave.
+~
+#EXIT
+Direction north~
+ToRoom    15138
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15135
+#ENDEXIT
+
+Reset O 15105 1 15137 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15138
+Name      A Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This natural cavern is home to variety of animals who have become trapped
+down here after entering from the city above and losing their way back.
+You smell guano everywhere, and see thick cobwebs.
+~
+#EXIT
+Direction north~
+ToRoom    15139
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15137
+#ENDEXIT
+
+Reset O 15105 1 15138 -1 -1 -1 100
+Reset M 15107 10 15138 -1 -1 -1 100
+Reset O 15134 1 15138 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15139
+Name      A Cavern~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This natural cavern is home to variety of animals who have become trapped
+down here after entering from the city above and losing their way back.
+You smell guano everywhere, and see thick cobwebs. A passage running
+westward leads into a dark maze.
+~
+#EXIT
+Direction south~
+ToRoom    15138
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15140
+#ENDEXIT
+
+Reset O 15105 1 15139 -1 -1 -1 100
+Reset M 15107 10 15139 -1 -1 -1 100
+Reset O 15134 1 15139 -1 -1 -1 100
+Reset M 15108 4 15139 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15140
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction east~
+ToRoom    15139
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15141
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15145
+#ENDEXIT
+
+Reset R 15140 4 100
+Reset O 15105 1 15140 -1 -1 -1 100
+Reset M 15107 10 15140 -1 -1 -1 100
+Reset O 15134 1 15140 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15141
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction south~
+ToRoom    15140
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15142
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15146
+#ENDEXIT
+
+Reset R 15141 4 100
+Reset M 15120 5 15141 -1 -1 -1 100
+  Reset E 15104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      15142
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction west~
+ToRoom    15141
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15143
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15147
+#ENDEXIT
+
+Reset R 15142 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15143
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction south~
+ToRoom    15142
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15144
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15148
+#ENDEXIT
+
+Reset R 15143 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15144
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction west~
+ToRoom    15143
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15149
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15169
+Flags     isdoor~
+#ENDEXIT
+
+Reset R 15144 4 100
+Reset M 15121 5 15144 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15145
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction south~
+ToRoom    15140
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15146
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15150
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15168
+Flags     isdoor~
+#ENDEXIT
+
+Reset R 15145 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15146
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction south~
+ToRoom    15145
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15141
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15147
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15151
+#ENDEXIT
+
+Reset R 15146 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15147
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction south~
+ToRoom    15146
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15142
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15148
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15152
+#ENDEXIT
+
+Reset R 15147 4 100
+Reset M 15120 5 15147 -1 -1 -1 100
+  Reset E 15104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      15148
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction south~
+ToRoom    15147
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15143
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15149
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15153
+#ENDEXIT
+
+Reset R 15148 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15149
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction west~
+ToRoom    15148
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15144
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15154
+#ENDEXIT
+
+Reset R 15149 4 100
+Reset M 15121 5 15149 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15150
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction south~
+ToRoom    15145
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15151
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15155
+#ENDEXIT
+
+Reset R 15150 4 100
+Reset M 15121 5 15150 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15151
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction north~
+ToRoom    15150
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15146
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15152
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15156
+#ENDEXIT
+
+Reset R 15151 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15152
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction north~
+ToRoom    15151
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15147
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15153
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15157
+#ENDEXIT
+
+Reset R 15152 4 100
+Reset O 15105 1 15152 -1 -1 -1 100
+Reset M 15120 5 15152 -1 -1 -1 100
+  Reset E 15104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      15153
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction east~
+ToRoom    15152
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15148
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15154
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15158
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15167
+Flags     isdoor~
+#ENDEXIT
+
+Reset R 15153 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15154
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction west~
+ToRoom    15153
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15149
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15159
+#ENDEXIT
+
+Reset R 15154 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15155
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction west~
+ToRoom    15150
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15156
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15160
+#ENDEXIT
+
+Reset R 15155 4 100
+Reset M 15121 5 15155 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15156
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction west~
+ToRoom    15155
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15151
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15157
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15161
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15166
+Flags     isdoor~
+#ENDEXIT
+
+Reset R 15156 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15157
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction east~
+ToRoom    15156
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15152
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15158
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15162
+#ENDEXIT
+
+Reset R 15157 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15158
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction south~
+ToRoom    15157
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    15153
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15159
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15163
+#ENDEXIT
+
+Reset R 15158 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15159
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction west~
+ToRoom    15158
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15154
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15164
+#ENDEXIT
+
+Reset R 15159 4 100
+Reset M 15120 5 15159 -1 -1 -1 100
+  Reset E 15104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      15160
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction south~
+ToRoom    15155
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15161
+#ENDEXIT
+
+Reset R 15160 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15161
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction south~
+ToRoom    15160
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15156
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15162
+#ENDEXIT
+
+Reset R 15161 4 100
+Reset M 15120 5 15161 -1 -1 -1 100
+  Reset E 15104 1 7 100
+#ENDROOM
+
+#ROOM
+Vnum      15162
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction east~
+ToRoom    15161
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15157
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    15163
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    15165
+Flags     isdoor~
+#ENDEXIT
+
+Reset R 15162 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15163
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction south~
+ToRoom    15162
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15158
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    15164
+#ENDEXIT
+
+Reset R 15163 4 100
+#ENDROOM
+
+#ROOM
+Vnum      15164
+Name      The Dark Maze~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This hive of subterranean passageways was once a burial chamber. But the
+priests long ago removed all the corpses, leaving the place vacant. Rumor
+has it, however, that a few tombs still remain, undisturbed for centuries,
+full of magnificent treasures.
+~
+#EXIT
+Direction north~
+ToRoom    15163
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    15159
+#ENDEXIT
+
+Reset R 15164 4 100
+Reset M 15121 5 15164 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      15165
+Name      Tomb of Ael~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This dark tomb contains a sarcophagus and the mortal remains of a powerful
+spellcaster of ancient times. Unfortunately this spellcaster was also
+rather evil... You could be in trouble.
+~
+#EXIT
+Direction up~
+ToRoom    15162
+#ENDEXIT
+
+Reset O 15105 1 15165 -1 -1 -1 100
+Reset M 15122 1 15165 -1 -1 -1 100
+  Reset E 15163 1 16 100
+#ENDROOM
+
+#ROOM
+Vnum      15166
+Name      Tomb of Baraga~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This dark tomb contains a sarcophagus and the mortal remains of a powerful
+spellcaster of ancient times. Unfortunately this spellcaster was also
+rather evil... You could be in trouble.
+~
+#EXIT
+Direction up~
+ToRoom    15156
+#ENDEXIT
+
+Reset O 15105 1 15166 -1 -1 -1 100
+Reset M 15123 1 15166 -1 -1 -1 100
+  Reset E 15164 1 3 100
+#ENDROOM
+
+#ROOM
+Vnum      15167
+Name      Tomb of Cas~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This dark tomb contains a sarcophagus and the mortal remains of a powerful
+spellcaster of ancient times. Unfortunately this spellcaster was also
+rather evil... You could be in trouble.
+~
+#EXIT
+Direction up~
+ToRoom    15153
+#ENDEXIT
+
+Reset O 15105 1 15167 -1 -1 -1 100
+Reset M 15124 1 15167 -1 -1 -1 100
+  Reset E 15165 1 8 100
+#ENDROOM
+
+#ROOM
+Vnum      15168
+Name      Tomb of Deros~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This dark tomb contains a sarcophagus and the mortal remains of a powerful
+spellcaster of ancient times. Unfortunately this spellcaster was also
+rather evil... You could be in trouble.
+~
+#EXIT
+Direction up~
+ToRoom    15145
+#ENDEXIT
+
+Reset O 15105 1 15168 -1 -1 -1 100
+Reset M 15125 1 15168 -1 -1 -1 100
+  Reset E 15166 1 6 100
+#ENDROOM
+
+#ROOM
+Vnum      15169
+Name      Tomb of Emur~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This dark tomb contains a sarcophagus and the mortal remains of a powerful
+spellcaster of ancient times. Unfortunately this spellcaster was also
+rather evil... You could be in trouble.
+~
+#EXIT
+Direction up~
+ToRoom    15144
+#ENDEXIT
+
+Reset O 15105 1 15169 -1 -1 -1 100
+Reset M 15105 1 15169 -1 -1 -1 100
+  Reset E 15167 1 12 100
+#ENDROOM
+
+#ENDAREA

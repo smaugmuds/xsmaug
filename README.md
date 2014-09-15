@@ -2,11 +2,32 @@
 
 ###Introduction
 
+```
+ ############################################################################
+ #                                                                          #
+ #   X      X  ******* **    **  ******  **    **  ******                   #
+ #    X    X  ******** ***  *** ******** **    ** ********       \\._.//    #
+ #     X  X   **       ******** **    ** **    ** **             (0...0)    #
+ #      XX    *******  ******** ******** **    ** **  ****        ).:.(     #
+ #      XX     ******* ** ** ** ******** **    ** **  ****        {o o}     #
+ #     X  X         ** **    ** **    ** **    ** **    **       / ' ' \    #
+ #    X    X  ******** **    ** **    ** ******** ********    -^^.VxvxV.^^- #
+ #   X      X *******  **    ** **    **  ******   ******                   #
+ #                                                                          #
+ # ------------------------------------------------------------------------ #
+ # Ne[X]t Generation [S]imulated [M]edieval [A]dventure Multi[U]ser [G]ame  #
+ # ------------------------------------------------------------------------ #
+ # XSMAUG 2.4 (C) 2014  by Antonio Cao @burzumishi                          #
+ # ------------------------------------------------------------------------ #
+ #                                  XSMAUG                                  #
+ ############################################################################
+```
+
 **Ne[X]t Generation of [S]imulated [M]edieval [A]dventure Multi-[U]ser [G]ame**
 
-**XSMAUG** is a multiplayer text-based role-playing game, which is a type of MUD.
+**XSMAUG** is a multiplayer text-based role-playing game, which is a type of MUD. It can be used and modified to create your own game server.
 
-**XSMAUG** is an enhancenment of **SMAUGFuss 1.9**, the goal is to develop a new structure to build and run in modern distributed system environments. **SMAUGFuss 1.9**, an fixed **SMAUG 1.4a** which is a heavily modified derivative of the **Merc 2.1** distribution.
+**XSMAUG** is an enhancenment of **AFKMud 2.1.5**, the goal is to develop a new structure to build and run in modern distributed system environments. **AFKMud**, is an fixed **SMAUG 1.4a** which is a heavily modified derivative of the **Merc 2.1** distribution. Stock area zones from **SMAUG 1.4a** have been restored into **XSMAUG**.
 
 **SMAUG 1.4a** is close to six times the size of **Merc 2.1**, and has major changes to the inner workings of the code, hence making porting of code from other Diku-derivatives non-trivial to the non-coder. Due to the ability to edit most everything online, you will most likely find the online help pages more informative. **SMAUG** is the base code that runs the popular **Realms of Despair** MUD. Through the years it has been tweaked, modified, and enhanced to become one of the most feature packed branches of the **MERC** family of codebases. 
 
@@ -17,37 +38,44 @@
 
 ### XSMAUG Releases
 
-The release of version **2.2** is HERE! With many bugfixes as well as important and useful new code features.
+The release of version **2.4** is HERE! With many bugfixes as well as important and useful new code features.
 
  * **[XSMAUG Phoenix Release 2.0] (https://github.com/smaugmuds/xsmaug/releases/tag/2.0)** **¡Launch!**
  * **[XSMAUG Phoenix Release 2.1] (https://github.com/smaugmuds/xsmaug/releases/tag/2.1)** **¡Update!**
- * **[XSMAUG Phoenix Release 2.2] (https://github.com/smaugmuds/xsmaug/releases/tag/2.2)**    **¡NEW!**
+ * **[XSMAUG Phoenix Release 2.2] (https://github.com/smaugmuds/xsmaug/releases/tag/2.2)** **¡Update!**
+ * **[XSMAUG Phoenix Release 2.4] (https://github.com/smaugmuds/xsmaug/releases/tag/2.4)**    **¡NEW!**
 
 #### Contents of the Release
 
-	- src:           Source files.
-	- doc:           Documentation.
-	- xsmaug.conf:   XSMAUG Server Config File.
-	- xsmaug-server: XSMAUG Server Boot Script.
-	- tools:         Developer tools.
-	- data/realm:    Realm Area files.
-	- data/player:   Player files (initially empty).
-	- data/vault:	 Guilds Vaults
-	- data/races:	 Races files.
-	- data/houses:	 House files.
-	- data/gods:     God players.
-	- data/deity:	 Deities.
-	- data/councils: Councils files.
-	- data/classes:  Classes files.
-	- data/clans:    Clans files.
-	- data/boards:   Boards files.
-	- data/corpses:  Death players corpses (initially empty).
-	- data/mudprogs: MUD Program files.
-	- data/system:   MUD Game System files.
-	- data/building: Building System files.
-	- data/classes:  Player Class files.
-	- data/color:	 MUD Color files.
-	- data/hotboot:  Fast boot config files.
+	- src:              Source files.
+	- doc:              Documentation.
+	- xsmaug.conf:      XSMAUG Server Config File.
+	- xsmaugd:          XSMAUG Server Boot Script.
+	- tools:            Developer tools.
+	- data/realm:       Realm Area files.
+	- data/areaconvert: Convert New Realm Area files.
+	- data/aucvaults:   Auction Vault files.
+	- data/player:      Player files (initially empty).
+	- data/vault:	    Guilds Vaults
+	- data/races:	    Races files.
+	- data/gods:        God players.
+	- data/deity:	    Realm Deities.
+	- data/councils:    Councils files.
+	- data/classes:     Classes files.
+	- data/clans:       Clans files.
+	- data/shops:       Clans Shops files.
+	- data/boards:      Boards files.
+	- data/corpses:     Death players corpses (initially empty).
+	- data/houses:      Player house files.
+	- data/mudprogs:    MUD Program files.
+	- data/system:      MUD Game System files.
+	- data/building:    Building System files.
+	- data/classes:     Player Class files.
+	- data/color:	    MUD Color files.
+	- data/hotboot:     Fast boot config files.
+	- data/crash:       Crash files.
+	- data/motd:        Message files.
+	- data/web:         Web Site & MUD dumped HTML Files.
 
 #### Features
 
@@ -91,7 +119,7 @@ Here are just some of the extra features XSMAUG has:
 	- Different prompts when you are fighting and when you are not
 	- Pets saving with their owners
 	- Pet Finding.
-	- New Healer.
+	- New Healer: set the healer flag on a mob of your choice.
 	- Configurable color codes online
 	- Projectiles are fully supported
 	- Extended bit vectors for when 32 are just not enough
@@ -102,48 +130,71 @@ Here are just some of the extra features XSMAUG has:
 	- HotBoot!
 	- Dump Objects and Mobs to files
 	- Quest bits added.
+	- Quest Master.
+	- Banker: Set the banker flag on a mob of your choice.
+	- Clans Shopkeepers
 	- Mounts and much much more
 
 Changes made to areas:
 
 	- Major changes to the reset system to fix the problems with the nested put resets.
+	- Major changes to the shops system.
 	- All of the stock areas in this package have been updated to support the new format.
-	- Will not be backward compatible with any Smaug mud that does not employ the reset fix.
-	- Areas written for Smaug 1.02a, 1.4, and 1.4a should load without a problem and remain compatible.
+	- Will not be backward compatible with any SMAUG mud.
+	- Areas written for Smaug 1.02a, 1.4, and 1.4a should import without a problem and remain compatible.
 
-New Imported Areas:
+Realm Areas:
 
-	- sesamest.are
-	- chess.are
-	- warner.are
-	- troy.are
-	- buds.are
-	- thalos.are
-	- prehist.are
-	- gauntlet.are
-	- chapelgods.are
-	- catacomb.are
-	- bazaar.are
-	- pground.are
-	- abyss.are
-	- kheltower.are
-	- isledead.are
-	- hood.are
+	- air.are         daycare.are     gate.are       hollywd.are      mirkwood.are  plains.are    sewer.are
+	- anthill.are     donjon.are      gauntlet.are   immtrain.are     mobfact.are   prehist.are   shaolin.are
+	- anvil.are       draconia.are    gilligan.are   jher.are         moria.are     pyramid.are   shire.are
+	- astral.are      dwarfmines.are  goblins.are    juargan.are      mtdoom.are    rainfrst.are  srefuge.are
+	- bazaar.are      dwarven.are     gods.are       keepvalor.are    newacad.are   rats.are      thalos.are
+	- Build.are       eastern.are     grave.are      land.are         newdark.are   redferne.are  tree.are
+	- canyon.are      elderwood.are   grove.are      lilith.are       olympus.are   rift.are      trollden.are
+	- catacombs.are   entry.are       gtown.are      limbo.are        one.are       rshouse.are   troy.are
+	- chapel.are      export.are      gwyn.are       magicschool.are  orchold.are   rtower.are    under.are
+	- chapelgods.are  fantasia.are    gyard.are      mahntor.are      pblood.are    school2.are   unholy.are
+	- cloudymt.are    forestpath.are  haon.are       manor.are        pground.are   seatears.are  valley.are
+	- crystalmir.are  galaxy.are      haven.are      marsh.are        pit.are       sesame.are    void.are
+	- damara.are      gallery.are     highcliff.are  midennir.are     pixie.are     seven.are     warkeep.are
+	- warner.are      waymoot.are     weater.are     weed.are         weirdan.are   wyvern.are
 
 
 #### ChangeLog
 
+	* XSMAUG 2.2 -> XSMAUG 2.4
+
+		- Conversion to GNU Package: configure, make, make install
+		- Configure checks for cc, gcc, g++, (g)awk, -ldl, -lz, -lcrypt, -lgd, -lmysqlclient, basic c libraries, headers and functions
+		- Indented code with GNU style.
+		- "LOG_DIR" variable in "mud.h" is now obsolete and has been changed to "LOGDIR" in "config.h"
+		- Server logs now goes to system directory "$(localstatedir)/log/xsmaug/"
+		- Port XSMAUG from AFKMud 2.1.5.
+		- Import Stock SMAUG 1.4a Areas
+		- Changes in structure files and directories.
+		- Fixed some bugs.
+		- Added: Optional HTTP Server to test & publish MUD generated HTML pages with static content.
+		- Added: "CMDF( do_version )" based in "config.h" defines.
+		- Added: "CMDF( do_petfind )"
+		- Added: xsmaug.conf & xsmaugd
+		- Updated: "CMDF( do_webroom )" now it accepts "area.are" file as argument.
+		- Updated: Tools
+		- Updated: Documentation
+
 	* XSMAUG 2.1 -> XSMAUG 2.2
 
 		- Conversion to GNU Package: configure, make, make install
-		- Configure checks for cc, gcc, g++, (g)awk, -ldl, -lz, -lcrypt, basic c libraries, headers and functions
+		- Configure checks for cc, gcc, g++, (g)awk, -ldl, -lz, -lcrypt, -lgd, -lmysqlclient, basic c libraries, headers and functions
 		- Indented code with GNU style.
 		- New structure.
 		- Server logs now goes to system directory "$(localstatedir)/log/xsmaug/"
 		- "LOG_DIR" variable in "mud.h" is now obsolete and has been changed to "LOGDIR" in "config.h"
 		- Added: Command "dump" (do_dump)
-		- Added: Quest Bits (do_abit, do_qbit)
-		- Added: Capture SIGTERM & SIGKILL signals.
+		- Added: Banker (ACT_BANKER): (do_balance, do_deposit, do_withdraw)
+		- Added: Quest Bits (do_abit, do_qbit) & New Quest Master
+		- Added: Capture SIGTERM & More signals.
+		- Added: Admin list (admin.lst)
 
 	* XSMAUG 2.0 -> XSMAUG 2.1
 

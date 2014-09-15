@@ -1,103 +1,104 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         The Gauntlet~
-Author       Rolindar~
-WeatherX     0
-WeatherY     0
-Ranges       10 15 1 20
-Economy      0 27085
-ResetMsg     A hoarse battlecry echoes over the hills.~
+Version         1
+Name            The Gauntlet~
+Author          Rolindar~
+Vnums           2500 2599
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          10 15 1 20
+ResetMsg        A hoarse battlecry echoes over the hills.~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       2500
-Keywords   giant leech~
-Short      a giant leech~
-Long       A leech the size of your forearm rises from the fetid waters.
+Vnum      2500
+Keywords  giant leech~
+Race      slime~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a giant leech~
+Long      A leech the size of your forearm rises from the fetid waters.
 ~
-Desc       These foul bloodsucking creatures can drain a small animal entirely of
+Desc      These foul bloodsucking creatures can drain a small animal entirely of
 blood in minutes; you shudder to think of the damage a pack of them
 may do.
 ~
-Race       slime~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc sentinel aggressive~
-Affected   infrared~
-Stats1     0 5 0 0 0 0
-Stats2     1 1 39
-Stats3     1 1 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     insectoid~
-Speaking   insectoid~
-Bodyparts  guts tail~
-Suscept    fire~
-Attacks    bite feed~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    5 21 0 39 1 1 1
+Speaks    insectoid~
+Speaking  insectoid~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts guts tail~
+Suscept   NONE~
+Attacks   bite~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2501
-Keywords   blood hawk~
-Short      a blood hawk~
-Long       A lean hawk with red splotches dives down at you!
+Vnum      2501
+Keywords  blood hawk~
+Race      monster~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a blood hawk~
+Long      A lean hawk with red splotches dives down at you!
 ~
-Desc       These vicious avian predators are bold and aggressive enough to attack
+Desc      These vicious avian predators are bold and aggressive enough to attack
 even humanoid travellers, despite being only marginally larger than
 normal hawks.
 ~
-Race       monster~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc sentinel aggressive~
-Affected   detect_invis detect_hidden infrared flying~
-Stats1     -200 8 0 0 0 0
-Stats2     2 1 80
-Stats3     2 3 6
-Stats4     0 0 0 0 0
-Attribs    13 13 13 18 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head heart guts eye wings tail claws beak~
-Attacks    claws gouge~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    8 21 0 80 2 3 6
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis detect_hidden infrared flying~
+Bodyparts head heart guts eye wings tail claws beak~
+Attacks   claws gouge~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2502
-Keywords   war dog~
-Short      a war dog~
-Long       A war dog remains faithfully by its master's side.
+Vnum      2502
+Keywords  war dog~
+Race      dog~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a war dog~
+Long      A war dog remains faithfully by its master's side.
 ~
-Desc       Gnolls are very close to all canines, as they share a distant ancestor,
+Desc      Gnolls are very close to all canines, as they share a distant ancestor,
 and bands of gnolls on the warpath are always accompanied by dogs bred
 for battle, which remain fiercely loyal to their brutal owners.
 ~
-Race       dog~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Affected   detect_invis detect_hidden infrared~
-Stats1     0 10 0 0 0 0
-Stats2     1 1 100
-Stats3     2 3 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal goblin~
-Speaking   mammal~
-Bodyparts  head legs heart brains guts ear eye tail paws~
-Attacks    bite claws~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    10 21 0 100 2 3 4
+Speaks    mammal goblin~
+Speaking  mammal~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head legs heart brains guts ear eye tail paws~
+Attacks   bite claws~
+Defenses  dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   growl
+~
+#ENDPROG
+
 #MUDPROG
 Progtype  rand_prog~
 Arglist   2~
@@ -106,45 +107,49 @@ mpasound The sound of a dog barking issues from one of the ruined buildings.
 ~
 #ENDPROG
 
-#MUDPROG
-Progtype  rand_prog~
-Arglist   2~
-Comlist   growl
-~
-#ENDPROG
-
 #ENDMOBILE
 
 #MOBILE
-Vnum       2503
-Keywords   gnoll chieftain~
-Short      a wounded gnoll chieftain~
-Long       A badly wounded gnoll chieftain leans against the wall.
+Vnum      2503
+Keywords  gnoll chieftain~
+Race      monster~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a wounded gnoll chieftain~
+Long      A badly wounded gnoll chieftain leans against the wall.
 ~
-Desc       This fellow, evidently one of the leaders of the band that ravaged this
+Desc      This fellow, evidently one of the leaders of the band that ravaged this
 place, doesn't have long to live; deep slashes have incapacitated his
 right leg and left arm, and he has bled copious amounts onto the ground.
 There would be little honor in slaying such a foe, despite his role in
 the destruction of this place. Perhaps he has some useful information?
 ~
-Race       monster~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc sentinel~
-Affected   detect_invis detect_hidden infrared~
-Stats1     -400 14 0 0 750 0
-Stats2     1 1 66
-Stats3     1 4 10
-Stats4     0 0 0 0 0
-Attribs    18 13 13 18 18 13 13
-Saves      0 0 0 0 0
-Speaks     common goblin~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Attacks    trip~
-Defenses   parry dodge~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    14 21 0 66 1 4 10
+Speaks    common goblin~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Attacks   trip~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+mpe The gnoll looks up, bleary eyed, and tenses suddenly.
+say Adventurer! It would seem you have the advantage. 
+mpe The gnoll gestures at his broken and torn limbs.
+say I am done for, wounded as I was my clan abandoned me. 
+sigh
+say I am now no use to anyone...
+endif
+~
+#ENDPROG
+
 #MUDPROG
 Progtype  rand_prog~
 Arglist   2~
@@ -175,141 +180,123 @@ endif
 ~
 #ENDPROG
 
-#MUDPROG
-Progtype  greet_prog~
-Arglist   100~
-Comlist   if ispc($n)
-mpe The gnoll looks up, bleary eyed, and tenses suddenly.
-say Adventurer! It would seem you have the advantage. 
-mpe The gnoll gestures at his broken and torn limbs.
-say I am done for, wounded as I was my clan abandoned me. 
-sigh
-say I am now no use to anyone...
-endif
-~
-#ENDPROG
-
 #ENDMOBILE
 
 #MOBILE
-Vnum       2504
-Keywords   giant worker ant~
-Short      a giant worker ant~
-Long       A giant worker ant hauls rubble away from a hole in the floor.
+Vnum      2504
+Keywords  giant worker ant~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a giant worker ant~
+Long      A giant worker ant hauls rubble away from a hole in the floor.
 ~
-Desc       Insects the size of hunting dogs, these ants are quite aggressive and
+Desc      Insects the size of hunting dogs, these ants are quite aggressive and
 their carniverous appetite makes them mark most humanoids as potential
 meals.
 ~
-Race       insect~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc sentinel aggressive~
-Affected   infrared~
-Stats1     0 8 0 0 0 0
-Stats2     1 1 80
-Stats3     2 2 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     insectoid~
-Speaking   insectoid~
-Bodyparts  head legs guts~
-Attacks    bite~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    8 21 0 80 2 2 4
+Speaks    insectoid~
+Speaking  insectoid~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head legs guts~
+Attacks   bite~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2505
-Keywords   giant soldier ant~
-Short      a giant soldier ant~
-Long       A giant soldier ant moves to protect his Queen.
+Vnum      2505
+Keywords  giant soldier ant~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a giant soldier ant~
+Long      A giant soldier ant moves to protect his Queen.
 ~
-Desc       The guards of the nest and its Queen, these armored insects have a dim,
+Desc      The guards of the nest and its Queen, these armored insects have a dim,
 but malevolent, intelligence, and view all creatures not of its nest
 (including other ants) as deadly foes.
 ~
-Race       insect~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_poison~
-Gender     neuter~
-Actflags   npc sentinel aggressive~
-Affected   infrared~
-Stats1     -200 10 0 0 0 0
-Stats2     1 1 140
-Stats3     3 3 6
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     insectoid~
-Speaking   insectoid~
-Bodyparts  head legs heart guts~
-Attacks    bite sting~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    10 21 0 140 3 3 6
+Speaks    insectoid~
+Speaking  insectoid~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head legs heart guts~
+Attacks   bite sting~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2506
-Keywords   giant ant queen~
-Short      the queen ant~
-Long       A bloated, massive ant lies sprawled in the center of the room.
+Vnum      2506
+Keywords  giant ant queen~
+Race      insect~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     the queen ant~
+Long      A bloated, massive ant lies sprawled in the center of the room.
 ~
-Desc       This bloated insect is so grossly fat that it can barely move to defend
+Desc      This bloated insect is so grossly fat that it can barely move to defend
 itself from intruders, hence the presence of its soldier guards. You
 sense a dim malevolent intelligence from the creature, and wonder at
 how much these insects truly understand.
 ~
-Race       insect~
-Class      queen~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel~
-Affected   infrared~
-Stats1     -300 16 0 -100 0 0
-Stats2     1 1 299
-Stats3     1 1 1
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     insectoid~
-Speaking   insectoid~
-Resist     cold electricity blunt slash magic~
-Suscept    fire~
+Nattacks  0.000000
+Stats1    -300 0 0 0 0 0
+Stats2    16 21 -100 299 1 1 1
+Speaks    insectoid~
+Speaking  insectoid~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts guts~
+Resist    fire cold energy pierce plus6~
+Suscept   NONE~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2507
-Keywords   gnoll ~
-Short      a gnoll~
-Long       A drunk gnoll is snoring loudly on the floor.
+Vnum      2507
+Keywords  gnoll ~
+Race      monster~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a gnoll~
+Long      A drunk gnoll is snoring loudly on the floor.
 ~
-Desc       The foul humanoids that have taken over the Keep, these doglike beasts
+Desc      The foul humanoids that have taken over the Keep, these doglike beasts
 wield their weapons with great strength and precision, when they are not
 rolling drunk, which is fortunately rare.
 ~
-Race       monster~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Affected   infrared~
-Stats1     -400 12 0 0 500 0
-Stats2     1 1 149
-Stats3     2 4 4
-Stats4     0 0 0 0 0
-Attribs    16 13 13 16 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Resist     blunt paralysis~
-Defenses   parry dodge~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 149 2 4 4
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy magic~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   snore
+~
+#ENDPROG
+
 #MUDPROG
 Progtype  rand_prog~
 Arglist   1~
@@ -321,43 +308,41 @@ endif
 ~
 #ENDPROG
 
-#MUDPROG
-Progtype  rand_prog~
-Arglist   2~
-Comlist   snore
-~
-#ENDPROG
-
 #ENDMOBILE
 
 #MOBILE
-Vnum       2508
-Keywords   gnoll~
-Short      a gnoll~
-Long       A gnoll sentry snorts and takes a swig of his jack of ale.
+Vnum      2508
+Keywords  gnoll~
+Race      monster~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a gnoll~
+Long      A gnoll sentry snorts and takes a swig of his jack of ale.
 ~
-Desc       The foul humanoids that have taken over the Keep, these doglike beasts
+Desc      The foul humanoids that have taken over the Keep, these doglike beasts
 wield their weapons with great strength and precision, when they are not
 rolling drunk, which is fortunately rare.
 ~
-Race       monster~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Affected   infrared~
-Stats1     -400 12 0 0 500 0
-Stats2     1 1 149
-Stats3     2 4 4
-Stats4     0 0 0 0 0
-Attribs    16 13 13 16 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Resist     blunt paralysis~
-Defenses   parry dodge~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 149 2 4 4
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy magic~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   mpasound The sound of raucous singing can be heard nearby.
+puke
+~
+#ENDPROG
+
 #MUDPROG
 Progtype  greet_prog~
 Arglist   20~
@@ -373,77 +358,64 @@ endif
 ~
 #ENDPROG
 
-#MUDPROG
-Progtype  rand_prog~
-Arglist   1~
-Comlist   mpasound The sound of raucous singing can be heard nearby.
-puke
-~
-#ENDPROG
-
 #ENDMOBILE
 
 #MOBILE
-Vnum       2509
-Keywords   magical guardian~
-Short      a magical guardian~
-Long       A magical guardian sits on a large wooden chair.
+Vnum      2509
+Keywords  magical guardian~
+Race      magical~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_frost~
+Short     a magical guardian~
+Long      A magical guardian sits on a large wooden chair.
 ~
-Desc       This guardian has sat here for decades, unaware of the chaos that has
+Desc      This guardian has sat here for decades, unaware of the chaos that has
 wrought such damage on other sections of the keep, continuing to hold
 steadfast vigil over this area. It appears to be ignoring you, and does
 not appear to be a threat in any way; perhaps it would be best if you
 left it be?
 ~
-Race       magical~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_breath_frost~
-Gender     neuter~
-Actflags   npc sentinel~
-Affected   invisible detect_invis detect_hidden sanctuary infrared floating truesight~
-Stats1     200 20 0 -100 0 0
-Stats2     1 1 499
-Stats3     7 4 6
-Stats4     0 0 2 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      -10 -10 -10 -10 -10
-Speaks     magical~
-Speaking   magical~
-Immune     cold sleep charm nonmagic~
-Attacks    drain blindness curse weaken~
-Defenses   parry dodge disarm~
+Nattacks  2.000000
+Stats1    200 0 0 0 0 0
+Stats2    20 21 -100 499 7 4 6
+Speaks    magical~
+Speaking  magical~
+Actflags  npc sentinel~
+Affected  invisible detect_invis detect_hidden sanctuary infrared floating truesight~
+Bodyparts guts~
+Immune    fire drain sleep hold~
+Attacks   drain blindness curse weaken~
+Defenses  parry dodge disarm~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2510
-Keywords   gnoll sentry~
-Short      a gnoll sentry~
-Long       An alert gnoll sentry watches over the upper gate.
+Vnum      2510
+Keywords  gnoll sentry~
+Race      monster~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a gnoll sentry~
+Long      An alert gnoll sentry watches over the upper gate.
 ~
-Desc       The foul humanoids that have taken over the Keep, these doglike beasts
+Desc      The foul humanoids that have taken over the Keep, these doglike beasts
 wield their weapons with great strength and precision, when they are not
 rolling drunk, which is fortunately rare.
 ~
-Race       monster~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel aggressive~
-Affected   infrared~
-Stats1     -400 12 0 0 500 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    16 13 13 16 13 13 13
-Saves      0 0 0 0 0
-Speaks     goblin~
-Speaking   goblin~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Resist     blunt paralysis~
-Defenses   parry dodge~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 0 0 0 0
+Speaks    goblin~
+Speaking  goblin~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy magic~
+Defenses  parry dodge~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -470,34 +442,31 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2511
-Keywords   malnourished warhorse~
-Short      the warhorse~
-Long       A mighty black warhorse beats angrily at the ground here.
+Vnum      2511
+Keywords  malnourished warhorse~
+Race      horse~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the warhorse~
+Long      A mighty black warhorse beats angrily at the ground here.
 ~
-Desc       This poor brute has not been fed or brushed properly in weeks, and is now
+Desc      This poor brute has not been fed or brushed properly in weeks, and is now
 awaiting his fate as the next course for the gnoll's dinner.
 ~
-Race       horse~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel mountable~
-Affected   infrared~
-Stats1     0 14 0 80 0 0
-Stats2     3 3 30
-Stats3     3 3 10
-Stats4     0 0 2 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head legs heart brains guts feet ear eye tail~
-Resist     cold~
-Suscept    charm~
-Attacks    bite kick~
-Defenses   dodge~
+Nattacks  2.000000
+Stats1    0 0 0 0 0 0
+Stats2    14 21 80 30 3 3 10
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc sentinel mountable~
+Affected  infrared~
+Bodyparts head legs heart brains guts feet ear eye tail~
+Resist    fire~
+Suscept   sleep~
+Attacks   bite kick~
+Defenses  dodge~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   1~
@@ -508,45 +477,32 @@ Comlist   mpasound A feeble whinney, as of an injured horse, can be heard.
 #ENDMOBILE
 
 #MOBILE
-Vnum       2512
-Keywords   gnoll shaman~
-Short      the gnoll shaman~
-Long       An elderly gnoll female sits smoking a smelly pipe.
+Vnum      2512
+Keywords  gnoll shaman~
+Race      monster~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the gnoll shaman~
+Long      An elderly gnoll female sits smoking a smelly pipe.
 ~
-Desc       This vile woman is one of the tribal leaders, and despite her apparent
+Desc      This vile woman is one of the tribal leaders, and despite her apparent
 age and frailty is quite a threat. Strange visions twist and whirl in
 front of you as you gaze at the pipe, and you suspect sorcery is at 
 work here.
 ~
-Race       monster~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_cleric~
-Gender     female~
-Actflags   npc sentinel aggressive~
-Affected   detect_invis infrared~
-Stats1     -700 14 0 0 1200 0
-Stats2     1 1 220
-Stats3     2 4 4
-Stats4     0 0 0 0 0
-Attribs    16 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts claws~
-Attacks    bite claws poison~
-Defenses   parry dodge cureserious dispelmagic disarm~
-#MUDPROG
-Progtype  fight_prog~
-Arglist   15~
-Comlist   mpe _yel Strange smoke pours from the pipe, affecting your vision!
-mpdamage $r 25
-c blindness $r
-wink $r
-~
-#ENDPROG
-
+Nattacks  0.000000
+Stats1    -700 0 0 0 0 0
+Stats2    14 21 0 220 2 4 4
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis infrared~
+Bodyparts head arms legs heart guts claws~
+Attacks   bite claws poison~
+Defenses  parry dodge cureserious dispelmagic disarm~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -561,98 +517,107 @@ endif
 ~
 #ENDPROG
 
+#MUDPROG
+Progtype  fight_prog~
+Arglist   15~
+Comlist   mpe _yel Strange smoke pours from the pipe, affecting your vision!
+mpdamage $r 25
+c blindness $r
+wink $r
+~
+#ENDPROG
+
 #ENDMOBILE
 
 #MOBILE
-Vnum       2513
-Keywords   hyena~
-Short      a hyena~
-Long       A hyena snarls and bites as it circles its mistress' chair.
+Vnum      2513
+Keywords  hyena~
+Race      dog~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a hyena~
+Long      A hyena snarls and bites as it circles its mistress' chair.
 ~
-Desc       These cowardly creatures are normally only dangerous in packs, though
+Desc      These cowardly creatures are normally only dangerous in packs, though
 the gnoll shaman appears to have some sort of hold on them that makes
 them even more aggressive than normal, and unnaturally bold.
 ~
-Race       dog~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel aggressive~
-Affected   detect_invis infrared~
-Stats1     -200 8 0 0 0 0
-Stats2     1 1 100
-Stats3     2 2 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head legs heart brains guts ear eye tail paws~
-Attacks    bite~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    8 21 0 100 2 2 4
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis infrared~
+Bodyparts head legs heart brains guts ear eye tail paws~
+Attacks   bite~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2514
-Keywords   gnoll~
-Short      a gnoll~
-Long       A gnoll female lays plates of food on the table.
+Vnum      2514
+Keywords  gnoll~
+Race      monster~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a gnoll~
+Long      A gnoll female lays plates of food on the table.
 ~
-Desc       The foul humanoids that have taken over the Keep, these doglike beasts
+Desc      The foul humanoids that have taken over the Keep, these doglike beasts
 wield their weapons with great strength and precision, when they are not
 rolling drunk, which is fortunately rare.
 ~
-Race       monster~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel~
-Affected   infrared~
-Stats1     -400 10 0 0 200 0
-Stats2     1 1 149
-Stats3     2 4 4
-Stats4     0 0 0 0 0
-Attribs    16 13 13 16 13 13 13
-Saves      0 0 0 0 0
-Speaks     goblin~
-Speaking   goblin~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Resist     blunt paralysis~
-Attacks    bite~
-Defenses   parry dodge~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    10 21 0 149 2 4 4
+Speaks    goblin~
+Speaking  goblin~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy magic~
+Attacks   bite~
+Defenses  parry dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2515
-Keywords   man at arms~
-Short      a man-at-arms~
-Long       A badly bruised human sits on the stone floor.
+Vnum      2515
+Keywords  man at arms~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a man-at-arms~
+Long      A badly bruised human sits on the stone floor.
 ~
-Desc       This unfortunate soul is one of the survivors of the original garrison,
+Desc      This unfortunate soul is one of the survivors of the original garrison,
 kept now to be devoured at an upcoming feast. While he is grateful to
 see a face other than gnollish, he is still suspicious of your motives;
 he has known too many adventurers...
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel wimpy~
-Affected   infrared~
-Stats1     400 12 0 0 0 0
-Stats2     8 8 120
-Stats3     1 4 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts~
-Attacks    kick~
-Defenses   parry dodge~
+Nattacks  0.000000
+Stats1    400 -1 0 0 0 0
+Stats2    12 21 0 120 1 4 4
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel wimpy~
+Affected  infrared~
+Bodyparts head arms legs heart guts~
+Attacks   kick~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   moan
+mpasound Muffled cries for help can be heard from somewhere nearby.
+~
+#ENDPROG
+
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -666,81 +631,60 @@ endif
 ~
 #ENDPROG
 
-#MUDPROG
-Progtype  rand_prog~
-Arglist   2~
-Comlist   moan
-mpasound Muffled cries for help can be heard from somewhere nearby.
-~
-#ENDPROG
-
 #ENDMOBILE
 
 #MOBILE
-Vnum       2516
-Keywords   gnoll sentry~
-Short      a gnoll sentry~
-Long       A gnoll stares intently out the crossletted arrowslits.
+Vnum      2516
+Keywords  gnoll sentry~
+Race      monster~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a gnoll sentry~
+Long      A gnoll stares intently out the crossletted arrowslits.
 ~
-Desc       The foul humanoids that have taken over the Keep, these doglike beasts
+Desc      The foul humanoids that have taken over the Keep, these doglike beasts
 wield their weapons with great strength and precision, when they are not
 rolling drunk, which is fortunately rare.
 ~
-Race       monster~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Affected   infrared~
-Stats1     -400 12 0 0 500 0
-Stats2     1 1 149
-Stats3     2 4 4
-Stats4     0 0 0 0 0
-Attribs    16 13 13 16 13 13 13
-Saves      0 0 0 0 0
-Speaks     goblin~
-Speaking   goblin~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Resist     blunt paralysis~
-Defenses   parry dodge~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 149 2 4 4
+Speaks    goblin~
+Speaking  goblin~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy magic~
+Defenses  parry dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2517
-Keywords   drunken gnoll sentry~
-Short      a drunken gnoll~
-Long       A drunken gnoll sentry staggers to his feet.
+Vnum      2517
+Keywords  drunken gnoll sentry~
+Race      monster~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a drunken gnoll~
+Long      A drunken gnoll sentry staggers to his feet.
 ~
-Desc       The foul humanoids that have taken over the Keep, these doglike beasts
+Desc      The foul humanoids that have taken over the Keep, these doglike beasts
 wield their weapons with great strength and precision, when they are not
 rolling drunk, which is fortunately rare.
 ~
-Race       monster~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel aggressive~
-Affected   infrared~
-Stats1     -400 12 0 0 500 0
-Stats2     1 1 149
-Stats3     2 4 4
-Stats4     0 0 0 0 0
-Attribs    16 13 13 16 13 13 13
-Saves      0 0 0 0 0
-Speaks     goblin~
-Speaking   goblin~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Resist     blunt paralysis~
-Defenses   parry dodge~
-#MUDPROG
-Progtype  rand_prog~
-Arglist   2~
-Comlist   drool
-~
-#ENDPROG
-
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 149 2 4 4
+Speaks    goblin~
+Speaking  goblin~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy magic~
+Defenses  parry dodge~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   2~
@@ -748,36 +692,54 @@ Comlist   burp
 ~
 #ENDPROG
 
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   drool
+~
+#ENDPROG
+
 #ENDMOBILE
 
 #MOBILE
-Vnum       2518
-Keywords   gnoll archer~
-Short      a gnoll archer~
-Long       A gnollish archer patrols the battlements, keeping an eye out.
+Vnum      2518
+Keywords  gnoll archer~
+Race      monster~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a gnoll archer~
+Long      A gnollish archer patrols the battlements, keeping an eye out.
 ~
-Desc       The foul humanoids that have taken over the Keep, these doglike beasts
+Desc      The foul humanoids that have taken over the Keep, these doglike beasts
 wield their weapons with great strength and precision, when they are not
 rolling drunk, which is fortunately rare.
 ~
-Race       monster~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc aggressive~
-Affected   infrared~
-Stats1     -400 12 0 0 500 0
-Stats2     1 1 149
-Stats3     2 4 4
-Stats4     0 0 0 0 0
-Attribs    16 13 13 16 13 13 13
-Saves      0 0 0 0 0
-Speaks     goblin~
-Speaking   goblin~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Resist     blunt paralysis~
-Defenses   parry dodge~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 149 2 4 4
+Speaks    goblin~
+Speaking  goblin~
+Actflags  npc aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy magic~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   mutter
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   yawn
+~
+#ENDPROG
+
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -793,55 +755,38 @@ endif
 ~
 #ENDPROG
 
-#MUDPROG
-Progtype  rand_prog~
-Arglist   2~
-Comlist   yawn
-~
-#ENDPROG
-
-#MUDPROG
-Progtype  rand_prog~
-Arglist   2~
-Comlist   mutter
-~
-#ENDPROG
-
 #ENDMOBILE
 
 #MOBILE
-Vnum       2519
-Keywords   half ogre mercenary~
-Short      a half-ogre mercenary~
-Long       A burly half-ogre cracks his knuckles as he stalks about the room.
+Vnum      2519
+Keywords  half ogre mercenary~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a half-ogre mercenary~
+Long      A burly half-ogre cracks his knuckles as he stalks about the room.
 ~
-Desc       Hired on by the new master of the keep some weeks ago, the half-ogre is
+Desc      Hired on by the new master of the keep some weeks ago, the half-ogre is
 going crazy with boredom, as there has not been much call for his
 particular 'skills' since the keep fell.
 ~
-Race       half-ogre~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel aggressive~
-Affected   infrared~
-Stats1     -786 13 0 0 5000 0
-Stats2     1 1 250
-Stats3     1 10 6
-Stats4     0 0 0 0 0
-Attribs    18 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     ogre~
-Speaking   ogre~
-Bodyparts  head arms legs heart guts~
-Resist     poison charm magic paralysis~
-Attacks    punch trip~
-Defenses   parry dodge disarm~
+Nattacks  0.000000
+Stats1    -786 -1 0 0 0 0
+Stats2    13 21 0 250 1 10 6
+Speaks    ogre~
+Speaking  ogre~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head arms legs heart guts~
+Resist    acid sleep plus6 magic~
+Attacks   punch trip~
+Defenses  parry dodge disarm~
 #MUDPROG
-Progtype  fight_prog~
-Arglist   10~
-Comlist   pummel
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mpe The half-ogre lets out a hoarse cry as he spies you.
 ~
 #ENDPROG
 
@@ -854,41 +799,38 @@ say A siege, an ambush, a knifing... ANYTHING!
 #ENDPROG
 
 #MUDPROG
-Progtype  greet_prog~
-Arglist   100~
-Comlist   mpe The half-ogre lets out a hoarse cry as he spies you.
+Progtype  fight_prog~
+Arglist   10~
+Comlist   pummel
 ~
 #ENDPROG
 
 #ENDMOBILE
 
 #MOBILE
-Vnum       2520
-Keywords   prisonone ogrillon~
-Short      the ogrillon~
-Long       A ferocious hybrid of ogre and some other unknown race gibbers and drools.
+Vnum      2520
+Keywords  prisonone ogrillon~
+Race      half-ogre~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the ogrillon~
+Long      A ferocious hybrid of ogre and some other unknown race gibbers and drools.
 ~
-Desc       Once the powerful ruler of the forces that took the keep, the ogrillon's
+Desc      Once the powerful ruler of the forces that took the keep, the ogrillon's
 weak intellect was unable to withstand the mental assault of the Gauntlet
 it wore, and when the gauntlet had achieved its goal (the taking of the
 Keep), it slowly drove the brute mad, and now awaits a new owner...
 ~
-Race       half-ogre~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Affected   detect_invis detect_hidden infrared~
-Stats1     -1000 18 0 0 15000 0
-Stats2     1 1 10
-Stats3     1 1 100
-Stats4     0 0 0 0 0
-Attribs    13 13 22 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     ogre~
-Speaking   ogre~
-Bodyparts  head arms legs heart guts~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    18 21 0 10 1 1 100
+Speaks    ogre~
+Speaking  ogre~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head arms legs heart guts~
 #MUDPROG
 Progtype  all_greet_prog~
 Arglist   100~
@@ -934,42 +876,41 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       2521
-Keywords   lorganarch giant two headed troll~
-Short      Lorganarch~
-Long       A giant, two-headed troll scowls as it is released from its confinement.
+Vnum      2521
+Keywords  lorganarch giant two headed troll~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     Lorganarch~
+Long      A giant, two-headed troll scowls as it is released from its confinement.
 ~
-Desc       This foul creature was once lord of a tribe of local brigands, brought
+Desc      This foul creature was once lord of a tribe of local brigands, brought
 to justice by the Duke of Alderweg and imprisoned in the magical cell.
 He has remained in a state of suspended animation for nigh on 50 years,
 and thus will emerge with the same anger he had seconds before the Duke
 cast him here...
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc scavenger aggressive~
-Affected   detect_invis detect_hidden infrared~
-Stats1     -800 18 0 0 0 0
-Stats2     1 1 500
-Stats3     3 8 8
-Stats4     0 0 2 0 0
-Attribs    20 13 13 20 20 3 3
-Saves      -10 -10 -10 -10 -10
-Speaks     trollese~
-Speaking   trollese~
-Bodyparts  head arms legs heart brains guts feet fingers ear eye claws~
-Resist     cold electricity blunt slash~
-Immune     drain sleep charm~
-Suscept    fire pierce acid~
-Attacks    bite claws bash gouge~
-Defenses   parry dodge disarm~
+Nattacks  2.000000
+Stats1    -800 -1 0 0 0 0
+Stats2    18 21 0 500 3 8 8
+Speaks    trollese~
+Speaking  trollese~
+Actflags  npc scavenger aggressive~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head arms legs heart brains guts feet fingers ear eye claws~
+Resist    fire cold energy pierce~
+Immune    poison drain sleep~
+Suscept   NONE blunt slash~
+Attacks   bite claws bash gouge~
+Defenses  parry dodge disarm~
 #MUDPROG
-Progtype  fight_prog~
-Arglist   15~
-Comlist   blitz
+Progtype  rand_prog~
+Arglist   33~
+Comlist   get all
+wear all
+lick
 ~
 #ENDPROG
 
@@ -981,155 +922,71 @@ Comlist   pummel
 #ENDPROG
 
 #MUDPROG
-Progtype  rand_prog~
-Arglist   33~
-Comlist   get all
-wear all
-lick
+Progtype  fight_prog~
+Arglist   15~
+Comlist   blitz
 ~
 #ENDPROG
 
 #ENDMOBILE
 
 #MOBILE
-Vnum       2522
-Keywords   tunnel giant ant~
-Short      a giant soldier ant~
-Long       A giant soldier ant bursts through the earthen wall.
+Vnum      2522
+Keywords  tunnel giant ant~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a giant soldier ant~
+Long      A giant soldier ant bursts through the earthen wall.
 ~
-Desc       The guards of the nest and its Queen, these armored insects have a dim,
+Desc      The guards of the nest and its Queen, these armored insects have a dim,
 but malevolent, intelligence, and view all creatures not of its nest
 (including other ants) as deadly foes.
 ~
-Race       insect~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_poison~
-Gender     neuter~
-Actflags   npc sentinel aggressive~
-Affected   infrared~
-Stats1     -200 12 0 0 0 0
-Stats2     1 1 140
-Stats3     3 3 6
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common orcish trollese mammal spiritual magical goblin ancient clan~
-Speaking   common orcish trollese mammal spiritual magical goblin ancient clan~
-Bodyparts  head legs heart guts~
-Attacks    bite sting~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -200 0 0 0 0 0
+Stats2    12 21 0 140 3 3 6
+Speaks    common orcish trollese mammal spiritual magical goblin ancient clan~
+Speaking  clan~
+Actflags  npc sentinel aggressive~
+Affected  infrared~
+Bodyparts head legs heart guts~
+Attacks   bite sting~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2525
-Keywords   fire giant chief~
-Short      the fire giant chieftain~
-Long       A massive, redskinned man glowers menacingly at all who enter.
+Vnum      2525
+Keywords  fire giant chief~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the fire giant chieftain~
+Long      A massive, redskinned man glowers menacingly at all who enter.
 ~
-Desc       The head of a large band of mercenaries, this menacing figure is both
+Desc      The head of a large band of mercenaries, this menacing figure is both
 respected and feared by those he commands. Despite his malevolent 
 appearance (and nature) the giant is not a criminal or a bandit, and is
 merely here to fetch back what is rightfully his from the Ogrillon.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel~
-Affected   detect_invis detect_hidden infrared~
-Stats1     -400 18 0 -100 50000 0
-Stats2     10 10 600
-Stats3     2 8 14
-Stats4     0 0 0 0 0
-Attribs    22 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Resist     blunt slash poison sleep charm~
-Immune     fire paralysis~
-Suscept    cold~
-Attacks    punch trip~
-Defenses   parry dodge disarm~
-#MUDPROG
-Progtype  speech_prog~
-Arglist   gauntlet~
-Comlist   say Gauntlet? What gauntlet? I am not concerned with gauntlets.
-say I am concerned with two things- my daughter, and that accursed
-say ogrillon, who has taken her from me!
-growl
-~
-#ENDPROG
-
-#MUDPROG
-Progtype  rand_prog~
-Arglist   2~
-Comlist   , paces the floor, musing.
-if ispc($r)
-mpe Noticing you, he turns, obviously irritated.
-say Well!?! What do you want, $n???
-scowl
-endif
-~
-#ENDPROG
-
-#MUDPROG
-Progtype  speech_prog~
-Arglist   daughter~
-Comlist   say Yes, my daughter, taken from me by that accursed Ogrillon.
-mutter
-say By Surtur's beard, the hurting I shall inflict upon him
-say when I find him...
-, slams his balled right hand into his left palm.
-~
-#ENDPROG
-
-#MUDPROG
-Progtype  speech_prog~
-Arglist   ogrillon~
-Comlist   gasp
-Say The Ogrillon!?! You know of that beast? Speak, then, tell me!
-, paces the floor, musing.
-say Wait, don't tell me, do for me! Find where he has kept my daughter.
-say If you do, I will agree to pay you a handsome reward!
-nod
-~
-#ENDPROG
-
-#MUDPROG
-Progtype  bribe_prog~
-Arglist   1000~
-Comlist   eye $n
-say What's this for? Surely you cannot hope to purchase my services...
-say Gods, I have a daughter to rescue!
-mutter
-say But, I'll keep the gold, methinks!
-cackle
-mpjunk coins
-~
-#ENDPROG
-
-#MUDPROG
-Progtype  fight_prog~
-Arglist   20~
-Comlist   stun
-roar
-mutter
-~
-#ENDPROG
-
-#MUDPROG
-Progtype  act_prog~
-Arglist   flees~
-Comlist   cackle
-yell Run, run $n, back to ye mother's teat!
-snicker
-~
-#ENDPROG
-
+Nattacks  0.000000
+Stats1    -400 -1 0 0 0 0
+Stats2    18 21 -100 600 2 8 14
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy pierce acid drain sleep~
+Immune    NONE magic~
+Suscept   fire~
+Attacks   punch trip~
+Defenses  parry dodge disarm~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -1165,41 +1022,114 @@ endif
 ~
 #ENDPROG
 
+#MUDPROG
+Progtype  act_prog~
+Arglist   flees~
+Comlist   cackle
+yell Run, run $n, back to ye mother's teat!
+snicker
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   stun
+roar
+mutter
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  bribe_prog~
+Arglist   1000~
+Comlist   eye $n
+say What's this for? Surely you cannot hope to purchase my services...
+say Gods, I have a daughter to rescue!
+mutter
+say But, I'll keep the gold, methinks!
+cackle
+mpjunk coins
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   ogrillon~
+Comlist   gasp
+Say The Ogrillon!?! You know of that beast? Speak, then, tell me!
+, paces the floor, musing.
+say Wait, don't tell me, do for me! Find where he has kept my daughter.
+say If you do, I will agree to pay you a handsome reward!
+nod
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   daughter~
+Comlist   say Yes, my daughter, taken from me by that accursed Ogrillon.
+mutter
+say By Surtur's beard, the hurting I shall inflict upon him
+say when I find him...
+, slams his balled right hand into his left palm.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   , paces the floor, musing.
+if ispc($r)
+mpe Noticing you, he turns, obviously irritated.
+say Well!?! What do you want, $n???
+scowl
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   gauntlet~
+Comlist   say Gauntlet? What gauntlet? I am not concerned with gauntlets.
+say I am concerned with two things- my daughter, and that accursed
+say ogrillon, who has taken her from me!
+growl
+~
+#ENDPROG
+
 #ENDMOBILE
 
 #MOBILE
-Vnum       2526
-Keywords   hell hound~
-Short      a hell hound~
-Long       A red hound, its fur aflame, stalks about the camp.
+Vnum      2526
+Keywords  hell hound~
+Race      dog~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_fire~
+Short     a hell hound~
+Long      A red hound, its fur aflame, stalks about the camp.
 ~
-Desc       Fearful pets of the fire giants, these hounds are surrounded at all
+Desc      Fearful pets of the fire giants, these hounds are surrounded at all
 times by flickering flames, that burn just above their blood red pelts.
 The heat is sufficiently intense that to be even within a dozen yards 
 causes discomfort. Normally aggressive, you sense some greater force is
 holding these naturally ferocious beasts at bay.
 ~
-Race       dog~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_breath_fire~
-Gender     neuter~
-Actflags   npc stayarea~
-Affected   detect_invis detect_hidden infrared fireshield~
-Stats1     -400 13 0 0 0 0
-Stats2     1 1 250
-Stats3     4 4 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 -5 -5
-Speaks     mammal~
-Speaking   mammal~
-Bodyparts  head legs heart brains guts ear eye tail paws~
-Immune     fire~
-Suscept    cold~
-Attacks    bite~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -400 0 0 0 0 0
+Stats2    13 21 0 250 4 4 4
+Speaks    mammal~
+Speaking  mammal~
+Actflags  npc stayarea~
+Affected  detect_invis detect_hidden infrared fireshield~
+Bodyparts head legs heart brains guts ear eye tail paws~
+Immune    NONE~
+Suscept   fire~
+Attacks   bite~
+Defenses  dodge~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -1210,35 +1140,32 @@ Comlist   mea $n The beast growls but does not attack.
 #ENDMOBILE
 
 #MOBILE
-Vnum       2527
-Keywords   hobgoblin mercenary~
-Short      a hobgoblin mercenary~
-Long       A lean, battle-scarred hobgoblin leans on his polearm.
+Vnum      2527
+Keywords  hobgoblin mercenary~
+Race      hobgoblin~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     a hobgoblin mercenary~
+Long      A lean, battle-scarred hobgoblin leans on his polearm.
 ~
-Desc       This scarred veteran of countless campaigns is a ruthless killer, its
+Desc      This scarred veteran of countless campaigns is a ruthless killer, its
 natural instinct for carnage reined in by a code of conduct imposed by
 its kind as well as the tyrannical fire giant. His armor and weapons are
 in good condition, and reflect this same discipline.
 ~
-Race       hobgoblin~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_guard~
-Gender     neuter~
-Actflags   npc stayarea~
-Affected   infrared~
-Stats1     -400 12 0 0 1000 0
-Stats2     1 1 200
-Stats3     1 8 1
-Stats4     0 0 2 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     goblin~
-Speaking   goblin~
-Bodyparts  head arms legs heart guts~
-Attacks    trip gouge~
-Defenses   parry dodge~
+Nattacks  2.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 200 1 8 1
+Speaks    goblin~
+Speaking  goblin~
+Actflags  npc stayarea~
+Affected  infrared~
+Bodyparts head arms legs heart guts~
+Attacks   trip gouge~
+Defenses  parry dodge~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -1249,45 +1176,32 @@ Comlist   mea $n The mercenary ignores you as he makes his way about the camp.
 #ENDMOBILE
 
 #MOBILE
-Vnum       2528
-Keywords   hobgoblin sentry~
-Short      the hobgoblin sentry~
-Long       An alert hobgoblin sentry stands here.
+Vnum      2528
+Keywords  hobgoblin sentry~
+Race      hobgoblin~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     the hobgoblin sentry~
+Long      An alert hobgoblin sentry stands here.
 ~
-Desc       This scarred veteran of countless campaigns is a ruthless killer, its
+Desc      This scarred veteran of countless campaigns is a ruthless killer, its
 natural instinct for carnage reined in by a code of conduct imposed by
 its kind as well as the tyrannical fire giant. His armor and weapons are
 in good condition, and reflect this same discipline.
 ~
-Race       hobgoblin~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_guard~
-Gender     neuter~
-Actflags   npc sentinel~
-Affected   infrared~
-Stats1     -400 12 0 0 1000 0
-Stats2     1 1 200
-Stats3     1 8 1
-Stats4     0 0 2 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     goblin~
-Speaking   goblin~
-Bodyparts  head arms legs heart guts~
-Attacks    trip gouge~
-Defenses   parry dodge~
-#MUDPROG
-Progtype  fight_prog~
-Arglist   10~
-Comlist   yell Trouble at the east entrance!
-mpe The hobgoblin is joined by some comrades, to aid in defending the camp!
-mpmload 2529
-mpmload 2529
-~
-#ENDPROG
-
+Nattacks  2.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 200 1 8 1
+Speaks    goblin~
+Speaking  goblin~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart guts~
+Attacks   trip gouge~
+Defenses  parry dodge~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -1302,46 +1216,46 @@ endif
 ~
 #ENDPROG
 
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   yell Trouble at the east entrance!
+mpe The hobgoblin is joined by some comrades, to aid in defending the camp!
+mpmload 2529
+mpmload 2529
+~
+#ENDPROG
+
 #ENDMOBILE
 
 #MOBILE
-Vnum       2529
-Keywords   hobgoblin berserker~
-Short      a hobgoblin berserker~
-Long       A hobgoblin berserker snarls and gnashes his sharpened teeth.
+Vnum      2529
+Keywords  hobgoblin berserker~
+Race      hobgoblin~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     a hobgoblin berserker~
+Long      A hobgoblin berserker snarls and gnashes his sharpened teeth.
 ~
-Desc       This scarred veteran of countless campaigns is a ruthless killer, its
+Desc      This scarred veteran of countless campaigns is a ruthless killer, its
 natural instinct for carnage reined in by a code of conduct imposed by
 its kind as well as the tyrannical fire giant. His armor and weapons are
 in good condition, and reflect this same discipline.
 ~
-Race       hobgoblin~
-Class      savage~
-Position   standing~
-DefPos     standing~
-Specfun    spec_fido~
-Gender     neuter~
-Actflags   npc sentinel aggressive~
-Affected   detect_invis detect_hidden infrared~
-Stats1     -400 12 0 0 1000 0
-Stats2     1 1 200
-Stats3     1 8 1
-Stats4     0 0 2 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common goblin~
-Speaking   goblin~
-Bodyparts  head arms legs heart guts~
-Immune     poison sleep charm paralysis~
-Attacks    bite claws trip gouge poison~
-Defenses   parry dodge~
-#MUDPROG
-Progtype  rand_prog~
-Arglist   2~
-Comlist   snarl
-~
-#ENDPROG
-
+Nattacks  2.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 200 1 8 1
+Speaks    common goblin~
+Speaking  goblin~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis detect_hidden infrared~
+Bodyparts head arms legs heart guts~
+Immune    acid drain sleep magic~
+Attacks   bite claws trip gouge poison~
+Defenses  parry dodge~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   2~
@@ -1349,51 +1263,42 @@ Comlist   drool
 ~
 #ENDPROG
 
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   snarl
+~
+#ENDPROG
+
 #ENDMOBILE
 
 #MOBILE
-Vnum       2530
-Keywords   chieftain guard~
-Short      the chieftain's guard~
-Long       A hobgoblin stands before the large red tent.
+Vnum      2530
+Keywords  chieftain guard~
+Race      hobgoblin~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     the chieftain's guard~
+Long      A hobgoblin stands before the large red tent.
 ~
-Desc       This scarred veteran of countless campaigns is a ruthless killer, its
+Desc      This scarred veteran of countless campaigns is a ruthless killer, its
 natural instinct for carnage reined in by a code of conduct imposed by
 its kind as well as the tyrannical fire giant. His armor and weapons are
 in good condition, and reflect this same discipline.
 ~
-Race       hobgoblin~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_guard~
-Gender     neuter~
-Actflags   npc sentinel~
-Affected   infrared~
-Stats1     -400 12 0 0 1000 0
-Stats2     1 1 200
-Stats3     1 8 1
-Stats4     0 0 2 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     goblin~
-Speaking   goblin~
-Bodyparts  head arms legs heart guts~
-Attacks    trip gouge~
-Defenses   parry dodge~
-#MUDPROG
-Progtype  fight_prog~
-Arglist   10~
-Comlist   snarl
-say Ye'll be sorry ye did that!
-yell Send the berserkers!
-mpe Several snarling hobgoblins emerge from nearby tents...
-mpmload 2529
-mpmload 2529
-mpmload 2529
-~
-#ENDPROG
-
+Nattacks  2.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 200 1 8 1
+Speaks    goblin~
+Speaking  goblin~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart guts~
+Attacks   trip gouge~
+Defenses  parry dodge~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -1411,69 +1316,76 @@ endif
 ~
 #ENDPROG
 
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   snarl
+say Ye'll be sorry ye did that!
+yell Send the berserkers!
+mpe Several snarling hobgoblins emerge from nearby tents...
+mpmload 2529
+mpmload 2529
+mpmload 2529
+~
+#ENDPROG
+
 #ENDMOBILE
 
 #MOBILE
-Vnum       2531
-Keywords   resting mercenary hobgoblin~
-Short      a hobgoblin mercenary~
-Long       A hobgoblin mercenary rests by the campfire.
+Vnum      2531
+Keywords  resting mercenary hobgoblin~
+Race      hobgoblin~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     a hobgoblin mercenary~
+Long      A hobgoblin mercenary rests by the campfire.
 ~
-Desc       This scarred veteran of countless campaigns is a ruthless killer, its
+Desc      This scarred veteran of countless campaigns is a ruthless killer, its
 natural instinct for carnage reined in by a code of conduct imposed by
 its kind as well as the tyrannical fire giant. His armor and weapons are
 in good condition, and reflect this same discipline.
 ~
-Race       hobgoblin~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_guard~
-Gender     neuter~
-Actflags   npc sentinel~
-Affected   infrared~
-Stats1     -400 12 0 0 1000 0
-Stats2     1 1 200
-Stats3     1 8 1
-Stats4     0 0 2 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     goblin~
-Speaking   goblin~
-Bodyparts  head arms legs heart guts~
-Attacks    trip~
-Defenses   parry dodge~
+Nattacks  2.000000
+Stats1    -400 0 0 0 0 0
+Stats2    12 21 0 200 1 8 1
+Speaks    goblin~
+Speaking  goblin~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart guts~
+Attacks   trip~
+Defenses  parry dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2532
-Keywords   screaming devilkin~
-Short      a screaming devilkin~
-Long       A tiny, demonic creature darts about the tent.
+Vnum      2532
+Keywords  screaming devilkin~
+Race      magical~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a screaming devilkin~
+Long      A tiny, demonic creature darts about the tent.
 ~
-Desc       Standing at no more than two feet high, these creatures are deceptive
+Desc      Standing at no more than two feet high, these creatures are deceptive
 in their appearance, for while one imagines they'd be an easy foe to best,
 one can be suddenly, and lethally surprised by their ferocity. In addition,
 the high pitched shriek that issues forth in combat can fell mighty opponents.
 ~
-Race       magical~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc sentinel scavenger aggressive~
-Affected   detect_invis detect_hidden infrared flying~
-Stats1     -400 10 0 0 0 0
-Stats2     1 1 120
-Stats3     1 4 6
-Stats4     0 0 3 0 0
-Attribs    13 13 13 22 13 13 13
-Saves      0 0 0 0 0
-Speaks     magical~
-Speaking   magical~
-Bodyparts  head heart brains guts ear eye wings tail claws~
-Attacks    bite claws tail~
-Defenses   dodge~
+Nattacks  3.000000
+Stats1    -400 0 0 0 0 0
+Stats2    10 21 0 120 1 4 6
+Speaks    magical~
+Speaking  magical~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden infrared flying~
+Bodyparts head heart brains guts ear eye wings tail claws~
+Attacks   bite claws tail~
+Defenses  dodge~
 #MUDPROG
 Progtype  fight_prog~
 Arglist   25~
@@ -1486,37 +1398,34 @@ shriek
 #ENDMOBILE
 
 #MOBILE
-Vnum       2533
-Keywords   fire giant chieftain daughter~
-Short      the fire chieftain's daughter~
-Long       A formidable fire giant glares around her.
+Vnum      2533
+Keywords  fire giant chieftain daughter~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     the fire chieftain's daughter~
+Long      A formidable fire giant glares around her.
 ~
-Desc       Captured by the despicable Ogrillon and held to ransom, this woman is
+Desc      Captured by the despicable Ogrillon and held to ransom, this woman is
 far from devout, but will not attack her rescuers outright; the lawful
 nature of fire giants means that they know when to restrain their natural
 urges to slay hereditary enemies.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     female~
-Actflags   npc sentinel~
-Affected   infrared~
-Stats1     -400 16 0 0 5600 0
-Stats2     1 1 600
-Stats3     2 8 4
-Stats4     0 0 0 0 0
-Attribs    22 13 13 22 22 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart brains guts hands feet fingers ear eye~
-Resist     blunt slash paralysis~
-Immune     fire~
-Suscept    cold~
-Attacks    punch bash~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -400 -1 0 0 0 0
+Stats2    16 21 0 600 2 8 4
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  infrared~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+Resist    energy pierce magic~
+Immune    NONE~
+Suscept   fire~
+Attacks   punch bash~
+Defenses  dodge~
 #MUDPROG
 Progtype  rand_prog~
 Arglist   2~
@@ -1527,88 +1436,65 @@ Comlist   glare
 #ENDMOBILE
 
 #MOBILE
-Vnum       2534
-Keywords   prisonsac volt beastie~
-Short      a volt~
-Long       A flying serpent sparkling with electricity lashes its tail out.
+Vnum      2534
+Keywords  prisonsac volt beastie~
+Race      magical~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_lightning~
+Short     a volt~
+Long      A flying serpent sparkling with electricity lashes its tail out.
 ~
-Desc       A magical creature that resembles a flying serpent, a volt is charged
+Desc      A magical creature that resembles a flying serpent, a volt is charged
 with lethal doses of electricity; lethal, that is, save to itself. The
 discharge can fell an elephant, however.
 ~
-Race       magical~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_breath_lightning~
-Gender     neuter~
-Actflags   npc aggressive~
-Affected   infrared flying shockshield~
-Stats1     -500 13 0 -50 0 0
-Stats2     8 10 88
-Stats3     2 2 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     magical~
-Speaking   magical~
-Bodyparts  head guts tail~
-Immune     electricity~
-Attacks    bite sting~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    13 21 -50 88 2 2 4
+Speaks    magical~
+Speaking  magical~
+Actflags  npc aggressive~
+Affected  infrared flying shockshield~
+Bodyparts head guts tail~
+Immune    cold~
+Attacks   bite sting~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       2535
-Keywords   revenant~
-Short      a revenant~
-Long       The ghostly form of a man slain unjustly refuses to rest.
+Vnum      2535
+Keywords  revenant~
+Race      undead~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a revenant~
+Long      The ghostly form of a man slain unjustly refuses to rest.
 ~
-Desc       Decades ago, the Duke of Alderweg accidentally slew a young knight on
+Desc      Decades ago, the Duke of Alderweg accidentally slew a young knight on
 a hunting trip. Although it was an accident, the spirit of the knight
 lingered, as a revenant, stalking the Duke endlessly. Eventually the
 duke managed to trap it in this tower, where it has remained. It ignores
 the gnolls, and thus they are free to store their items here, but the
 arrival of an intelligent being will certainly stir it.
 ~
-Race       undead~
-Class      mage~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_mage~
-Gender     neuter~
-Actflags   npc sentinel~
-Affected   detect_invis detect_hidden sanctuary infrared protect shockshield iceshield~
-Stats1     200 21 0 -100 0 0
-Stats2     1 1 1000
-Stats3     11 2 18
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      -10 -10 -10 -10 -10
-Speaks     common~
-Speaking   common~
-Resist     blunt pierce slash nonmagic magic~
-Immune     cold electricity poison drain sleep charm paralysis~
-Attacks    bite claws drain~
-Defenses   parry dodge dispelevil disarm~
-#MUDPROG
-Progtype  hitprcnt_prog~
-Arglist   20~
-Comlist   howl
-~
-#ENDPROG
-
-#MUDPROG
-Progtype  fight_prog~
-Arglist   20~
-Comlist   mea $n _lbl The revenant's cold hands encircle your neck, and squeeze!
-mer $n _lbl The revenant grabs ahold of $n's neck with freezing hands!
-c 'chill touch'
-c 'energy drain'
-mpdamage $n 25
-~
-#ENDPROG
-
+Nattacks  0.000000
+Stats1    200 0 0 0 0 0
+Stats2    21 21 -100 1000 11 2 18
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary infrared protect shockshield iceshield~
+Bodyparts head arms legs guts hands feet fingers ear eye~
+Resist    energy blunt pierce hold plus6~
+Immune    fire cold acid poison drain sleep magic~
+Attacks   bite claws drain~
+Defenses  parry dodge dispelevil disarm~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -1629,39 +1515,53 @@ endif
 ~
 #ENDPROG
 
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   mea $n _lbl The revenant's cold hands encircle your neck, and squeeze!
+mer $n _lbl The revenant grabs ahold of $n's neck with freezing hands!
+c 'chill touch'
+c 'energy drain'
+mpdamage $n 25
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  hitprcnt_prog~
+Arglist   20~
+Comlist   howl
+~
+#ENDPROG
+
 #ENDMOBILE
 
 #MOBILE
-Vnum       2599
-Keywords   final mob~
-Short      a newly created final mob~
-Long       Some god abandoned a newly created final mob here.
+Vnum      2599
+Keywords  final mob~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a newly created final mob~
+Long      Some god abandoned a newly created final mob here.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc~
-Stats1     0 1 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc~
 #ENDMOBILE
 
 #OBJECT
-Vnum     2500
-Keywords rowboat~
-Type     boat~
-Short    a rowboat~
-Long     A long wooden rowboat hangs from two ropes on the roof.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    100 4000 400 0 0
+Vnum      2500
+Keywords  rowboat~
+Type      boat~
+Short     a rowboat~
+Long      A long wooden rowboat hangs from two ropes on the roof.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     100 4000 -2 1 0 None None None
 #EXDESC
 ExDescKey    rowboat~
 ExDesc       Small, but sturdy, this craft would be capable of traversing small bodies
@@ -1672,22 +1572,22 @@ of water after a little soaking to expand the planks.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2501
-Keywords splint mail~
-Type     armor~
-Short    A suit of splint mail~
-Long     A suit of crude, but functional, splint mail lies here.~
-Flags    antimage antithief anticleric metal antidruid~
-WFlags   take body~
-Values   10 0 0 0 0 0
-Stats    20 500 50 0 0
-Affect       -1 -1 1 1 0
-Affect       -1 -1 1 5 0
-Affect       -1 -1 10 13 0
-Affect       -1 -1 2 18 0
-Affect       -1 -1 2 19 0
-Affect       -1 -1 -2 22 0
-Affect       -1 -1 2 24 0
+Vnum      2501
+Keywords  splint mail~
+Type      armor~
+Short     A suit of splint mail~
+Long      A suit of crude, but functional, splint mail lies here.~
+Flags     metal anticleric antimage antirogue antidruid~
+WFlags    take body~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     20 500 -2 1 0 None None None
+AffData strength 1 -1 -1 0
+AffData constitution 1 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData save_para -2 -1 -1 0
+AffData save_spell 2 -1 -1 0
 #EXDESC
 ExDescKey    splint mail~
 ExDesc       Heavy armor shunned by the spellcasting classes, this mail affords 
@@ -1698,15 +1598,15 @@ a variety of benefits to those trained in its use.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2502
-Keywords heavy crossbow~
-Type     weapon~
-Short    a heavy crossbow~
-Long     This crossbow has seen better days...~
-Flags    organic~
-WFlags   take wield~
-Values   0 0 0 7 0 0
-Stats    8 250 25 0 0
+Vnum      2502
+Keywords  heavy crossbow~
+Type      weapon~
+Short     a heavy crossbow~
+Long      This crossbow has seen better days...~
+Flags     organic~
+WFlags    take wield~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     8 250 -2 1 0 None None None
 #EXDESC
 ExDescKey    crossbow~
 ExDesc       Once a fine missile weapon, this crossbow is missing its string and
@@ -1718,18 +1618,18 @@ weapon.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2503
-Keywords spiked collar~
-Type     armor~
-Short    a spiked dog collar~
-Long     A spiked dog collar is curled up on the floor.~
-Flags    metal~
-WFlags   take neck~
-Values   5 0 0 0 0 0
-Stats    2 330 33 0 0
-Affect       -1 -1 -1 2 0
-Affect       -1 -1 -2 18 0
-Affect       -1 -1 2 19 0
+Vnum      2503
+Keywords  spiked collar~
+Type      armor~
+Short     a spiked dog collar~
+Long      A spiked dog collar is curled up on the floor.~
+Flags     metal~
+WFlags    take neck~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     2 330 -2 1 0 None None None
+AffData intelligence -1 -1 -1 0
+AffData hitroll -2 -1 -1 0
+AffData damroll 2 -1 -1 0
 #EXDESC
 ExDescKey    spiked dog collar~
 ExDesc       A rather vicious item of apparel, this collar could inflict significant
@@ -1741,19 +1641,19 @@ the wearer was a canine (or an orc...)
 #ENDOBJECT
 
 #OBJECT
-Vnum     2504
-Keywords jade bracelet~
-Type     armor~
-Short    a jade bracelet~
-Long     A string threaded through several pieces of jade is here.~
-Flags    magic antievil antithief antiwarrior antivampire~
-WFlags   take wrist~
-Values   5 0 0 0 0 0
-Stats    1 5000 500 0 0
-Affect       -1 -1 1 3 0
-Affect       -1 -1 1 4 0
-Affect       -1 -1 10 12 0
-Affect       -1 -1 2 18 0
+Vnum      2504
+Keywords  jade bracelet~
+Type      armor~
+Short     a jade bracelet~
+Long      A string threaded through several pieces of jade is here.~
+Flags     magic antievil antirogue antiwarrior~
+WFlags    take wrist~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     1 5000 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
+AffData mana 10 -1 -1 0
+AffData hitroll 2 -1 -1 0
 #EXDESC
 ExDescKey    jade bracelet~
 ExDesc       You sense strange properties in this neglected piece of jewelry. Jade
@@ -1766,17 +1666,17 @@ enchantments.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2505
-Keywords battle axe~
-Type     weapon~
-Short    a battle axe~
-Long     A metal battle axe is buried in a chunk of wood.~
-Flags    metal~
-WFlags   take wield~
-Values   0 0 0 3 0 0
-Stats    25 350 35 0 0
-Affect       -1 -1 2 19 0
-Affect       -1 -1 -2 18 0
+Vnum      2505
+Keywords  battle axe~
+Type      weapon~
+Short     a battle axe~
+Long      A metal battle axe is buried in a chunk of wood.~
+Flags     metal~
+WFlags    take wield~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     25 350 -2 1 0 None None None
+AffData damroll 2 -1 -1 0
+AffData hitroll -2 -1 -1 0
 #EXDESC
 ExDescKey    battle axe~
 ExDesc       A simple, sturdy double bladed broad axe, used with two hands, though
@@ -1787,16 +1687,16 @@ the gnolls are burly enough to wield it single handed.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2506
-Keywords leather bracer~
-Type     armor~
-Short    a leather bracer~
-Long     A thick leahter bracer lies here.~
-Flags    organic~
-WFlags   take wrist~
-Values   4 0 0 0 0 0
-Stats    1 200 20 0 0
-Affect       -1 -1 3 18 0
+Vnum      2506
+Keywords  leather bracer~
+Type      armor~
+Short     a leather bracer~
+Long      A thick leahter bracer lies here.~
+Flags     organic~
+WFlags    take wrist~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     1 200 -2 9999 0 None None None
+AffData hitroll 3 -1 -1 0
 #EXDESC
 ExDescKey    leather bracer~
 ExDesc       The type worn by archers and crossbowmen, this wrist guard affords 
@@ -1808,18 +1708,18 @@ accuracy and distance.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2507
-Keywords battered iron helmet~
-Type     armor~
-Short    a battered iron helmet~
-Long     A rather battered iron helmet has been discarded here.~
-WFlags   take head~
-Values   5 0 0 0 0 0
-Stats    2 150 15 0 0
-Affect       -1 -1 1 5 0
-Affect       -1 -1 -2 4 0
-Affect       -1 -1 -10 12 0
-Affect       -1 -1 20 13 0
+Vnum      2507
+Keywords  battered iron helmet~
+Type      armor~
+Short     a battered iron helmet~
+Long      A rather battered iron helmet has been discarded here.~
+WFlags    take head~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     2 150 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+AffData dexterity -2 -1 -1 0
+AffData mana -10 -1 -1 0
+AffData hit 20 -1 -1 0
 #EXDESC
 ExDescKey    battered iron helmet~
 ExDesc       Large dents and holes in the helmet seem to indicate that it did its
@@ -1831,17 +1731,17 @@ bit of life left in it yet...
 #ENDOBJECT
 
 #OBJECT
-Vnum     2508
-Keywords leather belt~
-Type     armor~
-Short    a leather belt~
-Long     This thin strip of leather would serve as a crude belt.~
-Flags    organic~
-WFlags   take wrist~
-Values   4 0 0 0 0 0
-Stats    1 40 4 0 0
-Affect       -1 -1 2 2 0
-Affect       -1 -1 10 12 0
+Vnum      2508
+Keywords  leather belt~
+Type      armor~
+Short     a leather belt~
+Long      This thin strip of leather would serve as a crude belt.~
+Flags     organic~
+WFlags    take wrist~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     1 40 -2 9999 0 None None None
+AffData intelligence 2 -1 -1 0
+AffData mana 10 -1 -1 0
 #EXDESC
 ExDescKey    leather belt~
 ExDesc       This belt is unremarkable in every way, save that there are twelve
@@ -1852,18 +1752,18 @@ notches in a section near the buckle.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2509
-Keywords leather leggings~
-Type     armor~
-Short    leather leggings~
-Long     These leggings are covered in unmentionable stains.~
-Flags    organic~
-WFlags   take legs~
-Values   4 0 0 0 0 0
-Stats    3 75 7 0 0
-Affect       -1 -1 1 1 0
-Affect       -1 -1 -1 22 0
-Affect       -1 -1 25 14 0
+Vnum      2509
+Keywords  leather leggings~
+Type      armor~
+Short     leather leggings~
+Long      These leggings are covered in unmentionable stains.~
+Flags     organic~
+WFlags    take legs~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     3 75 -2 9999 0 None None None
+AffData strength 1 -1 -1 0
+AffData save_para -1 -1 -1 0
+AffData move 25 -1 -1 0
 #EXDESC
 ExDescKey    leather leggings~
 ExDesc       A pair of leather trousers, thickened and lined with strips of boiled
@@ -1875,18 +1775,18 @@ and are far less cumbersome than their metal counterparts.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2510
-Keywords bearskin cloak~
-Type     armor~
-Short    a bearskin cloak~
-Long     A bearskin has been slung on the floor.~
-Flags    organic~
-WFlags   take neck~
-Values   8 0 0 0 0 0
-Stats    10 750 75 0 0
-Affect       -1 -1 1 5 0
-Affect       -1 -1 20 13 0
-Affect       -1 -1 -2 23 0
+Vnum      2510
+Keywords  bearskin cloak~
+Type      armor~
+Short     a bearskin cloak~
+Long      A bearskin has been slung on the floor.~
+Flags     organic~
+WFlags    take neck~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     10 750 -2 1 0 None None None
+AffData constitution 1 -1 -1 0
+AffData hit 20 -1 -1 0
+AffData save_breath -2 -1 -1 0
 #EXDESC
 ExDescKey    bearskin cloak~
 ExDesc       A cloak in the loosest sense of the word, this uncured hide has literally
@@ -1898,17 +1798,17 @@ slayer's shoulders.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2511
-Keywords hard leather boots~
-Type     armor~
-Short    hard leather boots~
-Long     These scuffed boots are made of durable cowhide.~
-WFlags   take feet~
-Values   6 0 0 0 0 0
-Stats    2 500 50 0 0
-Affect       -1 -1 -25 14 0
-Affect       -1 -1 10 13 0
-Affect       -1 -1 2 19 0
+Vnum      2511
+Keywords  hard leather boots~
+Type      armor~
+Short     hard leather boots~
+Long      These scuffed boots are made of durable cowhide.~
+WFlags    take feet~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     2 500 -2 1 0 None None None
+AffData move -25 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData damroll 2 -1 -1 0
 #EXDESC
 ExDescKey    leather boots~
 ExDesc       These boots have metal rivets on the sides, and caps on the toes, that
@@ -1920,18 +1820,18 @@ distances in them rather tiring and painful on the toes.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2512
-Keywords sword cold~
-Type     weapon~
-Short    cold sword~
-Long     This sword glistens with a sheen of ice.~
-Flags    glow magic bless antievil~
-WFlags   take wield~
-Values   0 0 0 6 0 0
-Stats    8 175000 17500 0 0
-Affect       -1 -1 6 18 0
-Affect       -1 -1 4 19 0
-Affect       -1 -1 -2 23 0
+Vnum      2512
+Keywords  sword cold~
+Type      weapon~
+Short     cold sword~
+Long      This sword glistens with a sheen of ice.~
+Flags     glow magic bless antievil~
+WFlags    take wield~
+Values    0 0 0 6 0 0 0 0 0 0 0
+Stats     8 175000 -2 1 0 None None None
+AffData hitroll 6 -1 -1 0
+AffData damroll 4 -1 -1 0
+AffData save_breath -2 -1 -1 0
 #EXDESC
 ExDescKey    cold sword~
 ExDesc       A powerful weapon, this magical blade was forged in cold fire, and has
@@ -1961,16 +1861,16 @@ endif
 #ENDOBJECT
 
 #OBJECT
-Vnum     2513
-Keywords studded leather armor~
-Type     armor~
-Short    studded leather armor~
-Long     This armor is stained with food and ale.~
-WFlags   take body~
-Values   5 0 0 0 0 0
-Stats    13 250 25 0 0
-Affect       -1 -1 -5 17 0
-Affect       -1 -1 10 13 0
+Vnum      2513
+Keywords  studded leather armor~
+Type      armor~
+Short     studded leather armor~
+Long      This armor is stained with food and ale.~
+WFlags    take body~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     13 250 -2 1 0 None None None
+AffData armor -5 -1 -1 0
+AffData hit 10 -1 -1 0
 #EXDESC
 ExDescKey    leather armor~
 ExDesc       Several strips of leather bound with wire and lined with heavy metal
@@ -1982,17 +1882,17 @@ affords almost equivalent protection.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2514
-Keywords wooden shield~
-Type     armor~
-Short    an old wooden shield~
-Long     This shield bears the marks of many battles.~
-Flags    organic~
-WFlags   take shield~
-Values   7 0 0 0 0 0
-Stats    5 150 15 0 0
-Affect       -1 -1 1 17 0
-Affect       -1 -1 -1 2 0
+Vnum      2514
+Keywords  wooden shield~
+Type      armor~
+Short     an old wooden shield~
+Long      This shield bears the marks of many battles.~
+Flags     organic~
+WFlags    take shield~
+Values    7 0 0 0 0 0 0 0 0 0 0
+Stats     5 150 -2 9999 0 None None None
+AffData armor 1 -1 -1 0
+AffData intelligence -1 -1 -1 0
 #EXDESC
 ExDescKey    shield~
 ExDesc       This shield is so battered and old that it is all but useless.
@@ -2002,17 +1902,17 @@ ExDesc       This shield is so battered and old that it is all but useless.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2515
-Keywords loop gold earring~
-Type     armor~
-Short    a gold earring~
-Long     A small gold earring has been forgotten.~
-Flags    metal~
-WFlags   take ears~
-Values   3 0 0 0 0 0
-Stats    1 1200 120 0 0
-Affect       -1 -1 1 18 0
-Affect       -1 -1 1 19 0
+Vnum      2515
+Keywords  loop gold earring~
+Type      armor~
+Short     a gold earring~
+Long      A small gold earring has been forgotten.~
+Flags     metal~
+WFlags    take ears~
+Values    3 0 0 0 0 0 0 0 0 0 0
+Stats     1 1200 -2 1 0 None None None
+AffData hitroll 1 -1 -1 0
+AffData damroll 1 -1 -1 0
 #EXDESC
 ExDescKey    loop gold earring~
 ExDesc       A plain band of gold fashioned into an earring.
@@ -2022,17 +1922,17 @@ ExDesc       A plain band of gold fashioned into an earring.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2516
-Keywords oaken club~
-Type     weapon~
-Short    an oaken club~
-Long     An oaken club covered in runes hums ominously.~
-Flags    hum magic organic~
-WFlags   take wield~
-Values   0 0 0 7 0 0
-Stats    10 2000 200 0 0
-Affect       -1 -1 30 12 0
-Affect       -1 -1 3 19 0
+Vnum      2516
+Keywords  oaken club~
+Type      weapon~
+Short     an oaken club~
+Long      An oaken club covered in runes hums ominously.~
+Flags     hum organic magic~
+WFlags    take wield~
+Values    0 0 0 7 0 0 0 0 0 0 0
+Stats     10 2000 -2 1 0 None None None
+AffData mana 30 -1 -1 0
+AffData damroll 3 -1 -1 0
 #EXDESC
 ExDescKey    club~
 ExDesc       A heavy, but impressive weapon that is capable of caving in the skulls
@@ -2043,16 +1943,16 @@ of smaller humanoids.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2517
-Keywords plain wooden pipe~
-Type     wand~
-Short    a plain wooden pipe~
-Long     Despite appearances, you suspect there is more to this pipe than meets the eye...~
-Flags    magic~
-WFlags   take hold~
-Values   15 3 2 -1 0 0
-Stats    1 5000 500 0 0
-Spells   'blindness'
+Vnum      2517
+Keywords  plain wooden pipe~
+Type      wand~
+Short     a plain wooden pipe~
+Long      Despite appearances, you suspect there is more to this pipe than meets the eye...~
+Flags     magic~
+WFlags    take hold~
+Values    15 3 2 -1 0 0 0 0 0 0 0
+Stats     1 5000 -2 1 0 None None None
+Spells       'blindness'
 #EXDESC
 ExDescKey    pipe~
 ExDesc       An unremarkable pipe, though it does seem to glint in the light ever
@@ -2070,16 +1970,16 @@ Comlist   mea $n _yel Smoke billows from the pipe into the eyes of your foes!
 #ENDOBJECT
 
 #OBJECT
-Vnum     2518
-Keywords studded leather gauntlets~
-Type     armor~
-Short    studded leather gauntlets~
-Long     A pair of studded leather gauntlets lie on the floor, wanting for hands.~
-WFlags   take hands~
-Values   4 0 0 0 0 0
-Stats    3 400 40 0 0
-Affect       -1 -1 1 1 0
-Affect       -1 -1 2 18 0
+Vnum      2518
+Keywords  studded leather gauntlets~
+Type      armor~
+Short     studded leather gauntlets~
+Long      A pair of studded leather gauntlets lie on the floor, wanting for hands.~
+WFlags    take hands~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     3 400 -2 1 0 None None None
+AffData strength 1 -1 -1 0
+AffData hitroll 2 -1 -1 0
 #EXDESC
 ExDescKey    gauntlets~
 ExDesc       Simple in form, but durable and efficient, these gauntlets were doubtless
@@ -2090,17 +1990,17 @@ stolen by their current user from a dwarf or gnome.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2519
-Keywords wolf pelt~
-Type     armor~
-Short    a wolf's pelt~
-Long     This wolf pelt can be wrapped about the body.~
-Flags    organic~
-WFlags   take about~
-Values   6 0 0 0 0 0
-Stats    1 500 50 0 0
-Affect       -1 -1 -10 17 0
-Affect       -1 -1 20 13 0
+Vnum      2519
+Keywords  wolf pelt~
+Type      armor~
+Short     a wolf's pelt~
+Long      This wolf pelt can be wrapped about the body.~
+Flags     organic~
+WFlags    take about~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+AffData armor -10 -1 -1 0
+AffData hit 20 -1 -1 0
 #EXDESC
 ExDescKey    pelt~
 ExDesc       Torn from the back of a Timber Wolf, this pelt will both protect the
@@ -2111,18 +2011,18 @@ wearer from the cold, and afford them some armor against weapon blows.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2520
-Keywords splinted sleeves~
-Type     armor~
-Short    splinted sleeves~
-Long     These heavy sleeves would seriously encumber the arms.~
-Flags    antimage antithief~
-WFlags   take arms~
-Values   7 0 0 0 0 0
-Stats    12 1000 100 0 0
-Affect       -1 -1 -2 2 0
-Affect       -1 -1 15 13 0
-Affect       -1 -1 2 19 0
+Vnum      2520
+Keywords  splinted sleeves~
+Type      armor~
+Short     splinted sleeves~
+Long      These heavy sleeves would seriously encumber the arms.~
+Flags     antimage antirogue~
+WFlags    take arms~
+Values    7 0 0 0 0 0 0 0 0 0 0
+Stats     12 1000 -2 1 0 None None None
+AffData intelligence -2 -1 -1 0
+AffData hit 15 -1 -1 0
+AffData damroll 2 -1 -1 0
 #EXDESC
 ExDescKey    sleeves~
 ExDesc       Heavy and rather restrictive on arm movement, these devices nevertheless
@@ -2133,15 +2033,15 @@ afford great protection and add a bit of weight to your weapon strikes.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2521
-Keywords gnollish longbow bow~
-Type     missileweapon~
-Short    a heavy gnollish longbow~
-Long     A heavy gnollish longbow lies unwanted here.~
-Flags    organic~
-WFlags   take missile~
-Values   8 0 2 14 2 0
-Stats    10 500 50 0 0
+Vnum      2521
+Keywords  gnollish longbow bow~
+Type      missileweapon~
+Short     a heavy gnollish longbow~
+Long      A heavy gnollish longbow lies unwanted here.~
+Flags     organic~
+WFlags    take missile~
+Values    8 0 2 14 2 0 0 0 0 0 0
+Stats     10 500 -2 1 0 None None None
 #EXDESC
 ExDescKey    longbow~
 ExDesc       This simple weapon can propel arrows a good 200 yards or more with
@@ -2152,17 +2052,17 @@ some degree of accuracy.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2522
-Keywords spell book cover~
-Type     armor~
-Short    a spell book cover~
-Long     This cover has been torn from a spellbook and fashioned into an adornment.~
-Flags    magic organic~
-WFlags   take neck~
-Values   4 0 0 0 0 0
-Stats    1 0 0 0 0
-Affect       -1 -1 15 12 0
-Affect       -1 -1 -2 24 0
+Vnum      2522
+Keywords  spell book cover~
+Type      armor~
+Short     a spell book cover~
+Long      This cover has been torn from a spellbook and fashioned into an adornment.~
+Flags     organic magic~
+WFlags    take neck~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData mana 15 -1 -1 0
+AffData save_spell -2 -1 -1 0
 #EXDESC
 ExDescKey    spell book cover~
 ExDesc       Torn by the ignorant ogrekin from a spellbook because it was inlaid
@@ -2175,18 +2075,18 @@ the neck.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2523
-Keywords castellan longsword~
-Type     weapon~
-Short    the Castellan's longsword~
-Long     A magical longsword lies here, unwanted and forgotten.~
-Flags    magic metal~
-WFlags   take wield~
-Values   0 0 0 3 0 0
-Stats    20 150000 15000 0 0
-Affect       -1 -1 4 18 0
-Affect       -1 -1 4 19 0
-Affect       -1 -1 -2 24 0
+Vnum      2523
+Keywords  castellan longsword~
+Type      weapon~
+Short     the Castellan's longsword~
+Long      A magical longsword lies here, unwanted and forgotten.~
+Flags     metal magic~
+WFlags    take wield~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     20 150000 -2 1 0 None None None
+AffData hitroll 4 -1 -1 0
+AffData damroll 4 -1 -1 0
+AffData save_spell -2 -1 -1 0
 #EXDESC
 ExDescKey    longsword sword~
 ExDesc       This fine blade was once wielded by the Castellan of Alderweg, though
@@ -2197,13 +2097,13 @@ it didn't do him much good when he was cut down by gnolls.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2524
-Keywords weapon rack~
-Type     container~
-Short    the weapon rack~
-Long     A weapon rack lines the west wall.~
-Values   10000 1 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2524
+Keywords  weapon rack~
+Type      container~
+Short     the weapon rack~
+Long      A weapon rack lines the west wall.~
+Values    10000 1 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    weapon rack~
 ExDesc       This weapon rack, like many others in the keep, has long since been
@@ -2215,46 +2115,42 @@ been overlooked.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2525
-Keywords gauntlet~
-Type     armor~
-Short    The Gauntlet~
-Long     A gauntlet of tough black leather has been discarded here.~
-Flags    hum evil magic antigood metal~
-WFlags   take hands~
-Values   17 0 0 0 0 0
-Stats    10 225600 22560 0 0
-Affect       -1 -1 25 13 0
-Affect       -1 -1 3 18 0
-Affect       -1 -1 3 19 0
+Vnum      2525
+Keywords  gauntlet~
+Type      armor~
+Short     The Gauntlet~
+Long      A gauntlet of tough black leather has been discarded here.~
+Flags     hum metal magic antigood evil~
+WFlags    take hands~
+Values    17 0 0 0 0 0 0 0 0 0 0
+Stats     10 225600 -2 1 0 None None None
+AffData hit 25 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
 #MUDPROG
-Progtype  exa_prog~
+Progtype  get_prog~
 Arglist   100~
-Comlist   mea $n Peering closely at the worn leather material, you notice several
-mea $n large metal protuberences, similar to the studs and rivets found
-mea $n on certain types of leather armor.
-if isevil($n)
-mea $n _whi A voice whispers to you 'Wear me, $n, tarry not!'
-mpforce $n ponder
+Comlist   if isgood($n)
 else
-mea $n You sense, somehow, that this is a device of war, of bloodshed.
-mea $n _red Images of violent conflict arise unbidden in your mind. 
-mea $n _whi Through them all, however, you notice a white gloved hand...
+mea $n _blu A deep, booming voice speaks in your mind as you grasp $o.
+mea $n _whi The Gauntlet tells you 'Wear me, $n, feel my power!'
+mpforce $n shiver
+mpforce $n grin
 endif
 ~
 #ENDPROG
 
 #MUDPROG
-Progtype  sac_prog~
+Progtype  wear_prog~
 Arglist   100~
 Comlist   if isgood($n)
-mea $n _whi A brilliant light shines from the heavens, bathing you in its glow.
-mer $n _whi A brilliant light shines from the heavens, bathing $n in its glow.
-c sanc $n
 else
-mea $n _whi The Gauntlet tells you 'NNNNNNNOOOOOOO!!!!!!!'
-mpe _blu Sparks of electricity fly from the ruined artifact.
-mpdamage $n 50
+mea $n You feel a surge of power flow through your arm.
+mer $n $n grins confidently as power flows through $m.
+mpforce $n flex
+if rand(10)
+c kindred $n
+endif
 endif
 ~
 #ENDPROG
@@ -2276,29 +2172,33 @@ endif
 #ENDPROG
 
 #MUDPROG
-Progtype  wear_prog~
+Progtype  sac_prog~
 Arglist   100~
 Comlist   if isgood($n)
+mea $n _whi A brilliant light shines from the heavens, bathing you in its glow.
+mer $n _whi A brilliant light shines from the heavens, bathing $n in its glow.
+c sanc $n
 else
-mea $n You feel a surge of power flow through your arm.
-mer $n $n grins confidently as power flows through $m.
-mpforce $n flex
-if rand(10)
-c kindred $n
-endif
+mea $n _whi The Gauntlet tells you 'NNNNNNNOOOOOOO!!!!!!!'
+mpe _blu Sparks of electricity fly from the ruined artifact.
+mpdamage $n 50
 endif
 ~
 #ENDPROG
 
 #MUDPROG
-Progtype  get_prog~
+Progtype  exa_prog~
 Arglist   100~
-Comlist   if isgood($n)
+Comlist   mea $n Peering closely at the worn leather material, you notice several
+mea $n large metal protuberences, similar to the studs and rivets found
+mea $n on certain types of leather armor.
+if isevil($n)
+mea $n _whi A voice whispers to you 'Wear me, $n, tarry not!'
+mpforce $n ponder
 else
-mea $n _blu A deep, booming voice speaks in your mind as you grasp $o.
-mea $n _whi The Gauntlet tells you 'Wear me, $n, feel my power!'
-mpforce $n shiver
-mpforce $n grin
+mea $n You sense, somehow, that this is a device of war, of bloodshed.
+mea $n _red Images of violent conflict arise unbidden in your mind. 
+mea $n _whi Through them all, however, you notice a white gloved hand...
 endif
 ~
 #ENDPROG
@@ -2306,21 +2206,21 @@ endif
 #ENDOBJECT
 
 #OBJECT
-Vnum     2526
-Keywords duke robes~
-Type     armor~
-Short    the Duke's robes~
-Long     A silk robe with gold brocade and sable trim has been piled here.~
-Flags    magic~
-WFlags   take about~
-Values   11 0 0 0 0 0
-Stats    4 15000 1500 0 0
-Affect       -1 -1 1 3 0
-Affect       -1 -1 2 18 0
-Affect       -1 -1 2 19 0
-Affect       -1 -1 -2 24 0
-Affect       -1 -1 15 13 0
-Affect       -1 -1 15 12 0
+Vnum      2526
+Keywords  duke robes~
+Type      armor~
+Short     the Duke's robes~
+Long      A silk robe with gold brocade and sable trim has been piled here.~
+Flags     magic~
+WFlags    take about~
+Values    11 0 0 0 0 0 0 0 0 0 0
+Stats     4 15000 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+AffData save_spell -2 -1 -1 0
+AffData hit 15 -1 -1 0
+AffData mana 15 -1 -1 0
 #EXDESC
 ExDescKey    duke robes~
 ExDesc       These robes were once of fine quality and repair, but their new owner
@@ -2332,15 +2232,15 @@ to the weave. Nevertheless, they still appear to be functional.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2527
-Keywords scroll protection~
-Type     scroll~
-Short    a scroll of protection~
-Long     A piece of vellum bound with a red ribbon lies here.~
-WFlags   take~
-Values   15 -1 -1 -1 0 0
-Stats    1 5000 500 0 0
-Spells   'protection' 'sanctuary' 'NONE'
+Vnum      2527
+Keywords  scroll protection~
+Type      scroll~
+Short     a scroll of protection~
+Long      A piece of vellum bound with a red ribbon lies here.~
+WFlags    take~
+Values    15 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 5000 -2 1 0 None None None
+Spells       'protection from evil' 'sanctuary' 'NONE'
 #EXDESC
 ExDescKey    scroll~
 ExDesc       This piece of vellum is inscribed with various magical runes and symbols
@@ -2352,14 +2252,14 @@ type.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2528
-Keywords prison gem sac~
-Type     treasure~
-Short    a prison gem~
-Long     A brilliant gemstone, of contrasting white and black, lies here.~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    1 80000 8000 0 0
+Vnum      2528
+Keywords  prison gem sac~
+Type      treasure~
+Short     a prison gem~
+Long      A brilliant gemstone, of contrasting white and black, lies here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 80000 -2 1 0 None None None
 #EXDESC
 ExDescKey    prison gem gemstone~
 ExDesc       This is a fine piece of jewelry, though you somehow suspect its true
@@ -2392,14 +2292,14 @@ endif
 #ENDOBJECT
 
 #OBJECT
-Vnum     2529
-Keywords prison gem sac2~
-Type     treasure~
-Short    a prison gem~
-Long     A brilliant gemstone, of contrasting white and black, lies here.~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    1 80000 8000 0 0
+Vnum      2529
+Keywords  prison gem sac2~
+Type      treasure~
+Short     a prison gem~
+Long      A brilliant gemstone, of contrasting white and black, lies here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 80000 -2 1 0 None None None
 #EXDESC
 ExDescKey    prison gem gemstone~
 ExDesc       This is a fine piece of jewelry, though you somehow suspect its true
@@ -2435,14 +2335,14 @@ endif
 #ENDOBJECT
 
 #OBJECT
-Vnum     2530
-Keywords prison gem sac3~
-Type     treasure~
-Short    a prison gem~
-Long     A brilliant gemstone, of contrasting white and black, lies here.~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    1 80000 8000 0 0
+Vnum      2530
+Keywords  prison gem sac3~
+Type      treasure~
+Short     a prison gem~
+Long      A brilliant gemstone, of contrasting white and black, lies here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 80000 -2 1 0 None None None
 #EXDESC
 ExDescKey    prison gem gemstone~
 ExDesc       This is a fine piece of jewelry, though you somehow suspect its true
@@ -2476,14 +2376,14 @@ endif
 #ENDOBJECT
 
 #OBJECT
-Vnum     2531
-Keywords prison gem sac4~
-Type     treasure~
-Short    a prison gem~
-Long     A brilliant gemstone, of contrasting white and black, lies here.~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    1 80000 8000 0 0
+Vnum      2531
+Keywords  prison gem sac4~
+Type      treasure~
+Short     a prison gem~
+Long      A brilliant gemstone, of contrasting white and black, lies here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 80000 -2 1 0 None None None
 #EXDESC
 ExDescKey    prison gem gemstone~
 ExDesc       This is a fine piece of jewelry, though you somehow suspect its true
@@ -2520,22 +2420,22 @@ endif
 #ENDOBJECT
 
 #OBJECT
-Vnum     2532
-Keywords red plate mail~
-Type     armor~
-Short    red plate mail~
-Long     A suit of giant-sized red plate lies spread out here.~
-Flags    hum evil antigood metal~
-WFlags   take body~
-Values   12 0 0 0 0 0
-Stats    50 57560 5756 0 0
-Affect       -1 -1 -20 17 0
-Affect       -1 -1 3 18 0
-Affect       -1 -1 3 19 0
-Affect       -1 -1 1 27 0
-Affect       -1 -1 2 29 0
-Affect       -1 -1 15 13 0
-Affect       -1 -1 15 12 0
+Vnum      2532
+Keywords  red plate mail~
+Type      armor~
+Short     red plate mail~
+Long      A suit of giant-sized red plate lies spread out here.~
+Flags     hum metal antigood evil~
+WFlags    take body~
+Values    12 0 0 0 0 0 0 0 0 0 0
+Stats     50 57560 -2 1 0 None None None
+AffData armor -20 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData resistant NONE~ -1 -1 0
+AffData susceptible fire~ -1 -1 0
+AffData hit 15 -1 -1 0
+AffData mana 15 -1 -1 0
 #MUDPROG
 Progtype  wear_prog~
 Arglist   100~
@@ -2551,17 +2451,17 @@ endif
 #ENDOBJECT
 
 #OBJECT
-Vnum     2533
-Keywords flaming sword~
-Type     weapon~
-Short    a flaming sword~
-Long     The edge of this blade is limned with bluish flame.~
-Flags    glow magic~
-WFlags   take wield~
-Values   0 0 0 6 0 0
-Stats    18 75000 7500 0 0
-Affect       -1 -1 4 18 0
-Affect       -1 -1 4 19 0
+Vnum      2533
+Keywords  flaming sword~
+Type      weapon~
+Short     a flaming sword~
+Long      The edge of this blade is limned with bluish flame.~
+Flags     glow magic~
+WFlags    take wield~
+Values    0 0 0 6 0 0 0 0 0 0 0
+Stats     18 75000 -2 1 0 None None None
+AffData hitroll 4 -1 -1 0
+AffData damroll 4 -1 -1 0
 #EXDESC
 ExDescKey    sword~
 ExDesc       This sword is swathed in magical flame.
@@ -2571,16 +2471,16 @@ ExDesc       This sword is swathed in magical flame.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2534
-Keywords voulge~
-Type     weapon~
-Short    a voulge~
-Long     A long pole arm, known as a voulge, is thrust into the dirt.~
-Flags    metal~
-WFlags   take wield~
-Values   0 0 0 3 0 0
-Stats    12 1200 120 0 0
-Affect       -1 -1 3 18 0
+Vnum      2534
+Keywords  voulge~
+Type      weapon~
+Short     a voulge~
+Long      A long pole arm, known as a voulge, is thrust into the dirt.~
+Flags     metal~
+WFlags    take wield~
+Values    0 0 0 3 0 0 0 0 0 0 0
+Stats     12 1200 -2 1 0 None None None
+AffData hitroll 3 -1 -1 0
 #EXDESC
 ExDescKey    voulge~
 ExDesc       A simple, but sturdy weapon, this pole arm is favored by footmen from
@@ -2591,15 +2491,15 @@ many races.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2535
-Keywords leather cuirass~
-Type     armor~
-Short    a leather cuirass~
-Long     A leather cuirass lies abandoned in the mud.~
-Flags    organic~
-WFlags   take body~
-Values   7 0 0 0 0 0
-Stats    1 500 50 0 0
+Vnum      2535
+Keywords  leather cuirass~
+Type      armor~
+Short     a leather cuirass~
+Long      A leather cuirass lies abandoned in the mud.~
+Flags     organic~
+WFlags    take body~
+Values    7 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
 #EXDESC
 ExDescKey    leather cuirass~
 ExDesc       Showing considerable signs of wear, the armor is nevertheless still in
@@ -2610,24 +2510,24 @@ quite acceptable working order.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2536
-Keywords camp fire~
-Type     fire~
-Short    the camp fire~
-Long     A large camp fire blazes here, between the tents.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2536
+Keywords  camp fire~
+Type      fire~
+Short     the camp fire~
+Long      A large camp fire blazes here, between the tents.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2537
-Keywords prison gem sac5~
-Type     treasure~
-Short    a prison gem~
-Long     A brilliant gemstone, of contrasting white and black, lies here.~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    1 80000 8000 0 0
+Vnum      2537
+Keywords  prison gem sac5~
+Type      treasure~
+Short     a prison gem~
+Long      A brilliant gemstone, of contrasting white and black, lies here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 80000 -2 1 0 None None None
 #EXDESC
 ExDescKey    prison gem gemstone~
 ExDesc       This is a fine piece of jewelry, though you somehow suspect its true
@@ -2649,33 +2549,33 @@ endif
 #ENDOBJECT
 
 #OBJECT
-Vnum     2538
-Keywords gaping hole~
-Type     furniture~
-Short    a gaping hole~
-Long     A gaping hole leads down into a tunnel.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2538
+Keywords  gaping hole~
+Type      furniture~
+Short     a gaping hole~
+Long      A gaping hole leads down into a tunnel.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2539
-Keywords cooking fire~
-Type     fire~
-Short    a cooking fire~
-Long     A cooking fire blazes in the hearth.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2539
+Keywords  cooking fire~
+Type      fire~
+Short     a cooking fire~
+Long      A cooking fire blazes in the hearth.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     2540
-Keywords cauldron oil~
-Type     furniture~
-Short    a cauldron of oil~
-Long     A cauldron of oil sits here, ready to be heated.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2540
+Keywords  cauldron oil~
+Type      furniture~
+Short     a cauldron of oil~
+Long      A cauldron of oil sits here, ready to be heated.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    cauldron~
 ExDesc       This metal pot is filled with a highly flammable liquid.
@@ -2685,14 +2585,14 @@ ExDesc       This metal pot is filled with a highly flammable liquid.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2541
-Keywords arrow~
-Type     projectile~
-Short    a black arrow~
-Long     A black fletched arrow is buried in the ground.~
-WFlags   take~
-Values   0 0 2 14 0 0
-Stats    1 20 2 0 0
+Vnum      2541
+Keywords  arrow~
+Type      projectile~
+Short     a black arrow~
+Long      A black fletched arrow is buried in the ground.~
+WFlags    take~
+Values    0 0 2 14 0 0 0 0 0 0 0
+Stats     1 20 -2 9999 0 None None None
 #EXDESC
 ExDescKey    arrow~
 ExDesc       Shot straight and true, this arrow could travel 200 yards or more.
@@ -2702,14 +2602,14 @@ ExDesc       Shot straight and true, this arrow could travel 200 yards or more.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2542
-Keywords quiver~
-Type     quiver~
-Short    a quiver~
-Long     A small green case filled with arrows spills its contents everywhere.~
-WFlags   take~
-Values   20 1 -1 0 0 0
-Stats    1 54 5 0 0
+Vnum      2542
+Keywords  quiver~
+Type      quiver~
+Short     a quiver~
+Long      A small green case filled with arrows spills its contents everywhere.~
+WFlags    take~
+Values    20 1 -1 0 0 0 0 0 0 0 0
+Stats     1 54 -2 9999 0 None None None
 #EXDESC
 ExDescKey    quiver~
 ExDesc       This device is used to store arrows or quarrels.
@@ -2719,14 +2619,14 @@ ExDesc       This device is used to store arrows or quarrels.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2543
-Keywords prison ledger~
-Type     book~
-Short    the prison ledger~
-Long     A small, leather bound ledger rests on the floor.~
-WFlags   take~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2543
+Keywords  prison ledger~
+Type      book~
+Short     the prison ledger~
+Long      A small, leather bound ledger rests on the floor.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    prison ledger~
 ExDesc       The ledger is filled with a neat, flowing script, that details prisoners
@@ -2755,13 +2655,13 @@ The Ogrillon, and more importantly the Gauntlet, must be in one of these cells!
 #ENDOBJECT
 
 #OBJECT
-Vnum     2544
-Keywords skeleton~
-Type     furniture~
-Short    a skeleton~
-Long     A skeleton lies slumped over a weapon rack.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2544
+Keywords  skeleton~
+Type      furniture~
+Short     a skeleton~
+Long      A skeleton lies slumped over a weapon rack.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    skeleton~
 ExDesc       It is the skeleton of a small human, or an elf perhaps. There is no
@@ -2772,19 +2672,19 @@ sign of how the creature met its end.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2545
-Keywords silver earring~
-Type     armor~
-Short    a silver earring~
-Long     An earring of shining silver glimmers faintly.~
-Flags    glow invis magic antievil metal antivampire~
-WFlags   take ears~
-Values   3 0 0 0 0 0
-Stats    1 37560 3756 0 0
-Affect       -1 -1 1 31 0
-Affect       -1 -1 1 25 0
-Affect       -1 -1 22 12 0
-Affect       -1 -1 -2 22 0
+Vnum      2545
+Keywords  silver earring~
+Type      armor~
+Short     a silver earring~
+Long      An earring of shining silver glimmers faintly.~
+Flags     glow metal invis magic antievil~
+WFlags    take ears~
+Values    3 0 0 0 0 0 0 0 0 0 0
+Stats     1 37560 -2 1 0 None None None
+AffData class 1 -1 -1 0
+AffData sex 1 -1 -1 0
+AffData mana 22 -1 -1 0
+AffData save_para -2 -1 -1 0
 #EXDESC
 ExDescKey    silver earring~
 ExDesc       A pretty bauble, perhaps enow to curry the favor of a pretty noble.
@@ -2794,17 +2694,17 @@ ExDesc       A pretty bauble, perhaps enow to curry the favor of a pretty noble.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2546
-Keywords bone necklace~
-Type     armor~
-Short    a goblin bone necklace~
-Long     A series of goblin finger bones have been threaded on a loop of leather.~
-WFlags   take neck~
-Values   5 0 0 0 0 0
-Stats    2 600 60 0 0
-Affect       -1 -1 2 18 0
-Affect       -1 -1 1 19 0
-Affect       -1 -1 -3 24 0
+Vnum      2546
+Keywords  bone necklace~
+Type      armor~
+Short     a goblin bone necklace~
+Long      A series of goblin finger bones have been threaded on a loop of leather.~
+WFlags    take neck~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     2 600 -2 1 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 1 -1 -1 0
+AffData save_spell -3 -1 -1 0
 #EXDESC
 ExDescKey    bone necklace~
 ExDesc       Doubtless a grim trophy of past victories against that fecund race.
@@ -2814,21 +2714,22 @@ ExDesc       Doubtless a grim trophy of past victories against that fecund race.
 #ENDOBJECT
 
 #OBJECT
-Vnum     2599
-Keywords final object~
-Type     trash~
-Short    a newly created final object~
-Long     Some god dropped a newly created final object here.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      2599
+Keywords  final object~
+Type      trash~
+Short     a newly created final object~
+Long      Some god dropped a newly created final object here.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #ROOM
-Vnum     2500
-Name     The Underground Harbor~
-Sector   inside~
-Flags    dark indoors nosummon~
-Desc     The stairs end at the eastern end of a narrow ledge that runs around
+Vnum      2500
+Name      The Underground Harbor~
+Sector    indoors~
+Flags     dark indoors nosummon~
+Stats     0 0 0 0 0
+Desc      The stairs end at the eastern end of a narrow ledge that runs around
 three sides of the dark, water filled chamber that lies to the west.
 Lack of light makes it difficult to determine the depth of the water, or
 what may lurk within, though you suspect the thick, albeit corroded,
@@ -2844,15 +2745,21 @@ Desc      The waters flow in from the end of the harbor.
 ~
 #ENDEXIT
 
-Reset O 0 2500 1 2500
+#EXIT
+Direction up~
+ToRoom    8767
+#ENDEXIT
+
+Reset O 2500 1 2500 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2501
-Name     The Harbor Entrance~
-Sector   water_noswim~
-Flags    dark indoors~
-Desc     The end of this flooded chamber is barred by thick rusted iron gates,
+Vnum      2501
+Name      The Harbor Entrance~
+Sector    water_noswim~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The end of this flooded chamber is barred by thick rusted iron gates,
 set in the southwestern wall of the cavern. Through gaps in the metal
 you can peer out onto the choppy waters of the Lake, stirred by the
 winds accompanying an approaching stormfront. Eager to be out of these
@@ -2874,17 +2781,19 @@ Desc      The open waters of the lake beckon.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2500 3 2501
-Reset M 0 2500 3 2501
-Reset M 0 2500 3 2501
-Reset D 0 2501 9 1
+Reset M 2500 3 2501 -1 -1 -1 100
+Reset M 2500 3 2501 -1 -1 -1 100
+Reset M 2500 3 2501 -1 -1 -1 100
+Reset D 2501 9 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2502
-Name     Sailing the Lake~
-Sector   water_noswim~
-Desc     You emerge from the subterranean dock and out onto the windswept waters
+Vnum      2502
+Name      Sailing the Lake~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You emerge from the subterranean dock and out onto the windswept waters
 of Lake Spendlowe. The strong gusts of wind drive you southwards; travel
 back north along the lake towards Kusnir is impossible. Dark stormclouds
 hover menacingly above that fishing village; you wonder if they will call
@@ -2909,14 +2818,16 @@ Desc      A small harbor lies underneath the hillside.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2502 6 1
+Reset D 2502 6 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2503
-Name     The Source of the Gann~
-Sector   water_noswim~
-Desc     Here the waters of the lake flow out, forming the Gann river, an escape
+Vnum      2503
+Name      The Source of the Gann~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here the waters of the lake flow out, forming the Gann river, an escape
 for much of the immense volume of water poured into Spendlowe by the
 Lewyn to the northeast. The muddy banks of the river are unsuitable for
 mooring, and progress further south along the lake appears to serve no
@@ -2940,11 +2851,12 @@ Desc      The Gann flows swiftly southeast.
 #ENDROOM
 
 #ROOM
-Vnum     2504
-Name     Sailing Along the Gann~
-Sector   water_noswim~
-Flags    nosummon~
-Desc     The Gann flows swiftly southeast, away from the lake that feeds it.
+Vnum      2504
+Name      Sailing Along the Gann~
+Sector    water_noswim~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      The Gann flows swiftly southeast, away from the lake that feeds it.
 Flowing with the current, you cast an occasional glance back northward,
 gazing warily at the looming stormclouds. It would be dangerous to be caught
 in a thunderstorm out here, on the waters of the river. Small fish dart
@@ -2964,15 +2876,17 @@ Desc      The Gann flows swiftly southeast.
 ~
 #ENDEXIT
 
-Reset M 0 2501 2 2504
-Reset M 0 2501 2 2504
+Reset M 2501 2 2504 -1 -1 -1 100
+Reset M 2501 2 2504 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2505
-Name     Sailing Along the Gann~
-Sector   water_noswim~
-Desc     The river continues, winding its way through lightly wooded hills,
+Vnum      2505
+Name      Sailing Along the Gann~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The river continues, winding its way through lightly wooded hills,
 heading eastward up ahead past the docks of Gannaway. Smoke rises to
 the southeast, great plumes of it; certainly more than you would normally
 expect from chimneys. Perhaps they are burning refuse? Frowning, you feel
@@ -2995,10 +2909,12 @@ Desc      Upstream, the waters narrow.
 #ENDROOM
 
 #ROOM
-Vnum     2506
-Name     Gannaway Docks~
-Sector   water_noswim~
-Desc     Here the river flows east past the docks of the village of Gannaway,
+Vnum      2506
+Name      Gannaway Docks~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here the river flows east past the docks of the village of Gannaway,
 which lies due south of here. Well, it used to lie south of here. To
 your astonishment, all that remains of the once-thriving settlement is
 the smoldering remains of burnt out houses. Scores of human corpses,
@@ -3030,10 +2946,12 @@ Desc      Upstream, the waters narrow.
 #ENDROOM
 
 #ROOM
-Vnum     2507
-Name     Thick Rivergrass~
-Sector   water_noswim~
-Desc     Progress past this point is impossible; masses of thick rivergrass grow
+Vnum      2507
+Name      Thick Rivergrass~
+Sector    water_noswim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Progress past this point is impossible; masses of thick rivergrass grow
 wildly through the river, barring passage, while thick vines hang from
 the trees to either side, increasing the inaccessibility further downstream.
 ~
@@ -3047,11 +2965,12 @@ Desc      A collection of wooden jetties lies in this direction.
 #ENDROOM
 
 #ROOM
-Vnum     2508
-Name     The Ruins of Gannaway~
-Sector   city~
-Flags    nosummon~
-Desc     The village lies before you, existing not as the peaceful, thriving
+Vnum      2508
+Name      The Ruins of Gannaway~
+Sector    city~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      The village lies before you, existing not as the peaceful, thriving
 river community you expected (and indeed looked forward to), but as
 a fire ravaged shambles, a mess of stone structures scorched and smashed.
 The remains of the stockade lie smoldering in heaps around the perimeter
@@ -3091,10 +3010,12 @@ Desc      A burnt-out structure.
 #ENDROOM
 
 #ROOM
-Vnum     2509
-Name     A Ruined Dwelling~
-Sector   city~
-Desc     You wander slowly through the remains of the village, shaking your head
+Vnum      2509
+Name      A Ruined Dwelling~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You wander slowly through the remains of the village, shaking your head
 at the senseless slaughter. Some 200 corpses litter the street, most of
 them humans, although a few yellowskinned gnoll corpses are a sign that
 the villagers did not perish without some measure of resistance. But humans
@@ -3114,11 +3035,12 @@ Desc      The smoldering remains of the village of Gannaway indicate trouble...
 #ENDROOM
 
 #ROOM
-Vnum     2510
-Name     A Ruined Dwelling~
-Sector   city~
-Flags    nosummon~
-Desc     You wander slowly through the remains of the village, shaking your head
+Vnum      2510
+Name      A Ruined Dwelling~
+Sector    city~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      You wander slowly through the remains of the village, shaking your head
 at the senseless slaughter. Some 200 corpses litter the street, most of
 them humans, although a few yellowskinned gnoll corpses are a sign that
 the villagers did not perish without some measure of resistance. But humans
@@ -3135,18 +3057,20 @@ Desc      The smoldering remains of the village of Gannaway indicate trouble...
 ~
 #ENDEXIT
 
-Reset M 0 2502 1 2510
-  Reset E 1 2503 1 3
-Reset M 0 2503 1 2510
-  Reset E 1 2501 1 5
-  Reset E 1 2502 1 16
+Reset M 2502 1 2510 -1 -1 -1 100
+  Reset E 2503 1 3 100
+Reset M 2503 1 2510 -1 -1 -1 100
+  Reset E 2501 1 5 100
+  Reset E 2502 1 16 100
 #ENDROOM
 
 #ROOM
-Vnum     2511
-Name     The Outskirts of Gannaway~
-Sector   field~
-Desc     Despite a terrible sadness at the fate of these hapless humans, you
+Vnum      2511
+Name      The Outskirts of Gannaway~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Despite a terrible sadness at the fate of these hapless humans, you
 are glad to be away from the site of slaughter and doom, and eager to
 press onwards, further south, towards the source of the gnoll raids,
 evident by the many pairs of gnollish feet that have pounded the earth
@@ -3172,11 +3096,12 @@ Desc      A path winds its way into the mouhtains.
 #ENDROOM
 
 #ROOM
-Vnum     2512
-Name     A Mountain Trail~
-Sector   hills~
-Flags    nosummon~
-Desc     The dirt path quickly turns from packed earth to rubble strewn stone,
+Vnum      2512
+Name      A Mountain Trail~
+Sector    hills~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      The dirt path quickly turns from packed earth to rubble strewn stone,
 as it wends its way into the mountains. Small pebbles crunch beneath
 your feet as you progress southwards and steadily upwards, affording
 you an excellent view of the ruins of Gannaway, the Gann flowing away
@@ -3200,11 +3125,12 @@ Desc      A path winds it way into the mountains.
 #ENDROOM
 
 #ROOM
-Vnum     2513
-Name     A Mountain Trail~
-Sector   mountain~
-Flags    nosummon~
-Desc     The path continues, winding southwards up the slopes of this low range,
+Vnum      2513
+Name      A Mountain Trail~
+Sector    mountain~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      The path continues, winding southwards up the slopes of this low range,
 heading towards, presumably, the site of the legendary Keep of Alderweg.
 The stormfront you spied earlier appears to be moving away eastward,
 meaning you will be spared the brunt of the thunderstorm, a thankful
@@ -3228,10 +3154,12 @@ Desc      The smoldering remains of a village are visible from here.
 #ENDROOM
 
 #ROOM
-Vnum     2514
-Name     A Bend in the Trail~
-Sector   mountain~
-Desc     At this point the path doglegs back to the southwest, and widens, to
+Vnum      2514
+Name      A Bend in the Trail~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      At this point the path doglegs back to the southwest, and widens, to
 the point where three horsemen could comfortably ride abreast. The hard
 ground is too stony to gather imprints of tracks or horsesign, but the
 abundance of litter, including several human bones, is sufficient sign
@@ -3258,10 +3186,12 @@ Desc      Ahead, the path splits in two.
 #ENDROOM
 
 #ROOM
-Vnum     2515
-Name     The Path Divides~
-Sector   mountain~
-Desc     At this point the mountain trail divides, with a narrow branch twisting
+Vnum      2515
+Name      The Path Divides~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      At this point the mountain trail divides, with a narrow branch twisting
 downwards to the southwest, while the second heads due south, towards
 the walls of the Keep, which come into view as you round the bend. The
 Keep is smaller than you expected, set in the side of a mountain and
@@ -3297,11 +3227,12 @@ Desc      This approach would certainly appear to be the more preferable of the 
 #ENDROOM
 
 #ROOM
-Vnum     2516
-Name     Death at the Upper Gate~
-Sector   mountain~
-Flags    death nomob solitary norecall nosummon noastral~
-Desc     The short path ends before a small gateway. Long shadows are cast across
+Vnum      2516
+Name      Death at the Upper Gate~
+Sector    mountain~
+Flags     death nomob nosummon norecall noastral solitary~
+Stats     0 0 0 0 0
+Desc      The short path ends before a small gateway. Long shadows are cast across
 the path by the Keep's towers. The walls around the gate are dotted with
 crossletted arrowslits, from which dozens of guards could easily pepper
 whoever approached with arrows and other missiles. Larger openings, for
@@ -3314,10 +3245,12 @@ before expiring.
 #ENDROOM
 
 #ROOM
-Vnum     2517
-Name     The Lower Path~
-Sector   mountain~
-Desc     This path swiftly descends along the side of the mountain that holds the
+Vnum      2517
+Name      The Lower Path~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path swiftly descends along the side of the mountain that holds the
 Keep, heading towards whatever lies at the base (hopefully another, more
 approachable, entrance). Heading down here means passing out of view of
 the towers, which is also good. The path shows signs of significant usage
@@ -3342,10 +3275,12 @@ Desc      Ahead, the path splits in two.
 #ENDROOM
 
 #ROOM
-Vnum     2518
-Name     The Lower Path~
-Sector   mountain~
-Desc     Thick scrub grows along the path where it descends steeply, eventually
+Vnum      2518
+Name      The Lower Path~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Thick scrub grows along the path where it descends steeply, eventually
 levelling out at the lowest level of the Keep, the walls of which lie 
 to the southwest, partially barring the trail. By sticking close to
 the mountain side of the trail, you can remain hidden from any observers
@@ -3380,11 +3315,12 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     2519
-Name     Lower Gates of the Keep~
-Sector   mountain~
-Flags    nosummon~
-Desc     At this point the path passes close by the walls of the Keep, at a 
+Vnum      2519
+Name      Lower Gates of the Keep~
+Sector    mountain~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      At this point the path passes close by the walls of the Keep, at a 
 buttressed section of the battlements, which contains a heavy gate, 
 studded with iron and firmly barred by both physical and magical forces.
 Impervious to mundane means of entrance, it can only be broached by those
@@ -3410,7 +3346,16 @@ Desc      Scotch thistle and other growth provide a nasty threat to travellers.
 Flags     isdoor~
 #ENDEXIT
 
-Reset D 0 2519 6 2
+Reset D 2519 6 2 100 -2
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if ispc($r)
+mea $r _lbl You sense that this gate is safe from watching eyes above...
+endif
+~
+#ENDPROG
+
 #MUDPROG
 Progtype  entry_prog~
 Arglist   100~
@@ -3425,23 +3370,15 @@ endif
 ~
 #ENDPROG
 
-#MUDPROG
-Progtype  rand_prog~
-Arglist   100~
-Comlist   if ispc($r)
-mea $r _lbl You sense that this gate is safe from watching eyes above...
-endif
-~
-#ENDPROG
-
 #ENDROOM
 
 #ROOM
-Vnum     2520
-Name     The Gateway of Berghof~
-Sector   inside~
-Flags    dark indoors nosummon~
-Desc     The doors of the Keep open onto what was in days gone by a thriving
+Vnum      2520
+Name      The Gateway of Berghof~
+Sector    indoors~
+Flags     dark indoors nosummon~
+Stats     0 0 0 0 0
+Desc      The doors of the Keep open onto what was in days gone by a thriving
 gateway, where tolls were excised on goods travelling north and south
 along the road the Keep intercepts. Deep red stone forms the walls on
 each side, while the floor is of grey stone, inlaid with the coat of arms
@@ -3473,19 +3410,20 @@ Keywords  gate~
 Flags     isdoor closed locked pickproof nopassdoor bashproof~
 #ENDEXIT
 
-Reset M 0 2509 1 2520
-  Reset E 1 2512 1 16
-Reset D 0 2520 0 1
-Reset D 0 2520 1 1
-Reset D 0 2520 9 2
+Reset M 2509 1 2520 -1 -1 -1 100
+  Reset E 2512 1 16 100
+Reset D 2520 0 1 100 -2
+Reset D 2520 1 1 100 -2
+Reset D 2520 9 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2521
-Name     The Toll Room~
-Sector   inside~
-Flags    dark indoors nosummon~
-Desc     This smaller chamber contains little of interest save for a pan-balance
+Vnum      2521
+Name      The Toll Room~
+Sector    indoors~
+Flags     dark indoors nosummon~
+Stats     0 0 0 0 0
+Desc      This smaller chamber contains little of interest save for a pan-balance
 set on a large wooden table near the entrance, used when tolls were
 excised here so many years ago. Whatever else once stood here has long
 since vanished, slain or fled the incursion of the upper levels. The air
@@ -3500,15 +3438,16 @@ Desc      The entrance chamber of the Keep beckons.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2521 3 1
+Reset D 2521 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2522
-Name     A Long Hallway~
-Sector   inside~
-Flags    dark indoors nosummon~
-Desc     The door opens onto a long, narrow hallway, the floor of which is
+Vnum      2522
+Name      A Long Hallway~
+Sector    indoors~
+Flags     dark indoors nosummon~
+Stats     0 0 0 0 0
+Desc      The door opens onto a long, narrow hallway, the floor of which is
 formed of hexagonal tiles of varying shades and hues. The decor is
 quite pleasant, and manages to capture well the feel of the ancestral
 home of the Berghofs on the shores of Lake Spendlowe. The marine decor
@@ -3533,16 +3472,17 @@ Desc      The entrance chamber of the Keep beckons.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2522 0 1
-Reset D 0 2522 2 1
+Reset D 2522 0 1 100 -2
+Reset D 2522 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2523
-Name     A Long Hallway~
-Sector   inside~
-Flags    dark indoors nosummon~
-Desc     The hall continues here, interrupted by screens of the same material
+Vnum      2523
+Name      A Long Hallway~
+Sector    indoors~
+Flags     dark indoors nosummon~
+Stats     0 0 0 0 0
+Desc      The hall continues here, interrupted by screens of the same material
 to the north and south. There is a door set in the east wall, though
 to reach it you will have to cross piles of rubbish which have been
 deposited here by some newer tenants of the keep. Several coccooned
@@ -3576,21 +3516,22 @@ Keywords  screen~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2504 5 2523
-Reset M 0 2504 5 2523
-Reset M 0 2504 5 2523
-Reset O 0 2504 1 2523
-Reset D 0 2523 0 1
-Reset D 0 2523 1 1
-Reset D 0 2523 2 1
+Reset M 2504 5 2523 -1 -1 -1 100
+Reset M 2504 5 2523 -1 -1 -1 100
+Reset M 2504 5 2523 -1 -1 -1 100
+Reset O 2504 1 2523 -1 -1 -1 100
+Reset D 2523 0 1 100 -2
+Reset D 2523 1 1 100 -2
+Reset D 2523 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2524
-Name     A Long Hallway~
-Sector   inside~
-Flags    dark indoors nosummon~
-Desc     The hall ends here, in a section where it widens slightly, to accomodate
+Vnum      2524
+Name      A Long Hallway~
+Sector    indoors~
+Flags     dark indoors nosummon~
+Stats     0 0 0 0 0
+Desc      The hall ends here, in a section where it widens slightly, to accomodate
 a large mosaic on the north wall, depicting a very familiar looking glove-
 The Sentinel. More evidence of insectoid intruders abounds here, including
 a pile of eggs, next to which lie more corpses, ready to be devoured as
@@ -3613,13 +3554,13 @@ Keywords  hole~
 Flags     hidden can_enter~
 #ENDEXIT
 
-Reset M 0 2505 2 2524
-Reset M 0 2505 2 2524
-Reset M 0 2504 5 2524
-Reset M 0 2504 5 2524
-Reset M 0 2506 1 2524
-Reset O 0 2538 1 2524
-Reset D 0 2524 2 1
+Reset M 2505 2 2524 -1 -1 -1 100
+Reset M 2505 2 2524 -1 -1 -1 100
+Reset M 2504 5 2524 -1 -1 -1 100
+Reset M 2504 5 2524 -1 -1 -1 100
+Reset M 2506 1 2524 -1 -1 -1 100
+Reset O 2538 1 2524 -1 -1 -1 100
+Reset D 2524 2 1 100 -2
 #EXDESC
 ExDescKey    hole~
 ExDesc       This hole is only three or four feet across, but you think you would be
@@ -3636,12 +3577,12 @@ ExDesc       All manner of rubble is piled here, the byproduct of recent excavat
 #ENDROOM
 
 #ROOM
-Vnum     2525
-Name     A Dusty Passage~
-Sector   inside~
-Flags    dark indoors nosummon~
-Stats    0 0 3
-Desc     The door opens onto a narrow, dusty corridor, which has not been used
+Vnum      2525
+Name      A Dusty Passage~
+Sector    indoors~
+Flags     dark indoors nosummon~
+Stats     0 0 3 0 0
+Desc      The door opens onto a narrow, dusty corridor, which has not been used
 in ages, judging by the lack of tracks in the dirt. Only two or three
 humanoids could walk abreast in here at any one time; apparently this
 passage wasn't intended for regular usage by large volumes of people.
@@ -3665,15 +3606,16 @@ Desc      Little can be made out in the gloom...
 ~
 #ENDEXIT
 
-Reset D 0 2525 3 1
+Reset D 2525 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2526
-Name     The Painted Room~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     If the previous hall was meant to capture the aquatic region surrounding
+Vnum      2526
+Name      The Painted Room~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      If the previous hall was meant to capture the aquatic region surrounding
 the Van Arthog Manor, then this chamber equally superbly captures the
 regional flora. The circular chamber could easily be an arboretum, or a
 pagoda in a grassy field, surrounded on all sides by lush grass and tall
@@ -3708,8 +3650,8 @@ Keywords  pillar~
 Flags     isdoor closed locked secret hidden~
 #ENDEXIT
 
-Reset D 0 2526 4 1
-Reset D 0 2526 8 2
+Reset D 2526 4 1 100 -2
+Reset D 2526 8 2 100 -2
 #EXDESC
 ExDescKey    pillar~
 ExDesc       You notice a faint fracture in one of the pillars and deduce that it
@@ -3727,11 +3669,12 @@ open onto a staircase of sorts, leading up into the Keep.
 #ENDROOM
 
 #ROOM
-Vnum     2527
-Name     The Dungeons~
-Sector   inside~
-Flags    dark indoors nosummon noastral~
-Desc     A featureless stone room lies beyond the pillar, devoid of any features
+Vnum      2527
+Name      The Dungeons~
+Sector    indoors~
+Flags     dark indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      A featureless stone room lies beyond the pillar, devoid of any features
 of note or particular interest. You cannot see any cell doors, or markings
 where prisoners may be chained, yet this is indeed the dungeons of the Keep.
 Perhaps, seeing as the Dukes of the Keep were mages, the prisoners were kept
@@ -3749,15 +3692,16 @@ Desc      Little can be made out in the gloom...
 Flags     isdoor closed locked~
 #ENDEXIT
 
-Reset D 0 2527 7 2
+Reset D 2527 7 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2528
-Name     Ascending the Spiral Stair~
-Sector   inside~
-Flags    dark indoors~
-Desc     A narrow stair winds upward through the center of the Keep here, terminating
+Vnum      2528
+Name      Ascending the Spiral Stair~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      A narrow stair winds upward through the center of the Keep here, terminating
 far above in one of the keep's many turrets. Numerous landings lead off the
 stair at various stages above; there is an approximate distance of twelve
 feet between storeys. The stairs here don't appear to have been used in
@@ -3778,15 +3722,16 @@ Desc      Little can be made out in the gloom...
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2528 5 1
+Reset D 2528 5 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2529
-Name     Ascending the Spiral Stair~
-Sector   inside~
-Flags    dark indoors~
-Desc     The stairs pass a landing here, off of which leads a large wooden door,
+Vnum      2529
+Name      Ascending the Spiral Stair~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The stairs pass a landing here, off of which leads a large wooden door,
 which presumably opens onto some of the major chambers of the Keep to
 the south. Various noises can be heard through the wood; evidently whoever
 now controls this place is leader of a boisterous garrison! Perhaps caution
@@ -3815,15 +3760,16 @@ Desc      Little can be made out in the gloom...
 ~
 #ENDEXIT
 
-Reset D 0 2529 2 1
+Reset D 2529 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2530
-Name     A Small Guard Room~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     The stench of sweat, alcohol and vomit assaults you as you enter this
+Vnum      2530
+Name      A Small Guard Room~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      The stench of sweat, alcohol and vomit assaults you as you enter this
 room, the floor of which is covered in straw, ostensibly placed to absorb
 stains and odors... Broken wooden furniture, used by the former human 
 garrison and now considered useless by the new inhabitants, lies strewn
@@ -3848,31 +3794,32 @@ Desc      A solid door opens onto one of the many rooms of the Keep.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2507 3 2530
-  Reset E 1 2505 1 16
-  Reset E 1 2506 1 14
-  Reset E 1 2507 1 6
-  Reset E 1 2508 1 15
-Reset M 0 2507 3 2530
-  Reset E 1 2507 1 6
-  Reset E 1 2505 1 16
-  Reset E 1 2508 1 14
-  Reset E 1 2506 1 15
-Reset M 0 2507 3 2530
-  Reset E 1 2508 1 14
-  Reset E 1 2506 1 15
-  Reset E 1 2507 1 6
-  Reset E 1 2505 1 16
-Reset D 0 2530 0 1
-Reset D 0 2530 3 1
+Reset M 2507 3 2530 -1 -1 -1 100
+  Reset E 2505 1 16 100
+  Reset E 2506 1 14 100
+  Reset E 2507 1 6 100
+  Reset E 2508 1 15 100
+Reset M 2507 3 2530 -1 -1 -1 100
+  Reset E 2507 1 6 100
+  Reset E 2505 1 16 100
+  Reset E 2508 1 14 100
+  Reset E 2506 1 15 100
+Reset M 2507 3 2530 -1 -1 -1 100
+  Reset E 2508 1 14 100
+  Reset E 2506 1 15 100
+  Reset E 2507 1 6 100
+  Reset E 2505 1 16 100
+Reset D 2530 0 1 100 -2
+Reset D 2530 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2531
-Name     The Defense Room~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     This large chamber is filled with weapon racks, most of which have been
+Vnum      2531
+Name      The Defense Room~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      This large chamber is filled with weapon racks, most of which have been
 stripped and smashed, and the walls are lined with crossletted arrowslits;
 evidently this chamber plays (or played) an important role in the Keep's
 defense, though whoever once defended this place failed to hold off the
@@ -3903,36 +3850,37 @@ Desc      The guard chamber continues.
 ~
 #ENDEXIT
 
-Reset M 0 2508 7 2531
-  Reset E 1 2509 1 7
-  Reset E 1 2510 1 3
-  Reset E 1 2511 1 8
-  Reset E 1 2505 1 16
-Reset M 0 2508 7 2531
-  Reset E 1 2509 1 7
-  Reset E 1 2510 1 3
-  Reset E 1 2511 1 8
-  Reset E 1 2505 1 16
-Reset M 0 2508 7 2531
-  Reset E 1 2509 1 7
-  Reset E 1 2510 1 3
-  Reset E 1 2511 1 8
-  Reset E 1 2505 1 16
-Reset M 0 2508 7 2531
-  Reset E 1 2509 1 7
-  Reset E 1 2510 1 3
-  Reset E 1 2511 1 8
-  Reset E 1 2505 1 16
-Reset D 0 2531 0 1
-Reset D 0 2531 1 1
+Reset M 2508 7 2531 -1 -1 -1 100
+  Reset E 2509 1 7 100
+  Reset E 2510 1 3 100
+  Reset E 2511 1 8 100
+  Reset E 2505 1 16 100
+Reset M 2508 7 2531 -1 -1 -1 100
+  Reset E 2509 1 7 100
+  Reset E 2510 1 3 100
+  Reset E 2511 1 8 100
+  Reset E 2505 1 16 100
+Reset M 2508 7 2531 -1 -1 -1 100
+  Reset E 2509 1 7 100
+  Reset E 2510 1 3 100
+  Reset E 2511 1 8 100
+  Reset E 2505 1 16 100
+Reset M 2508 7 2531 -1 -1 -1 100
+  Reset E 2509 1 7 100
+  Reset E 2510 1 3 100
+  Reset E 2511 1 8 100
+  Reset E 2505 1 16 100
+Reset D 2531 0 1 100 -2
+Reset D 2531 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2532
-Name     The Upper Gate of Berghof~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     This is, strategically speaking, one of the most important chambers in
+Vnum      2532
+Name      The Upper Gate of Berghof~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      This is, strategically speaking, one of the most important chambers in
 the Keep, for it is from here that guards can look out for intruders
 advancing along the upper path that you had the choice of taking earlier.
 It is apparent now that to follow that path would have been sheer suicide,
@@ -3961,31 +3909,32 @@ Desc      A solid door opens onto one of the many rooms of the Keep.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2510 3 2532
-  Reset E 1 2513 1 5
-  Reset E 1 2505 1 16
-  Reset E 1 2514 1 11
-  Reset E 1 2515 1 19
-Reset M 0 2510 3 2532
-  Reset E 1 2513 1 5
-  Reset E 1 2505 1 16
-  Reset E 1 2514 1 11
-  Reset E 1 2515 1 19
-Reset M 0 2510 3 2532
-  Reset E 1 2513 1 5
-  Reset E 1 2505 1 16
-  Reset E 1 2514 1 11
-  Reset E 1 2515 1 19
-Reset D 0 2532 1 1
-Reset D 0 2532 2 1
+Reset M 2510 3 2532 -1 -1 -1 100
+  Reset E 2513 1 5 100
+  Reset E 2505 1 16 100
+  Reset E 2514 1 11 100
+  Reset E 2515 1 19 100
+Reset M 2510 3 2532 -1 -1 -1 100
+  Reset E 2513 1 5 100
+  Reset E 2505 1 16 100
+  Reset E 2514 1 11 100
+  Reset E 2515 1 19 100
+Reset M 2510 3 2532 -1 -1 -1 100
+  Reset E 2513 1 5 100
+  Reset E 2505 1 16 100
+  Reset E 2514 1 11 100
+  Reset E 2515 1 19 100
+Reset D 2532 1 1 100 -2
+Reset D 2532 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2533
-Name     The Keep Stables~
-Sector   inside~
-Flags    dark indoors nosummon~
-Desc     The five stalls that line the eastern wall of this long chamber indicate
+Vnum      2533
+Name      The Keep Stables~
+Sector    indoors~
+Flags     dark indoors nosummon~
+Stats     0 0 0 0 0
+Desc      The five stalls that line the eastern wall of this long chamber indicate
 immediately the function of this place. While most of the garrison had
 little need of horses, being for the most part crossbowmen and pikemen,
 occasionally scouts or messengers would have need of horses, and fine steeds
@@ -4008,19 +3957,20 @@ Desc      A solid door opens onto one of the many rooms of the Keep.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2511 3 2533
-Reset M 0 2511 3 2533
-Reset M 0 2511 3 2533
-Reset D 0 2533 0 1
-Reset D 0 2533 3 1
+Reset M 2511 3 2533 -1 -1 -1 100
+Reset M 2511 3 2533 -1 -1 -1 100
+Reset M 2511 3 2533 -1 -1 -1 100
+Reset D 2533 0 1 100 -2
+Reset D 2533 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2534
-Name     Tack Room~
-Sector   inside~
-Flags    dark indoors~
-Desc     The center of this room is piled high with all manner of objects 
+Vnum      2534
+Name      Tack Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The center of this room is piled high with all manner of objects 
 associated with horseriding; torn from the hooks and pegs set in the walls
 and hurled onto the floor by the new inhabitants of the keep, they appear
 to be of little more than nominal value. 
@@ -4033,15 +3983,16 @@ Desc      A solid door opens onto one of the many rooms of the Keep.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2534 2 1
+Reset D 2534 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2535
-Name     The Defense Room~
-Sector   city~
-Flags    nosummon~
-Desc     More smashed weapon racks and piles of weapons litter this section of the
+Vnum      2535
+Name      The Defense Room~
+Sector    city~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      More smashed weapon racks and piles of weapons litter this section of the
 chamber, accompanied by alcohol and blood stains, the inevitable result of
 countless hours of carousing. Crossletted arrowslits allow a limited view
 of the surrounding terrain; certainly an astute and skilful archer could
@@ -4063,22 +4014,22 @@ Desc      The defense room continues to the east.
 ~
 #ENDEXIT
 
-Reset M 0 2508 7 2535
-  Reset E 1 2511 1 8
-  Reset E 1 2509 1 7
-  Reset E 1 2505 1 16
-  Reset E 1 2510 1 3
-Reset M 0 2508 7 2535
-  Reset E 1 2510 1 3
-  Reset E 1 2511 1 8
-  Reset E 1 2509 1 7
-  Reset E 1 2505 1 16
-Reset M 0 2508 7 2535
-  Reset E 1 2510 1 3
-  Reset E 1 2509 1 7
-  Reset E 1 2505 1 16
-  Reset E 1 2511 1 8
-Reset O 0 2540 1 2535
+Reset M 2508 7 2535 -1 -1 -1 100
+  Reset E 2511 1 8 100
+  Reset E 2509 1 7 100
+  Reset E 2505 1 16 100
+  Reset E 2510 1 3 100
+Reset M 2508 7 2535 -1 -1 -1 100
+  Reset E 2510 1 3 100
+  Reset E 2511 1 8 100
+  Reset E 2509 1 7 100
+  Reset E 2505 1 16 100
+Reset M 2508 7 2535 -1 -1 -1 100
+  Reset E 2510 1 3 100
+  Reset E 2509 1 7 100
+  Reset E 2505 1 16 100
+  Reset E 2511 1 8 100
+Reset O 2540 1 2535 -1 -1 -1 100
 #EXDESC
 ExDescKey    murder hole holes~
 ExDesc       Peering through the metal grate, you see a chamber below, which would
@@ -4089,11 +4040,12 @@ become a death trap to any who attacked from that direction.
 #ENDROOM
 
 #ROOM
-Vnum     2536
-Name     Another Stair~
-Sector   inside~
-Flags    indoors~
-Desc     This narrow corridor ends at a staircase, which leads down to a section
+Vnum      2536
+Name      Another Stair~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This narrow corridor ends at a staircase, which leads down to a section
 of the Keep not accessible by any other point, where in turn one can 
 access the sole battlement encircling the Keep. Thus any assault would
 have to fight past numerous guard rooms under heavy fire to reach more
@@ -4117,11 +4069,12 @@ Desc      The stairs descend to a darkened chamber...
 #ENDROOM
 
 #ROOM
-Vnum     2537
-Name     Ascending the Spiral Stair~
-Sector   inside~
-Flags    dark indoors~
-Desc     The staircase ends here, at a landing bearing a single door. It does
+Vnum      2537
+Name      Ascending the Spiral Stair~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The staircase ends here, at a landing bearing a single door. It does
 continue for a short distance upward to a trapdoor, set in the ceiling,
 which presumably leads into the turret of one of the keep's many towers.
 There are signs of frequent passage here, including food scraps and
@@ -4151,8 +4104,8 @@ Desc      A staircase winds back down to the lower levels.
 ~
 #ENDEXIT
 
-Reset D 0 2537 2 1
-Reset D 0 2537 4 1
+Reset D 2537 2 1 100 -2
+Reset D 2537 4 1 100 -2
 #MUDPROG
 Progtype  rand_prog~
 Arglist   50~
@@ -4164,11 +4117,12 @@ mpasound The tromping of booted feet on flagstones echoes up and down the stair
 #ENDROOM
 
 #ROOM
-Vnum     2538
-Name     The Kitchens~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     This cramped chamber evokes memories of a ship's galley more than a
+Vnum      2538
+Name      The Kitchens~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      This cramped chamber evokes memories of a ship's galley more than a
 kitchen created to provide food for a garrion of five hundred; space
 is at a premium in the small keep, however, and the lack of amenities
 and space is overcome by a clever roster system. The keep's current
@@ -4192,22 +4146,23 @@ Desc      A narrow corridor runs outside the kitchen.
 ~
 #ENDEXIT
 
-Reset M 0 2512 1 2538
-  Reset E 1 2516 1 16
-  Reset E 1 2517 1 17
-Reset M 0 2513 3 2538
-Reset M 0 2513 3 2538
-Reset M 0 2513 3 2538
-Reset O 0 2539 1 2538
-Reset D 0 2538 0 1
+Reset M 2512 1 2538 -1 -1 -1 100
+  Reset E 2516 1 16 100
+  Reset E 2517 1 17 100
+Reset M 2513 3 2538 -1 -1 -1 100
+Reset M 2513 3 2538 -1 -1 -1 100
+Reset M 2513 3 2538 -1 -1 -1 100
+Reset O 2539 1 2538 -1 -1 -1 100
+Reset D 2538 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2539
-Name     A Narrow Corridor~
-Sector   inside~
-Flags    indoors~
-Desc     This narrow stone corridor is no more than eight feet high and not
+Vnum      2539
+Name      A Narrow Corridor~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This narrow stone corridor is no more than eight feet high and not
 much longer; it serves as an accessway between the chambers on this
 level. Sounds and smells fill the area, emanating from behind various
 doors.
@@ -4234,15 +4189,16 @@ Desc      A door opens onto unknown perils.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2539 3 1
+Reset D 2539 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2540
-Name     The Mess Hall~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     In days of old, the off duty soldiers of the keep would gather here
+Vnum      2540
+Name      The Mess Hall~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      In days of old, the off duty soldiers of the keep would gather here
 to eat, and discuss various issues of the day. The function of this 
 room has not changed since the arrival of the usurpers, but the decor
 has. Significantly. Where once there lay a wooden table laden with
@@ -4267,19 +4223,20 @@ Desc      A door opens onto unknown perils.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2514 3 2540
-Reset M 0 2514 3 2540
-Reset M 0 2514 3 2540
-Reset D 0 2540 0 1
-Reset D 0 2540 1 1
+Reset M 2514 3 2540 -1 -1 -1 100
+Reset M 2514 3 2540 -1 -1 -1 100
+Reset M 2514 3 2540 -1 -1 -1 100
+Reset D 2540 0 1 100 -2
+Reset D 2540 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2541
-Name     The End of the Corridor~
-Sector   inside~
-Flags    indoors~
-Desc     The corridor ends before two wooden doors, which lead to chambers of
+Vnum      2541
+Name      The End of the Corridor~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The corridor ends before two wooden doors, which lead to chambers of
 importance in the keep- the pantry and the dungeon. The function of
 each is proclaimed by a brass plaque affixed to the wooden surface.
 This area appears to be deserted; no gnoll sentries have been posted
@@ -4308,16 +4265,17 @@ Desc      The corridor runs south towards the center of this level.
 ~
 #ENDEXIT
 
-Reset D 0 2541 0 1
-Reset D 0 2541 1 2
+Reset D 2541 0 1 100 -2
+Reset D 2541 1 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2542
-Name     A Makeshift Gaol~
-Sector   inside~
-Flags    dark indoors nosummon~
-Desc     Bloodstained piles of straw cover the cold stone floor of this depressing
+Vnum      2542
+Name      A Makeshift Gaol~
+Sector    indoors~
+Flags     dark indoors nosummon~
+Stats     0 0 0 0 0
+Desc      Bloodstained piles of straw cover the cold stone floor of this depressing
 chamber; once a storeroom, it has been hastily converted into a gaol,
 to house what few humans from the original garrison remain alive. Gnolls
 have little use for prisoners that do not guarantee handsome ransoms,
@@ -4332,18 +4290,19 @@ Desc      An exit to freedom!
 Flags     isdoor closed locked~
 #ENDEXIT
 
-Reset M 0 2515 3 2542
-Reset M 0 2515 3 2542
-Reset M 0 2515 3 2542
-Reset D 0 2542 3 2
+Reset M 2515 3 2542 -1 -1 -1 100
+Reset M 2515 3 2542 -1 -1 -1 100
+Reset M 2515 3 2542 -1 -1 -1 100
+Reset D 2542 3 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2543
-Name     The Pantry~
-Sector   inside~
-Flags    dark indoors~
-Desc     Rotting foodstuffs and moldering sacks of grain fill the creaking wooden
+Vnum      2543
+Name      The Pantry~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Rotting foodstuffs and moldering sacks of grain fill the creaking wooden
 shelves that line the walls of this room. Undesirable to gnoll appetites,
 the food here has simply been abandonded; in fact, scarcely anyone has
 bothered coming here since the occupation, due partly to the unwholesome
@@ -4358,15 +4317,16 @@ Desc      A door opens onto unknown perils.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2543 2 1
+Reset D 2543 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2544
-Name     An Empty Guard Room~
-Sector   inside~
-Flags    dark indoors~
-Desc     One of many guard posts in the keep, this one has been stripped of
+Vnum      2544
+Name      An Empty Guard Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      One of many guard posts in the keep, this one has been stripped of
 furnishings and abandoned for unknown reasons, though it would be fair
 to assume that it wouldn't be a rational one; gnollish minds are too
 chaotic for cohesive planning. Then again, the very chaotic nature of
@@ -4390,8 +4350,8 @@ Desc      A door opens onto unknown perils.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2544 2 1
-Reset D 0 2544 3 1
+Reset D 2544 2 1 100 -2
+Reset D 2544 3 1 100 -2
 #MUDPROG
 Progtype  entry_prog~
 Arglist   100~
@@ -4407,11 +4367,12 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     2545
-Name     A Guard Room~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     This chamber lies on the northwest corner of the keep, and affords an
+Vnum      2545
+Name      A Guard Room~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      This chamber lies on the northwest corner of the keep, and affords an
 excellent view, through the crossletted arrowslits, of the path approaching
 the upper gate. Once again the futility of an assault from this direction
 is apparent; the archers here could easily pick the attackers off long
@@ -4425,39 +4386,40 @@ Desc      A door opens onto unknown perils.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2516 4 2545
-  Reset E 1 2505 1 16
-  Reset E 1 2518 1 9
-  Reset E 1 2519 1 12
-  Reset E 1 2520 1 10
-  Reset G 1 2521 1
-Reset M 0 2516 4 2545
-  Reset E 1 2505 1 16
-  Reset E 1 2518 1 9
-  Reset E 1 2519 1 12
-  Reset E 1 2520 1 10
-  Reset G 1 2521 1
-Reset M 0 2516 4 2545
-  Reset E 1 2505 1 16
-  Reset E 1 2518 1 9
-  Reset E 1 2519 1 12
-  Reset E 1 2520 1 10
-  Reset G 1 2521 1
-Reset M 0 2516 4 2545
-  Reset E 1 2505 1 16
-  Reset E 1 2518 1 9
-  Reset E 1 2519 1 12
-  Reset E 1 2520 1 10
-  Reset G 1 2521 1
-Reset D 0 2545 1 1
+Reset M 2516 4 2545 -1 -1 -1 100
+  Reset E 2505 1 16 100
+  Reset E 2518 1 9 100
+  Reset E 2519 1 12 100
+  Reset E 2520 1 10 100
+  Reset G 2521 1 100
+Reset M 2516 4 2545 -1 -1 -1 100
+  Reset E 2505 1 16 100
+  Reset E 2518 1 9 100
+  Reset E 2519 1 12 100
+  Reset E 2520 1 10 100
+  Reset G 2521 1 100
+Reset M 2516 4 2545 -1 -1 -1 100
+  Reset E 2505 1 16 100
+  Reset E 2518 1 9 100
+  Reset E 2519 1 12 100
+  Reset E 2520 1 10 100
+  Reset G 2521 1 100
+Reset M 2516 4 2545 -1 -1 -1 100
+  Reset E 2505 1 16 100
+  Reset E 2518 1 9 100
+  Reset E 2519 1 12 100
+  Reset E 2520 1 10 100
+  Reset G 2521 1 100
+Reset D 2545 1 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2546
-Name     The Death Room~
-Sector   inside~
-Flags    dark indoors nosummon~
-Desc     The stairs enter a room directly below the murder holes in the defense
+Vnum      2546
+Name      The Death Room~
+Sector    indoors~
+Flags     dark indoors nosummon~
+Stats     0 0 0 0 0
+Desc      The stairs enter a room directly below the murder holes in the defense
 room. Boiling oil could be poured on any who ascended to the battlements
 to the south and attempted to enter the keep this way. The floor bears
 no stains; apparently no enemy has yet been powerful, brave or stupid
@@ -4474,8 +4436,8 @@ Direction up~
 ToRoom    2536
 #ENDEXIT
 
-Reset O 0 2528 1 2546
-Reset D 0 2546 2 1
+Reset O 2528 1 2546 -1 -1 -1 100
+Reset D 2546 2 1 100 -2
 #MUDPROG
 Progtype  entry_prog~
 Arglist   100~
@@ -4492,11 +4454,12 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     2547
-Name     A Sentry Hall~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     A guard chamber where offduty guards from the battlements may rest
+Vnum      2547
+Name      A Sentry Hall~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      A guard chamber where offduty guards from the battlements may rest
 between shifts, this chamber contains a series of beds arranged around
 a large wooden table. The furniture here is in surprisingly good 
 condition; this room has escaped the attention of the bulk of the gnoll
@@ -4519,31 +4482,32 @@ Desc      A door opens onto unknown perils.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2517 3 2547
-  Reset E 1 2513 1 5
-  Reset E 1 2514 1 11
-  Reset E 1 2507 1 6
-  Reset E 1 2505 1 16
-Reset M 0 2517 3 2547
-  Reset E 1 2507 1 6
-  Reset E 1 2514 1 11
-  Reset E 1 2513 1 5
-  Reset E 1 2505 1 16
-Reset M 0 2517 3 2547
-  Reset E 1 2505 1 16
-  Reset E 1 2507 1 6
-  Reset E 1 2514 1 11
-  Reset E 1 2513 1 5
-Reset D 0 2547 0 1
-Reset D 0 2547 2 1
+Reset M 2517 3 2547 -1 -1 -1 100
+  Reset E 2513 1 5 100
+  Reset E 2514 1 11 100
+  Reset E 2507 1 6 100
+  Reset E 2505 1 16 100
+Reset M 2517 3 2547 -1 -1 -1 100
+  Reset E 2507 1 6 100
+  Reset E 2514 1 11 100
+  Reset E 2513 1 5 100
+  Reset E 2505 1 16 100
+Reset M 2517 3 2547 -1 -1 -1 100
+  Reset E 2505 1 16 100
+  Reset E 2507 1 6 100
+  Reset E 2514 1 11 100
+  Reset E 2513 1 5 100
+Reset D 2547 0 1 100 -2
+Reset D 2547 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2548
-Name     Patrolling the Battlements~
-Sector   city~
-Flags    nosummon~
-Desc     These battlements circle the keep at the second level, affording an
+Vnum      2548
+Name      Patrolling the Battlements~
+Sector    city~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      These battlements circle the keep at the second level, affording an
 excellent view of the southern and western aspects of the lands 
 surrounding the keep. A stiff breeze assaults those who patrol here,
 carrying a chill from the southern lands. There are bound to be several
@@ -4564,19 +4528,21 @@ Desc      The battlements circle this level of the keep.
 ~
 #ENDEXIT
 
-Reset M 0 2518 2 2548
-  Reset E 1 2506 1 14
-  Reset E 1 2509 1 7
-  Reset E 1 2513 1 5
-  Reset G 1 2521 1
-Reset D 0 2548 0 1
+Reset M 2518 2 2548 -1 -1 -1 100
+  Reset E 2506 1 14 100
+  Reset E 2509 1 7 100
+  Reset E 2513 1 5 100
+  Reset G 2521 1 100
+Reset D 2548 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2549
-Name     Patrolling the Battlements~
-Sector   city~
-Desc     The walls of the keep tower to the northeast; as the battlements wind
+Vnum      2549
+Name      Patrolling the Battlements~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The walls of the keep tower to the northeast; as the battlements wind
 around the southwestern corner it is impossible to even see the highest
 level. Arrowslits, crossletted to allow a variety of missile weapons,
 overlook the crenelated battlements, bastioned by supports of stone,
@@ -4599,18 +4565,20 @@ Desc      The battlements circle this level of the keep.
 ~
 #ENDEXIT
 
-Reset M 0 2518 2 2549
-  Reset E 1 2513 1 5
-  Reset E 1 2506 1 14
-  Reset E 1 2509 1 7
-  Reset G 1 2521 1
+Reset M 2518 2 2549 -1 -1 -1 100
+  Reset E 2513 1 5 100
+  Reset E 2506 1 14 100
+  Reset E 2509 1 7 100
+  Reset G 2521 1 100
 #ENDROOM
 
 #ROOM
-Vnum     2550
-Name     Patrolling the Battlements~
-Sector   city~
-Desc     The battlements end here, where the keep merges into the mountainside.
+Vnum      2550
+Name      Patrolling the Battlements~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The battlements end here, where the keep merges into the mountainside.
 Progress further north is blocked by the mountain itself; solid,
 impenetrable granite, a superb natural defense. It also leaves a blind
 spot, where those on these battlements cannot view the upper road that
@@ -4627,11 +4595,12 @@ Desc      The battlements circle this level of the keep.
 #ENDROOM
 
 #ROOM
-Vnum     2551
-Name     The Eastern Turret~
-Sector   inside~
-Flags    indoors~
-Desc     Narrow windows line the walls of this circular turret, allowing a
+Vnum      2551
+Name      The Eastern Turret~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Narrow windows line the walls of this circular turret, allowing a
 360 degree view of the surrounding terrain. No sentry has been posted
 here; the range is too great for even a longbow to hit approaching
 enemies with any accuracy, and the guard rooms on the lower levels
@@ -4652,15 +4621,16 @@ Keywords  trapdoor~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2551 5 1
+Reset D 2551 5 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2552
-Name     The Upper Levels of the Keep of Alderweg~
-Sector   inside~
-Flags    indoors~
-Desc     Guttering torchlight dimly illuminates this chamber, which contains
+Vnum      2552
+Name      The Upper Levels of the Keep of Alderweg~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Guttering torchlight dimly illuminates this chamber, which contains
 two doors, leading into the quarters of the most important residents
 of the keep. No doubt the heart of the evil that has taken over this
 former bastion of law resides nearby, and no doubt it is aware of any
@@ -4682,16 +4652,17 @@ Desc      A door opens onto unknown perils.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset D 0 2552 1 1
-Reset D 0 2552 3 1
+Reset D 2552 1 1 100 -2
+Reset D 2552 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2553
-Name     A Reception Area~
-Sector   inside~
-Flags    indoors~
-Desc     Once a chamber where the Castellan would carry out various day-to-day
+Vnum      2553
+Name      A Reception Area~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Once a chamber where the Castellan would carry out various day-to-day
 administrative tasks, this chamber has been turned upside down in
 searches for booty, and in its current demolished state serves as 
 quarters for one of the keep's new guardians. A narrow set of stairs
@@ -4724,19 +4695,20 @@ Keywords  trapdoor~
 Flags     isdoor closed locked~
 #ENDEXIT
 
-Reset M 0 2519 1 2553
-  Reset E 1 2522 1 3
-Reset D 0 2553 1 1
-Reset D 0 2553 2 1
-Reset D 0 2553 4 2
+Reset M 2519 1 2553 -1 -1 -1 100
+  Reset E 2522 1 3 100
+Reset D 2553 1 1 100 -2
+Reset D 2553 2 1 100 -2
+Reset D 2553 4 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2554
-Name     The Lieutenant's Quarters~
-Sector   inside~
-Flags    dark indoors~
-Desc     Before the occupation, the lieutenant of the keep resided here, in
+Vnum      2554
+Name      The Lieutenant's Quarters~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Before the occupation, the lieutenant of the keep resided here, in
 a simple bed, which now lies smashed to flinders next to his desk,
 which is in a similar state. The lieutenant met his end defending the
 Keep on the lower levels, and did not live to see the ignomious end
@@ -4750,8 +4722,8 @@ Desc      A door opens onto unknown perils.
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset O 0 2537 1 2554
-Reset D 0 2554 3 1
+Reset O 2537 1 2554 -1 -1 -1 100
+Reset D 2554 3 1 100 -2
 #MUDPROG
 Progtype  entry_prog~
 Arglist   100~
@@ -4768,11 +4740,12 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     2555
-Name     Chambers of the Castellan~
-Sector   inside~
-Flags    indoors nosummon noastral~
-Desc     The chambers of the Castellan are but a former shade of their once-
+Vnum      2555
+Name      Chambers of the Castellan~
+Sector    indoors~
+Flags     indoors nosummon noastral~
+Stats     0 0 0 0 0
+Desc      The chambers of the Castellan are but a former shade of their once-
 impressive condition. Fine tapestries depicting Alderweg have been torn
 to ribbons, and lie piled on the floor. Antique furniture lies smashed
 to smithereens, near pools of dried blood. Torn cloth and broken weapons
@@ -4797,20 +4770,22 @@ Keywords  trapdoor~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset M 0 2520 1 2555
-  Reset E 1 2525 1 9
-  Reset E 1 2526 1 12
-  Reset G 1 2527 1
-Reset O 0 2524 1 2555
-Reset D 0 2555 0 1
-Reset D 0 2555 4 1
+Reset M 2520 1 2555 -1 -1 -1 100
+  Reset E 2525 1 9 100
+  Reset E 2526 1 12 100
+  Reset G 2527 1 100
+Reset O 2524 1 2555 -1 -1 -1 100
+Reset D 2555 0 1 100 -2
+Reset D 2555 4 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     2556
-Name     The Northern Turret~
-Sector   city~
-Desc     The windows of this turret have been boarded up for some unknown reason,
+Vnum      2556
+Name      The Northern Turret~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The windows of this turret have been boarded up for some unknown reason,
 thus eliminating the majestic view. Weapons and armor of all sorts, mostly
 far inferior to your own, have been stockpiled here, including recently
 added longbows of gnollish manufacture; crude, but powerful weapons. A
@@ -4827,14 +4802,14 @@ Keywords  trapdoor~
 Flags     isdoor closed locked~
 #ENDEXIT
 
-Reset M 0 2535 1 2556
-  Reset E 1 2545 1 19
-Reset O 0 2521 1 2556
-Reset O 0 2541 1 2556
-Reset O 0 2542 1 2556
-Reset O 0 2544 1 2556
-Reset O 0 2531 1 2556
-Reset D 0 2556 5 2
+Reset M 2535 1 2556 -1 -1 -1 100
+  Reset E 2545 1 19 100
+Reset O 2521 1 2556 -1 -1 -1 100
+Reset O 2541 1 2556 -1 -1 -1 100
+Reset O 2542 1 2556 -1 -1 -1 100
+Reset O 2544 1 2556 -1 -1 -1 100
+Reset O 2531 1 2556 -1 -1 -1 100
+Reset D 2556 5 2 100 -2
 #MUDPROG
 Progtype  entry_prog~
 Arglist   100~
@@ -4851,11 +4826,12 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     2557
-Name     The Western Turret~
-Sector   inside~
-Flags    indoors~
-Desc     Of all the turrets of the keep, this one affords the best view; from
+Vnum      2557
+Name      The Western Turret~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Of all the turrets of the keep, this one affords the best view; from
 here, one can peer far over the surrounding countryside with little
 restrictions. The remains of Gannaway are visible far to the northwest,
 while beyond that the Lewyn flows from Lake Spendlowe, upon which rests
@@ -4872,8 +4848,8 @@ Keywords  trapdoor~
 Flags     isdoor closed~
 #ENDEXIT
 
-Reset O 0 2530 1 2557
-Reset D 0 2557 5 1
+Reset O 2530 1 2557 -1 -1 -1 100
+Reset D 2557 5 1 100 -2
 #MUDPROG
 Progtype  entry_prog~
 Arglist   100~
@@ -4890,51 +4866,56 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     2560
-Name     Cell #1~
-Sector   city~
-Flags    nomob norecall nosummon noastral~
+Vnum      2560
+Name      Cell #1~
+Sector    city~
+Flags     nomob nosummon norecall noastral~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     2561
-Name     Cell #2~
-Sector   city~
-Flags    nomob norecall nosummon noastral~
-Reset M 0 2533 1 2561
-  Reset E 1 2546 1 3
+Vnum      2561
+Name      Cell #2~
+Sector    city~
+Flags     nomob nosummon norecall noastral~
+Stats     0 0 0 0 0
+Reset M 2533 1 2561 -1 -1 -1 100
+  Reset E 2546 1 3 100
 #ENDROOM
 
 #ROOM
-Vnum     2562
-Name     Cell #3~
-Sector   city~
-Flags    nomob norecall nosummon noastral~
-Reset M 0 2534 1 2562
+Vnum      2562
+Name      Cell #3~
+Sector    city~
+Flags     nomob nosummon norecall noastral~
+Stats     0 0 0 0 0
+Reset M 2534 1 2562 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2563
-Name     Cell #4~
-Sector   city~
-Flags    nomob norecall nosummon noastral~
-Reset M 0 2521 1 2563
+Vnum      2563
+Name      Cell #4~
+Sector    city~
+Flags     nomob nosummon norecall noastral~
+Stats     0 0 0 0 0
+Reset M 2521 1 2563 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2564
-Name     Cell #5~
-Sector   city~
-Flags    nomob norecall nosummon noastral~
+Vnum      2564
+Name      Cell #5~
+Sector    city~
+Flags     nomob nosummon norecall noastral~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     2565
-Name     A Cramped Tunnel~
-Sector   city~
-Flags    dark indoors nosummon~
-Stats    0 0 3
-Desc     The hole opens onto a narrow tunnel, created by some burrowing creature
+Vnum      2565
+Name      A Cramped Tunnel~
+Sector    city~
+Flags     dark indoors nosummon~
+Stats     0 0 3 0 0
+Desc      The hole opens onto a narrow tunnel, created by some burrowing creature
 with powerful appendages. It runs beneath the walls of the Keep, heading
 presumably to the lowlands beyond the hills. The air here is stale, and
 stifling; it is also uncomfortably hot. Various dead animals, mostly
@@ -4956,7 +4937,7 @@ Desc      Up lies a broad stone chamber.
 Flags     climb~
 #ENDEXIT
 
-Reset O 0 2529 1 2565
+Reset O 2529 1 2565 -1 -1 -1 100
 #MUDPROG
 Progtype  entry_prog~
 Arglist   100~
@@ -4973,12 +4954,12 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     2566
-Name     A Cramped Tunnel~
-Sector   city~
-Flags    dark indoors~
-Stats    0 0 1
-Desc     Progress is difficult through this earthen passage, hampered by both
+Vnum      2566
+Name      A Cramped Tunnel~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 1 0 0
+Desc      Progress is difficult through this earthen passage, hampered by both
 the cramped conditions and the uncomfortable temperature. Fresh air
 filters in only barely from the entrance, and is barely sufficient for
 the needs of any creature unused to such an environment. The walls are
@@ -5002,12 +4983,12 @@ Desc      It is too dark to see very far...
 #ENDROOM
 
 #ROOM
-Vnum     2567
-Name     A Cramped Tunnel~
-Sector   city~
-Flags    dark indoors~
-Stats    0 0 1
-Desc     The tunnel is beginning to slope slightly, heading upwards as it heads
+Vnum      2567
+Name      A Cramped Tunnel~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 1 0 0
+Desc      The tunnel is beginning to slope slightly, heading upwards as it heads
 east, and downwards to the west, where it disappears in the darkness with
 no hint of an escape. Surely whatever creature constructed this earthen
 edit must be well used to cramped, humid and claustrophobic conditions;
@@ -5030,12 +5011,12 @@ Desc      It is too dark to see very far...
 #ENDROOM
 
 #ROOM
-Vnum     2568
-Name     A Cramped Tunnel~
-Sector   city~
-Flags    dark indoors~
-Stats    0 0 1
-Desc     At last there is a noticeable change in the tunnel's direction, and some
+Vnum      2568
+Name      A Cramped Tunnel~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 1 0 0
+Desc      At last there is a noticeable change in the tunnel's direction, and some
 hope of escape from this tomblike passage. Light filters in from somewhere
 to the north, indicating a possible exit from the tunnel, though it also
 means a possible encounter with this tunnel's engineers...
@@ -5057,12 +5038,12 @@ Desc      It is too dark to see very far...
 #ENDROOM
 
 #ROOM
-Vnum     2569
-Name     A Cramped Tunnel~
-Sector   city~
-Flags    dark indoors~
-Stats    0 0 3
-Desc     The tunnel ends here, at a gaping hole that presumably marks where the
+Vnum      2569
+Name      A Cramped Tunnel~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 3 0 0
+Desc      The tunnel ends here, at a gaping hole that presumably marks where the
 creatures that construced this passage began their work. The tunnel itself
 is an admirable feat, despite the considerable discomfort it causes non-
 insectoid travellers; to be able to accurately gauge the distance and
@@ -5097,11 +5078,12 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     2570
-Name     The Lowlands~
-Sector   field~
-Flags    nosummon~
-Desc     The tunnel opens onto rolling plains, which lie a fair distance- 500
+Vnum      2570
+Name      The Lowlands~
+Sector    field~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      The tunnel opens onto rolling plains, which lie a fair distance- 500
 yards at least- from the walls of the keep, which tower to the east.
 The grass here has been gouged and churned by the mandibles of the
 giant ants that burrowed into the keep. This, however, isn't as gripping
@@ -5121,15 +5103,16 @@ Keywords  hole~
 Flags     hidden can_enter~
 #ENDEXIT
 
-Reset O 0 2538 1 2570
+Reset O 2538 1 2570 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2571
-Name     Approaching a Camp~
-Sector   field~
-Flags    nomob nosummon~
-Desc     A dirt path has been worn into the earth here by the passing of countless
+Vnum      2571
+Name      Approaching a Camp~
+Sector    field~
+Flags     nomob nosummon~
+Stats     0 0 0 0 0
+Desc      A dirt path has been worn into the earth here by the passing of countless
 pairs of booted feet, recently too. Dozens of tents have been pitched to
 the west, centered around a roaring blaze. Shouts and cries echo from the
 camp; voices raised in the guttural goblin tongue can be heard in the
@@ -5161,11 +5144,12 @@ worth, they have been impaled on blackened spears around the camp.
 #ENDROOM
 
 #ROOM
-Vnum     2572
-Name     The Mercenary Camp~
-Sector   city~
-Flags    nosummon~
-Desc     Starting here is a row of tents, of varying sizes and hues, housing 
+Vnum      2572
+Name      The Mercenary Camp~
+Sector    city~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      Starting here is a row of tents, of varying sizes and hues, housing 
 what appears to be a mercenary army of considerable size, doubtless
 amassed with the intention of taking the Keep of Alderweg. Large crimson
 banners flutter from stakes placed before the tents, evidently the 
@@ -5201,9 +5185,9 @@ Desc      West leads further into this dark camp.
 ~
 #ENDEXIT
 
-Reset M 0 2528 1 2572
-  Reset E 1 2534 1 16
-  Reset E 1 2535 1 5
+Reset M 2528 1 2572 -1 -1 -1 100
+  Reset E 2534 1 16 100
+  Reset E 2535 1 5 100
 #EXDESC
 ExDescKey    banner banners~
 ExDesc       The banner bears a motif of a clenched red fist on a green field.
@@ -5213,11 +5197,12 @@ ExDesc       The banner bears a motif of a clenched red fist on a green field.
 #ENDROOM
 
 #ROOM
-Vnum     2573
-Name     A Barracks Tent~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     The interior of this tent is filled with simple bunks, on which the
+Vnum      2573
+Name      A Barracks Tent~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      The interior of this tent is filled with simple bunks, on which the
 hobgoblins sleep when they are not on duty or fighting for their 
 employer. There is little else of interest in here; hobgoblins are 
 vicious and cruel, but quite orderly in their domestic environment.
@@ -5232,11 +5217,12 @@ Desc      The camp bustles with activity.
 #ENDROOM
 
 #ROOM
-Vnum     2574
-Name     A Barracks Tent~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     The interior of this tent is filled with simple bunks, on which the
+Vnum      2574
+Name      A Barracks Tent~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      The interior of this tent is filled with simple bunks, on which the
 hobgoblins sleep when they are not on duty or fighting for their 
 employer. There is little else of interest in here; hobgoblins are 
 vicious and cruel, but quite orderly in their domestic environment.
@@ -5248,15 +5234,16 @@ Desc      The camp bustles with activity.
 ~
 #ENDEXIT
 
-Reset M 0 2526 2 2574
+Reset M 2526 2 2574 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2575
-Name     A Large Campfire~
-Sector   city~
-Flags    nosummon~
-Desc     Scores of hobgoblin mercenaries lie resting or eating around the fire,
+Vnum      2575
+Name      A Large Campfire~
+Sector    city~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      Scores of hobgoblin mercenaries lie resting or eating around the fire,
 obviously eager for battle. They ignore any new arrivals; being a 
 mercenary army, they are well-used to strange individuals wandering into
 camp. It would be a mistake to start a fight here; anyone who challenged
@@ -5277,28 +5264,29 @@ Desc      West leads further into this dark camp.
 ~
 #ENDEXIT
 
-Reset M 0 2531 6 2575
-Reset M 0 2531 6 2575
-Reset M 0 2531 6 2575
-Reset M 0 2531 6 2575
-Reset M 0 2531 6 2575
-Reset M 0 2531 6 2575
-Reset M 0 2527 4 2575
-  Reset E 1 2534 1 16
-  Reset E 1 2535 1 5
-Reset M 0 2527 4 2575
-  Reset E 1 2534 1 16
-  Reset E 1 2535 1 5
-Reset M 0 2526 2 2575
-Reset O 0 2536 1 2575
+Reset M 2531 6 2575 -1 -1 -1 100
+Reset M 2531 6 2575 -1 -1 -1 100
+Reset M 2531 6 2575 -1 -1 -1 100
+Reset M 2531 6 2575 -1 -1 -1 100
+Reset M 2531 6 2575 -1 -1 -1 100
+Reset M 2531 6 2575 -1 -1 -1 100
+Reset M 2527 4 2575 -1 -1 -1 100
+  Reset E 2534 1 16 100
+  Reset E 2535 1 5 100
+Reset M 2527 4 2575 -1 -1 -1 100
+  Reset E 2534 1 16 100
+  Reset E 2535 1 5 100
+Reset M 2526 2 2575 -1 -1 -1 100
+Reset O 2536 1 2575 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2576
-Name     The Chieftain's Pavilion~
-Sector   city~
-Flags    nosummon~
-Desc     The end of the camp is dominated by three large tents, each the color
+Vnum      2576
+Name      The Chieftain's Pavilion~
+Sector    city~
+Flags     nosummon~
+Stats     0 0 0 0 0
+Desc      The end of the camp is dominated by three large tents, each the color
 of a blazing fire. The air here is uncomfortably warm, heated by 
 numerous iron braziers, within which piles of charcoal smolder. Numerous
 mercenaries saunter past, glancing only occasionally at new visitors to
@@ -5333,17 +5321,18 @@ Desc      West lies the chieftain of this army.
 ~
 #ENDEXIT
 
-Reset M 0 2530 1 2576
-  Reset E 1 2535 1 5
-  Reset E 1 2534 1 16
+Reset M 2530 1 2576 -1 -1 -1 100
+  Reset E 2535 1 5 100
+  Reset E 2534 1 16 100
 #ENDROOM
 
 #ROOM
-Vnum     2577
-Name     The Chieftain's Tent~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     This tent could house a score of hobgoblins, but instead houses but
+Vnum      2577
+Name      The Chieftain's Tent~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      This tent could house a score of hobgoblins, but instead houses but
 one man- the fire giant that leads this organized fighting force. He
 rests in a bunk the size of a drawbridge, next to which sits the chair
 in which he sits while holding meetings with his officers; the chair 
@@ -5357,23 +5346,24 @@ Desc      The camp bustles with activity.
 ~
 #ENDEXIT
 
-Reset M 0 2525 1 2577
-  Reset E 1 2532 1 5
-  Reset E 1 2533 1 16
-Reset M 0 2527 4 2577
-  Reset E 1 2534 1 16
-  Reset E 1 2535 1 5
-Reset M 0 2527 4 2577
-  Reset E 1 2534 1 16
-  Reset E 1 2535 1 5
+Reset M 2525 1 2577 -1 -1 -1 100
+  Reset E 2532 1 5 100
+  Reset E 2533 1 16 100
+Reset M 2527 4 2577 -1 -1 -1 100
+  Reset E 2534 1 16 100
+  Reset E 2535 1 5 100
+Reset M 2527 4 2577 -1 -1 -1 100
+  Reset E 2534 1 16 100
+  Reset E 2535 1 5 100
 #ENDROOM
 
 #ROOM
-Vnum     2578
-Name     The Hound Pen~
-Sector   inside~
-Flags    indoors~
-Desc     Within this tent lie several beds of a strange cloth, soaked in 
+Vnum      2578
+Name      The Hound Pen~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Within this tent lie several beds of a strange cloth, soaked in 
 chemicals that prevent it from being incinerated by the forms of those
 that rest upon them. The air in here is even hotter than outside, warmed
 to an almost unbearable temperature by several blazing fires, and the
@@ -5389,11 +5379,12 @@ Desc      The camp bustles with activity.
 #ENDROOM
 
 #ROOM
-Vnum     2579
-Name     A Small Tent~
-Sector   inside~
-Flags    indoors nosummon~
-Desc     This tent is empty, devoid of any furniture or even traces of habitation.
+Vnum      2579
+Name      A Small Tent~
+Sector    indoors~
+Flags     indoors nosummon~
+Stats     0 0 0 0 0
+Desc      This tent is empty, devoid of any furniture or even traces of habitation.
 All that can be seen is a small pile of bones, evidently the remains of
 a meal recently devoured by the creatures that live here. The air stinks
 of fire and brimstone, mingled with the odor of spilled blood...
@@ -5405,15 +5396,16 @@ Desc      The camp bustles with activity.
 ~
 #ENDEXIT
 
-Reset M 0 2532 2 2579
-Reset M 0 2532 2 2579
+Reset M 2532 2 2579 -1 -1 -1 100
+Reset M 2532 2 2579 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     2599
-Name     Final Room~
-Sector   city~
-Flags    nomob nosummon~
+Vnum      2599
+Name      Final Room~
+Sector    city~
+Flags     nomob nosummon~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ENDAREA

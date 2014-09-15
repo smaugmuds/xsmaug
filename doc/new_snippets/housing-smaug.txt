@@ -1,0 +1,421 @@
+-------------------------------------------------------------------------------------------
+:                                  Automated Housing                                      :
+:                                                                                         :
+:                                                                                         :
+:                             Author: Senir                                               :
+:                              Email: oldgaijin@yahoo.com                                 :
+:                            Created: February 4, 2001                                    :
+:                                                                                         :
+: Files Edited:                                               Codebases tested on:        :
+:    Makefile, mud.h                                        Base & Modified SMAUG 1.4a    :
+:    act_obj.c, act_wiz.c                                                                 :
+:    comm.c, db.c, misc.c,                                                                :
+:    rent.c(if applicable), tables.c                                                      :
+:    update.c                                                                             :
+:                                                                                         :
+-------------------------------------------------------------------------------------------
+
+\\\\\\\\\\\\\\\\\\\\\\\
+------Background-------
+\\\\\\\\\\\\\\\\\\\\\\\
+
+   I was told by an immortal awhile back that housing was only building. This is my
+response. I coded this in a couple free days. This is more a concept idea snippet then
+anything and will probably have several extension snippets to it as more ideas come out of
+it. Remember to edit house.h to your preference on installation or you might not like the
+settings set by default; all settings which you might want to modify are defined in 
+house.h since this was designed with the person who has to put up with this in mind.
+
+\\\\\\\\\\\\\\\\\\\\\\\
+------How to Use-------
+\\\\\\\\\\\\\\\\\\\\\\\
+
+This is a fully automated housing system. For an easier to understand 'how to use', I'll 
+explain each command using general descriptions of them and their potentional uses. Then,
+I'll explain the ideology of the residence types and the ideology of house mobs. The most 
+important thing to remember though is that start rooms for residences have to exist already.
+Also the circulation cycle of a residence will always start with an immortal, either by 
+manually setting it on a player or adding it to the housing auction. Also, it's adviced to 
+have a preplanned housing area for the start rooms of houses to create a neighborhood type 
+setting as additional rooms are just random free vnums in that area or for the area defined
+in house.h, which is another reason to adjust house.h to your preferences. Now on to details
+on commands, residences, and house mobs.
+
+*Commands*
+
+   The accessories command is used to add furniture and house mobs(if defined) to
+existing houses without any immortal interaction. It's a great way to have them be able to 
+buy regenerative furniture or guards or maybe even fountains and the like. Immortals need 
+to add accessories to this command for them to buy though. Apartments are not able to have 
+accessories.
+
+   The gohome command is used for a mortal to return to the first room in their house when
+they type it and is more like a gocouncil or goclan type of command.
+
+   The homebuy command is the main one used for interaction with the automated housing 
+system. This command allows for a mortal to bid on or find more information on a house on 
+auction and for immortals to control every feature of a current residence on auction. New 
+residences can be added to the auction using this command by immortals, for basically 
+beginning the circulation of a house through the system. Sellhouse is the mortal aspect of 
+adding residences to the auction and will be mentioned in its own accompanying description.
+
+   The house command is used by mortals for manipulation of their house. They are able to
+edit names and descriptions for their housing rooms as well as add additional rooms by
+themselves. Apartments are not able to be manipulated by mortals in this manner. The house 
+command also has features for immortals to have manual control over houses.
+
+   The residence command is a simple command to list the relevant information about current
+residences. Residences on it are in alphabetical order.
+
+   The sellhouse command is the second command used for interaction with the automated
+housing system. It places a mortal's residence on the housing auction for the default bid
+or for the bid the mortal specifies, which has to be above the default bid. This command is
+mostly used for recirculating houses through the housing auction structure.
+
+*Residence Types*
+
+   The house is the basic residence type. A house provides you with saving of objects left 
+in it. It also allows you to have a key to the locked doors to outside the current house; 
+allowing other mortals access to the house for parties, etc. Houses also support having 
+accessories, which a mortal buys on their own, such as furniture and house mobs(if defined),
+allowing for the proper introduction of regenerative furniture into housing. Houses also 
+provide player manipulation of house room names and descriptions. Finally, houses allow 
+additional rooms up to the maximum number of house rooms. Because of these benefits, the 
+default price of a house is (by default with the snippet) two and a half times the price 
+of apartments.
+
+   The apartment is the second residence type supported in this system. An apartment allows
+saving of objects left in it. Keys are not provided for apartments; therefore, the owning 
+player should be the only one who ever has access to their apartment, since all doors 
+leading to it are locked. No accessories of any kind can be bought for apartments, nor can 
+the apartment room name and description be edited by the owner. Also, no additional rooms 
+can be added to apartments. Since there is a lack of these features, the price is lower. 
+This would be considered the "poor man's" house.
+
+*House Mobs*
+
+   The house mob is a concept which has been left mostly to the individual mud's 
+imagination, since the needs and preferences of an individual mud could not be addressed in
+only one extension snippet. The only code included in the snippet that affects house mobs is
+the accessories command to place them in the game in the same systematic way as furniture.
+There are a variety of implementations that may be put into affect on the individual mud;
+the options including healing mobs, guard mobs, janitor mobs, or even house pets.
+
+\\\\\\\\\\\\\\\\\\\\\\\
+----Terms of Usage-----
+\\\\\\\\\\\\\\\\\\\\\\\
+
+   $1 Support:
+              I reserve the right to refuse all support on this snippet if an email is not
+              sent to me when you install it, stating the installed snippet's name, the
+              user's codebase-version, and the user's contact email. I will not release
+              these email addresses to third-parties, etc. The first reason I ask for
+              emails is because I don't want to get a thousand emails from people I don't
+              have listed for support. The second and final reason is because I try to keep
+              these snippets bug-free and completely working. If somehow a bug is found, I
+              will fix the snippet and repost it to the hosting snippet site, without
+              warning in either the snippet or on the site. This is probably the main
+              reason I ask for the email addresses so you all can have completely working 
+              snippets.
+    
+   $2 Liability:
+              Before you are authorized to use this snippet, you must wave all liability
+              from the author for any damage caused by the snippet, both unintential or
+              intential(will probably never cause this but this is a full disclaimer).
+              This includes, but is not limited to: crashing of mud, self-deletion of mud,
+              flame-throwing the server, inability of the mud to startup, vampire code
+              sucking the essence out of your mud, Michael Jackson hanging around the mud's
+              internals, and Mike Tyson severing the sound code.
+
+   $3 Comments:
+              Before you are authorized to use this snippet, you are required to retain all
+              comments(explanations begun with \\). This is to aid in possible removal of
+              this code and also to help people read this code and understand how this code
+              works; not to placard my name everwhere like most snippet authors. In return
+              for retaining comments to help others, I don't require my name anywhere in
+              your credits file. 
+
+   $4 Hosting:
+              This snippet may only be hosted on sites authorized by the author. All other
+              sites may not host it, but can only link to it; unless they meet the 
+              following conditions. They agree not to deface the snippet or any other
+              snippet of the author. The are not allowed to modify, cheat, or lie on the
+              site or in the snippet that would cause personal gain or the gain of a
+              third-party and deprive the author in any way or form. They must also link
+              to the snippet with accurate info, listing at least the snippet name and
+              author.
+
+++++++++++++++++++++++++++++++++++++++CODE STARTS HERE+++++++++++++++++++++++++++++++++++++
+
+*******************************************************************************************
+-----------------------------------------MAKEFILE------------------------------------------
+*******************************************************************************************
+
+In the object file declaration lines which begin with O_FILES:
+
+   ~add-    house.o
+
+In the source file declaration lines which begin with C_FILES:
+
+   ~add-    house.c
+
+In the header file declaration lines marked with H_FILES:
+
+   ~add-    house.h
+
+
+*******************************************************************************************
+-------------------------------------------MUD.H-------------------------------------------
+*******************************************************************************************
+
+In the section below the Game Parameters comment:
+
+ [below]    #define LEVEL_HIGOD		    LEVEL_GOD
+
+   ~add-    #include "house.h" /* For housing module */
+
+
+*******************************************************************************************
+-----------------------------------------ACT_OBJ.C-----------------------------------------
+*******************************************************************************************
+
+In the function do_get: 
+
+ [below]    separate_obj(obj);
+	    get_obj( ch, obj, NULL );
+	    if ( char_died(ch) )
+		return;
+
+   ~add-    save_house_by_vnum(ch->in_room->vnum); /* House Object Saving */
+
+ [below]      act( AT_PLAIN, "I see no $T here.", ch, NULL, chk, TO_CHAR );
+	    } 
+
+  %change    else
+	     if ( IS_SET( sysdata.save_flags, SV_GET ) )
+		 save_char_obj( ch );
+
+  %into    else
+           {
+                   save_house_by_vnum(ch->in_room->vnum); /* House Object Saving */
+
+                   if ( IS_SET( sysdata.save_flags, SV_GET ) )
+                           save_char_obj( ch );
+           }
+                
+
+In the function do_drop:
+
+ [below]    obj_to_room( create_money( number ), ch->in_room );
+
+   ~add-    save_house_by_vnum(ch->in_room->vnum); /* House Object Saving */
+
+ [below]       act( AT_PLAIN, "You are not carrying any $T.", ch, NULL, chk, TO_CHAR );
+             }
+            }
+
+   ~add-    save_house_by_vnum(ch->in_room->vnum); /* House Object Saving */
+
+In the function do_sacrifice:
+
+ [below]    if ( cur_obj == obj->serial )
+              global_objcode = rOBJ_SACCED;
+            extract_obj( obj );
+
+   ~add-    save_house_by_vnum(ch->in_room->vnum); /* Prevent House Object Duplication */
+
+
+*******************************************************************************************
+-----------------------------------------ACT_WIZ.C-----------------------------------------
+*******************************************************************************************
+
+In the function do_purge:
+
+ [below]    act( AT_IMMORT, "You have purged the room!", ch, NULL, NULL, TO_CHAR );
+
+   ~add-    save_house_by_vnum(ch->in_room->vnum); /* Prevent House Object Duplication */
+
+ [below]    /* Single object purge in room for high level purge - Scryn 8/12*/
+              if ( obj )
+              {
+
+   ~add-    int vnum = (obj->in_room ? obj->in_room->vnum : ROOM_VNUM_LIMBO);
+
+ [below]    extract_obj( obj );
+
+   ~add-    save_house_by_vnum(vnum); /* Prevent House Object Duplication */
+
+In the function do_destroy:
+
+ [below]    ch_printf(ch, "Player %s destroyed.  Pfile saved in backup directory.\n\r", 
+		name );
+
+   ~add-    	sprintf( buf, "%s%s", HOUSE_DIR, name );
+                if ( !remove( buf ) )
+                   send_to_char( "Player's housing data destroyed.\n\r", ch );
+                else if ( errno != ENOENT )
+                {
+                   ch_printf( ch, "Unknown error #%d - %s (housing data)."
+                                  "  Report to Coder.\n\r", errno, strerror( errno ) );
+                   sprintf( buf2, "%s destroying %s", ch->name, buf );
+                   perror( buf2 );
+                }
+
+
+*******************************************************************************************
+------------------------------------------COMM.C-------------------------------------------
+*******************************************************************************************
+
+In the function nanny, in the section CON_READ_MOTD:
+
+ [below]    tax_player(ch);  /* Here we go, let's tax players to lower the gold 
+                    pool -- TRI */
+            mail_count(ch);
+
+   ~add-    check_loginmsg(ch);
+
+*******************************************************************************************
+-------------------------------------------DB.C--------------------------------------------
+*******************************************************************************************
+
+In the function boot_db:
+
+ [below]    load_morphs( );
+
+   ~add-    log_string("Loading Housing System, Home Accessories Data,"
+                       " and Home Auctioning System");
+            load_homedata();
+            load_accessories();
+            load_homebuy();
+
+
+*******************************************************************************************
+------------------------------------------MISC.C-------------------------------------------
+*******************************************************************************************
+
+In the function do_empty:
+
+ [below]    if ( empty_obj( obj, NULL, ch->in_room ) )
+	    {
+		 act( AT_ACTION, "You empty $p.", ch, obj, NULL, TO_CHAR );
+		 act( AT_ACTION, "$n empties $p.", ch, obj, NULL, TO_ROOM );
+
+   ~add-    save_house_by_vnum(ch->in_room->vnum); /* House Object Saving */
+
+*******************************************************************************************
+----------------------------------RENT.C (IF APPLICABLE)-----------------------------------
+*******************************************************************************************
+
+In the function do_quit:
+
+ [below]    int level = get_trust(ch);
+
+   ~add-    HOME_DATA *tmphome = NULL;
+
+ [below]    argument = one_argument( argument, arg1 );
+
+   ~add-    for ( tmphome = first_home; tmphome; tmphome = tmphome->next)
+                for ( room_chance = 0; room_chance < MAX_HOUSE_ROOMS; room_chance++)
+                    if ( tmphome->vnum[room_chance] == ch->in_room->vnum
+                       && !str_cmp( tmphome->name, ch->name))
+                          break;
+
+            if ( tmphome)
+            {
+                sprintf( log_buf, "%s has house quitted.", ch->name );
+                log_string_plus( log_buf, LOG_COMM, level);
+	        char_leaving( ch, 0 );
+            }
+
+
+*******************************************************************************************
+-----------------------------------------TABLES.C------------------------------------------
+*******************************************************************************************
+
+In the function skill_function:
+
+ [below]    if ( !str_cmp( name, "do_aassign" ))        return do_aassign;
+
+   ~add-    if ( !str_cmp( name, "do_accessories"))     return do_accessories; 
+
+ [below]    if ( !str_cmp( name, "do_gold" ))           return do_gold;
+
+   ~add-    if ( !str_cmp( name, "do_gohome" ))	        return do_gohome;
+
+ [below]    if ( !str_cmp( name, "do_holylight" ))      return do_holylight;
+
+   ~add-    if ( !str_cmp( name, "do_homebuy"))         return do_homebuy;
+            if ( !str_cmp( name, "do_house" ))          return do_house; 
+
+ [below]    if ( !str_cmp( name, "do_reset" ))		return do_reset;
+
+   ~add-    if ( !str_cmp( name, "do_residence"))       return do_residence; 
+
+ [below]    if ( !str_cmp( name, "do_sell" ))		return do_sell;
+
+   ~add-    if ( !str_cmp( name, "do_sellhouse" ))	return do_sellhouse;
+
+In the function skill_name:
+
+ [below]    if ( skill == do_homepage )	                return "do_homepage";
+
+   ~add-    if ( skill == do_accessories )              return "do_accessories";
+            if ( skill == do_gohome )	                return "do_gohome";
+            if ( skill == do_homebuy )	                return "do_homebuy";
+            if ( skill == do_house )	                return "do_house";
+            if ( skill == do_residence )                return "do_residence";
+            if ( skill == do_sellhouse )                return "do_sellhouse";
+
+
+*******************************************************************************************
+-----------------------------------------UPDATE.C------------------------------------------
+*******************************************************************************************
+
+In the function update_handler:
+
+ [below]    static  int	    pulse_second;
+
+   ~add-    static  int     pulse_houseauc;
+
+ [below]     send_to_char( "Starting update timer.\n\r", timechar );
+             gettimeofday(&stime, NULL);
+            }
+
+   ~add-    if ( --pulse_houseauc  <= 0 )
+	    {
+		pulse_houseauc = 1800 * PULSE_PER_SECOND;
+		homebuy_update();
+	    }
+
+
+*******************************************************************************************
+---------------------------------------COMMAND LINE----------------------------------------
+*******************************************************************************************
+
+Make clean and make(compile) the source code using the appropriate routine for your
+operating system.
+
+In the smaug directory(regular one that includes area, gods, and player directories)
+create a new directory called 'houses' or whatever HOUSE_DIR is defined as in house.h.
+
+*******************************************************************************************
+------------------------------------------ONLINE-------------------------------------------
+*******************************************************************************************
+
+After a reboot(or copyover) of the mud:
+
+   ~enter these commands-    cedit accessories create
+                             cedit accessories level 1
+                             cedit gohome create
+                             cedit gohome level 1
+                             cedit homebuy create
+                             cedit homebuy level 1
+                             cedit house create
+                             cedit house level 1
+                             cedit residence create
+                             cedit residence level 1
+                             cedit sellhouse create
+                             cedit sellhouse level 1
+                             cedit save cmdtable
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

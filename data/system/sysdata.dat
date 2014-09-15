@@ -1,47 +1,75 @@
 #SYSTEM
-MudName	     (Name Not Set)~
-Highplayers    2
-Highplayertime Sat Jul  7 23:54:56 2007~
+Version        1
+MudName        Realm Of Darkness~
+Password       ~
+Dbserver       localhost~
+Dbname         dbname~
+Dbuser         dbuser~
+Dbpass         dbpass~
+Highplayers    1
+Highplayertime Sun Dec 10, 2006 1:14:17 AM PST~
 CheckImmHost   1
-Nameresolving  1
+Nameresolving  0
 Waitforauth    0
-Wizlock        0
-Readallmail    58
-Readmailfree   51
-Writemailfree  51
-Takeothersmail 58
-Muse           56
-Think          60
-Build          53
-Log            53
-Protoflag      56
-Overridepriv   61
-Msetplayer     56
-Stunplrvsplr   80
-Stunregular    15
-Gougepvp       40
-Gougenontank   80
-Bashpvp        40
-Bashnontank    80
+Readallmail    115
+Readmailfree   101
+Writemailfree  2
+Takeothersmail 115
+Getnotake      101
+Build          103
+Protoflag      105
+Overridepriv   108
+Msetplayer     110
+Stunplrvsplr   65
+Stunregular    0
+Gougepvp       0
+Gougenontank   0
+Bashpvp        0
+Bashnontank    0
 Dodgemod       2
 Parrymod       2
 Tumblemod      4
-Damplrvsplr    100
+Damplrvsplr    25
 Damplrvsmob    100
 Dammobvsplr    100
 Dammobvsmob    100
-Forcepc        56
-Guildoverseer  ~
-Guildadvisor   ~
-Saveflags      1445
+Forcepc        110
+Saveflags      death kill passwd drop put give auto zap auction get receive idle fill empty~
 Savefreq       20
-Bestowdif      10
-BanSiteLevel   61
-BanRaceLevel   61
-BanClassLevel  61
-MorphOpt       1
-PetSave	     1
-Pkloot	     1
+Bestowdif      5
+PetSave        1
+Wizlock        0
+Implock        0
+Lockdown       0
+Admin_Email    (null)~
+Newbie_purge   30
+Regular_purge  90
+Autopurge      0
+Testmode       0
+Mapsize        7
+Motd           0
+Imotd          0
+Telnet         Not set~
+HTTP           No page set~
+Maxvnum        100000
+Minguild       10
+Maxcond        100
+Maxignore      10
+Maximpact      30
+Maxholiday     30
+Initcond       12
+Secpertick     70
+Pulsepersec    4
+Hoursperday    28
+Daysperweek    13
+Dayspermonth   26
+Monthsperyear  14
+Minego         25
+Rebootcount    5
+Auctionseconds 15
+Crashhandler   0
+Gameloopalarm  30
+Webwho         0
 End
 
 #END

@@ -1,54 +1,54 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Redferne's Residence~
-Author       Diku~
-WeatherX     0
-WeatherY     0
-Ranges       20 30 0 60
-Economy      0 1246000
+Version         1
+Name            Redferne's Residence~
+Author          Diku~
+Vnums           7900 7918
+Continent       one~
+Coordinates     0 0
+Dates           1403834970 1403834970
+Ranges          20 30 0 60
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       7900
-Keywords   grand knight paladin~
-Short      the Grand Knight of paladins~
-Long       The Grand Knight is standing here, waiting for someone to help.
+Vnum      7900
+Keywords  grand knight paladin~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the Grand Knight of paladins~
+Long      The Grand Knight is standing here, waiting for someone to help.
 ~
-Desc       The Knight is standing here, smiling at you. He is dressed all in
+Desc      The Knight is standing here, smiling at you. He is dressed all in
 white, blue and silver. He looks VERY strong, as he stands here, ready to
 help the innocent.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_cast_cleric~
-Gender     male~
-Actflags   npc stayarea prototype~
-Affected   detect_invis sanctuary~
-Stats1     1000 45 -5 -9 2000 100000
-Stats2     20 10 700
-Stats3     2 6 14
-Stats4     0 0 4 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    kick trip bash weaken~
-Defenses   parry dodge disarm~
+Nattacks  4.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    45 21 -9 700 2 6 14
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea proto~
+Affected  detect_invis sanctuary~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   kick trip bash weaken~
+Defenses  parry dodge disarm~
 #ENDMOBILE
 
 #OBJECT
-Vnum     7909
-Keywords treasure coins~
-Type     money~
-Short    a huge treasure~
-Long     A huge treasure is lying here, looking very valuable.~
-WFlags   take~
-Values   -100 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      7909
+Keywords  treasure coins~
+Type      money~
+Short     a huge treasure~
+Long      A huge treasure is lying here, looking very valuable.~
+WFlags    take~
+Values    -100 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    treasure~
 ExDesc       Looks like a LOT of coins.  One of them has writing on it.
@@ -64,14 +64,14 @@ ExDesc       It reads: "Hi Conan.  No more coins from here, pal. :) Signed, Redf
 #ENDOBJECT
 
 #OBJECT
-Vnum     7910
-Keywords chest~
-Type     container~
-Short    a wooden chest~
-Long     A wooden chest stands in the corner.~
-WFlags   take~
-Values   100 15 7911 0 0 0
-Stats    400 100 10 0 0
+Vnum      7910
+Keywords  chest~
+Type      container~
+Short     a wooden chest~
+Long      A wooden chest stands in the corner.~
+WFlags    take~
+Values    100 15 7911 0 0 0 0 0 0 0 0
+Stats     400 100 -2 9999 0 None None None
 #EXDESC
 ExDescKey    chest~
 ExDesc       It is a robust chest made from short, heavy planks that have been fastened
@@ -82,14 +82,14 @@ together with tenons.  It is equipped with a simple brass lock.
 #ENDOBJECT
 
 #OBJECT
-Vnum     7911
-Keywords key~
-Type     key~
-Short    a small brass key~
-Long     A small brass key lies here.~
-WFlags   take~
-Values   7910 0 0 0 0 0
-Stats    1 10 1 0 0
+Vnum      7911
+Keywords  key~
+Type      key~
+Short     a small brass key~
+Long      A small brass key lies here.~
+WFlags    take~
+Values    7910 0 0 0 0 0 0 0 0 0 0
+Stats     1 10 -2 9999 0 None None None
 #EXDESC
 ExDescKey    key~
 ExDesc       It is a small, simple brass key with no inscriptions or marks of any kind.
@@ -99,11 +99,12 @@ ExDesc       It is a small, simple brass key with no inscriptions or marks of an
 #ENDOBJECT
 
 #ROOM
-Vnum     7900
-Name     Outside Redferne's residence~
-Sector   inside~
-Flags    nomob private nosummon noastral~
-Desc     A huge cloud forms the plateau on which you are now standing. The wind here
+Vnum      7900
+Name      Outside Redferne's residence~
+Sector    indoors~
+Flags     nomob nosummon private noastral~
+Stats     0 0 0 0 0
+Desc      A huge cloud forms the plateau on which you are now standing. The wind here
 is absolutely quiet and the sun is shining warmly upon you. From under the
 cloud you can hear the faint sounds of Darkhaven. Right before you to the
 north lies the grand Mansion of Naris, the residence of the Greater God
@@ -125,18 +126,18 @@ Desc      You see a Huge Chain that anchors the Mansion of Naris to the ground.
 ~
 #ENDEXIT
 
-Reset D 0 7900 0 1
-Reset M 0 7900 1 7900
-  Reset E 1 7216 99 16
-  Reset E 1 7217 99 5
-  Reset E 1 7218 99 7
-  Reset E 1 7219 99 9
-  Reset E 1 7220 99 6
-  Reset E 1 7221 99 11
-  Reset E 1 7223 99 10
-  Reset E 1 7222 99 8
-  Reset E 1 7224 99 12
-  Reset G 1 7911 99
+Reset D 7900 0 1 100 -2
+Reset M 7900 1 7900 -1 -1 -1 100
+  Reset E 7216 99 16 100
+  Reset E 7217 99 5 100
+  Reset E 7218 99 7 100
+  Reset E 7219 99 9 100
+  Reset E 7220 99 6 100
+  Reset E 7221 99 11 100
+  Reset E 7223 99 10 100
+  Reset E 7222 99 8 100
+  Reset E 7224 99 12 100
+  Reset G 7911 99 100
 #MUDPROG
 Progtype  act_prog~
 Arglist   p has lost~
@@ -147,11 +148,12 @@ Comlist   mpforce 0.$n quit
 #ENDROOM
 
 #ROOM
-Vnum     7901
-Name     The Southern end of the hall~
-Sector   inside~
-Flags    nomob indoors private~
-Desc     You are standing in a vast hall that is dimly lit, but wherefrom the
+Vnum      7901
+Name      The Southern end of the hall~
+Sector    indoors~
+Flags     nomob indoors private~
+Stats     0 0 0 0 0
+Desc      You are standing in a vast hall that is dimly lit, but wherefrom the
 light comes, is a mystery. The walls seem to radiate warmth and give
 the pleasant feeling of being welcome here. A large portrait is hanging
 on one of the walls. A large wooden staircase leads up into the tower.
@@ -209,9 +211,9 @@ It ends in what seems like a large bedroom up there.
 ~
 #ENDEXIT
 
-Reset D 0 7901 2 1
-Reset D 0 7901 3 1
-Reset D 0 7901 1 1
+Reset D 7901 2 1 100 -2
+Reset D 7901 3 1 100 -2
+Reset D 7901 1 1 100 -2
 #EXDESC
 ExDescKey    runes~
 ExDesc       These runes are utterly strange to you, but you are in luck today: Under
@@ -229,11 +231,12 @@ ExDesc       They read "LIBRARY".
 #ENDROOM
 
 #ROOM
-Vnum     7902
-Name     Redferne's Library~
-Sector   inside~
-Flags    nomob indoors private~
-Desc     This is truly a magnificent place! Books and scrolls lie together on every
+Vnum      7902
+Name      Redferne's Library~
+Sector    indoors~
+Flags     nomob indoors private~
+Stats     0 0 0 0 0
+Desc      This is truly a magnificent place! Books and scrolls lie together on every
 shelf. A large globe, with the map of the Mud-world upon it, stands in the
 dimly lit north-western corner of the room. Two large and comfortable-
 looking leather arm-chairs adorn the center of the library together with
@@ -251,7 +254,7 @@ Keywords  door ash ashen east~
 Flags     isdoor closed pickproof~
 #ENDEXIT
 
-Reset D 0 7902 1 1
+Reset D 7902 1 1 100 -2
 #EXDESC
 ExDescKey    globe world map~
 ExDesc       You see a large world map stretch out on the enormous globe. It has towns
@@ -305,24 +308,26 @@ Grand Sea on the West-coast of the land.
 #ENDROOM
 
 #ROOM
-Vnum     7903
-Name     The Artifact room of Naris~
-Sector   inside~
-Flags    nomob indoors private~
-Desc     This is gloomy and dark room with only a faint light radiating from the
+Vnum      7903
+Name      The Artifact room of Naris~
+Sector    indoors~
+Flags     nomob indoors private~
+Stats     0 0 0 0 0
+Desc      This is gloomy and dark room with only a faint light radiating from the
 walls. A bunch of funny-looking items fill the center of the room. There are
 no furniture here what-so-ever. The only way out seems to be west, through
 the low steel door.
 ~
-Reset O 0 7909 10 7903
+Reset O 7909 10 7903 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7904
-Name     The Northern end of the hall~
-Sector   inside~
-Flags    nomob indoors private~
-Desc     You are standing in the northern end of the huge hall. This part is under
+Vnum      7904
+Name      The Northern end of the hall~
+Sector    indoors~
+Flags     nomob indoors private~
+Stats     0 0 0 0 0
+Desc      You are standing in the northern end of the huge hall. This part is under
 the grand wooden staircase so the light seems a little less bright here,
 but this doesn't bother your sight at all. To the north lies the kitchen.
 To the south lies the Southern end of the hall. To the east there is a huge
@@ -362,16 +367,17 @@ Keywords  aspen asp~
 Flags     isdoor closed pickproof~
 #ENDEXIT
 
-Reset D 0 7904 1 1
-Reset D 0 7904 3 1
+Reset D 7904 1 1 100 -2
+Reset D 7904 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     7905
-Name     The Sitting room of Naris~
-Sector   inside~
-Flags    nomob indoors private~
-Desc     You are standing in the middle of a really comfortable place. The walls are
+Vnum      7905
+Name      The Sitting room of Naris~
+Sector    indoors~
+Flags     nomob indoors private~
+Stats     0 0 0 0 0
+Desc      You are standing in the middle of a really comfortable place. The walls are
 decorated with paintings of smiling Kings and Queens. The most attractive
 picture is one of a Prince in shiny armour. By one of the walls there is an
 old arm-chair. The only exit is through the aspenwood door to the east.
@@ -386,7 +392,7 @@ Keywords  asp aspen door heavy~
 Flags     isdoor closed pickproof~
 #ENDEXIT
 
-Reset D 0 7905 1 1
+Reset D 7905 1 1 100 -2
 #EXDESC
 ExDescKey    chair arm-chair~
 ExDesc       This is truly a wonderful relic of the past. In it is a large cushion.
@@ -396,11 +402,12 @@ ExDesc       This is truly a wonderful relic of the past. In it is a large cushi
 #ENDROOM
 
 #ROOM
-Vnum     7906
-Name     The Kitchen of Naris~
-Sector   inside~
-Flags    nomob indoors private~
-Desc     This must be the place of food and drink. You can hear the faint noise of 
+Vnum      7906
+Name      The Kitchen of Naris~
+Sector    indoors~
+Flags     nomob indoors private~
+Stats     0 0 0 0 0
+Desc      This must be the place of food and drink. You can hear the faint noise of 
 rats feasting on meat and bread from somewhere undeterminable. The sound
 makes you feel the agony of HUNGER. The only visible exit is south to the
 Northern end of the hall. To the north there is a larder, and to the east
@@ -431,16 +438,17 @@ Desc      You can see the northern end of the hall.
 ~
 #ENDEXIT
 
-Reset D 0 7906 1 1
-Reset D 0 7906 0 1
+Reset D 7906 1 1 100 -2
+Reset D 7906 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     7907
-Name     The Larder~
-Sector   inside~
-Flags    nomob indoors private~
-Desc     You can see food all over. Among the heaps of food you notice HUGE rats
+Vnum      7907
+Name      The Larder~
+Sector    indoors~
+Flags     nomob indoors private~
+Stats     0 0 0 0 0
+Desc      You can see food all over. Among the heaps of food you notice HUGE rats
 scuttering around, nibbling pieces off the heaps here and there.
 ~
 #EXIT
@@ -450,15 +458,16 @@ Keywords  door wooden larder exit~
 Flags     isdoor closed pickproof~
 #ENDEXIT
 
-Reset D 0 7907 2 1
+Reset D 7907 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     7908
-Name     The Fridge~
-Sector   inside~
-Flags    nomob indoors private~
-Desc     This place is LOADED with drink, water and booze.
+Vnum      7908
+Name      The Fridge~
+Sector    indoors~
+Flags     nomob indoors private~
+Stats     0 0 0 0 0
+Desc      This place is LOADED with drink, water and booze.
 ~
 #EXIT
 Direction west~
@@ -467,16 +476,17 @@ Keywords  door exit fridge~
 Flags     isdoor closed pickproof~
 #ENDEXIT
 
-Reset D 0 7908 3 1
-Reset O 0 6013 10 7908
+Reset D 7908 3 1 100 -2
+Reset O 6013 10 7908 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     7909
-Name     On the stairs~
-Sector   inside~
-Flags    nomob indoors private~
-Desc     You can see up and down the stairway. It seems to take forever, either going
+Vnum      7909
+Name      On the stairs~
+Sector    indoors~
+Flags     nomob indoors private~
+Stats     0 0 0 0 0
+Desc      You can see up and down the stairway. It seems to take forever, either going
 up OR down. It's just a seemingly insurmountable climb, either way. Up is the 
 bedroom of Redferne, and Down leads to the Southern end of the hall.
 ~
@@ -493,11 +503,12 @@ ToRoom    7901
 #ENDROOM
 
 #ROOM
-Vnum     7910
-Name     The Treasure room~
-Sector   inside~
-Flags    nomob indoors private~
-Desc     This place is gloomy.  The only visible exit is west, through the oak door.
+Vnum      7910
+Name      The Treasure room~
+Sector    indoors~
+Flags     nomob indoors private~
+Stats     0 0 0 0 0
+Desc      This place is gloomy.  The only visible exit is west, through the oak door.
 ~
 #EXIT
 Direction west~
@@ -508,18 +519,19 @@ Keywords  door oak tall~
 Flags     isdoor closed pickproof~
 #ENDEXIT
 
-Reset D 0 7910 3 1
-Reset O 0 7910 1 7910
-  Reset P 0 7298 1 7910
-  Reset P 0 7208 6 7910
+Reset D 7910 3 1 100 -2
+Reset O 7910 1 7910 -1 -1 -1 100
+  Reset P 1 7298 1 7910 100
+  Reset P 1 7208 6 7910 100
 #ENDROOM
 
 #ROOM
-Vnum     7911
-Name     Redferne's Bedroom~
-Sector   inside~
-Flags    nomob indoors private~
-Desc     This is a snugly set bedroom with all the necessities for a romantic evening.
+Vnum      7911
+Name      Redferne's Bedroom~
+Sector    indoors~
+Flags     nomob indoors private~
+Stats     0 0 0 0 0
+Desc      This is a snugly set bedroom with all the necessities for a romantic evening.
 A large fireplace adorns the east wall, and sizzling away is the wood that
 is ablaze within.  The bed is enormous, covering at least HALF of this great
 room.  This stretches at least 300 square feet, so can you imagine the BED?
@@ -540,15 +552,16 @@ Direction down~
 ToRoom    7909
 #ENDEXIT
 
-Reset D 0 7911 2 1
+Reset D 7911 2 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     7912
-Name     The Balcony of Redferne's Residence~
-Sector   inside~
-Flags    nomob private~
-Desc     You see a splendid view of most of this world. The valleys stretch as
+Vnum      7912
+Name      The Balcony of Redferne's Residence~
+Sector    indoors~
+Flags     nomob private~
+Stats     0 0 0 0 0
+Desc      You see a splendid view of most of this world. The valleys stretch as
 far as the eye reaches to the south from here. Down below you can see
 the entrance of this magnificent building. To the north are the doors
 to Redferne's Bedroom.
@@ -563,15 +576,16 @@ Keywords  doors~
 Flags     isdoor closed pickproof~
 #ENDEXIT
 
-Reset D 0 7912 0 1
+Reset D 7912 0 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     7913
-Name     The Monster Pen~
-Sector   inside~
-Flags    indoors~
-Desc     This looks like the cage in which a large carnivore is being kept. Judging by
+Vnum      7913
+Name      The Monster Pen~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This looks like the cage in which a large carnivore is being kept. Judging by
 the state the walls are in, this could very well be a large AGGRESSIVE animal. 
 This makes you pretty insecure, this stating your feeling about the place, 
 quite mildly.
@@ -585,15 +599,16 @@ Keywords  door cage metal pen~
 Flags     isdoor closed pickproof~
 #ENDEXIT
 
-Reset D 0 7913 3 1
+Reset D 7913 3 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     7914
-Name     On the Huge Chain~
-Sector   mountain~
-Flags    nomob~
-Desc     This place has quite a good view over Darkhaven. Your possibilities of movement
+Vnum      7914
+Name      On the Huge Chain~
+Sector    mountain~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This place has quite a good view over Darkhaven. Your possibilities of movement
 seems to extend only to up and down. Unless you want to let go of the secure
 and seemingly unmoveable chain, then those are the directions you should take
 from here.
@@ -615,11 +630,12 @@ Desc      Down below you see the huge chain anchored to the ground in the Road C
 #ENDROOM
 
 #ROOM
-Vnum     7916
-Name     On the Great Chain of Naris~
-Sector   mountain~
-Flags    nomob~
-Desc     You are approximately on the middle of the treacherous Chain. One false step
+Vnum      7916
+Name      On the Great Chain of Naris~
+Sector    mountain~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You are approximately on the middle of the treacherous Chain. One false step
 and death will come and collect you quickly. The chain leads upwards and down.
 No way are you going to descend now ... you've only just begun your climb.
 Besides it could cost you your life.  Look down and you'll see why.
@@ -634,11 +650,12 @@ Desc      There seems to be only one way from here and that's up.
 #ENDROOM
 
 #ROOM
-Vnum     7918
-Name     The Mighty Chain of Naris~
-Sector   mountain~
-Flags    nomob~
-Desc     This place offers a splendid view of the WHOLE COUNTRY SIDE!!! A magnificent
+Vnum      7918
+Name      The Mighty Chain of Naris~
+Sector    mountain~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      This place offers a splendid view of the WHOLE COUNTRY SIDE!!! A magnificent
 light shines upon you and the way up through the clouds is opened. Up there
 you can now see the Mansion of Naris, Residence of the Greater God Redferne.
 The chain beneath you seems to evaporate in the mustering clouds that

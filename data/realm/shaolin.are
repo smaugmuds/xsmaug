@@ -1,0 +1,1881 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Shaolin Temple~
+Author          Boom~
+Vnums           20101 20137
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          15 25 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      20101
+Keywords  monk child~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A monk child~
+Long      A monk child is here sweeping the floor.
+~
+Desc      He is only a child, surely you will want to pick on someone your own size.
+~
+Nattacks  0.000000
+Stats1    500 0 0 0 0 0
+Stats2    6 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20102
+Keywords  female prisoner~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     An imprisoned nun~
+Long      A female prisoner cringes away from you in terror.
+~
+Desc      Judging from what is left of her clothes, she appears to be a nun.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    8 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger stayarea~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20103
+Keywords  disciple~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A disciple~
+Long      A disciple tries to impress you with his new skills.
+~
+Desc      One of the many who came here to learn the Shaolin martial skills. Like 
+many others, he seems quite hopeless.
+~
+Nattacks  0.000000
+Stats1    100 0 0 0 0 0
+Stats2    8 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20104
+Keywords  monk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A monk~
+Long      A monk is here practicing his skills. Watch it!
+~
+Desc      You take a step back to ensure you're out of the range of his deadly moves.
+~
+Nattacks  0.000000
+Stats1    201 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20105
+Keywords  monk guard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     A monk guard~
+Long      A monk guard charges at you for intruding this room!
+~
+Desc      Armed and dangerous, you don't want to mess with him.
+~
+Nattacks  0.000000
+Stats1    -100 0 0 0 0 0
+Stats2    20 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20106
+Keywords  demon~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     Your own inner demon~
+Long      Your own inner demon screams and attacks!
+~
+Desc      This extremely ugly creature looks very familiar. Wait a minute, it looks
+exactly like you. In fact, it is you!
+~
+Nattacks  0.000000
+Stats1    -201 0 0 0 0 0
+Stats2    21 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20107
+Keywords  evil monk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     An evil monk~
+Long      An evil monk jumps from the ceiling and took you by surprise!
+~
+Desc      He looks about the same with the rest of the monks here.  In fact,he looks
+more friendly than the rest.  Too bad he doesn't like your face.
+~
+Nattacks  0.000000
+Stats1    -300 0 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea~
+Affected  detect_invis detect_hidden infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20108
+Keywords  wood wooden monk man machine~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     The wooden man~
+Long      The wooden man fighting machine creaks and pummels you!
+~
+Desc      Made entirely of hard wood and controlled mechanically by chains and pulleys,
+this is one tough bugger.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    18 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_invis detect_hidden infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20109
+Keywords  monk warrior~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     The monk warrior~
+Long      A monk warrior struts proudly here.
+~
+Desc      Recently promoted to warrior status, he takes a look at your puny size and
+laughs in your face.
+~
+Nattacks  0.000000
+Stats1    201 0 0 0 0 0
+Stats2    22 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger stayarea wimpy~
+Affected  protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20110
+Keywords  luohan Luohan bronze monk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     The Luohan~
+Long      The Luohan stands motionlessly here, waiting for you to attack.
+~
+Desc      With skin as tough as bronze, these monks are among the most highly skilled.
+You don't want to mess with them.  Then again, do you have a choice?
+~
+Nattacks  0.000000
+Stats1    500 0 0 0 0 0
+Stats2    27 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel scavenger~
+Affected  sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20111
+Keywords  Wuhua wuhua monk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     Wuhua~
+Long      Wuhua screams with a wild sense of joy as he pounces on you!
+~
+Desc      Looking every bit like a pervert, he just can't wait to lay his filthy
+claws on you.
+~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    24 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20112
+Keywords  master librarian monk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     The Master of Books~
+Long      A master sits here reading his books, oblivious to your intrusion.
+~
+Desc      He looks old and his eyes are failing him.  In one hand, he holds a lighted
+candle to help him read better.
+~
+Nattacks  0.000000
+Stats1    500 0 0 0 0 0
+Stats2    27 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20113
+Keywords  master monk drunken~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     The Drunken Master~
+Long      A master is resting here, looking very intoxicated.
+~
+Desc      Hmm.. Are monks supposed to do this? You pondered as you look at this 
+pathetic excuse for a human being.
+~
+Nattacks  0.000000
+Stats1    250 0 0 0 0 0
+Stats2    21 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger stayarea wimpy~
+Affected  sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20114
+Keywords  master monk trainer~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     The Master Trainer~
+Long      A master is here doing pushups with one finger.
+~
+Desc      Wow. What a amazing feat! Such demonstration of strength and control.
+Don't you wish you can do that.
+~
+Nattacks  0.000000
+Stats1    500 0 0 0 0 0
+Stats2    26 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger stayarea wimpy~
+Affected  invisible sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20115
+Keywords  abbot Abbot monk~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_fire~
+Short     The Abbot of Shaolin~
+Long      The Abbot of Shaolin nods in your direction, acknowledging your presence.
+~
+Desc      Looking strong and healthy even at this age, the Abbot cuts an impressive 
+figure.
+~
+Nattacks  0.000000
+Stats1    800 0 0 0 0 0
+Stats2    31 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger stayarea wimpy~
+Affected  sanctuary protect flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20116
+Keywords  Jinshen jinshen~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_any~
+Short     The Jinshen~
+Long      A Jinshen sits here, undisturbed.
+~
+Desc      Covered from head to toe with gold flakes, this mortal shell of a former
+high monk has been perfectly preserved.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    33 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel~
+Affected  invisible detect_invis sanctuary protect hide~
+#ENDMOBILE
+
+#MOBILE
+Vnum      20117
+Keywords  guest visitor~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     The visiting guest~
+Long      A visiting guest stands here.
+~
+Desc      Looking at his best in his fine clothing, he looks rather wealthy.
+~
+Nattacks  0.000000
+Stats1    50 0 0 0 0 0
+Stats2    15 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc scavenger stayarea wimpy~
+#ENDMOBILE
+
+#OBJECT
+Vnum      20101
+Keywords  candle lighted~
+Type      furniture~
+Short     a lighted candle~
+Long      A lighted candle stands here, providing little light and warm.~
+Flags     nodrop~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      20102
+Keywords  candle lighted~
+Type      furniture~
+Short     a lighted candle~
+Long      A lighted candle stands here, providing little light and warm.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      20105
+Keywords  shelizi Shelizi~
+Type      key~
+Short     a Shelizi~
+Long      A bright crystal is here waiting to be picked up.~
+Flags     glow~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      20106
+Keywords  hot steaming bun~
+Type      food~
+Short     a steaming hot bun~
+Long      A steaming hot bun lies here waiting to be consumed.~
+WFlags    take~
+Values    24 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      20107
+Keywords  treasure~
+Type      money~
+Short     a huge treasure~
+Long      A huge treasure of Shaolin beckons you.~
+WFlags    take~
+Values    20100 0 0 0 0 0 0 0 0 0 0
+Stats     100 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      20108
+Keywords  flame mercy~
+Type      light~
+Short     the Flame of Mercy~
+Long      Sparks of beautiful multi-colored light envelops you.~
+Flags     glow~
+Values    0 0 -1 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 20 -1 -1 0
+AffData armor -10 -1 -1 0
+AffData damroll 4 -1 -1 0
+AffData save_breath -5 -1 -1 0
+AffData save_spell -5 -1 -1 0
+#EXDESC
+ExDescKey    sparks flame mercy light~
+ExDesc       A gift to the mortal world from the Goddess of Mercy.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20109
+Keywords  manual book Jiuyangzhenjing jiuyangzhenjing~
+Type      scroll~
+Short     a Jiuyangzhenjing manual~
+Long      An old chinese manual is discarded here.~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+Spells       'flamestrike' 'fireball' 'burning hands'
+#EXDESC
+ExDescKey    book manual jiuyangzhenjing Jiuyangzhenjing~
+ExDesc       One of the most sought after manual in Shaolin. It is believed to contain 
+a powerful source of Yang energy.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20110
+Keywords  manual book jiuyingzhenjing Jiuyingzhenjing~
+Type      scroll~
+Short     a Jiuyingzhenjing manual~
+Long      An old chinese manual is discarded here.~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+Spells       'acid blast' 'chill touch' 'energy drain'
+#EXDESC
+ExDescKey    manual book jiuyingzhenjing Jiuyingzhenjing~
+ExDesc       This is the counterpart of the Jiuyangzhenjing.  It is believed to contain
+a powerful source of Ying energy.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20111
+Keywords  manual book Yijinjing yijinjing~
+Type      scroll~
+Short     a Yijinjing manual~
+Long      A book of some sort is left on the floor.~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+Spells       'cure critical' 'kindred strength' 'heal'
+#EXDESC
+ExDescKey    manual book Yijinjing yijinjing~
+ExDesc       This is the legendary healing manual of Shaolin.  It is said to be able to
+bring the dead alive!
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20112
+Keywords  sabre dragon~
+Type      weapon~
+Short     the Dragon Sabre~
+Long      A huge sabre with a dragon motif is planted firmly in the ground.~
+Flags     glow~
+Values    15 20 0 1 0 0 0 0 0 0 0
+Stats     100 0 -2 9999 0 None None None
+AffData hitroll 5 -1 -1 0
+AffData damroll 5 -1 -1 0
+#EXDESC
+ExDescKey    sabre dragon~
+ExDesc       This heavy weapon glows and hums as you lay it upon your laps. The dragon 
+carved into it seems almost alive.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20113
+Keywords  half moon knife~
+Type      weapon~
+Short     a half-moon knife~
+Long      A massive knife is lying on the table.~
+WFlags    take~
+Values    10 20 0 1 0 0 0 0 0 0 0
+Stats     50 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    half moon knife~
+ExDesc       Shaped like a half moon, this knife can be deadly in the hands of a skilled
+exponent.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20114
+Keywords  chain whip~
+Type      weapon~
+Short     a chain whip~
+Long      A whip made of chains is left on the floor.~
+Flags     hum~
+Values    12 20 0 4 0 0 0 0 0 0 0
+Stats     50 0 -2 9999 0 None None None
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+#EXDESC
+ExDescKey    chain whip~
+ExDesc       Written on it : Made in Shaolin Temple.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20115
+Keywords  bronze key~
+Type      key~
+Short     a bronze key~
+Long      A bronze key lies half buried in the ground.~
+Flags     glow~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      20116
+Keywords  horse spear~
+Type      weapon~
+Short     a horse spear~
+Long      A long slim spear leans against the wall.~
+Flags     magic~
+WFlags    take~
+Values    10 18 0 11 0 0 0 0 0 0 0
+Stats     25 0 -2 9999 0 None None None
+AffData hitroll 4 -1 -1 0
+AffData damroll 2 -1 -1 0
+#EXDESC
+ExDescKey    horse spear~
+ExDesc       Used during the ancient times for hunting horses, it can be just as effective
+against men.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20117
+Keywords  kamasutra sutra manual book~
+Type      treasure~
+Short     a Kamasutra~
+Long      An old and torn book of some sort is left in one corner of the room.~
+Flags     nodrop~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData strength 1 -1 -1 0
+AffData intelligence 1 -1 -1 0
+#EXDESC
+ExDescKey    book sutra manual kamasutra~
+ExDesc       Are you really sure you want to do this?
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20118
+Keywords  garters~
+Type      armor~
+Short     monk's garters~
+Long      A material of some sort is left here.~
+Flags     hum~
+WFlags    take~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData move 50 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      20119
+Keywords  robe~
+Type      armor~
+Short     a monk's robe~
+Long      A rough and cheap looking piece of cloth is discarded here.~
+WFlags    take~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+AffData constitution 1 -1 -1 0
+AffData mana 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      20120
+Keywords  cane armor~
+Type      armor~
+Short     a cane armor~
+Long      A suit of cane armor stands here.~
+Flags     magic~
+WFlags    take~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     30 0 -2 9999 0 None None None
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      20121
+Keywords  Jiasha jiasha robe~
+Type      armor~
+Short     abbot's Jiasha~
+Long      A pile of golden and red cloth lies here.~
+Flags     glow~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     25 0 -2 9999 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData mana 15 -1 -1 0
+AffData save_spell -5 -1 -1 0
+#EXDESC
+ExDescKey    jiasha Jiasha robe~
+ExDesc       This robe was tailor-made for the Abbot of Shaolin Temple by Boom's Workshop.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20122
+Keywords  fozhu necklace~
+Type      armor~
+Short     abbot's fozhu~
+Long      A necklace made of big black beads is dumped here.~
+Flags     hum~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+AffData strength 1 -1 -1 0
+AffData mana 10 -1 -1 0
+AffData save_breath -5 -1 -1 0
+#EXDESC
+ExDescKey    fozhu necklace~
+ExDesc       Written on it: FOR EXPORT ONLY.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20123
+Keywords  staff Abbot~
+Type      armor~
+Short     the Staff of Abbot~
+Long      A staff made entirely of solid gold stands here.~
+Flags     hum~
+Values    10 10 10 208 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData hit 20 -1 -1 0
+AffData armor -10 -1 -1 0
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#EXDESC
+ExDescKey    staff Abbot~
+ExDesc       Written on it : Compliments of Boom's Workshop.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      20124
+Keywords  hair lock~
+Type      key~
+Short     a lock of nun's hair~
+Long      A few strands of long hair lies on the floor.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      20125
+Keywords  cane shield~
+Type      armor~
+Short     a cane shield~
+Long      A disc made of cane lies in the mud.~
+Flags     hum~
+Values    10 0 0 0 0 0 0 0 0 0 0
+Stats     35 0 -2 9999 0 None None None
+AffData dexterity 2 -1 -1 0
+AffData intelligence 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      20131
+Keywords  chain keys key~
+Type      key~
+Short     a chain of keys~
+Long      A chain of keys hang on the wall.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      20136
+Keywords  candle lighted~
+Type      key~
+Short     a lighted candle~
+Long      A lighted candle stands here, providing little light and warm.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     10 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      20137
+Keywords  shell boom Boom body~
+Type      container~
+Short     the mortal shell of Boom~
+Long      The mortal shell of Boom sits here waiting to be preserved in gold.~
+Flags     glow~
+Values    100 10 20105 0 0 0 0 0 0 0 0
+Stats     100 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    boom shell body mortal Boom~
+ExDesc       This is the human body of Boom left behind after his essence departed
+from this world to a realm beyond mere mortals.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#ROOM
+Vnum      20101
+Name      Mountain Stairs~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A flight of stairs carved onto the mountain leads up.
+You can barely see a temple of some sort on top of the mountain.
+You see the path back to the beach to the south.
+~
+#EXIT
+Direction south~
+ToRoom    247
+Desc      You see the foot of the mountain ahead.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    20102
+Desc      The stairs leads up.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      20102
+Name      Path to the Shaolin Temple~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      After struggling up that flight of stairs, you finally reached the top of 
+the mountain, well almost. Ahead of you, lies the great Shaolin Temple.
+A side mountain path leads west.
+~
+#EXIT
+Direction west~
+ToRoom    20103
+Desc      A mountain path.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    20106
+Desc      A flight of stairs leads up.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    20101
+Desc      Mountain stairway
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      20103
+Name      A side mountain path~
+Sector    mountain~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This path, overgrown with vegetation, leads north to a small clearing and  
+east to where you came from.
+~
+#EXIT
+Direction north~
+ToRoom    20104
+Desc      A small clearing.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    20102
+Desc      A mountain path.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      20104
+Name      Mountain shrine~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      A small shrine lies in one corner of this small clearing. This place 
+looks deserted and very forgotten. To your west, a hugå stone boulder is
+set into the mountain. South leads you back to the mountain path.
+~
+#EXIT
+Direction south~
+ToRoom    20103
+Desc      A mountain path.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    20105
+Desc      A huge stone set into the mountain.
+~
+Keywords  stone boulder~
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+Reset D 20104 3 1 100 -2
+#EXDESC
+ExDescKey    shrine stone boulder~
+ExDesc       Written on it :
+To attain enlightenment, you first need to fight your own inner demon.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      20105
+Name      A dark cave~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      At the far end of this small cave, stands a strange glowing mirror.
+A dark misty shadow slowly takes form as you look into the mirror. You 
+gasped in astonishment as your own reflection in the mirror charges at you.
+~
+#EXIT
+Direction east~
+ToRoom    20104
+Desc      A small clearing.
+~
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+Reset M 20106 1 20105 -1 -1 -1 100
+Reset D 20105 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20106
+Name      Entrance to Shaolin Temple~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand at the main entrance of the famous Shaolin Temple, home to the
+most highly skilled of all monks. At both sides of the entrance,are two
+impressive stone lion statues. North leads you into the temple.
+A plaque on the wall catches your attention.
+~
+#EXIT
+Direction north~
+ToRoom    20107
+Desc      The path leads you into the main court of the temple.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    20102
+Desc      The path leads down the mountain.
+~
+#ENDEXIT
+
+#EXDESC
+ExDescKey    plaque wall sign~
+ExDesc       |=========================================|
+|      Welcome to Shaolin Temple          |
+|   ---------------------------------     |
+|                                         |
+| May your visit be fun and enlightening. |   
+|                                         | 
+|       <<<< ----- BOOM ---- >>>>>        |            
+|=========================================|
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      20107
+Name      The Main Court~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Large pieces of stone slabs cover
+Pots of plants and flowers line the sides of the court.  This place
+looks simple, and well-maintained.  Exits leads to all directions.
+~
+#EXIT
+Direction north~
+ToRoom    20119
+Desc      Grand Hall.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    20113
+Desc      A side court.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    20106
+Desc      Entrance to temple.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    20108
+Desc      A side court.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      20108
+Name      A Side Court~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Similar to the Main Court, this place looks empty except for few pots of
+plants. The floor is also covered with large stone slabs. Path to the east
+leads you back to the Main Court.
+~
+#EXIT
+Direction north~
+ToRoom    20111
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    20107
+Desc      The Main Court.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    20112
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    20109
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+Reset D 20108 0 1 100 -2
+Reset D 20108 2 1 100 -2
+Reset D 20108 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20109
+Name      The Dining Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Bravo! You found the dining place of the monks.  The room is empty except
+for an extremely long dining table and some benches.  You hear some noises
+coming from the south.
+~
+#EXIT
+Direction east~
+ToRoom    20108
+Desc      A Side Court.
+~
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    20110
+Desc      The Kitchen.
+~
+#ENDEXIT
+
+Reset M 20101 2 20109 -1 -1 -1 100
+Reset D 20109 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20110
+Name      The Kitchen~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The aroma of fresh hot steaming buns almost make you salivate as you enter
+the kitchen.  Some pots and pans are hung on the wall, waiting to be used.
+~
+#EXIT
+Direction north~
+ToRoom    20109
+Desc      The Dining Hall.
+~
+#ENDEXIT
+
+Reset O 20106 0 20110 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      20111
+Name      The Monks' Bunk~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Well, even the toughest of them needs rest.  This is the sleeping chamber
+of the monks. It contains nothing of interest to you, unless if you want
+their sleeping mats.
+~
+#EXIT
+Direction south~
+ToRoom    20108
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+Reset M 20109 1 20111 -1 -1 -1 100
+  Reset E 20120 0 5 100
+  Reset E 20118 0 8 100
+  Reset E 20119 0 12 100
+  Reset E 20125 0 11 100
+  Reset E 20114 0 16 100
+  Reset G 20106 0 100
+Reset D 20111 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20112
+Name      The Disciples' Bunk~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the sleeping chamber of all the young men, like yourself,who come 
+from all over the world to learn the legendary martial skills of Shaolin.
+~
+#EXIT
+Direction north~
+ToRoom    20108
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+Reset D 20112 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20113
+Name      A Side Court~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Similar to the Main Court, this place looks empty except for few pots of
+plants. The floor is also covered with large stone slabs. Path to west
+leads you back to the Main Court. You hear shouts coming from the north and
+south.  A small building lies on the east.
+~
+#EXIT
+Direction north~
+ToRoom    20118
+Desc      A Training Arena.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    20114
+Desc      A small building.
+~
+Keywords  door~
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    20117
+Desc      A Training Arena.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    20107
+Desc      The Main Court.
+~
+#ENDEXIT
+
+Reset D 20113 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20114
+Name      The Chamber of Wooden Men~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The room is filled with pulleys and machinery that controls the movement
+of these wooden fighting machines.  You cursed yourself for not paying
+more attention during those training sessions, as those deadly machines
+charged at you.  The only exit lies south.
+~
+#EXIT
+Direction south~
+ToRoom    20115
+Desc      The Luohan Chamber.
+~
+#ENDEXIT
+
+Reset M 20108 2 20114 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      20115
+Name      The Luohan Chamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Within this chamber dwells the legendary Luohans of Shaolin. They are here
+to see if you are ready to leave Shaolin.  You mutter a hasty prayer as you 
+prepare yourself to face these men of bronze.
+~
+#EXIT
+Direction down~
+ToRoom    20116
+Key       20115
+Desc      A trapdoor leads down.
+~
+Keywords  door~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset M 20110 2 20115 -1 -1 -1 100
+  Reset G 20115 0 100
+Reset D 20115 5 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20116
+Name      A Secret Tunnel~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The floor above you closes and seals off your exit. 
+This well-lit passage leads south.  To the south you see a bright source
+of light.
+~
+#EXIT
+Direction south~
+ToRoom    20101
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      20117
+Name      A Training Arena~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A square court covered with stone slabs.  This is where the monks practice
+their arts.  Rows of weapons adorned both sides of the court.
+~
+#EXIT
+Direction north~
+ToRoom    20113
+Desc      A side court.
+~
+#ENDEXIT
+
+Reset M 20104 1 20117 -1 -1 -1 100
+  Reset E 20116 0 16 100
+Reset M 20104 1 20117 -1 -1 -1 100
+  Reset E 20116 0 16 100
+#ENDROOM
+
+#ROOM
+Vnum      20118
+Name      A Training Arena~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A square court covered with stone slabs. This is where the disciples practice
+their arts.  Rows of weapons adorned both sides of the court.
+~
+#EXIT
+Direction south~
+ToRoom    20113
+Desc      A side court.
+~
+#ENDEXIT
+
+Reset M 20103 3 20118 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      20119
+Name      The Grand Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This massive hall contains figurines of the Buddha in all sort of sizes and
+positions. Towering above all of them, is a huge golden statue of a sleeping 
+Buddha.  Directly in front of it, is a huge stone table for offerings.
+Exits lead west and east to side halls, while south leads you back to the
+Main Court.
+~
+#EXIT
+Direction east~
+ToRoom    20126
+Desc      A side hall.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    20107
+Desc      The main court.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    20120
+Desc      A side hall.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    20136
+Keywords  Buddha golden statue~
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+Reset D 20119 5 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20120
+Name      A Side Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room connects you to the Main Hall.  There are rooms to your north,
+south and west.  A staircase leads up.
+~
+#EXIT
+Direction north~
+ToRoom    20124
+Desc      A room.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    20119
+Desc      The main hall.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    20121
+Desc      A room.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    20122
+Desc      A room.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    20123
+Desc      A room.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      20121
+Name      A Master's Chamber~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room looks empty except for a hard bed, a table and some chairs. It
+looks extremely well kept, so make sure you do not dirty it.  You better
+leave before the master catches you in here.
+~
+#EXIT
+Direction north~
+ToRoom    20120
+Desc      A side hall.
+~
+#ENDEXIT
+
+Reset O 20102 0 20121 -1 -1 -1 100
+Reset M 20113 1 20121 -1 -1 -1 100
+  Reset E 20118 0 7 100
+  Reset E 20119 0 12 100
+  Reset G 20109 0 100
+#ENDROOM
+
+#ROOM
+Vnum      20122
+Name      A Master's Chamber~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room looks empty except for a hard bed, a table and some chairs. It
+looks extremely well kept, so make sure you do not dirty it. You better
+leave before the master catches you in here.
+~
+#EXIT
+Direction east~
+ToRoom    20120
+Desc      A side hall.
+~
+#ENDEXIT
+
+Reset O 20102 0 20122 -1 -1 -1 100
+Reset M 20114 1 20122 -1 -1 -1 100
+  Reset E 20118 0 7 100
+  Reset E 20119 0 12 100
+  Reset E 20125 0 11 100
+  Reset E 20114 0 16 100
+#ENDROOM
+
+#ROOM
+Vnum      20123
+Name      The Abbot's Chamber~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room looks about the same with the rest of the rooms.  Hardly fitting
+for the chief of Shaolin. You see nothing of value here.  By the way, it
+is out of bounds to people like you, you better leave.
+~
+#EXIT
+Direction down~
+ToRoom    20120
+Desc      A side hall.
+~
+#ENDEXIT
+
+Reset O 20102 0 20123 -1 -1 -1 100
+Reset M 20115 1 20123 -1 -1 -1 100
+  Reset E 20121 0 1024 100
+  Reset E 20122 0 4 100
+  Reset E 20123 0 16384 100
+#ENDROOM
+
+#ROOM
+Vnum      20124
+Name      The Library~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room contains all the sutras and martial manuals of Shaolin. 
+Bookshelves line the walls displaying the books in a systematic manner.
+However, there is nothing you can use here. It is guarded by one of the 
+masters.
+~
+#EXIT
+Direction east~
+ToRoom    20125
+Key       20124
+Keywords  bookshelf~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    20120
+Desc      A side hall.
+~
+#ENDEXIT
+
+Reset M 20112 1 20124 -1 -1 -1 100
+  Reset E 20118 0 7 100
+  Reset E 20119 0 12 100
+  Reset G 20101 0 100
+  Reset G 20111 0 100
+Reset D 20124 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20125
+Name      A Secret Chamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have found the room where the most precious manuals and sutras are
+kept.  You rubbed your hands eagerly as your eyes take into account the
+treasures hidden here.
+~
+#EXIT
+Direction west~
+ToRoom    20124
+Key       20124
+Desc      The Library.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset O 20107 0 20125 -1 -1 -1 100
+Reset O 20110 0 20125 -1 -1 -1 100
+Reset D 20125 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20126
+Name      A Side Hall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room connects you to the Main Hall.  There are rooms to your north,
+south and east.  A staircase leads up.
+~
+#EXIT
+Direction north~
+ToRoom    20129
+Desc      A room.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    20128
+Desc      A room.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    20127
+Desc      A room.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    20119
+Desc      The main hall.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    20130
+Desc      A room.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    20131
+Keywords  trapdoor floor~
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+Reset D 20126 5 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20127
+Name      A Guest Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room is reserved for the guests who have come to Shaolin to give
+their offerings.  A table and some chairs is set in the middle of the room.
+The bed looks hard and uninviting, and like the rest of the temple,it is
+extremely clean and tidy.
+~
+#EXIT
+Direction north~
+ToRoom    20126
+Desc      A side hall.
+~
+#ENDEXIT
+
+Reset O 20102 0 20127 -1 -1 -1 100
+Reset M 20117 2 20127 -1 -1 -1 100
+  Reset G 20106 0 100
+#ENDROOM
+
+#ROOM
+Vnum      20128
+Name      A Guest Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room is reserved for the guests who have come to Shaolin to give
+their offerings.  A table and some chairs is set in the middle of the room.
+The bed looks hard and uninviting, and like the rest of the temple,it is
+extremely clean and tidy.
+~
+#EXIT
+Direction west~
+ToRoom    20126
+Desc      A side hall.
+~
+#ENDEXIT
+
+Reset O 20102 0 20128 -1 -1 -1 100
+Reset M 20101 2 20128 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      20129
+Name      A Guest Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room is reserved for the guests who have come to Shaolin to give
+their offerings.  A table and some chairs is set in the middle of the room.
+The bed looks hard and uninviting, and like the rest of the temple,it is
+extremely clean and tidy.
+~
+#EXIT
+Direction south~
+ToRoom    20126
+Desc      A side hall.
+~
+#ENDEXIT
+
+Reset O 20136 0 20129 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      20130
+Name      A Guest Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room is reserved for the guests who have come to Shaolin to give
+their offerings.  A table and some chairs is set in the middle of the room.
+The bed looks hard and uninviting, and like the rest of the temple,it is
+extremely clean and tidy.
+~
+#EXIT
+Direction down~
+ToRoom    20126
+Desc      A side hall.
+~
+#ENDEXIT
+
+Reset O 20102 0 20130 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      20131
+Name      The Dungeons~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You climbed into the dungeon, realizing too late that this is a FORBIDDEN
+AREA. Let's see you talk your way out of this mess.
+There are four prison cells here.
+~
+#EXIT
+Direction north~
+ToRoom    20135
+Key       20131
+Desc      A prison cell.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    20133
+Key       20131
+Desc      A prison cell.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    20134
+Key       20131
+Desc      A prison cell.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    20132
+Key       20131
+Desc      A prison cell.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    20126
+Desc      A side hall.
+~
+Keywords  trapdoor~
+Flags     isdoor closed pickproof~
+#ENDEXIT
+
+Reset M 20105 1 20131 -1 -1 -1 100
+  Reset E 20120 0 5 100
+  Reset E 20125 0 11 100
+  Reset E 20113 0 16 100
+Reset M 20105 1 20131 -1 -1 -1 100
+  Reset E 20120 0 5 100
+  Reset E 20125 0 11 100
+  Reset E 20113 0 16 100
+  Reset G 20131 0 100
+Reset D 20131 4 1 100 -2
+Reset D 20131 0 2 100 -2
+Reset D 20131 1 2 100 -2
+Reset D 20131 2 2 100 -2
+Reset D 20131 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20132
+Name      A prison cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      It looks dark and gloomy, probably the only place in the temple that is not
+kept clean and maintained.
+~
+#EXIT
+Direction east~
+ToRoom    20131
+Key       20131
+Desc      The guard room.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset M 20107 2 20132 -1 -1 -1 100
+  Reset E 20119 0 12 100
+Reset D 20132 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20133
+Name      An empty prison~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Blood and gore are about the only thing you can find in here. It looks like
+any other MUD prisons. What do you expect?
+~
+#EXIT
+Direction west~
+ToRoom    20131
+Key       20131
+Desc      The guard room.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset D 20133 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20134
+Name      Cell of Wuhua~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Locked here for the past ten years, for the unspeakable crimes he did to 
+both men and women is...Wuhua, the lusty monk. After ten long years, you 
+cannot imagine what he will do to you.
+~
+#EXIT
+Direction north~
+ToRoom    20131
+Key       20131
+Desc      The guard room.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset M 20111 1 20134 -1 -1 -1 100
+  Reset E 20117 0 17 100
+Reset D 20134 0 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20135
+Name      A female prison cell~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Hmmm.. Female prisoners here in Shaolin? You wonder what crimes they could
+have committed. The sight of blood and shreds of torn clothing on the floor
+tells you everything.  At least now you don't regret killing those monks.
+~
+#EXIT
+Direction south~
+ToRoom    20131
+Key       20131
+Desc      The guard room.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset M 20102 3 20135 -1 -1 -1 100
+  Reset G 20124 0 100
+Reset D 20135 2 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20136
+Name      A Mysterious Room~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The door above you closes and effectively seals off your exit. The walls 
+of this strange room glow and hum as if it is alive. This is where the 
+body of the high monks are kept after they attain enlightenment. These
+bodies are embalmed and preserved using gold, hence they are sometimes 
+referred to as "Jinshen". A stairway leads down.
+~
+#EXIT
+Direction east~
+ToRoom    20137
+Key       20136
+Keywords  workshop wall~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    20116
+Desc      The stairway leads down~
+#ENDEXIT
+
+Reset M 20116 1 20136 -1 -1 -1 100
+  Reset E 20112 0 16 100
+  Reset G 20115 0 100
+Reset D 20136 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      20137
+Name      A Workshop~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      A long working table stands in one corner of the room. Bottles of strange
+looking potions and pieces of gold flakes are strewn all over the table.
+~
+#EXIT
+Direction west~
+ToRoom    20136
+Key       20136
+Desc      A mysterious room.
+~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset O 20137 0 20137 -1 -1 -1 100
+Reset D 20137 3 2 100 -2
+#ENDROOM
+
+#ENDAREA

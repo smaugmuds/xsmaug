@@ -1,20 +1,24 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Build Interface Stuff~
-Author       Haus~
-WeatherX     0
-WeatherY     0
-Ranges       0 60 0 60
-Economy      0 45000000
+Version         1
+Name            Build Interface Stuff~
+Author          Haus~
+Vnums           9500 9589
+Continent       one~
+Coordinates     0 0
+Dates           1403946571 1403946571
+Ranges          0 60 0 60
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #ROOM
-Vnum     9500
-Name     Hermit's hut~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are inside the hermit's hut. It is rather old, but serves it purpose.
+Vnum      9500
+Name      Hermit's hut~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are inside the hermit's hut. It is rather old, but serves it purpose.
 It keeps its habitant from the rough winds and dangerous beasts of the
 plains and foothills. There is a small fireplace here.
 ~
@@ -28,15 +32,16 @@ Direction south~
 ToRoom    9504
 #ENDEXIT
 
-Reset O 0 30 1 9500
+Reset O 30 1 9500 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     9501
-Name     Inside a small tent~
-Sector   inside~
-Flags    indoors~
-Desc     This is a small and simple tent with few possessions in sight. Lying
+Vnum      9501
+Name      Inside a small tent~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is a small and simple tent with few possessions in sight. Lying
 here and there are young-looking men and women, possibly slaves to the
 leader of this band.
 ~
@@ -58,11 +63,12 @@ ToRoom    9500
 #ENDROOM
 
 #ROOM
-Vnum     9502
-Name     A Hovel~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are inside the hermit's hut. It is rather old, but serves it purpose.
+Vnum      9502
+Name      A Hovel~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are inside the hermit's hut. It is rather old, but serves it purpose.
 It keeps its habitant from the rough winds and dangerous beasts of the
 plains and foothills. There is a small fireplace here.
 ~
@@ -84,10 +90,12 @@ ToRoom    9501
 #ENDROOM
 
 #ROOM
-Vnum     9503
-Name     A Campsite~
-Sector   field~
-Desc     This small group of desert nomads has stopped for the day to rest
+Vnum      9503
+Name      A Campsite~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This small group of desert nomads has stopped for the day to rest
 and refresh themselves beside this beautiful oasis. Three tents and some
 camels make up the party. From within two of the tents you hear muffled
 voices, obviously surprised at your visit.
@@ -105,11 +113,12 @@ ToRoom    9502
 #ENDROOM
 
 #ROOM
-Vnum     9504
-Name     A Shack~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are inside the hermit's hut. It is rather old, but serves it purpose.
+Vnum      9504
+Name      A Shack~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are inside the hermit's hut. It is rather old, but serves it purpose.
 It keeps its habitant from the rough winds and dangerous beasts of the
 plains and foothills. There is a small fireplace here.
 ~
@@ -131,11 +140,12 @@ ToRoom    9508
 #ENDROOM
 
 #ROOM
-Vnum     9505
-Name     Inside the cabin~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are inside a small one-room cabin made entirely from heavy logs.  It is
+Vnum      9505
+Name      Inside the cabin~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are inside a small one-room cabin made entirely from heavy logs.  It is
 very sparsely furnished, containing only most basic housekeeping equipment,
 such as a bed, a chair and a table.
 ~
@@ -162,11 +172,12 @@ ToRoom    9504
 #ENDROOM
 
 #ROOM
-Vnum     9506
-Name     A Homestead~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are inside a small one-room cabin made entirely from heavy logs.  It is
+Vnum      9506
+Name      A Homestead~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are inside a small one-room cabin made entirely from heavy logs.  It is
 very sparsely furnished, containing only most basic housekeeping equipment,
 such as a bed, a chair and a table.
 ~
@@ -193,10 +204,12 @@ ToRoom    9505
 #ENDROOM
 
 #ROOM
-Vnum     9507
-Name     A Keep~
-Sector   city~
-Desc     You are in a huge hall. Large tapestries line the walls and huge statues of
+Vnum      9507
+Name      A Keep~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in a huge hall. Large tapestries line the walls and huge statues of
 various make and appearance are spread about. The ceiling above supports huge
 candelabras, which light the room. To the east, you see a bright light and
 hear sounds of inhabitation. Looking west, you see the entry gates to the keep.
@@ -219,11 +232,12 @@ ToRoom    9506
 #ENDROOM
 
 #ROOM
-Vnum     9508
-Name     A Fortress~
-Sector   city~
-Flags    dark indoors~
-Desc     You are in a huge hall. Large tapestries line the walls and huge statues of
+Vnum      9508
+Name      A Fortress~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a huge hall. Large tapestries line the walls and huge statues of
 various make and appearance are spread about. The ceiling above supports huge
 candelabras, which light the room. To the east, you see a bright light and
 hear sounds of inhabitation. Looking west, you see the entry gates to the keep.
@@ -246,11 +260,12 @@ ToRoom    9513
 #ENDROOM
 
 #ROOM
-Vnum     9509
-Name     A Castle~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are in a huge hall. Large tapestries line the walls and huge statues of
+Vnum      9509
+Name      A Castle~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a huge hall. Large tapestries line the walls and huge statues of
 various make and appearance are spread about. The ceiling above supports huge
 candelabras, which light the room. To the east, you see a bright light and
 hear sounds of inhabitation. Looking west, you see the entry gates to the keep.
@@ -278,11 +293,12 @@ ToRoom    9508
 #ENDROOM
 
 #ROOM
-Vnum     9510
-Name     Guard House~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are in the guard house to the west of the entrance
+Vnum      9510
+Name      Guard House~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in the guard house to the west of the entrance
 to the castle.  There are nude posters covering the walls.
 ~
 #EXIT
@@ -308,11 +324,12 @@ ToRoom    9509
 #ENDROOM
 
 #ROOM
-Vnum     9511
-Name     By the Temple Altar~
-Sector   inside~
-Flags    dark nomob indoors nomagic safe norecall nosummon noastral~
-Desc     You are by the temple altar in the northern end of the Temple of Darkhaven.
+Vnum      9511
+Name      By the Temple Altar~
+Sector    indoors~
+Flags     dark nomob indoors safe nosummon nomagic norecall noastral~
+Stats     0 0 0 0 0
+Desc      You are by the temple altar in the northern end of the Temple of Darkhaven.
 A huge altar made from white polished marble is standing in front of you and
 behind it is a ten foot tall sitting statue of Odin, the King of the Gods.
 ~
@@ -334,11 +351,12 @@ ToRoom    9510
 #ENDROOM
 
 #ROOM
-Vnum     9512
-Name     Inside a Store~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are in a small room that smells of rare chemicals and spices.
+Vnum      9512
+Name      Inside a Store~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small room that smells of rare chemicals and spices.
 Dividing the room in two is a large desk, and on the wall behind it are
 numerous shelves crammed with jars, bottles, books and scrolls of all
 sorts and sizes.
@@ -356,10 +374,12 @@ ToRoom    9517
 #ENDROOM
 
 #ROOM
-Vnum     9513
-Name     A Spooky Graveyard~
-Sector   field~
-Desc     You are on a well-kept gravel road that leads north-south through the
+Vnum      9513
+Name      A Spooky Graveyard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a well-kept gravel road that leads north-south through the
 graveyard.  On both sides of the road grow dark evergreen trees.  An iron
 grate is to the north and narrow gravel paths lead east and west.
 ~
@@ -386,11 +406,12 @@ ToRoom    9512
 #ENDROOM
 
 #ROOM
-Vnum     9514
-Name     A Monestary~
-Sector   inside~
-Flags    dark lawful~
-Desc     You are in a huge hall. Large tapestries line the walls and huge statues of
+Vnum      9514
+Name      A Monestary~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a huge hall. Large tapestries line the walls and huge statues of
 various make and appearance are spread about. The ceiling above supports huge
 candelabras, which light the room. To the east, you see a bright light and
 hear sounds of inhabitation. Looking west, you see the entry gates to the keep.
@@ -418,11 +439,12 @@ ToRoom    9513
 #ENDROOM
 
 #ROOM
-Vnum     9515
-Name     A Stable~
-Sector   city~
-Flags    dark indoors~
-Desc     This is a large stable where mounts of all types are brought to be trained
+Vnum      9515
+Name      A Stable~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is a large stable where mounts of all types are brought to be trained
 as mounts.  Looking about you see four stable-hands trying to saddle a 
 excitable and sleek looking stallion that stands nearly 18 hands tall. 
 There are a number of different stalls here each holding a different mount,
@@ -451,11 +473,12 @@ ToRoom    9514
 #ENDROOM
 
 #ROOM
-Vnum     9516
-Name     A Tavern~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are standing in the bar.  The bar is set against the northern wall, old
+Vnum      9516
+Name      A Tavern~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in the bar.  The bar is set against the northern wall, old
 archaic writing, carvings and symbols cover its top.  A fireplace is built into
 the western wall, and through the southeastern windows you can see the temple
 square.  This place makes you feel like home.
@@ -479,11 +502,12 @@ ToRoom    9515
 #ENDROOM
 
 #ROOM
-Vnum     9517
-Name     The Basement~
-Sector   mountain~
-Flags    dark indoors~
-Desc     This seems like your average basement.  Old Christmas decorations,
+Vnum      9517
+Name      The Basement~
+Sector    mountain~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This seems like your average basement.  Old Christmas decorations,
 suitcases, bicycles litter your way.  You hear the squeaking of
 rats in the corners.
 ~
@@ -505,11 +529,12 @@ ToRoom    9522
 #ENDROOM
 
 #ROOM
-Vnum     9518
-Name     A Bedroom~
-Sector   inside~
-Flags    dark indoors~
-Desc     This is a snugly set bedroom with all the necessities for a romantic evening.
+Vnum      9518
+Name      A Bedroom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is a snugly set bedroom with all the necessities for a romantic evening.
 A large fireplace adorns the east wall, and sizzling away is the wood that
 is ablaze within.  The bed is enormous, covering at least HALF of this great
 room.  This stretches at least 300 square feet, so can you imagine the BED?
@@ -539,11 +564,12 @@ ToRoom    9517
 #ENDROOM
 
 #ROOM
-Vnum     9519
-Name     A Banquet Room~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are in the dining area of the student mages. From the number of
+Vnum      9519
+Name      A Banquet Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in the dining area of the student mages. From the number of
 tables and chairs here, you can see that this room could easily seat
 several hundred people. It is oddly deserted here, obviously not meal time.
   Exits lead west to the kitchen, and back east.
@@ -571,11 +597,12 @@ ToRoom    9518
 #ENDROOM
 
 #ROOM
-Vnum     9520
-Name     A Corridor~
-Sector   inside~
-Flags    dark indoors~
-Desc     You stand in the great hall of the keep. Huge pillars rise up to the vaulted
+Vnum      9520
+Name      A Corridor~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand in the great hall of the keep. Huge pillars rise up to the vaulted
 ceiling and torch light glimmers off the marble floor here. You are amazed at
 the sheer size of the hall. The hall itself leads north and east. You notice a
 smaller hall leading south, deeper into the keep.
@@ -603,11 +630,12 @@ ToRoom    9519
 #ENDROOM
 
 #ROOM
-Vnum     9521
-Name     An Attic~
-Sector   city~
-Flags    dark indoors~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9521
+Name      An Attic~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -630,11 +658,12 @@ ToRoom    9520
 #ENDROOM
 
 #ROOM
-Vnum     9522
-Name     A Vault~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9522
+Name      A Vault~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -657,11 +686,12 @@ ToRoom    9527
 #ENDROOM
 
 #ROOM
-Vnum     9523
-Name     Sitting Room~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are standing in the middle of a really comfortable place. The walls are
+Vnum      9523
+Name      Sitting Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in the middle of a really comfortable place. The walls are
 decorated with paintings of smiling Kings and Queens. The most attractive
 picture is one of a Prince in shiny armour. By one of the walls there is an
 old arm-chair. The only exit is through the aspenwood door to the east.
@@ -689,11 +719,12 @@ ToRoom    9522
 #ENDROOM
 
 #ROOM
-Vnum     9524
-Name     Study~
-Sector   inside~
-Flags    dark indoors silence~
-Desc     You are in a small dark passage, which would be unremarkable if not for
+Vnum      9524
+Name      Study~
+Sector    indoors~
+Flags     dark indoors silence~
+Stats     0 0 0 0 0
+Desc      You are in a small dark passage, which would be unremarkable if not for
 the fact that it ends in a blinding blue light to the west. On hooks set
 into the wall here there hang several travel worthy cloaks, and a small
 leather backpack.  It looks as if someone has prepared this room to be used
@@ -722,11 +753,12 @@ ToRoom    9523
 #ENDROOM
 
 #ROOM
-Vnum     9525
-Name     A Passageway~
-Sector   city~
-Flags    dark indoors tunnel~
-Desc     This Passageway branches off from the main hall and leads somewhere ... where?
+Vnum      9525
+Name      A Passageway~
+Sector    city~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      This Passageway branches off from the main hall and leads somewhere ... where?
 ~
 #EXIT
 Direction north~
@@ -751,11 +783,12 @@ ToRoom    9524
 #ENDROOM
 
 #ROOM
-Vnum     9526
-Name     Tower~
-Sector   city~
-Flags    dark indoors~
-Desc     The tower creaks and groans, almost as if it were muttering to
+Vnum      9526
+Name      Tower~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The tower creaks and groans, almost as if it were muttering to
 itself.  There are windows displaying a full moon, reigning over
 the night sky.  The room is dark and there is almost a musty odor
 to it.  You are surprised that you can't detect any dust or dirt,
@@ -779,11 +812,12 @@ ToRoom    9525
 #ENDROOM
 
 #ROOM
-Vnum     9527
-Name     Crypt~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are in a large room which continues to the west.  You notice many
+Vnum      9527
+Name      Crypt~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a large room which continues to the west.  You notice many
 coffins here.  Open coffins reveal remains of something other than man.  
 The smell of reptile is very strong here.
 ~
@@ -805,11 +839,12 @@ ToRoom    9532
 #ENDROOM
 
 #ROOM
-Vnum     9528
-Name     Work Room~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are in the workroom of The Mad Alchemist. Bubbling braziers, long
+Vnum      9528
+Name      Work Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in the workroom of The Mad Alchemist. Bubbling braziers, long
 glass tubes and scores of oddly shaped vials and bottles are everywhere.
 It is incredibly messy here, crushed glass and other trash litter the floor.
   The only apparent exit is the one you entered by.
@@ -837,11 +872,12 @@ ToRoom    9527
 #ENDROOM
 
 #ROOM
-Vnum     9529
-Name     Laboratory~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are in the workroom of The Mad Alchemist. Bubbling braziers, long
+Vnum      9529
+Name      Laboratory~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in the workroom of The Mad Alchemist. Bubbling braziers, long
 glass tubes and scores of oddly shaped vials and bottles are everywhere.
 It is incredibly messy here, crushed glass and other trash litter the floor.
   The only apparent exit is the one you entered by.
@@ -869,11 +905,12 @@ ToRoom    9528
 #ENDROOM
 
 #ROOM
-Vnum     9530
-Name     A hallway~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are in a long hallway leading north and south. The walls emit a faint
+Vnum      9530
+Name      A hallway~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a long hallway leading north and south. The walls emit a faint
 magical glow which provides enough light to see by.
   The sharp sound of metal on metal can be heard to the west.
 ~
@@ -900,11 +937,12 @@ ToRoom    9529
 #ENDROOM
 
 #ROOM
-Vnum     9531
-Name     Turret~
-Sector   city~
-Flags    dark indoors~
-Desc     The tower creaks and groans, almost as if it were muttering to
+Vnum      9531
+Name      Turret~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The tower creaks and groans, almost as if it were muttering to
 itself.  There are windows displaying a full moon, reigning over
 the night sky.  The room is dark and there is almost a musty odor
 to it.  You are surprised that you can't detect any dust or dirt,
@@ -928,11 +966,12 @@ ToRoom    9530
 #ENDROOM
 
 #ROOM
-Vnum     9532
-Name     Storage Room~
-Sector   inside~
-Flags    dark indoors private~
-Desc     You are in a small store room. Assorted junk is piled on shelves or
+Vnum      9532
+Name      Storage Room~
+Sector    indoors~
+Flags     dark indoors private~
+Stats     0 0 0 0 0
+Desc      You are in a small store room. Assorted junk is piled on shelves or
 leaning against walls.
   The only apparent exit it back south.
 ~
@@ -954,11 +993,12 @@ ToRoom    9537
 #ENDROOM
 
 #ROOM
-Vnum     9533
-Name     Kitchen~
-Sector   inside~
-Flags    dark indoors~
-Desc     This must be the place of food and drink. You can hear the faint noise of 
+Vnum      9533
+Name      Kitchen~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This must be the place of food and drink. You can hear the faint noise of 
 rats feasting on meat and bread from somewhere undeterminable. The sound
 makes you feel the agony of HUNGER. The only visible exit is south to the
 Northern end of the hall. To the north there is a larder, and to the east
@@ -987,11 +1027,12 @@ ToRoom    9532
 #ENDROOM
 
 #ROOM
-Vnum     9534
-Name     The Larder~
-Sector   inside~
-Flags    dark indoors private~
-Desc     You can see food all over. Among the heaps of food you notice HUGE rats
+Vnum      9534
+Name      The Larder~
+Sector    indoors~
+Flags     dark indoors private~
+Stats     0 0 0 0 0
+Desc      You can see food all over. Among the heaps of food you notice HUGE rats
 scuttering around, nibbling pieces off the heaps here and there.
 ~
 #EXIT
@@ -1017,11 +1058,12 @@ ToRoom    9533
 #ENDROOM
 
 #ROOM
-Vnum     9535
-Name     The Stairs~
-Sector   inside~
-Flags    dark indoors~
-Desc     The stairs continue to circle up and down here.
+Vnum      9535
+Name      The Stairs~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The stairs continue to circle up and down here.
 ~
 #EXIT
 Direction north~
@@ -1046,10 +1088,12 @@ ToRoom    9534
 #ENDROOM
 
 #ROOM
-Vnum     9536
-Name     On The Rooftop~
-Sector   hills~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9536
+Name      On The Rooftop~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -1072,11 +1116,12 @@ ToRoom    9535
 #ENDROOM
 
 #ROOM
-Vnum     9537
-Name     Closet~
-Sector   inside~
-Flags    dark indoors solitary~
-Desc     You are in a dark broom closet. Many straw brooms and other cleaning
+Vnum      9537
+Name      Closet~
+Sector    indoors~
+Flags     dark indoors solitary~
+Stats     0 0 0 0 0
+Desc      You are in a dark broom closet. Many straw brooms and other cleaning
 instruments have been left here, apparently unused (perhaps the maid quit?).
   The only exit leads back north to the hallway.
 ~
@@ -1098,11 +1143,12 @@ ToRoom    9542
 #ENDROOM
 
 #ROOM
-Vnum     9538
-Name     Office~
-Sector   inside~
-Flags    dark indoors~
-Desc     This is the central office of Discordia.  Here meetings are held and
+Vnum      9538
+Name      Office~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is the central office of Discordia.  Here meetings are held and
 important issues discussed.  Here the deities and leaders merge together
 their trains of thought, to form the governing body of Discordia.
 ~
@@ -1129,11 +1175,12 @@ ToRoom    9537
 #ENDROOM
 
 #ROOM
-Vnum     9539
-Name     The treasury~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are in a small chamber, the stale air here is testament to the fact
+Vnum      9539
+Name      The treasury~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a small chamber, the stale air here is testament to the fact
 that it has gone undisturbed for many years.
 ~
 #EXIT
@@ -1159,11 +1206,12 @@ ToRoom    9538
 #ENDROOM
 
 #ROOM
-Vnum     9540
-Name     The landing~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are on a small landing in the middle of a long stairway leading up.
+Vnum      9540
+Name      The landing~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are on a small landing in the middle of a long stairway leading up.
 Your senses seem dulled here, no sound or smell can be detected at all, and
 the only thing you can see in any direction is endless stairway.
 ~
@@ -1190,11 +1238,12 @@ ToRoom    9539
 #ENDROOM
 
 #ROOM
-Vnum     9541
-Name     On The Balcony~
-Sector   hills~
-Flags    dark indoors~
-Desc     You see a splendid of the most of this world. The valleys stretch as far as
+Vnum      9541
+Name      On The Balcony~
+Sector    hills~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You see a splendid of the most of this world. The valleys stretch as far as
 the eye reaches to the south from here. Down below you can see the entrance
 of this magnificent building. To the north are the doors to Redferne's Bedroom.
 ~
@@ -1216,11 +1265,12 @@ ToRoom    9540
 #ENDROOM
 
 #ROOM
-Vnum     9542
-Name     Foyer~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     You are inside the high tower of sorcery. The sight is truly amazing.
+Vnum      9542
+Name      Foyer~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      You are inside the high tower of sorcery. The sight is truly amazing.
 From here, it is obvious that somehow, the tower is much larger on the
 inside than it is on the outside. Young mages walk about, completely
 oblivious to your presence.
@@ -1245,11 +1295,12 @@ ToRoom    9547
 #ENDROOM
 
 #ROOM
-Vnum     9543
-Name     Drawing Room~
-Sector   inside~
-Flags    dark indoors~
-Desc     You have entered the master enchanter's chamber. Upon all the walls here
+Vnum      9543
+Name      Drawing Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You have entered the master enchanter's chamber. Upon all the walls here
 are racks of finely crafted weapons. A huge chest with a glowing lock is
 set to one side. Several unfinished looking blades rest atop a small work
 table.
@@ -1277,11 +1328,12 @@ ToRoom    9542
 #ENDROOM
 
 #ROOM
-Vnum     9544
-Name     The Den~
-Sector   city~
-Flags    dark indoors~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9544
+Name      The Den~
+Sector    city~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -1309,11 +1361,12 @@ ToRoom    9543
 #ENDROOM
 
 #ROOM
-Vnum     9545
-Name     At A Ladder~
-Sector   mountain~
-Flags    dark~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9545
+Name      At A Ladder~
+Sector    mountain~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -1341,11 +1394,12 @@ ToRoom    9544
 #ENDROOM
 
 #ROOM
-Vnum     9546
-Name     On A Catwalk~
-Sector   mountain~
-Flags    private~
-Desc     You stand on a precarious catwalk, high above the ground.
+Vnum      9546
+Name      On A Catwalk~
+Sector    mountain~
+Flags     private~
+Stats     0 0 0 0 0
+Desc      You stand on a precarious catwalk, high above the ground.
 This small beam is so thin that your toes hang off into the air.
 ~
 #EXIT
@@ -1366,11 +1420,12 @@ ToRoom    9545
 #ENDROOM
 
 #ROOM
-Vnum     9547
-Name     Entrance~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     "Magnificent" does not even begin to describe the foyer.  Lavishly
+Vnum      9547
+Name      Entrance~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      "Magnificent" does not even begin to describe the foyer.  Lavishly
 decorated, yet elegant, it gives an impression of indescribable
 wealth.  Paintings and tapestries line the walls depicting scenes
 from throughout history.  Antiques furnitures and oriental rugs are
@@ -1395,11 +1450,12 @@ ToRoom    9552
 #ENDROOM
 
 #ROOM
-Vnum     9548
-Name     Arboretum.~
-Sector   inside~
-Flags    dark indoors~
-Desc     A small indoor garden so that the residents don't have to go
+Vnum      9548
+Name      Arboretum.~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      A small indoor garden so that the residents don't have to go
 outside to enjoy plants and commune with nature.  There are several
 trees, a small pond and flowers of every kind.
 ~
@@ -1426,11 +1482,12 @@ ToRoom    9547
 #ENDROOM
 
 #ROOM
-Vnum     9549
-Name     The Library~
-Sector   inside~
-Flags    dark indoors~
-Desc     This is truly a magnificent place! Books and scrolls lie together on every
+Vnum      9549
+Name      The Library~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This is truly a magnificent place! Books and scrolls lie together on every
 shelf. A large globe, with the map of the Mud-world upon it, stands in the
 dimly lit north-western corner of the room. Two large and comfortable-
 looking leather arm-chairs adorn the center of the library together with
@@ -1462,11 +1519,12 @@ ToRoom    9548
 #ENDROOM
 
 #ROOM
-Vnum     9550
-Name     A Vent~
-Sector   inside~
-Flags    dark indoors tunnel private~
-Desc     It is very dark here...
+Vnum      9550
+Name      A Vent~
+Sector    indoors~
+Flags     dark indoors tunnel private~
+Stats     0 0 0 0 0
+Desc      It is very dark here...
 ~
 #EXIT
 Direction north~
@@ -1491,11 +1549,12 @@ ToRoom    9549
 #ENDROOM
 
 #ROOM
-Vnum     9551
-Name     A Shaft~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9551
+Name      A Shaft~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -1518,11 +1577,12 @@ ToRoom    9550
 #ENDROOM
 
 #ROOM
-Vnum     9552
-Name     Gate~
-Sector   inside~
-Flags    dark~
-Desc     You have reached the entrance to the high tower of sorcerery. The
+Vnum      9552
+Name      Gate~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You have reached the entrance to the high tower of sorcerery. The
 tower looms above you at an incredible height. It seems to disappear
 into the storm clouds above.
   A diamond gate is to the north, guarded by a huge golem. The trail
@@ -1546,11 +1606,12 @@ ToRoom    9557
 #ENDROOM
 
 #ROOM
-Vnum     9553
-Name     Audience Room~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are in a large chamber. Small bolts of energy leap from wall to wall,
+Vnum      9553
+Name      Audience Room~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are in a large chamber. Small bolts of energy leap from wall to wall,
 crackling with power. The floor is a swirl of indeterminable colors and
 patterns ever changing. Bright bursts of color seem to explode into the air
 and fade again at random times. All this splendor plays about and draws
@@ -1580,11 +1641,12 @@ ToRoom    9552
 #ENDROOM
 
 #ROOM
-Vnum     9554
-Name     Conservatory~
-Sector   inside~
-Flags    dark indoors~
-Desc     Here was the rehearsal and recital room for the residents of the
+Vnum      9554
+Name      Conservatory~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Here was the rehearsal and recital room for the residents of the
 estate.  There is a Steinway piano in the corner and various gilded
 instruments are on display in a glass cabinet.
 ~
@@ -1611,11 +1673,12 @@ ToRoom    9553
 #ENDROOM
 
 #ROOM
-Vnum     9555
-Name     A Dumbwaiter~
-Sector   inside~
-Flags    dark indoors tunnel private~
-Desc     It is very dark here...
+Vnum      9555
+Name      A Dumbwaiter~
+Sector    indoors~
+Flags     dark indoors tunnel private~
+Stats     0 0 0 0 0
+Desc      It is very dark here...
 ~
 #EXIT
 Direction north~
@@ -1640,11 +1703,12 @@ ToRoom    9554
 #ENDROOM
 
 #ROOM
-Vnum     9556
-Name     A Chimney~
-Sector   inside~
-Flags    dark indoors~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9556
+Name      A Chimney~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -1667,10 +1731,12 @@ ToRoom    9555
 #ENDROOM
 
 #ROOM
-Vnum     9557
-Name     Porch~
-Sector   city~
-Desc     A huge patio overlooks the lawn area.  There are enough tables and
+Vnum      9557
+Name      Porch~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A huge patio overlooks the lawn area.  There are enough tables and
 chairs for a party of 100.  The tables and chairs are ornate and
 expensive, tasteful and elegant.  Stairs lead up to the main
 house.
@@ -1693,11 +1759,12 @@ ToRoom    9562
 #ENDROOM
 
 #ROOM
-Vnum     9558
-Name     Classroom~
-Sector   inside~
-Flags    dark~
-Desc     You are in an apparently empty classroom. A strange feeling of being
+Vnum      9558
+Name      Classroom~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in an apparently empty classroom. A strange feeling of being
 watched comes over you, and you hear the faint rustle of robes.
   The only apparent exit is back east to the hallway.
 ~
@@ -1724,11 +1791,12 @@ ToRoom    9557
 #ENDROOM
 
 #ROOM
-Vnum     9559
-Name     Limbo~
-Sector   city~
-Flags    dark~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9559
+Name      Limbo~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -1756,10 +1824,12 @@ ToRoom    9558
 #ENDROOM
 
 #ROOM
-Vnum     9560
-Name     Lawn~
-Sector   field~
-Desc     The lawn seems to stretch and stretch to the south and to the west.
+Vnum      9560
+Name      Lawn~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The lawn seems to stretch and stretch to the south and to the west.
 North of you is a gate.  The grass is emerald green and luscious,
 obviously well cared for.
 ~
@@ -1786,11 +1856,12 @@ ToRoom    9559
 #ENDROOM
 
 #ROOM
-Vnum     9561
-Name     Limbo~
-Sector   city~
-Flags    dark~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9561
+Name      Limbo~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -1813,10 +1884,12 @@ ToRoom    9560
 #ENDROOM
 
 #ROOM
-Vnum     9562
-Name     Lake~
-Sector   water_swim~
-Desc     A huge patio overlooks the lawn area.  There are enough tables and
+Vnum      9562
+Name      Lake~
+Sector    water_swim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A huge patio overlooks the lawn area.  There are enough tables and
 chairs for a party of 100.  The tables and chairs are ornate and
 expensive, tasteful and elegant.  Stairs lead up to the main
 house.
@@ -1839,11 +1912,12 @@ ToRoom    9567
 #ENDROOM
 
 #ROOM
-Vnum     9563
-Name     Forest~
-Sector   forest~
-Flags    dark~
-Desc     You are in an apparently empty classroom. A strange feeling of being
+Vnum      9563
+Name      Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in an apparently empty classroom. A strange feeling of being
 watched comes over you, and you hear the faint rustle of robes.
   The only apparent exit is back east to the hallway.
 ~
@@ -1870,11 +1944,12 @@ ToRoom    9562
 #ENDROOM
 
 #ROOM
-Vnum     9564
-Name     Swamp~
-Sector   city~
-Flags    dark~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9564
+Name      Swamp~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -1902,11 +1977,12 @@ ToRoom    9563
 #ENDROOM
 
 #ROOM
-Vnum     9565
-Name     Well~
-Sector   inside~
-Flags    dark indoors tunnel private~
-Desc     The lawn seems to stretch and stretch to the south and to the west.
+Vnum      9565
+Name      Well~
+Sector    indoors~
+Flags     dark indoors tunnel private~
+Stats     0 0 0 0 0
+Desc      The lawn seems to stretch and stretch to the south and to the west.
 North of you is a gate.  The grass is emerald green and luscious,
 obviously well cared for.
 ~
@@ -1933,11 +2009,12 @@ ToRoom    9564
 #ENDROOM
 
 #ROOM
-Vnum     9566
-Name     Street~
-Sector   city~
-Flags    dark~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9566
+Name      Street~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -1960,11 +2037,12 @@ ToRoom    9565
 #ENDROOM
 
 #ROOM
-Vnum     9567
-Name     On the River~
-Sector   water_noswim~
-Flags    dark~
-Desc     The levee is directly north of here.  The river flows in an east west
+Vnum      9567
+Name      On the River~
+Sector    water_noswim~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The levee is directly north of here.  The river flows in an east west
 direction.
 ~
 #EXIT
@@ -1985,10 +2063,12 @@ ToRoom    9572
 #ENDROOM
 
 #ROOM
-Vnum     9568
-Name     The Floor of the Canyon~
-Sector   mountain~
-Desc     Various elemental forms wander the floor of the canyon.  Some seem to be
+Vnum      9568
+Name      The Floor of the Canyon~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Various elemental forms wander the floor of the canyon.  Some seem to be
 going about their business, while others seem to have no business at all.
 In general, it is calm, yet there is always a incessant buzz of things
 going on about.  The canyon continues north and east.
@@ -2016,10 +2096,12 @@ ToRoom    9567
 #ENDROOM
 
 #ROOM
-Vnum     9569
-Name     Beach~
-Sector   desert~
-Desc     This damp, cold beach is covered in a thick grey mist limiting vision
+Vnum      9569
+Name      Beach~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This damp, cold beach is covered in a thick grey mist limiting vision
 to arms reach.  The ghostly sound of the waves can be heard off to the
 east. The mist itself seem to be flowing in from the west.
 ~
@@ -2046,11 +2128,12 @@ ToRoom    9568
 #ENDROOM
 
 #ROOM
-Vnum     9570
-Name     Mine~
-Sector   mountain~
-Flags    dark indoors tunnel~
-Desc     You are at the bottom of the mineshaft.  The air here is very sooty, and
+Vnum      9570
+Name      Mine~
+Sector    mountain~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      You are at the bottom of the mineshaft.  The air here is very sooty, and
 it is very hard to breath.  The mineshaft leads up and east.
 ~
 #EXIT
@@ -2076,10 +2159,12 @@ ToRoom    9569
 #ENDROOM
 
 #ROOM
-Vnum     9571
-Name     Road~
-Sector   hills~
-Desc     You stand on Bywater Road, the busiest street in all of Shiredom.  The road
+Vnum      9571
+Name      Road~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand on Bywater Road, the busiest street in all of Shiredom.  The road
 continues to the east and west while to the north lies the general store.
 ~
 #EXIT
@@ -2100,10 +2185,12 @@ ToRoom    9570
 #ENDROOM
 
 #ROOM
-Vnum     9572
-Name     On the Stream~
-Sector   water_swim~
-Desc     The stream is cold and frigid, yet it supports plenty of life beneath its
+Vnum      9572
+Name      On the Stream~
+Sector    water_swim~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The stream is cold and frigid, yet it supports plenty of life beneath its
 surface.  The current trickles west and there is a field to the south.
 ~
 #EXIT
@@ -2119,10 +2206,12 @@ ToRoom    9573
 #ENDROOM
 
 #ROOM
-Vnum     9573
-Name     The forest clearing~
-Sector   forest~
-Desc     You are in a clearing in the forest.  Lots of fresh stumps of varying sizes
+Vnum      9573
+Name      The forest clearing~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are in a clearing in the forest.  Lots of fresh stumps of varying sizes
 protrude from the ground and heavy logs are stacked neatly in a big pile
 supported by stakes set into the ground.  Paths lead north, east and west.
 ~
@@ -2144,11 +2233,12 @@ ToRoom    9572
 #ENDROOM
 
 #ROOM
-Vnum     9574
-Name     Snake Pit~
-Sector   mountain~
-Flags    dark~
-Desc     You stand beside a large dark pond.  The water boils not with heat, but with
+Vnum      9574
+Name      Snake Pit~
+Sector    mountain~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand beside a large dark pond.  The water boils not with heat, but with
 motion, as if it is alive.  A creaking beat pulses through the air, leaving
 you with a cold sweat and fear in your heart.
 ~
@@ -2175,11 +2265,12 @@ ToRoom    9573
 #ENDROOM
 
 #ROOM
-Vnum     9575
-Name     Tunnel~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9575
+Name      Tunnel~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -2207,10 +2298,12 @@ ToRoom    9574
 #ENDROOM
 
 #ROOM
-Vnum     9576
-Name     Path~
-Sector   forest~
-Desc     You are on a small path leading through the dense forest.  The crowns of the
+Vnum      9576
+Name      Path~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a small path leading through the dense forest.  The crowns of the
 old trees leave the forest in an unreal twilight illumination.  The path
 continues east and west.
 ~
@@ -2232,10 +2325,12 @@ ToRoom    9575
 #ENDROOM
 
 #ROOM
-Vnum     9577
-Name     Sandstorm~
-Sector   desert~
-Desc     A vast desert stretches for miles, the sand constantly shifting around you.
+Vnum      9577
+Name      Sandstorm~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      A vast desert stretches for miles, the sand constantly shifting around you.
 You feel lost.
 ~
 #EXIT
@@ -2256,10 +2351,12 @@ ToRoom    9582
 #ENDROOM
 
 #ROOM
-Vnum     9578
-Name     Rope~
-Sector   city~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9578
+Name      Rope~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -2287,10 +2384,12 @@ ToRoom    9577
 #ENDROOM
 
 #ROOM
-Vnum     9579
-Name     Cliff~
-Sector   mountain~
-Desc     Being very careful not to lose your balance, you look around and
+Vnum      9579
+Name      Cliff~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Being very careful not to lose your balance, you look around and
 find that this canyon is about a half a kilometer deep. To the west is
 a dark cave leading under the desert sands.
 ~
@@ -2312,11 +2411,12 @@ ToRoom    9578
 #ENDROOM
 
 #ROOM
-Vnum     9580
-Name     An Underground River~
-Sector   water_swim~
-Flags    dark indoors tunnel~
-Desc     You are standing in water, the tunnel continues both to the
+Vnum      9580
+Name      An Underground River~
+Sector    water_swim~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      You are standing in water, the tunnel continues both to the
 north and south.
 ~
 #EXIT
@@ -2332,11 +2432,12 @@ ToRoom    9585
 #ENDROOM
 
 #ROOM
-Vnum     9581
-Name     Jungle~
-Sector   forest~
-Flags    dark~
-Desc     You stand beside a large dark pond.  The water boils not with heat, but with
+Vnum      9581
+Name      Jungle~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You stand beside a large dark pond.  The water boils not with heat, but with
 motion, as if it is alive.  A creaking beat pulses through the air, leaving
 you with a cold sweat and fear in your heart.
 ~
@@ -2358,10 +2459,12 @@ ToRoom    9580
 #ENDROOM
 
 #ROOM
-Vnum     9582
-Name     Sand Bar~
-Sector   desert~
-Desc     You are on a little sand bar in the water.
+Vnum      9582
+Name      Sand Bar~
+Sector    desert~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on a little sand bar in the water.
 ~
 #EXIT
 Direction north~
@@ -2386,10 +2489,12 @@ ToRoom    9581
 #ENDROOM
 
 #ROOM
-Vnum     9583
-Name     On the Rope Bridge~
-Sector   mountain~
-Desc     You are on the rope bridge.  From here, you can see the whole Valley of the
+Vnum      9583
+Name      On the Rope Bridge~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are on the rope bridge.  From here, you can see the whole Valley of the
 Elves.  To the south, you see the main valley.  To the north-east, you see a
 smaller valley with a building in the center of it.  To the north-west, you
 can see a very small valley with a shack in it's center.  A rope ladder
@@ -2418,11 +2523,12 @@ ToRoom    9582
 #ENDROOM
 
 #ROOM
-Vnum     9584
-Name     A Bridge~
-Sector   city~
-Flags    dark~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9584
+Name      A Bridge~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -2445,11 +2551,12 @@ ToRoom    9583
 #ENDROOM
 
 #ROOM
-Vnum     9585
-Name     An Underground Lake~
-Sector   water_swim~
-Flags    dark indoors~
-Desc     You stand beside a large dark pond.  The water boils not with heat, but with
+Vnum      9585
+Name      An Underground Lake~
+Sector    water_swim~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You stand beside a large dark pond.  The water boils not with heat, but with
 motion, as if it is alive.  A creaking beat pulses through the air, leaving
 you with a cold sweat and fear in your heart.
 ~
@@ -2466,11 +2573,12 @@ ToRoom    9586
 #ENDROOM
 
 #ROOM
-Vnum     9586
-Name     Cave~
-Sector   mountain~
-Flags    dark indoors~
-Desc     This cavern overwhelms you. The walls and ceiling seem miles away.
+Vnum      9586
+Name      Cave~
+Sector    mountain~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      This cavern overwhelms you. The walls and ceiling seem miles away.
 Bones of previous adventurers lie strewn on the cavern floor.
 ~
 #EXIT
@@ -2491,11 +2599,12 @@ ToRoom    9585
 #ENDROOM
 
 #ROOM
-Vnum     9587
-Name     Sombody Ignored This Room~
-Sector   city~
-Flags    dark~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9587
+Name      Sombody Ignored This Room~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -2518,10 +2627,12 @@ ToRoom    9586
 #ENDROOM
 
 #ROOM
-Vnum     9588
-Name     A Rope Ladder~
-Sector   mountain~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9588
+Name      A Rope Ladder~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.
@@ -2544,11 +2655,12 @@ ToRoom    9587
 #ENDROOM
 
 #ROOM
-Vnum     9589
-Name     A Natural Bridge~
-Sector   hills~
-Flags    dark~
-Desc     You are floating in a formless void, detached from all sensation of physical
+Vnum      9589
+Name      A Natural Bridge~
+Sector    hills~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are floating in a formless void, detached from all sensation of physical
 matter, surrounded by swirling glowing light, which fades into the relative
 darkness around you without any trace of edges or shadow.
    There is a "No Tipping" notice pinned to the darkness.

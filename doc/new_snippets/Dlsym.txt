@@ -1,0 +1,114 @@
+Dlsym Support
+-------------
+
+Written by Trax of Forever's End
+
+Prerequisite Requirements
+-------------------------
+
+A system compatible with the dynamic library support needed for this.
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This code, as currently given here, is the ultimate in laziness realized
+for adding new commands/skills/spells/specials to your mud. No longer will
+you need to deal with the megalith of the tables.c file, nor will you even
+need to worry about the DECLARE_*_FUN statements. Just drop your function
+in, compile the mud, and add the entry online after reboot.
+
+It should be noted that this may not be portable across all platforms, but
+testing done on it has proven it to be a great deal more portable than the
+BFD code which this takes the place of.
+
+Installation Instructions
+-------------------------
+
+DO NOT ATTEMPT INSTALLATION on a C++ based version of Smaug unless you KNOW what to expect.
+This includes the FUSS++ package. There is a great deal of additional work which needs to be
+done to make it work properly. So unless you're prepared to tackle modifications to every last
+one of your DO_FUN, SPELL_FUN, and SPEC_FUN functions.... yeah. Thought so. The truly
+adventurous can examine the AFKMud codebase to see what's involved.
+
+
+First and foremost: MAKE BACKUPS. If this code is applied wrong, it could
+seriously screw you over. Perhaps even make you crazy.
+
+If you are replacing a BFD install, proceed to ReplaceBFD.txt.
+
+If this is a new install, proceed to NewInstall.txt.
+
+Once done in either file, return here.
+
+Assuming everything works, your mud is now using dlsym support for commands.
+
+You may notice that the DECLARE_*_FUN statements have been left behind. This
+was intentional. It makes it slightly less messy to leave those alone. Too
+much other code would have needed to be changed to do a total conversion.
+I leave it to you to complete that as desired.
+
+Future commands you add to your mud will not require these statements.
+When adding new commands, it is suggested that any external references in other
+files that are designed to force a character to do that command as a result of
+function processing be sent through interpret().
+
+Example:
+
+Player types: credits
+
+Mud normally processes it as so: do_help( ch, "help credits" );
+
+Mud should now process it as so: interpret( ch, "help credits" );
+
+Doing so will avoid getting "implicit declaration" warnings from your compiler.
+It also has the added bonus of making sure the player is legally allowed to
+perform the command, so in a way it adds an extra layer of security.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

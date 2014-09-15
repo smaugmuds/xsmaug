@@ -1,0 +1,114 @@
+Slay V2.0 Smaug Port
+--------------------
+
+Originally written by Gary McNickle (gary@dharvest.com) for ROM2.4 muds.
+Ported to Smaug 1.4a by Samson.
+
+Addition of online slay editing added for V2.0 by Samson of Alsherok
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This code lets immortals who have access to the slay command create
+customized versions for their own amusement. Everything is handled
+via OLC functions and saved in a file to persist over reboots.
+This was primarily done as my first exercise in altering OLC portions
+of my Smaug code, but hey. It's also fun! :)
+
+Installation Instructions
+-------------------------
+
+1. To install this code:
+
+   Copy slay.c and slay.h into your code directory, then add slay.o
+   and slay.c to the appropriate locations in your Makefile.
+
+2. In mud.h:
+
+   Find the following code:
+
+   #define LEVEL_HIGOD		    LEVEL_GOD
+
+   and below it add: #include "slay.h"
+
+   Find the Character Substates section:
+   Add the following after SUB_PROJ_DESC:
+   
+   SUB_SLAYCMSG, SUB_SLAYVMSG, SUB_SLAYRMSG
+
+3. Find the do_slay function in fight.c and comment it out, or rename
+   it as do_oldslay. If you choose to rename it, be sure and update your
+   tables.c file appropriately.
+
+4. In db.c,  above the following:
+
+   log_string( "Loading corpses" );
+        load_corpses( );
+
+   Add this:
+
+   log_string( "Loading slay table" ); /* Online slay table - Samson 8-3-98 */
+   load_slays( );
+
+5. Add entries in tables.c for: do_makeslay, do_setslay, do_showslay,
+   and do_destroyslay.
+
+6. Place the included slay.dat file in your dist/system directory.
+
+7. Make clean, and then recompile.
+
+8. After you reboot, add the following commands using cedit, or by 
+    editing commands.dat:
+   
+    setslay, showslay, makeslay, destroyslay
+
+9. Add the included help text in Slay.help to your help.are file.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok

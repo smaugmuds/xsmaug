@@ -1,0 +1,105 @@
+/*
+
+To install this code, add the following lines to the stated files:
+
+>> mud.h
+
+> PLR_QUESTOR to all the other PLR stuff	
+ 
+
+>#define IS_QUESTOR(ch)     (xIS_SET((ch)->act, PLR_QUESTOR))
+
+>DECLARE_DO_FUN( do_aquest	);
+
+> add to struct  char_data:
+
+    CHAR_DATA *         questgiver; /* Vassago */
+    sh_int              nextquest; /* Vassago */
+    sh_int              countdown; /* Vassago */
+    sh_int              questobj; /* Vassago */
+    sh_int              questmob; /* Vassago */
+
+>> act_info.c
+
+> add to show_char_to_char_0:
+
+    if (IS_NPC(victim) &&ch->questmob > 0 && victim->pIndexData->vnum == ch->questmob)
+        strcat( buf, "[TARGET] ");
+
+>> fight.c
+
+> add to function group_gain()
+
+        if (xIS_SET(ch->act, PLR_QUESTOR)&&IS_NPC(victim))
+        {
+            if (ch->questmob == victim->pIndexData->vnum)
+            {
+		send_to_char("You have almost completed your QUEST!\n\r",ch);
+                send_to_char("Return to the questmaster before your time runs out!\n\r",ch);
+                ch->questmob = -1;
+            }
+        }
+
+>> tables.c
+
+        if ( !str_cmp( name, "do_aquest" ))             return do_aquest;
+    if ( skill == do_aquest )           return "do_aquest";
+
+/* If you know how to code, you know where those go... */
+
+>> save.c
+
+> add to fwrite_char() function:
+
+    if (ch->nextquest != 0)
+        fprintf( fp, "QuestNext %d\n",  ch->nextquest   );
+    else if (ch->countdown != 0)
+        fprintf( fp, "QuestNext %d\n",  30              );
+
+> add to fread_char() function:
+
+        case 'Q':
+            KEY( "QuestNext",   ch->nextquest,          fread_number( fp ) );
+            break;
+
+>> special.c
+
+>DECLARE_SPEC_FUN(       spec_questmaster        );
+
+>    if ( !str_cmp( name, "spec_questmaster"       ) ) return spec_questmaster;
+
+>    if ( special == spec_questmaster    )       return "spec_questmaster";
+
+( I suggest the following for "bool spec_questmaster( CHAR_DATA *ch )" )
+bool spec_questmaster( CHAR_DATA *ch )
+{
+ if ( !IS_NPC(ch) )
+  return FALSE;
+ else
+  return TRUE;
+}
+
+/* This is just a simple thing so you can add your own progs and make your
+ * Questmaster unique to your MUD.
+ */
+
+>> update.c
+
+> add to the 'local functions' section:
+
+void    quest_update    args( ( void ) ); /* Vassago - quest.c */
+
+> add to the update_handler() function under pulse_area section:
+
+        quest_update     ( );
+
+*/
+Now in the mud shell, you need to set up the quest items defined in quest.c,
+and set up your questmaster by using ...
+mset <victim> spec spec_questmaster
+Lastly create the quest command using something like ...
+cedit aquest create do_aquest
+
+And that should be it ... hope you enjoy.
+
+LrdElder

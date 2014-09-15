@@ -1,0 +1,1563 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Seven Holy Places~
+Author          Yaegar~
+Vnums           30665 30699
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          45 60 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      30665
+Keywords  elf guildmaster tcharees~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Tcharees, the Elven Guildmaster~
+Long      Tcharees, the Elven Guildmaster, welcomes you to his tower.
+~
+Desc      The Guildmaster isn't here for idle chit-chat so don't stare at him expecting
+it.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    60 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea practice~
+Affected  sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30666
+Keywords  kender guildmaster roeds~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     Roeds, the Kender Guildmaster~
+Long      Roeds, the Kender Guildmaster, welcomes you to his den.
+~
+Desc      The Guildmaster isn't here for idle chit-chat so don't stare at him expecting
+it.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    60 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea meta_aggr~
+Affected  sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30667
+Keywords  dryad guildmaster kalifax~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_adept~
+Short     Kalifax, the Dryad Guildmaster~
+Long      Kalifax, the Dryad Guildmaster, welcomes you to her den.
+~
+Desc      The Guildmaster isn't here for idle chit-chat so don't stare at her expecting
+it.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    60 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea polyself~
+Affected  sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30668
+Keywords  avian guildmistress Fela~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Fela, the Avian Guildmistress~
+Long      Fela, the Avian Guildmistress, welcomes you to her aerie.
+~
+Desc      The Guildmistress isn't here for idle chit-chat so don't stare at her expecting
+it.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    60 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea noassist~
+Affected  sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30669
+Keywords  illithid guildmaster mentar~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     Mentar, the Illithid Guildmaster~
+Long      Mentar, the Illithid Guildmaster, welcomes you to his lab.
+~
+Desc      The Guildmaster isn't here for idle chit-chat so don't stare at him expecting
+it.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    60 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30670
+Keywords  dwarf guildmaster stonefist~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Stonefist, the Dwarven Guildmaster~
+Long      Stonefist, the Dwarven Guildmaster, welcomes you to his castle.
+~
+Desc      The Guildmaster isn't here for idle chit-chat so don't stare at him expecting
+it.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    60 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30671
+Keywords  human guildmaster Lee Yuen~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Lee Yuen, the Human Guildmaster~
+Long      Lee Yuen, the Human Guildmaster, welcomes you to his dojo.
+~
+Desc      The Guildmaster isn't here for idle chit-chat so don't stare at him expecting
+it.
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    60 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea guardian~
+Affected  sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30672
+Keywords  elf sentry~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     an Elven Sentry~
+Long      An Elven Sentry guards the Guildmaster.
+~
+Desc      This fellow is devoted to his duty- to protect the guildmaster from harm.
+He glares suspiciously as you approach- perhaps you seem like a hostile
+person...?
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30673
+Keywords  kender sentry~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a Kender Sentry~
+Long      A Kender Sentry guards the Guildmaster.
+~
+Desc      This fellow is devoted to his duty- to protect the guildmaster from harm.
+He glares suspiciously as you approach- perhaps you seem like a hostile
+person...?
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30674
+Keywords  dryad sentry~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a Dryad Sentry~
+Long      A Dryad Sentry guards the Guildmaster.
+~
+Desc      This fellow is devoted to his duty- to protect the guildmaster from harm.
+He glares suspiciously as you approach- perhaps you seem like a hostile
+person...?
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30675
+Keywords  avian sentry~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     an Avian Sentry~
+Long      An Avian Sentry guards the Guildmistress.
+~
+Desc      This woman is devoted to her duty- to protect the guildmistress from harm.
+She glares suspiciously as you approach- perhaps you seem like a hostile
+person...?
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30676
+Keywords  illithid sentry~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     an Illithid Sentry~
+Long      An Illithid Sentry guards the Guildmaster.
+~
+Desc      This fellow is devoted to his duty- to protect the guildmaster from harm.
+He glares suspiciously as you approach- perhaps you seem like a hostile
+person...?
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30677
+Keywords  dwarf sentry~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     a Dwarven Sentry~
+Long      A Dwarven Sentry guards the Guildmaster.
+~
+Desc      This fellow is devoted to his duty- to protect the guildmaster from harm.
+He glares suspiciously as you approach- perhaps you seem like a hostile
+person...?
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30678
+Keywords  human sentry~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a Human Sentry~
+Long      A Human Sentry guards the Guildmaster.
+~
+Desc      This fellow is devoted to his duty- to protect the guildmaster from harm.
+He glares suspiciously as you approach- perhaps you seem like a hostile
+person...?
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30679
+Keywords  elf pupil~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     an Elven pupil~
+Long      A pupil patiently waits for her turn.
+~
+Desc      This student has been here all day, waiting for an audience with her 
+guildmaster, and you just push right in front of her and see the guildmaster
+immediately? Good for you!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30680
+Keywords  kender pupil~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a Kender pupil~
+Long      A Kender pupil patiently waits for his turn.
+~
+Desc      This student has been here all day, waiting for an audience with his 
+guildmaster, and you just push right in front of him and see the guildmaster
+immediately? Good for you!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30681
+Keywords  dryad pupil~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     a Dryad pupil~
+Long      A Dryad pupil patiently waits for his turn.
+~
+Desc      This student has been here all day, waiting for an audience with his 
+guildmaster, and you just push right in front of him and see the guildmaster
+immediately? Good for you!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30682
+Keywords  pupil~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     an Avian pupil~
+Long      An Avian patiently waits for his turn.
+~
+Desc      This student has been here all day, waiting for an audience with his 
+guildmistress, and you just push right in front of him and see the 
+guildmistress immediately? Good for you!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30683
+Keywords  illithid pupil~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     an Illithid pupil~
+Long      An Illithid pupil patiently waits for his turn.
+~
+Desc      This student has been here all day, waiting for an audience with his 
+guildmaster, and you just push right in front of him and see the guildmaster
+immediately? Good for you!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30684
+Keywords  dwarf pupil~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     a Dwarven pupil~
+Long      A Dwarven pupil patiently waits for his turn.
+~
+Desc      This student has been here all day, waiting for an audience with his 
+guildmaster, and you just push right in front of him and see the guildmaster
+immediately? Good for you!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30685
+Keywords  pupil~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a Human pupil~
+Long      A Human pupil patiently waits for her turn.
+~
+Desc      This student has been here all day, waiting for an audience with her 
+guildmaster, and you just push right in front of her and see the guildmaster
+immediately? Good for you!
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    45 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30686
+Keywords  pupil grandchild~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a grandchild~
+Long      A grandchild of the Guildmaster spars with one of his siblings here.
+~
+Desc      When visiting the home of a strange person of whom you intend to ask a great
+favor, its usually not a great idea to kill his kids as an opening remark...
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    58 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary protect~
+#ENDMOBILE
+
+#MOBILE
+Vnum      30687
+Keywords  pupil grandchild~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a grandchild~
+Long      A grandchild of the Guildmaster spars with one of his siblings here.
+~
+Desc      When visiting the home of a strange person of whom you intend to ask a great
+favor, its usually not a great idea to kill his kids as an opening remark...
+~
+Nattacks  0.000000
+Stats1    1000 0 0 0 0 0
+Stats2    58 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  sanctuary protect~
+#ENDMOBILE
+
+#OBJECT
+Vnum      30665
+Keywords  guildsword sword~
+Type      weapon~
+Short     a Guildsword~
+Long      A Guildsword glitters here.
+~
+Flags     glow~
+Values    0 0 0 11 0 0 0 0 0 0 0
+Stats     20 0 -2 9999 0 None None None
+AffData armor -20 -1 -1 0
+AffData hitroll 6 -1 -1 0
+AffData damroll 6 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      30666
+Keywords  guildarmor~
+Type      armor~
+Short     a suit of Guildarmor~
+Long      A suit of shiny Guildarmor lies here.
+~
+Flags     glow~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     15 0 -2 9999 0 None None None
+AffData mana 25 -1 -1 0
+AffData hit 25 -1 -1 0
+AffData armor -20 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData damroll 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      30667
+Keywords  guildcloak~
+Type      bloodstain~
+Short     a Guildcloak~
+Long      A Guildcloak hovers here.
+~
+Flags     glow~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData armor -10 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData damroll 1 -1 -1 0
+AffData save_breath -1 -1 -1 0
+AffData save_spell -1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      30668
+Keywords  a guildband~
+Type      armor~
+Short     a Guildband~
+Long      A Guildband lies here.
+~
+Flags     glow~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData dexterity 2 -1 -1 0
+AffData mana 50 -1 -1 0
+AffData sex 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      30669
+Keywords  guildbracer~
+Type      armor~
+Short     a Guildbracer~
+Long      A Guildbracer lies here.
+~
+Flags     glow~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData strength 1 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData mana 20 -1 -1 0
+AffData armor -10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      30670
+Keywords  key~
+Type      key~
+Short     a Key to the Guildmaster's Room~
+Long      You'll need this key if you want to practice any further...
+~
+Flags     glow~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     5 0 -2 9999 0 None None None
+AffData mana 25 -1 -1 0
+#ENDOBJECT
+
+#ROOM
+Vnum      30665
+Name      Base of the Elf Tower~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing at the base of the Elf Tower, one of the Seven Holy Places
+and home to the High Elven Guildmaster, who can complete your training. There
+is a set of steps leading up.
+~
+#EXIT
+Direction south~
+ToRoom    928
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30666
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      30666
+Name      Inside the Elf Tower~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Expensive paintings line the walls of the stairway, and you stop more than
+once to examine a particularly excellent work of art as you ascend. Every
+now and again, a ghostly servant passes you, on some mission of its own,
+its passing drawing the warmth from your body. Yet you feel no fear.
+~
+#EXIT
+Direction up~
+ToRoom    30667
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30665
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      30667
+Name      A Landing~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have reached the top of the stairway you were ascending, and now have
+the option of continuing up a second set of stairs at the far end of the
+room, or of going through a door to the east marked "Waiting Room".
+However, if you wish to proceed without an appointment, you'll need to get
+past the large sentry guarding the door...
+~
+#EXIT
+Direction east~
+ToRoom    30668
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30669
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30666
+#ENDEXIT
+
+Reset M 30672 1 30667 -1 -1 -1 100
+  Reset E 30665 1 16 100
+  Reset E 30666 1 5 100
+  Reset E 30667 1 12 100
+  Reset E 30668 1 6 100
+  Reset E 30669 1 14 100
+  Reset E 30669 1 15 100
+  Reset E 30670 1 17 100
+Reset D 30667 4 2 100 -2
+Reset D 30667 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30668
+Name      A Waiting Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a well-stocked library, staffed by more of the ghostly 
+servants you saw earlier, and populated by several scholars and mages. It 
+is in this spacious library that prospective pupils of the Guildmaster await
+his call. It looks like you may be in for quite a wait, unless you're 
+feeling impatient...
+~
+#EXIT
+Direction west~
+ToRoom    30667
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 30679 3 30668 -1 -1 -1 100
+Reset D 30668 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30669
+Name      The Top of the Tower~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a magnificent room, a hemispherical chamber inhabited by
+the guildmaster. The roof of this place is constructed entirely of some sort
+of tinted magical glass which allows the sun to shine in, bathing the well-
+furnished room in bright light. You are amazed by the sheer number of ancient
+and rare magical tomes here, and you wait in awe to see what the Guildmaster
+is willing to teach you. You have proved yourself worthy by taking the 
+initiative and besting his champion rather than waiting, and he is pleased.
+~
+#EXIT
+Direction down~
+ToRoom    30667
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 30665 1 30669 -1 -1 -1 100
+Reset D 30669 5 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30670
+Name      Outside the Thieves' Den~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are standing at the top of a dark, narrow staircase that descends into
+the depths of the Kender-run Thieves' Guild. You hear shouts and laughter
+coming from below, the sounds of merriment slightly warming your chilled
+bones.
+~
+#EXIT
+Direction south~
+ToRoom    29155
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30671
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      30671
+Name      The Base of the Stairs~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are in a cramped basement with three doors leading south, west and east,
+and a staircase leading up. There are no obvious signs or markings on any
+of the doors, and you are unsure where to proceed.
+~
+#EXIT
+Direction east~
+ToRoom    30674
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30673
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30672
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 30673 1 30671 -1 -1 -1 100
+  Reset E 30665 1 16 100
+  Reset E 30666 1 5 100
+  Reset E 30667 1 12 100
+  Reset E 30668 1 6 100
+  Reset E 30669 1 14 100
+  Reset E 30669 1 15 100
+  Reset E 30670 1 17 100
+Reset D 30671 1 1 100 -2
+Reset D 30671 2 2 100 -2
+Reset D 30671 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30672
+Name      The Waiting Room~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the potential students of the all-powerful Kender Guildmaster await an
+audience with him to practice new skills that will make them the best thieves-
+err... borrowers, in all of Anon.
+~
+#EXIT
+Direction east~
+ToRoom    30671
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 30680 3 30672 -1 -1 -1 100
+Reset D 30672 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30673
+Name      The Guildmaster's Office~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      In this simple chamber, a small Kender trains the many students who come
+seeking knowledge. He charges nothing for his tuition, but doesn't hesitate
+in helping himself to a fair portion of your treasure without your noticing.
+You have proved yourself worthy by taking the initiative and besting his 
+champion rather than waiting, and he is pleased.
+~
+#EXIT
+Direction north~
+ToRoom    30671
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 30666 1 30673 -1 -1 -1 100
+Reset D 30673 0 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30674
+Name      A Storage Chamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here the Kender keep a small supply of oil, ropes, torches, tinderboxes,
+daggers and bladed boots for their various sojourns. You would take some, but
+you are somewhat deterred by the vast array of magical wards present upon
+each item...
+~
+#EXIT
+Direction west~
+ToRoom    30671
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 30674 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30675
+Name      Entrance to the Hidden Glade~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You have found the Hidden Glade, one of the Seven Holy Places, home to the
+ancient and wise Dryad Guildmistress. Her tree is said to lie due 
+north of the entrance.
+~
+#EXIT
+Direction north~
+ToRoom    30676
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    154
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      30676
+Name      Proceeding Through the Glade~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As you proceed, you marvel at the beauty of this Glade. Birdcalls echo from 
+the tops of mighty oaks and majestic pines, while the cries of wild animals
+emanate from the nearby undergrowth. Despite this, you still feel perfectly
+at ease and safe from harm.
+~
+#EXIT
+Direction north~
+ToRoom    30677
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30675
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      30677
+Name      A Clearing~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Suddenly you enter a wide clearing, with a small magical fire burning away
+between several small tents. Some huddled figures move about here, doubtless
+fellow Dryads awaiting the call of their Guildmaster.
+
+The Guild Tree is directly ahead.
+~
+#EXIT
+Direction north~
+ToRoom    30678
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30676
+#ENDEXIT
+
+Reset M 30681 3 30677 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30678
+Name      The Base of the Tree~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing at the base of a towrering oak tree, ancient beyond reckoning.
+At the top awaits the Dryad Guildmaster, but access is blocked by a 
+magical gate, to key to which is borne by the sentry. So you may wait 
+your turn with the other Dryads, or jump the line and attempt to take 
+the key from this sentry, and enter immediately. Perhaps it may seem nicer 
+to wait, but it should be remembered that some Dryads have had to wait 
+hundreds of years for a practice sesson with the Guildmistress...
+~
+#EXIT
+Direction south~
+ToRoom    30677
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30679
+Key       30670
+Keywords  gate~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 30674 1 30678 -1 -1 -1 100
+  Reset E 30665 1 16 100
+  Reset E 30666 1 5 100
+  Reset E 30667 1 12 100
+  Reset E 30668 1 6 100
+  Reset E 30669 1 14 100
+  Reset E 30669 1 15 100
+  Reset E 30670 1 17 100
+Reset D 30678 4 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30679
+Name      The Top of the Tree~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a magical area at the top of the ancient oak which protects
+its occupant from the elements. However, it has been cunningly designed to
+give occupants the illusion that they are living INSIDE a tree... It sure
+looks real. Are you SURE its an illusion? Anyway, your mistress awaits. You 
+have proved yourself worthy by taking the initiative and besting her champion 
+rather than waiting, and she is pleased.
+~
+#EXIT
+Direction down~
+ToRoom    30678
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 30667 1 30679 -1 -1 -1 100
+Reset D 30679 5 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30680
+Name      Base of the Cliff~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing at the base of a massive granite cliff-face, atop which,
+it is rumored, lie both the most powerful Avian Guild, and the castle of
+the Elf Lord Yaegar, though the former has been seen but rarely by mortals,
+and the latter not at all.
+~
+#EXIT
+Direction north~
+ToRoom    17254
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30681
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      30681
+Name      Ascending the Cliff~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      With some effort, you heave yourself up the cliff-face, using your hover
+ability when necessary to clear unscaleable sections. Graffiti has been
+carved here by past visitors, some of it very unkind toward the Avian
+Guildmaster.
+~
+#EXIT
+Direction up~
+ToRoom    30682
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30680
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      30682
+Name      A Ledge~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You eventually reach a small outcrop two thirds of the way up the cliff,
+and pause to catch your breath. Suddenly, you notice, with mounting dismay,
+that the way upward is blocked by a massive metal gate with a huge lock.
+Standing before this is the biggest Avian you have ever seen. There is a sign
+next to the gate.
+~
+#EXIT
+Direction east~
+ToRoom    30683
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    30684
+Key       30670
+Keywords  gate~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    30681
+#ENDEXIT
+
+Reset M 30675 1 30682 -1 -1 -1 100
+  Reset E 30665 1 16 100
+  Reset E 30666 1 5 100
+  Reset E 30667 1 12 100
+  Reset E 30668 1 6 100
+  Reset E 30669 1 14 100
+  Reset E 30669 1 15 100
+  Reset E 30670 1 17 100
+Reset D 30682 4 2 100 -2
+#EXDESC
+ExDescKey    sign~
+ExDesc       The sign says-
+
+     "Welcome, traveller, to one of the Seven Holy Places. If you wish to
+      see the guildmistress, then proceed east and wait with the rest of the
+      students. If you have a problem with this, then you'll have to deal
+      with the sentry".
+
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      30683
+Name      The Waiting Ledge~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here all potential students of the Guildmistress await an audience. It looks
+like some of them have been waiting for quite some time...
+~
+#EXIT
+Direction west~
+ToRoom    30682
+#ENDEXIT
+
+Reset M 30682 3 30683 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30684
+Name      The Aerie~
+Sector    mountain~
+Flags     safe~
+Stats     0 0 0 0 0
+Desc      You have entered the aerie of the Guildmistress. She is seated in a nest,
+waiting patiently for your requests. You have proved yourself worthy by taking
+the initiative and besting her champion rather than waiting, and she is 
+pleased.
+~
+#EXIT
+Direction down~
+ToRoom    30682
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 30668 1 30684 -1 -1 -1 100
+Reset D 30684 5 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30685
+Name      The Donjon~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are standing outside a disused donjon, given by an ageing Lord to the
+Illithids for use as a guild. It has come over the years to absorb a 
+tremendous amount of psionic energy from the atmosphere due to some strange
+composition of its walls, and thus has quickly become one of the Seven Holy
+Places, the home of a High Guildmaster.
+~
+#EXIT
+Direction east~
+ToRoom    30686
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    9714
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      30686
+Name      Inside the Donjon~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Flickering shadows created by the light cast from your lightsource surround
+you as you proceed through the twisting corridors toward the center of this
+dark guild.
+~
+#EXIT
+Direction north~
+ToRoom    30687
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30685
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      30687
+Name      A Recess~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Seated within a recess here are several Illithid students, awaiting the 
+attention of their master. You have to wait for a VERY long time to see him,
+unless you feel like stealing the door key from his bodyguard...
+~
+#EXIT
+Direction south~
+ToRoom    30686
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30688
+#ENDEXIT
+
+Reset M 30683 3 30687 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30688
+Name      Outside the Guildmaster's Chambers~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are standing in a dark chamber filled with bronze urns that hum quietly
+as they gather psionic energy from the air for the Guildmaster, who is one
+of the few creatures who has managed to discover the secret of Unlimited
+Mana.
+~
+#EXIT
+Direction north~
+ToRoom    30689
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30687
+#ENDEXIT
+
+Reset M 30676 1 30688 -1 -1 -1 100
+  Reset E 30665 1 16 100
+  Reset E 30666 1 5 100
+  Reset E 30667 1 12 100
+  Reset E 30668 1 6 100
+  Reset E 30669 1 14 100
+  Reset E 30669 1 15 100
+  Reset E 30670 1 17 100
+Reset D 30688 0 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30689
+Name      The Guildmaster's Chamber~
+Sector    indoors~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Squeezing past hundreds of urns, amulets, scrolls, braziers, bookshelves and
+bunsen burners, you come face to face with the most powerful Illithid in
+Anon. Your Guildmaster turns to face you and telepathically asks what you
+what you wish to learn. You have proved yourself worthy by taking the 
+initiative and besting his champion rather than waiting, and he is pleased.
+~
+#EXIT
+Direction south~
+ToRoom    30688
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 30669 1 30689 -1 -1 -1 100
+Reset D 30689 2 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30690
+Name      Outside Fort RockBreak~
+Sector    mountain~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Fort RockBreak is the traditional home of the RockBreaker Clan, ancient
+Dwarves who milennia ago dedicated themselves to the advancement of the
+knowledge of their fellow Dwarves. It has since become one of the Seven
+Holy Places, and within you will find your Guildmaster.
+~
+#EXIT
+Direction north~
+ToRoom    30691
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    4779
+#ENDEXIT
+
+Reset D 30690 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30691
+Name      Inside the Fort~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You tread slowly across dressed stone floors into a corridor lined with war
+banners, axes, hammers and shields. All of them look as though they have
+seen a LOT of action.
+~
+#EXIT
+Direction north~
+ToRoom    30694
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30692
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30690
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 30691 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30692
+Name      Anteroom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      In this room gather the Dwarves from all parts of the world who have reached
+a sufficient level of experience to train under the High Guildmaster. It looks
+like you're in for a long wait, unless there's a quicker way in...
+~
+#EXIT
+Direction north~
+ToRoom    30693
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30691
+#ENDEXIT
+
+Reset M 30684 3 30692 -1 -1 -1 100
+Reset D 30692 0 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30693
+Name      The Guildhall~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The greatest living Dwarven Guildmaster in all of Anon resides here, quietly
+practicing his skills at metalwork and masonry, though he will more than
+gladly pause in this rather mediocre work to teach you how to more effectively
+bash the skulls of your enemies. You have proved yourself worthy by taking
+the initiative and besting his champion rather than waiting, and he is pleased.
+~
+#EXIT
+Direction south~
+ToRoom    30692
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30694
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 30670 1 30693 -1 -1 -1 100
+Reset D 30693 2 2 100 -2
+Reset D 30693 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30694
+Name      Guard Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The Guildmaster's Sentry resides here, where he spends his time arranging
+flowers or weaving baskets. You see, the years have softened his mind, but
+not his fists...
+~
+#EXIT
+Direction east~
+ToRoom    30693
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30691
+#ENDEXIT
+
+Reset M 30677 1 30694 -1 -1 -1 100
+  Reset E 30665 1 16 100
+  Reset E 30666 1 5 100
+  Reset E 30667 1 12 100
+  Reset E 30668 1 6 100
+  Reset E 30669 1 14 100
+  Reset E 30669 1 15 100
+  Reset E 30670 1 17 100
+Reset D 30694 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30695
+Name      Outside the Temple~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing outside the first of the Seven Holy Places, the ancient
+Eversacred Temple, home of the Human Guildmaster, who is master of 98 
+different style of martial arts, and has successfully bested the 36 chambers
+no less than 5 times.
+~
+#EXIT
+Direction north~
+ToRoom    30696
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    10787
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      30696
+Name      Inside the Temple~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in the large central area of the Temple. Courtyards lie to the left
+and right, while a locked mithril door lies straight ahead. A small sign
+instructs you to head east and wait your turn.
+~
+#EXIT
+Direction north~
+ToRoom    30699
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    30698
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    30695
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    30697
+#ENDEXIT
+
+Reset M 30678 1 30696 -1 -1 -1 100
+  Reset E 30665 1 16 100
+  Reset E 30666 1 5 100
+  Reset E 30667 1 12 100
+  Reset E 30668 1 6 100
+  Reset E 30669 1 14 100
+  Reset E 30669 1 15 100
+  Reset E 30670 1 17 100
+Reset D 30696 0 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      30697
+Name      Practice Yard~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here, several young students, grandsons of the Guildmaster, engage in mock
+combat routines using sais, nunchakas, ninjatos, bo-sticks and kusari-gamas.
+~
+#EXIT
+Direction east~
+ToRoom    30696
+#ENDEXIT
+
+Reset M 30686 2 30697 -1 -1 -1 100
+Reset M 30687 2 30697 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30698
+Name      Waiting Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This quiet rooms is full fo straw mats, upon which fellow humans kneel in
+quiet contemplation, preparing themselves spiritually and mentally for the
+upcoming training they wish to receive. You may join them if you really want
+to...
+~
+#EXIT
+Direction west~
+ToRoom    30696
+#ENDEXIT
+
+Reset M 30685 3 30698 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      30699
+Name      The Guildmaster's Chambers~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The Guildmaster looks up as you enter from his reed mat on the floor, and it
+appears he has been expecting you. He motions for you to sit with him and
+enjoy some tea before you train. You have proved yourself worthy by taking
+the initiative and besting his champion rather than waiting, and he is pleased.
+~
+#EXIT
+Direction south~
+ToRoom    30696
+Key       30670
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 30671 1 30699 -1 -1 -1 100
+Reset D 30699 2 2 100 -2
+#ENDROOM
+
+#ENDAREA

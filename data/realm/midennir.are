@@ -1,127 +1,118 @@
 #XSMAUGAREA
 #AREADATA
-Version      1
-Name         Miden'nir~
-Author       Copper~
-WeatherX     0
-WeatherY     0
-Ranges       5 15 0 60
-Economy      0 35006290
+Version         1
+Name            Miden'nir~
+Author          Copper~
+Vnums           3500 3590
+Continent       one~
+Coordinates     0 0
+Dates           1403834970 1403834970
+Ranges          5 15 0 60
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
 #ENDAREADATA
 
 #MOBILE
-Vnum       3500
-Keywords   gypsy~
-Short      a Black Forest gypsy~
-Long       A swift little creature scrounges for nifty items.
+Vnum      3500
+Keywords  gypsy~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     a Black Forest gypsy~
+Long      A swift little creature scrounges for nifty items.
 ~
-Desc       She looks like a sneaky little creature. Don't take your eyes off of her for
+Desc      She looks like a sneaky little creature. Don't take your eyes off of her for
 toooooo long.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Specfun    spec_thief~
-Gender     female~
-Actflags   npc scavenger stayarea~
-Affected   detect_invis infrared sneak hide~
-Stats1     -570 8 10 1 600 3575
-Stats2     8 10 80
-Stats3     2 6 1
-Stats4     0 0 1 0 0
-Attribs    10 13 13 18 13 13 18
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head legs heart guts ear eye claws~
-Attacks    claws~
-Defenses   disarm~
+Nattacks  1.000000
+Stats1    -570 -1 0 0 0 0
+Stats2    8 21 1 80 2 6 1
+Speaks    common~
+Speaking  common~
+Actflags  npc scavenger stayarea~
+Affected  detect_invis infrared sneak hide~
+Bodyparts head legs heart guts ear eye claws~
+Attacks   claws~
+Defenses  disarm~
 #ENDMOBILE
 
 #MOBILE
-Vnum       3501
-Keywords   mountain goblin spy inhabitant~
-Short      a goblin spy~
-Long       An inhabitant of the forest prowls about, protecting his mountain.
+Vnum      3501
+Keywords  mountain goblin spy inhabitant~
+Race      goblin~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a goblin spy~
+Long      An inhabitant of the forest prowls about, protecting his mountain.
 ~
-Desc       Prowling the Black Forest, this predator represents the initial line of
+Desc      Prowling the Black Forest, this predator represents the initial line of
 defense against those who might try to infiltrate the mighty mountain.
 ~
-Race       goblin~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc aggressive stayarea~
-Stats1     -500 6 15 6 30 800
-Stats2     5 7 55
-Stats3     1 10 4
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
+Nattacks  0.000000
+Stats1    -500 0 0 0 0 0
+Stats2    6 21 6 55 1 10 4
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Bodyparts head arms legs heart guts hands feet ear eye~
 #ENDMOBILE
 
 #MOBILE
-Vnum       3502
-Keywords   jacob finn elf~
-Short      Jacob, the young Finn elf~
-Long       A young, shivering elf quietly drops tears onto the dirt below.
+Vnum      3502
+Keywords  jacob finn elf~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  resting~
+DefPos    resting~
+Short     Jacob, the young Finn elf~
+Long      A young, shivering elf quietly drops tears onto the dirt below.
 ~
-Desc       Jacob looks as though he narrowly missed the evildoings of the dark
+Desc      Jacob looks as though he narrowly missed the evildoings of the dark
 goblins of Miden'nir. It looks, sadly, as though his brethren did not
 share his good fortune.
 ~
-Race       human~
-Class      warrior~
-Position   sitting~
-DefPos     sitting~
-Gender     male~
-Actflags   npc sentinel r2 wimpy~
-Affected   hide~
-Stats1     500 7 17 6 0 600
-Stats2     1 12 47
-Stats3     1 8 0
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs hands feet ear eye~
-Attacks    trip~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    500 -1 0 0 0 0
+Stats2    7 21 6 47 1 8 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel wimpy~
+Affected  hide~
+Bodyparts head arms legs hands feet ear eye~
+Attacks   trip~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       3503
-Keywords   black jack bartender man~
-Short      Jack~
-Long       A tall, chubby man focuses on making the best drinks possible for his patrons.
+Vnum      3503
+Keywords  black jack bartender man~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Jack~
+Long      A tall, chubby man focuses on making the best drinks possible for his patrons.
 ~
-Desc       "Black" Jack's been employed here for much longer than he can remember. He
+Desc      "Black" Jack's been employed here for much longer than he can remember. He
 drinks as much profit as he makes. Standing 6'4" and weighing about 310
 lbs., though, who's going to tell him different?
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel stayarea~
-Stats1     400 10 8 1 1500 7000
-Stats2     1 12 200
-Stats3     2 8 1
-Stats4     0 0 1 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Attacks    trip~
-Defenses   parry dodge~
+Nattacks  1.000000
+Stats1    400 -1 0 0 0 0
+Stats2    10 21 1 200 2 8 1
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Attacks   trip~
+Defenses  parry dodge~
 ShopData   17 0 0 0 0 130 90 7 21
 #MUDPROG
 Progtype  greet_prog~
@@ -150,34 +141,31 @@ wink $n
 #ENDMOBILE
 
 #MOBILE
-Vnum       3504
-Keywords   dave bard soul man~
-Short      Dave the introspective bard~
-Long       A pensive soul sits at a table, randomly questioning his liquor bottle.
+Vnum      3504
+Keywords  dave bard soul man~
+Race      high-elf~
+Class     Rogue~
+Gender    male~
+Position  sitting~
+DefPos    sitting~
+Short     Dave the introspective bard~
+Long      A pensive soul sits at a table, randomly questioning his liquor bottle.
 ~
-Desc       Dave doesn't get out too often. Actually, he has not left his seat other
+Desc      Dave doesn't get out too often. Actually, he has not left his seat other
 than to sleep or relieve himself. He seems pretty content, though, for a
 person with no social life.
 ~
-Race       elf~
-Class      thief~
-Position   aggressive~
-DefPos     aggressive~
-Gender     male~
-Actflags   npc sentinel stayarea~
-Affected   detect_invis~
-Stats1     600 8 13 3 10 3750
-Stats2     2 6 92
-Stats3     2 6 3
-Stats4     0 0 1 0 0
-Attribs    12 18 18 10 10 10 10
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head arms legs heart guts hands feet ear eye~
-Resist     poison~
-Suscept    magic~
-Attacks    punch trip~
+Nattacks  1.000000
+Stats1    600 -1 0 0 0 0
+Stats2    8 21 3 92 2 6 3
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  detect_invis~
+Bodyparts head arms legs heart guts hands feet ear eye~
+Resist    acid~
+Suscept   plus6~
+Attacks   punch trip~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   57~
@@ -195,35 +183,32 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       3505
-Keywords   doom elite goblin figure~
-Short      A Doom elite~
-Long       A massive goblin prowls the Circle of Doom, protecting his king.
+Vnum      3505
+Keywords  doom elite goblin figure~
+Race      goblin~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A Doom elite~
+Long      A massive goblin prowls the Circle of Doom, protecting his king.
 ~
-Desc       Created from Brajtkomu's own magic, this predator's duty is to rid the
+Desc      Created from Brajtkomu's own magic, this predator's duty is to rid the
 nucleus of Mount Doom of unwanted visitors. He kills on sight.
 ~
-Race       goblin~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc aggressive stayarea~
-Affected   detect_invis detect_hidden sanctuary infrared sneak~
-Stats1     -1000 16 12 4 10 4000
-Stats2     5 7 190
-Stats3     5 7 4
-Stats4     0 0 1 0 0
-Attribs    18 10 10 16 16 8 10
-Saves      -5 0 0 -3 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head legs guts feet~
-Resist     nonmagic~
-Immune     poison~
-Suscept    fire magic~
-Attacks    kick trip~
-Defenses   parry dodge disarm~
+Nattacks  1.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    16 21 4 190 5 7 4
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  detect_invis detect_hidden sanctuary infrared sneak~
+Bodyparts head legs guts feet~
+Resist    hold~
+Immune    acid~
+Suscept   NONE plus6~
+Attacks   kick trip~
+Defenses  parry dodge disarm~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -238,30 +223,27 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       3506
-Keywords   goblin doom protector~
-Short      a Doom goblin~
-Long       A protector of the mountain is here, foaming at the mouth.
+Vnum      3506
+Keywords  goblin doom protector~
+Race      goblin~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     a Doom goblin~
+Long      A protector of the mountain is here, foaming at the mouth.
 ~
-Desc       Sworn to protect Mount Doom from invaders, this fierce warrior would do
+Desc      Sworn to protect Mount Doom from invaders, this fierce warrior would do
 whatever he could to destroy all who sought to infiltrate his home.
 ~
-Race       goblin~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc aggressive stayarea~
-Affected   detect_invis infrared~
-Stats1     -1000 10 15 3 2000 2000
-Stats2     2 6 130
-Stats3     2 6 2
-Stats4     0 0 0 0 0
-Attribs    16 13 13 13 13 8 13
-Saves      0 0 0 0 0
-Speaks     goblin~
-Speaking   goblin~
-Bodyparts  head arms legs heart guts hands feet ear eye~
+Nattacks  0.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    10 21 3 130 2 6 2
+Speaks    goblin~
+Speaking  goblin~
+Actflags  npc aggressive stayarea~
+Affected  detect_invis infrared~
+Bodyparts head arms legs heart guts hands feet ear eye~
 #MUDPROG
 Progtype  all_greet_prog~
 Arglist   100~
@@ -276,33 +258,30 @@ endif
 #ENDMOBILE
 
 #MOBILE
-Vnum       3507
-Keywords   goblin dark king figure brajtkomu~
-Short      Brajtkomu, the Goblin King~
-Long       A lone, dark figure growls at himself from his black, decaying throne.
+Vnum      3507
+Keywords  goblin dark king figure brajtkomu~
+Race      goblin~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Brajtkomu, the Goblin King~
+Long      A lone, dark figure growls at himself from his black, decaying throne.
 ~
-Desc       The shadows somehow seem to converge upon themselves, creating this horrid,
+Desc      The shadows somehow seem to converge upon themselves, creating this horrid,
 though wondrous, creature. Brajtkomu did not gain his position and status
 only by looking so mean...
 ~
-Race       goblin~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel aggressive~
-Affected   detect_evil detect_invis detect_hidden sanctuary infrared~
-Stats1     -1000 15 10 1 3500 8000
-Stats2     6 4 170
-Stats3     4 7 4
-Stats4     0 0 1 0 0
-Attribs    18 10 16 16 13 10 16
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common goblin~
-Bodyparts  head legs heart~
-Attacks    kick~
-Defenses   dodge~
+Nattacks  1.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    15 21 1 170 4 7 4
+Speaks    common elvish pixie ogre dragon ancient halfling~
+Speaking  goblin~
+Actflags  npc sentinel aggressive~
+Affected  detect_evil detect_invis detect_hidden sanctuary infrared~
+Bodyparts head legs heart~
+Attacks   kick~
+Defenses  dodge~
 #MUDPROG
 Progtype  greet_prog~
 Arglist   100~
@@ -317,104 +296,97 @@ muhaha
 #ENDMOBILE
 
 #MOBILE
-Vnum       3508
-Keywords   jed innkeeper proprietor man~
-Short      Innkeeper Jed~
-Long       The proprietor sits at his desk, slowly paging through his favorite book.
+Vnum      3508
+Keywords  jed innkeeper proprietor man~
+Race      human~
+Class     Rogue~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Innkeeper Jed~
+Long      The proprietor sits at his desk, slowly paging through his favorite book.
 ~
-Desc       Jed makes you feel right at home in this strange place. His bushy, brown
+Desc      Jed makes you feel right at home in this strange place. His bushy, brown
 beard is, remarkably, groomed to near perfection. He peers up at you with
 warm blue eyes, and you feel a sudden urge to rent a room. What a suave
 businessman, eh?
 ~
-Race       human~
-Class      thief~
-Position   standing~
-DefPos     standing~
-Gender     male~
-Actflags   npc sentinel scavenger prototype~
-Stats1     0 10 0 0 50 0
-Stats2     1 1 88
-Stats3     2 6 2
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
-Bodyparts  head legs heart feet~
-Suscept    magic~
-Defenses   dodge~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    10 21 0 88 2 6 2
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel scavenger proto~
+Bodyparts head legs heart feet~
+Suscept   plus6~
+Defenses  dodge~
 #ENDMOBILE
 
 #MOBILE
-Vnum       3550
-Keywords   final mob~
-Short      a newly created final mob~
-Long       Some god abandoned a newly created final mob here.
+Vnum      3550
+Keywords  final mob~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a newly created final mob~
+Long      Some god abandoned a newly created final mob here.
 ~
-Race       human~
-Class      warrior~
-Position   standing~
-DefPos     standing~
-Gender     neuter~
-Actflags   npc prototype~
-Stats1     0 1 0 0 0 0
-Stats2     0 0 0
-Stats3     0 0 0
-Stats4     0 0 0 0 0
-Attribs    13 13 13 13 13 13 13
-Saves      0 0 0 0 0
-Speaks     common~
-Speaking   common~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc proto~
 #ENDMOBILE
 
 #OBJECT
-Vnum     3500
-Keywords crescent white deerbone~
-Type     armor~
-Short    a white deerbone crescent~
-Long     An earring of the purest white rests in the dirt.~
-Flags    dark magic metal~
-WFlags   take ears~
-Values   4 6 0 0 0 0
-Stats    1 10 1 0 0
-Affect       -1 -1 1 2 0
+Vnum      3500
+Keywords  crescent white deerbone~
+Type      armor~
+Short     a white deerbone crescent~
+Long      An earring of the purest white rests in the dirt.~
+Flags     metal magic~
+WFlags    take ears~
+Values    4 6 0 0 0 0 0 0 0 0 0
+Stats     1 10 -2 9999 0 None None None
+AffData intelligence 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     3501
-Keywords green beer winter ale~
-Type     drinkcon~
-Short    "Black" Jack's Green Winter Ale~
-Long     A big bottle of green ooze has been wisely discarded on the ground.~
-WFlags   take hold~
-Values   10 10 4 0 0 0
-Stats    1 10 1 0 0
+Vnum      3501
+Keywords  green beer winter ale~
+Type      drinkcon~
+Short     "Black" Jack's Green Winter Ale~
+Long      A big bottle of green ooze has been wisely discarded on the ground.~
+WFlags    take hold~
+Values    10 10 4 0 0 0 0 0 0 0 0
+Stats     1 10 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     3502
-Keywords book~
-Type     furniture~
-Short    Jed's favorite book of tales~
-Long     An old, worn book rests quietly on the ground, pages intact.~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    3 35 3 0 0
-Affect       -1 -1 2 3 0
-Affect       -1 -1 10 12 0
+Vnum      3502
+Keywords  book~
+Type      furniture~
+Short     Jed's favorite book of tales~
+Long      An old, worn book rests quietly on the ground, pages intact.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     3 35 -2 9999 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData mana 10 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     3503
-Keywords black key~
-Type     key~
-Short    a strange black key~
-Long     An old, black key draws your attention.~
-Flags    dark metal~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    2 0 0 0 0
+Vnum      3503
+Keywords  black key~
+Type      key~
+Short     a strange black key~
+Long      An old, black key draws your attention.~
+Flags     metal~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    key~
 ExDesc       The key is obviously quite old. Upon it have been inscribed some arcane
@@ -431,14 +403,14 @@ ExDesc       You cannot seem to decipher the strange runes.
 #ENDOBJECT
 
 #OBJECT
-Vnum     3504
-Keywords vat~
-Type     container~
-Short    Jack's brewing vat~
-Long     A big vat sits majestically in the middle of the room.~
-Flags    metal~
-Values   190 0 0 0 0 0
-Stats    90 0 0 0 0
+Vnum      3504
+Keywords  vat~
+Type      container~
+Short     Jack's brewing vat~
+Long      A big vat sits majestically in the middle of the room.~
+Flags     metal~
+Values    190 0 0 0 0 0 0 0 0 0 0
+Stats     90 0 -2 9999 0 None None None
 #EXDESC
 ExDescKey    vat~
 ExDesc       The vat gets put to good use whenever Jack actually has to make a fresh batch
@@ -449,31 +421,31 @@ of his Green Winter Ale. In other words, not too often.
 #ENDOBJECT
 
 #OBJECT
-Vnum     3505
-Keywords doom skeleton key~
-Type     key~
-Short    the key of Doom~
-Long     A shadowy skeleton key darkens the ground below.~
-Flags    hum dark metal~
-WFlags   take hold~
-Values   0 0 0 0 0 0
-Stats    2 0 0 0 0
+Vnum      3505
+Keywords  doom skeleton key~
+Type      key~
+Short     the key of Doom~
+Long      A shadowy skeleton key darkens the ground below.~
+Flags     hum metal~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     2 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     3506
-Keywords doom cape~
-Type     armor~
-Short    a long, black Doom insignia cape~
-Long     A long, dark cape casts strange shadows upon the ground.~
-Flags    hum dark magic~
-WFlags   take about~
-Values   10 4 0 0 0 0
-Stats    3 3000 300 0 0
-Affect       -1 -1 -2 3 0
-Affect       -1 -1 2 1 0
-Affect       -1 -1 3 18 0
-Affect       -1 -1 1 19 0
+Vnum      3506
+Keywords  doom cape~
+Type      armor~
+Short     a long, black Doom insignia cape~
+Long      A long, dark cape casts strange shadows upon the ground.~
+Flags     hum magic~
+WFlags    take about~
+Values    10 4 0 0 0 0 0 0 0 0 0
+Stats     3 3000 -2 1 0 None None None
+AffData wisdom -2 -1 -1 0
+AffData strength 2 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 1 -1 -1 0
 #MUDPROG
 Progtype  wear_prog~
 Arglist   100~
@@ -484,93 +456,95 @@ Comlist   mpforce $n muhaha
 #ENDOBJECT
 
 #OBJECT
-Vnum     3507
-Keywords doom visor~
-Type     armor~
-Short    a black Doom insignia visor~
-Long     A dark visor casts strange shadows on the ground.~
-Flags    hum dark metal~
-WFlags   take eyes~
-Values   10 3 0 0 0 0
-Stats    2 5700 570 0 0
-Affect       -1 -1 1 19 0
-Affect       -1 -1 1 18 0
-Affect       -1 -1 -2 1 0
-Affect       -1 -1 -2 31 0
-Affect       -1 -1 -2 25 0
-Affect       -1 -1 -2 3 0
-Affect       -1 -1 10 13 0
+Vnum      3507
+Keywords  doom visor~
+Type      armor~
+Short     a black Doom insignia visor~
+Long      A dark visor casts strange shadows on the ground.~
+Flags     hum metal~
+WFlags    take eyes~
+Values    10 3 0 0 0 0 0 0 0 0 0
+Stats     2 5700 -2 1 0 None None None
+AffData damroll 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData strength -2 -1 -1 0
+AffData class -2 -1 -1 0
+AffData sex -2 -1 -1 0
+AffData wisdom -2 -1 -1 0
+AffData hit 10 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     3508
-Keywords doom sceptre~
-Type     armor~
-Short    Brajtkomu's sceptre of Doom~
-Long     A darkened sceptre envelopes the ground in an evil mist.~
-Flags    glow hum dark evil metal~
-WFlags   take hold~
-Values   8 10 0 0 0 0
-Stats    6 190000 19000 0 0
-Affect       -1 -1 30 12 0
-Affect       -1 -1 10 13 0
-Affect       -1 -1 2 19 0
+Vnum      3508
+Keywords  doom sceptre~
+Type      armor~
+Short     Brajtkomu's sceptre of Doom~
+Long      A darkened sceptre envelopes the ground in an evil mist.~
+Flags     glow hum metal evil~
+WFlags    take hold~
+Values    8 10 0 0 0 0 0 0 0 0 0
+Stats     6 190000 -2 1 0 None None None
+AffData mana 30 -1 -1 0
+AffData hit 10 -1 -1 0
+AffData damroll 2 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     3509
-Keywords clogs~
-Type     armor~
-Short    a pair of clogs made of Black Forest bark~
-Long     Some black clogs have been discarded on the ground.~
-Flags    organic~
-WFlags   take feet~
-Values   8 6 0 0 0 0
-Stats    6 10 1 0 0
-Affect       -1 -1 2 2 0
-Affect       -1 -1 10 13 0
+Vnum      3509
+Keywords  clogs~
+Type      armor~
+Short     a pair of clogs made of Black Forest bark~
+Long      Some black clogs have been discarded on the ground.~
+Flags     organic~
+WFlags    take feet~
+Values    8 6 0 0 0 0 0 0 0 0 0
+Stats     6 10 -2 9999 0 None None None
+AffData intelligence 2 -1 -1 0
+AffData hit 10 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     3510
-Keywords doom arm armguards guards black~
-Type     armor~
-Short    a pair of black Doom insignia armguards~
-Long     A pair of dark metal armguards casts strange shadows onto the ground.~
-Flags    dark evil metal~
-WFlags   take arms~
-Values   8 8 0 0 0 0
-Stats    4 6000 600 0 0
-Affect       -1 -1 1 19 0
-Affect       -1 -1 1 18 0
+Vnum      3510
+Keywords  doom arm armguards guards black~
+Type      armor~
+Short     a pair of black Doom insignia armguards~
+Long      A pair of dark metal armguards casts strange shadows onto the ground.~
+Flags     metal evil~
+WFlags    take arms~
+Values    8 8 0 0 0 0 0 0 0 0 0
+Stats     4 6000 -2 1 0 None None None
+AffData damroll 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
 #ENDOBJECT
 
 #OBJECT
-Vnum     3511
-Keywords signobj~
-Type     furniture~
-Short    the sign~
-Long     An old sign made of wood tilts a bit to the left.~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      3511
+Keywords  signobj~
+Type      furniture~
+Short     the sign~
+Long      An old sign made of wood tilts a bit to the left.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #OBJECT
-Vnum     3550
-Keywords final object~
-Type     trash~
-Short    a newly created final object~
-Long     Some god dropped a newly created final object here.~
-Flags    prototype~
-Values   0 0 0 0 0 0
-Stats    1 0 0 0 0
+Vnum      3550
+Keywords  final object~
+Type      trash~
+Short     a newly created final object~
+Long      Some god dropped a newly created final object here.~
+Flags     proto~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
 #ENDOBJECT
 
 #ROOM
-Vnum     3500
-Name     The Plains~
-Sector   city~
-Desc     You are standing on the plains. This is a vast desolate place where the
+Vnum      3500
+Name      The Plains~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing on the plains. This is a vast desolate place where the
 wind can howl undisturbed since nothing but you bars its way. However you
 are not the first to wander here. Before you somebody has left a small path.
 The path looks rather bewildered and is not the kind of path to lead to
@@ -585,10 +559,12 @@ ToRoom    3501
 #ENDROOM
 
 #ROOM
-Vnum     3501
-Name     The Lane~
-Sector   city~
-Desc     You are strolling along a pleasant, shady lane. The road is lined on both
+Vnum      3501
+Name      The Lane~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are strolling along a pleasant, shady lane. The road is lined on both
 sides by tall, stately trees which lend the scene with a sense of quiet
 serenity. You can follow the road north or south.
 ~
@@ -605,10 +581,12 @@ ToRoom    3502
 #ENDROOM
 
 #ROOM
-Vnum     3502
-Name     The Cross Roads on the Hilltop~
-Sector   city~
-Desc     You stand atop a hill upon which several roads cross.  The great city of
+Vnum      3502
+Name      The Cross Roads on the Hilltop~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand atop a hill upon which several roads cross.  The great city of
 Darkhaven can be seen a short distance to the west, while to the east the
 stately oaks and poplars of the holy grove wave slowly in the wind.  A
 wide, flat path leads due south through the stark landscape of the dwarven
@@ -659,11 +637,12 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     3503
-Name     Outskirts of Darkhaven~
-Sector   city~
-Flags    nomob~
-Desc     You stand on the outskirts of the city of Darkhaven; the primary city of
+Vnum      3503
+Name      Outskirts of Darkhaven~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You stand on the outskirts of the city of Darkhaven; the primary city of
 this land.  The road leads east into the peace and quiet of the forest;
 while to the west comes to the western gate of the city, surrounded by a
 confusion of shops, bars, and market places.  Another path meanders off
@@ -693,10 +672,12 @@ Desc      A pathway meaders into the forest...
 #ENDROOM
 
 #ROOM
-Vnum     3504
-Name     On a Long, Rusted Bridge~
-Sector   city~
-Desc     Much reluctance plagues your thoughts as you stumble onto the old bridge 
+Vnum      3504
+Name      On a Long, Rusted Bridge~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Much reluctance plagues your thoughts as you stumble onto the old bridge 
 leading south into the Black Forest, in which there is rumored to be an 
 ancient mountain, within which lies a labyrinth of untold riches. None
 who have ever gone looking for the treasure, though, have returned
@@ -722,7 +703,7 @@ Desc      A crag can be seen below, but getting there from here would be impossi
 Flags     window~
 #ENDEXIT
 
-Reset O 0 3511 1 3504
+Reset O 3511 1 3504 -1 -1 -1 100
 #EXDESC
 ExDescKey    sign~
 ExDesc       The sign, covered with a strange green substance, reads:
@@ -763,10 +744,12 @@ endif
 #ENDROOM
 
 #ROOM
-Vnum     3505
-Name     Before the Black Forest~
-Sector   forest~
-Desc     Looking back, the sanctuary of New Darkhaven seems to beckon you now more
+Vnum      3505
+Name      Before the Black Forest~
+Sector    forest~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Looking back, the sanctuary of New Darkhaven seems to beckon you now more
 than ever before. The woods to the south project feelings of despair and
 misery. The bards used to tell you stories of horror about mighty
 adventurers who would traverse into the heart of the Black Forest, never
@@ -797,11 +780,12 @@ Desc      A strange building lies to the west...
 #ENDROOM
 
 #ROOM
-Vnum     3506
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3506
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -820,15 +804,16 @@ Desc      The forest concedes to the vast darkness...
 ~
 #ENDEXIT
 
-Reset M 0 3501 8 3506
+Reset M 3501 8 3506 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3507
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3507
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -857,11 +842,12 @@ Desc      The forest concedes to the vast darkness...
 #ENDROOM
 
 #ROOM
-Vnum     3508
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3508
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -883,11 +869,12 @@ Desc      The forest concedes to the vast darkness...
 #ENDROOM
 
 #ROOM
-Vnum     3509
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3509
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -913,15 +900,16 @@ Desc      The forest concedes to the vast darkness...
 ~
 #ENDEXIT
 
-Reset M 0 3501 8 3509
+Reset M 3501 8 3509 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3510
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3510
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -950,11 +938,12 @@ Desc      The forest concedes to the vast darkness...
 #ENDROOM
 
 #ROOM
-Vnum     3511
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3511
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest appears to grow darker and darker.
@@ -976,11 +965,12 @@ Desc      The forest concedes to the vast darkness...
 #ENDROOM
 
 #ROOM
-Vnum     3512
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3512
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -999,16 +989,17 @@ Desc      The forest concedes to the vast darkness...
 ~
 #ENDEXIT
 
-Reset M 0 3501 8 3512
-Reset M 0 3501 8 3512
+Reset M 3501 8 3512 -1 -1 -1 100
+Reset M 3501 8 3512 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3513
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3513
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -1034,15 +1025,16 @@ Desc      The forest concedes to the vast darkness...
 ~
 #ENDEXIT
 
-Reset M 0 3501 8 3513
+Reset M 3501 8 3513 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3514
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3514
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -1078,11 +1070,12 @@ Desc      The forest concedes to the vast darkness...
 #ENDROOM
 
 #ROOM
-Vnum     3515
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3515
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -1111,11 +1104,12 @@ Desc      Darkness consumes the forest in a terrifying void...
 #ENDROOM
 
 #ROOM
-Vnum     3516
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3516
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -1151,11 +1145,12 @@ Desc      The forest concedes to the vast darkness...
 #ENDROOM
 
 #ROOM
-Vnum     3517
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3517
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -1177,11 +1172,12 @@ Desc      The forest concedes to the vast darkness...
 #ENDROOM
 
 #ROOM
-Vnum     3518
-Name     Heart of the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     You now realize that the darkness and mystery of the Black Forest were not
+Vnum      3518
+Name      Heart of the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You now realize that the darkness and mystery of the Black Forest were not
 exaggerated in tales of olde. The trees appear to reach out, as if trying
 to strangle the lifeforce out of all creatures that might be foolish enough
 to wander too deep into the forest. Though the blood on the ground has
@@ -1205,11 +1201,12 @@ Desc      Darkness consumes the forest in a terrifying void...
 #ENDROOM
 
 #ROOM
-Vnum     3519
-Name     Heart of the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     You now realize that the darkness and mystery of the Black Forest were not
+Vnum      3519
+Name      Heart of the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You now realize that the darkness and mystery of the Black Forest were not
 exaggerated in tales of olde. The trees appear to reach out, as if trying
 to strangle the lifeforce out of all creatures that might be foolish enough
 to wander too deep into the forest. Though the blood on the ground has
@@ -1240,11 +1237,12 @@ Desc      Darkness consumes the forest in a terrifying void...
 #ENDROOM
 
 #ROOM
-Vnum     3520
-Name     Heart of the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     You now realize that the darkness and mystery of the Black Forest were not
+Vnum      3520
+Name      Heart of the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You now realize that the darkness and mystery of the Black Forest were not
 exaggerated in tales of olde. The trees appear to reach out, as if trying
 to strangle the lifeforce out of all creatures that might be foolish enough
 to wander too deep into the forest. Though the blood on the ground has
@@ -1268,11 +1266,12 @@ Desc      Darkness consumes the forest in a terrifying void...
 #ENDROOM
 
 #ROOM
-Vnum     3521
-Name     Heart of the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     You now realize that the darkness and mystery of the Black Forest were not
+Vnum      3521
+Name      Heart of the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You now realize that the darkness and mystery of the Black Forest were not
 exaggerated in tales of olde. The trees appear to reach out, as if trying
 to strangle the lifeforce out of all creatures that might be foolish enough
 to wander too deep into the forest. Though the blood on the ground has
@@ -1300,18 +1299,19 @@ Desc      Darkness consumes the forest in a terrifying void...
 ~
 #ENDEXIT
 
-Reset M 0 3500 2 3521
-  Reset E 1 3509 2 8
-Reset M 0 3500 2 3521
-  Reset E 1 3509 2 8
+Reset M 3500 2 3521 -1 -1 -1 100
+  Reset E 3509 2 8 100
+Reset M 3500 2 3521 -1 -1 -1 100
+  Reset E 3509 2 8 100
 #ENDROOM
 
 #ROOM
-Vnum     3522
-Name     Heart of the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     You now realize that the darkness and mystery of the Black Forest were not
+Vnum      3522
+Name      Heart of the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You now realize that the darkness and mystery of the Black Forest were not
 exaggerated in tales of olde. The trees appear to reach out, as if trying
 to strangle the lifeforce out of all creatures that might be foolish enough
 to wander too deep into the forest. Though the blood on the ground has
@@ -1332,15 +1332,16 @@ Desc      Darkness consumes the forest in a terrifying void...
 ~
 #ENDEXIT
 
-Reset M 0 3501 8 3522
+Reset M 3501 8 3522 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3523
-Name     Heart of the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     You now realize that the darkness and mystery of the Black Forest were not
+Vnum      3523
+Name      Heart of the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You now realize that the darkness and mystery of the Black Forest were not
 exaggerated in tales of olde. The trees appear to reach out, as if trying
 to strangle the lifeforce out of all creatures that might be foolish enough
 to wander too deep into the forest. Though the blood on the ground has
@@ -1371,11 +1372,12 @@ Desc      Darkness consumes the forest in a terrifying void...
 #ENDROOM
 
 #ROOM
-Vnum     3524
-Name     Underbelly of Mount Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+Vnum      3524
+Name      Underbelly of Mount Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The underground portion of Mount Doom is, unbelievably, even darker than the
 ground level. Burnt-out torches line the walls of the tunnel, serving as
 little more than decoration. Scarlet stains the sides of the tunnel in
 several places. Something must live down here.
@@ -1404,15 +1406,16 @@ Keywords  grate~
 Flags     isdoor closed locked secret~
 #ENDEXIT
 
-Reset D 0 3524 4 2
+Reset D 3524 4 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     3525
-Name     Underbelly of Mount Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+Vnum      3525
+Name      Underbelly of Mount Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The underground portion of Mount Doom is, unbelievably, even darker than the
 ground level. Burnt-out torches line the walls of the tunnel, serving as
 little more than decoration. Scarlet stains the sides of the tunnel in
 several places. Something must live down here.
@@ -1441,11 +1444,12 @@ Desc      A shadowy passage...
 #ENDROOM
 
 #ROOM
-Vnum     3526
-Name     Underbelly of Mount Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+Vnum      3526
+Name      Underbelly of Mount Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The underground portion of Mount Doom is, unbelievably, even darker than the
 ground level. Burnt-out torches line the walls of the tunnel, serving as
 little more than decoration. Scarlet stains the sides of the tunnel in
 several places. Something must live down here.
@@ -1474,11 +1478,12 @@ Desc      Into the darkness...
 #ENDROOM
 
 #ROOM
-Vnum     3527
-Name     Underbelly of Mount Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+Vnum      3527
+Name      Underbelly of Mount Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The underground portion of Mount Doom is, unbelievably, even darker than the
 ground level. Burnt-out torches line the walls of the tunnel, serving as
 little more than decoration. Scarlet stains the sides of the tunnel in
 several places. Something must live down here.
@@ -1507,11 +1512,12 @@ Desc      A shadowy passage...
 #ENDROOM
 
 #ROOM
-Vnum     3528
-Name     Underbelly of Mount Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+Vnum      3528
+Name      Underbelly of Mount Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The underground portion of Mount Doom is, unbelievably, even darker than the
 ground level. Burnt-out torches line the walls of the tunnel, serving as
 little more than decoration. Scarlet stains the sides of the tunnel in
 several places. Something must live down here.
@@ -1540,11 +1546,12 @@ Desc      Into the darkness...
 #ENDROOM
 
 #ROOM
-Vnum     3529
-Name     Underbelly of Mount Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     The underground portion of Mount Doom is, unbelievably, even darker than the
+Vnum      3529
+Name      Underbelly of Mount Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The underground portion of Mount Doom is, unbelievably, even darker than the
 ground level. Burnt-out torches line the walls of the tunnel, serving as
 little more than decoration. Scarlet stains the sides of the tunnel in
 several places. Something must live down here.
@@ -1571,11 +1578,12 @@ Desc      A shadowy passage...
 #ENDROOM
 
 #ROOM
-Vnum     3530
-Name     A Long, Cavernous Tunnel~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     By now, the water has been totally drained from the tunnel. The chants have
+Vnum      3530
+Name      A Long, Cavernous Tunnel~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      By now, the water has been totally drained from the tunnel. The chants have
 become frighteningly close. Also of notice in this portion of the tunnel is
 a repugnant stench. That is not to say that the rest of the tunnel didn't
 stink, only that the smell is a bit different and the severity is much worse
@@ -1595,16 +1603,17 @@ Desc      A strange odor emanates from this direction...
 ~
 #ENDEXIT
 
-Reset M 0 3506 4 3530
-  Reset E 1 3510 4 10
+Reset M 3506 4 3530 -1 -1 -1 100
+  Reset E 3510 4 10 100
 #ENDROOM
 
 #ROOM
-Vnum     3531
-Name     A Massive Pile of Slop~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     Alas, the goblins of this mountain obviously have not heard of proper waste
+Vnum      3531
+Name      A Massive Pile of Slop~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      Alas, the goblins of this mountain obviously have not heard of proper waste
 disposal. A gigantic pile of something has been left here for some unknown
 reason. Maybe goblins just really like slop, or maybe there might be some
 other reason for this hygienic atrocity. Difficult to tell.
@@ -1626,15 +1635,16 @@ Keywords  grate~
 Flags     isdoor closed locked secret searchable~
 #ENDEXIT
 
-Reset D 0 3531 5 2
+Reset D 3531 5 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     3532
-Name     Underbelly of Mount Doom~
-Sector   inside~
-Flags    indoors~
-Desc     The tunnel, which looked to have continued north for some time, stops
+Vnum      3532
+Name      Underbelly of Mount Doom~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The tunnel, which looked to have continued north for some time, stops
 abruptly at this point. The torches on the walls are lit, highlighting the
 scarlet-stained spots on the sides of the tunnel. The chant-like noises that
 had disappeared momentarily have now resurfaced, louder than before. Also,
@@ -1656,7 +1666,7 @@ Desc      Back into the darkness...
 ~
 #ENDEXIT
 
-Reset D 0 3532 0 1
+Reset D 3532 0 1 100 -2
 #EXDESC
 ExDescKey    drawing~
 ExDesc       The drawing depicts an old, broken ladder. At the bottom of the ladder, a
@@ -1667,11 +1677,12 @@ pile of bones litters blood-soaked ground.
 #ENDROOM
 
 #ROOM
-Vnum     3533
-Name     A Damp Passage~
-Sector   inside~
-Flags    dark indoors~
-Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+Vnum      3533
+Name      A Damp Passage~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Not even a single inch of this part of the mountain is dry. Dripping down
 the sides of the room is something that is not quite water, though not quite
 slime. Also, the temperature in this small passage is considerably higher
 than in the main corridor of the underbelly. Possibly, this might be because
@@ -1694,11 +1705,12 @@ Desc      Back into the main tunnel of the underbelly...
 #ENDROOM
 
 #ROOM
-Vnum     3534
-Name     A Dark Alcove~
-Sector   inside~
-Flags    dark indoors~
-Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+Vnum      3534
+Name      A Dark Alcove~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Darkness envelopes the room from the bottom to the top. The dim spec of light
 that peeks in from the main tunnel of the underground casts strange, twisted
 shapes upon the distorted walls of the umbrageous alcove.
 ~
@@ -1712,11 +1724,12 @@ Desc      Back into the shadowy passage...
 #ENDROOM
 
 #ROOM
-Vnum     3535
-Name     A Damp Passage~
-Sector   inside~
-Flags    dark indoors~
-Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+Vnum      3535
+Name      A Damp Passage~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Not even a single inch of this part of the mountain is dry. Dripping down
 the sides of the room is something that is not quite water, though not quite
 slime. Also, the temperature in this small passage is considerably higher
 than in the main corridor of the underbelly. Possibly, this might be because
@@ -1739,11 +1752,12 @@ Desc      Back into the main tunnel of the underbelly...
 #ENDROOM
 
 #ROOM
-Vnum     3536
-Name     A Dark Alcove~
-Sector   inside~
-Flags    dark indoors~
-Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+Vnum      3536
+Name      A Dark Alcove~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Darkness envelopes the room from the bottom to the top. The dim spec of light
 that peeks in from the main tunnel of the underground casts strange, twisted
 shapes upon the distorted walls of the umbrageous alcove.
 ~
@@ -1757,11 +1771,12 @@ Desc      Back into the shadowy passage...
 #ENDROOM
 
 #ROOM
-Vnum     3537
-Name     A Damp Passage~
-Sector   inside~
-Flags    dark indoors~
-Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+Vnum      3537
+Name      A Damp Passage~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Not even a single inch of this part of the mountain is dry. Dripping down
 the sides of the room is something that is not quite water, though not quite
 slime. Also, the temperature in this small passage is considerably higher
 than in the main corridor of the underbelly. Possibly, this might be because
@@ -1784,11 +1799,12 @@ Desc      Back into the main tunnel of the underbelly...
 #ENDROOM
 
 #ROOM
-Vnum     3538
-Name     A Dark Alcove~
-Sector   inside~
-Flags    dark indoors~
-Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+Vnum      3538
+Name      A Dark Alcove~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Darkness envelopes the room from the bottom to the top. The dim spec of light
 that peeks in from the main tunnel of the underground casts strange, twisted
 shapes upon the distorted walls of the umbrageous alcove.
 ~
@@ -1802,11 +1818,12 @@ Desc      Back into the shadowy passage...
 #ENDROOM
 
 #ROOM
-Vnum     3539
-Name     A Damp Passage~
-Sector   inside~
-Flags    dark indoors~
-Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+Vnum      3539
+Name      A Damp Passage~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Not even a single inch of this part of the mountain is dry. Dripping down
 the sides of the room is something that is not quite water, though not quite
 slime. Also, the temperature in this small passage is considerably higher
 than in the main corridor of the underbelly. Possibly, this might be because
@@ -1829,11 +1846,12 @@ Desc      Back into the main tunnel of the underbelly...
 #ENDROOM
 
 #ROOM
-Vnum     3540
-Name     A Dark Alcove~
-Sector   inside~
-Flags    dark indoors~
-Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+Vnum      3540
+Name      A Dark Alcove~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Darkness envelopes the room from the bottom to the top. The dim spec of light
 that peeks in from the main tunnel of the underground casts strange, twisted
 shapes upon the distorted walls of the umbrageous alcove.
 ~
@@ -1847,11 +1865,12 @@ Desc      Back into the shadowy passage...
 #ENDROOM
 
 #ROOM
-Vnum     3541
-Name     A Damp Passage~
-Sector   inside~
-Flags    dark indoors~
-Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+Vnum      3541
+Name      A Damp Passage~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Not even a single inch of this part of the mountain is dry. Dripping down
 the sides of the room is something that is not quite water, though not quite
 slime. Also, the temperature in this small passage is considerably higher
 than in the main corridor of the underbelly. Possibly, this might be because
@@ -1874,11 +1893,12 @@ Desc      Back into the main tunnel of the underbelly...
 #ENDROOM
 
 #ROOM
-Vnum     3542
-Name     A Dark Alcove~
-Sector   inside~
-Flags    dark indoors~
-Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+Vnum      3542
+Name      A Dark Alcove~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Darkness envelopes the room from the bottom to the top. The dim spec of light
 that peeks in from the main tunnel of the underground casts strange, twisted
 shapes upon the distorted walls of the umbrageous alcove.
 ~
@@ -1892,11 +1912,12 @@ Desc      Back into the shadowy passage...
 #ENDROOM
 
 #ROOM
-Vnum     3543
-Name     A Damp Passage~
-Sector   inside~
-Flags    dark indoors~
-Desc     Not even a single inch of this part of the mountain is dry. Dripping down
+Vnum      3543
+Name      A Damp Passage~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Not even a single inch of this part of the mountain is dry. Dripping down
 the sides of the room is something that is not quite water, though not quite
 slime. Also, the temperature in this small passage is considerably higher
 than in the main corridor of the underbelly. Possibly, this might be because
@@ -1919,11 +1940,12 @@ Desc      Back into the main tunnel of the underbelly...
 #ENDROOM
 
 #ROOM
-Vnum     3544
-Name     A Dark Alcove~
-Sector   inside~
-Flags    dark indoors~
-Desc     Darkness envelopes the room from the bottom to the top. The dim spec of light
+Vnum      3544
+Name      A Dark Alcove~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Darkness envelopes the room from the bottom to the top. The dim spec of light
 that peeks in from the main tunnel of the underground casts strange, twisted
 shapes upon the distorted walls of the umbrageous alcove.
 ~
@@ -1937,11 +1959,12 @@ Desc      Back into the shadowy passage...
 #ENDROOM
 
 #ROOM
-Vnum     3545
-Name     An Old, Broken Ladder~
-Sector   inside~
-Flags    dark indoors~
-Desc     The distance to the bottom of this hole is much more than anyone in their
+Vnum      3545
+Name      An Old, Broken Ladder~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The distance to the bottom of this hole is much more than anyone in their
 right mind would care to plunge. Fortunately, the ladder looks sturdy enough
 to carry even slightly-heavy souls down into the depths of the underbelly.
 Probably not the wisest thing to test its might, though. Also, a weathered
@@ -1964,7 +1987,7 @@ Desc      A descent into mystery...
 Flags     climb~
 #ENDEXIT
 
-Reset D 0 3545 2 1
+Reset D 3545 2 1 100 -2
 #EXDESC
 ExDescKey    drawing~
 ExDesc       The drawing depicts a shadowy, massive figure apparently toying with a group
@@ -1975,11 +1998,12 @@ of blood-soaked adventurers.
 #ENDROOM
 
 #ROOM
-Vnum     3546
-Name     An Old, Broken Ladder~
-Sector   inside~
-Flags    dark indoors~
-Desc     The old ladder continues to bend, though refusing to break beneath the same
+Vnum      3546
+Name      An Old, Broken Ladder~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The old ladder continues to bend, though refusing to break beneath the same
 weight it has weathered thousands of times before. The bottom of the hole
 appears close, though through the darkness it is difficult to tell.
 ~
@@ -2002,11 +2026,12 @@ Flags     climb~
 #ENDROOM
 
 #ROOM
-Vnum     3547
-Name     An Old, Broken Ladder~
-Sector   inside~
-Flags    dark indoors~
-Desc     The bottom of the hole is definitely close now. The ridged ground below can
+Vnum      3547
+Name      An Old, Broken Ladder~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The bottom of the hole is definitely close now. The ridged ground below can
 be slightly uncovered through the shadows that race back and forth across
 the old ladder's rungs. A vile stench seems to emanate from below, causing
 slight nausea, though it is not nearly potent enough at this point to make
@@ -2030,11 +2055,12 @@ Desc      The bottom of the old, broken ladder...
 #ENDROOM
 
 #ROOM
-Vnum     3548
-Name     The Bottom of the Ladder~
-Sector   inside~
-Flags    dark nomob indoors~
-Desc     The stink has now become an unfortunate reality. No matter how much breath
+Vnum      3548
+Name      The Bottom of the Ladder~
+Sector    indoors~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      The stink has now become an unfortunate reality. No matter how much breath
 is held, the odor continues to unwantedly sneak into your nasal passages.
 The curiosity of what lies beyond this spot makes the unbearable odors
 temporarily subside, however.
@@ -2056,11 +2082,12 @@ Desc      Up the old, broken ladder...
 #ENDROOM
 
 #ROOM
-Vnum     3549
-Name     The Circle Of Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+Vnum      3549
+Name      The Circle Of Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      An ice-cold breeze flows through the room. The stench of unavoidable death
 fills the frigid air with an immense aura of despair. The blackened walls,
 ceiling and floor look infinite from this point-of-view. Torches made from
 bones of some sort line the sides of the room, though none are lit.
@@ -2089,11 +2116,12 @@ Desc      Impending Doom...
 #ENDROOM
 
 #ROOM
-Vnum     3550
-Name     Within the Black Forest~
-Sector   forest~
-Flags    dark~
-Desc     Even the breeze flowing through the treetops is dark and gloomy. Strange
+Vnum      3550
+Name      Within the Black Forest~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Even the breeze flowing through the treetops is dark and gloomy. Strange
 noises come at you from each direction. The leaves on the ground might make
 rustling sounds if they were not soaked down with blood. In each direction,
 the forest seems to grow darker and darker.
@@ -2108,11 +2136,12 @@ Desc      The forest concedes to the vast darkness...
 #ENDROOM
 
 #ROOM
-Vnum     3551
-Name     Gazing Upon Mount Doom~
-Sector   city~
-Flags    dark~
-Desc     The forest is abruptly left in the distance. Gazing up, the mountain peers
+Vnum      3551
+Name      Gazing Upon Mount Doom~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The forest is abruptly left in the distance. Gazing up, the mountain peers
 down upon you like a vulture carefully monitoring its prey. Though this
 place looks quite serene from the outside, the stories and tales about Mount
 Doom have discredited that notion of serenity long before now.
@@ -2132,20 +2161,21 @@ Direction west~
 ToRoom    3523
 #ENDEXIT
 
-Reset M 0 3501 8 3551
-Reset M 0 3501 8 3551
-Reset M 0 3506 4 3551
-  Reset E 1 3510 4 10
-  Reset G 1 3505 1
-Reset D 0 3551 2 2
+Reset M 3501 8 3551 -1 -1 -1 100
+Reset M 3501 8 3551 -1 -1 -1 100
+Reset M 3506 4 3551 -1 -1 -1 100
+  Reset E 3510 4 10 100
+  Reset G 3505 1 100
+Reset D 3551 2 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     3552
-Name     A Long, Cavernous Tunnel~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     Though cold and dreary-looking from the outside, the temperature within the
+Vnum      3552
+Name      A Long, Cavernous Tunnel~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      Though cold and dreary-looking from the outside, the temperature within the
 mountain is relatively comfortable. The tunnel appears to stretch for some
 distance southward, though traversing too far into this accursed place does
 not look to be a very wise decision.
@@ -2167,17 +2197,18 @@ Desc      The dark tunnel continues...
 ~
 #ENDEXIT
 
-Reset M 0 3506 4 3552
-  Reset E 1 3510 4 10
-Reset D 0 3552 0 2
+Reset M 3506 4 3552 -1 -1 -1 100
+  Reset E 3510 4 10 100
+Reset D 3552 0 2 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     3553
-Name     A Long, Cavernous Tunnel~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     The tunnel continues to run southward, with no immediate end in sight. The
+Vnum      3553
+Name      A Long, Cavernous Tunnel~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      The tunnel continues to run southward, with no immediate end in sight. The
 cavern walls have begun to trickle water onto the dirt below, making it
 quite difficult to sneak about as there are puddles splishing and splashing
 with each step.
@@ -2199,11 +2230,12 @@ Desc      The dark tunnel continues...
 #ENDROOM
 
 #ROOM
-Vnum     3554
-Name     Green Winter Ale Brewery~
-Sector   inside~
-Flags    dark indoors~
-Desc     Ahh, the good ol' Green Winter Ale Brewery. This is the place in which all
+Vnum      3554
+Name      Green Winter Ale Brewery~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Ahh, the good ol' Green Winter Ale Brewery. This is the place in which all
 of Jack's "magic" begins (and, fortunately, ends). The dust that covers most
 of the floor would suggest that Jack has not needed to brew any fresh Green
 Ale in quite some time. Maybe the shelf lives of the existing bottles is
@@ -2216,17 +2248,18 @@ Keywords  trapdoor~
 Flags     isdoor closed secret~
 #ENDEXIT
 
-Reset O 0 3504 1 3554
-  Reset P 0 3503 1 3504
-Reset D 0 3554 4 1
+Reset O 3504 1 3554 -1 -1 -1 100
+  Reset P 1 3503 1 3504 100
+Reset D 3554 4 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     3555
-Name     A Long, Cavernous Tunnel~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     The puddles have now become a single, massive pool enveloping the floor
+Vnum      3555
+Name      A Long, Cavernous Tunnel~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      The puddles have now become a single, massive pool enveloping the floor
 of the tunnel. To the south, strange, chant-like noises beckon investigation
 in that direction. The journey now has become one of survival, not only
 a search for riches. The labyrinth depicted in tales of olde must be close,
@@ -2246,16 +2279,17 @@ Desc      The dark tunnel continues...
 ~
 #ENDEXIT
 
-Reset M 0 3506 4 3555
-  Reset E 1 3510 4 10
+Reset M 3506 4 3555 -1 -1 -1 100
+  Reset E 3510 4 10 100
 #ENDROOM
 
 #ROOM
-Vnum     3556
-Name     A Long, Cavernous Tunnel~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     At this point in the tunnel, tiny cracks have become evident in the lower
+Vnum      3556
+Name      A Long, Cavernous Tunnel~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      At this point in the tunnel, tiny cracks have become evident in the lower
 parts of the walls. What might have caused them is anybody's guess. The
 strange thing is that all of the water from the floor of the tunnel seems to
 be gravitating towards the cracks. From the south, the chant-like noises
@@ -2278,11 +2312,12 @@ Desc      The dark tunnel continues...
 #ENDROOM
 
 #ROOM
-Vnum     3557
-Name     The Circle of Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+Vnum      3557
+Name      The Circle of Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      An ice-cold breeze flows through the room. The stench of unavoidable death
 fills the frigid air with an immense aura of despair. The blackened walls,
 ceiling and floor look infinite from this point-of-view. Torches made from
 bones of some sort line the sides of the room, though none are lit.
@@ -2304,11 +2339,12 @@ Desc      Impending Doom...
 #ENDROOM
 
 #ROOM
-Vnum     3558
-Name     The Circle of Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+Vnum      3558
+Name      The Circle of Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      An ice-cold breeze flows through the room. The stench of unavoidable death
 fills the frigid air with an immense aura of despair. The blackened walls,
 ceiling and floor look infinite from this point-of-view. Torches made from
 bones of some sort line the sides of the room, though none are lit.
@@ -2330,11 +2366,12 @@ Desc      Impending Doom...
 #ENDROOM
 
 #ROOM
-Vnum     3559
-Name     The Circle of Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+Vnum      3559
+Name      The Circle of Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      An ice-cold breeze flows through the room. The stench of unavoidable death
 fills the frigid air with an immense aura of despair. The blackened walls,
 ceiling and floor look infinite from this point-of-view. Torches made from
 bones of some sort line the sides of the room, though none are lit.
@@ -2353,17 +2390,18 @@ Desc      Impending Doom...
 ~
 #ENDEXIT
 
-Reset M 0 3505 2 3559
-  Reset E 1 3506 2 12
-  Reset E 1 3507 2 20
+Reset M 3505 2 3559 -1 -1 -1 100
+  Reset E 3506 2 12 100
+  Reset E 3507 2 20 100
 #ENDROOM
 
 #ROOM
-Vnum     3560
-Name     The Circle of Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+Vnum      3560
+Name      The Circle of Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      An ice-cold breeze flows through the room. The stench of unavoidable death
 fills the frigid air with an immense aura of despair. The blackened walls,
 ceiling and floor look infinite from this point-of-view. Torches made from
 bones of some sort line the sides of the room, though none are lit.
@@ -2382,17 +2420,18 @@ Desc      Impending Doom...
 ~
 #ENDEXIT
 
-Reset M 0 3505 2 3560
-  Reset E 1 3506 2 12
-  Reset E 1 3507 2 20
+Reset M 3505 2 3560 -1 -1 -1 100
+  Reset E 3506 2 12 100
+  Reset E 3507 2 20 100
 #ENDROOM
 
 #ROOM
-Vnum     3561
-Name     The Circle of Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+Vnum      3561
+Name      The Circle of Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      An ice-cold breeze flows through the room. The stench of unavoidable death
 fills the frigid air with an immense aura of despair. The blackened walls,
 ceiling and floor look infinite from this point-of-view. Torches made from
 bones of some sort line the sides of the room, though none are lit.
@@ -2414,11 +2453,12 @@ Desc      Impending Doom...
 #ENDROOM
 
 #ROOM
-Vnum     3562
-Name     The Circle of Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+Vnum      3562
+Name      The Circle of Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      An ice-cold breeze flows through the room. The stench of unavoidable death
 fills the frigid air with an immense aura of despair. The blackened walls,
 ceiling and floor look infinite from this point-of-view. Torches made from
 bones of some sort line the sides of the room, though none are lit.
@@ -2440,11 +2480,12 @@ Desc      Impending Doom...
 #ENDROOM
 
 #ROOM
-Vnum     3563
-Name     The Circle of Doom~
-Sector   inside~
-Flags    dark indoors~
-Desc     An ice-cold breeze flows through the room. The stench of unavoidable death
+Vnum      3563
+Name      The Circle of Doom~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      An ice-cold breeze flows through the room. The stench of unavoidable death
 fills the frigid air with an immense aura of despair. The blackened walls,
 ceiling and floor look infinite from this point-of-view. Torches made from
 bones of some sort line the sides of the room, though none are lit.
@@ -2473,11 +2514,12 @@ Desc      Impending Doom...
 #ENDROOM
 
 #ROOM
-Vnum     3564
-Name     A Skull-filled Tunnel~
-Sector   inside~
-Flags    dark nomob indoors tunnel~
-Desc     Each and every piece of this particular tunnel seems to have been built with
+Vnum      3564
+Name      A Skull-filled Tunnel~
+Sector    indoors~
+Flags     dark nomob indoors tunnel~
+Stats     0 0 0 0 0
+Desc      Each and every piece of this particular tunnel seems to have been built with
 the skulls of different creatures- those creatures that foolishly traversed
 into the Circle of Doom. Though no torches appear in sight, a soft, though
 eerie, glow pulsates out from beneath the skulls. Shadows created by the
@@ -2501,11 +2543,12 @@ Desc      Impending Doom...
 #ENDROOM
 
 #ROOM
-Vnum     3565
-Name     A Skull-filled Tunnel~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     Each and every piece of this particular tunnel seems to have been built with
+Vnum      3565
+Name      A Skull-filled Tunnel~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      Each and every piece of this particular tunnel seems to have been built with
 the skulls of different creatures- those creatures that foolishly traversed
 into the Circle Of Doom. Though no torches appear in sight, a soft, though
 eerie, glow pulsates out from beneath the skulls. Shadows created by the
@@ -2529,11 +2572,12 @@ Desc      The mysterious tunnel continues...
 #ENDROOM
 
 #ROOM
-Vnum     3566
-Name     A Skull-filled Tunnel~
-Sector   inside~
-Flags    dark indoors tunnel~
-Desc     Each and every piece of this particular tunnel seems to have been built with
+Vnum      3566
+Name      A Skull-filled Tunnel~
+Sector    indoors~
+Flags     dark indoors tunnel~
+Stats     0 0 0 0 0
+Desc      Each and every piece of this particular tunnel seems to have been built with
 the skulls of different creatures- those creatures that foolishly traversed
 into the Circle of Doom. Though no torches appear in sight, a soft, though
 eerie, glow pulsates out from beneath the skulls. Shadows created by the
@@ -2557,11 +2601,12 @@ Desc      The mysterious tunnel continues...
 #ENDROOM
 
 #ROOM
-Vnum     3567
-Name     The Dark Landing~
-Sector   inside~
-Flags    dark indoors~
-Desc     The skulls trail off as the tunnel turns into a dark, gloomy landing. An
+Vnum      3567
+Name      The Dark Landing~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      The skulls trail off as the tunnel turns into a dark, gloomy landing. An
 even darker set of stairs leads down into possible doom. Thoughts and
 questions begin to take shape. Have any souls ever made it this deep into
 the evil mountain? If so, have they made it out alive? Only glory remains
@@ -2584,11 +2629,12 @@ Desc      This sort of darkness you have not before witnessed...
 #ENDROOM
 
 #ROOM
-Vnum     3568
-Name     Lair of the Goblin King~
-Sector   inside~
-Flags    dark indoors chaotic norecall nosummon noastral~
-Desc     Spiderwebs blanket the ceiling and cracks of the goblin king's throne room.
+Vnum      3568
+Name      Lair of the Goblin King~
+Sector    indoors~
+Flags     dark indoors nosummon norecall noastral~
+Stats     0 0 0 0 0
+Desc      Spiderwebs blanket the ceiling and cracks of the goblin king's throne room.
 A massive, crumbling granite throne sits darkly in the middle of the dirt-
 covered floor, casting visions of terror upon the four walls. The room's
 temperature must be close to freezing, and you think that whoever or whatever
@@ -2601,23 +2647,25 @@ Desc      Back towards the mysterious tunnel...
 ~
 #ENDEXIT
 
-Reset M 0 3507 1 3568
-  Reset E 1 3508 1 17
+Reset M 3507 1 3568 -1 -1 -1 100
+  Reset E 3508 1 17 100
 #ENDROOM
 
 #ROOM
-Vnum     3569
-Name     Diov a ni gnitaolf~
-Sector   city~
-Flags    nomob~
+Vnum      3569
+Name      Diov a ni gnitaolf~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     3570
-Name     Outside a Mysterious Inn~
-Sector   city~
-Flags    nomob~
-Desc     The darkness engulfing the forest lessens as the inn becomes near. Equipped
+Vnum      3570
+Name      Outside a Mysterious Inn~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      The darkness engulfing the forest lessens as the inn becomes near. Equipped
 with battered shutters and chipped paint, this place still seems to oddly
 possess a heightened sense of warmth and friendliness. There is, however,
 a not-so-fresh scent creeping out from the entrance of the inn.
@@ -2639,11 +2687,12 @@ Desc      The interior of the Green Gobble Inn lies to the west...
 #ENDROOM
 
 #ROOM
-Vnum     3571
-Name     The Clover Suite~
-Sector   inside~
-Flags    indoors~
-Desc     So named because of its odd shape, the room contains three tiny alcoves-
+Vnum      3571
+Name      The Clover Suite~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      So named because of its odd shape, the room contains three tiny alcoves-
 one in the north wall, one in the east, and one in the west. A bed lies in
 the northern alcove, while a dresser lies in the east and a small desk in
 the west. A large oriental rug covers the spacious center of the room.
@@ -2658,11 +2707,12 @@ Desc      Back towards the scary stairs...
 #ENDROOM
 
 #ROOM
-Vnum     3572
-Name     The King's Suite~
-Sector   inside~
-Flags    indoors~
-Desc     Jed has reserved this room for the distant possibility that a king of some
+Vnum      3572
+Name      The King's Suite~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Jed has reserved this room for the distant possibility that a king of some
 sort might actually stay here sometime. You are pretty certain that there
 won't be an occupant here anytime in the near future.
 ~
@@ -2676,11 +2726,12 @@ Desc      Back towards the scary stairs...
 #ENDROOM
 
 #ROOM
-Vnum     3573
-Name     The Recovery Room~
-Sector   inside~
-Flags    indoors~
-Desc     This shabby, threadbare room appears to serve the purpose of housing those
+Vnum      3573
+Name      The Recovery Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This shabby, threadbare room appears to serve the purpose of housing those
 individuals who have consumed a bit too much of Jack's green winter ale and
 are quite unable to make the journey home on the same night. A messy double
 bed- the only piece of furniture in the room- rests in the middle of the
@@ -2697,11 +2748,12 @@ Desc      Back towards the scary stairs...
 #ENDROOM
 
 #ROOM
-Vnum     3574
-Name     Jed's Desk~
-Sector   inside~
-Flags    nomob indoors~
-Desc     The Green Gobble actually is much bigger on the inside than it appears from
+Vnum      3574
+Name      Jed's Desk~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      The Green Gobble actually is much bigger on the inside than it appears from
 the shadowy forest. An unspectacular reception desk beckons you from the
 southwest corner of the room. Directly to the east of the front desk, a
 flight of stairs trails up to the guest rooms.
@@ -2732,16 +2784,17 @@ Desc      A flight of scary stairs...
 ~
 #ENDEXIT
 
-Reset M 0 3508 1 3574
-  Reset E 1 3502 1 17
+Reset M 3508 1 3574 -1 -1 -1 100
+  Reset E 3502 1 17 100
 #ENDROOM
 
 #ROOM
-Vnum     3575
-Name     The Bloodsoaked Brambles~
-Sector   forest~
-Flags    dark~
-Desc     The darkened trail comes to an abrupt stop at this point. Floating all about
+Vnum      3575
+Name      The Bloodsoaked Brambles~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The darkened trail comes to an abrupt stop at this point. Floating all about
 is an overshadowing sense of loss. There seem to have been rose bushes on
 the sides of the path. They all have been trampled and now drip with blood.
 You can only hope that whatever horrors took place here do not soon return.
@@ -2753,16 +2806,17 @@ Desc      A trail thru the woods.
 ~
 #ENDEXIT
 
-Reset M 0 3502 1 3575
-  Reset E 1 3500 1 19
+Reset M 3502 1 3575 -1 -1 -1 100
+  Reset E 3500 1 19 100
 #ENDROOM
 
 #ROOM
-Vnum     3576
-Name     "Black" Jack's Dusty Saloon~
-Sector   inside~
-Flags    indoors~
-Desc     Mounds of dust cover the floor. The tables look as though they might have
+Vnum      3576
+Name      "Black" Jack's Dusty Saloon~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Mounds of dust cover the floor. The tables look as though they might have
 been strewn about in a skirmish and long forgotten. There is, however, a
 single, upright table in the southeast corner of the bar- possibly an
 indication of just how much business "Black" Jack does nowadays.
@@ -2781,17 +2835,18 @@ Keywords  trapdoor~
 Flags     isdoor closed secret searchable~
 #ENDEXIT
 
-Reset M 0 3503 1 3576
-  Reset G 1 3501 3503
-Reset D 0 3576 5 1
+Reset M 3503 1 3576 -1 -1 -1 100
+  Reset G 3501 3503 100
+Reset D 3576 5 1 100 -2
 #ENDROOM
 
 #ROOM
-Vnum     3577
-Name     A Dark Corner Room~
-Sector   inside~
-Flags    indoors~
-Desc     The atmosphere in this part of the inn is one of solemnity. There are but
+Vnum      3577
+Name      A Dark Corner Room~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The atmosphere in this part of the inn is one of solemnity. There are but
 three lonely tables taking up space in a room that could easily host ten or
 so. Though the mood here is nothing short of morose, it is quite a bit better
 than Jack's place.
@@ -2803,15 +2858,16 @@ Desc      Back towards Jed...
 ~
 #ENDEXIT
 
-Reset M 0 3504 1 3577
+Reset M 3504 1 3577 -1 -1 -1 100
 #ENDROOM
 
 #ROOM
-Vnum     3578
-Name     A Dark, Dusty Attic~
-Sector   inside~
-Flags    dark indoors~
-Desc     Despite a tiny layer of dust on the ground, the attic actually seems to be
+Vnum      3578
+Name      A Dark, Dusty Attic~
+Sector    indoors~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      Despite a tiny layer of dust on the ground, the attic actually seems to be
 the cleanest part of the inn. Scattered boxes and miscellaneous items of
 mostly-insignificant worth litter the floor. There is, however, one box,
 in particular, that catches your attention. Also, there is a sign posted
@@ -2849,11 +2905,12 @@ and undergarments contained within. Better to leave this box alone.
 #ENDROOM
 
 #ROOM
-Vnum     3579
-Name     A Creepy Corridor~
-Sector   inside~
-Flags    indoors~
-Desc     The second floor to this place is no more spectacular than the first. The
+Vnum      3579
+Name      A Creepy Corridor~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      The second floor to this place is no more spectacular than the first. The
 corridor is filled with dust, and the floorboards make loud, unsettling
 creaking noises as you arrive at the top of the stairs. The corridor
 hosts three guestrooms, though you highly doubt that they are occupied.
@@ -2894,18 +2951,20 @@ Desc      A flight of scary stairs...
 #ENDROOM
 
 #ROOM
-Vnum     3580
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      3580
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     3581
-Name     On a Darkened Trail~
-Sector   forest~
-Flags    dark~
-Desc     A tiny trail of blood runs to the east, becoming more and more dense as the
+Vnum      3581
+Name      On a Darkened Trail~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      A tiny trail of blood runs to the east, becoming more and more dense as the
 footprints seem to blend together. Also, the once serene breeze has now
 become a dark, dreary whisper.
 ~
@@ -2926,11 +2985,12 @@ Desc      The darkened trail continues...
 #ENDROOM
 
 #ROOM
-Vnum     3582
-Name     On a Darkened Trail~
-Sector   forest~
-Flags    dark~
-Desc     Here, you think you can almost make out tiny footprints in the visible parts
+Vnum      3582
+Name      On a Darkened Trail~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      Here, you think you can almost make out tiny footprints in the visible parts
 of the dirt. Beside the tiny footprints lie bigger, uglier footprints. You
 can only wonder why two creatures of such differing size would choose to
 travel together.
@@ -2952,11 +3012,12 @@ Desc      The darkened trail continues...
 #ENDROOM
 
 #ROOM
-Vnum     3583
-Name     On a Darkened Trail~
-Sector   forest~
-Flags    dark~
-Desc     The trail becomes darker to the north. The trampling of the trees and plant
+Vnum      3583
+Name      On a Darkened Trail~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The trail becomes darker to the north. The trampling of the trees and plant
 life appears to become more intense in that direction, also. A frightful,
 though serene, breeze blows through what remains of the treetops.
 ~
@@ -2977,11 +3038,12 @@ Desc      The darkened trail twists toward the forest...
 #ENDROOM
 
 #ROOM
-Vnum     3584
-Name     On a Darkened Trail~
-Sector   forest~
-Flags    dark~
-Desc     The forest narrows into what looks to have been a recently-constructed path
+Vnum      3584
+Name      On a Darkened Trail~
+Sector    forest~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      The forest narrows into what looks to have been a recently-constructed path
 of some sort. The forest looks as though it has been deliberately pushed
 aside to make room for some dark, mighty force.
 ~
@@ -3002,21 +3064,24 @@ Desc      The forest concedes to the vast darkness...
 #ENDROOM
 
 #ROOM
-Vnum     3585
-Name     Beside a murky river~
-Sector   forest~
-Flags    nomob~
-Desc     You've clambered down between several large rocks resting on the steep
+Vnum      3585
+Name      Beside a murky river~
+Sector    forest~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      You've clambered down between several large rocks resting on the steep
 banks of a murky river.  The only exit appears to be back from where
 you came.
 ~
 #ENDROOM
 
 #ROOM
-Vnum     3586
-Name     Inside the Forest's Edge~
-Sector   field~
-Desc     You stand just inside the forest's edge in a narrow trail.  To the
+Vnum      3586
+Name      Inside the Forest's Edge~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand just inside the forest's edge in a narrow trail.  To the
 northwest runs a large, busy road, while the trail itself heads into
 the relative quiet of the forest to the southwest.
 ~
@@ -3037,10 +3102,12 @@ Desc      The trail continues into the forest...
 #ENDROOM
 
 #ROOM
-Vnum     3587
-Name     Along a Quiet Trail~
-Sector   field~
-Desc     You travel down a quiet, narrow trail through the forest.  The sounds of
+Vnum      3587
+Name      Along a Quiet Trail~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You travel down a quiet, narrow trail through the forest.  The sounds of
 civilization can be heard roughly north of here, while the forest changes
 gradually to the south. 
 ~
@@ -3061,10 +3128,12 @@ Desc      The trail continues toward the forest's edge.
 #ENDROOM
 
 #ROOM
-Vnum     3588
-Name     A Quiet Trail~
-Sector   field~
-Desc     You travel down a quiet, narrow trail through the forest.  The sounds of
+Vnum      3588
+Name      A Quiet Trail~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You travel down a quiet, narrow trail through the forest.  The sounds of
 civilization can be heard roughly north of here, while the forest changes
 gradually to the south. 
 ~
@@ -3085,17 +3154,20 @@ Desc      A bend in the trail...
 #ENDROOM
 
 #ROOM
-Vnum     3589
-Name     Floating in a void~
-Sector   city~
-Flags    nomob~
+Vnum      3589
+Name      Floating in a void~
+Sector    city~
+Flags     nomob proto~
+Stats     0 0 0 0 0
 #ENDROOM
 
 #ROOM
-Vnum     3590
-Name     Beneath a rusted bridge~
-Sector   hills~
-Desc     Here opens a small crag just outside an steep earth embankment, and just
+Vnum      3590
+Name      Beneath a rusted bridge~
+Sector    hills~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Here opens a small crag just outside an steep earth embankment, and just
 beneath what appears to be a large and somewhat decrepit bridge.  The
 stench of sewage wafts from the gaping hole in the embankment, and the
 nearby rush of what sounds like a large river can be heard, though you

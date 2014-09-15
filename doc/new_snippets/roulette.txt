@@ -1,0 +1,69 @@
+  AUTHOR: Cronel (cronel_kal@hotmail.com)
+          of FrozenMUD (empire.digiunix.net 4000)
+
+
+  FILES
+      roulette.c       The code
+      roulette.txt     This file
+      roulette.help    Suggested help topic(s) for this code
+
+
+  LICENSE
+  Permission to use and distribute this code is granted provided
+  the header in the source file is retained and unaltered, and the 
+  distribution package contains all the original files unmodified.
+  If you modify this code and use/distribute modified versions
+  you must give credit to the original author(s).
+
+
+  DESCRIPTION
+  This implements a roulette; people can bet money on numbers, colors, etc,
+  and win or lose lots of money. It also lets people know what bets are
+  on by simply looking at the roulette table. The roulette works by having
+  "rounds" wich are handled as mud updates. It also permits immortals to
+  stop an ongoing roulette round.
+
+  NOTE: This code was written a long time ago, and is not finished;
+  you should only bet on a number, on even/odd, or on a column; on
+  all other bets, you will allways lose. 
+
+
+  INSTALLATION INSTRUCTIONS 
+  To install this code, follow these instructions:
+    1) Add a OBJ_ROULETTE_VNUM #define in mud.h to the vnum
+       of your roulette object. If you have more than one
+       object with this vnum, only the first will work as
+       roulette.
+    2) Add the do_bet command to the tables (add the DECLARE_DO_FUN 
+       in mud.h, and to functions "skill_name" and "skill_function"
+       in tables.c).
+    3) Add a PULSE_BET define in mud.h, next to the other PULSE_*
+       definitions. I'd set PULSE_BET to something close to 
+       PULSE_AUCTION. Declare the bet_update() function in mud.h too;
+       by adding this line somewhere near the other declarations:
+         void bet_update args( ( void ) );
+    4) Add a pulse_bet variable in update_handler (update.c; this
+       variable must be static, like the others) and add this code
+       somewhere in that function:
+         if( -- pulse_bet <= 0 )
+         {
+            pulse_bet = PULSE_BET;
+            bet_update();
+         }
+    6) Add the "roulette.c" to the Makefile, recompile and reboot.
+    6) Once in the game, build the roulette room, the croupier mob, 
+       and roulette object. The room should be nomob and the mob sentinel, 
+       since the first mob in the list will be the one acting as croupier 
+       (don't want mobs to wander into the room or the croupier to wander
+       out). The roulette must have an extra with keyword "roulette".
+       Create the "bet" command.
+
+
+
+  If you have any comments, or bug reports please feel free to mail the
+  author, or the mud administration of FrozenMUD at mudadmins@xnet.org.
+  Even dropping a "Good work guys!" line can go a long way in future 
+  releases.
+ 
+
+  --Cronel 24/10/1998

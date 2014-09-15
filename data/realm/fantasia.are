@@ -1,0 +1,4168 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Fantasia~
+Author          &PTemptation&D  ~
+Vnums           18400 18499
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          10 60 0 60
+ResetMsg        A voice in the back of your head whispers, 'Do what you wish'~
+ResetFreq       20
+Flags           noteleport~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      18400
+Keywords  falkor~
+Race      dragon~
+Class     Ranger~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     Falkor, the Luck Dragon~
+Long      Falkor, the Luck Dragon is resting here.
+~
+Desc      Falkor is a luck dragon. He is very large, extending almost the length of
+a football field from his muzzle to the tip of his tail. He stands about
+a story high, with confidence, yet with an aura of compassion about him.
+His eyes are large as well, ruby red in color. However, they are not 
+piercing, they are more warm and kind looking. His scales are the purest
+white you've ever seen, and shimer like the clearest ocean ever could.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    54 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander mountable pacifist~
+Affected  detect_invis detect_hidden truesight~
+Bodyparts guts wings tail scales claws tailattack forelegs~
+#MUDPROG
+Progtype  act_prog~
+Arglist   'pets you.'~
+Comlist   smile $n
+itch
+nuz $n
+whis $n Can you reach an itch right behind my ear?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   'scratches you on your back.'~
+Comlist   moan
+'oh yeah.. that's it!
+'Just say where you would like to go, and with a little luck I'll get you here!
+mpforce $n mount falkor
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   'help me!'~
+Comlist   mpforce $n mount falk
+mpgoto 18440
+mpforce $n look
+mpecho _whi Falkor gently lands with you mounted on his back.
+mpforce $n dismount
+mpecho _whi You suddenly feel very tired.
+mpecho _red Everything fades to black...
+mpforce $n sleep
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p darkhaven~
+Comlist   if ismounted($n)
+mea $n _dgr Falkor looks at you.
+mpgoto 21000
+mpforce $n look
+if sex($n) == 2
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off the fair maiden $n.
+endif
+if sex($n) == 1
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off the brave $n.
+endif
+if sex($n) == 0
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off $n.
+mpforce $n dimount
+endif
+mpforce $n dismount
+nuz $n
+'Remember, you can do anything, $n, with a little luck!
+chuck
+stare
+mpecho _whi The Luck Dragon once again takes flight, and is gone.
+mpgoto 18440
+else
+'I can't take you anywhere, I have this itch....
+nudge $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p taliana~
+Comlist   emote chuckles softly.
+'I thought you might say that..
+grin
+if ismounted($n)
+mea $n _dgr Falkor looks at you.
+mpgoto 9900
+mpforce $n look
+if sex($n) == 2
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off the fair maiden $n.
+endif
+if sex($n) == 1
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off the brave $n.
+endif
+if sex($n) == 0
+mpecho _whi A beautiful Luck Dragon swoops in, dropping off $n.
+mpforce $n dimount
+endif
+mpforce $n dismount
+nuz $n
+'Remember, you can do anything, $n, with a little luck!
+chuck
+stare
+mpecho _whi The Luck Dragon once again takes flight, and is gone.
+mpgoto 18440
+else
+'I can't take you anywhere, I have this itch....
+nudge $n
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   tells you 'possibilities'~
+Comlist   nod oracle
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18401
+Keywords  morla~
+Race      reptile~
+Class     Druid~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     Morla~
+Long      Morla sits here, staring you straight in the face, seemingly a little irritated by your presense.
+~
+Desc      A very, very large turtle, Morla is better known as The Tortoise Shell
+Mountain. He has been here in the heart of the Swamp of Sadness for
+thousands of years. Morla has had very few visitors in his lifetime but
+mysteriously knows almost everything about the Realm of Fantasia.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander pacifist~
+Affected  flying~
+Bodyparts guts tail scales claws forelegs~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mea $n _cya Morla looks at you.
+mea $n _cya Morla gasps.
+mea $n _lbl Morla says 'We haven't seen the Auryn in a long time.'
+mea $n _lbl Morla says 'We haven't talked to anyone in thousands of years.'
+mea $n _cya Morla looks at you.
+mea $n _lbl Morla says 'Why have you disturbed my sleep?'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p the empress is dying~
+Comlist   if($n)ispc
+mpecho _cya Morla sneezes on you.
+hmm
+sneeze
+'We don't care.
+mpecho _cya Morla looks at you.
+'We must be allergic to you.
+'We know how to save her though.
+'Not that it matters.
+mpecho _cya Morla looks at you.
+sneez
+'Why don't you just ask the Oracle?
+sneez
+'Now go away, and leave me in peace!
+mpecho _cya Morla sneezes on you.
+mpecho _lbl Morla says 'Take this with you, it might help you get out of here.
+mpoload 18406
+drop cry
+mpforce $n get cry
+mpecho _cya Morla looks at you and says 'Shoo!'
+mpforce $n e
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18402
+Keywords  correander man~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     Mr. Correander~
+Long      Mr. Coreander is standing here, none to pleased with your presense.
+~
+Desc      Mr. Correander stands near the door of his office. He seems to be in his
+mid-50's to 60's. He has spindly white hair and a crotchety look to his
+face full of wrinkles. He is somewhat hunched over, no doubt from reading
+all the time. He's wearing a white dress shirt with a tan, cotton sweater-
+vest over it. He is also wearing a pair of plain, brown tweed pants with
+a pair of black dress shoes.
+~
+Nattacks  4.000000
+Stats1    0 -1 0 0 0 0
+Stats2    10 21 0 800 3 6 20
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  sanctuary truesight~
+Bodyparts head heart guts hands~
+Immune    drain sleep magic~
+Attacks   bite punch kick trip~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mea $n _cya Mr. Coreander growls at you.  Hey, two can play it that way!
+mea $n _lbl Mr. Coreander says 'Get out of here, I don't like kids.'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18403
+Keywords  Atreyu~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_acid~
+Short     The Greenskin, Atreyu~
+Long      Atreyu, a young Grassy Ocean warrior of the Greenskin Nation is standing here.
+~
+Desc      Standing before you is a boy warrior from the Grassy Ocean. He is about ten 
+or twelve years old with green skin and blue-black hair. He comes from a 
+nation of purple buffalo hunters called the Greenskins.
+~
+Nattacks  2.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    55 21 0 19999 1 1 299
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary flying truesight fireshield iceshield~
+Bodyparts head heart guts hands ear~
+Resist    drain sleep magic~
+Immune    cold electricity drain sleep hold magic~
+Attacks   bite trip gouge~
+Defenses  parry dodge heal shield disarm~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   30~
+Comlist   mpe _lbl The Greenskin, Atreyu says 'I don't know why you're doing this.'
+mpe _lbl The Greenskin, Atreyu says 'I was sent to help Fantasia!'
+c q $r
+c q $r
+c q $r
+mpdamage $r 700
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   mpe _cya The Greenskin, Atreyu growls deeply.
+bite $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   c acid
+disarm $n
+disarm $n
+get all
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p flees head over heals~
+Comlist   mpat $n 'Can't take the heat?
+mpat $n cackle
+mpat $n mea $n _whi An arrow comes flying at you, and lodges in your chest.
+mpat $n mpdamage $n 200
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p disarms you!~
+Comlist   wear sikanda
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if rand(75)
+mpjunk sikanda
+'You have beaten me.. I can't believe it..
+cough
+'however.. you're quest is not over...
+mpecho _whi Atreyu takes on last gasping breath as he hits the ground.
+mpecho _blu The earth trembles beneath your feet!
+mpdamage all 300
+mpforce $n say FALKOR!
+else
+if rand(8)
+mpjunk sikanda
+'You have beaten me.. I can't believe it..
+cough
+'however.. you're quest is not over...
+mpecho _whi Atreyu takes on last gasping breath as he hits the ground.
+mpecho _blu The earth trembles beneath your feet!
+mpecho _pur A small piece of purple leather falls from Atreyu's ankle.
+oi 18429 50
+mpforce $n say FALKOR!
+else
+'You have beaten me.. I can't believe it..
+cough
+'You are truly.. a worthy warrior, and for that, I offer you this..
+give sikanda $n
+mpecho _whi Atreyu takes on last gasping breath as he hits the ground.
+mpecho _blu The earth trembles beneath your feet!
+mpforce $n say FALKOR!
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18404
+Keywords  bully~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A bully~
+Long      A mean looking bully stands here, seemingly intending to want to do bodily harm to you.
+~
+Desc      A tough looking fella, he seems to be someone you don't want to mess
+with. He is a little bigger then you, and twice as thick. But the blank
+dull stare of stupidity sets you at ease that in a match of wits, you would
+surely overcome. However, I don't think there's time for that, he seems
+much more interested in pounding your face in!
+~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    50 21 0 8000 1 1 300
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel scavenger~
+Affected  invisible sneak hide truesight~
+Bodyparts head legs heart~
+Immune    drain sleep magic~
+Attacks   bite punch kick~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  act_prog~
+Arglist   {p} boogies!~
+Comlist   if level($n) >=45
+c q $n
+else
+mea $n _lbl A bully says 'Hey! What are you doing here? You better scram!'
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18405
+Keywords  gmork~
+Race      wolf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Gmork~
+Long      Gmork sits here, crouched and waiting to attack you.
+~
+Desc      Resting before you is the great, and vile Gmork. He has been pursueing
+you since you first entered Fantasia. He is a large vampire-wolf. His fur
+is thick and nearly stands straight up from his thick, muscular body.
+His eyes are deep black, yet reflective. You can see yourself staring
+back at you. His fangs are several inches long, and extremely sharp.
+~
+Nattacks  3.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    50 21 0 29999 1 1 235
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Bodyparts head legs heart guts ear tail~
+Immune    drain sleep magic~
+Attacks   bite trip gouge gasbreath poison weaken~
+Defenses  parry dodge heal shield disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   snarl
+mea 0.$n _lbl Gmork says 'If you come any closer, I will rip you to shreds.'
+growl 0.$n
+mea 0.$n _lbl Gmork says 'I am Gmork, and you $n, have the honor of being my
+mea 0.$n _lbl last victim. I am the one sent to destroy the only one who
+mea 0.$n _lbl can stop The Nothing.'
+snarl
+c q $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if rand(50)
+mpecho _lbl Gmork says 'I have failed.'
+whimper
+mpecho _lbl Gmork says 'But so have you, Bastian still does not believe.'
+mpecho _lbl Gmork says 'All hope for Fantasia is lost.'
+else
+mpecho _lbl Gmork says 'I have failed.'
+whimper
+mpecho _lbl Gmork says 'But you have not....'
+mpoload 18420 48
+mpecho _cya Gmork's chest rips open and Bastian's Dreams are revealed.
+drop bastian
+cough
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   circle~
+Comlist   mpdamage $r 700
+mprestore self 500
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   stun~
+Comlist   say You cannot win. Accept that you will be my next meal!
+cackle
+mpdamage all 800
+c spiral
+c earthquake
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   30~
+Comlist   say You cannot win. Accept that you will be my next meal!
+cackle
+mpdamage all 800
+c spiral
+c earthquake
+muha
+bash
+bash
+c quantum
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   backstab~
+Comlist   say Ok that hurt!
+c spiral
+c spiral
+c spiral
+muha
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   30~
+Comlist   say Ouch! hurts bad....
+c heal
+c heal
+c heal
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   5~
+Comlist   c gas
+c gas
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p flees head over heals~
+Comlist   mpat $n 'Can't take the heat?
+mpat $n cackle
+mpat $n mea $n _whi Gmork swipes you with his claws as you flee.
+mpat $n mpdamage $n 200
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18406
+Keywords  urgl~
+Race      gnome~
+Class     Cleric~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Urgl~
+Long      Urgl stands here over a vat of Batwing Broth.
+~
+Desc      A small, frail looking gnome, Urgl stands before you somewhat hunched
+over. Her hair is wirey, but thick and curly. She has a bit of a long
+nose, and crooked teeth. But yet her smile is warm, and friendly with
+perhaps a touch of mischief in her eyes. She is clothed in a few layers
+of clothing, mostly drab and dull looking.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel pacifist~
+Affected  sanctuary truesight~
+ShopData   0 0 0 0 0 120 90 0 23
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mea 0.$n _gre Urgl looks at you.
+mea $n _lbl Urgl says 'Ahh! You're awake!'
+mea $n _cya Urgl smiles at you.
+mea $n _lbl Urgl says 'I'm making a batch of my famous Batwing Broth.'
+mea $n _lbl Urgl says 'If you would like to take some on your quest just'
+mea $n _lbl Urgl says 'type list and that will tell you my prices.'
+mea $n _cya Urgl smiles at you.
+mea 0.$n _cya Urgl nods solemnly.
+mea 0.$n _lbl Urgl says 'That's my old man over there.'
+mea 0.$n _whi Urgl points at Engywook.
+mea 0.$n _lbl Urgl says 'He's been going on and on about you, hoping you're'
+mea 0.$n _lbl Urgl says 'the one.'
+mea 0.$n _cya Urgl smiles at you.
+mea 0.$n _whi Urgl goes back to making her batwing broth.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18407
+Keywords  engywook~
+Race      gnome~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Engywook~
+Long      Engywook sits here looking over his log of information on the Southern Oracle.
+~
+Desc      A bit taller than his wife, Engy wook sits behind his desk full of books
+and scientific drawings. His hair is white, and bushy like Urgl's. He
+also is somewhat hunched over with a big toothy grin. He is wearing a
+plain brown smock with a pair of white cotton pants and no shoes.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel pacifist~
+Affected  sanctuary truesight~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p looks at you.~
+Comlist   smile $n
+mea $n _lbl Engywook says 'Have you come to see the Oracle?
+mea $n _cya Engywook grins.
+mea $n _lbl Engywook says 'It's my scientific speciality!'
+mea 0.$n _whi Engywook whispers to you 'The most important hint I can offer'
+mea 0.$n _whi Engywook whispers to you 'you is... if you are not pure of'
+mea 0.$n _whi Engywook whispers to you 'heart, I would suggest not trying'
+mea 0.$n _whi Engywook whispers to you 'to pass through the first gate.'
+mea 0.$n _whi Engywook whispers to you 'You will not make it.'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18408
+Keywords  great sphinx~
+Race      golem~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     The Great Sphinx~
+Long      The Great Sphinx sits here eternally, waiting to eliminate those that try to pass.
+~
+Desc      Two large Sphinx stand to either side of the cavern, guarding the passage.
+They are made of stone, with eyes that open when they prepare to zap an
+unworthy questor. It would be suggested to answer the questions asked of
+of you swiftly so that you might pass on to the next gate.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    55 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc proto~
+Affected  detect_invis detect_hidden truesight~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if isevil($n)
+mea $n _cya The Great Sphinx's eyes open.
+mea $n _lre A powerful beam shoots from the Sphinx's eyes...
+mea $n _cya Everything fades to black...
+mpslay $n
+else
+'If you answer incorrectly, you shall surely perish.
+,looks at you.
+'The first riddle..
+'I never was, am always to be,
+'No one ever saw me, nor ever will
+'And yet I am the confidence of all
+'To live and breathe on this terrestrial ball.
+'Choose your answer wisely.
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p tomorrow~
+Comlist   nod
+'Very good.
+mptrans 0.$n 18451
+mpat 18451 'Now for the second riddle.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   mpslay all
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18409
+Keywords  great sphinx2~
+Race      golem~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     The Great Sphinx~
+Long      The Great Sphinx sits here eternally, waiting to eliminate those that try to pass.
+~
+Desc      Two large Sphinx stand to either side of the cavern, guarding the passage.
+They are made of stone, with eyes that open when they prepare to zap an
+unworthy questor. It would be suggested to answer the questions asked of
+of you swiftly so that you might pass on to the next gate.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  detect_invis detect_hidden truesight~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p Now for the second riddle.~
+Comlist   , looks at you.
+'The beginning of eternity
+'The end of time and space
+'The beginning of every end,
+'And the end of every place.
+, spends a few moments in thought.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p the letter e~
+Comlist   'Very good, one more riddle, and you shall be allowed to pass.
+mptrans 0.$n 18452
+mpat 18452 'The third riddle is as follows:
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   mpslay all
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18410
+Keywords  great sphinx3~
+Race      golem~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     The Great Sphinx~
+Long      The Great Sphinx sits here eternally, waiting to eliminate those that try to pass.
+~
+Desc      Two large Sphinx stand to either side of the cavern, guarding the passage.
+They are made of stone, with eyes that open when they prepare to zap an
+unworthy questor. It would be suggested to answer the questions asked of
+of you swiftly so that you might pass on to the next gate.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc~
+Affected  detect_invis detect_hidden truesight~
+Bodyparts head arms legs heart brains guts hands feet fingers ear eye~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p The third riddle is as follows:~
+Comlist   , ponders a moment in thought.
+'At night they come without being fetched,
+'And by day they are lost without being stolen.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p the stars~
+Comlist   'Very good, $n.
+'You are very wise, and have answered all my riddles correctly.
+'You shall now move on to the second gate.
+'Good luck, $n.
+mea $n _yel The Great Sphinx's eyes close.
+mea $n _yel The wind picks up behind you, nudging you forward.
+mptrans 0.$n 18453
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   100~
+Comlist   mpslay all
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18411
+Keywords  southern oracle~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     The Southern Oracle~
+Long      The Southern Oracle is sitting here, starting to decay and crumble.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel pacifist~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mea $n _lbl The Southern Oracle says 'Do not be afraid, we will not harm you.
+mea $n _lbl We have been waiting for you a long time. Fantasia needs a new
+mea $n _lbl dream. No one from Fantasia can help us. Only the dreams of a
+mea $n _lbl human child can save us. If you want to save our world,
+mea $n _lbl you must hurry.'
+mea $n _cya Another large piece of rock falls from the Southern Oracle.
+mpdamage all 300
+mea $n _lbl The Southern Oracle says 'We're not sure how much longer we can
+mea $n _lbl out last The Nothing.'
+mea $n _cya Falkore pads out from behind The Southern Oracle.
+mea $n _lbl The Southern Oracle says 'Hello, Falkor, I see that you are
+mea $n _lbl accompaning $N on $S quest.'
+mea $n _lbl The Southern Oracle says 'You must take $M to the boundries of
+mea $n _lbl Fantasia.'
+mea $n _cya Falkor nods solemnly.
+mea $n _cya You mount Falkor.
+mea $n _cya Falkor takes off into the night sky.
+mea $n _whi The wind begins to pick up.
+mea $n _whi A terrible storm blows in suddenly.
+mea $n _lbl Falkor says 'I'm losing control!!'
+mea $n }red You are falling!!! &D
+mea $n _whi You hit the ground with a rousounding THUD!!
+mpforce $n sleep
+mptrans all 18481
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18418
+Keywords  empress~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     the Empress~
+Long      The Empress looks up at you with large child-like eyes.
+~
+Desc      The Empress is sitting comfortably in the middle of the room. Her hair is
+neatly combed back against her head. A thin, silver tiarra settles on the
+top of her head, drawing to a "v" in the middle of her forehead. Her eyes
+are a bright blue, surrounded by long, black lashes. Her cheeks are slightly
+rouged and her lips are full, and red. She is wearing a long white gown
+that hangs from her shoulders with silken sleeves that draw to a "v" at
+the top of her hands. The dress it self is fit tightly across her torso
+but blossoms out at her hips, coming to a full and extravagant drape
+over her lower half. There are beads and diamonds strewn all throughout
+the fabric, seemingly giving her a slight glow.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    50 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel nowander pacifist~
+Affected  sanctuary~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mea $n _dgr The Empress looks at you.
+mea $n _cya The Empress smiles at you.
+mea $n _lbl The Empress says 'Greetings, $n.'
+if carryingvnum($n) 18420
+mea $n _lbl The Empress says 'You have done well, $n. You have saved all
+mea $n _lbl of Fantasia.'
+Mea $n _cya The Empress smiles at you.
+mea $n _lbl The Empress says 'Please give me Bastian's Dreams.'
+else
+frown
+mea $n _lbl The Empress says 'You have not completed your quest, $n'
+mea $n _lbl The Empress says 'The fate of all Fantasia lies on your shoulders.'
+mea $n _cya The Empress hugs you.
+mea $n _lbl The Empress says 'Please don't give up, you're the only one who
+mea $n _lbl can save us.'
+mea $n _lbl The Empress says 'You're the only one that can save me...'
+sniff
+mea $n _lbl The Empress says 'Please hurry, $n. Time is running out..'
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you bastian's dreams.~
+Comlist   if ispc($n)
+if rand(75)
+thank $n
+mpjunk bastian's dreams
+hug $n
+wave $n
+mea $n _lbl The Empress says 'Now you must go back to the real world.'
+mptrans all 21000
+else
+thank $n
+mea $n _lbl The Empress says 'Now you must go back to the real world.'
+mea $n _lbl The Empress says 'But take this, so you don't forget us.
+mpoload 18421 50
+get grain
+give grain $n
+wink $n
+mea $n _lbl The Empress says 'Be sure to tell the others...
+wave $n
+mptrans all 21000
+endif
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   savea
+mea $n _dgr The Empress looks at you.
+mea $n _cya The Empress smiles at you.
+mea $n _lbl The Empress says 'Greetings, $n.'
+if iscarrying($n) == 18420
+mea $n _lbl The Empress says 'You have done well, $n. You have saved all
+mea $n _lbl of Fantasia.'
+Mea $n _cya The Empress smiles at you.
+mea $n _lbl The Empress says 'Please give me Bastian's Dreams.'
+else
+frown
+mea $n _lbl The Empress says 'You have not completed your quest, $n'
+mea $n _lbl The Empress says 'The fate of all Fantasia lies on your shoulders.'
+mea $n _cya The Empress hugs you.
+mea $n _lbl The Empress says 'Please don't give up, you're the only one who
+mea $n _lbl can save us.'
+mea $n _lbl The Empress says 'You're the only one that can save me...'
+sniff
+mea $n _lbl The Empress says 'Please hurry, $n. Time is running out..'
+endif
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gives you bastian's dreams.~
+Comlist   if ispc($n)
+if rand(75)
+thanks $n
+mpjunk bastian's dreams
+hug $n
+wave $n
+mea $n _lbl The Empress says 'Now you must go back to the real world.'
+mptrans $n 21000
+else
+thank $n
+mea $n _lbl The Empress says 'Now you must go back to the real world.'
+mea $n _lbl The Empress says 'But take this, so you don't forget us.
+mpoload 18421 50
+get grain
+give grain $n
+wink $n
+mea $n _lbl The Empress says 'Be sure to tell the others...
+wave $n
+mptrans $n 21000
+endif
+endif
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18419
+Keywords  cairon~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Cairon~
+Long      Cairon stands here, addressing the concerned people of Fantasia.
+~
+Desc      A tall, wise looking centaur stands before you. He is dark complected,
+half-man, half-horse.  His hair is white, and curly, extending beyond 
+his shoulders and cascading down his back. He is the most skilled, and
+wisest physician in all of Fantasia, but is seemingly troubled greatly
+by the Empress' illness. Even he can't seem to save her.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    50 21 0 7000 1 1 200
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  truesight~
+Bodyparts long_tongue~
+Immune    acid drain sleep magic~
+Attacks   bite punch kick trip~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   mea $n _lbl Cairon says 'I know you have come to beseech the Empress for help.'
+mea $n _lbl Cairon says 'But the Empress has fallen ill...'
+mea $n _lbl Cairon says 'There seems to be a mysterious link between her
+mea $n _lbl and the Nothing.'
+mea $n _lbl Cairon says 'Our only hope is to find a brave warrior 
+mea $n _lbl willing to take on this almost impossible quest.'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p I have come to save Fantasia.~
+Comlist   mpecho _dgr Cairon looks at $n.
+nod
+'Then you will need this, fair warrior...
+mpoload 18403 45
+mpecho _dgr Cairon removes the Auryn from around his neck.
+give auryn $n
+'If you can not wear that, you will not be able to complete
+mpecho _lbl the quest, and should turn back now.'
+'Goodluck, and remember, all of us are counting on you.
+'Defeat the Nothing, $n, or we will all perish.
+mptrans $n 18473
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18420
+Keywords  blubb~
+Race      bat~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_acid~
+Short     Blubb~
+Long      Blubb is hanging from a branch above you.
+~
+Desc      Blubb is a large bat, and Vooshvazool's mode of travel. He is somewhat
+furry and light pink in color. He has large black eyes that are closed
+most of the time as he sleeps... a lot.
+~
+Nattacks  3.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    50 21 0 8000 1 1 175
+Speaks    common clan~
+Speaking  clan~
+Actflags  npc sentinel nowander~
+Affected  sanctuary flying~
+Bodyparts head heart feet tail~
+Resist    cold electricity plus6~
+Immune    cold electricity acid drain sleep plus6 magic~
+Attacks   bite trip curse~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   snore
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18421
+Keywords  gluckuk~
+Race      dwarf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Gluckuk~
+Long      Gluckuk stands here tending to his racing snail.
+~
+Desc      Gluckuk is a tiny, almost what a munchkin might look like. He has a round
+face with rosey cheeks. He is dressed in a colorful tophat and a crimson
+tuxedo with tails.
+~
+Nattacks  2.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    45 21 0 9000 1 1 250
+Speaks    common clan~
+Speaking  clan~
+Actflags  npc sentinel nowander~
+Affected  sanctuary truesight~
+Bodyparts head heart hands feet~
+Resist    NONE fire acid hold~
+Immune    drain sleep magic~
+Attacks   punch kick trip~
+Defenses  parry dodge disarm~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   'If the Empress can't save us, who can?
+sigh
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18422
+Keywords  Vooshvazool~
+Race      goblin~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Vooshvazool~
+Long      Vooshvazool sits here poking at his dinner over the fire.
+~
+Desc      Vooshvazool, a Nytehob, is not a very attractive fellow. He has frizzy
+light brown hair, and a long pointed nose. Several warts reside on his 
+wrinkly face. He is clothed in a simple brown tunic and a pair of worn
+leather pants.
+~
+Nattacks  2.000000
+Stats1    0 0 0 0 0 0
+Stats2    48 21 0 9000 1 1 150
+Speaks    common clan~
+Speaking  clan~
+Actflags  npc sentinel nowander~
+Affected  sanctuary flying~
+Bodyparts head heart hands feet~
+Resist    cold electricity plus6~
+Immune    cold electricity acid drain sleep plus6 magic~
+Attacks   bite trip curse~
+Defenses  parry dodge~
+#ENDMOBILE
+
+#MOBILE
+Vnum      18423
+Keywords  rock biter~
+Race      golem~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Rock Biter~
+Long      Rock Biter sits here chomping on limestone.
+~
+Desc      A large being stands before you, seemingly made of rock. He towers several
+stories above you. He somehow manages to have some expression to his face
+and you sence that he is greatly troubled.
+~
+Nattacks  3.000000
+Stats1    0 0 0 0 0 0
+Stats2    48 21 0 12000 1 1 190
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  sanctuary flying~
+Bodyparts head guts hands~
+Resist    cold electricity plus6~
+Immune    cold electricity acid drain sleep plus6 magic~
+Attacks   bite trip curse~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   1~
+Comlist   'There used to be a lake back home, and all the tasty limestone we needed.
+'But then the Nothing came, and the lake dried up, and the rocks..were gone.
+'I've come to seek the Empress and try to save what's left of my people.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   'Why are you attacking me? Don't you know the Nothing is coming??
+sniff
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   100~
+Comlist   mer $n }whi Rock Biter hits the ground so hard, the ground shakes beneath you.
+mea $n }whi Rock Biter hits the ground so hard, the ground shakes beneath you.
+mpdamage all 200
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18424
+Keywords  rock biter~
+Race      golem~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Rock Biter~
+Long      Rock Biter sits here chomping on limestone.
+~
+Desc      A large being stands before you, seemingly made of rock. He towers several
+stories above you. He somehow manages to have some expression to his face
+and you sence that he is greatly troubled.
+~
+Nattacks  3.000000
+Stats1    0 0 0 0 0 0
+Stats2    48 21 0 4999 1 1 190
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  sanctuary flying~
+Bodyparts head guts hands~
+Resist    cold electricity plus6~
+Immune    cold electricity acid drain sleep plus6 magic~
+Attacks   bite trip curse~
+Defenses  parry dodge~
+#MUDPROG
+Progtype  act_prog~
+Arglist   arises~
+Comlist   'They look.. like big.. strong hands... don't they?
+sigh
+shake
+sniff
+'They were not strong enough to hold onto my friends, the Nothing took
+'them away from me. So I'm going to sit here, and wait... and let it take
+'me too.
+sigh
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18425
+Keywords  johnston teacher math~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Ms. Johnston~
+Long      Your math teacher stands here, obviously perturbed you are late for her class again.
+~
+Nattacks  2.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    40 21 0 1999 1 1 100
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary flying truesight~
+Bodyparts legs hands feet~
+Immune    sleep magic~
+Attacks   bite punch kick~
+Defenses  parry dodge disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   emote looks at you.
+mea $n _cya Ms. Johnston rolls her eyes at you.
+mea $n _lbl Your math teacher says 'Late again, $n?'
+tsk
+mea $n _lbl Your math teacher says 'What until your father hears, you are in
+mea $n _lbl big trouble, $n!'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   'You are soooo expelled!
+growl
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18426
+Keywords  music teacher marmalade~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Ms. Marmalade, your music teacher~
+Long      Your music teacher sits here rubbing her temples in frustration.
+~
+Nattacks  2.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    40 21 0 1999 1 1 100
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary flying truesight~
+Bodyparts legs hands feet~
+Immune    sleep magic~
+Attacks   bite punch kick~
+Defenses  parry dodge disarm~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   2~
+Comlist   'Everybody now...
+lala
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p goes 'la la la'~
+Comlist   growl $n
+'On second thought, $n, why don't you go lunch?
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   ,grabs a music stand and smashes it over your head.
+'Take that!
+growl
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18427
+Keywords  Ms. Shultz art teacher~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     Ms. Shultz, your art teacher~
+Long      Your art teacher is sitting here, getting ready for her next class.
+~
+Nattacks  2.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    40 21 0 1999 1 1 74
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary flying truesight~
+Bodyparts legs hands feet~
+Immune    sleep magic~
+Attacks   bite punch kick~
+Defenses  parry dodge disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   '$n shouldn't you be in math class right now?'
+mea $n _cya Ms. Shultz, your are teacher looks at you.
+tsk 0.$n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   thwap $r
+mpdamage $r 200
+'Betcha wish you went and took that test..'
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18428
+Keywords  Mr. Turlington english teacher~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Mr. Turlington, your math teacher~
+Long      Your english teachers sits behind his desk, grading papers.
+~
+Nattacks  2.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    40 21 0 1999 1 1 100
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel~
+Affected  detect_invis detect_hidden sanctuary flying truesight~
+Bodyparts legs hands feet~
+Immune    sleep magic~
+Attacks   bite punch kick~
+Defenses  parry dodge disarm~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   mea $n _cya Mr. Turlington, your math teacher looks at you.
+smile
+mea $n _lbl Mr. Turlington says 'Ah, welcome $n, you're just in time for your'
+mea $n _lbl Mr. Turlington says 'essay examination. Please have a seat and'
+mea $n _lbl Mr. Turlington says 'begin. This test will count as 50% of your'
+mea $n _lbl Mr. Turlington says 'final grade.'
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  fight_prog~
+Arglist   20~
+Comlist   'You are in big trouble, $r!
+mpdamage $r 100
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18429
+Keywords  racing snail~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A racing snail~
+Long      A racing snail sits here, peering at you.
+~
+Desc      A friendly looking snail, it's larger then then the Tiny that rides him.
+A pinked body, his skin is thick and rubbery, with a large shell on his
+back with a saddle on it for Gluckuk.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    49 21 0 7000 1 1 100
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander~
+Affected  sanctuary~
+Immune    drain sleep magic~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   10~
+Comlist   mpecho _Whi A racing snail slimes you!
+mpdamage all 200
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18430
+Keywords  bunny~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     a furry little bunny~
+Long      A furry little bunny hops around merrily.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    1 21 0 0 0 0 0
+Speaking  common~
+Actflags  npc sentinel nowander pacifist~
+#MUDPROG
+Progtype  rand_prog~
+Arglist   3~
+Comlist   mpecho _whi The bunny sits back on its haunches and sniffs the air, then goes
+mpecho _whi back to hopping around.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p gently pets you.~
+Comlist   purr
+wiggle
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p nibbles on your ear.~
+Comlist   giggle
+flutter $n
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p looks at you.~
+Comlist   nose
+semote $n wiggles it's nose.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18431
+Keywords  falkor2~
+Race      dragon~
+Class     Ranger~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     Falkor, the Luck Dragon~
+Long      Falkor, the Luck Dragon is resting here.
+~
+Desc      Falkor is a luck dragon. He is very large, extending almost the length of
+a football field from his muzzle to the tip of his tail. He stands about
+a story high, with confidence, yet with an aura of compassion about him.
+His eyes are large as well, ruby red in color. However, they are not 
+piercing, they are more warm and kind looking. His scales are the purest
+white you've ever seen, and shimer like the clearest ocean ever could.
+~
+Nattacks  0.000000
+Stats1    0 0 0 0 0 0
+Stats2    54 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc sentinel nowander mountable pacifist proto~
+Affected  detect_invis detect_hidden truesight~
+RepairData 5 9 15 100 1 0 23
+#MUDPROG
+Progtype  rand_prog~
+Arglist   10~
+Comlist   'Let me see your equipment, it seems to have been damaged in the fight.
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      18499
+Keywords  Legolas~
+Race      high-elf~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     Legolas~
+Long      Legolas the Elven Archer stands here, ready to do his Mistress, Temptations, biddings.
+~
+Nattacks  0.000000
+Stats1    0 -1 0 0 0 0
+Stats2    55 21 0 0 0 0 0
+Speaks    common~
+Speaking  common~
+Actflags  npc mountable~
+Affected  sanctuary truesight fireshield iceshield~
+Bodyparts head~
+#MUDPROG
+Progtype  act_prog~
+Arglist   p pets you.~
+Comlist   purr
+nuz tempt
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p spanks you playfully.  OUCH!~
+Comlist   again temptation
+beg temptation
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p mounts you.~
+Comlist   'Where may I take you Mistress?
+nuz tempt
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p dismounts you.~
+Comlist   pout
+'But Mistress, I love being ridden by you...
+sniff
+lap temptation
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  act_prog~
+Arglist   p nibbles on your ear.~
+Comlist   swoon tempt
+quiver tempt
+lap tempt
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum      18402
+Keywords  neverending story book~
+Type      treasure~
+Short     The Neverending Story~
+Long      The Neverending Story lies here collecting dust.~
+Flags     glow hum inventory~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#MUDPROG
+Progtype  exa_prog~
+Arglist   100~
+Comlist   if inroom($n) == 18417
+mpforce 0.$n drop book
+mea $n _whi As you begin to read, you start to feel strange..
+mea $n _whi Your eyelids get heavy... and everything becomes surreal.
+mpforce $n sleep
+mptrans $n 18460
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      18403
+Keywords  auryn~
+Type      armor~
+Short     the Auryn~
+Long      A small metallic symbol of two woven snakes lies here.~
+Action    Also called "The Gem" or "The Glory". Auryn is the Childlike Empress's golden amulet. It consists of two snakes, one black, one white, each biting the other's tail. On the reverse side it reads, "Do What You Wish". ~
+Flags     glow magic~
+WFlags    take neck~
+Values    12 12 20 0 0 0 0 0 0 0 0
+Stats     1 10000 -2 9999 0 None None None
+AffData strength 2 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData damroll 6 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData hit 50 -1 -1 0
+#EXDESC
+ExDescKey    auryn gem glory pendant~
+ExDesc       Also called "The Gem" or "The Glory". Auryn is the Childlike Empress's 
+golden amulet. It consists of two snakes, one black, one white, each biting
+the other's tail. On the reverse side it reads, "Do What You Wish". 
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      18404
+Keywords  Sikanda sword~
+Type      weapon~
+Short     Sikanda~
+Long      A shimmering, magical sword lies here, seeming to create it's own light.~
+Flags     glow hum metal magic antievil anticleric antirogue~
+WFlags    take wield~
+Values    12 4 15 3 3 0 0 0 0 0 0
+Stats     8 100000 -2 1 0 None None None
+AffData strength 2 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData move -50 -1 -1 0
+AffData hitroll 15 -1 -1 0
+AffData damroll 18 -1 -1 0
+AffData hit 100 -1 -1 0
+AffData wearspell 'bless' -1 -1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mer $n _whi In a brilliant flash of light, $n brings Sikanda to hand.
+mea $n _whi You feel magically more powerful as you bring Sikanda to hand.
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mea $n _red You feel heavy hearted as you stop wielding Sikanda.
+mer $n _red $n feels heavy hearted as $e stops wielding Sikanda.
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      18406
+Keywords  cry~
+Type      treasure~
+Short     a cry for help~
+Long      Someone's last hope lies here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#MUDPROG
+Progtype  exa_prog~
+Arglist   100~
+Comlist   mea $n _cya You look up to the sky, for what you to believe is the last time.
+mpforce $n 'What is that?
+mpecho _cya As you look up you see a small white object coming closer.
+mpecho _whi As it nears, you see that it is a magical Luck Dragon.
+mpecho _whi Falkor swoops down.
+mptrans falkor
+mpforce $n drop cry
+mpforce $n 'Help me!
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      18411
+Keywords  batwing broth~
+Type      potion~
+Short     batwing broth~
+Long      A spindle of batwing broth lies here.~
+WFlags    take hold~
+Values    35 -1 -1 -1 0 0 0 0 0 0 0
+Stats     2 30000 -2 1 0 None None None
+Spells       'kindred strength' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      18412
+Keywords  eye of newt~
+Type      pill~
+Short     eye of newt~
+Long      A disgusting looking eye lies here in the dirt.~
+WFlags    take hold~
+Values    50 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 100000 -2 1 0 None None None
+Spells       'true sight' 'NONE' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      18417
+Keywords  key~
+Type      key~
+Short     a key to the attic~
+Long      A key labeled "Attic" lies here in the cubbyhole.~
+Flags     inventory~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      18420
+Keywords  bastians dreams~
+Type      treasure~
+Short     Bastian's Dreams~
+Long      The heart of Fantasia lies here.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#MUDPROG
+Progtype  exa_prog~
+Arglist   100~
+Comlist   if ispc($n)
+mpecho _whi Something is different...
+mptrans all 18479
+endif
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      18421
+Keywords  grain sand~
+Type      armor~
+Short     a grain of sand~
+Long      The stuff dreams are made of lies here.~
+Flags     glow magic antiwarrior~
+WFlags    take hold~
+Values    17 17 0 0 0 0 0 0 0 0 0
+Stats     1 1000 -2 1 0 None None None
+AffData dexterity 2 -1 -1 0
+AffData hit 40 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      18425
+Keywords  leather vest~
+Type      armor~
+Short     a light, leather vest~
+Long      A small pile of leather lies here.~
+WFlags    take body~
+Values    12 12 0 0 0 0 0 0 0 0 0
+Stats     3 12000 -2 1 4 None None None
+AffData armor -7 -1 -1 0
+AffData constitution 2 -1 -1 0
+AffData mana 30 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      18426
+Keywords  baggy leather pants~
+Type      armor~
+Short     a pair of baggy, leather pants~
+Long      Some god dropped a newly created baggy leather pants here.~
+Flags     bless antievil anticleric antimage~
+WFlags    take legs~
+Values    12 0 0 0 0 0 0 0 0 0 0
+Stats     1 21000 -2 1 0 None None None
+AffData armor 4 -1 -1 0
+AffData intelligence 2 -1 -1 0
+AffData wisdom 1 -1 -1 0
+AffData hitroll 4 -1 -1 0
+AffData damroll 7 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      18427
+Keywords  leather jacket~
+Type      armor~
+Short     a leather jacket~
+Long      A leather jacket is laying here in a clump~
+Flags     antigood antineutral anticleric antimage~
+WFlags    take body~
+Values    12 12 0 0 0 0 0 0 0 0 0
+Stats     3 140000 -2 1 32 None None None
+AffData armor -10 -1 -1 0
+AffData strength 1 -1 -1 0
+AffData hitroll 3 -1 -1 0
+AffData damroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      18428
+Keywords  plaid skirt~
+Type      armor~
+Short     a plaid cotton skirt~
+Long      Some god dropped a newly created plaid skirt here.~
+WFlags    legs~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      18429
+Keywords  Mark purple buffalo hunter~
+Type      armor~
+Short     &pthe mark of the purple buffalo hunter&D~
+Long      &pA tribal mark set in deep purple lies here.&D~
+Flags     glow bless antineutral anticleric antimage antidruid~
+WFlags    take ankle~
+Values    12 12 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData armor -8 -1 -1 0
+AffData strength 1 -1 -1 0
+AffData hitroll 1 -1 -1 0
+AffData damroll 3 -1 -1 0
+AffData hit 20 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      18430
+Keywords  limestone~
+Type      pill~
+Short     a limestone~
+Long      Some god dropped a newly created limestone here.~
+Flags     proto~
+WFlags    take~
+Values    50 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 1200 -2 1 0 None None None
+Spells       'stone skin' 'grounding' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      18450
+Keywords  stream~
+Type      fountain~
+Short     a newly created stream~
+Long      A slow moving stream babbles here quietly.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      18460
+Keywords  desk~
+Type      furniture~
+Short     a newly created desk~
+Long      A large wooden desk sits here against the wall, covered with books and paperwork.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      18461
+Keywords  bookshelf~
+Type      furniture~
+Short     a newly created bookshelf~
+Long      Tall wooden bookshelves line the walls, filled with old, dusty books.~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      18462
+Keywords  goblin sword~
+Type      weapon~
+Short     a goblin sword~
+Long      A small, poorly-made sword lies here.~
+Flags     glow antigood anticleric antimage evil antidruid~
+WFlags    take wield~
+Values    12 7 3 11 0 0 0 0 0 0 0
+Stats     1 2400 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      18463
+Keywords  chalkboard~
+Type      furniture~
+Short     a chalkboard~
+Long      A chalkboard sits here at the front of the class~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    chalkboard~
+ExDesc       A large green chalkboard, there are various math equations off to the
+side of the board, but in the center you see large letters:
+*     *  ****** ******* *     *     ******* ****** ******* *******
+* * * *  *    *    *    *     *        *    *      *          *
+*  *  *  ******    *    *******        *    ****   *******    *
+*     *  *    *    *    *     *        *    *            *    *
+*     *  *    *    *    *     *        *    ****** *******    *
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      18464
+Keywords  instrument closet~
+Type      container~
+Short     an instrument closet~
+Long      An instrument closet sits here along the wall.~
+Values    30 5 18465 15 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    closet~
+ExDesc       A large wooden closet sits here against the wall. It seems to be made
+of a thick, cheap wood. It is covered by a chipped, army green paint.
+There are two large doors that sit above two lowers drawers.
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      18465
+Keywords  music note key~
+Type      key~
+Short     a music note charm necklace~
+Long      Someone left a small, silver music note on the ground here.~
+Flags     glow magic~
+WFlags    take neck~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 10000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      18466
+Keywords  guitar~
+Type      treasure~
+Short     a guitar~
+Long      A small wooden guitar sits here perched against the wall.~
+WFlags    take hold~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    guitar~
+ExDesc       The guitar is small, but it seems to be made of the finest wood. It's
+thickly coated with a fine liquer, and the strings are in fine shape.
+~
+#ENDEXDESC
+
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n _whi You strum across the strings as you hold the guitar in your hands.
+mer $n _whi $n strums across the strings as $e holds the guitar in $s hands.
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      18467
+Keywords  paintbrush~
+Type      weapon~
+Short     a paintbrush~
+Long      A plain wooden paintbrush, still damn with paint, lies here.~
+WFlags    take wield~
+Values    12 4 4 7 0 0 0 0 0 0 0
+Stats     1 2000 -2 1 0 None None None
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mea $n _red Your fingers wrap around the paintbrush as you grin evilly.
+mer $n _red $n's fingers wrap around the paintbrush as $e grins evilly.
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      18468
+Keywords  smock~
+Type      armor~
+Short     a flimsy art smock~
+Long      A flimsy art smock is lying here in a clump.~
+WFlags    take body~
+Values    17 17 0 0 0 0 0 0 0 0 0
+Stats     1 2400 -2 1 128 None None None
+AffData armor -4 -1 -1 0
+AffData intelligence 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
+AffData hitroll 5 -1 -1 0
+AffData damroll 4 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      18469
+Keywords  english chalkboard~
+Type      furniture~
+Short     a chalkboard~
+Long      A chalkboard sits here at the front of the class~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+#EXDESC
+ExDescKey    chalkboard~
+ExDesc       You see a large green chalkboard saying:
+ 
+***** ***** ***** ***** *    *   ******* ****** ******* *******
+*     *     *     *   *  *  *       *    *      *          *
+***   ***** ***** *****   *         *    ****   *******    *
+*         *     * *   *   *         *    *            *    *
+***** ***** ***** *   *   *         *    ****** *******    *
+~
+#ENDEXDESC
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      18470
+Keywords  book childhood stories~
+Type      staff~
+Short     a book of childhood stories~
+Long      A book of childhood stories sits here collecting dust.~
+Flags     hidden~
+WFlags    take hold~
+Values    60 5 5 -1 0 0 0 0 0 0 0
+Stats     2 24800 -2 1 0 None None None
+Spells       'true sight'
+#ENDOBJECT
+
+#OBJECT
+Vnum      18471
+Keywords  temptation home skillet~
+Type      staff~
+Short     Temptation's Home Skillet~
+Long      Temptation's Home Skillet lies here, waiting to fry your ass!~
+WFlags    take hold~
+Values    0 0 0 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData strength 20 -1 -1 0
+AffData dexterity 20 -1 -1 0
+AffData wisdom 20 -1 -1 0
+AffData constitution 20 -1 -1 0
+AffData intelligence 20 -1 -1 0
+AffData sex 20 -1 -1 0
+AffData class 20 -1 -1 0
+Spells       'NONE'
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mpe _whi $n wields $O and looks around for the next ass she gets to fry!
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mpe _whi $n asks 'Did you smell, what the $n, was cookin'?'
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#ROOM
+Vnum      18400
+Name      An Abandoned Warehouse~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You've wandered into an abandoned warehouse. It's a rather large building
+with cement walls, painted gray but chipping. There are wooden crates
+lining the walls, and a various assundry of long tables and heavy machinery.
+There is little light, even from the windows that are high upon the walls.
+They appear to have been spray painted over with black paint. It's almost
+as if someoene was trying to hide something in here. The air is thick and
+musty, making it hard to breath. There are footprints on the dirty floor
+that appear to be recent.
+~
+#EXIT
+Direction north~
+ToRoom    18401
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 18404 1 18400 -1 -1 -1 100
+  Reset E 18427 1 12 100
+Reset D 18400 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      18401
+Name      On The Street~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Walking out from the warehouse, thank goodness you got past those bullies,
+but it would probably be best to move along swiftly. They will be back with
+reinforcements, no doubt. The street is busy, cars fill the street, either
+parked or stuck in traffic. The exhaust is thick, and the noise is deffening.
+There are several shops lining the street. There appears to be a bookstore
+up ahead.
+~
+#EXIT
+Direction north~
+ToRoom    18402
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18400
+Flags     isdoor pickproof~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18402
+Name      On The Street~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are nearing the bookstore, and from here it appears to be empty. Most
+likely it will provide a quiet refuge for the time being. There's something
+mysterious about it, seemingly drawing you inside. You hear a commotion to
+the south, it seems the bullies are coming up quick, better hurry inside.
+~
+#EXIT
+Direction north~
+ToRoom    18403
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    18405
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18401
+#ENDEXIT
+
+Reset D 18402 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      18403
+Name      Inside The Antique Bookstore~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As the door opens, it creaks softly and a small bell jingles overhead. The
+air is musty in here, smelling of all books, perhaps a hint of mildew as
+well. It's not particularly well lit so one would have to strain to really
+see the merchandise. It is quiet as you thought, although you can see the
+bustling traffic outside through the front window.
+~
+#EXIT
+Direction north~
+ToRoom    18404
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18402
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 18403 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      18404
+Name      Inside The Antique Bookstore~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Venturing further into the bookstore, a man rushes up from his seat in the
+office ahead, to meet you. He was reading a book, which he quickly shut 
+before coming to greet you. He moves between you and the view of the office,
+almost seeming to want to hide what was in there. He looks rather irritated
+by your presense here. But the book is large, and you can't help but want to
+get a closer look.
+~
+#EXIT
+Direction north~
+ToRoom    18418
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18403
+#ENDEXIT
+
+Reset M 18402 1 18404 -1 -1 -1 100
+Reset O 18461 1 18404 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18405
+Name      Approaching The School~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      Moving east down the street from the bookstore, once again, the traffic and
+sounds are deffening. People rush by you, not even seeming to see you. You
+hear a clock striking, then look up to see the time. Uh oh, schools started
+and you're not there. Wasn't today the day of the big math test? This day is
+already looking disasterous.
+~
+#EXIT
+Direction east~
+ToRoom    18406
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18402
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18406
+Name      Before The School~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand before a large brick building running the entire length of the
+block. The windows are cloudy so you can't really see in. The grounds are
+well-kept and clean. Seeing as there are no other kids standing outside or
+running around, you know school has already started and you are late.
+~
+#EXIT
+Direction north~
+ToRoom    18407
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18405
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18407
+Name      Inside The School~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you enter the building, the halls are large and ominous. Not a sound as
+you walk down the hallway. You struggle to see in the small window of the
+dreaded math class, and you see they are taking a test. Maybe you should go
+find a safe place to hide out for a while?
+~
+#EXIT
+Direction north~
+ToRoom    18409
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    18408
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18406
+#ENDEXIT
+
+Reset D 18407 1 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      18408
+Name      Math Class~
+Sector    indoors~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      As you enter class, your stomach begins to knot. You know you should
+have just gone to the attic or something. Suddenly you're the center
+of attention as your teacher begins to scold you for being late, again.
+~
+#EXIT
+Direction west~
+ToRoom    18407
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 18425 1 18408 -1 -1 -1 100
+Reset O 18463 1 18408 -1 -1 -1 100
+Reset D 18408 3 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      18409
+Name      At The Base Of The Stairs~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You walk down the long hallway toward a set of metal-grate stairs. A small
+sign on the wall reads "The Attic." To the east and west are more hallways
+with several classroom doors along the dingy walls. There is hardly any
+sound to be heard here. The florescent lighting doesn't do much to pep up
+the mediocre surroundings.
+~
+#EXIT
+Direction east~
+ToRoom    18410
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18407
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18415
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    18414
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18410
+Name      Along The Eastwing Of The School~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you walk down the darkened hallway, the only sound heard are chairs being
+scooted along the floor in the classrooms surrounding you. All the doors are
+closed, so any sound is muffled. Most of the windows are to high to see
+what's going on in them room.
+~
+#EXIT
+Direction north~
+ToRoom    18411
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18412
+Flags     isdoor closed~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18409
+#ENDEXIT
+
+Reset D 18410 0 1 100 -2
+Reset D 18410 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      18411
+Name      Art Class~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you enter this room, you see the walls are covered with drawings
+and paintings. There are several cabinets lining the walls all filled
+with various art supplies. There are long tables arranged in a semi-
+circle, still covered in wet paintings.
+~
+#EXIT
+Direction south~
+ToRoom    18410
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 18427 1 18411 -1 -1 -1 100
+  Reset E 18467 1 16 100
+  Reset E 18468 1 5 100
+Reset D 18411 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      18412
+Name      Music Class~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room is well-lit. There are several chairs spread out 3 half
+circles around a small wooden podeum. Off to the side is a large closet
+where the school's instruments are held and kept under lock for safe
+keeping. There are large posters on the walls of various music scales
+and encouraging words. You sense the teacher really likes her job.
+~
+#EXIT
+Direction north~
+ToRoom    18410
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 18426 1 18412 -1 -1 -1 100
+  Reset E 18465 1 3 100
+Reset O 18464 1 18412 -1 -1 -1 100
+Reset D 18412 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      18413
+Name      English Class~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      Upon entering this room, it smells musty, and looks like no one has
+bothered to dust for ages. The books that line the walls are old and 
+smell of mildew. The desks are aligned in four rows of eight, all
+facing forward. There are papers on each desk, still upside down.  Uh
+oh, looks like another test. 
+~
+#EXIT
+Direction north~
+ToRoom    18415
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset M 18428 1 18413 -1 -1 -1 100
+Reset O 18469 1 18413 -1 -1 -1 100
+Reset D 18413 0 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      18414
+Name      At The Top Of The Stairs~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are now at the top of the stairs. Before you is the door to the
+old attic. There is a small cubbyhole to the right of the door that
+reads "Attic" above it. The glass is broken out, and you can see the
+key sitting inside. Behind you are the stairs back to the main floor
+of the school. It's rumored that mysterious things have happened in
+the attic. Maybe it would be safer if you just went back to math class
+and took the test...
+~
+#EXIT
+Direction north~
+ToRoom    18416
+Key       18417
+Flags     isdoor closed locked pickproof nopassdoor bashproof~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    18409
+#ENDEXIT
+
+Reset O 18417 1 18414 -1 -1 -1 100
+Reset D 18414 0 2 100 -2
+#MUDPROG
+Progtype  all_greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+if level($n) <=45
+mea $n _Whi You are not ready to venture beyond the school yet.
+
+mpforce $n d
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      18415
+Name      Along The Westwing Of The School~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you walk down the darkened hallway, the only sound heard are chairs being
+scooted along the floor in the classrooms surrounding you. All the doors are
+closed, so any sound is muffled. Most of the windows are to high to see
+what's going on in them room.
+~
+#EXIT
+Direction east~
+ToRoom    18409
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18413
+Flags     isdoor closed~
+#ENDEXIT
+
+Reset D 18415 2 1 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      18416
+Name      Just Inside The Attic~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      As you enter the attic, you are overwhelmed by the dust that lays
+thickly on every surface in the room. There is just a ton of junk stored
+here. Everything from old manakins, old, out-of-date schoolbooks, 
+globes, wooden desks, old gym equipment, to stuffed owls and school
+supplies.
+~
+#EXIT
+Direction north~
+ToRoom    18417
+Desc      In The Middle Of The Attic
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18414
+Key       18417
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset D 18416 2 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      18417
+Name      In The Middle Of The Attic~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      Well, this seems to be as good'a place as any to do some light reading
+and hide from the rest of the world for a while. There is a small lamp
+in the corner of the room, once turned on, will shed some light for
+you. Also, there is a gym mattress in the middle of the floor. A
+little dusty, of course, but it still looks comfortable to sprawl out
+on. The shadows cast against the walls, over all the junk in the room
+makes for an erie ambiance.
+~
+#EXIT
+Direction south~
+ToRoom    18416
+Desc      Just Inside The Attic
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18418
+Name      The Backroom of the Bookstore~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is where Mr. Correander's office must be. There is a desk covered
+with dusty books and various orderforms. Even though the books are old
+and dusty, Mr. Correander certainly seems to be busy. One book on the
+desk catches your eye. A thick, leatherbound book with a strange 
+insignia. The one that Mr. Correander had been reading just before you
+entered.
+~
+#EXIT
+Direction south~
+ToRoom    18404
+#ENDEXIT
+
+Reset O 18460 1 18418 -1 -1 -1 100
+Reset O 18402 1 18418 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18419
+Name      Deadly Swamp of Sadness~
+Sector    water_swim~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      You've entered the deadly swamp of sadness. The ground is murky,
+and covered in muck and swamp. Small dead trees and mounds of gunk
+are all that makes up this area. It is rumored that once you lose
+hope, you will begin to sink, and the swamp will claim your very life.
+Don't slow down, and don't give up. You're Fantasia's only hope.
+~
+#ENDROOM
+
+#ROOM
+Vnum      18420
+Name      Deadly Swamp of Sadness~
+Sector    water_swim~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      You've entered the deadly swamp of sadness. The ground is murky, and
+covered in muck and swamp. Small dead trees and mounds of gunk are all
+that make up this area. It is rumored that once you lose hope, you will
+begin to sink, and the swamp will claim your very life. Don't slow down, 
+and don't give up. You're Fantasia's only hope.
+~
+#EXIT
+Direction east~
+ToRoom    18421
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18421
+Name      Walking Through the Swamp~
+Sector    water_swim~
+Flags     nosummon nosupplicate norecall noastral nodrop teleport~
+Stats     0 0 0 0 0
+Desc      As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+#EXIT
+Direction north~
+ToRoom    18422
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18420
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    18421
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18422
+Name      Walking Through the Swamp~
+Sector    indoors~
+Flags     nomob nosummon nosupplicate norecall noastral nodrop teleport~
+Stats     0 0 0 0 0
+Desc      As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell 
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+#EXIT
+Direction north~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18423
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    18424
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    18424
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    18424
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18423
+Name      Walking Through the Swamp~
+Sector    water_swim~
+Flags     nomob nosummon nosupplicate norecall noastral nodrop teleport~
+Stats     0 0 0 0 0
+Desc      As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell 
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+#EXIT
+Direction north~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    18423
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18425
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    18422
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    18422
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    18423
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    18423
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18424
+Name      Walking Through the Swamp~
+Sector    water_swim~
+Flags     nomob nosummon nosupplicate norecall noastral nodrop teleport~
+Stats     0 0 0 0 0
+Desc      As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell 
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+#ENDROOM
+
+#ROOM
+Vnum      18425
+Name      Walking Through the Swamp~
+Sector    water_swim~
+Flags     nomob nosummon nosupplicate norecall noastral nodrop teleport~
+Stats     0 0 0 0 0
+Desc      As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell 
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+#EXIT
+Direction north~
+ToRoom    18423
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    18422
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18423
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18426
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    18422
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    18424
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    18421
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18426
+Name      Walking Through the Swamp~
+Sector    water_swim~
+Flags     nomob nosummon nosupplicate norecall noastral nodrop teleport~
+Stats     0 0 0 0 0
+Desc      As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell 
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+#EXIT
+Direction north~
+ToRoom    18427
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    18422
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18423
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    18421
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    18422
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    18424
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    18426
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18427
+Name      Before the Great Shell Mountain~
+Sector    water_swim~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      A huge mountain of swamp gunk lies before you. This has to be the 
+place. As you look around though, you don't see anyone. No one could
+possible live in this place, could they? Maybe you should get on top
+of the mountain and take a better look.
+~
+#EXIT
+Direction up~
+ToRoom    18428
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18428
+Name      The Top Of Shell Mountain~
+Sector    indoors~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      There is a solitary twiggy little tree here. That's about all you
+can sense as far as life in this swamp. Looking around you can see
+for miles, but still all you see is swamp. No other people. You've 
+failed. Tired, and hopeless, you are not a victim of the swamp. But 
+wait, before you go back down, why don't you just try calling his 
+name? What could it hurt?
+~
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p morla~
+Comlist   mea $n _whi The ground begins to shake...
+mea $n *red You are falling!!
+mpopenpassage 18428 18429 5
+mpat 18428 mpforce $n down
+mpclosepassage 18428 5
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      18429
+Name      Standing Before The Wonderous Morla~
+Sector    indoors~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      The mountain rises, and you find Morla's giant turtle head staring
+you straight in the face. His very eyes are three times as large as
+you. Surely, he must be thousands of years old. It is rumored he is
+the wisest, mortal creature in the world. It makes you wonder why
+he lives here, in the middle of such despair.
+~
+#EXIT
+Direction east~
+ToRoom    18430
+#ENDEXIT
+
+Reset M 18401 1 18429 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18430
+Name      Walking Through the Swamp~
+Sector    indoors~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      As you continue along your quest, the odor here only grows. Each step
+harder than the last. How will you ever find Morla and the Shell
+Mountain? Why were you chosen to save Fantasia? Where is Morla? Will
+you ever find him? Probably not. You will probably die here, sucked
+in by the sadness of the swamp. All of Fantasia will disappear. 
+Afterall, you're just a child.. what could you possibly do?
+~
+#EXIT
+Direction west~
+ToRoom    18429
+Desc      Standing Before The Wonderous Morla
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18431
+Name      Proceeding To The Mirror Gate~
+Sector    indoors~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      The sky is growing dim as the wind begins to pick up again. Perhaps it is
+all the sand that is pelting your skin, that is dimming the starlight. Your
+flesh is beginning to feel raw and weatherbeaten. It's hard to breathe, let
+alone see. The sand at your feet is thick as well, making each step tougher
+than the last.
+~
+#EXIT
+Direction north~
+ToRoom    18432
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    18453
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18432
+Name      Before the Mirror Gate~
+Sector    indoors~
+Flags     nosummon private nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      Standing before what seems to be a large mirror, you see that the wind has
+died down just the slightest bit. You are thankful that the sand is no longer
+beating against your flesh. The gate is several feet higher than you, and
+probably twenty feet wide. It seems to be set in a large rock. But you've
+seen something like this before. It seems quite possible that this is some
+sort of portal you must enter. But how? The answer lies within you. Look at
+yourself honestly, and you may find a way to pass through.
+~
+#EXIT
+Direction south~
+ToRoom    18431
+#ENDEXIT
+
+#EXIT
+Direction somewhere~
+ToRoom    18459
+Flags     hidden can_enter~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18433
+Name      The Southern Oracle~
+Sector    indoors~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      Here the sky is completely clear for a change. The stars in the sky burn
+brightly and seem to twinkle at different moments. The air is still, yet
+crisp, unlike most of the other places you've been thus far. The ground is
+made of dirt, packed hard and smooth. There is no sound, except the sound
+of your pounding heart, and your soft breathing. Directly before you is the
+Southern Oracle. You can't help but be hopeful about what she might be able
+to tell you about the cure for the Empress. Hopefully, she has the answer
+you seek. She is made of thick stone, several stories high as the Great
+Sphynx was, but there is a certain aura of magic about her, of hope and of
+wisdom.
+~
+#EXIT
+Direction northwest~
+ToRoom    18458
+#ENDEXIT
+
+Reset M 18411 1 18433 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18440
+Name      Falkor's Cave~
+Sector    underground~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      A cold, and dark cave, this is Falkor's home. There is a small fire lit
+in the center, shedding both light and warmth. The walls are cool and almost
+wet, yet completely smooth and shimmery. He lies near the middle, resting
+comfortably in his home.
+~
+#EXIT
+Direction east~
+ToRoom    18448
+Flags     nomob~
+#ENDEXIT
+
+Reset M 18400 1 18440 -1 -1 -1 100
+Reset O 30 1 18440 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18448
+Name      Nearing the First Test~
+Sector    indoors~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      &Y *                           *                          *
+                         *               * 
+              *                        *
+ *                   *                              *
+ 
+          *                  *                   *         *
+ 
+        *                *                       *
+ 
+                   *                      *                      *
+                             *                             *
+ 
+          *                                *                *
+ 
+*                     *             *                    *
+&O_____________________________________________________________________
+~
+#EXIT
+Direction north~
+ToRoom    18450
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    18449
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18440
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18449
+Name      Engywook's Hut~
+Sector    indoors~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      As you enter the hut, you see it is rather cluttered with various
+scientific experiments. Some that work, some that don't. Urgl's in
+the kitchen cooking up some dinner. A rather strange scent fills the
+hut. Makes you wonder what exactly she is putting in her stew.
+~
+#EXIT
+Direction west~
+ToRoom    18448
+#ENDEXIT
+
+Reset M 18406 1 18449 -1 -1 -1 100
+  Reset G 18412 1 100
+  Reset G 18411 1 100
+Reset M 18407 1 18449 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18450
+Name      The First Gate~
+Sector    desert~
+Flags     nomob nosummon private nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      Before you stands the Riddle Gate. It is the first test toward finding the
+cure for the Empress and saving all of Fantasia from the Nothing. A Great
+Sphinx stands before you, surrounded by an aura of magic and power. Made of
+stone, it's got the head of a human, but the body of a lion. It stands
+several stories high, and is about 100 feet long. You get the idea that it
+would be powerful enough to stop you if you do not do as it says.
+~
+Reset M 18408 1 18450 -1 -1 -1 100
+#MUDPROG
+Progtype  rand_prog~
+Arglist   25~
+Comlist   if ispc($n)
+mea $n _whi You took too long. 
+mea $n _whi You're only way out is a prayer to your deity.
+mea $n _yel The Sphinx's eyes open and a harsh wind begins to pick up.
+mpat 18454 mpecho _lbl Something is different...
+mptrans 0.$n 18454
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      18451
+Name      The First Gate~
+Sector    desert~
+Flags     nomob nosummon private nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      Before you stands the Riddle Gate. It is the first test toward finding the
+cure for the Empress and saving all of Fantasia from the Nothing. A Great
+Sphinx stands before you, surrounded by an aura of magic and power. Made of
+stone, it's got the head of a human, but the body of a lion. It stands
+several stories high, and is about 100 feet long. You get the idea that it
+would be powerful enough to stop you if you do not do as it says.
+~
+Reset M 18409 1 18451 -1 -1 -1 100
+#MUDPROG
+Progtype  rand_prog~
+Arglist   25~
+Comlist   recho _whi You've taken to long.
+recho _whi Now you will have to beg your deity for help.
+if ispc($n)
+mea $n _whi You took too long. 
+mea $n _whi You're only way out is a prayer to your deity.
+mea $n _yel The Sphinx's eyes open and a harsh wind begins to pick up.
+mpat 18454 mpecho _lbl Something is different...
+mptrans 0.$n 18454
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      18452
+Name      The First Gate~
+Sector    desert~
+Flags     nomob nosummon private nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      Before you stands the Riddle Gate. It is the first test toward finding the
+cure for the Empress and saving all of Fantasia from the Nothing. A Great
+Sphinx stands before you, surrounded by an aura of magic and power. Made of
+stone, it's got the head of a human, but the body of a lion. It stands
+several stories high, and is about 100 feet long. You get the idea that it
+would be powerful enough to stop you if you do not do as it says.
+~
+Reset M 18410 1 18452 -1 -1 -1 100
+#MUDPROG
+Progtype  rand_prog~
+Arglist   25~
+Comlist   recho _whi You've taken to long.
+recho _whi Now you will have to beg your deity for help.
+if ispc($n)
+mea $n _whi You took too long. 
+mea $n _whi You're only way out is a prayer to your deity.
+mea $n _yel The Sphinx's eyes open and a harsh wind begins to pick up.
+mpat 18454 mpecho _lbl Something is different...
+mptrans 0.$n 18454
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      18453
+Name      Beyond The First Gate~
+Sector    desert~
+Flags     nosummon private nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      Well, you've made it through the first gate.  That's definetly no easy feat.
+The wind has died down once more, and things seem strangely calm. Almost,
+too much so. The ground is still sand, which makes it somewhat difficult to
+trudge through. Looking around, it seems to go on forever in all directions.
+The sky is dark, but the stars are burning brightly, lighting the area
+enough to ensure safe travels... at least for now.
+~
+#EXIT
+Direction northwest~
+ToRoom    18431
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18454
+Name      A Dark Crevice~
+Sector    desert~
+Flags     nomob teleport~
+Stats     0 0 0 0 0
+Desc      You look around, and notice you are in a different place. There is nothing
+but a cold void surrounding you. There is no air movement, and a dead cold
+silence. This is a deep crevice, the walls are tall and surround you. There
+appears to be no way out. The walls are ridged, and slick, impossible
+to climb. Perhaps you should call on your deity for help?
+~
+#ENDROOM
+
+#ROOM
+Vnum      18458
+Name      Nearing the Southern Oracle~
+Sector    desert~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      The air is thin again.  The night is clear. Stars fill the open sky
+shedding wonderous light upon any who are traveling this night. There is
+a gentle breeze blowing, perhaps it's more of a calm before the storm. This
+is no doubt a good place to rest if need be. Up ahead you can see two more
+large stone statues. A slight glow is emitting from them. There almost
+seems to be something magical about them.
+~
+#EXIT
+Direction southeast~
+ToRoom    18433
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18459
+Name      Just Past The Mirror Gate~
+Sector    desert~
+Flags     nomob nosummon norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      Once more, things are calm. The sky is clear and the stars are quite visible
+as they shimmer in the sky. The moon is high above, and full. The air is
+still, as it has been in the past, but something is different. It seems much
+more fresh, and cool. There is however, no sound still. But you are not
+alone.
+~
+Reset M 18403 1 18459 -1 -1 -1 100
+  Reset E 18404 1 16 100
+  Reset E 18425 1 5 100
+  Reset E 18426 1 7 100
+#MUDPROG
+Progtype  rand_prog~
+Arglist   100~
+Comlist   if mobinworld(18403) < 1
+mpsleep 10
+mpforce $n get all atreyu
+mpforce $n sac corpse
+mppurge
+mpsleep 10
+mpecho _whi A strong wind blows and reveals a small opening to the north.
+mpecho _whi Falkor appears in the sky, and swoops down, scooping you up.
+mptrans all 18458
+endif
+~
+#ENDPROG
+
+#ENDROOM
+
+#ROOM
+Vnum      18460
+Name      In The Beginning~
+Sector    forest~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      You find yourself in a heavily wooded area. There are large rocks and
+larger trees lining the path which you walk. The air is thick and moist
+and there is are serious feelings of dread and darkness here. In the 
+distance you can make out a large white building. Keep going east to
+make your way there.
+~
+#EXIT
+Direction east~
+ToRoom    18461
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18461
+Name      Nearing The Ivory Tower~
+Sector    forest~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      As you continue on, you can see the tower is quite large. However, you
+can see that you are still a bit of a distance off. You begin to run
+into other creatures that inhibit Fantasia. Everyone seems to be in a 
+hurry to get to the tower as well.
+~
+#EXIT
+Direction east~
+ToRoom    18462
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18460
+#ENDEXIT
+
+Reset M 18420 1 18461 -1 -1 -1 100
+Reset M 18421 1 18461 -1 -1 -1 100
+Reset M 18422 1 18461 -1 -1 -1 100
+  Reset E 18462 1 16 100
+Reset M 18429 1 18461 -1 -1 -1 100
+Reset O 30 1 18461 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18462
+Name      A Small Glade~
+Sector    forest~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      As you near the Ivory Tower, you begin to get a sense of it's magesty 
+and true beauty. It seemingly glows an aura of purity and light. A
+true shining star amidst all the hopelessness and despair that the
+Nothing is causing.
+~
+#EXIT
+Direction east~
+ToRoom    18463
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18461
+#ENDEXIT
+
+Reset M 18423 1 18462 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18463
+Name      Standing Before The Ivory Tower~
+Sector    forest~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      A tall, magnificent building, the Ivory Tower stands 20 stories above
+you. The building itself seems to glow, and the air around it is
+much lighter then it has been so far along your travel. The walls are
+shimmering and glass-like. There are stairs spiriling around it to
+the top where the Empress resides.
+~
+#EXIT
+Direction west~
+ToRoom    18462
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    18464
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18464
+Name      Climbing The Stairs Of The Tower~
+Sector    city~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      Climbing the stairs to the top of the tower, you notice the stairs 
+are made of the same ivory, glassy substance as the rest of the tower.
+You can hear that many have already arrived. The noise from the top
+of the tower pours down the stairs. Mostly fearful and some angry
+voices, all talking of the Nothing... and hoping the Empress can help.
+~
+#EXIT
+Direction up~
+ToRoom    18465
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    18463
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18465
+Name      The Top Of The Ivory Tower~
+Sector    city~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      As your reach the top, you stand in complete awe. The heart of Fantasia
+is truly beyond your wildest dreams. There are representatives from
+each of the different lands in Fantasia, standing about. They are all
+here for the same reason. To find an answer and some hope for their
+land from the Empress. There is a large building in the center, shaped
+like a beautiful white rose. That is the home of the Empress. It 
+shimmers magically with the most beauty and life you've seen so far.
+~
+#EXIT
+Direction north~
+ToRoom    18471
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    18464
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    18466
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    18470
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18466
+Name      The Main Floor Of The Tower~
+Sector    city~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      This space is completely open to the sky. The veiw from this high is
+nothing less then amazing. You can see for miles across the beautiful
+lands of Fantasia. The land around the tower remains untouched by the
+Nothing, growing, healthy and peaceful. The floors here in this area are
+made of the same substance as the stairs and walls, the shimery ivory
+make. There is a small stage type area where the Empress would address
+the people, had she been feeling up to it. There are stairs that lead
+to the rose that houses Her Magesty.
+~
+#EXIT
+Direction north~
+ToRoom    18469
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18471
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    18465
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18467
+Name      The Main Floor Of The Tower~
+Sector    city~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      As your reach the top, you stand in complete awe. The heart of Fantasia
+is truly beyond your wildest dreams. There are representatives from
+each of the different lands in Fantasia, standing about. They are all
+here for the same reason. To find an answer and some hope for their
+land from the Empress. There is a large building in the center, shaped
+like a beautiful white rose. That is the home of the Empress. It 
+shimmers magically with the most beauty and life you've seen so far.
+~
+#EXIT
+Direction north~
+ToRoom    18468
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    18471
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    18465
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18468
+Name      The Main Floor Of The Tower~
+Sector    city~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      As your reach the top, you stand in complete awe. The heart of Fantasia
+is truly beyond your wildest dreams. There are representatives from
+each of the different lands in Fantasia, standing about. They are all
+here for the same reason. To find an answer and some hope for their
+land from the Empress. There is a large building in the center, shaped
+like a beautiful white rose. That is the home of the Empress. It 
+shimmers magically with the most beauty and life you've seen so far.
+~
+#EXIT
+Direction east~
+ToRoom    18470
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18467
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18469
+Name      The Main Floor Of The Tower~
+Sector    city~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      As your reach the top, you stand in complete awe. The heart of Fantasia
+is truly beyond your wildest dreams. There are representatives from
+each of the different lands in Fantasia, standing about. They are all
+here for the same reason. To find an answer and some hope for their
+land from the Empress. There is a large building in the center, shaped
+like a beautiful white rose. That is the home of the Empress. It 
+shimmers magically with the most beauty and life you've seen so far.
+~
+#EXIT
+Direction south~
+ToRoom    18466
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18470
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18470
+Name      The Center Of The Main Floor~
+Sector    city~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      This is the main stage area where the Empress would address the people
+of Fantasia. The stage is made of ivory, there are bergundy velvet
+ropes adorning the edges of the stages. A small podium is just off to
+the right, made of the same ivory, with a strange symbol cut into it.
+The symbol seems to be two intertwined snakes, one black, one white.
+There is a small doorway toward the back of the area, it seems to  be
+the enterance to where the Empress resides. Above the doorway, carved
+into the ivory is a phrase "Believe In Your Dreams."
+~
+#EXIT
+Direction north~
+ToRoom    18472
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    18469
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18468
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    18471
+#ENDEXIT
+
+Reset M 18419 1 18470 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18471
+Name      Standing Before The Empress' Lair~
+Sector    city~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      This space is completely open to the sky. The veiw from this high is
+nothing less then amazing. You can see for miles across the beautiful
+lands of Fantasia. The land around the tower remains untouched by the
+Nothing, it's growing, healthy and peaceful. The floors here in this area
+are made of the same substance as the stairs and walls, the shimery ivory
+make. There is a small stage type area where the Empress would address
+the people, had she been feeling up to it. There are stairs that lead
+to the rose that houses Her Magesty.
+~
+#EXIT
+Direction east~
+ToRoom    18466
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18465
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18467
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    18470
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18472
+Name      The Lair Of The Empress~
+Sector    indoors~
+Flags     indoors nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      This is the home of the Empress. She governs over all of Fantasia from
+this very room. There is a large, white half-crescent bed in the center
+of the room. The bed, made with same ivory everything else is, the
+sheets are of white satin. Along one wall is a large desk, covered with
+papers and books. The room itself is circular, the walls are sparkly,
+but not decorated. In the middle of the wall, all the way around, is a
+large window that runs the length of the room. It gives the Empress
+the most magnificent view anyone could ever to have of Fantasia, as it
+was meant to be.
+~
+#EXIT
+Direction south~
+ToRoom    18470
+#ENDEXIT
+
+Reset M 18418 1 18472 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18473
+Name      The Beginning Of An Adventure~
+Sector    city~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      Well, you find yourself at the beginning of the quest. You got yourself
+into this. But if you want to turn back, you can always just recite
+a few magic words and find yourself in the safety of your home. But
+if you choose to go on, you have the opportunity to save all of 
+Fantasia Make your choice wisely, because once you go northeast, there
+is no turning back.
+~
+#EXIT
+Direction northeast~
+ToRoom    18474
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18474
+Name      The Plains~
+Sector    field~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      You begin your quest to find a cure for the Empress, finding yourself
+traveling across the plains. The grass is high and green, blowing gently
+in the wind as you pass through. The breeze seems to take away some of 
+the heat from the sun that is beating down on you. You can see for miles
+across the land. The view is rather breathtaking.
+~
+#EXIT
+Direction east~
+ToRoom    18475
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18475
+Name      An Enchanted Forest~
+Sector    forest~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      Here you find a safe place to rest. There is a small stream running
+down through the center of the forest. Everything is quiet and peaceful
+and the air smells fresh. You can hear the soft coos of the birds that
+are perched in the trees above, calling this place their home. Almost
+everything is so healthy and green. Flowers of every imaginable color
+decorate the landscape as well.
+~
+#EXIT
+Direction east~
+ToRoom    18476
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18474
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    18478
+Flags     hidden~
+#ENDEXIT
+
+Reset M 18430 1 18475 -1 -1 -1 100
+Reset O 18450 1 18475 -1 -1 -1 100
+Reset O 20 1 18475 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18476
+Name      The Silver Mountains~
+Sector    mountain~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      Passing through the mountains, it's rather cool. But the scenery is 
+truly amazing. Snow capped mountains, yet green toward the bottom. The 
+mountains are huge, and seem to be perfect for climbing. But you're 
+on a quest, so you best make your way past, quickly. Remember, you're
+the only hope Fantasia has.
+~
+#EXIT
+Direction west~
+ToRoom    18475
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    18420
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18478
+Name      On A Tree Branch~
+Sector    city~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      You are very high up, you can see quite a bit from here. To the west are the
+plains you just came through, to the east are the Silver Mountains which you
+must travel through next. The foliage is thick however, it seems like this
+might be a good place to leave something valuable.
+~
+#EXIT
+Direction down~
+ToRoom    18475
+#ENDEXIT
+
+Reset O 18470 1 18478 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18479
+Name      The Lair Of The Empress~
+Sector    city~
+Flags     nomob indoors nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      This is the home of the Empress. She governs over all of Fantasia from
+this very room. There is a large, white half-crescent bed in the center
+of the room. The bed, made with same ivory everything else is, the
+sheets are of white satin. Along one wall is a large desk, covered with
+papers and books. The room itself is circular, the walls are sparkly,
+but not decorated. In the middle of the wall, all the way around, is a
+large window that runs the length of the room. It gives the Empress
+the most magnificent view anyone could ever to have of Fantasia, as it
+was meant to be.
+~
+Reset M 18418 2 18479 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18481
+Name      By the Sea of Possibilities~
+Sector    city~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      Finding yourself on the beach, everything seems calm once more. Falkor
+however, seems nowhere to be found. The waves roll in gently, and a 
+light mist from them tickles your skin. To the east a small abandoned
+shelter of some type. It seems to be the only hint of civilization.
+There is however, a dark sense of dread as you near it. But what choice
+do you really have?
+~
+#EXIT
+Direction east~
+ToRoom    18482
+#ENDEXIT
+
+Reset M 18424 1 18481 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18482
+Name      In The Ruins Of Spook City~
+Sector    city~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      &O --------> --------> --------> --------> --------> --------> -------->
+ 
+ 
+&W                               .;''; ;`"';  ...
+                            _(    _(   . ) (`  )
+                        .-``    _(     ) '`.    )
+                       (_____.=( (_.:'-'   (____')
+ 
+ 
+&p                                 _,(-)
+                             `-(`  \_(        _,(-)
+                       _,(-)   //">\      `-(`  \_(
+                   `-(`  \_(                //"\>
+                     //"\ >        _,(-)
+                               `-(`  \_(
+                                 //">\
+ 
+&O --------> --------> --------> --------> --------> --------> -------->
+ 
+&WThe Grassy Plains and the Purple Buffalo
+
+~
+#EXIT
+Direction east~
+ToRoom    18483
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18481
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18483
+Name      In The Ruins Of Spook City~
+Sector    city~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      &x.&G                                   ___-------___
+                                 -''             ''-_
+                             _-'                   / '-_
+                           /'   \                 /     \
+            ____          /      \_______________/        \
+         ,-'___ '-,      /       /               \          \
+       ,'| |   |   \    /       /                 \          \
+       |o| |o__|    |  /_______/                   \__________\
+       | oo         / /        \                   /           \
+       |____       | /          \                 /             \ 
+        \___)       ||           \_______________/     _-_      //\__//
+          \___      ||------_-''-_ ------------- \ --/'   '\    || __/
+              '-----||----/'     |-------------------\      |/''''
+                (_(__/  ./     /                    \_\      \.
+ &O ,    &G                (_(___/                         \_____)_)
+&OO/
+|
+/>
+ 
+&WMorla In The Swamp of Sadness
+ 
+~
+#EXIT
+Direction east~
+ToRoom    18484
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    18482
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18484
+Name      In The Ruins Of Spook City~
+Sector    city~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      &W
+                                       ____
+                ,.-''''-,__,..---'''```    ``''-.
+               //      '   `.                    `,
+              /                         )         .
+             |    \  /                  /           \,
+            : \. \\|      .          ,`            | `'.
+         ,.-' , \\``',     ;          ;             ;    `,
+        //`_),.\|\)_ .\   /          ,\          ._,'      \
+        \\)  ,+`[  e\ \.-`''--......-. '''''''       `\.     )
+        _,--`  /\   )`.`,           (_(____________  / )_.-' |
+       //,/`_)'  `''-. `/    _,.......----------'"""'``      /
+       \\)\)        &O@/&W`"   +`   ________                   _,`
+        `` `       &O/U&W    ,` ,'``         ```````'"""""""'``
+                 &O  /> &W   | /  
+                          \'_,
+ 
+Falkor
+
+~
+#EXIT
+Direction west~
+ToRoom    18483
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    18485
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18485
+Name      In The Ruins Of Spook City~
+Sector    city~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      &O
+                                 /\
+                                ( ;`-v/--- ;._
+                             ,/'"/ ' < o\  '".-'\\\--,
+                           ,/",/W  u '`. -  >,._..,   )'
+                          ,/'  w  ,U'v  ;//')/')/'\;-)'
+                       ,/"'/   W` 'v  W |;         )/'
+                     ;''  |  v' v`" W }  \\
+                    "    .'\    v  `v/-W,) '\)\.)\/)
+                             `\   ,/,)'   ''')/-;'
+                                  \
+                                   '". _
+                                        \
+ 
+&WA Presense Yet Unseen
+ 
+~
+#EXIT
+Direction west~
+ToRoom    18486
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    18484
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18486
+Name      In The Ruins Of Spook City~
+Sector    city~
+Flags     nomob nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      *                           *                          *
+                         *               * 
+              *                        *
+ *                   *                              *
+           &Y*           &W      , .-.-,_,  &Y*                            *
+      *                   &W   )`-.>'` (                     &Y*
+                 *&W          /     `\  |       &Y*
+  *                     * &W  |   _   | |    &Y         *        *
+         *     &W              \ | | / / &Y *                           *
+      *           *   &W       `=|_|/.=`        &Y   *          *
+&W                     (_______`-;`.-'_______)
+                            /     /
+                           /     /
+                          /_____/
+
+
+The Empress' Lair
+ 
+~
+#EXIT
+Direction north~
+ToRoom    18487
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    18485
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18487
+Name      Gmork's Lair~
+Sector    indoors~
+Flags     nomob indoors nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      The air here is thick, almost putrid. The walks are black, and crumbling
+in decay. There is little light, and absolutely no air movement. You can
+see that the lair extends to the north, but it is suggested you turn
+back the way you came, for only your demise awaits you ahead.
+~
+#EXIT
+Direction north~
+ToRoom    18488
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    18486
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18488
+Name      Chaos and Indifference~
+Sector    indoors~
+Flags     nomob indoors nosummon norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      And you entered, despite the warning. Here is Gmork, the servant of The
+Nothing. There is nothing but darkness here. No light. The dark is 
+thick, and it seems to be entering your very veins, overcoming and
+surging throughout your body. All hope seems to have disappeared, and 
+there is only emptiness and indifference remaining. What a terrible place
+to die. Alone, and probably never to be found.
+~
+#EXIT
+Direction south~
+ToRoom    18487
+#ENDEXIT
+
+Reset M 18405 1 18488 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      18489
+Name      The Center of the Main Floor~
+Sector    city~
+Flags     nosummon nosupplicate norecall noastral teleport~
+Stats     0 0 0 0 0
+Desc      This is the main stage area where the Empress would address the people
+of Fantasia. The stage is made of ivory, there are bergundy velvet
+ropes adorning the edges of the stages. A small podium is just off to
+the right, made of the same ivory, with a strange symbol cut into it.
+The symbol seems to be two intertwined snakes, one black, one white.
+There is a small doorway toward the back of the area, it seems to  be
+the enterance to where the Empress resides. Above the doorway, carved
+into the ivory is a phrase "Believe In Your Dreams."
+~
+#EXIT
+Direction north~
+ToRoom    18472
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      18499
+Name      &RT&re&Rm&rp&Rt&ra&Rt&ri&Ro&rn&Rs &rD&Ro&rm&Ra&ri&Rn &ro&Rf &rD&Ra&rr&Rk&rn&Re&rs&Rs~
+Sector    indoors~
+Flags     nomob~
+Stats     0 0 0 0 0
+Desc      &x.
+ 
+&RPlain and simple, &Wif you weren't invited, }RGET OUT!&D &WIf you were
+invited &Cwelcome. &WIf you were transed, &Rkiss your }Wass&D &Ggoodbye.
+ 
+ 
+~
+Reset M 18499 1 18499 -1 -1 -1 100
+  Reset E 21068 1 21 100
+  Reset E 7538 1 8 100
+#ENDROOM
+
+#ENDAREA

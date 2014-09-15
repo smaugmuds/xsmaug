@@ -1,0 +1,2278 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            Dragon Tower~
+Author          Wench~
+Vnums           2200 2299
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          5 30 0 65
+Climate         0 0 0
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      2200
+Keywords  hatchling dragon baby~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_any~
+Short     the dragon hatchling~
+Long      A dragon hatchling is here, chewing on a bone.
+~
+Desc      This small dragon hisses at you as you enter the room.  Although it is only a
+few feet long, its sharp teeth make you think twice about petting it.
+~
+Nattacks  0.000000
+Stats1    -900 2000 0 0 0 0
+Stats2    7 21 4 100 1 8 2
+Speaking  common~
+Actflags  npc sentinel stayarea~
+Affected  flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2201
+Keywords  draconian~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the Draconian~
+Long      The Draconian is standing here.
+~
+Desc      This horrible creature is a bizarre cross between a man and a dragon.  He 
+has black scales and a seven foot wingspan.  He scowls at you and hefts his 
+spear as you enter the room.
+~
+Nattacks  0.000000
+Stats1    -900 2000 0 0 0 0
+Stats2    13 21 2 130 2 6 3
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2202
+Keywords  master~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     the dragon master~
+Long      The lord of this crypt is here.
+~
+Desc      He doesn't look happy to see you.
+~
+Nattacks  0.000000
+Stats1    -1000 35000 0 0 0 0
+Stats2    27 21 -2 270 3 6 8
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  flying~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2203
+Keywords  man mage wizard~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     a powerful mage~
+Long      A man is here, studying some books.
+~
+Desc      A powerful looking mage is standing in this room studying his spells.  You are
+surprised at the fact that he is human, and realize that he must be very
+powerful to have been accepted by the creatures which live here.
+~
+Nattacks  0.000000
+Stats1    -900 600 0 0 0 0
+Stats2    22 21 3 220 1 8 10
+Speaking  common~
+Actflags  npc sentinel~
+Affected  invisible detect_invis sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2204
+Keywords  cleric draconian~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     the holy Draconian~
+Long      A Draconian is here, deep in thought.          
+~
+Desc      A Draconian stands here, dressed in simple robes.  Around his neck you 
+notice a golden medallion in the shape of a five headed dragon.  
+~
+Nattacks  0.000000
+Stats1    -900 400 0 0 0 0
+Stats2    22 21 0 220 3 5 6
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2205
+Keywords  king draconian~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_any~
+Short     the Draconian King~
+Long      A Draconian wearing fine clothes is here, pondering his greatness.          
+~
+Desc      The king of the draconians sits here on a golden throne.  He looks as 
+though he could crush your head with a single blow.  Yet you sense that he 
+is controlled by a greater power. 
+~
+Nattacks  0.000000
+Stats1    -900 800 0 0 0 0
+Stats2    26 21 1 260 2 8 12
+Speaking  common~
+Actflags  npc sentinel scavenger~
+Affected  detect_invis sanctuary~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2206
+Keywords  concubine draconian~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Short     a concubine~
+Long      A concubine is resting here. 
+~
+Desc      This is a concubine of the king.  She is lounging here, wearing nothing at 
+all.  You find yourself strangely repulsed as she draws a knife and 
+prepares to defend herself. 
+~
+Nattacks  0.000000
+Stats1    -500 100 0 0 0 0
+Stats2    6 21 5 50 2 3 1
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2207
+Keywords  bodyguard draconian~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A bodyguard~
+Long      A bodyguard is here, staring at you menacingly. 
+~
+Desc      This creature has devoted its life to defending the king.  Your intrusion has
+not pleased it.
+~
+Nattacks  0.000000
+Stats1    -800 5000 0 0 0 0
+Stats2    18 21 2 180 2 6 10
+Speaking  common~
+Actflags  npc sentinel aggressive~
+Affected  detect_evil detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2220
+Keywords  tiamat dragon~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_any~
+Short     Tiamat~
+Long      A five headed dragon hisses at you as you enter this room.
+~
+Desc      You see before you the master of this Tower, Tiamat.  She frowns at you as she
+prepares to make you pay for your insolence ... with your lives!
+~
+Nattacks  0.000000
+Stats1    -1000 50000 0 0 0 0
+Stats2    35 21 -10 1000 4 9 15
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2221
+Keywords  dragon red~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_fire~
+Short     the Great Red Dragon~
+Long      A red dragon is here, contemplating your existence. 
+~
+Desc      This huge red dragon dominates the chamber.  As you turn to flee, he grins at
+you and invites you to stay ... forever! 
+~
+Nattacks  0.000000
+Stats1    -1000 10000 0 0 0 0
+Stats2    27 21 -5 270 2 8 10
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2222
+Keywords  dragon black~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_acid~
+Short     the Great Black Dragon~
+Long      A black dragon is here, laughing at your insolence. 
+~
+Desc      This huge black wyrm laughs at your puny weapons.  You realize that he is not
+going to roll over and die for you.
+~
+Nattacks  0.000000
+Stats1    -900 20000 0 0 0 0
+Stats2    26 21 -3 260 3 8 4
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2223
+Keywords  dragon white~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_frost~
+Short     the Great White Dragon~
+Long      A white dragon is here, waiting for you. 
+~
+Desc      This dragon towers over you.  Recalling your previous experiences with white
+dragons, you are not afraid.  She smiles at you and says 'I think you will find
+me a greater challenge than my offspring.'
+~
+Nattacks  0.000000
+Stats1    -1000 35000 0 0 0 0
+Stats2    27 21 -3 270 3 8 4
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2225
+Keywords  dragon green~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_gas~
+Short     the Ancient Green Dragon~
+Long      A green dragon is here, looking distraught. 
+~
+Desc      This huge beast appears to be the most directly related to the draconians. 
+She looks at you with sorrow in her eyes and says 'You have slaughtered my 
+children.  Prepare to die.'
+~
+Nattacks  0.000000
+Stats1    -1000 20000 0 0 0 0
+Stats2    31 21 -4 310 3 8 15
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2226
+Keywords  hydra~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_poison~
+Short     a large hydra~
+Long      A hydra is here, blocking the doorway. 
+~
+Desc      A hydra is here, guarding the entrance to a sealed vault.  You have the feeling
+it isn't happy to see you.
+~
+Nattacks  0.000000
+Stats1    -800 5000 0 0 0 0
+Stats2    18 21 1 180 2 8 7
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2227
+Keywords  slave human~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     A human slave~
+Long      A Human slave is here, hard at work.          
+~
+Desc      He looks like he's under a lot of stress.  He would probably like it if you
+left him alone.
+~
+Nattacks  0.000000
+Stats1    0 100 0 0 0 0
+Stats2    5 21 6 50 1 6 4
+Speaking  common~
+Actflags  npc sentinel~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2240
+Keywords  zombie draconian~
+Race      human~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_undead~
+Short     a Draconian zombie~
+Long      A Draconian zombie is here, staring at nothing in particular.
+~
+Desc      This used to be one of the warriors of this tribe.  He was denied his final
+rest, however, and now guards this corridor tirelessly as a zombie.
+~
+Nattacks  0.000000
+Stats1    -400 1500 0 0 0 0
+Stats2    9 21 4 175 1 8 6
+Speaking  common~
+Actflags  npc sentinel scavenger aggressive~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2241
+Keywords  dragon phase~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_gas~
+Short     the phase dragon~
+Long      A Phase Dragon is darting around the room.          
+~
+Desc      This small dragon looks like he's up to no good. 
+~
+Nattacks  0.000000
+Stats1    -300 5000 0 0 0 0
+Stats2    10 21 3 150 2 6 6
+Speaking  common~
+Actflags  npc scavenger aggressive stayarea wimpy~
+Affected  detect_invis detect_hidden~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2242
+Keywords  fool draconian~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_thief~
+Short     the draconian fool~
+Long      A Fool is here, making fun of you.          
+~
+Desc      This dragon man looks VERY foolish, dressed in a green and blue striped 
+suit.  As you enter the room, he points at you and laughs. 
+~
+Nattacks  0.000000
+Stats1    0 500 0 0 0 0
+Stats2    5 21 5 50 3 3 4
+Speaking  common~
+Actflags  npc stayarea wimpy~
+#ENDMOBILE
+
+#MOBILE
+Vnum      2243
+Keywords  queen draconian~
+Race      human~
+Class     Warrior~
+Gender    female~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_any~
+Short     the Draconian Queen~
+Long      A Female Draconian sits, here, looking very important.          
+~
+Desc      This draconian looks VERY busy as she orders her slaves around.  You think 
+it might be a good idea to leave her alone. 
+~
+Nattacks  0.000000
+Stats1    -600 10000 0 0 0 0
+Stats2    20 21 2 200 3 4 8
+Speaking  common~
+Actflags  npc sentinel scavenger~
+Affected  detect_invis detect_hidden sanctuary~
+#ENDMOBILE
+
+#OBJECT
+Vnum      2200
+Keywords  spear jagged~
+Type      weapon~
+Short     a jagged spear~
+Long      A jagged spear has been left here.~
+WFlags    take wield~
+Values    0 2 5 11 0 0 0 0 0 0 0
+Stats     15 4000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2201
+Keywords  dagger silver~
+Type      weapon~
+Short     a silver dagger~
+Long      A silver dagger is lying here.~
+WFlags    take wield~
+Values    0 2 4 11 0 0 0 0 0 0 0
+Stats     10 1000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2202
+Keywords  knife tooth dragon~
+Type      weapon~
+Short     a dragon's tooth knife~
+Long      A dangerous looking knife made from a dragon's tooth has been left here.~
+WFlags    take wield~
+Values    0 3 5 11 0 0 0 0 0 0 0
+Stats     8 100000 -2 1 0 None None None
+AffData intelligence 1 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2203
+Keywords  bracelet dragon~
+Type      armor~
+Short     a dragon skin bracelet~
+Long      A scaly bracelet lies on the ground.~
+WFlags    take wrist~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     10 40000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2204
+Keywords  belt silk black~
+Type      armor~
+Short     a black silk belt~
+Long      A black belt made of the finest silk is hanging here.~
+WFlags    take waist~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     25 10000 -2 1 0 None None None
+AffData constitution 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2210
+Keywords  belt silk white~
+Type      container~
+Short     a white silk belt.~
+Long      A white belt made of the finest silk is hanging here.~
+WFlags    take waist~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     25 10000 -2 1 0 None None None
+AffData strength 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2211
+Keywords  bracelet platinum~
+Type      armor~
+Short     a platinum bracelet.~
+Long      A tarnished platinum bracelet has been dropped here.~
+Flags     glow~
+WFlags    take wrist~
+Values    7 0 0 0 0 0 0 0 0 0 0
+Stats     5 50000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2220
+Keywords  symbol holy~
+Type      armor~
+Short     a holy symbol~
+Long      A golden holy symbol is here.~
+Flags     glow~
+WFlags    take neck hold~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     2 50000 -2 1 0 None None None
+AffData mana 15 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2221
+Keywords  robe black~
+Type      armor~
+Short     a plain black robe~
+Long      A black robe is hanging on a hook on the wall.~
+WFlags    take about~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     3 50000 -2 1 0 None None None
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2222
+Keywords  sword emerald~
+Type      weapon~
+Short     an emerald sword~
+Long      An emerald long sword is leaning against the wall.~
+WFlags    take wield~
+Values    0 3 6 3 0 0 0 0 0 0 0
+Stats     24 200000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2223
+Keywords  club stone~
+Type      weapon~
+Short     a stone club~
+Long      A heavy looking stone club is here.~
+WFlags    take wield~
+Values    0 3 5 8 0 0 0 0 0 0 0
+Stats     18 7500 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2224
+Keywords  ring diamond~
+Type      armor~
+Short     a diamond ring~
+Long      A diamond ring lies gleaming on the ground.~
+WFlags    take finger~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     6 50000 -2 1 0 None None None
+AffData hitroll 3 -1 -1 0
+AffData damroll 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2230
+Keywords  ring copper~
+Type      armor~
+Short     a copper ring~
+Long      A copper ring is here.~
+WFlags    take finger~
+Values    1 0 0 0 0 0 0 0 0 0 0
+Stats     1 100000 -2 1 0 None None None
+AffData dexterity 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2231
+Keywords  key steel~
+Type      key~
+Short     a steel key~
+Long      A steel key.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2232
+Keywords  key ruby~
+Type      key~
+Short     A ruby key~
+Long      A ruby key.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2233
+Keywords  key white~
+Type      key~
+Short     a white key~
+Long      A white key.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2234
+Keywords  key grey~
+Type      key~
+Short     a grey key~
+Long      A grey key is resting on the ground here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2237
+Keywords  key stone~
+Type      key~
+Short     a stone key~
+Long      A stone key.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2240
+Keywords  key black~
+Type      key~
+Short     a black key~
+Long      A black key.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2241
+Keywords  key platinum~
+Type      key~
+Short     a platinum key~
+Long      A platinum key.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2242
+Keywords  shield crested~
+Type      armor~
+Short     a crested shield~
+Long      A large crested shield draws your attention.~
+WFlags    take shield~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     20 200000 -2 1 0 None None None
+AffData constitution 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2243
+Keywords  wand golden~
+Type      wand~
+Short     a golden wand~
+Long      A golden wand has been dropped here.~
+Flags     glow~
+WFlags    take hold~
+Values    25 10 10 -1 0 0 0 0 0 0 0
+Stats     5 10000 -2 1 0 None None None
+Spells       'dispel magic'
+#ENDOBJECT
+
+#OBJECT
+Vnum      2244
+Keywords  staff silver~
+Type      staff~
+Short     a silver staff~
+Long      A silver staff.~
+Flags     glow magic~
+WFlags    take hold~
+Values    25 20 20 -1 0 0 0 0 0 0 0
+Stats     5 10000 -2 1 0 None None None
+Spells       'faerie fog'
+#ENDOBJECT
+
+#OBJECT
+Vnum      2245
+Keywords  staff dragon~
+Type      staff~
+Short     the staff of the dragon~
+Long      A powerful oak staff has been left here.~
+Flags     glow magic~
+WFlags    take hold~
+Values    25 10 10 -1 0 0 0 0 0 0 0
+Stats     5 10000 -2 1 0 None None None
+Spells       'call lightning'
+#ENDOBJECT
+
+#OBJECT
+Vnum      2246
+Keywords  mail scale~
+Type      armor~
+Short     scale mail~
+Long      A set of scale mail has been abandoned here.~
+Flags     glow~
+WFlags    take body~
+Values    8 0 0 0 0 0 0 0 0 0 0
+Stats     20 100000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2250
+Keywords  staff black~
+Type      staff~
+Short     a black staff~
+Long      You notice the faint outline of a staff.~
+Flags     glow~
+Values    30 3 3 -1 0 0 0 0 0 0 0
+Stats     25 75000 -2 1 0 None None None
+Spells       'energy drain'
+#ENDOBJECT
+
+#OBJECT
+Vnum      2251
+Keywords  potion cyan~
+Type      potion~
+Short     a cyan potion~
+Long      A small cyan potion has been left here.~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 40000 -2 1 0 None None None
+Spells       'blindness' 'harm' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      2252
+Keywords  potion magenta~
+Type      potion~
+Short     a magenta potion~
+Long      A magenta potion.~
+Flags     nodrop~
+WFlags    take~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 2000 -2 1 0 None None None
+Spells       'cure critical' 'protection from evil' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      2254
+Keywords  gauntlets spiked~
+Type      armor~
+Short     a pair of spiked gauntlets~
+Long      A pair of spiked gauntlets.~
+Flags     glow magic~
+WFlags    take hands~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     10 50000 -2 1 0 None None None
+AffData damroll 2 -1 -1 0
+AffData strength 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2260
+Keywords  scimitar golden~
+Type      weapon~
+Short     a golden scimitar~
+Long      A golden scimitar.~
+Flags     glow~
+WFlags    take wield~
+Values    0 3 5 3 0 0 0 0 0 0 0
+Stats     10 40000 -2 1 0 None None None
+AffData wisdom 1 -1 -1 0
+AffData dexterity 1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2261
+Keywords  brooch diamond~
+Type      armor~
+Short     a diamond brooch~
+Long      A diamond brooch.~
+Flags     magic~
+WFlags    take neck~
+Values    4 0 0 0 0 0 0 0 0 0 0
+Stats     2 10000 -2 1 0 None None None
+AffData mana 25 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2270
+Keywords  scroll~
+Type      scroll~
+Short     a runed scroll~
+Long      A runed scroll.~
+Flags     magic~
+WFlags    take hold~
+Values    30 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 5000 -2 1 0 None None None
+Spells       'armor' 'protection from evil' 'shield'
+#ENDOBJECT
+
+#OBJECT
+Vnum      2271
+Keywords  gloves dragon~
+Type      armor~
+Short     a pair of dragon skin gloves~
+Long      A pair of dragon skin gloves are lying on the ground.~
+WFlags    take hands~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     5 40000 -2 1 0 None None None
+AffData intelligence 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2275
+Keywords  helm dragon~
+Type      armor~
+Short     a helm of dragon kind~
+Long      A helm made of a dragon's skull is lying on the ground.~
+WFlags    take head~
+Values    5 0 0 0 0 0 0 0 0 0 0
+Stats     15 30000 -2 1 0 None None None
+AffData hit 15 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2276
+Keywords  fur cloak~
+Type      armor~
+Short     a fur cloak~
+Long      A large mound of fur is lying here.~
+WFlags    take about~
+Values    6 0 0 0 0 0 0 0 0 0 0
+Stats     10 25000 -2 1 0 None None None
+AffData strength 1 -1 -1 0
+AffData hit 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2280
+Keywords  leggings dragon scale~
+Type      armor~
+Short     a pair of dragon scale leggings~
+Long      A pair of dragon scale leggings is lying on the ground.~
+WFlags    take legs~
+Values    7 0 0 0 0 0 0 0 0 0 0
+Stats     15 35000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2281
+Keywords  sleeves dragon scale~
+Type      armor~
+Short     a set of dragon scale sleeves~
+Long      A set of dragon scale sleeves is lying on the ground.~
+WFlags    take arms~
+Values    7 0 0 0 0 0 0 0 0 0 0
+Stats     12 30000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2285
+Keywords  whip dragon tail~
+Type      weapon~
+Short     a dragon tailed whip~
+Long      A dragon tailed whip is lying on the ground.~
+Flags     hum~
+Values    0 4 5 4 0 0 0 0 0 0 0
+Stats     14 40000 -2 1 0 None None None
+AffData hitroll 2 -1 -1 0
+AffData damroll 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      2286
+Keywords  hammer copper~
+Type      weapon~
+Short     a copper hammer~
+Long      A copper hammer is lying on the ground.~
+WFlags    take wield~
+Values    0 3 5 8 0 0 0 0 0 0 0
+Stats     12 30000 -2 1 0 None None None
+#ENDOBJECT
+
+#OBJECT
+Vnum      2299
+Keywords  key gold tarnished~
+Type      key~
+Short     a tarnished gold key~
+Long      A tarnished gold key lies here.~
+WFlags    take~
+Values    0 0 0 0 0 0 0 0 0 0 0
+Stats     1 500 -2 1 0 None None None
+#ENDOBJECT
+
+#ROOM
+Vnum      2201
+Name      The Tower Gates~
+Sector    city~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      You are at the entrance to a tall tower.  Lightning flashes periodically and
+it is raining.  You think it might be a good idea to turn back into the grove.
+~
+#EXIT
+Direction north~
+ToRoom    2202
+Key       2231
+Desc      You see a large steel gate.  Beyond is the Foyer of the Tower.
+~
+Keywords  gate steel~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1304
+Desc      The shadows cloud your vision.
+~
+#ENDEXIT
+
+Reset M 2200 5 2201 -1 -1 -1 100
+  Reset G 2231 1 100
+Reset D 2201 0 2 100 -2
+#EXDESC
+ExDescKey    gate~
+ExDesc       The gate is tall and secure.  Whoever built it values privacy.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2202
+Name      The Foyer~
+Sector    indoors~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      This is the entrance to the Tower.  The hallway continues to the north,
+leading towards a staircase.  You notice a grim painting on the wall,  and 
+quickly look away.
+~
+#EXIT
+Direction north~
+ToRoom    2203
+Desc      You see a long hallway. 
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2201
+Desc      You see the gate. 
+~
+#ENDEXIT
+
+Reset M 2200 5 2202 -1 -1 -1 100
+#EXDESC
+ExDescKey    painting~
+ExDesc       This painting depicts the grisly death of a foolish human.  You hope you do 
+not share his fate.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2203
+Name      Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This hallway seems to stretch on forever.  You notice a stairway in  
+the distance. 
+~
+#EXIT
+Direction north~
+ToRoom    2204
+Desc      The hall continues. 
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2202
+Desc      You see the foyer. 
+~
+#ENDEXIT
+
+Reset M 2200 5 2203 -1 -1 -1 100
+Reset M 2200 5 2203 -1 -1 -1 100
+Reset M 2201 7 2203 -1 -1 -1 100
+  Reset E 2200 20 16 100
+#ENDROOM
+
+#ROOM
+Vnum      2204
+Name      Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You trudge down the hallway.  You notice doors to the east and west. 
+~
+#EXIT
+Direction north~
+ToRoom    2207
+Desc      The hall continues. 
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2205
+Desc      You see a door.  You notice a sign. 
+~
+Keywords  door~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2203
+Desc      The hall continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2206
+Desc      You see an oak door.  There is an inscription on it. 
+~
+Keywords  oak~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 2201 7 2204 -1 -1 -1 100
+  Reset E 2200 20 16 100
+Reset M 2201 7 2204 -1 -1 -1 100
+  Reset E 2200 20 16 100
+Reset M 2201 7 2204 -1 -1 -1 100
+  Reset E 2200 20 16 100
+#EXDESC
+ExDescKey    sign~
+ExDesc       The sign says "NURSERY" in bold letters.     
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    inscription~
+ExDesc       It says "STORAGE"
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2205
+Name      Nursery~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      It looks like a tornado has been through here.  Toys are scattered everywhere,
+and a small group of dragon hatchlings are fighting over a bone. 
+~
+#EXIT
+Direction east~
+ToRoom    2223
+Key       2297
+Desc      You see a large stone door.
+~
+Keywords  door stone~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2204
+Desc      You see the hallway. 
+~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 2200 5 2205 -1 -1 -1 100
+Reset M 2200 5 2205 -1 -1 -1 100
+Reset M 2200 5 2205 -1 -1 -1 100
+Reset M 2200 5 2205 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2206
+Name      Storage Room~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This room is covered with dust, it looks as if no one has been here in ages.
+~
+#EXIT
+Direction east~
+ToRoom    2204
+Desc      You see the hallway. 
+~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2208
+Desc      You see nothing special. 
+~
+Keywords  trapdoor~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 2200 5 2206 -1 -1 -1 100
+#EXDESC
+ExDescKey    dust~
+ExDesc       As you look closely at the dust, you notice the outline of a trapdoor!       
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2207
+Name      End of the Hallway~
+Sector    indoors~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have finally reached the end of the hallway.  A huge staircase leads up.
+You see a sign at the base of the staircase. 
+~
+#EXIT
+Direction south~
+ToRoom    2204
+Desc      The hall continues. 
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2210
+Desc      The second floor.
+~
+#ENDEXIT
+
+Reset M 2200 5 2207 -1 -1 -1 100
+Reset M 2227 5 2207 -1 -1 -1 100
+#EXDESC
+ExDescKey    sign~
+ExDesc       The sign reads:
+    This area is kind of tough.  You probably shouldn't go up these stairs 
+    alone if you are under 18th level, or at all if you under 14th level.  
+    Have fun! -- Wench
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2208
+Name      Guardian's Room~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You climb down the rickety stairs and find yourself face to face with a 
+gargantuan hydra.  How fast can you climb UP stairs? 
+~
+#EXIT
+Direction south~
+ToRoom    2209
+Key       2234
+Desc      A large grey door.
+~
+Keywords  grey~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2206
+Desc      You see the storage room. 
+~
+Keywords  door trap trapdoor~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 2226 1 2208 -1 -1 -1 100
+  Reset G 2234 1 100
+  Reset G 2243 9 100
+  Reset G 2223 20 100
+  Reset E 2244 5 17 100
+#ENDROOM
+
+#ROOM
+Vnum      2209
+Name      The Treasure Room~
+Sector    city~
+Flags     nomob indoors~
+Stats     0 0 0 0 0
+Desc      You have made it past the hydra into the vault.  You are astounded by 
+the treasure here.  Not only are you now rich, you can probably rest here
+safely.  The west wall seems to have a large door made entirely of ruby.
+~
+#EXIT
+Direction north~
+ToRoom    2208
+Key       2234
+Desc      You see nothing special. 
+~
+Keywords  grey~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2218
+Key       2232
+Desc      You see a ruby door!
+~
+Keywords  door ruby~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset D 2209 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      2210
+Name      The Second Floor~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have made it up to the second floor.  You hear hissing and see several
+dragon men rushing you.  You wonder how long you will be staying here.
+~
+#EXIT
+Direction south~
+ToRoom    2211
+Key       1
+Desc      You see the court.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2207
+Desc      You see the first floor.
+~
+#ENDEXIT
+
+Reset M 2201 7 2210 -1 -1 -1 100
+  Reset E 2200 20 16 100
+Reset M 2207 20 2210 -1 -1 -1 100
+  Reset E 2286 20 16 100
+#ENDROOM
+
+#ROOM
+Vnum      2211
+Name      The Court~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered what seems to be a large court.  The people guarding it
+don't seem happy to see you ...
+~
+#EXIT
+Direction north~
+ToRoom    2210
+Desc      You see nothing special.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2212
+Desc      You see a wooden door. 
+~
+Keywords  door wooden~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2213
+Desc      You see the court.
+~
+#ENDEXIT
+
+Reset M 2207 10 2211 -1 -1 -1 100
+  Reset E 2286 50 16 100
+Reset M 2207 10 2211 -1 -1 -1 100
+  Reset E 2260 50 16 100
+#ENDROOM
+
+#ROOM
+Vnum      2212
+Name      Hall O' Pleasure~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You stop dead in your tracks as you enter this ornately decorated room - it
+is populated with the king's harem.  
+~
+#EXIT
+Direction west~
+ToRoom    2211
+Desc      You see the Court.
+~
+#ENDEXIT
+
+Reset M 2206 5 2212 -1 -1 -1 100
+  Reset E 2201 50 16 100
+Reset M 2206 5 2212 -1 -1 -1 100
+  Reset G 2233 2 100
+  Reset E 2201 50 16 100
+Reset M 2206 5 2212 -1 -1 -1 100
+  Reset G 2240 2 100
+  Reset E 2201 50 16 100
+Reset M 2206 5 2212 -1 -1 -1 100
+  Reset E 2201 50 16 100
+#ENDROOM
+
+#ROOM
+Vnum      2213
+Name      The Court~
+Sector    city~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are continuing down the hall.  To the east and west you see ornate doors.
+~
+#EXIT
+Direction north~
+ToRoom    2211
+Desc      You see the court.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2214
+Key       2240
+Desc      You see a black door.
+~
+Keywords  door black~
+Flags     isdoor~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2216
+Desc      You see the court.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2215
+Key       2233
+Desc      You see a white door.
+~
+Keywords  door white~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2214
+Name      The Library~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a huge room, filled with books.  A peaceful man is
+sitting at a table, studying.
+~
+#EXIT
+Direction west~
+ToRoom    2213
+Key       2240
+Desc      You see the court.
+~
+Keywords  door black~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 2203 1 2214 -1 -1 -1 100
+  Reset E 2223 50 12 100
+  Reset E 2250 50 17 100
+  Reset G 2251 50 100
+  Reset E 2261 50 3 100
+Reset M 2242 5 2214 -1 -1 -1 100
+Reset M 2204 1 2214 -1 -1 -1 100
+  Reset E 2220 50 3 100
+  Reset E 2211 50 14 100
+  Reset E 2210 50 13 100
+  Reset G 2270 50 100
+  Reset G 2252 50 100
+#ENDROOM
+
+#ROOM
+Vnum      2215
+Name      The Sanctum~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This small room is modestly decorated with small dragon icons.  Its sole
+occupant is deep in thought.
+~
+#EXIT
+Direction east~
+ToRoom    2213
+Key       2233
+Desc      You see the Court.
+~
+Keywords  door white~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2216
+Name      The Court Ends~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have reached the end of the court.  A huge Draconian is sitting in a
+chair here.  As you enter, he motions with his hand and you are rushed by three
+of his bodyguards.
+~
+#EXIT
+Direction north~
+ToRoom    2213
+Desc      You see the court.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2217
+Desc      You see a private chamber.
+~
+#ENDEXIT
+
+Reset M 2205 1 2216 -1 -1 -1 100
+  Reset E 2222 8 16 100
+  Reset E 2276 50 12 100
+  Reset E 2242 50 11 100
+  Reset E 2254 50 9 100
+  Reset G 2232 2 100
+Reset M 2207 5 2216 -1 -1 -1 100
+Reset M 2207 5 2216 -1 -1 -1 100
+Reset M 2207 5 2216 -1 -1 -1 100
+Reset M 2242 5 2216 -1 -1 -1 100
+Reset M 2242 5 2216 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2217
+Name      bedroom~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is the personal room of the draconian king.  It is not empty.
+~
+#EXIT
+Direction west~
+ToRoom    2216
+Desc      You see Court.
+~
+#ENDEXIT
+
+Reset M 2243 1 2217 -1 -1 -1 100
+  Reset E 2203 50 14 100
+  Reset E 2204 50 13 100
+  Reset E 2201 50 16 100
+Reset M 2227 5 2217 -1 -1 -1 100
+Reset M 2227 5 2217 -1 -1 -1 100
+Reset M 2241 5 2217 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2218
+Name      Entrance to the Crypt~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a large room which smells heavily of reptile.  You wonder
+what awaits you here.
+~
+#EXIT
+Direction east~
+ToRoom    2209
+Key       2232
+Desc      You see the Treasure Vault.
+~
+Keywords  door ruby~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2219
+Desc      You see the Crypt.
+~
+#ENDEXIT
+
+Reset M 2240 5 2218 -1 -1 -1 100
+Reset M 2240 5 2218 -1 -1 -1 100
+Reset D 2218 1 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      2219
+Name      Crypt~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are in a large room which continues to the west.  You notice many
+coffins here.  Open coffins reveal remains of something other than man.  
+The smell of reptile is very strong here.
+~
+#EXIT
+Direction east~
+ToRoom    2218
+Desc      You see the entrance.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2222
+Desc      You see nothing special.
+~
+#ENDEXIT
+
+Reset M 2240 5 2219 -1 -1 -1 100
+Reset M 2240 5 2219 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2220
+Name      The Lair~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a large room dominated by a great white dragon.  It growls
+at you before it attacks.
+~
+#EXIT
+Direction south~
+ToRoom    2235
+Desc      You the cave opening.
+~
+#ENDEXIT
+
+Reset M 2223 1 2220 -1 -1 -1 100
+  Reset E 2246 50 5 100
+#ENDROOM
+
+#ROOM
+Vnum      2221
+Name      A Lair~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a large room dominated by a great black dragon.  It looks
+as though it is amused by your presence.
+~
+#EXIT
+Direction north~
+ToRoom    2241
+Desc      You the cave opening.
+~
+#ENDEXIT
+
+Reset M 2222 1 2221 -1 -1 -1 100
+  Reset E 2280 50 7 100
+#ENDROOM
+
+#ROOM
+Vnum      2222
+Name      The Crypt Ends~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have come to the end of the Crypt.  It seems deserted.  There is a 
+strange coffin lying against the wall.
+~
+#EXIT
+Direction east~
+ToRoom    2219
+Desc      You see the Crypt.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2232
+Keywords  coffin~
+Flags     isdoor closed locked~
+#ENDEXIT
+
+Reset M 2202 1 2222 -1 -1 -1 100
+  Reset E 2202 50 16 100
+  Reset E 2281 50 10 100
+  Reset E 2271 50 9 100
+Reset D 2222 3 2 100 -2
+#EXDESC
+ExDescKey    coffin~
+ExDesc       A coffin lies a against the east wall.  It is closed.
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2223
+Name      Entrance to the Great Hall~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a huge hall.  It has been carefully decorated with
+beautiful tapestries depicting a great battle between dragons and men.  The
+dragons appear to be the victors.
+~
+#EXIT
+Direction east~
+ToRoom    2224
+Desc      The Hall continues.
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2205
+Key       2297
+Desc      You see the Nursery.
+~
+Keywords  door stone~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2224
+Name      The Great Hall~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You are working your way down the Hall.  To the north, you notice a smaller
+passageway, while the main hall continues to the east.
+~
+#EXIT
+Direction north~
+ToRoom    2225
+Desc      You see a narrow passageway.
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2229
+Desc      You see the Hall.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2225
+Name      A Narrow Passageway~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This Passageway branches off from the main hall and leads somewhere ... where?
+~
+#EXIT
+Direction north~
+ToRoom    2226
+Desc      You see a large Lair.  It looks dangerous.
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2224
+Desc      You see the great hall.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2226
+Name      Lair~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a large lair with bones strewn about the ground.  You
+notice the source of these as you come face to face with a rather large red
+dragon.  You notice a trap door in the floor.
+~
+#EXIT
+Direction south~
+ToRoom    2225
+Desc      The narrow passageway.
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2227
+Desc      You see a trap door.
+~
+Keywords  door trap trapdoor~
+Flags     isdoor~
+#ENDEXIT
+
+Reset M 2221 1 2226 -1 -1 -1 100
+  Reset E 2275 50 6 100
+  Reset E 2245 50 17 100
+  Reset G 2299 2 100
+#ENDROOM
+
+#ROOM
+Vnum      2227
+Name      Underground Tunnel~
+Sector    field~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You have entered an underground tunnel.  It is dark and dirty, and you find
+yourself wishing you were back in Midgaard.
+~
+#EXIT
+Direction north~
+ToRoom    2228
+Desc      You see the tunnel.
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2226
+Desc      You see the red dragon's lair.
+~
+Keywords  door trap trapdoor~
+Flags     isdoor~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2228
+Name      Underground Tunnel~
+Sector    field~
+Flags     dark nomob indoors~
+Stats     0 0 0 0 0
+Desc      This tunnel has come to a dead end.  You feel nervous about being trapped here.
+~
+#EXIT
+Direction south~
+ToRoom    2227
+Desc      You see the tunnel.
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2229
+Name      The Great Hall Ends.~
+Sector    city~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have come to the end of the great hall.  You see before you a huge
+golden door, it must be at least twenty feet tall!  It has beautiful etchings
+of dragons.  You see a sign on the door.
+~
+#EXIT
+Direction east~
+ToRoom    2230
+Key       2299
+Desc      You see a great golden door.
+~
+Keywords  door great golden~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2224
+Desc      You see the hall.
+~
+#ENDEXIT
+
+Reset D 2229 1 2 100 -2
+#EXDESC
+ExDescKey    sign~
+ExDesc       Congratulations on making it this far!  Watch out, it gets a little
+    nasty here... :) - Wench
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2230
+Name      THE Lair~
+Sector    field~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have entered a huge lair.  You feel that something big lives here or at least did.  The golden door lies back to the west.
+~
+#EXIT
+Direction west~
+ToRoom    2229
+Key       2299
+Desc      You see a great golden door.
+~
+Keywords  door golden great~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+Reset M 2225 1 2230 -1 -1 -1 100
+  Reset G 2241 2 100
+  Reset G 2285 50 100
+  Reset E 2261 50 3 100
+Reset D 2230 3 2 100 -2
+#ENDROOM
+
+#ROOM
+Vnum      2231
+Name      The End...~
+Sector    field~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      You have reached the final lair.  It is dominated by a huge five headed
+dragon.  You suddenly realize that you have SERIOUS problems...
+~
+#EXIT
+Direction south~
+ToRoom    2243
+Key       2241
+Desc      You see the top of the mountain.
+~
+Flags     isdoor pickproof~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2232
+Name      Stairwell~
+Sector    field~
+Flags     indoors~
+Stats     0 0 0 0 0
+Desc      This is an old decrepit stairwell that leads to the wine cellar.  It looks
+like it hasn't been used for decades.  Well, at least not by anything living.
+~
+#EXIT
+Direction east~
+ToRoom    2222
+Desc      The crypt~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2233
+Desc      A wine cellar~
+#ENDEXIT
+
+Reset M 2240 5 2232 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2233
+Name      Wine cellar~
+Sector    field~
+Flags     dark~
+Stats     0 0 0 0 0
+Desc      This is the old wine cellar of the Dragon Tower.  The shelves are empty.
+Nothing living has been in here for a long time.  You see a tunnel leading
+off to the east and boy does it smell bad.  Kinda of like rotting flesh.
+~
+#EXIT
+Direction east~
+ToRoom    2234
+Desc      A tunnel
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2232
+Desc      The stairwell
+~
+#ENDEXIT
+
+Reset M 2240 5 2233 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2234
+Name      Tunnel~
+Sector    field~
+Flags     dark tunnel~
+Stats     0 0 0 0 0
+Desc      This tunnel seems to stretch for miles.  You try to distinguish the end but
+your eyes soon tire from the strain.  The smell here has increased two fold.
+The tunnel continues to go to the east.  The wine cellar lies back to the 
+west.
+~
+#EXIT
+Direction north~
+ToRoom    2235
+Desc      A cave opening
+~
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    2236
+Desc      A tunnel
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2233
+Desc      A tunnel
+~
+#ENDEXIT
+
+Reset M 2240 5 2234 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2235
+Name      A cave opening~
+Sector    field~
+Flags     dark tunnel~
+Stats     0 0 0 0 0
+Desc      You stand at the opening of a giant cave.  There are many bones strewn across
+the room.  Some human, some indistinguishable.  It smells very bad in here.
+You can hear movement in the cave to the north.  The tunnel goes back to the
+south.
+~
+#EXIT
+Direction north~
+ToRoom    2220
+Desc      The lair
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2234
+Desc      The tunnel
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2236
+Name      The End of the tunnel~
+Sector    field~
+Flags     dark tunnel~
+Stats     0 0 0 0 0
+Desc      You have finally come to the end of the tunnel.  Back to the west lies
+the miles of tunnels you have walked through.  You see the faint outline of
+a trapdoor above you.  A bride over an underground river lies to the south.
+~
+#EXIT
+Direction south~
+ToRoom    2237
+Desc      bridge
+~
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    2234
+Desc      The tunnel
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2202
+Desc      trapdoor
+~
+#ENDEXIT
+
+Reset M 2240 5 2236 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2237
+Name      The Bridge~
+Sector    field~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are walking along an old wooden bridge.  Its not that secure.  You 
+might want to hurry along.  To the south, on the other side of the bridge,
+lies a small opening.
+~
+#EXIT
+Direction north~
+ToRoom    2236
+Desc      The tunnel end
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2238
+Desc      A small opening
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2238
+Name      A small opening~
+Sector    field~
+Flags     dark indoors~
+Stats     0 0 0 0 0
+Desc      You are standing in a small opening.  To the north lies the old wooden
+bridge.  To your south the you can see a clearing.  You can see sunlight
+again.  What a welcome relief!
+~
+#EXIT
+Direction north~
+ToRoom    2237
+Desc      bridge
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2239
+Desc      clearing
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2239
+Name      Clearing~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand out in a clearing.  Mountains are all around you.  There is a 
+well in the middle of the clearing.  Lying against the well is a sign.  A
+path leads up the mountain.  The small opening is back to the north.
+~
+#EXIT
+Direction north~
+ToRoom    2238
+Desc      the small opening
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2240
+Desc      A path
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2244
+Desc      The well
+~
+#ENDEXIT
+
+Reset M 2200 5 2239 -1 -1 -1 100
+#EXDESC
+ExDescKey    well~
+ExDesc       You peer over the side of the well.  It looks VERY, VERY deep.  It appears
+to be ENDLESS.
+~
+#ENDEXDESC
+
+#EXDESC
+ExDescKey    sign~
+ExDesc       The sign reads:
+         This is a bottomless pit cleverly disguised as a well.  People have
+fallen in and never been heard from again.  Trust me, you don't want to go 
+down there.
+                        The All Powerful Well Keeper
+~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2240
+Name      A path~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      This path leads up the side of the mountain.  A clearing lies below you.
+There is a cave opening to the west.  The path continues up the mountain.
+~
+#EXIT
+Direction west~
+ToRoom    2241
+Desc      cave opening
+~
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    2242
+Desc      the path continues
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2239
+Desc      clearing
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2241
+Name      A cave opening~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You stand before a huge cave opening.  You hearing heavy breathing from
+within the cave.  There are a few skeletons lying about.  The cave lies to 
+the south.  The path is back to the east.
+~
+#EXIT
+Direction east~
+ToRoom    2240
+Desc      the path
+~
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    2221
+Desc      A lair
+~
+#ENDEXIT
+
+Reset M 2200 5 2241 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      2242
+Name      The path continues~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      The path continues up the mountain to the top.  The path also goes down.
+Thats it, nothing more to see.
+~
+#EXIT
+Direction up~
+ToRoom    2243
+Desc      top of the mountain
+~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2240
+Desc      path
+~
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      2243
+Name      The top of the mountain~
+Sector    field~
+Flags     ~
+Stats     0 0 0 0 0
+Desc      You are standing at the top of the mountain.  It feels more like the top of
+the world.  To your north lies a huge platinum door.  You hear very pronounced
+grumbling from behind the doors.  It sounds like something huge and hungry.
+But if you don't have the key you don't have to worry because you can't get it.
+If you do have the key I would suggest not going in.  Some believe the Five
+Headed dragon Tiamat was imprisoned here by the gods.  But who believes in 
+fairy tales.  Well, if you're scared, you can always go down the mountain.
+~
+#EXIT
+Direction north~
+ToRoom    2231
+Key       2241
+Desc      The platinum door
+~
+Keywords  door platinum~
+Flags     isdoor closed locked pickproof~
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    2242
+Desc      The path continues
+~
+#ENDEXIT
+
+Reset D 2243 0 2 100 -2
+#EXDESC
+ExDescKey    door platinum~
+ExDesc       A huge platinum door separates you from harm~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      2244
+Name      Well~
+Sector    indoors~
+Flags     death~
+Stats     0 0 0 0 0
+Desc      O
+ h
+   !
+
+     N
+      o
+       !
+
+   I warned you!  You have fallen into the bottomless pit.  You life flashes
+right before your eyes.  Pretty pathetic isn't it?  Next time you'll know
+to listen to the God of Laughs.
+~
+#ENDROOM
+
+#ENDAREA

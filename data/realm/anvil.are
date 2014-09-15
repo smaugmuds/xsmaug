@@ -1,0 +1,3419 @@
+#XSMAUGAREA
+#AREADATA
+Version         1
+Name            The Sun's Anvil~
+Author          Narwhal~
+Vnums           1000 1071
+Continent       one~
+Coordinates     0 0
+Dates           1403856829 1403856829
+Ranges          55 75 55 75
+ResetMsg        The wind misteriously starts to flow, later to fall into nothingness~
+ResetFreq       10
+Flags           noteleport~
+Climate         2 2 2
+Treasure        20 74 85 93 20 50 60 75
+#ENDAREADATA
+
+#MOBILE
+Vnum      1000
+Keywords  merchant slave master~
+Race      human~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     The merchant slave master~
+Long      A slave master
+~
+Desc      This man soared by its numerous wounds and scars, old mercenary of His Royal
+masjesty the emperor, now follows only one god, Quar, his lord and only master. 
+Sometimes 'finds' some good beings in this desert and gives them free
+transportation to the market, where he will gain good money for its sold. ~
+Nattacks  4.000000
+Stats1    -500 -1 180 65 0 0
+Stats2    65 21 -200 1250 3 8 20
+Speaks    common~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  infrared truesight berserk~
+Bodyparts head arms~
+Resist    energy blunt~
+Immune    sleep plus6~
+Suscept   pierce hold~
+Attacks   punch kick trip bash~
+Defenses  parry disarm grip~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   95~
+Comlist   if rand(50)
+say My god Quar, help me in my duty against thy enemies!!
+stun
+disarm
+kick
+gouge
+kick
+disarm
+gouge
+take all
+else
+if rand(40)
+shout Beware sad Mortal, and watch the almighty wrath of Quar!!
+mpe _red An Ethereal fist appears from nowhere and with a single blow, thrases your equipment!! 
+mpforce $n remove all
+mpdamage $n 250
+gouge
+gouge
+gouge
+else
+if rand(35)
+ca heal 
+c 'cure blindness'
+c 'dispel evil'
+c 'dispel magic'
+else
+if rand(30)
+mpe Picks a strange gem of one of his pockets and shouts:
+mpe This is the price for those that oppose to Quar designs!!
+mpe _red Suddenly the gem channels a blinding ray of light and /\/\**ObLiTeRaTeS**/\/\ you!!
+mpdamage $n 500
+shout If you want more, come.. and I will get you SOME!!
+muhaha
+else
+if rand(25)
+wield sword
+disarm
+punch
+else
+c 'faerie fire' $r
+c 'galvanic whip' $r
+c 'quatum spike' $r
+endif
+endif
+endif
+endif
+endif~
+#ENDPROG
+
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   smile
+Say Ave Adhali.
+bow $n
+say I can offer you many priceless objects and potions brought from the far seas of Khurdin.
+decir Accept and I will promise that you wont be deceived.
+if wis($n) < 20
+mea $n Please, say yes, and I will offer you what I have...
+else
+mea $n Run!! What the merchant really wants is to sold you as another good!!
+endif~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p yes~
+Comlist   mea $n Smiles at you as his face turns into the one of a beast.
+mpechoar $n $n accepts the contract of the slave master.
+grin
+mea $n The slave master whispers a soft chant...
+mpechoar $n The slave master whispers a song and points a finger to $n!
+mpforce $n rest
+mpforce $n sleep
+shout How Good!! Another one for the collection!!
+mpe $n rests into a deep slumber.
+shout And Now DIE!! Because what I want from you it is your SOUL!!!
+mpkill $n
+disarm
+disarm
+gouge
+stun
+kick
+gouge
+take all
+~
+#ENDPROG
+
+#MUDPROG
+Progtype  speech_prog~
+Arglist   p no~
+Comlist   decir Damm you $n!!
+, whisper some words
+insult $n
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      1001
+Keywords  wyrling dragon snake wyvern~
+Race      monster~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_breath_any~
+Short     A sand wyvern~
+Long      The huge Sand Wyvern looks at you as if you were its next meal.
+~
+Desc      It is one of the last ones of its race. The race, proud, intelligent and powerful
+in ancient times, was brought here by the gods, to protect the world from its
+menace. They are beings of 12 meters of lenght, and almost 7 meters tall. Its 
+scales, now exchanged by a thick layer of skin, shine with a strange red glow;
+its wings are now but two bone like appendix ending into a sharpened claw
+and its eyes, now located at each side of the head, glow evily.. This traits
+always inspire a preternatural terror on its victims.~
+Nattacks  3.000000
+Stats1    0 0 700 500 0 0
+Stats2    65 21 -75 3000 10 8 20
+Speaks    common dragon ancient~
+Speaking  common~
+Actflags  npc scavenger stayarea noassist~
+Affected  detect_invis detect_hidden protect sneak~
+Bodyparts head arms heart wings claws fangs tusks forelegs~
+Resist    blunt acid plus6~
+Immune    poison drain sleep~
+Suscept   fire energy pierce hold~
+Attacks   bite claws kick stun gasbreath~
+Defenses  dodge stoneskin disarm grip~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   if ispc($n)
+frown
+emote stares at you with not much interest.
+snarl $n
+else
+emote scratches its skin against the sand to free itself from the parasites.
+endif~
+#ENDPROG
+
+#MUDPROG
+Progtype  death_prog~
+Arglist   25~
+Comlist   mpechoar 0.$n $n As the beast dies, a bone it is stripped violently from its body.
+mpoload 1003 65
+drop axe~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      1002
+Keywords  swarm mosquito~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_fido~
+Short     A deadly swarm~
+Long      A deadly swarm attacks you in search of your blood.
+~
+Desc      It is an insect plague of all colors, sizes and kinds. They move through the 
+desert searching for victims to drink the vital fluids to sustain themselves.~
+Nattacks  2.000000
+Stats1    -200 0 0 0 0 0
+Stats2    65 21 -100 3000 20 8 100
+Speaks    insectoid~
+Speaking  insectoid~
+Actflags  npc stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden poison floating detect_traps shockshield~
+Bodyparts wings~
+Resist    fire sleep~
+Immune    fire hold~
+Suscept   acid plus6~
+Attacks   bite drain poison weaken~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   50~
+Comlist   c 'unravel defenses' $n
+c 'drain life' $n
+c poison $n
+c curse $n
+c weaken $n~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      1003
+Keywords  Golem blood~
+Race      golem~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A blood golem~
+Long      The Blood Golem glances at you with glee.
+~
+Desc      They are the result of dark and arcane magic upon a race of humans that lived in
+the desert. Isn´t known how or when, but what common lore explain, is that 
+a powerful mage, during the 2nd era, called upon the powers of a demon to possess
+to the desert people..., and this is the result... evil creatures without will
+and with only one thought... Kill!!.~
+Nattacks  4.000000
+Stats1    -500 0 0 0 0 0
+Stats2    69 21 -200 3000 21 10 100
+Speaks    common goblin ancient~
+Speaking  ancient~
+Actflags  npc stayarea~
+Affected  shockshield iceshield _flaming~
+Bodyparts head legs claws~
+Resist    NONE fire cold slash~
+Immune    electricity magic~
+Suscept   blunt sleep~
+Attacks   bite claws bash colorspray~
+Defenses  parry grip~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   kill $n~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      1004
+Keywords  Drist beetle~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A drist beetle~
+Long      A drist beetle stares stupidly at you with its compound eyes
+~
+Desc      You find yourself with a being with the body of a mountain, and a brain the size
+of the head of a needle. The drist beetles are known by their brutality, but not
+for their intelligence. Also they are known to attack adventures like you and 
+satiate their hunger with their flesh!.~
+Nattacks  2.000000
+Stats1    100 0 0 0 0 0
+Stats2    64 21 -250 2000 40 10 50
+Speaks    common insectoid~
+Speaking  common~
+Actflags  npc stayarea~
+Affected  detect_invis detect_hidden faerie_fire infrared protect berserk~
+Bodyparts eye tail tusks tailattack~
+Resist    plus6~
+Immune    electricity sleep~
+Suscept   NONE blunt~
+Attacks   bite gouge blindness curse~
+Defenses  shield stoneskin~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   say Ddddrrrrrriiiiiiiiiisssssssssttttttttt!!!!!~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      1005
+Keywords  snail beast insect~
+Race      insect~
+Class     Warrior~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     An insect-like beast~
+Long      A sand snail, as big as a truck, attacks you!!
+~
+Desc      It is a snail with red to brown colours, developing through all its body. Has 
+twenty pairs of legs and one pair of frightening jaws. With its size, it is the
+biggest predator of all the desert.~
+Nattacks  5.000000
+Stats1    -300 0 0 0 0 0
+Stats2    67 21 -300 1000 10 10 20
+Speaks    common~
+Speaking  common~
+Actflags  npc aggressive stayarea~
+Affected  detect_invis detect_hidden protect sneak hide~
+Bodyparts brains scales claws hooves~
+Resist    hold~
+Immune    NONE fire slash sleep plus6~
+Suscept   energy blunt charm~
+Attacks   claws drain causeserious curse~
+Defenses  sanctuary shield stoneskin teleport~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1006
+Keywords  Jamella merchant world end~
+Race      human~
+Class     Ranger~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_cleric~
+Short     Jamella, Merchant of the end of the world~
+Long      Jamella, Merchant of the end of the world
+~
+Desc      She is Jamella, I dont know if you will or wont recognize her, because the time
+has passed since she came from the land of Tristram. She is dressed with travel
+clothes, surely because she has arrived recently from a long journey.
+She sells goods of all trades, but some of those items... are just sold here,
+and beleive me if I tell you this, If you have arrived here, you have to be a
+skillfull and resourcefull adventurer to have survived to the tricks and beasts
+of this desert.~
+Nattacks  5.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    65 21 -500 20000 100 4 150
+Speaks    common god~
+Speaking  common~
+Actflags  npc stayarea guardian pacifist~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary infrared protect flying floating detect_traps fireshield shockshield iceshield _flaming~
+Bodyparts head arms legs heart brains guts hands feet ear eye~
+Resist    sleep~
+Immune    NONE fire cold electricity energy blunt pierce slash acid poison drain sleep charm hold plus6 magic~
+Defenses  parry dodge heal curelight cureserious curecritical dispelmagic dispelevil sanctuary shield bless stoneskin teleport disarm grip truesight~
+ShopData   10 5 0 0 0 130 125 1 23
+#MUDPROG
+Progtype  greet_prog~
+Arglist   100~
+Comlist   say Salve, Adhali
+smile
+say as you can see, I have some things that maybe those should be of your interest....
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      1007
+Keywords  Dragon Azogue~
+Race      dragon~
+Class     Mage~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_cast_mage~
+Short     The Azogue Dragon~
+Long      The Azogue Dragon snarls at you sadistically
+~
+Desc      It is a dragon-like beast, with the body of a snake and the wings of a bat.
+Its huge reptilian body, his sharpened wits, mortal breath and wizard spells, 
+turn him to be, the most lethal beast of this desert. Not only thinks evily, but
+he feeds on evil, bathes on evil. However, not everything its that bad..., because
+as the legend says, they bear wonderful treasures and magic objects along with
+themselves... (if you can survive, of course)~
+Nattacks  4.000000
+Stats1    -1000 0 0 0 0 0
+Stats2    70 21 -200 5500 40 12 100
+Speaks    common dragon~
+Speaking  dragon~
+Actflags  npc aggressive stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden infrared flying floating detect_traps fireshield shockshield~
+Bodyparts head heart brains scales fangs horns tailattack~
+Resist    NONE fire cold poison~
+Immune    electricity acid sleep plus6~
+Suscept   energy blunt pierce hold~
+Attacks   tail drain firebreath acidbreath nastypoison flamestrike colorspray~
+Defenses  heal shield bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1008
+Keywords  wolf man lupine~
+Race      human~
+Class     Mage~
+Gender    neuter~
+Position  standing~
+DefPos    standing~
+Short     A lupine~
+Long      A magic flesh-craft, in between a man and a wolf, is here
+~
+Desc      It is an anomaly of this desert, which is connected to diverse realities of the
+time plane, and that summons all the evil in the worlds in its-self. The lupine
+its a magic being, not summoned by any maddened wizard, but created by the desert
+as a reflection of the people's anger. The lupine it is a social creature, as it
+is seen in groups of 3 to 4 beings, and will not doubt in killing you if you stay
+to close of its sharpened claws.~
+Nattacks  0.000000
+Stats1    -1000 -1 0 0 0 0
+Stats2    66 21 -150 3000 20 100 75
+Speaks    common spiritual~
+Speaking  spiritual~
+Actflags  npc aggressive stayarea~
+Affected  detect_invis detect_magic detect_hidden infrared sneak detect_traps berserk~
+Bodyparts brains claws paws~
+Resist    NONE fire~
+Immune    fire energy poison plus6~
+Suscept   blunt hold~
+Attacks   bite claws trip harm~
+Defenses  dodge shield~
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   say You Will now pay for your daring, you fool!!
+warmup
+gouge
+gouge
+disarm
+disarm
+stun
+kick
+jump
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#MOBILE
+Vnum      1009
+Keywords  sand shark~
+Race      mule~
+Class     Warrior~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Short     A sand shark~
+Long      A creature with the size of a bull and covered with scales, is here.
+~
+Desc      Known among mortals with the name of sand shark, the bulette is a wonderful 
+predator that only lives to eat. It is universally feared, also by other
+creatures, because it charges brutally against any foe, to later hardly bite 
+any body-part that comes at his mouth. The body of the bulette is blue-grayish
+and covered by scales into a scale-like design. Its claws and teeth are made 
+of ivory, and his eyes, are yellow-greenish.~
+Nattacks  4.000000
+Stats1    150 0 0 0 0 0
+Stats2    65 21 -300 4500 30 10 50
+Speaks    ancient~
+Speaking  ancient~
+Actflags  npc aggressive stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary hide detect_traps berserk~
+Bodyparts head legs tail scales haunches forelegs~
+Resist    cold electricity energy acid~
+Immune    NONE fire slash poison sleep hold plus6~
+Suscept   blunt pierce hold magic~
+Attacks   bite claws tail kick gouge nastypoison~
+Defenses  parry dodge bless~
+#ENDMOBILE
+
+#MOBILE
+Vnum      1010
+Keywords  Djiin genie guard~
+Race      human~
+Class     Ranger~
+Gender    male~
+Position  standing~
+DefPos    standing~
+Specfun   spec_guard~
+Short     A Djiin~
+Long      A Djiin, noble among the genies, looks at you with patience.
+~
+Desc      He is one of the djiins that the gods once gave to its most precious followers.
+Actually, also serve a mortal lord, but have been commanded to protect this 
+desert. However, not many of them understand this, but they dont say a thing,
+because they dont want to suffer gods's anger.~
+Nattacks  4.000000
+Stats1    1000 -1 0 0 0 0
+Stats2    70 21 -250 3000 10 20 50
+Speaks    common elvish dwarven god~
+Speaking  god~
+Actflags  npc stayarea~
+Affected  detect_evil detect_invis detect_magic detect_hidden sanctuary infrared protect sneak flying _flaming~
+Bodyparts head arms guts hands wings~
+Resist    energy blunt~
+Immune    NONE fire cold electricity energy slash acid drain sleep charm hold plus6~
+Suscept   pierce magic~
+Attacks   claws kick trip firebreath causeserious~
+Defenses  parry dodge curecritical dispelevil sanctuary shield~
+#MUDPROG
+Progtype  greet_prog~
+Arglist   85~
+Comlist   say Greetings , Sahid, what can I do for you?
+if isgood($n)
+say Wait a little my friend, and I shall give you some aditional help in your journey....
+c sanctuary $n
+c protection $n
+c armor $n
+c shield $n
+else
+say Get out from here, Hideous beast, of you will check how well sharpened my blade is!!
+endif
+
+~
+#ENDPROG
+
+#ENDMOBILE
+
+#OBJECT
+Vnum      1000
+Keywords  thick skin layer~
+Type      armor~
+Short     A thick layer of skin~
+Long      The skin of one of the wyverns of this desert.~
+Flags     antigood antineutral hidden~
+WFlags    take body~
+Values    50 65 0 10 0 0 0 0 0 0 0
+Stats     8 150000 -2 1 0 None None None
+AffData constitution 2 -1 -1 0
+AffData hit 25 -1 -1 0
+AffData armor 50 -1 -1 0
+AffData sneak 15 -1 -1 0
+AffData dodge 25 -1 -1 0
+AffData wearspell 'alertness' -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1001
+Keywords  merchant quar armor~
+Type      armor~
+Short     The Armor of Quar~
+Long      The armor of a merchant of the god Quar.~
+Flags     glow~
+WFlags    take body~
+Values    95 95 0 10 87 0 0 0 0 0 0
+Stats     2 300000 -2 1 0 None None None
+AffData mentalstate -1 -1 -1 0
+AffData immune NONE fire cold electricity pierce slash~ -1 -1 0
+AffData intelligence 3 -1 -1 0
+AffData hitroll 6 -1 -1 0
+AffData class 4 -1 -1 0
+AffData dodge 35 -1 -1 0
+AffData strength 2 -1 -1 0
+AffData wisdom 2 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1002
+Keywords  unspeakable sword~
+Type      weapon~
+Short     The sword of the Unspeakable~
+Long      The sword of the Unspeakable~
+Action    The Snarling slash~
+Flags     bless antineutral poisoned loyal~
+WFlags    take wield~
+Values    45 7 8 5 0 0 0 0 0 0 0
+Stats     2 10000000 -2 1 0 None None None
+AffData hitroll 8 -1 -1 0
+AffData damroll 10 -1 -1 0
+AffData class 3 -1 -1 0
+AffData intelligence 2 -1 -1 0
+AffData armor 60 -1 -1 0
+AffData weaponspell 'lethargy' -1 -1 0
+AffData wearspell 'fireshield' -1 -1 0
+AffData hit 150 -1 -1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   mpe _lbl No te defraudaré $n lo juro por Quar!!~
+#ENDPROG
+
+#MUDPROG
+Progtype  remove_prog~
+Arglist   100~
+Comlist   mpe _red Noooooo!!! Se presa de mi Ira, $n!
+mpdamage $n 150~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      1003
+Keywords  axe wurm~
+Type      weapon~
+Short     The Wurm-Hals Axe~
+Long      A bone of the wyvern.~
+WFlags    take wield~
+Values    35 1 50 208 0 0 0 0 0 0 0
+Stats     4 100000 -2 1 0 None None None
+AffData damroll -20 -1 -1 0
+AffData strength -5 -1 -1 0
+AffData track -35 -1 -1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   100~
+Comlist   c 'trollish vigor'
+c 'elvish beauty'
+c heal
+c shield 
+c fly
+c float
+c agility
+c 'eldritch sphere'
+c invisivility~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      1004
+Keywords  flask fluid colors prism~
+Type      potion~
+Short     A prism-like flask~
+Long      A prism-like flask~
+Flags     bless~
+WFlags    take wield~
+Values    65 -1 -1 -1 0 0 0 0 0 0 0
+Stats     2 25000 -2 1 0 None None None
+AffData wisdom 2 -1 -1 0
+AffData class 2 -1 -1 0
+Spells       'dragon wit' 'dragonskin' 'sagacity'
+#ENDOBJECT
+
+#OBJECT
+Vnum      1005
+Keywords  jar honey~
+Type      potion~
+Short     A pot of honey~
+Long      A pot of honey~
+Flags     glow~
+WFlags    take wield~
+Values    65 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 0 -2 9999 0 None None None
+AffData class 2 -1 -1 0
+Spells       'holy sanctity' 'shadowform' 'shockshield'
+#ENDOBJECT
+
+#OBJECT
+Vnum      1006
+Keywords  blood red vial~
+Type      potion~
+Short     A blood vial~
+Long      A vial full of blood... Yuck!!
+~
+WFlags    take wield~
+Values    69 -1 -1 -1 0 0 0 0 0 0 0
+Stats     2 34000 -2 1 0 None None None
+AffData stun 20 -1 -1 0
+Spells       'detect poison' 'dispel magic' 'eldritch sphere'
+#ENDOBJECT
+
+#OBJECT
+Vnum      1007
+Keywords  beast eye~
+Type      armor~
+Short     The beast eye~
+Long      The beast eye, stares at you evily.~
+Flags     glow metal magic antigood evil~
+WFlags    take eyes~
+Values    75 75 0 0 0 0 0 0 0 0 0
+Stats     3 10000000 -2 1 0 None None None
+AffData mana 100 -1 -1 0
+AffData hitregen 20 -1 -1 0
+AffData move 150 -1 -1 0
+AffData hit 125 -1 -1 0
+AffData sex -2 -1 -1 0
+AffData dexterity -2 -1 -1 0
+AffData strength 2 -1 -1 0
+AffData wisdom -1 -1 -1 0
+AffData wearspell 'eldritch sphere' -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1008
+Keywords  sand moisture flask~
+Type      potion~
+Short     A flask full of a sand moisture~
+Long      A little flask with a small moisture of sand inside.
+~
+Flags     glow~
+WFlags    take~
+Values    35 -1 -1 -1 0 0 0 0 0 0 0
+Stats     3 17000 -2 1 0 None None None
+Spells       'alertness' 'antimagic shell' 'aqua breath'
+#ENDOBJECT
+
+#OBJECT
+Vnum      1009
+Keywords  vial hydragirum~
+Type      potion~
+Short     A Hydragirum vial~
+Long      It is a potion made of Hydragirum, a plant unknown in this dimension.~
+Flags     glow~
+WFlags    take~
+Values    45 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 18000 -2 1 0 None None None
+Spells       'ethereal shield' 'heal' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      1010
+Keywords  flask Mhir ptaf~
+Type      potion~
+Short     A flask of ptaf~
+Long      A flask of ptaf.~
+Flags     glow~
+WFlags    take~
+Values    35 -1 -1 -1 0 0 0 0 0 0 0
+Stats     1 50000 -2 1 0 None None None
+Spells       'change sex' 'cure blindness' 'farsight'
+#ENDOBJECT
+
+#OBJECT
+Vnum      1011
+Keywords  werlig staff~
+Type      weapon~
+Short     A werlig Staff~
+Long      This is a staff made of the wood of a werlig, a tree known to have magical
+properties.~
+Action    The Colour Explosion~
+Flags     glow metal magic bless antirogue~
+WFlags    take wield~
+Values    0 10 8 203 0 0 0 0 0 0 0
+Stats     4 500000 -2 1 0 None None None
+AffData hitroll 8 -1 -1 0
+AffData damroll 8 -1 -1 0
+AffData wisdom 3 -1 -1 0
+AffData constitution 2 -1 -1 0
+AffData armor 100 -1 -1 0
+#MUDPROG
+Progtype  fight_prog~
+Arglist   75~
+Comlist   c rayo $r
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      1012
+Keywords  azogue skin~
+Type      armor~
+Short     The Azogue Skin~
+Long      This is the skin of the evil dragon that lives in the desert of the Sun's Anvil.
+It is very shiny, by the numerous gold pieces and gems that lie embedded in it,
+but also it is flexible, by the bones that are in between the coins and gems.
+Those bones once belonged to the dead enemies of the dragon.~
+WFlags    take body~
+Values    100 100 0 0 0 0 0 0 0 0 0
+Stats     4 45000000 -2 1 0 None None None
+AffData sex 3 -1 -1 0
+AffData armor 100 -1 -1 0
+AffData strength 2 -1 -1 0
+AffData wisdom 2 -1 -1 0
+AffData parry 25 -1 -1 0
+AffData wearspell 'eldritch sphere' -1 -1 0
+AffData mana 100 -1 -1 0
+AffData hitregen 5 -1 -1 0
+AffData hit 150 -1 -1 0
+#MUDPROG
+Progtype  wear_prog~
+Arglist   25~
+Comlist   c sacntuary
+c protection
+c 'eldritch sphere'
+c 'stone skin'
+c shield
+c 'electric shield'
+c 'iceshield'
+c 'fireshield'
+c armor
+c 'demon skin'
+c 'dragon skin'
+
+~
+#ENDPROG
+
+#ENDOBJECT
+
+#OBJECT
+Vnum      1013
+Keywords  potion cyan~
+Type      potion~
+Short     A cyan potion~
+Long      A cyan potion~
+Flags     glow magic~
+WFlags    take~
+Values    60 -1 -1 -1 0 0 0 0 0 0 0
+Stats     2 1000000 -2 1 0 None None None
+Spells       'fireshield' 'inner warmth' 'NONE'
+#ENDOBJECT
+
+#OBJECT
+Vnum      1014
+Keywords  Pyrosulfate anthodic mixture~
+Type      potion~
+Short     A mixture of Pyrosulfate anthodic~
+Long      It is a potion made of the root of the ptaf.
+~
+Flags     glow antineutral~
+WFlags    take~
+Values    45 -1 -1 -1 0 0 0 0 0 0 0
+Stats     2 50000 -2 1 0 None None None
+Spells       'dragon wit' 'iceshield' 'infravision'
+#ENDOBJECT
+
+#OBJECT
+Vnum      1015
+Keywords  mail armor~
+Type      armor~
+Short     A mail amor~
+Long      It is the shell of the bulette, that may give you protection if you wield it.~
+Flags     glow magic bless antineutral antimage antirogue antidruid~
+WFlags    take body~
+Values    150 150 0 0 0 0 0 0 0 0 0
+Stats     5 20000000 -2 1 0 None None None
+AffData armor -150 -1 -1 0
+AffData damroll 10 -1 -1 0
+AffData move -100 -1 -1 0
+AffData strength 3 -1 -1 0
+AffData constitution 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1016
+Keywords  belt Djiin~
+Type      armor~
+Short     A belt of purple silk~
+Long      A belt of purple silk stays here on the floor.
+~
+Flags     glow magic bless antievil antineutral~
+Values    75 75 0 0 0 0 0 0 0 0 0
+Stats     2 2500000 -2 1 0 None None None
+AffData move 100 -1 -1 0
+AffData mana 200 -1 -1 0
+AffData hit 100 -1 -1 0
+AffData sex 3 -1 -1 0
+AffData dexterity 3 -1 -1 0
+AffData intelligence 3 -1 -1 0
+AffData hitroll 10 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1017
+Keywords  Djiin sword~
+Type      weapon~
+Short     The Sword of the Djiin~
+Long      A huge and mighty sword remains forgotten here.~
+Action    The Mighty Slash~
+Flags     glow metal magic bless antievil antineutral~
+WFlags    take wield~
+Values    0 10 8 3 0 0 0 0 0 0 0
+Stats     3 1000000 -2 1 0 None None None
+AffData hitroll 8 -1 -1 0
+AffData damroll 12 -1 -1 0
+AffData intelligence 2 -1 -1 0
+AffData save_spell 10 -1 -1 0
+AffData wearspell 'sanctuary' -1 -1 0
+AffData strength 3 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1018
+Keywords  Djiin Bracers~
+Type      armor~
+Short     The Bracers of the Djiin~
+Long      They are the golden bracers of the djiin, a magnificient piece of art-work.~
+Flags     glow magic bless antievil~
+WFlags    take arms~
+Values    75 75 0 0 0 0 0 0 0 0 0
+Stats     2 10000000 -2 1 0 None None None
+AffData hitroll 10 -1 -1 0
+AffData parry 25 -1 -1 0
+AffData steal 25 -1 -1 0
+AffData spellfail 25 -1 -1 0
+AffData dodge 25 -1 -1 0
+AffData intelligence 3 -1 -1 0
+AffData strength -1 -1 -1 0
+#ENDOBJECT
+
+#OBJECT
+Vnum      1019
+Keywords  large flask~
+Type      potion~
+Short     A large flask~
+Long      A large flask.~
+Flags     metal~
+WFlags    take~
+Values    60 -1 -1 -1 0 0 0 0 0 0 0
+Stats     2 35000 -2 1 0 None None None
+Spells       'divinity' 'shield' 'trollish vigor'
+#ENDOBJECT
+
+#ROOM
+Vnum      1000
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+#EXIT
+Direction north~
+ToRoom    1001
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1002
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1003
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1024
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1007
+#ENDEXIT
+
+Reset R 1000 1 100
+#ENDROOM
+
+#ROOM
+Vnum      1001
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+#EXIT
+Direction east~
+ToRoom    1003
+#ENDEXIT
+
+#EXIT
+Direction north~
+ToRoom    1000
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1002
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1000
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1036
+#ENDEXIT
+
+Reset R 1001 2 100
+Reset M 1003 1 1001 -1 -1 -1 100
+  Reset G 1006 0 100
+#ENDROOM
+
+#ROOM
+Vnum      1002
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+#EXIT
+Direction north~
+ToRoom    1001
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1003
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1000
+#ENDEXIT
+
+Reset R 1002 3 100
+#ENDROOM
+
+#ROOM
+Vnum      1003
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+#EXIT
+Direction north~
+ToRoom    1002
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1000
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1001
+#ENDEXIT
+
+Reset R 1003 3 100
+#ENDROOM
+
+#ROOM
+Vnum      1004
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+#EXIT
+Direction north~
+ToRoom    1007
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1005
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1004
+#ENDEXIT
+
+Reset R 1004 0 100
+Reset M 1000 1 1004 -1 -1 -1 100
+  Reset E 1001 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      1005
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+#EXIT
+Direction east~
+ToRoom    1006
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1007
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1004
+#ENDEXIT
+
+Reset R 1005 1 100
+#ENDROOM
+
+#ROOM
+Vnum      1006
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+#EXIT
+Direction north~
+ToRoom    1006
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1006
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1007
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1005
+#ENDEXIT
+
+Reset R 1006 0 100
+Reset M 1003 2 1006 -1 -1 -1 100
+  Reset G 1006 0 100
+Reset M 1010 1 1006 -1 -1 -1 100
+  Reset E 1017 0 16 100
+  Reset E 1016 0 13 100
+  Reset E 1018 0 10 100
+#ENDROOM
+
+#ROOM
+Vnum      1007
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+#EXIT
+Direction north~
+ToRoom    1006
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1004
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1008
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1000
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1011
+#ENDEXIT
+
+Reset R 1007 1 100
+Reset M 1001 2 1007 -1 -1 -1 100
+  Reset E 1000 0 12 100
+#ENDROOM
+
+#ROOM
+Vnum      1008
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+#EXIT
+Direction north~
+ToRoom    1007
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1009
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1009
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1010
+#ENDEXIT
+
+Reset R 1008 1 100
+#ENDROOM
+
+#ROOM
+Vnum      1009
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+#EXIT
+Direction north~
+ToRoom    1008
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1010
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1040
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1009
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1009
+#ENDEXIT
+
+Reset R 1009 1 100
+Reset M 1010 1 1009 -1 -1 -1 100
+  Reset E 1018 0 10 100
+  Reset E 1017 0 16 100
+#ENDROOM
+
+#ROOM
+Vnum      1010
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+#EXIT
+Direction north~
+ToRoom    1011
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1008
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1018
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1009
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1012
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1013
+#ENDEXIT
+
+Reset M 1003 1 1010 -1 -1 -1 100
+  Reset G 1006 0 100
+#ENDROOM
+
+#ROOM
+Vnum      1011
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+~
+#EXIT
+Direction north~
+ToRoom    1014
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1010
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1007
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1012
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1012
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+#EXIT
+Direction north~
+ToRoom    1013
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1020
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1010
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1011
+#ENDEXIT
+
+Reset M 1010 1 1012 -1 -1 -1 100
+  Reset E 1017 0 16 100
+  Reset E 1018 0 10 100
+  Reset E 1016 0 13 100
+#ENDROOM
+
+#ROOM
+Vnum      1013
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+#EXIT
+Direction north~
+ToRoom    1021
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1012
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1010
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1015
+#ENDEXIT
+
+Reset M 1003 2 1013 -1 -1 -1 100
+  Reset G 1006 0 100
+#ENDROOM
+
+#ROOM
+Vnum      1014
+Name      A way in the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The skies above, lie eternally as the surroundings completely imbue itself into
+this deathly desert. You ask yourself, while walking, when your sweat will banish, 
+and those mirages that surround you, that, as a sword in the forge of a blacksmith,
+are starting to gain a defined shape.
+
+~
+#EXIT
+Direction north~
+ToRoom    1015
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1011
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1016
+#ENDEXIT
+
+Reset M 1000 1 1014 -1 -1 -1 100
+  Reset E 1002 0 16 100
+  Reset E 1001 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      1015
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction south~
+ToRoom    1014
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1030
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1013
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1029
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1016
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction north~
+ToRoom    1018
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1014
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1022
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1026
+#ENDEXIT
+
+Reset M 1000 1 1016 -1 -1 -1 100
+  Reset E 1001 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      1017
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction north~
+ToRoom    1012
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1029
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1023
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1018
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction north~
+ToRoom    1010
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1001
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1016
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1025
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1019
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction up~
+ToRoom    1029
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1038
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1044
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1020
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction north~
+ToRoom    1012
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1021
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1040
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1031
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1030
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1021
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction north~
+ToRoom    1035
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1013
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1020
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1040
+#ENDEXIT
+
+Reset M 1010 1 1021 -1 -1 -1 100
+  Reset E 1017 0 16 100
+  Reset E 1016 0 13 100
+#ENDROOM
+
+#ROOM
+Vnum      1022
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction north~
+ToRoom    1016
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1040
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1009
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1023
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction northwest~
+ToRoom    1017
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1033
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1024
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction east~
+ToRoom    1040
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1000
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1025
+#ENDEXIT
+
+Reset M 1010 1 1024 -1 -1 -1 100
+  Reset E 1018 0 10 100
+  Reset E 1017 0 16 100
+#ENDROOM
+
+#ROOM
+Vnum      1025
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction north~
+ToRoom    1030
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1024
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1018
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1026
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction east~
+ToRoom    1016
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1050
+#ENDEXIT
+
+Reset M 1000 1 1026 -1 -1 -1 100
+  Reset E 1001 0 5 100
+Reset M 1008 1 1026 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1027
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction north~
+ToRoom    1028
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1049
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1029
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1031
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1028
+Name      The Sun's Anvil~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert has overcomed your will. You have got lost in this desert, that as 
+the legends say, many adventurers have come to..., to never come back...., prey
+of the numerous slave merchants of this desert, or of the unsatisfied thirst of
+an unexisting water, or prey of the hunger and the madness there isnt any one
+to talk to in various kilometers around you, except for the slave merchants,
+which may be glad to take you to the next city, and conduct you to the bazaar
+of the city, where you may find that you are the next first quality good that
+it is going to be sold.
+~
+#EXIT
+Direction north~
+ToRoom    1060
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1027
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1040
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1030
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1031
+#ENDEXIT
+
+Reset M 1004 1 1028 -1 -1 -1 100
+  Reset G 1010 0 100
+Reset M 1010 1 1028 -1 -1 -1 100
+  Reset E 1016 0 13 100
+#ENDROOM
+
+#ROOM
+Vnum      1029
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction down~
+ToRoom    1019
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1015
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1027
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1017
+#ENDEXIT
+
+Reset M 1001 1 1029 -1 -1 -1 100
+  Reset E 1000 0 12 100
+#ENDROOM
+
+#ROOM
+Vnum      1030
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction south~
+ToRoom    1025
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1020
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1028
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1035
+#ENDEXIT
+
+Reset M 1008 2 1030 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1031
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction northeast~
+ToRoom    1028
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1027
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1020
+#ENDEXIT
+
+Reset M 1001 1 1031 -1 -1 -1 100
+  Reset E 1000 0 12 100
+#ENDROOM
+
+#ROOM
+Vnum      1032
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1010
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1010
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1059
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1033
+#ENDEXIT
+
+Reset M 1008 2 1032 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1033
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction up~
+ToRoom    1034
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1023
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1032
+#ENDEXIT
+
+Reset M 1007 1 1033 -1 -1 -1 100
+  Reset E 1012 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      1034
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1047
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1036
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1043
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1037
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1035
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1033
+#ENDEXIT
+
+Reset M 1002 3 1034 -1 -1 -1 100
+  Reset G 1004 0 100
+Reset M 1001 1 1034 -1 -1 -1 100
+  Reset G 1000 0 100
+Reset M 1004 1 1034 -1 -1 -1 100
+  Reset G 1005 0 100
+#ENDROOM
+
+#ROOM
+Vnum      1035
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1050
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1021
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1034
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1030
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1053
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1043
+#ENDEXIT
+
+Reset M 1001 1 1035 -1 -1 -1 100
+  Reset E 1000 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      1036
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1041
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1034
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1001
+#ENDEXIT
+
+Reset M 1001 2 1036 -1 -1 -1 100
+  Reset E 1000 0 5 100
+Reset M 1004 1 1036 -1 -1 -1 100
+Reset M 1010 2 1036 -1 -1 -1 100
+  Reset E 1016 0 13 100
+  Reset E 1017 0 16 100
+  Reset E 1018 0 10 100
+#ENDROOM
+
+#ROOM
+Vnum      1037
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1037
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1034
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1037
+#ENDEXIT
+
+Reset M 1002 2 1037 -1 -1 -1 100
+  Reset E 1005 0 17 100
+#ENDROOM
+
+#ROOM
+Vnum      1038
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction northeast~
+ToRoom    1039
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1040
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1019
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1041
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1039
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1049
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1061
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1050
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1038
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1040
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction east~
+ToRoom    1020
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1024
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1021
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1038
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1028
+#ENDEXIT
+
+Reset M 1002 1 1040 -1 -1 -1 100
+  Reset G 1004 0 100
+#ENDROOM
+
+#ROOM
+Vnum      1041
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction south~
+ToRoom    1036
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1038
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1015
+#ENDEXIT
+
+Reset M 1001 1 1041 -1 -1 -1 100
+  Reset E 1000 0 12 100
+Reset M 1004 1 1041 -1 -1 -1 100
+  Reset G 1010 0 100
+Reset M 1010 1 1041 -1 -1 -1 100
+  Reset E 1017 0 16 100
+  Reset E 1016 0 13 100
+  Reset E 1018 0 10 100
+#ENDROOM
+
+#ROOM
+Vnum      1042
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1042
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1012
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1043
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1034
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1036
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1035
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1044
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1045
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1050
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1019
+#ENDEXIT
+
+Reset M 1001 1 1044 -1 -1 -1 100
+  Reset E 1000 0 12 100
+#ENDROOM
+
+#ROOM
+Vnum      1045
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction south~
+ToRoom    1044
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1054
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1052
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1046
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1030
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1046
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1044
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1046
+#ENDEXIT
+
+Reset M 1010 1 1046 -1 -1 -1 100
+  Reset E 1018 0 16 100
+  Reset E 1016 0 13 100
+#ENDROOM
+
+#ROOM
+Vnum      1047
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction south~
+ToRoom    1034
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1049
+#ENDEXIT
+
+Reset M 1002 4 1047 -1 -1 -1 100
+  Reset G 1004 0 100
+Reset M 1004 1 1047 -1 -1 -1 100
+  Reset G 1008 0 100
+Reset M 1008 2 1047 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1048
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1047
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1016
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1051
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1049
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction south~
+ToRoom    1039
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1027
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1047
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1050
+Name      Into a sand sea~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nothing around yourself seems to have a sense, when you look at the numerous 
+mirages that seem to shape-up the city to the one you think you are moving to.
+The wind blows like a ghost at your ears, and the dunes extend in the distance 
+as if you were trapped in a nightmare. Now you realize why this desert it is
+called the Sun's Anvil, because the sun it is slowly forging you to be ready for
+your death..., which you think will be more pleasant than keep existing in this
+solitude that blinds and burns you in soul and flesh...
+~
+#EXIT
+Direction north~
+ToRoom    1039
+#ENDEXIT
+
+#EXIT
+Direction east~
+ToRoom    1026
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1035
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1060
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1055
+#ENDEXIT
+
+Reset M 1007 1 1050 -1 -1 -1 100
+  Reset E 1012 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      1051
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction northwest~
+ToRoom    1048
+#ENDEXIT
+
+Reset M 1010 1 1051 -1 -1 -1 100
+  Reset E 1018 0 10 100
+  Reset E 1017 0 16 100
+#ENDROOM
+
+#ROOM
+Vnum      1052
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction north~
+ToRoom    1053
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1055
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1052
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1045
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1052
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1053
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction north~
+ToRoom    1060
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1052
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1055
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1035
+#ENDEXIT
+
+Reset M 1000 1 1053 -1 -1 -1 100
+  Reset E 1002 0 16 100
+  Reset E 1001 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      1054
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction north~
+ToRoom    1055
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1045
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1056
+#ENDEXIT
+
+Reset M 1003 1 1054 -1 -1 -1 100
+  Reset G 1006 0 100
+Reset M 1002 1 1054 -1 -1 -1 100
+Reset M 1002 1 1054 -1 -1 -1 100
+  Reset G 1006 0 100
+#ENDROOM
+
+#ROOM
+Vnum      1055
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction east~
+ToRoom    1053
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1054
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1052
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1063
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1050
+#ENDEXIT
+
+Reset M 1009 1 1055 -1 -1 -1 100
+  Reset E 1015 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      1056
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction north~
+ToRoom    1057
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1060
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1054
+#ENDEXIT
+
+Reset M 1008 2 1056 -1 -1 -1 100
+#ENDROOM
+
+#ROOM
+Vnum      1057
+Name      Along the desert~
+Sector    indoors~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction north~
+ToRoom    1058
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1056
+#ENDEXIT
+
+Reset M 1005 1 1057 -1 -1 -1 100
+  Reset E 1007 0 20 100
+#ENDROOM
+
+#ROOM
+Vnum      1058
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction north~
+ToRoom    1059
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1057
+#ENDEXIT
+
+Reset M 1010 1 1058 -1 -1 -1 100
+  Reset E 1017 0 16 100
+  Reset E 1018 0 10 100
+  Reset G 1019 0 100
+#ENDROOM
+
+#ROOM
+Vnum      1059
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction south~
+ToRoom    1058
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1032
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1060
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1060
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction south~
+ToRoom    1028
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1059
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1050
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1055
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1061
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1061
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction north~
+ToRoom    1062
+#ENDEXIT
+
+#EXIT
+Direction west~
+ToRoom    1039
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1060
+#ENDEXIT
+
+Reset M 1000 1 1061 -1 -1 -1 100
+  Reset E 1002 0 16 100
+  Reset E 1001 0 5 100
+#ENDROOM
+
+#ROOM
+Vnum      1062
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction north~
+ToRoom    1063
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1061
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1063
+Name      Along the desert~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The desert around feeds on your will as the carterpillar feeds on tree's leaves.
+The sky doesnt have any cloud, and it remains its blueish colour all through.
+The Ea Sea it is now very far, and you cant see nothing except death and 
+destruction around you. The only water around you, remains slowly evaporating 
+from your scorched-shell like body.
+~
+#EXIT
+Direction south~
+ToRoom    1062
+#ENDEXIT
+
+#EXIT
+Direction northwest~
+ToRoom    1064
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1055
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1064
+Name      A stone-covered way~
+Sector    desert~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+#EXIT
+Direction north~
+ToRoom    1066
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1063
+#ENDEXIT
+
+#EXIT
+Direction southeast~
+ToRoom    1065
+#ENDEXIT
+
+#EXDESC
+ExDescKey    horizon~
+ExDesc       *             *
+        *     *          *         *
+                   *           *
+           *              *
+       |      |=
+       |      |
+      / \||||/ \
+      | |||||| |
+ |    | |_--_| |    |  |  |  |  |
+/ \   | |_||_| |   / \/ \/ \/ \/ \
+--------****----------------------------------
+---------****---------------------------------
+----------****--------------------------------
+----------****--------------------------------
+---------****---------------------------------
+----------****--------------------------------
+-----------***--------------------------------
+------------***-------------------------------
+-------------***------------------------------
+-------------**-------------------------------
+--------------**------------------------------
+---------------**-----------------------------   ~
+#ENDEXDESC
+
+#ENDROOM
+
+#ROOM
+Vnum      1065
+Name      A stone-covered way~
+Sector    mountain~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      The nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+#EXIT
+Direction northwest~
+ToRoom    1064
+#ENDEXIT
+
+Reset M 1010 1 1065 -1 -1 -1 100
+  Reset E 1017 0 16 100
+  Reset E 1016 0 13 100
+  Reset E 1018 0 10 100
+#ENDROOM
+
+#ROOM
+Vnum      1066
+Name      A stone-covered way~
+Sector    indoors~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+#EXIT
+Direction north~
+ToRoom    1069
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1064
+#ENDEXIT
+
+#EXIT
+Direction up~
+ToRoom    1067
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1067
+Name      A stone-covered way~
+Sector    indoors~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+#EXIT
+Direction north~
+ToRoom    1068
+#ENDEXIT
+
+#EXIT
+Direction down~
+ToRoom    1066
+#ENDEXIT
+
+#EXIT
+Direction southwest~
+ToRoom    1069
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1068
+Name      A stone-covered way~
+Sector    indoors~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+#EXIT
+Direction north~
+ToRoom    1069
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1067
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1069
+Name      A stone-covered way~
+Sector    indoors~
+Flags     norecall noastral~
+Stats     0 0 0 0 0
+Desc      Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+#EXIT
+Direction north~
+ToRoom    1070
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1066
+#ENDEXIT
+
+#EXIT
+Direction northeast~
+ToRoom    1067
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1070
+Name      A stone-covered way~
+Sector    indoors~
+Flags     nomob nomagic nosupplicate norecall noastral nodrop nodropall~
+Stats     0 0 0 0 0
+Desc      Nature hasnt been able to tear appart this stone road in which you are now in
+and the ethernal flow of the desert hasn´t invaded this place. There are no signs
+of wheel tracks, but you watch the horizon with the hope that a city or some kind
+of civilization lies somewhere in the far east.
+~
+#EXIT
+Direction north~
+ToRoom    1071
+#ENDEXIT
+
+#EXIT
+Direction south~
+ToRoom    1069
+#ENDEXIT
+
+#ENDROOM
+
+#ROOM
+Vnum      1071
+Name      A passage to eternity~
+Sector    indoors~
+Flags     nomob safe nosummon nomagic nosupplicate norecall noastral nodrop~
+Stats     0 0 0 0 0
+Desc      A wooden door lies before you. You open it, and you discover that you are in a 
+shop full of extrange and unknown items... some for the client to buy the products
+and so, make richer to the owner. The floor, made of black marble, the ceiling
+sustained by four columms, that neither hercule would have been able to crush, 
+and in the environment that surrounds you, the essence of aromatic plants, burning
+on brass pots, give an exotic touch to the room, making in an unspeakable way 
+feeling the best you could or would have ever been.
+~
+#EXIT
+Direction south~
+ToRoom    1070
+#ENDEXIT
+
+Reset M 1006 1 1071 -1 -1 -1 100
+  Reset G 1014 0 100
+  Reset G 1013 0 100
+  Reset G 1006 0 100
+  Reset G 1011 0 100
+  Reset G 1009 0 100
+  Reset G 1010 0 100
+  Reset G 1004 0 100
+  Reset G 1008 0 100
+  Reset G 1019 0 100
+#ENDROOM
+
+#ENDAREA

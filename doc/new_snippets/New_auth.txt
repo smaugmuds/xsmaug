@@ -1,0 +1,560 @@
+Rantic's New Authorization System
+---------------------------------
+
+Written by Rantic <supfly@geocities.com>
+
+Additions and enhancements by Samson of Alsherok.
+
+Terms of Use
+------------
+
+1. You may use this snippet in your code provided that any included
+comment headers in the code are left intact. You may add your own, but
+do not take mine out.
+
+2. This snippet may not be posted for redistribution on any site
+without obtaining prior written consent from the Alsherok team.
+
+3. ( optional ) Register with the forums at http://forums.alsherok.net
+Registration is not required to make use of the snippet, but since I no
+longer provide email support for any of the code I release, forum posts
+are your only avenue for direct support. This may seem overly stupid,
+but you can blame the continuing abuse I suffer from spammers for this.
+Don't post stuff to TMC or TMS asking about my code. I'm highly unlikely
+to ever notice it there on the rare ocassions I skim posts in either place.
+
+If forum registration doesn't appeal to you, then you can try to get ahold
+of me via IMC on the code channel.
+
+If you can't agree to these terms, don't use this code, and don't expect
+me to help if something breaks while installing it. Harsh? Hardly. I'm
+tired of people who come crawling to whine and complain when they haven't
+bothered to comply with the terms first.
+
+What this code does
+-------------------
+
+This code replaces the stock name authorization system with one that
+will allow players to enter and play the game up to a certain level
+before their name is approved or rejected. Names which are pending
+for review will be stored in a file, and the player need not be online
+to be approved. Perfect for muds who's immortals are not always available.
+
+Installation Instructions
+-------------------------
+
+1. To install this code, place the files new_auth.c, and new_auth.h
+   in your source directory. Add the approporiate entries to your
+   Makefile for new_auth.c and new_auth.o.
+
+   In mud.h, find this line:
+
+   #define LEVEL_AVATAR		   (MAX_LEVEL - 15)
+
+   And below it, add this line:
+
+   #include "new_auth.h"
+
+   Locate the following code and comment it out:
+
+#define NOT_AUTHED(ch)		(!IS_NPC(ch) && ch->pcdata->auth_state <= 3  \
+			      && IS_SET(ch->pcdata->flags, PCFLAG_UNAUTHED) )
+
+#define IS_WAITING_FOR_AUTH(ch) (!IS_NPC(ch) && ch->desc		     \
+			      && ch->pcdata->auth_state == 1		     \
+			      && IS_SET(ch->pcdata->flags, PCFLAG_UNAUTHED) )
+
+2. In mud_comm.c, locate function do_mpapplyb, and comment it out.
+
+   In function do_mptransfer, locate the following lines of code:
+
+    /* Put in the variable nextinroom to make this work right. -Narn */
+    if ( !str_cmp( arg1, "all" ) )
+    {
+	for ( victim = ch->in_room->first_person; victim; victim = nextinroom )
+	{
+            nextinroom = victim->next_in_room;
+	    if ( victim != ch
+	    &&   !NOT_AUTHED(victim)
+	    &&   can_see( ch, victim ) )
+	    {
+		sprintf( buf, "%s %s", victim->name, arg2 );
+		do_mptransfer( ch, buf );
+	    }
+	}
+	return;
+    }
+    /* This will only transfer PC's in the area not Mobs --Shaddai */
+    if ( !str_cmp( arg1, "area" ) )
+    {
+	for ( d = first_descriptor; d; d = d->next )
+	{
+		if ( !d->character || (d->connected != CON_PLAYING &&
+		     d->connected != CON_EDITING) || !can_see(ch, d->character)
+		     || ch->in_room->area != d->character->in_room->area ||
+		     NOT_AUTHED(d->character) )	
+			continue;
+		sprintf( buf, "%s %s", d->character->name, arg2 );
+		do_mptransfer( ch, buf );
+        }
+        return;
+    }
+
+   Replace those lines with these:
+
+   /*
+    * Put in the variable nextinroom to make this work right. -Narn 
+    */
+   if( !str_cmp( arg1, "all" ) )
+   {
+      for( victim = ch->in_room->first_person; victim; victim = nextinroom )
+      {
+         nextinroom = victim->next_in_room;
+         if( victim != ch && !NEW_AUTH( victim )   /* new auth */
+             && can_see( ch, victim ) )
+         {
+            sprintf( buf, "%s %s", victim->name, arg2 );
+            do_mptransfer( ch, buf );
+         }
+      }
+      return;
+   }
+   /*
+    * This will only transfer PC's in the area not Mobs --Shaddai 
+    */
+   if( !str_cmp( arg1, "area" ) )
+   {
+      for( d = first_descriptor; d; d = d->next )
+      {
+         if( !d->character || ( d->connected != CON_PLAYING && d->connected != CON_EDITING ) || !can_see( ch, d->character ) || ch->in_room->area != d->character->in_room->area || d->character->level == 1 ) /* new auth */
+            continue;
+         sprintf( buf, "%s %s", d->character->name, arg2 );
+         do_mptransfer( ch, buf );
+      }
+      return;
+   }
+
+3. In act_wiz.c, locate function do_reserve and comment all of it out.
+
+   Locate function do_authorize, and comment all of it out.
+
+   Locate function do_transfer, and find the following lines of code:
+
+    if ( NOT_AUTHED( victim ) )
+    {
+	send_to_char( "They are not authorized yet!\r\n", ch);
+	return;
+    }
+
+   Replace them with these lines of code:
+
+   /*
+   if( NEW_AUTH( victim ) )      
+   {
+      send_to_char( "They might not be in the auth list yet!\r\n", ch );
+      return;           
+   }
+   */ /* new auth */
+
+Locate function do_cset, and find the following code:
+
+    pager_printf_color(ch, "\r\n&WMail:\r\n  &wRead all mail: &W%d  &wRead mail for free: &W%d  &wWrite mail for free: &W%d\r\n",
+	    sysdata.read_all_mail, sysdata.read_mail_free, sysdata.write_mail_free );
+    pager_printf_color(ch, "  &wTake all mail: &W%d", sysdata.take_others_mail );
+
+  Immediately below that, add this line:
+
+      pager_printf_color( ch, "\r\n&wName authorization: &W%s\r\n", sysdata.WAIT_FOR_AUTH ? "On" : "Off" );
+       
+  Further down in the function, locate the following code:
+
+  argument = one_argument( argument, arg );
+  smash_tilde( argument );
+
+  if (!str_cmp(arg, "help"))
+  {
+     do_help(ch, "controls");
+     return;
+  }
+
+  And right below it, add this code:
+
+   if( !str_cmp( arg, "auth" ) )
+   {
+      sysdata.WAIT_FOR_AUTH = !sysdata.WAIT_FOR_AUTH;
+
+      if( sysdata.WAIT_FOR_AUTH )
+         send_to_char( "Name authorization system enabled.\r\n", ch );
+      else
+         send_to_char( "Name authorization system disabled.\r\n", ch );
+      return;
+   }
+
+  In function do_destroy, locate the following code:
+
+    if ( !remove( buf ) )
+    {
+        AREA_DATA *pArea;
+        
+        set_char_color( AT_RED, ch );
+        ch_printf( ch, "Player %s destroyed.\r\n", name );
+
+  On the next line, add this:
+
+        remove_from_auth( name );
+
+4. In comm.c, locate the following line:
+
+void	shutdown_mud		args( ( char *reason ) );
+
+   Immediately below it, add the following line:
+
+void save_auth_list	args( ( void ) );
+
+   Then locate function do_name and comment all of it out.
+   
+   In function nanny, find the following lines of code:
+
+	    if (!sysdata.WAIT_FOR_AUTH)
+	      char_to_room( ch, get_room_index( ROOM_VNUM_SCHOOL ) );
+	    else
+	    {
+	      char_to_room( ch, get_room_index( ROOM_AUTH_START ) );
+	      ch->pcdata->auth_state = 0;
+	      SET_BIT(ch->pcdata->flags, PCFLAG_UNAUTHED);
+	    }
+
+    And right above the closing brace, add this line:
+
+               add_to_auth( ch ); /* new auth */
+
+    Then locate the following lines:
+
+    if ( !ch->was_in_room && ch->in_room == get_room_index( ROOM_VNUM_TEMPLE ))
+      	ch->was_in_room = get_room_index( ROOM_VNUM_TEMPLE );
+    else if ( ch->was_in_room == get_room_index( ROOM_VNUM_TEMPLE ))
+        ch->was_in_room = get_room_index( ROOM_VNUM_TEMPLE );
+    else if ( !ch->was_in_room )
+    	ch->was_in_room = ch->in_room;
+
+    And right above them add this line:
+
+         check_auth_state( ch ); /* new auth */
+
+  Locate function close_socket.
+
+    In the declarations at the top, add:
+
+   AUTH_LIST *old_auth;
+ 
+    Further down, locate the following code:
+
+    if ( dclose->character )
+    {
+	sprintf( log_buf, "Closing link to %s.", ch->pcdata->filename );
+	log_string_plus( log_buf, LOG_COMM, UMAX( sysdata.log_level, ch->level ) );
+/*
+	if ( ch->level < LEVEL_DEMI )
+	  to_channel( log_buf, CHANNEL_MONITOR, "Monitor", ch->level );
+*/
+	if ( dclose->connected == CON_PLAYING
+	||   dclose->connected == CON_EDITING )
+
+    Right below the commented portion, add the following:
+
+      /* Link dead auth -- Rantic */
+      old_auth = get_auth_name( ch->name );
+      if( old_auth != NULL && old_auth->state == AUTH_ONLINE )
+      {
+         old_auth->state = AUTH_LINK_DEAD;
+         save_auth_list();
+      }
+
+   In function check_reconnect, near the very bottom, locate the
+   return TRUE;
+
+   Right above it should be a d->connected = CON_PLAYING;
+   Below that, add the following:
+
+            check_auth_state( ch ); /* Link dead support -- Rantic */
+
+5. In update.c, locate function auth_update and comment all of it out.
+
+   Locate function gain_exp, and find the following lines:
+
+    if (NOT_AUTHED(ch) && ch->exp >= exp_level(ch, ch->level+1))
+    {
+	send_to_char("You can not ascend to a higher level until you are authorized.\r\n", ch);
+	ch->exp = (exp_level(ch, (ch->level+1)) - 1);
+	return;
+    }
+
+   Replace them with these lines:
+
+   if( NEW_AUTH(ch) && ch->exp >= exp_level(ch, ch->level+1) )
+   {
+      send_to_char( "You can not ascend to a higher level until you are authorized.\r\n", ch );
+      ch->exp = (exp_level(ch, (ch->level+1)) - 1);
+      return;
+   }
+
+   Locate function gain_condition, and find the following line:
+
+    if ( value == 0 || IS_NPC(ch) || ch->level >= LEVEL_IMMORTAL || NOT_AUTHED(ch))
+	return;
+
+   Replace it with this line:
+
+    if ( value == 0 || IS_NPC(ch) || ch->level >= LEVEL_IMMORTAL || NEW_AUTH( ch ) ) /* new auth */ 
+    	return;
+
+6. In handler.c, function can_see, locate the following lines:
+
+    /* Redone by Narn to let newbie council members see pre-auths. */
+    if( NOT_AUTHED( victim ) )
+    {
+      if( NOT_AUTHED( ch ) || IS_IMMORTAL( ch ) || IS_NPC( ch ) )
+        return TRUE;
+
+      if( ch->pcdata->council && !str_cmp( ch->pcdata->council->name, "Newbie Council" ) )
+        return TRUE;
+
+      return FALSE;
+    }  
+
+   Replace them with these lines:
+
+   /* Redone by Narn to let newbie council members see pre-auths. */
+   if( NEW_AUTH( victim ) ) /* new auth */
+   {
+      if( NEW_AUTH( ch ) || IS_IMMORTAL( ch ) || IS_NPC( ch ) )
+         return TRUE;
+
+      if( ch->pcdata->council && !str_cmp( ch->pcdata->council->name, "Newbie Council" ) )
+         return TRUE;
+
+      return FALSE;
+   }
+
+7. In fight.c, locate function damage, and find the following lines:
+
+    /* Make sure newbies dont die */
+
+    if (!IS_NPC(victim) && NOT_AUTHED(victim) && victim->hit < 1)
+	victim->hit = 1;
+
+    Replace then with these lines:
+
+    /* Make sure newbies dont die */
+
+    if (!IS_NPC(victim) && NEW_AUTH(victim) && victim->hit < 1) /* new auth */
+     	victim->hit = 1;
+
+   Locate function raw_kill and find these lines:
+
+    /* backup in case hp goes below 1 */
+    if (NOT_AUTHED(victim))
+    {
+      bug( "raw_kill: killing unauthed", 0 );
+      return;
+    }
+
+    Replace them with these lines:
+
+	/* backup in case hp goes below 1 */
+   if( NEW_AUTH( victim ) ) /* new auth */
+   {
+      bug( "%s: killing level 1", __FUNCTION__ );
+      return;
+   }
+
+8. In act_info.c, locate function do_channels, and find these lines:
+
+        if ( ch->level > 2 && !NOT_AUTHED( ch ) )
+          ch_printf_color( ch, "%s", !IS_SET( ch->deaf, CHANNEL_AUCTION ) ?
+				                " &G+AUCTION" 	          :
+						" &g-auction" );
+
+    Replace them with these lines:
+
+      if( get_trust( ch ) > 2 && !NEW_AUTH( ch ) ) /* new auth */
+         ch_printf_color( ch, "%s", !IS_SET( ch->deaf, CHANNEL_AUCTION ) ? " &G+AUCTION" : " &g-auction" );
+
+9. In db.c, locate the following lines:
+
+void	init_area_weather args( ( void ) );
+void	load_weatherdata args( ( void ) );
+PROJECT_DATA *read_project args( ( char *filename, FILE *fp ) );
+NOTE_DATA *read_log  args( ( FILE *fp ) );
+
+   Immediately below them, add the following:
+
+void load_auth_list args( ( void ) ); /* New Auth Code */
+void save_auth_list args( ( void ) );
+
+   Locate function boot_db, and find the following lines:
+
+        log_string( "Loading reserved names" );
+        load_reserved( );
+
+   Right below them, add these lines:
+
+      log_string( "Loading auth namelist" );
+      load_auth_list(  );
+      save_auth_list(  );
+
+10. In act_comm.c, locate function do_quit.
+    At the top in the declaractions section, add the following:
+    ALTERATION TO DO_QUIT NOT REQUIRED IF USING RENT SNIPPET - CODE IS ALREADY INCLUDED
+
+    AUTH_LIST *old_auth;    
+
+   Find the following lines:
+
+    if ( IS_PKILL( ch ) && ch->wimpy > (int) ch->max_hit / 2.25 )
+    {
+        send_to_char( "Your wimpy has been adjusted to the maximum level for deadlies.\r\n", ch );
+        do_wimpy( ch, "max" );
+    }
+    /* Get 'em dismounted until we finish mount saving -- Blodkai, 4/97 */
+    if ( ch->position == POS_MOUNTED )
+	do_dismount( ch, "" );
+    set_char_color( AT_WHITE, ch );
+    send_to_char( "Your surroundings begin to fade as a mystical swirling vortex of colors\r\nenvelops your body... When you come to, things are not as they were.\r\n\r\n", ch );
+    act( AT_SAY, "A strange voice says, 'We await your return, $n...'", ch, NULL, NULL, TO_CHAR );
+    act( AT_BYE, "$n has left the game.", ch, NULL, NULL, TO_CANSEE );
+    set_char_color( AT_GREY, ch);
+
+
+   Above the comment by Blodkai, add the following lines:
+
+    /* new auth */
+    if ( NEW_AUTH( ch ) ) 
+        remove_from_auth( ch->name );
+    else
+    {
+        old_auth = get_auth_name( ch->name );
+	  if( old_auth != NULL 
+	  && (old_auth->state == AUTH_ONLINE || old_auth->state == AUTH_LINK_DEAD) )
+                 old_auth->state = AUTH_OFFLINE; /* Logging off */
+    }
+
+    Locate function do_newbiechat, and replace it with the following:
+
+void do_newbiechat( CHAR_DATA *ch, char *argument )
+{  
+    if ( IS_NPC( ch )
+    || ( !NEW_AUTH( ch ) && !IS_IMMORTAL(ch) /* new auth */
+    && !( ch->pcdata->council && !str_cmp( ch->pcdata->council->name, "Newbie Council" ) ) ) )
+    {
+        send_to_char( "Huh?\r\n", ch );
+        return;
+    }
+    talk_channel( ch, argument, CHANNEL_NEWBIE, "newbiechat" );
+    return;
+}
+
+   Locate function do_tell, and find the following lines:
+
+	 if ( ( victim = get_char_world( ch, arg ) ) == NULL 
+       || ( IS_NPC(victim) && victim->in_room != ch->in_room ) 
+       || (!NOT_AUTHED(ch) && NOT_AUTHED(victim) && !IS_IMMORTAL(ch) ) )
+
+   Replace them with these lines:
+
+	 if ( ( victim = get_char_world( ch, arg ) ) == NULL 
+       || ( IS_NPC(victim) && victim->in_room != ch->in_room ) 
+       || (!NEW_AUTH(ch) && NEW_AUTH(victim) && !IS_IMMORTAL(ch) ) ) /* new auth */
+
+   Locate the following lines:
+
+    if (NOT_AUTHED(ch) && !NOT_AUTHED(victim) && !IS_IMMORTAL(victim) )
+    {
+	send_to_char( "They can't hear you because you are not authorized.\r\n", ch);
+	return;
+    }
+
+   Replace them with these lines:
+
+    if (NEW_AUTH(ch) && !NEW_AUTH(victim) && !IS_IMMORTAL(victim) ) /* new auth */    
+    {
+	send_to_char( "They can't hear you because you are not authorized.\r\n", ch);
+	return;
+    }
+
+   Locate function talk_channel, and find the following lines:
+
+	    if ( channel != CHANNEL_NEWBIE && NOT_AUTHED(och) )
+		continue;		
+
+   Replace them with these lines:
+
+          if ( channel != CHANNEL_NEWBIE && NEW_AUTH( och ) ) /* new auth */
+            continue;
+
+   Locate the following lines just a bit further down:
+
+            if ( channel == CHANNEL_WARTALK && NOT_AUTHED( och ) )
+               continue;
+
+   Replace them with these lines:
+
+          if ( channel == CHANNEL_WARTALK && NEW_AUTH( och ) ) /* new auth */
+		continue;
+
+   Locate the following lines:
+
+            /* Fix by Narn to let newbie council members see the newbie channel. */
+	    if ( channel == CHANNEL_NEWBIE  && 
+                  ( !IS_IMMORTAL(och) && !NOT_AUTHED(och) 
+                  && !( och->pcdata->council && 
+                     !str_cmp( och->pcdata->council->name, "Newbie Council" ) ) ) )
+		continue;
+
+   Replace them with these lines:
+
+            /* Fix by Narn to let newbie council members see the newbie channel. */
+	    if ( channel == CHANNEL_NEWBIE  && 
+                  ( !IS_IMMORTAL(och) && !NEW_AUTH(och) 
+                  && !( och->pcdata->council && 
+                     !str_cmp( och->pcdata->council->name, "Newbie Council" ) ) ) )
+		continue;
+
+   Locate each of the following functions: do_chat, do_clantalk, do_music,
+     do_quest, do_ask, do_answer, do_shout, do_yell, and replace each
+
+    if (NOT_AUTHED(ch))
+
+   with one of these:
+
+    if ( NEW_AUTH( ch ) )
+
+11. Place the auth.dat file in your dist/system directory.
+
+12. Cut/Paste the contents of new_auth.help into your help.are file
+    if you don't already have an entry for 'help authorize'.
+
+13. Make clean, then recompile.
+
+If there are any problems with this installation, feel free to post your
+question to the forums at http://forums.alsherok.net
+
+This code has been installed and tested on Smaug 1.6 FUSS, which is a bugfixed
+and cleaned up version of the base Smaug 1.4a code. The Smaug FUSS Project is
+maintained on servers which run the Redhat and Fedora family of Linux. Limited
+testing has also been done on the Cygwin package under WindowsXP SP1 and SP2.
+Users of BSD, MSVC, MSVC++, or Macintosh platforms are on their own as The
+Smaug FUSS Project does not have access to these development environments for testing.
+The Smaug FUSS Project can be found at: http://www.smaugfuss.org
+
+No guarantees are made that this code will be compatible with your codebase and any
+modifications you may have made to it. No warranty of any kind is expressed or implied
+by the use of this code, and we are not responsible for any damages which may result
+from the application of this snippet to your codebase.
+
+Adventure beckons in the lands of mystique....
+Samson, Implementor of Alsherok
+http://www.alsherok.net
+telnet://alsherok.net:5500
+
+IMC2 contact: Samson@Alsherok
