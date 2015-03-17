@@ -52,7 +52,7 @@ void bailout( int );
 #include <sys/socket.h>
 #endif
 #if defined(__CYGWIN__)
-const int WAIT_ANY = -1;   /* This is not guaranteed to work! */
+// const int WAIT_ANY = 0;   /* This is not guaranteed to work! */
 #include <sys/socket.h>
 #endif
 #include <sys/time.h>
