@@ -1128,7 +1128,9 @@ typedef HANDLE process_id_t;
 #include <dlfcn.h>
 #include <inttypes.h>
 #include <pwd.h>
-/* #define O_BINARY 0 */
+#if !defined(__CYGWIN__)
+#define O_BINARY 0
+#endif
 #define INT64_FMT PRId64
 typedef struct stat file_stat_t;
 typedef pid_t process_id_t;

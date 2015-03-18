@@ -12,7 +12,7 @@
  # ------------------------------------------------------------------------ #
  # Ne[X]t Generation [S]imulated [M]edieval [A]dventure Multi[U]ser [G]ame  #
  # ------------------------------------------------------------------------ #
- # XSMAUG 2.4 (C) 2014  by Antonio Cao @burzumishi                          #
+ # XSMAUG © 2014-2015 Antonio Cao (@burzumishi)                             #
  # ------------------------------------------------------------------------ #
  #                                  XSMAUG                                  #
  #                                 Makefile                                 #
@@ -24,7 +24,9 @@ CXX = g++
 
 ARCH = `uname -m`
 
-bin_PROGRAMS = xsmaug dnsresolv
+bin_PROGRAMS = xsmaug$(EXEEXT) dnsresolv$(EXEEXT)
+
+CLEANFILES = *~ *.o xsmaug$(EXEEXT) dnsresolv$(EXEEXT)
 
 xsmaug_SOURCES = act_comm.cpp \
 act_info.cpp \
@@ -116,7 +118,7 @@ win32.cpp
 
 dnsresolv_SOURCES = dnsresolv.cpp
 
-include_HEADERS = mud.h mud_cfg.h
+include_HEADERS = mud.h mud_cfg.h mongoose.h
 
 xsmaug_CXXFLAGS = -O3 -pipe -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
 xsmaug_CFLAGS = -O3 -pipe -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings

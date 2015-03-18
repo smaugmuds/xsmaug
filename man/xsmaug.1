@@ -1,0 +1,95 @@
+.\" Copyright (c) 2014, Antonio Cao (@burzumishi) <antoniocao000@gmail.com>
+.\"
+.\" This is free documentation; you can redistribute it and/or
+.\" modify it under the terms of the GNU General Public License as
+.\" published by the Free Software Foundation; either version 2 of
+.\" the License, or (at your option) any later version.
+.\"
+.\" The GNU General Public License's references to "object code"
+.\" and "executables" are to be interpreted as the output of any
+.\" document formatting or typesetting system, including
+.\" intermediate and printed output.
+.\"
+.\" This manual is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public
+.\" License along with this manual; if not, write to the Free
+.\" Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+.\" Boston, MA  02111-1301  USA.
+.TH GENETIC 1
+.SH NAME
+xsmaug \- Genuine Package Manager
+
+.SH SYNOPSIS
+.B xsmaug --option1 --option2 'args' ... --command|-c 'file'
+
+.SH DESCRIPTION
+Genetic is a package manager for Genuine GNU/Linux, it will help you on manage Genuine System packages.
+
+.SH COMMANDS:
+
+.TP
+.B	[-h] --help
+.br
+
+.TP
+.B	[-v] --version
+.br
+
+.SH OPTIONS:
+
+.TP
+	     --admindir
+	     --color
+	     --verbose
+	     --force
+.br
+
+.SH Source Development Commands:
+
+.TP
+.B	[-s] --source     'source.tar.<gz|bz2|xz>'
+	     --autotools
+	     --prefix     'directory'
+	     --configure  '--with --enable'
+	     --packages   'package1 package2'
+.br
+
+.TP
+.B	[-b] --build      'SrcInfo'
+	     --autotools
+	     --disable-gen-source
+.br
+
+.SH Package Management Commands:
+
+.TP
+.B	[-i] --install    'package-version.<arch|dev|dbg|src>.gen'
+.br
+
+.TP
+.B	[-u] --uninstall  'package.<dbg|dev>'
+.br
+
+.TP
+.B	[-U] --unpack     'package-version.<arch|dev|dbg|src>.gen'
+	     --unpackdir  'directory'
+.br
+
+.SH BUGS:
+
+The bug tracker can be reached by visiting the website
+\fIhttps://github.com/genuine-linux/xsmaug/issues\fR
+
+Before sending a bug report, please verify that you have the latest
+version of xsmaug. Many bugs (major and minor) are fixed at each
+release, and if yours is out of date, the problem may already have
+been solved.
+
+.SH ADDITIONAL INFORMATION:
+
+For further information, visit the website
+\fIhttps://github.com/smaugmuds/xsmaug\fR
