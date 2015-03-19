@@ -61,14 +61,12 @@ xsmaugd: xsmaugd.in Makefile
 	$(do_subst) < $(srcdir)/xsmaugd.in > xsmaugd
 	chmod +x xsmaugd
 
-CLEANFILES = *~ */*~ $(bin_SCRIPTS) etc/xsmaug.conf xsmaug.h xsmaugd
+CLEANFILES = *~ */*~ $(bin_SCRIPTS) xsmaugd
 
 docdir = $(datarootdir)/doc/@PACKAGE@
 doc_DATA = README AUTHORS INSTALL NEWS LICENSE ChangeLog doc/*.md doc/*.txt
 
-man_MANS=man/xsmaug.1
-
-include_HEADERS = xsmaug.h
+man_MANS = man/xsmaug.1
 
 all-local:
 	@echo "=== all-local done ==="
@@ -100,10 +98,6 @@ install-data-hook:
 	cp -rvf data/* $(sharedstatedir)/@PACKAGE@; \
 	echo "Creating <@PACKAGE@> log directory ..."; \
 	mkdir -pv $(localstatedir)/log/@PACKAGE@; \
-	echo "Installing <@PACKAGE@> man pages ..."; \
-	mkdir -pv $(mandir)/man1; \
-	echo "Installing <@PACKAGE@> documentation ..."; \
-	cp man/xsmaug.1 $(mandir)/man1/xsmaug.1; \
 	echo "Creating user <$(USER)> and group <$(GROUP)> ..."; \
 	groupadd $(GROUP); \
 	useradd $(USER) -g $(GROUP); \

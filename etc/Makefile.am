@@ -20,7 +20,7 @@
 
 CLEANFILES = xsmaug.conf *~
 
-etcdir = $(sysconfdir)
+etcdir = $(sysconfdir)/$(PACKAGE)
 etc_DATA = xsmaug.conf
 
 do_subst = sed -e 's,[@]sharedstatedir[@],$(sharedstatedir),g' \

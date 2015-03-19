@@ -26,16 +26,18 @@
 AC_PREREQ([2.69])
 LT_PREREQ([2.4])  # require libtool
 
-PACKAGE=xsmaug
+AC_SUBST([PACKAGE], ["xsmaug"])
 
-XSMAUG_MAJOR_VERSION=2
-XSMAUG_MINOR_VERSION=5
-XSMAUG_UPDATE_VERSION=1
+AC_SUBST([XSMAUG_MAJOR_VERSION], [2])
+AC_SUBST([XSMAUG_MINOR_VERSION], [5])
+AC_SUBST([XSMAUG_UPDATE_VERSION], [2])
 
-VERSION=$XSMAUG_MAJOR_VERSION.$XSMAUG_MINOR_VERSION.$XSMAUG_UPDATE_VERSION
+AC_SUBST([VERSION], ["${XSMAUG_MAJOR_VERSION}.${XSMAUG_MINOR_VERSION}.${XSMAUG_UPDATE_VERSION}"])
 
-AC_INIT([xsmaug], [2.5.1],
-	[<antoniocao000@gmail.com>],
+AC_SUBST([DESCRIPTION], ["XSMAUG MUD Server"])
+
+AC_INIT([xsmaug], [2.5.2],
+	[<@burzumishi>],
 	[xsmaug])
 
 AC_COPYRIGHT(["2014-2015 (c) Antonio Cao (@burzumishi)"])
@@ -48,18 +50,16 @@ AM_PROG_LIBTOOL
 AM_SANITY_CHECK
 AM_INIT_AUTOMAKE
 
-AC_CONFIG_HEADERS([xsmaug.h])
+AC_CONFIG_HEADERS([src/xsmaug.h])
 AC_CONFIG_MACRO_DIR([m4])
 
 AC_CANONICAL_HOST
 AC_CANONICAL_BUILD
 
 AC_DEFINE_UNQUOTED([PREFIX], ["/opt/xsmaug/"], [Define to the root directory.])
-AC_DEFINE_UNQUOTED([RUNDIR], ["${prefix}/com/xsmaug/"], [Define to the read-only architecture-independant data directory.])
+AC_DEFINE_UNQUOTED([RUNDIR], ["${prefix}/com/xsmaug/"], [Define modifiable architecture-independent data.])
 AC_DEFINE_UNQUOTED([LOGDIR], ["${prefix}/var/log/xsmaug/"], [Define to log directory.])
 AC_DEFINE_UNQUOTED([BINDIR], ["${prefix}/bin/"], [Define HotBoot Executable Directory.])
-
-AC_SUBST([DESCRIPTION], ["XSMAUG MUD Server"])
 
 AC_LANG([C++])
 AC_LANG_PUSH([C++])
@@ -67,7 +67,7 @@ AC_LANG_PUSH([C++])
 AC_PROG_CC([cc])
 AC_PROG_CXX([g++])
 AC_PROG_LIBTOOL
-AC_PROG_RANLIB
+# AC_PROG_RANLIB
 AC_PROG_LEX
 AC_PROG_AWK
 AC_PROG_GREP
@@ -83,13 +83,28 @@ AC_SUBST(LIBTOOL_DEPS)
 
 # Checks for libraries.
 AC_CHECK_LIB([crypt], [encrypt])
+AM_CONDITIONAL([HAVE_CRYPT], [test -n "${crypt}"])
+
 AC_CHECK_LIB([dl], [dlopen])
+AM_CONDITIONAL([HAVE_DL], [test -n "${dl}"])
+
 AC_CHECK_LIB([z], [zlibVersion])
+AM_CONDITIONAL([HAVE_Z], [test -n "${z}"])
+
 AC_CHECK_LIB([m], [isnan])
+AM_CONDITIONAL([HAVE_Z], [test -n "${z}"])
+
 AC_CHECK_LIB([mysqlclient], [mysql_init])
+AM_CONDITIONAL([HAVE_MYSQLCLIENT], [test -n "${mysqlclient}"])
+
 AC_CHECK_LIB([gd], [gdImageCreate])
+AM_CONDITIONAL([HAVE_GD], [test -n "${gd}"])
+
 AC_CHECK_LIB([ssl], [main])
+AM_CONDITIONAL([HAVE_SSL], [test -n "${ssl}"])
+
 AC_CHECK_LIB([pthread], [main])
+AM_CONDITIONAL([HAVE_PTHREAD], [test -n "${pthread}"])
 
 # Checks for header files.
 AC_CHECK_HEADERS([arpa/inet.h fcntl.h gd.h malloc.h math.h mysql/mysql.h netdb.h netinet/in.h sys/param.h sys/socket.h sys/time.h unistd.h pthread.h openssl/ssl.h limits.h stddef.h])
@@ -112,6 +127,7 @@ AC_STRUCT_TIMEZONE
 AC_FUNC_FORK
 AC_FUNC_MKTIME
 AC_FUNC_REALLOC
+
 AC_CHECK_FUNCS([alarm dup2 gethostbyaddr gethostbyname gettimeofday inet_ntoa isascii memmove memset pow putenv select socket sqrt strcasecmp strchr strerror strpbrk strrchr strstr tzset strtol getcwd memchr mkdir rmdir strcspn strdup strspn])
 
 AC_PATH_PROG([BASH], [bash])

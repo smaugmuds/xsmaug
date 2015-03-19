@@ -38,7 +38,7 @@
  ****************************************************************************/
 
 #ifdef HAVE_CONFIG_H
-#include "../xsmaug.h"
+#include "xsmaug.h"
 #endif
 
 #ifndef __MUD_H__
@@ -61,7 +61,7 @@ using namespace std;
  * Removing this is a violation of your license agreement.
  */
 #define CODENAME "XSMAUG"
-#define CODEVERSION "2.5.1"
+#define CODEVERSION "2.5.2"
 #define COPYRIGHT "Copyright The Alsherok Team 1997-2012. All rights reserved. "
 
 const int LGST = 4096;  /* Large String */
