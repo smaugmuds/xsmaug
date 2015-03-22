@@ -121,12 +121,14 @@ httpd_SOURCES = httpd.cpp mongoose.cpp
 
 include_HEADERS = xsmaug.h mud.h mud_cfg.h mongoose.h
 
-xsmaug_CXXFLAGS = -O3 -pipe -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
-xsmaug_CFLAGS = -O3 -pipe -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
+CFLAGS_COMMON = -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
 
-dnsresolv_CXXFLAGS = -O3 -pipe -Wno-all
-dnsresolv_CFLAGS = -O3 -pipe -Wno-all
+xsmaug_CXXFLAGS = -O3 -pipe -export-dynamic $(CFLAGS_COMMON)
+xsmaug_CFLAGS = -O3 -pipe -export-dynamic $(CFLAGS_COMMON)
 
-httpd_CXXFLAGS = -O3 -pipe -W -Wno-all -I../.. -pthread -g -O0 -DMONGOOSE_ENABLE_THREADS -DNS_ENABLE_SSL -lssl $(CFLAGS_EXTRA) 
-httpd_CFLAGS = -O3 -pipe -W -Wno-all -I../.. -pthread -g -O0 -DMONGOOSE_ENABLE_THREADS -DNS_ENABLE_SSL -lssl $(CFLAGS_EXTRA)
+dnsresolv_CXXFLAGS = -O3 -pipe $(CFLAGS_COMMON)
+dnsresolv_CFLAGS = -O3 -pipe $(CFLAGS_COMMON)
+
+httpd_CXXFLAGS = -g -O0 -W $(CFLAGS_COMMON) -I../.. -pthread -DMONGOOSE_ENABLE_THREADS -DNS_ENABLE_SSL -lssl $(CFLAGS_EXTRA)
+httpd_CFLAGS = -g -O0 -W $(CFLAGS_COMMON) -I../.. -pthread -DMONGOOSE_ENABLE_THREADS -DNS_ENABLE_SSL -lssl $(CFLAGS_EXTRA)
 

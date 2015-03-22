@@ -67,23 +67,24 @@ all-local:
 	@echo "=== all-local done ==="
 
 clean-local:
-	@rm -rfv Makefile src/Makefile config.log etc/init.d/xsmaugd* \
-	etc/Makefile bin/xsmaug-monitor etc/xsmaugd.conf src/xsmaug.h etc/httpd.cfg; \
+	@rm -rfv Makefile src/Makefile config.log etc/init.d/xsmaugd etc/init.d/xsmaugd-httpd \
+	etc/Makefile bin/xsmaug-monitor etc/xsmaugd.conf src/xsmaug.h etc/httpd.cfg compile \
+	stamp-h1; \
 	echo "=== clean-local done ==="
 
 distclean-local:
-	@rm -rfv configure src/Makefile.in Makefile.in \
-	Makefile src/Makefile config.log etc/httpd.cfg \
+	@rm -rfv configure src/Makefile.in Makefile.in compile \
+	Makefile src/Makefile config.log etc/httpd.cfg stamp-h1 \
 	etc/Makefile.in etc/xsmaugd.conf bin/xsmaug-monitor \
-	etc/Makefile src/xsmaug.h etc/init.d/xsmaugd*; \
+	etc/Makefile src/xsmaug.h etc/init.d/xsmaugd etc/init.d/xsmaugd-httpd; \
 	echo "=== distclean-local done ==="
 
 devdistclean-local:
-	@rm -rfv aclocal.m4 autom4te.cache config.guess \
+	@rm -rfv aclocal.m4 autom4te.cache config.guess stamp-h1 \
  	configure config.sub install-sh missing etc/httpd.cfg \
 	Makefile.in src/Makefile.in Makefile src/Makefile compile \
 	config.log config.status ltmain.sh depcomp bin/xsmaug-monitor \
-	etc/Makefile.in etc/xsmaugd.conf etc/init.d/xsmaugd* \
+	etc/Makefile.in etc/xsmaugd.conf etc/init.d/xsmaugd etc/init.d/xsmaugd-httpd \
 	etc/Makefile etc/conf.d/Makefile m4 src/xsmaug.h; \
 	echo "=== distclean-local done ==="
 
@@ -93,8 +94,9 @@ install-data-hook:
 	cp -rvf data/* $(sharedstatedir)/@PACKAGE@; \
 	echo "Creating <@PACKAGE@> directory to store log files ..."; \
 	mkdir -pv $(localstatedir)/log/@PACKAGE@; \
-	echo "Creating <@PACKAGE@> directory to store lock files ..."; \
+	echo "Creating <@PACKAGE@> directories to store lock and run files ..."; \
 	mkdir -pv $(localstatedir)/lock/@PACKAGE@; \
+	mkdir -pv $(localstatedir)/run/; \
 	echo "Creating user <$(USER)> and group <$(GROUP)> ..."; \
 	groupadd $(GROUP); \
 	useradd $(USER) -g $(GROUP); \

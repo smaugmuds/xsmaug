@@ -1,0 +1,75 @@
+#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:          xsmaug
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Should-Start:      
+# Should-Stop:       
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: MUD Server
+# Description:       XSMAUG 2.5 MUD Server
+### END INIT INFO
+
+source @sysconfdir@/@PACKAGE@/@PACKAGE@d.conf
+
+test -f $BINDIR/$EXEC || exit 0
+
+. /lib/lsb/init-functions
+
+RUN=no
+
+# Include xsmaug defaults if available
+if [ -f /etc/default/@PACKAGE@ ] ; then
+    . /etc/default/@PACKAGE@
+fi
+
+if [ "x$RUN" != "xyes" ] ; then
+    echo "$NAME disabled; edit /etc/default/@PACKAGE@"
+    exit 0
+fi
+
+set -e
+
+do_start () {
+  start-stop-daemon --oknodo --start --quiet --chuid $USER -m --pidfile $MONITOR_PIDFILE \
+    --exec $BINDIR/$MONITOR --
+}
+
+do_stop () {
+  start-stop-daemon --oknodo --stop --quiet --user $USER \
+    --pidfile $MONITOR_PIDFILE --exec $MONITOR
+}
+
+case "$1" in
+  start)
+	log_daemon_msg "Starting $DESC" "$NAME"
+        do_start
+	log_end_msg $?
+	;;
+  stop)
+	log_daemon_msg "Stopping $DESC" "$NAME"
+        do_stop
+	log_end_msg $?
+	;;
+  reload|force-reload)
+	log_daemon_msg "Reloading $DESC configuration files" "$NAME"
+	start-stop-daemon --oknodo --stop --signal 1 --quiet --user $USER \
+          --pidfile $MONITOR_PIDFILE --exec $MONITOR
+        log_end_msg $?
+        ;;
+  restart)
+	log_daemon_msg "Restarting $DESC" "$NAME"
+        do_stop
+	sleep 3
+        do_start
+	log_end_msg $?
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart|reload|force-reload}" >&2
+	exit 1;
+	;;
+esac
+
+exit 0

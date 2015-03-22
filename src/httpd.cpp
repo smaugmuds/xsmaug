@@ -78,7 +78,7 @@ static char **s_argv = { NULL };
 static void set_options(char *argv[]);
 
 #if !defined(HTTPD_CONFIG_FILE)
-#define HTTPD_CONFIG_FILE "../etc/httpd.conf"
+#define HTTPD_CONFIG_FILE "../etc/xsmaug/httpd.conf"
 #endif /* !HTTPD_CONFIG_FILE */
 
 static void __cdecl signal_handler(int sig_num) {
@@ -122,7 +122,7 @@ static void show_usage_and_exit(void) {
   const char **names;
   int i;
 
-  fprintf(stderr, "@{XSMAUG} Mongoose version %s (c) Sergey Lyubka, built on %s\n",
+  fprintf(stderr, "-- { XSMAUG } -- Mongoose version %s (c) Sergey Lyubka, built on %s\n",
           MVER, __DATE__);
   fprintf(stderr, "Usage:\n");
 #if !defined(MONGOOSE_NO_AUTH) && !defined(MONGOOSE_NO_FILESYSTEM)

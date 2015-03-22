@@ -1,0 +1,87 @@
+#!@ENV@ @BASH@
+
+############################################################################
+#                                                                          #
+#   X      X  ******* **    **  ******  **    **  ******                   #
+#    X    X  ******** ***  *** ******** **    ** ********       \\._.//    #
+#     X  X   **       ******** **    ** **    ** **             (0...0)    #
+#      XX    *******  ******** ******** **    ** **  ****        ).:.(     #
+#      XX     ******* ** ** ** ******** **    ** **  ****        {o o}     #
+#     X  X         ** **    ** **    ** **    ** **    **       / ' ' \    #
+#    X    X  ******** **    ** **    ** ******** ********    -^^.VxvxV.^^- #
+#   X      X *******  **    ** **    **  ******   ******                   #
+#                                                                          #
+# ------------------------------------------------------------------------ #
+# Ne[X]t Generation [S]imulated [M]edieval [A]dventure Multi[U]ser [G]ame  #
+# ------------------------------------------------------------------------ #
+# XSMAUG 2.4 (C) 2014  by Antonio Cao @burzumishi                          #
+# ------------------------------------------------------------------------ #
+#             						@PACKAGE@d-httpd   				                        #
+############################################################################
+
+source @sysconfdir@/@PACKAGE@/@PACKAGE@d.conf
+
+true=0;
+false=1;
+
+test -x $BINDIR/$HTTPD || exit $false;
+
+set -e;
+
+start_daemon() {
+	if test ! -f "$HTTPD_PIDFILE"; then
+		($SU $USER -c $BINDIR/$HTTPD &>>$HTTPD_LOGFILE &) &
+	fi;
+
+	until $SU $USER -c "pidof $HTTPD > $HTTPD_PIDFILE";	do
+		sleep 2;
+	done
+
+	echo -n "$HTTPD ($(cat $HTTPD_PIDFILE)) ... ";
+}
+
+stop_daemon() {
+	if test -f "$HTTPD_PIDFILE"; then
+		if test -f "/proc/$(cat $HTTPD_PIDFILE)/status"; then
+			kill -9 $(cat $HTTPD_PIDFILE) &>/dev/null;
+		fi;
+
+		$SU $USER -c "rm -f $HTTPD_PIDFILE";
+	fi;
+
+	echo -n "$HTTPD (Stopped) ... ";
+}
+
+status_daemon() {
+	if test -f "$HTTPD_PIDFILE"; then
+		echo -n "$HTTPD ($(cat $HTTPD_PIDFILE)) ... ";
+	else
+		echo -n "$HTTPD (Stopped) ... ";
+	fi;
+}
+
+case $1 in
+  start) echo -n "Starting $DESC web server ... ";
+         start_daemon;
+				 echo "done.";
+	;;
+  stop) echo -n "Stopping $DESC web server ... ";
+        stop_daemon;
+			  echo "done.";
+	;;
+	status) echo -n "Status $DESC web server ... ";
+					status_daemon;
+				  echo "done.";
+	;;
+  restart) echo -n "Restarting $DESC web server ... ";
+        	 stop_daemon;
+					 sleep 2;
+					 start_daemon;
+					 echo "done.";
+	;;
+  *) echo "Usage: $0 {start|stop|restart|status}" >&2;
+		 exit $false;
+	;;
+esac;
+
+exit $true;
