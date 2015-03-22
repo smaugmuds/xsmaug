@@ -17,7 +17,7 @@
  # ------------------------------------------------------------------------ #
  # Ne[X]t Generation [S]imulated [M]edieval [A]dventure Multi[U]ser [G]ame  #
  # ------------------------------------------------------------------------ #
- # XSMAUG 2.4 (C) 2014  by Antonio Cao @burzumishi                          #
+ # XSMAUG 2.5 (C) 2014-2015  by Antonio Cao @burzumishi                     #
  # ------------------------------------------------------------------------ #
  #                                  XSMAUG                                  #
  ############################################################################
@@ -49,17 +49,19 @@ The release of version **2.4** is HERE! With many bugfixes as well as important 
 
 	- src:              Source files.
 	- doc:              Documentation.
-	- xsmaug.conf:      XSMAUG Server Config File.
-	- xsmaugd:          XSMAUG Server Boot Script.
+	- bin:							Init Scripts.
+	- etc:  						XSMAUG Script Config Files.
+	- etc/init.d: 			XSMAUG & HTTPD Server SysV Scripts.
+	- man:							Man Pages.
 	- tools:            Developer tools.
 	- data/realm:       Realm Area files.
-	- data/areaconvert: Convert New Realm Area files.
+	- data/areaconvert:	Convert New Realm Area files.
 	- data/aucvaults:   Auction Vault files.
 	- data/player:      Player files (initially empty).
-	- data/vault:	    Guilds Vaults
-	- data/races:	    Races files.
-	- data/gods:        God players.
-	- data/deity:	    Realm Deities.
+	- data/vault:	   		Guilds Vaults
+	- data/races:	   		Races files.
+	- data/gods:      	God players.
+	- data/deity:	    	Realm Deities.
 	- data/councils:    Councils files.
 	- data/classes:     Classes files.
 	- data/clans:       Clans files.
@@ -71,7 +73,7 @@ The release of version **2.4** is HERE! With many bugfixes as well as important 
 	- data/system:      MUD Game System files.
 	- data/building:    Building System files.
 	- data/classes:     Player Class files.
-	- data/color:	    MUD Color files.
+	- data/color:	    	MUD Color files.
 	- data/hotboot:     Fast boot config files.
 	- data/crash:       Crash files.
 	- data/motd:        Message files.
@@ -163,6 +165,11 @@ Realm Areas:
 
 
 #### ChangeLog
+
+	* XSMAUG 2.4 -> XSMAUG 2.5
+
+		- Init Script Daemons, Monitor and configuration files.
+		- Some build fixes.
 
 	* XSMAUG 2.2 -> XSMAUG 2.4
 
@@ -262,10 +269,10 @@ The license terms boil down to this: the people who wrote this mud want due cred
 
 **SMAUG** is a derivative of the version **2.1** distribution of **Merc Diku Mud**. **SMAUG** contains substantial enhancements to **Merc Diku Mud**, including some features of the original **Diku Mud** that were removed by the Merc team.
 
-**XSMAUG** is a derivative of the original **SMAUG** and is subject to their copyright and license agreement.  **XSMAUG** contains substantial enhancements to **SMAUG**.  These enhancements are copyright 2014 by **Antonio Cao** ([@burzumishi] (https://github.com/burzumishi)) under the **'GNU GPL v2 LICENSE'**.
+**XSMAUG** is a derivative of the original **SMAUG** and is subject to their copyright and license agreement.  **XSMAUG** contains substantial enhancements to **SMAUG**.  These enhancements are copyright 2014-2015 by **Antonio Cao** ([@burzumishi] (https://github.com/burzumishi)) under the **'GNU GPL v2 LICENSE'**.
 
 **Thanks to the SMAUG Code Team!**
 
 ==============
 
-_**XSMAUG** (c) 2014_
+_**XSMAUG** (c) 2014-2015_

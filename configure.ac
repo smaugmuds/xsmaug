@@ -34,8 +34,6 @@ AC_SUBST([XSMAUG_UPDATE_VERSION], [2])
 
 AC_SUBST([VERSION], ["${XSMAUG_MAJOR_VERSION}.${XSMAUG_MINOR_VERSION}.${XSMAUG_UPDATE_VERSION}"])
 
-AC_SUBST([DESCRIPTION], ["XSMAUG MUD Server"])
-
 AC_INIT([xsmaug], [2.5.2],
 	[<@burzumishi>],
 	[xsmaug])
@@ -60,6 +58,9 @@ AC_DEFINE_UNQUOTED([PREFIX], ["/opt/xsmaug/"], [Define to the root directory.])
 AC_DEFINE_UNQUOTED([RUNDIR], ["${prefix}/com/xsmaug/"], [Define modifiable architecture-independent data.])
 AC_DEFINE_UNQUOTED([LOGDIR], ["${prefix}/var/log/xsmaug/"], [Define to log directory.])
 AC_DEFINE_UNQUOTED([BINDIR], ["${prefix}/bin/"], [Define HotBoot Executable Directory.])
+AC_DEFINE_UNQUOTED([LOCKDIR], ["${prefix}/var/lock/xsmaug/"], [Define lock file directory.])
+
+AC_SUBST([DESCRIPTION], ["XSMAUG MUD Server"])
 
 AC_LANG([C++])
 AC_LANG_PUSH([C++])
@@ -154,7 +155,9 @@ fi
 
 AC_CONFIG_FILES([Makefile
 		 src/Makefile
-		 etc/Makefile])
+		 bin/Makefile
+		 etc/Makefile
+		 etc/init.d/Makefile])
 
 LT_OUTPUT
 AC_OUTPUT

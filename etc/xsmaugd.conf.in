@@ -12,20 +12,41 @@
  # ------------------------------------------------------------------------ #
  # Ne[X]t Generation [S]imulated [M]edieval [A]dventure Multi[U]ser [G]ame  #
  # ------------------------------------------------------------------------ #
- # XSMAUG 2.4 (C) 2014  by Antonio Cao @burzumishi                          #
+ # XSMAUG 2.5 (C) 2014  by Antonio Cao @burzumishi                          #
  # ------------------------------------------------------------------------ #
  #                                  @PACKAGE@                                  #
  #                                  Config                                  #
  ############################################################################
 
-@PACKAGE@=@PACKAGE@
-version="@VERSION@"
+@PACKAGE@=@PACKAGE@;
+VERSION=@VERSION@;
 
-bin="@bindir@"
-data="@sharedstatedir@/@PACKAGE@"
-realm="realm"
+NAME=@PACKAGE@
+DESC="@DESCRIPTION@"
 
-host="localhost"
-port="4000"
+USER=@USER@
+GROUP=@GROUP@
 
-log="@localstatedir@/log/@PACKAGE@/@PACKAGE@-server.log"
+HOST=localhost
+PORT=4000
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:@bindir@
+BINDIR=@bindir@
+INITD=@sysconfdir@/init.d
+
+SU="su"
+
+EXEC=$NAME
+MONITOR=@PACKAGE@-monitor
+DAEMON=@PACKAGE@d
+HTTPD=httpd
+
+RUNDIR=@localstatedir@/run
+EXEC_PIDFILE=$RUNDIR/@PACKAGE@.pid
+MONITOR_PIDFILE=$RUNDIR/@PACKAGE@-monitor.pid
+HTTPD_PIDFILE=$RUNDIR/@PACKAGE@-httpd.pid
+
+LOGDIR=@localstatedir@/log/@PACKAGE@
+EXEC_LOGFILE=$LOGDIR/@PACKAGE@.log
+MONITOR_LOGFILE=$LOGDIR/@PACKAGE@-monitor.log
+HTTPD_LOGFILE=$LOGDIR/@PACKAGE@-httpd.log

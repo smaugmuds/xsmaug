@@ -18,10 +18,12 @@
  #                                 Makefile                                 #
  ############################################################################
 
-CLEANFILES = xsmaug.conf *~
+SUBDIRS = init.d
 
 etcdir = $(sysconfdir)/$(PACKAGE)
-etc_DATA = xsmaug.conf
+etc_DATA = xsmaugd.conf httpd.conf
+
+CLEANFILES = $(etc_DATA) *~
 
 do_subst = sed -e 's,[@]sharedstatedir[@],$(sharedstatedir),g' \
 		-e 's,[@]localstatedir[@],$(localstatedir),g' \
@@ -36,13 +38,18 @@ do_subst = sed -e 's,[@]sharedstatedir[@],$(sharedstatedir),g' \
 		-e 's,[@]PERL[@],$(PERL),g' \
 		-e 's,[@]ENV[@],$(ENV),g' \
 		-e 's,[@]BASH[@],$(BASH),g' \
+		-e 's,[@]USER[@],$(USER),g' \
+		-e 's,[@]GROUP[@],$(GROUP),g' \
 		-e 's,[@]CC[@],$(CC),g' \
 		-e 's,[@]CXX[@],$(CXX),g' \
 		-e 's,[@]PACKAGE[@],$(PACKAGE),g' \
 		-e 's,[@]VERSION[@],$(VERSION),g' \
 		-e 's,[@]DESCRIPTION[@],$(DESCRIPTION),g'
 
-xsmaug.conf: xsmaug.conf.in Makefile
-	$(do_subst) < $(srcdir)/xsmaug.conf.in > xsmaug.conf
+xsmaugd.conf: xsmaugd.conf.in Makefile
+	$(do_subst) < $(srcdir)/xsmaugd.conf.in > xsmaugd.conf
 
-all-local: xsmaug.conf
+httpd.conf: httpd.conf.in Makefile
+	$(do_subst) < $(srcdir)/httpd.conf.in > httpd.conf
+
+all-local: xsmaugd.conf httpd.conf

@@ -18,22 +18,10 @@
  #                                 Makefile                                 #
  ############################################################################
 
-CC = g++
-CPP = g++
-CXX = g++
+SVdir = $(sysconfdir)/init.d
+SV_SCRIPTS = xsmaugd xsmaugd.debian xsmaugd-httpd
 
-USER = xsmaug
-GROUP = xsmaug
-
-ARCH = `getconf LONG_BIT`
-
-ACLOCAL_AMFLAGS = -I m4
-
-SUBDIRS = src etc bin
-
-EXTRA_DIST = autogen.sh data tools doc etc src man db \
-	README.md LICENSE m4 libtool bin autom4te.cache \
-	missing compile config.guess config.sub depcomp aclocal.m4
+CLEANFILES = $(SV_SCRIPTS) *~
 
 do_subst = sed -e 's,[@]sharedstatedir[@],$(sharedstatedir),g' \
 		-e 's,[@]localstatedir[@],$(localstatedir),g' \
@@ -56,51 +44,16 @@ do_subst = sed -e 's,[@]sharedstatedir[@],$(sharedstatedir),g' \
 		-e 's,[@]VERSION[@],$(VERSION),g' \
 		-e 's,[@]DESCRIPTION[@],$(DESCRIPTION),g'
 
-CLEANFILES = *~ */*~
+xsmaugd.debian: xsmaugd.debian.in Makefile
+	$(do_subst) < $(srcdir)/xsmaugd.debian.in > xsmaugd.debian; \
+	chmod +x xsmaugd.debian;
 
-docdir = $(datarootdir)/doc/@PACKAGE@
-doc_DATA = README AUTHORS INSTALL NEWS LICENSE ChangeLog doc/*.md doc/*.txt
+xsmaugd: xsmaugd.in Makefile
+	$(do_subst) < $(srcdir)/xsmaugd.in > xsmaugd; \
+	chmod +x xsmaugd;
 
-man_MANS = man/xsmaug.1 man/xsmaugd.1
+xsmaugd-httpd: xsmaugd-httpd.in Makefile
+	$(do_subst) < $(srcdir)/xsmaugd-httpd.in > xsmaugd-httpd; \
+	chmod +x xsmaugd-httpd;
 
-all-local:
-	@echo "=== all-local done ==="
-
-clean-local:
-	@rm -rfv Makefile src/Makefile config.log etc/init.d/xsmaugd* \
-	etc/Makefile bin/xsmaug-monitor etc/xsmaugd.conf src/xsmaug.h etc/httpd.cfg; \
-	echo "=== clean-local done ==="
-
-distclean-local:
-	@rm -rfv configure src/Makefile.in Makefile.in \
-	Makefile src/Makefile config.log etc/httpd.cfg \
-	etc/Makefile.in etc/xsmaugd.conf bin/xsmaug-monitor \
-	etc/Makefile src/xsmaug.h etc/init.d/xsmaugd*; \
-	echo "=== distclean-local done ==="
-
-devdistclean-local:
-	@rm -rfv aclocal.m4 autom4te.cache config.guess \
- 	configure config.sub install-sh missing etc/httpd.cfg \
-	Makefile.in src/Makefile.in Makefile src/Makefile compile \
-	config.log config.status ltmain.sh depcomp bin/xsmaug-monitor \
-	etc/Makefile.in etc/xsmaugd.conf etc/init.d/xsmaugd* \
-	etc/Makefile etc/conf.d/Makefile m4 src/xsmaug.h; \
-	echo "=== distclean-local done ==="
-
-install-data-hook:
-	@echo "Installing <@PACKAGE@> data files ..."; \
-	mkdir -pv $(sharedstatedir)/@PACKAGE@; \
-	cp -rvf data/* $(sharedstatedir)/@PACKAGE@; \
-	echo "Creating <@PACKAGE@> directory to store log files ..."; \
-	mkdir -pv $(localstatedir)/log/@PACKAGE@; \
-	echo "Creating <@PACKAGE@> directory to store lock files ..."; \
-	mkdir -pv $(localstatedir)/lock/@PACKAGE@; \
-	echo "Creating user <$(USER)> and group <$(GROUP)> ..."; \
-	groupadd $(GROUP); \
-	useradd $(USER) -g $(GROUP); \
-	echo "Setting up <$(prefix)> permissions to <$(USER):$(GROUP)> ..."; \
-	chown -R $(USER):$(GROUP) $(prefix); \
-	echo ""; \
-	echo "<@PACKAGE@> has ben installed to <$(prefix)> directory!"; \
-	echo "You can execute <$(sysconfdir)/init.d/xsmaugd start> now!"; \
-	echo "";
+all-local: xsmaugd xsmaugd.debian xsmaugd-httpd

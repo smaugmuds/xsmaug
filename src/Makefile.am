@@ -24,9 +24,9 @@ CXX = g++
 
 ARCH = `uname -m`
 
-bin_PROGRAMS = xsmaug$(EXEEXT) dnsresolv$(EXEEXT)
+bin_PROGRAMS = xsmaug$(EXEEXT) dnsresolv$(EXEEXT) httpd$(EXEEXT)
 
-CLEANFILES = *~ *.o xsmaug.h xsmaug$(EXEEXT) dnsresolv$(EXEEXT)
+CLEANFILES = *~ *.o xsmaug.h xsmaug$(EXEEXT) dnsresolv$(EXEEXT) httpd$(EXEEXT)
 
 xsmaug_SOURCES = act_comm.cpp \
 act_info.cpp \
@@ -76,7 +76,6 @@ md5.cpp \
 misc.cpp \
 mobindex.cpp \
 modules.cpp \
-mongoose.cpp \
 mspecial.cpp \
 mssp.cpp \
 mud_cfg.cpp \
@@ -118,6 +117,8 @@ win32.cpp
 
 dnsresolv_SOURCES = dnsresolv.cpp
 
+httpd_SOURCES = httpd.cpp mongoose.cpp
+
 include_HEADERS = xsmaug.h mud.h mud_cfg.h mongoose.h
 
 xsmaug_CXXFLAGS = -O3 -pipe -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-result -Wno-write-strings
@@ -125,3 +126,7 @@ xsmaug_CFLAGS = -O3 -pipe -export-dynamic -Wno-all -Wno-cast-align -Wno-unused-r
 
 dnsresolv_CXXFLAGS = -O3 -pipe -Wno-all
 dnsresolv_CFLAGS = -O3 -pipe -Wno-all
+
+httpd_CXXFLAGS = -O3 -pipe -W -Wno-all -I../.. -pthread -g -O0 -DMONGOOSE_ENABLE_THREADS -DNS_ENABLE_SSL -lssl $(CFLAGS_EXTRA) 
+httpd_CFLAGS = -O3 -pipe -W -Wno-all -I../.. -pthread -g -O0 -DMONGOOSE_ENABLE_THREADS -DNS_ENABLE_SSL -lssl $(CFLAGS_EXTRA)
+
