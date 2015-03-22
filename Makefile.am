@@ -68,24 +68,24 @@ all-local:
 
 clean-local:
 	@rm -rfv Makefile src/Makefile config.log etc/init.d/xsmaugd etc/init.d/xsmaugd-httpd \
-	etc/Makefile bin/xsmaug-monitor etc/xsmaugd.conf src/xsmaug.h etc/httpd.cfg compile \
-	stamp-h1; \
+	etc/Makefile bin/xsmaug-monitor etc/xsmaugd.conf src/xsmaug.h etc/httpd.cfg compile stamp-h1\
+	etc/init.d/Makefile; \
 	echo "=== clean-local done ==="
 
-distclean-local:
-	@rm -rfv configure src/Makefile.in Makefile.in compile \
-	Makefile src/Makefile config.log etc/httpd.cfg stamp-h1 \
-	etc/Makefile.in etc/xsmaugd.conf bin/xsmaug-monitor \
+distclean-local: clean-local
+	@rm -rfv configure src/Makefile.in Makefile.in compile etc/init.d/Makefile.in \
+	Makefile src/Makefile config.log etc/httpd.cfg stamp-h1 bin\Makefile.in \
+	etc/Makefile.in etc/xsmaugd.conf bin/xsmaug-monitor bin\Makefile etc/init.d\Makefile \
 	etc/Makefile src/xsmaug.h etc/init.d/xsmaugd etc/init.d/xsmaugd-httpd; \
 	echo "=== distclean-local done ==="
 
-devdistclean-local:
-	@rm -rfv aclocal.m4 autom4te.cache config.guess stamp-h1 \
- 	configure config.sub install-sh missing etc/httpd.cfg \
-	Makefile.in src/Makefile.in Makefile src/Makefile compile \
+devdistclean-local: distclean-local
+	@rm -rfv aclocal.m4 autom4te.cache config.guess stamp-h1 etc/init.d/Makefile.in \
+ 	configure config.sub install-sh missing etc/httpd.cfg bin\Makefile.in \
+	Makefile.in src/Makefile.in Makefile src/Makefile compile bin\Makefile \
 	config.log config.status ltmain.sh depcomp bin/xsmaug-monitor \
 	etc/Makefile.in etc/xsmaugd.conf etc/init.d/xsmaugd etc/init.d/xsmaugd-httpd \
-	etc/Makefile etc/conf.d/Makefile m4 src/xsmaug.h; \
+	etc/Makefile etc/conf.d/Makefile m4 src/xsmaug.h etc/init.d/Makefile; \
 	echo "=== distclean-local done ==="
 
 install-data-hook:

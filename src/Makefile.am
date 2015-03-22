@@ -26,7 +26,9 @@ ARCH = `uname -m`
 
 bin_PROGRAMS = xsmaug$(EXEEXT) dnsresolv$(EXEEXT) httpd$(EXEEXT)
 
-CLEANFILES = *~ *.o xsmaug.h xsmaug$(EXEEXT) dnsresolv$(EXEEXT) httpd$(EXEEXT)
+CLEANFILES = *~ *.o xsmaug.h xsmaug$(EXEEXT) dnsresolv$(EXEEXT) httpd$(EXEEXT) stamp-h1
+
+CLEANDIRS = .deps
 
 xsmaug_SOURCES = act_comm.cpp \
 act_info.cpp \
