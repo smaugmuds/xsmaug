@@ -67,8 +67,10 @@ CLEANDEVELFILES = compile configure depcomp aclocal.m4 \
 	config.status ltmain.sh depcomp m4 README COPYING NEWS \
 	AUTHORS ChangeLog INSTALL config.lt libtool src/.deps
 
-CLEANBUILDFILES = config.log stamp-h1 `find $(srcdir) -iname "Makefile"` \
-	`find $(srcdir) -iname "Makefile.in"` 
+CLEANBUILDFILES = config.log src/xsmaug.h \
+	`find $(srcdir) -iname "stamp-h1"` \
+	`find $(srcdir) -iname "Makefile"` \
+	`find $(srcdir) -iname "Makefile.in"`
 
 CLEANFILES = $(CLEANBUILDFILES) *~ */*~
 
