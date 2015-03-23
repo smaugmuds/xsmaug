@@ -72,7 +72,8 @@ CLEANBUILDFILES = config.log src/xsmaug.h \
 	`find $(srcdir) -iname "Makefile"` \
 	`find $(srcdir) -iname "Makefile.in"`
 
-CLEANFILES = $(CLEANBUILDFILES) *~ */*~
+CLEANFILES = $(CLEANBUILDFILES) \
+	`find $(srcdir) -iname "*~"`
 
 all-local:
 	@echo "=== all-local done ==="
