@@ -56,36 +56,34 @@ do_subst = sed -e 's,[@]sharedstatedir[@],$(sharedstatedir),g' \
 		-e 's,[@]VERSION[@],$(VERSION),g' \
 		-e 's,[@]DESCRIPTION[@],$(DESCRIPTION),g'
 
-CLEANFILES = *~ */*~
-
 docdir = $(datarootdir)/doc/@PACKAGE@
-doc_DATA = README AUTHORS INSTALL NEWS LICENSE ChangeLog doc/*.md doc/*.txt
+doc_DATA = README AUTHORS INSTALL NEWS LICENSE ChangeLog \
+	doc/*.md doc/*.txt
 
 man_MANS = man/xsmaug.1 man/xsmaugd.1
+
+CLEANDEVELFILES = compile configure depcomp aclocal.m4 \
+	autom4te.cache config.guess config.sub install-sh missing \
+	config.status ltmain.sh depcomp m4 README COPYING NEWS \
+	AUTHORS ChangeLog INSTALL config.lt libtool src/.deps
+
+CLEANBUILDFILES = config.log stamp-h1 `find $(srcdir) -iname "Makefile"` \
+	`find $(srcdir) -iname "Makefile.in"` 
+
+CLEANFILES = $(CLEANBUILDFILES) *~ */*~
 
 all-local:
 	@echo "=== all-local done ==="
 
 clean-local:
-	@rm -rfv Makefile src/Makefile config.log etc/init.d/xsmaugd etc/init.d/xsmaugd-httpd \
-	etc/Makefile bin/xsmaug-monitor etc/xsmaugd.conf src/xsmaug.h etc/httpd.cfg compile stamp-h1\
-	etc/init.d/Makefile; \
+	@rm -rfv $(CLEANBUILDFILES) src/.deps; \
 	echo "=== clean-local done ==="
 
 distclean-local: clean-local
-	@rm -rfv configure src/Makefile.in Makefile.in compile etc/init.d/Makefile.in \
-	Makefile src/Makefile config.log etc/httpd.cfg stamp-h1 bin\Makefile.in \
-	etc/Makefile.in etc/xsmaugd.conf bin/xsmaug-monitor bin\Makefile etc/init.d\Makefile \
-	etc/Makefile src/xsmaug.h etc/init.d/xsmaugd etc/init.d/xsmaugd-httpd; \
-	echo "=== distclean-local done ==="
+	@echo "=== distclean-local done ==="
 
 devdistclean-local: distclean-local
-	@rm -rfv aclocal.m4 autom4te.cache config.guess stamp-h1 etc/init.d/Makefile.in \
- 	configure config.sub install-sh missing etc/httpd.cfg bin\Makefile.in \
-	Makefile.in src/Makefile.in Makefile src/Makefile compile bin\Makefile \
-	config.log config.status ltmain.sh depcomp bin/xsmaug-monitor \
-	etc/Makefile.in etc/xsmaugd.conf etc/init.d/xsmaugd etc/init.d/xsmaugd-httpd \
-	etc/Makefile etc/conf.d/Makefile m4 src/xsmaug.h etc/init.d/Makefile; \
+	@rm -rfv $(CLEANDEVELFILES); \
 	echo "=== distclean-local done ==="
 
 install-data-hook:

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
  ############################################################################
  #                                                                          #
@@ -14,7 +14,7 @@
  # ------------------------------------------------------------------------ #
  # Ne[X]t Generation [S]imulated [M]edieval [A]dventure Multi[U]ser [G]ame  #
  # ------------------------------------------------------------------------ #
- # XSMAUG 2.4 (C) 2014  by Antonio Cao @burzumishi                          #
+ # XSMAUG © 2014-2015 Antonio Cao (@burzumishi)                             #
  # ------------------------------------------------------------------------ #
  #                                  XSMAUG                                  #
  #                                  Autogen                                 #
@@ -34,7 +34,9 @@ ln -sf README.md ChangeLog
 
 automake -a
 
-if [ -f "configure" ]; then
-	./configure --prefix=/opt/xsmaug
-fi;
+test -x configure || exit
+
+./configure --prefix=/opt/xsmaug
+
+exit
 

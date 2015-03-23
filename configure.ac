@@ -55,7 +55,7 @@ AC_CANONICAL_HOST
 AC_CANONICAL_BUILD
 
 AC_DEFINE_UNQUOTED([PREFIX], ["/opt/xsmaug/"], [Define to the root directory.])
-AC_DEFINE_UNQUOTED([RUNDIR], ["${prefix}/com/xsmaug/"], [Define modifiable architecture-independent data.])
+AC_DEFINE_UNQUOTED([RUNDIR], ["${prefix}/var//xsmaug/"], [Define modifiable architecture-independent data.])
 AC_DEFINE_UNQUOTED([LOGDIR], ["${prefix}/var/log/xsmaug/"], [Define to log directory.])
 AC_DEFINE_UNQUOTED([BINDIR], ["${prefix}/bin/"], [Define HotBoot Executable Directory.])
 AC_DEFINE_UNQUOTED([LOCKDIR], ["${prefix}/var/lock/xsmaug/"], [Define lock file directory.])
